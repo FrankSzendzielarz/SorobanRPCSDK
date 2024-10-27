@@ -7,9 +7,9 @@ A lightweight SDK enabling native consumption of the Stellar Soroban RPC gateway
 We are developing a larger, privately funded project that leverages Stellar as its exclusive transaction processing platform. The architecture integrates Soroban RPC server as the primary entrypoint to the Stellar network, interfacing with native front-ends across multiple platforms:
 - Android and iOS 
 - Tizen OS for Smart TVs
-- Samsung smart wearables (post-MVP)
 - Unity native game development (post-MVP)
 - WASM web applications (post-MVP)
+- Samsung smart wearables (optional)
 
 During development, we encountered significant platform compatibility challenges with existing SDKs:
 
