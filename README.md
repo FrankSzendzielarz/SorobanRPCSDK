@@ -7,7 +7,7 @@ involves server components using Soroban RPC server as the entrypoint to the Ste
 targetting Android, iOS, Tizen OS for Smart TVs (and later potential Samsung smart wearables). Post-MVP the project includes Unity
 native game development, WASM web, and more. 
 
-One of the hurdles was the lack of SDK comptability or documentation for the platforms targetted: Tizen smart TV apps, for instance, embrace the development community through .NET,
+One of the hurdles was the lack of SDK compatibility or documentation for the platforms targetted: Tizen smart TV apps, for instance, embrace the development community through .NET,
 while the current SDKs for Stellar use NaCl native libraries that for obscure reasons do not 
 work on production TV sets (but, confusingly, do on emulators). Some libraries referenced by the SDKs are not permitted as runtime dependencies and cause 
 runtime load errors. For Android and iOS cross-platform there are similar compatibility headaches. Unity game development is done
