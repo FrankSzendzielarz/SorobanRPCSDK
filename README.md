@@ -45,7 +45,7 @@ The manually coded functionality would address:
 	- Soroban Authorisation signing
 	- Transaction generation from Simulation
 
-### Minimum Deliverable Variant
+### Minimum Deliverable - Unity
 
 Unity however requires some additional customisation. Metadata for the Unity Editor requires entity properties to be decorated
 using a proprietary Unity library. Dependent libraries that conflict with the Unity Editor for design time game integration
