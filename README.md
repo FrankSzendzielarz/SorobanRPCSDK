@@ -1,7 +1,7 @@
 # Cross Platform Soroban RPC SDK
 A lightweight SDK for cross platform and native consumption of the Stellar Soroban RPC gateway.
 
-[AI generated summary here](Readme-Claude.md)
+[AI generated summary here](README-Claude.md)
 
 ## Motivations
 We are developing a larger, privately funded project using Stellar exclusively as the transaction processing platform. The architecture
