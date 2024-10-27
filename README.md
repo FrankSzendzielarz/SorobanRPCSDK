@@ -93,8 +93,8 @@ with:
 
 ### Common Deliverable
 
-The SDK would be respond to changes to upstream Soroban RPC spec and XDR spec automatically. A github action would allow 
-updates, or similar mechanism. Unlike the other SDKs, this is simple and lightweight enough that little manual intervention
+The SDK would respond to upstream changes in the Soroban RPC and XDR specs automatically. A github action would allow 
+updates, generating code and compiling, or a similar mechanism. This is simple and lightweight enough that little manual intervention
 should be required.
 
 
