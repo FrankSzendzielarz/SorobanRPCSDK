@@ -71,8 +71,7 @@ native app for the device being considered.
 When the SDK we propose is added into another *.NET based* project (such as Samsung Smart TV, Android/ios/windows native cross platform, etc), all the Stellar objects, such as Ledger Entries, Transactions and so on,
 are immediately available to the .NET developer. The Soroban RPC interface is immediately available as methods. **getLedgerEntries**,
 **simulateTransaction** and the various **operations** . But for developers in other environments, using Swift, Kotlin, Objective C, Java
-or more, all they would be getting is a statically linked binary without a clear way of interfacing with it. It would not be of great
-benefit, just to offer a native binary output based on the minimum deliverable.
+or more, all they would be getting is a statically linked binary without a clear way of interfacing with it. To them, a native binary output based on the minimum deliverable would not be of great benefit.
 
 However, it seems we can solve that and we could help extend the native binary SDK's reach even further
 with:
