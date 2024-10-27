@@ -57,7 +57,7 @@ we could offer.
 
 ### Extended Deliverables
 
-On reflection, it became clear that with a .NET implementation of this, doorways opens to some other deliverables that would
+On reflection, it became clear that with a .NET implementation of this, doorways open to some other deliverables that would
 greatly broaden the reach. It seems at this point the cost/benefit could be worth it - adding a little complexity
 to get something much more accessible and without drawing resources too much from the main project.
 
