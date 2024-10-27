@@ -51,7 +51,7 @@ The manually coded functionality would address:
 
 Unity however requires some additional customisation. Metadata for the Unity Editor requires entity properties to be decorated
 using a proprietary Unity library. Dependent libraries that conflict with the Unity Editor for design time game integration
-with Stellar (such as Newtonsoft) must internalised to the SDK using obscure techniques like IL-weaving. Thankfully, this
+with Stellar (such as Newtonsoft) must be internalised to the SDK using obscure techniques like IL-weaving. Thankfully, this
 is something we have already achieved with other Unity libraries, and just needs to be repeated here.
 
 This deliverable would involve a different build process and different output artifact, but would still be part of the minimum
