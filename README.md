@@ -66,7 +66,7 @@ allows the team to specify targets, such as Linux x64, and even generate single-
 specific runtime are embedded. A link-time process called 'trimming' then cuts out anything unnecessary, essentially outputting a
 native app for the device being considered.
 
-When the SDK we propose is added into another .NET based project (such as Samsung Smart TV, Android/ios/windows native cross platform, etc), all the Stellar objects, such as Ledger Entries, Transactions and so on,
+When the SDK we propose is added into another *.NET based* project (such as Samsung Smart TV, Android/ios/windows native cross platform, etc), all the Stellar objects, such as Ledger Entries, Transactions and so on,
 are immediately available to the .NET developer. The Soroban RPC interface is immediately available as methods. **getLedgerEntries**,
 **simulateTransaction** and the various **operations** . But for developers on other platforms, using Swift, Kotlin, Objective C, Java
 or more, all they would be getting is a statically linked binary without a clear way of interfacing with it. It would not be of great
