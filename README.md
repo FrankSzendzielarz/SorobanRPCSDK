@@ -18,7 +18,7 @@ metadata and fails at design-time because of dependent assemblies that conflict 
 Also, the SDKs and documentation miss new functional areas related to Soroban, such as assembling a transaction after simulation, or allowing clients to sign
 Soroban authorisation invocations easily. 
 
-Hours, days, were spent trying to understand how these obstacles could be overcome. 
+A lot of time was spent trying to understand how these obstacles could be overcome. 
 
 The end result is a loose set of software components assembled to meet the goals of the project MVP. We decided that we could 
 package this into a lightweight, compact SDK that gives back to the community. Further, we believe we could automate the 
@@ -27,7 +27,7 @@ maintenance process, to at least provide a gateway to Stellar through Soroban RP
 ## Goals
 
 ### Minimum Deliverable
-Initially the idea was to produce a .NET Core SDK for Soroban RPC servers, targetting .NET Standard 2.0, which could be used for:
+Initially the idea was to produce a .NET Core SDK for Soroban RPC servers, targetting **.NET Standard 2.0**, which could be used for:
 
 - Tizen OS , Smart TV and Samsung wearable, lightweight access to Soroban RPC instances
 - Cross platform native development 
@@ -56,6 +56,9 @@ is something we have already achieved with other Unity libraries, and just needs
 
 This deliverable would involve a different build process and different output artifact, but would still be part of the minimum
 we could offer.
+
+NB: There is an existing [Unity SDK](https://github.com/Kirbyrawr/stellar-sdk-unity), but is a 4 year old, archive version of the
+.NET SDK, while even the most up to date SDK lacked some Soroban features we needed.
 
 ### Extended Deliverables
 
