@@ -110,4 +110,5 @@ the same way we have, researching and implementing the extended deliverables, an
 need manual maintenance.
 
 Funding is basically indirect funding for the larger effort, which uses Stellar exclusively for transaction processing.
-
+That main project must be developed in privacy for the time being, in order not to incentivise competition, particularly 
+from other chains, and is being prepared for discussion with SDF, as the project is exclusively Stellar based.
