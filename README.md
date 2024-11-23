@@ -72,19 +72,25 @@ without the ability to debug into the SDK itself, but with the advantage of bein
 The current .NET SDK for Stellar adds overhead that also requires manual maintenance. While that might be useful for more complex
 business logic abstracted across Horizon and Soroban RPC, it is not necessary for the purposes of this lightweight SDK. 
 
-In this example, the SDK is providing two classes, a manually defind `LedgerKeyClaimableBalance` and a code-generated `Xdr.LedgerKeyClaimableBalance`. 
+In this example, the SDK is providing two classes, a manually defined `LedgerKeyClaimableBalance` (right) and a code-generated `Xdr.LedgerKeyClaimableBalance` (left). 
 
-[PICTURE: The classes side by side]
+![Asset Classes](Images/LedgerKey.png)
 
 The types are separated for the sole benefit of offering the user the convenience of avoiding switching on the `Discriminant`. However, 
 this comes with the additional footprint of extra classes, extra references, and that the wrapper class is manually updated.
 
+![Asset Classes](Images/Discriminant.png)
+
 In this case, **our design is that only the XDR code generated C# class will be made available**.
 
 In some instances the SDK wrapper classes implement utility functions. Here we see the same pattern as before except the wrapper class is
-providing a helper `CanonicalName` for the `Asset` class:
+providing a helper `CanonicalName` for a type of `Asset` class:
 
-[PICTURE: The classes side by side]
+![Asset Classes](Images/AssetClasses.png)
+
+In the above image, the automatically generated XDR C# class is on the left, while the manually maintained one on the right really only adds
+the `CanonicalName`. Further, the base class holds a reference in memory to the XDR class, increasing footprint. The `GetHashCode` and `Equals` can
+be ignored.
 
 In C#, it is not necessary to introduce additional wrapper classes and memory footprint to augment code-generated classes with manual functionality.
 Instead, **our design uses the `partial` keyword to declare partial classes**, A C# partial class allows a class to be defined across 
@@ -92,7 +98,10 @@ multiple file system files. The code generated part can be updated, while a sepa
 continue to introduce new utilities and helpers without fear of changes being overwritten by the code generator, and without the overhead
 of the more abstract domain objects.
 
-[PICTURE: The partial classes side by side]
+![Asset Classes](Images/Partials.png)
+
+Note how the above shows **two difference files** and yet only one class. The left is automatically generated and the right is a manually
+provided extension.
 
 ### Automated Maintenance
 
@@ -105,13 +114,23 @@ XDRGEN itself will be forked to add the 'generate partials' template or option.
 Finally, the SDK will specify an additional partial class for the client request/response messages themselves, adding the XDR classes, such
 as ledger entries, transactions and so on, so that properties like the below highlighted are not needed by the user:
 
-[PICTURE: The client class with the XDR string , and a new field with the XDR object ]
+![Asset Classes](Images/ClientClassAugmented.png)
+
+In the above, the code is from a prototype of the OpenRPC code generator proposed in this document, where the OpenRPC spec's XDR field
+is present automatically for the ledger `Entries` class of the `GetLedgerEntries` method. The `Xdr.LedgerEntry` field is added here for 
+illustration, as it would be in a separate partial created by the below tool.
 
 Rather than a GitHub action, the SDK will include a tool or script that can be executed locally to update the source, allow the maintainer
 to check build, compensate in manually updateable partials, and submit changes to the repository via git. This simple script will behave
 as follows:
 
-[PICTURE: The 3 inputs of OpenRPC Gen, XDRGEN (slight mod), Client Class]
+![Asset Classes](Images/SourceUpdates.png)
+
+This illustrates that during the overall process of Stellar Upgrades, the Soroban and XDR specs change. Changes to those specs
+drive some Stellar upgrades outside the scope of this document, while upgrades sometimes drive changes to the specs. When the specs
+change, there is the possibility of automatically upgrading the Soroban light SDK. This triggers the XDRGEN and custom OpenRPC generator
+tools to produce their artifacts, which along with a separate set of information on which convenience XDR objects to include the actual
+RPC methods, triggers a final update to generate an updated version of the Soroban Light SDK **source code**.
 
 ### Native Platform Dependency Restrictions and Unity Build
 
@@ -152,8 +171,7 @@ platform-agnostic static linking. The client can link the binary, and use `proto
 The SDK would include an interface definition allowing the native client to pass in a reference to their own `HTTP client`. The
 SDK would therefore use the platform's own and client's own HTTP tooling to connect to Soroban RPC.
 
-[PICTURE: The build process, along with the client executable linking the assembly , and client software including classes generated
-from the protobuf / grpc ]
+![Asset Classes](Images/Build.png)
 
 Some further proof of concept work needs to be done to check what is possible here, and if gRPC can be used for in-process channels.
 
