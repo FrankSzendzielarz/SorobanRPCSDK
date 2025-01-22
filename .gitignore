@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/Generator/bin/Debug/net8.0
+/Generator/obj
+/Generator/.vs/Generator
