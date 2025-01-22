@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarXDR\\Stellar-ledger-entries.x\""
+    }
+  }
+}
