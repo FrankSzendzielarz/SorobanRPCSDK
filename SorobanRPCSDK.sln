@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{80ABA85D-E7C2-4D3B-8486-9498295FE2E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarRPCSDK", "StellarRPCSDK\StellarRPCSDK.csproj", "{45043F20-7889-40C3-A60D-1E4289F66102}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{80ABA85D-E7C2-4D3B-8486-9498295FE2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80ABA85D-E7C2-4D3B-8486-9498295FE2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80ABA85D-E7C2-4D3B-8486-9498295FE2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45043F20-7889-40C3-A60D-1E4289F66102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45043F20-7889-40C3-A60D-1E4289F66102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45043F20-7889-40C3-A60D-1E4289F66102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45043F20-7889-40C3-A60D-1E4289F66102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

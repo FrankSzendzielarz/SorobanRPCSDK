@@ -2,7 +2,7 @@
   "profiles": {
     "Generator": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarXDR\\Stellar-ledger-entries.x\""
+      "commandLineArgs": "\"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarXDR\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarOpenRPC\\stellar-rpc.openrpc.json\""
     }
   }
 }

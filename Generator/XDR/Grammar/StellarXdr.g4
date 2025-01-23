@@ -107,8 +107,8 @@ unionTypeSpec
     ;
 
 arraySizeSpec
-    : '[' value ']'      // Fixed size array
-    | '<' value? '>'     // Variable size array with optional max
+    : '[' value ']'      # FixedArraySize
+    | '<' value? '>'     # VarArraySize
     ;
 
 constantDefinition

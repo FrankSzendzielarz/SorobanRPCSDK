@@ -1,8 +1,7 @@
 ﻿using Antlr4.Runtime;
-using Generator.CodeGenVisitors;
 using Generator.OpenRPC;
+using Generator.XDR;
 using Generator.XDR.Grammar;
-using NJsonSchema.CodeGeneration.CSharp;
 using System.Text.Json;
 
 
@@ -75,7 +74,7 @@ public class Program
                 }
 
                 // Visit the parse tree
-                var visitor = new CSharpCodeGenVisitor(outputDir);
+                var visitor = new CSharpCodeGenVisitor(outputDir,tokens);
                 visitor.Visit(tree);
             }
             Console.WriteLine($"XDR generation complete.");
