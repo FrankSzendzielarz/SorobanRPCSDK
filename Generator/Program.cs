@@ -80,10 +80,10 @@ public class Program
             Console.WriteLine($"XDR generation complete.");
             Console.WriteLine($"Generating code for OpenRPC file {openRPCFile}");
 
-            var jsonContent = await File.ReadAllTextAsync(openRPCFile);
-            var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
-            var generator = new CSharpOpenRPCGenerator(spec!, outputDir);
-            await generator.GenerateAsync();
+            //var jsonContent = await File.ReadAllTextAsync(openRPCFile);
+            //var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
+            //var generator = new CSharpOpenRPCGenerator(spec!, outputDir);
+            //await generator.GenerateAsync();
 
             Console.WriteLine($"Successfully generated code in {outputDir}");
         }
