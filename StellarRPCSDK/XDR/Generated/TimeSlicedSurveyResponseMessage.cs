@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class TimeSlicedSurveyResponseMessage
-{
-    private SurveyResponseMessage _response;
-    public SurveyResponseMessage response
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class TimeSlicedSurveyResponseMessage
     {
-        get => _response;
-        set
+        private SurveyResponseMessage _response;
+        public SurveyResponseMessage response
         {
-            _response = value;
+            get => _response;
+            set
+            {
+                _response = value;
+            }
+        }
+
+        private uint32 _nonce;
+        public uint32 nonce
+        {
+            get => _nonce;
+            set
+            {
+                _nonce = value;
+            }
+        }
+
+        public TimeSlicedSurveyResponseMessage()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private uint32 _nonce;
-    public uint32 nonce
+    public static partial class TimeSlicedSurveyResponseMessageXdr
     {
-        get => _nonce;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TimeSlicedSurveyResponseMessage value)
         {
-            _nonce = value;
+            value.Validate();
+            SurveyResponseMessageXdr.Encode(stream, value.response);
+            uint32Xdr.Encode(stream, value.nonce);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static TimeSlicedSurveyResponseMessage Decode(XdrReader stream)
+        {
+            var result = new TimeSlicedSurveyResponseMessage();
+            result.response = SurveyResponseMessageXdr.Decode(stream);
+            result.nonce = uint32Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public TimeSlicedSurveyResponseMessage()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class TimeSlicedSurveyResponseMessageXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TimeSlicedSurveyResponseMessage value)
-    {
-        value.Validate();
-        SurveyResponseMessageXdr.Encode(stream, value.response);
-        uint32Xdr.Encode(stream, value.nonce);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static TimeSlicedSurveyResponseMessage Decode(XdrReader stream)
-    {
-        var result = new TimeSlicedSurveyResponseMessage();
-        result.response = SurveyResponseMessageXdr.Decode(stream);
-        result.nonce = uint32Xdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -33,45 +33,43 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum TransactionResultCode
-{
-    txFEE_BUMP_INNER_SUCCESS = 1,
-    txSUCCESS = 0,
-    txFAILED = -1,
-    txTOO_EARLY = -2,
-    txTOO_LATE = -3,
-    txMISSING_OPERATION = -4,
-    txBAD_SEQ = -5,
-    txBAD_AUTH = -6,
-    txINSUFFICIENT_BALANCE = -7,
-    txNO_ACCOUNT = -8,
-    txINSUFFICIENT_FEE = -9,
-    txBAD_AUTH_EXTRA = -10,
-    txINTERNAL_ERROR = -11,
-    txNOT_SUPPORTED = -12,
-    txFEE_BUMP_INNER_FAILED = -13,
-    txBAD_SPONSORSHIP = -14,
-    txBAD_MIN_SEQ_AGE_OR_GAP = -15,
-    txMALFORMED = -16,
-    txSOROBAN_INVALID = -17,
-}
-
-public static partial class TransactionResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TransactionResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum TransactionResultCode
     {
-       stream.WriteInt((int)value);
+        txFEE_BUMP_INNER_SUCCESS = 1,
+        txSUCCESS = 0,
+        txFAILED = -1,
+        txTOO_EARLY = -2,
+        txTOO_LATE = -3,
+        txMISSING_OPERATION = -4,
+        txBAD_SEQ = -5,
+        txBAD_AUTH = -6,
+        txINSUFFICIENT_BALANCE = -7,
+        txNO_ACCOUNT = -8,
+        txINSUFFICIENT_FEE = -9,
+        txBAD_AUTH_EXTRA = -10,
+        txINTERNAL_ERROR = -11,
+        txNOT_SUPPORTED = -12,
+        txFEE_BUMP_INNER_FAILED = -13,
+        txBAD_SPONSORSHIP = -14,
+        txBAD_MIN_SEQ_AGE_OR_GAP = -15,
+        txMALFORMED = -16,
+        txSOROBAN_INVALID = -17,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static TransactionResultCode Decode(XdrReader stream)
+    public static partial class TransactionResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(TransactionResultCode), value))
-            throw new InvalidOperationException($"Unknown TransactionResultCode value: {value}");
-        return (TransactionResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TransactionResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static TransactionResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(TransactionResultCode), value))
+              throw new InvalidOperationException($"Unknown TransactionResultCode value: {value}");
+            return (TransactionResultCode)value;
+        }
     }
-}
-}

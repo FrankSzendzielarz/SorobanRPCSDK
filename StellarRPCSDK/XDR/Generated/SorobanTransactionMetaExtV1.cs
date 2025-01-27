@@ -40,80 +40,77 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SorobanTransactionMetaExtV1
-{
-    private ExtensionPoint _ext;
-    public ExtensionPoint ext
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SorobanTransactionMetaExtV1
     {
-        get => _ext;
-        set
+        private ExtensionPoint _ext;
+        public ExtensionPoint ext
         {
-            _ext = value;
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        private int64 _totalNonRefundableResourceFeeCharged;
+        public int64 totalNonRefundableResourceFeeCharged
+        {
+            get => _totalNonRefundableResourceFeeCharged;
+            set
+            {
+                _totalNonRefundableResourceFeeCharged = value;
+            }
+        }
+
+        private int64 _totalRefundableResourceFeeCharged;
+        public int64 totalRefundableResourceFeeCharged
+        {
+            get => _totalRefundableResourceFeeCharged;
+            set
+            {
+                _totalRefundableResourceFeeCharged = value;
+            }
+        }
+
+        private int64 _rentFeeCharged;
+        public int64 rentFeeCharged
+        {
+            get => _rentFeeCharged;
+            set
+            {
+                _rentFeeCharged = value;
+            }
+        }
+
+        public SorobanTransactionMetaExtV1()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int64 _totalNonRefundableResourceFeeCharged;
-    public int64 totalNonRefundableResourceFeeCharged
+    public static partial class SorobanTransactionMetaExtV1Xdr
     {
-        get => _totalNonRefundableResourceFeeCharged;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SorobanTransactionMetaExtV1 value)
         {
-            _totalNonRefundableResourceFeeCharged = value;
+            value.Validate();
+            ExtensionPointXdr.Encode(stream, value.ext);
+            int64Xdr.Encode(stream, value.totalNonRefundableResourceFeeCharged);
+            int64Xdr.Encode(stream, value.totalRefundableResourceFeeCharged);
+            int64Xdr.Encode(stream, value.rentFeeCharged);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SorobanTransactionMetaExtV1 Decode(XdrReader stream)
+        {
+            var result = new SorobanTransactionMetaExtV1();
+            result.ext = ExtensionPointXdr.Decode(stream);
+            result.totalNonRefundableResourceFeeCharged = int64Xdr.Decode(stream);
+            result.totalRefundableResourceFeeCharged = int64Xdr.Decode(stream);
+            result.rentFeeCharged = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private int64 _totalRefundableResourceFeeCharged;
-    public int64 totalRefundableResourceFeeCharged
-    {
-        get => _totalRefundableResourceFeeCharged;
-        set
-        {
-            _totalRefundableResourceFeeCharged = value;
-        }
-    }
-
-    private int64 _rentFeeCharged;
-    public int64 rentFeeCharged
-    {
-        get => _rentFeeCharged;
-        set
-        {
-            _rentFeeCharged = value;
-        }
-    }
-
-    public SorobanTransactionMetaExtV1()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SorobanTransactionMetaExtV1Xdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SorobanTransactionMetaExtV1 value)
-    {
-        value.Validate();
-        ExtensionPointXdr.Encode(stream, value.ext);
-        int64Xdr.Encode(stream, value.totalNonRefundableResourceFeeCharged);
-        int64Xdr.Encode(stream, value.totalRefundableResourceFeeCharged);
-        int64Xdr.Encode(stream, value.rentFeeCharged);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SorobanTransactionMetaExtV1 Decode(XdrReader stream)
-    {
-        var result = new SorobanTransactionMetaExtV1();
-        result.ext = ExtensionPointXdr.Decode(stream);
-        result.totalNonRefundableResourceFeeCharged = int64Xdr.Decode(stream);
-        result.totalRefundableResourceFeeCharged = int64Xdr.Decode(stream);
-        result.rentFeeCharged = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

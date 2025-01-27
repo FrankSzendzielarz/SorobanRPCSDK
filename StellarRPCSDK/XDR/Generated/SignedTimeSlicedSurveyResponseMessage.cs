@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SignedTimeSlicedSurveyResponseMessage
-{
-    private Signature _responseSignature;
-    public Signature responseSignature
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SignedTimeSlicedSurveyResponseMessage
     {
-        get => _responseSignature;
-        set
+        private Signature _responseSignature;
+        public Signature responseSignature
         {
-            _responseSignature = value;
+            get => _responseSignature;
+            set
+            {
+                _responseSignature = value;
+            }
+        }
+
+        private TimeSlicedSurveyResponseMessage _response;
+        public TimeSlicedSurveyResponseMessage response
+        {
+            get => _response;
+            set
+            {
+                _response = value;
+            }
+        }
+
+        public SignedTimeSlicedSurveyResponseMessage()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private TimeSlicedSurveyResponseMessage _response;
-    public TimeSlicedSurveyResponseMessage response
+    public static partial class SignedTimeSlicedSurveyResponseMessageXdr
     {
-        get => _response;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SignedTimeSlicedSurveyResponseMessage value)
         {
-            _response = value;
+            value.Validate();
+            SignatureXdr.Encode(stream, value.responseSignature);
+            TimeSlicedSurveyResponseMessageXdr.Encode(stream, value.response);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SignedTimeSlicedSurveyResponseMessage Decode(XdrReader stream)
+        {
+            var result = new SignedTimeSlicedSurveyResponseMessage();
+            result.responseSignature = SignatureXdr.Decode(stream);
+            result.response = TimeSlicedSurveyResponseMessageXdr.Decode(stream);
+            return result;
         }
     }
-
-    public SignedTimeSlicedSurveyResponseMessage()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SignedTimeSlicedSurveyResponseMessageXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SignedTimeSlicedSurveyResponseMessage value)
-    {
-        value.Validate();
-        SignatureXdr.Encode(stream, value.responseSignature);
-        TimeSlicedSurveyResponseMessageXdr.Encode(stream, value.response);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SignedTimeSlicedSurveyResponseMessage Decode(XdrReader stream)
-    {
-        var result = new SignedTimeSlicedSurveyResponseMessage();
-        result.responseSignature = SignatureXdr.Decode(stream);
-        result.response = TimeSlicedSurveyResponseMessageXdr.Decode(stream);
-        return result;
-    }
-}
 }

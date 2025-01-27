@@ -16,30 +16,28 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum BucketEntryType
-{
-    METAENTRY = -1,
-    LIVEENTRY = 0,
-    DEADENTRY = 1,
-    INITENTRY = 2,
-}
-
-public static partial class BucketEntryTypeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, BucketEntryType value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum BucketEntryType
     {
-       stream.WriteInt((int)value);
+        METAENTRY = -1,
+        LIVEENTRY = 0,
+        DEADENTRY = 1,
+        INITENTRY = 2,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static BucketEntryType Decode(XdrReader stream)
+    public static partial class BucketEntryTypeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(BucketEntryType), value))
-            throw new InvalidOperationException($"Unknown BucketEntryType value: {value}");
-        return (BucketEntryType)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, BucketEntryType value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static BucketEntryType Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(BucketEntryType), value))
+              throw new InvalidOperationException($"Unknown BucketEntryType value: {value}");
+            return (BucketEntryType)value;
+        }
     }
-}
-}

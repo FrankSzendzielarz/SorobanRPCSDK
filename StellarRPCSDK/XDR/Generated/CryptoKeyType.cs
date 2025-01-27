@@ -17,31 +17,29 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum CryptoKeyType
-{
-    KEY_TYPE_ED25519 = 0,
-    KEY_TYPE_PRE_AUTH_TX = 1,
-    KEY_TYPE_HASH_X = 2,
-    KEY_TYPE_ED25519_SIGNED_PAYLOAD = 3,
-    KEY_TYPE_MUXED_ED25519 = 0x100,
-}
-
-public static partial class CryptoKeyTypeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, CryptoKeyType value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum CryptoKeyType
     {
-       stream.WriteInt((int)value);
+        KEY_TYPE_ED25519 = 0,
+        KEY_TYPE_PRE_AUTH_TX = 1,
+        KEY_TYPE_HASH_X = 2,
+        KEY_TYPE_ED25519_SIGNED_PAYLOAD = 3,
+        KEY_TYPE_MUXED_ED25519 = 0x100,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static CryptoKeyType Decode(XdrReader stream)
+    public static partial class CryptoKeyTypeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(CryptoKeyType), value))
-            throw new InvalidOperationException($"Unknown CryptoKeyType value: {value}");
-        return (CryptoKeyType)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, CryptoKeyType value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static CryptoKeyType Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(CryptoKeyType), value))
+              throw new InvalidOperationException($"Unknown CryptoKeyType value: {value}");
+            return (CryptoKeyType)value;
+        }
     }
-}
-}

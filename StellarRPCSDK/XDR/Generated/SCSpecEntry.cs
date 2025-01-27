@@ -20,148 +20,142 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class SCSpecEntry
-{
-    public abstract SCSpecEntryKind Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 : SCSpecEntry
-{
-    public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_FUNCTION_V0;
-    private SCSpecFunctionV0 _functionV0;
-    public SCSpecFunctionV0 functionV0
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class SCSpecEntry
     {
-        get => _functionV0;
-        set
-        {
-            _functionV0 = value;
-        }
+        public abstract SCSpecEntryKind Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0 : SCSpecEntry
-{
-    public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_STRUCT_V0;
-    private SCSpecUDTStructV0 _udtStructV0;
-    public SCSpecUDTStructV0 udtStructV0
+    public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 : SCSpecEntry
     {
-        get => _udtStructV0;
-        set
+        public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_FUNCTION_V0;
+        private SCSpecFunctionV0 _functionV0;
+        public SCSpecFunctionV0 functionV0
         {
-            _udtStructV0 = value;
+            get => _functionV0;
+            set
+            {
+                _functionV0 = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0 : SCSpecEntry
-{
-    public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_UNION_V0;
-    private SCSpecUDTUnionV0 _udtUnionV0;
-    public SCSpecUDTUnionV0 udtUnionV0
+    public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0 : SCSpecEntry
     {
-        get => _udtUnionV0;
-        set
+        public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_STRUCT_V0;
+        private SCSpecUDTStructV0 _udtStructV0;
+        public SCSpecUDTStructV0 udtStructV0
         {
-            _udtUnionV0 = value;
+            get => _udtStructV0;
+            set
+            {
+                _udtStructV0 = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0 : SCSpecEntry
-{
-    public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_ENUM_V0;
-    private SCSpecUDTEnumV0 _udtEnumV0;
-    public SCSpecUDTEnumV0 udtEnumV0
+    public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0 : SCSpecEntry
     {
-        get => _udtEnumV0;
-        set
+        public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_UNION_V0;
+        private SCSpecUDTUnionV0 _udtUnionV0;
+        public SCSpecUDTUnionV0 udtUnionV0
         {
-            _udtEnumV0 = value;
+            get => _udtUnionV0;
+            set
+            {
+                _udtUnionV0 = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 : SCSpecEntry
-{
-    public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
-    private SCSpecUDTErrorEnumV0 _udtErrorEnumV0;
-    public SCSpecUDTErrorEnumV0 udtErrorEnumV0
+    public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0 : SCSpecEntry
     {
-        get => _udtErrorEnumV0;
-        set
+        public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_ENUM_V0;
+        private SCSpecUDTEnumV0 _udtEnumV0;
+        public SCSpecUDTEnumV0 udtEnumV0
         {
-            _udtErrorEnumV0 = value;
+            get => _udtEnumV0;
+            set
+            {
+                _udtEnumV0 = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class SCSpecEntryXdr
-{
-    public static void Encode(XdrWriter stream, SCSpecEntry value)
+    public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 : SCSpecEntry
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override SCSpecEntryKind Discriminator => SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
+        private SCSpecUDTErrorEnumV0 _udtErrorEnumV0;
+        public SCSpecUDTErrorEnumV0 udtErrorEnumV0
         {
-            case SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 case_SC_SPEC_ENTRY_FUNCTION_V0:
+            get => _udtErrorEnumV0;
+            set
+            {
+                _udtErrorEnumV0 = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class SCSpecEntryXdr
+    {
+        public static void Encode(XdrWriter stream, SCSpecEntry value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 case_SC_SPEC_ENTRY_FUNCTION_V0:
                 SCSpecFunctionV0Xdr.Encode(stream, case_SC_SPEC_ENTRY_FUNCTION_V0.functionV0);
                 break;
-            case SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0 case_SC_SPEC_ENTRY_UDT_STRUCT_V0:
+                case SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0 case_SC_SPEC_ENTRY_UDT_STRUCT_V0:
                 SCSpecUDTStructV0Xdr.Encode(stream, case_SC_SPEC_ENTRY_UDT_STRUCT_V0.udtStructV0);
                 break;
-            case SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0 case_SC_SPEC_ENTRY_UDT_UNION_V0:
+                case SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0 case_SC_SPEC_ENTRY_UDT_UNION_V0:
                 SCSpecUDTUnionV0Xdr.Encode(stream, case_SC_SPEC_ENTRY_UDT_UNION_V0.udtUnionV0);
                 break;
-            case SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0 case_SC_SPEC_ENTRY_UDT_ENUM_V0:
+                case SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0 case_SC_SPEC_ENTRY_UDT_ENUM_V0:
                 SCSpecUDTEnumV0Xdr.Encode(stream, case_SC_SPEC_ENTRY_UDT_ENUM_V0.udtEnumV0);
                 break;
-            case SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 case_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
+                case SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 case_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
                 SCSpecUDTErrorEnumV0Xdr.Encode(stream, case_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0.udtErrorEnumV0);
                 break;
+            }
         }
-    }
-    public static SCSpecEntry Decode(XdrReader stream)
-    {
-        var discriminator = (SCSpecEntryKind)stream.ReadInt();
-        switch (discriminator)
+        public static SCSpecEntry Decode(XdrReader stream)
         {
-            case SC_SPEC_ENTRY_FUNCTION_V0:
+            var discriminator = (SCSpecEntryKind)stream.ReadInt();
+            switch (discriminator)
+            {
+                case SC_SPEC_ENTRY_FUNCTION_V0:
                 var result_SC_SPEC_ENTRY_FUNCTION_V0 = new SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0();
-                result_SC_SPEC_ENTRY_FUNCTION_V0.functionV0 = SCSpecFunctionV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_FUNCTION_V0.                 = SCSpecFunctionV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_FUNCTION_V0;
-            case SC_SPEC_ENTRY_UDT_STRUCT_V0:
+                case SC_SPEC_ENTRY_UDT_STRUCT_V0:
                 var result_SC_SPEC_ENTRY_UDT_STRUCT_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0();
-                result_SC_SPEC_ENTRY_UDT_STRUCT_V0.udtStructV0 = SCSpecUDTStructV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_STRUCT_V0.                 = SCSpecUDTStructV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_STRUCT_V0;
-            case SC_SPEC_ENTRY_UDT_UNION_V0:
+                case SC_SPEC_ENTRY_UDT_UNION_V0:
                 var result_SC_SPEC_ENTRY_UDT_UNION_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0();
-                result_SC_SPEC_ENTRY_UDT_UNION_V0.udtUnionV0 = SCSpecUDTUnionV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_UNION_V0.                 = SCSpecUDTUnionV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_UNION_V0;
-            case SC_SPEC_ENTRY_UDT_ENUM_V0:
+                case SC_SPEC_ENTRY_UDT_ENUM_V0:
                 var result_SC_SPEC_ENTRY_UDT_ENUM_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0();
-                result_SC_SPEC_ENTRY_UDT_ENUM_V0.udtEnumV0 = SCSpecUDTEnumV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_ENUM_V0.                 = SCSpecUDTEnumV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_ENUM_V0;
-            case SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
+                case SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
                 var result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0();
-                result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0.udtErrorEnumV0 = SCSpecUDTErrorEnumV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0.                 = SCSpecUDTErrorEnumV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for SCSpecEntry: {discriminator}");
+            }
         }
     }
-}
 }

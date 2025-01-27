@@ -19,31 +19,29 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum CreateAccountResultCode
-{
-    CREATE_ACCOUNT_SUCCESS = 0,
-    CREATE_ACCOUNT_MALFORMED = -1,
-    CREATE_ACCOUNT_UNDERFUNDED = -2,
-    CREATE_ACCOUNT_LOW_RESERVE = -3,
-    CREATE_ACCOUNT_ALREADY_EXIST = -4,
-}
-
-public static partial class CreateAccountResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, CreateAccountResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum CreateAccountResultCode
     {
-       stream.WriteInt((int)value);
+        CREATE_ACCOUNT_SUCCESS = 0,
+        CREATE_ACCOUNT_MALFORMED = -1,
+        CREATE_ACCOUNT_UNDERFUNDED = -2,
+        CREATE_ACCOUNT_LOW_RESERVE = -3,
+        CREATE_ACCOUNT_ALREADY_EXIST = -4,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static CreateAccountResultCode Decode(XdrReader stream)
+    public static partial class CreateAccountResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(CreateAccountResultCode), value))
-            throw new InvalidOperationException($"Unknown CreateAccountResultCode value: {value}");
-        return (CreateAccountResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, CreateAccountResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static CreateAccountResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(CreateAccountResultCode), value))
+              throw new InvalidOperationException($"Unknown CreateAccountResultCode value: {value}");
+            return (CreateAccountResultCode)value;
+        }
     }
-}
-}

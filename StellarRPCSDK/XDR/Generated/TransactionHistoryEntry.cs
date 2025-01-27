@@ -22,68 +22,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class TransactionHistoryEntry
-{
-    private uint32 _ledgerSeq;
-    public uint32 ledgerSeq
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class TransactionHistoryEntry
     {
-        get => _ledgerSeq;
-        set
+        private uint32 _ledgerSeq;
+        public uint32 ledgerSeq
         {
-            _ledgerSeq = value;
+            get => _ledgerSeq;
+            set
+            {
+                _ledgerSeq = value;
+            }
+        }
+
+        private TransactionSet _txSet;
+        public TransactionSet txSet
+        {
+            get => _txSet;
+            set
+            {
+                _txSet = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public TransactionHistoryEntry()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private TransactionSet _txSet;
-    public TransactionSet txSet
+    public static partial class TransactionHistoryEntryXdr
     {
-        get => _txSet;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TransactionHistoryEntry value)
         {
-            _txSet = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.ledgerSeq);
+            TransactionSetXdr.Encode(stream, value.txSet);
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static TransactionHistoryEntry Decode(XdrReader stream)
+        {
+            var result = new TransactionHistoryEntry();
+            result.ledgerSeq = uint32Xdr.Decode(stream);
+            result.txSet = TransactionSetXdr.Decode(stream);
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private object _ext;
-    public object ext
-    {
-        get => _ext;
-        set
-        {
-            _ext = value;
-        }
-    }
-
-    public TransactionHistoryEntry()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class TransactionHistoryEntryXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TransactionHistoryEntry value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.ledgerSeq);
-        TransactionSetXdr.Encode(stream, value.txSet);
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static TransactionHistoryEntry Decode(XdrReader stream)
-    {
-        var result = new TransactionHistoryEntry();
-        result.ledgerSeq = uint32Xdr.Decode(stream);
-        result.txSet = TransactionSetXdr.Decode(stream);
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -159,96 +159,94 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum ContractCostType
-{
-    WasmInsnExec = 0,
-    MemAlloc = 1,
-    MemCpy = 2,
-    MemCmp = 3,
-    DispatchHostFunction = 4,
-    VisitObject = 5,
-    ValSer = 6,
-    ValDeser = 7,
-    ComputeSha256Hash = 8,
-    ComputeEd25519PubKey = 9,
-    VerifyEd25519Sig = 10,
-    VmInstantiation = 11,
-    VmCachedInstantiation = 12,
-    InvokeVmFunction = 13,
-    ComputeKeccak256Hash = 14,
-    DecodeEcdsaCurve256Sig = 15,
-    RecoverEcdsaSecp256k1Key = 16,
-    Int256AddSub = 17,
-    Int256Mul = 18,
-    Int256Div = 19,
-    Int256Pow = 20,
-    Int256Shift = 21,
-    ChaCha20DrawBytes = 22,
-    ParseWasmInstructions = 23,
-    ParseWasmFunctions = 24,
-    ParseWasmGlobals = 25,
-    ParseWasmTableEntries = 26,
-    ParseWasmTypes = 27,
-    ParseWasmDataSegments = 28,
-    ParseWasmElemSegments = 29,
-    ParseWasmImports = 30,
-    ParseWasmExports = 31,
-    ParseWasmDataSegmentBytes = 32,
-    InstantiateWasmInstructions = 33,
-    InstantiateWasmFunctions = 34,
-    InstantiateWasmGlobals = 35,
-    InstantiateWasmTableEntries = 36,
-    InstantiateWasmTypes = 37,
-    InstantiateWasmDataSegments = 38,
-    InstantiateWasmElemSegments = 39,
-    InstantiateWasmImports = 40,
-    InstantiateWasmExports = 41,
-    InstantiateWasmDataSegmentBytes = 42,
-    Sec1DecodePointUncompressed = 43,
-    VerifyEcdsaSecp256r1Sig = 44,
-    Bls12381EncodeFp = 45,
-    Bls12381DecodeFp = 46,
-    Bls12381G1CheckPointOnCurve = 47,
-    Bls12381G1CheckPointInSubgroup = 48,
-    Bls12381G2CheckPointOnCurve = 49,
-    Bls12381G2CheckPointInSubgroup = 50,
-    Bls12381G1ProjectiveToAffine = 51,
-    Bls12381G2ProjectiveToAffine = 52,
-    Bls12381G1Add = 53,
-    Bls12381G1Mul = 54,
-    Bls12381G1Msm = 55,
-    Bls12381MapFpToG1 = 56,
-    Bls12381HashToG1 = 57,
-    Bls12381G2Add = 58,
-    Bls12381G2Mul = 59,
-    Bls12381G2Msm = 60,
-    Bls12381MapFp2ToG2 = 61,
-    Bls12381HashToG2 = 62,
-    Bls12381Pairing = 63,
-    Bls12381FrFromU256 = 64,
-    Bls12381FrToU256 = 65,
-    Bls12381FrAddSub = 66,
-    Bls12381FrMul = 67,
-    Bls12381FrPow = 68,
-    Bls12381FrInv = 69,
-}
-
-public static partial class ContractCostTypeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ContractCostType value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum ContractCostType
     {
-       stream.WriteInt((int)value);
+        WasmInsnExec = 0,
+        MemAlloc = 1,
+        MemCpy = 2,
+        MemCmp = 3,
+        DispatchHostFunction = 4,
+        VisitObject = 5,
+        ValSer = 6,
+        ValDeser = 7,
+        ComputeSha256Hash = 8,
+        ComputeEd25519PubKey = 9,
+        VerifyEd25519Sig = 10,
+        VmInstantiation = 11,
+        VmCachedInstantiation = 12,
+        InvokeVmFunction = 13,
+        ComputeKeccak256Hash = 14,
+        DecodeEcdsaCurve256Sig = 15,
+        RecoverEcdsaSecp256k1Key = 16,
+        Int256AddSub = 17,
+        Int256Mul = 18,
+        Int256Div = 19,
+        Int256Pow = 20,
+        Int256Shift = 21,
+        ChaCha20DrawBytes = 22,
+        ParseWasmInstructions = 23,
+        ParseWasmFunctions = 24,
+        ParseWasmGlobals = 25,
+        ParseWasmTableEntries = 26,
+        ParseWasmTypes = 27,
+        ParseWasmDataSegments = 28,
+        ParseWasmElemSegments = 29,
+        ParseWasmImports = 30,
+        ParseWasmExports = 31,
+        ParseWasmDataSegmentBytes = 32,
+        InstantiateWasmInstructions = 33,
+        InstantiateWasmFunctions = 34,
+        InstantiateWasmGlobals = 35,
+        InstantiateWasmTableEntries = 36,
+        InstantiateWasmTypes = 37,
+        InstantiateWasmDataSegments = 38,
+        InstantiateWasmElemSegments = 39,
+        InstantiateWasmImports = 40,
+        InstantiateWasmExports = 41,
+        InstantiateWasmDataSegmentBytes = 42,
+        Sec1DecodePointUncompressed = 43,
+        VerifyEcdsaSecp256r1Sig = 44,
+        Bls12381EncodeFp = 45,
+        Bls12381DecodeFp = 46,
+        Bls12381G1CheckPointOnCurve = 47,
+        Bls12381G1CheckPointInSubgroup = 48,
+        Bls12381G2CheckPointOnCurve = 49,
+        Bls12381G2CheckPointInSubgroup = 50,
+        Bls12381G1ProjectiveToAffine = 51,
+        Bls12381G2ProjectiveToAffine = 52,
+        Bls12381G1Add = 53,
+        Bls12381G1Mul = 54,
+        Bls12381G1Msm = 55,
+        Bls12381MapFpToG1 = 56,
+        Bls12381HashToG1 = 57,
+        Bls12381G2Add = 58,
+        Bls12381G2Mul = 59,
+        Bls12381G2Msm = 60,
+        Bls12381MapFp2ToG2 = 61,
+        Bls12381HashToG2 = 62,
+        Bls12381Pairing = 63,
+        Bls12381FrFromU256 = 64,
+        Bls12381FrToU256 = 65,
+        Bls12381FrAddSub = 66,
+        Bls12381FrMul = 67,
+        Bls12381FrPow = 68,
+        Bls12381FrInv = 69,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static ContractCostType Decode(XdrReader stream)
+    public static partial class ContractCostTypeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(ContractCostType), value))
-            throw new InvalidOperationException($"Unknown ContractCostType value: {value}");
-        return (ContractCostType)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ContractCostType value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static ContractCostType Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(ContractCostType), value))
+              throw new InvalidOperationException($"Unknown ContractCostType value: {value}");
+            return (ContractCostType)value;
+        }
     }
-}
-}

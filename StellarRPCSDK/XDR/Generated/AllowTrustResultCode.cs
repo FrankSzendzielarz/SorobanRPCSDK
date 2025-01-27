@@ -21,33 +21,31 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum AllowTrustResultCode
-{
-    ALLOW_TRUST_SUCCESS = 0,
-    ALLOW_TRUST_MALFORMED = -1,
-    ALLOW_TRUST_NO_TRUST_LINE = -2,
-    ALLOW_TRUST_TRUST_NOT_REQUIRED = -3,
-    ALLOW_TRUST_CANT_REVOKE = -4,
-    ALLOW_TRUST_SELF_NOT_ALLOWED = -5,
-    ALLOW_TRUST_LOW_RESERVE = -6,
-}
-
-public static partial class AllowTrustResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, AllowTrustResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum AllowTrustResultCode
     {
-       stream.WriteInt((int)value);
+        ALLOW_TRUST_SUCCESS = 0,
+        ALLOW_TRUST_MALFORMED = -1,
+        ALLOW_TRUST_NO_TRUST_LINE = -2,
+        ALLOW_TRUST_TRUST_NOT_REQUIRED = -3,
+        ALLOW_TRUST_CANT_REVOKE = -4,
+        ALLOW_TRUST_SELF_NOT_ALLOWED = -5,
+        ALLOW_TRUST_LOW_RESERVE = -6,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static AllowTrustResultCode Decode(XdrReader stream)
+    public static partial class AllowTrustResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(AllowTrustResultCode), value))
-            throw new InvalidOperationException($"Unknown AllowTrustResultCode value: {value}");
-        return (AllowTrustResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, AllowTrustResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static AllowTrustResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(AllowTrustResultCode), value))
+              throw new InvalidOperationException($"Unknown AllowTrustResultCode value: {value}");
+            return (AllowTrustResultCode)value;
+        }
     }
-}
-}

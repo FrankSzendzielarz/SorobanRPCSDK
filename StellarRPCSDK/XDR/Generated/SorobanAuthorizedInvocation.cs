@@ -12,65 +12,62 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SorobanAuthorizedInvocation
-{
-    private SorobanAuthorizedFunction _function;
-    public SorobanAuthorizedFunction function
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SorobanAuthorizedInvocation
     {
-        get => _function;
-        set
+        private SorobanAuthorizedFunction _function;
+        public SorobanAuthorizedFunction function
         {
-            _function = value;
+            get => _function;
+            set
+            {
+                _function = value;
+            }
+        }
+
+        private SorobanAuthorizedInvocation[] _subInvocations;
+        public SorobanAuthorizedInvocation[] subInvocations
+        {
+            get => _subInvocations;
+            set
+            {
+                _subInvocations = value;
+            }
+        }
+
+        public SorobanAuthorizedInvocation()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private SorobanAuthorizedInvocation[] _subInvocations;
-    public SorobanAuthorizedInvocation[] subInvocations
+    public static partial class SorobanAuthorizedInvocationXdr
     {
-        get => _subInvocations;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SorobanAuthorizedInvocation value)
         {
-            _subInvocations = value;
+            value.Validate();
+            SorobanAuthorizedFunctionXdr.Encode(stream, value.function);
+            stream.WriteInt(value.subInvocations.Length);
+            foreach (var item in value.subInvocations)
+            {
+                    SorobanAuthorizedInvocationXdr.Encode(stream, item);
+            }
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SorobanAuthorizedInvocation Decode(XdrReader stream)
+        {
+            var result = new SorobanAuthorizedInvocation();
+            result.function = SorobanAuthorizedFunctionXdr.Decode(stream);
+            var length = stream.ReadInt();
+            result.subInvocations = new SorobanAuthorizedInvocation[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.subInvocations[i] = SorobanAuthorizedInvocationXdr.Decode(stream);
+            }
+            return result;
         }
     }
-
-    public SorobanAuthorizedInvocation()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SorobanAuthorizedInvocationXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SorobanAuthorizedInvocation value)
-    {
-        value.Validate();
-        SorobanAuthorizedFunctionXdr.Encode(stream, value.function);
-        stream.WriteInt(value.subInvocations.Length);
-        foreach (var item in value.subInvocations)
-        {
-            SorobanAuthorizedInvocationXdr.Encode(stream, item);
-        }
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SorobanAuthorizedInvocation Decode(XdrReader stream)
-    {
-        var result = new SorobanAuthorizedInvocation();
-        result.function = SorobanAuthorizedFunctionXdr.Decode(stream);
-        var length = stream.ReadInt();
-        result.subInvocations = new SorobanAuthorizedInvocation[length];
-        for (var i = 0; i < length; i++)
-        {
-            result.subInvocations[i] = SorobanAuthorizedInvocationXdr.Decode(stream);
-        }
-        return result;
-    }
-}
 }

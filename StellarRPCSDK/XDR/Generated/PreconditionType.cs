@@ -13,29 +13,27 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum PreconditionType
-{
-    PRECOND_NONE = 0,
-    PRECOND_TIME = 1,
-    PRECOND_V2 = 2,
-}
-
-public static partial class PreconditionTypeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, PreconditionType value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum PreconditionType
     {
-       stream.WriteInt((int)value);
+        PRECOND_NONE = 0,
+        PRECOND_TIME = 1,
+        PRECOND_V2 = 2,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static PreconditionType Decode(XdrReader stream)
+    public static partial class PreconditionTypeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(PreconditionType), value))
-            throw new InvalidOperationException($"Unknown PreconditionType value: {value}");
-        return (PreconditionType)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, PreconditionType value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static PreconditionType Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(PreconditionType), value))
+              throw new InvalidOperationException($"Unknown PreconditionType value: {value}");
+            return (PreconditionType)value;
+        }
     }
-}
-}

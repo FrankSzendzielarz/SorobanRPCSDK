@@ -13,68 +13,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LiquidityPoolConstantProductParameters
-{
-    private Asset _assetA;
-    public Asset assetA
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LiquidityPoolConstantProductParameters
     {
-        get => _assetA;
-        set
+        private Asset _assetA;
+        public Asset assetA
         {
-            _assetA = value;
+            get => _assetA;
+            set
+            {
+                _assetA = value;
+            }
+        }
+
+        private Asset _assetB;
+        public Asset assetB
+        {
+            get => _assetB;
+            set
+            {
+                _assetB = value;
+            }
+        }
+
+        private int32 _fee;
+        public int32 fee
+        {
+            get => _fee;
+            set
+            {
+                _fee = value;
+            }
+        }
+
+        public LiquidityPoolConstantProductParameters()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private Asset _assetB;
-    public Asset assetB
+    public static partial class LiquidityPoolConstantProductParametersXdr
     {
-        get => _assetB;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LiquidityPoolConstantProductParameters value)
         {
-            _assetB = value;
+            value.Validate();
+            AssetXdr.Encode(stream, value.assetA);
+            AssetXdr.Encode(stream, value.assetB);
+            int32Xdr.Encode(stream, value.fee);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LiquidityPoolConstantProductParameters Decode(XdrReader stream)
+        {
+            var result = new LiquidityPoolConstantProductParameters();
+            result.assetA = AssetXdr.Decode(stream);
+            result.assetB = AssetXdr.Decode(stream);
+            result.fee = int32Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private int32 _fee;
-    public int32 fee
-    {
-        get => _fee;
-        set
-        {
-            _fee = value;
-        }
-    }
-
-    public LiquidityPoolConstantProductParameters()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class LiquidityPoolConstantProductParametersXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LiquidityPoolConstantProductParameters value)
-    {
-        value.Validate();
-        AssetXdr.Encode(stream, value.assetA);
-        AssetXdr.Encode(stream, value.assetB);
-        int32Xdr.Encode(stream, value.fee);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LiquidityPoolConstantProductParameters Decode(XdrReader stream)
-    {
-        var result = new LiquidityPoolConstantProductParameters();
-        result.assetA = AssetXdr.Decode(stream);
-        result.assetB = AssetXdr.Decode(stream);
-        result.fee = int32Xdr.Decode(stream);
-        return result;
-    }
-}
 }

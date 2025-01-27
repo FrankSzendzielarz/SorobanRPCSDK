@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class CreateAccountOp
-{
-    private AccountID _destination;
-    public AccountID destination
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class CreateAccountOp
     {
-        get => _destination;
-        set
+        private AccountID _destination;
+        public AccountID destination
         {
-            _destination = value;
+            get => _destination;
+            set
+            {
+                _destination = value;
+            }
+        }
+
+        private int64 _startingBalance;
+        public int64 startingBalance
+        {
+            get => _startingBalance;
+            set
+            {
+                _startingBalance = value;
+            }
+        }
+
+        public CreateAccountOp()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int64 _startingBalance;
-    public int64 startingBalance
+    public static partial class CreateAccountOpXdr
     {
-        get => _startingBalance;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, CreateAccountOp value)
         {
-            _startingBalance = value;
+            value.Validate();
+            AccountIDXdr.Encode(stream, value.destination);
+            int64Xdr.Encode(stream, value.startingBalance);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static CreateAccountOp Decode(XdrReader stream)
+        {
+            var result = new CreateAccountOp();
+            result.destination = AccountIDXdr.Decode(stream);
+            result.startingBalance = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public CreateAccountOp()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class CreateAccountOpXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, CreateAccountOp value)
-    {
-        value.Validate();
-        AccountIDXdr.Encode(stream, value.destination);
-        int64Xdr.Encode(stream, value.startingBalance);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static CreateAccountOp Decode(XdrReader stream)
-    {
-        var result = new CreateAccountOp();
-        result.destination = AccountIDXdr.Decode(stream);
-        result.startingBalance = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

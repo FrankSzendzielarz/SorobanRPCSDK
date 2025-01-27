@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class UpgradeEntryMeta
-{
-    private LedgerUpgrade _upgrade;
-    public LedgerUpgrade upgrade
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class UpgradeEntryMeta
     {
-        get => _upgrade;
-        set
+        private LedgerUpgrade _upgrade;
+        public LedgerUpgrade upgrade
         {
-            _upgrade = value;
+            get => _upgrade;
+            set
+            {
+                _upgrade = value;
+            }
+        }
+
+        private LedgerEntryChanges _changes;
+        public LedgerEntryChanges changes
+        {
+            get => _changes;
+            set
+            {
+                _changes = value;
+            }
+        }
+
+        public UpgradeEntryMeta()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private LedgerEntryChanges _changes;
-    public LedgerEntryChanges changes
+    public static partial class UpgradeEntryMetaXdr
     {
-        get => _changes;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, UpgradeEntryMeta value)
         {
-            _changes = value;
+            value.Validate();
+            LedgerUpgradeXdr.Encode(stream, value.upgrade);
+            LedgerEntryChangesXdr.Encode(stream, value.changes);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static UpgradeEntryMeta Decode(XdrReader stream)
+        {
+            var result = new UpgradeEntryMeta();
+            result.upgrade = LedgerUpgradeXdr.Decode(stream);
+            result.changes = LedgerEntryChangesXdr.Decode(stream);
+            return result;
         }
     }
-
-    public UpgradeEntryMeta()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class UpgradeEntryMetaXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, UpgradeEntryMeta value)
-    {
-        value.Validate();
-        LedgerUpgradeXdr.Encode(stream, value.upgrade);
-        LedgerEntryChangesXdr.Encode(stream, value.changes);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static UpgradeEntryMeta Decode(XdrReader stream)
-    {
-        var result = new UpgradeEntryMeta();
-        result.upgrade = LedgerUpgradeXdr.Decode(stream);
-        result.changes = LedgerEntryChangesXdr.Decode(stream);
-        return result;
-    }
-}
 }

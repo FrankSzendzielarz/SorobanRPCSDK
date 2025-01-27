@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class ColdArchiveArchivedLeaf
-{
-    private uint32 _index;
-    public uint32 index
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class ColdArchiveArchivedLeaf
     {
-        get => _index;
-        set
+        private uint32 _index;
+        public uint32 index
         {
-            _index = value;
+            get => _index;
+            set
+            {
+                _index = value;
+            }
+        }
+
+        private LedgerEntry _archivedEntry;
+        public LedgerEntry archivedEntry
+        {
+            get => _archivedEntry;
+            set
+            {
+                _archivedEntry = value;
+            }
+        }
+
+        public ColdArchiveArchivedLeaf()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private LedgerEntry _archivedEntry;
-    public LedgerEntry archivedEntry
+    public static partial class ColdArchiveArchivedLeafXdr
     {
-        get => _archivedEntry;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ColdArchiveArchivedLeaf value)
         {
-            _archivedEntry = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.index);
+            LedgerEntryXdr.Encode(stream, value.archivedEntry);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static ColdArchiveArchivedLeaf Decode(XdrReader stream)
+        {
+            var result = new ColdArchiveArchivedLeaf();
+            result.index = uint32Xdr.Decode(stream);
+            result.archivedEntry = LedgerEntryXdr.Decode(stream);
+            return result;
         }
     }
-
-    public ColdArchiveArchivedLeaf()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class ColdArchiveArchivedLeafXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ColdArchiveArchivedLeaf value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.index);
-        LedgerEntryXdr.Encode(stream, value.archivedEntry);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static ColdArchiveArchivedLeaf Decode(XdrReader stream)
-    {
-        var result = new ColdArchiveArchivedLeaf();
-        result.index = uint32Xdr.Decode(stream);
-        result.archivedEntry = LedgerEntryXdr.Decode(stream);
-        return result;
-    }
-}
 }

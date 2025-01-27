@@ -25,35 +25,33 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum ChangeTrustResultCode
-{
-    CHANGE_TRUST_SUCCESS = 0,
-    CHANGE_TRUST_MALFORMED = -1,
-    CHANGE_TRUST_NO_ISSUER = -2,
-    CHANGE_TRUST_INVALID_LIMIT = -3,
-    CHANGE_TRUST_LOW_RESERVE = -4,
-    CHANGE_TRUST_SELF_NOT_ALLOWED = -5,
-    CHANGE_TRUST_TRUST_LINE_MISSING = -6,
-    CHANGE_TRUST_CANNOT_DELETE = -7,
-    CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES = -8,
-}
-
-public static partial class ChangeTrustResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ChangeTrustResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum ChangeTrustResultCode
     {
-       stream.WriteInt((int)value);
+        CHANGE_TRUST_SUCCESS = 0,
+        CHANGE_TRUST_MALFORMED = -1,
+        CHANGE_TRUST_NO_ISSUER = -2,
+        CHANGE_TRUST_INVALID_LIMIT = -3,
+        CHANGE_TRUST_LOW_RESERVE = -4,
+        CHANGE_TRUST_SELF_NOT_ALLOWED = -5,
+        CHANGE_TRUST_TRUST_LINE_MISSING = -6,
+        CHANGE_TRUST_CANNOT_DELETE = -7,
+        CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES = -8,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static ChangeTrustResultCode Decode(XdrReader stream)
+    public static partial class ChangeTrustResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(ChangeTrustResultCode), value))
-            throw new InvalidOperationException($"Unknown ChangeTrustResultCode value: {value}");
-        return (ChangeTrustResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ChangeTrustResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static ChangeTrustResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(ChangeTrustResultCode), value))
+              throw new InvalidOperationException($"Unknown ChangeTrustResultCode value: {value}");
+            return (ChangeTrustResultCode)value;
+        }
     }
-}
-}

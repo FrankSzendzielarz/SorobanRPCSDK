@@ -14,79 +14,76 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class LedgerCloseMeta
-{
-    public abstract int Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class LedgerCloseMeta_0 : LedgerCloseMeta
-{
-    public override int Discriminator => 0;
-    private LedgerCloseMetaV0 _v0;
-    public LedgerCloseMetaV0 v0
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class LedgerCloseMeta
     {
-        get => _v0;
-        set
-        {
-            _v0 = value;
-        }
+        public abstract int Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class LedgerCloseMeta_1 : LedgerCloseMeta
-{
-    public override int Discriminator => 1;
-    private LedgerCloseMetaV1 _v1;
-    public LedgerCloseMetaV1 v1
+    public sealed partial class LedgerCloseMeta_0 : LedgerCloseMeta
     {
-        get => _v1;
-        set
+        public override int Discriminator => 0;
+        private LedgerCloseMetaV0 _v0;
+        public LedgerCloseMetaV0 v0
         {
-            _v1 = value;
+            get => _v0;
+            set
+            {
+                _v0 = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class LedgerCloseMetaXdr
-{
-    public static void Encode(XdrWriter stream, LedgerCloseMeta value)
+    public sealed partial class LedgerCloseMeta_1 : LedgerCloseMeta
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override int Discriminator => 1;
+        private LedgerCloseMetaV1 _v1;
+        public LedgerCloseMetaV1 v1
         {
-            case LedgerCloseMeta_0 case_0:
+            get => _v1;
+            set
+            {
+                _v1 = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class LedgerCloseMetaXdr
+    {
+        public static void Encode(XdrWriter stream, LedgerCloseMeta value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case LedgerCloseMeta_0 case_0:
                 LedgerCloseMetaV0Xdr.Encode(stream, case_0.v0);
                 break;
-            case LedgerCloseMeta_1 case_1:
+                case LedgerCloseMeta_1 case_1:
                 LedgerCloseMetaV1Xdr.Encode(stream, case_1.v1);
                 break;
+            }
         }
-    }
-    public static LedgerCloseMeta Decode(XdrReader stream)
-    {
-        var discriminator = (int)stream.ReadInt();
-        switch (discriminator)
+        public static LedgerCloseMeta Decode(XdrReader stream)
         {
-            case 0:
+            var discriminator = (int)stream.ReadInt();
+            switch (discriminator)
+            {
+                case 0:
                 var result_0 = new LedgerCloseMeta_0();
-                result_0.v0 = LedgerCloseMetaV0Xdr.Decode(stream);
+                result_0.                 = LedgerCloseMetaV0Xdr.Decode(stream);
                 return result_0;
-            case 1:
+                case 1:
                 var result_1 = new LedgerCloseMeta_1();
-                result_1.v1 = LedgerCloseMetaV1Xdr.Decode(stream);
+                result_1.                 = LedgerCloseMetaV1Xdr.Decode(stream);
                 return result_1;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for LedgerCloseMeta: {discriminator}");
+            }
         }
     }
-}
 }

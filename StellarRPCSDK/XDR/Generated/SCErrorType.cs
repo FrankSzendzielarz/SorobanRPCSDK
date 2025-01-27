@@ -20,36 +20,34 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum SCErrorType
-{
-    SCE_CONTRACT = 0,
-    SCE_WASM_VM = 1,
-    SCE_CONTEXT = 2,
-    SCE_STORAGE = 3,
-    SCE_OBJECT = 4,
-    SCE_CRYPTO = 5,
-    SCE_EVENTS = 6,
-    SCE_BUDGET = 7,
-    SCE_VALUE = 8,
-    SCE_AUTH = 9,
-}
-
-public static partial class SCErrorTypeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SCErrorType value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum SCErrorType
     {
-       stream.WriteInt((int)value);
+        SCE_CONTRACT = 0,
+        SCE_WASM_VM = 1,
+        SCE_CONTEXT = 2,
+        SCE_STORAGE = 3,
+        SCE_OBJECT = 4,
+        SCE_CRYPTO = 5,
+        SCE_EVENTS = 6,
+        SCE_BUDGET = 7,
+        SCE_VALUE = 8,
+        SCE_AUTH = 9,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static SCErrorType Decode(XdrReader stream)
+    public static partial class SCErrorTypeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(SCErrorType), value))
-            throw new InvalidOperationException($"Unknown SCErrorType value: {value}");
-        return (SCErrorType)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SCErrorType value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static SCErrorType Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(SCErrorType), value))
+              throw new InvalidOperationException($"Unknown SCErrorType value: {value}");
+            return (SCErrorType)value;
+        }
     }
-}
-}

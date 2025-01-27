@@ -27,56 +27,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LiquidityPoolEntry
-{
-    private PoolID _liquidityPoolID;
-    public PoolID liquidityPoolID
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LiquidityPoolEntry
     {
-        get => _liquidityPoolID;
-        set
+        private PoolID _liquidityPoolID;
+        public PoolID liquidityPoolID
         {
-            _liquidityPoolID = value;
+            get => _liquidityPoolID;
+            set
+            {
+                _liquidityPoolID = value;
+            }
+        }
+
+        private object _body;
+        public object body
+        {
+            get => _body;
+            set
+            {
+                _body = value;
+            }
+        }
+
+        public LiquidityPoolEntry()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _body;
-    public object body
+    public static partial class LiquidityPoolEntryXdr
     {
-        get => _body;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LiquidityPoolEntry value)
         {
-            _body = value;
+            value.Validate();
+            PoolIDXdr.Encode(stream, value.liquidityPoolID);
+            Xdr.Encode(stream, value.body);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LiquidityPoolEntry Decode(XdrReader stream)
+        {
+            var result = new LiquidityPoolEntry();
+            result.liquidityPoolID = PoolIDXdr.Decode(stream);
+            result.body = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public LiquidityPoolEntry()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class LiquidityPoolEntryXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LiquidityPoolEntry value)
-    {
-        value.Validate();
-        PoolIDXdr.Encode(stream, value.liquidityPoolID);
-        Xdr.Encode(stream, value.body);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LiquidityPoolEntry Decode(XdrReader stream)
-    {
-        var result = new LiquidityPoolEntry();
-        result.liquidityPoolID = PoolIDXdr.Decode(stream);
-        result.body = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

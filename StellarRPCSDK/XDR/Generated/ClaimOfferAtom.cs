@@ -21,104 +21,101 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class ClaimOfferAtom
-{
-    private AccountID _sellerID;
-    public AccountID sellerID
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class ClaimOfferAtom
     {
-        get => _sellerID;
-        set
+        private AccountID _sellerID;
+        public AccountID sellerID
         {
-            _sellerID = value;
+            get => _sellerID;
+            set
+            {
+                _sellerID = value;
+            }
+        }
+
+        private int64 _offerID;
+        public int64 offerID
+        {
+            get => _offerID;
+            set
+            {
+                _offerID = value;
+            }
+        }
+
+        private Asset _assetSold;
+        public Asset assetSold
+        {
+            get => _assetSold;
+            set
+            {
+                _assetSold = value;
+            }
+        }
+
+        private int64 _amountSold;
+        public int64 amountSold
+        {
+            get => _amountSold;
+            set
+            {
+                _amountSold = value;
+            }
+        }
+
+        private Asset _assetBought;
+        public Asset assetBought
+        {
+            get => _assetBought;
+            set
+            {
+                _assetBought = value;
+            }
+        }
+
+        private int64 _amountBought;
+        public int64 amountBought
+        {
+            get => _amountBought;
+            set
+            {
+                _amountBought = value;
+            }
+        }
+
+        public ClaimOfferAtom()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int64 _offerID;
-    public int64 offerID
+    public static partial class ClaimOfferAtomXdr
     {
-        get => _offerID;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ClaimOfferAtom value)
         {
-            _offerID = value;
+            value.Validate();
+            AccountIDXdr.Encode(stream, value.sellerID);
+            int64Xdr.Encode(stream, value.offerID);
+            AssetXdr.Encode(stream, value.assetSold);
+            int64Xdr.Encode(stream, value.amountSold);
+            AssetXdr.Encode(stream, value.assetBought);
+            int64Xdr.Encode(stream, value.amountBought);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static ClaimOfferAtom Decode(XdrReader stream)
+        {
+            var result = new ClaimOfferAtom();
+            result.sellerID = AccountIDXdr.Decode(stream);
+            result.offerID = int64Xdr.Decode(stream);
+            result.assetSold = AssetXdr.Decode(stream);
+            result.amountSold = int64Xdr.Decode(stream);
+            result.assetBought = AssetXdr.Decode(stream);
+            result.amountBought = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private Asset _assetSold;
-    public Asset assetSold
-    {
-        get => _assetSold;
-        set
-        {
-            _assetSold = value;
-        }
-    }
-
-    private int64 _amountSold;
-    public int64 amountSold
-    {
-        get => _amountSold;
-        set
-        {
-            _amountSold = value;
-        }
-    }
-
-    private Asset _assetBought;
-    public Asset assetBought
-    {
-        get => _assetBought;
-        set
-        {
-            _assetBought = value;
-        }
-    }
-
-    private int64 _amountBought;
-    public int64 amountBought
-    {
-        get => _amountBought;
-        set
-        {
-            _amountBought = value;
-        }
-    }
-
-    public ClaimOfferAtom()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class ClaimOfferAtomXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ClaimOfferAtom value)
-    {
-        value.Validate();
-        AccountIDXdr.Encode(stream, value.sellerID);
-        int64Xdr.Encode(stream, value.offerID);
-        AssetXdr.Encode(stream, value.assetSold);
-        int64Xdr.Encode(stream, value.amountSold);
-        AssetXdr.Encode(stream, value.assetBought);
-        int64Xdr.Encode(stream, value.amountBought);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static ClaimOfferAtom Decode(XdrReader stream)
-    {
-        var result = new ClaimOfferAtom();
-        result.sellerID = AccountIDXdr.Decode(stream);
-        result.offerID = int64Xdr.Decode(stream);
-        result.assetSold = AssetXdr.Decode(stream);
-        result.amountSold = int64Xdr.Decode(stream);
-        result.assetBought = AssetXdr.Decode(stream);
-        result.amountBought = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

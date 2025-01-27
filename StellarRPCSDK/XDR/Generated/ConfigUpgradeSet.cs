@@ -10,53 +10,50 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class ConfigUpgradeSet
-{
-    private ConfigSettingEntry[] _updatedEntry;
-    public ConfigSettingEntry[] updatedEntry
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class ConfigUpgradeSet
     {
-        get => _updatedEntry;
-        set
+        private ConfigSettingEntry[] _updatedEntry;
+        public ConfigSettingEntry[] updatedEntry
         {
-            _updatedEntry = value;
+            get => _updatedEntry;
+            set
+            {
+                _updatedEntry = value;
+            }
+        }
+
+        public ConfigUpgradeSet()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    public ConfigUpgradeSet()
+    public static partial class ConfigUpgradeSetXdr
     {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class ConfigUpgradeSetXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ConfigUpgradeSet value)
-    {
-        value.Validate();
-        stream.WriteInt(value.updatedEntry.Length);
-        foreach (var item in value.updatedEntry)
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ConfigUpgradeSet value)
         {
-            ConfigSettingEntryXdr.Encode(stream, item);
+            value.Validate();
+            stream.WriteInt(value.updatedEntry.Length);
+            foreach (var item in value.updatedEntry)
+            {
+                    ConfigSettingEntryXdr.Encode(stream, item);
+            }
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static ConfigUpgradeSet Decode(XdrReader stream)
+        {
+            var result = new ConfigUpgradeSet();
+            var length = stream.ReadInt();
+            result.updatedEntry = new ConfigSettingEntry[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.updatedEntry[i] = ConfigSettingEntryXdr.Decode(stream);
+            }
+            return result;
         }
     }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static ConfigUpgradeSet Decode(XdrReader stream)
-    {
-        var result = new ConfigUpgradeSet();
-        var length = stream.ReadInt();
-        result.updatedEntry = new ConfigSettingEntry[length];
-        for (var i = 0; i < length; i++)
-        {
-            result.updatedEntry[i] = ConfigSettingEntryXdr.Decode(stream);
-        }
-        return result;
-    }
-}
 }

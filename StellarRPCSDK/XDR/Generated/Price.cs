@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class Price
-{
-    private int32 _n;
-    public int32 n
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class Price
     {
-        get => _n;
-        set
+        private int32 _n;
+        public int32 n
         {
-            _n = value;
+            get => _n;
+            set
+            {
+                _n = value;
+            }
+        }
+
+        private int32 _d;
+        public int32 d
+        {
+            get => _d;
+            set
+            {
+                _d = value;
+            }
+        }
+
+        public Price()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int32 _d;
-    public int32 d
+    public static partial class PriceXdr
     {
-        get => _d;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, Price value)
         {
-            _d = value;
+            value.Validate();
+            int32Xdr.Encode(stream, value.n);
+            int32Xdr.Encode(stream, value.d);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static Price Decode(XdrReader stream)
+        {
+            var result = new Price();
+            result.n = int32Xdr.Decode(stream);
+            result.d = int32Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public Price()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class PriceXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, Price value)
-    {
-        value.Validate();
-        int32Xdr.Encode(stream, value.n);
-        int32Xdr.Encode(stream, value.d);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static Price Decode(XdrReader stream)
-    {
-        var result = new Price();
-        result.n = int32Xdr.Decode(stream);
-        result.d = int32Xdr.Decode(stream);
-        return result;
-    }
-}
 }

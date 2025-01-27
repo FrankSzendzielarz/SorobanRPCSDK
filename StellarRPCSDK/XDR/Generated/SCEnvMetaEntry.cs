@@ -15,56 +15,54 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class SCEnvMetaEntry
-{
-    public abstract SCEnvMetaKind Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION : SCEnvMetaEntry
-{
-    public override SCEnvMetaKind Discriminator => SC_ENV_META_KIND_INTERFACE_VERSION;
-    private object _interfaceVersion;
-    public object interfaceVersion
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class SCEnvMetaEntry
     {
-        get => _interfaceVersion;
-        set
-        {
-            _interfaceVersion = value;
-        }
+        public abstract SCEnvMetaKind Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class SCEnvMetaEntryXdr
-{
-    public static void Encode(XdrWriter stream, SCEnvMetaEntry value)
+    public sealed partial class SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION : SCEnvMetaEntry
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override SCEnvMetaKind Discriminator => SC_ENV_META_KIND_INTERFACE_VERSION;
+        private object _interfaceVersion;
+        public object interfaceVersion
         {
-            case SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION case_SC_ENV_META_KIND_INTERFACE_VERSION:
+            get => _interfaceVersion;
+            set
+            {
+                _interfaceVersion = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class SCEnvMetaEntryXdr
+    {
+        public static void Encode(XdrWriter stream, SCEnvMetaEntry value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION case_SC_ENV_META_KIND_INTERFACE_VERSION:
                 Xdr.Encode(stream, case_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion);
                 break;
+            }
         }
-    }
-    public static SCEnvMetaEntry Decode(XdrReader stream)
-    {
-        var discriminator = (SCEnvMetaKind)stream.ReadInt();
-        switch (discriminator)
+        public static SCEnvMetaEntry Decode(XdrReader stream)
         {
-            case SC_ENV_META_KIND_INTERFACE_VERSION:
+            var discriminator = (SCEnvMetaKind)stream.ReadInt();
+            switch (discriminator)
+            {
+                case SC_ENV_META_KIND_INTERFACE_VERSION:
                 var result_SC_ENV_META_KIND_INTERFACE_VERSION = new SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION();
-                result_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion = Xdr.Decode(stream);
+                result_SC_ENV_META_KIND_INTERFACE_VERSION.                 = Xdr.Decode(stream);
                 return result_SC_ENV_META_KIND_INTERFACE_VERSION;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for SCEnvMetaEntry: {discriminator}");
+            }
         }
     }
-}
 }

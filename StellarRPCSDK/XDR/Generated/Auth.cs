@@ -11,44 +11,41 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class Auth
-{
-    private int _flags;
-    public int flags
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class Auth
     {
-        get => _flags;
-        set
+        private int _flags;
+        public int flags
         {
-            _flags = value;
+            get => _flags;
+            set
+            {
+                _flags = value;
+            }
+        }
+
+        public Auth()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    public Auth()
+    public static partial class AuthXdr
     {
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, Auth value)
+        {
+            value.Validate();
+            stream.WriteInt(value.flags);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static Auth Decode(XdrReader stream)
+        {
+            var result = new Auth();
+            result.flags = stream.ReadInt();
+            return result;
+        }
     }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class AuthXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, Auth value)
-    {
-        value.Validate();
-        stream.WriteInt(value.flags);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static Auth Decode(XdrReader stream)
-    {
-        var result = new Auth();
-        result.flags = stream.ReadInt();
-        return result;
-    }
-}
 }

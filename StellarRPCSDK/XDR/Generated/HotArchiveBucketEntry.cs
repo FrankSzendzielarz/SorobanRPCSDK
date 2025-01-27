@@ -18,125 +18,120 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class HotArchiveBucketEntry
-{
-    public abstract HotArchiveBucketEntryType Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED : HotArchiveBucketEntry
-{
-    public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_ARCHIVED;
-    private LedgerEntry _archivedEntry;
-    public LedgerEntry archivedEntry
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class HotArchiveBucketEntry
     {
-        get => _archivedEntry;
-        set
-        {
-            _archivedEntry = value;
-        }
+        public abstract HotArchiveBucketEntryType Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_LIVE : HotArchiveBucketEntry
-{
-    public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_LIVE;
-    private LedgerKey _key;
-    public LedgerKey key
+    public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED : HotArchiveBucketEntry
     {
-        get => _key;
-        set
+        public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_ARCHIVED;
+        private LedgerEntry _archivedEntry;
+        public LedgerEntry archivedEntry
         {
-            _key = value;
+            get => _archivedEntry;
+            set
+            {
+                _archivedEntry = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_DELETED : HotArchiveBucketEntry
-{
-    public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_DELETED;
-    private LedgerKey _key;
-    public LedgerKey key
+    public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_LIVE : HotArchiveBucketEntry
     {
-        get => _key;
-        set
+        public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_LIVE;
+        private LedgerKey _key;
+        public LedgerKey key
         {
-            _key = value;
+            get => _key;
+            set
+            {
+                _key = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY : HotArchiveBucketEntry
-{
-    public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_METAENTRY;
-    private BucketMetadata _metaEntry;
-    public BucketMetadata metaEntry
+    public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_DELETED : HotArchiveBucketEntry
     {
-        get => _metaEntry;
-        set
+        public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_DELETED;
+        private LedgerKey _key;
+        public LedgerKey key
         {
-            _metaEntry = value;
+            get => _key;
+            set
+            {
+                _key = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class HotArchiveBucketEntryXdr
-{
-    public static void Encode(XdrWriter stream, HotArchiveBucketEntry value)
+    public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY : HotArchiveBucketEntry
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override HotArchiveBucketEntryType Discriminator => HOT_ARCHIVE_METAENTRY;
+        private BucketMetadata _metaEntry;
+        public BucketMetadata metaEntry
         {
-            case HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED case_HOT_ARCHIVE_ARCHIVED:
+            get => _metaEntry;
+            set
+            {
+                _metaEntry = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class HotArchiveBucketEntryXdr
+    {
+        public static void Encode(XdrWriter stream, HotArchiveBucketEntry value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED case_HOT_ARCHIVE_ARCHIVED:
                 LedgerEntryXdr.Encode(stream, case_HOT_ARCHIVE_ARCHIVED.archivedEntry);
                 break;
-            case HotArchiveBucketEntry_HOT_ARCHIVE_LIVE case_HOT_ARCHIVE_LIVE:
+                case HotArchiveBucketEntry_HOT_ARCHIVE_LIVE case_HOT_ARCHIVE_LIVE:
                 LedgerKeyXdr.Encode(stream, case_HOT_ARCHIVE_LIVE.key);
                 break;
-            case HotArchiveBucketEntry_HOT_ARCHIVE_DELETED case_HOT_ARCHIVE_DELETED:
+                case HotArchiveBucketEntry_HOT_ARCHIVE_DELETED case_HOT_ARCHIVE_DELETED:
                 LedgerKeyXdr.Encode(stream, case_HOT_ARCHIVE_DELETED.key);
                 break;
-            case HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY case_HOT_ARCHIVE_METAENTRY:
+                case HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY case_HOT_ARCHIVE_METAENTRY:
                 BucketMetadataXdr.Encode(stream, case_HOT_ARCHIVE_METAENTRY.metaEntry);
                 break;
+            }
         }
-    }
-    public static HotArchiveBucketEntry Decode(XdrReader stream)
-    {
-        var discriminator = (HotArchiveBucketEntryType)stream.ReadInt();
-        switch (discriminator)
+        public static HotArchiveBucketEntry Decode(XdrReader stream)
         {
-            case HOT_ARCHIVE_ARCHIVED:
+            var discriminator = (HotArchiveBucketEntryType)stream.ReadInt();
+            switch (discriminator)
+            {
+                case HOT_ARCHIVE_ARCHIVED:
                 var result_HOT_ARCHIVE_ARCHIVED = new HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED();
-                result_HOT_ARCHIVE_ARCHIVED.archivedEntry = LedgerEntryXdr.Decode(stream);
+                result_HOT_ARCHIVE_ARCHIVED.                 = LedgerEntryXdr.Decode(stream);
                 return result_HOT_ARCHIVE_ARCHIVED;
-            case HOT_ARCHIVE_LIVE:
+                case HOT_ARCHIVE_LIVE:
                 var result_HOT_ARCHIVE_LIVE = new HotArchiveBucketEntry_HOT_ARCHIVE_LIVE();
-                result_HOT_ARCHIVE_LIVE.key = LedgerKeyXdr.Decode(stream);
+                result_HOT_ARCHIVE_LIVE.                 = LedgerKeyXdr.Decode(stream);
                 return result_HOT_ARCHIVE_LIVE;
-            case HOT_ARCHIVE_DELETED:
+                case HOT_ARCHIVE_DELETED:
                 var result_HOT_ARCHIVE_DELETED = new HotArchiveBucketEntry_HOT_ARCHIVE_DELETED();
-                result_HOT_ARCHIVE_DELETED.key = LedgerKeyXdr.Decode(stream);
+                result_HOT_ARCHIVE_DELETED.                 = LedgerKeyXdr.Decode(stream);
                 return result_HOT_ARCHIVE_DELETED;
-            case HOT_ARCHIVE_METAENTRY:
+                case HOT_ARCHIVE_METAENTRY:
                 var result_HOT_ARCHIVE_METAENTRY = new HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY();
-                result_HOT_ARCHIVE_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
+                result_HOT_ARCHIVE_METAENTRY.                 = BucketMetadataXdr.Decode(stream);
                 return result_HOT_ARCHIVE_METAENTRY;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for HotArchiveBucketEntry: {discriminator}");
+            }
         }
     }
-}
 }

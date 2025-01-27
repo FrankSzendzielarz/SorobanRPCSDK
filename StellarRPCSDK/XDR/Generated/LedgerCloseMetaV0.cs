@@ -24,119 +24,116 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LedgerCloseMetaV0
-{
-    private LedgerHeaderHistoryEntry _ledgerHeader;
-    public LedgerHeaderHistoryEntry ledgerHeader
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LedgerCloseMetaV0
     {
-        get => _ledgerHeader;
-        set
+        private LedgerHeaderHistoryEntry _ledgerHeader;
+        public LedgerHeaderHistoryEntry ledgerHeader
         {
-            _ledgerHeader = value;
+            get => _ledgerHeader;
+            set
+            {
+                _ledgerHeader = value;
+            }
         }
-    }
 
-    private TransactionSet _txSet;
-    public TransactionSet txSet
-    {
-        get => _txSet;
-        set
+        private TransactionSet _txSet;
+        public TransactionSet txSet
         {
-            _txSet = value;
+            get => _txSet;
+            set
+            {
+                _txSet = value;
+            }
         }
-    }
 
-    private TransactionResultMeta[] _txProcessing;
-    public TransactionResultMeta[] txProcessing
-    {
-        get => _txProcessing;
-        set
+        private TransactionResultMeta[] _txProcessing;
+        public TransactionResultMeta[] txProcessing
         {
-            _txProcessing = value;
+            get => _txProcessing;
+            set
+            {
+                _txProcessing = value;
+            }
         }
-    }
 
-    private UpgradeEntryMeta[] _upgradesProcessing;
-    public UpgradeEntryMeta[] upgradesProcessing
-    {
-        get => _upgradesProcessing;
-        set
+        private UpgradeEntryMeta[] _upgradesProcessing;
+        public UpgradeEntryMeta[] upgradesProcessing
         {
-            _upgradesProcessing = value;
+            get => _upgradesProcessing;
+            set
+            {
+                _upgradesProcessing = value;
+            }
         }
-    }
 
-    private SCPHistoryEntry[] _scpInfo;
-    public SCPHistoryEntry[] scpInfo
-    {
-        get => _scpInfo;
-        set
+        private SCPHistoryEntry[] _scpInfo;
+        public SCPHistoryEntry[] scpInfo
         {
-            _scpInfo = value;
+            get => _scpInfo;
+            set
+            {
+                _scpInfo = value;
+            }
         }
-    }
 
-    public LedgerCloseMetaV0()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class LedgerCloseMetaV0Xdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LedgerCloseMetaV0 value)
-    {
-        value.Validate();
-        LedgerHeaderHistoryEntryXdr.Encode(stream, value.ledgerHeader);
-        TransactionSetXdr.Encode(stream, value.txSet);
-        stream.WriteInt(value.txProcessing.Length);
-        foreach (var item in value.txProcessing)
+        public LedgerCloseMetaV0()
         {
-            TransactionResultMetaXdr.Encode(stream, item);
         }
-        stream.WriteInt(value.upgradesProcessing.Length);
-        foreach (var item in value.upgradesProcessing)
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
         {
-            UpgradeEntryMetaXdr.Encode(stream, item);
-        }
-        stream.WriteInt(value.scpInfo.Length);
-        foreach (var item in value.scpInfo)
-        {
-            SCPHistoryEntryXdr.Encode(stream, item);
         }
     }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LedgerCloseMetaV0 Decode(XdrReader stream)
+    public static partial class LedgerCloseMetaV0Xdr
     {
-        var result = new LedgerCloseMetaV0();
-        result.ledgerHeader = LedgerHeaderHistoryEntryXdr.Decode(stream);
-        result.txSet = TransactionSetXdr.Decode(stream);
-        var length = stream.ReadInt();
-        result.txProcessing = new TransactionResultMeta[length];
-        for (var i = 0; i < length; i++)
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LedgerCloseMetaV0 value)
         {
-            result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+            value.Validate();
+            LedgerHeaderHistoryEntryXdr.Encode(stream, value.ledgerHeader);
+            TransactionSetXdr.Encode(stream, value.txSet);
+            stream.WriteInt(value.txProcessing.Length);
+            foreach (var item in value.txProcessing)
+            {
+                    TransactionResultMetaXdr.Encode(stream, item);
+            }
+            stream.WriteInt(value.upgradesProcessing.Length);
+            foreach (var item in value.upgradesProcessing)
+            {
+                    UpgradeEntryMetaXdr.Encode(stream, item);
+            }
+            stream.WriteInt(value.scpInfo.Length);
+            foreach (var item in value.scpInfo)
+            {
+                    SCPHistoryEntryXdr.Encode(stream, item);
+            }
         }
-        var length = stream.ReadInt();
-        result.upgradesProcessing = new UpgradeEntryMeta[length];
-        for (var i = 0; i < length; i++)
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LedgerCloseMetaV0 Decode(XdrReader stream)
         {
-            result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+            var result = new LedgerCloseMetaV0();
+            result.ledgerHeader = LedgerHeaderHistoryEntryXdr.Decode(stream);
+            result.txSet = TransactionSetXdr.Decode(stream);
+            var length = stream.ReadInt();
+            result.txProcessing = new TransactionResultMeta[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+            }
+            var length = stream.ReadInt();
+            result.upgradesProcessing = new UpgradeEntryMeta[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+            }
+            var length = stream.ReadInt();
+            result.scpInfo = new SCPHistoryEntry[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
+            }
+            return result;
         }
-        var length = stream.ReadInt();
-        result.scpInfo = new SCPHistoryEntry[length];
-        for (var i = 0; i < length; i++)
-        {
-            result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
-        }
-        return result;
     }
-}
 }

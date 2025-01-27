@@ -69,573 +69,549 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class StellarMessage
-{
-    public abstract MessageType Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class StellarMessage_ERROR_MSG : StellarMessage
-{
-    public override MessageType Discriminator => ERROR_MSG;
-    private Error _error;
-    public Error error
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class StellarMessage
     {
-        get => _error;
-        set
-        {
-            _error = value;
-        }
+        public abstract MessageType Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_HELLO : StellarMessage
-{
-    public override MessageType Discriminator => HELLO;
-    private Hello _hello;
-    public Hello hello
+    public sealed partial class StellarMessage_ERROR_MSG : StellarMessage
     {
-        get => _hello;
-        set
+        public override MessageType Discriminator => ERROR_MSG;
+        private Error _error;
+        public Error error
         {
-            _hello = value;
+            get => _error;
+            set
+            {
+                _error = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_AUTH : StellarMessage
-{
-    public override MessageType Discriminator => AUTH;
-    private Auth _auth;
-    public Auth auth
+    public sealed partial class StellarMessage_HELLO : StellarMessage
     {
-        get => _auth;
-        set
+        public override MessageType Discriminator => HELLO;
+        private Hello _hello;
+        public Hello hello
         {
-            _auth = value;
+            get => _hello;
+            set
+            {
+                _hello = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_DONT_HAVE : StellarMessage
-{
-    public override MessageType Discriminator => DONT_HAVE;
-    private DontHave _dontHave;
-    public DontHave dontHave
+    public sealed partial class StellarMessage_AUTH : StellarMessage
     {
-        get => _dontHave;
-        set
+        public override MessageType Discriminator => AUTH;
+        private Auth _auth;
+        public Auth auth
         {
-            _dontHave = value;
+            get => _auth;
+            set
+            {
+                _auth = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_PEERS : StellarMessage
-{
-    public override MessageType Discriminator => PEERS;
-    private PeerAddress[] _peers;
-    public PeerAddress[] peers
+    public sealed partial class StellarMessage_DONT_HAVE : StellarMessage
     {
-        get => _peers;
-        set
+        public override MessageType Discriminator => DONT_HAVE;
+        private DontHave _dontHave;
+        public DontHave dontHave
         {
-            if (value.Length > 100)
-                throw new ArgumentException($"Cannot exceed 100 bytes");
-            _peers = value;
+            get => _dontHave;
+            set
+            {
+                _dontHave = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_GET_TX_SET : StellarMessage
-{
-    public override MessageType Discriminator => GET_TX_SET;
-    private uint256 _txSetHash;
-    public uint256 txSetHash
+    public sealed partial class StellarMessage_PEERS : StellarMessage
     {
-        get => _txSetHash;
-        set
+        public override MessageType Discriminator => PEERS;
+        private PeerAddress[] _peers;
+        public PeerAddress[] peers
         {
-            _txSetHash = value;
+            get => _peers;
+            set
+            {
+                if (value.Length > 100)
+                	throw new ArgumentException($"Cannot exceed 100 bytes");
+                _peers = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TX_SET : StellarMessage
-{
-    public override MessageType Discriminator => TX_SET;
-    private TransactionSet _txSet;
-    public TransactionSet txSet
+    public sealed partial class StellarMessage_GET_TX_SET : StellarMessage
     {
-        get => _txSet;
-        set
+        public override MessageType Discriminator => GET_TX_SET;
+        private uint256 _txSetHash;
+        public uint256 txSetHash
         {
-            _txSet = value;
+            get => _txSetHash;
+            set
+            {
+                _txSetHash = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_GENERALIZED_TX_SET : StellarMessage
-{
-    public override MessageType Discriminator => GENERALIZED_TX_SET;
-    private GeneralizedTransactionSet _generalizedTxSet;
-    public GeneralizedTransactionSet generalizedTxSet
+    public sealed partial class StellarMessage_TX_SET : StellarMessage
     {
-        get => _generalizedTxSet;
-        set
+        public override MessageType Discriminator => TX_SET;
+        private TransactionSet _txSet;
+        public TransactionSet txSet
         {
-            _generalizedTxSet = value;
+            get => _txSet;
+            set
+            {
+                _txSet = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TRANSACTION : StellarMessage
-{
-    public override MessageType Discriminator => TRANSACTION;
-    private TransactionEnvelope _transaction;
-    public TransactionEnvelope transaction
+    public sealed partial class StellarMessage_GENERALIZED_TX_SET : StellarMessage
     {
-        get => _transaction;
-        set
+        public override MessageType Discriminator => GENERALIZED_TX_SET;
+        private GeneralizedTransactionSet _generalizedTxSet;
+        public GeneralizedTransactionSet generalizedTxSet
         {
-            _transaction = value;
+            get => _generalizedTxSet;
+            set
+            {
+                _generalizedTxSet = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SURVEY_REQUEST : StellarMessage
-{
-    public override MessageType Discriminator => SURVEY_REQUEST;
-    private SignedSurveyRequestMessage _signedSurveyRequestMessage;
-    public SignedSurveyRequestMessage signedSurveyRequestMessage
+    public sealed partial class StellarMessage_TRANSACTION : StellarMessage
     {
-        get => _signedSurveyRequestMessage;
-        set
+        public override MessageType Discriminator => TRANSACTION;
+        private TransactionEnvelope _transaction;
+        public TransactionEnvelope transaction
         {
-            _signedSurveyRequestMessage = value;
+            get => _transaction;
+            set
+            {
+                _transaction = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SURVEY_RESPONSE : StellarMessage
-{
-    public override MessageType Discriminator => SURVEY_RESPONSE;
-    private SignedSurveyResponseMessage _signedSurveyResponseMessage;
-    public SignedSurveyResponseMessage signedSurveyResponseMessage
+    public sealed partial class StellarMessage_SURVEY_REQUEST : StellarMessage
     {
-        get => _signedSurveyResponseMessage;
-        set
+        public override MessageType Discriminator => SURVEY_REQUEST;
+        private SignedSurveyRequestMessage _signedSurveyRequestMessage;
+        public SignedSurveyRequestMessage signedSurveyRequestMessage
         {
-            _signedSurveyResponseMessage = value;
+            get => _signedSurveyRequestMessage;
+            set
+            {
+                _signedSurveyRequestMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TIME_SLICED_SURVEY_REQUEST : StellarMessage
-{
-    public override MessageType Discriminator => TIME_SLICED_SURVEY_REQUEST;
-    private SignedTimeSlicedSurveyRequestMessage _signedTimeSlicedSurveyRequestMessage;
-    public SignedTimeSlicedSurveyRequestMessage signedTimeSlicedSurveyRequestMessage
+    public sealed partial class StellarMessage_SURVEY_RESPONSE : StellarMessage
     {
-        get => _signedTimeSlicedSurveyRequestMessage;
-        set
+        public override MessageType Discriminator => SURVEY_RESPONSE;
+        private SignedSurveyResponseMessage _signedSurveyResponseMessage;
+        public SignedSurveyResponseMessage signedSurveyResponseMessage
         {
-            _signedTimeSlicedSurveyRequestMessage = value;
+            get => _signedSurveyResponseMessage;
+            set
+            {
+                _signedSurveyResponseMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TIME_SLICED_SURVEY_RESPONSE : StellarMessage
-{
-    public override MessageType Discriminator => TIME_SLICED_SURVEY_RESPONSE;
-    private SignedTimeSlicedSurveyResponseMessage _signedTimeSlicedSurveyResponseMessage;
-    public SignedTimeSlicedSurveyResponseMessage signedTimeSlicedSurveyResponseMessage
+    public sealed partial class StellarMessage_TIME_SLICED_SURVEY_REQUEST : StellarMessage
     {
-        get => _signedTimeSlicedSurveyResponseMessage;
-        set
+        public override MessageType Discriminator => TIME_SLICED_SURVEY_REQUEST;
+        private SignedTimeSlicedSurveyRequestMessage _signedTimeSlicedSurveyRequestMessage;
+        public SignedTimeSlicedSurveyRequestMessage signedTimeSlicedSurveyRequestMessage
         {
-            _signedTimeSlicedSurveyResponseMessage = value;
+            get => _signedTimeSlicedSurveyRequestMessage;
+            set
+            {
+                _signedTimeSlicedSurveyRequestMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING : StellarMessage
-{
-    public override MessageType Discriminator => TIME_SLICED_SURVEY_START_COLLECTING;
-    private SignedTimeSlicedSurveyStartCollectingMessage _signedTimeSlicedSurveyStartCollectingMessage;
-    public SignedTimeSlicedSurveyStartCollectingMessage signedTimeSlicedSurveyStartCollectingMessage
+    public sealed partial class StellarMessage_TIME_SLICED_SURVEY_RESPONSE : StellarMessage
     {
-        get => _signedTimeSlicedSurveyStartCollectingMessage;
-        set
+        public override MessageType Discriminator => TIME_SLICED_SURVEY_RESPONSE;
+        private SignedTimeSlicedSurveyResponseMessage _signedTimeSlicedSurveyResponseMessage;
+        public SignedTimeSlicedSurveyResponseMessage signedTimeSlicedSurveyResponseMessage
         {
-            _signedTimeSlicedSurveyStartCollectingMessage = value;
+            get => _signedTimeSlicedSurveyResponseMessage;
+            set
+            {
+                _signedTimeSlicedSurveyResponseMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING : StellarMessage
-{
-    public override MessageType Discriminator => TIME_SLICED_SURVEY_STOP_COLLECTING;
-    private SignedTimeSlicedSurveyStopCollectingMessage _signedTimeSlicedSurveyStopCollectingMessage;
-    public SignedTimeSlicedSurveyStopCollectingMessage signedTimeSlicedSurveyStopCollectingMessage
+    public sealed partial class StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING : StellarMessage
     {
-        get => _signedTimeSlicedSurveyStopCollectingMessage;
-        set
+        public override MessageType Discriminator => TIME_SLICED_SURVEY_START_COLLECTING;
+        private SignedTimeSlicedSurveyStartCollectingMessage _signedTimeSlicedSurveyStartCollectingMessage;
+        public SignedTimeSlicedSurveyStartCollectingMessage signedTimeSlicedSurveyStartCollectingMessage
         {
-            _signedTimeSlicedSurveyStopCollectingMessage = value;
+            get => _signedTimeSlicedSurveyStartCollectingMessage;
+            set
+            {
+                _signedTimeSlicedSurveyStartCollectingMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_GET_SCP_QUORUMSET : StellarMessage
-{
-    public override MessageType Discriminator => GET_SCP_QUORUMSET;
-    private uint256 _qSetHash;
-    public uint256 qSetHash
+    public sealed partial class StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING : StellarMessage
     {
-        get => _qSetHash;
-        set
+        public override MessageType Discriminator => TIME_SLICED_SURVEY_STOP_COLLECTING;
+        private SignedTimeSlicedSurveyStopCollectingMessage _signedTimeSlicedSurveyStopCollectingMessage;
+        public SignedTimeSlicedSurveyStopCollectingMessage signedTimeSlicedSurveyStopCollectingMessage
         {
-            _qSetHash = value;
+            get => _signedTimeSlicedSurveyStopCollectingMessage;
+            set
+            {
+                _signedTimeSlicedSurveyStopCollectingMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SCP_QUORUMSET : StellarMessage
-{
-    public override MessageType Discriminator => SCP_QUORUMSET;
-    private SCPQuorumSet _qSet;
-    public SCPQuorumSet qSet
+    public sealed partial class StellarMessage_GET_SCP_QUORUMSET : StellarMessage
     {
-        get => _qSet;
-        set
+        public override MessageType Discriminator => GET_SCP_QUORUMSET;
+        private uint256 _qSetHash;
+        public uint256 qSetHash
         {
-            _qSet = value;
+            get => _qSetHash;
+            set
+            {
+                _qSetHash = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SCP_MESSAGE : StellarMessage
-{
-    public override MessageType Discriminator => SCP_MESSAGE;
-    private SCPEnvelope _envelope;
-    public SCPEnvelope envelope
+    public sealed partial class StellarMessage_SCP_QUORUMSET : StellarMessage
     {
-        get => _envelope;
-        set
+        public override MessageType Discriminator => SCP_QUORUMSET;
+        private SCPQuorumSet _qSet;
+        public SCPQuorumSet qSet
         {
-            _envelope = value;
+            get => _qSet;
+            set
+            {
+                _qSet = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_GET_SCP_STATE : StellarMessage
-{
-    public override MessageType Discriminator => GET_SCP_STATE;
-    private uint32 _getSCPLedgerSeq;
-    public uint32 getSCPLedgerSeq
+    public sealed partial class StellarMessage_SCP_MESSAGE : StellarMessage
     {
-        get => _getSCPLedgerSeq;
-        set
+        public override MessageType Discriminator => SCP_MESSAGE;
+        private SCPEnvelope _envelope;
+        public SCPEnvelope envelope
         {
-            _getSCPLedgerSeq = value;
+            get => _envelope;
+            set
+            {
+                _envelope = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SEND_MORE : StellarMessage
-{
-    public override MessageType Discriminator => SEND_MORE;
-    private SendMore _sendMoreMessage;
-    public SendMore sendMoreMessage
+    public sealed partial class StellarMessage_GET_SCP_STATE : StellarMessage
     {
-        get => _sendMoreMessage;
-        set
+        public override MessageType Discriminator => GET_SCP_STATE;
+        private uint32 _getSCPLedgerSeq;
+        public uint32 getSCPLedgerSeq
         {
-            _sendMoreMessage = value;
+            get => _getSCPLedgerSeq;
+            set
+            {
+                _getSCPLedgerSeq = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_SEND_MORE_EXTENDED : StellarMessage
-{
-    public override MessageType Discriminator => SEND_MORE_EXTENDED;
-    private SendMoreExtended _sendMoreExtendedMessage;
-    public SendMoreExtended sendMoreExtendedMessage
+    public sealed partial class StellarMessage_SEND_MORE : StellarMessage
     {
-        get => _sendMoreExtendedMessage;
-        set
+        public override MessageType Discriminator => SEND_MORE;
+        private SendMore _sendMoreMessage;
+        public SendMore sendMoreMessage
         {
-            _sendMoreExtendedMessage = value;
+            get => _sendMoreMessage;
+            set
+            {
+                _sendMoreMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_FLOOD_ADVERT : StellarMessage
-{
-    public override MessageType Discriminator => FLOOD_ADVERT;
-    private FloodAdvert _floodAdvert;
-    public FloodAdvert floodAdvert
+    public sealed partial class StellarMessage_SEND_MORE_EXTENDED : StellarMessage
     {
-        get => _floodAdvert;
-        set
+        public override MessageType Discriminator => SEND_MORE_EXTENDED;
+        private SendMoreExtended _sendMoreExtendedMessage;
+        public SendMoreExtended sendMoreExtendedMessage
         {
-            _floodAdvert = value;
+            get => _sendMoreExtendedMessage;
+            set
+            {
+                _sendMoreExtendedMessage = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class StellarMessage_FLOOD_DEMAND : StellarMessage
-{
-    public override MessageType Discriminator => FLOOD_DEMAND;
-    private FloodDemand _floodDemand;
-    public FloodDemand floodDemand
+    public sealed partial class StellarMessage_FLOOD_ADVERT : StellarMessage
     {
-        get => _floodDemand;
-        set
+        public override MessageType Discriminator => FLOOD_ADVERT;
+        private FloodAdvert _floodAdvert;
+        public FloodAdvert floodAdvert
         {
-            _floodDemand = value;
+            get => _floodAdvert;
+            set
+            {
+                _floodAdvert = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class StellarMessageXdr
-{
-    public static void Encode(XdrWriter stream, StellarMessage value)
+    public sealed partial class StellarMessage_FLOOD_DEMAND : StellarMessage
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override MessageType Discriminator => FLOOD_DEMAND;
+        private FloodDemand _floodDemand;
+        public FloodDemand floodDemand
         {
-            case StellarMessage_ERROR_MSG case_ERROR_MSG:
+            get => _floodDemand;
+            set
+            {
+                _floodDemand = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class StellarMessageXdr
+    {
+        public static void Encode(XdrWriter stream, StellarMessage value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case StellarMessage_ERROR_MSG case_ERROR_MSG:
                 ErrorXdr.Encode(stream, case_ERROR_MSG.error);
                 break;
-            case StellarMessage_HELLO case_HELLO:
+                case StellarMessage_HELLO case_HELLO:
                 HelloXdr.Encode(stream, case_HELLO.hello);
                 break;
-            case StellarMessage_AUTH case_AUTH:
+                case StellarMessage_AUTH case_AUTH:
                 AuthXdr.Encode(stream, case_AUTH.auth);
                 break;
-            case StellarMessage_DONT_HAVE case_DONT_HAVE:
+                case StellarMessage_DONT_HAVE case_DONT_HAVE:
                 DontHaveXdr.Encode(stream, case_DONT_HAVE.dontHave);
                 break;
-            case StellarMessage_PEERS case_PEERS:
+                case StellarMessage_PEERS case_PEERS:
                 stream.WriteInt(case_PEERS.peers.Length);
                 foreach (var item in case_PEERS.peers)
                 {
-                    PeerAddressXdr.Encode(stream, item);
+                        PeerAddressXdr.Encode(stream, item);
                 }
                 break;
-            case StellarMessage_GET_TX_SET case_GET_TX_SET:
+                case StellarMessage_GET_TX_SET case_GET_TX_SET:
                 uint256Xdr.Encode(stream, case_GET_TX_SET.txSetHash);
                 break;
-            case StellarMessage_TX_SET case_TX_SET:
+                case StellarMessage_TX_SET case_TX_SET:
                 TransactionSetXdr.Encode(stream, case_TX_SET.txSet);
                 break;
-            case StellarMessage_GENERALIZED_TX_SET case_GENERALIZED_TX_SET:
+                case StellarMessage_GENERALIZED_TX_SET case_GENERALIZED_TX_SET:
                 GeneralizedTransactionSetXdr.Encode(stream, case_GENERALIZED_TX_SET.generalizedTxSet);
                 break;
-            case StellarMessage_TRANSACTION case_TRANSACTION:
+                case StellarMessage_TRANSACTION case_TRANSACTION:
                 TransactionEnvelopeXdr.Encode(stream, case_TRANSACTION.transaction);
                 break;
-            case StellarMessage_SURVEY_REQUEST case_SURVEY_REQUEST:
+                case StellarMessage_SURVEY_REQUEST case_SURVEY_REQUEST:
                 SignedSurveyRequestMessageXdr.Encode(stream, case_SURVEY_REQUEST.signedSurveyRequestMessage);
                 break;
-            case StellarMessage_SURVEY_RESPONSE case_SURVEY_RESPONSE:
+                case StellarMessage_SURVEY_RESPONSE case_SURVEY_RESPONSE:
                 SignedSurveyResponseMessageXdr.Encode(stream, case_SURVEY_RESPONSE.signedSurveyResponseMessage);
                 break;
-            case StellarMessage_TIME_SLICED_SURVEY_REQUEST case_TIME_SLICED_SURVEY_REQUEST:
+                case StellarMessage_TIME_SLICED_SURVEY_REQUEST case_TIME_SLICED_SURVEY_REQUEST:
                 SignedTimeSlicedSurveyRequestMessageXdr.Encode(stream, case_TIME_SLICED_SURVEY_REQUEST.signedTimeSlicedSurveyRequestMessage);
                 break;
-            case StellarMessage_TIME_SLICED_SURVEY_RESPONSE case_TIME_SLICED_SURVEY_RESPONSE:
+                case StellarMessage_TIME_SLICED_SURVEY_RESPONSE case_TIME_SLICED_SURVEY_RESPONSE:
                 SignedTimeSlicedSurveyResponseMessageXdr.Encode(stream, case_TIME_SLICED_SURVEY_RESPONSE.signedTimeSlicedSurveyResponseMessage);
                 break;
-            case StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING case_TIME_SLICED_SURVEY_START_COLLECTING:
+                case StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING case_TIME_SLICED_SURVEY_START_COLLECTING:
                 SignedTimeSlicedSurveyStartCollectingMessageXdr.Encode(stream, case_TIME_SLICED_SURVEY_START_COLLECTING.signedTimeSlicedSurveyStartCollectingMessage);
                 break;
-            case StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING case_TIME_SLICED_SURVEY_STOP_COLLECTING:
+                case StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING case_TIME_SLICED_SURVEY_STOP_COLLECTING:
                 SignedTimeSlicedSurveyStopCollectingMessageXdr.Encode(stream, case_TIME_SLICED_SURVEY_STOP_COLLECTING.signedTimeSlicedSurveyStopCollectingMessage);
                 break;
-            case StellarMessage_GET_SCP_QUORUMSET case_GET_SCP_QUORUMSET:
+                case StellarMessage_GET_SCP_QUORUMSET case_GET_SCP_QUORUMSET:
                 uint256Xdr.Encode(stream, case_GET_SCP_QUORUMSET.qSetHash);
                 break;
-            case StellarMessage_SCP_QUORUMSET case_SCP_QUORUMSET:
+                case StellarMessage_SCP_QUORUMSET case_SCP_QUORUMSET:
                 SCPQuorumSetXdr.Encode(stream, case_SCP_QUORUMSET.qSet);
                 break;
-            case StellarMessage_SCP_MESSAGE case_SCP_MESSAGE:
+                case StellarMessage_SCP_MESSAGE case_SCP_MESSAGE:
                 SCPEnvelopeXdr.Encode(stream, case_SCP_MESSAGE.envelope);
                 break;
-            case StellarMessage_GET_SCP_STATE case_GET_SCP_STATE:
+                case StellarMessage_GET_SCP_STATE case_GET_SCP_STATE:
                 uint32Xdr.Encode(stream, case_GET_SCP_STATE.getSCPLedgerSeq);
                 break;
-            case StellarMessage_SEND_MORE case_SEND_MORE:
+                case StellarMessage_SEND_MORE case_SEND_MORE:
                 SendMoreXdr.Encode(stream, case_SEND_MORE.sendMoreMessage);
                 break;
-            case StellarMessage_SEND_MORE_EXTENDED case_SEND_MORE_EXTENDED:
+                case StellarMessage_SEND_MORE_EXTENDED case_SEND_MORE_EXTENDED:
                 SendMoreExtendedXdr.Encode(stream, case_SEND_MORE_EXTENDED.sendMoreExtendedMessage);
                 break;
-            case StellarMessage_FLOOD_ADVERT case_FLOOD_ADVERT:
+                case StellarMessage_FLOOD_ADVERT case_FLOOD_ADVERT:
                 FloodAdvertXdr.Encode(stream, case_FLOOD_ADVERT.floodAdvert);
                 break;
-            case StellarMessage_FLOOD_DEMAND case_FLOOD_DEMAND:
+                case StellarMessage_FLOOD_DEMAND case_FLOOD_DEMAND:
                 FloodDemandXdr.Encode(stream, case_FLOOD_DEMAND.floodDemand);
                 break;
+            }
         }
-    }
-    public static StellarMessage Decode(XdrReader stream)
-    {
-        var discriminator = (MessageType)stream.ReadInt();
-        switch (discriminator)
+        public static StellarMessage Decode(XdrReader stream)
         {
-            case ERROR_MSG:
+            var discriminator = (MessageType)stream.ReadInt();
+            switch (discriminator)
+            {
+                case ERROR_MSG:
                 var result_ERROR_MSG = new StellarMessage_ERROR_MSG();
-                result_ERROR_MSG.error = ErrorXdr.Decode(stream);
+                result_ERROR_MSG.                 = ErrorXdr.Decode(stream);
                 return result_ERROR_MSG;
-            case HELLO:
+                case HELLO:
                 var result_HELLO = new StellarMessage_HELLO();
-                result_HELLO.hello = HelloXdr.Decode(stream);
+                result_HELLO.                 = HelloXdr.Decode(stream);
                 return result_HELLO;
-            case AUTH:
+                case AUTH:
                 var result_AUTH = new StellarMessage_AUTH();
-                result_AUTH.auth = AuthXdr.Decode(stream);
+                result_AUTH.                 = AuthXdr.Decode(stream);
                 return result_AUTH;
-            case DONT_HAVE:
+                case DONT_HAVE:
                 var result_DONT_HAVE = new StellarMessage_DONT_HAVE();
-                result_DONT_HAVE.dontHave = DontHaveXdr.Decode(stream);
+                result_DONT_HAVE.                 = DontHaveXdr.Decode(stream);
                 return result_DONT_HAVE;
-            case PEERS:
+                case PEERS:
                 var result_PEERS = new StellarMessage_PEERS();
                 var length = stream.ReadInt();
-                result_PEERS.peers = new PeerAddress[length];
+                result_PEERS.                 = new PeerAddress[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_PEERS.peers[i] = PeerAddressXdr.Decode(stream);
+                    result_PEERS.                [i] = PeerAddressXdr.Decode(stream);
                 }
                 return result_PEERS;
-            case GET_TX_SET:
+                case GET_TX_SET:
                 var result_GET_TX_SET = new StellarMessage_GET_TX_SET();
-                result_GET_TX_SET.txSetHash = uint256Xdr.Decode(stream);
+                result_GET_TX_SET.                 = uint256Xdr.Decode(stream);
                 return result_GET_TX_SET;
-            case TX_SET:
+                case TX_SET:
                 var result_TX_SET = new StellarMessage_TX_SET();
-                result_TX_SET.txSet = TransactionSetXdr.Decode(stream);
+                result_TX_SET.                 = TransactionSetXdr.Decode(stream);
                 return result_TX_SET;
-            case GENERALIZED_TX_SET:
+                case GENERALIZED_TX_SET:
                 var result_GENERALIZED_TX_SET = new StellarMessage_GENERALIZED_TX_SET();
-                result_GENERALIZED_TX_SET.generalizedTxSet = GeneralizedTransactionSetXdr.Decode(stream);
+                result_GENERALIZED_TX_SET.                 = GeneralizedTransactionSetXdr.Decode(stream);
                 return result_GENERALIZED_TX_SET;
-            case TRANSACTION:
+                case TRANSACTION:
                 var result_TRANSACTION = new StellarMessage_TRANSACTION();
-                result_TRANSACTION.transaction = TransactionEnvelopeXdr.Decode(stream);
+                result_TRANSACTION.                 = TransactionEnvelopeXdr.Decode(stream);
                 return result_TRANSACTION;
-            case SURVEY_REQUEST:
+                case SURVEY_REQUEST:
                 var result_SURVEY_REQUEST = new StellarMessage_SURVEY_REQUEST();
-                result_SURVEY_REQUEST.signedSurveyRequestMessage = SignedSurveyRequestMessageXdr.Decode(stream);
+                result_SURVEY_REQUEST.                 = SignedSurveyRequestMessageXdr.Decode(stream);
                 return result_SURVEY_REQUEST;
-            case SURVEY_RESPONSE:
+                case SURVEY_RESPONSE:
                 var result_SURVEY_RESPONSE = new StellarMessage_SURVEY_RESPONSE();
-                result_SURVEY_RESPONSE.signedSurveyResponseMessage = SignedSurveyResponseMessageXdr.Decode(stream);
+                result_SURVEY_RESPONSE.                 = SignedSurveyResponseMessageXdr.Decode(stream);
                 return result_SURVEY_RESPONSE;
-            case TIME_SLICED_SURVEY_REQUEST:
+                case TIME_SLICED_SURVEY_REQUEST:
                 var result_TIME_SLICED_SURVEY_REQUEST = new StellarMessage_TIME_SLICED_SURVEY_REQUEST();
-                result_TIME_SLICED_SURVEY_REQUEST.signedTimeSlicedSurveyRequestMessage = SignedTimeSlicedSurveyRequestMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_REQUEST.                 = SignedTimeSlicedSurveyRequestMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_REQUEST;
-            case TIME_SLICED_SURVEY_RESPONSE:
+                case TIME_SLICED_SURVEY_RESPONSE:
                 var result_TIME_SLICED_SURVEY_RESPONSE = new StellarMessage_TIME_SLICED_SURVEY_RESPONSE();
-                result_TIME_SLICED_SURVEY_RESPONSE.signedTimeSlicedSurveyResponseMessage = SignedTimeSlicedSurveyResponseMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_RESPONSE.                 = SignedTimeSlicedSurveyResponseMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_RESPONSE;
-            case TIME_SLICED_SURVEY_START_COLLECTING:
+                case TIME_SLICED_SURVEY_START_COLLECTING:
                 var result_TIME_SLICED_SURVEY_START_COLLECTING = new StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING();
-                result_TIME_SLICED_SURVEY_START_COLLECTING.signedTimeSlicedSurveyStartCollectingMessage = SignedTimeSlicedSurveyStartCollectingMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_START_COLLECTING.                 = SignedTimeSlicedSurveyStartCollectingMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_START_COLLECTING;
-            case TIME_SLICED_SURVEY_STOP_COLLECTING:
+                case TIME_SLICED_SURVEY_STOP_COLLECTING:
                 var result_TIME_SLICED_SURVEY_STOP_COLLECTING = new StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING();
-                result_TIME_SLICED_SURVEY_STOP_COLLECTING.signedTimeSlicedSurveyStopCollectingMessage = SignedTimeSlicedSurveyStopCollectingMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_STOP_COLLECTING.                 = SignedTimeSlicedSurveyStopCollectingMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_STOP_COLLECTING;
-            case GET_SCP_QUORUMSET:
+                case GET_SCP_QUORUMSET:
                 var result_GET_SCP_QUORUMSET = new StellarMessage_GET_SCP_QUORUMSET();
-                result_GET_SCP_QUORUMSET.qSetHash = uint256Xdr.Decode(stream);
+                result_GET_SCP_QUORUMSET.                 = uint256Xdr.Decode(stream);
                 return result_GET_SCP_QUORUMSET;
-            case SCP_QUORUMSET:
+                case SCP_QUORUMSET:
                 var result_SCP_QUORUMSET = new StellarMessage_SCP_QUORUMSET();
-                result_SCP_QUORUMSET.qSet = SCPQuorumSetXdr.Decode(stream);
+                result_SCP_QUORUMSET.                 = SCPQuorumSetXdr.Decode(stream);
                 return result_SCP_QUORUMSET;
-            case SCP_MESSAGE:
+                case SCP_MESSAGE:
                 var result_SCP_MESSAGE = new StellarMessage_SCP_MESSAGE();
-                result_SCP_MESSAGE.envelope = SCPEnvelopeXdr.Decode(stream);
+                result_SCP_MESSAGE.                 = SCPEnvelopeXdr.Decode(stream);
                 return result_SCP_MESSAGE;
-            case GET_SCP_STATE:
+                case GET_SCP_STATE:
                 var result_GET_SCP_STATE = new StellarMessage_GET_SCP_STATE();
-                result_GET_SCP_STATE.getSCPLedgerSeq = uint32Xdr.Decode(stream);
+                result_GET_SCP_STATE.                 = uint32Xdr.Decode(stream);
                 return result_GET_SCP_STATE;
-            case SEND_MORE:
+                case SEND_MORE:
                 var result_SEND_MORE = new StellarMessage_SEND_MORE();
-                result_SEND_MORE.sendMoreMessage = SendMoreXdr.Decode(stream);
+                result_SEND_MORE.                 = SendMoreXdr.Decode(stream);
                 return result_SEND_MORE;
-            case SEND_MORE_EXTENDED:
+                case SEND_MORE_EXTENDED:
                 var result_SEND_MORE_EXTENDED = new StellarMessage_SEND_MORE_EXTENDED();
-                result_SEND_MORE_EXTENDED.sendMoreExtendedMessage = SendMoreExtendedXdr.Decode(stream);
+                result_SEND_MORE_EXTENDED.                 = SendMoreExtendedXdr.Decode(stream);
                 return result_SEND_MORE_EXTENDED;
-            case FLOOD_ADVERT:
+                case FLOOD_ADVERT:
                 var result_FLOOD_ADVERT = new StellarMessage_FLOOD_ADVERT();
-                result_FLOOD_ADVERT.floodAdvert = FloodAdvertXdr.Decode(stream);
+                result_FLOOD_ADVERT.                 = FloodAdvertXdr.Decode(stream);
                 return result_FLOOD_ADVERT;
-            case FLOOD_DEMAND:
+                case FLOOD_DEMAND:
                 var result_FLOOD_DEMAND = new StellarMessage_FLOOD_DEMAND();
-                result_FLOOD_DEMAND.floodDemand = FloodDemandXdr.Decode(stream);
+                result_FLOOD_DEMAND.                 = FloodDemandXdr.Decode(stream);
                 return result_FLOOD_DEMAND;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for StellarMessage: {discriminator}");
+            }
         }
     }
-}
 }

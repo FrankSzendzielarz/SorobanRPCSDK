@@ -24,30 +24,28 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum AccountFlags
-{
-    AUTH_REQUIRED_FLAG = 0x1,
-    AUTH_REVOCABLE_FLAG = 0x2,
-    AUTH_IMMUTABLE_FLAG = 0x4,
-    AUTH_CLAWBACK_ENABLED_FLAG = 0x8,
-}
-
-public static partial class AccountFlagsXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, AccountFlags value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum AccountFlags
     {
-       stream.WriteInt((int)value);
+        AUTH_REQUIRED_FLAG = 0x1,
+        AUTH_REVOCABLE_FLAG = 0x2,
+        AUTH_IMMUTABLE_FLAG = 0x4,
+        AUTH_CLAWBACK_ENABLED_FLAG = 0x8,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static AccountFlags Decode(XdrReader stream)
+    public static partial class AccountFlagsXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(AccountFlags), value))
-            throw new InvalidOperationException($"Unknown AccountFlags value: {value}");
-        return (AccountFlags)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, AccountFlags value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static AccountFlags Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(AccountFlags), value))
+              throw new InvalidOperationException($"Unknown AccountFlags value: {value}");
+            return (AccountFlags)value;
+        }
     }
-}
-}

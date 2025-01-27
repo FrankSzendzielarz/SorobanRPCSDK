@@ -14,56 +14,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class ChangeTrustOp
-{
-    private ChangeTrustAsset _line;
-    public ChangeTrustAsset line
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class ChangeTrustOp
     {
-        get => _line;
-        set
+        private ChangeTrustAsset _line;
+        public ChangeTrustAsset line
         {
-            _line = value;
+            get => _line;
+            set
+            {
+                _line = value;
+            }
+        }
+
+        private int64 _limit;
+        public int64 limit
+        {
+            get => _limit;
+            set
+            {
+                _limit = value;
+            }
+        }
+
+        public ChangeTrustOp()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int64 _limit;
-    public int64 limit
+    public static partial class ChangeTrustOpXdr
     {
-        get => _limit;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ChangeTrustOp value)
         {
-            _limit = value;
+            value.Validate();
+            ChangeTrustAssetXdr.Encode(stream, value.line);
+            int64Xdr.Encode(stream, value.limit);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static ChangeTrustOp Decode(XdrReader stream)
+        {
+            var result = new ChangeTrustOp();
+            result.line = ChangeTrustAssetXdr.Decode(stream);
+            result.limit = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public ChangeTrustOp()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class ChangeTrustOpXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ChangeTrustOp value)
-    {
-        value.Validate();
-        ChangeTrustAssetXdr.Encode(stream, value.line);
-        int64Xdr.Encode(stream, value.limit);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static ChangeTrustOp Decode(XdrReader stream)
-    {
-        var result = new ChangeTrustOp();
-        result.line = ChangeTrustAssetXdr.Decode(stream);
-        result.limit = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

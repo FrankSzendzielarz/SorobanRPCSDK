@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SignedSurveyResponseMessage
-{
-    private Signature _responseSignature;
-    public Signature responseSignature
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SignedSurveyResponseMessage
     {
-        get => _responseSignature;
-        set
+        private Signature _responseSignature;
+        public Signature responseSignature
         {
-            _responseSignature = value;
+            get => _responseSignature;
+            set
+            {
+                _responseSignature = value;
+            }
+        }
+
+        private SurveyResponseMessage _response;
+        public SurveyResponseMessage response
+        {
+            get => _response;
+            set
+            {
+                _response = value;
+            }
+        }
+
+        public SignedSurveyResponseMessage()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private SurveyResponseMessage _response;
-    public SurveyResponseMessage response
+    public static partial class SignedSurveyResponseMessageXdr
     {
-        get => _response;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SignedSurveyResponseMessage value)
         {
-            _response = value;
+            value.Validate();
+            SignatureXdr.Encode(stream, value.responseSignature);
+            SurveyResponseMessageXdr.Encode(stream, value.response);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SignedSurveyResponseMessage Decode(XdrReader stream)
+        {
+            var result = new SignedSurveyResponseMessage();
+            result.responseSignature = SignatureXdr.Decode(stream);
+            result.response = SurveyResponseMessageXdr.Decode(stream);
+            return result;
         }
     }
-
-    public SignedSurveyResponseMessage()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SignedSurveyResponseMessageXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SignedSurveyResponseMessage value)
-    {
-        value.Validate();
-        SignatureXdr.Encode(stream, value.responseSignature);
-        SurveyResponseMessageXdr.Encode(stream, value.response);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SignedSurveyResponseMessage Decode(XdrReader stream)
-    {
-        var result = new SignedSurveyResponseMessage();
-        result.responseSignature = SignatureXdr.Decode(stream);
-        result.response = SurveyResponseMessageXdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -18,125 +18,120 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class BucketEntry
-{
-    public abstract BucketEntryType Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
-{
-    public override BucketEntryType Discriminator => LIVEENTRY;
-    private LedgerEntry _liveEntry;
-    public LedgerEntry liveEntry
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class BucketEntry
     {
-        get => _liveEntry;
-        set
-        {
-            _liveEntry = value;
-        }
+        public abstract BucketEntryType Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class BucketEntry_INITENTRY : BucketEntry
-{
-    public override BucketEntryType Discriminator => INITENTRY;
-    private LedgerEntry _liveEntry;
-    public LedgerEntry liveEntry
+    public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
     {
-        get => _liveEntry;
-        set
+        public override BucketEntryType Discriminator => LIVEENTRY;
+        private LedgerEntry _liveEntry;
+        public LedgerEntry liveEntry
         {
-            _liveEntry = value;
+            get => _liveEntry;
+            set
+            {
+                _liveEntry = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class BucketEntry_DEADENTRY : BucketEntry
-{
-    public override BucketEntryType Discriminator => DEADENTRY;
-    private LedgerKey _deadEntry;
-    public LedgerKey deadEntry
+    public sealed partial class BucketEntry_INITENTRY : BucketEntry
     {
-        get => _deadEntry;
-        set
+        public override BucketEntryType Discriminator => INITENTRY;
+        private LedgerEntry _liveEntry;
+        public LedgerEntry liveEntry
         {
-            _deadEntry = value;
+            get => _liveEntry;
+            set
+            {
+                _liveEntry = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class BucketEntry_METAENTRY : BucketEntry
-{
-    public override BucketEntryType Discriminator => METAENTRY;
-    private BucketMetadata _metaEntry;
-    public BucketMetadata metaEntry
+    public sealed partial class BucketEntry_DEADENTRY : BucketEntry
     {
-        get => _metaEntry;
-        set
+        public override BucketEntryType Discriminator => DEADENTRY;
+        private LedgerKey _deadEntry;
+        public LedgerKey deadEntry
         {
-            _metaEntry = value;
+            get => _deadEntry;
+            set
+            {
+                _deadEntry = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class BucketEntryXdr
-{
-    public static void Encode(XdrWriter stream, BucketEntry value)
+    public sealed partial class BucketEntry_METAENTRY : BucketEntry
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override BucketEntryType Discriminator => METAENTRY;
+        private BucketMetadata _metaEntry;
+        public BucketMetadata metaEntry
         {
-            case BucketEntry_LIVEENTRY case_LIVEENTRY:
+            get => _metaEntry;
+            set
+            {
+                _metaEntry = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class BucketEntryXdr
+    {
+        public static void Encode(XdrWriter stream, BucketEntry value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case BucketEntry_LIVEENTRY case_LIVEENTRY:
                 LedgerEntryXdr.Encode(stream, case_LIVEENTRY.liveEntry);
                 break;
-            case BucketEntry_INITENTRY case_INITENTRY:
+                case BucketEntry_INITENTRY case_INITENTRY:
                 LedgerEntryXdr.Encode(stream, case_INITENTRY.liveEntry);
                 break;
-            case BucketEntry_DEADENTRY case_DEADENTRY:
+                case BucketEntry_DEADENTRY case_DEADENTRY:
                 LedgerKeyXdr.Encode(stream, case_DEADENTRY.deadEntry);
                 break;
-            case BucketEntry_METAENTRY case_METAENTRY:
+                case BucketEntry_METAENTRY case_METAENTRY:
                 BucketMetadataXdr.Encode(stream, case_METAENTRY.metaEntry);
                 break;
+            }
         }
-    }
-    public static BucketEntry Decode(XdrReader stream)
-    {
-        var discriminator = (BucketEntryType)stream.ReadInt();
-        switch (discriminator)
+        public static BucketEntry Decode(XdrReader stream)
         {
-            case LIVEENTRY:
+            var discriminator = (BucketEntryType)stream.ReadInt();
+            switch (discriminator)
+            {
+                case LIVEENTRY:
                 var result_LIVEENTRY = new BucketEntry_LIVEENTRY();
-                result_LIVEENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
+                result_LIVEENTRY.                 = LedgerEntryXdr.Decode(stream);
                 return result_LIVEENTRY;
-            case INITENTRY:
+                case INITENTRY:
                 var result_INITENTRY = new BucketEntry_INITENTRY();
-                result_INITENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
+                result_INITENTRY.                 = LedgerEntryXdr.Decode(stream);
                 return result_INITENTRY;
-            case DEADENTRY:
+                case DEADENTRY:
                 var result_DEADENTRY = new BucketEntry_DEADENTRY();
-                result_DEADENTRY.deadEntry = LedgerKeyXdr.Decode(stream);
+                result_DEADENTRY.                 = LedgerKeyXdr.Decode(stream);
                 return result_DEADENTRY;
-            case METAENTRY:
+                case METAENTRY:
                 var result_METAENTRY = new BucketEntry_METAENTRY();
-                result_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
+                result_METAENTRY.                 = BucketMetadataXdr.Decode(stream);
                 return result_METAENTRY;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for BucketEntry: {discriminator}");
+            }
         }
     }
-}
 }

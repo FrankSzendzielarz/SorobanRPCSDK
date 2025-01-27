@@ -11,44 +11,41 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SCSpecTypeOption
-{
-    private SCSpecTypeDef _valueType;
-    public SCSpecTypeDef valueType
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SCSpecTypeOption
     {
-        get => _valueType;
-        set
+        private SCSpecTypeDef _valueType;
+        public SCSpecTypeDef valueType
         {
-            _valueType = value;
+            get => _valueType;
+            set
+            {
+                _valueType = value;
+            }
+        }
+
+        public SCSpecTypeOption()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    public SCSpecTypeOption()
+    public static partial class SCSpecTypeOptionXdr
     {
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SCSpecTypeOption value)
+        {
+            value.Validate();
+            SCSpecTypeDefXdr.Encode(stream, value.valueType);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SCSpecTypeOption Decode(XdrReader stream)
+        {
+            var result = new SCSpecTypeOption();
+            result.valueType = SCSpecTypeDefXdr.Decode(stream);
+            return result;
+        }
     }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SCSpecTypeOptionXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SCSpecTypeOption value)
-    {
-        value.Validate();
-        SCSpecTypeDefXdr.Encode(stream, value.valueType);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SCSpecTypeOption Decode(XdrReader stream)
-    {
-        var result = new SCSpecTypeOption();
-        result.valueType = SCSpecTypeDefXdr.Decode(stream);
-        return result;
-    }
-}
 }

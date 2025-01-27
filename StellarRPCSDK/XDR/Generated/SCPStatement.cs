@@ -45,68 +45,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SCPStatement
-{
-    private NodeID _nodeID;
-    public NodeID nodeID
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SCPStatement
     {
-        get => _nodeID;
-        set
+        private NodeID _nodeID;
+        public NodeID nodeID
         {
-            _nodeID = value;
+            get => _nodeID;
+            set
+            {
+                _nodeID = value;
+            }
+        }
+
+        private uint64 _slotIndex;
+        public uint64 slotIndex
+        {
+            get => _slotIndex;
+            set
+            {
+                _slotIndex = value;
+            }
+        }
+
+        private object _pledges;
+        public object pledges
+        {
+            get => _pledges;
+            set
+            {
+                _pledges = value;
+            }
+        }
+
+        public SCPStatement()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private uint64 _slotIndex;
-    public uint64 slotIndex
+    public static partial class SCPStatementXdr
     {
-        get => _slotIndex;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SCPStatement value)
         {
-            _slotIndex = value;
+            value.Validate();
+            NodeIDXdr.Encode(stream, value.nodeID);
+            uint64Xdr.Encode(stream, value.slotIndex);
+            Xdr.Encode(stream, value.pledges);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SCPStatement Decode(XdrReader stream)
+        {
+            var result = new SCPStatement();
+            result.nodeID = NodeIDXdr.Decode(stream);
+            result.slotIndex = uint64Xdr.Decode(stream);
+            result.pledges = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private object _pledges;
-    public object pledges
-    {
-        get => _pledges;
-        set
-        {
-            _pledges = value;
-        }
-    }
-
-    public SCPStatement()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SCPStatementXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SCPStatement value)
-    {
-        value.Validate();
-        NodeIDXdr.Encode(stream, value.nodeID);
-        uint64Xdr.Encode(stream, value.slotIndex);
-        Xdr.Encode(stream, value.pledges);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SCPStatement Decode(XdrReader stream)
-    {
-        var result = new SCPStatement();
-        result.nodeID = NodeIDXdr.Decode(stream);
-        result.slotIndex = uint64Xdr.Decode(stream);
-        result.pledges = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

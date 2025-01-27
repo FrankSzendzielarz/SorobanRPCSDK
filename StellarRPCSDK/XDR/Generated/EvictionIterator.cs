@@ -12,68 +12,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class EvictionIterator
-{
-    private uint32 _bucketListLevel;
-    public uint32 bucketListLevel
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class EvictionIterator
     {
-        get => _bucketListLevel;
-        set
+        private uint32 _bucketListLevel;
+        public uint32 bucketListLevel
         {
-            _bucketListLevel = value;
+            get => _bucketListLevel;
+            set
+            {
+                _bucketListLevel = value;
+            }
+        }
+
+        private bool _isCurrBucket;
+        public bool isCurrBucket
+        {
+            get => _isCurrBucket;
+            set
+            {
+                _isCurrBucket = value;
+            }
+        }
+
+        private uint64 _bucketFileOffset;
+        public uint64 bucketFileOffset
+        {
+            get => _bucketFileOffset;
+            set
+            {
+                _bucketFileOffset = value;
+            }
+        }
+
+        public EvictionIterator()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private bool _isCurrBucket;
-    public bool isCurrBucket
+    public static partial class EvictionIteratorXdr
     {
-        get => _isCurrBucket;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, EvictionIterator value)
         {
-            _isCurrBucket = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.bucketListLevel);
+            stream.WriteInt(value.isCurrBucket ? 1 : 0);
+            uint64Xdr.Encode(stream, value.bucketFileOffset);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static EvictionIterator Decode(XdrReader stream)
+        {
+            var result = new EvictionIterator();
+            result.bucketListLevel = uint32Xdr.Decode(stream);
+            result.isCurrBucket = stream.ReadInt() != 0;
+            result.bucketFileOffset = uint64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private uint64 _bucketFileOffset;
-    public uint64 bucketFileOffset
-    {
-        get => _bucketFileOffset;
-        set
-        {
-            _bucketFileOffset = value;
-        }
-    }
-
-    public EvictionIterator()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class EvictionIteratorXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, EvictionIterator value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.bucketListLevel);
-        stream.WriteInt(value.isCurrBucket ? 1 : 0);
-        uint64Xdr.Encode(stream, value.bucketFileOffset);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static EvictionIterator Decode(XdrReader stream)
-    {
-        var result = new EvictionIterator();
-        result.bucketListLevel = uint32Xdr.Decode(stream);
-        result.isCurrBucket = stream.ReadInt() != 0;
-        result.bucketFileOffset = uint64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

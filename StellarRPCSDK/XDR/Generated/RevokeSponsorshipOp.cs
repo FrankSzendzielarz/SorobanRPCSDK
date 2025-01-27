@@ -18,79 +18,76 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class RevokeSponsorshipOp
-{
-    public abstract RevokeSponsorshipType Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY : RevokeSponsorshipOp
-{
-    public override RevokeSponsorshipType Discriminator => REVOKE_SPONSORSHIP_LEDGER_ENTRY;
-    private LedgerKey _ledgerKey;
-    public LedgerKey ledgerKey
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class RevokeSponsorshipOp
     {
-        get => _ledgerKey;
-        set
-        {
-            _ledgerKey = value;
-        }
+        public abstract RevokeSponsorshipType Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER : RevokeSponsorshipOp
-{
-    public override RevokeSponsorshipType Discriminator => REVOKE_SPONSORSHIP_SIGNER;
-    private object _signer;
-    public object signer
+    public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY : RevokeSponsorshipOp
     {
-        get => _signer;
-        set
+        public override RevokeSponsorshipType Discriminator => REVOKE_SPONSORSHIP_LEDGER_ENTRY;
+        private LedgerKey _ledgerKey;
+        public LedgerKey ledgerKey
         {
-            _signer = value;
+            get => _ledgerKey;
+            set
+            {
+                _ledgerKey = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class RevokeSponsorshipOpXdr
-{
-    public static void Encode(XdrWriter stream, RevokeSponsorshipOp value)
+    public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER : RevokeSponsorshipOp
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override RevokeSponsorshipType Discriminator => REVOKE_SPONSORSHIP_SIGNER;
+        private object _signer;
+        public object signer
         {
-            case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY case_REVOKE_SPONSORSHIP_LEDGER_ENTRY:
+            get => _signer;
+            set
+            {
+                _signer = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class RevokeSponsorshipOpXdr
+    {
+        public static void Encode(XdrWriter stream, RevokeSponsorshipOp value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY case_REVOKE_SPONSORSHIP_LEDGER_ENTRY:
                 LedgerKeyXdr.Encode(stream, case_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey);
                 break;
-            case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER case_REVOKE_SPONSORSHIP_SIGNER:
+                case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER case_REVOKE_SPONSORSHIP_SIGNER:
                 Xdr.Encode(stream, case_REVOKE_SPONSORSHIP_SIGNER.signer);
                 break;
+            }
         }
-    }
-    public static RevokeSponsorshipOp Decode(XdrReader stream)
-    {
-        var discriminator = (RevokeSponsorshipType)stream.ReadInt();
-        switch (discriminator)
+        public static RevokeSponsorshipOp Decode(XdrReader stream)
         {
-            case REVOKE_SPONSORSHIP_LEDGER_ENTRY:
+            var discriminator = (RevokeSponsorshipType)stream.ReadInt();
+            switch (discriminator)
+            {
+                case REVOKE_SPONSORSHIP_LEDGER_ENTRY:
                 var result_REVOKE_SPONSORSHIP_LEDGER_ENTRY = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY();
-                result_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey = LedgerKeyXdr.Decode(stream);
+                result_REVOKE_SPONSORSHIP_LEDGER_ENTRY.                 = LedgerKeyXdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_LEDGER_ENTRY;
-            case REVOKE_SPONSORSHIP_SIGNER:
+                case REVOKE_SPONSORSHIP_SIGNER:
                 var result_REVOKE_SPONSORSHIP_SIGNER = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER();
-                result_REVOKE_SPONSORSHIP_SIGNER.signer = Xdr.Decode(stream);
+                result_REVOKE_SPONSORSHIP_SIGNER.                 = Xdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_SIGNER;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for RevokeSponsorshipOp: {discriminator}");
+            }
         }
     }
-}
 }

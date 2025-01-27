@@ -21,34 +21,32 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum AccountMergeResultCode
-{
-    ACCOUNT_MERGE_SUCCESS = 0,
-    ACCOUNT_MERGE_MALFORMED = -1,
-    ACCOUNT_MERGE_NO_ACCOUNT = -2,
-    ACCOUNT_MERGE_IMMUTABLE_SET = -3,
-    ACCOUNT_MERGE_HAS_SUB_ENTRIES = -4,
-    ACCOUNT_MERGE_SEQNUM_TOO_FAR = -5,
-    ACCOUNT_MERGE_DEST_FULL = -6,
-    ACCOUNT_MERGE_IS_SPONSOR = -7,
-}
-
-public static partial class AccountMergeResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, AccountMergeResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum AccountMergeResultCode
     {
-       stream.WriteInt((int)value);
+        ACCOUNT_MERGE_SUCCESS = 0,
+        ACCOUNT_MERGE_MALFORMED = -1,
+        ACCOUNT_MERGE_NO_ACCOUNT = -2,
+        ACCOUNT_MERGE_IMMUTABLE_SET = -3,
+        ACCOUNT_MERGE_HAS_SUB_ENTRIES = -4,
+        ACCOUNT_MERGE_SEQNUM_TOO_FAR = -5,
+        ACCOUNT_MERGE_DEST_FULL = -6,
+        ACCOUNT_MERGE_IS_SPONSOR = -7,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static AccountMergeResultCode Decode(XdrReader stream)
+    public static partial class AccountMergeResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(AccountMergeResultCode), value))
-            throw new InvalidOperationException($"Unknown AccountMergeResultCode value: {value}");
-        return (AccountMergeResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, AccountMergeResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static AccountMergeResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(AccountMergeResultCode), value))
+              throw new InvalidOperationException($"Unknown AccountMergeResultCode value: {value}");
+            return (AccountMergeResultCode)value;
+        }
     }
-}
-}

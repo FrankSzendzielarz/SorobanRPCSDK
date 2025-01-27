@@ -8,38 +8,37 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SponsorshipDescriptor
-{
-    private AccountID _innerValue;
-    public AccountID InnerValue
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SponsorshipDescriptor
     {
-        get => _innerValue;
-        set
+        private AccountID _innerValue;
+        public AccountID InnerValue
         {
-            _innerValue = value;
+            get => _innerValue;
+            set
+            {
+                _innerValue = value;
+            }
+        }
+
+        public SponsorshipDescriptor() { }
+
+        public SponsorshipDescriptor(AccountID value)
+        {
+            InnerValue = value;
         }
     }
-
-    public SponsorshipDescriptor() { }
-
-    public SponsorshipDescriptor(AccountID value)
+    public static partial class SponsorshipDescriptorXdr
     {
-        InnerValue = value;
+            public static void Encode(XdrWriter stream, SponsorshipDescriptor value)
+        {
+            AccountIDXdr.Encode(stream, value.InnerValue);
+        }
+        public static SponsorshipDescriptor Decode(XdrReader stream)
+        {
+            var result = new SponsorshipDescriptor();
+            result.InnerValue = AccountIDXdr.Decode(stream);
+            return result;
+        }
     }
-}
-
-public static partial class SponsorshipDescriptorXdr
-{
-    public static void Encode(XdrWriter stream, SponsorshipDescriptor value)
-    {
-        AccountIDXdr.Encode(stream, value.InnerValue);
-    }
-    public static SponsorshipDescriptor Decode(XdrReader stream)
-    {
-        var result = new SponsorshipDescriptor();
-        result.InnerValue = AccountIDXdr.Decode(stream);
-        return result;
-    }
-}
 }

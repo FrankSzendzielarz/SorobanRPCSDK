@@ -19,31 +19,29 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum ManageDataResultCode
-{
-    MANAGE_DATA_SUCCESS = 0,
-    MANAGE_DATA_NOT_SUPPORTED_YET = -1,
-    MANAGE_DATA_NAME_NOT_FOUND = -2,
-    MANAGE_DATA_LOW_RESERVE = -3,
-    MANAGE_DATA_INVALID_NAME = -4,
-}
-
-public static partial class ManageDataResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, ManageDataResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum ManageDataResultCode
     {
-       stream.WriteInt((int)value);
+        MANAGE_DATA_SUCCESS = 0,
+        MANAGE_DATA_NOT_SUPPORTED_YET = -1,
+        MANAGE_DATA_NAME_NOT_FOUND = -2,
+        MANAGE_DATA_LOW_RESERVE = -3,
+        MANAGE_DATA_INVALID_NAME = -4,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static ManageDataResultCode Decode(XdrReader stream)
+    public static partial class ManageDataResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(ManageDataResultCode), value))
-            throw new InvalidOperationException($"Unknown ManageDataResultCode value: {value}");
-        return (ManageDataResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, ManageDataResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static ManageDataResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(ManageDataResultCode), value))
+              throw new InvalidOperationException($"Unknown ManageDataResultCode value: {value}");
+            return (ManageDataResultCode)value;
+        }
     }
-}
-}

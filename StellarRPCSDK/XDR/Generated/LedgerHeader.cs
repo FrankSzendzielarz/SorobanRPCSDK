@@ -46,224 +46,221 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LedgerHeader
-{
-    private uint32 _ledgerVersion;
-    public uint32 ledgerVersion
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LedgerHeader
     {
-        get => _ledgerVersion;
-        set
+        private uint32 _ledgerVersion;
+        public uint32 ledgerVersion
         {
-            _ledgerVersion = value;
+            get => _ledgerVersion;
+            set
+            {
+                _ledgerVersion = value;
+            }
+        }
+
+        private Hash _previousLedgerHash;
+        public Hash previousLedgerHash
+        {
+            get => _previousLedgerHash;
+            set
+            {
+                _previousLedgerHash = value;
+            }
+        }
+
+        private StellarValue _scpValue;
+        public StellarValue scpValue
+        {
+            get => _scpValue;
+            set
+            {
+                _scpValue = value;
+            }
+        }
+
+        private Hash _txSetResultHash;
+        public Hash txSetResultHash
+        {
+            get => _txSetResultHash;
+            set
+            {
+                _txSetResultHash = value;
+            }
+        }
+
+        private Hash _bucketListHash;
+        public Hash bucketListHash
+        {
+            get => _bucketListHash;
+            set
+            {
+                _bucketListHash = value;
+            }
+        }
+
+        private uint32 _ledgerSeq;
+        public uint32 ledgerSeq
+        {
+            get => _ledgerSeq;
+            set
+            {
+                _ledgerSeq = value;
+            }
+        }
+
+        private int64 _totalCoins;
+        public int64 totalCoins
+        {
+            get => _totalCoins;
+            set
+            {
+                _totalCoins = value;
+            }
+        }
+
+        private int64 _feePool;
+        public int64 feePool
+        {
+            get => _feePool;
+            set
+            {
+                _feePool = value;
+            }
+        }
+
+        private uint32 _inflationSeq;
+        public uint32 inflationSeq
+        {
+            get => _inflationSeq;
+            set
+            {
+                _inflationSeq = value;
+            }
+        }
+
+        private uint64 _idPool;
+        public uint64 idPool
+        {
+            get => _idPool;
+            set
+            {
+                _idPool = value;
+            }
+        }
+
+        private uint32 _baseFee;
+        public uint32 baseFee
+        {
+            get => _baseFee;
+            set
+            {
+                _baseFee = value;
+            }
+        }
+
+        private uint32 _baseReserve;
+        public uint32 baseReserve
+        {
+            get => _baseReserve;
+            set
+            {
+                _baseReserve = value;
+            }
+        }
+
+        private uint32 _maxTxSetSize;
+        public uint32 maxTxSetSize
+        {
+            get => _maxTxSetSize;
+            set
+            {
+                _maxTxSetSize = value;
+            }
+        }
+
+        private Hash[] _skipList = new Hash[4];
+        public Hash[] skipList
+        {
+            get => _skipList;
+            set
+            {
+                if (value.Length != 4)
+                	throw new ArgumentException($"Must be exactly 4 bytes");
+                _skipList = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public LedgerHeader()
+        {
+            skipList = new Hash[4];
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
+            if (skipList.Length != 4)
+            	throw new InvalidOperationException($"skipList must be exactly 4 elements");
         }
     }
-
-    private Hash _previousLedgerHash;
-    public Hash previousLedgerHash
+    public static partial class LedgerHeaderXdr
     {
-        get => _previousLedgerHash;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LedgerHeader value)
         {
-            _previousLedgerHash = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.ledgerVersion);
+            HashXdr.Encode(stream, value.previousLedgerHash);
+            StellarValueXdr.Encode(stream, value.scpValue);
+            HashXdr.Encode(stream, value.txSetResultHash);
+            HashXdr.Encode(stream, value.bucketListHash);
+            uint32Xdr.Encode(stream, value.ledgerSeq);
+            int64Xdr.Encode(stream, value.totalCoins);
+            int64Xdr.Encode(stream, value.feePool);
+            uint32Xdr.Encode(stream, value.inflationSeq);
+            uint64Xdr.Encode(stream, value.idPool);
+            uint32Xdr.Encode(stream, value.baseFee);
+            uint32Xdr.Encode(stream, value.baseReserve);
+            uint32Xdr.Encode(stream, value.maxTxSetSize);
+            foreach (var item in value.skipList)
+            {
+                    HashXdr.Encode(stream, item);
+            }
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LedgerHeader Decode(XdrReader stream)
+        {
+            var result = new LedgerHeader();
+            result.ledgerVersion = uint32Xdr.Decode(stream);
+            result.previousLedgerHash = HashXdr.Decode(stream);
+            result.scpValue = StellarValueXdr.Decode(stream);
+            result.txSetResultHash = HashXdr.Decode(stream);
+            result.bucketListHash = HashXdr.Decode(stream);
+            result.ledgerSeq = uint32Xdr.Decode(stream);
+            result.totalCoins = int64Xdr.Decode(stream);
+            result.feePool = int64Xdr.Decode(stream);
+            result.inflationSeq = uint32Xdr.Decode(stream);
+            result.idPool = uint64Xdr.Decode(stream);
+            result.baseFee = uint32Xdr.Decode(stream);
+            result.baseReserve = uint32Xdr.Decode(stream);
+            result.maxTxSetSize = uint32Xdr.Decode(stream);
+            result.skipList = new Hash[4];
+            for (var i = 0; i < 4; i++)
+            {
+                result.skipList[i] = HashXdr.Decode(stream);
+            }
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private StellarValue _scpValue;
-    public StellarValue scpValue
-    {
-        get => _scpValue;
-        set
-        {
-            _scpValue = value;
-        }
-    }
-
-    private Hash _txSetResultHash;
-    public Hash txSetResultHash
-    {
-        get => _txSetResultHash;
-        set
-        {
-            _txSetResultHash = value;
-        }
-    }
-
-    private Hash _bucketListHash;
-    public Hash bucketListHash
-    {
-        get => _bucketListHash;
-        set
-        {
-            _bucketListHash = value;
-        }
-    }
-
-    private uint32 _ledgerSeq;
-    public uint32 ledgerSeq
-    {
-        get => _ledgerSeq;
-        set
-        {
-            _ledgerSeq = value;
-        }
-    }
-
-    private int64 _totalCoins;
-    public int64 totalCoins
-    {
-        get => _totalCoins;
-        set
-        {
-            _totalCoins = value;
-        }
-    }
-
-    private int64 _feePool;
-    public int64 feePool
-    {
-        get => _feePool;
-        set
-        {
-            _feePool = value;
-        }
-    }
-
-    private uint32 _inflationSeq;
-    public uint32 inflationSeq
-    {
-        get => _inflationSeq;
-        set
-        {
-            _inflationSeq = value;
-        }
-    }
-
-    private uint64 _idPool;
-    public uint64 idPool
-    {
-        get => _idPool;
-        set
-        {
-            _idPool = value;
-        }
-    }
-
-    private uint32 _baseFee;
-    public uint32 baseFee
-    {
-        get => _baseFee;
-        set
-        {
-            _baseFee = value;
-        }
-    }
-
-    private uint32 _baseReserve;
-    public uint32 baseReserve
-    {
-        get => _baseReserve;
-        set
-        {
-            _baseReserve = value;
-        }
-    }
-
-    private uint32 _maxTxSetSize;
-    public uint32 maxTxSetSize
-    {
-        get => _maxTxSetSize;
-        set
-        {
-            _maxTxSetSize = value;
-        }
-    }
-
-    private Hash[] _skipList = new Hash[4];
-    public Hash[] skipList
-    {
-        get => _skipList;
-        set
-        {
-            if (value.Length != 4)
-                throw new ArgumentException($"Must be exactly 4 bytes");
-            _skipList = value;
-        }
-    }
-
-    private object _ext;
-    public object ext
-    {
-        get => _ext;
-        set
-        {
-            _ext = value;
-        }
-    }
-
-    public LedgerHeader()
-    {
-        skipList = new Hash[4];
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-        if (skipList.Length != 4)
-            throw new InvalidOperationException($"skipList must be exactly 4 elements");
-    }
-}
-
-public static partial class LedgerHeaderXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LedgerHeader value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.ledgerVersion);
-        HashXdr.Encode(stream, value.previousLedgerHash);
-        StellarValueXdr.Encode(stream, value.scpValue);
-        HashXdr.Encode(stream, value.txSetResultHash);
-        HashXdr.Encode(stream, value.bucketListHash);
-        uint32Xdr.Encode(stream, value.ledgerSeq);
-        int64Xdr.Encode(stream, value.totalCoins);
-        int64Xdr.Encode(stream, value.feePool);
-        uint32Xdr.Encode(stream, value.inflationSeq);
-        uint64Xdr.Encode(stream, value.idPool);
-        uint32Xdr.Encode(stream, value.baseFee);
-        uint32Xdr.Encode(stream, value.baseReserve);
-        uint32Xdr.Encode(stream, value.maxTxSetSize);
-        foreach (var item in value.skipList)
-        {
-            HashXdr.Encode(stream, item);
-        }
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LedgerHeader Decode(XdrReader stream)
-    {
-        var result = new LedgerHeader();
-        result.ledgerVersion = uint32Xdr.Decode(stream);
-        result.previousLedgerHash = HashXdr.Decode(stream);
-        result.scpValue = StellarValueXdr.Decode(stream);
-        result.txSetResultHash = HashXdr.Decode(stream);
-        result.bucketListHash = HashXdr.Decode(stream);
-        result.ledgerSeq = uint32Xdr.Decode(stream);
-        result.totalCoins = int64Xdr.Decode(stream);
-        result.feePool = int64Xdr.Decode(stream);
-        result.inflationSeq = uint32Xdr.Decode(stream);
-        result.idPool = uint64Xdr.Decode(stream);
-        result.baseFee = uint32Xdr.Decode(stream);
-        result.baseReserve = uint32Xdr.Decode(stream);
-        result.maxTxSetSize = uint32Xdr.Decode(stream);
-        result.skipList = new Hash[4];
-        for (var i = 0; i < 4; i++)
-        {
-            result.skipList[i] = HashXdr.Decode(stream);
-        }
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

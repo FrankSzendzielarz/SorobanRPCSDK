@@ -24,37 +24,35 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum SetOptionsResultCode
-{
-    SET_OPTIONS_SUCCESS = 0,
-    SET_OPTIONS_LOW_RESERVE = -1,
-    SET_OPTIONS_TOO_MANY_SIGNERS = -2,
-    SET_OPTIONS_BAD_FLAGS = -3,
-    SET_OPTIONS_INVALID_INFLATION = -4,
-    SET_OPTIONS_CANT_CHANGE = -5,
-    SET_OPTIONS_UNKNOWN_FLAG = -6,
-    SET_OPTIONS_THRESHOLD_OUT_OF_RANGE = -7,
-    SET_OPTIONS_BAD_SIGNER = -8,
-    SET_OPTIONS_INVALID_HOME_DOMAIN = -9,
-    SET_OPTIONS_AUTH_REVOCABLE_REQUIRED = -10,
-}
-
-public static partial class SetOptionsResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SetOptionsResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum SetOptionsResultCode
     {
-       stream.WriteInt((int)value);
+        SET_OPTIONS_SUCCESS = 0,
+        SET_OPTIONS_LOW_RESERVE = -1,
+        SET_OPTIONS_TOO_MANY_SIGNERS = -2,
+        SET_OPTIONS_BAD_FLAGS = -3,
+        SET_OPTIONS_INVALID_INFLATION = -4,
+        SET_OPTIONS_CANT_CHANGE = -5,
+        SET_OPTIONS_UNKNOWN_FLAG = -6,
+        SET_OPTIONS_THRESHOLD_OUT_OF_RANGE = -7,
+        SET_OPTIONS_BAD_SIGNER = -8,
+        SET_OPTIONS_INVALID_HOME_DOMAIN = -9,
+        SET_OPTIONS_AUTH_REVOCABLE_REQUIRED = -10,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static SetOptionsResultCode Decode(XdrReader stream)
+    public static partial class SetOptionsResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(SetOptionsResultCode), value))
-            throw new InvalidOperationException($"Unknown SetOptionsResultCode value: {value}");
-        return (SetOptionsResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SetOptionsResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static SetOptionsResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(SetOptionsResultCode), value))
+              throw new InvalidOperationException($"Unknown SetOptionsResultCode value: {value}");
+            return (SetOptionsResultCode)value;
+        }
     }
-}
-}

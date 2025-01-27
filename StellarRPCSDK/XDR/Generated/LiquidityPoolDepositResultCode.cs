@@ -25,34 +25,32 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum LiquidityPoolDepositResultCode
-{
-    LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
-    LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,
-    LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,
-    LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3,
-    LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,
-    LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,
-    LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,
-    LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7,
-}
-
-public static partial class LiquidityPoolDepositResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LiquidityPoolDepositResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum LiquidityPoolDepositResultCode
     {
-       stream.WriteInt((int)value);
+        LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
+        LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,
+        LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,
+        LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3,
+        LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,
+        LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,
+        LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,
+        LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static LiquidityPoolDepositResultCode Decode(XdrReader stream)
+    public static partial class LiquidityPoolDepositResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(LiquidityPoolDepositResultCode), value))
-            throw new InvalidOperationException($"Unknown LiquidityPoolDepositResultCode value: {value}");
-        return (LiquidityPoolDepositResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LiquidityPoolDepositResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static LiquidityPoolDepositResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(LiquidityPoolDepositResultCode), value))
+              throw new InvalidOperationException($"Unknown LiquidityPoolDepositResultCode value: {value}");
+            return (LiquidityPoolDepositResultCode)value;
+        }
     }
-}
-}

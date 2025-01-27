@@ -18,56 +18,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LedgerEntryExtensionV1
-{
-    private SponsorshipDescriptor _sponsoringID;
-    public SponsorshipDescriptor sponsoringID
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LedgerEntryExtensionV1
     {
-        get => _sponsoringID;
-        set
+        private SponsorshipDescriptor _sponsoringID;
+        public SponsorshipDescriptor sponsoringID
         {
-            _sponsoringID = value;
+            get => _sponsoringID;
+            set
+            {
+                _sponsoringID = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public LedgerEntryExtensionV1()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _ext;
-    public object ext
+    public static partial class LedgerEntryExtensionV1Xdr
     {
-        get => _ext;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LedgerEntryExtensionV1 value)
         {
-            _ext = value;
+            value.Validate();
+            SponsorshipDescriptorXdr.Encode(stream, value.sponsoringID);
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LedgerEntryExtensionV1 Decode(XdrReader stream)
+        {
+            var result = new LedgerEntryExtensionV1();
+            result.sponsoringID = SponsorshipDescriptorXdr.Decode(stream);
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public LedgerEntryExtensionV1()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class LedgerEntryExtensionV1Xdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LedgerEntryExtensionV1 value)
-    {
-        value.Validate();
-        SponsorshipDescriptorXdr.Encode(stream, value.sponsoringID);
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LedgerEntryExtensionV1 Decode(XdrReader stream)
-    {
-        var result = new LedgerEntryExtensionV1();
-        result.sponsoringID = SponsorshipDescriptorXdr.Decode(stream);
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

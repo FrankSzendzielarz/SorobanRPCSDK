@@ -8,38 +8,37 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class int64
-{
-    private long _innerValue;
-    public long InnerValue
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class int64
     {
-        get => _innerValue;
-        set
+        private long _innerValue;
+        public long InnerValue
         {
-            _innerValue = value;
+            get => _innerValue;
+            set
+            {
+                _innerValue = value;
+            }
+        }
+
+        public int64() { }
+
+        public int64(long value)
+        {
+            InnerValue = value;
         }
     }
-
-    public int64() { }
-
-    public int64(long value)
+    public static partial class int64Xdr
     {
-        InnerValue = value;
+            public static void Encode(XdrWriter stream, int64 value)
+        {
+            stream.WriteLong(value.InnerValue);
+        }
+        public static int64 Decode(XdrReader stream)
+        {
+            var result = new int64();
+            result.InnerValue = stream.ReadLong();
+            return result;
+        }
     }
-}
-
-public static partial class int64Xdr
-{
-    public static void Encode(XdrWriter stream, int64 value)
-    {
-        stream.WriteLong(value.InnerValue);
-    }
-    public static int64 Decode(XdrReader stream)
-    {
-        var result = new int64();
-        result.InnerValue = stream.ReadLong();
-        return result;
-    }
-}
 }

@@ -7,6 +7,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.Tracing;
 using System.IO;
+using System.Security.Claims;
 using System.Text;
 using System.Text.RegularExpressions;
 using static Generator.XDR.Grammar.StellarXdrParser;
@@ -20,8 +21,9 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
     {
         public string? Namespace { get; set; }
         public Stack<string> TypeStack { get; } = new();
-        public string CurrentPath => string.Join(".", TypeStack.Reverse());
+        public CodeFile CurrentCodeFile { get; set; }
         public string CurrentNamespace => Namespace ?? "StellarGenerated";
+
     }
 
     private readonly string _outputDir;
@@ -62,25 +64,24 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         }
     }
 
-    private string GetDocumentationComment(ParserRuleContext context, bool isProperty = false)
+    private void WriteDocumentationComment(ParserRuleContext context, bool isProperty = false)
     {
+        var code = _context.CurrentCodeFile;
         if (_commentMap.TryGetValue(context.Start, out var comment))
         {
             var lines = comment.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-            var sb = new StringBuilder();
-            sb.AppendLine(isProperty ? "    /// <value>" : "    /// <summary>");
+        
+            code.AppendLine(isProperty ? "/// <value>" : "    /// <summary>");
             foreach (var line in lines)
             {
                 var trimmedLine = line.Trim();
                 if (!string.IsNullOrEmpty(trimmedLine))
                 {
-                    sb.AppendLine($"    /// {trimmedLine}");
+                    code.AppendLine($"/// {trimmedLine}");
                 }
             }
-            sb.AppendLine(isProperty ? "    /// </value>" : "    /// </summary>");
-            return sb.ToString();
+            code.AppendLine(isProperty ? "/// </value>" : "    /// </summary>");
         }
-        return string.Empty;
     }
 
     private IEnumerable<string> ExtractConstraints(string comment)
@@ -110,13 +111,14 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         var enumName = context.identifier().GetText();
         Console.WriteLine($"Visiting enum: {enumName}");
         _context.TypeStack.Push(enumName);
-
+        _context.CurrentCodeFile = new CodeFile(Path.Combine(_outputDir, $"{enumName}.cs"));
         try
         {
-            GenerateEnum(context);
+            GenerateEnum(context,enumName);
         }
         finally
         {
+            _context.CurrentCodeFile.Write();
             _context.TypeStack.Pop();
         }
 
@@ -128,13 +130,14 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         var structName = context.identifier().GetText();
         Console.WriteLine($"Visiting struct: {structName}");
         _context.TypeStack.Push(structName);
-
+        _context.CurrentCodeFile = new CodeFile(Path.Combine(_outputDir, $"{structName}.cs"));
         try
         {
-            GenerateStruct(context);
+            GenerateStruct(context,structName);
         }
         finally
         {
+            _context.CurrentCodeFile.Write();
             _context.TypeStack.Pop();
         }
 
@@ -146,13 +149,14 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         var unionName = context.identifier().GetText();
         Console.WriteLine($"Visiting union: {unionName}");
         _context.TypeStack.Push(unionName);
-
+        _context.CurrentCodeFile = new CodeFile(Path.Combine(_outputDir, $"{unionName}.cs"));
         try
         {
-            GenerateUnion(context);
+            GenerateUnion(context,unionName);
         }
         finally
         {
+            _context.CurrentCodeFile.Write();
             _context.TypeStack.Pop();
         }
 
@@ -164,46 +168,57 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         var typedefName = context.declaration().identifier().GetText();
         Console.WriteLine($"Visiting typedef: {typedefName}");
         _context.TypeStack.Push(typedefName);
-
+        _context.CurrentCodeFile = new CodeFile(Path.Combine(_outputDir, $"{typedefName}.cs"));
         try
         {
-            GenerateTypedef(context);
+            GenerateTypedef(context,typedefName);
         }
         finally
         {
+            _context.CurrentCodeFile.Write();
             _context.TypeStack.Pop();
         }
 
         return null;
     }
 
-    private void WriteFileHeader(StringBuilder code, ParserRuleContext context)
+    private void WriteFileHeader( ParserRuleContext context)
     {
-        code.AppendLine("// Generated code - do not modify");
-        code.AppendLine($"// Source:");
-        code.AppendLine();
-      
-        string source = context.Start.InputStream.GetText(
-              new Interval(context.Start.StartIndex, context.Stop.StopIndex)
-          );
-        foreach (var comment in source.Split("\n"))
+        var code=_context.CurrentCodeFile;
+        if (code.IsRoot)
         {
-            code.AppendLine($"// {comment}");
-        }
+            code.AppendLine("// Generated code - do not modify");
+            code.AppendLine($"// Source:");
+            code.AppendLine();
 
-        code.AppendLine();
-        code.AppendLine();
-        code.AppendLine("using System;");
-        code.AppendLine();
-        code.AppendLine($"namespace {_context.CurrentNamespace} {{");
-        code.AppendLine();
+            string source = context.Start.InputStream.GetText(
+                  new Interval(context.Start.StartIndex, context.Stop.StopIndex)
+              );
+            foreach (var comment in source.Split("\n"))
+            {
+                code.AppendLine($"// {comment}");
+            }
+
+            code.AppendLine();
+            code.AppendLine();
+            code.AppendLine("using System;");
+            code.AppendLine();
+            code.AppendLine($"namespace {_context.CurrentNamespace} {{");
+            code.AppendLine();
+            code.Indent();
+        }
     }
 
-    private void WriteFileFooter(StringBuilder code, ParserRuleContext context)
-    {
-       
-        code.AppendLine($"}}");
 
+
+    private void WriteFileFooter()
+    {
+        var code = _context.CurrentCodeFile;
+        code.Unindent();
+        if (code.IsRoot)
+        {
+            code.AppendLine($"}}");
+        }
     }
 
 
@@ -234,11 +249,13 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         if (text.StartsWith("string"))
             return new CSharpTypeInfo("string", arrayType, maxLength);
 
+       
+
         var baseType = decl.typeSpecifier().GetText() switch
         {
-            "unsigned int" => "uint",
+            "unsignedint" => "uint",
             "int" => "int",
-            "unsigned hyper" => "ulong",
+            "unsignedhyper" => "ulong",
             "hyper" => "long",
             "float" => "float",
             "double" => "double",
@@ -246,93 +263,79 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
             _ => decl.typeSpecifier().identifier()?.GetText() ?? "object"
         };
 
-        return new CSharpTypeInfo(baseType, arrayType, maxLength);
-    }
-    private void GenerateEnum(StellarXdrParser.EnumDefinitionContext context)
-    {
-        var enumName = context.identifier().GetText();
-        var code = new StringBuilder();
-        var filename = Path.Combine(_outputDir, $"{enumName}.cs");
-
-        WriteFileHeader(code, context);
-
-        var docComment = GetDocumentationComment(context);
-        if (!string.IsNullOrEmpty(docComment))
+        if (baseType=="object")
         {
-            code.Append(docComment);
+            var x = decl.typeSpecifier().GetText();
         }
 
+        return new CSharpTypeInfo(baseType, arrayType, maxLength);
+    }
+    private void GenerateEnum(StellarXdrParser.EnumDefinitionContext context, string enumName)
+    {
+       
+        WriteFileHeader(context);
+        WriteDocumentationComment(context);
+
+        var code = _context.CurrentCodeFile;
         code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
         code.AppendLine($"public enum {enumName}");
-        code.AppendLine("{");
-
+        code.OpenBlock();
         var enumMembers = context.enumBody().enumMember();
+  
         foreach (var member in enumMembers)
         {
-            var memberDoc = GetDocumentationComment(member);
-            if (!string.IsNullOrEmpty(memberDoc))
-            {
-                code.Append(memberDoc);
-            }
+            WriteDocumentationComment(member);
 
             var name = member.identifier(0).GetText();
             string value;
-
             if (member.constant() != null)
                 value = member.constant().GetText();
             else if (member.identifier().Length > 1)
                 value = member.identifier(1).GetText();
             else
                 value = "0";
-
-            code.AppendLine($"    {name} = {value},");
+            
+            code.AppendLine($"{name} = {value},");
         }
-
-        code.AppendLine("}");
+        code.CloseBlock();
         code.AppendLine();
 
         // Generate static XDR helper class
         code.AppendLine($"public static partial class {enumName}Xdr");
-        code.AppendLine("{");
-        code.AppendLine("    /// <summary>Encodes enum value to XDR stream</summary>");
-        code.AppendLine($"    public static void Encode(XdrWriter stream, {enumName} value)");
-        code.AppendLine("    {");
-        code.AppendLine("       stream.WriteInt((int)value);");
-        code.AppendLine("    }");
-        code.AppendLine();
+        code.OpenBlock();
 
-        code.AppendLine("    /// <summary>Decodes enum value from XDR stream</summary>");
-        code.AppendLine($"    public static {enumName} Decode(XdrReader stream)");
-        code.AppendLine("    {");
-        code.AppendLine("        var value = stream.ReadInt();");
-        code.AppendLine($"        if (!Enum.IsDefined(typeof({enumName}), value))");
-        code.AppendLine($"            throw new InvalidOperationException($\"Unknown {enumName} value: {{value}}\");");
-        code.AppendLine($"        return ({enumName})value;");
-        code.AppendLine("    }");
-        code.AppendLine("}");
+        code.AppendLine("/// <summary>Encodes enum value to XDR stream</summary>");
+        code.AppendLine($"public static void Encode(XdrWriter stream, {enumName} value)");
+        code.OpenBlock();
+        code.AppendLine("stream.WriteInt((int)value);");
+        code.CloseBlock();
 
-        WriteFileFooter(code, context);
+        code.AppendLine("/// <summary>Decodes enum value from XDR stream</summary>");
+        code.AppendLine($"public static {enumName} Decode(XdrReader stream)");
+        code.OpenBlock();
+        code.AppendLine("var value = stream.ReadInt();");
+        code.AppendLine($"if (!Enum.IsDefined(typeof({enumName}), value))");
+        code.AppendLine($"  throw new InvalidOperationException($\"Unknown {enumName} value: {{value}}\");");
+        code.AppendLine($"return ({enumName})value;");
+        code.CloseBlock();
 
-        File.WriteAllText(filename, code.ToString());
+        code.CloseBlock();
+
+
+
+        
     }
 
-    private void GenerateStruct(StellarXdrParser.StructDefinitionContext context)
+    private void GenerateStruct(StellarXdrParser.StructDefinitionContext context,string structName)
     {
-        var structName = context.identifier().GetText();
-        var code = new StringBuilder();
-        var filename = Path.Combine(_outputDir, $"{structName}.cs");
+        WriteFileHeader(context);
 
-        WriteFileHeader(code, context);
+        WriteDocumentationComment(context);
 
-        var docComment = GetDocumentationComment(context);
-        if (!string.IsNullOrEmpty(docComment))
-        {
-            code.Append(docComment);
-        }
-
+        var code = _context.CurrentCodeFile;
         code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
         code.AppendLine($"public partial class {structName}");
-        code.AppendLine("{");
+        code.OpenBlock();
 
         // Generate properties
         foreach (var member in context.structBody().structMember())
@@ -340,92 +343,84 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
             var decl = member.declaration();
             if (decl.typeSpecifier() == null) continue;
 
-            var memberDoc = GetDocumentationComment(member, true);
-            if (!string.IsNullOrEmpty(memberDoc))
-            {
-                code.Append(memberDoc);
-            }
+            WriteDocumentationComment(member, true);
 
             var fieldType = GetCSharpTypeInfo(decl);
             var fieldName = getFieldName(decl);
-            GenerateProperty(code, decl, fieldType, fieldName);
+            GenerateProperty( decl, fieldType, fieldName);
             code.AppendLine();
         }
 
         // Generate constructor
-        code.AppendLine($"    public {structName}()");
-        code.AppendLine("    {");
+        code.AppendLine($"public {structName}()");
+        code.OpenBlock();
         foreach (var member in context.structBody().structMember())
         {
             var decl = member.declaration();
             if (decl.typeSpecifier() == null) continue;
 
-            GenerateInitialization(code, decl);
+            GenerateInitialization(decl);
         }
-        code.AppendLine("    }");
-        code.AppendLine();
+        code.CloseBlock();
 
         // Generate validation method
-        code.AppendLine("    /// <summary>Validates all fields have valid values</summary>");
-        code.AppendLine("    public virtual void Validate()");
-        code.AppendLine("    {");
+        code.AppendLine("/// <summary>Validates all fields have valid values</summary>");
+        code.AppendLine("public virtual void Validate()");
+        code.OpenBlock();
         foreach (var member in context.structBody().structMember())
         {
             var decl = member.declaration();
             if (decl.typeSpecifier() != null)
             {
-                GenerateValidation(code, decl);
+                GenerateValidation( decl);
             }
         }
-        code.AppendLine("    }");
-
-        code.AppendLine("}");
-        code.AppendLine();
+        code.CloseBlock();
+        code.CloseBlock();
 
         // Generate XDR helper class
-        GenerateStructXdrHelperClass(code, structName, context.structBody().structMember());
+        GenerateStructXdrHelperClass( structName, context.structBody().structMember());
 
-        WriteFileFooter(code, context);
+        WriteFileFooter();
 
-        File.WriteAllText(filename, code.ToString());
+       
     }
 
-    private void GenerateProperty(StringBuilder code, StellarXdrParser.DeclarationContext decl,
-                                CSharpTypeInfo fieldType, string fieldName)
+    private void GenerateProperty(DeclarationContext decl, CSharpTypeInfo fieldType, string fieldName)
     {
-
-
+        var code = _context.CurrentCodeFile;
         switch (fieldType.ArrayType)
         {
             case ArrayType.Fixed:
-                code.AppendLine($"    private {fieldType.CSharpType}[] _{fieldName.ToCamelCase()} = new {fieldType.CSharpType}[{fieldType.MaxLength}];");
+                code.AppendLine($"private {fieldType.CSharpType}[] _{fieldName.ToCamelCase()} = new {fieldType.CSharpType}[{fieldType.MaxLength}];");
                 break;
             case ArrayType.Variable:
-                code.AppendLine($"    private {fieldType.CSharpType}[] _{fieldName.ToCamelCase()};");
+                code.AppendLine($"private {fieldType.CSharpType}[] _{fieldName.ToCamelCase()};");
                 break;
             case ArrayType.None:
-                code.AppendLine($"    private {fieldType.CSharpType} _{fieldName.ToCamelCase()};");
+                code.AppendLine($"private {fieldType.CSharpType} _{fieldName.ToCamelCase()};");
                 break;
 
         }
 
-        code.AppendLine($"    public {fieldType.FullCSharpType} {fieldName}");
-        code.AppendLine("    {");
-        code.AppendLine($"        get => _{fieldName.ToCamelCase()};");
-        code.AppendLine("        set");
-        code.AppendLine("        {");
+        code.AppendLine($"public {fieldType.FullCSharpType} {fieldName}");
+        code.OpenBlock();
+        code.AppendLine($"get => _{fieldName.ToCamelCase()};");
+        code.AppendLine("set");
+        code.OpenBlock();
 
-        GeneratePropertyValidation(code, decl, "value", fieldType);
+        GeneratePropertyValidation( decl, "value", fieldType);
 
-        code.AppendLine($"            _{fieldName.ToCamelCase()} = value;");
-        code.AppendLine("        }");
-        code.AppendLine("    }");
+        code.AppendLine($"_{fieldName.ToCamelCase()} = value;");
+        code.CloseBlock();
+        code.CloseBlock();
 
 
     }
 
-    private void GenerateInitialization(StringBuilder code, StellarXdrParser.DeclarationContext decl)
+    private void GenerateInitialization( StellarXdrParser.DeclarationContext decl)
     {
+        var code = _context.CurrentCodeFile;
         var typeInfo = GetCSharpTypeInfo(decl);
 
         if (typeInfo.ArrayType == ArrayType.Fixed)
@@ -433,83 +428,85 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
             var size = typeInfo.MaxLength;
             var fieldName = getFieldName(decl);
             var fieldType = typeInfo.CSharpType;
-            code.AppendLine($"        {fieldName} = new {fieldType}[{size}];");
+            code.AppendLine($"{fieldName} = new {fieldType}[{size}];");
         }
     }
 
-    private void GenerateValidation(StringBuilder code, StellarXdrParser.DeclarationContext decl)
+    private void GenerateValidation( StellarXdrParser.DeclarationContext decl)
     {
+        var code = _context.CurrentCodeFile;
         var typeInfo = GetCSharpTypeInfo(decl);
         var fieldName = getFieldName(decl);
-
 
         if (typeInfo.ArrayType == ArrayType.Fixed)
         {
             var size = typeInfo.MaxLength;
-            code.AppendLine($"        if ({fieldName}.Length != {size})");
-            code.AppendLine($"            throw new InvalidOperationException($\"{fieldName} must be exactly {size} elements\");");
+            code.AppendLine($"if ({fieldName}.Length != {size})");
+            code.AppendLine($"\tthrow new InvalidOperationException($\"{fieldName} must be exactly {size} elements\");");
         }
         else if (typeInfo.ArrayType == ArrayType.Variable )
         {
             var maxSize = typeInfo.MaxLength;
             if (maxSize != null)
             {
-                code.AppendLine($"        if ({fieldName}.Length > {maxSize})");
-                code.AppendLine($"            throw new InvalidOperationException($\"{fieldName} cannot exceed {maxSize} elements\");");
+                code.AppendLine($"if ({fieldName}.Length > {maxSize})");
+                code.AppendLine($"\tthrow new InvalidOperationException($\"{fieldName} cannot exceed {maxSize} elements\");");
             }
         }
     }
 
-    private void GenerateStructXdrHelperClass(StringBuilder code, string structName,
+    private void GenerateStructXdrHelperClass(string structName,
                                             IEnumerable<StellarXdrParser.StructMemberContext> members)
     {
+        var code = _context.CurrentCodeFile;
         code.AppendLine($"public static partial class {structName}Xdr");
-        code.AppendLine("{");
+        code.OpenBlock();
 
-        // Generate Encode method
-        code.AppendLine("    /// <summary>Encodes struct to XDR stream</summary>");
-        code.AppendLine($"    public static void Encode(XdrWriter stream, {structName} value)");
-        code.AppendLine("    {");
-        code.AppendLine("        value.Validate();");
-        foreach (var member in members)
-        {
-            var decl = member.declaration();
-            if (decl.typeSpecifier() != null)
-            {
-                string fieldName = getFieldName(decl);
-                GenerateEncodeStatement(code, decl, "value",fieldName);
-            }
-        }
-        code.AppendLine("    }");
-        code.AppendLine();
+            // Generate Encode method
+            code.AppendLine("/// <summary>Encodes struct to XDR stream</summary>");
+            code.AppendLine($"public static void Encode(XdrWriter stream, {structName} value)");
+            code.OpenBlock();
+                code.AppendLine("value.Validate();");
+                foreach (var member in members)
+                {
+                    var decl = member.declaration();
+                    if (decl.typeSpecifier() != null)
+                    {
+                        string fieldName = getFieldName(decl);
+                        GenerateEncodeStatement(decl, "value",fieldName);
+                    }
+                }
+            code.CloseBlock();
 
-        // Generate Decode method
-        code.AppendLine("    /// <summary>Decodes struct from XDR stream</summary>");
-        code.AppendLine($"    public static {structName} Decode(XdrReader stream)");
-        code.AppendLine("    {");
-        code.AppendLine($"        var result = new {structName}();");
-        foreach (var member in members)
-        {
-            var decl = member.declaration();
-            if (decl.typeSpecifier() != null)
-            {
-                GenerateDecodeStatement(code, decl, "result");
-            }
-        }
-        code.AppendLine("        return result;");
-        code.AppendLine("    }");
-        code.AppendLine("}");
+            // Generate Decode method
+            code.AppendLine("/// <summary>Decodes struct from XDR stream</summary>");
+            code.AppendLine($"public static {structName} Decode(XdrReader stream)");
+            code.OpenBlock();
+                code.AppendLine($"var result = new {structName}();");
+                foreach (var member in members)
+                {
+                    var decl = member.declaration();
+                    if (decl.typeSpecifier() != null)
+                    {
+                        GenerateDecodeStatement(decl, "result");
+                    }
+                }
+                code.AppendLine("return result;");
+            code.CloseBlock();
+
+        code.CloseBlock();
     }
 
-    private void GeneratePropertyValidation(StringBuilder code, StellarXdrParser.DeclarationContext decl, string valueName, CSharpTypeInfo typeInfo)
+    private void GeneratePropertyValidation( StellarXdrParser.DeclarationContext decl, string valueName, CSharpTypeInfo typeInfo)
     {
+        var code= _context.CurrentCodeFile;
         if (typeInfo.FullCSharpType == "string")
         {
             var maxLength = typeInfo.MaxLength;
             if (maxLength != null)
             {
-                code.AppendLine($"            if (System.Text.Encoding.UTF8.GetByteCount({valueName}) > {maxLength})");
-                code.AppendLine($"                throw new ArgumentException($\"String exceeds {maxLength} bytes when UTF8 encoded\");");
+                code.AppendLine($"if (System.Text.Encoding.UTF8.GetByteCount({valueName}) > {maxLength})");
+                code.AppendLine($"\tthrow new ArgumentException($\"String exceeds {maxLength} bytes when UTF8 encoded\");");
             }
         }
         else
@@ -517,79 +514,64 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
             if (typeInfo.ArrayType == ArrayType.Fixed)
             {
                 var size = typeInfo.MaxLength;
-                code.AppendLine($"            if ({valueName}.Length != {size})");
-                code.AppendLine($"                throw new ArgumentException($\"Must be exactly {size} bytes\");");
+                code.AppendLine($"if ({valueName}.Length != {size})");
+                code.AppendLine($"\tthrow new ArgumentException($\"Must be exactly {size} bytes\");");
             }
             else if (typeInfo.ArrayType == ArrayType.Variable)
             {
                 var maxSize = typeInfo.MaxLength;
                 if (maxSize != null)
                 {
-                    code.AppendLine($"            if ({valueName}.Length > {maxSize})");
-                    code.AppendLine($"                throw new ArgumentException($\"Cannot exceed {maxSize} bytes\");");
+                    code.AppendLine($"if ({valueName}.Length > {maxSize})");
+                    code.AppendLine($"\tthrow new ArgumentException($\"Cannot exceed {maxSize} bytes\");");
                 }
             }
         }
     }
 
 
-    private void GenerateUnion(StellarXdrParser.UnionDefinitionContext context)
+    private void GenerateUnion(StellarXdrParser.UnionDefinitionContext context,string unionName)
     {
-        var unionName = context.identifier().GetText();
         var switchDecl = context.unionBody().declaration();
         var discriminatorType = GetCSharpTypeInfo(switchDecl);
-        var code = new StringBuilder();
-        var filename = Path.Combine(_outputDir, $"{unionName}.cs");
+        var code = _context.CurrentCodeFile;
 
-        WriteFileHeader(code, context);
-
-        var docComment = GetDocumentationComment(context);
-        if (!string.IsNullOrEmpty(docComment))
-        {
-            code.Append(docComment);
-        }
+        WriteFileHeader( context);
+        WriteDocumentationComment(context);
 
         // Generate abstract base class
         code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
         code.AppendLine($"public abstract partial class {unionName}");
-        code.AppendLine("{");
-        code.AppendLine($"    public abstract {discriminatorType.CSharpType} Discriminator {{ get; }}");
+        code.OpenBlock();
+        code.AppendLine($"public abstract {discriminatorType.CSharpType} Discriminator {{ get; }}");
         code.AppendLine();
-        code.AppendLine("    /// <summary>Validates the union case matches its discriminator</summary>");
-        code.AppendLine("    public abstract void ValidateCase();");
-        code.AppendLine("}");
-        code.AppendLine();
+        code.AppendLine("/// <summary>Validates the union case matches its discriminator</summary>");
+        code.AppendLine("public abstract void ValidateCase();");
+        code.CloseBlock();
 
         // Generate case classes
         foreach (var caseSpec in context.unionBody().caseSpec())
         {
             foreach (var value in caseSpec.value())
             {
-                var caseDoc = GetDocumentationComment(caseSpec);
-                if (!string.IsNullOrEmpty(caseDoc))
-                {
-                    code.Append(caseDoc);
-                }
+                WriteDocumentationComment(caseSpec);
 
                 var className = $"{unionName}_{value.GetText()}";
                 code.AppendLine($"public sealed partial class {className} : {unionName}");
-                code.AppendLine("{");
-                code.AppendLine($"    public override {discriminatorType.CSharpType} Discriminator => {value.GetText()};");
-
+                code.OpenBlock();
+                code.AppendLine($"public override {discriminatorType.CSharpType} Discriminator => {value.GetText()};");
                 var decl = caseSpec.declaration();
                 if (decl.typeSpecifier() != null)
                 {
                     var fieldType = GetCSharpTypeInfo(decl);
                     var fieldName = getFieldName(decl);
 
-                    GenerateProperty(code, decl, fieldType, fieldName);
+                    GenerateProperty(decl, fieldType, fieldName);
 
                 }
-
                 code.AppendLine();
-                code.AppendLine("    public override void ValidateCase() {}");
-                code.AppendLine("}");
-                code.AppendLine();
+                code.AppendLine("public override void ValidateCase() {}");
+                code.CloseBlock();
             }
         }
 
@@ -598,235 +580,236 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         if (defaultCase != null)
         {
             code.AppendLine($"public sealed partial class {unionName}_Default : {unionName}");
-            code.AppendLine("{");
-            code.AppendLine($"    private readonly {discriminatorType.CSharpType} _discriminator;");
-            code.AppendLine($"    public override {discriminatorType.CSharpType} Discriminator => _discriminator;");
+            code.OpenBlock();
+            code.AppendLine($"private readonly {discriminatorType.CSharpType} _discriminator;");
+            code.AppendLine($"public override {discriminatorType.CSharpType} Discriminator => _discriminator;");
 
             var defaultDecl = defaultCase.declaration();
             if (defaultDecl.typeSpecifier() != null)
             {
                 var fieldType = GetCSharpTypeInfo(defaultDecl);
                 var fieldName = getFieldName(defaultDecl);
-                GenerateProperty(code, defaultDecl, fieldType, fieldName);
+                GenerateProperty( defaultDecl, fieldType, fieldName);
             }
 
             code.AppendLine();
-            code.AppendLine($"    public {unionName}_Default({discriminatorType.CSharpType} discriminator)");
-            code.AppendLine("    {");
-            code.AppendLine("        _discriminator = discriminator;");
-            code.AppendLine("    }");
+            code.AppendLine($"public {unionName}_Default({discriminatorType.CSharpType} discriminator)");
+            code.OpenBlock();
+            code.AppendLine(" _discriminator = discriminator;");
+            code.CloseBlock(); 
 
             code.AppendLine();
-            code.AppendLine("    public override void ValidateCase() {}");
-            code.AppendLine("}");
+            code.AppendLine("public override void ValidateCase() {}");
+            code.CloseBlock();
         }
 
         // Generate XDR helper class
         code.AppendLine($"public static partial class {unionName}Xdr");
-        code.AppendLine("{");
-        GenerateUnionEncodeMethods(code, unionName, discriminatorType.CSharpType, context);
-        GenerateUnionDecodeMethods(code, unionName, discriminatorType.CSharpType, context);
-        code.AppendLine("}");
-        WriteFileFooter(code, context);
+        code.OpenBlock();
+        GenerateUnionEncodeMethods(unionName, discriminatorType.CSharpType, context);
+        GenerateUnionDecodeMethods(unionName, discriminatorType.CSharpType, context);
+        code.CloseBlock();
+        WriteFileFooter();
 
-        File.WriteAllText(filename, code.ToString());
+      
     }
 
-    private void GenerateTypedef(StellarXdrParser.TypedefDefinitionContext context)
+    private void GenerateTypedef(StellarXdrParser.TypedefDefinitionContext context,string typedefName)
     {
         var declaration = context.declaration();
-        var typedefName = declaration.identifier().GetText();
-        var code = new StringBuilder();
-        var filename = Path.Combine(_outputDir, $"{typedefName}.cs");
 
-        WriteFileHeader(code, context);
-
-        var docComment = GetDocumentationComment(context);
-        if (!string.IsNullOrEmpty(docComment))
+        if (typedefName=="uint32")
         {
-            code.Append(docComment);
+
         }
 
+        WriteFileHeader( context);
+        WriteDocumentationComment(context);
+
+        var code = _context.CurrentCodeFile;
         code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
         code.AppendLine($"public partial class {typedefName}");
-        code.AppendLine("{");
+        code.OpenBlock();
 
         var baseType = GetCSharpTypeInfo(declaration);
 
-
-        GenerateProperty(code, declaration, baseType, "InnerValue");
+        GenerateProperty( declaration, baseType, "InnerValue");
 
 
         // Generate constructors
         code.AppendLine();
-        code.AppendLine($"    public {typedefName}() {{ }}");
+        code.AppendLine($"public {typedefName}() {{ }}");
         code.AppendLine();
-        code.AppendLine($"    public {typedefName}({baseType.FullCSharpType} value)");
-        code.AppendLine("    {");
-        code.AppendLine("        InnerValue = value;");
-        code.AppendLine("    }");
+        code.AppendLine($"public {typedefName}({baseType.FullCSharpType} value)");
+        code.OpenBlock();
+        code.AppendLine("InnerValue = value;");
+        code.CloseBlock();
 
-        code.AppendLine("}");
-        code.AppendLine();
+        code.CloseBlock();
 
         // Generate XDR helper class
         code.AppendLine($"public static partial class {typedefName}Xdr");
-        code.AppendLine("{");
-        GenerateTypedefEncodeMethods(code, typedefName, declaration);
-        GenerateTypedefDecodeMethods(code, typedefName, declaration);
-        code.AppendLine("}");
+        code.OpenBlock();
+        GenerateTypedefEncodeMethods(typedefName, declaration);
+        GenerateTypedefDecodeMethods(typedefName, declaration);
+        code.CloseBlock();
 
-        WriteFileFooter(code, context);
+        WriteFileFooter();
 
-        File.WriteAllText(filename, code.ToString());
+       
     }
 
 
 
-    private void GenerateUnionEncodeMethods(StringBuilder code, string unionName, string discriminatorType,
+    private void GenerateUnionEncodeMethods( string unionName, string discriminatorType,
                                           StellarXdrParser.UnionDefinitionContext context)
     {
-        code.AppendLine($"    public static void Encode(XdrWriter stream, {unionName} value)");
-        code.AppendLine("    {");
-        code.AppendLine("        value.ValidateCase();");
-        code.AppendLine($"        stream.WriteInt((int)value.Discriminator);");
-        code.AppendLine("        switch (value)");
-        code.AppendLine("        {");
+        var code = _context.CurrentCodeFile;
+        code.AppendLine($"public static void Encode(XdrWriter stream, {unionName} value)");
+        code.OpenBlock();
+        code.AppendLine("value.ValidateCase();");
+        code.AppendLine($"stream.WriteInt((int)value.Discriminator);");
+        code.AppendLine("switch (value)");
+        code.OpenBlock();
 
         foreach (var caseSpec in context.unionBody().caseSpec())
         {
             foreach (var value in caseSpec.value())
             {
-                code.AppendLine($"            case {unionName}_{value.GetText()} case_{value.GetText()}:");
+                code.AppendLine($"case {unionName}_{value.GetText()} case_{value.GetText()}:");
                 var decl = caseSpec.declaration();
                 if (decl.typeSpecifier() != null)
                 {
                     var fieldName = getFieldName(decl);
-                    GenerateEncodeStatement(code, decl, $"case_{value.GetText()}", fieldName, "                ");
+                    GenerateEncodeStatement( decl, $"case_{value.GetText()}", fieldName);
                 }
-                code.AppendLine("                break;");
+                code.AppendLine("break;");
             }
         }
 
         if (context.unionBody().defaultCase() != null)
         {
-            code.AppendLine("            case var defaultCase:");
+            code.AppendLine("case var defaultCase:");
             var defaultDecl = context.unionBody().defaultCase().declaration();
             if (defaultDecl.typeSpecifier() != null)
             {
                 var fieldName = getFieldName(defaultDecl);
-                GenerateEncodeStatement(code, defaultDecl, "defaultCase", fieldName, "                ");
+                GenerateEncodeStatement(defaultDecl, "defaultCase", fieldName);
             }
-            code.AppendLine("                break;");
+            code.AppendLine("break;");
         }
 
-        code.AppendLine("        }");
-        code.AppendLine("    }");
+        code.CloseBlock();
+        code.CloseBlock();
     }
 
-    private void GenerateUnionDecodeMethods(StringBuilder code, string unionName, string discriminatorType,
+    private void GenerateUnionDecodeMethods( string unionName, string discriminatorType,
                                           StellarXdrParser.UnionDefinitionContext context)
     {
-        code.AppendLine($"    public static {unionName} Decode(XdrReader stream)");
-        code.AppendLine("    {");
-        code.AppendLine($"        var discriminator = ({discriminatorType})stream.ReadInt();");
-        code.AppendLine("        switch (discriminator)");
-        code.AppendLine("        {");
+        var code = _context.CurrentCodeFile;
+
+        code.AppendLine($"public static {unionName} Decode(XdrReader stream)");
+        code.OpenBlock();
+        code.AppendLine($"var discriminator = ({discriminatorType})stream.ReadInt();");
+        code.AppendLine("switch (discriminator)");
+        code.OpenBlock();
 
         foreach (var caseSpec in context.unionBody().caseSpec())
         {
             foreach (var value in caseSpec.value())
             {
-                code.AppendLine($"            case {value.GetText()}:");
-                code.AppendLine($"                var result_{value.GetText()} = new {unionName}_{value.GetText()}();");
+                code.AppendLine($"case {value.GetText()}:");
+                code.AppendLine($"var result_{value.GetText()} = new {unionName}_{value.GetText()}();");
                 var decl = caseSpec.declaration();
                 if (decl.typeSpecifier() != null)
                 {
                     var fieldName = getFieldName(decl);
-                    GenerateDecodeStatement(code, decl, $"result_{value.GetText()}", "                ");
+                    GenerateDecodeStatement(decl, $"result_{value.GetText()}", "                ");
                 }
-                code.AppendLine($"                return result_{value.GetText()};");
+                code.AppendLine($"return result_{value.GetText()};");
             }
         }
 
         if (context.unionBody().defaultCase() != null)
         {
-            code.AppendLine("            default:");
-            code.AppendLine($"                var defaultResult = new {unionName}_Default(discriminator);");
+            code.AppendLine("default:");
+            code.AppendLine($"var defaultResult = new {unionName}_Default(discriminator);");
             var defaultDecl = context.unionBody().defaultCase().declaration();
             if (defaultDecl.typeSpecifier() != null)
             {
                 var fieldName = getFieldName(defaultDecl);
-                GenerateDecodeStatement(code, defaultDecl, "defaultResult", "                ");
+                GenerateDecodeStatement( defaultDecl, "defaultResult", "                ");
             }
-            code.AppendLine("                return defaultResult;");
+            code.AppendLine("return defaultResult;");
         }
         else
         {
-            code.AppendLine("            default:");
-            code.AppendLine($"                throw new Exception($\"Unknown discriminator for {unionName}: {{discriminator}}\");");
+            code.AppendLine("default:");
+            code.AppendLine($"throw new Exception($\"Unknown discriminator for {unionName}: {{discriminator}}\");");
         }
 
-        code.AppendLine("        }");
-        code.AppendLine("    }");
+        code.CloseBlock();
+        code.CloseBlock();
     }
 
-    private void GenerateTypedefEncodeMethods(StringBuilder code, string typedefName,
+    private void GenerateTypedefEncodeMethods( string typedefName,
                                             StellarXdrParser.DeclarationContext declaration)
     {
+        var code = _context.CurrentCodeFile;
         code.AppendLine($"    public static void Encode(XdrWriter stream, {typedefName} value)");
-        code.AppendLine("    {");
-        GenerateEncodeStatement(code, declaration, "value", "InnerValue");
-        code.AppendLine("    }");
+        code.OpenBlock();
+        GenerateEncodeStatement( declaration, "value", "InnerValue");
+        code.CloseBlock();
     }
 
-    private void GenerateTypedefDecodeMethods(StringBuilder code, string typedefName,
+    private void GenerateTypedefDecodeMethods(string typedefName,
                                             StellarXdrParser.DeclarationContext declaration)
     {
-        code.AppendLine($"    public static {typedefName} Decode(XdrReader stream)");
-        code.AppendLine("    {");
-        code.AppendLine($"        var result = new {typedefName}();");
-        GenerateDecodeStatement(code, declaration, "result",fieldName: "InnerValue");
-        code.AppendLine("        return result;");
-        code.AppendLine("    }");
+        var code = _context.CurrentCodeFile;
+        code.AppendLine($"public static {typedefName} Decode(XdrReader stream)");
+        code.OpenBlock();
+        code.AppendLine($"var result = new {typedefName}();");
+        GenerateDecodeStatement(declaration, "result",fieldName: "InnerValue");
+        code.AppendLine("return result;");
+        code.CloseBlock();
     }
 
-    private void GenerateEncodeStatement(StringBuilder code, StellarXdrParser.DeclarationContext decl,
-                                       string valueName,string fieldName, string indent = "        ")
+    private void GenerateEncodeStatement( StellarXdrParser.DeclarationContext decl,
+                                       string valueName,string fieldName)
     {
         var typeSpec = decl.typeSpecifier();
         var typeInfo = GetCSharpTypeInfo(decl);
-
+        var code = _context.CurrentCodeFile;
 
         if (decl.GetText().StartsWith("opaque"))
         {
             if (typeInfo.ArrayType == ArrayType.Fixed)
             {
-                code.AppendLine($"{indent}stream.WriteFixedOpaque({valueName}.{fieldName});");
+                code.AppendLine($"stream.WriteFixedOpaque({valueName}.{fieldName});");
             }
             else
             {
-                code.AppendLine($"{indent}stream.WriteOpaque({valueName}.{fieldName});");
+                code.AppendLine($"stream.WriteOpaque({valueName}.{fieldName});");
             }
         }
         else if (decl.GetText().StartsWith("string"))
         {
-            code.AppendLine($"{indent}stream.WriteString({valueName}.{fieldName});");
+            code.AppendLine($"stream.WriteString({valueName}.{fieldName});");
         }
         else if (typeInfo.ArrayType != ArrayType.None)
         {
             if (typeInfo.ArrayType == ArrayType.Variable)
             {
-                code.AppendLine($"{indent}stream.WriteInt({valueName}.{fieldName}.Length);");
+                code.AppendLine($"stream.WriteInt({valueName}.{fieldName}.Length);");
             }
-            code.AppendLine($"{indent}foreach (var item in {valueName}.{fieldName})");
-            code.AppendLine($"{indent}{{");
-            code.AppendLine($"{indent}    {GetEncodeStatement(typeSpec, "item")};");
-            code.AppendLine($"{indent}}}");
+            code.AppendLine($"foreach (var item in {valueName}.{fieldName})");
+            code.OpenBlock();
+            code.AppendLine($"    {GetEncodeStatement(typeSpec, "item")};");
+            code.CloseBlock();
         }
         else
         {
-            code.AppendLine($"{indent}{GetEncodeStatement(typeSpec, $"{valueName}.{fieldName}")};");
+            code.AppendLine($"{GetEncodeStatement(typeSpec, $"{valueName}.{fieldName}")};");
         }
     }
 
@@ -840,9 +823,10 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         return fieldName;
     }
 
-    private void GenerateDecodeStatement(StringBuilder code, StellarXdrParser.DeclarationContext decl,
-                                       string valueName, string indent = "        ", string fieldName=null)
+    private void GenerateDecodeStatement( StellarXdrParser.DeclarationContext decl,
+                                       string valueName,  string fieldName=null)
     {
+        var code = _context.CurrentCodeFile;
         var typeSpec = decl.typeSpecifier();
         if (String.IsNullOrEmpty(fieldName)) fieldName = getFieldName(decl);
         var typeInfo = GetCSharpTypeInfo(decl);
@@ -851,16 +835,16 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
         {
             if (typeInfo.ArrayType == ArrayType.Fixed)
             {
-                code.AppendLine($"{indent}stream.ReadFixedOpaque({valueName}.{fieldName});");
+                code.AppendLine($"stream.ReadFixedOpaque({valueName}.{fieldName});");
             }
             else
             {
-                code.AppendLine($"{indent}{valueName}.{fieldName} = stream.ReadOpaque();");
+                code.AppendLine($"{valueName}.{fieldName} = stream.ReadOpaque();");
             }
         }
         else if (decl.GetText().StartsWith("string"))
         {
-            code.AppendLine($"{indent}{valueName}.{fieldName} = stream.ReadString();");
+            code.AppendLine($"{valueName}.{fieldName} = stream.ReadString();");
         }
         else if (typeInfo.ArrayType != ArrayType.None)
         {
@@ -871,19 +855,19 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
             }
             else
             {
-                code.AppendLine($"{indent}var length = stream.ReadInt();");
+                code.AppendLine($"var length = stream.ReadInt();");
                 length = "length";
             }
 
-            code.AppendLine($"{indent}{valueName}.{fieldName} = new {typeInfo.CSharpType}[{length}];");
-            code.AppendLine($"{indent}for (var i = 0; i < {length}; i++)");
-            code.AppendLine($"{indent}{{");
-            code.AppendLine($"{indent}    {valueName}.{fieldName}[i] = {GetDecodeStatement(typeSpec)};");
-            code.AppendLine($"{indent}}}");
+            code.AppendLine($"{valueName}.{fieldName} = new {typeInfo.CSharpType}[{length}];");
+            code.AppendLine($"for (var i = 0; i < {length}; i++)");
+            code.OpenBlock();
+            code.AppendLine($"{valueName}.{fieldName}[i] = {GetDecodeStatement(typeSpec)};");
+            code.CloseBlock();
         }
         else
         {
-            code.AppendLine($"{indent}{valueName}.{fieldName} = {GetDecodeStatement(typeSpec)};");
+            code.AppendLine($"{valueName}.{fieldName} = {GetDecodeStatement(typeSpec)};");
         }
     }
 
@@ -891,9 +875,9 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
     {
         return typeSpec.GetText() switch
         {
-            "unsigned int" => $"stream.WriteUInt({valueName})",
+            "unsignedint" => $"stream.WriteUInt({valueName})",
             "int" => $"stream.WriteInt({valueName})",
-            "unsigned hyper" => $"stream.WriteULong({valueName})",
+            "unsignedhyper" => $"stream.WriteULong({valueName})",
             "hyper" => $"stream.WriteLong({valueName})",
             "float" => $"stream.WriteFloat({valueName})",
             "double" => $"stream.WriteDouble({valueName})",
@@ -906,9 +890,9 @@ public partial class CSharpCodeGenVisitor : StellarXdrBaseVisitor<object>
     {
         return typeSpec.GetText() switch
         {
-            "unsigned int" => "stream.ReadUInt()",
+            "unsignedint" => "stream.ReadUInt()",
             "int" => "stream.ReadInt()",
-            "unsigned hyper" => "stream.ReadULong()",
+            "unsignedhyper" => "stream.ReadULong()",
             "hyper" => "stream.ReadLong()",
             "float" => "stream.ReadFloat()",
             "double" => "stream.ReadDouble()",

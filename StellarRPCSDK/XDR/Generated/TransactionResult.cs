@@ -47,68 +47,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class TransactionResult
-{
-    private int64 _feeCharged;
-    public int64 feeCharged
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class TransactionResult
     {
-        get => _feeCharged;
-        set
+        private int64 _feeCharged;
+        public int64 feeCharged
         {
-            _feeCharged = value;
+            get => _feeCharged;
+            set
+            {
+                _feeCharged = value;
+            }
+        }
+
+        private object _result;
+        public object result
+        {
+            get => _result;
+            set
+            {
+                _result = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public TransactionResult()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _result;
-    public object result
+    public static partial class TransactionResultXdr
     {
-        get => _result;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TransactionResult value)
         {
-            _result = value;
+            value.Validate();
+            int64Xdr.Encode(stream, value.feeCharged);
+            Xdr.Encode(stream, value.result);
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static TransactionResult Decode(XdrReader stream)
+        {
+            var result = new TransactionResult();
+            result.feeCharged = int64Xdr.Decode(stream);
+            result.result = Xdr.Decode(stream);
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private object _ext;
-    public object ext
-    {
-        get => _ext;
-        set
-        {
-            _ext = value;
-        }
-    }
-
-    public TransactionResult()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class TransactionResultXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TransactionResult value)
-    {
-        value.Validate();
-        int64Xdr.Encode(stream, value.feeCharged);
-        Xdr.Encode(stream, value.result);
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static TransactionResult Decode(XdrReader stream)
-    {
-        var result = new TransactionResult();
-        result.feeCharged = int64Xdr.Decode(stream);
-        result.result = Xdr.Decode(stream);
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -14,28 +14,26 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum BumpSequenceResultCode
-{
-    BUMP_SEQUENCE_SUCCESS = 0,
-    BUMP_SEQUENCE_BAD_SEQ = -1,
-}
-
-public static partial class BumpSequenceResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, BumpSequenceResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum BumpSequenceResultCode
     {
-       stream.WriteInt((int)value);
+        BUMP_SEQUENCE_SUCCESS = 0,
+        BUMP_SEQUENCE_BAD_SEQ = -1,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static BumpSequenceResultCode Decode(XdrReader stream)
+    public static partial class BumpSequenceResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(BumpSequenceResultCode), value))
-            throw new InvalidOperationException($"Unknown BumpSequenceResultCode value: {value}");
-        return (BumpSequenceResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, BumpSequenceResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static BumpSequenceResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(BumpSequenceResultCode), value))
+              throw new InvalidOperationException($"Unknown BumpSequenceResultCode value: {value}");
+            return (BumpSequenceResultCode)value;
+        }
     }
-}
-}

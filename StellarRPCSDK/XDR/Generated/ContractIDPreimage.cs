@@ -18,79 +18,76 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public abstract partial class ContractIDPreimage
-{
-    public abstract ContractIDPreimageType Discriminator { get; }
-
-    /// <summary>Validates the union case matches its discriminator</summary>
-    public abstract void ValidateCase();
-}
-
-public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS : ContractIDPreimage
-{
-    public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
-    private object _fromAddress;
-    public object fromAddress
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public abstract partial class ContractIDPreimage
     {
-        get => _fromAddress;
-        set
-        {
-            _fromAddress = value;
-        }
+        public abstract ContractIDPreimageType Discriminator { get; }
+
+        /// <summary>Validates the union case matches its discriminator</summary>
+        public abstract void ValidateCase();
     }
-
-    public override void ValidateCase() {}
-}
-
-public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET : ContractIDPreimage
-{
-    public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ASSET;
-    private Asset _fromAsset;
-    public Asset fromAsset
+    public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS : ContractIDPreimage
     {
-        get => _fromAsset;
-        set
+        public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
+        private object _fromAddress;
+        public object fromAddress
         {
-            _fromAsset = value;
+            get => _fromAddress;
+            set
+            {
+                _fromAddress = value;
+            }
         }
+
+        public override void ValidateCase() {}
     }
-
-    public override void ValidateCase() {}
-}
-
-public static partial class ContractIDPreimageXdr
-{
-    public static void Encode(XdrWriter stream, ContractIDPreimage value)
+    public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET : ContractIDPreimage
     {
-        value.ValidateCase();
-        stream.WriteInt((int)value.Discriminator);
-        switch (value)
+        public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ASSET;
+        private Asset _fromAsset;
+        public Asset fromAsset
         {
-            case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
+            get => _fromAsset;
+            set
+            {
+                _fromAsset = value;
+            }
+        }
+
+        public override void ValidateCase() {}
+    }
+    public static partial class ContractIDPreimageXdr
+    {
+        public static void Encode(XdrWriter stream, ContractIDPreimage value)
+        {
+            value.ValidateCase();
+            stream.WriteInt((int)value.Discriminator);
+            switch (value)
+            {
+                case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
                 Xdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress);
                 break;
-            case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET case_CONTRACT_ID_PREIMAGE_FROM_ASSET:
+                case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET case_CONTRACT_ID_PREIMAGE_FROM_ASSET:
                 AssetXdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset);
                 break;
+            }
         }
-    }
-    public static ContractIDPreimage Decode(XdrReader stream)
-    {
-        var discriminator = (ContractIDPreimageType)stream.ReadInt();
-        switch (discriminator)
+        public static ContractIDPreimage Decode(XdrReader stream)
         {
-            case CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
+            var discriminator = (ContractIDPreimageType)stream.ReadInt();
+            switch (discriminator)
+            {
+                case CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
                 var result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS();
-                result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress = Xdr.Decode(stream);
+                result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.                 = Xdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
-            case CONTRACT_ID_PREIMAGE_FROM_ASSET:
+                case CONTRACT_ID_PREIMAGE_FROM_ASSET:
                 var result_CONTRACT_ID_PREIMAGE_FROM_ASSET = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET();
-                result_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset = AssetXdr.Decode(stream);
+                result_CONTRACT_ID_PREIMAGE_FROM_ASSET.                 = AssetXdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ASSET;
-            default:
+                default:
                 throw new Exception($"Unknown discriminator for ContractIDPreimage: {discriminator}");
+            }
         }
     }
-}
 }

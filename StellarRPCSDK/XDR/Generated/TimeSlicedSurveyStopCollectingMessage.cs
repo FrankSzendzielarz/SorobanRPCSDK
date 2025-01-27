@@ -13,68 +13,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class TimeSlicedSurveyStopCollectingMessage
-{
-    private NodeID _surveyorID;
-    public NodeID surveyorID
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class TimeSlicedSurveyStopCollectingMessage
     {
-        get => _surveyorID;
-        set
+        private NodeID _surveyorID;
+        public NodeID surveyorID
         {
-            _surveyorID = value;
+            get => _surveyorID;
+            set
+            {
+                _surveyorID = value;
+            }
+        }
+
+        private uint32 _nonce;
+        public uint32 nonce
+        {
+            get => _nonce;
+            set
+            {
+                _nonce = value;
+            }
+        }
+
+        private uint32 _ledgerNum;
+        public uint32 ledgerNum
+        {
+            get => _ledgerNum;
+            set
+            {
+                _ledgerNum = value;
+            }
+        }
+
+        public TimeSlicedSurveyStopCollectingMessage()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private uint32 _nonce;
-    public uint32 nonce
+    public static partial class TimeSlicedSurveyStopCollectingMessageXdr
     {
-        get => _nonce;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TimeSlicedSurveyStopCollectingMessage value)
         {
-            _nonce = value;
+            value.Validate();
+            NodeIDXdr.Encode(stream, value.surveyorID);
+            uint32Xdr.Encode(stream, value.nonce);
+            uint32Xdr.Encode(stream, value.ledgerNum);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static TimeSlicedSurveyStopCollectingMessage Decode(XdrReader stream)
+        {
+            var result = new TimeSlicedSurveyStopCollectingMessage();
+            result.surveyorID = NodeIDXdr.Decode(stream);
+            result.nonce = uint32Xdr.Decode(stream);
+            result.ledgerNum = uint32Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private uint32 _ledgerNum;
-    public uint32 ledgerNum
-    {
-        get => _ledgerNum;
-        set
-        {
-            _ledgerNum = value;
-        }
-    }
-
-    public TimeSlicedSurveyStopCollectingMessage()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class TimeSlicedSurveyStopCollectingMessageXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TimeSlicedSurveyStopCollectingMessage value)
-    {
-        value.Validate();
-        NodeIDXdr.Encode(stream, value.surveyorID);
-        uint32Xdr.Encode(stream, value.nonce);
-        uint32Xdr.Encode(stream, value.ledgerNum);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static TimeSlicedSurveyStopCollectingMessage Decode(XdrReader stream)
-    {
-        var result = new TimeSlicedSurveyStopCollectingMessage();
-        result.surveyorID = NodeIDXdr.Decode(stream);
-        result.nonce = uint32Xdr.Decode(stream);
-        result.ledgerNum = uint32Xdr.Decode(stream);
-        return result;
-    }
-}
 }

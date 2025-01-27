@@ -15,28 +15,26 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum EndSponsoringFutureReservesResultCode
-{
-    END_SPONSORING_FUTURE_RESERVES_SUCCESS = 0,
-    END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED = -1,
-}
-
-public static partial class EndSponsoringFutureReservesResultCodeXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, EndSponsoringFutureReservesResultCode value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum EndSponsoringFutureReservesResultCode
     {
-       stream.WriteInt((int)value);
+        END_SPONSORING_FUTURE_RESERVES_SUCCESS = 0,
+        END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED = -1,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static EndSponsoringFutureReservesResultCode Decode(XdrReader stream)
+    public static partial class EndSponsoringFutureReservesResultCodeXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(EndSponsoringFutureReservesResultCode), value))
-            throw new InvalidOperationException($"Unknown EndSponsoringFutureReservesResultCode value: {value}");
-        return (EndSponsoringFutureReservesResultCode)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, EndSponsoringFutureReservesResultCode value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static EndSponsoringFutureReservesResultCode Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(EndSponsoringFutureReservesResultCode), value))
+              throw new InvalidOperationException($"Unknown EndSponsoringFutureReservesResultCode value: {value}");
+            return (EndSponsoringFutureReservesResultCode)value;
+        }
     }
-}
-}

@@ -46,68 +46,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class LedgerEntry
-{
-    private uint32 _lastModifiedLedgerSeq;
-    public uint32 lastModifiedLedgerSeq
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class LedgerEntry
     {
-        get => _lastModifiedLedgerSeq;
-        set
+        private uint32 _lastModifiedLedgerSeq;
+        public uint32 lastModifiedLedgerSeq
         {
-            _lastModifiedLedgerSeq = value;
+            get => _lastModifiedLedgerSeq;
+            set
+            {
+                _lastModifiedLedgerSeq = value;
+            }
+        }
+
+        private object _data;
+        public object data
+        {
+            get => _data;
+            set
+            {
+                _data = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public LedgerEntry()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _data;
-    public object data
+    public static partial class LedgerEntryXdr
     {
-        get => _data;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, LedgerEntry value)
         {
-            _data = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.lastModifiedLedgerSeq);
+            Xdr.Encode(stream, value.data);
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static LedgerEntry Decode(XdrReader stream)
+        {
+            var result = new LedgerEntry();
+            result.lastModifiedLedgerSeq = uint32Xdr.Decode(stream);
+            result.data = Xdr.Decode(stream);
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private object _ext;
-    public object ext
-    {
-        get => _ext;
-        set
-        {
-            _ext = value;
-        }
-    }
-
-    public LedgerEntry()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class LedgerEntryXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, LedgerEntry value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.lastModifiedLedgerSeq);
-        Xdr.Encode(stream, value.data);
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static LedgerEntry Decode(XdrReader stream)
-    {
-        var result = new LedgerEntry();
-        result.lastModifiedLedgerSeq = uint32Xdr.Decode(stream);
-        result.data = Xdr.Decode(stream);
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

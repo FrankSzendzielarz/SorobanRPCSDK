@@ -22,56 +22,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class BucketMetadata
-{
-    private uint32 _ledgerVersion;
-    public uint32 ledgerVersion
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class BucketMetadata
     {
-        get => _ledgerVersion;
-        set
+        private uint32 _ledgerVersion;
+        public uint32 ledgerVersion
         {
-            _ledgerVersion = value;
+            get => _ledgerVersion;
+            set
+            {
+                _ledgerVersion = value;
+            }
+        }
+
+        private object _ext;
+        public object ext
+        {
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        public BucketMetadata()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _ext;
-    public object ext
+    public static partial class BucketMetadataXdr
     {
-        get => _ext;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, BucketMetadata value)
         {
-            _ext = value;
+            value.Validate();
+            uint32Xdr.Encode(stream, value.ledgerVersion);
+            Xdr.Encode(stream, value.ext);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static BucketMetadata Decode(XdrReader stream)
+        {
+            var result = new BucketMetadata();
+            result.ledgerVersion = uint32Xdr.Decode(stream);
+            result.ext = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public BucketMetadata()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class BucketMetadataXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, BucketMetadata value)
-    {
-        value.Validate();
-        uint32Xdr.Encode(stream, value.ledgerVersion);
-        Xdr.Encode(stream, value.ext);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static BucketMetadata Decode(XdrReader stream)
-    {
-        var result = new BucketMetadata();
-        result.ledgerVersion = uint32Xdr.Decode(stream);
-        result.ext = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

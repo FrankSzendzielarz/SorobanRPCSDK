@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class InflationPayout
-{
-    private AccountID _destination;
-    public AccountID destination
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class InflationPayout
     {
-        get => _destination;
-        set
+        private AccountID _destination;
+        public AccountID destination
         {
-            _destination = value;
+            get => _destination;
+            set
+            {
+                _destination = value;
+            }
+        }
+
+        private int64 _amount;
+        public int64 amount
+        {
+            get => _amount;
+            set
+            {
+                _amount = value;
+            }
+        }
+
+        public InflationPayout()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private int64 _amount;
-    public int64 amount
+    public static partial class InflationPayoutXdr
     {
-        get => _amount;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, InflationPayout value)
         {
-            _amount = value;
+            value.Validate();
+            AccountIDXdr.Encode(stream, value.destination);
+            int64Xdr.Encode(stream, value.amount);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static InflationPayout Decode(XdrReader stream)
+        {
+            var result = new InflationPayout();
+            result.destination = AccountIDXdr.Decode(stream);
+            result.amount = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public InflationPayout()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class InflationPayoutXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, InflationPayout value)
-    {
-        value.Validate();
-        AccountIDXdr.Encode(stream, value.destination);
-        int64Xdr.Encode(stream, value.amount);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static InflationPayout Decode(XdrReader stream)
-    {
-        var result = new InflationPayout();
-        result.destination = AccountIDXdr.Decode(stream);
-        result.amount = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

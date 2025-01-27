@@ -73,56 +73,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class Operation
-{
-    private MuxedAccount _sourceAccount;
-    public MuxedAccount sourceAccount
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class Operation
     {
-        get => _sourceAccount;
-        set
+        private MuxedAccount _sourceAccount;
+        public MuxedAccount sourceAccount
         {
-            _sourceAccount = value;
+            get => _sourceAccount;
+            set
+            {
+                _sourceAccount = value;
+            }
+        }
+
+        private object _body;
+        public object body
+        {
+            get => _body;
+            set
+            {
+                _body = value;
+            }
+        }
+
+        public Operation()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _body;
-    public object body
+    public static partial class OperationXdr
     {
-        get => _body;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, Operation value)
         {
-            _body = value;
+            value.Validate();
+            MuxedAccountXdr.Encode(stream, value.sourceAccount);
+            Xdr.Encode(stream, value.body);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static Operation Decode(XdrReader stream)
+        {
+            var result = new Operation();
+            result.sourceAccount = MuxedAccountXdr.Decode(stream);
+            result.body = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public Operation()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class OperationXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, Operation value)
-    {
-        value.Validate();
-        MuxedAccountXdr.Encode(stream, value.sourceAccount);
-        Xdr.Encode(stream, value.body);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static Operation Decode(XdrReader stream)
-    {
-        var result = new Operation();
-        result.sourceAccount = MuxedAccountXdr.Decode(stream);
-        result.body = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

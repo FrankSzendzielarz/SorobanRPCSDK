@@ -14,94 +14,91 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SCSpecFunctionV0
-{
-    private SCSymbol _name;
-    public SCSymbol name
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SCSpecFunctionV0
     {
-        get => _name;
-        set
+        private SCSymbol _name;
+        public SCSymbol name
         {
-            _name = value;
+            get => _name;
+            set
+            {
+                _name = value;
+            }
         }
-    }
 
-    private SCSpecFunctionInputV0[] _inputs;
-    public SCSpecFunctionInputV0[] inputs
-    {
-        get => _inputs;
-        set
+        private SCSpecFunctionInputV0[] _inputs;
+        public SCSpecFunctionInputV0[] inputs
         {
-            if (value.Length > 10)
-                throw new ArgumentException($"Cannot exceed 10 bytes");
-            _inputs = value;
+            get => _inputs;
+            set
+            {
+                if (value.Length > 10)
+                	throw new ArgumentException($"Cannot exceed 10 bytes");
+                _inputs = value;
+            }
         }
-    }
 
-    private SCSpecTypeDef[] _outputs;
-    public SCSpecTypeDef[] outputs
-    {
-        get => _outputs;
-        set
+        private SCSpecTypeDef[] _outputs;
+        public SCSpecTypeDef[] outputs
         {
-            if (value.Length > 1)
-                throw new ArgumentException($"Cannot exceed 1 bytes");
-            _outputs = value;
+            get => _outputs;
+            set
+            {
+                if (value.Length > 1)
+                	throw new ArgumentException($"Cannot exceed 1 bytes");
+                _outputs = value;
+            }
         }
-    }
 
-    public SCSpecFunctionV0()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-        if (inputs.Length > 10)
-            throw new InvalidOperationException($"inputs cannot exceed 10 elements");
-        if (outputs.Length > 1)
-            throw new InvalidOperationException($"outputs cannot exceed 1 elements");
-    }
-}
-
-public static partial class SCSpecFunctionV0Xdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SCSpecFunctionV0 value)
-    {
-        value.Validate();
-        SCSymbolXdr.Encode(stream, value.name);
-        stream.WriteInt(value.inputs.Length);
-        foreach (var item in value.inputs)
+        public SCSpecFunctionV0()
         {
-            SCSpecFunctionInputV0Xdr.Encode(stream, item);
         }
-        stream.WriteInt(value.outputs.Length);
-        foreach (var item in value.outputs)
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
         {
-            SCSpecTypeDefXdr.Encode(stream, item);
+            if (inputs.Length > 10)
+            	throw new InvalidOperationException($"inputs cannot exceed 10 elements");
+            if (outputs.Length > 1)
+            	throw new InvalidOperationException($"outputs cannot exceed 1 elements");
         }
     }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SCSpecFunctionV0 Decode(XdrReader stream)
+    public static partial class SCSpecFunctionV0Xdr
     {
-        var result = new SCSpecFunctionV0();
-        result.name = SCSymbolXdr.Decode(stream);
-        var length = stream.ReadInt();
-        result.inputs = new SCSpecFunctionInputV0[length];
-        for (var i = 0; i < length; i++)
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SCSpecFunctionV0 value)
         {
-            result.inputs[i] = SCSpecFunctionInputV0Xdr.Decode(stream);
+            value.Validate();
+            SCSymbolXdr.Encode(stream, value.name);
+            stream.WriteInt(value.inputs.Length);
+            foreach (var item in value.inputs)
+            {
+                    SCSpecFunctionInputV0Xdr.Encode(stream, item);
+            }
+            stream.WriteInt(value.outputs.Length);
+            foreach (var item in value.outputs)
+            {
+                    SCSpecTypeDefXdr.Encode(stream, item);
+            }
         }
-        var length = stream.ReadInt();
-        result.outputs = new SCSpecTypeDef[length];
-        for (var i = 0; i < length; i++)
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SCSpecFunctionV0 Decode(XdrReader stream)
         {
-            result.outputs[i] = SCSpecTypeDefXdr.Decode(stream);
+            var result = new SCSpecFunctionV0();
+            result.name = SCSymbolXdr.Decode(stream);
+            var length = stream.ReadInt();
+            result.inputs = new SCSpecFunctionInputV0[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.inputs[i] = SCSpecFunctionInputV0Xdr.Decode(stream);
+            }
+            var length = stream.ReadInt();
+            result.outputs = new SCSpecTypeDef[length];
+            for (var i = 0; i < length; i++)
+            {
+                result.outputs[i] = SCSpecTypeDefXdr.Decode(stream);
+            }
+            return result;
         }
-        return result;
     }
-}
 }

@@ -20,56 +20,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class TransactionSignaturePayload
-{
-    private Hash _networkId;
-    public Hash networkId
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class TransactionSignaturePayload
     {
-        get => _networkId;
-        set
+        private Hash _networkId;
+        public Hash networkId
         {
-            _networkId = value;
+            get => _networkId;
+            set
+            {
+                _networkId = value;
+            }
+        }
+
+        private object _taggedTransaction;
+        public object taggedTransaction
+        {
+            get => _taggedTransaction;
+            set
+            {
+                _taggedTransaction = value;
+            }
+        }
+
+        public TransactionSignaturePayload()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private object _taggedTransaction;
-    public object taggedTransaction
+    public static partial class TransactionSignaturePayloadXdr
     {
-        get => _taggedTransaction;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TransactionSignaturePayload value)
         {
-            _taggedTransaction = value;
+            value.Validate();
+            HashXdr.Encode(stream, value.networkId);
+            Xdr.Encode(stream, value.taggedTransaction);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static TransactionSignaturePayload Decode(XdrReader stream)
+        {
+            var result = new TransactionSignaturePayload();
+            result.networkId = HashXdr.Decode(stream);
+            result.taggedTransaction = Xdr.Decode(stream);
+            return result;
         }
     }
-
-    public TransactionSignaturePayload()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class TransactionSignaturePayloadXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TransactionSignaturePayload value)
-    {
-        value.Validate();
-        HashXdr.Encode(stream, value.networkId);
-        Xdr.Encode(stream, value.taggedTransaction);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static TransactionSignaturePayload Decode(XdrReader stream)
-    {
-        var result = new TransactionSignaturePayload();
-        result.networkId = HashXdr.Decode(stream);
-        result.taggedTransaction = Xdr.Decode(stream);
-        return result;
-    }
-}
 }

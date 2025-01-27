@@ -12,56 +12,53 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SCMapEntry
-{
-    private SCVal _key;
-    public SCVal key
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SCMapEntry
     {
-        get => _key;
-        set
+        private SCVal _key;
+        public SCVal key
         {
-            _key = value;
+            get => _key;
+            set
+            {
+                _key = value;
+            }
+        }
+
+        private SCVal _val;
+        public SCVal val
+        {
+            get => _val;
+            set
+            {
+                _val = value;
+            }
+        }
+
+        public SCMapEntry()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private SCVal _val;
-    public SCVal val
+    public static partial class SCMapEntryXdr
     {
-        get => _val;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SCMapEntry value)
         {
-            _val = value;
+            value.Validate();
+            SCValXdr.Encode(stream, value.key);
+            SCValXdr.Encode(stream, value.val);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SCMapEntry Decode(XdrReader stream)
+        {
+            var result = new SCMapEntry();
+            result.key = SCValXdr.Decode(stream);
+            result.val = SCValXdr.Decode(stream);
+            return result;
         }
     }
-
-    public SCMapEntry()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SCMapEntryXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SCMapEntry value)
-    {
-        value.Validate();
-        SCValXdr.Encode(stream, value.key);
-        SCValXdr.Encode(stream, value.val);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SCMapEntry Decode(XdrReader stream)
-    {
-        var result = new SCMapEntry();
-        result.key = SCValXdr.Decode(stream);
-        result.val = SCValXdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -22,68 +22,65 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public partial class SorobanTransactionData
-{
-    private ExtensionPoint _ext;
-    public ExtensionPoint ext
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public partial class SorobanTransactionData
     {
-        get => _ext;
-        set
+        private ExtensionPoint _ext;
+        public ExtensionPoint ext
         {
-            _ext = value;
+            get => _ext;
+            set
+            {
+                _ext = value;
+            }
+        }
+
+        private SorobanResources _resources;
+        public SorobanResources resources
+        {
+            get => _resources;
+            set
+            {
+                _resources = value;
+            }
+        }
+
+        private int64 _resourceFee;
+        public int64 resourceFee
+        {
+            get => _resourceFee;
+            set
+            {
+                _resourceFee = value;
+            }
+        }
+
+        public SorobanTransactionData()
+        {
+        }
+        /// <summary>Validates all fields have valid values</summary>
+        public virtual void Validate()
+        {
         }
     }
-
-    private SorobanResources _resources;
-    public SorobanResources resources
+    public static partial class SorobanTransactionDataXdr
     {
-        get => _resources;
-        set
+        /// <summary>Encodes struct to XDR stream</summary>
+        public static void Encode(XdrWriter stream, SorobanTransactionData value)
         {
-            _resources = value;
+            value.Validate();
+            ExtensionPointXdr.Encode(stream, value.ext);
+            SorobanResourcesXdr.Encode(stream, value.resources);
+            int64Xdr.Encode(stream, value.resourceFee);
+        }
+        /// <summary>Decodes struct from XDR stream</summary>
+        public static SorobanTransactionData Decode(XdrReader stream)
+        {
+            var result = new SorobanTransactionData();
+            result.ext = ExtensionPointXdr.Decode(stream);
+            result.resources = SorobanResourcesXdr.Decode(stream);
+            result.resourceFee = int64Xdr.Decode(stream);
+            return result;
         }
     }
-
-    private int64 _resourceFee;
-    public int64 resourceFee
-    {
-        get => _resourceFee;
-        set
-        {
-            _resourceFee = value;
-        }
-    }
-
-    public SorobanTransactionData()
-    {
-    }
-
-    /// <summary>Validates all fields have valid values</summary>
-    public virtual void Validate()
-    {
-    }
-}
-
-public static partial class SorobanTransactionDataXdr
-{
-    /// <summary>Encodes struct to XDR stream</summary>
-    public static void Encode(XdrWriter stream, SorobanTransactionData value)
-    {
-        value.Validate();
-        ExtensionPointXdr.Encode(stream, value.ext);
-        SorobanResourcesXdr.Encode(stream, value.resources);
-        int64Xdr.Encode(stream, value.resourceFee);
-    }
-
-    /// <summary>Decodes struct from XDR stream</summary>
-    public static SorobanTransactionData Decode(XdrReader stream)
-    {
-        var result = new SorobanTransactionData();
-        result.ext = ExtensionPointXdr.Decode(stream);
-        result.resources = SorobanResourcesXdr.Decode(stream);
-        result.resourceFee = int64Xdr.Decode(stream);
-        return result;
-    }
-}
 }

@@ -18,29 +18,27 @@ using System;
 
 namespace stellar {
 
-[System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
-public enum TrustLineFlags
-{
-    AUTHORIZED_FLAG = 1,
-    AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG = 2,
-    TRUSTLINE_CLAWBACK_ENABLED_FLAG = 4,
-}
-
-public static partial class TrustLineFlagsXdr
-{
-    /// <summary>Encodes enum value to XDR stream</summary>
-    public static void Encode(XdrWriter stream, TrustLineFlags value)
+    [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    public enum TrustLineFlags
     {
-       stream.WriteInt((int)value);
+        AUTHORIZED_FLAG = 1,
+        AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG = 2,
+        TRUSTLINE_CLAWBACK_ENABLED_FLAG = 4,
     }
 
-    /// <summary>Decodes enum value from XDR stream</summary>
-    public static TrustLineFlags Decode(XdrReader stream)
+    public static partial class TrustLineFlagsXdr
     {
-        var value = stream.ReadInt();
-        if (!Enum.IsDefined(typeof(TrustLineFlags), value))
-            throw new InvalidOperationException($"Unknown TrustLineFlags value: {value}");
-        return (TrustLineFlags)value;
+        /// <summary>Encodes enum value to XDR stream</summary>
+        public static void Encode(XdrWriter stream, TrustLineFlags value)
+        {
+            stream.WriteInt((int)value);
+        }
+        /// <summary>Decodes enum value from XDR stream</summary>
+        public static TrustLineFlags Decode(XdrReader stream)
+        {
+            var value = stream.ReadInt();
+            if (!Enum.IsDefined(typeof(TrustLineFlags), value))
+              throw new InvalidOperationException($"Unknown TrustLineFlags value: {value}");
+            return (TrustLineFlags)value;
+        }
     }
-}
-}
