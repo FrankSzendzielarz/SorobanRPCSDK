@@ -15,14 +15,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class PublicKey
     {
-        public abstract PublicKeyType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class PublicKey_PUBLIC_KEY_TYPE_ED25519 : PublicKey
     {
-        public override PublicKeyType Discriminator => PUBLIC_KEY_TYPE_ED25519;
+        public override int Discriminator => PUBLIC_KEY_TYPE_ED25519;
         private uint256 _ed25519;
         public uint256 ed25519
         {
@@ -50,7 +50,7 @@ namespace stellar {
         }
         public static PublicKey Decode(XdrReader stream)
         {
-            var discriminator = (PublicKeyType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case PUBLIC_KEY_TYPE_ED25519:

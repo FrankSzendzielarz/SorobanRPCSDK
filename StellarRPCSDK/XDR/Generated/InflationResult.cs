@@ -17,14 +17,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class InflationResult
     {
-        public abstract InflationResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class InflationResult_INFLATION_SUCCESS : InflationResult
     {
-        public override InflationResultCode Discriminator => INFLATION_SUCCESS;
+        public override int Discriminator => INFLATION_SUCCESS;
         private InflationPayout[] _payouts;
         public InflationPayout[] payouts
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class InflationResult_INFLATION_NOT_TIME : InflationResult
     {
-        public override InflationResultCode Discriminator => INFLATION_NOT_TIME;
+        public override int Discriminator => INFLATION_NOT_TIME;
 
         public override void ValidateCase() {}
     }
@@ -64,7 +64,7 @@ namespace stellar {
         }
         public static InflationResult Decode(XdrReader stream)
         {
-            var discriminator = (InflationResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case INFLATION_SUCCESS:

@@ -26,74 +26,74 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SetOptionsResult
     {
-        public abstract SetOptionsResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_SUCCESS : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_SUCCESS;
+        public override int Discriminator => SET_OPTIONS_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_LOW_RESERVE : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_LOW_RESERVE;
+        public override int Discriminator => SET_OPTIONS_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_TOO_MANY_SIGNERS : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_TOO_MANY_SIGNERS;
+        public override int Discriminator => SET_OPTIONS_TOO_MANY_SIGNERS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_BAD_FLAGS : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_BAD_FLAGS;
+        public override int Discriminator => SET_OPTIONS_BAD_FLAGS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_INVALID_INFLATION : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_INVALID_INFLATION;
+        public override int Discriminator => SET_OPTIONS_INVALID_INFLATION;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_CANT_CHANGE : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_CANT_CHANGE;
+        public override int Discriminator => SET_OPTIONS_CANT_CHANGE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_UNKNOWN_FLAG : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_UNKNOWN_FLAG;
+        public override int Discriminator => SET_OPTIONS_UNKNOWN_FLAG;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_THRESHOLD_OUT_OF_RANGE : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_THRESHOLD_OUT_OF_RANGE;
+        public override int Discriminator => SET_OPTIONS_THRESHOLD_OUT_OF_RANGE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_BAD_SIGNER : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_BAD_SIGNER;
+        public override int Discriminator => SET_OPTIONS_BAD_SIGNER;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_INVALID_HOME_DOMAIN : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_INVALID_HOME_DOMAIN;
+        public override int Discriminator => SET_OPTIONS_INVALID_HOME_DOMAIN;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_AUTH_REVOCABLE_REQUIRED : SetOptionsResult
     {
-        public override SetOptionsResultCode Discriminator => SET_OPTIONS_AUTH_REVOCABLE_REQUIRED;
+        public override int Discriminator => SET_OPTIONS_AUTH_REVOCABLE_REQUIRED;
 
         public override void ValidateCase() {}
     }
@@ -131,7 +131,7 @@ namespace stellar {
         }
         public static SetOptionsResult Decode(XdrReader stream)
         {
-            var discriminator = (SetOptionsResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case SET_OPTIONS_SUCCESS:

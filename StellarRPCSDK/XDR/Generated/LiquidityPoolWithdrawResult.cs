@@ -21,44 +21,44 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LiquidityPoolWithdrawResult
     {
-        public abstract LiquidityPoolWithdrawResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_SUCCESS;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_MALFORMED : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_MALFORMED;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_NO_TRUST : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_LINE_FULL : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM : LiquidityPoolWithdrawResult
     {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
+        public override int Discriminator => LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
 
         public override void ValidateCase() {}
     }
@@ -86,7 +86,7 @@ namespace stellar {
         }
         public static LiquidityPoolWithdrawResult Decode(XdrReader stream)
         {
-            var discriminator = (LiquidityPoolWithdrawResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case LIQUIDITY_POOL_WITHDRAW_SUCCESS:

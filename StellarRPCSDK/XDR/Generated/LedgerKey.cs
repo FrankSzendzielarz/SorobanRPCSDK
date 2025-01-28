@@ -74,14 +74,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LedgerKey
     {
-        public abstract LedgerEntryType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LedgerKey_ACCOUNT : LedgerKey
     {
-        public override LedgerEntryType Discriminator => ACCOUNT;
+        public override int Discriminator => ACCOUNT;
         private object _account;
         public object account
         {
@@ -96,7 +96,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_TRUSTLINE : LedgerKey
     {
-        public override LedgerEntryType Discriminator => TRUSTLINE;
+        public override int Discriminator => TRUSTLINE;
         private object _trustLine;
         public object trustLine
         {
@@ -111,7 +111,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_OFFER : LedgerKey
     {
-        public override LedgerEntryType Discriminator => OFFER;
+        public override int Discriminator => OFFER;
         private object _offer;
         public object offer
         {
@@ -126,7 +126,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_DATA : LedgerKey
     {
-        public override LedgerEntryType Discriminator => DATA;
+        public override int Discriminator => DATA;
         private object _data;
         public object data
         {
@@ -141,7 +141,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CLAIMABLE_BALANCE : LedgerKey
     {
-        public override LedgerEntryType Discriminator => CLAIMABLE_BALANCE;
+        public override int Discriminator => CLAIMABLE_BALANCE;
         private object _claimableBalance;
         public object claimableBalance
         {
@@ -156,7 +156,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_LIQUIDITY_POOL : LedgerKey
     {
-        public override LedgerEntryType Discriminator => LIQUIDITY_POOL;
+        public override int Discriminator => LIQUIDITY_POOL;
         private object _liquidityPool;
         public object liquidityPool
         {
@@ -171,7 +171,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONTRACT_DATA : LedgerKey
     {
-        public override LedgerEntryType Discriminator => CONTRACT_DATA;
+        public override int Discriminator => CONTRACT_DATA;
         private object _contractData;
         public object contractData
         {
@@ -186,7 +186,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONTRACT_CODE : LedgerKey
     {
-        public override LedgerEntryType Discriminator => CONTRACT_CODE;
+        public override int Discriminator => CONTRACT_CODE;
         private object _contractCode;
         public object contractCode
         {
@@ -201,7 +201,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONFIG_SETTING : LedgerKey
     {
-        public override LedgerEntryType Discriminator => CONFIG_SETTING;
+        public override int Discriminator => CONFIG_SETTING;
         private object _configSetting;
         public object configSetting
         {
@@ -216,7 +216,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_TTL : LedgerKey
     {
-        public override LedgerEntryType Discriminator => TTL;
+        public override int Discriminator => TTL;
         private object _ttl;
         public object ttl
         {
@@ -271,7 +271,7 @@ namespace stellar {
         }
         public static LedgerKey Decode(XdrReader stream)
         {
-            var discriminator = (LedgerEntryType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case ACCOUNT:

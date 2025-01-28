@@ -22,11 +22,12 @@ namespace Generator.XDR
 
         public string FullCSharpType => ArrayType!=ArrayType.None ? $"{CSharpType}[]" : CSharpType;
 
-        public CSharpTypeInfo(string csharpType, ArrayType arrayType, int? maxLength = null)
+        public CSharpTypeInfo(string csharpType, ArrayType arrayType, int? maxLength = null, bool isEnum=false)
         {
             CSharpType = csharpType;
             ArrayType = arrayType;
             MaxLength = maxLength;
+            isEnum = isEnum;
         }
     }
 }

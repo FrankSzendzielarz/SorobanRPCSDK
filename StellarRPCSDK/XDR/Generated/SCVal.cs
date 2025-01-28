@@ -71,14 +71,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCVal
     {
-        public abstract SCValType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCVal_SCV_BOOL : SCVal
     {
-        public override SCValType Discriminator => SCV_BOOL;
+        public override int Discriminator => SCV_BOOL;
         private bool _b;
         public bool b
         {
@@ -93,13 +93,13 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_VOID : SCVal
     {
-        public override SCValType Discriminator => SCV_VOID;
+        public override int Discriminator => SCV_VOID;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCVal_SCV_ERROR : SCVal
     {
-        public override SCValType Discriminator => SCV_ERROR;
+        public override int Discriminator => SCV_ERROR;
         private SCError _error;
         public SCError error
         {
@@ -114,7 +114,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_U32 : SCVal
     {
-        public override SCValType Discriminator => SCV_U32;
+        public override int Discriminator => SCV_U32;
         private uint32 _u32;
         public uint32 u32
         {
@@ -129,7 +129,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_I32 : SCVal
     {
-        public override SCValType Discriminator => SCV_I32;
+        public override int Discriminator => SCV_I32;
         private int32 _i32;
         public int32 i32
         {
@@ -144,7 +144,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_U64 : SCVal
     {
-        public override SCValType Discriminator => SCV_U64;
+        public override int Discriminator => SCV_U64;
         private uint64 _u64;
         public uint64 u64
         {
@@ -159,7 +159,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_I64 : SCVal
     {
-        public override SCValType Discriminator => SCV_I64;
+        public override int Discriminator => SCV_I64;
         private int64 _i64;
         public int64 i64
         {
@@ -174,7 +174,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_TIMEPOINT : SCVal
     {
-        public override SCValType Discriminator => SCV_TIMEPOINT;
+        public override int Discriminator => SCV_TIMEPOINT;
         private TimePoint _timepoint;
         public TimePoint timepoint
         {
@@ -189,7 +189,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_DURATION : SCVal
     {
-        public override SCValType Discriminator => SCV_DURATION;
+        public override int Discriminator => SCV_DURATION;
         private Duration _duration;
         public Duration duration
         {
@@ -204,7 +204,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_U128 : SCVal
     {
-        public override SCValType Discriminator => SCV_U128;
+        public override int Discriminator => SCV_U128;
         private UInt128Parts _u128;
         public UInt128Parts u128
         {
@@ -219,7 +219,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_I128 : SCVal
     {
-        public override SCValType Discriminator => SCV_I128;
+        public override int Discriminator => SCV_I128;
         private Int128Parts _i128;
         public Int128Parts i128
         {
@@ -234,7 +234,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_U256 : SCVal
     {
-        public override SCValType Discriminator => SCV_U256;
+        public override int Discriminator => SCV_U256;
         private UInt256Parts _u256;
         public UInt256Parts u256
         {
@@ -249,7 +249,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_I256 : SCVal
     {
-        public override SCValType Discriminator => SCV_I256;
+        public override int Discriminator => SCV_I256;
         private Int256Parts _i256;
         public Int256Parts i256
         {
@@ -264,7 +264,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_BYTES : SCVal
     {
-        public override SCValType Discriminator => SCV_BYTES;
+        public override int Discriminator => SCV_BYTES;
         private SCBytes _bytes;
         public SCBytes bytes
         {
@@ -279,7 +279,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_STRING : SCVal
     {
-        public override SCValType Discriminator => SCV_STRING;
+        public override int Discriminator => SCV_STRING;
         private SCString _str;
         public SCString str
         {
@@ -294,7 +294,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_SYMBOL : SCVal
     {
-        public override SCValType Discriminator => SCV_SYMBOL;
+        public override int Discriminator => SCV_SYMBOL;
         private SCSymbol _sym;
         public SCSymbol sym
         {
@@ -309,7 +309,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_VEC : SCVal
     {
-        public override SCValType Discriminator => SCV_VEC;
+        public override int Discriminator => SCV_VEC;
         private SCVec _vec;
         public SCVec vec
         {
@@ -324,7 +324,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_MAP : SCVal
     {
-        public override SCValType Discriminator => SCV_MAP;
+        public override int Discriminator => SCV_MAP;
         private SCMap _map;
         public SCMap map
         {
@@ -339,7 +339,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_ADDRESS : SCVal
     {
-        public override SCValType Discriminator => SCV_ADDRESS;
+        public override int Discriminator => SCV_ADDRESS;
         private SCAddress _address;
         public SCAddress address
         {
@@ -354,13 +354,13 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_LEDGER_KEY_CONTRACT_INSTANCE : SCVal
     {
-        public override SCValType Discriminator => SCV_LEDGER_KEY_CONTRACT_INSTANCE;
+        public override int Discriminator => SCV_LEDGER_KEY_CONTRACT_INSTANCE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCVal_SCV_LEDGER_KEY_NONCE : SCVal
     {
-        public override SCValType Discriminator => SCV_LEDGER_KEY_NONCE;
+        public override int Discriminator => SCV_LEDGER_KEY_NONCE;
         private SCNonceKey _nonce_key;
         public SCNonceKey nonce_key
         {
@@ -375,7 +375,7 @@ namespace stellar {
     }
     public sealed partial class SCVal_SCV_CONTRACT_INSTANCE : SCVal
     {
-        public override SCValType Discriminator => SCV_CONTRACT_INSTANCE;
+        public override int Discriminator => SCV_CONTRACT_INSTANCE;
         private SCContractInstance _instance;
         public SCContractInstance instance
         {
@@ -464,7 +464,7 @@ namespace stellar {
         }
         public static SCVal Decode(XdrReader stream)
         {
-            var discriminator = (SCValType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case SCV_BOOL:

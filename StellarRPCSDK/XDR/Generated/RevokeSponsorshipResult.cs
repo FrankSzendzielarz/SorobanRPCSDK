@@ -21,44 +21,44 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class RevokeSponsorshipResult
     {
-        public abstract RevokeSponsorshipResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_SUCCESS;
+        public override int Discriminator => REVOKE_SPONSORSHIP_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_DOES_NOT_EXIST : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
+        public override int Discriminator => REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_NOT_SPONSOR : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_NOT_SPONSOR;
+        public override int Discriminator => REVOKE_SPONSORSHIP_NOT_SPONSOR;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_LOW_RESERVE : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_LOW_RESERVE;
+        public override int Discriminator => REVOKE_SPONSORSHIP_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
+        public override int Discriminator => REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_MALFORMED : RevokeSponsorshipResult
     {
-        public override RevokeSponsorshipResultCode Discriminator => REVOKE_SPONSORSHIP_MALFORMED;
+        public override int Discriminator => REVOKE_SPONSORSHIP_MALFORMED;
 
         public override void ValidateCase() {}
     }
@@ -86,7 +86,7 @@ namespace stellar {
         }
         public static RevokeSponsorshipResult Decode(XdrReader stream)
         {
-            var discriminator = (RevokeSponsorshipResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case REVOKE_SPONSORSHIP_SUCCESS:

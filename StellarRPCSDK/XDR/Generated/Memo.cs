@@ -23,26 +23,26 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class Memo
     {
-        public abstract MemoType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class Memo_MEMO_NONE : Memo
     {
-        public override MemoType Discriminator => MEMO_NONE;
+        public override int Discriminator => MEMO_NONE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class Memo_MEMO_TEXT : Memo
     {
-        public override MemoType Discriminator => MEMO_TEXT;
+        public override int Discriminator => MEMO_TEXT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class Memo_MEMO_ID : Memo
     {
-        public override MemoType Discriminator => MEMO_ID;
+        public override int Discriminator => MEMO_ID;
         private uint64 _id;
         public uint64 id
         {
@@ -57,7 +57,7 @@ namespace stellar {
     }
     public sealed partial class Memo_MEMO_HASH : Memo
     {
-        public override MemoType Discriminator => MEMO_HASH;
+        public override int Discriminator => MEMO_HASH;
         private Hash _hash;
         public Hash hash
         {
@@ -72,7 +72,7 @@ namespace stellar {
     }
     public sealed partial class Memo_MEMO_RETURN : Memo
     {
-        public override MemoType Discriminator => MEMO_RETURN;
+        public override int Discriminator => MEMO_RETURN;
         private Hash _retHash;
         public Hash retHash
         {
@@ -110,7 +110,7 @@ namespace stellar {
         }
         public static Memo Decode(XdrReader stream)
         {
-            var discriminator = (MemoType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case MEMO_NONE:

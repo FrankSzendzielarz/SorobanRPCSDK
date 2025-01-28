@@ -20,14 +20,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class AssetCode
     {
-        public abstract AssetType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4 : AssetCode
     {
-        public override AssetType Discriminator => ASSET_TYPE_CREDIT_ALPHANUM4;
+        public override int Discriminator => ASSET_TYPE_CREDIT_ALPHANUM4;
         private AssetCode4 _assetCode4;
         public AssetCode4 assetCode4
         {
@@ -42,7 +42,7 @@ namespace stellar {
     }
     public sealed partial class AssetCode_ASSET_TYPE_CREDIT_ALPHANUM12 : AssetCode
     {
-        public override AssetType Discriminator => ASSET_TYPE_CREDIT_ALPHANUM12;
+        public override int Discriminator => ASSET_TYPE_CREDIT_ALPHANUM12;
         private AssetCode12 _assetCode12;
         public AssetCode12 assetCode12
         {
@@ -73,7 +73,7 @@ namespace stellar {
         }
         public static AssetCode Decode(XdrReader stream)
         {
-            var discriminator = (AssetType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case ASSET_TYPE_CREDIT_ALPHANUM4:

@@ -27,7 +27,7 @@ public class Program
         {
             if (!Directory.Exists(xdrFolder))
             {
-                Console.WriteLine($"Duirectory {xdrFolder} not found.");
+                Console.WriteLine($"Directory {xdrFolder} not found.");
                 return;
             }
 
@@ -40,6 +40,8 @@ public class Program
             // Create output directory if it doesn't exist
             Directory.CreateDirectory(outputDir);
 
+            var visitor = new TypeExtractorVisitor(outputDir);
+
             // Read and parse the xdr input files
             foreach (var xdrFile in Directory.GetFiles(xdrFolder, "*.x"))
             {
@@ -50,6 +52,7 @@ public class Program
                 // Create the lexer
                 var lexer = new StellarXdrLexer(inputStream);
                 var tokens = new CommonTokenStream(lexer);
+                
 
                 // Create the parser
                 var parser = new StellarXdrParser(tokens);
@@ -74,7 +77,9 @@ public class Program
                 }
 
                 // Visit the parse tree
-                var visitor = new CSharpCodeGenVisitor(outputDir,tokens);
+
+                //var visitor = new CSharpCodeGenVisitor(outputDir,tokens);
+                visitor.BuildCommentMap(tokens);
                 visitor.Visit(tree);
             }
             Console.WriteLine($"XDR generation complete.");

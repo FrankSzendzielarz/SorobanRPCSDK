@@ -26,20 +26,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ChangeTrustAsset
     {
-        public abstract AssetType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ChangeTrustAsset_ASSET_TYPE_NATIVE : ChangeTrustAsset
     {
-        public override AssetType Discriminator => ASSET_TYPE_NATIVE;
+        public override int Discriminator => ASSET_TYPE_NATIVE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM4 : ChangeTrustAsset
     {
-        public override AssetType Discriminator => ASSET_TYPE_CREDIT_ALPHANUM4;
+        public override int Discriminator => ASSET_TYPE_CREDIT_ALPHANUM4;
         private AlphaNum4 _alphaNum4;
         public AlphaNum4 alphaNum4
         {
@@ -54,7 +54,7 @@ namespace stellar {
     }
     public sealed partial class ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM12 : ChangeTrustAsset
     {
-        public override AssetType Discriminator => ASSET_TYPE_CREDIT_ALPHANUM12;
+        public override int Discriminator => ASSET_TYPE_CREDIT_ALPHANUM12;
         private AlphaNum12 _alphaNum12;
         public AlphaNum12 alphaNum12
         {
@@ -69,7 +69,7 @@ namespace stellar {
     }
     public sealed partial class ChangeTrustAsset_ASSET_TYPE_POOL_SHARE : ChangeTrustAsset
     {
-        public override AssetType Discriminator => ASSET_TYPE_POOL_SHARE;
+        public override int Discriminator => ASSET_TYPE_POOL_SHARE;
         private LiquidityPoolParameters _liquidityPool;
         public LiquidityPoolParameters liquidityPool
         {
@@ -105,7 +105,7 @@ namespace stellar {
         }
         public static ChangeTrustAsset Decode(XdrReader stream)
         {
-            var discriminator = (AssetType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case ASSET_TYPE_NATIVE:

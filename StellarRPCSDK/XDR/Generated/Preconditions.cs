@@ -19,20 +19,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class Preconditions
     {
-        public abstract PreconditionType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class Preconditions_PRECOND_NONE : Preconditions
     {
-        public override PreconditionType Discriminator => PRECOND_NONE;
+        public override int Discriminator => PRECOND_NONE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class Preconditions_PRECOND_TIME : Preconditions
     {
-        public override PreconditionType Discriminator => PRECOND_TIME;
+        public override int Discriminator => PRECOND_TIME;
         private TimeBounds _timeBounds;
         public TimeBounds timeBounds
         {
@@ -47,7 +47,7 @@ namespace stellar {
     }
     public sealed partial class Preconditions_PRECOND_V2 : Preconditions
     {
-        public override PreconditionType Discriminator => PRECOND_V2;
+        public override int Discriminator => PRECOND_V2;
         private PreconditionsV2 _v2;
         public PreconditionsV2 v2
         {
@@ -80,7 +80,7 @@ namespace stellar {
         }
         public static Preconditions Decode(XdrReader stream)
         {
-            var discriminator = (PreconditionType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case PRECOND_NONE:

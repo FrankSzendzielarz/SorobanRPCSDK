@@ -19,14 +19,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ClaimAtom
     {
-        public abstract ClaimAtomType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_V0 : ClaimAtom
     {
-        public override ClaimAtomType Discriminator => CLAIM_ATOM_TYPE_V0;
+        public override int Discriminator => CLAIM_ATOM_TYPE_V0;
         private ClaimOfferAtomV0 _v0;
         public ClaimOfferAtomV0 v0
         {
@@ -41,7 +41,7 @@ namespace stellar {
     }
     public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_ORDER_BOOK : ClaimAtom
     {
-        public override ClaimAtomType Discriminator => CLAIM_ATOM_TYPE_ORDER_BOOK;
+        public override int Discriminator => CLAIM_ATOM_TYPE_ORDER_BOOK;
         private ClaimOfferAtom _orderBook;
         public ClaimOfferAtom orderBook
         {
@@ -56,7 +56,7 @@ namespace stellar {
     }
     public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_LIQUIDITY_POOL : ClaimAtom
     {
-        public override ClaimAtomType Discriminator => CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
+        public override int Discriminator => CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
         private ClaimLiquidityAtom _liquidityPool;
         public ClaimLiquidityAtom liquidityPool
         {
@@ -90,7 +90,7 @@ namespace stellar {
         }
         public static ClaimAtom Decode(XdrReader stream)
         {
-            var discriminator = (ClaimAtomType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAIM_ATOM_TYPE_V0:

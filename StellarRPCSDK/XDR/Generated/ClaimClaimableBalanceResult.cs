@@ -21,44 +21,44 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ClaimClaimableBalanceResult
     {
-        public abstract ClaimClaimableBalanceResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_SUCCESS;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_LINE_FULL : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NO_TRUST : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED : ClaimClaimableBalanceResult
     {
-        public override ClaimClaimableBalanceResultCode Discriminator => CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
+        public override int Discriminator => CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
@@ -86,7 +86,7 @@ namespace stellar {
         }
         public static ClaimClaimableBalanceResult Decode(XdrReader stream)
         {
-            var discriminator = (ClaimClaimableBalanceResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAIM_CLAIMABLE_BALANCE_SUCCESS:

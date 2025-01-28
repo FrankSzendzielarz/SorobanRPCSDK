@@ -23,14 +23,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ColdArchiveBucketEntry
     {
-        public abstract ColdArchiveBucketEntryType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY : ColdArchiveBucketEntry
     {
-        public override ColdArchiveBucketEntryType Discriminator => COLD_ARCHIVE_METAENTRY;
+        public override int Discriminator => COLD_ARCHIVE_METAENTRY;
         private BucketMetadata _metaEntry;
         public BucketMetadata metaEntry
         {
@@ -45,7 +45,7 @@ namespace stellar {
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_ARCHIVED_LEAF : ColdArchiveBucketEntry
     {
-        public override ColdArchiveBucketEntryType Discriminator => COLD_ARCHIVE_ARCHIVED_LEAF;
+        public override int Discriminator => COLD_ARCHIVE_ARCHIVED_LEAF;
         private ColdArchiveArchivedLeaf _archivedLeaf;
         public ColdArchiveArchivedLeaf archivedLeaf
         {
@@ -60,7 +60,7 @@ namespace stellar {
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_DELETED_LEAF : ColdArchiveBucketEntry
     {
-        public override ColdArchiveBucketEntryType Discriminator => COLD_ARCHIVE_DELETED_LEAF;
+        public override int Discriminator => COLD_ARCHIVE_DELETED_LEAF;
         private ColdArchiveDeletedLeaf _deletedLeaf;
         public ColdArchiveDeletedLeaf deletedLeaf
         {
@@ -75,7 +75,7 @@ namespace stellar {
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_BOUNDARY_LEAF : ColdArchiveBucketEntry
     {
-        public override ColdArchiveBucketEntryType Discriminator => COLD_ARCHIVE_BOUNDARY_LEAF;
+        public override int Discriminator => COLD_ARCHIVE_BOUNDARY_LEAF;
         private ColdArchiveBoundaryLeaf _boundaryLeaf;
         public ColdArchiveBoundaryLeaf boundaryLeaf
         {
@@ -90,7 +90,7 @@ namespace stellar {
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_HASH : ColdArchiveBucketEntry
     {
-        public override ColdArchiveBucketEntryType Discriminator => COLD_ARCHIVE_HASH;
+        public override int Discriminator => COLD_ARCHIVE_HASH;
         private ColdArchiveHashEntry _hashEntry;
         public ColdArchiveHashEntry hashEntry
         {
@@ -130,7 +130,7 @@ namespace stellar {
         }
         public static ColdArchiveBucketEntry Decode(XdrReader stream)
         {
-            var discriminator = (ColdArchiveBucketEntryType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case COLD_ARCHIVE_METAENTRY:

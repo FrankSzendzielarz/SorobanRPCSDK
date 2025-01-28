@@ -17,14 +17,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ContractExecutable
     {
-        public abstract ContractExecutableType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ContractExecutable_CONTRACT_EXECUTABLE_WASM : ContractExecutable
     {
-        public override ContractExecutableType Discriminator => CONTRACT_EXECUTABLE_WASM;
+        public override int Discriminator => CONTRACT_EXECUTABLE_WASM;
         private Hash _wasm_hash;
         public Hash wasm_hash
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class ContractExecutable_CONTRACT_EXECUTABLE_STELLAR_ASSET : ContractExecutable
     {
-        public override ContractExecutableType Discriminator => CONTRACT_EXECUTABLE_STELLAR_ASSET;
+        public override int Discriminator => CONTRACT_EXECUTABLE_STELLAR_ASSET;
 
         public override void ValidateCase() {}
     }
@@ -60,7 +60,7 @@ namespace stellar {
         }
         public static ContractExecutable Decode(XdrReader stream)
         {
-            var discriminator = (ContractExecutableType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CONTRACT_EXECUTABLE_WASM:

@@ -30,14 +30,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LedgerUpgrade
     {
-        public abstract LedgerUpgradeType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_VERSION : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_VERSION;
+        public override int Discriminator => LEDGER_UPGRADE_VERSION;
         private uint32 _newLedgerVersion;
         public uint32 newLedgerVersion
         {
@@ -52,7 +52,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_BASE_FEE : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_BASE_FEE;
+        public override int Discriminator => LEDGER_UPGRADE_BASE_FEE;
         private uint32 _newBaseFee;
         public uint32 newBaseFee
         {
@@ -67,7 +67,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_MAX_TX_SET_SIZE : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_MAX_TX_SET_SIZE;
+        public override int Discriminator => LEDGER_UPGRADE_MAX_TX_SET_SIZE;
         private uint32 _newMaxTxSetSize;
         public uint32 newMaxTxSetSize
         {
@@ -82,7 +82,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_BASE_RESERVE : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_BASE_RESERVE;
+        public override int Discriminator => LEDGER_UPGRADE_BASE_RESERVE;
         private uint32 _newBaseReserve;
         public uint32 newBaseReserve
         {
@@ -97,7 +97,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_FLAGS : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_FLAGS;
+        public override int Discriminator => LEDGER_UPGRADE_FLAGS;
         private uint32 _newFlags;
         public uint32 newFlags
         {
@@ -112,7 +112,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_CONFIG : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_CONFIG;
+        public override int Discriminator => LEDGER_UPGRADE_CONFIG;
         private ConfigUpgradeSetKey _newConfig;
         public ConfigUpgradeSetKey newConfig
         {
@@ -127,7 +127,7 @@ namespace stellar {
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE : LedgerUpgrade
     {
-        public override LedgerUpgradeType Discriminator => LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;
+        public override int Discriminator => LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;
         private uint32 _newMaxSorobanTxSetSize;
         public uint32 newMaxSorobanTxSetSize
         {
@@ -173,7 +173,7 @@ namespace stellar {
         }
         public static LedgerUpgrade Decode(XdrReader stream)
         {
-            var discriminator = (LedgerUpgradeType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case LEDGER_UPGRADE_VERSION:

@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class BucketEntry
     {
-        public abstract BucketEntryType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
     {
-        public override BucketEntryType Discriminator => LIVEENTRY;
+        public override int Discriminator => LIVEENTRY;
         private LedgerEntry _liveEntry;
         public LedgerEntry liveEntry
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_INITENTRY : BucketEntry
     {
-        public override BucketEntryType Discriminator => INITENTRY;
+        public override int Discriminator => INITENTRY;
         private LedgerEntry _liveEntry;
         public LedgerEntry liveEntry
         {
@@ -58,7 +58,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_DEADENTRY : BucketEntry
     {
-        public override BucketEntryType Discriminator => DEADENTRY;
+        public override int Discriminator => DEADENTRY;
         private LedgerKey _deadEntry;
         public LedgerKey deadEntry
         {
@@ -73,7 +73,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_METAENTRY : BucketEntry
     {
-        public override BucketEntryType Discriminator => METAENTRY;
+        public override int Discriminator => METAENTRY;
         private BucketMetadata _metaEntry;
         public BucketMetadata metaEntry
         {
@@ -110,7 +110,7 @@ namespace stellar {
         }
         public static BucketEntry Decode(XdrReader stream)
         {
-            var discriminator = (BucketEntryType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case LIVEENTRY:

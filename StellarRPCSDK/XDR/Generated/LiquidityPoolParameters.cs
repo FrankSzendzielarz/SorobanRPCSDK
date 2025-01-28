@@ -15,14 +15,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LiquidityPoolParameters
     {
-        public abstract LiquidityPoolType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT : LiquidityPoolParameters
     {
-        public override LiquidityPoolType Discriminator => LIQUIDITY_POOL_CONSTANT_PRODUCT;
+        public override int Discriminator => LIQUIDITY_POOL_CONSTANT_PRODUCT;
         private LiquidityPoolConstantProductParameters _constantProduct;
         public LiquidityPoolConstantProductParameters constantProduct
         {
@@ -50,7 +50,7 @@ namespace stellar {
         }
         public static LiquidityPoolParameters Decode(XdrReader stream)
         {
-            var discriminator = (LiquidityPoolType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case LIQUIDITY_POOL_CONSTANT_PRODUCT:

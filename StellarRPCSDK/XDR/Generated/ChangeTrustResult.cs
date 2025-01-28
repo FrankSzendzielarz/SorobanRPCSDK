@@ -24,62 +24,62 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ChangeTrustResult
     {
-        public abstract ChangeTrustResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_SUCCESS : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_SUCCESS;
+        public override int Discriminator => CHANGE_TRUST_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_MALFORMED : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_MALFORMED;
+        public override int Discriminator => CHANGE_TRUST_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_NO_ISSUER : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_NO_ISSUER;
+        public override int Discriminator => CHANGE_TRUST_NO_ISSUER;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_INVALID_LIMIT : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_INVALID_LIMIT;
+        public override int Discriminator => CHANGE_TRUST_INVALID_LIMIT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_LOW_RESERVE : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_LOW_RESERVE;
+        public override int Discriminator => CHANGE_TRUST_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_SELF_NOT_ALLOWED : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_SELF_NOT_ALLOWED;
+        public override int Discriminator => CHANGE_TRUST_SELF_NOT_ALLOWED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_TRUST_LINE_MISSING : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_TRUST_LINE_MISSING;
+        public override int Discriminator => CHANGE_TRUST_TRUST_LINE_MISSING;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_CANNOT_DELETE : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_CANNOT_DELETE;
+        public override int Discriminator => CHANGE_TRUST_CANNOT_DELETE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ChangeTrustResult_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES : ChangeTrustResult
     {
-        public override ChangeTrustResultCode Discriminator => CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;
+        public override int Discriminator => CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;
 
         public override void ValidateCase() {}
     }
@@ -113,7 +113,7 @@ namespace stellar {
         }
         public static ChangeTrustResult Decode(XdrReader stream)
         {
-            var discriminator = (ChangeTrustResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CHANGE_TRUST_SUCCESS:

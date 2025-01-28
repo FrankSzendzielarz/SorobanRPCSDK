@@ -17,20 +17,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SorobanCredentials
     {
-        public abstract SorobanCredentialsType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT : SorobanCredentials
     {
-        public override SorobanCredentialsType Discriminator => SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
+        public override int Discriminator => SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SorobanCredentials_SOROBAN_CREDENTIALS_ADDRESS : SorobanCredentials
     {
-        public override SorobanCredentialsType Discriminator => SOROBAN_CREDENTIALS_ADDRESS;
+        public override int Discriminator => SOROBAN_CREDENTIALS_ADDRESS;
         private SorobanAddressCredentials _address;
         public SorobanAddressCredentials address
         {
@@ -60,7 +60,7 @@ namespace stellar {
         }
         public static SorobanCredentials Decode(XdrReader stream)
         {
-            var discriminator = (SorobanCredentialsType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:

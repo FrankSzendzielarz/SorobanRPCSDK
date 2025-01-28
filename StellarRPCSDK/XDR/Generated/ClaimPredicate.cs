@@ -26,20 +26,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ClaimPredicate
     {
-        public abstract ClaimPredicateType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_UNCONDITIONAL;
+        public override int Discriminator => CLAIM_PREDICATE_UNCONDITIONAL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_AND : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_AND;
+        public override int Discriminator => CLAIM_PREDICATE_AND;
         private ClaimPredicate[] _andPredicates;
         public ClaimPredicate[] andPredicates
         {
@@ -56,7 +56,7 @@ namespace stellar {
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_OR : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_OR;
+        public override int Discriminator => CLAIM_PREDICATE_OR;
         private ClaimPredicate[] _orPredicates;
         public ClaimPredicate[] orPredicates
         {
@@ -73,7 +73,7 @@ namespace stellar {
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_NOT : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_NOT;
+        public override int Discriminator => CLAIM_PREDICATE_NOT;
         private ClaimPredicate _notPredicate;
         public ClaimPredicate notPredicate
         {
@@ -88,7 +88,7 @@ namespace stellar {
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
+        public override int Discriminator => CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
         private int64 _absBefore;
         public int64 absBefore
         {
@@ -103,7 +103,7 @@ namespace stellar {
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME : ClaimPredicate
     {
-        public override ClaimPredicateType Discriminator => CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
+        public override int Discriminator => CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
         private int64 _relBefore;
         public int64 relBefore
         {
@@ -153,7 +153,7 @@ namespace stellar {
         }
         public static ClaimPredicate Decode(XdrReader stream)
         {
-            var discriminator = (ClaimPredicateType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAIM_PREDICATE_UNCONDITIONAL:

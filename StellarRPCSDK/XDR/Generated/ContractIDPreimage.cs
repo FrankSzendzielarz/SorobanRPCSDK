@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ContractIDPreimage
     {
-        public abstract ContractIDPreimageType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS : ContractIDPreimage
     {
-        public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
+        public override int Discriminator => CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
         private object _fromAddress;
         public object fromAddress
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET : ContractIDPreimage
     {
-        public override ContractIDPreimageType Discriminator => CONTRACT_ID_PREIMAGE_FROM_ASSET;
+        public override int Discriminator => CONTRACT_ID_PREIMAGE_FROM_ASSET;
         private Asset _fromAsset;
         public Asset fromAsset
         {
@@ -74,7 +74,7 @@ namespace stellar {
         }
         public static ContractIDPreimage Decode(XdrReader stream)
         {
-            var discriminator = (ContractIDPreimageType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case CONTRACT_ID_PREIMAGE_FROM_ADDRESS:

@@ -72,14 +72,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class StellarMessage
     {
-        public abstract MessageType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class StellarMessage_ERROR_MSG : StellarMessage
     {
-        public override MessageType Discriminator => ERROR_MSG;
+        public override int Discriminator => ERROR_MSG;
         private Error _error;
         public Error error
         {
@@ -94,7 +94,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_HELLO : StellarMessage
     {
-        public override MessageType Discriminator => HELLO;
+        public override int Discriminator => HELLO;
         private Hello _hello;
         public Hello hello
         {
@@ -109,7 +109,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_AUTH : StellarMessage
     {
-        public override MessageType Discriminator => AUTH;
+        public override int Discriminator => AUTH;
         private Auth _auth;
         public Auth auth
         {
@@ -124,7 +124,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_DONT_HAVE : StellarMessage
     {
-        public override MessageType Discriminator => DONT_HAVE;
+        public override int Discriminator => DONT_HAVE;
         private DontHave _dontHave;
         public DontHave dontHave
         {
@@ -139,7 +139,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_PEERS : StellarMessage
     {
-        public override MessageType Discriminator => PEERS;
+        public override int Discriminator => PEERS;
         private PeerAddress[] _peers;
         public PeerAddress[] peers
         {
@@ -156,7 +156,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_GET_TX_SET : StellarMessage
     {
-        public override MessageType Discriminator => GET_TX_SET;
+        public override int Discriminator => GET_TX_SET;
         private uint256 _txSetHash;
         public uint256 txSetHash
         {
@@ -171,7 +171,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TX_SET : StellarMessage
     {
-        public override MessageType Discriminator => TX_SET;
+        public override int Discriminator => TX_SET;
         private TransactionSet _txSet;
         public TransactionSet txSet
         {
@@ -186,7 +186,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_GENERALIZED_TX_SET : StellarMessage
     {
-        public override MessageType Discriminator => GENERALIZED_TX_SET;
+        public override int Discriminator => GENERALIZED_TX_SET;
         private GeneralizedTransactionSet _generalizedTxSet;
         public GeneralizedTransactionSet generalizedTxSet
         {
@@ -201,7 +201,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TRANSACTION : StellarMessage
     {
-        public override MessageType Discriminator => TRANSACTION;
+        public override int Discriminator => TRANSACTION;
         private TransactionEnvelope _transaction;
         public TransactionEnvelope transaction
         {
@@ -216,7 +216,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SURVEY_REQUEST : StellarMessage
     {
-        public override MessageType Discriminator => SURVEY_REQUEST;
+        public override int Discriminator => SURVEY_REQUEST;
         private SignedSurveyRequestMessage _signedSurveyRequestMessage;
         public SignedSurveyRequestMessage signedSurveyRequestMessage
         {
@@ -231,7 +231,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SURVEY_RESPONSE : StellarMessage
     {
-        public override MessageType Discriminator => SURVEY_RESPONSE;
+        public override int Discriminator => SURVEY_RESPONSE;
         private SignedSurveyResponseMessage _signedSurveyResponseMessage;
         public SignedSurveyResponseMessage signedSurveyResponseMessage
         {
@@ -246,7 +246,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TIME_SLICED_SURVEY_REQUEST : StellarMessage
     {
-        public override MessageType Discriminator => TIME_SLICED_SURVEY_REQUEST;
+        public override int Discriminator => TIME_SLICED_SURVEY_REQUEST;
         private SignedTimeSlicedSurveyRequestMessage _signedTimeSlicedSurveyRequestMessage;
         public SignedTimeSlicedSurveyRequestMessage signedTimeSlicedSurveyRequestMessage
         {
@@ -261,7 +261,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TIME_SLICED_SURVEY_RESPONSE : StellarMessage
     {
-        public override MessageType Discriminator => TIME_SLICED_SURVEY_RESPONSE;
+        public override int Discriminator => TIME_SLICED_SURVEY_RESPONSE;
         private SignedTimeSlicedSurveyResponseMessage _signedTimeSlicedSurveyResponseMessage;
         public SignedTimeSlicedSurveyResponseMessage signedTimeSlicedSurveyResponseMessage
         {
@@ -276,7 +276,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING : StellarMessage
     {
-        public override MessageType Discriminator => TIME_SLICED_SURVEY_START_COLLECTING;
+        public override int Discriminator => TIME_SLICED_SURVEY_START_COLLECTING;
         private SignedTimeSlicedSurveyStartCollectingMessage _signedTimeSlicedSurveyStartCollectingMessage;
         public SignedTimeSlicedSurveyStartCollectingMessage signedTimeSlicedSurveyStartCollectingMessage
         {
@@ -291,7 +291,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING : StellarMessage
     {
-        public override MessageType Discriminator => TIME_SLICED_SURVEY_STOP_COLLECTING;
+        public override int Discriminator => TIME_SLICED_SURVEY_STOP_COLLECTING;
         private SignedTimeSlicedSurveyStopCollectingMessage _signedTimeSlicedSurveyStopCollectingMessage;
         public SignedTimeSlicedSurveyStopCollectingMessage signedTimeSlicedSurveyStopCollectingMessage
         {
@@ -306,7 +306,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_GET_SCP_QUORUMSET : StellarMessage
     {
-        public override MessageType Discriminator => GET_SCP_QUORUMSET;
+        public override int Discriminator => GET_SCP_QUORUMSET;
         private uint256 _qSetHash;
         public uint256 qSetHash
         {
@@ -321,7 +321,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SCP_QUORUMSET : StellarMessage
     {
-        public override MessageType Discriminator => SCP_QUORUMSET;
+        public override int Discriminator => SCP_QUORUMSET;
         private SCPQuorumSet _qSet;
         public SCPQuorumSet qSet
         {
@@ -336,7 +336,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SCP_MESSAGE : StellarMessage
     {
-        public override MessageType Discriminator => SCP_MESSAGE;
+        public override int Discriminator => SCP_MESSAGE;
         private SCPEnvelope _envelope;
         public SCPEnvelope envelope
         {
@@ -351,7 +351,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_GET_SCP_STATE : StellarMessage
     {
-        public override MessageType Discriminator => GET_SCP_STATE;
+        public override int Discriminator => GET_SCP_STATE;
         private uint32 _getSCPLedgerSeq;
         public uint32 getSCPLedgerSeq
         {
@@ -366,7 +366,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SEND_MORE : StellarMessage
     {
-        public override MessageType Discriminator => SEND_MORE;
+        public override int Discriminator => SEND_MORE;
         private SendMore _sendMoreMessage;
         public SendMore sendMoreMessage
         {
@@ -381,7 +381,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_SEND_MORE_EXTENDED : StellarMessage
     {
-        public override MessageType Discriminator => SEND_MORE_EXTENDED;
+        public override int Discriminator => SEND_MORE_EXTENDED;
         private SendMoreExtended _sendMoreExtendedMessage;
         public SendMoreExtended sendMoreExtendedMessage
         {
@@ -396,7 +396,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_FLOOD_ADVERT : StellarMessage
     {
-        public override MessageType Discriminator => FLOOD_ADVERT;
+        public override int Discriminator => FLOOD_ADVERT;
         private FloodAdvert _floodAdvert;
         public FloodAdvert floodAdvert
         {
@@ -411,7 +411,7 @@ namespace stellar {
     }
     public sealed partial class StellarMessage_FLOOD_DEMAND : StellarMessage
     {
-        public override MessageType Discriminator => FLOOD_DEMAND;
+        public override int Discriminator => FLOOD_DEMAND;
         private FloodDemand _floodDemand;
         public FloodDemand floodDemand
         {
@@ -509,7 +509,7 @@ namespace stellar {
         }
         public static StellarMessage Decode(XdrReader stream)
         {
-            var discriminator = (MessageType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case ERROR_MSG:

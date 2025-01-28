@@ -79,14 +79,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class OperationResult
     {
-        public abstract OperationResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class OperationResult_opINNER : OperationResult
     {
-        public override OperationResultCode Discriminator => opINNER;
+        public override int Discriminator => opINNER;
         private object _tr;
         public object tr
         {
@@ -101,37 +101,37 @@ namespace stellar {
     }
     public sealed partial class OperationResult_opBAD_AUTH : OperationResult
     {
-        public override OperationResultCode Discriminator => opBAD_AUTH;
+        public override int Discriminator => opBAD_AUTH;
 
         public override void ValidateCase() {}
     }
     public sealed partial class OperationResult_opNO_ACCOUNT : OperationResult
     {
-        public override OperationResultCode Discriminator => opNO_ACCOUNT;
+        public override int Discriminator => opNO_ACCOUNT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class OperationResult_opNOT_SUPPORTED : OperationResult
     {
-        public override OperationResultCode Discriminator => opNOT_SUPPORTED;
+        public override int Discriminator => opNOT_SUPPORTED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class OperationResult_opTOO_MANY_SUBENTRIES : OperationResult
     {
-        public override OperationResultCode Discriminator => opTOO_MANY_SUBENTRIES;
+        public override int Discriminator => opTOO_MANY_SUBENTRIES;
 
         public override void ValidateCase() {}
     }
     public sealed partial class OperationResult_opEXCEEDED_WORK_LIMIT : OperationResult
     {
-        public override OperationResultCode Discriminator => opEXCEEDED_WORK_LIMIT;
+        public override int Discriminator => opEXCEEDED_WORK_LIMIT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class OperationResult_opTOO_MANY_SPONSORING : OperationResult
     {
-        public override OperationResultCode Discriminator => opTOO_MANY_SPONSORING;
+        public override int Discriminator => opTOO_MANY_SPONSORING;
 
         public override void ValidateCase() {}
     }
@@ -162,7 +162,7 @@ namespace stellar {
         }
         public static OperationResult Decode(XdrReader stream)
         {
-            var discriminator = (OperationResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case opINNER:

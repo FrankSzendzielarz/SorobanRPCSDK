@@ -29,14 +29,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SignerKey
     {
-        public abstract SignerKeyType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_ED25519 : SignerKey
     {
-        public override SignerKeyType Discriminator => SIGNER_KEY_TYPE_ED25519;
+        public override int Discriminator => SIGNER_KEY_TYPE_ED25519;
         private uint256 _ed25519;
         public uint256 ed25519
         {
@@ -51,7 +51,7 @@ namespace stellar {
     }
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_PRE_AUTH_TX : SignerKey
     {
-        public override SignerKeyType Discriminator => SIGNER_KEY_TYPE_PRE_AUTH_TX;
+        public override int Discriminator => SIGNER_KEY_TYPE_PRE_AUTH_TX;
         private uint256 _preAuthTx;
         public uint256 preAuthTx
         {
@@ -66,7 +66,7 @@ namespace stellar {
     }
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_HASH_X : SignerKey
     {
-        public override SignerKeyType Discriminator => SIGNER_KEY_TYPE_HASH_X;
+        public override int Discriminator => SIGNER_KEY_TYPE_HASH_X;
         private uint256 _hashX;
         public uint256 hashX
         {
@@ -81,7 +81,7 @@ namespace stellar {
     }
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD : SignerKey
     {
-        public override SignerKeyType Discriminator => SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
+        public override int Discriminator => SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
         private object _ed25519SignedPayload;
         public object ed25519SignedPayload
         {
@@ -118,7 +118,7 @@ namespace stellar {
         }
         public static SignerKey Decode(XdrReader stream)
         {
-            var discriminator = (SignerKeyType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case SIGNER_KEY_TYPE_ED25519:

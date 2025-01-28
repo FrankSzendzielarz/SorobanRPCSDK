@@ -19,14 +19,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class TxSetComponent
     {
-        public abstract TxSetComponentType Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class TxSetComponent_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE : TxSetComponent
     {
-        public override TxSetComponentType Discriminator => TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
+        public override int Discriminator => TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
         private object _txsMaybeDiscountedFee;
         public object txsMaybeDiscountedFee
         {
@@ -54,7 +54,7 @@ namespace stellar {
         }
         public static TxSetComponent Decode(XdrReader stream)
         {
-            var discriminator = (TxSetComponentType)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE:

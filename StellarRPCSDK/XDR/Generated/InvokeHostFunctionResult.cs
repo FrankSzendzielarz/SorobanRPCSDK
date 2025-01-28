@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class InvokeHostFunctionResult
     {
-        public abstract InvokeHostFunctionResultCode Discriminator { get; }
+        public abstract int Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_SUCCESS;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_SUCCESS;
         private Hash _success;
         public Hash success
         {
@@ -43,31 +43,31 @@ namespace stellar {
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_MALFORMED : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_MALFORMED;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_TRAPPED : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_TRAPPED;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_TRAPPED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE : InvokeHostFunctionResult
     {
-        public override InvokeHostFunctionResultCode Discriminator => INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
+        public override int Discriminator => INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
 
         public override void ValidateCase() {}
     }
@@ -96,7 +96,7 @@ namespace stellar {
         }
         public static InvokeHostFunctionResult Decode(XdrReader stream)
         {
-            var discriminator = (InvokeHostFunctionResultCode)stream.ReadInt();
+            var discriminator = (int)stream.ReadInt();
             switch (discriminator)
             {
                 case INVOKE_HOST_FUNCTION_SUCCESS:
