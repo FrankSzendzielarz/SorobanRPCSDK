@@ -57,6 +57,56 @@ namespace stellar {
         public virtual void Validate()
         {
         }
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public abstract partial class bodyUnion
+        {
+            public abstract LiquidityPoolType Discriminator { get; }
+
+            /// <summary>Validates the union case matches its discriminator</summary>
+            public abstract void ValidateCase();
+        }
+        public sealed partial class bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT : bodyUnion
+        {
+            public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
+            private object _constantProduct;
+            public object constantProduct
+            {
+                get => _constantProduct;
+                set
+                {
+                    _constantProduct = value;
+                }
+            }
+
+            public override void ValidateCase() {}
+        }
+        public static partial class bodyUnionXdr
+        {
+            public static void Encode(XdrWriter stream, bodyUnion value)
+            {
+                value.ValidateCase();
+                stream.WriteInt((int)value.Discriminator);
+                switch (value)
+                {
+                    case bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                    Xdr.Encode(stream, case_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct);
+                    break;
+                }
+            }
+            public static bodyUnion Decode(XdrReader stream)
+            {
+                var discriminator = (LiquidityPoolType)stream.ReadInt();
+                switch (discriminator)
+                {
+                    case LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                    var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT();
+                    result_LIQUIDITY_POOL_CONSTANT_PRODUCT.                 = Xdr.Decode(stream);
+                    return result_LIQUIDITY_POOL_CONSTANT_PRODUCT;
+                    default:
+                    throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
+                }
+            }
+        }
     }
     public static partial class LiquidityPoolEntryXdr
     {

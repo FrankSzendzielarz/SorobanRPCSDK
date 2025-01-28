@@ -206,7 +206,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         foreach (var xdrDefinedType in _context.AllTypes)
         {
-            Console.WriteLine($"Generating {xdrDefinedType.FullName}");
+           
             xdrDefinedType.Generate(_context.AllTypes);
             xdrDefinedType.CodeFile.Write();
         }

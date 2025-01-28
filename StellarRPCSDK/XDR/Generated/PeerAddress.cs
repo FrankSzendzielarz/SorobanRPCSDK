@@ -60,6 +60,56 @@ namespace stellar {
         public virtual void Validate()
         {
         }
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public abstract partial class ipUnion
+        {
+            public abstract IPAddrType Discriminator { get; }
+
+            /// <summary>Validates the union case matches its discriminator</summary>
+            public abstract void ValidateCase();
+        }
+        public sealed partial class ipUnion_IPv4 : ipUnion
+        {
+            public override IPAddrType Discriminator => IPAddrType.IPv4;
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ipUnion_IPv6 : ipUnion
+        {
+            public override IPAddrType Discriminator => IPAddrType.IPv6;
+
+            public override void ValidateCase() {}
+        }
+        public static partial class ipUnionXdr
+        {
+            public static void Encode(XdrWriter stream, ipUnion value)
+            {
+                value.ValidateCase();
+                stream.WriteInt((int)value.Discriminator);
+                switch (value)
+                {
+                    case ipUnion_IPv4 case_IPv4:
+                    break;
+                    case ipUnion_IPv6 case_IPv6:
+                    break;
+                }
+            }
+            public static ipUnion Decode(XdrReader stream)
+            {
+                var discriminator = (IPAddrType)stream.ReadInt();
+                switch (discriminator)
+                {
+                    case IPv4:
+                    var result_IPv4 = new ipUnion_IPv4();
+                    return result_IPv4;
+                    case IPv6:
+                    var result_IPv6 = new ipUnion_IPv6();
+                    return result_IPv6;
+                    default:
+                    throw new Exception($"Unknown discriminator for ipUnion: {discriminator}");
+                }
+            }
+        }
     }
     public static partial class PeerAddressXdr
     {

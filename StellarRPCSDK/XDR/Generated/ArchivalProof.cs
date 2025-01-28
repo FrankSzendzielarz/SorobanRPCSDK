@@ -49,6 +49,78 @@ namespace stellar {
         public virtual void Validate()
         {
         }
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public abstract partial class bodyUnion
+        {
+            public abstract ArchivalProofType Discriminator { get; }
+
+            /// <summary>Validates the union case matches its discriminator</summary>
+            public abstract void ValidateCase();
+        }
+        public sealed partial class bodyUnion_EXISTENCE : bodyUnion
+        {
+            public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
+            private NonexistenceProofBody _nonexistenceProof;
+            public NonexistenceProofBody nonexistenceProof
+            {
+                get => _nonexistenceProof;
+                set
+                {
+                    _nonexistenceProof = value;
+                }
+            }
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class bodyUnion_NONEXISTENCE : bodyUnion
+        {
+            public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;
+            private ExistenceProofBody _existenceProof;
+            public ExistenceProofBody existenceProof
+            {
+                get => _existenceProof;
+                set
+                {
+                    _existenceProof = value;
+                }
+            }
+
+            public override void ValidateCase() {}
+        }
+        public static partial class bodyUnionXdr
+        {
+            public static void Encode(XdrWriter stream, bodyUnion value)
+            {
+                value.ValidateCase();
+                stream.WriteInt((int)value.Discriminator);
+                switch (value)
+                {
+                    case bodyUnion_EXISTENCE case_EXISTENCE:
+                    NonexistenceProofBodyXdr.Encode(stream, case_EXISTENCE.nonexistenceProof);
+                    break;
+                    case bodyUnion_NONEXISTENCE case_NONEXISTENCE:
+                    ExistenceProofBodyXdr.Encode(stream, case_NONEXISTENCE.existenceProof);
+                    break;
+                }
+            }
+            public static bodyUnion Decode(XdrReader stream)
+            {
+                var discriminator = (ArchivalProofType)stream.ReadInt();
+                switch (discriminator)
+                {
+                    case EXISTENCE:
+                    var result_EXISTENCE = new bodyUnion_EXISTENCE();
+                    result_EXISTENCE.                 = NonexistenceProofBodyXdr.Decode(stream);
+                    return result_EXISTENCE;
+                    case NONEXISTENCE:
+                    var result_NONEXISTENCE = new bodyUnion_NONEXISTENCE();
+                    result_NONEXISTENCE.                 = ExistenceProofBodyXdr.Decode(stream);
+                    return result_NONEXISTENCE;
+                    default:
+                    throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
+                }
+            }
+        }
     }
     public static partial class ArchivalProofXdr
     {

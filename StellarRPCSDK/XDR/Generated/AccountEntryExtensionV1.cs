@@ -50,6 +50,67 @@ namespace stellar {
         public virtual void Validate()
         {
         }
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public abstract partial class extUnion
+        {
+            public abstract int Discriminator { get; }
+
+            /// <summary>Validates the union case matches its discriminator</summary>
+            public abstract void ValidateCase();
+        }
+        public sealed partial class extUnion_0 : extUnion
+        {
+            public override int Discriminator => int.0;
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class extUnion_2 : extUnion
+        {
+            public override int Discriminator => int.2;
+            private AccountEntryExtensionV2 _v2;
+            public AccountEntryExtensionV2 v2
+            {
+                get => _v2;
+                set
+                {
+                    _v2 = value;
+                }
+            }
+
+            public override void ValidateCase() {}
+        }
+        public static partial class extUnionXdr
+        {
+            public static void Encode(XdrWriter stream, extUnion value)
+            {
+                value.ValidateCase();
+                stream.WriteInt((int)value.Discriminator);
+                switch (value)
+                {
+                    case extUnion_0 case_0:
+                    break;
+                    case extUnion_2 case_2:
+                    AccountEntryExtensionV2Xdr.Encode(stream, case_2.v2);
+                    break;
+                }
+            }
+            public static extUnion Decode(XdrReader stream)
+            {
+                var discriminator = (int)stream.ReadInt();
+                switch (discriminator)
+                {
+                    case 0:
+                    var result_0 = new extUnion_0();
+                    return result_0;
+                    case 2:
+                    var result_2 = new extUnion_2();
+                    result_2.                 = AccountEntryExtensionV2Xdr.Decode(stream);
+                    return result_2;
+                    default:
+                    throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
+                }
+            }
+        }
     }
     public static partial class AccountEntryExtensionV1Xdr
     {

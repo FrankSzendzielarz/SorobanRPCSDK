@@ -2,6 +2,7 @@
 using Antlr4.Runtime.Misc;
 using Generator.XDR.Grammar;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,22 +51,24 @@ namespace Generator.XDR
 
         public void Generate(List<XDRTypeDefinition> allTypes)
         {
+            Console.WriteLine($"Generating {FullName}");
             switch (this.XDRType)
             {
                 case XDRType.Enum:
-                    GenerateEnum(ParserRuleContext as EnumBodyContext);
+                    GenerateEnum(ParserRuleContext as EnumBodyContext, allTypes);
                     break;
                 case XDRType.TypeDef:
                     GenerateTypedef(ParserRuleContext as TypedefDefinitionContext);
                     break;
                 case XDRType.Union:
-                    GenerateUnion(ParserRuleContext as UnionBodyContext);
+                    GenerateUnion(ParserRuleContext as UnionBodyContext,allTypes);
                     break;
                 case XDRType.Struct:
-                    GenerateStruct(ParserRuleContext as StructBodyContext);
+                    GenerateStruct(ParserRuleContext as StructBodyContext,allTypes);
                     break;
 
             }
+            
             WriteFooter();
         }
         private void WriteFileHeader(ParserRuleContext context)
@@ -169,7 +172,7 @@ namespace Generator.XDR
 
             return new CSharpTypeInfo(baseType, arrayType, maxLength);
         }
-        private void GenerateEnum(StellarXdrParser.EnumBodyContext context)
+        private void GenerateEnum(StellarXdrParser.EnumBodyContext context, List<XDRTypeDefinition> allTypes)
         {
 
             string enumName = Name;
@@ -217,6 +220,12 @@ namespace Generator.XDR
             code.AppendLine($"return ({enumName})value;");
             code.CloseBlock();
 
+
+            foreach (var child in this.NestedTypes)
+            {
+                child.Generate(allTypes);
+            }
+
             code.CloseBlock();
 
 
@@ -224,7 +233,7 @@ namespace Generator.XDR
 
         }
 
-        private void GenerateStruct(StellarXdrParser.StructBodyContext context)
+        private void GenerateStruct(StellarXdrParser.StructBodyContext context, List<XDRTypeDefinition> allTypes)
         {
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
@@ -270,6 +279,11 @@ namespace Generator.XDR
                 }
             }
             code.CloseBlock();
+
+            foreach (var child in this.NestedTypes)
+            {
+                child.Generate(allTypes);
+            }
             code.CloseBlock();
 
             // Generate XDR helper class
@@ -428,7 +442,7 @@ namespace Generator.XDR
             return true;
         }
 
-        private void GenerateUnion(StellarXdrParser.UnionBodyContext context)
+        private void GenerateUnion(StellarXdrParser.UnionBodyContext context, List<XDRTypeDefinition> allTypes)
         {
             var switchDecl = context.declaration();
             var discriminatorType = GetCSharpTypeInfo(switchDecl);
@@ -543,6 +557,10 @@ namespace Generator.XDR
 
                 code.AppendLine();
                 code.AppendLine("public override void ValidateCase() {}");
+                foreach (var child in this.NestedTypes)
+                {
+                    child.Generate(allTypes);
+                }
                 code.CloseBlock();
             }
 
