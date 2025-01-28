@@ -23,7 +23,7 @@ namespace stellar {
     }
     public sealed partial class GeneralizedTransactionSet_1 : GeneralizedTransactionSet
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private TransactionSetV1 _v1TxSet;
         public TransactionSetV1 v1TxSet
         {

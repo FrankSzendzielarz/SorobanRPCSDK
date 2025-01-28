@@ -20,38 +20,38 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ClawbackResult
     {
-        public abstract int Discriminator { get; }
+        public abstract ClawbackResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ClawbackResult_CLAWBACK_SUCCESS : ClawbackResult
     {
-        public override int Discriminator => CLAWBACK_SUCCESS;
+        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackResult_CLAWBACK_MALFORMED : ClawbackResult
     {
-        public override int Discriminator => CLAWBACK_MALFORMED;
+        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackResult_CLAWBACK_NOT_CLAWBACK_ENABLED : ClawbackResult
     {
-        public override int Discriminator => CLAWBACK_NOT_CLAWBACK_ENABLED;
+        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackResult_CLAWBACK_NO_TRUST : ClawbackResult
     {
-        public override int Discriminator => CLAWBACK_NO_TRUST;
+        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackResult_CLAWBACK_UNDERFUNDED : ClawbackResult
     {
-        public override int Discriminator => CLAWBACK_UNDERFUNDED;
+        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
@@ -77,7 +77,7 @@ namespace stellar {
         }
         public static ClawbackResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ClawbackResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAWBACK_SUCCESS:

@@ -68,3 +68,4 @@ namespace stellar {
             return (PathPaymentStrictSendResultCode)value;
         }
     }
+}

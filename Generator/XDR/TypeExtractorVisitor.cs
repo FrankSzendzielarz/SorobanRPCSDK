@@ -10,36 +10,7 @@ namespace Generator.XDR;
 /// </summary>
 public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 {
-    public class XDRTypeDefinition
-    {
-        public XDRType XDRType { get;  }
-        public ParserRuleContext ParserRuleContext { get; }
-        public string Namespace { get; }
-        public string Name { get; }
-        public List<XDRTypeDefinition> NestedTypes { get; } = new();
-        public XDRTypeDefinition? Parent { get; } = null;
-        private CodeFile? _codeFile { get; }
-        public CodeFile? CodeFile => _codeFile != null ? _codeFile: Parent?.CodeFile;
-        public string FullName =>  Parent == null ? Name  : $"{Parent.FullName}.{Name}";
-        public XDRTypeDefinition(XDRType xdrType, ParserRuleContext parserRuleContext, string _namespace, string name, XDRTypeDefinition? parent, string outputDir)
-        {
-            XDRType = xdrType;
-            ParserRuleContext = parserRuleContext;
-            Namespace = _namespace;
-            Name = name;
-            Parent = parent;
-            if (parent!= null)
-            {
-                parent.NestedTypes.Add(this);
-            }
-            else
-            {
-                _codeFile = new CodeFile(Path.Combine(outputDir, $"{name}.cs"));
-            }
-            
-        }
-
-    }
+  
 
     private class TypeContext
     {
@@ -49,9 +20,9 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         public string CurrentNamespace => Namespace ?? "StellarGenerated";
         public string? CurrentTypeName => CurrentType?.FullName;
 
-        public void AddType(string typeName, XDRType type, ParserRuleContext ruleContext,string outputDir)
+        public void AddType(string typeName, XDRType type, ParserRuleContext docsContext, ParserRuleContext ruleContext,string outputDir, Dictionary<IToken, string> commentMap)
         {
-            var newType = new XDRTypeDefinition(type, ruleContext, CurrentNamespace, typeName, CurrentType,outputDir);
+            var newType = new XDRTypeDefinition(type, docsContext,ruleContext, CurrentNamespace, typeName, CurrentType,outputDir, commentMap);
             if (CurrentType==null) AllTypes.Add(newType);
             CurrentType = newType;
             Console.WriteLine($"Found type: {CurrentTypeName}");
@@ -75,8 +46,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     private CodeFile CurrentCodeFile { get; set; }
     private readonly TypeContext _context = new();
     private readonly string _outputDir;
-    public Dictionary<string, XDRType> Types = new();
-    private readonly Dictionary<IToken, string> _commentMap = new();
+    private Dictionary<IToken, string> _commentMap = new();
 
     public TypeExtractorVisitor(string outputDir)
     {
@@ -86,6 +56,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
     public void BuildCommentMap(CommonTokenStream tokenStream)
     {
+        _commentMap = new();
         var tokens = tokenStream.GetTokens();
         IToken? lastToken = null;
 
@@ -125,7 +96,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         var enumName = context.identifier().GetText();
         XDRType type = XDRType.Enum;
-        _context.AddType(enumName, type,context,_outputDir);
+        _context.AddType(enumName, type,context, context.enumBody(),_outputDir,_commentMap);
         try
         {
             return base.VisitEnumDefinition(context);
@@ -142,7 +113,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         var structName = context.identifier().GetText();
         XDRType type = XDRType.Struct;
-        _context.AddType(structName, type, context, _outputDir);
+        _context.AddType(structName, type, context,context.structBody(), _outputDir,_commentMap);
         try
         {
             return base.VisitStructDefinition(context);
@@ -157,7 +128,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         var unionName = context.identifier().GetText();
         XDRType type = XDRType.Union;
-        _context.AddType(unionName, type, context, _outputDir);
+        _context.AddType(unionName, type, context,context.unionBody(), _outputDir,_commentMap );
         try
         {
             return base.VisitUnionDefinition(context);
@@ -172,7 +143,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         var typedefName = context.declaration().identifier().GetText();
         XDRType type = XDRType.TypeDef;
-        _context.AddType(typedefName, type, context, _outputDir);
+        _context.AddType(typedefName, type, context,context, _outputDir, _commentMap);
         try 
         { 
             return base.VisitTypedefDefinition(context);
@@ -187,7 +158,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         string localName = GetNestedTypeName(context, "Union");
         XDRType type = XDRType.Union;
-        _context.AddType(localName, type, context, _outputDir);
+        _context.AddType(localName, type, context,context.unionBody(), _outputDir, _commentMap);
         try
         {
             return base.VisitUnionTypeSpec(context);
@@ -203,7 +174,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         string localName = GetNestedTypeName(context, "Enum");
         XDRType type = XDRType.Enum;
-        _context.AddType(localName, type, context, _outputDir);
+        _context.AddType(localName, type, context, context.enumBody(), _outputDir, _commentMap);
         try
         {
             return base.VisitEnumTypeSpec(context);
@@ -219,7 +190,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         string localName = GetNestedTypeName(context, "Struct");
         XDRType type = XDRType.Struct;
-        _context.AddType(localName, type, context, _outputDir);
+        _context.AddType(localName, type, context, context.structBody(), _outputDir, _commentMap);
         try
         {
             return base.VisitStructTypeSpec(context);
@@ -231,7 +202,17 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
     }
 
-    public static string GetNestedTypeName(ParserRuleContext context, string typeSuffix)
+    public void WriteAllTypes()
+    {
+        foreach (var xdrDefinedType in _context.AllTypes)
+        {
+            Console.WriteLine($"Generating {xdrDefinedType.FullName}");
+            xdrDefinedType.Generate(_context.AllTypes);
+            xdrDefinedType.CodeFile.Write();
+        }
+    }
+
+    internal static string GetNestedTypeName(ParserRuleContext context, string typeSuffix)
     {
         var parentDecl = context.Parent;
         while (parentDecl != null && !(parentDecl is StellarXdrParser.DeclarationContext))
@@ -246,24 +227,6 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         return $"Nested{typeSuffix}";
     }
 
-    private void WriteDocumentationComment(ParserRuleContext context, CodeFile code, bool isProperty = false)
-    {
-
-        if (_commentMap.TryGetValue(context.Start, out var comment))
-        {
-            var lines = comment.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-            code.AppendLine(isProperty ? "/// <value>" : "    /// <summary>");
-            foreach (var line in lines)
-            {
-                var trimmedLine = line.Trim();
-                if (!string.IsNullOrEmpty(trimmedLine))
-                {
-                    code.AppendLine($"/// {trimmedLine}");
-                }
-            }
-            code.AppendLine(isProperty ? "/// </value>" : "    /// </summary>");
-        }
-    }
+   
 
 }

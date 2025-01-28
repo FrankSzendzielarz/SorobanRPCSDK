@@ -19,14 +19,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class Claimant
     {
-        public abstract int Discriminator { get; }
+        public abstract ClaimantType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class Claimant_CLAIMANT_TYPE_V0 : Claimant
     {
-        public override int Discriminator => CLAIMANT_TYPE_V0;
+        public override ClaimantType Discriminator => ClaimantType.CLAIMANT_TYPE_V0;
         private object _v0;
         public object v0
         {
@@ -54,7 +54,7 @@ namespace stellar {
         }
         public static Claimant Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ClaimantType)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAIMANT_TYPE_V0:

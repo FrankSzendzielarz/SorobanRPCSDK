@@ -19,14 +19,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class TransactionEnvelope
     {
-        public abstract int Discriminator { get; }
+        public abstract EnvelopeType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX_V0 : TransactionEnvelope
     {
-        public override int Discriminator => ENVELOPE_TYPE_TX_V0;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
         private TransactionV0Envelope _v0;
         public TransactionV0Envelope v0
         {
@@ -41,7 +41,7 @@ namespace stellar {
     }
     public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX : TransactionEnvelope
     {
-        public override int Discriminator => ENVELOPE_TYPE_TX;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
         private TransactionV1Envelope _v1;
         public TransactionV1Envelope v1
         {
@@ -56,7 +56,7 @@ namespace stellar {
     }
     public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX_FEE_BUMP : TransactionEnvelope
     {
-        public override int Discriminator => ENVELOPE_TYPE_TX_FEE_BUMP;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
         private FeeBumpTransactionEnvelope _feeBump;
         public FeeBumpTransactionEnvelope feeBump
         {
@@ -90,7 +90,7 @@ namespace stellar {
         }
         public static TransactionEnvelope Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (EnvelopeType)stream.ReadInt();
             switch (discriminator)
             {
                 case ENVELOPE_TYPE_TX_V0:

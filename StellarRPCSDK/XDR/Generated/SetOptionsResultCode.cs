@@ -56,3 +56,4 @@ namespace stellar {
             return (SetOptionsResultCode)value;
         }
     }
+}

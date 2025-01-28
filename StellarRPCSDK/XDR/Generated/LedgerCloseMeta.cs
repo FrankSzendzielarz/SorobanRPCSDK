@@ -24,7 +24,7 @@ namespace stellar {
     }
     public sealed partial class LedgerCloseMeta_0 : LedgerCloseMeta
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
         private LedgerCloseMetaV0 _v0;
         public LedgerCloseMetaV0 v0
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class LedgerCloseMeta_1 : LedgerCloseMeta
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private LedgerCloseMetaV1 _v1;
         public LedgerCloseMetaV1 v1
         {

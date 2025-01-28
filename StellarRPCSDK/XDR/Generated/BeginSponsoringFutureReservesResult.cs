@@ -20,32 +20,32 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class BeginSponsoringFutureReservesResult
     {
-        public abstract int Discriminator { get; }
+        public abstract BeginSponsoringFutureReservesResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS : BeginSponsoringFutureReservesResult
     {
-        public override int Discriminator => BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
+        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED : BeginSponsoringFutureReservesResult
     {
-        public override int Discriminator => BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
+        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED : BeginSponsoringFutureReservesResult
     {
-        public override int Discriminator => BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
+        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE : BeginSponsoringFutureReservesResult
     {
-        public override int Discriminator => BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
+        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
 
         public override void ValidateCase() {}
     }
@@ -69,7 +69,7 @@ namespace stellar {
         }
         public static BeginSponsoringFutureReservesResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (BeginSponsoringFutureReservesResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:

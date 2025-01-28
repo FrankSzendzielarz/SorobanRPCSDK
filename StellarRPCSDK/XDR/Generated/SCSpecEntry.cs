@@ -23,14 +23,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCSpecEntry
     {
-        public abstract int Discriminator { get; }
+        public abstract SCSpecEntryKind Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 : SCSpecEntry
     {
-        public override int Discriminator => SC_SPEC_ENTRY_FUNCTION_V0;
+        public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_FUNCTION_V0;
         private SCSpecFunctionV0 _functionV0;
         public SCSpecFunctionV0 functionV0
         {
@@ -45,7 +45,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0 : SCSpecEntry
     {
-        public override int Discriminator => SC_SPEC_ENTRY_UDT_STRUCT_V0;
+        public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_STRUCT_V0;
         private SCSpecUDTStructV0 _udtStructV0;
         public SCSpecUDTStructV0 udtStructV0
         {
@@ -60,7 +60,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0 : SCSpecEntry
     {
-        public override int Discriminator => SC_SPEC_ENTRY_UDT_UNION_V0;
+        public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_UNION_V0;
         private SCSpecUDTUnionV0 _udtUnionV0;
         public SCSpecUDTUnionV0 udtUnionV0
         {
@@ -75,7 +75,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0 : SCSpecEntry
     {
-        public override int Discriminator => SC_SPEC_ENTRY_UDT_ENUM_V0;
+        public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ENUM_V0;
         private SCSpecUDTEnumV0 _udtEnumV0;
         public SCSpecUDTEnumV0 udtEnumV0
         {
@@ -90,7 +90,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 : SCSpecEntry
     {
-        public override int Discriminator => SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
+        public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
         private SCSpecUDTErrorEnumV0 _udtErrorEnumV0;
         public SCSpecUDTErrorEnumV0 udtErrorEnumV0
         {
@@ -130,7 +130,7 @@ namespace stellar {
         }
         public static SCSpecEntry Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCSpecEntryKind)stream.ReadInt();
             switch (discriminator)
             {
                 case SC_SPEC_ENTRY_FUNCTION_V0:

@@ -28,14 +28,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ManageSellOfferResult
     {
-        public abstract int Discriminator { get; }
+        public abstract ManageSellOfferResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_SUCCESS : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_SUCCESS;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_SUCCESS;
         private ManageOfferSuccessResult _success;
         public ManageOfferSuccessResult success
         {
@@ -50,73 +50,73 @@ namespace stellar {
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_MALFORMED : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_MALFORMED;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_SELL_NO_TRUST : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_SELL_NO_TRUST;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_SELL_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_BUY_NO_TRUST : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_BUY_NO_TRUST;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_BUY_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_LINE_FULL : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_LINE_FULL;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_UNDERFUNDED : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_UNDERFUNDED;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_CROSS_SELF : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_CROSS_SELF;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_CROSS_SELF;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_SELL_NO_ISSUER : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_SELL_NO_ISSUER;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_SELL_NO_ISSUER;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_BUY_NO_ISSUER : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_BUY_NO_ISSUER;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_BUY_NO_ISSUER;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_NOT_FOUND : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_NOT_FOUND;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_NOT_FOUND;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ManageSellOfferResult_MANAGE_SELL_OFFER_LOW_RESERVE : ManageSellOfferResult
     {
-        public override int Discriminator => MANAGE_SELL_OFFER_LOW_RESERVE;
+        public override ManageSellOfferResultCode Discriminator => ManageSellOfferResultCode.MANAGE_SELL_OFFER_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
@@ -159,7 +159,7 @@ namespace stellar {
         }
         public static ManageSellOfferResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ManageSellOfferResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case MANAGE_SELL_OFFER_SUCCESS:

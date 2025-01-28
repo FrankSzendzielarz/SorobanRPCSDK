@@ -23,56 +23,56 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LiquidityPoolDepositResult
     {
-        public abstract int Discriminator { get; }
+        public abstract LiquidityPoolDepositResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_SUCCESS;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_MALFORMED : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_MALFORMED;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NO_TRUST : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_LINE_FULL : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_POOL_FULL : LiquidityPoolDepositResult
     {
-        public override int Discriminator => LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
+        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
 
         public override void ValidateCase() {}
     }
@@ -104,7 +104,7 @@ namespace stellar {
         }
         public static LiquidityPoolDepositResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (LiquidityPoolDepositResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case LIQUIDITY_POOL_DEPOSIT_SUCCESS:

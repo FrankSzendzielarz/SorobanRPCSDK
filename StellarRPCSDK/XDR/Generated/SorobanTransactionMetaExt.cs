@@ -24,13 +24,13 @@ namespace stellar {
     }
     public sealed partial class SorobanTransactionMetaExt_0 : SorobanTransactionMetaExt
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SorobanTransactionMetaExt_1 : SorobanTransactionMetaExt
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private SorobanTransactionMetaExtV1 _v1;
         public SorobanTransactionMetaExtV1 v1
         {

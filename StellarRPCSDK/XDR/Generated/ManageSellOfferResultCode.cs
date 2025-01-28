@@ -67,3 +67,4 @@ namespace stellar {
             return (ManageSellOfferResultCode)value;
         }
     }
+}

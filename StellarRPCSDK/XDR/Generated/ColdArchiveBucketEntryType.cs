@@ -41,3 +41,4 @@ namespace stellar {
             return (ColdArchiveBucketEntryType)value;
         }
     }
+}

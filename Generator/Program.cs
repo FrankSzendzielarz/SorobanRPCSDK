@@ -82,6 +82,7 @@ public class Program
                 visitor.BuildCommentMap(tokens);
                 visitor.Visit(tree);
             }
+            visitor.WriteAllTypes();
             Console.WriteLine($"XDR generation complete.");
             Console.WriteLine($"Generating code for OpenRPC file {openRPCFile}");
 

@@ -49,3 +49,4 @@ namespace stellar {
             return (AllowTrustResultCode)value;
         }
     }
+}

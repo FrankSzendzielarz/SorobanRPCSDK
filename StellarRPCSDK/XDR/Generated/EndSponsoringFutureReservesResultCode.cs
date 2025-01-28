@@ -38,3 +38,4 @@ namespace stellar {
             return (EndSponsoringFutureReservesResultCode)value;
         }
     }
+}

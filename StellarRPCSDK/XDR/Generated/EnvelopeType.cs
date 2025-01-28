@@ -51,3 +51,4 @@ namespace stellar {
             return (EnvelopeType)value;
         }
     }
+}

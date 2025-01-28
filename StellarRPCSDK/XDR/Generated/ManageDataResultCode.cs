@@ -45,3 +45,4 @@ namespace stellar {
             return (ManageDataResultCode)value;
         }
     }
+}

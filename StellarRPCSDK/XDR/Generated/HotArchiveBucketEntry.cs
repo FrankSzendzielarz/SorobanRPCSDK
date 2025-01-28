@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class HotArchiveBucketEntry
     {
-        public abstract int Discriminator { get; }
+        public abstract HotArchiveBucketEntryType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED : HotArchiveBucketEntry
     {
-        public override int Discriminator => HOT_ARCHIVE_ARCHIVED;
+        public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_ARCHIVED;
         private LedgerEntry _archivedEntry;
         public LedgerEntry archivedEntry
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_LIVE : HotArchiveBucketEntry
     {
-        public override int Discriminator => HOT_ARCHIVE_LIVE;
+        public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_LIVE;
         private LedgerKey _key;
         public LedgerKey key
         {
@@ -58,7 +58,7 @@ namespace stellar {
     }
     public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_DELETED : HotArchiveBucketEntry
     {
-        public override int Discriminator => HOT_ARCHIVE_DELETED;
+        public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_DELETED;
         private LedgerKey _key;
         public LedgerKey key
         {
@@ -73,7 +73,7 @@ namespace stellar {
     }
     public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY : HotArchiveBucketEntry
     {
-        public override int Discriminator => HOT_ARCHIVE_METAENTRY;
+        public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_METAENTRY;
         private BucketMetadata _metaEntry;
         public BucketMetadata metaEntry
         {
@@ -110,7 +110,7 @@ namespace stellar {
         }
         public static HotArchiveBucketEntry Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (HotArchiveBucketEntryType)stream.ReadInt();
             switch (discriminator)
             {
                 case HOT_ARCHIVE_ARCHIVED:

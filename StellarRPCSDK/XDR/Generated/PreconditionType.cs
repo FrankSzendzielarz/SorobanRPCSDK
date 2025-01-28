@@ -37,3 +37,4 @@ namespace stellar {
             return (PreconditionType)value;
         }
     }
+}

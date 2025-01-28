@@ -20,32 +20,32 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ClawbackClaimableBalanceResult
     {
-        public abstract int Discriminator { get; }
+        public abstract ClawbackClaimableBalanceResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS : ClawbackClaimableBalanceResult
     {
-        public override int Discriminator => CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
+        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST : ClawbackClaimableBalanceResult
     {
-        public override int Discriminator => CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
+        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER : ClawbackClaimableBalanceResult
     {
-        public override int Discriminator => CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
+        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED : ClawbackClaimableBalanceResult
     {
-        public override int Discriminator => CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
+        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
 
         public override void ValidateCase() {}
     }
@@ -69,7 +69,7 @@ namespace stellar {
         }
         public static ClawbackClaimableBalanceResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ClawbackClaimableBalanceResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:

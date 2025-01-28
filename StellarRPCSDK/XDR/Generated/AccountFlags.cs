@@ -49,3 +49,4 @@ namespace stellar {
             return (AccountFlags)value;
         }
     }
+}

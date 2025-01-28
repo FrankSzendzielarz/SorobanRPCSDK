@@ -35,3 +35,4 @@ namespace stellar {
             return (IPAddrType)value;
         }
     }
+}

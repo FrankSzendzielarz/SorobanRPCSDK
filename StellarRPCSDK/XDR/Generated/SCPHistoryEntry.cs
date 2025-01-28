@@ -22,7 +22,7 @@ namespace stellar {
     }
     public sealed partial class SCPHistoryEntry_0 : SCPHistoryEntry
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
         private SCPHistoryEntryV0 _v0;
         public SCPHistoryEntryV0 v0
         {

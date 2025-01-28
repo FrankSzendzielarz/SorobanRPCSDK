@@ -59,3 +59,4 @@ namespace stellar {
             return (ConfigSettingID)value;
         }
     }
+}

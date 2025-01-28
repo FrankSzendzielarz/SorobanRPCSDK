@@ -24,7 +24,7 @@ namespace stellar {
     }
     public sealed partial class StoredTransactionSet_0 : StoredTransactionSet
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
         private TransactionSet _txSet;
         public TransactionSet txSet
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class StoredTransactionSet_1 : StoredTransactionSet
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private GeneralizedTransactionSet _generalizedTxSet;
         public GeneralizedTransactionSet generalizedTxSet
         {

@@ -250,3 +250,4 @@ namespace stellar {
             return (ContractCostType)value;
         }
     }
+}

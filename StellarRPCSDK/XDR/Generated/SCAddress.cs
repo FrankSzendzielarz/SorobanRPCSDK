@@ -17,14 +17,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCAddress
     {
-        public abstract int Discriminator { get; }
+        public abstract SCAddressType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCAddress_SC_ADDRESS_TYPE_ACCOUNT : SCAddress
     {
-        public override int Discriminator => SC_ADDRESS_TYPE_ACCOUNT;
+        public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
         private AccountID _accountId;
         public AccountID accountId
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class SCAddress_SC_ADDRESS_TYPE_CONTRACT : SCAddress
     {
-        public override int Discriminator => SC_ADDRESS_TYPE_CONTRACT;
+        public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;
         private Hash _contractId;
         public Hash contractId
         {
@@ -70,7 +70,7 @@ namespace stellar {
         }
         public static SCAddress Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCAddressType)stream.ReadInt();
             switch (discriminator)
             {
                 case SC_ADDRESS_TYPE_ACCOUNT:

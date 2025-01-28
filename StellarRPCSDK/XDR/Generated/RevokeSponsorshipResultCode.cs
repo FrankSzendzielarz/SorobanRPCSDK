@@ -46,3 +46,4 @@ namespace stellar {
             return (RevokeSponsorshipResultCode)value;
         }
     }
+}

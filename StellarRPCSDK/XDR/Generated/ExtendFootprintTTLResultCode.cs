@@ -42,3 +42,4 @@ namespace stellar {
             return (ExtendFootprintTTLResultCode)value;
         }
     }
+}

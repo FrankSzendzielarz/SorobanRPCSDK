@@ -87,3 +87,4 @@ namespace stellar {
             return (SCSpecType)value;
         }
     }
+}

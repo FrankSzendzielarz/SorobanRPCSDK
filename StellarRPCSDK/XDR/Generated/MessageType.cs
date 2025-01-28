@@ -89,3 +89,4 @@ namespace stellar {
             return (MessageType)value;
         }
     }
+}

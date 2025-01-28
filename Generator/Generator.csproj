@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="XDR\CSharpCodeGenVisitor.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
 		<PackageReference Include="Antlr4" Version="4.6.6">
 		  <PrivateAssets>all</PrivateAssets>

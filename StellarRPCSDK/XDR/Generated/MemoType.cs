@@ -41,3 +41,4 @@ namespace stellar {
             return (MemoType)value;
         }
     }
+}

@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class RevokeSponsorshipOp
     {
-        public abstract int Discriminator { get; }
+        public abstract RevokeSponsorshipType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY : RevokeSponsorshipOp
     {
-        public override int Discriminator => REVOKE_SPONSORSHIP_LEDGER_ENTRY;
+        public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
         private LedgerKey _ledgerKey;
         public LedgerKey ledgerKey
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER : RevokeSponsorshipOp
     {
-        public override int Discriminator => REVOKE_SPONSORSHIP_SIGNER;
+        public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
         private object _signer;
         public object signer
         {
@@ -74,7 +74,7 @@ namespace stellar {
         }
         public static RevokeSponsorshipOp Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (RevokeSponsorshipType)stream.ReadInt();
             switch (discriminator)
             {
                 case REVOKE_SPONSORSHIP_LEDGER_ENTRY:

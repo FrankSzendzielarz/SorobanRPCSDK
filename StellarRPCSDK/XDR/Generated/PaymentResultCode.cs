@@ -54,3 +54,4 @@ namespace stellar {
             return (PaymentResultCode)value;
         }
     }
+}

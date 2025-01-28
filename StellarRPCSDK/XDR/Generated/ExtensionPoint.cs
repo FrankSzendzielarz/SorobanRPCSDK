@@ -22,7 +22,7 @@ namespace stellar {
     }
     public sealed partial class ExtensionPoint_0 : ExtensionPoint
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
 
         public override void ValidateCase() {}
     }

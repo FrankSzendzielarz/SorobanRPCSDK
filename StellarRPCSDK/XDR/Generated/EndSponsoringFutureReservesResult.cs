@@ -18,20 +18,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class EndSponsoringFutureReservesResult
     {
-        public abstract int Discriminator { get; }
+        public abstract EndSponsoringFutureReservesResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS : EndSponsoringFutureReservesResult
     {
-        public override int Discriminator => END_SPONSORING_FUTURE_RESERVES_SUCCESS;
+        public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED : EndSponsoringFutureReservesResult
     {
-        public override int Discriminator => END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
+        public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
 
         public override void ValidateCase() {}
     }
@@ -51,7 +51,7 @@ namespace stellar {
         }
         public static EndSponsoringFutureReservesResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (EndSponsoringFutureReservesResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case END_SPONSORING_FUTURE_RESERVES_SUCCESS:

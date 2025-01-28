@@ -44,3 +44,4 @@ namespace stellar {
             return (ClawbackResultCode)value;
         }
     }
+}

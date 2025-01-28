@@ -20,38 +20,38 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class CreateAccountResult
     {
-        public abstract int Discriminator { get; }
+        public abstract CreateAccountResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_SUCCESS : CreateAccountResult
     {
-        public override int Discriminator => CREATE_ACCOUNT_SUCCESS;
+        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_MALFORMED : CreateAccountResult
     {
-        public override int Discriminator => CREATE_ACCOUNT_MALFORMED;
+        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_UNDERFUNDED : CreateAccountResult
     {
-        public override int Discriminator => CREATE_ACCOUNT_UNDERFUNDED;
+        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_LOW_RESERVE : CreateAccountResult
     {
-        public override int Discriminator => CREATE_ACCOUNT_LOW_RESERVE;
+        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_ALREADY_EXIST : CreateAccountResult
     {
-        public override int Discriminator => CREATE_ACCOUNT_ALREADY_EXIST;
+        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;
 
         public override void ValidateCase() {}
     }
@@ -77,7 +77,7 @@ namespace stellar {
         }
         public static CreateAccountResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (CreateAccountResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case CREATE_ACCOUNT_SUCCESS:

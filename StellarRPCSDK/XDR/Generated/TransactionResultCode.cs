@@ -73,3 +73,4 @@ namespace stellar {
             return (TransactionResultCode)value;
         }
     }
+}

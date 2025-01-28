@@ -43,14 +43,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class HashIDPreimage
     {
-        public abstract int Discriminator { get; }
+        public abstract EnvelopeType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class HashIDPreimage_ENVELOPE_TYPE_OP_ID : HashIDPreimage
     {
-        public override int Discriminator => ENVELOPE_TYPE_OP_ID;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
         private object _operationID;
         public object operationID
         {
@@ -65,7 +65,7 @@ namespace stellar {
     }
     public sealed partial class HashIDPreimage_ENVELOPE_TYPE_POOL_REVOKE_OP_ID : HashIDPreimage
     {
-        public override int Discriminator => ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
         private object _revokeID;
         public object revokeID
         {
@@ -80,7 +80,7 @@ namespace stellar {
     }
     public sealed partial class HashIDPreimage_ENVELOPE_TYPE_CONTRACT_ID : HashIDPreimage
     {
-        public override int Discriminator => ENVELOPE_TYPE_CONTRACT_ID;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
         private object _contractID;
         public object contractID
         {
@@ -95,7 +95,7 @@ namespace stellar {
     }
     public sealed partial class HashIDPreimage_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION : HashIDPreimage
     {
-        public override int Discriminator => ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
+        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
         private object _sorobanAuthorization;
         public object sorobanAuthorization
         {
@@ -132,7 +132,7 @@ namespace stellar {
         }
         public static HashIDPreimage Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (EnvelopeType)stream.ReadInt();
             switch (discriminator)
             {
                 case ENVELOPE_TYPE_OP_ID:

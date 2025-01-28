@@ -20,14 +20,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class AuthenticatedMessage
     {
-        public abstract int Discriminator { get; }
+        public abstract uint32 Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class AuthenticatedMessage_0 : AuthenticatedMessage
     {
-        public override int Discriminator => 0;
+        public override uint32 Discriminator => uint32.0;
         private object _v0;
         public object v0
         {
@@ -55,7 +55,7 @@ namespace stellar {
         }
         public static AuthenticatedMessage Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (uint32)stream.ReadInt();
             switch (discriminator)
             {
                 case 0:

@@ -35,3 +35,4 @@ namespace stellar {
             return (SCSpecUDTUnionCaseV0Kind)value;
         }
     }
+}

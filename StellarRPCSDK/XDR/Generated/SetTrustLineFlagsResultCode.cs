@@ -47,3 +47,4 @@ namespace stellar {
             return (SetTrustLineFlagsResultCode)value;
         }
     }
+}

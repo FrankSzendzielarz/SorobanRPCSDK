@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LedgerEntryChange
     {
-        public abstract int Discriminator { get; }
+        public abstract LedgerEntryChangeType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LedgerEntryChange_LEDGER_ENTRY_CREATED : LedgerEntryChange
     {
-        public override int Discriminator => LEDGER_ENTRY_CREATED;
+        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
         private LedgerEntry _created;
         public LedgerEntry created
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class LedgerEntryChange_LEDGER_ENTRY_UPDATED : LedgerEntryChange
     {
-        public override int Discriminator => LEDGER_ENTRY_UPDATED;
+        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
         private LedgerEntry _updated;
         public LedgerEntry updated
         {
@@ -58,7 +58,7 @@ namespace stellar {
     }
     public sealed partial class LedgerEntryChange_LEDGER_ENTRY_REMOVED : LedgerEntryChange
     {
-        public override int Discriminator => LEDGER_ENTRY_REMOVED;
+        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
         private LedgerKey _removed;
         public LedgerKey removed
         {
@@ -73,7 +73,7 @@ namespace stellar {
     }
     public sealed partial class LedgerEntryChange_LEDGER_ENTRY_STATE : LedgerEntryChange
     {
-        public override int Discriminator => LEDGER_ENTRY_STATE;
+        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;
         private LedgerEntry _state;
         public LedgerEntry state
         {
@@ -110,7 +110,7 @@ namespace stellar {
         }
         public static LedgerEntryChange Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (LedgerEntryChangeType)stream.ReadInt();
             switch (discriminator)
             {
                 case LEDGER_ENTRY_CREATED:

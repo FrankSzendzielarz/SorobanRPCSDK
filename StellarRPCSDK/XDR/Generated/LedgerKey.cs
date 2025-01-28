@@ -74,14 +74,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class LedgerKey
     {
-        public abstract int Discriminator { get; }
+        public abstract LedgerEntryType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class LedgerKey_ACCOUNT : LedgerKey
     {
-        public override int Discriminator => ACCOUNT;
+        public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
         private object _account;
         public object account
         {
@@ -96,7 +96,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_TRUSTLINE : LedgerKey
     {
-        public override int Discriminator => TRUSTLINE;
+        public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
         private object _trustLine;
         public object trustLine
         {
@@ -111,7 +111,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_OFFER : LedgerKey
     {
-        public override int Discriminator => OFFER;
+        public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
         private object _offer;
         public object offer
         {
@@ -126,7 +126,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_DATA : LedgerKey
     {
-        public override int Discriminator => DATA;
+        public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
         private object _data;
         public object data
         {
@@ -141,7 +141,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CLAIMABLE_BALANCE : LedgerKey
     {
-        public override int Discriminator => CLAIMABLE_BALANCE;
+        public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
         private object _claimableBalance;
         public object claimableBalance
         {
@@ -156,7 +156,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_LIQUIDITY_POOL : LedgerKey
     {
-        public override int Discriminator => LIQUIDITY_POOL;
+        public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
         private object _liquidityPool;
         public object liquidityPool
         {
@@ -171,7 +171,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONTRACT_DATA : LedgerKey
     {
-        public override int Discriminator => CONTRACT_DATA;
+        public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
         private object _contractData;
         public object contractData
         {
@@ -186,7 +186,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONTRACT_CODE : LedgerKey
     {
-        public override int Discriminator => CONTRACT_CODE;
+        public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
         private object _contractCode;
         public object contractCode
         {
@@ -201,7 +201,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_CONFIG_SETTING : LedgerKey
     {
-        public override int Discriminator => CONFIG_SETTING;
+        public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
         private object _configSetting;
         public object configSetting
         {
@@ -216,7 +216,7 @@ namespace stellar {
     }
     public sealed partial class LedgerKey_TTL : LedgerKey
     {
-        public override int Discriminator => TTL;
+        public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
         private object _ttl;
         public object ttl
         {
@@ -271,7 +271,7 @@ namespace stellar {
         }
         public static LedgerKey Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (LedgerEntryType)stream.ReadInt();
             switch (discriminator)
             {
                 case ACCOUNT:

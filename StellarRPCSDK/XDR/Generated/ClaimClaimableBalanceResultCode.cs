@@ -43,3 +43,4 @@ namespace stellar {
             return (ClaimClaimableBalanceResultCode)value;
         }
     }
+}

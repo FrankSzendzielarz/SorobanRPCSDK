@@ -50,3 +50,4 @@ namespace stellar {
             return (AccountMergeResultCode)value;
         }
     }
+}

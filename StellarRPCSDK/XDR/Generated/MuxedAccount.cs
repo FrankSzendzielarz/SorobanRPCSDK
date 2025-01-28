@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class MuxedAccount
     {
-        public abstract int Discriminator { get; }
+        public abstract CryptoKeyType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class MuxedAccount_KEY_TYPE_ED25519 : MuxedAccount
     {
-        public override int Discriminator => KEY_TYPE_ED25519;
+        public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
         private uint256 _ed25519;
         public uint256 ed25519
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class MuxedAccount_KEY_TYPE_MUXED_ED25519 : MuxedAccount
     {
-        public override int Discriminator => KEY_TYPE_MUXED_ED25519;
+        public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
         private object _med25519;
         public object med25519
         {
@@ -74,7 +74,7 @@ namespace stellar {
         }
         public static MuxedAccount Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (CryptoKeyType)stream.ReadInt();
             switch (discriminator)
             {
                 case KEY_TYPE_ED25519:

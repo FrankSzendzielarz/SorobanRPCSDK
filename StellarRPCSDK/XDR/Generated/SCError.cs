@@ -25,14 +25,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCError
     {
-        public abstract int Discriminator { get; }
+        public abstract SCErrorType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCError_SCE_CONTRACT : SCError
     {
-        public override int Discriminator => SCE_CONTRACT;
+        public override SCErrorType Discriminator => SCErrorType.SCE_CONTRACT;
         private uint32 _contractCode;
         public uint32 contractCode
         {
@@ -47,7 +47,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_WASM_VM : SCError
     {
-        public override int Discriminator => SCE_WASM_VM;
+        public override SCErrorType Discriminator => SCErrorType.SCE_WASM_VM;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -62,7 +62,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_CONTEXT : SCError
     {
-        public override int Discriminator => SCE_CONTEXT;
+        public override SCErrorType Discriminator => SCErrorType.SCE_CONTEXT;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -77,7 +77,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_STORAGE : SCError
     {
-        public override int Discriminator => SCE_STORAGE;
+        public override SCErrorType Discriminator => SCErrorType.SCE_STORAGE;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -92,7 +92,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_OBJECT : SCError
     {
-        public override int Discriminator => SCE_OBJECT;
+        public override SCErrorType Discriminator => SCErrorType.SCE_OBJECT;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -107,7 +107,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_CRYPTO : SCError
     {
-        public override int Discriminator => SCE_CRYPTO;
+        public override SCErrorType Discriminator => SCErrorType.SCE_CRYPTO;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -122,7 +122,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_EVENTS : SCError
     {
-        public override int Discriminator => SCE_EVENTS;
+        public override SCErrorType Discriminator => SCErrorType.SCE_EVENTS;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -137,7 +137,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_BUDGET : SCError
     {
-        public override int Discriminator => SCE_BUDGET;
+        public override SCErrorType Discriminator => SCErrorType.SCE_BUDGET;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -152,7 +152,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_VALUE : SCError
     {
-        public override int Discriminator => SCE_VALUE;
+        public override SCErrorType Discriminator => SCErrorType.SCE_VALUE;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -167,7 +167,7 @@ namespace stellar {
     }
     public sealed partial class SCError_SCE_AUTH : SCError
     {
-        public override int Discriminator => SCE_AUTH;
+        public override SCErrorType Discriminator => SCErrorType.SCE_AUTH;
         private SCErrorCode _code;
         public SCErrorCode code
         {
@@ -222,7 +222,7 @@ namespace stellar {
         }
         public static SCError Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCErrorType)stream.ReadInt();
             switch (discriminator)
             {
                 case SCE_CONTRACT:

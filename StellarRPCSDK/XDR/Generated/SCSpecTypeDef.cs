@@ -46,122 +46,122 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCSpecTypeDef
     {
-        public abstract int Discriminator { get; }
+        public abstract SCSpecType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_VAL : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_VAL;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VAL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_BOOL : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_BOOL;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BOOL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_VOID : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_VOID;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VOID;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_ERROR : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_ERROR;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ERROR;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_U32 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_U32;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U32;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_I32 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_I32;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I32;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_U64 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_U64;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U64;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_I64 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_I64;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I64;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_TIMEPOINT : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_TIMEPOINT;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TIMEPOINT;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_DURATION : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_DURATION;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_DURATION;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_U128 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_U128;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U128;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_I128 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_I128;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I128;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_U256 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_U256;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U256;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_I256 : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_I256;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I256;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_BYTES : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_BYTES;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_STRING : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_STRING;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_STRING;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_SYMBOL : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_SYMBOL;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_SYMBOL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_ADDRESS : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_ADDRESS;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ADDRESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_OPTION : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_OPTION;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_OPTION;
         private SCSpecTypeOption _option;
         public SCSpecTypeOption option
         {
@@ -176,7 +176,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_RESULT : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_RESULT;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_RESULT;
         private SCSpecTypeResult _result;
         public SCSpecTypeResult result
         {
@@ -191,7 +191,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_VEC : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_VEC;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VEC;
         private SCSpecTypeVec _vec;
         public SCSpecTypeVec vec
         {
@@ -206,7 +206,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_MAP : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_MAP;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_MAP;
         private SCSpecTypeMap _map;
         public SCSpecTypeMap map
         {
@@ -221,7 +221,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_TUPLE : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_TUPLE;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TUPLE;
         private SCSpecTypeTuple _tuple;
         public SCSpecTypeTuple tuple
         {
@@ -236,7 +236,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_BYTES_N : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_BYTES_N;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES_N;
         private SCSpecTypeBytesN _bytesN;
         public SCSpecTypeBytesN bytesN
         {
@@ -251,7 +251,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_UDT : SCSpecTypeDef
     {
-        public override int Discriminator => SC_SPEC_TYPE_UDT;
+        public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_UDT;
         private SCSpecTypeUDT _udt;
         public SCSpecTypeUDT udt
         {
@@ -333,7 +333,7 @@ namespace stellar {
         }
         public static SCSpecTypeDef Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCSpecType)stream.ReadInt();
             switch (discriminator)
             {
                 case SC_SPEC_TYPE_VAL:

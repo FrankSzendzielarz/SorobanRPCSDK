@@ -85,3 +85,4 @@ namespace stellar {
             return (OperationType)value;
         }
     }
+}

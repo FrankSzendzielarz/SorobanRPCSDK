@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class HostFunction
     {
-        public abstract int Discriminator { get; }
+        public abstract HostFunctionType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT : HostFunction
     {
-        public override int Discriminator => HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
+        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
         private InvokeContractArgs _invokeContract;
         public InvokeContractArgs invokeContract
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT : HostFunction
     {
-        public override int Discriminator => HOST_FUNCTION_TYPE_CREATE_CONTRACT;
+        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
         private CreateContractArgs _createContract;
         public CreateContractArgs createContract
         {
@@ -58,13 +58,13 @@ namespace stellar {
     }
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM : HostFunction
     {
-        public override int Discriminator => HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
+        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
 
         public override void ValidateCase() {}
     }
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 : HostFunction
     {
-        public override int Discriminator => HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
+        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
         private CreateContractArgsV2 _createContractV2;
         public CreateContractArgsV2 createContractV2
         {
@@ -100,7 +100,7 @@ namespace stellar {
         }
         public static HostFunction Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (HostFunctionType)stream.ReadInt();
             switch (discriminator)
             {
                 case HOST_FUNCTION_TYPE_INVOKE_CONTRACT:

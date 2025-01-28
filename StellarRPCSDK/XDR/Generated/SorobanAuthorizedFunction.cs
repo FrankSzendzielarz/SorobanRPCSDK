@@ -27,14 +27,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SorobanAuthorizedFunction
     {
-        public abstract int Discriminator { get; }
+        public abstract SorobanAuthorizedFunctionType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN : SorobanAuthorizedFunction
     {
-        public override int Discriminator => SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
+        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
         private InvokeContractArgs _contractFn;
         public InvokeContractArgs contractFn
         {
@@ -49,7 +49,7 @@ namespace stellar {
     }
     public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN : SorobanAuthorizedFunction
     {
-        public override int Discriminator => SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
+        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
         private CreateContractArgs _createContractHostFn;
         public CreateContractArgs createContractHostFn
         {
@@ -64,7 +64,7 @@ namespace stellar {
     }
     public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN : SorobanAuthorizedFunction
     {
-        public override int Discriminator => SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
+        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
         private CreateContractArgsV2 _createContractV2HostFn;
         public CreateContractArgsV2 createContractV2HostFn
         {
@@ -98,7 +98,7 @@ namespace stellar {
         }
         public static SorobanAuthorizedFunction Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SorobanAuthorizedFunctionType)stream.ReadInt();
             switch (discriminator)
             {
                 case SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:

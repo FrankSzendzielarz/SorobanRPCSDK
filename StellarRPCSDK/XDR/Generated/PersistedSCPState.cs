@@ -24,7 +24,7 @@ namespace stellar {
     }
     public sealed partial class PersistedSCPState_0 : PersistedSCPState
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
         private PersistedSCPStateV0 _v0;
         public PersistedSCPStateV0 v0
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class PersistedSCPState_1 : PersistedSCPState
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private PersistedSCPStateV1 _v1;
         public PersistedSCPStateV1 v1
         {

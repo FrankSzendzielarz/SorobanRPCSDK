@@ -64,3 +64,4 @@ namespace stellar {
             return (ManageBuyOfferResultCode)value;
         }
     }
+}

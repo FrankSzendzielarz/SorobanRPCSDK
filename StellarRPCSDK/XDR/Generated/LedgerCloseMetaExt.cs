@@ -24,13 +24,13 @@ namespace stellar {
     }
     public sealed partial class LedgerCloseMetaExt_0 : LedgerCloseMetaExt
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LedgerCloseMetaExt_1 : LedgerCloseMetaExt
     {
-        public override int Discriminator => 1;
+        public override int Discriminator => int.1;
         private LedgerCloseMetaExtV1 _v1;
         public LedgerCloseMetaExtV1 v1
         {

@@ -17,14 +17,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCSpecUDTUnionCaseV0
     {
-        public abstract int Discriminator { get; }
+        public abstract SCSpecUDTUnionCaseV0Kind Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0 : SCSpecUDTUnionCaseV0
     {
-        public override int Discriminator => SC_SPEC_UDT_UNION_CASE_VOID_V0;
+        public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
         private SCSpecUDTUnionCaseVoidV0 _voidCase;
         public SCSpecUDTUnionCaseVoidV0 voidCase
         {
@@ -39,7 +39,7 @@ namespace stellar {
     }
     public sealed partial class SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 : SCSpecUDTUnionCaseV0
     {
-        public override int Discriminator => SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
+        public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
         private SCSpecUDTUnionCaseTupleV0 _tupleCase;
         public SCSpecUDTUnionCaseTupleV0 tupleCase
         {
@@ -70,7 +70,7 @@ namespace stellar {
         }
         public static SCSpecUDTUnionCaseV0 Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCSpecUDTUnionCaseV0Kind)stream.ReadInt();
             switch (discriminator)
             {
                 case SC_SPEC_UDT_UNION_CASE_VOID_V0:

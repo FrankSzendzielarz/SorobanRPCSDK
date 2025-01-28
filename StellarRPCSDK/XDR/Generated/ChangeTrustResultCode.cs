@@ -55,3 +55,4 @@ namespace stellar {
             return (ChangeTrustResultCode)value;
         }
     }
+}

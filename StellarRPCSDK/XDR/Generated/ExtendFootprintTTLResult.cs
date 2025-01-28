@@ -19,32 +19,32 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ExtendFootprintTTLResult
     {
-        public abstract int Discriminator { get; }
+        public abstract ExtendFootprintTTLResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS : ExtendFootprintTTLResult
     {
-        public override int Discriminator => EXTEND_FOOTPRINT_TTL_SUCCESS;
+        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_MALFORMED : ExtendFootprintTTLResult
     {
-        public override int Discriminator => EXTEND_FOOTPRINT_TTL_MALFORMED;
+        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED : ExtendFootprintTTLResult
     {
-        public override int Discriminator => EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
+        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE : ExtendFootprintTTLResult
     {
-        public override int Discriminator => EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
+        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
 
         public override void ValidateCase() {}
     }
@@ -68,7 +68,7 @@ namespace stellar {
         }
         public static ExtendFootprintTTLResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ExtendFootprintTTLResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case EXTEND_FOOTPRINT_TTL_SUCCESS:

@@ -17,20 +17,20 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class BumpSequenceResult
     {
-        public abstract int Discriminator { get; }
+        public abstract BumpSequenceResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class BumpSequenceResult_BUMP_SEQUENCE_SUCCESS : BumpSequenceResult
     {
-        public override int Discriminator => BUMP_SEQUENCE_SUCCESS;
+        public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class BumpSequenceResult_BUMP_SEQUENCE_BAD_SEQ : BumpSequenceResult
     {
-        public override int Discriminator => BUMP_SEQUENCE_BAD_SEQ;
+        public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;
 
         public override void ValidateCase() {}
     }
@@ -50,7 +50,7 @@ namespace stellar {
         }
         public static BumpSequenceResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (BumpSequenceResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case BUMP_SEQUENCE_SUCCESS:

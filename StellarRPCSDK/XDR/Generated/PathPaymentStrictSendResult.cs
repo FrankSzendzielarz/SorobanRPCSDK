@@ -34,14 +34,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class PathPaymentStrictSendResult
     {
-        public abstract int Discriminator { get; }
+        public abstract PathPaymentStrictSendResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_SUCCESS : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_SUCCESS;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SUCCESS;
         private object _success;
         public object success
         {
@@ -56,55 +56,55 @@ namespace stellar {
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_MALFORMED : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_MALFORMED;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_UNDERFUNDED : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_UNDERFUNDED;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_NO_DESTINATION : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_NO_DESTINATION;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_DESTINATION;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_NO_TRUST : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_NO_TRUST;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_LINE_FULL : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_LINE_FULL;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_NO_ISSUER : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_NO_ISSUER;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_ISSUER;
         private Asset _noIssuer;
         public Asset noIssuer
         {
@@ -119,19 +119,19 @@ namespace stellar {
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PathPaymentStrictSendResult_PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN : PathPaymentStrictSendResult
     {
-        public override int Discriminator => PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN;
+        public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN;
 
         public override void ValidateCase() {}
     }
@@ -175,7 +175,7 @@ namespace stellar {
         }
         public static PathPaymentStrictSendResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (PathPaymentStrictSendResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case PATH_PAYMENT_STRICT_SEND_SUCCESS:

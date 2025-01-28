@@ -22,7 +22,7 @@ namespace stellar {
     }
     public sealed partial class TransactionPhase_0 : TransactionPhase
     {
-        public override int Discriminator => 0;
+        public override int Discriminator => int.0;
         private TxSetComponent[] _v0Components;
         public TxSetComponent[] v0Components
         {

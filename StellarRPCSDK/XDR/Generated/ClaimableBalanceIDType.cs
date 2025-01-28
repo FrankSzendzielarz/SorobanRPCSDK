@@ -33,3 +33,4 @@ namespace stellar {
             return (ClaimableBalanceIDType)value;
         }
     }
+}

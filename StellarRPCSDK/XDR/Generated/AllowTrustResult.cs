@@ -22,50 +22,50 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class AllowTrustResult
     {
-        public abstract int Discriminator { get; }
+        public abstract AllowTrustResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_SUCCESS : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_SUCCESS;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_MALFORMED : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_MALFORMED;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_NO_TRUST_LINE : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_NO_TRUST_LINE;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_NO_TRUST_LINE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_TRUST_NOT_REQUIRED : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_TRUST_NOT_REQUIRED;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_TRUST_NOT_REQUIRED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_CANT_REVOKE : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_CANT_REVOKE;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_CANT_REVOKE;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_SELF_NOT_ALLOWED : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_SELF_NOT_ALLOWED;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SELF_NOT_ALLOWED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_LOW_RESERVE : AllowTrustResult
     {
-        public override int Discriminator => ALLOW_TRUST_LOW_RESERVE;
+        public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_LOW_RESERVE;
 
         public override void ValidateCase() {}
     }
@@ -95,7 +95,7 @@ namespace stellar {
         }
         public static AllowTrustResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (AllowTrustResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case ALLOW_TRUST_SUCCESS:

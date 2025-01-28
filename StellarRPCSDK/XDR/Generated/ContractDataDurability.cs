@@ -34,3 +34,4 @@ namespace stellar {
             return (ContractDataDurability)value;
         }
     }
+}

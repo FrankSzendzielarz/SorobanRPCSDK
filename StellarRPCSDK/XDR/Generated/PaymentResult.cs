@@ -25,68 +25,68 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class PaymentResult
     {
-        public abstract int Discriminator { get; }
+        public abstract PaymentResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class PaymentResult_PAYMENT_SUCCESS : PaymentResult
     {
-        public override int Discriminator => PAYMENT_SUCCESS;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_MALFORMED : PaymentResult
     {
-        public override int Discriminator => PAYMENT_MALFORMED;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_UNDERFUNDED : PaymentResult
     {
-        public override int Discriminator => PAYMENT_UNDERFUNDED;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_UNDERFUNDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_SRC_NO_TRUST : PaymentResult
     {
-        public override int Discriminator => PAYMENT_SRC_NO_TRUST;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_SRC_NOT_AUTHORIZED : PaymentResult
     {
-        public override int Discriminator => PAYMENT_SRC_NOT_AUTHORIZED;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_NO_DESTINATION : PaymentResult
     {
-        public override int Discriminator => PAYMENT_NO_DESTINATION;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_DESTINATION;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_NO_TRUST : PaymentResult
     {
-        public override int Discriminator => PAYMENT_NO_TRUST;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_TRUST;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_NOT_AUTHORIZED : PaymentResult
     {
-        public override int Discriminator => PAYMENT_NOT_AUTHORIZED;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NOT_AUTHORIZED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_LINE_FULL : PaymentResult
     {
-        public override int Discriminator => PAYMENT_LINE_FULL;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_LINE_FULL;
 
         public override void ValidateCase() {}
     }
     public sealed partial class PaymentResult_PAYMENT_NO_ISSUER : PaymentResult
     {
-        public override int Discriminator => PAYMENT_NO_ISSUER;
+        public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_ISSUER;
 
         public override void ValidateCase() {}
     }
@@ -122,7 +122,7 @@ namespace stellar {
         }
         public static PaymentResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (PaymentResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case PAYMENT_SUCCESS:

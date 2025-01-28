@@ -104,3 +104,4 @@ namespace stellar {
             return (SCValType)value;
         }
     }
+}

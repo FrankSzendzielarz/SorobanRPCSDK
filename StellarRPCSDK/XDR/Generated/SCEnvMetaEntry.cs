@@ -18,14 +18,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCEnvMetaEntry
     {
-        public abstract int Discriminator { get; }
+        public abstract SCEnvMetaKind Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION : SCEnvMetaEntry
     {
-        public override int Discriminator => SC_ENV_META_KIND_INTERFACE_VERSION;
+        public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
         private object _interfaceVersion;
         public object interfaceVersion
         {
@@ -53,7 +53,7 @@ namespace stellar {
         }
         public static SCEnvMetaEntry Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (SCEnvMetaKind)stream.ReadInt();
             switch (discriminator)
             {
                 case SC_ENV_META_KIND_INTERFACE_VERSION:

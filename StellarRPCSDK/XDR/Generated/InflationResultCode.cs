@@ -37,3 +37,4 @@ namespace stellar {
             return (InflationResultCode)value;
         }
     }
+}

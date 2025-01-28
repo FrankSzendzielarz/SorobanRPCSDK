@@ -41,14 +41,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ConfigSettingEntry
     {
-        public abstract int Discriminator { get; }
+        public abstract ConfigSettingID Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
         private uint32 _contractMaxSizeBytes;
         public uint32 contractMaxSizeBytes
         {
@@ -63,7 +63,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COMPUTE_V0 : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_COMPUTE_V0;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
         private ConfigSettingContractComputeV0 _contractCompute;
         public ConfigSettingContractComputeV0 contractCompute
         {
@@ -78,7 +78,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
         private ConfigSettingContractLedgerCostV0 _contractLedgerCost;
         public ConfigSettingContractLedgerCostV0 contractLedgerCost
         {
@@ -93,7 +93,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
         private ConfigSettingContractHistoricalDataV0 _contractHistoricalData;
         public ConfigSettingContractHistoricalDataV0 contractHistoricalData
         {
@@ -108,7 +108,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EVENTS_V0 : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_EVENTS_V0;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
         private ConfigSettingContractEventsV0 _contractEvents;
         public ConfigSettingContractEventsV0 contractEvents
         {
@@ -123,7 +123,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
         private ConfigSettingContractBandwidthV0 _contractBandwidth;
         public ConfigSettingContractBandwidthV0 contractBandwidth
         {
@@ -138,7 +138,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
         private ContractCostParams _contractCostParamsCpuInsns;
         public ContractCostParams contractCostParamsCpuInsns
         {
@@ -153,7 +153,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
         private ContractCostParams _contractCostParamsMemBytes;
         public ContractCostParams contractCostParamsMemBytes
         {
@@ -168,7 +168,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
         private uint32 _contractDataKeySizeBytes;
         public uint32 contractDataKeySizeBytes
         {
@@ -183,7 +183,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
         private uint32 _contractDataEntrySizeBytes;
         public uint32 contractDataEntrySizeBytes
         {
@@ -198,7 +198,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_STATE_ARCHIVAL : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_STATE_ARCHIVAL;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
         private StateArchivalSettings _stateArchivalSettings;
         public StateArchivalSettings stateArchivalSettings
         {
@@ -213,7 +213,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EXECUTION_LANES : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
         private ConfigSettingContractExecutionLanesV0 _contractExecutionLanes;
         public ConfigSettingContractExecutionLanesV0 contractExecutionLanes
         {
@@ -228,7 +228,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
         private uint64[] _bucketListSizeWindow;
         public uint64[] bucketListSizeWindow
         {
@@ -243,7 +243,7 @@ namespace stellar {
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_EVICTION_ITERATOR : ConfigSettingEntry
     {
-        public override int Discriminator => CONFIG_SETTING_EVICTION_ITERATOR;
+        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;
         private EvictionIterator _evictionIterator;
         public EvictionIterator evictionIterator
         {
@@ -314,7 +314,7 @@ namespace stellar {
         }
         public static ConfigSettingEntry Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (ConfigSettingID)stream.ReadInt();
             switch (discriminator)
             {
                 case CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:

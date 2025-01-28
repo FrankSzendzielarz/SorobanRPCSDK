@@ -39,3 +39,4 @@ namespace stellar {
             return (SCPStatementType)value;
         }
     }
+}

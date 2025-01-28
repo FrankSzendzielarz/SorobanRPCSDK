@@ -19,32 +19,32 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class RestoreFootprintResult
     {
-        public abstract int Discriminator { get; }
+        public abstract RestoreFootprintResultCode Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS : RestoreFootprintResult
     {
-        public override int Discriminator => RESTORE_FOOTPRINT_SUCCESS;
+        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_MALFORMED : RestoreFootprintResult
     {
-        public override int Discriminator => RESTORE_FOOTPRINT_MALFORMED;
+        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED : RestoreFootprintResult
     {
-        public override int Discriminator => RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
+        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
 
         public override void ValidateCase() {}
     }
     public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE : RestoreFootprintResult
     {
-        public override int Discriminator => RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
+        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
 
         public override void ValidateCase() {}
     }
@@ -68,7 +68,7 @@ namespace stellar {
         }
         public static RestoreFootprintResult Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (RestoreFootprintResultCode)stream.ReadInt();
             switch (discriminator)
             {
                 case RESTORE_FOOTPRINT_SUCCESS:

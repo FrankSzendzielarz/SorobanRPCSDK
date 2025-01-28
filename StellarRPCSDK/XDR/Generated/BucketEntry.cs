@@ -21,14 +21,14 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class BucketEntry
     {
-        public abstract int Discriminator { get; }
+        public abstract BucketEntryType Discriminator { get; }
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
     }
     public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
     {
-        public override int Discriminator => LIVEENTRY;
+        public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
         private LedgerEntry _liveEntry;
         public LedgerEntry liveEntry
         {
@@ -43,7 +43,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_INITENTRY : BucketEntry
     {
-        public override int Discriminator => INITENTRY;
+        public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
         private LedgerEntry _liveEntry;
         public LedgerEntry liveEntry
         {
@@ -58,7 +58,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_DEADENTRY : BucketEntry
     {
-        public override int Discriminator => DEADENTRY;
+        public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
         private LedgerKey _deadEntry;
         public LedgerKey deadEntry
         {
@@ -73,7 +73,7 @@ namespace stellar {
     }
     public sealed partial class BucketEntry_METAENTRY : BucketEntry
     {
-        public override int Discriminator => METAENTRY;
+        public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;
         private BucketMetadata _metaEntry;
         public BucketMetadata metaEntry
         {
@@ -110,7 +110,7 @@ namespace stellar {
         }
         public static BucketEntry Decode(XdrReader stream)
         {
-            var discriminator = (int)stream.ReadInt();
+            var discriminator = (BucketEntryType)stream.ReadInt();
             switch (discriminator)
             {
                 case LIVEENTRY:
