@@ -20,9 +20,9 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         public string CurrentNamespace => Namespace ?? "StellarGenerated";
         public string? CurrentTypeName => CurrentType?.FullName;
 
-        public void AddType(string typeName, XDRType type, ParserRuleContext docsContext, ParserRuleContext ruleContext,string outputDir, Dictionary<IToken, string> commentMap)
+        public void AddType(string typeName, XDRType type, ParserRuleContext docsContext, ParserRuleContext ruleContext,string outputDir, Dictionary<IToken, string> commentMap, List<string> enumAliases=null)
         {
-            var newType = new XDRTypeDefinition(type, docsContext,ruleContext, CurrentNamespace, typeName, CurrentType,outputDir, commentMap);
+            var newType = new XDRTypeDefinition(type, docsContext,ruleContext, CurrentNamespace, typeName, CurrentType,outputDir, commentMap, enumAliases);
             if (CurrentType==null) AllTypes.Add(newType);
             CurrentType = newType;
             Console.WriteLine($"Found type: {CurrentTypeName}");
@@ -96,7 +96,8 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         var enumName = context.identifier().GetText();
         XDRType type = XDRType.Enum;
-        _context.AddType(enumName, type,context, context.enumBody(),_outputDir,_commentMap);
+        List<string> members = GetEnumMemberNames(context.enumBody());
+        _context.AddType(enumName, type,context, context.enumBody(),_outputDir,_commentMap,members);
         try
         {
             return base.VisitEnumDefinition(context);
@@ -174,7 +175,8 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     {
         string localName = GetNestedTypeName(context);
         XDRType type = XDRType.Enum;
-        _context.AddType(localName, type, context, context.enumBody(), _outputDir, _commentMap);
+        List<string> members = GetEnumMemberNames(context.enumBody());
+        _context.AddType(localName, type, context, context.enumBody(), _outputDir, _commentMap,members);
         try
         {
             return base.VisitEnumTypeSpec(context);
@@ -184,6 +186,16 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             _context.Pop();
         }
 
+    }
+
+    private List<string> GetEnumMemberNames(StellarXdrParser.EnumBodyContext enumBodyContext)
+    {
+        List<string> results=new List<string>();
+        foreach (var member in enumBodyContext.enumMember())
+        {
+            results.Add(member.identifier(0).GetText());
+        }
+        return results;
     }
 
     public override object VisitStructTypeSpec([NotNull] StellarXdrParser.StructTypeSpecContext context)

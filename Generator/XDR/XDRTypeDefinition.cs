@@ -21,13 +21,16 @@ namespace Generator.XDR
         public string Namespace { get; }
         public string Name { get; }
         public List<XDRTypeDefinition> NestedTypes { get; } = new();
+
+        public List<string> EnumAliases { get; } 
         public XDRTypeDefinition? Parent { get; } = null;
         private CodeFile? _codeFile { get; }
         public CodeFile? CodeFile => _codeFile != null ? _codeFile : Parent?.CodeFile;
         public string FullName => Parent == null ? Name : $"{Parent.FullName}.{Name}";
         public Dictionary<IToken, string> CommentMap { get; } 
-        public XDRTypeDefinition(XDRType xdrType, ParserRuleContext? documentationContext, ParserRuleContext parserRuleContext, string _namespace, string name, XDRTypeDefinition? parent, string outputDir, Dictionary<IToken, string> commentMap)
+        public XDRTypeDefinition(XDRType xdrType, ParserRuleContext? documentationContext, ParserRuleContext parserRuleContext, string _namespace, string name, XDRTypeDefinition? parent, string outputDir, Dictionary<IToken, string> commentMap, List<string> enumAliases)
         {
+            EnumAliases = enumAliases;
             XDRType = xdrType;
             ParserRuleContext = parserRuleContext;
             Namespace = _namespace;
@@ -198,7 +201,7 @@ namespace Generator.XDR
                 if (member.constant() != null)
                     value = member.constant().GetText();
                 else if (member.identifier().Length > 1)
-                    value = member.identifier(1).GetText();
+                    value = LookUpEnumAlias(member.identifier(1).GetText(),allTypes);
                 else
                     value = "0";
 
@@ -237,6 +240,19 @@ namespace Generator.XDR
 
 
 
+        }
+
+        private string LookUpEnumAlias(string enumMember, List<XDRTypeDefinition> allTypes)
+        {
+            var type=allTypes.Where(t=>t.XDRType==XDRType.Enum && t.EnumAliases.Contains(enumMember)).FirstOrDefault();  
+            if (type == null)
+            {
+                Console.Error.WriteLine($"Enum member not found {enumMember}");
+                return enumMember;
+            }else
+            {
+                return $"{type.FullName}.{enumMember}";
+            }
         }
 
         private void GenerateStruct(StellarXdrParser.StructBodyContext context, List<XDRTypeDefinition> allTypes)

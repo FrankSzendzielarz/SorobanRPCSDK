@@ -14,7 +14,7 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum PublicKeyType
     {
-        PUBLIC_KEY_TYPE_ED25519 = KEY_TYPE_ED25519,
+        PUBLIC_KEY_TYPE_ED25519 = CryptoKeyType.KEY_TYPE_ED25519,
     }
 
     public static partial class PublicKeyTypeXdr
