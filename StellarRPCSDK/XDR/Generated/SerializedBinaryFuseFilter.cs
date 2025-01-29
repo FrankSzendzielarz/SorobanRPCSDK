@@ -108,6 +108,16 @@ namespace stellar {
             }
         }
 
+        private byte[] _fingerprints;
+        public byte[] fingerprints
+        {
+            get => _fingerprints;
+            set
+            {
+                _fingerprints = value;
+            }
+        }
+
         public SerializedBinaryFuseFilter()
         {
         }
@@ -130,6 +140,7 @@ namespace stellar {
             uint32Xdr.Encode(stream, value.segmentCount);
             uint32Xdr.Encode(stream, value.segmentCountLength);
             uint32Xdr.Encode(stream, value.fingerprintLength);
+            stream.WriteOpaque(value.fingerprints);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static SerializedBinaryFuseFilter Decode(XdrReader stream)
@@ -143,6 +154,7 @@ namespace stellar {
             result.segmentCount = uint32Xdr.Decode(stream);
             result.segmentCountLength = uint32Xdr.Decode(stream);
             result.fingerprintLength = uint32Xdr.Decode(stream);
+            result.fingerprints = stream.ReadOpaque();
             return result;
         }
     }

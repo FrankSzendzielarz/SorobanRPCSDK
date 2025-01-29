@@ -17,6 +17,40 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecUDTEnumV0
     {
+        private string _doc;
+        public string doc
+        {
+            get => _doc;
+            set
+            {
+                _doc = value;
+            }
+        }
+
+        private string _lib;
+        public string lib
+        {
+            get => _lib;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 80)
+                	throw new ArgumentException($"String exceeds 80 bytes when UTF8 encoded");
+                _lib = value;
+            }
+        }
+
+        private string _name;
+        public string name
+        {
+            get => _name;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 60)
+                	throw new ArgumentException($"String exceeds 60 bytes when UTF8 encoded");
+                _name = value;
+            }
+        }
+
         private SCSpecUDTEnumCaseV0[] _cases;
         public SCSpecUDTEnumCaseV0[] cases
         {
@@ -45,6 +79,9 @@ namespace stellar {
         public static void Encode(XdrWriter stream, SCSpecUDTEnumV0 value)
         {
             value.Validate();
+            stream.WriteString(value.doc);
+            stream.WriteString(value.lib);
+            stream.WriteString(value.name);
             stream.WriteInt(value.cases.Length);
             foreach (var item in value.cases)
             {
@@ -55,6 +92,9 @@ namespace stellar {
         public static SCSpecUDTEnumV0 Decode(XdrReader stream)
         {
             var result = new SCSpecUDTEnumV0();
+            result.doc = stream.ReadString();
+            result.lib = stream.ReadString();
+            result.name = stream.ReadString();
             {
                 var length = stream.ReadInt();
                 result.cases = new SCSpecUDTEnumCaseV0[length];

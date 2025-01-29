@@ -17,6 +17,16 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecFunctionV0
     {
+        private string _doc;
+        public string doc
+        {
+            get => _doc;
+            set
+            {
+                _doc = value;
+            }
+        }
+
         private SCSymbol _name;
         public SCSymbol name
         {
@@ -69,6 +79,7 @@ namespace stellar {
         public static void Encode(XdrWriter stream, SCSpecFunctionV0 value)
         {
             value.Validate();
+            stream.WriteString(value.doc);
             SCSymbolXdr.Encode(stream, value.name);
             stream.WriteInt(value.inputs.Length);
             foreach (var item in value.inputs)
@@ -85,6 +96,7 @@ namespace stellar {
         public static SCSpecFunctionV0 Decode(XdrReader stream)
         {
             var result = new SCSpecFunctionV0();
+            result.doc = stream.ReadString();
             result.name = SCSymbolXdr.Decode(stream);
             {
                 var length = stream.ReadInt();

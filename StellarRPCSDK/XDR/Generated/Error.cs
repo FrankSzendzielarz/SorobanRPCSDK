@@ -25,6 +25,18 @@ namespace stellar {
             }
         }
 
+        private string _msg;
+        public string msg
+        {
+            get => _msg;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 100)
+                	throw new ArgumentException($"String exceeds 100 bytes when UTF8 encoded");
+                _msg = value;
+            }
+        }
+
         public Error()
         {
         }
@@ -40,12 +52,14 @@ namespace stellar {
         {
             value.Validate();
             ErrorCodeXdr.Encode(stream, value.code);
+            stream.WriteString(value.msg);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static Error Decode(XdrReader stream)
         {
             var result = new Error();
             result.code = ErrorCodeXdr.Decode(stream);
+            result.msg = stream.ReadString();
             return result;
         }
     }

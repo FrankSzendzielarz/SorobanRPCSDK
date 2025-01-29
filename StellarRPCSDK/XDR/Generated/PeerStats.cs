@@ -40,6 +40,18 @@ namespace stellar {
             }
         }
 
+        private string _versionStr;
+        public string versionStr
+        {
+            get => _versionStr;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 100)
+                	throw new ArgumentException($"String exceeds 100 bytes when UTF8 encoded");
+                _versionStr = value;
+            }
+        }
+
         private uint64 _messagesRead;
         public uint64 messagesRead
         {
@@ -185,6 +197,7 @@ namespace stellar {
         {
             value.Validate();
             NodeIDXdr.Encode(stream, value.id);
+            stream.WriteString(value.versionStr);
             uint64Xdr.Encode(stream, value.messagesRead);
             uint64Xdr.Encode(stream, value.messagesWritten);
             uint64Xdr.Encode(stream, value.bytesRead);
@@ -204,6 +217,7 @@ namespace stellar {
         {
             var result = new PeerStats();
             result.id = NodeIDXdr.Decode(stream);
+            result.versionStr = stream.ReadString();
             result.messagesRead = uint64Xdr.Decode(stream);
             result.messagesWritten = uint64Xdr.Decode(stream);
             result.bytesRead = uint64Xdr.Decode(stream);

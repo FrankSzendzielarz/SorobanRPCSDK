@@ -281,7 +281,7 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-                if (decl.typeSpecifier() == null) continue;
+           //     if (decl.typeSpecifier() == null) continue;
 
                 WriteDocumentationComment(member, true);
 
@@ -297,7 +297,7 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-                if (decl.typeSpecifier() == null) continue;
+          //      if (decl.typeSpecifier() == null) continue;
 
                 GenerateInitialization(decl);
             }
@@ -310,10 +310,10 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-                if (decl.typeSpecifier() != null)
-                {
+               // if (decl.typeSpecifier() != null)
+              //  {
                     GenerateValidation(decl);
-                }
+               // }
             }
             code.CloseBlock();
 
@@ -414,11 +414,11 @@ namespace Generator.XDR
             foreach (var member in members)
             {
                 var decl = member.declaration();
-                if (decl.typeSpecifier() != null)
-                {
+                //if (decl.typeSpecifier() != null)
+                //{
                     string fieldName = getFieldName(decl);
                     GenerateEncodeStatement(decl, "value", fieldName);
-                }
+                //}
             }
             code.CloseBlock();
 
@@ -430,10 +430,10 @@ namespace Generator.XDR
             foreach (var member in members)
             {
                 var decl = member.declaration();
-                if (decl.typeSpecifier() != null)
-                {
+                //if (decl.typeSpecifier() != null)
+               //{
                     GenerateDecodeStatement(decl, "result");
-                }
+                //}
             }
             code.AppendLine("return result;");
             code.CloseBlock();

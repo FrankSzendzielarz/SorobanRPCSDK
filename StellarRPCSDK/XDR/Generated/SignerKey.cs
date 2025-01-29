@@ -47,12 +47,26 @@ namespace stellar {
                 }
             }
 
+            private byte[] _payload;
+            public byte[] payload
+            {
+                get => _payload;
+                set
+                {
+                    if (value.Length > 64)
+                    	throw new ArgumentException($"Cannot exceed 64 bytes");
+                    _payload = value;
+                }
+            }
+
             public ed25519SignedPayloadStruct()
             {
             }
             /// <summary>Validates all fields have valid values</summary>
             public virtual void Validate()
             {
+                if (payload.Length > 64)
+                	throw new InvalidOperationException($"payload cannot exceed 64 elements");
             }
         }
         public static partial class ed25519SignedPayloadStructXdr
@@ -62,12 +76,14 @@ namespace stellar {
             {
                 value.Validate();
                 uint256Xdr.Encode(stream, value.ed25519);
+                stream.WriteOpaque(value.payload);
             }
             /// <summary>Decodes struct from XDR stream</summary>
             public static ed25519SignedPayloadStruct Decode(XdrReader stream)
             {
                 var result = new ed25519SignedPayloadStruct();
                 result.ed25519 = uint256Xdr.Decode(stream);
+                result.payload = stream.ReadOpaque();
                 return result;
             }
         }

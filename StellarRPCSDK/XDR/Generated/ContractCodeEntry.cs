@@ -46,6 +46,16 @@ namespace stellar {
             }
         }
 
+        private byte[] _code;
+        public byte[] code
+        {
+            get => _code;
+            set
+            {
+                _code = value;
+            }
+        }
+
         public ContractCodeEntry()
         {
         }
@@ -173,6 +183,7 @@ namespace stellar {
             value.Validate();
             ContractCodeEntry.extUnionXdr.Encode(stream, value.ext);
             HashXdr.Encode(stream, value.hash);
+            stream.WriteOpaque(value.code);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ContractCodeEntry Decode(XdrReader stream)
@@ -180,6 +191,7 @@ namespace stellar {
             var result = new ContractCodeEntry();
             result.ext = ContractCodeEntry.extUnionXdr.Decode(stream);
             result.hash = HashXdr.Decode(stream);
+            result.code = stream.ReadOpaque();
             return result;
         }
     }

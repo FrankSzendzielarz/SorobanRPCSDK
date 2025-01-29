@@ -14,12 +14,27 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Curve25519Public
     {
+        private byte[] _key = new byte[32];
+        public byte[] key
+        {
+            get => _key;
+            set
+            {
+                if (value.Length != 32)
+                	throw new ArgumentException($"Must be exactly 32 bytes");
+                _key = value;
+            }
+        }
+
         public Curve25519Public()
         {
+            key = new byte[32];
         }
         /// <summary>Validates all fields have valid values</summary>
         public virtual void Validate()
         {
+            if (key.Length != 32)
+            	throw new InvalidOperationException($"key must be exactly 32 elements");
         }
     }
     public static partial class Curve25519PublicXdr
@@ -28,11 +43,13 @@ namespace stellar {
         public static void Encode(XdrWriter stream, Curve25519Public value)
         {
             value.Validate();
+            stream.WriteFixedOpaque(value.key);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static Curve25519Public Decode(XdrReader stream)
         {
             var result = new Curve25519Public();
+            stream.ReadFixedOpaque(result.key);
             return result;
         }
     }

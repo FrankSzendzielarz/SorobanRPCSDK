@@ -62,6 +62,18 @@ namespace stellar {
             }
         }
 
+        private string _versionStr;
+        public string versionStr
+        {
+            get => _versionStr;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 100)
+                	throw new ArgumentException($"String exceeds 100 bytes when UTF8 encoded");
+                _versionStr = value;
+            }
+        }
+
         private int _listeningPort;
         public int listeningPort
         {
@@ -120,6 +132,7 @@ namespace stellar {
             uint32Xdr.Encode(stream, value.overlayVersion);
             uint32Xdr.Encode(stream, value.overlayMinVersion);
             HashXdr.Encode(stream, value.networkID);
+            stream.WriteString(value.versionStr);
             stream.WriteInt(value.listeningPort);
             NodeIDXdr.Encode(stream, value.peerID);
             AuthCertXdr.Encode(stream, value.cert);
@@ -133,6 +146,7 @@ namespace stellar {
             result.overlayVersion = uint32Xdr.Decode(stream);
             result.overlayMinVersion = uint32Xdr.Decode(stream);
             result.networkID = HashXdr.Decode(stream);
+            result.versionStr = stream.ReadString();
             result.listeningPort = stream.ReadInt();
             result.peerID = NodeIDXdr.Decode(stream);
             result.cert = AuthCertXdr.Decode(stream);
