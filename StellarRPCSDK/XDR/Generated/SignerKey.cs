@@ -33,6 +33,44 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class ed25519SignedPayloadStruct
+        {
+            private uint256 _ed25519;
+            public uint256 ed25519
+            {
+                get => _ed25519;
+                set
+                {
+                    _ed25519 = value;
+                }
+            }
+
+            public ed25519SignedPayloadStruct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class ed25519SignedPayloadStructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, ed25519SignedPayloadStruct value)
+            {
+                value.Validate();
+                uint256Xdr.Encode(stream, value.ed25519);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static ed25519SignedPayloadStruct Decode(XdrReader stream)
+            {
+                var result = new ed25519SignedPayloadStruct();
+                result.ed25519 = uint256Xdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_ED25519 : SignerKey
     {
@@ -82,8 +120,8 @@ namespace stellar {
     public sealed partial class SignerKey_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD : SignerKey
     {
         public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
-        private object _ed25519SignedPayload;
-        public object ed25519SignedPayload
+        private ed25519SignedPayloadStruct _ed25519SignedPayload;
+        public ed25519SignedPayloadStruct ed25519SignedPayload
         {
             get => _ed25519SignedPayload;
             set
@@ -112,7 +150,7 @@ namespace stellar {
                 uint256Xdr.Encode(stream, case_SIGNER_KEY_TYPE_HASH_X.hashX);
                 break;
                 case SignerKey_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD case_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
-                Xdr.Encode(stream, case_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD.ed25519SignedPayload);
+                SignerKey.ed25519SignedPayloadStructXdr.Encode(stream, case_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD.ed25519SignedPayload);
                 break;
             }
         }
@@ -121,21 +159,21 @@ namespace stellar {
             var discriminator = (SignerKeyType)stream.ReadInt();
             switch (discriminator)
             {
-                case SIGNER_KEY_TYPE_ED25519:
+                case SignerKeyType.SIGNER_KEY_TYPE_ED25519:
                 var result_SIGNER_KEY_TYPE_ED25519 = new SignerKey_SIGNER_KEY_TYPE_ED25519();
-                result_SIGNER_KEY_TYPE_ED25519.                 = uint256Xdr.Decode(stream);
+                result_SIGNER_KEY_TYPE_ED25519.ed25519 = uint256Xdr.Decode(stream);
                 return result_SIGNER_KEY_TYPE_ED25519;
-                case SIGNER_KEY_TYPE_PRE_AUTH_TX:
+                case SignerKeyType.SIGNER_KEY_TYPE_PRE_AUTH_TX:
                 var result_SIGNER_KEY_TYPE_PRE_AUTH_TX = new SignerKey_SIGNER_KEY_TYPE_PRE_AUTH_TX();
-                result_SIGNER_KEY_TYPE_PRE_AUTH_TX.                 = uint256Xdr.Decode(stream);
+                result_SIGNER_KEY_TYPE_PRE_AUTH_TX.preAuthTx = uint256Xdr.Decode(stream);
                 return result_SIGNER_KEY_TYPE_PRE_AUTH_TX;
-                case SIGNER_KEY_TYPE_HASH_X:
+                case SignerKeyType.SIGNER_KEY_TYPE_HASH_X:
                 var result_SIGNER_KEY_TYPE_HASH_X = new SignerKey_SIGNER_KEY_TYPE_HASH_X();
-                result_SIGNER_KEY_TYPE_HASH_X.                 = uint256Xdr.Decode(stream);
+                result_SIGNER_KEY_TYPE_HASH_X.hashX = uint256Xdr.Decode(stream);
                 return result_SIGNER_KEY_TYPE_HASH_X;
-                case SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
+                case SignerKeyType.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD:
                 var result_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD = new SignerKey_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD();
-                result_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD.                 = Xdr.Decode(stream);
+                result_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD.ed25519SignedPayload = SignerKey.ed25519SignedPayloadStructXdr.Decode(stream);
                 return result_SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
                 default:
                 throw new Exception($"Unknown discriminator for SignerKey: {discriminator}");

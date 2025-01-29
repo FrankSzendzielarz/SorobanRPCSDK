@@ -25,6 +25,56 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class med25519Struct
+        {
+            private uint64 _id;
+            public uint64 id
+            {
+                get => _id;
+                set
+                {
+                    _id = value;
+                }
+            }
+
+            private uint256 _ed25519;
+            public uint256 ed25519
+            {
+                get => _ed25519;
+                set
+                {
+                    _ed25519 = value;
+                }
+            }
+
+            public med25519Struct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class med25519StructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, med25519Struct value)
+            {
+                value.Validate();
+                uint64Xdr.Encode(stream, value.id);
+                uint256Xdr.Encode(stream, value.ed25519);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static med25519Struct Decode(XdrReader stream)
+            {
+                var result = new med25519Struct();
+                result.id = uint64Xdr.Decode(stream);
+                result.ed25519 = uint256Xdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class MuxedAccount_KEY_TYPE_ED25519 : MuxedAccount
     {
@@ -44,8 +94,8 @@ namespace stellar {
     public sealed partial class MuxedAccount_KEY_TYPE_MUXED_ED25519 : MuxedAccount
     {
         public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
-        private object _med25519;
-        public object med25519
+        private med25519Struct _med25519;
+        public med25519Struct med25519
         {
             get => _med25519;
             set
@@ -68,7 +118,7 @@ namespace stellar {
                 uint256Xdr.Encode(stream, case_KEY_TYPE_ED25519.ed25519);
                 break;
                 case MuxedAccount_KEY_TYPE_MUXED_ED25519 case_KEY_TYPE_MUXED_ED25519:
-                Xdr.Encode(stream, case_KEY_TYPE_MUXED_ED25519.med25519);
+                MuxedAccount.med25519StructXdr.Encode(stream, case_KEY_TYPE_MUXED_ED25519.med25519);
                 break;
             }
         }
@@ -77,13 +127,13 @@ namespace stellar {
             var discriminator = (CryptoKeyType)stream.ReadInt();
             switch (discriminator)
             {
-                case KEY_TYPE_ED25519:
+                case CryptoKeyType.KEY_TYPE_ED25519:
                 var result_KEY_TYPE_ED25519 = new MuxedAccount_KEY_TYPE_ED25519();
-                result_KEY_TYPE_ED25519.                 = uint256Xdr.Decode(stream);
+                result_KEY_TYPE_ED25519.ed25519 = uint256Xdr.Decode(stream);
                 return result_KEY_TYPE_ED25519;
-                case KEY_TYPE_MUXED_ED25519:
+                case CryptoKeyType.KEY_TYPE_MUXED_ED25519:
                 var result_KEY_TYPE_MUXED_ED25519 = new MuxedAccount_KEY_TYPE_MUXED_ED25519();
-                result_KEY_TYPE_MUXED_ED25519.                 = Xdr.Decode(stream);
+                result_KEY_TYPE_MUXED_ED25519.med25519 = MuxedAccount.med25519StructXdr.Decode(stream);
                 return result_KEY_TYPE_MUXED_ED25519;
                 default:
                 throw new Exception($"Unknown discriminator for MuxedAccount: {discriminator}");

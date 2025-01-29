@@ -76,6 +76,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class StellarMessage_ERROR_MSG : StellarMessage
     {
@@ -512,102 +513,102 @@ namespace stellar {
             var discriminator = (MessageType)stream.ReadInt();
             switch (discriminator)
             {
-                case ERROR_MSG:
+                case MessageType.ERROR_MSG:
                 var result_ERROR_MSG = new StellarMessage_ERROR_MSG();
-                result_ERROR_MSG.                 = ErrorXdr.Decode(stream);
+                result_ERROR_MSG.error = ErrorXdr.Decode(stream);
                 return result_ERROR_MSG;
-                case HELLO:
+                case MessageType.HELLO:
                 var result_HELLO = new StellarMessage_HELLO();
-                result_HELLO.                 = HelloXdr.Decode(stream);
+                result_HELLO.hello = HelloXdr.Decode(stream);
                 return result_HELLO;
-                case AUTH:
+                case MessageType.AUTH:
                 var result_AUTH = new StellarMessage_AUTH();
-                result_AUTH.                 = AuthXdr.Decode(stream);
+                result_AUTH.auth = AuthXdr.Decode(stream);
                 return result_AUTH;
-                case DONT_HAVE:
+                case MessageType.DONT_HAVE:
                 var result_DONT_HAVE = new StellarMessage_DONT_HAVE();
-                result_DONT_HAVE.                 = DontHaveXdr.Decode(stream);
+                result_DONT_HAVE.dontHave = DontHaveXdr.Decode(stream);
                 return result_DONT_HAVE;
-                case PEERS:
+                case MessageType.PEERS:
                 var result_PEERS = new StellarMessage_PEERS();
                 var length = stream.ReadInt();
-                result_PEERS.                 = new PeerAddress[length];
+                result_PEERS.peers = new PeerAddress[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_PEERS.                [i] = PeerAddressXdr.Decode(stream);
+                    result_PEERS.peers[i] = PeerAddressXdr.Decode(stream);
                 }
                 return result_PEERS;
-                case GET_TX_SET:
+                case MessageType.GET_TX_SET:
                 var result_GET_TX_SET = new StellarMessage_GET_TX_SET();
-                result_GET_TX_SET.                 = uint256Xdr.Decode(stream);
+                result_GET_TX_SET.txSetHash = uint256Xdr.Decode(stream);
                 return result_GET_TX_SET;
-                case TX_SET:
+                case MessageType.TX_SET:
                 var result_TX_SET = new StellarMessage_TX_SET();
-                result_TX_SET.                 = TransactionSetXdr.Decode(stream);
+                result_TX_SET.txSet = TransactionSetXdr.Decode(stream);
                 return result_TX_SET;
-                case GENERALIZED_TX_SET:
+                case MessageType.GENERALIZED_TX_SET:
                 var result_GENERALIZED_TX_SET = new StellarMessage_GENERALIZED_TX_SET();
-                result_GENERALIZED_TX_SET.                 = GeneralizedTransactionSetXdr.Decode(stream);
+                result_GENERALIZED_TX_SET.generalizedTxSet = GeneralizedTransactionSetXdr.Decode(stream);
                 return result_GENERALIZED_TX_SET;
-                case TRANSACTION:
+                case MessageType.TRANSACTION:
                 var result_TRANSACTION = new StellarMessage_TRANSACTION();
-                result_TRANSACTION.                 = TransactionEnvelopeXdr.Decode(stream);
+                result_TRANSACTION.transaction = TransactionEnvelopeXdr.Decode(stream);
                 return result_TRANSACTION;
-                case SURVEY_REQUEST:
+                case MessageType.SURVEY_REQUEST:
                 var result_SURVEY_REQUEST = new StellarMessage_SURVEY_REQUEST();
-                result_SURVEY_REQUEST.                 = SignedSurveyRequestMessageXdr.Decode(stream);
+                result_SURVEY_REQUEST.signedSurveyRequestMessage = SignedSurveyRequestMessageXdr.Decode(stream);
                 return result_SURVEY_REQUEST;
-                case SURVEY_RESPONSE:
+                case MessageType.SURVEY_RESPONSE:
                 var result_SURVEY_RESPONSE = new StellarMessage_SURVEY_RESPONSE();
-                result_SURVEY_RESPONSE.                 = SignedSurveyResponseMessageXdr.Decode(stream);
+                result_SURVEY_RESPONSE.signedSurveyResponseMessage = SignedSurveyResponseMessageXdr.Decode(stream);
                 return result_SURVEY_RESPONSE;
-                case TIME_SLICED_SURVEY_REQUEST:
+                case MessageType.TIME_SLICED_SURVEY_REQUEST:
                 var result_TIME_SLICED_SURVEY_REQUEST = new StellarMessage_TIME_SLICED_SURVEY_REQUEST();
-                result_TIME_SLICED_SURVEY_REQUEST.                 = SignedTimeSlicedSurveyRequestMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_REQUEST.signedTimeSlicedSurveyRequestMessage = SignedTimeSlicedSurveyRequestMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_REQUEST;
-                case TIME_SLICED_SURVEY_RESPONSE:
+                case MessageType.TIME_SLICED_SURVEY_RESPONSE:
                 var result_TIME_SLICED_SURVEY_RESPONSE = new StellarMessage_TIME_SLICED_SURVEY_RESPONSE();
-                result_TIME_SLICED_SURVEY_RESPONSE.                 = SignedTimeSlicedSurveyResponseMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_RESPONSE.signedTimeSlicedSurveyResponseMessage = SignedTimeSlicedSurveyResponseMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_RESPONSE;
-                case TIME_SLICED_SURVEY_START_COLLECTING:
+                case MessageType.TIME_SLICED_SURVEY_START_COLLECTING:
                 var result_TIME_SLICED_SURVEY_START_COLLECTING = new StellarMessage_TIME_SLICED_SURVEY_START_COLLECTING();
-                result_TIME_SLICED_SURVEY_START_COLLECTING.                 = SignedTimeSlicedSurveyStartCollectingMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_START_COLLECTING.signedTimeSlicedSurveyStartCollectingMessage = SignedTimeSlicedSurveyStartCollectingMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_START_COLLECTING;
-                case TIME_SLICED_SURVEY_STOP_COLLECTING:
+                case MessageType.TIME_SLICED_SURVEY_STOP_COLLECTING:
                 var result_TIME_SLICED_SURVEY_STOP_COLLECTING = new StellarMessage_TIME_SLICED_SURVEY_STOP_COLLECTING();
-                result_TIME_SLICED_SURVEY_STOP_COLLECTING.                 = SignedTimeSlicedSurveyStopCollectingMessageXdr.Decode(stream);
+                result_TIME_SLICED_SURVEY_STOP_COLLECTING.signedTimeSlicedSurveyStopCollectingMessage = SignedTimeSlicedSurveyStopCollectingMessageXdr.Decode(stream);
                 return result_TIME_SLICED_SURVEY_STOP_COLLECTING;
-                case GET_SCP_QUORUMSET:
+                case MessageType.GET_SCP_QUORUMSET:
                 var result_GET_SCP_QUORUMSET = new StellarMessage_GET_SCP_QUORUMSET();
-                result_GET_SCP_QUORUMSET.                 = uint256Xdr.Decode(stream);
+                result_GET_SCP_QUORUMSET.qSetHash = uint256Xdr.Decode(stream);
                 return result_GET_SCP_QUORUMSET;
-                case SCP_QUORUMSET:
+                case MessageType.SCP_QUORUMSET:
                 var result_SCP_QUORUMSET = new StellarMessage_SCP_QUORUMSET();
-                result_SCP_QUORUMSET.                 = SCPQuorumSetXdr.Decode(stream);
+                result_SCP_QUORUMSET.qSet = SCPQuorumSetXdr.Decode(stream);
                 return result_SCP_QUORUMSET;
-                case SCP_MESSAGE:
+                case MessageType.SCP_MESSAGE:
                 var result_SCP_MESSAGE = new StellarMessage_SCP_MESSAGE();
-                result_SCP_MESSAGE.                 = SCPEnvelopeXdr.Decode(stream);
+                result_SCP_MESSAGE.envelope = SCPEnvelopeXdr.Decode(stream);
                 return result_SCP_MESSAGE;
-                case GET_SCP_STATE:
+                case MessageType.GET_SCP_STATE:
                 var result_GET_SCP_STATE = new StellarMessage_GET_SCP_STATE();
-                result_GET_SCP_STATE.                 = uint32Xdr.Decode(stream);
+                result_GET_SCP_STATE.getSCPLedgerSeq = uint32Xdr.Decode(stream);
                 return result_GET_SCP_STATE;
-                case SEND_MORE:
+                case MessageType.SEND_MORE:
                 var result_SEND_MORE = new StellarMessage_SEND_MORE();
-                result_SEND_MORE.                 = SendMoreXdr.Decode(stream);
+                result_SEND_MORE.sendMoreMessage = SendMoreXdr.Decode(stream);
                 return result_SEND_MORE;
-                case SEND_MORE_EXTENDED:
+                case MessageType.SEND_MORE_EXTENDED:
                 var result_SEND_MORE_EXTENDED = new StellarMessage_SEND_MORE_EXTENDED();
-                result_SEND_MORE_EXTENDED.                 = SendMoreExtendedXdr.Decode(stream);
+                result_SEND_MORE_EXTENDED.sendMoreExtendedMessage = SendMoreExtendedXdr.Decode(stream);
                 return result_SEND_MORE_EXTENDED;
-                case FLOOD_ADVERT:
+                case MessageType.FLOOD_ADVERT:
                 var result_FLOOD_ADVERT = new StellarMessage_FLOOD_ADVERT();
-                result_FLOOD_ADVERT.                 = FloodAdvertXdr.Decode(stream);
+                result_FLOOD_ADVERT.floodAdvert = FloodAdvertXdr.Decode(stream);
                 return result_FLOOD_ADVERT;
-                case FLOOD_DEMAND:
+                case MessageType.FLOOD_DEMAND:
                 var result_FLOOD_DEMAND = new StellarMessage_FLOOD_DEMAND();
-                result_FLOOD_DEMAND.                 = FloodDemandXdr.Decode(stream);
+                result_FLOOD_DEMAND.floodDemand = FloodDemandXdr.Decode(stream);
                 return result_FLOOD_DEMAND;
                 default:
                 throw new Exception($"Unknown discriminator for StellarMessage: {discriminator}");

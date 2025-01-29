@@ -43,8 +43,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -67,10 +67,11 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
@@ -108,7 +109,7 @@ namespace stellar {
             value.Validate();
             HashXdr.Encode(stream, value.hash);
             LedgerHeaderXdr.Encode(stream, value.header);
-            Xdr.Encode(stream, value.ext);
+            LedgerHeaderHistoryEntry.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static LedgerHeaderHistoryEntry Decode(XdrReader stream)
@@ -116,7 +117,7 @@ namespace stellar {
             var result = new LedgerHeaderHistoryEntry();
             result.hash = HashXdr.Decode(stream);
             result.header = LedgerHeaderXdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.ext = LedgerHeaderHistoryEntry.extUnionXdr.Decode(stream);
             return result;
         }
     }

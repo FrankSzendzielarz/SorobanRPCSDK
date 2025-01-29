@@ -19,10 +19,11 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCPHistoryEntry_0 : SCPHistoryEntry
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
         private SCPHistoryEntryV0 _v0;
         public SCPHistoryEntryV0 v0
         {
@@ -55,7 +56,7 @@ namespace stellar {
             {
                 case 0:
                 var result_0 = new SCPHistoryEntry_0();
-                result_0.                 = SCPHistoryEntryV0Xdr.Decode(stream);
+                result_0.v0 = SCPHistoryEntryV0Xdr.Decode(stream);
                 return result_0;
                 default:
                 throw new Exception($"Unknown discriminator for SCPHistoryEntry: {discriminator}");

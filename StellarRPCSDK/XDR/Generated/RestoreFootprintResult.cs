@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS : RestoreFootprintResult
     {
@@ -71,16 +72,16 @@ namespace stellar {
             var discriminator = (RestoreFootprintResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case RESTORE_FOOTPRINT_SUCCESS:
+                case RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS:
                 var result_RESTORE_FOOTPRINT_SUCCESS = new RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS();
                 return result_RESTORE_FOOTPRINT_SUCCESS;
-                case RESTORE_FOOTPRINT_MALFORMED:
+                case RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED:
                 var result_RESTORE_FOOTPRINT_MALFORMED = new RestoreFootprintResult_RESTORE_FOOTPRINT_MALFORMED();
                 return result_RESTORE_FOOTPRINT_MALFORMED;
-                case RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED:
+                case RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED:
                 var result_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED = new RestoreFootprintResult_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED();
                 return result_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
-                case RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE:
+                case RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE:
                 var result_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE = new RestoreFootprintResult_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE();
                 return result_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
                 default:

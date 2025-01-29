@@ -22,6 +22,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS : EndSponsoringFutureReservesResult
     {
@@ -54,10 +55,10 @@ namespace stellar {
             var discriminator = (EndSponsoringFutureReservesResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case END_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                case EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
                 var result_END_SPONSORING_FUTURE_RESERVES_SUCCESS = new EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS();
                 return result_END_SPONSORING_FUTURE_RESERVES_SUCCESS;
-                case END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
+                case EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
                 var result_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED = new EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED();
                 return result_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
                 default:

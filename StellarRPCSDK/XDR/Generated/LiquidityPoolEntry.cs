@@ -40,8 +40,8 @@ namespace stellar {
             }
         }
 
-        private object _body;
-        public object body
+        private bodyUnion _body;
+        public bodyUnion body
         {
             get => _body;
             set
@@ -64,12 +64,98 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
+            [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            public partial class constantProductStruct
+            {
+                private LiquidityPoolConstantProductParameters __params;
+                public LiquidityPoolConstantProductParameters _params
+                {
+                    get => __params;
+                    set
+                    {
+                        __params = value;
+                    }
+                }
+
+                private int64 _reserveA;
+                public int64 reserveA
+                {
+                    get => _reserveA;
+                    set
+                    {
+                        _reserveA = value;
+                    }
+                }
+
+                private int64 _reserveB;
+                public int64 reserveB
+                {
+                    get => _reserveB;
+                    set
+                    {
+                        _reserveB = value;
+                    }
+                }
+
+                private int64 _totalPoolShares;
+                public int64 totalPoolShares
+                {
+                    get => _totalPoolShares;
+                    set
+                    {
+                        _totalPoolShares = value;
+                    }
+                }
+
+                private int64 _poolSharesTrustLineCount;
+                public int64 poolSharesTrustLineCount
+                {
+                    get => _poolSharesTrustLineCount;
+                    set
+                    {
+                        _poolSharesTrustLineCount = value;
+                    }
+                }
+
+                public constantProductStruct()
+                {
+                }
+                /// <summary>Validates all fields have valid values</summary>
+                public virtual void Validate()
+                {
+                }
+            }
+            public static partial class constantProductStructXdr
+            {
+                /// <summary>Encodes struct to XDR stream</summary>
+                public static void Encode(XdrWriter stream, constantProductStruct value)
+                {
+                    value.Validate();
+                    LiquidityPoolConstantProductParametersXdr.Encode(stream, value._params);
+                    int64Xdr.Encode(stream, value.reserveA);
+                    int64Xdr.Encode(stream, value.reserveB);
+                    int64Xdr.Encode(stream, value.totalPoolShares);
+                    int64Xdr.Encode(stream, value.poolSharesTrustLineCount);
+                }
+                /// <summary>Decodes struct from XDR stream</summary>
+                public static constantProductStruct Decode(XdrReader stream)
+                {
+                    var result = new constantProductStruct();
+                    result._params = LiquidityPoolConstantProductParametersXdr.Decode(stream);
+                    result.reserveA = int64Xdr.Decode(stream);
+                    result.reserveB = int64Xdr.Decode(stream);
+                    result.totalPoolShares = int64Xdr.Decode(stream);
+                    result.poolSharesTrustLineCount = int64Xdr.Decode(stream);
+                    return result;
+                }
+            }
         }
         public sealed partial class bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT : bodyUnion
         {
             public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
-            private object _constantProduct;
-            public object constantProduct
+            private constantProductStruct _constantProduct;
+            public constantProductStruct constantProduct
             {
                 get => _constantProduct;
                 set
@@ -89,7 +175,7 @@ namespace stellar {
                 switch (value)
                 {
                     case bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
-                    Xdr.Encode(stream, case_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct);
+                    bodyUnion.constantProductStructXdr.Encode(stream, case_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct);
                     break;
                 }
             }
@@ -98,9 +184,9 @@ namespace stellar {
                 var discriminator = (LiquidityPoolType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                    case LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT:
                     var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT();
-                    result_LIQUIDITY_POOL_CONSTANT_PRODUCT.                 = Xdr.Decode(stream);
+                    result_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct = bodyUnion.constantProductStructXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_CONSTANT_PRODUCT;
                     default:
                     throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
@@ -115,14 +201,14 @@ namespace stellar {
         {
             value.Validate();
             PoolIDXdr.Encode(stream, value.liquidityPoolID);
-            Xdr.Encode(stream, value.body);
+            LiquidityPoolEntry.bodyUnionXdr.Encode(stream, value.body);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static LiquidityPoolEntry Decode(XdrReader stream)
         {
             var result = new LiquidityPoolEntry();
             result.liquidityPoolID = PoolIDXdr.Decode(stream);
-            result.body = Xdr.Decode(stream);
+            result.body = LiquidityPoolEntry.bodyUnionXdr.Decode(stream);
             return result;
         }
     }

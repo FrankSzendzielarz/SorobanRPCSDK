@@ -21,10 +21,11 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class PersistedSCPState_0 : PersistedSCPState
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
         private PersistedSCPStateV0 _v0;
         public PersistedSCPStateV0 v0
         {
@@ -39,7 +40,7 @@ namespace stellar {
     }
     public sealed partial class PersistedSCPState_1 : PersistedSCPState
     {
-        public override int Discriminator => int.1;
+        public override int Discriminator => 1;
         private PersistedSCPStateV1 _v1;
         public PersistedSCPStateV1 v1
         {
@@ -75,11 +76,11 @@ namespace stellar {
             {
                 case 0:
                 var result_0 = new PersistedSCPState_0();
-                result_0.                 = PersistedSCPStateV0Xdr.Decode(stream);
+                result_0.v0 = PersistedSCPStateV0Xdr.Decode(stream);
                 return result_0;
                 case 1:
                 var result_1 = new PersistedSCPState_1();
-                result_1.                 = PersistedSCPStateV1Xdr.Decode(stream);
+                result_1.v1 = PersistedSCPStateV1Xdr.Decode(stream);
                 return result_1;
                 default:
                 throw new Exception($"Unknown discriminator for PersistedSCPState: {discriminator}");

@@ -31,6 +31,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN : SorobanAuthorizedFunction
     {
@@ -101,17 +102,17 @@ namespace stellar {
             var discriminator = (SorobanAuthorizedFunctionType)stream.ReadInt();
             switch (discriminator)
             {
-                case SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:
+                case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:
                 var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN();
-                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN.                 = InvokeContractArgsXdr.Decode(stream);
+                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN.contractFn = InvokeContractArgsXdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
-                case SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN:
+                case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN:
                 var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN();
-                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN.                 = CreateContractArgsXdr.Decode(stream);
+                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN.createContractHostFn = CreateContractArgsXdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
-                case SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN:
+                case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN:
                 var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN();
-                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN.                 = CreateContractArgsV2Xdr.Decode(stream);
+                result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN.createContractV2HostFn = CreateContractArgsV2Xdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
                 default:
                 throw new Exception($"Unknown discriminator for SorobanAuthorizedFunction: {discriminator}");

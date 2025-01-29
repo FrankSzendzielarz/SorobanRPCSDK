@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT : HostFunction
     {
@@ -103,20 +104,20 @@ namespace stellar {
             var discriminator = (HostFunctionType)stream.ReadInt();
             switch (discriminator)
             {
-                case HOST_FUNCTION_TYPE_INVOKE_CONTRACT:
+                case HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT:
                 var result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT = new HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT();
-                result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT.                 = InvokeContractArgsXdr.Decode(stream);
+                result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT.invokeContract = InvokeContractArgsXdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
-                case HOST_FUNCTION_TYPE_CREATE_CONTRACT:
+                case HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT:
                 var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT = new HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT();
-                result_HOST_FUNCTION_TYPE_CREATE_CONTRACT.                 = CreateContractArgsXdr.Decode(stream);
+                result_HOST_FUNCTION_TYPE_CREATE_CONTRACT.createContract = CreateContractArgsXdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_CREATE_CONTRACT;
-                case HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
+                case HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
                 var result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM = new HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM();
                 return result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
-                case HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
+                case HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
                 var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 = new HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2();
-                result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2.                 = CreateContractArgsV2Xdr.Decode(stream);
+                result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2.createContractV2 = CreateContractArgsV2Xdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
                 default:
                 throw new Exception($"Unknown discriminator for HostFunction: {discriminator}");

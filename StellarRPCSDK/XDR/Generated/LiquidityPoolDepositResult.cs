@@ -27,6 +27,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS : LiquidityPoolDepositResult
     {
@@ -107,28 +108,28 @@ namespace stellar {
             var discriminator = (LiquidityPoolDepositResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case LIQUIDITY_POOL_DEPOSIT_SUCCESS:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS:
                 var result_LIQUIDITY_POOL_DEPOSIT_SUCCESS = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS();
                 return result_LIQUIDITY_POOL_DEPOSIT_SUCCESS;
-                case LIQUIDITY_POOL_DEPOSIT_MALFORMED:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED:
                 var result_LIQUIDITY_POOL_DEPOSIT_MALFORMED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_MALFORMED();
                 return result_LIQUIDITY_POOL_DEPOSIT_MALFORMED;
-                case LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
                 var result_LIQUIDITY_POOL_DEPOSIT_NO_TRUST = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NO_TRUST();
                 return result_LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
-                case LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
                 var result_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED();
                 return result_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
-                case LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
                 var result_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED();
                 return result_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
-                case LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
                 var result_LIQUIDITY_POOL_DEPOSIT_LINE_FULL = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_LINE_FULL();
                 return result_LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
-                case LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
                 var result_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE();
                 return result_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
-                case LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
+                case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
                 var result_LIQUIDITY_POOL_DEPOSIT_POOL_FULL = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_POOL_FULL();
                 return result_LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
                 default:

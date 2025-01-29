@@ -60,8 +60,8 @@ namespace stellar {
             }
         }
 
-        private object _result;
-        public object result
+        private resultUnion _result;
+        public resultUnion result
         {
             get => _result;
             set
@@ -70,8 +70,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -94,6 +94,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class resultUnion_txFEE_BUMP_INNER_SUCCESS : resultUnion
         {
@@ -310,75 +311,75 @@ namespace stellar {
                 var discriminator = (TransactionResultCode)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case txFEE_BUMP_INNER_SUCCESS:
+                    case TransactionResultCode.txFEE_BUMP_INNER_SUCCESS:
                     var result_txFEE_BUMP_INNER_SUCCESS = new resultUnion_txFEE_BUMP_INNER_SUCCESS();
-                    result_txFEE_BUMP_INNER_SUCCESS.                 = InnerTransactionResultPairXdr.Decode(stream);
+                    result_txFEE_BUMP_INNER_SUCCESS.innerResultPair = InnerTransactionResultPairXdr.Decode(stream);
                     return result_txFEE_BUMP_INNER_SUCCESS;
-                    case txFEE_BUMP_INNER_FAILED:
+                    case TransactionResultCode.txFEE_BUMP_INNER_FAILED:
                     var result_txFEE_BUMP_INNER_FAILED = new resultUnion_txFEE_BUMP_INNER_FAILED();
-                    result_txFEE_BUMP_INNER_FAILED.                 = InnerTransactionResultPairXdr.Decode(stream);
+                    result_txFEE_BUMP_INNER_FAILED.innerResultPair = InnerTransactionResultPairXdr.Decode(stream);
                     return result_txFEE_BUMP_INNER_FAILED;
-                    case txSUCCESS:
+                    case TransactionResultCode.txSUCCESS:
                     var result_txSUCCESS = new resultUnion_txSUCCESS();
                     var length = stream.ReadInt();
-                    result_txSUCCESS.                 = new OperationResult[length];
+                    result_txSUCCESS.results = new OperationResult[length];
                     for (var i = 0; i < length; i++)
                     {
-                        result_txSUCCESS.                [i] = OperationResultXdr.Decode(stream);
+                        result_txSUCCESS.results[i] = OperationResultXdr.Decode(stream);
                     }
                     return result_txSUCCESS;
-                    case txFAILED:
+                    case TransactionResultCode.txFAILED:
                     var result_txFAILED = new resultUnion_txFAILED();
                     var length = stream.ReadInt();
-                    result_txFAILED.                 = new OperationResult[length];
+                    result_txFAILED.results = new OperationResult[length];
                     for (var i = 0; i < length; i++)
                     {
-                        result_txFAILED.                [i] = OperationResultXdr.Decode(stream);
+                        result_txFAILED.results[i] = OperationResultXdr.Decode(stream);
                     }
                     return result_txFAILED;
-                    case txTOO_EARLY:
+                    case TransactionResultCode.txTOO_EARLY:
                     var result_txTOO_EARLY = new resultUnion_txTOO_EARLY();
                     return result_txTOO_EARLY;
-                    case txTOO_LATE:
+                    case TransactionResultCode.txTOO_LATE:
                     var result_txTOO_LATE = new resultUnion_txTOO_LATE();
                     return result_txTOO_LATE;
-                    case txMISSING_OPERATION:
+                    case TransactionResultCode.txMISSING_OPERATION:
                     var result_txMISSING_OPERATION = new resultUnion_txMISSING_OPERATION();
                     return result_txMISSING_OPERATION;
-                    case txBAD_SEQ:
+                    case TransactionResultCode.txBAD_SEQ:
                     var result_txBAD_SEQ = new resultUnion_txBAD_SEQ();
                     return result_txBAD_SEQ;
-                    case txBAD_AUTH:
+                    case TransactionResultCode.txBAD_AUTH:
                     var result_txBAD_AUTH = new resultUnion_txBAD_AUTH();
                     return result_txBAD_AUTH;
-                    case txINSUFFICIENT_BALANCE:
+                    case TransactionResultCode.txINSUFFICIENT_BALANCE:
                     var result_txINSUFFICIENT_BALANCE = new resultUnion_txINSUFFICIENT_BALANCE();
                     return result_txINSUFFICIENT_BALANCE;
-                    case txNO_ACCOUNT:
+                    case TransactionResultCode.txNO_ACCOUNT:
                     var result_txNO_ACCOUNT = new resultUnion_txNO_ACCOUNT();
                     return result_txNO_ACCOUNT;
-                    case txINSUFFICIENT_FEE:
+                    case TransactionResultCode.txINSUFFICIENT_FEE:
                     var result_txINSUFFICIENT_FEE = new resultUnion_txINSUFFICIENT_FEE();
                     return result_txINSUFFICIENT_FEE;
-                    case txBAD_AUTH_EXTRA:
+                    case TransactionResultCode.txBAD_AUTH_EXTRA:
                     var result_txBAD_AUTH_EXTRA = new resultUnion_txBAD_AUTH_EXTRA();
                     return result_txBAD_AUTH_EXTRA;
-                    case txINTERNAL_ERROR:
+                    case TransactionResultCode.txINTERNAL_ERROR:
                     var result_txINTERNAL_ERROR = new resultUnion_txINTERNAL_ERROR();
                     return result_txINTERNAL_ERROR;
-                    case txNOT_SUPPORTED:
+                    case TransactionResultCode.txNOT_SUPPORTED:
                     var result_txNOT_SUPPORTED = new resultUnion_txNOT_SUPPORTED();
                     return result_txNOT_SUPPORTED;
-                    case txBAD_SPONSORSHIP:
+                    case TransactionResultCode.txBAD_SPONSORSHIP:
                     var result_txBAD_SPONSORSHIP = new resultUnion_txBAD_SPONSORSHIP();
                     return result_txBAD_SPONSORSHIP;
-                    case txBAD_MIN_SEQ_AGE_OR_GAP:
+                    case TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP:
                     var result_txBAD_MIN_SEQ_AGE_OR_GAP = new resultUnion_txBAD_MIN_SEQ_AGE_OR_GAP();
                     return result_txBAD_MIN_SEQ_AGE_OR_GAP;
-                    case txMALFORMED:
+                    case TransactionResultCode.txMALFORMED:
                     var result_txMALFORMED = new resultUnion_txMALFORMED();
                     return result_txMALFORMED;
-                    case txSOROBAN_INVALID:
+                    case TransactionResultCode.txSOROBAN_INVALID:
                     var result_txSOROBAN_INVALID = new resultUnion_txSOROBAN_INVALID();
                     return result_txSOROBAN_INVALID;
                     default:
@@ -393,10 +394,11 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
@@ -433,16 +435,16 @@ namespace stellar {
         {
             value.Validate();
             int64Xdr.Encode(stream, value.feeCharged);
-            Xdr.Encode(stream, value.result);
-            Xdr.Encode(stream, value.ext);
+            TransactionResult.resultUnionXdr.Encode(stream, value.result);
+            TransactionResult.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static TransactionResult Decode(XdrReader stream)
         {
             var result = new TransactionResult();
             result.feeCharged = int64Xdr.Decode(stream);
-            result.result = Xdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.result = TransactionResult.resultUnionXdr.Decode(stream);
+            result.ext = TransactionResult.extUnionXdr.Decode(stream);
             return result;
         }
     }

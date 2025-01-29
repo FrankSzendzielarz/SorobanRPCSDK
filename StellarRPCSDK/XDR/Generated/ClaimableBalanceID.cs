@@ -19,6 +19,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClaimableBalanceID_CLAIMABLE_BALANCE_ID_TYPE_V0 : ClaimableBalanceID
     {
@@ -53,9 +54,9 @@ namespace stellar {
             var discriminator = (ClaimableBalanceIDType)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAIMABLE_BALANCE_ID_TYPE_V0:
+                case ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0:
                 var result_CLAIMABLE_BALANCE_ID_TYPE_V0 = new ClaimableBalanceID_CLAIMABLE_BALANCE_ID_TYPE_V0();
-                result_CLAIMABLE_BALANCE_ID_TYPE_V0.                 = HashXdr.Decode(stream);
+                result_CLAIMABLE_BALANCE_ID_TYPE_V0.v0 = HashXdr.Decode(stream);
                 return result_CLAIMABLE_BALANCE_ID_TYPE_V0;
                 default:
                 throw new Exception($"Unknown discriminator for ClaimableBalanceID: {discriminator}");

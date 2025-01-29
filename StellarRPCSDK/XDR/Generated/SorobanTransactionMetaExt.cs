@@ -21,16 +21,17 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SorobanTransactionMetaExt_0 : SorobanTransactionMetaExt
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
 
         public override void ValidateCase() {}
     }
     public sealed partial class SorobanTransactionMetaExt_1 : SorobanTransactionMetaExt
     {
-        public override int Discriminator => int.1;
+        public override int Discriminator => 1;
         private SorobanTransactionMetaExtV1 _v1;
         public SorobanTransactionMetaExtV1 v1
         {
@@ -68,7 +69,7 @@ namespace stellar {
                 return result_0;
                 case 1:
                 var result_1 = new SorobanTransactionMetaExt_1();
-                result_1.                 = SorobanTransactionMetaExtV1Xdr.Decode(stream);
+                result_1.v1 = SorobanTransactionMetaExtV1Xdr.Decode(stream);
                 return result_1;
                 default:
                 throw new Exception($"Unknown discriminator for SorobanTransactionMetaExt: {discriminator}");

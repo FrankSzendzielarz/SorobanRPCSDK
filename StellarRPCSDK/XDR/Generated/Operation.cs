@@ -86,8 +86,8 @@ namespace stellar {
             }
         }
 
-        private object _body;
-        public object body
+        private bodyUnion _body;
+        public bodyUnion body
         {
             get => _body;
             set
@@ -110,6 +110,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class bodyUnion_CREATE_ACCOUNT : bodyUnion
         {
@@ -592,111 +593,111 @@ namespace stellar {
                 var discriminator = (OperationType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case CREATE_ACCOUNT:
+                    case OperationType.CREATE_ACCOUNT:
                     var result_CREATE_ACCOUNT = new bodyUnion_CREATE_ACCOUNT();
-                    result_CREATE_ACCOUNT.                 = CreateAccountOpXdr.Decode(stream);
+                    result_CREATE_ACCOUNT.createAccountOp = CreateAccountOpXdr.Decode(stream);
                     return result_CREATE_ACCOUNT;
-                    case PAYMENT:
+                    case OperationType.PAYMENT:
                     var result_PAYMENT = new bodyUnion_PAYMENT();
-                    result_PAYMENT.                 = PaymentOpXdr.Decode(stream);
+                    result_PAYMENT.paymentOp = PaymentOpXdr.Decode(stream);
                     return result_PAYMENT;
-                    case PATH_PAYMENT_STRICT_RECEIVE:
+                    case OperationType.PATH_PAYMENT_STRICT_RECEIVE:
                     var result_PATH_PAYMENT_STRICT_RECEIVE = new bodyUnion_PATH_PAYMENT_STRICT_RECEIVE();
-                    result_PATH_PAYMENT_STRICT_RECEIVE.                 = PathPaymentStrictReceiveOpXdr.Decode(stream);
+                    result_PATH_PAYMENT_STRICT_RECEIVE.pathPaymentStrictReceiveOp = PathPaymentStrictReceiveOpXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_RECEIVE;
-                    case MANAGE_SELL_OFFER:
+                    case OperationType.MANAGE_SELL_OFFER:
                     var result_MANAGE_SELL_OFFER = new bodyUnion_MANAGE_SELL_OFFER();
-                    result_MANAGE_SELL_OFFER.                 = ManageSellOfferOpXdr.Decode(stream);
+                    result_MANAGE_SELL_OFFER.manageSellOfferOp = ManageSellOfferOpXdr.Decode(stream);
                     return result_MANAGE_SELL_OFFER;
-                    case CREATE_PASSIVE_SELL_OFFER:
+                    case OperationType.CREATE_PASSIVE_SELL_OFFER:
                     var result_CREATE_PASSIVE_SELL_OFFER = new bodyUnion_CREATE_PASSIVE_SELL_OFFER();
-                    result_CREATE_PASSIVE_SELL_OFFER.                 = CreatePassiveSellOfferOpXdr.Decode(stream);
+                    result_CREATE_PASSIVE_SELL_OFFER.createPassiveSellOfferOp = CreatePassiveSellOfferOpXdr.Decode(stream);
                     return result_CREATE_PASSIVE_SELL_OFFER;
-                    case SET_OPTIONS:
+                    case OperationType.SET_OPTIONS:
                     var result_SET_OPTIONS = new bodyUnion_SET_OPTIONS();
-                    result_SET_OPTIONS.                 = SetOptionsOpXdr.Decode(stream);
+                    result_SET_OPTIONS.setOptionsOp = SetOptionsOpXdr.Decode(stream);
                     return result_SET_OPTIONS;
-                    case CHANGE_TRUST:
+                    case OperationType.CHANGE_TRUST:
                     var result_CHANGE_TRUST = new bodyUnion_CHANGE_TRUST();
-                    result_CHANGE_TRUST.                 = ChangeTrustOpXdr.Decode(stream);
+                    result_CHANGE_TRUST.changeTrustOp = ChangeTrustOpXdr.Decode(stream);
                     return result_CHANGE_TRUST;
-                    case ALLOW_TRUST:
+                    case OperationType.ALLOW_TRUST:
                     var result_ALLOW_TRUST = new bodyUnion_ALLOW_TRUST();
-                    result_ALLOW_TRUST.                 = AllowTrustOpXdr.Decode(stream);
+                    result_ALLOW_TRUST.allowTrustOp = AllowTrustOpXdr.Decode(stream);
                     return result_ALLOW_TRUST;
-                    case ACCOUNT_MERGE:
+                    case OperationType.ACCOUNT_MERGE:
                     var result_ACCOUNT_MERGE = new bodyUnion_ACCOUNT_MERGE();
-                    result_ACCOUNT_MERGE.                 = MuxedAccountXdr.Decode(stream);
+                    result_ACCOUNT_MERGE.destination = MuxedAccountXdr.Decode(stream);
                     return result_ACCOUNT_MERGE;
-                    case INFLATION:
+                    case OperationType.INFLATION:
                     var result_INFLATION = new bodyUnion_INFLATION();
                     return result_INFLATION;
-                    case MANAGE_DATA:
+                    case OperationType.MANAGE_DATA:
                     var result_MANAGE_DATA = new bodyUnion_MANAGE_DATA();
-                    result_MANAGE_DATA.                 = ManageDataOpXdr.Decode(stream);
+                    result_MANAGE_DATA.manageDataOp = ManageDataOpXdr.Decode(stream);
                     return result_MANAGE_DATA;
-                    case BUMP_SEQUENCE:
+                    case OperationType.BUMP_SEQUENCE:
                     var result_BUMP_SEQUENCE = new bodyUnion_BUMP_SEQUENCE();
-                    result_BUMP_SEQUENCE.                 = BumpSequenceOpXdr.Decode(stream);
+                    result_BUMP_SEQUENCE.bumpSequenceOp = BumpSequenceOpXdr.Decode(stream);
                     return result_BUMP_SEQUENCE;
-                    case MANAGE_BUY_OFFER:
+                    case OperationType.MANAGE_BUY_OFFER:
                     var result_MANAGE_BUY_OFFER = new bodyUnion_MANAGE_BUY_OFFER();
-                    result_MANAGE_BUY_OFFER.                 = ManageBuyOfferOpXdr.Decode(stream);
+                    result_MANAGE_BUY_OFFER.manageBuyOfferOp = ManageBuyOfferOpXdr.Decode(stream);
                     return result_MANAGE_BUY_OFFER;
-                    case PATH_PAYMENT_STRICT_SEND:
+                    case OperationType.PATH_PAYMENT_STRICT_SEND:
                     var result_PATH_PAYMENT_STRICT_SEND = new bodyUnion_PATH_PAYMENT_STRICT_SEND();
-                    result_PATH_PAYMENT_STRICT_SEND.                 = PathPaymentStrictSendOpXdr.Decode(stream);
+                    result_PATH_PAYMENT_STRICT_SEND.pathPaymentStrictSendOp = PathPaymentStrictSendOpXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_SEND;
-                    case CREATE_CLAIMABLE_BALANCE:
+                    case OperationType.CREATE_CLAIMABLE_BALANCE:
                     var result_CREATE_CLAIMABLE_BALANCE = new bodyUnion_CREATE_CLAIMABLE_BALANCE();
-                    result_CREATE_CLAIMABLE_BALANCE.                 = CreateClaimableBalanceOpXdr.Decode(stream);
+                    result_CREATE_CLAIMABLE_BALANCE.createClaimableBalanceOp = CreateClaimableBalanceOpXdr.Decode(stream);
                     return result_CREATE_CLAIMABLE_BALANCE;
-                    case CLAIM_CLAIMABLE_BALANCE:
+                    case OperationType.CLAIM_CLAIMABLE_BALANCE:
                     var result_CLAIM_CLAIMABLE_BALANCE = new bodyUnion_CLAIM_CLAIMABLE_BALANCE();
-                    result_CLAIM_CLAIMABLE_BALANCE.                 = ClaimClaimableBalanceOpXdr.Decode(stream);
+                    result_CLAIM_CLAIMABLE_BALANCE.claimClaimableBalanceOp = ClaimClaimableBalanceOpXdr.Decode(stream);
                     return result_CLAIM_CLAIMABLE_BALANCE;
-                    case BEGIN_SPONSORING_FUTURE_RESERVES:
+                    case OperationType.BEGIN_SPONSORING_FUTURE_RESERVES:
                     var result_BEGIN_SPONSORING_FUTURE_RESERVES = new bodyUnion_BEGIN_SPONSORING_FUTURE_RESERVES();
-                    result_BEGIN_SPONSORING_FUTURE_RESERVES.                 = BeginSponsoringFutureReservesOpXdr.Decode(stream);
+                    result_BEGIN_SPONSORING_FUTURE_RESERVES.beginSponsoringFutureReservesOp = BeginSponsoringFutureReservesOpXdr.Decode(stream);
                     return result_BEGIN_SPONSORING_FUTURE_RESERVES;
-                    case END_SPONSORING_FUTURE_RESERVES:
+                    case OperationType.END_SPONSORING_FUTURE_RESERVES:
                     var result_END_SPONSORING_FUTURE_RESERVES = new bodyUnion_END_SPONSORING_FUTURE_RESERVES();
                     return result_END_SPONSORING_FUTURE_RESERVES;
-                    case REVOKE_SPONSORSHIP:
+                    case OperationType.REVOKE_SPONSORSHIP:
                     var result_REVOKE_SPONSORSHIP = new bodyUnion_REVOKE_SPONSORSHIP();
-                    result_REVOKE_SPONSORSHIP.                 = RevokeSponsorshipOpXdr.Decode(stream);
+                    result_REVOKE_SPONSORSHIP.revokeSponsorshipOp = RevokeSponsorshipOpXdr.Decode(stream);
                     return result_REVOKE_SPONSORSHIP;
-                    case CLAWBACK:
+                    case OperationType.CLAWBACK:
                     var result_CLAWBACK = new bodyUnion_CLAWBACK();
-                    result_CLAWBACK.                 = ClawbackOpXdr.Decode(stream);
+                    result_CLAWBACK.clawbackOp = ClawbackOpXdr.Decode(stream);
                     return result_CLAWBACK;
-                    case CLAWBACK_CLAIMABLE_BALANCE:
+                    case OperationType.CLAWBACK_CLAIMABLE_BALANCE:
                     var result_CLAWBACK_CLAIMABLE_BALANCE = new bodyUnion_CLAWBACK_CLAIMABLE_BALANCE();
-                    result_CLAWBACK_CLAIMABLE_BALANCE.                 = ClawbackClaimableBalanceOpXdr.Decode(stream);
+                    result_CLAWBACK_CLAIMABLE_BALANCE.clawbackClaimableBalanceOp = ClawbackClaimableBalanceOpXdr.Decode(stream);
                     return result_CLAWBACK_CLAIMABLE_BALANCE;
-                    case SET_TRUST_LINE_FLAGS:
+                    case OperationType.SET_TRUST_LINE_FLAGS:
                     var result_SET_TRUST_LINE_FLAGS = new bodyUnion_SET_TRUST_LINE_FLAGS();
-                    result_SET_TRUST_LINE_FLAGS.                 = SetTrustLineFlagsOpXdr.Decode(stream);
+                    result_SET_TRUST_LINE_FLAGS.setTrustLineFlagsOp = SetTrustLineFlagsOpXdr.Decode(stream);
                     return result_SET_TRUST_LINE_FLAGS;
-                    case LIQUIDITY_POOL_DEPOSIT:
+                    case OperationType.LIQUIDITY_POOL_DEPOSIT:
                     var result_LIQUIDITY_POOL_DEPOSIT = new bodyUnion_LIQUIDITY_POOL_DEPOSIT();
-                    result_LIQUIDITY_POOL_DEPOSIT.                 = LiquidityPoolDepositOpXdr.Decode(stream);
+                    result_LIQUIDITY_POOL_DEPOSIT.liquidityPoolDepositOp = LiquidityPoolDepositOpXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_DEPOSIT;
-                    case LIQUIDITY_POOL_WITHDRAW:
+                    case OperationType.LIQUIDITY_POOL_WITHDRAW:
                     var result_LIQUIDITY_POOL_WITHDRAW = new bodyUnion_LIQUIDITY_POOL_WITHDRAW();
-                    result_LIQUIDITY_POOL_WITHDRAW.                 = LiquidityPoolWithdrawOpXdr.Decode(stream);
+                    result_LIQUIDITY_POOL_WITHDRAW.liquidityPoolWithdrawOp = LiquidityPoolWithdrawOpXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_WITHDRAW;
-                    case INVOKE_HOST_FUNCTION:
+                    case OperationType.INVOKE_HOST_FUNCTION:
                     var result_INVOKE_HOST_FUNCTION = new bodyUnion_INVOKE_HOST_FUNCTION();
-                    result_INVOKE_HOST_FUNCTION.                 = InvokeHostFunctionOpXdr.Decode(stream);
+                    result_INVOKE_HOST_FUNCTION.invokeHostFunctionOp = InvokeHostFunctionOpXdr.Decode(stream);
                     return result_INVOKE_HOST_FUNCTION;
-                    case EXTEND_FOOTPRINT_TTL:
+                    case OperationType.EXTEND_FOOTPRINT_TTL:
                     var result_EXTEND_FOOTPRINT_TTL = new bodyUnion_EXTEND_FOOTPRINT_TTL();
-                    result_EXTEND_FOOTPRINT_TTL.                 = ExtendFootprintTTLOpXdr.Decode(stream);
+                    result_EXTEND_FOOTPRINT_TTL.extendFootprintTTLOp = ExtendFootprintTTLOpXdr.Decode(stream);
                     return result_EXTEND_FOOTPRINT_TTL;
-                    case RESTORE_FOOTPRINT:
+                    case OperationType.RESTORE_FOOTPRINT:
                     var result_RESTORE_FOOTPRINT = new bodyUnion_RESTORE_FOOTPRINT();
-                    result_RESTORE_FOOTPRINT.                 = RestoreFootprintOpXdr.Decode(stream);
+                    result_RESTORE_FOOTPRINT.restoreFootprintOp = RestoreFootprintOpXdr.Decode(stream);
                     return result_RESTORE_FOOTPRINT;
                     default:
                     throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
@@ -711,14 +712,14 @@ namespace stellar {
         {
             value.Validate();
             MuxedAccountXdr.Encode(stream, value.sourceAccount);
-            Xdr.Encode(stream, value.body);
+            Operation.bodyUnionXdr.Encode(stream, value.body);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static Operation Decode(XdrReader stream)
         {
             var result = new Operation();
             result.sourceAccount = MuxedAccountXdr.Decode(stream);
-            result.body = Xdr.Decode(stream);
+            result.body = Operation.bodyUnionXdr.Decode(stream);
             return result;
         }
     }

@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ContractExecutable_CONTRACT_EXECUTABLE_WASM : ContractExecutable
     {
@@ -63,11 +64,11 @@ namespace stellar {
             var discriminator = (ContractExecutableType)stream.ReadInt();
             switch (discriminator)
             {
-                case CONTRACT_EXECUTABLE_WASM:
+                case ContractExecutableType.CONTRACT_EXECUTABLE_WASM:
                 var result_CONTRACT_EXECUTABLE_WASM = new ContractExecutable_CONTRACT_EXECUTABLE_WASM();
-                result_CONTRACT_EXECUTABLE_WASM.                 = HashXdr.Decode(stream);
+                result_CONTRACT_EXECUTABLE_WASM.wasm_hash = HashXdr.Decode(stream);
                 return result_CONTRACT_EXECUTABLE_WASM;
-                case CONTRACT_EXECUTABLE_STELLAR_ASSET:
+                case ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET:
                 var result_CONTRACT_EXECUTABLE_STELLAR_ASSET = new ContractExecutable_CONTRACT_EXECUTABLE_STELLAR_ASSET();
                 return result_CONTRACT_EXECUTABLE_STELLAR_ASSET;
                 default:

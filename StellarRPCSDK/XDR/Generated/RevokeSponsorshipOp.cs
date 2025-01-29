@@ -25,6 +25,56 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class signerStruct
+        {
+            private AccountID _accountID;
+            public AccountID accountID
+            {
+                get => _accountID;
+                set
+                {
+                    _accountID = value;
+                }
+            }
+
+            private SignerKey _signerKey;
+            public SignerKey signerKey
+            {
+                get => _signerKey;
+                set
+                {
+                    _signerKey = value;
+                }
+            }
+
+            public signerStruct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class signerStructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, signerStruct value)
+            {
+                value.Validate();
+                AccountIDXdr.Encode(stream, value.accountID);
+                SignerKeyXdr.Encode(stream, value.signerKey);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static signerStruct Decode(XdrReader stream)
+            {
+                var result = new signerStruct();
+                result.accountID = AccountIDXdr.Decode(stream);
+                result.signerKey = SignerKeyXdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY : RevokeSponsorshipOp
     {
@@ -44,8 +94,8 @@ namespace stellar {
     public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER : RevokeSponsorshipOp
     {
         public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
-        private object _signer;
-        public object signer
+        private signerStruct _signer;
+        public signerStruct signer
         {
             get => _signer;
             set
@@ -68,7 +118,7 @@ namespace stellar {
                 LedgerKeyXdr.Encode(stream, case_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey);
                 break;
                 case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER case_REVOKE_SPONSORSHIP_SIGNER:
-                Xdr.Encode(stream, case_REVOKE_SPONSORSHIP_SIGNER.signer);
+                RevokeSponsorshipOp.signerStructXdr.Encode(stream, case_REVOKE_SPONSORSHIP_SIGNER.signer);
                 break;
             }
         }
@@ -77,13 +127,13 @@ namespace stellar {
             var discriminator = (RevokeSponsorshipType)stream.ReadInt();
             switch (discriminator)
             {
-                case REVOKE_SPONSORSHIP_LEDGER_ENTRY:
+                case RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY:
                 var result_REVOKE_SPONSORSHIP_LEDGER_ENTRY = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY();
-                result_REVOKE_SPONSORSHIP_LEDGER_ENTRY.                 = LedgerKeyXdr.Decode(stream);
+                result_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey = LedgerKeyXdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_LEDGER_ENTRY;
-                case REVOKE_SPONSORSHIP_SIGNER:
+                case RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER:
                 var result_REVOKE_SPONSORSHIP_SIGNER = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER();
-                result_REVOKE_SPONSORSHIP_SIGNER.                 = Xdr.Decode(stream);
+                result_REVOKE_SPONSORSHIP_SIGNER.signer = RevokeSponsorshipOp.signerStructXdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_SIGNER;
                 default:
                 throw new Exception($"Unknown discriminator for RevokeSponsorshipOp: {discriminator}");

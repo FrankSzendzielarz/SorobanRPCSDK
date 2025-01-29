@@ -60,8 +60,8 @@ namespace stellar {
             }
         }
 
-        private object _body;
-        public object body
+        private bodyUnion _body;
+        public bodyUnion body
         {
             get => _body;
             set
@@ -84,12 +84,71 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
+            [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            public partial class v0Struct
+            {
+                private SCVal[] _topics;
+                public SCVal[] topics
+                {
+                    get => _topics;
+                    set
+                    {
+                        _topics = value;
+                    }
+                }
+
+                private SCVal _data;
+                public SCVal data
+                {
+                    get => _data;
+                    set
+                    {
+                        _data = value;
+                    }
+                }
+
+                public v0Struct()
+                {
+                }
+                /// <summary>Validates all fields have valid values</summary>
+                public virtual void Validate()
+                {
+                }
+            }
+            public static partial class v0StructXdr
+            {
+                /// <summary>Encodes struct to XDR stream</summary>
+                public static void Encode(XdrWriter stream, v0Struct value)
+                {
+                    value.Validate();
+                    stream.WriteInt(value.topics.Length);
+                    foreach (var item in value.topics)
+                    {
+                            SCValXdr.Encode(stream, item);
+                    }
+                    SCValXdr.Encode(stream, value.data);
+                }
+                /// <summary>Decodes struct from XDR stream</summary>
+                public static v0Struct Decode(XdrReader stream)
+                {
+                    var result = new v0Struct();
+                    var length = stream.ReadInt();
+                    result.topics = new SCVal[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result.topics[i] = SCValXdr.Decode(stream);
+                    }
+                    result.data = SCValXdr.Decode(stream);
+                    return result;
+                }
+            }
         }
         public sealed partial class bodyUnion_0 : bodyUnion
         {
-            public override int Discriminator => int.0;
-            private object _v0;
-            public object v0
+            public override int Discriminator => 0;
+            private v0Struct _v0;
+            public v0Struct v0
             {
                 get => _v0;
                 set
@@ -109,7 +168,7 @@ namespace stellar {
                 switch (value)
                 {
                     case bodyUnion_0 case_0:
-                    Xdr.Encode(stream, case_0.v0);
+                    bodyUnion.v0StructXdr.Encode(stream, case_0.v0);
                     break;
                 }
             }
@@ -120,7 +179,7 @@ namespace stellar {
                 {
                     case 0:
                     var result_0 = new bodyUnion_0();
-                    result_0.                 = Xdr.Decode(stream);
+                    result_0.v0 = bodyUnion.v0StructXdr.Decode(stream);
                     return result_0;
                     default:
                     throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
@@ -137,7 +196,7 @@ namespace stellar {
             ExtensionPointXdr.Encode(stream, value.ext);
             HashXdr.Encode(stream, value.contractID);
             ContractEventTypeXdr.Encode(stream, value.type);
-            Xdr.Encode(stream, value.body);
+            ContractEvent.bodyUnionXdr.Encode(stream, value.body);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ContractEvent Decode(XdrReader stream)
@@ -146,7 +205,7 @@ namespace stellar {
             result.ext = ExtensionPointXdr.Decode(stream);
             result.contractID = HashXdr.Decode(stream);
             result.type = ContractEventTypeXdr.Decode(stream);
-            result.body = Xdr.Decode(stream);
+            result.body = ContractEvent.bodyUnionXdr.Decode(stream);
             return result;
         }
     }

@@ -76,8 +76,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -102,16 +102,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_1 : extUnion
         {
-            public override int Discriminator => int.1;
+            public override int Discriminator => 1;
             private ClaimableBalanceEntryExtensionV1 _v1;
             public ClaimableBalanceEntryExtensionV1 v1
             {
@@ -149,7 +150,7 @@ namespace stellar {
                     return result_0;
                     case 1:
                     var result_1 = new extUnion_1();
-                    result_1.                 = ClaimableBalanceEntryExtensionV1Xdr.Decode(stream);
+                    result_1.v1 = ClaimableBalanceEntryExtensionV1Xdr.Decode(stream);
                     return result_1;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -171,7 +172,7 @@ namespace stellar {
             }
             AssetXdr.Encode(stream, value.asset);
             int64Xdr.Encode(stream, value.amount);
-            Xdr.Encode(stream, value.ext);
+            ClaimableBalanceEntry.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ClaimableBalanceEntry Decode(XdrReader stream)
@@ -186,7 +187,7 @@ namespace stellar {
             }
             result.asset = AssetXdr.Decode(stream);
             result.amount = int64Xdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.ext = ClaimableBalanceEntry.extUnionXdr.Decode(stream);
             return result;
         }
     }

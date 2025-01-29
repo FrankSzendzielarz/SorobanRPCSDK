@@ -59,8 +59,8 @@ namespace stellar {
             }
         }
 
-        private object _data;
-        public object data
+        private dataUnion _data;
+        public dataUnion data
         {
             get => _data;
             set
@@ -69,8 +69,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -93,6 +93,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class dataUnion_ACCOUNT : dataUnion
         {
@@ -289,45 +290,45 @@ namespace stellar {
                 var discriminator = (LedgerEntryType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case ACCOUNT:
+                    case LedgerEntryType.ACCOUNT:
                     var result_ACCOUNT = new dataUnion_ACCOUNT();
-                    result_ACCOUNT.                 = AccountEntryXdr.Decode(stream);
+                    result_ACCOUNT.account = AccountEntryXdr.Decode(stream);
                     return result_ACCOUNT;
-                    case TRUSTLINE:
+                    case LedgerEntryType.TRUSTLINE:
                     var result_TRUSTLINE = new dataUnion_TRUSTLINE();
-                    result_TRUSTLINE.                 = TrustLineEntryXdr.Decode(stream);
+                    result_TRUSTLINE.trustLine = TrustLineEntryXdr.Decode(stream);
                     return result_TRUSTLINE;
-                    case OFFER:
+                    case LedgerEntryType.OFFER:
                     var result_OFFER = new dataUnion_OFFER();
-                    result_OFFER.                 = OfferEntryXdr.Decode(stream);
+                    result_OFFER.offer = OfferEntryXdr.Decode(stream);
                     return result_OFFER;
-                    case DATA:
+                    case LedgerEntryType.DATA:
                     var result_DATA = new dataUnion_DATA();
-                    result_DATA.                 = DataEntryXdr.Decode(stream);
+                    result_DATA.data = DataEntryXdr.Decode(stream);
                     return result_DATA;
-                    case CLAIMABLE_BALANCE:
+                    case LedgerEntryType.CLAIMABLE_BALANCE:
                     var result_CLAIMABLE_BALANCE = new dataUnion_CLAIMABLE_BALANCE();
-                    result_CLAIMABLE_BALANCE.                 = ClaimableBalanceEntryXdr.Decode(stream);
+                    result_CLAIMABLE_BALANCE.claimableBalance = ClaimableBalanceEntryXdr.Decode(stream);
                     return result_CLAIMABLE_BALANCE;
-                    case LIQUIDITY_POOL:
+                    case LedgerEntryType.LIQUIDITY_POOL:
                     var result_LIQUIDITY_POOL = new dataUnion_LIQUIDITY_POOL();
-                    result_LIQUIDITY_POOL.                 = LiquidityPoolEntryXdr.Decode(stream);
+                    result_LIQUIDITY_POOL.liquidityPool = LiquidityPoolEntryXdr.Decode(stream);
                     return result_LIQUIDITY_POOL;
-                    case CONTRACT_DATA:
+                    case LedgerEntryType.CONTRACT_DATA:
                     var result_CONTRACT_DATA = new dataUnion_CONTRACT_DATA();
-                    result_CONTRACT_DATA.                 = ContractDataEntryXdr.Decode(stream);
+                    result_CONTRACT_DATA.contractData = ContractDataEntryXdr.Decode(stream);
                     return result_CONTRACT_DATA;
-                    case CONTRACT_CODE:
+                    case LedgerEntryType.CONTRACT_CODE:
                     var result_CONTRACT_CODE = new dataUnion_CONTRACT_CODE();
-                    result_CONTRACT_CODE.                 = ContractCodeEntryXdr.Decode(stream);
+                    result_CONTRACT_CODE.contractCode = ContractCodeEntryXdr.Decode(stream);
                     return result_CONTRACT_CODE;
-                    case CONFIG_SETTING:
+                    case LedgerEntryType.CONFIG_SETTING:
                     var result_CONFIG_SETTING = new dataUnion_CONFIG_SETTING();
-                    result_CONFIG_SETTING.                 = ConfigSettingEntryXdr.Decode(stream);
+                    result_CONFIG_SETTING.configSetting = ConfigSettingEntryXdr.Decode(stream);
                     return result_CONFIG_SETTING;
-                    case TTL:
+                    case LedgerEntryType.TTL:
                     var result_TTL = new dataUnion_TTL();
-                    result_TTL.                 = TTLEntryXdr.Decode(stream);
+                    result_TTL.ttl = TTLEntryXdr.Decode(stream);
                     return result_TTL;
                     default:
                     throw new Exception($"Unknown discriminator for dataUnion: {discriminator}");
@@ -341,16 +342,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_1 : extUnion
         {
-            public override int Discriminator => int.1;
+            public override int Discriminator => 1;
             private LedgerEntryExtensionV1 _v1;
             public LedgerEntryExtensionV1 v1
             {
@@ -388,7 +390,7 @@ namespace stellar {
                     return result_0;
                     case 1:
                     var result_1 = new extUnion_1();
-                    result_1.                 = LedgerEntryExtensionV1Xdr.Decode(stream);
+                    result_1.v1 = LedgerEntryExtensionV1Xdr.Decode(stream);
                     return result_1;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -403,16 +405,16 @@ namespace stellar {
         {
             value.Validate();
             uint32Xdr.Encode(stream, value.lastModifiedLedgerSeq);
-            Xdr.Encode(stream, value.data);
-            Xdr.Encode(stream, value.ext);
+            LedgerEntry.dataUnionXdr.Encode(stream, value.data);
+            LedgerEntry.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static LedgerEntry Decode(XdrReader stream)
         {
             var result = new LedgerEntry();
             result.lastModifiedLedgerSeq = uint32Xdr.Decode(stream);
-            result.data = Xdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.data = LedgerEntry.dataUnionXdr.Decode(stream);
+            result.ext = LedgerEntry.extUnionXdr.Decode(stream);
             return result;
         }
     }

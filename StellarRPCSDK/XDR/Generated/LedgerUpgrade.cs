@@ -34,6 +34,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LedgerUpgrade_LEDGER_UPGRADE_VERSION : LedgerUpgrade
     {
@@ -176,33 +177,33 @@ namespace stellar {
             var discriminator = (LedgerUpgradeType)stream.ReadInt();
             switch (discriminator)
             {
-                case LEDGER_UPGRADE_VERSION:
+                case LedgerUpgradeType.LEDGER_UPGRADE_VERSION:
                 var result_LEDGER_UPGRADE_VERSION = new LedgerUpgrade_LEDGER_UPGRADE_VERSION();
-                result_LEDGER_UPGRADE_VERSION.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_VERSION.newLedgerVersion = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_VERSION;
-                case LEDGER_UPGRADE_BASE_FEE:
+                case LedgerUpgradeType.LEDGER_UPGRADE_BASE_FEE:
                 var result_LEDGER_UPGRADE_BASE_FEE = new LedgerUpgrade_LEDGER_UPGRADE_BASE_FEE();
-                result_LEDGER_UPGRADE_BASE_FEE.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_BASE_FEE.newBaseFee = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_BASE_FEE;
-                case LEDGER_UPGRADE_MAX_TX_SET_SIZE:
+                case LedgerUpgradeType.LEDGER_UPGRADE_MAX_TX_SET_SIZE:
                 var result_LEDGER_UPGRADE_MAX_TX_SET_SIZE = new LedgerUpgrade_LEDGER_UPGRADE_MAX_TX_SET_SIZE();
-                result_LEDGER_UPGRADE_MAX_TX_SET_SIZE.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_MAX_TX_SET_SIZE.newMaxTxSetSize = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_MAX_TX_SET_SIZE;
-                case LEDGER_UPGRADE_BASE_RESERVE:
+                case LedgerUpgradeType.LEDGER_UPGRADE_BASE_RESERVE:
                 var result_LEDGER_UPGRADE_BASE_RESERVE = new LedgerUpgrade_LEDGER_UPGRADE_BASE_RESERVE();
-                result_LEDGER_UPGRADE_BASE_RESERVE.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_BASE_RESERVE.newBaseReserve = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_BASE_RESERVE;
-                case LEDGER_UPGRADE_FLAGS:
+                case LedgerUpgradeType.LEDGER_UPGRADE_FLAGS:
                 var result_LEDGER_UPGRADE_FLAGS = new LedgerUpgrade_LEDGER_UPGRADE_FLAGS();
-                result_LEDGER_UPGRADE_FLAGS.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_FLAGS.newFlags = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_FLAGS;
-                case LEDGER_UPGRADE_CONFIG:
+                case LedgerUpgradeType.LEDGER_UPGRADE_CONFIG:
                 var result_LEDGER_UPGRADE_CONFIG = new LedgerUpgrade_LEDGER_UPGRADE_CONFIG();
-                result_LEDGER_UPGRADE_CONFIG.                 = ConfigUpgradeSetKeyXdr.Decode(stream);
+                result_LEDGER_UPGRADE_CONFIG.newConfig = ConfigUpgradeSetKeyXdr.Decode(stream);
                 return result_LEDGER_UPGRADE_CONFIG;
-                case LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE:
+                case LedgerUpgradeType.LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE:
                 var result_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE = new LedgerUpgrade_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE();
-                result_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE.                 = uint32Xdr.Decode(stream);
+                result_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE.newMaxSorobanTxSetSize = uint32Xdr.Decode(stream);
                 return result_LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;
                 default:
                 throw new Exception($"Unknown discriminator for LedgerUpgrade: {discriminator}");

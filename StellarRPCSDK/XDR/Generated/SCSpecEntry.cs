@@ -27,6 +27,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0 : SCSpecEntry
     {
@@ -133,25 +134,25 @@ namespace stellar {
             var discriminator = (SCSpecEntryKind)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_SPEC_ENTRY_FUNCTION_V0:
+                case SCSpecEntryKind.SC_SPEC_ENTRY_FUNCTION_V0:
                 var result_SC_SPEC_ENTRY_FUNCTION_V0 = new SCSpecEntry_SC_SPEC_ENTRY_FUNCTION_V0();
-                result_SC_SPEC_ENTRY_FUNCTION_V0.                 = SCSpecFunctionV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_FUNCTION_V0.functionV0 = SCSpecFunctionV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_FUNCTION_V0;
-                case SC_SPEC_ENTRY_UDT_STRUCT_V0:
+                case SCSpecEntryKind.SC_SPEC_ENTRY_UDT_STRUCT_V0:
                 var result_SC_SPEC_ENTRY_UDT_STRUCT_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_STRUCT_V0();
-                result_SC_SPEC_ENTRY_UDT_STRUCT_V0.                 = SCSpecUDTStructV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_STRUCT_V0.udtStructV0 = SCSpecUDTStructV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_STRUCT_V0;
-                case SC_SPEC_ENTRY_UDT_UNION_V0:
+                case SCSpecEntryKind.SC_SPEC_ENTRY_UDT_UNION_V0:
                 var result_SC_SPEC_ENTRY_UDT_UNION_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_UNION_V0();
-                result_SC_SPEC_ENTRY_UDT_UNION_V0.                 = SCSpecUDTUnionV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_UNION_V0.udtUnionV0 = SCSpecUDTUnionV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_UNION_V0;
-                case SC_SPEC_ENTRY_UDT_ENUM_V0:
+                case SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ENUM_V0:
                 var result_SC_SPEC_ENTRY_UDT_ENUM_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_ENUM_V0();
-                result_SC_SPEC_ENTRY_UDT_ENUM_V0.                 = SCSpecUDTEnumV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_ENUM_V0.udtEnumV0 = SCSpecUDTEnumV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_ENUM_V0;
-                case SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
+                case SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0:
                 var result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0 = new SCSpecEntry_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0();
-                result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0.                 = SCSpecUDTErrorEnumV0Xdr.Decode(stream);
+                result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0.udtErrorEnumV0 = SCSpecUDTErrorEnumV0Xdr.Decode(stream);
                 return result_SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
                 default:
                 throw new Exception($"Unknown discriminator for SCSpecEntry: {discriminator}");

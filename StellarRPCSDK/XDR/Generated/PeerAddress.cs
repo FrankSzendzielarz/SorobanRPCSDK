@@ -23,8 +23,8 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PeerAddress
     {
-        private object _ip;
-        public object ip
+        private ipUnion _ip;
+        public ipUnion ip
         {
             get => _ip;
             set
@@ -67,6 +67,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class ipUnion_IPv4 : ipUnion
         {
@@ -99,10 +100,10 @@ namespace stellar {
                 var discriminator = (IPAddrType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case IPv4:
+                    case IPAddrType.IPv4:
                     var result_IPv4 = new ipUnion_IPv4();
                     return result_IPv4;
-                    case IPv6:
+                    case IPAddrType.IPv6:
                     var result_IPv6 = new ipUnion_IPv6();
                     return result_IPv6;
                     default:
@@ -117,7 +118,7 @@ namespace stellar {
         public static void Encode(XdrWriter stream, PeerAddress value)
         {
             value.Validate();
-            Xdr.Encode(stream, value.ip);
+            PeerAddress.ipUnionXdr.Encode(stream, value.ip);
             uint32Xdr.Encode(stream, value.port);
             uint32Xdr.Encode(stream, value.numFailures);
         }
@@ -125,7 +126,7 @@ namespace stellar {
         public static PeerAddress Decode(XdrReader stream)
         {
             var result = new PeerAddress();
-            result.ip = Xdr.Decode(stream);
+            result.ip = PeerAddress.ipUnionXdr.Decode(stream);
             result.port = uint32Xdr.Decode(stream);
             result.numFailures = uint32Xdr.Decode(stream);
             return result;

@@ -30,6 +30,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SetOptionsResult_SET_OPTIONS_SUCCESS : SetOptionsResult
     {
@@ -134,37 +135,37 @@ namespace stellar {
             var discriminator = (SetOptionsResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case SET_OPTIONS_SUCCESS:
+                case SetOptionsResultCode.SET_OPTIONS_SUCCESS:
                 var result_SET_OPTIONS_SUCCESS = new SetOptionsResult_SET_OPTIONS_SUCCESS();
                 return result_SET_OPTIONS_SUCCESS;
-                case SET_OPTIONS_LOW_RESERVE:
+                case SetOptionsResultCode.SET_OPTIONS_LOW_RESERVE:
                 var result_SET_OPTIONS_LOW_RESERVE = new SetOptionsResult_SET_OPTIONS_LOW_RESERVE();
                 return result_SET_OPTIONS_LOW_RESERVE;
-                case SET_OPTIONS_TOO_MANY_SIGNERS:
+                case SetOptionsResultCode.SET_OPTIONS_TOO_MANY_SIGNERS:
                 var result_SET_OPTIONS_TOO_MANY_SIGNERS = new SetOptionsResult_SET_OPTIONS_TOO_MANY_SIGNERS();
                 return result_SET_OPTIONS_TOO_MANY_SIGNERS;
-                case SET_OPTIONS_BAD_FLAGS:
+                case SetOptionsResultCode.SET_OPTIONS_BAD_FLAGS:
                 var result_SET_OPTIONS_BAD_FLAGS = new SetOptionsResult_SET_OPTIONS_BAD_FLAGS();
                 return result_SET_OPTIONS_BAD_FLAGS;
-                case SET_OPTIONS_INVALID_INFLATION:
+                case SetOptionsResultCode.SET_OPTIONS_INVALID_INFLATION:
                 var result_SET_OPTIONS_INVALID_INFLATION = new SetOptionsResult_SET_OPTIONS_INVALID_INFLATION();
                 return result_SET_OPTIONS_INVALID_INFLATION;
-                case SET_OPTIONS_CANT_CHANGE:
+                case SetOptionsResultCode.SET_OPTIONS_CANT_CHANGE:
                 var result_SET_OPTIONS_CANT_CHANGE = new SetOptionsResult_SET_OPTIONS_CANT_CHANGE();
                 return result_SET_OPTIONS_CANT_CHANGE;
-                case SET_OPTIONS_UNKNOWN_FLAG:
+                case SetOptionsResultCode.SET_OPTIONS_UNKNOWN_FLAG:
                 var result_SET_OPTIONS_UNKNOWN_FLAG = new SetOptionsResult_SET_OPTIONS_UNKNOWN_FLAG();
                 return result_SET_OPTIONS_UNKNOWN_FLAG;
-                case SET_OPTIONS_THRESHOLD_OUT_OF_RANGE:
+                case SetOptionsResultCode.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE:
                 var result_SET_OPTIONS_THRESHOLD_OUT_OF_RANGE = new SetOptionsResult_SET_OPTIONS_THRESHOLD_OUT_OF_RANGE();
                 return result_SET_OPTIONS_THRESHOLD_OUT_OF_RANGE;
-                case SET_OPTIONS_BAD_SIGNER:
+                case SetOptionsResultCode.SET_OPTIONS_BAD_SIGNER:
                 var result_SET_OPTIONS_BAD_SIGNER = new SetOptionsResult_SET_OPTIONS_BAD_SIGNER();
                 return result_SET_OPTIONS_BAD_SIGNER;
-                case SET_OPTIONS_INVALID_HOME_DOMAIN:
+                case SetOptionsResultCode.SET_OPTIONS_INVALID_HOME_DOMAIN:
                 var result_SET_OPTIONS_INVALID_HOME_DOMAIN = new SetOptionsResult_SET_OPTIONS_INVALID_HOME_DOMAIN();
                 return result_SET_OPTIONS_INVALID_HOME_DOMAIN;
-                case SET_OPTIONS_AUTH_REVOCABLE_REQUIRED:
+                case SetOptionsResultCode.SET_OPTIONS_AUTH_REVOCABLE_REQUIRED:
                 var result_SET_OPTIONS_AUTH_REVOCABLE_REQUIRED = new SetOptionsResult_SET_OPTIONS_AUTH_REVOCABLE_REQUIRED();
                 return result_SET_OPTIONS_AUTH_REVOCABLE_REQUIRED;
                 default:

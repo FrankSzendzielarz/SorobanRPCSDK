@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class BumpSequenceResult_BUMP_SEQUENCE_SUCCESS : BumpSequenceResult
     {
@@ -53,10 +54,10 @@ namespace stellar {
             var discriminator = (BumpSequenceResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case BUMP_SEQUENCE_SUCCESS:
+                case BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS:
                 var result_BUMP_SEQUENCE_SUCCESS = new BumpSequenceResult_BUMP_SEQUENCE_SUCCESS();
                 return result_BUMP_SEQUENCE_SUCCESS;
-                case BUMP_SEQUENCE_BAD_SEQ:
+                case BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ:
                 var result_BUMP_SEQUENCE_BAD_SEQ = new BumpSequenceResult_BUMP_SEQUENCE_BAD_SEQ();
                 return result_BUMP_SEQUENCE_BAD_SEQ;
                 default:

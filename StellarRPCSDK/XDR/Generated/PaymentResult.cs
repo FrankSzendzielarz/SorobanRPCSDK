@@ -29,6 +29,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class PaymentResult_PAYMENT_SUCCESS : PaymentResult
     {
@@ -125,34 +126,34 @@ namespace stellar {
             var discriminator = (PaymentResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case PAYMENT_SUCCESS:
+                case PaymentResultCode.PAYMENT_SUCCESS:
                 var result_PAYMENT_SUCCESS = new PaymentResult_PAYMENT_SUCCESS();
                 return result_PAYMENT_SUCCESS;
-                case PAYMENT_MALFORMED:
+                case PaymentResultCode.PAYMENT_MALFORMED:
                 var result_PAYMENT_MALFORMED = new PaymentResult_PAYMENT_MALFORMED();
                 return result_PAYMENT_MALFORMED;
-                case PAYMENT_UNDERFUNDED:
+                case PaymentResultCode.PAYMENT_UNDERFUNDED:
                 var result_PAYMENT_UNDERFUNDED = new PaymentResult_PAYMENT_UNDERFUNDED();
                 return result_PAYMENT_UNDERFUNDED;
-                case PAYMENT_SRC_NO_TRUST:
+                case PaymentResultCode.PAYMENT_SRC_NO_TRUST:
                 var result_PAYMENT_SRC_NO_TRUST = new PaymentResult_PAYMENT_SRC_NO_TRUST();
                 return result_PAYMENT_SRC_NO_TRUST;
-                case PAYMENT_SRC_NOT_AUTHORIZED:
+                case PaymentResultCode.PAYMENT_SRC_NOT_AUTHORIZED:
                 var result_PAYMENT_SRC_NOT_AUTHORIZED = new PaymentResult_PAYMENT_SRC_NOT_AUTHORIZED();
                 return result_PAYMENT_SRC_NOT_AUTHORIZED;
-                case PAYMENT_NO_DESTINATION:
+                case PaymentResultCode.PAYMENT_NO_DESTINATION:
                 var result_PAYMENT_NO_DESTINATION = new PaymentResult_PAYMENT_NO_DESTINATION();
                 return result_PAYMENT_NO_DESTINATION;
-                case PAYMENT_NO_TRUST:
+                case PaymentResultCode.PAYMENT_NO_TRUST:
                 var result_PAYMENT_NO_TRUST = new PaymentResult_PAYMENT_NO_TRUST();
                 return result_PAYMENT_NO_TRUST;
-                case PAYMENT_NOT_AUTHORIZED:
+                case PaymentResultCode.PAYMENT_NOT_AUTHORIZED:
                 var result_PAYMENT_NOT_AUTHORIZED = new PaymentResult_PAYMENT_NOT_AUTHORIZED();
                 return result_PAYMENT_NOT_AUTHORIZED;
-                case PAYMENT_LINE_FULL:
+                case PaymentResultCode.PAYMENT_LINE_FULL:
                 var result_PAYMENT_LINE_FULL = new PaymentResult_PAYMENT_LINE_FULL();
                 return result_PAYMENT_LINE_FULL;
-                case PAYMENT_NO_ISSUER:
+                case PaymentResultCode.PAYMENT_NO_ISSUER:
                 var result_PAYMENT_NO_ISSUER = new PaymentResult_PAYMENT_NO_ISSUER();
                 return result_PAYMENT_NO_ISSUER;
                 default:

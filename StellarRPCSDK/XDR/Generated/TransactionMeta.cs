@@ -25,10 +25,11 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class TransactionMeta_0 : TransactionMeta
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
         private OperationMeta[] _operations;
         public OperationMeta[] operations
         {
@@ -43,7 +44,7 @@ namespace stellar {
     }
     public sealed partial class TransactionMeta_1 : TransactionMeta
     {
-        public override int Discriminator => int.1;
+        public override int Discriminator => 1;
         private TransactionMetaV1 _v1;
         public TransactionMetaV1 v1
         {
@@ -58,7 +59,7 @@ namespace stellar {
     }
     public sealed partial class TransactionMeta_2 : TransactionMeta
     {
-        public override int Discriminator => int.2;
+        public override int Discriminator => 2;
         private TransactionMetaV2 _v2;
         public TransactionMetaV2 v2
         {
@@ -73,7 +74,7 @@ namespace stellar {
     }
     public sealed partial class TransactionMeta_3 : TransactionMeta
     {
-        public override int Discriminator => int.3;
+        public override int Discriminator => 3;
         private TransactionMetaV3 _v3;
         public TransactionMetaV3 v3
         {
@@ -120,23 +121,23 @@ namespace stellar {
                 case 0:
                 var result_0 = new TransactionMeta_0();
                 var length = stream.ReadInt();
-                result_0.                 = new OperationMeta[length];
+                result_0.operations = new OperationMeta[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_0.                [i] = OperationMetaXdr.Decode(stream);
+                    result_0.operations[i] = OperationMetaXdr.Decode(stream);
                 }
                 return result_0;
                 case 1:
                 var result_1 = new TransactionMeta_1();
-                result_1.                 = TransactionMetaV1Xdr.Decode(stream);
+                result_1.v1 = TransactionMetaV1Xdr.Decode(stream);
                 return result_1;
                 case 2:
                 var result_2 = new TransactionMeta_2();
-                result_2.                 = TransactionMetaV2Xdr.Decode(stream);
+                result_2.v2 = TransactionMetaV2Xdr.Decode(stream);
                 return result_2;
                 case 3:
                 var result_3 = new TransactionMeta_3();
-                result_3.                 = TransactionMetaV3Xdr.Decode(stream);
+                result_3.v3 = TransactionMetaV3Xdr.Decode(stream);
                 return result_3;
                 default:
                 throw new Exception($"Unknown discriminator for TransactionMeta: {discriminator}");

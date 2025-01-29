@@ -26,6 +26,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class AllowTrustResult_ALLOW_TRUST_SUCCESS : AllowTrustResult
     {
@@ -98,25 +99,25 @@ namespace stellar {
             var discriminator = (AllowTrustResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case ALLOW_TRUST_SUCCESS:
+                case AllowTrustResultCode.ALLOW_TRUST_SUCCESS:
                 var result_ALLOW_TRUST_SUCCESS = new AllowTrustResult_ALLOW_TRUST_SUCCESS();
                 return result_ALLOW_TRUST_SUCCESS;
-                case ALLOW_TRUST_MALFORMED:
+                case AllowTrustResultCode.ALLOW_TRUST_MALFORMED:
                 var result_ALLOW_TRUST_MALFORMED = new AllowTrustResult_ALLOW_TRUST_MALFORMED();
                 return result_ALLOW_TRUST_MALFORMED;
-                case ALLOW_TRUST_NO_TRUST_LINE:
+                case AllowTrustResultCode.ALLOW_TRUST_NO_TRUST_LINE:
                 var result_ALLOW_TRUST_NO_TRUST_LINE = new AllowTrustResult_ALLOW_TRUST_NO_TRUST_LINE();
                 return result_ALLOW_TRUST_NO_TRUST_LINE;
-                case ALLOW_TRUST_TRUST_NOT_REQUIRED:
+                case AllowTrustResultCode.ALLOW_TRUST_TRUST_NOT_REQUIRED:
                 var result_ALLOW_TRUST_TRUST_NOT_REQUIRED = new AllowTrustResult_ALLOW_TRUST_TRUST_NOT_REQUIRED();
                 return result_ALLOW_TRUST_TRUST_NOT_REQUIRED;
-                case ALLOW_TRUST_CANT_REVOKE:
+                case AllowTrustResultCode.ALLOW_TRUST_CANT_REVOKE:
                 var result_ALLOW_TRUST_CANT_REVOKE = new AllowTrustResult_ALLOW_TRUST_CANT_REVOKE();
                 return result_ALLOW_TRUST_CANT_REVOKE;
-                case ALLOW_TRUST_SELF_NOT_ALLOWED:
+                case AllowTrustResultCode.ALLOW_TRUST_SELF_NOT_ALLOWED:
                 var result_ALLOW_TRUST_SELF_NOT_ALLOWED = new AllowTrustResult_ALLOW_TRUST_SELF_NOT_ALLOWED();
                 return result_ALLOW_TRUST_SELF_NOT_ALLOWED;
-                case ALLOW_TRUST_LOW_RESERVE:
+                case AllowTrustResultCode.ALLOW_TRUST_LOW_RESERVE:
                 var result_ALLOW_TRUST_LOW_RESERVE = new AllowTrustResult_ALLOW_TRUST_LOW_RESERVE();
                 return result_ALLOW_TRUST_LOW_RESERVE;
                 default:

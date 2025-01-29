@@ -47,8 +47,8 @@ namespace stellar {
             }
         }
 
-        private object _innerTx;
-        public object innerTx
+        private innerTxUnion _innerTx;
+        public innerTxUnion innerTx
         {
             get => _innerTx;
             set
@@ -57,8 +57,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -81,6 +81,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class innerTxUnion_ENVELOPE_TYPE_TX : innerTxUnion
         {
@@ -115,9 +116,9 @@ namespace stellar {
                 var discriminator = (EnvelopeType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case ENVELOPE_TYPE_TX:
+                    case EnvelopeType.ENVELOPE_TYPE_TX:
                     var result_ENVELOPE_TYPE_TX = new innerTxUnion_ENVELOPE_TYPE_TX();
-                    result_ENVELOPE_TYPE_TX.                 = TransactionV1EnvelopeXdr.Decode(stream);
+                    result_ENVELOPE_TYPE_TX.v1 = TransactionV1EnvelopeXdr.Decode(stream);
                     return result_ENVELOPE_TYPE_TX;
                     default:
                     throw new Exception($"Unknown discriminator for innerTxUnion: {discriminator}");
@@ -131,10 +132,11 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
@@ -172,8 +174,8 @@ namespace stellar {
             value.Validate();
             MuxedAccountXdr.Encode(stream, value.feeSource);
             int64Xdr.Encode(stream, value.fee);
-            Xdr.Encode(stream, value.innerTx);
-            Xdr.Encode(stream, value.ext);
+            FeeBumpTransaction.innerTxUnionXdr.Encode(stream, value.innerTx);
+            FeeBumpTransaction.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static FeeBumpTransaction Decode(XdrReader stream)
@@ -181,8 +183,8 @@ namespace stellar {
             var result = new FeeBumpTransaction();
             result.feeSource = MuxedAccountXdr.Decode(stream);
             result.fee = int64Xdr.Decode(stream);
-            result.innerTx = Xdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.innerTx = FeeBumpTransaction.innerTxUnionXdr.Decode(stream);
+            result.ext = FeeBumpTransaction.extUnionXdr.Decode(stream);
             return result;
         }
     }

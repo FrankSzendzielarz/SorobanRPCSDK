@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS : ClawbackClaimableBalanceResult
     {
@@ -72,16 +73,16 @@ namespace stellar {
             var discriminator = (ClawbackClaimableBalanceResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
+                case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
                 var result_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
-                case CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
                 var result_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
-                case CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
+                case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
                 var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
-                case CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
+                case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
                 var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
                 default:

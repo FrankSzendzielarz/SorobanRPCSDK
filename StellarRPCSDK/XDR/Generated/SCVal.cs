@@ -75,6 +75,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCVal_SCV_BOOL : SCVal
     {
@@ -467,91 +468,91 @@ namespace stellar {
             var discriminator = (SCValType)stream.ReadInt();
             switch (discriminator)
             {
-                case SCV_BOOL:
+                case SCValType.SCV_BOOL:
                 var result_SCV_BOOL = new SCVal_SCV_BOOL();
-                result_SCV_BOOL.                 = stream.ReadInt() != 0;
+                result_SCV_BOOL.b = stream.ReadInt() != 0;
                 return result_SCV_BOOL;
-                case SCV_VOID:
+                case SCValType.SCV_VOID:
                 var result_SCV_VOID = new SCVal_SCV_VOID();
                 return result_SCV_VOID;
-                case SCV_ERROR:
+                case SCValType.SCV_ERROR:
                 var result_SCV_ERROR = new SCVal_SCV_ERROR();
-                result_SCV_ERROR.                 = SCErrorXdr.Decode(stream);
+                result_SCV_ERROR.error = SCErrorXdr.Decode(stream);
                 return result_SCV_ERROR;
-                case SCV_U32:
+                case SCValType.SCV_U32:
                 var result_SCV_U32 = new SCVal_SCV_U32();
-                result_SCV_U32.                 = uint32Xdr.Decode(stream);
+                result_SCV_U32.u32 = uint32Xdr.Decode(stream);
                 return result_SCV_U32;
-                case SCV_I32:
+                case SCValType.SCV_I32:
                 var result_SCV_I32 = new SCVal_SCV_I32();
-                result_SCV_I32.                 = int32Xdr.Decode(stream);
+                result_SCV_I32.i32 = int32Xdr.Decode(stream);
                 return result_SCV_I32;
-                case SCV_U64:
+                case SCValType.SCV_U64:
                 var result_SCV_U64 = new SCVal_SCV_U64();
-                result_SCV_U64.                 = uint64Xdr.Decode(stream);
+                result_SCV_U64.u64 = uint64Xdr.Decode(stream);
                 return result_SCV_U64;
-                case SCV_I64:
+                case SCValType.SCV_I64:
                 var result_SCV_I64 = new SCVal_SCV_I64();
-                result_SCV_I64.                 = int64Xdr.Decode(stream);
+                result_SCV_I64.i64 = int64Xdr.Decode(stream);
                 return result_SCV_I64;
-                case SCV_TIMEPOINT:
+                case SCValType.SCV_TIMEPOINT:
                 var result_SCV_TIMEPOINT = new SCVal_SCV_TIMEPOINT();
-                result_SCV_TIMEPOINT.                 = TimePointXdr.Decode(stream);
+                result_SCV_TIMEPOINT.timepoint = TimePointXdr.Decode(stream);
                 return result_SCV_TIMEPOINT;
-                case SCV_DURATION:
+                case SCValType.SCV_DURATION:
                 var result_SCV_DURATION = new SCVal_SCV_DURATION();
-                result_SCV_DURATION.                 = DurationXdr.Decode(stream);
+                result_SCV_DURATION.duration = DurationXdr.Decode(stream);
                 return result_SCV_DURATION;
-                case SCV_U128:
+                case SCValType.SCV_U128:
                 var result_SCV_U128 = new SCVal_SCV_U128();
-                result_SCV_U128.                 = UInt128PartsXdr.Decode(stream);
+                result_SCV_U128.u128 = UInt128PartsXdr.Decode(stream);
                 return result_SCV_U128;
-                case SCV_I128:
+                case SCValType.SCV_I128:
                 var result_SCV_I128 = new SCVal_SCV_I128();
-                result_SCV_I128.                 = Int128PartsXdr.Decode(stream);
+                result_SCV_I128.i128 = Int128PartsXdr.Decode(stream);
                 return result_SCV_I128;
-                case SCV_U256:
+                case SCValType.SCV_U256:
                 var result_SCV_U256 = new SCVal_SCV_U256();
-                result_SCV_U256.                 = UInt256PartsXdr.Decode(stream);
+                result_SCV_U256.u256 = UInt256PartsXdr.Decode(stream);
                 return result_SCV_U256;
-                case SCV_I256:
+                case SCValType.SCV_I256:
                 var result_SCV_I256 = new SCVal_SCV_I256();
-                result_SCV_I256.                 = Int256PartsXdr.Decode(stream);
+                result_SCV_I256.i256 = Int256PartsXdr.Decode(stream);
                 return result_SCV_I256;
-                case SCV_BYTES:
+                case SCValType.SCV_BYTES:
                 var result_SCV_BYTES = new SCVal_SCV_BYTES();
-                result_SCV_BYTES.                 = SCBytesXdr.Decode(stream);
+                result_SCV_BYTES.bytes = SCBytesXdr.Decode(stream);
                 return result_SCV_BYTES;
-                case SCV_STRING:
+                case SCValType.SCV_STRING:
                 var result_SCV_STRING = new SCVal_SCV_STRING();
-                result_SCV_STRING.                 = SCStringXdr.Decode(stream);
+                result_SCV_STRING.str = SCStringXdr.Decode(stream);
                 return result_SCV_STRING;
-                case SCV_SYMBOL:
+                case SCValType.SCV_SYMBOL:
                 var result_SCV_SYMBOL = new SCVal_SCV_SYMBOL();
-                result_SCV_SYMBOL.                 = SCSymbolXdr.Decode(stream);
+                result_SCV_SYMBOL.sym = SCSymbolXdr.Decode(stream);
                 return result_SCV_SYMBOL;
-                case SCV_VEC:
+                case SCValType.SCV_VEC:
                 var result_SCV_VEC = new SCVal_SCV_VEC();
-                result_SCV_VEC.                 = SCVecXdr.Decode(stream);
+                result_SCV_VEC.vec = SCVecXdr.Decode(stream);
                 return result_SCV_VEC;
-                case SCV_MAP:
+                case SCValType.SCV_MAP:
                 var result_SCV_MAP = new SCVal_SCV_MAP();
-                result_SCV_MAP.                 = SCMapXdr.Decode(stream);
+                result_SCV_MAP.map = SCMapXdr.Decode(stream);
                 return result_SCV_MAP;
-                case SCV_ADDRESS:
+                case SCValType.SCV_ADDRESS:
                 var result_SCV_ADDRESS = new SCVal_SCV_ADDRESS();
-                result_SCV_ADDRESS.                 = SCAddressXdr.Decode(stream);
+                result_SCV_ADDRESS.address = SCAddressXdr.Decode(stream);
                 return result_SCV_ADDRESS;
-                case SCV_LEDGER_KEY_CONTRACT_INSTANCE:
+                case SCValType.SCV_LEDGER_KEY_CONTRACT_INSTANCE:
                 var result_SCV_LEDGER_KEY_CONTRACT_INSTANCE = new SCVal_SCV_LEDGER_KEY_CONTRACT_INSTANCE();
                 return result_SCV_LEDGER_KEY_CONTRACT_INSTANCE;
-                case SCV_LEDGER_KEY_NONCE:
+                case SCValType.SCV_LEDGER_KEY_NONCE:
                 var result_SCV_LEDGER_KEY_NONCE = new SCVal_SCV_LEDGER_KEY_NONCE();
-                result_SCV_LEDGER_KEY_NONCE.                 = SCNonceKeyXdr.Decode(stream);
+                result_SCV_LEDGER_KEY_NONCE.nonce_key = SCNonceKeyXdr.Decode(stream);
                 return result_SCV_LEDGER_KEY_NONCE;
-                case SCV_CONTRACT_INSTANCE:
+                case SCValType.SCV_CONTRACT_INSTANCE:
                 var result_SCV_CONTRACT_INSTANCE = new SCVal_SCV_CONTRACT_INSTANCE();
-                result_SCV_CONTRACT_INSTANCE.                 = SCContractInstanceXdr.Decode(stream);
+                result_SCV_CONTRACT_INSTANCE.instance = SCContractInstanceXdr.Decode(stream);
                 return result_SCV_CONTRACT_INSTANCE;
                 default:
                 throw new Exception($"Unknown discriminator for SCVal: {discriminator}");

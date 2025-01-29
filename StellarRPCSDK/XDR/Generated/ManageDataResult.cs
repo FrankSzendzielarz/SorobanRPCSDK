@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ManageDataResult_MANAGE_DATA_SUCCESS : ManageDataResult
     {
@@ -80,19 +81,19 @@ namespace stellar {
             var discriminator = (ManageDataResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case MANAGE_DATA_SUCCESS:
+                case ManageDataResultCode.MANAGE_DATA_SUCCESS:
                 var result_MANAGE_DATA_SUCCESS = new ManageDataResult_MANAGE_DATA_SUCCESS();
                 return result_MANAGE_DATA_SUCCESS;
-                case MANAGE_DATA_NOT_SUPPORTED_YET:
+                case ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET:
                 var result_MANAGE_DATA_NOT_SUPPORTED_YET = new ManageDataResult_MANAGE_DATA_NOT_SUPPORTED_YET();
                 return result_MANAGE_DATA_NOT_SUPPORTED_YET;
-                case MANAGE_DATA_NAME_NOT_FOUND:
+                case ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND:
                 var result_MANAGE_DATA_NAME_NOT_FOUND = new ManageDataResult_MANAGE_DATA_NAME_NOT_FOUND();
                 return result_MANAGE_DATA_NAME_NOT_FOUND;
-                case MANAGE_DATA_LOW_RESERVE:
+                case ManageDataResultCode.MANAGE_DATA_LOW_RESERVE:
                 var result_MANAGE_DATA_LOW_RESERVE = new ManageDataResult_MANAGE_DATA_LOW_RESERVE();
                 return result_MANAGE_DATA_LOW_RESERVE;
-                case MANAGE_DATA_INVALID_NAME:
+                case ManageDataResultCode.MANAGE_DATA_INVALID_NAME:
                 var result_MANAGE_DATA_INVALID_NAME = new ManageDataResult_MANAGE_DATA_INVALID_NAME();
                 return result_MANAGE_DATA_INVALID_NAME;
                 default:

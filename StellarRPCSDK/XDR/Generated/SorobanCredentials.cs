@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT : SorobanCredentials
     {
@@ -63,12 +64,12 @@ namespace stellar {
             var discriminator = (SorobanCredentialsType)stream.ReadInt();
             switch (discriminator)
             {
-                case SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:
+                case SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:
                 var result_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT = new SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT();
                 return result_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
-                case SOROBAN_CREDENTIALS_ADDRESS:
+                case SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS:
                 var result_SOROBAN_CREDENTIALS_ADDRESS = new SorobanCredentials_SOROBAN_CREDENTIALS_ADDRESS();
-                result_SOROBAN_CREDENTIALS_ADDRESS.                 = SorobanAddressCredentialsXdr.Decode(stream);
+                result_SOROBAN_CREDENTIALS_ADDRESS.address = SorobanAddressCredentialsXdr.Decode(stream);
                 return result_SOROBAN_CREDENTIALS_ADDRESS;
                 default:
                 throw new Exception($"Unknown discriminator for SorobanCredentials: {discriminator}");

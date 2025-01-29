@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCAddress_SC_ADDRESS_TYPE_ACCOUNT : SCAddress
     {
@@ -73,13 +74,13 @@ namespace stellar {
             var discriminator = (SCAddressType)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_ADDRESS_TYPE_ACCOUNT:
+                case SCAddressType.SC_ADDRESS_TYPE_ACCOUNT:
                 var result_SC_ADDRESS_TYPE_ACCOUNT = new SCAddress_SC_ADDRESS_TYPE_ACCOUNT();
-                result_SC_ADDRESS_TYPE_ACCOUNT.                 = AccountIDXdr.Decode(stream);
+                result_SC_ADDRESS_TYPE_ACCOUNT.accountId = AccountIDXdr.Decode(stream);
                 return result_SC_ADDRESS_TYPE_ACCOUNT;
-                case SC_ADDRESS_TYPE_CONTRACT:
+                case SCAddressType.SC_ADDRESS_TYPE_CONTRACT:
                 var result_SC_ADDRESS_TYPE_CONTRACT = new SCAddress_SC_ADDRESS_TYPE_CONTRACT();
-                result_SC_ADDRESS_TYPE_CONTRACT.                 = HashXdr.Decode(stream);
+                result_SC_ADDRESS_TYPE_CONTRACT.contractId = HashXdr.Decode(stream);
                 return result_SC_ADDRESS_TYPE_CONTRACT;
                 default:
                 throw new Exception($"Unknown discriminator for SCAddress: {discriminator}");

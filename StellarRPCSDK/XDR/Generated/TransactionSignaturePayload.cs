@@ -33,8 +33,8 @@ namespace stellar {
             }
         }
 
-        private object _taggedTransaction;
-        public object taggedTransaction
+        private taggedTransactionUnion _taggedTransaction;
+        public taggedTransactionUnion taggedTransaction
         {
             get => _taggedTransaction;
             set
@@ -57,6 +57,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class taggedTransactionUnion_ENVELOPE_TYPE_TX : taggedTransactionUnion
         {
@@ -109,13 +110,13 @@ namespace stellar {
                 var discriminator = (EnvelopeType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case ENVELOPE_TYPE_TX:
+                    case EnvelopeType.ENVELOPE_TYPE_TX:
                     var result_ENVELOPE_TYPE_TX = new taggedTransactionUnion_ENVELOPE_TYPE_TX();
-                    result_ENVELOPE_TYPE_TX.                 = TransactionXdr.Decode(stream);
+                    result_ENVELOPE_TYPE_TX.tx = TransactionXdr.Decode(stream);
                     return result_ENVELOPE_TYPE_TX;
-                    case ENVELOPE_TYPE_TX_FEE_BUMP:
+                    case EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP:
                     var result_ENVELOPE_TYPE_TX_FEE_BUMP = new taggedTransactionUnion_ENVELOPE_TYPE_TX_FEE_BUMP();
-                    result_ENVELOPE_TYPE_TX_FEE_BUMP.                 = FeeBumpTransactionXdr.Decode(stream);
+                    result_ENVELOPE_TYPE_TX_FEE_BUMP.feeBump = FeeBumpTransactionXdr.Decode(stream);
                     return result_ENVELOPE_TYPE_TX_FEE_BUMP;
                     default:
                     throw new Exception($"Unknown discriminator for taggedTransactionUnion: {discriminator}");
@@ -130,14 +131,14 @@ namespace stellar {
         {
             value.Validate();
             HashXdr.Encode(stream, value.networkId);
-            Xdr.Encode(stream, value.taggedTransaction);
+            TransactionSignaturePayload.taggedTransactionUnionXdr.Encode(stream, value.taggedTransaction);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static TransactionSignaturePayload Decode(XdrReader stream)
         {
             var result = new TransactionSignaturePayload();
             result.networkId = HashXdr.Decode(stream);
-            result.taggedTransaction = Xdr.Decode(stream);
+            result.taggedTransaction = TransactionSignaturePayload.taggedTransactionUnionXdr.Decode(stream);
             return result;
         }
     }

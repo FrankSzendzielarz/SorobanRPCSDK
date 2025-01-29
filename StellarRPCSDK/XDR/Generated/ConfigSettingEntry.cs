@@ -45,6 +45,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES : ConfigSettingEntry
     {
@@ -317,66 +318,66 @@ namespace stellar {
             var discriminator = (ConfigSettingID)stream.ReadInt();
             switch (discriminator)
             {
-                case CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:
                 var result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES();
-                result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES.                 = uint32Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES.contractMaxSizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
-                case CONFIG_SETTING_CONTRACT_COMPUTE_V0:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0:
                 var result_CONFIG_SETTING_CONTRACT_COMPUTE_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COMPUTE_V0();
-                result_CONFIG_SETTING_CONTRACT_COMPUTE_V0.                 = ConfigSettingContractComputeV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_COMPUTE_V0.contractCompute = ConfigSettingContractComputeV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COMPUTE_V0;
-                case CONFIG_SETTING_CONTRACT_LEDGER_COST_V0:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0:
                 var result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0();
-                result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0.                 = ConfigSettingContractLedgerCostV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0.contractLedgerCost = ConfigSettingContractLedgerCostV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
-                case CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0:
                 var result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0();
-                result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0.                 = ConfigSettingContractHistoricalDataV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0.contractHistoricalData = ConfigSettingContractHistoricalDataV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
-                case CONFIG_SETTING_CONTRACT_EVENTS_V0:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0:
                 var result_CONFIG_SETTING_CONTRACT_EVENTS_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EVENTS_V0();
-                result_CONFIG_SETTING_CONTRACT_EVENTS_V0.                 = ConfigSettingContractEventsV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_EVENTS_V0.contractEvents = ConfigSettingContractEventsV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_EVENTS_V0;
-                case CONFIG_SETTING_CONTRACT_BANDWIDTH_V0:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0:
                 var result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0();
-                result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0.                 = ConfigSettingContractBandwidthV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0.contractBandwidth = ConfigSettingContractBandwidthV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
-                case CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS:
                 var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS();
-                result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS.                 = ContractCostParamsXdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS.contractCostParamsCpuInsns = ContractCostParamsXdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
-                case CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES:
                 var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES();
-                result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES.                 = ContractCostParamsXdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES.contractCostParamsMemBytes = ContractCostParamsXdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
-                case CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES:
                 var result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES();
-                result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES.                 = uint32Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES.contractDataKeySizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
-                case CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES:
                 var result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES();
-                result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES.                 = uint32Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES.contractDataEntrySizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
-                case CONFIG_SETTING_STATE_ARCHIVAL:
+                case ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL:
                 var result_CONFIG_SETTING_STATE_ARCHIVAL = new ConfigSettingEntry_CONFIG_SETTING_STATE_ARCHIVAL();
-                result_CONFIG_SETTING_STATE_ARCHIVAL.                 = StateArchivalSettingsXdr.Decode(stream);
+                result_CONFIG_SETTING_STATE_ARCHIVAL.stateArchivalSettings = StateArchivalSettingsXdr.Decode(stream);
                 return result_CONFIG_SETTING_STATE_ARCHIVAL;
-                case CONFIG_SETTING_CONTRACT_EXECUTION_LANES:
+                case ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES:
                 var result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EXECUTION_LANES();
-                result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES.                 = ConfigSettingContractExecutionLanesV0Xdr.Decode(stream);
+                result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES.contractExecutionLanes = ConfigSettingContractExecutionLanesV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
-                case CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
+                case ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
                 var result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW = new ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW();
                 var length = stream.ReadInt();
-                result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.                 = new uint64[length];
+                result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow = new uint64[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.                [i] = uint64Xdr.Decode(stream);
+                    result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow[i] = uint64Xdr.Decode(stream);
                 }
                 return result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
-                case CONFIG_SETTING_EVICTION_ITERATOR:
+                case ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR:
                 var result_CONFIG_SETTING_EVICTION_ITERATOR = new ConfigSettingEntry_CONFIG_SETTING_EVICTION_ITERATOR();
-                result_CONFIG_SETTING_EVICTION_ITERATOR.                 = EvictionIteratorXdr.Decode(stream);
+                result_CONFIG_SETTING_EVICTION_ITERATOR.evictionIterator = EvictionIteratorXdr.Decode(stream);
                 return result_CONFIG_SETTING_EVICTION_ITERATOR;
                 default:
                 throw new Exception($"Unknown discriminator for ConfigSettingEntry: {discriminator}");

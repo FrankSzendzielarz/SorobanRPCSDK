@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS : ExtendFootprintTTLResult
     {
@@ -71,16 +72,16 @@ namespace stellar {
             var discriminator = (ExtendFootprintTTLResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case EXTEND_FOOTPRINT_TTL_SUCCESS:
+                case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS:
                 var result_EXTEND_FOOTPRINT_TTL_SUCCESS = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS();
                 return result_EXTEND_FOOTPRINT_TTL_SUCCESS;
-                case EXTEND_FOOTPRINT_TTL_MALFORMED:
+                case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED:
                 var result_EXTEND_FOOTPRINT_TTL_MALFORMED = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_MALFORMED();
                 return result_EXTEND_FOOTPRINT_TTL_MALFORMED;
-                case EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED:
+                case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED:
                 var result_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED();
                 return result_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
-                case EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE:
+                case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE:
                 var result_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE();
                 return result_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
                 default:

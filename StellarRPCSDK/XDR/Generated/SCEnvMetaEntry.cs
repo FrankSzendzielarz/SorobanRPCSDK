@@ -22,12 +22,62 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class interfaceVersionStruct
+        {
+            private uint32 _protocol;
+            public uint32 protocol
+            {
+                get => _protocol;
+                set
+                {
+                    _protocol = value;
+                }
+            }
+
+            private uint32 _preRelease;
+            public uint32 preRelease
+            {
+                get => _preRelease;
+                set
+                {
+                    _preRelease = value;
+                }
+            }
+
+            public interfaceVersionStruct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class interfaceVersionStructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, interfaceVersionStruct value)
+            {
+                value.Validate();
+                uint32Xdr.Encode(stream, value.protocol);
+                uint32Xdr.Encode(stream, value.preRelease);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static interfaceVersionStruct Decode(XdrReader stream)
+            {
+                var result = new interfaceVersionStruct();
+                result.protocol = uint32Xdr.Decode(stream);
+                result.preRelease = uint32Xdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION : SCEnvMetaEntry
     {
         public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
-        private object _interfaceVersion;
-        public object interfaceVersion
+        private interfaceVersionStruct _interfaceVersion;
+        public interfaceVersionStruct interfaceVersion
         {
             get => _interfaceVersion;
             set
@@ -47,7 +97,7 @@ namespace stellar {
             switch (value)
             {
                 case SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION case_SC_ENV_META_KIND_INTERFACE_VERSION:
-                Xdr.Encode(stream, case_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion);
+                SCEnvMetaEntry.interfaceVersionStructXdr.Encode(stream, case_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion);
                 break;
             }
         }
@@ -56,9 +106,9 @@ namespace stellar {
             var discriminator = (SCEnvMetaKind)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_ENV_META_KIND_INTERFACE_VERSION:
+                case SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION:
                 var result_SC_ENV_META_KIND_INTERFACE_VERSION = new SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION();
-                result_SC_ENV_META_KIND_INTERFACE_VERSION.                 = Xdr.Decode(stream);
+                result_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion = SCEnvMetaEntry.interfaceVersionStructXdr.Decode(stream);
                 return result_SC_ENV_META_KIND_INTERFACE_VERSION;
                 default:
                 throw new Exception($"Unknown discriminator for SCEnvMetaEntry: {discriminator}");

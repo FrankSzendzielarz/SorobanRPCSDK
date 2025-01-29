@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LedgerEntryChange_LEDGER_ENTRY_CREATED : LedgerEntryChange
     {
@@ -113,21 +114,21 @@ namespace stellar {
             var discriminator = (LedgerEntryChangeType)stream.ReadInt();
             switch (discriminator)
             {
-                case LEDGER_ENTRY_CREATED:
+                case LedgerEntryChangeType.LEDGER_ENTRY_CREATED:
                 var result_LEDGER_ENTRY_CREATED = new LedgerEntryChange_LEDGER_ENTRY_CREATED();
-                result_LEDGER_ENTRY_CREATED.                 = LedgerEntryXdr.Decode(stream);
+                result_LEDGER_ENTRY_CREATED.created = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_CREATED;
-                case LEDGER_ENTRY_UPDATED:
+                case LedgerEntryChangeType.LEDGER_ENTRY_UPDATED:
                 var result_LEDGER_ENTRY_UPDATED = new LedgerEntryChange_LEDGER_ENTRY_UPDATED();
-                result_LEDGER_ENTRY_UPDATED.                 = LedgerEntryXdr.Decode(stream);
+                result_LEDGER_ENTRY_UPDATED.updated = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_UPDATED;
-                case LEDGER_ENTRY_REMOVED:
+                case LedgerEntryChangeType.LEDGER_ENTRY_REMOVED:
                 var result_LEDGER_ENTRY_REMOVED = new LedgerEntryChange_LEDGER_ENTRY_REMOVED();
-                result_LEDGER_ENTRY_REMOVED.                 = LedgerKeyXdr.Decode(stream);
+                result_LEDGER_ENTRY_REMOVED.removed = LedgerKeyXdr.Decode(stream);
                 return result_LEDGER_ENTRY_REMOVED;
-                case LEDGER_ENTRY_STATE:
+                case LedgerEntryChangeType.LEDGER_ENTRY_STATE:
                 var result_LEDGER_ENTRY_STATE = new LedgerEntryChange_LEDGER_ENTRY_STATE();
-                result_LEDGER_ENTRY_STATE.                 = LedgerEntryXdr.Decode(stream);
+                result_LEDGER_ENTRY_STATE.state = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_STATE;
                 default:
                 throw new Exception($"Unknown discriminator for LedgerEntryChange: {discriminator}");

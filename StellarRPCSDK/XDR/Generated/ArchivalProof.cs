@@ -32,8 +32,8 @@ namespace stellar {
             }
         }
 
-        private object _body;
-        public object body
+        private bodyUnion _body;
+        public bodyUnion body
         {
             get => _body;
             set
@@ -56,6 +56,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class bodyUnion_EXISTENCE : bodyUnion
         {
@@ -108,13 +109,13 @@ namespace stellar {
                 var discriminator = (ArchivalProofType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case EXISTENCE:
+                    case ArchivalProofType.EXISTENCE:
                     var result_EXISTENCE = new bodyUnion_EXISTENCE();
-                    result_EXISTENCE.                 = NonexistenceProofBodyXdr.Decode(stream);
+                    result_EXISTENCE.nonexistenceProof = NonexistenceProofBodyXdr.Decode(stream);
                     return result_EXISTENCE;
-                    case NONEXISTENCE:
+                    case ArchivalProofType.NONEXISTENCE:
                     var result_NONEXISTENCE = new bodyUnion_NONEXISTENCE();
-                    result_NONEXISTENCE.                 = ExistenceProofBodyXdr.Decode(stream);
+                    result_NONEXISTENCE.existenceProof = ExistenceProofBodyXdr.Decode(stream);
                     return result_NONEXISTENCE;
                     default:
                     throw new Exception($"Unknown discriminator for bodyUnion: {discriminator}");
@@ -129,14 +130,14 @@ namespace stellar {
         {
             value.Validate();
             uint32Xdr.Encode(stream, value.epoch);
-            Xdr.Encode(stream, value.body);
+            ArchivalProof.bodyUnionXdr.Encode(stream, value.body);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ArchivalProof Decode(XdrReader stream)
         {
             var result = new ArchivalProof();
             result.epoch = uint32Xdr.Decode(stream);
-            result.body = Xdr.Decode(stream);
+            result.body = ArchivalProof.bodyUnionXdr.Decode(stream);
             return result;
         }
     }

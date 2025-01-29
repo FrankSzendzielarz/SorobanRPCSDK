@@ -30,6 +30,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ChangeTrustAsset_ASSET_TYPE_NATIVE : ChangeTrustAsset
     {
@@ -108,20 +109,20 @@ namespace stellar {
             var discriminator = (AssetType)stream.ReadInt();
             switch (discriminator)
             {
-                case ASSET_TYPE_NATIVE:
+                case AssetType.ASSET_TYPE_NATIVE:
                 var result_ASSET_TYPE_NATIVE = new ChangeTrustAsset_ASSET_TYPE_NATIVE();
                 return result_ASSET_TYPE_NATIVE;
-                case ASSET_TYPE_CREDIT_ALPHANUM4:
+                case AssetType.ASSET_TYPE_CREDIT_ALPHANUM4:
                 var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM4();
-                result_ASSET_TYPE_CREDIT_ALPHANUM4.                 = AlphaNum4Xdr.Decode(stream);
+                result_ASSET_TYPE_CREDIT_ALPHANUM4.alphaNum4 = AlphaNum4Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM4;
-                case ASSET_TYPE_CREDIT_ALPHANUM12:
+                case AssetType.ASSET_TYPE_CREDIT_ALPHANUM12:
                 var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM12();
-                result_ASSET_TYPE_CREDIT_ALPHANUM12.                 = AlphaNum12Xdr.Decode(stream);
+                result_ASSET_TYPE_CREDIT_ALPHANUM12.alphaNum12 = AlphaNum12Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM12;
-                case ASSET_TYPE_POOL_SHARE:
+                case AssetType.ASSET_TYPE_POOL_SHARE:
                 var result_ASSET_TYPE_POOL_SHARE = new ChangeTrustAsset_ASSET_TYPE_POOL_SHARE();
-                result_ASSET_TYPE_POOL_SHARE.                 = LiquidityPoolParametersXdr.Decode(stream);
+                result_ASSET_TYPE_POOL_SHARE.liquidityPool = LiquidityPoolParametersXdr.Decode(stream);
                 return result_ASSET_TYPE_POOL_SHARE;
                 default:
                 throw new Exception($"Unknown discriminator for ChangeTrustAsset: {discriminator}");

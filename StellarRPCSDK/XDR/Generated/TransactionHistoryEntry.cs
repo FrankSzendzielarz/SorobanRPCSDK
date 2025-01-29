@@ -45,8 +45,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -69,16 +69,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_1 : extUnion
         {
-            public override int Discriminator => int.1;
+            public override int Discriminator => 1;
             private GeneralizedTransactionSet _generalizedTxSet;
             public GeneralizedTransactionSet generalizedTxSet
             {
@@ -116,7 +117,7 @@ namespace stellar {
                     return result_0;
                     case 1:
                     var result_1 = new extUnion_1();
-                    result_1.                 = GeneralizedTransactionSetXdr.Decode(stream);
+                    result_1.generalizedTxSet = GeneralizedTransactionSetXdr.Decode(stream);
                     return result_1;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -132,7 +133,7 @@ namespace stellar {
             value.Validate();
             uint32Xdr.Encode(stream, value.ledgerSeq);
             TransactionSetXdr.Encode(stream, value.txSet);
-            Xdr.Encode(stream, value.ext);
+            TransactionHistoryEntry.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static TransactionHistoryEntry Decode(XdrReader stream)
@@ -140,7 +141,7 @@ namespace stellar {
             var result = new TransactionHistoryEntry();
             result.ledgerSeq = uint32Xdr.Decode(stream);
             result.txSet = TransactionSetXdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.ext = TransactionHistoryEntry.extUnionXdr.Decode(stream);
             return result;
         }
     }

@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class Preconditions_PRECOND_NONE : Preconditions
     {
@@ -83,16 +84,16 @@ namespace stellar {
             var discriminator = (PreconditionType)stream.ReadInt();
             switch (discriminator)
             {
-                case PRECOND_NONE:
+                case PreconditionType.PRECOND_NONE:
                 var result_PRECOND_NONE = new Preconditions_PRECOND_NONE();
                 return result_PRECOND_NONE;
-                case PRECOND_TIME:
+                case PreconditionType.PRECOND_TIME:
                 var result_PRECOND_TIME = new Preconditions_PRECOND_TIME();
-                result_PRECOND_TIME.                 = TimeBoundsXdr.Decode(stream);
+                result_PRECOND_TIME.timeBounds = TimeBoundsXdr.Decode(stream);
                 return result_PRECOND_TIME;
-                case PRECOND_V2:
+                case PreconditionType.PRECOND_V2:
                 var result_PRECOND_V2 = new Preconditions_PRECOND_V2();
-                result_PRECOND_V2.                 = PreconditionsV2Xdr.Decode(stream);
+                result_PRECOND_V2.v2 = PreconditionsV2Xdr.Decode(stream);
                 return result_PRECOND_V2;
                 default:
                 throw new Exception($"Unknown discriminator for Preconditions: {discriminator}");

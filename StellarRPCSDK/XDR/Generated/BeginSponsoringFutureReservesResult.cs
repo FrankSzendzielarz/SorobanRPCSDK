@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS : BeginSponsoringFutureReservesResult
     {
@@ -72,16 +73,16 @@ namespace stellar {
             var discriminator = (BeginSponsoringFutureReservesResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:
                 var result_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
-                case BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED:
+                case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED:
                 var result_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
-                case BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED:
+                case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED:
                 var result_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
-                case BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE:
+                case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE:
                 var result_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
                 default:

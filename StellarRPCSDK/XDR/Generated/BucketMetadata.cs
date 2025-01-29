@@ -35,8 +35,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -59,16 +59,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_1 : extUnion
         {
-            public override int Discriminator => int.1;
+            public override int Discriminator => 1;
             private BucketListType _bucketListType;
             public BucketListType bucketListType
             {
@@ -106,7 +107,7 @@ namespace stellar {
                     return result_0;
                     case 1:
                     var result_1 = new extUnion_1();
-                    result_1.                 = BucketListTypeXdr.Decode(stream);
+                    result_1.bucketListType = BucketListTypeXdr.Decode(stream);
                     return result_1;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -121,14 +122,14 @@ namespace stellar {
         {
             value.Validate();
             uint32Xdr.Encode(stream, value.ledgerVersion);
-            Xdr.Encode(stream, value.ext);
+            BucketMetadata.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static BucketMetadata Decode(XdrReader stream)
         {
             var result = new BucketMetadata();
             result.ledgerVersion = uint32Xdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.ext = BucketMetadata.extUnionXdr.Decode(stream);
             return result;
         }
     }

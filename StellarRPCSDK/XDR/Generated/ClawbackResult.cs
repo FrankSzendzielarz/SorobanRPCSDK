@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClawbackResult_CLAWBACK_SUCCESS : ClawbackResult
     {
@@ -80,19 +81,19 @@ namespace stellar {
             var discriminator = (ClawbackResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAWBACK_SUCCESS:
+                case ClawbackResultCode.CLAWBACK_SUCCESS:
                 var result_CLAWBACK_SUCCESS = new ClawbackResult_CLAWBACK_SUCCESS();
                 return result_CLAWBACK_SUCCESS;
-                case CLAWBACK_MALFORMED:
+                case ClawbackResultCode.CLAWBACK_MALFORMED:
                 var result_CLAWBACK_MALFORMED = new ClawbackResult_CLAWBACK_MALFORMED();
                 return result_CLAWBACK_MALFORMED;
-                case CLAWBACK_NOT_CLAWBACK_ENABLED:
+                case ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED:
                 var result_CLAWBACK_NOT_CLAWBACK_ENABLED = new ClawbackResult_CLAWBACK_NOT_CLAWBACK_ENABLED();
                 return result_CLAWBACK_NOT_CLAWBACK_ENABLED;
-                case CLAWBACK_NO_TRUST:
+                case ClawbackResultCode.CLAWBACK_NO_TRUST:
                 var result_CLAWBACK_NO_TRUST = new ClawbackResult_CLAWBACK_NO_TRUST();
                 return result_CLAWBACK_NO_TRUST;
-                case CLAWBACK_UNDERFUNDED:
+                case ClawbackResultCode.CLAWBACK_UNDERFUNDED:
                 var result_CLAWBACK_UNDERFUNDED = new ClawbackResult_CLAWBACK_UNDERFUNDED();
                 return result_CLAWBACK_UNDERFUNDED;
                 default:

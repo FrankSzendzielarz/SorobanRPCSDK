@@ -33,8 +33,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -57,16 +57,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_2 : extUnion
         {
-            public override int Discriminator => int.2;
+            public override int Discriminator => 2;
             private AccountEntryExtensionV2 _v2;
             public AccountEntryExtensionV2 v2
             {
@@ -104,7 +105,7 @@ namespace stellar {
                     return result_0;
                     case 2:
                     var result_2 = new extUnion_2();
-                    result_2.                 = AccountEntryExtensionV2Xdr.Decode(stream);
+                    result_2.v2 = AccountEntryExtensionV2Xdr.Decode(stream);
                     return result_2;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -119,14 +120,14 @@ namespace stellar {
         {
             value.Validate();
             LiabilitiesXdr.Encode(stream, value.liabilities);
-            Xdr.Encode(stream, value.ext);
+            AccountEntryExtensionV1.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static AccountEntryExtensionV1 Decode(XdrReader stream)
         {
             var result = new AccountEntryExtensionV1();
             result.liabilities = LiabilitiesXdr.Decode(stream);
-            result.ext = Xdr.Decode(stream);
+            result.ext = AccountEntryExtensionV1.extUnionXdr.Decode(stream);
             return result;
         }
     }

@@ -19,10 +19,11 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class TransactionPhase_0 : TransactionPhase
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
         private TxSetComponent[] _v0Components;
         public TxSetComponent[] v0Components
         {
@@ -60,10 +61,10 @@ namespace stellar {
                 case 0:
                 var result_0 = new TransactionPhase_0();
                 var length = stream.ReadInt();
-                result_0.                 = new TxSetComponent[length];
+                result_0.v0Components = new TxSetComponent[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_0.                [i] = TxSetComponentXdr.Decode(stream);
+                    result_0.v0Components[i] = TxSetComponentXdr.Decode(stream);
                 }
                 return result_0;
                 default:

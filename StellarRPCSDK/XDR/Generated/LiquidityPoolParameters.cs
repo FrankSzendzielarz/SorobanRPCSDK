@@ -19,6 +19,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT : LiquidityPoolParameters
     {
@@ -53,9 +54,9 @@ namespace stellar {
             var discriminator = (LiquidityPoolType)stream.ReadInt();
             switch (discriminator)
             {
-                case LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                case LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT:
                 var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT();
-                result_LIQUIDITY_POOL_CONSTANT_PRODUCT.                 = LiquidityPoolConstantProductParametersXdr.Decode(stream);
+                result_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct = LiquidityPoolConstantProductParametersXdr.Decode(stream);
                 return result_LIQUIDITY_POOL_CONSTANT_PRODUCT;
                 default:
                 throw new Exception($"Unknown discriminator for LiquidityPoolParameters: {discriminator}");

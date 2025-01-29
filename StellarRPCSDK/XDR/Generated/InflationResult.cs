@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class InflationResult_INFLATION_SUCCESS : InflationResult
     {
@@ -67,16 +68,16 @@ namespace stellar {
             var discriminator = (InflationResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case INFLATION_SUCCESS:
+                case InflationResultCode.INFLATION_SUCCESS:
                 var result_INFLATION_SUCCESS = new InflationResult_INFLATION_SUCCESS();
                 var length = stream.ReadInt();
-                result_INFLATION_SUCCESS.                 = new InflationPayout[length];
+                result_INFLATION_SUCCESS.payouts = new InflationPayout[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_INFLATION_SUCCESS.                [i] = InflationPayoutXdr.Decode(stream);
+                    result_INFLATION_SUCCESS.payouts[i] = InflationPayoutXdr.Decode(stream);
                 }
                 return result_INFLATION_SUCCESS;
-                case INFLATION_NOT_TIME:
+                case InflationResultCode.INFLATION_NOT_TIME:
                 var result_INFLATION_NOT_TIME = new InflationResult_INFLATION_NOT_TIME();
                 return result_INFLATION_NOT_TIME;
                 default:

@@ -35,8 +35,8 @@ namespace stellar {
             }
         }
 
-        private object _offer;
-        public object offer
+        private offerUnion _offer;
+        public offerUnion offer
         {
             get => _offer;
             set
@@ -59,6 +59,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class offerUnion_MANAGE_OFFER_CREATED : offerUnion
         {
@@ -119,15 +120,15 @@ namespace stellar {
                 var discriminator = (ManageOfferEffect)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case MANAGE_OFFER_CREATED:
+                    case ManageOfferEffect.MANAGE_OFFER_CREATED:
                     var result_MANAGE_OFFER_CREATED = new offerUnion_MANAGE_OFFER_CREATED();
-                    result_MANAGE_OFFER_CREATED.                 = OfferEntryXdr.Decode(stream);
+                    result_MANAGE_OFFER_CREATED.offer = OfferEntryXdr.Decode(stream);
                     return result_MANAGE_OFFER_CREATED;
-                    case MANAGE_OFFER_UPDATED:
+                    case ManageOfferEffect.MANAGE_OFFER_UPDATED:
                     var result_MANAGE_OFFER_UPDATED = new offerUnion_MANAGE_OFFER_UPDATED();
-                    result_MANAGE_OFFER_UPDATED.                 = OfferEntryXdr.Decode(stream);
+                    result_MANAGE_OFFER_UPDATED.offer = OfferEntryXdr.Decode(stream);
                     return result_MANAGE_OFFER_UPDATED;
-                    case MANAGE_OFFER_DELETED:
+                    case ManageOfferEffect.MANAGE_OFFER_DELETED:
                     var result_MANAGE_OFFER_DELETED = new offerUnion_MANAGE_OFFER_DELETED();
                     return result_MANAGE_OFFER_DELETED;
                     default:
@@ -147,7 +148,7 @@ namespace stellar {
             {
                     ClaimAtomXdr.Encode(stream, item);
             }
-            Xdr.Encode(stream, value.offer);
+            ManageOfferSuccessResult.offerUnionXdr.Encode(stream, value.offer);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ManageOfferSuccessResult Decode(XdrReader stream)
@@ -159,7 +160,7 @@ namespace stellar {
             {
                 result.offersClaimed[i] = ClaimAtomXdr.Decode(stream);
             }
-            result.offer = Xdr.Decode(stream);
+            result.offer = ManageOfferSuccessResult.offerUnionXdr.Decode(stream);
             return result;
         }
     }

@@ -19,6 +19,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCMetaEntry_SC_META_V0 : SCMetaEntry
     {
@@ -53,9 +54,9 @@ namespace stellar {
             var discriminator = (SCMetaKind)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_META_V0:
+                case SCMetaKind.SC_META_V0:
                 var result_SC_META_V0 = new SCMetaEntry_SC_META_V0();
-                result_SC_META_V0.                 = SCMetaV0Xdr.Decode(stream);
+                result_SC_META_V0.v0 = SCMetaV0Xdr.Decode(stream);
                 return result_SC_META_V0;
                 default:
                 throw new Exception($"Unknown discriminator for SCMetaEntry: {discriminator}");

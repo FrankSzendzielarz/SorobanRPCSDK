@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_SUCCESS : SetTrustLineFlagsResult
     {
@@ -89,22 +90,22 @@ namespace stellar {
             var discriminator = (SetTrustLineFlagsResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case SET_TRUST_LINE_FLAGS_SUCCESS:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_SUCCESS:
                 var result_SET_TRUST_LINE_FLAGS_SUCCESS = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_SUCCESS();
                 return result_SET_TRUST_LINE_FLAGS_SUCCESS;
-                case SET_TRUST_LINE_FLAGS_MALFORMED:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_MALFORMED:
                 var result_SET_TRUST_LINE_FLAGS_MALFORMED = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_MALFORMED();
                 return result_SET_TRUST_LINE_FLAGS_MALFORMED;
-                case SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
                 var result_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE();
                 return result_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE;
-                case SET_TRUST_LINE_FLAGS_CANT_REVOKE:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_CANT_REVOKE:
                 var result_SET_TRUST_LINE_FLAGS_CANT_REVOKE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_CANT_REVOKE();
                 return result_SET_TRUST_LINE_FLAGS_CANT_REVOKE;
-                case SET_TRUST_LINE_FLAGS_INVALID_STATE:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_INVALID_STATE:
                 var result_SET_TRUST_LINE_FLAGS_INVALID_STATE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_INVALID_STATE();
                 return result_SET_TRUST_LINE_FLAGS_INVALID_STATE;
-                case SET_TRUST_LINE_FLAGS_LOW_RESERVE:
+                case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_LOW_RESERVE:
                 var result_SET_TRUST_LINE_FLAGS_LOW_RESERVE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_LOW_RESERVE();
                 return result_SET_TRUST_LINE_FLAGS_LOW_RESERVE;
                 default:

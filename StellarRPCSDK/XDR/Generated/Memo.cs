@@ -27,6 +27,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class Memo_MEMO_NONE : Memo
     {
@@ -113,23 +114,23 @@ namespace stellar {
             var discriminator = (MemoType)stream.ReadInt();
             switch (discriminator)
             {
-                case MEMO_NONE:
+                case MemoType.MEMO_NONE:
                 var result_MEMO_NONE = new Memo_MEMO_NONE();
                 return result_MEMO_NONE;
-                case MEMO_TEXT:
+                case MemoType.MEMO_TEXT:
                 var result_MEMO_TEXT = new Memo_MEMO_TEXT();
                 return result_MEMO_TEXT;
-                case MEMO_ID:
+                case MemoType.MEMO_ID:
                 var result_MEMO_ID = new Memo_MEMO_ID();
-                result_MEMO_ID.                 = uint64Xdr.Decode(stream);
+                result_MEMO_ID.id = uint64Xdr.Decode(stream);
                 return result_MEMO_ID;
-                case MEMO_HASH:
+                case MemoType.MEMO_HASH:
                 var result_MEMO_HASH = new Memo_MEMO_HASH();
-                result_MEMO_HASH.                 = HashXdr.Decode(stream);
+                result_MEMO_HASH.hash = HashXdr.Decode(stream);
                 return result_MEMO_HASH;
-                case MEMO_RETURN:
+                case MemoType.MEMO_RETURN:
                 var result_MEMO_RETURN = new Memo_MEMO_RETURN();
-                result_MEMO_RETURN.                 = HashXdr.Decode(stream);
+                result_MEMO_RETURN.retHash = HashXdr.Decode(stream);
                 return result_MEMO_RETURN;
                 default:
                 throw new Exception($"Unknown discriminator for Memo: {discriminator}");

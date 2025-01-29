@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS : LiquidityPoolWithdrawResult
     {
@@ -89,22 +90,22 @@ namespace stellar {
             var discriminator = (LiquidityPoolWithdrawResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case LIQUIDITY_POOL_WITHDRAW_SUCCESS:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS:
                 var result_LIQUIDITY_POOL_WITHDRAW_SUCCESS = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS();
                 return result_LIQUIDITY_POOL_WITHDRAW_SUCCESS;
-                case LIQUIDITY_POOL_WITHDRAW_MALFORMED:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED:
                 var result_LIQUIDITY_POOL_WITHDRAW_MALFORMED = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_MALFORMED();
                 return result_LIQUIDITY_POOL_WITHDRAW_MALFORMED;
-                case LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
                 var result_LIQUIDITY_POOL_WITHDRAW_NO_TRUST = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_NO_TRUST();
                 return result_LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
-                case LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
                 var result_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED();
                 return result_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
-                case LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
                 var result_LIQUIDITY_POOL_WITHDRAW_LINE_FULL = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_LINE_FULL();
                 return result_LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
-                case LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
+                case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
                 var result_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM();
                 return result_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
                 default:

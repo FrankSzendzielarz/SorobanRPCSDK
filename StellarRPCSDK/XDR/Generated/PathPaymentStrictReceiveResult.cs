@@ -39,12 +39,71 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class successStruct
+        {
+            private ClaimAtom[] _offers;
+            public ClaimAtom[] offers
+            {
+                get => _offers;
+                set
+                {
+                    _offers = value;
+                }
+            }
+
+            private SimplePaymentResult _last;
+            public SimplePaymentResult last
+            {
+                get => _last;
+                set
+                {
+                    _last = value;
+                }
+            }
+
+            public successStruct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class successStructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, successStruct value)
+            {
+                value.Validate();
+                stream.WriteInt(value.offers.Length);
+                foreach (var item in value.offers)
+                {
+                        ClaimAtomXdr.Encode(stream, item);
+                }
+                SimplePaymentResultXdr.Encode(stream, value.last);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static successStruct Decode(XdrReader stream)
+            {
+                var result = new successStruct();
+                var length = stream.ReadInt();
+                result.offers = new ClaimAtom[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.offers[i] = ClaimAtomXdr.Decode(stream);
+                }
+                result.last = SimplePaymentResultXdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS : PathPaymentStrictReceiveResult
     {
         public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
-        private object _success;
-        public object success
+        private successStruct _success;
+        public successStruct success
         {
             get => _success;
             set
@@ -145,7 +204,7 @@ namespace stellar {
             switch (value)
             {
                 case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
-                Xdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.success);
+                PathPaymentStrictReceiveResult.successStructXdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.success);
                 break;
                 case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED case_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
                 break;
@@ -179,45 +238,45 @@ namespace stellar {
             var discriminator = (PathPaymentStrictReceiveResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS();
-                result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.                 = Xdr.Decode(stream);
+                result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.success = PathPaymentStrictReceiveResult.successStructXdr.Decode(stream);
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
-                case PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED;
-                case PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED;
-                case PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST;
-                case PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED;
-                case PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION;
-                case PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST;
-                case PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED;
-                case PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL;
-                case PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER();
-                result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER.                 = AssetXdr.Decode(stream);
+                result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER.noIssuer = AssetXdr.Decode(stream);
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER;
-                case PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS;
-                case PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF;
-                case PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
+                case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
                 var result_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX;
                 default:

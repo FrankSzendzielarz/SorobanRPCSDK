@@ -21,8 +21,8 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClaimableBalanceEntryExtensionV1
     {
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -55,10 +55,11 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
@@ -94,14 +95,14 @@ namespace stellar {
         public static void Encode(XdrWriter stream, ClaimableBalanceEntryExtensionV1 value)
         {
             value.Validate();
-            Xdr.Encode(stream, value.ext);
+            ClaimableBalanceEntryExtensionV1.extUnionXdr.Encode(stream, value.ext);
             uint32Xdr.Encode(stream, value.flags);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ClaimableBalanceEntryExtensionV1 Decode(XdrReader stream)
         {
             var result = new ClaimableBalanceEntryExtensionV1();
-            result.ext = Xdr.Decode(stream);
+            result.ext = ClaimableBalanceEntryExtensionV1.extUnionXdr.Decode(stream);
             result.flags = uint32Xdr.Decode(stream);
             return result;
         }

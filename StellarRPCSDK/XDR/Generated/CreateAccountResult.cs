@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class CreateAccountResult_CREATE_ACCOUNT_SUCCESS : CreateAccountResult
     {
@@ -80,19 +81,19 @@ namespace stellar {
             var discriminator = (CreateAccountResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case CREATE_ACCOUNT_SUCCESS:
+                case CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS:
                 var result_CREATE_ACCOUNT_SUCCESS = new CreateAccountResult_CREATE_ACCOUNT_SUCCESS();
                 return result_CREATE_ACCOUNT_SUCCESS;
-                case CREATE_ACCOUNT_MALFORMED:
+                case CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED:
                 var result_CREATE_ACCOUNT_MALFORMED = new CreateAccountResult_CREATE_ACCOUNT_MALFORMED();
                 return result_CREATE_ACCOUNT_MALFORMED;
-                case CREATE_ACCOUNT_UNDERFUNDED:
+                case CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED:
                 var result_CREATE_ACCOUNT_UNDERFUNDED = new CreateAccountResult_CREATE_ACCOUNT_UNDERFUNDED();
                 return result_CREATE_ACCOUNT_UNDERFUNDED;
-                case CREATE_ACCOUNT_LOW_RESERVE:
+                case CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE:
                 var result_CREATE_ACCOUNT_LOW_RESERVE = new CreateAccountResult_CREATE_ACCOUNT_LOW_RESERVE();
                 return result_CREATE_ACCOUNT_LOW_RESERVE;
-                case CREATE_ACCOUNT_ALREADY_EXIST:
+                case CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST:
                 var result_CREATE_ACCOUNT_ALREADY_EXIST = new CreateAccountResult_CREATE_ACCOUNT_ALREADY_EXIST();
                 return result_CREATE_ACCOUNT_ALREADY_EXIST;
                 default:

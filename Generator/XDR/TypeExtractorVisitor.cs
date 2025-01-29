@@ -156,7 +156,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
     public override object VisitUnionTypeSpec([NotNull] StellarXdrParser.UnionTypeSpecContext context)
     {
-        string localName = GetNestedTypeName(context, "Union");
+        string localName = GetNestedTypeName(context);
         XDRType type = XDRType.Union;
         _context.AddType(localName, type, context,context.unionBody(), _outputDir, _commentMap);
         try
@@ -172,7 +172,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
     public override object VisitEnumTypeSpec([NotNull] StellarXdrParser.EnumTypeSpecContext context)
     {
-        string localName = GetNestedTypeName(context, "Enum");
+        string localName = GetNestedTypeName(context);
         XDRType type = XDRType.Enum;
         _context.AddType(localName, type, context, context.enumBody(), _outputDir, _commentMap);
         try
@@ -188,7 +188,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
     public override object VisitStructTypeSpec([NotNull] StellarXdrParser.StructTypeSpecContext context)
     {
-        string localName = GetNestedTypeName(context, "Struct");
+        string localName = GetNestedTypeName(context);
         XDRType type = XDRType.Struct;
         _context.AddType(localName, type, context, context.structBody(), _outputDir, _commentMap);
         try
@@ -212,8 +212,24 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         }
     }
 
-    internal static string GetNestedTypeName(ParserRuleContext context, string typeSuffix)
+    internal static string GetNestedTypeName(ParserRuleContext context)
     {
+        string typeSuffix="Unknown";
+        switch (context)
+        {
+            case StellarXdrParser.UnionTypeSpecContext u:
+                typeSuffix = "Union";
+                break;
+            case StellarXdrParser.StructTypeSpecContext s:
+                typeSuffix = "Struct";
+                break;
+            case StellarXdrParser.EnumTypeSpecContext e:
+                typeSuffix = "Enum";
+                break;
+
+        }
+     
+
         var parentDecl = context.Parent;
         while (parentDecl != null && !(parentDecl is StellarXdrParser.DeclarationContext))
         {

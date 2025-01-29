@@ -25,12 +25,62 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
+        [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        public partial class fromAddressStruct
+        {
+            private SCAddress _address;
+            public SCAddress address
+            {
+                get => _address;
+                set
+                {
+                    _address = value;
+                }
+            }
+
+            private uint256 _salt;
+            public uint256 salt
+            {
+                get => _salt;
+                set
+                {
+                    _salt = value;
+                }
+            }
+
+            public fromAddressStruct()
+            {
+            }
+            /// <summary>Validates all fields have valid values</summary>
+            public virtual void Validate()
+            {
+            }
+        }
+        public static partial class fromAddressStructXdr
+        {
+            /// <summary>Encodes struct to XDR stream</summary>
+            public static void Encode(XdrWriter stream, fromAddressStruct value)
+            {
+                value.Validate();
+                SCAddressXdr.Encode(stream, value.address);
+                uint256Xdr.Encode(stream, value.salt);
+            }
+            /// <summary>Decodes struct from XDR stream</summary>
+            public static fromAddressStruct Decode(XdrReader stream)
+            {
+                var result = new fromAddressStruct();
+                result.address = SCAddressXdr.Decode(stream);
+                result.salt = uint256Xdr.Decode(stream);
+                return result;
+            }
+        }
     }
     public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS : ContractIDPreimage
     {
         public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
-        private object _fromAddress;
-        public object fromAddress
+        private fromAddressStruct _fromAddress;
+        public fromAddressStruct fromAddress
         {
             get => _fromAddress;
             set
@@ -65,7 +115,7 @@ namespace stellar {
             switch (value)
             {
                 case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
-                Xdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress);
+                ContractIDPreimage.fromAddressStructXdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress);
                 break;
                 case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET case_CONTRACT_ID_PREIMAGE_FROM_ASSET:
                 AssetXdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset);
@@ -77,13 +127,13 @@ namespace stellar {
             var discriminator = (ContractIDPreimageType)stream.ReadInt();
             switch (discriminator)
             {
-                case CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
+                case ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
                 var result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS();
-                result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.                 = Xdr.Decode(stream);
+                result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress = ContractIDPreimage.fromAddressStructXdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
-                case CONTRACT_ID_PREIMAGE_FROM_ASSET:
+                case ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET:
                 var result_CONTRACT_ID_PREIMAGE_FROM_ASSET = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET();
-                result_CONTRACT_ID_PREIMAGE_FROM_ASSET.                 = AssetXdr.Decode(stream);
+                result_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset = AssetXdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ASSET;
                 default:
                 throw new Exception($"Unknown discriminator for ContractIDPreimage: {discriminator}");

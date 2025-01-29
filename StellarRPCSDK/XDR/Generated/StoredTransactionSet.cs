@@ -21,10 +21,11 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class StoredTransactionSet_0 : StoredTransactionSet
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
         private TransactionSet _txSet;
         public TransactionSet txSet
         {
@@ -39,7 +40,7 @@ namespace stellar {
     }
     public sealed partial class StoredTransactionSet_1 : StoredTransactionSet
     {
-        public override int Discriminator => int.1;
+        public override int Discriminator => 1;
         private GeneralizedTransactionSet _generalizedTxSet;
         public GeneralizedTransactionSet generalizedTxSet
         {
@@ -75,11 +76,11 @@ namespace stellar {
             {
                 case 0:
                 var result_0 = new StoredTransactionSet_0();
-                result_0.                 = TransactionSetXdr.Decode(stream);
+                result_0.txSet = TransactionSetXdr.Decode(stream);
                 return result_0;
                 case 1:
                 var result_1 = new StoredTransactionSet_1();
-                result_1.                 = GeneralizedTransactionSetXdr.Decode(stream);
+                result_1.generalizedTxSet = GeneralizedTransactionSetXdr.Decode(stream);
                 return result_1;
                 default:
                 throw new Exception($"Unknown discriminator for StoredTransactionSet: {discriminator}");

@@ -19,6 +19,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class PublicKey_PUBLIC_KEY_TYPE_ED25519 : PublicKey
     {
@@ -53,9 +54,9 @@ namespace stellar {
             var discriminator = (PublicKeyType)stream.ReadInt();
             switch (discriminator)
             {
-                case PUBLIC_KEY_TYPE_ED25519:
+                case PublicKeyType.PUBLIC_KEY_TYPE_ED25519:
                 var result_PUBLIC_KEY_TYPE_ED25519 = new PublicKey_PUBLIC_KEY_TYPE_ED25519();
-                result_PUBLIC_KEY_TYPE_ED25519.                 = uint256Xdr.Decode(stream);
+                result_PUBLIC_KEY_TYPE_ED25519.ed25519 = uint256Xdr.Decode(stream);
                 return result_PUBLIC_KEY_TYPE_ED25519;
                 default:
                 throw new Exception($"Unknown discriminator for PublicKey: {discriminator}");

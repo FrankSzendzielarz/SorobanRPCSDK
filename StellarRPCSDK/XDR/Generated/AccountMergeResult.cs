@@ -27,6 +27,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class AccountMergeResult_ACCOUNT_MERGE_SUCCESS : AccountMergeResult
     {
@@ -117,29 +118,29 @@ namespace stellar {
             var discriminator = (AccountMergeResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case ACCOUNT_MERGE_SUCCESS:
+                case AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS:
                 var result_ACCOUNT_MERGE_SUCCESS = new AccountMergeResult_ACCOUNT_MERGE_SUCCESS();
-                result_ACCOUNT_MERGE_SUCCESS.                 = int64Xdr.Decode(stream);
+                result_ACCOUNT_MERGE_SUCCESS.sourceAccountBalance = int64Xdr.Decode(stream);
                 return result_ACCOUNT_MERGE_SUCCESS;
-                case ACCOUNT_MERGE_MALFORMED:
+                case AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED:
                 var result_ACCOUNT_MERGE_MALFORMED = new AccountMergeResult_ACCOUNT_MERGE_MALFORMED();
                 return result_ACCOUNT_MERGE_MALFORMED;
-                case ACCOUNT_MERGE_NO_ACCOUNT:
+                case AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT:
                 var result_ACCOUNT_MERGE_NO_ACCOUNT = new AccountMergeResult_ACCOUNT_MERGE_NO_ACCOUNT();
                 return result_ACCOUNT_MERGE_NO_ACCOUNT;
-                case ACCOUNT_MERGE_IMMUTABLE_SET:
+                case AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET:
                 var result_ACCOUNT_MERGE_IMMUTABLE_SET = new AccountMergeResult_ACCOUNT_MERGE_IMMUTABLE_SET();
                 return result_ACCOUNT_MERGE_IMMUTABLE_SET;
-                case ACCOUNT_MERGE_HAS_SUB_ENTRIES:
+                case AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES:
                 var result_ACCOUNT_MERGE_HAS_SUB_ENTRIES = new AccountMergeResult_ACCOUNT_MERGE_HAS_SUB_ENTRIES();
                 return result_ACCOUNT_MERGE_HAS_SUB_ENTRIES;
-                case ACCOUNT_MERGE_SEQNUM_TOO_FAR:
+                case AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR:
                 var result_ACCOUNT_MERGE_SEQNUM_TOO_FAR = new AccountMergeResult_ACCOUNT_MERGE_SEQNUM_TOO_FAR();
                 return result_ACCOUNT_MERGE_SEQNUM_TOO_FAR;
-                case ACCOUNT_MERGE_DEST_FULL:
+                case AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL:
                 var result_ACCOUNT_MERGE_DEST_FULL = new AccountMergeResult_ACCOUNT_MERGE_DEST_FULL();
                 return result_ACCOUNT_MERGE_DEST_FULL;
-                case ACCOUNT_MERGE_IS_SPONSOR:
+                case AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR:
                 var result_ACCOUNT_MERGE_IS_SPONSOR = new AccountMergeResult_ACCOUNT_MERGE_IS_SPONSOR();
                 return result_ACCOUNT_MERGE_IS_SPONSOR;
                 default:

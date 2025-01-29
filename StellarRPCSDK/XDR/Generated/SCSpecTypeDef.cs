@@ -50,6 +50,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCSpecTypeDef_SC_SPEC_TYPE_VAL : SCSpecTypeDef
     {
@@ -336,87 +337,87 @@ namespace stellar {
             var discriminator = (SCSpecType)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_SPEC_TYPE_VAL:
+                case SCSpecType.SC_SPEC_TYPE_VAL:
                 var result_SC_SPEC_TYPE_VAL = new SCSpecTypeDef_SC_SPEC_TYPE_VAL();
                 return result_SC_SPEC_TYPE_VAL;
-                case SC_SPEC_TYPE_BOOL:
+                case SCSpecType.SC_SPEC_TYPE_BOOL:
                 var result_SC_SPEC_TYPE_BOOL = new SCSpecTypeDef_SC_SPEC_TYPE_BOOL();
                 return result_SC_SPEC_TYPE_BOOL;
-                case SC_SPEC_TYPE_VOID:
+                case SCSpecType.SC_SPEC_TYPE_VOID:
                 var result_SC_SPEC_TYPE_VOID = new SCSpecTypeDef_SC_SPEC_TYPE_VOID();
                 return result_SC_SPEC_TYPE_VOID;
-                case SC_SPEC_TYPE_ERROR:
+                case SCSpecType.SC_SPEC_TYPE_ERROR:
                 var result_SC_SPEC_TYPE_ERROR = new SCSpecTypeDef_SC_SPEC_TYPE_ERROR();
                 return result_SC_SPEC_TYPE_ERROR;
-                case SC_SPEC_TYPE_U32:
+                case SCSpecType.SC_SPEC_TYPE_U32:
                 var result_SC_SPEC_TYPE_U32 = new SCSpecTypeDef_SC_SPEC_TYPE_U32();
                 return result_SC_SPEC_TYPE_U32;
-                case SC_SPEC_TYPE_I32:
+                case SCSpecType.SC_SPEC_TYPE_I32:
                 var result_SC_SPEC_TYPE_I32 = new SCSpecTypeDef_SC_SPEC_TYPE_I32();
                 return result_SC_SPEC_TYPE_I32;
-                case SC_SPEC_TYPE_U64:
+                case SCSpecType.SC_SPEC_TYPE_U64:
                 var result_SC_SPEC_TYPE_U64 = new SCSpecTypeDef_SC_SPEC_TYPE_U64();
                 return result_SC_SPEC_TYPE_U64;
-                case SC_SPEC_TYPE_I64:
+                case SCSpecType.SC_SPEC_TYPE_I64:
                 var result_SC_SPEC_TYPE_I64 = new SCSpecTypeDef_SC_SPEC_TYPE_I64();
                 return result_SC_SPEC_TYPE_I64;
-                case SC_SPEC_TYPE_TIMEPOINT:
+                case SCSpecType.SC_SPEC_TYPE_TIMEPOINT:
                 var result_SC_SPEC_TYPE_TIMEPOINT = new SCSpecTypeDef_SC_SPEC_TYPE_TIMEPOINT();
                 return result_SC_SPEC_TYPE_TIMEPOINT;
-                case SC_SPEC_TYPE_DURATION:
+                case SCSpecType.SC_SPEC_TYPE_DURATION:
                 var result_SC_SPEC_TYPE_DURATION = new SCSpecTypeDef_SC_SPEC_TYPE_DURATION();
                 return result_SC_SPEC_TYPE_DURATION;
-                case SC_SPEC_TYPE_U128:
+                case SCSpecType.SC_SPEC_TYPE_U128:
                 var result_SC_SPEC_TYPE_U128 = new SCSpecTypeDef_SC_SPEC_TYPE_U128();
                 return result_SC_SPEC_TYPE_U128;
-                case SC_SPEC_TYPE_I128:
+                case SCSpecType.SC_SPEC_TYPE_I128:
                 var result_SC_SPEC_TYPE_I128 = new SCSpecTypeDef_SC_SPEC_TYPE_I128();
                 return result_SC_SPEC_TYPE_I128;
-                case SC_SPEC_TYPE_U256:
+                case SCSpecType.SC_SPEC_TYPE_U256:
                 var result_SC_SPEC_TYPE_U256 = new SCSpecTypeDef_SC_SPEC_TYPE_U256();
                 return result_SC_SPEC_TYPE_U256;
-                case SC_SPEC_TYPE_I256:
+                case SCSpecType.SC_SPEC_TYPE_I256:
                 var result_SC_SPEC_TYPE_I256 = new SCSpecTypeDef_SC_SPEC_TYPE_I256();
                 return result_SC_SPEC_TYPE_I256;
-                case SC_SPEC_TYPE_BYTES:
+                case SCSpecType.SC_SPEC_TYPE_BYTES:
                 var result_SC_SPEC_TYPE_BYTES = new SCSpecTypeDef_SC_SPEC_TYPE_BYTES();
                 return result_SC_SPEC_TYPE_BYTES;
-                case SC_SPEC_TYPE_STRING:
+                case SCSpecType.SC_SPEC_TYPE_STRING:
                 var result_SC_SPEC_TYPE_STRING = new SCSpecTypeDef_SC_SPEC_TYPE_STRING();
                 return result_SC_SPEC_TYPE_STRING;
-                case SC_SPEC_TYPE_SYMBOL:
+                case SCSpecType.SC_SPEC_TYPE_SYMBOL:
                 var result_SC_SPEC_TYPE_SYMBOL = new SCSpecTypeDef_SC_SPEC_TYPE_SYMBOL();
                 return result_SC_SPEC_TYPE_SYMBOL;
-                case SC_SPEC_TYPE_ADDRESS:
+                case SCSpecType.SC_SPEC_TYPE_ADDRESS:
                 var result_SC_SPEC_TYPE_ADDRESS = new SCSpecTypeDef_SC_SPEC_TYPE_ADDRESS();
                 return result_SC_SPEC_TYPE_ADDRESS;
-                case SC_SPEC_TYPE_OPTION:
+                case SCSpecType.SC_SPEC_TYPE_OPTION:
                 var result_SC_SPEC_TYPE_OPTION = new SCSpecTypeDef_SC_SPEC_TYPE_OPTION();
-                result_SC_SPEC_TYPE_OPTION.                 = SCSpecTypeOptionXdr.Decode(stream);
+                result_SC_SPEC_TYPE_OPTION.option = SCSpecTypeOptionXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_OPTION;
-                case SC_SPEC_TYPE_RESULT:
+                case SCSpecType.SC_SPEC_TYPE_RESULT:
                 var result_SC_SPEC_TYPE_RESULT = new SCSpecTypeDef_SC_SPEC_TYPE_RESULT();
-                result_SC_SPEC_TYPE_RESULT.                 = SCSpecTypeResultXdr.Decode(stream);
+                result_SC_SPEC_TYPE_RESULT.result = SCSpecTypeResultXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_RESULT;
-                case SC_SPEC_TYPE_VEC:
+                case SCSpecType.SC_SPEC_TYPE_VEC:
                 var result_SC_SPEC_TYPE_VEC = new SCSpecTypeDef_SC_SPEC_TYPE_VEC();
-                result_SC_SPEC_TYPE_VEC.                 = SCSpecTypeVecXdr.Decode(stream);
+                result_SC_SPEC_TYPE_VEC.vec = SCSpecTypeVecXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_VEC;
-                case SC_SPEC_TYPE_MAP:
+                case SCSpecType.SC_SPEC_TYPE_MAP:
                 var result_SC_SPEC_TYPE_MAP = new SCSpecTypeDef_SC_SPEC_TYPE_MAP();
-                result_SC_SPEC_TYPE_MAP.                 = SCSpecTypeMapXdr.Decode(stream);
+                result_SC_SPEC_TYPE_MAP.map = SCSpecTypeMapXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_MAP;
-                case SC_SPEC_TYPE_TUPLE:
+                case SCSpecType.SC_SPEC_TYPE_TUPLE:
                 var result_SC_SPEC_TYPE_TUPLE = new SCSpecTypeDef_SC_SPEC_TYPE_TUPLE();
-                result_SC_SPEC_TYPE_TUPLE.                 = SCSpecTypeTupleXdr.Decode(stream);
+                result_SC_SPEC_TYPE_TUPLE.tuple = SCSpecTypeTupleXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_TUPLE;
-                case SC_SPEC_TYPE_BYTES_N:
+                case SCSpecType.SC_SPEC_TYPE_BYTES_N:
                 var result_SC_SPEC_TYPE_BYTES_N = new SCSpecTypeDef_SC_SPEC_TYPE_BYTES_N();
-                result_SC_SPEC_TYPE_BYTES_N.                 = SCSpecTypeBytesNXdr.Decode(stream);
+                result_SC_SPEC_TYPE_BYTES_N.bytesN = SCSpecTypeBytesNXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_BYTES_N;
-                case SC_SPEC_TYPE_UDT:
+                case SCSpecType.SC_SPEC_TYPE_UDT:
                 var result_SC_SPEC_TYPE_UDT = new SCSpecTypeDef_SC_SPEC_TYPE_UDT();
-                result_SC_SPEC_TYPE_UDT.                 = SCSpecTypeUDTXdr.Decode(stream);
+                result_SC_SPEC_TYPE_UDT.udt = SCSpecTypeUDTXdr.Decode(stream);
                 return result_SC_SPEC_TYPE_UDT;
                 default:
                 throw new Exception($"Unknown discriminator for SCSpecTypeDef: {discriminator}");

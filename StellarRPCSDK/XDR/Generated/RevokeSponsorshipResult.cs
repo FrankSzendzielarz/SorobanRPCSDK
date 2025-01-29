@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS : RevokeSponsorshipResult
     {
@@ -89,22 +90,22 @@ namespace stellar {
             var discriminator = (RevokeSponsorshipResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case REVOKE_SPONSORSHIP_SUCCESS:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS:
                 var result_REVOKE_SPONSORSHIP_SUCCESS = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS();
                 return result_REVOKE_SPONSORSHIP_SUCCESS;
-                case REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
                 var result_REVOKE_SPONSORSHIP_DOES_NOT_EXIST = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_DOES_NOT_EXIST();
                 return result_REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
-                case REVOKE_SPONSORSHIP_NOT_SPONSOR:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR:
                 var result_REVOKE_SPONSORSHIP_NOT_SPONSOR = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_NOT_SPONSOR();
                 return result_REVOKE_SPONSORSHIP_NOT_SPONSOR;
-                case REVOKE_SPONSORSHIP_LOW_RESERVE:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE:
                 var result_REVOKE_SPONSORSHIP_LOW_RESERVE = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_LOW_RESERVE();
                 return result_REVOKE_SPONSORSHIP_LOW_RESERVE;
-                case REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
                 var result_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE();
                 return result_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
-                case REVOKE_SPONSORSHIP_MALFORMED:
+                case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED:
                 var result_REVOKE_SPONSORSHIP_MALFORMED = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_MALFORMED();
                 return result_REVOKE_SPONSORSHIP_MALFORMED;
                 default:

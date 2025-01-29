@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS : ClaimClaimableBalanceResult
     {
@@ -89,22 +90,22 @@ namespace stellar {
             var discriminator = (ClaimClaimableBalanceResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAIM_CLAIMABLE_BALANCE_SUCCESS:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_SUCCESS:
                 var result_CLAIM_CLAIMABLE_BALANCE_SUCCESS = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS();
                 return result_CLAIM_CLAIMABLE_BALANCE_SUCCESS;
-                case CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
                 var result_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST();
                 return result_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
-                case CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
                 var result_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM();
                 return result_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
-                case CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
                 var result_CLAIM_CLAIMABLE_BALANCE_LINE_FULL = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_LINE_FULL();
                 return result_CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
-                case CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
                 var result_CLAIM_CLAIMABLE_BALANCE_NO_TRUST = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NO_TRUST();
                 return result_CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
-                case CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
+                case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
                 var result_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED();
                 return result_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
                 default:

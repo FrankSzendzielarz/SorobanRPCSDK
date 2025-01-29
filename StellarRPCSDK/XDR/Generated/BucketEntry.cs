@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
     {
@@ -113,21 +114,21 @@ namespace stellar {
             var discriminator = (BucketEntryType)stream.ReadInt();
             switch (discriminator)
             {
-                case LIVEENTRY:
+                case BucketEntryType.LIVEENTRY:
                 var result_LIVEENTRY = new BucketEntry_LIVEENTRY();
-                result_LIVEENTRY.                 = LedgerEntryXdr.Decode(stream);
+                result_LIVEENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
                 return result_LIVEENTRY;
-                case INITENTRY:
+                case BucketEntryType.INITENTRY:
                 var result_INITENTRY = new BucketEntry_INITENTRY();
-                result_INITENTRY.                 = LedgerEntryXdr.Decode(stream);
+                result_INITENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
                 return result_INITENTRY;
-                case DEADENTRY:
+                case BucketEntryType.DEADENTRY:
                 var result_DEADENTRY = new BucketEntry_DEADENTRY();
-                result_DEADENTRY.                 = LedgerKeyXdr.Decode(stream);
+                result_DEADENTRY.deadEntry = LedgerKeyXdr.Decode(stream);
                 return result_DEADENTRY;
-                case METAENTRY:
+                case BucketEntryType.METAENTRY:
                 var result_METAENTRY = new BucketEntry_METAENTRY();
-                result_METAENTRY.                 = BucketMetadataXdr.Decode(stream);
+                result_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
                 return result_METAENTRY;
                 default:
                 throw new Exception($"Unknown discriminator for BucketEntry: {discriminator}");

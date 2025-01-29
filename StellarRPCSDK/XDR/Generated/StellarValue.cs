@@ -64,8 +64,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -90,6 +90,7 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_STELLAR_VALUE_BASIC : extUnion
         {
@@ -132,12 +133,12 @@ namespace stellar {
                 var discriminator = (StellarValueType)stream.ReadInt();
                 switch (discriminator)
                 {
-                    case STELLAR_VALUE_BASIC:
+                    case StellarValueType.STELLAR_VALUE_BASIC:
                     var result_STELLAR_VALUE_BASIC = new extUnion_STELLAR_VALUE_BASIC();
                     return result_STELLAR_VALUE_BASIC;
-                    case STELLAR_VALUE_SIGNED:
+                    case StellarValueType.STELLAR_VALUE_SIGNED:
                     var result_STELLAR_VALUE_SIGNED = new extUnion_STELLAR_VALUE_SIGNED();
-                    result_STELLAR_VALUE_SIGNED.                 = LedgerCloseValueSignatureXdr.Decode(stream);
+                    result_STELLAR_VALUE_SIGNED.lcValueSignature = LedgerCloseValueSignatureXdr.Decode(stream);
                     return result_STELLAR_VALUE_SIGNED;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -158,7 +159,7 @@ namespace stellar {
             {
                     UpgradeTypeXdr.Encode(stream, item);
             }
-            Xdr.Encode(stream, value.ext);
+            StellarValue.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static StellarValue Decode(XdrReader stream)
@@ -172,7 +173,7 @@ namespace stellar {
             {
                 result.upgrades[i] = UpgradeTypeXdr.Decode(stream);
             }
-            result.ext = Xdr.Decode(stream);
+            result.ext = StellarValue.extUnionXdr.Decode(stream);
             return result;
         }
     }

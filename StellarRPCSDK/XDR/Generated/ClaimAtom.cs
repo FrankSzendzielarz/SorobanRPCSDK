@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_V0 : ClaimAtom
     {
@@ -93,17 +94,17 @@ namespace stellar {
             var discriminator = (ClaimAtomType)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAIM_ATOM_TYPE_V0:
+                case ClaimAtomType.CLAIM_ATOM_TYPE_V0:
                 var result_CLAIM_ATOM_TYPE_V0 = new ClaimAtom_CLAIM_ATOM_TYPE_V0();
-                result_CLAIM_ATOM_TYPE_V0.                 = ClaimOfferAtomV0Xdr.Decode(stream);
+                result_CLAIM_ATOM_TYPE_V0.v0 = ClaimOfferAtomV0Xdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_V0;
-                case CLAIM_ATOM_TYPE_ORDER_BOOK:
+                case ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK:
                 var result_CLAIM_ATOM_TYPE_ORDER_BOOK = new ClaimAtom_CLAIM_ATOM_TYPE_ORDER_BOOK();
-                result_CLAIM_ATOM_TYPE_ORDER_BOOK.                 = ClaimOfferAtomXdr.Decode(stream);
+                result_CLAIM_ATOM_TYPE_ORDER_BOOK.orderBook = ClaimOfferAtomXdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_ORDER_BOOK;
-                case CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
+                case ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
                 var result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL = new ClaimAtom_CLAIM_ATOM_TYPE_LIQUIDITY_POOL();
-                result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL.                 = ClaimLiquidityAtomXdr.Decode(stream);
+                result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL.liquidityPool = ClaimLiquidityAtomXdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
                 default:
                 throw new Exception($"Unknown discriminator for ClaimAtom: {discriminator}");

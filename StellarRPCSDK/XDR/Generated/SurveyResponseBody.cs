@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V0 : SurveyResponseBody
     {
@@ -93,17 +94,17 @@ namespace stellar {
             var discriminator = (SurveyMessageResponseType)stream.ReadInt();
             switch (discriminator)
             {
-                case SURVEY_TOPOLOGY_RESPONSE_V0:
+                case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0:
                 var result_SURVEY_TOPOLOGY_RESPONSE_V0 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V0();
-                result_SURVEY_TOPOLOGY_RESPONSE_V0.                 = TopologyResponseBodyV0Xdr.Decode(stream);
+                result_SURVEY_TOPOLOGY_RESPONSE_V0.topologyResponseBodyV0 = TopologyResponseBodyV0Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V0;
-                case SURVEY_TOPOLOGY_RESPONSE_V1:
+                case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1:
                 var result_SURVEY_TOPOLOGY_RESPONSE_V1 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V1();
-                result_SURVEY_TOPOLOGY_RESPONSE_V1.                 = TopologyResponseBodyV1Xdr.Decode(stream);
+                result_SURVEY_TOPOLOGY_RESPONSE_V1.topologyResponseBodyV1 = TopologyResponseBodyV1Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V1;
-                case SURVEY_TOPOLOGY_RESPONSE_V2:
+                case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2:
                 var result_SURVEY_TOPOLOGY_RESPONSE_V2 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V2();
-                result_SURVEY_TOPOLOGY_RESPONSE_V2.                 = TopologyResponseBodyV2Xdr.Decode(stream);
+                result_SURVEY_TOPOLOGY_RESPONSE_V2.topologyResponseBodyV2 = TopologyResponseBodyV2Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V2;
                 default:
                 throw new Exception($"Unknown discriminator for SurveyResponseBody: {discriminator}");

@@ -29,6 +29,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCError_SCE_CONTRACT : SCError
     {
@@ -225,45 +226,45 @@ namespace stellar {
             var discriminator = (SCErrorType)stream.ReadInt();
             switch (discriminator)
             {
-                case SCE_CONTRACT:
+                case SCErrorType.SCE_CONTRACT:
                 var result_SCE_CONTRACT = new SCError_SCE_CONTRACT();
-                result_SCE_CONTRACT.                 = uint32Xdr.Decode(stream);
+                result_SCE_CONTRACT.contractCode = uint32Xdr.Decode(stream);
                 return result_SCE_CONTRACT;
-                case SCE_WASM_VM:
+                case SCErrorType.SCE_WASM_VM:
                 var result_SCE_WASM_VM = new SCError_SCE_WASM_VM();
-                result_SCE_WASM_VM.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_WASM_VM.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_WASM_VM;
-                case SCE_CONTEXT:
+                case SCErrorType.SCE_CONTEXT:
                 var result_SCE_CONTEXT = new SCError_SCE_CONTEXT();
-                result_SCE_CONTEXT.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_CONTEXT.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_CONTEXT;
-                case SCE_STORAGE:
+                case SCErrorType.SCE_STORAGE:
                 var result_SCE_STORAGE = new SCError_SCE_STORAGE();
-                result_SCE_STORAGE.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_STORAGE.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_STORAGE;
-                case SCE_OBJECT:
+                case SCErrorType.SCE_OBJECT:
                 var result_SCE_OBJECT = new SCError_SCE_OBJECT();
-                result_SCE_OBJECT.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_OBJECT.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_OBJECT;
-                case SCE_CRYPTO:
+                case SCErrorType.SCE_CRYPTO:
                 var result_SCE_CRYPTO = new SCError_SCE_CRYPTO();
-                result_SCE_CRYPTO.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_CRYPTO.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_CRYPTO;
-                case SCE_EVENTS:
+                case SCErrorType.SCE_EVENTS:
                 var result_SCE_EVENTS = new SCError_SCE_EVENTS();
-                result_SCE_EVENTS.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_EVENTS.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_EVENTS;
-                case SCE_BUDGET:
+                case SCErrorType.SCE_BUDGET:
                 var result_SCE_BUDGET = new SCError_SCE_BUDGET();
-                result_SCE_BUDGET.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_BUDGET.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_BUDGET;
-                case SCE_VALUE:
+                case SCErrorType.SCE_VALUE:
                 var result_SCE_VALUE = new SCError_SCE_VALUE();
-                result_SCE_VALUE.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_VALUE.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_VALUE;
-                case SCE_AUTH:
+                case SCErrorType.SCE_AUTH:
                 var result_SCE_AUTH = new SCError_SCE_AUTH();
-                result_SCE_AUTH.                 = SCErrorCodeXdr.Decode(stream);
+                result_SCE_AUTH.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_AUTH;
                 default:
                 throw new Exception($"Unknown discriminator for SCError: {discriminator}");

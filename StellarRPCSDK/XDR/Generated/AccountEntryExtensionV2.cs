@@ -55,8 +55,8 @@ namespace stellar {
             }
         }
 
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -79,16 +79,17 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_3 : extUnion
         {
-            public override int Discriminator => int.3;
+            public override int Discriminator => 3;
             private AccountEntryExtensionV3 _v3;
             public AccountEntryExtensionV3 v3
             {
@@ -126,7 +127,7 @@ namespace stellar {
                     return result_0;
                     case 3:
                     var result_3 = new extUnion_3();
-                    result_3.                 = AccountEntryExtensionV3Xdr.Decode(stream);
+                    result_3.v3 = AccountEntryExtensionV3Xdr.Decode(stream);
                     return result_3;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -147,7 +148,7 @@ namespace stellar {
             {
                     SponsorshipDescriptorXdr.Encode(stream, item);
             }
-            Xdr.Encode(stream, value.ext);
+            AccountEntryExtensionV2.extUnionXdr.Encode(stream, value.ext);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static AccountEntryExtensionV2 Decode(XdrReader stream)
@@ -161,7 +162,7 @@ namespace stellar {
             {
                 result.signerSponsoringIDs[i] = SponsorshipDescriptorXdr.Decode(stream);
             }
-            result.ext = Xdr.Decode(stream);
+            result.ext = AccountEntryExtensionV2.extUnionXdr.Decode(stream);
             return result;
         }
     }

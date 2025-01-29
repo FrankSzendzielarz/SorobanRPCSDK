@@ -24,6 +24,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4 : AssetCode
     {
@@ -76,13 +77,13 @@ namespace stellar {
             var discriminator = (AssetType)stream.ReadInt();
             switch (discriminator)
             {
-                case ASSET_TYPE_CREDIT_ALPHANUM4:
+                case AssetType.ASSET_TYPE_CREDIT_ALPHANUM4:
                 var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4();
-                result_ASSET_TYPE_CREDIT_ALPHANUM4.                 = AssetCode4Xdr.Decode(stream);
+                result_ASSET_TYPE_CREDIT_ALPHANUM4.assetCode4 = AssetCode4Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM4;
-                case ASSET_TYPE_CREDIT_ALPHANUM12:
+                case AssetType.ASSET_TYPE_CREDIT_ALPHANUM12:
                 var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new AssetCode_ASSET_TYPE_CREDIT_ALPHANUM12();
-                result_ASSET_TYPE_CREDIT_ALPHANUM12.                 = AssetCode12Xdr.Decode(stream);
+                result_ASSET_TYPE_CREDIT_ALPHANUM12.assetCode12 = AssetCode12Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM12;
                 default:
                 throw new Exception($"Unknown discriminator for AssetCode: {discriminator}");

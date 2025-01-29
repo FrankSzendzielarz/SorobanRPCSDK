@@ -23,6 +23,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX_V0 : TransactionEnvelope
     {
@@ -93,17 +94,17 @@ namespace stellar {
             var discriminator = (EnvelopeType)stream.ReadInt();
             switch (discriminator)
             {
-                case ENVELOPE_TYPE_TX_V0:
+                case EnvelopeType.ENVELOPE_TYPE_TX_V0:
                 var result_ENVELOPE_TYPE_TX_V0 = new TransactionEnvelope_ENVELOPE_TYPE_TX_V0();
-                result_ENVELOPE_TYPE_TX_V0.                 = TransactionV0EnvelopeXdr.Decode(stream);
+                result_ENVELOPE_TYPE_TX_V0.v0 = TransactionV0EnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX_V0;
-                case ENVELOPE_TYPE_TX:
+                case EnvelopeType.ENVELOPE_TYPE_TX:
                 var result_ENVELOPE_TYPE_TX = new TransactionEnvelope_ENVELOPE_TYPE_TX();
-                result_ENVELOPE_TYPE_TX.                 = TransactionV1EnvelopeXdr.Decode(stream);
+                result_ENVELOPE_TYPE_TX.v1 = TransactionV1EnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX;
-                case ENVELOPE_TYPE_TX_FEE_BUMP:
+                case EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP:
                 var result_ENVELOPE_TYPE_TX_FEE_BUMP = new TransactionEnvelope_ENVELOPE_TYPE_TX_FEE_BUMP();
-                result_ENVELOPE_TYPE_TX_FEE_BUMP.                 = FeeBumpTransactionEnvelopeXdr.Decode(stream);
+                result_ENVELOPE_TYPE_TX_FEE_BUMP.feeBump = FeeBumpTransactionEnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX_FEE_BUMP;
                 default:
                 throw new Exception($"Unknown discriminator for TransactionEnvelope: {discriminator}");

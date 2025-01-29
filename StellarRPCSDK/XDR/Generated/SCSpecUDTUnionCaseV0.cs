@@ -21,6 +21,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0 : SCSpecUDTUnionCaseV0
     {
@@ -73,13 +74,13 @@ namespace stellar {
             var discriminator = (SCSpecUDTUnionCaseV0Kind)stream.ReadInt();
             switch (discriminator)
             {
-                case SC_SPEC_UDT_UNION_CASE_VOID_V0:
+                case SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0:
                 var result_SC_SPEC_UDT_UNION_CASE_VOID_V0 = new SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0();
-                result_SC_SPEC_UDT_UNION_CASE_VOID_V0.                 = SCSpecUDTUnionCaseVoidV0Xdr.Decode(stream);
+                result_SC_SPEC_UDT_UNION_CASE_VOID_V0.voidCase = SCSpecUDTUnionCaseVoidV0Xdr.Decode(stream);
                 return result_SC_SPEC_UDT_UNION_CASE_VOID_V0;
-                case SC_SPEC_UDT_UNION_CASE_TUPLE_V0:
+                case SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0:
                 var result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 = new SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_TUPLE_V0();
-                result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0.                 = SCSpecUDTUnionCaseTupleV0Xdr.Decode(stream);
+                result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0.tupleCase = SCSpecUDTUnionCaseTupleV0Xdr.Decode(stream);
                 return result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
                 default:
                 throw new Exception($"Unknown discriminator for SCSpecUDTUnionCaseV0: {discriminator}");

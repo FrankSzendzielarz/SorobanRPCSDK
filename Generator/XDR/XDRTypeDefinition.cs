@@ -6,6 +6,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using static Generator.XDR.Grammar.StellarXdrParser;
@@ -168,7 +169,12 @@ namespace Generator.XDR
                 "bool" => "bool",
                 _ => decl.typeSpecifier().identifier()?.GetText() ?? "object"
             };
-
+            if (baseType == "object")
+            {
+                if (decl.typeSpecifier()?.baseType()?.unionTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.unionTypeSpec());
+                if (decl.typeSpecifier()?.baseType()?.enumTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.enumTypeSpec());
+                if (decl.typeSpecifier()?.baseType()?.structTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.structTypeSpec());
+            }
 
             return new CSharpTypeInfo(baseType, arrayType, maxLength);
         }
@@ -437,9 +443,14 @@ namespace Generator.XDR
         }
 
 
-        private bool isEnum(CSharpTypeInfo typeInfo)
+        private bool isEnum(string typeName, List<XDRTypeDefinition> allTypes)
         {
-            return true;
+            var xdr = allTypes.Where(t => t.Name == typeName).FirstOrDefault(); //TODO - should check against full name really including namespace
+            if (xdr != null)
+            {
+                return xdr.XDRType == XDRType.Enum;
+            }
+            return false;
         }
 
         private void GenerateUnion(StellarXdrParser.UnionBodyContext context, List<XDRTypeDefinition> allTypes)
@@ -454,7 +465,7 @@ namespace Generator.XDR
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine($"public abstract partial class {Name}");
             code.OpenBlock();
-            if (isEnum(discriminatorType))
+            if (isEnum(discriminatorType.CSharpType,allTypes))
             {
                 code.AppendLine($"public abstract {discriminatorType.CSharpType} Discriminator {{ get; }}");
             }
@@ -466,6 +477,11 @@ namespace Generator.XDR
             code.AppendLine();
             code.AppendLine("/// <summary>Validates the union case matches its discriminator</summary>");
             code.AppendLine("public abstract void ValidateCase();");
+            code.AppendLine();
+            foreach (var child in this.NestedTypes)
+            {
+                child.Generate(allTypes);
+            }
             code.CloseBlock();
 
             // Generate case classes
@@ -495,7 +511,7 @@ namespace Generator.XDR
 
 
                     */
-                    if (isEnum(discriminatorType))
+                    if (isEnum(discriminatorType.CSharpType, allTypes))
                     {
                         code.AppendLine($"public override {discriminatorType.CSharpType} Discriminator => {discriminatorType.CSharpType}.{value.GetText()};");
                     }
@@ -521,12 +537,14 @@ namespace Generator.XDR
                     }
                     code.AppendLine();
                     code.AppendLine("public override void ValidateCase() {}");
+            
+      
                     code.CloseBlock();
                 }
             }
 
             string discriminatorString = "int";
-            if (isEnum(discriminatorType))
+            if (isEnum(discriminatorType.CSharpType, allTypes))
             {
                 discriminatorString = discriminatorType.CSharpType;
             }
@@ -557,10 +575,6 @@ namespace Generator.XDR
 
                 code.AppendLine();
                 code.AppendLine("public override void ValidateCase() {}");
-                foreach (var child in this.NestedTypes)
-                {
-                    child.Generate(allTypes);
-                }
                 code.CloseBlock();
             }
 
@@ -568,7 +582,7 @@ namespace Generator.XDR
             code.AppendLine($"public static partial class {Name}Xdr");
             code.OpenBlock();
             GenerateUnionEncodeMethods(Name, context);
-            GenerateUnionDecodeMethods(Name, discriminatorString, context);
+            GenerateUnionDecodeMethods(Name, discriminatorString, context,allTypes);
             code.CloseBlock();
          
 
@@ -658,7 +672,7 @@ namespace Generator.XDR
         }
 
         private void GenerateUnionDecodeMethods(string unionName, string discriminatorType,
-                                              StellarXdrParser.UnionBodyContext context)
+                                              StellarXdrParser.UnionBodyContext context,List<XDRTypeDefinition> allTypes)
         {
             var code = CodeFile;
 
@@ -667,18 +681,26 @@ namespace Generator.XDR
             code.AppendLine($"var discriminator = ({discriminatorType})stream.ReadInt();");
             code.AppendLine("switch (discriminator)");
             code.OpenBlock();
-
+            bool en = isEnum(discriminatorType, allTypes);
             foreach (var caseSpec in context.caseSpec())
             {
                 foreach (var value in caseSpec.value())
                 {
-                    code.AppendLine($"case {value.GetText()}:");
+                    if (en)
+                    {
+                        code.AppendLine($"case {discriminatorType}.{value.GetText()}:");
+                    }
+                    else
+                    {
+                        code.AppendLine($"case {value.GetText()}:");
+                    }
+                    
                     code.AppendLine($"var result_{value.GetText()} = new {unionName}_{value.GetText()}();");
                     var decl = caseSpec.declaration();
                     if (decl.typeSpecifier() != null)
                     {
                         var fieldName = getFieldName(decl);
-                        GenerateDecodeStatement(decl, $"result_{value.GetText()}", "                ");
+                        GenerateDecodeStatement(decl, $"result_{value.GetText()}",fieldName);
                     }
                     code.AppendLine($"return result_{value.GetText()};");
                 }
@@ -692,7 +714,7 @@ namespace Generator.XDR
                 if (defaultDecl.typeSpecifier() != null)
                 {
                     var fieldName = getFieldName(defaultDecl);
-                    GenerateDecodeStatement(defaultDecl, "defaultResult", "                ");
+                    GenerateDecodeStatement(defaultDecl, "defaultResult",fieldName);
                 }
                 code.AppendLine("return defaultResult;");
             }
@@ -827,32 +849,62 @@ namespace Generator.XDR
 
         private string GetEncodeStatement(StellarXdrParser.TypeSpecifierContext typeSpec, string valueName)
         {
-            return typeSpec.GetText() switch
+            switch (typeSpec.GetText())
             {
-                "unsignedint" => $"stream.WriteUInt({valueName})",
-                "int" => $"stream.WriteInt({valueName})",
-                "unsignedhyper" => $"stream.WriteULong({valueName})",
-                "hyper" => $"stream.WriteLong({valueName})",
-                "float" => $"stream.WriteFloat({valueName})",
-                "double" => $"stream.WriteDouble({valueName})",
-                "bool" => $"stream.WriteInt({valueName} ? 1 : 0)",
-                _ => $"{typeSpec.identifier()?.GetText()}Xdr.Encode(stream, {valueName})"
-            };
+                case null:
+                    throw new InvalidOperationException("Type specification cannot be null");
+                case "unsignedint":
+                    return $"stream.WriteUInt({valueName})";
+                case "int":
+                    return $"stream.WriteInt({valueName})";
+                case "unsignedhyper":
+                    return $"stream.WriteULong({valueName})";
+                case "hyper":
+                    return $"stream.WriteLong({valueName})";
+                case "float":
+                    return $"stream.WriteFloat({valueName})";
+                case "double":
+                    return $"stream.WriteDouble({valueName})";
+                case "bool":
+                    return $"stream.WriteInt({valueName} ? 1 : 0)";
+                default:
+                    var result = typeSpec.identifier()?.GetText();
+                    if (String.IsNullOrEmpty(result))
+                    {
+                        if (typeSpec?.baseType()?.unionTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName(typeSpec?.baseType()?.unionTypeSpec());
+                        if (typeSpec?.baseType()?.enumTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName(typeSpec?.baseType()?.enumTypeSpec());
+                        if (typeSpec?.baseType()?.structTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName(typeSpec?.baseType()?.structTypeSpec());
+                        result = $"{Name}.{result}";
+                    }
+                    return $"{result}Xdr.Encode(stream, {valueName})";
+            }
         }
 
         private string GetDecodeStatement(StellarXdrParser.TypeSpecifierContext typeSpec)
         {
-            return typeSpec.GetText() switch
+            switch (typeSpec.GetText())
             {
-                "unsignedint" => "stream.ReadUInt()",
-                "int" => "stream.ReadInt()",
-                "unsignedhyper" => "stream.ReadULong()",
-                "hyper" => "stream.ReadLong()",
-                "float" => "stream.ReadFloat()",
-                "double" => "stream.ReadDouble()",
-                "bool" => "stream.ReadInt() != 0",
-                _ => $"{typeSpec.identifier()?.GetText()}Xdr.Decode(stream)"
-            };
+                case null:
+                    throw new InvalidOperationException("Type specification cannot be null");
+                case "unsignedint": return "stream.ReadUInt()";
+                case "int": return "stream.ReadInt()";
+                case "unsignedhyper": return "stream.ReadULong()";
+                case "hyper": return "stream.ReadLong()";
+                case "float": return "stream.ReadFloat()";
+                case "double": return "stream.ReadDouble()";
+                case "bool": return "stream.ReadInt() != 0";
+                default:
+                    var result = typeSpec.identifier()?.GetText();
+                    if (String.IsNullOrEmpty(result))
+                    {
+                        if (typeSpec?.baseType()?.unionTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName( typeSpec?.baseType()?.unionTypeSpec());
+                        if (typeSpec?.baseType()?.enumTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName(  typeSpec?.baseType()?.enumTypeSpec());
+                        if (typeSpec?.baseType()?.structTypeSpec() != null) result = TypeExtractorVisitor.GetNestedTypeName(typeSpec?.baseType()?.structTypeSpec());
+                        result = $"{Name}.{result}";
+                    }
+             
+                    return $"{result}Xdr.Decode(stream)";
+            }
         }
 
     }

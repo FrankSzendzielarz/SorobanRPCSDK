@@ -21,16 +21,17 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class LedgerCloseMetaExt_0 : LedgerCloseMetaExt
     {
-        public override int Discriminator => int.0;
+        public override int Discriminator => 0;
 
         public override void ValidateCase() {}
     }
     public sealed partial class LedgerCloseMetaExt_1 : LedgerCloseMetaExt
     {
-        public override int Discriminator => int.1;
+        public override int Discriminator => 1;
         private LedgerCloseMetaExtV1 _v1;
         public LedgerCloseMetaExtV1 v1
         {
@@ -68,7 +69,7 @@ namespace stellar {
                 return result_0;
                 case 1:
                 var result_1 = new LedgerCloseMetaExt_1();
-                result_1.                 = LedgerCloseMetaExtV1Xdr.Decode(stream);
+                result_1.v1 = LedgerCloseMetaExtV1Xdr.Decode(stream);
                 return result_1;
                 default:
                 throw new Exception($"Unknown discriminator for LedgerCloseMetaExt: {discriminator}");

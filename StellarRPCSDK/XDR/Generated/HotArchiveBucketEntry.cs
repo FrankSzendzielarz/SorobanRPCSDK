@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED : HotArchiveBucketEntry
     {
@@ -113,21 +114,21 @@ namespace stellar {
             var discriminator = (HotArchiveBucketEntryType)stream.ReadInt();
             switch (discriminator)
             {
-                case HOT_ARCHIVE_ARCHIVED:
+                case HotArchiveBucketEntryType.HOT_ARCHIVE_ARCHIVED:
                 var result_HOT_ARCHIVE_ARCHIVED = new HotArchiveBucketEntry_HOT_ARCHIVE_ARCHIVED();
-                result_HOT_ARCHIVE_ARCHIVED.                 = LedgerEntryXdr.Decode(stream);
+                result_HOT_ARCHIVE_ARCHIVED.archivedEntry = LedgerEntryXdr.Decode(stream);
                 return result_HOT_ARCHIVE_ARCHIVED;
-                case HOT_ARCHIVE_LIVE:
+                case HotArchiveBucketEntryType.HOT_ARCHIVE_LIVE:
                 var result_HOT_ARCHIVE_LIVE = new HotArchiveBucketEntry_HOT_ARCHIVE_LIVE();
-                result_HOT_ARCHIVE_LIVE.                 = LedgerKeyXdr.Decode(stream);
+                result_HOT_ARCHIVE_LIVE.key = LedgerKeyXdr.Decode(stream);
                 return result_HOT_ARCHIVE_LIVE;
-                case HOT_ARCHIVE_DELETED:
+                case HotArchiveBucketEntryType.HOT_ARCHIVE_DELETED:
                 var result_HOT_ARCHIVE_DELETED = new HotArchiveBucketEntry_HOT_ARCHIVE_DELETED();
-                result_HOT_ARCHIVE_DELETED.                 = LedgerKeyXdr.Decode(stream);
+                result_HOT_ARCHIVE_DELETED.key = LedgerKeyXdr.Decode(stream);
                 return result_HOT_ARCHIVE_DELETED;
-                case HOT_ARCHIVE_METAENTRY:
+                case HotArchiveBucketEntryType.HOT_ARCHIVE_METAENTRY:
                 var result_HOT_ARCHIVE_METAENTRY = new HotArchiveBucketEntry_HOT_ARCHIVE_METAENTRY();
-                result_HOT_ARCHIVE_METAENTRY.                 = BucketMetadataXdr.Decode(stream);
+                result_HOT_ARCHIVE_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
                 return result_HOT_ARCHIVE_METAENTRY;
                 default:
                 throw new Exception($"Unknown discriminator for HotArchiveBucketEntry: {discriminator}");

@@ -27,6 +27,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY : ColdArchiveBucketEntry
     {
@@ -133,25 +134,25 @@ namespace stellar {
             var discriminator = (ColdArchiveBucketEntryType)stream.ReadInt();
             switch (discriminator)
             {
-                case COLD_ARCHIVE_METAENTRY:
+                case ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY:
                 var result_COLD_ARCHIVE_METAENTRY = new ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY();
-                result_COLD_ARCHIVE_METAENTRY.                 = BucketMetadataXdr.Decode(stream);
+                result_COLD_ARCHIVE_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
                 return result_COLD_ARCHIVE_METAENTRY;
-                case COLD_ARCHIVE_ARCHIVED_LEAF:
+                case ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF:
                 var result_COLD_ARCHIVE_ARCHIVED_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_ARCHIVED_LEAF();
-                result_COLD_ARCHIVE_ARCHIVED_LEAF.                 = ColdArchiveArchivedLeafXdr.Decode(stream);
+                result_COLD_ARCHIVE_ARCHIVED_LEAF.archivedLeaf = ColdArchiveArchivedLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_ARCHIVED_LEAF;
-                case COLD_ARCHIVE_DELETED_LEAF:
+                case ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF:
                 var result_COLD_ARCHIVE_DELETED_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_DELETED_LEAF();
-                result_COLD_ARCHIVE_DELETED_LEAF.                 = ColdArchiveDeletedLeafXdr.Decode(stream);
+                result_COLD_ARCHIVE_DELETED_LEAF.deletedLeaf = ColdArchiveDeletedLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_DELETED_LEAF;
-                case COLD_ARCHIVE_BOUNDARY_LEAF:
+                case ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF:
                 var result_COLD_ARCHIVE_BOUNDARY_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_BOUNDARY_LEAF();
-                result_COLD_ARCHIVE_BOUNDARY_LEAF.                 = ColdArchiveBoundaryLeafXdr.Decode(stream);
+                result_COLD_ARCHIVE_BOUNDARY_LEAF.boundaryLeaf = ColdArchiveBoundaryLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_BOUNDARY_LEAF;
-                case COLD_ARCHIVE_HASH:
+                case ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH:
                 var result_COLD_ARCHIVE_HASH = new ColdArchiveBucketEntry_COLD_ARCHIVE_HASH();
-                result_COLD_ARCHIVE_HASH.                 = ColdArchiveHashEntryXdr.Decode(stream);
+                result_COLD_ARCHIVE_HASH.hashEntry = ColdArchiveHashEntryXdr.Decode(stream);
                 return result_COLD_ARCHIVE_HASH;
                 default:
                 throw new Exception($"Unknown discriminator for ColdArchiveBucketEntry: {discriminator}");

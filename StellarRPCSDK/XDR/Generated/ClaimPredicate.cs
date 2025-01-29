@@ -30,6 +30,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL : ClaimPredicate
     {
@@ -156,38 +157,38 @@ namespace stellar {
             var discriminator = (ClaimPredicateType)stream.ReadInt();
             switch (discriminator)
             {
-                case CLAIM_PREDICATE_UNCONDITIONAL:
+                case ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL:
                 var result_CLAIM_PREDICATE_UNCONDITIONAL = new ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL();
                 return result_CLAIM_PREDICATE_UNCONDITIONAL;
-                case CLAIM_PREDICATE_AND:
+                case ClaimPredicateType.CLAIM_PREDICATE_AND:
                 var result_CLAIM_PREDICATE_AND = new ClaimPredicate_CLAIM_PREDICATE_AND();
                 var length = stream.ReadInt();
-                result_CLAIM_PREDICATE_AND.                 = new ClaimPredicate[length];
+                result_CLAIM_PREDICATE_AND.andPredicates = new ClaimPredicate[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_CLAIM_PREDICATE_AND.                [i] = ClaimPredicateXdr.Decode(stream);
+                    result_CLAIM_PREDICATE_AND.andPredicates[i] = ClaimPredicateXdr.Decode(stream);
                 }
                 return result_CLAIM_PREDICATE_AND;
-                case CLAIM_PREDICATE_OR:
+                case ClaimPredicateType.CLAIM_PREDICATE_OR:
                 var result_CLAIM_PREDICATE_OR = new ClaimPredicate_CLAIM_PREDICATE_OR();
                 var length = stream.ReadInt();
-                result_CLAIM_PREDICATE_OR.                 = new ClaimPredicate[length];
+                result_CLAIM_PREDICATE_OR.orPredicates = new ClaimPredicate[length];
                 for (var i = 0; i < length; i++)
                 {
-                    result_CLAIM_PREDICATE_OR.                [i] = ClaimPredicateXdr.Decode(stream);
+                    result_CLAIM_PREDICATE_OR.orPredicates[i] = ClaimPredicateXdr.Decode(stream);
                 }
                 return result_CLAIM_PREDICATE_OR;
-                case CLAIM_PREDICATE_NOT:
+                case ClaimPredicateType.CLAIM_PREDICATE_NOT:
                 var result_CLAIM_PREDICATE_NOT = new ClaimPredicate_CLAIM_PREDICATE_NOT();
-                result_CLAIM_PREDICATE_NOT.                 = ClaimPredicateXdr.Decode(stream);
+                result_CLAIM_PREDICATE_NOT.notPredicate = ClaimPredicateXdr.Decode(stream);
                 return result_CLAIM_PREDICATE_NOT;
-                case CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
+                case ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
                 var result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME = new ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME();
-                result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME.                 = int64Xdr.Decode(stream);
+                result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME.absBefore = int64Xdr.Decode(stream);
                 return result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
-                case CLAIM_PREDICATE_BEFORE_RELATIVE_TIME:
+                case ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME:
                 var result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME = new ClaimPredicate_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME();
-                result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME.                 = int64Xdr.Decode(stream);
+                result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME.relBefore = int64Xdr.Decode(stream);
                 return result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
                 default:
                 throw new Exception($"Unknown discriminator for ClaimPredicate: {discriminator}");

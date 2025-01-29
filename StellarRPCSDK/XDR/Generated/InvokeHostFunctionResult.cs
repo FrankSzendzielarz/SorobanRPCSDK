@@ -25,6 +25,7 @@ namespace stellar {
 
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
+
     }
     public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS : InvokeHostFunctionResult
     {
@@ -99,23 +100,23 @@ namespace stellar {
             var discriminator = (InvokeHostFunctionResultCode)stream.ReadInt();
             switch (discriminator)
             {
-                case INVOKE_HOST_FUNCTION_SUCCESS:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS:
                 var result_INVOKE_HOST_FUNCTION_SUCCESS = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS();
-                result_INVOKE_HOST_FUNCTION_SUCCESS.                 = HashXdr.Decode(stream);
+                result_INVOKE_HOST_FUNCTION_SUCCESS.success = HashXdr.Decode(stream);
                 return result_INVOKE_HOST_FUNCTION_SUCCESS;
-                case INVOKE_HOST_FUNCTION_MALFORMED:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED:
                 var result_INVOKE_HOST_FUNCTION_MALFORMED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_MALFORMED();
                 return result_INVOKE_HOST_FUNCTION_MALFORMED;
-                case INVOKE_HOST_FUNCTION_TRAPPED:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED:
                 var result_INVOKE_HOST_FUNCTION_TRAPPED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_TRAPPED();
                 return result_INVOKE_HOST_FUNCTION_TRAPPED;
-                case INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED:
                 var result_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED();
                 return result_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
-                case INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED:
                 var result_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED();
                 return result_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
-                case INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE:
+                case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE:
                 var result_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE();
                 return result_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
                 default:

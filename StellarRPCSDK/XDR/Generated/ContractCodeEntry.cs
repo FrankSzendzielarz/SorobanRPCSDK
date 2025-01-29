@@ -26,8 +26,8 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractCodeEntry
     {
-        private object _ext;
-        public object ext
+        private extUnion _ext;
+        public extUnion ext
         {
             get => _ext;
             set
@@ -60,18 +60,68 @@ namespace stellar {
 
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
+
+            [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            public partial class v1Struct
+            {
+                private ExtensionPoint _ext;
+                public ExtensionPoint ext
+                {
+                    get => _ext;
+                    set
+                    {
+                        _ext = value;
+                    }
+                }
+
+                private ContractCodeCostInputs _costInputs;
+                public ContractCodeCostInputs costInputs
+                {
+                    get => _costInputs;
+                    set
+                    {
+                        _costInputs = value;
+                    }
+                }
+
+                public v1Struct()
+                {
+                }
+                /// <summary>Validates all fields have valid values</summary>
+                public virtual void Validate()
+                {
+                }
+            }
+            public static partial class v1StructXdr
+            {
+                /// <summary>Encodes struct to XDR stream</summary>
+                public static void Encode(XdrWriter stream, v1Struct value)
+                {
+                    value.Validate();
+                    ExtensionPointXdr.Encode(stream, value.ext);
+                    ContractCodeCostInputsXdr.Encode(stream, value.costInputs);
+                }
+                /// <summary>Decodes struct from XDR stream</summary>
+                public static v1Struct Decode(XdrReader stream)
+                {
+                    var result = new v1Struct();
+                    result.ext = ExtensionPointXdr.Decode(stream);
+                    result.costInputs = ContractCodeCostInputsXdr.Decode(stream);
+                    return result;
+                }
+            }
         }
         public sealed partial class extUnion_0 : extUnion
         {
-            public override int Discriminator => int.0;
+            public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
         public sealed partial class extUnion_1 : extUnion
         {
-            public override int Discriminator => int.1;
-            private object _v1;
-            public object v1
+            public override int Discriminator => 1;
+            private v1Struct _v1;
+            public v1Struct v1
             {
                 get => _v1;
                 set
@@ -93,7 +143,7 @@ namespace stellar {
                     case extUnion_0 case_0:
                     break;
                     case extUnion_1 case_1:
-                    Xdr.Encode(stream, case_1.v1);
+                    extUnion.v1StructXdr.Encode(stream, case_1.v1);
                     break;
                 }
             }
@@ -107,7 +157,7 @@ namespace stellar {
                     return result_0;
                     case 1:
                     var result_1 = new extUnion_1();
-                    result_1.                 = Xdr.Decode(stream);
+                    result_1.v1 = extUnion.v1StructXdr.Decode(stream);
                     return result_1;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");
@@ -121,14 +171,14 @@ namespace stellar {
         public static void Encode(XdrWriter stream, ContractCodeEntry value)
         {
             value.Validate();
-            Xdr.Encode(stream, value.ext);
+            ContractCodeEntry.extUnionXdr.Encode(stream, value.ext);
             HashXdr.Encode(stream, value.hash);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ContractCodeEntry Decode(XdrReader stream)
         {
             var result = new ContractCodeEntry();
-            result.ext = Xdr.Decode(stream);
+            result.ext = ContractCodeEntry.extUnionXdr.Decode(stream);
             result.hash = HashXdr.Decode(stream);
             return result;
         }
