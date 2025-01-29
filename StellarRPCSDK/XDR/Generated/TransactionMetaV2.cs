@@ -75,11 +75,13 @@ namespace stellar {
         {
             var result = new TransactionMetaV2();
             result.txChangesBefore = LedgerEntryChangesXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.operations = new OperationMeta[length];
-            for (var i = 0; i < length; i++)
             {
-                result.operations[i] = OperationMetaXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.operations = new OperationMeta[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.operations[i] = OperationMetaXdr.Decode(stream);
+                }
             }
             result.txChangesAfter = LedgerEntryChangesXdr.Decode(stream);
             return result;

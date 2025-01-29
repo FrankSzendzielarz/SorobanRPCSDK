@@ -60,11 +60,13 @@ namespace stellar {
         public static SCPHistoryEntryV0 Decode(XdrReader stream)
         {
             var result = new SCPHistoryEntryV0();
-            var length = stream.ReadInt();
-            result.quorumSets = new SCPQuorumSet[length];
-            for (var i = 0; i < length; i++)
             {
-                result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.quorumSets = new SCPQuorumSet[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                }
             }
             result.ledgerMessages = LedgerSCPMessagesXdr.Decode(stream);
             return result;

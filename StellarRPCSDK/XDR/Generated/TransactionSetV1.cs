@@ -61,11 +61,13 @@ namespace stellar {
         {
             var result = new TransactionSetV1();
             result.previousLedgerHash = HashXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.phases = new TransactionPhase[length];
-            for (var i = 0; i < length; i++)
             {
-                result.phases[i] = TransactionPhaseXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.phases = new TransactionPhase[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.phases[i] = TransactionPhaseXdr.Decode(stream);
+                }
             }
             return result;
         }

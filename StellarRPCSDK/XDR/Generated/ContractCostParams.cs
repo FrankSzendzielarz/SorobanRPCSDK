@@ -41,11 +41,13 @@ namespace stellar {
         public static ContractCostParams Decode(XdrReader stream)
         {
             var result = new ContractCostParams();
-            var length = stream.ReadInt();
-            result.InnerValue = new ContractCostParamEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = ContractCostParamEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new ContractCostParamEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = ContractCostParamEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

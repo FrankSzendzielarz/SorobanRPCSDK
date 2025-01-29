@@ -75,11 +75,13 @@ namespace stellar {
             var result = new CreateContractArgsV2();
             result.contractIDPreimage = ContractIDPreimageXdr.Decode(stream);
             result.executable = ContractExecutableXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.constructorArgs = new SCVal[length];
-            for (var i = 0; i < length; i++)
             {
-                result.constructorArgs[i] = SCValXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.constructorArgs = new SCVal[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.constructorArgs[i] = SCValXdr.Decode(stream);
+                }
             }
             return result;
         }

@@ -80,23 +80,29 @@ namespace stellar {
         public static PersistedSCPStateV0 Decode(XdrReader stream)
         {
             var result = new PersistedSCPStateV0();
-            var length = stream.ReadInt();
-            result.scpEnvelopes = new SCPEnvelope[length];
-            for (var i = 0; i < length; i++)
             {
-                result.scpEnvelopes[i] = SCPEnvelopeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.scpEnvelopes = new SCPEnvelope[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.scpEnvelopes[i] = SCPEnvelopeXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.quorumSets = new SCPQuorumSet[length];
-            for (var i = 0; i < length; i++)
             {
-                result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.quorumSets = new SCPQuorumSet[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.txSets = new StoredTransactionSet[length];
-            for (var i = 0; i < length; i++)
             {
-                result.txSets[i] = StoredTransactionSetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.txSets = new StoredTransactionSet[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.txSets[i] = StoredTransactionSetXdr.Decode(stream);
+                }
             }
             return result;
         }

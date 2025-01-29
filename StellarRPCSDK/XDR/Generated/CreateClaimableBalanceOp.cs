@@ -78,11 +78,13 @@ namespace stellar {
             var result = new CreateClaimableBalanceOp();
             result.asset = AssetXdr.Decode(stream);
             result.amount = int64Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.claimants = new Claimant[length];
-            for (var i = 0; i < length; i++)
             {
-                result.claimants[i] = ClaimantXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.claimants = new Claimant[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.claimants[i] = ClaimantXdr.Decode(stream);
+                }
             }
             return result;
         }

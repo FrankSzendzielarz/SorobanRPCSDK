@@ -41,11 +41,13 @@ namespace stellar {
         public static DiagnosticEvents Decode(XdrReader stream)
         {
             var result = new DiagnosticEvents();
-            var length = stream.ReadInt();
-            result.InnerValue = new DiagnosticEvent[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = DiagnosticEventXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new DiagnosticEvent[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = DiagnosticEventXdr.Decode(stream);
+                }
             }
             return result;
         }

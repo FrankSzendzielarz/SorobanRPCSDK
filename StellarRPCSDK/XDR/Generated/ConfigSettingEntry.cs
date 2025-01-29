@@ -368,11 +368,13 @@ namespace stellar {
                 return result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
                 case ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
                 var result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW = new ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW();
-                var length = stream.ReadInt();
-                result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow = new uint64[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow[i] = uint64Xdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow = new uint64[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow[i] = uint64Xdr.Decode(stream);
+                    }
                 }
                 return result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
                 case ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR:

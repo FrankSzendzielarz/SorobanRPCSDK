@@ -140,11 +140,13 @@ namespace stellar {
             result.minSeqNum = SequenceNumberXdr.Decode(stream);
             result.minSeqAge = DurationXdr.Decode(stream);
             result.minSeqLedgerGap = uint32Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.extraSigners = new SignerKey[length];
-            for (var i = 0; i < length; i++)
             {
-                result.extraSigners[i] = SignerKeyXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.extraSigners = new SignerKey[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.extraSigners[i] = SignerKeyXdr.Decode(stream);
+                }
             }
             return result;
         }

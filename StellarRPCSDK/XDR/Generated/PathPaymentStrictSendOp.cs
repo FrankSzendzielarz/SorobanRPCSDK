@@ -121,11 +121,13 @@ namespace stellar {
             result.destination = MuxedAccountXdr.Decode(stream);
             result.destAsset = AssetXdr.Decode(stream);
             result.destMin = int64Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.path = new Asset[length];
-            for (var i = 0; i < length; i++)
             {
-                result.path[i] = AssetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.path = new Asset[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.path[i] = AssetXdr.Decode(stream);
+                }
             }
             return result;
         }

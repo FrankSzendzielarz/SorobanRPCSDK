@@ -167,11 +167,13 @@ namespace stellar {
             var result = new StellarValue();
             result.txSetHash = HashXdr.Decode(stream);
             result.closeTime = TimePointXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.upgrades = new UpgradeType[length];
-            for (var i = 0; i < length; i++)
             {
-                result.upgrades[i] = UpgradeTypeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.upgrades = new UpgradeType[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.upgrades[i] = UpgradeTypeXdr.Decode(stream);
+                }
             }
             result.ext = StellarValue.extUnionXdr.Decode(stream);
             return result;

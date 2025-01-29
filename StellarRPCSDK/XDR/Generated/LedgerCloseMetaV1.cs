@@ -181,36 +181,46 @@ namespace stellar {
             result.ext = LedgerCloseMetaExtXdr.Decode(stream);
             result.ledgerHeader = LedgerHeaderHistoryEntryXdr.Decode(stream);
             result.txSet = GeneralizedTransactionSetXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.txProcessing = new TransactionResultMeta[length];
-            for (var i = 0; i < length; i++)
             {
-                result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.txProcessing = new TransactionResultMeta[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.upgradesProcessing = new UpgradeEntryMeta[length];
-            for (var i = 0; i < length; i++)
             {
-                result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.upgradesProcessing = new UpgradeEntryMeta[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.scpInfo = new SCPHistoryEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.scpInfo = new SCPHistoryEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
+                }
             }
             result.totalByteSizeOfBucketList = uint64Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.evictedTemporaryLedgerKeys = new LedgerKey[length];
-            for (var i = 0; i < length; i++)
             {
-                result.evictedTemporaryLedgerKeys[i] = LedgerKeyXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.evictedTemporaryLedgerKeys = new LedgerKey[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.evictedTemporaryLedgerKeys[i] = LedgerKeyXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.evictedPersistentLedgerEntries = new LedgerEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.evictedPersistentLedgerEntries[i] = LedgerEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.evictedPersistentLedgerEntries = new LedgerEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.evictedPersistentLedgerEntries[i] = LedgerEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

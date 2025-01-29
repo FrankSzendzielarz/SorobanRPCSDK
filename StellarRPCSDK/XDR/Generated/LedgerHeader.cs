@@ -316,10 +316,12 @@ namespace stellar {
             result.baseFee = uint32Xdr.Decode(stream);
             result.baseReserve = uint32Xdr.Decode(stream);
             result.maxTxSetSize = uint32Xdr.Decode(stream);
-            result.skipList = new Hash[4];
-            for (var i = 0; i < 4; i++)
             {
-                result.skipList[i] = HashXdr.Decode(stream);
+                result.skipList = new Hash[4];
+                for (var i = 0; i < 4; i++)
+                {
+                    result.skipList[i] = HashXdr.Decode(stream);
+                }
             }
             result.ext = LedgerHeader.extUnionXdr.Decode(stream);
             return result;

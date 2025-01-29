@@ -61,11 +61,13 @@ namespace stellar {
         {
             var result = new InvokeHostFunctionSuccessPreImage();
             result.returnValue = SCValXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.events = new ContractEvent[length];
-            for (var i = 0; i < length; i++)
             {
-                result.events[i] = ContractEventXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.events = new ContractEvent[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.events[i] = ContractEventXdr.Decode(stream);
+                }
             }
             return result;
         }

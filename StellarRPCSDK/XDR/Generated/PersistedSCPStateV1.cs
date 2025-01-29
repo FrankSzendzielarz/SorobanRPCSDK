@@ -65,17 +65,21 @@ namespace stellar {
         public static PersistedSCPStateV1 Decode(XdrReader stream)
         {
             var result = new PersistedSCPStateV1();
-            var length = stream.ReadInt();
-            result.scpEnvelopes = new SCPEnvelope[length];
-            for (var i = 0; i < length; i++)
             {
-                result.scpEnvelopes[i] = SCPEnvelopeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.scpEnvelopes = new SCPEnvelope[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.scpEnvelopes[i] = SCPEnvelopeXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.quorumSets = new SCPQuorumSet[length];
-            for (var i = 0; i < length; i++)
             {
-                result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.quorumSets = new SCPQuorumSet[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.quorumSets[i] = SCPQuorumSetXdr.Decode(stream);
+                }
             }
             return result;
         }

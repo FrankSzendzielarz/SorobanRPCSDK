@@ -41,11 +41,13 @@ namespace stellar {
         public static SCMap Decode(XdrReader stream)
         {
             var result = new SCMap();
-            var length = stream.ReadInt();
-            result.InnerValue = new SCMapEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = SCMapEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new SCMapEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = SCMapEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

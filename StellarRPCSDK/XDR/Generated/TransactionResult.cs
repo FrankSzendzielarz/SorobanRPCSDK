@@ -321,20 +321,24 @@ namespace stellar {
                     return result_txFEE_BUMP_INNER_FAILED;
                     case TransactionResultCode.txSUCCESS:
                     var result_txSUCCESS = new resultUnion_txSUCCESS();
-                    var length = stream.ReadInt();
-                    result_txSUCCESS.results = new OperationResult[length];
-                    for (var i = 0; i < length; i++)
                     {
-                        result_txSUCCESS.results[i] = OperationResultXdr.Decode(stream);
+                        var length = stream.ReadInt();
+                        result_txSUCCESS.results = new OperationResult[length];
+                        for (var i = 0; i < length; i++)
+                        {
+                            result_txSUCCESS.results[i] = OperationResultXdr.Decode(stream);
+                        }
                     }
                     return result_txSUCCESS;
                     case TransactionResultCode.txFAILED:
                     var result_txFAILED = new resultUnion_txFAILED();
-                    var length = stream.ReadInt();
-                    result_txFAILED.results = new OperationResult[length];
-                    for (var i = 0; i < length; i++)
                     {
-                        result_txFAILED.results[i] = OperationResultXdr.Decode(stream);
+                        var length = stream.ReadInt();
+                        result_txFAILED.results = new OperationResult[length];
+                        for (var i = 0; i < length; i++)
+                        {
+                            result_txFAILED.results[i] = OperationResultXdr.Decode(stream);
+                        }
                     }
                     return result_txFAILED;
                     case TransactionResultCode.txTOO_EARLY:

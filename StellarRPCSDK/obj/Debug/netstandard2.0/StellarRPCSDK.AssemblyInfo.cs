@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StellarRPCSDK")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4a1a3e7211eb0e47a59b5bd88ba244ae76a294e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ded16b2a28f84eee2410e8460655864e6a3ad12")]
 [assembly: System.Reflection.AssemblyProductAttribute("StellarRPCSDK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StellarRPCSDK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

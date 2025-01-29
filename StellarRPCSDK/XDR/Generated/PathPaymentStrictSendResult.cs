@@ -87,11 +87,13 @@ namespace stellar {
             public static successStruct Decode(XdrReader stream)
             {
                 var result = new successStruct();
-                var length = stream.ReadInt();
-                result.offers = new ClaimAtom[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result.offers[i] = ClaimAtomXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result.offers = new ClaimAtom[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result.offers[i] = ClaimAtomXdr.Decode(stream);
+                    }
                 }
                 result.last = SimplePaymentResultXdr.Decode(stream);
                 return result;

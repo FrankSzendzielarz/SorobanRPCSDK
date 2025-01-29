@@ -47,11 +47,13 @@ namespace stellar {
         public static ConfigUpgradeSet Decode(XdrReader stream)
         {
             var result = new ConfigUpgradeSet();
-            var length = stream.ReadInt();
-            result.updatedEntry = new ConfigSettingEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.updatedEntry[i] = ConfigSettingEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.updatedEntry = new ConfigSettingEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.updatedEntry[i] = ConfigSettingEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

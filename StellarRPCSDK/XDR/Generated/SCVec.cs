@@ -41,11 +41,13 @@ namespace stellar {
         public static SCVec Decode(XdrReader stream)
         {
             var result = new SCVec();
-            var length = stream.ReadInt();
-            result.InnerValue = new SCVal[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = SCValXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new SCVal[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = SCValXdr.Decode(stream);
+                }
             }
             return result;
         }

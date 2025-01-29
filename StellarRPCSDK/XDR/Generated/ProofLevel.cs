@@ -41,11 +41,13 @@ namespace stellar {
         public static ProofLevel Decode(XdrReader stream)
         {
             var result = new ProofLevel();
-            var length = stream.ReadInt();
-            result.InnerValue = new ArchivalProofNode[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = ArchivalProofNodeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new ArchivalProofNode[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = ArchivalProofNodeXdr.Decode(stream);
+                }
             }
             return result;
         }

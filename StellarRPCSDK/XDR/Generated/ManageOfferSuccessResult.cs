@@ -154,11 +154,13 @@ namespace stellar {
         public static ManageOfferSuccessResult Decode(XdrReader stream)
         {
             var result = new ManageOfferSuccessResult();
-            var length = stream.ReadInt();
-            result.offersClaimed = new ClaimAtom[length];
-            for (var i = 0; i < length; i++)
             {
-                result.offersClaimed[i] = ClaimAtomXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.offersClaimed = new ClaimAtom[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.offersClaimed[i] = ClaimAtomXdr.Decode(stream);
+                }
             }
             result.offer = ManageOfferSuccessResult.offerUnionXdr.Decode(stream);
             return result;

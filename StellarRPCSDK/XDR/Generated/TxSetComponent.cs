@@ -73,11 +73,13 @@ namespace stellar {
             {
                 var result = new txsMaybeDiscountedFeeStruct();
                 result.baseFee = int64Xdr.Decode(stream);
-                var length = stream.ReadInt();
-                result.txs = new TransactionEnvelope[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result.txs[i] = TransactionEnvelopeXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result.txs = new TransactionEnvelope[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result.txs[i] = TransactionEnvelopeXdr.Decode(stream);
+                    }
                 }
                 return result;
             }

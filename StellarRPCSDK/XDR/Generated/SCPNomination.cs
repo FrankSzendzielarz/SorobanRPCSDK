@@ -77,17 +77,21 @@ namespace stellar {
         {
             var result = new SCPNomination();
             result.quorumSetHash = HashXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.votes = new Value[length];
-            for (var i = 0; i < length; i++)
             {
-                result.votes[i] = ValueXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.votes = new Value[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.votes[i] = ValueXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.accepted = new Value[length];
-            for (var i = 0; i < length; i++)
             {
-                result.accepted[i] = ValueXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.accepted = new Value[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.accepted[i] = ValueXdr.Decode(stream);
+                }
             }
             return result;
         }

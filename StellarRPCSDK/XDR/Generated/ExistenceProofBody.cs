@@ -102,29 +102,37 @@ namespace stellar {
         public static ExistenceProofBody Decode(XdrReader stream)
         {
             var result = new ExistenceProofBody();
-            var length = stream.ReadInt();
-            result.keysToProve = new LedgerKey[length];
-            for (var i = 0; i < length; i++)
             {
-                result.keysToProve[i] = LedgerKeyXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.keysToProve = new LedgerKey[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.keysToProve[i] = LedgerKeyXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.lowBoundEntries = new ColdArchiveBucketEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.lowBoundEntries[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.lowBoundEntries = new ColdArchiveBucketEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.lowBoundEntries[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.highBoundEntries = new ColdArchiveBucketEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.highBoundEntries[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.highBoundEntries = new ColdArchiveBucketEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.highBoundEntries[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.proofLevels = new ProofLevel[length];
-            for (var i = 0; i < length; i++)
             {
-                result.proofLevels[i] = ProofLevelXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.proofLevels = new ProofLevel[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.proofLevels[i] = ProofLevelXdr.Decode(stream);
+                }
             }
             return result;
         }

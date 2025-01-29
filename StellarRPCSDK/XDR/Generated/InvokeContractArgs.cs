@@ -73,11 +73,13 @@ namespace stellar {
             var result = new InvokeContractArgs();
             result.contractAddress = SCAddressXdr.Decode(stream);
             result.functionName = SCSymbolXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.args = new SCVal[length];
-            for (var i = 0; i < length; i++)
             {
-                result.args[i] = SCValXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.args = new SCVal[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.args[i] = SCValXdr.Decode(stream);
+                }
             }
             return result;
         }

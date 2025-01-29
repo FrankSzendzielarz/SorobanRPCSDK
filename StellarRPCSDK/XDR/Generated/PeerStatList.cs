@@ -43,11 +43,13 @@ namespace stellar {
         public static PeerStatList Decode(XdrReader stream)
         {
             var result = new PeerStatList();
-            var length = stream.ReadInt();
-            result.InnerValue = new PeerStats[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = PeerStatsXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new PeerStats[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = PeerStatsXdr.Decode(stream);
+                }
             }
             return result;
         }

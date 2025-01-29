@@ -60,11 +60,13 @@ namespace stellar {
             {
                 case 0:
                 var result_0 = new TransactionPhase_0();
-                var length = stream.ReadInt();
-                result_0.v0Components = new TxSetComponent[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_0.v0Components[i] = TxSetComponentXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_0.v0Components = new TxSetComponent[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_0.v0Components[i] = TxSetComponentXdr.Decode(stream);
+                    }
                 }
                 return result_0;
                 default:

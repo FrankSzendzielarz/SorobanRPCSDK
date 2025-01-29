@@ -241,11 +241,13 @@ namespace stellar {
             result.flags = uint32Xdr.Decode(stream);
             result.homeDomain = stream.ReadString();
             result.thresholds = ThresholdsXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.signers = new Signer[length];
-            for (var i = 0; i < length; i++)
             {
-                result.signers[i] = SignerXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.signers = new Signer[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.signers[i] = SignerXdr.Decode(stream);
+                }
             }
             result.ext = AccountEntry.extUnionXdr.Decode(stream);
             return result;

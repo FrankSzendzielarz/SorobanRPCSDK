@@ -170,11 +170,13 @@ namespace stellar {
             result.seqNum = SequenceNumberXdr.Decode(stream);
             result.timeBounds = TimeBoundsXdr.Decode(stream);
             result.memo = MemoXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.operations = new Operation[length];
-            for (var i = 0; i < length; i++)
             {
-                result.operations[i] = OperationXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.operations = new Operation[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.operations[i] = OperationXdr.Decode(stream);
+                }
             }
             result.ext = TransactionV0.extUnionXdr.Decode(stream);
             return result;

@@ -41,11 +41,13 @@ namespace stellar {
         public static LedgerEntryChanges Decode(XdrReader stream)
         {
             var result = new LedgerEntryChanges();
-            var length = stream.ReadInt();
-            result.InnerValue = new LedgerEntryChange[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = LedgerEntryChangeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new LedgerEntryChange[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = LedgerEntryChangeXdr.Decode(stream);
+                }
             }
             return result;
         }

@@ -63,11 +63,13 @@ namespace stellar {
         {
             var result = new InvokeHostFunctionOp();
             result.hostFunction = HostFunctionXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.auth = new SorobanAuthorizationEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.auth[i] = SorobanAuthorizationEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.auth = new SorobanAuthorizationEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.auth[i] = SorobanAuthorizationEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

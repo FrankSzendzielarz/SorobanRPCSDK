@@ -156,11 +156,13 @@ namespace stellar {
             var result = new AccountEntryExtensionV2();
             result.numSponsored = uint32Xdr.Decode(stream);
             result.numSponsoring = uint32Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.signerSponsoringIDs = new SponsorshipDescriptor[length];
-            for (var i = 0; i < length; i++)
             {
-                result.signerSponsoringIDs[i] = SponsorshipDescriptorXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.signerSponsoringIDs = new SponsorshipDescriptor[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.signerSponsoringIDs[i] = SponsorshipDescriptorXdr.Decode(stream);
+                }
             }
             result.ext = AccountEntryExtensionV2.extUnionXdr.Decode(stream);
             return result;

@@ -41,11 +41,13 @@ namespace stellar {
         public static TxAdvertVector Decode(XdrReader stream)
         {
             var result = new TxAdvertVector();
-            var length = stream.ReadInt();
-            result.InnerValue = new Hash[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = HashXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new Hash[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = HashXdr.Decode(stream);
+                }
             }
             return result;
         }

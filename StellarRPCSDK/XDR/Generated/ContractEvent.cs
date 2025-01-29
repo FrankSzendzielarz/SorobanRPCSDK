@@ -133,11 +133,13 @@ namespace stellar {
                 public static v0Struct Decode(XdrReader stream)
                 {
                     var result = new v0Struct();
-                    var length = stream.ReadInt();
-                    result.topics = new SCVal[length];
-                    for (var i = 0; i < length; i++)
                     {
-                        result.topics[i] = SCValXdr.Decode(stream);
+                        var length = stream.ReadInt();
+                        result.topics = new SCVal[length];
+                        for (var i = 0; i < length; i++)
+                        {
+                            result.topics[i] = SCValXdr.Decode(stream);
+                        }
                     }
                     result.data = SCValXdr.Decode(stream);
                     return result;

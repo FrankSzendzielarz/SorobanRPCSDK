@@ -67,17 +67,21 @@ namespace stellar {
         public static NonexistenceProofBody Decode(XdrReader stream)
         {
             var result = new NonexistenceProofBody();
-            var length = stream.ReadInt();
-            result.entriesToProve = new ColdArchiveBucketEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.entriesToProve[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.entriesToProve = new ColdArchiveBucketEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.entriesToProve[i] = ColdArchiveBucketEntryXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.proofLevels = new ProofLevel[length];
-            for (var i = 0; i < length; i++)
             {
-                result.proofLevels[i] = ProofLevelXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.proofLevels = new ProofLevel[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.proofLevels[i] = ProofLevelXdr.Decode(stream);
+                }
             }
             return result;
         }

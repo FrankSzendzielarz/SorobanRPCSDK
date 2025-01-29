@@ -162,20 +162,24 @@ namespace stellar {
                 return result_CLAIM_PREDICATE_UNCONDITIONAL;
                 case ClaimPredicateType.CLAIM_PREDICATE_AND:
                 var result_CLAIM_PREDICATE_AND = new ClaimPredicate_CLAIM_PREDICATE_AND();
-                var length = stream.ReadInt();
-                result_CLAIM_PREDICATE_AND.andPredicates = new ClaimPredicate[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_CLAIM_PREDICATE_AND.andPredicates[i] = ClaimPredicateXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_CLAIM_PREDICATE_AND.andPredicates = new ClaimPredicate[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_CLAIM_PREDICATE_AND.andPredicates[i] = ClaimPredicateXdr.Decode(stream);
+                    }
                 }
                 return result_CLAIM_PREDICATE_AND;
                 case ClaimPredicateType.CLAIM_PREDICATE_OR:
                 var result_CLAIM_PREDICATE_OR = new ClaimPredicate_CLAIM_PREDICATE_OR();
-                var length = stream.ReadInt();
-                result_CLAIM_PREDICATE_OR.orPredicates = new ClaimPredicate[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_CLAIM_PREDICATE_OR.orPredicates[i] = ClaimPredicateXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_CLAIM_PREDICATE_OR.orPredicates = new ClaimPredicate[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_CLAIM_PREDICATE_OR.orPredicates[i] = ClaimPredicateXdr.Decode(stream);
+                    }
                 }
                 return result_CLAIM_PREDICATE_OR;
                 case ClaimPredicateType.CLAIM_PREDICATE_NOT:

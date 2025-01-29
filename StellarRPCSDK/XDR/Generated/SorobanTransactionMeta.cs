@@ -95,18 +95,22 @@ namespace stellar {
         {
             var result = new SorobanTransactionMeta();
             result.ext = SorobanTransactionMetaExtXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.events = new ContractEvent[length];
-            for (var i = 0; i < length; i++)
             {
-                result.events[i] = ContractEventXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.events = new ContractEvent[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.events[i] = ContractEventXdr.Decode(stream);
+                }
             }
             result.returnValue = SCValXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.diagnosticEvents = new DiagnosticEvent[length];
-            for (var i = 0; i < length; i++)
             {
-                result.diagnosticEvents[i] = DiagnosticEventXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.diagnosticEvents = new DiagnosticEvent[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.diagnosticEvents[i] = DiagnosticEventXdr.Decode(stream);
+                }
             }
             return result;
         }

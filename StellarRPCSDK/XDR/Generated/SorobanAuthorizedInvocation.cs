@@ -61,11 +61,13 @@ namespace stellar {
         {
             var result = new SorobanAuthorizedInvocation();
             result.function = SorobanAuthorizedFunctionXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.subInvocations = new SorobanAuthorizedInvocation[length];
-            for (var i = 0; i < length; i++)
             {
-                result.subInvocations[i] = SorobanAuthorizedInvocationXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.subInvocations = new SorobanAuthorizedInvocation[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.subInvocations[i] = SorobanAuthorizedInvocationXdr.Decode(stream);
+                }
             }
             return result;
         }

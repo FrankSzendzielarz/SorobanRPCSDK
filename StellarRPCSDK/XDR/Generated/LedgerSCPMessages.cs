@@ -61,11 +61,13 @@ namespace stellar {
         {
             var result = new LedgerSCPMessages();
             result.ledgerSeq = uint32Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.messages = new SCPEnvelope[length];
-            for (var i = 0; i < length; i++)
             {
-                result.messages[i] = SCPEnvelopeXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.messages = new SCPEnvelope[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.messages[i] = SCPEnvelopeXdr.Decode(stream);
+                }
             }
             return result;
         }

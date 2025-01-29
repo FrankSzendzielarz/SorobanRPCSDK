@@ -86,17 +86,21 @@ namespace stellar {
         {
             var result = new SCSpecFunctionV0();
             result.name = SCSymbolXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.inputs = new SCSpecFunctionInputV0[length];
-            for (var i = 0; i < length; i++)
             {
-                result.inputs[i] = SCSpecFunctionInputV0Xdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.inputs = new SCSpecFunctionInputV0[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.inputs[i] = SCSpecFunctionInputV0Xdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.outputs = new SCSpecTypeDef[length];
-            for (var i = 0; i < length; i++)
             {
-                result.outputs[i] = SCSpecTypeDefXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.outputs = new SCSpecTypeDef[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.outputs[i] = SCSpecTypeDefXdr.Decode(stream);
+                }
             }
             return result;
         }

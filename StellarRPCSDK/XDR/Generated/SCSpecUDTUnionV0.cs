@@ -55,11 +55,13 @@ namespace stellar {
         public static SCSpecUDTUnionV0 Decode(XdrReader stream)
         {
             var result = new SCSpecUDTUnionV0();
-            var length = stream.ReadInt();
-            result.cases = new SCSpecUDTUnionCaseV0[length];
-            for (var i = 0; i < length; i++)
             {
-                result.cases[i] = SCSpecUDTUnionCaseV0Xdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.cases = new SCSpecUDTUnionCaseV0[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.cases[i] = SCSpecUDTUnionCaseV0Xdr.Decode(stream);
+                }
             }
             return result;
         }

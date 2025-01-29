@@ -48,11 +48,13 @@ namespace stellar {
         public static TransactionResultSet Decode(XdrReader stream)
         {
             var result = new TransactionResultSet();
-            var length = stream.ReadInt();
-            result.results = new TransactionResultPair[length];
-            for (var i = 0; i < length; i++)
             {
-                result.results[i] = TransactionResultPairXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.results = new TransactionResultPair[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.results[i] = TransactionResultPairXdr.Decode(stream);
+                }
             }
             return result;
         }

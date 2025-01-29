@@ -115,23 +115,29 @@ namespace stellar {
             var result = new LedgerCloseMetaV0();
             result.ledgerHeader = LedgerHeaderHistoryEntryXdr.Decode(stream);
             result.txSet = TransactionSetXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.txProcessing = new TransactionResultMeta[length];
-            for (var i = 0; i < length; i++)
             {
-                result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.txProcessing = new TransactionResultMeta[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.txProcessing[i] = TransactionResultMetaXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.upgradesProcessing = new UpgradeEntryMeta[length];
-            for (var i = 0; i < length; i++)
             {
-                result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.upgradesProcessing = new UpgradeEntryMeta[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.upgradesProcessing[i] = UpgradeEntryMetaXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.scpInfo = new SCPHistoryEntry[length];
-            for (var i = 0; i < length; i++)
             {
-                result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.scpInfo = new SCPHistoryEntry[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.scpInfo[i] = SCPHistoryEntryXdr.Decode(stream);
+                }
             }
             return result;
         }

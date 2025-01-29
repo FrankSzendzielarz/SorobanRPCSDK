@@ -43,11 +43,13 @@ namespace stellar {
         public static TimeSlicedPeerDataList Decode(XdrReader stream)
         {
             var result = new TimeSlicedPeerDataList();
-            var length = stream.ReadInt();
-            result.InnerValue = new TimeSlicedPeerData[length];
-            for (var i = 0; i < length; i++)
             {
-                result.InnerValue[i] = TimeSlicedPeerDataXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.InnerValue = new TimeSlicedPeerData[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.InnerValue[i] = TimeSlicedPeerDataXdr.Decode(stream);
+                }
             }
             return result;
         }

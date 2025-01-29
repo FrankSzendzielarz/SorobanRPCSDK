@@ -67,11 +67,13 @@ namespace stellar {
         {
             var result = new FeeBumpTransactionEnvelope();
             result.tx = FeeBumpTransactionXdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.signatures = new DecoratedSignature[length];
-            for (var i = 0; i < length; i++)
             {
-                result.signatures[i] = DecoratedSignatureXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.signatures = new DecoratedSignature[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.signatures[i] = DecoratedSignatureXdr.Decode(stream);
+                }
             }
             return result;
         }

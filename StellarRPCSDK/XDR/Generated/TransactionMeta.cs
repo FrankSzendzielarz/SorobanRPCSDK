@@ -120,11 +120,13 @@ namespace stellar {
             {
                 case 0:
                 var result_0 = new TransactionMeta_0();
-                var length = stream.ReadInt();
-                result_0.operations = new OperationMeta[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_0.operations[i] = OperationMetaXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_0.operations = new OperationMeta[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_0.operations[i] = OperationMetaXdr.Decode(stream);
+                    }
                 }
                 return result_0;
                 case 1:

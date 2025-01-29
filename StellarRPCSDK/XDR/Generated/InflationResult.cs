@@ -70,11 +70,13 @@ namespace stellar {
             {
                 case InflationResultCode.INFLATION_SUCCESS:
                 var result_INFLATION_SUCCESS = new InflationResult_INFLATION_SUCCESS();
-                var length = stream.ReadInt();
-                result_INFLATION_SUCCESS.payouts = new InflationPayout[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_INFLATION_SUCCESS.payouts[i] = InflationPayoutXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_INFLATION_SUCCESS.payouts = new InflationPayout[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_INFLATION_SUCCESS.payouts[i] = InflationPayoutXdr.Decode(stream);
+                    }
                 }
                 return result_INFLATION_SUCCESS;
                 case InflationResultCode.INFLATION_NOT_TIME:

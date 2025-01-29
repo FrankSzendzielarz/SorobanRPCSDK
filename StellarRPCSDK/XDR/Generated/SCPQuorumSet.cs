@@ -77,17 +77,21 @@ namespace stellar {
         {
             var result = new SCPQuorumSet();
             result.threshold = uint32Xdr.Decode(stream);
-            var length = stream.ReadInt();
-            result.validators = new NodeID[length];
-            for (var i = 0; i < length; i++)
             {
-                result.validators[i] = NodeIDXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.validators = new NodeID[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.validators[i] = NodeIDXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.innerSets = new SCPQuorumSet[length];
-            for (var i = 0; i < length; i++)
             {
-                result.innerSets[i] = SCPQuorumSetXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.innerSets = new SCPQuorumSet[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.innerSets[i] = SCPQuorumSetXdr.Decode(stream);
+                }
             }
             return result;
         }

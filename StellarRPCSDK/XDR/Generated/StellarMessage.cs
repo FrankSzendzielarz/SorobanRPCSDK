@@ -531,11 +531,13 @@ namespace stellar {
                 return result_DONT_HAVE;
                 case MessageType.PEERS:
                 var result_PEERS = new StellarMessage_PEERS();
-                var length = stream.ReadInt();
-                result_PEERS.peers = new PeerAddress[length];
-                for (var i = 0; i < length; i++)
                 {
-                    result_PEERS.peers[i] = PeerAddressXdr.Decode(stream);
+                    var length = stream.ReadInt();
+                    result_PEERS.peers = new PeerAddress[length];
+                    for (var i = 0; i < length; i++)
+                    {
+                        result_PEERS.peers[i] = PeerAddressXdr.Decode(stream);
+                    }
                 }
                 return result_PEERS;
                 case MessageType.GET_TX_SET:

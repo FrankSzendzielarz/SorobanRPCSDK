@@ -748,7 +748,7 @@ namespace Generator.XDR
                                                 StellarXdrParser.DeclarationContext declaration)
         {
             var code = CodeFile;
-            code.AppendLine($"    public static void Encode(XdrWriter stream, {typedefName} value)");
+            code.AppendLine($"public static void Encode(XdrWriter stream, {typedefName} value)");
             code.OpenBlock();
             GenerateEncodeStatement(declaration, "value", "InnerValue");
             code.CloseBlock();
@@ -840,6 +840,7 @@ namespace Generator.XDR
             }
             else if (typeInfo.ArrayType != ArrayType.None)
             {
+                code.OpenBlock();
                 string length;
                 if (typeInfo.ArrayType == ArrayType.Fixed)
                 {
@@ -855,6 +856,7 @@ namespace Generator.XDR
                 code.AppendLine($"for (var i = 0; i < {length}; i++)");
                 code.OpenBlock();
                 code.AppendLine($"{valueName}.{fieldName}[i] = {GetDecodeStatement(typeSpec)};");
+                code.CloseBlock();
                 code.CloseBlock();
             }
             else

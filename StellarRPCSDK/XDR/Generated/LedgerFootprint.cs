@@ -64,17 +64,21 @@ namespace stellar {
         public static LedgerFootprint Decode(XdrReader stream)
         {
             var result = new LedgerFootprint();
-            var length = stream.ReadInt();
-            result.readOnly = new LedgerKey[length];
-            for (var i = 0; i < length; i++)
             {
-                result.readOnly[i] = LedgerKeyXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.readOnly = new LedgerKey[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.readOnly[i] = LedgerKeyXdr.Decode(stream);
+                }
             }
-            var length = stream.ReadInt();
-            result.readWrite = new LedgerKey[length];
-            for (var i = 0; i < length; i++)
             {
-                result.readWrite[i] = LedgerKeyXdr.Decode(stream);
+                var length = stream.ReadInt();
+                result.readWrite = new LedgerKey[length];
+                for (var i = 0; i < length; i++)
+                {
+                    result.readWrite[i] = LedgerKeyXdr.Decode(stream);
+                }
             }
             return result;
         }
