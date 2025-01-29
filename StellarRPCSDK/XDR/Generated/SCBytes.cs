@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class SCBytesXdr
     {
-            public static void Encode(XdrWriter stream, SCBytes value)
+        public static void Encode(XdrWriter stream, SCBytes value)
         {
             stream.WriteOpaque(value.InnerValue);
         }

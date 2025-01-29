@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class NodeIDXdr
     {
-            public static void Encode(XdrWriter stream, NodeID value)
+        public static void Encode(XdrWriter stream, NodeID value)
         {
             PublicKeyXdr.Encode(stream, value.InnerValue);
         }

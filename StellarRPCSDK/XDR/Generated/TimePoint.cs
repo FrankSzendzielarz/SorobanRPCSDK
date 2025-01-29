@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class TimePointXdr
     {
-            public static void Encode(XdrWriter stream, TimePoint value)
+        public static void Encode(XdrWriter stream, TimePoint value)
         {
             uint64Xdr.Encode(stream, value.InnerValue);
         }

@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class ProofLevelXdr
     {
-            public static void Encode(XdrWriter stream, ProofLevel value)
+        public static void Encode(XdrWriter stream, ProofLevel value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

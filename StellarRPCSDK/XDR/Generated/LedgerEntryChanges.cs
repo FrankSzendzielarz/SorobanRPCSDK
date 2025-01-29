@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class LedgerEntryChangesXdr
     {
-            public static void Encode(XdrWriter stream, LedgerEntryChanges value)
+        public static void Encode(XdrWriter stream, LedgerEntryChanges value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

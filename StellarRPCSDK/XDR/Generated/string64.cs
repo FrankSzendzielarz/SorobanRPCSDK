@@ -11,28 +11,28 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class string64
     {
-        private string[] _innerValue;
-        public string[] InnerValue
+        private string _innerValue;
+        public string InnerValue
         {
             get => _innerValue;
             set
             {
-                if (value.Length > 64)
-                	throw new ArgumentException($"Cannot exceed 64 bytes");
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 64)
+                	throw new ArgumentException($"String exceeds 64 bytes when UTF8 encoded");
                 _innerValue = value;
             }
         }
 
         public string64() { }
 
-        public string64(string[] value)
+        public string64(string value)
         {
             InnerValue = value;
         }
     }
     public static partial class string64Xdr
     {
-            public static void Encode(XdrWriter stream, string64 value)
+        public static void Encode(XdrWriter stream, string64 value)
         {
             stream.WriteString(value.InnerValue);
         }

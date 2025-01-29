@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class SCMapXdr
     {
-            public static void Encode(XdrWriter stream, SCMap value)
+        public static void Encode(XdrWriter stream, SCMap value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

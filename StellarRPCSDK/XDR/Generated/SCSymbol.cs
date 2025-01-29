@@ -11,8 +11,8 @@ namespace stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSymbol
     {
-        private string[] _innerValue;
-        public string[] InnerValue
+        private string _innerValue;
+        public string InnerValue
         {
             get => _innerValue;
             set
@@ -23,14 +23,14 @@ namespace stellar {
 
         public SCSymbol() { }
 
-        public SCSymbol(string[] value)
+        public SCSymbol(string value)
         {
             InnerValue = value;
         }
     }
     public static partial class SCSymbolXdr
     {
-            public static void Encode(XdrWriter stream, SCSymbol value)
+        public static void Encode(XdrWriter stream, SCSymbol value)
         {
             stream.WriteString(value.InnerValue);
         }

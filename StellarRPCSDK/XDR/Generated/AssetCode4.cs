@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class AssetCode4Xdr
     {
-            public static void Encode(XdrWriter stream, AssetCode4 value)
+        public static void Encode(XdrWriter stream, AssetCode4 value)
         {
             stream.WriteFixedOpaque(value.InnerValue);
         }

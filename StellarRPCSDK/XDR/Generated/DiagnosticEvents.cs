@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class DiagnosticEventsXdr
     {
-            public static void Encode(XdrWriter stream, DiagnosticEvents value)
+        public static void Encode(XdrWriter stream, DiagnosticEvents value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

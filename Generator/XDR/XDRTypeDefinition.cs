@@ -133,34 +133,45 @@ namespace Generator.XDR
 
         private CSharpTypeInfo GetCSharpTypeInfo(StellarXdrParser.DeclarationContext decl)
         {
-
             var text = decl.GetText();
             var arraySizeSpec = decl.arraySizeSpec();
             ArrayType arrayType = ArrayType.None;
             int? maxLength = null;
+
+            bool isOpaque = text.StartsWith("opaque");
+            bool isString = text.StartsWith("string");
+
             if (arraySizeSpec != null)
             {
                 if (arraySizeSpec is FixedArraySizeContext fixedArray)
                 {
+                    // Fixed size arrays (square brackets) always mean fixed array
                     arrayType = ArrayType.Fixed;
                     maxLength = int.Parse(fixedArray.value().GetText());
                 }
-
-                if (arraySizeSpec is VarArraySizeContext varArray)
+                else if (arraySizeSpec is VarArraySizeContext varArray)
                 {
-                    arrayType = ArrayType.Variable;
-                    maxLength = varArray?.value()?.constant() != null ? int.Parse(varArray.value().constant().GetText()) : null;
+                    if (isString)
+                    {
+                        // For strings, angle brackets specify max length
+                        maxLength = varArray?.value()?.constant() != null ?
+                            int.Parse(varArray.value().constant().GetText()) : null;
+                    }
+                    else
+                    {
+                        // For opaque and other types, angle brackets specify variable array
+                        arrayType = ArrayType.Variable;
+                        maxLength = varArray?.value()?.constant() != null ?
+                            int.Parse(varArray.value().constant().GetText()) : null;
+                    }
                 }
             }
 
-            if (text.StartsWith("opaque"))
+            if (isOpaque)
                 return new CSharpTypeInfo("byte", arrayType, maxLength);
 
-            if (text.StartsWith("string"))
+            if (isString)
                 return new CSharpTypeInfo("string", arrayType, maxLength);
-
-
-
             var baseType = decl.typeSpecifier().GetText() switch
             {
                 "unsignedint" => "uint",
@@ -172,11 +183,15 @@ namespace Generator.XDR
                 "bool" => "bool",
                 _ => decl.typeSpecifier().identifier()?.GetText() ?? "object"
             };
+
             if (baseType == "object")
             {
-                if (decl.typeSpecifier()?.baseType()?.unionTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.unionTypeSpec());
-                if (decl.typeSpecifier()?.baseType()?.enumTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.enumTypeSpec());
-                if (decl.typeSpecifier()?.baseType()?.structTypeSpec() != null) baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.structTypeSpec());
+                if (decl.typeSpecifier()?.baseType()?.unionTypeSpec() != null)
+                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.unionTypeSpec());
+                if (decl.typeSpecifier()?.baseType()?.enumTypeSpec() != null)
+                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.enumTypeSpec());
+                if (decl.typeSpecifier()?.baseType()?.structTypeSpec() != null)
+                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.structTypeSpec());
             }
 
             return new CSharpTypeInfo(baseType, arrayType, maxLength);

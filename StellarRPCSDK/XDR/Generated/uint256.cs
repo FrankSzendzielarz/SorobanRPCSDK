@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class uint256Xdr
     {
-            public static void Encode(XdrWriter stream, uint256 value)
+        public static void Encode(XdrWriter stream, uint256 value)
         {
             stream.WriteFixedOpaque(value.InnerValue);
         }

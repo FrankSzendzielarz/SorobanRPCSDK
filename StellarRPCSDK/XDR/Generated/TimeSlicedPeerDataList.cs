@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class TimeSlicedPeerDataListXdr
     {
-            public static void Encode(XdrWriter stream, TimeSlicedPeerDataList value)
+        public static void Encode(XdrWriter stream, TimeSlicedPeerDataList value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

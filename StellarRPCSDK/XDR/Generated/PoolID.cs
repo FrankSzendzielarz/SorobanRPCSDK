@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class PoolIDXdr
     {
-            public static void Encode(XdrWriter stream, PoolID value)
+        public static void Encode(XdrWriter stream, PoolID value)
         {
             HashXdr.Encode(stream, value.InnerValue);
         }

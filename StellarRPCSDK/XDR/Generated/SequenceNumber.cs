@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class SequenceNumberXdr
     {
-            public static void Encode(XdrWriter stream, SequenceNumber value)
+        public static void Encode(XdrWriter stream, SequenceNumber value)
         {
             int64Xdr.Encode(stream, value.InnerValue);
         }

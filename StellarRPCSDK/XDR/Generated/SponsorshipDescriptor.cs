@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class SponsorshipDescriptorXdr
     {
-            public static void Encode(XdrWriter stream, SponsorshipDescriptor value)
+        public static void Encode(XdrWriter stream, SponsorshipDescriptor value)
         {
             AccountIDXdr.Encode(stream, value.InnerValue);
         }

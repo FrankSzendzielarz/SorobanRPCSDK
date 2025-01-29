@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class ContractCostParamsXdr
     {
-            public static void Encode(XdrWriter stream, ContractCostParams value)
+        public static void Encode(XdrWriter stream, ContractCostParams value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

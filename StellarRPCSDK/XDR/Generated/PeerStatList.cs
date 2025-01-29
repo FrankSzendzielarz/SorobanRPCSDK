@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class PeerStatListXdr
     {
-            public static void Encode(XdrWriter stream, PeerStatList value)
+        public static void Encode(XdrWriter stream, PeerStatList value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)

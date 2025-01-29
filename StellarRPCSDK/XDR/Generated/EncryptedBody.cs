@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class EncryptedBodyXdr
     {
-            public static void Encode(XdrWriter stream, EncryptedBody value)
+        public static void Encode(XdrWriter stream, EncryptedBody value)
         {
             stream.WriteOpaque(value.InnerValue);
         }

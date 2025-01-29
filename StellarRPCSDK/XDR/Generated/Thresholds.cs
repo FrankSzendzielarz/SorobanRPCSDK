@@ -32,7 +32,7 @@ namespace stellar {
     }
     public static partial class ThresholdsXdr
     {
-            public static void Encode(XdrWriter stream, Thresholds value)
+        public static void Encode(XdrWriter stream, Thresholds value)
         {
             stream.WriteFixedOpaque(value.InnerValue);
         }

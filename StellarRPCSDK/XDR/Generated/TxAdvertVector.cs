@@ -30,7 +30,7 @@ namespace stellar {
     }
     public static partial class TxAdvertVectorXdr
     {
-            public static void Encode(XdrWriter stream, TxAdvertVector value)
+        public static void Encode(XdrWriter stream, TxAdvertVector value)
         {
             stream.WriteInt(value.InnerValue.Length);
             foreach (var item in value.InnerValue)
