@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace stellar
+namespace Stellar.XDR
 {
     /// <summary>
     /// Stream for writing XDR encoded data according to RFC 4506.

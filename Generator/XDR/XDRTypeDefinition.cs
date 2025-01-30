@@ -33,7 +33,7 @@ namespace Generator.XDR
             EnumAliases = enumAliases;
             XDRType = xdrType;
             ParserRuleContext = parserRuleContext;
-            Namespace = _namespace;
+            Namespace = $"{_namespace.ToPascalCase()}.XDR";
             Name = name;
             Parent = parent;
             CommentMap = commentMap;

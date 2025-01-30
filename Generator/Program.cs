@@ -13,7 +13,7 @@ public class Program
     {
         if (args.Length < 2)
         {
-            Console.WriteLine("Usage: StellarXdrGenerator <stellar xdr folder> <stellar openRPC file> [output_dir]");
+            Console.WriteLine("Usage: StellarXdrGenerator <stellar xdr folder> <stellar openRPC file> [output dir xdr] [output dir rpc]");
             return;
         }
 
@@ -21,7 +21,8 @@ public class Program
         var xdrFolder = args[0];
         var openRPCFile = args[1];
 
-        var outputDir = args.Length > 2 ? args[2] : Path.Combine(Directory.GetCurrentDirectory(), "Generated");
+        var outputDirXdr = args.Length > 2 ? args[2] : Path.Combine(Directory.GetCurrentDirectory(), "GeneratedXDR");
+        var outputDirRpc = args.Length > 3 ? args[3] : Path.Combine(Directory.GetCurrentDirectory(), "GeneratedRPC");
 
         try
         {
@@ -38,9 +39,9 @@ public class Program
             }
 
             // Create output directory if it doesn't exist
-            Directory.CreateDirectory(outputDir);
+            Directory.CreateDirectory(outputDirXdr);
 
-            var visitor = new TypeExtractorVisitor(outputDir);
+            var visitor = new TypeExtractorVisitor(outputDirXdr);
 
             // Read and parse the xdr input files
             foreach (var xdrFile in Directory.GetFiles(xdrFolder, "*.x"))
@@ -86,12 +87,12 @@ public class Program
             Console.WriteLine($"XDR generation complete.");
             Console.WriteLine($"Generating code for OpenRPC file {openRPCFile}");
 
-            //var jsonContent = await File.ReadAllTextAsync(openRPCFile);
-            //var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
-            //var generator = new CSharpOpenRPCGenerator(spec!, outputDir);
-            //await generator.GenerateAsync();
+            var jsonContent = await File.ReadAllTextAsync(openRPCFile);
+            var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
+            var generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc);
+            await generator.GenerateAsync();
 
-            Console.WriteLine($"Successfully generated code in {outputDir}");
+            Console.WriteLine($"Successfully generated code in {outputDirXdr} and {outputDirRpc}");
         }
         catch (Exception ex)
         {

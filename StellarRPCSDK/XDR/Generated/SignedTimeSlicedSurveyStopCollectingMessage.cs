@@ -10,7 +10,7 @@
 
 using System;
 
-namespace stellar {
+namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SignedTimeSlicedSurveyStopCollectingMessage

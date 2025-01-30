@@ -20,7 +20,11 @@ namespace Generator.OpenRPC
             {
                 ClassStyle = CSharpClassStyle.Poco,
                 GenerateDataAnnotations = true,
-                GenerateJsonMethods = true
+                GenerateJsonMethods = true,
+                Namespace = "Stellar.RPC",
+                JsonLibrary = CSharpJsonLibrary.SystemTextJson,
+                
+            
             };
         }
 
@@ -50,7 +54,8 @@ namespace Generator.OpenRPC
                 foreach (var param in method.Params)
                 {
                     // Create a JsonSchemaProperty instead of JsonSchema
-                    var propSchema = new JsonSchemaProperty();
+                    var propSchema = new JsonSchemaProperty(); 
+           
 
                     // Parse the schema from the parameter
                     var schemaFromParam = await JsonSchema.FromJsonAsync(
@@ -75,13 +80,14 @@ namespace Generator.OpenRPC
                     if (schemaFromParam.Type == JsonObjectType.Object && schemaFromParam.Properties != null)
                     {
                         propSchema.Type = JsonObjectType.Object;
+                      
                         foreach (var property in schemaFromParam.Properties)
                         {
                             propSchema.Properties.Add(property.Key, property.Value);
                         }
                     }
 
-                    paramSchema.Properties[param.Name] = propSchema;
+                    paramSchema.Properties[$"{ToPascalCase(method.Name)}{ToPascalCase(param.Name)}"] = propSchema;
 
                     if (param.Required)
                     {
@@ -109,15 +115,17 @@ namespace Generator.OpenRPC
         private async Task GenerateClientClassAsync()
         {
             var sb = new StringBuilder();
+            sb.AppendLine("using System.Text;");
             sb.AppendLine("using System.Text.Json;");
             sb.AppendLine("using System.Text.Json.Serialization;");
+            sb.AppendLine("using System.Net.Http;");
+            sb.AppendLine("using System.Threading.Tasks;");
+            sb.AppendLine("using Stellar.RPC;"); 
             sb.AppendLine();
 
             if (!string.IsNullOrEmpty(_spec.Info.Description))
             {
-                sb.AppendLine("/// <summary>");
-                sb.AppendLine($"/// {_spec.Info.Description}");
-                sb.AppendLine("/// </summary>");
+                sb.AppendLine(FormatXmlComment(_spec.Info.Description,0));
             }
 
             sb.AppendLine($"public class {_spec.Info.Title.Replace(" ", "")}Client");
@@ -148,17 +156,48 @@ namespace Generator.OpenRPC
                 sb.ToString());
         }
 
+        private string FormatXmlComment(string description, int indentationLevel = 1)
+        {
+            if (string.IsNullOrEmpty(description))
+                return string.Empty;
+
+            var sb = new StringBuilder();
+            var indent = new string(' ', indentationLevel * 4);
+
+            // Split by line breaks and handle both \n and \r\n
+            var lines = description.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+            sb.AppendLine($"{indent}/// <summary>");
+            foreach (var line in lines)
+            {
+                // Escape XML special characters and trim any trailing whitespace
+                var escapedLine = line.Trim()
+                    .Replace("&", "&amp;")
+                    .Replace("<", "&lt;")
+                    .Replace(">", "&gt;")
+                    .Replace("\"", "&quot;")
+                    .Replace("'", "&apos;");
+
+                // Skip empty lines in XML comments as they can cause issues
+                if (!string.IsNullOrWhiteSpace(escapedLine))
+                {
+                    sb.AppendLine($"{indent}/// {escapedLine}");
+                }
+            }
+            sb.AppendLine($"{indent}/// </summary>");
+
+            return sb.ToString().TrimEnd();
+        }
+
         private async Task GenerateMethodAsync(StringBuilder sb, RpcMethod method)
         {
             var methodName = ToPascalCase(method.Name);
-            var paramType = method.Params?.Any() == true ? $"{methodName}Params" : "object?";
+            var paramType = method.Params?.Any() == true ? $"{methodName}Params" : "object";
             var resultType = $"{methodName}Result";
 
             if (!string.IsNullOrEmpty(method.Description))
             {
-                sb.AppendLine($"    /// <summary>");
-                sb.AppendLine($"    /// {method.Description}");
-                sb.AppendLine($"    /// </summary>");
+                sb.AppendLine(FormatXmlComment(method.Description));
             }
 
             sb.AppendLine($"    public async Task<{resultType}> {methodName}Async({paramType} parameters = null)");
@@ -181,12 +220,12 @@ namespace Generator.OpenRPC
             sb.AppendLine("        var content = await response.Content.ReadAsStringAsync();");
             sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<{resultType}>>(content, _jsonOptions);");
             sb.AppendLine();
-            sb.AppendLine("        if (rpcResponse?.Error != null)");
+            sb.AppendLine("        if (rpcResponse.Error != null)");
             sb.AppendLine("        {");
             sb.AppendLine("            throw new JsonRpcException(rpcResponse.Error);");
             sb.AppendLine("        }");
             sb.AppendLine();
-            sb.AppendLine("        return rpcResponse!.Result!;");
+            sb.AppendLine("        return rpcResponse.Result;");
             sb.AppendLine("    }");
             sb.AppendLine();
         }

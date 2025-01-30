@@ -2,7 +2,7 @@
   "profiles": {
     "Generator": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarXDR\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarOpenRPC\\stellar-rpc.openrpc.json\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK\\XDR\\Generated\""
+      "commandLineArgs": "\"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarXDR\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarOpenRPC\\stellar-rpc.openrpc.json\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK\\XDR\\Generated\" \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK\\OpenRPC\\Generated\""
     }
   }
 }
