@@ -34,8 +34,8 @@ namespace Stellar.XDR {
             }
         }
 
-        private string _dataName;
-        public string dataName
+        private string64 _dataName;
+        public string64 dataName
         {
             get => _dataName;
             set
@@ -119,7 +119,7 @@ namespace Stellar.XDR {
         {
             value.Validate();
             AccountIDXdr.Encode(stream, value.accountID);
-            stream.WriteString(value.dataName);
+            string64Xdr.Encode(stream, value.dataName);
             DataValueXdr.Encode(stream, value.dataValue);
             DataEntry.extUnionXdr.Encode(stream, value.ext);
         }
@@ -128,7 +128,7 @@ namespace Stellar.XDR {
         {
             var result = new DataEntry();
             result.accountID = AccountIDXdr.Decode(stream);
-            result.dataName = stream.ReadString();
+            result.dataName = string64Xdr.Decode(stream);
             result.dataValue = DataValueXdr.Decode(stream);
             result.ext = DataEntry.extUnionXdr.Decode(stream);
             return result;

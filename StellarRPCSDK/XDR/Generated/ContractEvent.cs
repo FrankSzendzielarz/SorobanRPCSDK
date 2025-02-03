@@ -196,7 +196,14 @@ namespace Stellar.XDR {
         {
             value.Validate();
             ExtensionPointXdr.Encode(stream, value.ext);
-            HashXdr.Encode(stream, value.contractID);
+            if (value.contractID==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                HashXdr.Encode(stream, value.contractID);
+            }
             ContractEventTypeXdr.Encode(stream, value.type);
             ContractEvent.bodyUnionXdr.Encode(stream, value.body);
         }
@@ -205,7 +212,10 @@ namespace Stellar.XDR {
         {
             var result = new ContractEvent();
             result.ext = ExtensionPointXdr.Decode(stream);
-            result.contractID = HashXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.contractID = HashXdr.Decode(stream);
+            }
             result.type = ContractEventTypeXdr.Decode(stream);
             result.body = ContractEvent.bodyUnionXdr.Decode(stream);
             return result;

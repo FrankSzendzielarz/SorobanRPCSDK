@@ -1,5 +1,5 @@
 is_global = true
-build_property.RootNamespace = StellarRPCSDK
+build_property.RootNamespace = Stellar
 build_property.ProjectDir = C:\Users\frank\source\repos\SorobanRPCSDK\StellarRPCSDK\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

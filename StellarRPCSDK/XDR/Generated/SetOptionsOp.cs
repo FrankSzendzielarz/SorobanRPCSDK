@@ -99,8 +99,8 @@ namespace Stellar.XDR {
             }
         }
 
-        private string _homeDomain;
-        public string homeDomain
+        private string32 _homeDomain;
+        public string32 homeDomain
         {
             get => _homeDomain;
             set
@@ -133,29 +133,119 @@ namespace Stellar.XDR {
         public static void Encode(XdrWriter stream, SetOptionsOp value)
         {
             value.Validate();
-            AccountIDXdr.Encode(stream, value.inflationDest);
-            uint32Xdr.Encode(stream, value.clearFlags);
-            uint32Xdr.Encode(stream, value.setFlags);
-            uint32Xdr.Encode(stream, value.masterWeight);
-            uint32Xdr.Encode(stream, value.lowThreshold);
-            uint32Xdr.Encode(stream, value.medThreshold);
-            uint32Xdr.Encode(stream, value.highThreshold);
-            stream.WriteString(value.homeDomain);
-            SignerXdr.Encode(stream, value.signer);
+            if (value.inflationDest==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                AccountIDXdr.Encode(stream, value.inflationDest);
+            }
+            if (value.clearFlags==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.clearFlags);
+            }
+            if (value.setFlags==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.setFlags);
+            }
+            if (value.masterWeight==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.masterWeight);
+            }
+            if (value.lowThreshold==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.lowThreshold);
+            }
+            if (value.medThreshold==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.medThreshold);
+            }
+            if (value.highThreshold==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                uint32Xdr.Encode(stream, value.highThreshold);
+            }
+            if (value.homeDomain==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                string32Xdr.Encode(stream, value.homeDomain);
+            }
+            if (value.signer==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                SignerXdr.Encode(stream, value.signer);
+            }
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static SetOptionsOp Decode(XdrReader stream)
         {
             var result = new SetOptionsOp();
-            result.inflationDest = AccountIDXdr.Decode(stream);
-            result.clearFlags = uint32Xdr.Decode(stream);
-            result.setFlags = uint32Xdr.Decode(stream);
-            result.masterWeight = uint32Xdr.Decode(stream);
-            result.lowThreshold = uint32Xdr.Decode(stream);
-            result.medThreshold = uint32Xdr.Decode(stream);
-            result.highThreshold = uint32Xdr.Decode(stream);
-            result.homeDomain = stream.ReadString();
-            result.signer = SignerXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.inflationDest = AccountIDXdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.clearFlags = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.setFlags = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.masterWeight = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.lowThreshold = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.medThreshold = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.highThreshold = uint32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.homeDomain = string32Xdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.signer = SignerXdr.Decode(stream);
+            }
             return result;
         }
     }

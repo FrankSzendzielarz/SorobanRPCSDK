@@ -172,8 +172,22 @@ namespace Stellar.XDR {
                     value.Validate();
                     HashXdr.Encode(stream, value.quorumSetHash);
                     SCPBallotXdr.Encode(stream, value.ballot);
-                    SCPBallotXdr.Encode(stream, value.prepared);
-                    SCPBallotXdr.Encode(stream, value.preparedPrime);
+                    if (value.prepared==null){
+                    	stream.WriteInt(0);
+                    }
+                    else
+                    {
+                        stream.WriteInt(1);
+                        SCPBallotXdr.Encode(stream, value.prepared);
+                    }
+                    if (value.preparedPrime==null){
+                    	stream.WriteInt(0);
+                    }
+                    else
+                    {
+                        stream.WriteInt(1);
+                        SCPBallotXdr.Encode(stream, value.preparedPrime);
+                    }
                     uint32Xdr.Encode(stream, value.nC);
                     uint32Xdr.Encode(stream, value.nH);
                 }
@@ -183,8 +197,14 @@ namespace Stellar.XDR {
                     var result = new prepareStruct();
                     result.quorumSetHash = HashXdr.Decode(stream);
                     result.ballot = SCPBallotXdr.Decode(stream);
-                    result.prepared = SCPBallotXdr.Decode(stream);
-                    result.preparedPrime = SCPBallotXdr.Decode(stream);
+                    if (stream.ReadInt()==1)
+                    {
+                        result.prepared = SCPBallotXdr.Decode(stream);
+                    }
+                    if (stream.ReadInt()==1)
+                    {
+                        result.preparedPrime = SCPBallotXdr.Decode(stream);
+                    }
                     result.nC = uint32Xdr.Decode(stream);
                     result.nH = uint32Xdr.Decode(stream);
                     return result;

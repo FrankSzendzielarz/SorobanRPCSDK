@@ -61,7 +61,14 @@ namespace Stellar.XDR {
             public static void Encode(XdrWriter stream, txsMaybeDiscountedFeeStruct value)
             {
                 value.Validate();
-                int64Xdr.Encode(stream, value.baseFee);
+                if (value.baseFee==null){
+                	stream.WriteInt(0);
+                }
+                else
+                {
+                    stream.WriteInt(1);
+                    int64Xdr.Encode(stream, value.baseFee);
+                }
                 stream.WriteInt(value.txs.Length);
                 foreach (var item in value.txs)
                 {
@@ -72,7 +79,10 @@ namespace Stellar.XDR {
             public static txsMaybeDiscountedFeeStruct Decode(XdrReader stream)
             {
                 var result = new txsMaybeDiscountedFeeStruct();
-                result.baseFee = int64Xdr.Decode(stream);
+                if (stream.ReadInt()==1)
+                {
+                    result.baseFee = int64Xdr.Decode(stream);
+                }
                 {
                     var length = stream.ReadInt();
                     result.txs = new TransactionEnvelope[length];

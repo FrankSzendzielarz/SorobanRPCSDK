@@ -13,14 +13,15 @@ namespace Stellar.RPC
     /// Parameters for sendTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SendtransactionParams
+    public partial class SendTransactionParams
     {
         /// <summary>
         /// The signed transaction to broadcast for inclusion in a ledger.
         /// </summary>
 
-        [System.Text.Json.Serialization.JsonPropertyName("SendtransactionTransaction")]
-        public string SendtransactionTransaction { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("transaction")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Transaction { get; set; }
 
 
 
@@ -41,12 +42,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static SendtransactionParams FromJson(string data)
+        public static SendTransactionParams FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<SendtransactionParams>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<SendTransactionParams>(data, options);
 
         }
 

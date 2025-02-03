@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetfeestatsResult
+    public partial class GetFeeStatsResult
     {
         /// <summary>
         /// Inclusion fee distribution statistics for Soroban transactions
@@ -52,12 +52,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GetfeestatsResult FromJson(string data)
+        public static GetFeeStatsResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GetfeestatsResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetFeeStatsResult>(data, options);
 
         }
 

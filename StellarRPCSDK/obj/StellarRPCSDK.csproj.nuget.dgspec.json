@@ -65,6 +65,14 @@
             "System.Text.Json": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "dotnetstandard-bip32": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "dotnetstandard-bip39": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [

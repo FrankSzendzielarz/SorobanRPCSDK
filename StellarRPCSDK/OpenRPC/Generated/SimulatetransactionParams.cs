@@ -13,21 +13,22 @@ namespace Stellar.RPC
     /// Parameters for simulateTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SimulatetransactionParams
+    public partial class SimulateTransactionParams
     {
         /// <summary>
         /// In order for the RPC server to successfully simulate a Stellar transaction, the provided transaction must contain only a single operation of the type `invokeHostFunction`.
         /// </summary>
 
-        [System.Text.Json.Serialization.JsonPropertyName("SimulatetransactionTransaction")]
-        public string SimulatetransactionTransaction { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("transaction")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Transaction { get; set; }
 
         /// <summary>
         /// Contains configuration for how resources will be calculated when simulating transactions.
         /// </summary>
 
-        [System.Text.Json.Serialization.JsonPropertyName("SimulatetransactionResourceconfig")]
-        public SimulatetransactionResourceconfig SimulatetransactionResourceconfig { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("resourceConfig")]
+        public object ResourceConfig { get; set; }
 
 
 
@@ -48,52 +49,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static SimulatetransactionParams FromJson(string data)
+        public static SimulateTransactionParams FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<SimulatetransactionParams>(data, options);
-
-        }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SimulatetransactionResourceconfig
-    {
-        /// <summary>
-        /// Allow this many extra instructions when budgeting resources.
-        /// </summary>
-
-        [System.Text.Json.Serialization.JsonPropertyName("instructionLeeway")]
-        public double InstructionLeeway { get; set; }
-
-
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-        public string ToJson()
-        {
-
-            var options = new System.Text.Json.JsonSerializerOptions();
-
-            return System.Text.Json.JsonSerializer.Serialize(this, options);
-
-        }
-        public static SimulatetransactionResourceconfig FromJson(string data)
-        {
-
-            var options = new System.Text.Json.JsonSerializerOptions();
-
-            return System.Text.Json.JsonSerializer.Deserialize<SimulatetransactionResourceconfig>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<SimulateTransactionParams>(data, options);
 
         }
 

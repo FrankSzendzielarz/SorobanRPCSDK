@@ -98,8 +98,8 @@ namespace Stellar.XDR {
             }
         }
 
-        private string _homeDomain;
-        public string homeDomain
+        private string32 _homeDomain;
+        public string32 homeDomain
         {
             get => _homeDomain;
             set
@@ -218,9 +218,16 @@ namespace Stellar.XDR {
             int64Xdr.Encode(stream, value.balance);
             SequenceNumberXdr.Encode(stream, value.seqNum);
             uint32Xdr.Encode(stream, value.numSubEntries);
-            AccountIDXdr.Encode(stream, value.inflationDest);
+            if (value.inflationDest==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                AccountIDXdr.Encode(stream, value.inflationDest);
+            }
             uint32Xdr.Encode(stream, value.flags);
-            stream.WriteString(value.homeDomain);
+            string32Xdr.Encode(stream, value.homeDomain);
             ThresholdsXdr.Encode(stream, value.thresholds);
             stream.WriteInt(value.signers.Length);
             foreach (var item in value.signers)
@@ -237,9 +244,12 @@ namespace Stellar.XDR {
             result.balance = int64Xdr.Decode(stream);
             result.seqNum = SequenceNumberXdr.Decode(stream);
             result.numSubEntries = uint32Xdr.Decode(stream);
-            result.inflationDest = AccountIDXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.inflationDest = AccountIDXdr.Decode(stream);
+            }
             result.flags = uint32Xdr.Decode(stream);
-            result.homeDomain = stream.ReadString();
+            result.homeDomain = string32Xdr.Decode(stream);
             result.thresholds = ThresholdsXdr.Decode(stream);
             {
                 var length = stream.ReadInt();

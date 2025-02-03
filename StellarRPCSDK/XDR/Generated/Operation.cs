@@ -711,14 +711,24 @@ namespace Stellar.XDR {
         public static void Encode(XdrWriter stream, Operation value)
         {
             value.Validate();
-            MuxedAccountXdr.Encode(stream, value.sourceAccount);
+            if (value.sourceAccount==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                MuxedAccountXdr.Encode(stream, value.sourceAccount);
+            }
             Operation.bodyUnionXdr.Encode(stream, value.body);
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static Operation Decode(XdrReader stream)
         {
             var result = new Operation();
-            result.sourceAccount = MuxedAccountXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.sourceAccount = MuxedAccountXdr.Decode(stream);
+            }
             result.body = Operation.bodyUnionXdr.Decode(stream);
             return result;
         }

@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetnetworkResult
+    public partial class GetNetworkResult
     {
         /// <summary>
         /// Network passphrase configured for this Stellar RPC node.
@@ -53,12 +53,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GetnetworkResult FromJson(string data)
+        public static GetNetworkResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GetnetworkResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetNetworkResult>(data, options);
 
         }
 

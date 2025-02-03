@@ -1,5 +1,6 @@
 ﻿using NJsonSchema;
 using NJsonSchema.CodeGeneration.CSharp;
+using NJsonSchema.Generation.TypeMappers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -23,8 +24,13 @@ namespace Generator.OpenRPC
                 GenerateJsonMethods = true,
                 Namespace = "Stellar.RPC",
                 JsonLibrary = CSharpJsonLibrary.SystemTextJson,
-                
-            
+                ArrayType = "System.Collections.Generic.ICollection", 
+                ArrayBaseType = "System.Collections.Generic.ICollection<{0}>", 
+                 
+               
+    
+
+
             };
         }
 
@@ -53,28 +59,13 @@ namespace Generator.OpenRPC
 
                 foreach (var param in method.Params)
                 {
-                    // Create a JsonSchemaProperty instead of JsonSchema
-                    var propSchema = new JsonSchemaProperty(); 
-           
-
-                    // Parse the schema from the parameter
-                    var schemaFromParam = await JsonSchema.FromJsonAsync(
-                        param.Schema.GetRawText());
-
-                    // Copy properties from the parsed schema to our property
-                    propSchema.Type = schemaFromParam.Type;
-                    propSchema.Description = param.Description;
-                    propSchema.Pattern = schemaFromParam.Pattern;
-                    propSchema.Minimum = schemaFromParam.Minimum;
-                    propSchema.Maximum = schemaFromParam.Maximum;
-
-                    // Handle items for arrays
-                    if (schemaFromParam.Type == JsonObjectType.Array && schemaFromParam.Items != null)
+                    var schemaFromParam = param.Schema.ToJsonSchema();
+                    var propSchema = new JsonSchemaProperty
                     {
-                        propSchema.Type = JsonObjectType.Array;
-                        // Take the first schema from the Items collection
-                        propSchema.Item = schemaFromParam.Items.FirstOrDefault();
-                    }
+                        Type = schemaFromParam.Type,
+                        Description = param.Description,
+                        Item = schemaFromParam.Item
+                    };
 
                     // Handle properties for objects
                     if (schemaFromParam.Type == JsonObjectType.Object && schemaFromParam.Properties != null)
@@ -87,7 +78,7 @@ namespace Generator.OpenRPC
                         }
                     }
 
-                    paramSchema.Properties[$"{ToPascalCase(method.Name)}{ToPascalCase(param.Name)}"] = propSchema;
+                    paramSchema.Properties[$"{param.Name.ToCamelCase()}"] = propSchema;
 
                     if (param.Required)
                     {
@@ -96,7 +87,8 @@ namespace Generator.OpenRPC
                 }
 
                 var generator = new NJsonSchema.CodeGeneration.CSharp.CSharpGenerator(paramSchema, _settings);
-                var paramClassName = $"{ToPascalCase(method.Name)}Params";
+          
+                var paramClassName = $"{method.Name.ToPascalCase()}Params";
                 var code = generator.GenerateFile(paramClassName);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{paramClassName}.cs"), code);
             }
@@ -107,7 +99,7 @@ namespace Generator.OpenRPC
                     method.Result.Schema.GetRawText());
 
                 var generator = new NJsonSchema.CodeGeneration.CSharp.CSharpGenerator(resultSchema, _settings);
-                var resultClassName = $"{ToPascalCase(method.Name)}Result";
+                var resultClassName = $"{method.Name.ToPascalCase()}Result";
                 var code = generator.GenerateFile(resultClassName);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{resultClassName}.cs"), code);
             }
@@ -122,13 +114,15 @@ namespace Generator.OpenRPC
             sb.AppendLine("using System.Threading.Tasks;");
             sb.AppendLine("using Stellar.RPC;"); 
             sb.AppendLine();
-
+            sb.AppendLine("namespace Stellar.RPC");
+            sb.AppendLine("{");
+            
             if (!string.IsNullOrEmpty(_spec.Info.Description))
             {
                 sb.AppendLine(FormatXmlComment(_spec.Info.Description,0));
             }
 
-            sb.AppendLine($"public class {_spec.Info.Title.Replace(" ", "")}Client");
+            sb.AppendLine($"public partial class {_spec.Info.Title.Replace(" ", "")}Client");
             sb.AppendLine("{");
             sb.AppendLine("    private readonly HttpClient _httpClient;");
             sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
@@ -150,7 +144,7 @@ namespace Generator.OpenRPC
             }
 
             sb.AppendLine("}");
-
+            sb.AppendLine("}");
             await File.WriteAllTextAsync(
                 Path.Combine(_outputDir, $"{_spec.Info.Title.Replace(" ", "")}Client.cs"),
                 sb.ToString());
@@ -191,7 +185,7 @@ namespace Generator.OpenRPC
 
         private async Task GenerateMethodAsync(StringBuilder sb, RpcMethod method)
         {
-            var methodName = ToPascalCase(method.Name);
+            var methodName = method.Name.ToPascalCase();
             var paramType = method.Params?.Any() == true ? $"{methodName}Params" : "object";
             var resultType = $"{methodName}Result";
 
@@ -205,12 +199,12 @@ namespace Generator.OpenRPC
             sb.AppendLine("        var request = new JsonRpcRequest");
             sb.AppendLine("        {");
             sb.AppendLine("            JsonRpc = \"2.0\",");
-            sb.AppendLine($"            Method = \"{method.Name}\",");
+            sb.AppendLine($"            Method = \"{method.Name.ToCamelCase()}\",");
             sb.AppendLine("            Params = parameters,");
             sb.AppendLine("            Id = 1");
             sb.AppendLine("        };");
             sb.AppendLine();
-            sb.AppendLine("        var response = await _httpClient.PostAsync(\"\", ");
+            sb.AppendLine($"        var response = await _httpClient.PostAsync(\"\", ");
             sb.AppendLine("            new StringContent(");
             sb.AppendLine("                JsonSerializer.Serialize(request, _jsonOptions),");
             sb.AppendLine("                Encoding.UTF8,");
@@ -230,15 +224,7 @@ namespace Generator.OpenRPC
             sb.AppendLine();
         }
 
-        private string ToPascalCase(string input)
-        {
-            if (string.IsNullOrEmpty(input)) return input;
-
-            var words = input.Split(new[] { '_', ' ', '-' }, StringSplitOptions.RemoveEmptyEntries)
-                .Select(word => char.ToUpper(word[0]) + word.Substring(1).ToLower());
-
-            return string.Concat(words);
-        }
+        
     }
 
     // OpenRPC specific models
@@ -293,9 +279,36 @@ namespace Generator.OpenRPC
         public bool Required { get; set; }
 
         [JsonPropertyName("schema")]
-        public JsonElement Schema { get; set; }
+        public RpcParameterSchema Schema { get; set; } = new();
     }
 
+    public class RpcParameterSchema
+    {
+        [JsonPropertyName("type")]
+        public string Type { get; set; } = "";
+
+        [JsonPropertyName("description")]
+        public string Description { get; set; } = "";
+
+        [JsonPropertyName("items")]
+        public RpcParameterSchema? Items { get; set; }
+
+        public JsonSchema ToJsonSchema()
+        {
+            var schema = new JsonSchema
+            {
+                Type = Enum.Parse<JsonObjectType>(Type, true),
+                Description = Description
+            };
+
+            if (Items != null && Type.Equals("array", StringComparison.OrdinalIgnoreCase))
+            {
+                schema.Item = Items.ToJsonSchema();
+            }
+
+            return schema;
+        }
+    }
     public class RpcResult
     {
         [JsonPropertyName("name")]

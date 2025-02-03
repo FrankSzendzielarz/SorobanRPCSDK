@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "dotnetstandard-bip32/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/dotnetstandard-bip32.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/dotnetstandard-bip32.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        }
+      },
+      "dotnetstandard-bip39/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/dotnetstandard-bip39.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/dotnetstandard-bip39.dll": {
+            "related": ".deps.json;.pdb"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/9.0.1": {
         "type": "package",
         "dependencies": {
@@ -190,6 +216,39 @@
     }
   },
   "libraries": {
+    "dotnetstandard-bip32/1.0.0": {
+      "sha512": "YMsZb2abuvsyNikSBJaCjaqFlfhcpbodukDqE7JwqKYsRE1NmfLlqbpQrK0olqCubSh9YaF6QfwGCFSHJODAGA==",
+      "type": "package",
+      "path": "dotnetstandard-bip32/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build_package.ps1",
+        "dotnetstandard-bip32.1.0.0.nupkg.sha512",
+        "dotnetstandard-bip32.nuspec",
+        "lib/netstandard2.0/dotnetstandard-bip32.deps.json",
+        "lib/netstandard2.0/dotnetstandard-bip32.dll",
+        "lib/netstandard2.0/dotnetstandard-bip32.pdb",
+        "nuget.exe"
+      ]
+    },
+    "dotnetstandard-bip39/1.0.2": {
+      "sha512": "gayw9MyG3jjxkgRvrkhuzTY3H2yOh+I2+xAY+QktogyYfTcQvgt0+RtXbHQJn691/6i+B3L7wriNuLYv956gUQ==",
+      "type": "package",
+      "path": "dotnetstandard-bip39/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build_package.ps1",
+        "dotnetstandard-bip39.1.0.2.nupkg.sha512",
+        "dotnetstandard-bip39.nuspec",
+        "lib/netstandard2.0/dotnetstandard-bip39.deps.json",
+        "lib/netstandard2.0/dotnetstandard-bip39.dll",
+        "lib/netstandard2.0/dotnetstandard-bip39.pdb",
+        "lib/netstandard2.0/wordlists/_._",
+        "nuget.exe"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/9.0.1": {
       "sha512": "IVkmUqf+KzbuXKrxi2tyQlg11RArYk26t2eU5cHekff+7Ao09vH8vt8idC0BJSMnpiRV2OK66zM2EwJU6Tm5Cw==",
       "type": "package",
@@ -745,7 +804,9 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "System.ComponentModel.Annotations >= 5.0.0",
-      "System.Text.Json >= 9.0.1"
+      "System.Text.Json >= 9.0.1",
+      "dotnetstandard-bip32 >= 1.0.0",
+      "dotnetstandard-bip39 >= 1.0.2"
     ]
   },
   "packageFolders": {
@@ -813,6 +874,14 @@
           "System.Text.Json": {
             "target": "Package",
             "version": "[9.0.1, )"
+          },
+          "dotnetstandard-bip32": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "dotnetstandard-bip39": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           }
         },
         "imports": [

@@ -71,11 +71,11 @@ defaultCase
     ;
 
 declaration
-    : typeSpecifier identifier arraySizeSpec?
-    | 'opaque' identifier arraySizeSpec
-    | 'string' identifier arraySizeSpec
-    | typeSpecifier '*' identifier
-    | 'void'
+    : typeSpecifier identifier arraySizeSpec?   # GeneralDeclaration
+    | 'opaque' identifier arraySizeSpec         # OpaqueDeclaration
+    | 'string' identifier arraySizeSpec         # StringDeclaration
+    | typeSpecifier '*' identifier              # OptionalDeclaration
+    | 'void'                                    # VoidDeclaration
     ;
 
 typeSpecifier

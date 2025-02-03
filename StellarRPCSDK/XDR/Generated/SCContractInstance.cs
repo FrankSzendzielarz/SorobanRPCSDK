@@ -49,14 +49,24 @@ namespace Stellar.XDR {
         {
             value.Validate();
             ContractExecutableXdr.Encode(stream, value.executable);
-            SCMapXdr.Encode(stream, value.storage);
+            if (value.storage==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                SCMapXdr.Encode(stream, value.storage);
+            }
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static SCContractInstance Decode(XdrReader stream)
         {
             var result = new SCContractInstance();
             result.executable = ContractExecutableXdr.Decode(stream);
-            result.storage = SCMapXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.storage = SCMapXdr.Decode(stream);
+            }
             return result;
         }
     }

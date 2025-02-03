@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GettransactionsResult
+    public partial class GetTransactionsResult
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("transactions")]
@@ -63,12 +63,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GettransactionsResult FromJson(string data)
+        public static GetTransactionsResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GettransactionsResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetTransactionsResult>(data, options);
 
         }
 

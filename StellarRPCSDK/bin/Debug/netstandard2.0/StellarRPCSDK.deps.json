@@ -11,10 +11,28 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "System.ComponentModel.Annotations": "5.0.0",
-          "System.Text.Json": "9.0.1"
+          "System.Text.Json": "9.0.1",
+          "dotnetstandard-bip32": "1.0.0",
+          "dotnetstandard-bip39": "1.0.2"
         },
         "runtime": {
           "StellarRPCSDK.dll": {}
+        }
+      },
+      "dotnetstandard-bip32/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/dotnetstandard-bip32.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "dotnetstandard-bip39/1.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/dotnetstandard-bip39.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/9.0.1": {
@@ -140,6 +158,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "dotnetstandard-bip32/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YMsZb2abuvsyNikSBJaCjaqFlfhcpbodukDqE7JwqKYsRE1NmfLlqbpQrK0olqCubSh9YaF6QfwGCFSHJODAGA==",
+      "path": "dotnetstandard-bip32/1.0.0",
+      "hashPath": "dotnetstandard-bip32.1.0.0.nupkg.sha512"
+    },
+    "dotnetstandard-bip39/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gayw9MyG3jjxkgRvrkhuzTY3H2yOh+I2+xAY+QktogyYfTcQvgt0+RtXbHQJn691/6i+B3L7wriNuLYv956gUQ==",
+      "path": "dotnetstandard-bip39/1.0.2",
+      "hashPath": "dotnetstandard-bip39.1.0.2.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/9.0.1": {
       "type": "package",

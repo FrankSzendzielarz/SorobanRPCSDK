@@ -94,7 +94,14 @@ namespace Stellar.XDR {
                     OperationMetaXdr.Encode(stream, item);
             }
             LedgerEntryChangesXdr.Encode(stream, value.txChangesAfter);
-            SorobanTransactionMetaXdr.Encode(stream, value.sorobanMeta);
+            if (value.sorobanMeta==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                SorobanTransactionMetaXdr.Encode(stream, value.sorobanMeta);
+            }
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static TransactionMetaV3 Decode(XdrReader stream)
@@ -111,7 +118,10 @@ namespace Stellar.XDR {
                 }
             }
             result.txChangesAfter = LedgerEntryChangesXdr.Decode(stream);
-            result.sorobanMeta = SorobanTransactionMetaXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.sorobanMeta = SorobanTransactionMetaXdr.Decode(stream);
+            }
             return result;
         }
     }

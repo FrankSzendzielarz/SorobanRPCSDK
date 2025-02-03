@@ -227,8 +227,8 @@ namespace Stellar.XDR {
                 }
             }
 
-            private string _dataName;
-            public string dataName
+            private string64 _dataName;
+            public string64 dataName
             {
                 get => _dataName;
                 set
@@ -252,14 +252,14 @@ namespace Stellar.XDR {
             {
                 value.Validate();
                 AccountIDXdr.Encode(stream, value.accountID);
-                stream.WriteString(value.dataName);
+                string64Xdr.Encode(stream, value.dataName);
             }
             /// <summary>Decodes struct from XDR stream</summary>
             public static dataStruct Decode(XdrReader stream)
             {
                 var result = new dataStruct();
                 result.accountID = AccountIDXdr.Decode(stream);
-                result.dataName = stream.ReadString();
+                result.dataName = string64Xdr.Decode(stream);
                 return result;
             }
         }

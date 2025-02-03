@@ -131,71 +131,7 @@ namespace Generator.XDR
             }
         }
 
-        private CSharpTypeInfo GetCSharpTypeInfo(StellarXdrParser.DeclarationContext decl)
-        {
-            var text = decl.GetText();
-            var arraySizeSpec = decl.arraySizeSpec();
-            ArrayType arrayType = ArrayType.None;
-            int? maxLength = null;
-
-            bool isOpaque = text.StartsWith("opaque");
-            bool isString = text.StartsWith("string");
-
-            if (arraySizeSpec != null)
-            {
-                if (arraySizeSpec is FixedArraySizeContext fixedArray)
-                {
-                    // Fixed size arrays (square brackets) always mean fixed array
-                    arrayType = ArrayType.Fixed;
-                    maxLength = int.Parse(fixedArray.value().GetText());
-                }
-                else if (arraySizeSpec is VarArraySizeContext varArray)
-                {
-                    if (isString)
-                    {
-                        // For strings, angle brackets specify max length
-                        maxLength = varArray?.value()?.constant() != null ?
-                            int.Parse(varArray.value().constant().GetText()) : null;
-                    }
-                    else
-                    {
-                        // For opaque and other types, angle brackets specify variable array
-                        arrayType = ArrayType.Variable;
-                        maxLength = varArray?.value()?.constant() != null ?
-                            int.Parse(varArray.value().constant().GetText()) : null;
-                    }
-                }
-            }
-
-            if (isOpaque)
-                return new CSharpTypeInfo("byte", arrayType, maxLength);
-
-            if (isString)
-                return new CSharpTypeInfo("string", arrayType, maxLength);
-            var baseType = decl.typeSpecifier().GetText() switch
-            {
-                "unsignedint" => "uint",
-                "int" => "int",
-                "unsignedhyper" => "ulong",
-                "hyper" => "long",
-                "float" => "float",
-                "double" => "double",
-                "bool" => "bool",
-                _ => decl.typeSpecifier().identifier()?.GetText() ?? "object"
-            };
-
-            if (baseType == "object")
-            {
-                if (decl.typeSpecifier()?.baseType()?.unionTypeSpec() != null)
-                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.unionTypeSpec());
-                if (decl.typeSpecifier()?.baseType()?.enumTypeSpec() != null)
-                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.enumTypeSpec());
-                if (decl.typeSpecifier()?.baseType()?.structTypeSpec() != null)
-                    baseType = TypeExtractorVisitor.GetNestedTypeName(decl.typeSpecifier()?.baseType()?.structTypeSpec());
-            }
-
-            return new CSharpTypeInfo(baseType, arrayType, maxLength);
-        }
+        
         private void GenerateEnum(StellarXdrParser.EnumBodyContext context, List<XDRTypeDefinition> allTypes)
         {
 
@@ -285,7 +221,7 @@ namespace Generator.XDR
 
                 WriteDocumentationComment(member, true);
 
-                var fieldType = GetCSharpTypeInfo(decl);
+                var fieldType = new CSharpTypeInfo(decl);
                 var fieldName = getFieldName(decl);
                 GenerateProperty(decl, fieldType, fieldName);
                 code.AppendLine();
@@ -297,7 +233,7 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-          //      if (decl.typeSpecifier() == null) continue;
+
 
                 GenerateInitialization(decl);
             }
@@ -332,6 +268,8 @@ namespace Generator.XDR
         }
         private void GenerateProperty(DeclarationContext decl, CSharpTypeInfo fieldType, string fieldName)
         {
+            if (fieldType.IsVoid) return;
+
             var code = CodeFile;
             switch (fieldType.ArrayType)
             {
@@ -365,7 +303,7 @@ namespace Generator.XDR
         private void GenerateInitialization(StellarXdrParser.DeclarationContext decl)
         {
             var code = CodeFile;
-            var typeInfo = GetCSharpTypeInfo(decl);
+            var typeInfo = new CSharpTypeInfo(decl);
 
             if (typeInfo.ArrayType == ArrayType.Fixed)
             {
@@ -379,7 +317,7 @@ namespace Generator.XDR
         private void GenerateValidation(StellarXdrParser.DeclarationContext decl)
         {
             var code = CodeFile;
-            var typeInfo = GetCSharpTypeInfo(decl);
+            var typeInfo = new CSharpTypeInfo(decl);
             var fieldName = getFieldName(decl);
 
             if (typeInfo.ArrayType == ArrayType.Fixed)
@@ -414,11 +352,9 @@ namespace Generator.XDR
             foreach (var member in members)
             {
                 var decl = member.declaration();
-                //if (decl.typeSpecifier() != null)
-                //{
-                    string fieldName = getFieldName(decl);
-                    GenerateEncodeStatement(decl, "value", fieldName);
-                //}
+                string fieldName = getFieldName(decl);
+                GenerateEncodeStatement(decl, "value", fieldName);
+              
             }
             code.CloseBlock();
 
@@ -430,10 +366,7 @@ namespace Generator.XDR
             foreach (var member in members)
             {
                 var decl = member.declaration();
-                //if (decl.typeSpecifier() != null)
-               //{
-                    GenerateDecodeStatement(decl, "result");
-                //}
+                GenerateDecodeStatement(decl, "result");
             }
             code.AppendLine("return result;");
             code.CloseBlock();
@@ -487,7 +420,7 @@ namespace Generator.XDR
         private void GenerateUnion(StellarXdrParser.UnionBodyContext context, List<XDRTypeDefinition> allTypes)
         {
             var switchDecl = context.declaration();
-            var discriminatorType = GetCSharpTypeInfo(switchDecl);
+            var discriminatorType = new CSharpTypeInfo(switchDecl);
             var code = CodeFile;
 
 
@@ -558,14 +491,13 @@ namespace Generator.XDR
                         }
                     }
                     var decl = caseSpec.declaration();
-                    if (decl.typeSpecifier() != null)
-                    {
-                        var fieldType = GetCSharpTypeInfo(decl);
-                        var fieldName = getFieldName(decl);
+                    var fieldType = new CSharpTypeInfo(decl);
+                   
+                    var fieldName = getFieldName(decl);
+                    GenerateProperty(decl, fieldType, fieldName);
+                    
 
-                        GenerateProperty(decl, fieldType, fieldName);
-
-                    }
+                    
                     code.AppendLine();
                     code.AppendLine("public override void ValidateCase() {}");
             
@@ -591,12 +523,12 @@ namespace Generator.XDR
                 code.AppendLine($"public override {discriminatorString} Discriminator => _discriminator;");
 
                 var defaultDecl = defaultCase.declaration();
-                if (defaultDecl.typeSpecifier() != null)
-                {
-                    var fieldType = GetCSharpTypeInfo(defaultDecl);
-                    var fieldName = getFieldName(defaultDecl);
-                    GenerateProperty(defaultDecl, fieldType, fieldName);
-                }
+           
+                var fieldType = new CSharpTypeInfo(defaultDecl);
+         
+                var fieldName = getFieldName(defaultDecl);
+                GenerateProperty(defaultDecl, fieldType, fieldName);
+                
 
                 code.AppendLine();
                 code.AppendLine($"public {Name}_Default({discriminatorString} discriminator)");
@@ -630,7 +562,7 @@ namespace Generator.XDR
             code.AppendLine($"public partial class {Name}");
             code.OpenBlock();
 
-            var baseType = GetCSharpTypeInfo(declaration);
+            var baseType = new CSharpTypeInfo(declaration);
 
             GenerateProperty(declaration, baseType, "InnerValue");
 
@@ -677,10 +609,11 @@ namespace Generator.XDR
                 {
                     code.AppendLine($"case {unionName}_{value.GetText()} case_{value.GetText()}:");
                     var decl = caseSpec.declaration();
-                    if (decl.typeSpecifier() != null)
+                    if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext)
                     {
                         var fieldName = getFieldName(decl);
                         GenerateEncodeStatement(decl, $"case_{value.GetText()}", fieldName);
+                    
                     }
                     code.AppendLine("break;");
                 }
@@ -690,7 +623,7 @@ namespace Generator.XDR
             {
                 code.AppendLine("case var defaultCase:");
                 var defaultDecl = context.defaultCase().declaration();
-                if (defaultDecl.typeSpecifier() != null)
+                if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext)
                 {
                     var fieldName = getFieldName(defaultDecl);
                     GenerateEncodeStatement(defaultDecl, "defaultCase", fieldName);
@@ -728,7 +661,7 @@ namespace Generator.XDR
                     
                     code.AppendLine($"var result_{value.GetText()} = new {unionName}_{value.GetText()}();");
                     var decl = caseSpec.declaration();
-                    if (decl.typeSpecifier() != null)
+                    if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext)
                     {
                         var fieldName = getFieldName(decl);
                         GenerateDecodeStatement(decl, $"result_{value.GetText()}",fieldName);
@@ -742,7 +675,7 @@ namespace Generator.XDR
                 code.AppendLine("default:");
                 code.AppendLine($"var defaultResult = new {unionName}_Default(discriminator);");
                 var defaultDecl = context.defaultCase().declaration();
-                if (defaultDecl.typeSpecifier() != null)
+                if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext)
                 {
                     var fieldName = getFieldName(defaultDecl);
                     GenerateDecodeStatement(defaultDecl, "defaultResult",fieldName);
@@ -784,12 +717,21 @@ namespace Generator.XDR
         private void GenerateEncodeStatement(StellarXdrParser.DeclarationContext decl,
                                            string valueName, string fieldName)
         {
-            var typeSpec = decl.typeSpecifier();
-            var typeInfo = GetCSharpTypeInfo(decl);
+    
+            var typeInfo = new CSharpTypeInfo(decl);
             var code = CodeFile;
-
-            if (decl.GetText().StartsWith("opaque"))
+            if (typeInfo.IsOptional)
             {
+                code.AppendLine($"if ({valueName}.{fieldName}==null){{");
+                code.AppendLine($"\tstream.WriteInt(0);");
+                code.AppendLine("}");
+                code.AppendLine("else");
+                code.OpenBlock();
+                code.AppendLine($"stream.WriteInt(1);");
+            }
+            if (typeInfo.IsOpaque) 
+            {
+       
                 if (typeInfo.ArrayType == ArrayType.Fixed)
                 {
                     code.AppendLine($"stream.WriteFixedOpaque({valueName}.{fieldName});");
@@ -799,7 +741,7 @@ namespace Generator.XDR
                     code.AppendLine($"stream.WriteOpaque({valueName}.{fieldName});");
                 }
             }
-            else if (decl.GetText().StartsWith("string"))
+            else if (typeInfo.IsString)
             {
                 code.AppendLine($"stream.WriteString({valueName}.{fieldName});");
             }
@@ -811,18 +753,23 @@ namespace Generator.XDR
                 }
                 code.AppendLine($"foreach (var item in {valueName}.{fieldName})");
                 code.OpenBlock();
-                code.AppendLine($"    {GetEncodeStatement(typeSpec, "item")};");
+                code.AppendLine($"    {GetEncodeStatement(typeInfo.TypeSpecifierContext, "item")};");
                 code.CloseBlock();
             }
             else
             {
-                code.AppendLine($"{GetEncodeStatement(typeSpec, $"{valueName}.{fieldName}")};");
+                code.AppendLine($"{GetEncodeStatement(typeInfo.TypeSpecifierContext, $"{valueName}.{fieldName}")};");
+            }
+            if (typeInfo.IsOptional)
+            {
+              
+                code.CloseBlock();
             }
         }
 
         private static string getFieldName(DeclarationContext decl)
         {
-            string fieldName = decl.identifier().GetText();
+            string fieldName = DeclarationIdentifier(decl);
             if (SyntaxFacts.IsKeywordKind(SyntaxFacts.GetKeywordKind(fieldName)))
             {
                 fieldName = $"_{fieldName}";
@@ -834,11 +781,16 @@ namespace Generator.XDR
                                            string valueName, string fieldName = null)
         {
             var code = CodeFile;
-            var typeSpec = decl.typeSpecifier();
+         
             if (String.IsNullOrEmpty(fieldName)) fieldName = getFieldName(decl);
-            var typeInfo = GetCSharpTypeInfo(decl);
-
-            if (decl.GetText().StartsWith("opaque"))
+            var typeInfo = new CSharpTypeInfo(decl);
+            var typeSpec = typeInfo.TypeSpecifierContext;
+            if (typeInfo.IsOptional)
+            {
+                code.AppendLine($"if (stream.ReadInt()==1)");
+                code.OpenBlock();
+            }
+            if (typeInfo.IsOpaque)
             {
                 if (typeInfo.ArrayType == ArrayType.Fixed)
                 {
@@ -849,7 +801,7 @@ namespace Generator.XDR
                     code.AppendLine($"{valueName}.{fieldName} = stream.ReadOpaque();");
                 }
             }
-            else if (decl.GetText().StartsWith("string"))
+            else if (typeInfo.IsString)
             {
                 code.AppendLine($"{valueName}.{fieldName} = stream.ReadString();");
             }
@@ -877,6 +829,10 @@ namespace Generator.XDR
             else
             {
                 code.AppendLine($"{valueName}.{fieldName} = {GetDecodeStatement(typeSpec)};");
+            }
+            if (typeInfo.IsOptional)
+            {
+                code.CloseBlock();
             }
         }
 

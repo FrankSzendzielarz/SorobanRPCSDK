@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xhMnlNAmMj8=",
+  "dgSpecHash": "4wiTcAw+qvQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK\\StellarRPCSDK.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\frank\\.nuget\\packages\\dotnetstandard-bip32\\1.0.0\\dotnetstandard-bip32.1.0.0.nupkg.sha512",
+    "C:\\Users\\frank\\.nuget\\packages\\dotnetstandard-bip39\\1.0.2\\dotnetstandard-bip39.1.0.2.nupkg.sha512",
     "C:\\Users\\frank\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\9.0.1\\microsoft.bcl.asyncinterfaces.9.0.1.nupkg.sha512",
     "C:\\Users\\frank\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\frank\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

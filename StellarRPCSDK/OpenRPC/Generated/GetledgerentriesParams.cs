@@ -13,14 +13,15 @@ namespace Stellar.RPC
     /// Parameters for getLedgerEntries method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetledgerentriesParams
+    public partial class GetLedgerEntriesParams
     {
         /// <summary>
         /// Array containing the keys of the ledger entries you wish to retrieve. (an array of serialized base64 strings)
         /// </summary>
 
-        [System.Text.Json.Serialization.JsonPropertyName("GetledgerentriesKeys")]
-        public System.Collections.Generic.ICollection<object> GetledgerentriesKeys { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("keys")]
+        [System.ComponentModel.DataAnnotations.Required]
+        public System.Collections.Generic.ICollection<string> Keys { get; set; } = new System.Collections.ObjectModel.Collection<string>();
 
 
 
@@ -41,12 +42,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GetledgerentriesParams FromJson(string data)
+        public static GetLedgerEntriesParams FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GetledgerentriesParams>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetLedgerEntriesParams>(data, options);
 
         }
 

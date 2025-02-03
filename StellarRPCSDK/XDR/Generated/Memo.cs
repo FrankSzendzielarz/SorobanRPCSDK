@@ -38,6 +38,17 @@ namespace Stellar.XDR {
     public sealed partial class Memo_MEMO_TEXT : Memo
     {
         public override MemoType Discriminator => MemoType.MEMO_TEXT;
+        private string _text;
+        public string text
+        {
+            get => _text;
+            set
+            {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > 28)
+                	throw new ArgumentException($"String exceeds 28 bytes when UTF8 encoded");
+                _text = value;
+            }
+        }
 
         public override void ValidateCase() {}
     }

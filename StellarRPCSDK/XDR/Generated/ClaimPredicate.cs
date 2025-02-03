@@ -142,7 +142,14 @@ namespace Stellar.XDR {
                 }
                 break;
                 case ClaimPredicate_CLAIM_PREDICATE_NOT case_CLAIM_PREDICATE_NOT:
-                ClaimPredicateXdr.Encode(stream, case_CLAIM_PREDICATE_NOT.notPredicate);
+                if (case_CLAIM_PREDICATE_NOT.notPredicate==null){
+                	stream.WriteInt(0);
+                }
+                else
+                {
+                    stream.WriteInt(1);
+                    ClaimPredicateXdr.Encode(stream, case_CLAIM_PREDICATE_NOT.notPredicate);
+                }
                 break;
                 case ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME case_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
                 int64Xdr.Encode(stream, case_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME.absBefore);
@@ -184,7 +191,10 @@ namespace Stellar.XDR {
                 return result_CLAIM_PREDICATE_OR;
                 case ClaimPredicateType.CLAIM_PREDICATE_NOT:
                 var result_CLAIM_PREDICATE_NOT = new ClaimPredicate_CLAIM_PREDICATE_NOT();
-                result_CLAIM_PREDICATE_NOT.notPredicate = ClaimPredicateXdr.Decode(stream);
+                if (stream.ReadInt()==1)
+                {
+                    result_CLAIM_PREDICATE_NOT.notPredicate = ClaimPredicateXdr.Decode(stream);
+                }
                 return result_CLAIM_PREDICATE_NOT;
                 case ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
                 var result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME = new ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME();

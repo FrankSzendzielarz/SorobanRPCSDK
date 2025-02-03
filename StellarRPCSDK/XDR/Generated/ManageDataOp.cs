@@ -15,8 +15,8 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ManageDataOp
     {
-        private string _dataName;
-        public string dataName
+        private string64 _dataName;
+        public string64 dataName
         {
             get => _dataName;
             set
@@ -49,15 +49,25 @@ namespace Stellar.XDR {
         public static void Encode(XdrWriter stream, ManageDataOp value)
         {
             value.Validate();
-            stream.WriteString(value.dataName);
-            DataValueXdr.Encode(stream, value.dataValue);
+            string64Xdr.Encode(stream, value.dataName);
+            if (value.dataValue==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                DataValueXdr.Encode(stream, value.dataValue);
+            }
         }
         /// <summary>Decodes struct from XDR stream</summary>
         public static ManageDataOp Decode(XdrReader stream)
         {
             var result = new ManageDataOp();
-            result.dataName = stream.ReadString();
-            result.dataValue = DataValueXdr.Decode(stream);
+            result.dataName = string64Xdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.dataValue = DataValueXdr.Decode(stream);
+            }
             return result;
         }
     }

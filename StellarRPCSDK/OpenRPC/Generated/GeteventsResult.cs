@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GeteventsResult
+    public partial class GetEventsResult
     {
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
@@ -42,12 +42,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GeteventsResult FromJson(string data)
+        public static GetEventsResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GeteventsResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetEventsResult>(data, options);
 
         }
 

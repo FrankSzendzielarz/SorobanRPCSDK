@@ -1,6 +1,8 @@
 ﻿using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 using Generator.XDR.Grammar;
+using Microsoft.CodeAnalysis;
+using static Generator.XDR.Grammar.StellarXdrParser;
 
 namespace Generator.XDR;
 
@@ -140,9 +142,28 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         }
     }
 
+    internal static string DeclarationIdentifier(DeclarationContext dc)
+    {
+        switch (dc)
+        {
+            case (GeneralDeclarationContext g):
+                return g.identifier().GetText();
+            case (OpaqueDeclarationContext o):
+                return o.identifier().GetText();
+            case (StringDeclarationContext s):
+                return s.identifier().GetText();
+            case (OptionalDeclarationContext op):
+                return op.identifier().GetText();   
+            case (VoidDeclarationContext v):
+                return String.Empty;
+            default:
+                throw new ArgumentException($"Unrecognised declaration type {dc.GetText()}");
+        }
+    }
+
     public override object VisitTypedefDefinition([NotNull] StellarXdrParser.TypedefDefinitionContext context)
     {
-        var typedefName = context.declaration().identifier().GetText();
+        var typedefName = DeclarationIdentifier(context.declaration());
         XDRType type = XDRType.TypeDef;
         _context.AddType(typedefName, type, context,context, _outputDir, _commentMap);
         try 
@@ -250,7 +271,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
 
         if (parentDecl is StellarXdrParser.DeclarationContext declContext)
         {
-            return $"{declContext.identifier()?.GetText()}{typeSuffix}";
+            return $"{DeclarationIdentifier(declContext)}{typeSuffix}";
         }
         return $"Nested{typeSuffix}";
     }

@@ -72,12 +72,34 @@ namespace Stellar.XDR {
         public sealed partial class ipUnion_IPv4 : ipUnion
         {
             public override IPAddrType Discriminator => IPAddrType.IPv4;
+            private byte[] _ipv4 = new byte[4];
+            public byte[] ipv4
+            {
+                get => _ipv4;
+                set
+                {
+                    if (value.Length != 4)
+                    	throw new ArgumentException($"Must be exactly 4 bytes");
+                    _ipv4 = value;
+                }
+            }
 
             public override void ValidateCase() {}
         }
         public sealed partial class ipUnion_IPv6 : ipUnion
         {
             public override IPAddrType Discriminator => IPAddrType.IPv6;
+            private byte[] _ipv6 = new byte[16];
+            public byte[] ipv6
+            {
+                get => _ipv6;
+                set
+                {
+                    if (value.Length != 16)
+                    	throw new ArgumentException($"Must be exactly 16 bytes");
+                    _ipv6 = value;
+                }
+            }
 
             public override void ValidateCase() {}
         }

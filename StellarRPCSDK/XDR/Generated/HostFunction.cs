@@ -60,6 +60,15 @@ namespace Stellar.XDR {
     public sealed partial class HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM : HostFunction
     {
         public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
+        private byte[] _wasm;
+        public byte[] wasm
+        {
+            get => _wasm;
+            set
+            {
+                _wasm = value;
+            }
+        }
 
         public override void ValidateCase() {}
     }

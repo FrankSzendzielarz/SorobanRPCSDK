@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GettransactionResult
+    public partial class GetTransactionResult
     {
         /// <summary>
         /// The current status of the transaction by hash
@@ -19,7 +19,7 @@ namespace Stellar.RPC
         [System.Text.Json.Serialization.JsonPropertyName("status")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public GettransactionResultStatus Status { get; set; }
+        public GetTransactionResultStatus Status { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
@@ -119,19 +119,19 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GettransactionResult FromJson(string data)
+        public static GetTransactionResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GettransactionResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetTransactionResult>(data, options);
 
         }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum GettransactionResultStatus
+    public enum GetTransactionResultStatus
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"SUCCESS")]

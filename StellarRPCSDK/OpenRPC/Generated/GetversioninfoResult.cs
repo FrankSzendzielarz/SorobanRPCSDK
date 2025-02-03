@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetversioninfoResult
+    public partial class GetVersionInfoResult
     {
         /// <summary>
         /// The version of the RPC server.
@@ -70,12 +70,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GetversioninfoResult FromJson(string data)
+        public static GetVersionInfoResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GetversioninfoResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetVersionInfoResult>(data, options);
 
         }
 

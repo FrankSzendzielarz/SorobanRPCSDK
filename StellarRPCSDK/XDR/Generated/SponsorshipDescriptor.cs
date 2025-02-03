@@ -32,12 +32,22 @@ namespace Stellar.XDR {
     {
         public static void Encode(XdrWriter stream, SponsorshipDescriptor value)
         {
-            AccountIDXdr.Encode(stream, value.InnerValue);
+            if (value.InnerValue==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                AccountIDXdr.Encode(stream, value.InnerValue);
+            }
         }
         public static SponsorshipDescriptor Decode(XdrReader stream)
         {
             var result = new SponsorshipDescriptor();
-            result.InnerValue = AccountIDXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.InnerValue = AccountIDXdr.Decode(stream);
+            }
             return result;
         }
     }

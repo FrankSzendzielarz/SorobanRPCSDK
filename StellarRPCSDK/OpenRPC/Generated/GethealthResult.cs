@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GethealthResult
+    public partial class GetHealthResult
     {
         /// <summary>
         /// "healthy"
@@ -59,12 +59,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GethealthResult FromJson(string data)
+        public static GetHealthResult FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GethealthResult>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetHealthResult>(data, options);
 
         }
 

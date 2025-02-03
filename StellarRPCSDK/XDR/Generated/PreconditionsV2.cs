@@ -120,9 +120,30 @@ namespace Stellar.XDR {
         public static void Encode(XdrWriter stream, PreconditionsV2 value)
         {
             value.Validate();
-            TimeBoundsXdr.Encode(stream, value.timeBounds);
-            LedgerBoundsXdr.Encode(stream, value.ledgerBounds);
-            SequenceNumberXdr.Encode(stream, value.minSeqNum);
+            if (value.timeBounds==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                TimeBoundsXdr.Encode(stream, value.timeBounds);
+            }
+            if (value.ledgerBounds==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                LedgerBoundsXdr.Encode(stream, value.ledgerBounds);
+            }
+            if (value.minSeqNum==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                SequenceNumberXdr.Encode(stream, value.minSeqNum);
+            }
             DurationXdr.Encode(stream, value.minSeqAge);
             uint32Xdr.Encode(stream, value.minSeqLedgerGap);
             stream.WriteInt(value.extraSigners.Length);
@@ -135,9 +156,18 @@ namespace Stellar.XDR {
         public static PreconditionsV2 Decode(XdrReader stream)
         {
             var result = new PreconditionsV2();
-            result.timeBounds = TimeBoundsXdr.Decode(stream);
-            result.ledgerBounds = LedgerBoundsXdr.Decode(stream);
-            result.minSeqNum = SequenceNumberXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.timeBounds = TimeBoundsXdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.ledgerBounds = LedgerBoundsXdr.Decode(stream);
+            }
+            if (stream.ReadInt()==1)
+            {
+                result.minSeqNum = SequenceNumberXdr.Decode(stream);
+            }
             result.minSeqAge = DurationXdr.Decode(stream);
             result.minSeqLedgerGap = uint32Xdr.Decode(stream);
             {

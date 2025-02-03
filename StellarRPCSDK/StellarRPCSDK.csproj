@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Stellar</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
+    <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.1" />
   </ItemGroup>

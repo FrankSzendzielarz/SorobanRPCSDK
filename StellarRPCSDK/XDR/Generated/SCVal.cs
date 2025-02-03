@@ -445,10 +445,24 @@ namespace Stellar.XDR {
                 SCSymbolXdr.Encode(stream, case_SCV_SYMBOL.sym);
                 break;
                 case SCVal_SCV_VEC case_SCV_VEC:
-                SCVecXdr.Encode(stream, case_SCV_VEC.vec);
+                if (case_SCV_VEC.vec==null){
+                	stream.WriteInt(0);
+                }
+                else
+                {
+                    stream.WriteInt(1);
+                    SCVecXdr.Encode(stream, case_SCV_VEC.vec);
+                }
                 break;
                 case SCVal_SCV_MAP case_SCV_MAP:
-                SCMapXdr.Encode(stream, case_SCV_MAP.map);
+                if (case_SCV_MAP.map==null){
+                	stream.WriteInt(0);
+                }
+                else
+                {
+                    stream.WriteInt(1);
+                    SCMapXdr.Encode(stream, case_SCV_MAP.map);
+                }
                 break;
                 case SCVal_SCV_ADDRESS case_SCV_ADDRESS:
                 SCAddressXdr.Encode(stream, case_SCV_ADDRESS.address);
@@ -533,11 +547,17 @@ namespace Stellar.XDR {
                 return result_SCV_SYMBOL;
                 case SCValType.SCV_VEC:
                 var result_SCV_VEC = new SCVal_SCV_VEC();
-                result_SCV_VEC.vec = SCVecXdr.Decode(stream);
+                if (stream.ReadInt()==1)
+                {
+                    result_SCV_VEC.vec = SCVecXdr.Decode(stream);
+                }
                 return result_SCV_VEC;
                 case SCValType.SCV_MAP:
                 var result_SCV_MAP = new SCVal_SCV_MAP();
-                result_SCV_MAP.map = SCMapXdr.Decode(stream);
+                if (stream.ReadInt()==1)
+                {
+                    result_SCV_MAP.map = SCMapXdr.Decode(stream);
+                }
                 return result_SCV_MAP;
                 case SCValType.SCV_ADDRESS:
                 var result_SCV_ADDRESS = new SCVal_SCV_ADDRESS();

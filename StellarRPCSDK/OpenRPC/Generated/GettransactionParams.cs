@@ -13,15 +13,15 @@ namespace Stellar.RPC
     /// Parameters for getTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GettransactionParams
+    public partial class GetTransactionParams
     {
         /// <summary>
         /// Transaction hash to query as a hex-encoded string. This transaction hash should correspond to transaction that has been previously submitted to the network.
         /// </summary>
 
-        [System.Text.Json.Serialization.JsonPropertyName("GettransactionHash")]
-        [System.ComponentModel.DataAnnotations.RegularExpression(@"^[a-f\d]{64}$")]
-        public string GettransactionHash { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("hash")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Hash { get; set; }
 
 
 
@@ -42,12 +42,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static GettransactionParams FromJson(string data)
+        public static GetTransactionParams FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<GettransactionParams>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<GetTransactionParams>(data, options);
 
         }
 

@@ -152,7 +152,14 @@ namespace Stellar.XDR {
             uint256Xdr.Encode(stream, value.sourceAccountEd25519);
             uint32Xdr.Encode(stream, value.fee);
             SequenceNumberXdr.Encode(stream, value.seqNum);
-            TimeBoundsXdr.Encode(stream, value.timeBounds);
+            if (value.timeBounds==null){
+            	stream.WriteInt(0);
+            }
+            else
+            {
+                stream.WriteInt(1);
+                TimeBoundsXdr.Encode(stream, value.timeBounds);
+            }
             MemoXdr.Encode(stream, value.memo);
             stream.WriteInt(value.operations.Length);
             foreach (var item in value.operations)
@@ -168,7 +175,10 @@ namespace Stellar.XDR {
             result.sourceAccountEd25519 = uint256Xdr.Decode(stream);
             result.fee = uint32Xdr.Decode(stream);
             result.seqNum = SequenceNumberXdr.Decode(stream);
-            result.timeBounds = TimeBoundsXdr.Decode(stream);
+            if (stream.ReadInt()==1)
+            {
+                result.timeBounds = TimeBoundsXdr.Decode(stream);
+            }
             result.memo = MemoXdr.Decode(stream);
             {
                 var length = stream.ReadInt();
