@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator uint(uint32 _uint32) => _uint32.InnerValue;
+        public static implicit operator uint32(uint value) => new uint32(value);
     }
     public static partial class uint32Xdr
     {

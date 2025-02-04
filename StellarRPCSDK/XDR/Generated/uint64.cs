@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator ulong(uint64 _uint64) => _uint64.InnerValue;
+        public static implicit operator uint64(ulong value) => new uint64(value);
     }
     public static partial class uint64Xdr
     {

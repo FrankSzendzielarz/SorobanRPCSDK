@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator string(SCSymbol _scsymbol) => _scsymbol.InnerValue;
+        public static implicit operator SCSymbol(string value) => new SCSymbol(value);
     }
     public static partial class SCSymbolXdr
     {

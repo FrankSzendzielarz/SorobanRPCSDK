@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator PeerStats[](PeerStatList _peerstatlist) => _peerstatlist.InnerValue;
+        public static implicit operator PeerStatList(PeerStats[] value) => new PeerStatList(value);
     }
     public static partial class PeerStatListXdr
     {

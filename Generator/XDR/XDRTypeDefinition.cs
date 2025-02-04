@@ -598,6 +598,10 @@ namespace Generator.XDR
             code.AppendLine("InnerValue = value;");
             code.CloseBlock();
 
+            // typedef implicit operators utility
+            code.AppendLine($"public static implicit operator {baseType.FullCSharpType}({Name} _{Name.ToLowerInvariant()}) => _{Name.ToLowerInvariant()}.InnerValue;");
+            code.AppendLine($"public static implicit operator {Name}({baseType.FullCSharpType} value) => new {Name}(value);");
+            
             code.CloseBlock();
 
             // Generate XDR helper class

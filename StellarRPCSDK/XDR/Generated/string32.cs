@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator string(string32 _string32) => _string32.InnerValue;
+        public static implicit operator string32(string value) => new string32(value);
     }
     public static partial class string32Xdr
     {

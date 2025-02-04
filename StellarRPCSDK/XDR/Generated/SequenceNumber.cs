@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator int64(SequenceNumber _sequencenumber) => _sequencenumber.InnerValue;
+        public static implicit operator SequenceNumber(int64 value) => new SequenceNumber(value);
     }
     public static partial class SequenceNumberXdr
     {

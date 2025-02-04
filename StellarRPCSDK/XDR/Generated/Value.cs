@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](Value _value) => _value.InnerValue;
+        public static implicit operator Value(byte[] value) => new Value(value);
     }
     public static partial class ValueXdr
     {

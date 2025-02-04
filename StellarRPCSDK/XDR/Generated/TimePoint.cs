@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator uint64(TimePoint _timepoint) => _timepoint.InnerValue;
+        public static implicit operator TimePoint(uint64 value) => new TimePoint(value);
     }
     public static partial class TimePointXdr
     {

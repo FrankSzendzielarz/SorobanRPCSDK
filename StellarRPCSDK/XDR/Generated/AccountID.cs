@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator PublicKey(AccountID _accountid) => _accountid.InnerValue;
+        public static implicit operator AccountID(PublicKey value) => new AccountID(value);
     }
     public static partial class AccountIDXdr
     {

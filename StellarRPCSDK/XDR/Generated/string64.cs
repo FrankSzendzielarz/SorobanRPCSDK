@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator string(string64 _string64) => _string64.InnerValue;
+        public static implicit operator string64(string value) => new string64(value);
     }
     public static partial class string64Xdr
     {

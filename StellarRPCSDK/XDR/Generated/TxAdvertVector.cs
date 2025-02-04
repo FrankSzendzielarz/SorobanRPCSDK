@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator Hash[](TxAdvertVector _txadvertvector) => _txadvertvector.InnerValue;
+        public static implicit operator TxAdvertVector(Hash[] value) => new TxAdvertVector(value);
     }
     public static partial class TxAdvertVectorXdr
     {

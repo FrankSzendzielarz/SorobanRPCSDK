@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](Hash _hash) => _hash.InnerValue;
+        public static implicit operator Hash(byte[] value) => new Hash(value);
     }
     public static partial class HashXdr
     {

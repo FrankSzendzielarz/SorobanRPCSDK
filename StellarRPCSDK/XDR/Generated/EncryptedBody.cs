@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](EncryptedBody _encryptedbody) => _encryptedbody.InnerValue;
+        public static implicit operator EncryptedBody(byte[] value) => new EncryptedBody(value);
     }
     public static partial class EncryptedBodyXdr
     {

@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator ContractCostParamEntry[](ContractCostParams _contractcostparams) => _contractcostparams.InnerValue;
+        public static implicit operator ContractCostParams(ContractCostParamEntry[] value) => new ContractCostParams(value);
     }
     public static partial class ContractCostParamsXdr
     {

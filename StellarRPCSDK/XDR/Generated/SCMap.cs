@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator SCMapEntry[](SCMap _scmap) => _scmap.InnerValue;
+        public static implicit operator SCMap(SCMapEntry[] value) => new SCMap(value);
     }
     public static partial class SCMapXdr
     {

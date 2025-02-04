@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator LedgerEntryChange[](LedgerEntryChanges _ledgerentrychanges) => _ledgerentrychanges.InnerValue;
+        public static implicit operator LedgerEntryChanges(LedgerEntryChange[] value) => new LedgerEntryChanges(value);
     }
     public static partial class LedgerEntryChangesXdr
     {

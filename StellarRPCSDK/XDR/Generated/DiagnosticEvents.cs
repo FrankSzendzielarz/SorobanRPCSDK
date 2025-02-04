@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator DiagnosticEvent[](DiagnosticEvents _diagnosticevents) => _diagnosticevents.InnerValue;
+        public static implicit operator DiagnosticEvents(DiagnosticEvent[] value) => new DiagnosticEvents(value);
     }
     public static partial class DiagnosticEventsXdr
     {

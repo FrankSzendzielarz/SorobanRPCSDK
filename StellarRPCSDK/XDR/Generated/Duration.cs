@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator uint64(Duration _duration) => _duration.InnerValue;
+        public static implicit operator Duration(uint64 value) => new Duration(value);
     }
     public static partial class DurationXdr
     {

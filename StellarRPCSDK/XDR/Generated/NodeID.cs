@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator PublicKey(NodeID _nodeid) => _nodeid.InnerValue;
+        public static implicit operator NodeID(PublicKey value) => new NodeID(value);
     }
     public static partial class NodeIDXdr
     {

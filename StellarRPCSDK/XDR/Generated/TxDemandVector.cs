@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator Hash[](TxDemandVector _txdemandvector) => _txdemandvector.InnerValue;
+        public static implicit operator TxDemandVector(Hash[] value) => new TxDemandVector(value);
     }
     public static partial class TxDemandVectorXdr
     {

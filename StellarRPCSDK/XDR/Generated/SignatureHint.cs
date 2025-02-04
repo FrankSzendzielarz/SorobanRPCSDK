@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](SignatureHint _signaturehint) => _signaturehint.InnerValue;
+        public static implicit operator SignatureHint(byte[] value) => new SignatureHint(value);
     }
     public static partial class SignatureHintXdr
     {

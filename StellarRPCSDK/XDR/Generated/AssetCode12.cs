@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](AssetCode12 _assetcode12) => _assetcode12.InnerValue;
+        public static implicit operator AssetCode12(byte[] value) => new AssetCode12(value);
     }
     public static partial class AssetCode12Xdr
     {

@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator AccountID(SponsorshipDescriptor _sponsorshipdescriptor) => _sponsorshipdescriptor.InnerValue;
+        public static implicit operator SponsorshipDescriptor(AccountID value) => new SponsorshipDescriptor(value);
     }
     public static partial class SponsorshipDescriptorXdr
     {

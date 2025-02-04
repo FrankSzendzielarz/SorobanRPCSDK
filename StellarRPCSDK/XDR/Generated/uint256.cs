@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](uint256 _uint256) => _uint256.InnerValue;
+        public static implicit operator uint256(byte[] value) => new uint256(value);
     }
     public static partial class uint256Xdr
     {

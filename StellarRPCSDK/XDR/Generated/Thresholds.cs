@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](Thresholds _thresholds) => _thresholds.InnerValue;
+        public static implicit operator Thresholds(byte[] value) => new Thresholds(value);
     }
     public static partial class ThresholdsXdr
     {

@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator Hash(PoolID _poolid) => _poolid.InnerValue;
+        public static implicit operator PoolID(Hash value) => new PoolID(value);
     }
     public static partial class PoolIDXdr
     {

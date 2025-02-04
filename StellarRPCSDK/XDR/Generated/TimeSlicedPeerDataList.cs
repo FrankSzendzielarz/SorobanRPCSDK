@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator TimeSlicedPeerData[](TimeSlicedPeerDataList _timeslicedpeerdatalist) => _timeslicedpeerdatalist.InnerValue;
+        public static implicit operator TimeSlicedPeerDataList(TimeSlicedPeerData[] value) => new TimeSlicedPeerDataList(value);
     }
     public static partial class TimeSlicedPeerDataListXdr
     {

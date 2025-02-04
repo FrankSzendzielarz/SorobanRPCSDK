@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator SCVal[](SCVec _scvec) => _scvec.InnerValue;
+        public static implicit operator SCVec(SCVal[] value) => new SCVec(value);
     }
     public static partial class SCVecXdr
     {

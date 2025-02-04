@@ -30,6 +30,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator byte[](UpgradeType _upgradetype) => _upgradetype.InnerValue;
+        public static implicit operator UpgradeType(byte[] value) => new UpgradeType(value);
     }
     public static partial class UpgradeTypeXdr
     {

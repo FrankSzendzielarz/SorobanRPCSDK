@@ -28,6 +28,8 @@ namespace Stellar.XDR {
         {
             InnerValue = value;
         }
+        public static implicit operator ArchivalProofNode[](ProofLevel _prooflevel) => _prooflevel.InnerValue;
+        public static implicit operator ProofLevel(ArchivalProofNode[] value) => new ProofLevel(value);
     }
     public static partial class ProofLevelXdr
     {

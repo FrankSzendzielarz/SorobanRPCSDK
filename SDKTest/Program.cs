@@ -18,9 +18,9 @@ namespace SDKTest
             KeyPair keyPair = KeyPair.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
             PublicKey_PUBLIC_KEY_TYPE_ED25519 testAccountPubKey = new PublicKey_PUBLIC_KEY_TYPE_ED25519()
             {
-                ed25519 = new uint256(keyPair.PublicKey)
+                ed25519 = keyPair.PublicKey
             };
-            AccountID testAccountId = new AccountID(testAccountPubKey);
+            AccountID testAccountId = testAccountPubKey;
 
             // Get health
             var healthResult = await sorobanClient.GetHealthAsync();
