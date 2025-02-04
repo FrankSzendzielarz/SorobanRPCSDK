@@ -12,10 +12,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Historical data (pushed to core archives) settings for contracts.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractHistoricalDataV0
     {
-        private int64 _feeHistorical1KB;
         public int64 feeHistorical1KB
         {
             get => _feeHistorical1KB;
@@ -24,6 +26,7 @@ namespace Stellar.XDR {
                 _feeHistorical1KB = value;
             }
         }
+        private int64 _feeHistorical1KB;
 
         public ConfigSettingContractHistoricalDataV0()
         {

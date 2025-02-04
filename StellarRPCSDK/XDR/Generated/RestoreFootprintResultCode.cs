@@ -21,7 +21,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum RestoreFootprintResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         RESTORE_FOOTPRINT_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         RESTORE_FOOTPRINT_MALFORMED = -1,
         RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED = -2,
         RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE = -3,

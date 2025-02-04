@@ -21,21 +21,21 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SCMetaEntry_SC_META_V0 : SCMetaEntry
-    {
-        public override SCMetaKind Discriminator => SCMetaKind.SC_META_V0;
-        private SCMetaV0 _v0;
-        public SCMetaV0 v0
+        public sealed partial class ScMetaV0 : SCMetaEntry
         {
-            get => _v0;
-            set
+            public override SCMetaKind Discriminator => SCMetaKind.SC_META_V0;
+            public SCMetaV0 v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private SCMetaV0 _v0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCMetaEntryXdr
     {
@@ -55,7 +55,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCMetaEntry_SC_META_V0 case_SC_META_V0:
+                case SCMetaEntry.ScMetaV0 case_SC_META_V0:
                 SCMetaV0Xdr.Encode(stream, case_SC_META_V0.v0);
                 break;
             }
@@ -66,7 +66,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SCMetaKind.SC_META_V0:
-                var result_SC_META_V0 = new SCMetaEntry_SC_META_V0();
+                var result_SC_META_V0 = new SCMetaEntry.ScMetaV0();
                 result_SC_META_V0.v0 = SCMetaV0Xdr.Decode(stream);
                 return result_SC_META_V0;
                 default:

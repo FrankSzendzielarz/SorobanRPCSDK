@@ -23,27 +23,27 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT : SorobanCredentials
-    {
-        public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SorobanCredentials_SOROBAN_CREDENTIALS_ADDRESS : SorobanCredentials
-    {
-        public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS;
-        private SorobanAddressCredentials _address;
-        public SorobanAddressCredentials address
+        public sealed partial class SorobanCredentialsSourceAccount : SorobanCredentials
         {
-            get => _address;
-            set
-            {
-                _address = value;
-            }
-        }
+            public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SorobanCredentialsAddress : SorobanCredentials
+        {
+            public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS;
+            public SorobanAddressCredentials address
+            {
+                get => _address;
+                set
+                {
+                    _address = value;
+                }
+            }
+            private SorobanAddressCredentials _address;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SorobanCredentialsXdr
     {
@@ -63,9 +63,9 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT case_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:
+                case SorobanCredentials.SorobanCredentialsSourceAccount case_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:
                 break;
-                case SorobanCredentials_SOROBAN_CREDENTIALS_ADDRESS case_SOROBAN_CREDENTIALS_ADDRESS:
+                case SorobanCredentials.SorobanCredentialsAddress case_SOROBAN_CREDENTIALS_ADDRESS:
                 SorobanAddressCredentialsXdr.Encode(stream, case_SOROBAN_CREDENTIALS_ADDRESS.address);
                 break;
             }
@@ -76,10 +76,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT:
-                var result_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT = new SorobanCredentials_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT();
+                var result_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT = new SorobanCredentials.SorobanCredentialsSourceAccount();
                 return result_SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
                 case SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS:
-                var result_SOROBAN_CREDENTIALS_ADDRESS = new SorobanCredentials_SOROBAN_CREDENTIALS_ADDRESS();
+                var result_SOROBAN_CREDENTIALS_ADDRESS = new SorobanCredentials.SorobanCredentialsAddress();
                 result_SOROBAN_CREDENTIALS_ADDRESS.address = SorobanAddressCredentialsXdr.Decode(stream);
                 return result_SOROBAN_CREDENTIALS_ADDRESS;
                 default:

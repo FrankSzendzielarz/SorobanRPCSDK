@@ -46,6 +46,9 @@ namespace Stellar.XDR {
     public enum SCSpecType
     {
         SC_SPEC_TYPE_VAL = 0,
+        /// <summary>
+        /// Types with no parameters.
+        /// </summary>
         SC_SPEC_TYPE_BOOL = 1,
         SC_SPEC_TYPE_VOID = 2,
         SC_SPEC_TYPE_ERROR = 3,
@@ -63,12 +66,18 @@ namespace Stellar.XDR {
         SC_SPEC_TYPE_STRING = 16,
         SC_SPEC_TYPE_SYMBOL = 17,
         SC_SPEC_TYPE_ADDRESS = 19,
+        /// <summary>
+        /// Types with parameters.
+        /// </summary>
         SC_SPEC_TYPE_OPTION = 1000,
         SC_SPEC_TYPE_RESULT = 1001,
         SC_SPEC_TYPE_VEC = 1002,
         SC_SPEC_TYPE_MAP = 1004,
         SC_SPEC_TYPE_TUPLE = 1005,
         SC_SPEC_TYPE_BYTES_N = 1006,
+        /// <summary>
+        /// User defined types.
+        /// </summary>
         SC_SPEC_TYPE_UDT = 2000,
     }
 

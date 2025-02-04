@@ -20,9 +20,21 @@ namespace Stellar.XDR {
     public enum ErrorCode
     {
         ERR_MISC = 0,
+        /// <summary>
+        /// Unspecific error
+        /// </summary>
         ERR_DATA = 1,
+        /// <summary>
+        /// Malformed data
+        /// </summary>
         ERR_CONF = 2,
+        /// <summary>
+        /// Misconfiguration error
+        /// </summary>
         ERR_AUTH = 3,
+        /// <summary>
+        /// Authentication failure
+        /// </summary>
         ERR_LOAD = 4,
     }
 

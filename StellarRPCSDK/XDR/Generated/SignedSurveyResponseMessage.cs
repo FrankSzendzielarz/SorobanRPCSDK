@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SignedSurveyResponseMessage
     {
-        private Signature _responseSignature;
         public Signature responseSignature
         {
             get => _responseSignature;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _responseSignature = value;
             }
         }
+        private Signature _responseSignature;
 
-        private SurveyResponseMessage _response;
         public SurveyResponseMessage response
         {
             get => _response;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _response = value;
             }
         }
+        private SurveyResponseMessage _response;
 
         public SignedSurveyResponseMessage()
         {

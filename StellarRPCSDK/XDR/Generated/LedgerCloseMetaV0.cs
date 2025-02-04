@@ -28,7 +28,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerCloseMetaV0
     {
-        private LedgerHeaderHistoryEntry _ledgerHeader;
         public LedgerHeaderHistoryEntry ledgerHeader
         {
             get => _ledgerHeader;
@@ -37,8 +36,11 @@ namespace Stellar.XDR {
                 _ledgerHeader = value;
             }
         }
+        private LedgerHeaderHistoryEntry _ledgerHeader;
 
-        private TransactionSet _txSet;
+        /// <summary>
+        /// NB: txSet is sorted in "Hash order"
+        /// </summary>
         public TransactionSet txSet
         {
             get => _txSet;
@@ -47,8 +49,11 @@ namespace Stellar.XDR {
                 _txSet = value;
             }
         }
+        private TransactionSet _txSet;
 
-        private TransactionResultMeta[] _txProcessing;
+        /// <summary>
+        /// followed by applying transactions
+        /// </summary>
         public TransactionResultMeta[] txProcessing
         {
             get => _txProcessing;
@@ -57,8 +62,11 @@ namespace Stellar.XDR {
                 _txProcessing = value;
             }
         }
+        private TransactionResultMeta[] _txProcessing;
 
-        private UpgradeEntryMeta[] _upgradesProcessing;
+        /// <summary>
+        /// upgrades are applied last
+        /// </summary>
         public UpgradeEntryMeta[] upgradesProcessing
         {
             get => _upgradesProcessing;
@@ -67,8 +75,11 @@ namespace Stellar.XDR {
                 _upgradesProcessing = value;
             }
         }
+        private UpgradeEntryMeta[] _upgradesProcessing;
 
-        private SCPHistoryEntry[] _scpInfo;
+        /// <summary>
+        /// other misc information attached to the ledger close
+        /// </summary>
         public SCPHistoryEntry[] scpInfo
         {
             get => _scpInfo;
@@ -77,6 +88,7 @@ namespace Stellar.XDR {
                 _scpInfo = value;
             }
         }
+        private SCPHistoryEntry[] _scpInfo;
 
         public LedgerCloseMetaV0()
         {

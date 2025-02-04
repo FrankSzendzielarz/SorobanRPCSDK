@@ -30,7 +30,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class signerStruct
         {
-            private AccountID _accountID;
             public AccountID accountID
             {
                 get => _accountID;
@@ -39,8 +38,8 @@ namespace Stellar.XDR {
                     _accountID = value;
                 }
             }
+            private AccountID _accountID;
 
-            private SignerKey _signerKey;
             public SignerKey signerKey
             {
                 get => _signerKey;
@@ -49,6 +48,7 @@ namespace Stellar.XDR {
                     _signerKey = value;
                 }
             }
+            private SignerKey _signerKey;
 
             public signerStruct()
             {
@@ -86,36 +86,36 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY : RevokeSponsorshipOp
-    {
-        public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
-        private LedgerKey _ledgerKey;
-        public LedgerKey ledgerKey
+        public sealed partial class RevokeSponsorshipLedgerEntry : RevokeSponsorshipOp
         {
-            get => _ledgerKey;
-            set
+            public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
+            public LedgerKey ledgerKey
             {
-                _ledgerKey = value;
+                get => _ledgerKey;
+                set
+                {
+                    _ledgerKey = value;
+                }
             }
-        }
+            private LedgerKey _ledgerKey;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER : RevokeSponsorshipOp
-    {
-        public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
-        private signerStruct _signer;
-        public signerStruct signer
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipSigner : RevokeSponsorshipOp
         {
-            get => _signer;
-            set
+            public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
+            public signerStruct signer
             {
-                _signer = value;
+                get => _signer;
+                set
+                {
+                    _signer = value;
+                }
             }
-        }
+            private signerStruct _signer;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class RevokeSponsorshipOpXdr
     {
@@ -135,10 +135,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY case_REVOKE_SPONSORSHIP_LEDGER_ENTRY:
+                case RevokeSponsorshipOp.RevokeSponsorshipLedgerEntry case_REVOKE_SPONSORSHIP_LEDGER_ENTRY:
                 LedgerKeyXdr.Encode(stream, case_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey);
                 break;
-                case RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER case_REVOKE_SPONSORSHIP_SIGNER:
+                case RevokeSponsorshipOp.RevokeSponsorshipSigner case_REVOKE_SPONSORSHIP_SIGNER:
                 RevokeSponsorshipOp.signerStructXdr.Encode(stream, case_REVOKE_SPONSORSHIP_SIGNER.signer);
                 break;
             }
@@ -149,11 +149,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY:
-                var result_REVOKE_SPONSORSHIP_LEDGER_ENTRY = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_LEDGER_ENTRY();
+                var result_REVOKE_SPONSORSHIP_LEDGER_ENTRY = new RevokeSponsorshipOp.RevokeSponsorshipLedgerEntry();
                 result_REVOKE_SPONSORSHIP_LEDGER_ENTRY.ledgerKey = LedgerKeyXdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_LEDGER_ENTRY;
                 case RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER:
-                var result_REVOKE_SPONSORSHIP_SIGNER = new RevokeSponsorshipOp_REVOKE_SPONSORSHIP_SIGNER();
+                var result_REVOKE_SPONSORSHIP_SIGNER = new RevokeSponsorshipOp.RevokeSponsorshipSigner();
                 result_REVOKE_SPONSORSHIP_SIGNER.signer = RevokeSponsorshipOp.signerStructXdr.Decode(stream);
                 return result_REVOKE_SPONSORSHIP_SIGNER;
                 default:

@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class CreateClaimableBalanceOp
     {
-        private Asset _asset;
         public Asset asset
         {
             get => _asset;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private Asset _asset;
 
-        private int64 _amount;
         public int64 amount
         {
             get => _amount;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private Claimant[] _claimants;
         public Claimant[] claimants
         {
             get => _claimants;
@@ -48,6 +47,7 @@ namespace Stellar.XDR {
                 _claimants = value;
             }
         }
+        private Claimant[] _claimants;
 
         public CreateClaimableBalanceOp()
         {

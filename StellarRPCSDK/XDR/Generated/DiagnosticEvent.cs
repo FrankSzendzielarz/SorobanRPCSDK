@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class DiagnosticEvent
     {
-        private bool _inSuccessfulContractCall;
         public bool inSuccessfulContractCall
         {
             get => _inSuccessfulContractCall;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _inSuccessfulContractCall = value;
             }
         }
+        private bool _inSuccessfulContractCall;
 
-        private ContractEvent __event;
         public ContractEvent _event
         {
             get => __event;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 __event = value;
             }
         }
+        private ContractEvent __event;
 
         public DiagnosticEvent()
         {

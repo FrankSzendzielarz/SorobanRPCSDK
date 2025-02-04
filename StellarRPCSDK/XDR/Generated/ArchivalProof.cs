@@ -23,7 +23,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ArchivalProof
     {
-        private uint32 _epoch;
         public uint32 epoch
         {
             get => _epoch;
@@ -32,8 +31,8 @@ namespace Stellar.XDR {
                 _epoch = value;
             }
         }
+        private uint32 _epoch;
 
-        private bodyUnion _body;
         public bodyUnion body
         {
             get => _body;
@@ -42,6 +41,7 @@ namespace Stellar.XDR {
                 _body = value;
             }
         }
+        private bodyUnion _body;
 
         public ArchivalProof()
         {
@@ -58,36 +58,36 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class bodyUnion_EXISTENCE : bodyUnion
-        {
-            public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
-            private NonexistenceProofBody _nonexistenceProof;
-            public NonexistenceProofBody nonexistenceProof
+            public sealed partial class Existence : bodyUnion
             {
-                get => _nonexistenceProof;
-                set
+                public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
+                public NonexistenceProofBody nonexistenceProof
                 {
-                    _nonexistenceProof = value;
+                    get => _nonexistenceProof;
+                    set
+                    {
+                        _nonexistenceProof = value;
+                    }
                 }
-            }
+                private NonexistenceProofBody _nonexistenceProof;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_NONEXISTENCE : bodyUnion
-        {
-            public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;
-            private ExistenceProofBody _existenceProof;
-            public ExistenceProofBody existenceProof
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Nonexistence : bodyUnion
             {
-                get => _existenceProof;
-                set
+                public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;
+                public ExistenceProofBody existenceProof
                 {
-                    _existenceProof = value;
+                    get => _existenceProof;
+                    set
+                    {
+                        _existenceProof = value;
+                    }
                 }
-            }
+                private ExistenceProofBody _existenceProof;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class bodyUnionXdr
         {
@@ -107,10 +107,10 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case bodyUnion_EXISTENCE case_EXISTENCE:
+                    case bodyUnion.Existence case_EXISTENCE:
                     NonexistenceProofBodyXdr.Encode(stream, case_EXISTENCE.nonexistenceProof);
                     break;
-                    case bodyUnion_NONEXISTENCE case_NONEXISTENCE:
+                    case bodyUnion.Nonexistence case_NONEXISTENCE:
                     ExistenceProofBodyXdr.Encode(stream, case_NONEXISTENCE.existenceProof);
                     break;
                 }
@@ -121,11 +121,11 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case ArchivalProofType.EXISTENCE:
-                    var result_EXISTENCE = new bodyUnion_EXISTENCE();
+                    var result_EXISTENCE = new bodyUnion.Existence();
                     result_EXISTENCE.nonexistenceProof = NonexistenceProofBodyXdr.Decode(stream);
                     return result_EXISTENCE;
                     case ArchivalProofType.NONEXISTENCE:
-                    var result_NONEXISTENCE = new bodyUnion_NONEXISTENCE();
+                    var result_NONEXISTENCE = new bodyUnion.Nonexistence();
                     result_NONEXISTENCE.existenceProof = ExistenceProofBodyXdr.Decode(stream);
                     return result_NONEXISTENCE;
                     default:

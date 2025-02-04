@@ -24,7 +24,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PathPaymentStrictReceiveOp
     {
-        private Asset _sendAsset;
         public Asset sendAsset
         {
             get => _sendAsset;
@@ -33,8 +32,11 @@ namespace Stellar.XDR {
                 _sendAsset = value;
             }
         }
+        private Asset _sendAsset;
 
-        private int64 _sendMax;
+        /// <summary>
+        /// asset we pay with
+        /// </summary>
         public int64 sendMax
         {
             get => _sendMax;
@@ -43,8 +45,8 @@ namespace Stellar.XDR {
                 _sendMax = value;
             }
         }
+        private int64 _sendMax;
 
-        private MuxedAccount _destination;
         public MuxedAccount destination
         {
             get => _destination;
@@ -53,8 +55,11 @@ namespace Stellar.XDR {
                 _destination = value;
             }
         }
+        private MuxedAccount _destination;
 
-        private Asset _destAsset;
+        /// <summary>
+        /// recipient of the payment
+        /// </summary>
         public Asset destAsset
         {
             get => _destAsset;
@@ -63,8 +68,11 @@ namespace Stellar.XDR {
                 _destAsset = value;
             }
         }
+        private Asset _destAsset;
 
-        private int64 _destAmount;
+        /// <summary>
+        /// what they end up with
+        /// </summary>
         public int64 destAmount
         {
             get => _destAmount;
@@ -73,8 +81,8 @@ namespace Stellar.XDR {
                 _destAmount = value;
             }
         }
+        private int64 _destAmount;
 
-        private Asset[] _path;
         public Asset[] path
         {
             get => _path;
@@ -85,6 +93,7 @@ namespace Stellar.XDR {
                 _path = value;
             }
         }
+        private Asset[] _path;
 
         public PathPaymentStrictReceiveOp()
         {

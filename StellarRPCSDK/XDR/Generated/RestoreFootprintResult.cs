@@ -25,30 +25,30 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS : RestoreFootprintResult
-    {
-        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
+        public sealed partial class RestoreFootprintSuccess : RestoreFootprintResult
+        {
+            public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_MALFORMED : RestoreFootprintResult
-    {
-        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RestoreFootprintMalformed : RestoreFootprintResult
+        {
+            public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED : RestoreFootprintResult
-    {
-        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RestoreFootprintResourceLimitExceeded : RestoreFootprintResult
+        {
+            public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RestoreFootprintResult_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE : RestoreFootprintResult
-    {
-        public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RestoreFootprintInsufficientRefundableFee : RestoreFootprintResult
+        {
+            public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class RestoreFootprintResultXdr
     {
@@ -68,13 +68,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS case_RESTORE_FOOTPRINT_SUCCESS:
+                case RestoreFootprintResult.RestoreFootprintSuccess case_RESTORE_FOOTPRINT_SUCCESS:
                 break;
-                case RestoreFootprintResult_RESTORE_FOOTPRINT_MALFORMED case_RESTORE_FOOTPRINT_MALFORMED:
+                case RestoreFootprintResult.RestoreFootprintMalformed case_RESTORE_FOOTPRINT_MALFORMED:
                 break;
-                case RestoreFootprintResult_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED case_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED:
+                case RestoreFootprintResult.RestoreFootprintResourceLimitExceeded case_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED:
                 break;
-                case RestoreFootprintResult_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE case_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE:
+                case RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee case_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE:
                 break;
             }
         }
@@ -84,16 +84,16 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS:
-                var result_RESTORE_FOOTPRINT_SUCCESS = new RestoreFootprintResult_RESTORE_FOOTPRINT_SUCCESS();
+                var result_RESTORE_FOOTPRINT_SUCCESS = new RestoreFootprintResult.RestoreFootprintSuccess();
                 return result_RESTORE_FOOTPRINT_SUCCESS;
                 case RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED:
-                var result_RESTORE_FOOTPRINT_MALFORMED = new RestoreFootprintResult_RESTORE_FOOTPRINT_MALFORMED();
+                var result_RESTORE_FOOTPRINT_MALFORMED = new RestoreFootprintResult.RestoreFootprintMalformed();
                 return result_RESTORE_FOOTPRINT_MALFORMED;
                 case RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED:
-                var result_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED = new RestoreFootprintResult_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED();
+                var result_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED = new RestoreFootprintResult.RestoreFootprintResourceLimitExceeded();
                 return result_RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
                 case RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE:
-                var result_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE = new RestoreFootprintResult_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE();
+                var result_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE = new RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee();
                 return result_RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;
                 default:
                 throw new Exception($"Unknown discriminator for RestoreFootprintResult: {discriminator}");

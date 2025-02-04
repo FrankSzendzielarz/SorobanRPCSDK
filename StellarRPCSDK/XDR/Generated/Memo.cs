@@ -29,74 +29,77 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class Memo_MEMO_NONE : Memo
-    {
-        public override MemoType Discriminator => MemoType.MEMO_NONE;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Memo_MEMO_TEXT : Memo
-    {
-        public override MemoType Discriminator => MemoType.MEMO_TEXT;
-        private string _text;
-        public string text
+        public sealed partial class MemoNone : Memo
         {
-            get => _text;
-            set
-            {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > 28)
-                	throw new ArgumentException($"String exceeds 28 bytes when UTF8 encoded");
-                _text = value;
-            }
-        }
+            public override MemoType Discriminator => MemoType.MEMO_NONE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Memo_MEMO_ID : Memo
-    {
-        public override MemoType Discriminator => MemoType.MEMO_ID;
-        private uint64 _id;
-        public uint64 id
+            public override void ValidateCase() {}
+        }
+        public sealed partial class MemoText : Memo
         {
-            get => _id;
-            set
+            public override MemoType Discriminator => MemoType.MEMO_TEXT;
+            public string text
             {
-                _id = value;
+                get => _text;
+                set
+                {
+                    if (System.Text.Encoding.UTF8.GetByteCount(value) > 28)
+                    	throw new ArgumentException($"String exceeds 28 bytes when UTF8 encoded");
+                    _text = value;
+                }
             }
-        }
+            private string _text;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Memo_MEMO_HASH : Memo
-    {
-        public override MemoType Discriminator => MemoType.MEMO_HASH;
-        private Hash _hash;
-        public Hash hash
+            public override void ValidateCase() {}
+        }
+        public sealed partial class MemoId : Memo
         {
-            get => _hash;
-            set
+            public override MemoType Discriminator => MemoType.MEMO_ID;
+            public uint64 id
             {
-                _hash = value;
+                get => _id;
+                set
+                {
+                    _id = value;
+                }
             }
-        }
+            private uint64 _id;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Memo_MEMO_RETURN : Memo
-    {
-        public override MemoType Discriminator => MemoType.MEMO_RETURN;
-        private Hash _retHash;
-        public Hash retHash
+            public override void ValidateCase() {}
+        }
+        public sealed partial class MemoHash : Memo
         {
-            get => _retHash;
-            set
+            public override MemoType Discriminator => MemoType.MEMO_HASH;
+            public Hash hash
             {
-                _retHash = value;
+                get => _hash;
+                set
+                {
+                    _hash = value;
+                }
             }
-        }
+            private Hash _hash;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// the hash of what to pull from the content server
+        /// </summary>
+        public sealed partial class MemoReturn : Memo
+        {
+            public override MemoType Discriminator => MemoType.MEMO_RETURN;
+            public Hash retHash
+            {
+                get => _retHash;
+                set
+                {
+                    _retHash = value;
+                }
+            }
+            private Hash _retHash;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class MemoXdr
     {
@@ -116,17 +119,17 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case Memo_MEMO_NONE case_MEMO_NONE:
+                case Memo.MemoNone case_MEMO_NONE:
                 break;
-                case Memo_MEMO_TEXT case_MEMO_TEXT:
+                case Memo.MemoText case_MEMO_TEXT:
                 break;
-                case Memo_MEMO_ID case_MEMO_ID:
+                case Memo.MemoId case_MEMO_ID:
                 uint64Xdr.Encode(stream, case_MEMO_ID.id);
                 break;
-                case Memo_MEMO_HASH case_MEMO_HASH:
+                case Memo.MemoHash case_MEMO_HASH:
                 HashXdr.Encode(stream, case_MEMO_HASH.hash);
                 break;
-                case Memo_MEMO_RETURN case_MEMO_RETURN:
+                case Memo.MemoReturn case_MEMO_RETURN:
                 HashXdr.Encode(stream, case_MEMO_RETURN.retHash);
                 break;
             }
@@ -137,21 +140,21 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case MemoType.MEMO_NONE:
-                var result_MEMO_NONE = new Memo_MEMO_NONE();
+                var result_MEMO_NONE = new Memo.MemoNone();
                 return result_MEMO_NONE;
                 case MemoType.MEMO_TEXT:
-                var result_MEMO_TEXT = new Memo_MEMO_TEXT();
+                var result_MEMO_TEXT = new Memo.MemoText();
                 return result_MEMO_TEXT;
                 case MemoType.MEMO_ID:
-                var result_MEMO_ID = new Memo_MEMO_ID();
+                var result_MEMO_ID = new Memo.MemoId();
                 result_MEMO_ID.id = uint64Xdr.Decode(stream);
                 return result_MEMO_ID;
                 case MemoType.MEMO_HASH:
-                var result_MEMO_HASH = new Memo_MEMO_HASH();
+                var result_MEMO_HASH = new Memo.MemoHash();
                 result_MEMO_HASH.hash = HashXdr.Decode(stream);
                 return result_MEMO_HASH;
                 case MemoType.MEMO_RETURN:
-                var result_MEMO_RETURN = new Memo_MEMO_RETURN();
+                var result_MEMO_RETURN = new Memo.MemoReturn();
                 result_MEMO_RETURN.retHash = HashXdr.Decode(stream);
                 return result_MEMO_RETURN;
                 default:

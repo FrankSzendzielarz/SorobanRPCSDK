@@ -16,7 +16,7 @@ namespace SDKTest
 
             // Set up a test account
             KeyPair keyPair = KeyPair.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
-            PublicKey_PUBLIC_KEY_TYPE_ED25519 testAccountPubKey = new PublicKey_PUBLIC_KEY_TYPE_ED25519()
+            PublicKey.PublicKeyTypeEd25519 testAccountPubKey = new PublicKey.PublicKeyTypeEd25519()
             {
                 ed25519 = keyPair.PublicKey
             };
@@ -26,7 +26,7 @@ namespace SDKTest
             var healthResult = await sorobanClient.GetHealthAsync();
 
             // Get account
-            LedgerKey myAccount = new LedgerKey_ACCOUNT()
+            LedgerKey myAccount = new LedgerKey.Account()
             {
                 account = new LedgerKey.accountStruct() //TODO - this is an artifact of the XDR where unnecessary structs are added into union case arms.
                 {
@@ -43,6 +43,10 @@ namespace SDKTest
             var ledgerEntriesAccount = await sorobanClient.GetLedgerEntriesAsync(accountLedgerEntriesArgument);
 
             var test = ledgerEntriesAccount.Entries.First().LedgerEntryData;
+
+
+            PaymentOp paymentOp = new PaymentOp();
+            paymentOp.asset = new Asset.AssetTypeNative();
 
         }
     }

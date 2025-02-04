@@ -39,7 +39,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Transaction
     {
-        private MuxedAccount _sourceAccount;
+        /// <summary>
+        /// account used to run the transaction
+        /// </summary>
         public MuxedAccount sourceAccount
         {
             get => _sourceAccount;
@@ -48,8 +50,11 @@ namespace Stellar.XDR {
                 _sourceAccount = value;
             }
         }
+        private MuxedAccount _sourceAccount;
 
-        private uint32 _fee;
+        /// <summary>
+        /// the fee the sourceAccount will pay
+        /// </summary>
         public uint32 fee
         {
             get => _fee;
@@ -58,8 +63,11 @@ namespace Stellar.XDR {
                 _fee = value;
             }
         }
+        private uint32 _fee;
 
-        private SequenceNumber _seqNum;
+        /// <summary>
+        /// sequence number to consume in the account
+        /// </summary>
         public SequenceNumber seqNum
         {
             get => _seqNum;
@@ -68,8 +76,11 @@ namespace Stellar.XDR {
                 _seqNum = value;
             }
         }
+        private SequenceNumber _seqNum;
 
-        private Preconditions _cond;
+        /// <summary>
+        /// validity conditions
+        /// </summary>
         public Preconditions cond
         {
             get => _cond;
@@ -78,8 +89,8 @@ namespace Stellar.XDR {
                 _cond = value;
             }
         }
+        private Preconditions _cond;
 
-        private Memo _memo;
         public Memo memo
         {
             get => _memo;
@@ -88,8 +99,8 @@ namespace Stellar.XDR {
                 _memo = value;
             }
         }
+        private Memo _memo;
 
-        private Operation[] _operations;
         public Operation[] operations
         {
             get => _operations;
@@ -98,8 +109,11 @@ namespace Stellar.XDR {
                 _operations = value;
             }
         }
+        private Operation[] _operations;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -108,6 +122,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public Transaction()
         {
@@ -124,27 +139,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_1 : extUnion
-        {
-            public override int Discriminator => 1;
-            private SorobanTransactionData _sorobanData;
-            public SorobanTransactionData sorobanData
+            public sealed partial class case_0 : extUnion
             {
-                get => _sorobanData;
-                set
-                {
-                    _sorobanData = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_1 : extUnion
+            {
+                public override int Discriminator => 1;
+                public SorobanTransactionData sorobanData
+                {
+                    get => _sorobanData;
+                    set
+                    {
+                        _sorobanData = value;
+                    }
+                }
+                private SorobanTransactionData _sorobanData;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -164,9 +179,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_1 case_1:
+                    case extUnion.case_1 case_1:
                     SorobanTransactionDataXdr.Encode(stream, case_1.sorobanData);
                     break;
                 }
@@ -177,10 +192,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 1:
-                    var result_1 = new extUnion_1();
+                    var result_1 = new extUnion.case_1();
                     result_1.sorobanData = SorobanTransactionDataXdr.Decode(stream);
                     return result_1;
                     default:

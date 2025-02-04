@@ -26,36 +26,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ManageDataResult_MANAGE_DATA_SUCCESS : ManageDataResult
-    {
-        public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_SUCCESS;
+        public sealed partial class ManageDataSuccess : ManageDataResult
+        {
+            public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ManageDataResult_MANAGE_DATA_NOT_SUPPORTED_YET : ManageDataResult
-    {
-        public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ManageDataNotSupportedYet : ManageDataResult
+        {
+            public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ManageDataResult_MANAGE_DATA_NAME_NOT_FOUND : ManageDataResult
-    {
-        public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ManageDataNameNotFound : ManageDataResult
+        {
+            public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ManageDataResult_MANAGE_DATA_LOW_RESERVE : ManageDataResult
-    {
-        public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_LOW_RESERVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ManageDataLowReserve : ManageDataResult
+        {
+            public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_LOW_RESERVE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ManageDataResult_MANAGE_DATA_INVALID_NAME : ManageDataResult
-    {
-        public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_INVALID_NAME;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ManageDataInvalidName : ManageDataResult
+        {
+            public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_INVALID_NAME;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ManageDataResultXdr
     {
@@ -75,15 +75,15 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ManageDataResult_MANAGE_DATA_SUCCESS case_MANAGE_DATA_SUCCESS:
+                case ManageDataResult.ManageDataSuccess case_MANAGE_DATA_SUCCESS:
                 break;
-                case ManageDataResult_MANAGE_DATA_NOT_SUPPORTED_YET case_MANAGE_DATA_NOT_SUPPORTED_YET:
+                case ManageDataResult.ManageDataNotSupportedYet case_MANAGE_DATA_NOT_SUPPORTED_YET:
                 break;
-                case ManageDataResult_MANAGE_DATA_NAME_NOT_FOUND case_MANAGE_DATA_NAME_NOT_FOUND:
+                case ManageDataResult.ManageDataNameNotFound case_MANAGE_DATA_NAME_NOT_FOUND:
                 break;
-                case ManageDataResult_MANAGE_DATA_LOW_RESERVE case_MANAGE_DATA_LOW_RESERVE:
+                case ManageDataResult.ManageDataLowReserve case_MANAGE_DATA_LOW_RESERVE:
                 break;
-                case ManageDataResult_MANAGE_DATA_INVALID_NAME case_MANAGE_DATA_INVALID_NAME:
+                case ManageDataResult.ManageDataInvalidName case_MANAGE_DATA_INVALID_NAME:
                 break;
             }
         }
@@ -93,19 +93,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ManageDataResultCode.MANAGE_DATA_SUCCESS:
-                var result_MANAGE_DATA_SUCCESS = new ManageDataResult_MANAGE_DATA_SUCCESS();
+                var result_MANAGE_DATA_SUCCESS = new ManageDataResult.ManageDataSuccess();
                 return result_MANAGE_DATA_SUCCESS;
                 case ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET:
-                var result_MANAGE_DATA_NOT_SUPPORTED_YET = new ManageDataResult_MANAGE_DATA_NOT_SUPPORTED_YET();
+                var result_MANAGE_DATA_NOT_SUPPORTED_YET = new ManageDataResult.ManageDataNotSupportedYet();
                 return result_MANAGE_DATA_NOT_SUPPORTED_YET;
                 case ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND:
-                var result_MANAGE_DATA_NAME_NOT_FOUND = new ManageDataResult_MANAGE_DATA_NAME_NOT_FOUND();
+                var result_MANAGE_DATA_NAME_NOT_FOUND = new ManageDataResult.ManageDataNameNotFound();
                 return result_MANAGE_DATA_NAME_NOT_FOUND;
                 case ManageDataResultCode.MANAGE_DATA_LOW_RESERVE:
-                var result_MANAGE_DATA_LOW_RESERVE = new ManageDataResult_MANAGE_DATA_LOW_RESERVE();
+                var result_MANAGE_DATA_LOW_RESERVE = new ManageDataResult.ManageDataLowReserve();
                 return result_MANAGE_DATA_LOW_RESERVE;
                 case ManageDataResultCode.MANAGE_DATA_INVALID_NAME:
-                var result_MANAGE_DATA_INVALID_NAME = new ManageDataResult_MANAGE_DATA_INVALID_NAME();
+                var result_MANAGE_DATA_INVALID_NAME = new ManageDataResult.ManageDataInvalidName();
                 return result_MANAGE_DATA_INVALID_NAME;
                 default:
                 throw new Exception($"Unknown discriminator for ManageDataResult: {discriminator}");

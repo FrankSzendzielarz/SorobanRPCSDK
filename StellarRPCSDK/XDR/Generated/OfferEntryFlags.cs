@@ -17,6 +17,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum OfferEntryFlags
     {
+        /// <summary>
+        /// price
+        /// </summary>
         PASSIVE_FLAG = 1,
     }
 

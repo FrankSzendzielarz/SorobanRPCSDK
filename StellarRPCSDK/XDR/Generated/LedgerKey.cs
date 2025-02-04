@@ -83,7 +83,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class accountStruct
         {
-            private AccountID _accountID;
             public AccountID accountID
             {
                 get => _accountID;
@@ -92,6 +91,7 @@ namespace Stellar.XDR {
                     _accountID = value;
                 }
             }
+            private AccountID _accountID;
 
             public accountStruct()
             {
@@ -130,7 +130,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class trustLineStruct
         {
-            private AccountID _accountID;
             public AccountID accountID
             {
                 get => _accountID;
@@ -139,8 +138,8 @@ namespace Stellar.XDR {
                     _accountID = value;
                 }
             }
+            private AccountID _accountID;
 
-            private TrustLineAsset _asset;
             public TrustLineAsset asset
             {
                 get => _asset;
@@ -149,6 +148,7 @@ namespace Stellar.XDR {
                     _asset = value;
                 }
             }
+            private TrustLineAsset _asset;
 
             public trustLineStruct()
             {
@@ -189,7 +189,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class offerStruct
         {
-            private AccountID _sellerID;
             public AccountID sellerID
             {
                 get => _sellerID;
@@ -198,8 +197,8 @@ namespace Stellar.XDR {
                     _sellerID = value;
                 }
             }
+            private AccountID _sellerID;
 
-            private int64 _offerID;
             public int64 offerID
             {
                 get => _offerID;
@@ -208,6 +207,7 @@ namespace Stellar.XDR {
                     _offerID = value;
                 }
             }
+            private int64 _offerID;
 
             public offerStruct()
             {
@@ -248,7 +248,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class dataStruct
         {
-            private AccountID _accountID;
             public AccountID accountID
             {
                 get => _accountID;
@@ -257,8 +256,8 @@ namespace Stellar.XDR {
                     _accountID = value;
                 }
             }
+            private AccountID _accountID;
 
-            private string64 _dataName;
             public string64 dataName
             {
                 get => _dataName;
@@ -267,6 +266,7 @@ namespace Stellar.XDR {
                     _dataName = value;
                 }
             }
+            private string64 _dataName;
 
             public dataStruct()
             {
@@ -307,7 +307,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class claimableBalanceStruct
         {
-            private ClaimableBalanceID _balanceID;
             public ClaimableBalanceID balanceID
             {
                 get => _balanceID;
@@ -316,6 +315,7 @@ namespace Stellar.XDR {
                     _balanceID = value;
                 }
             }
+            private ClaimableBalanceID _balanceID;
 
             public claimableBalanceStruct()
             {
@@ -354,7 +354,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class liquidityPoolStruct
         {
-            private PoolID _liquidityPoolID;
             public PoolID liquidityPoolID
             {
                 get => _liquidityPoolID;
@@ -363,6 +362,7 @@ namespace Stellar.XDR {
                     _liquidityPoolID = value;
                 }
             }
+            private PoolID _liquidityPoolID;
 
             public liquidityPoolStruct()
             {
@@ -401,7 +401,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class contractDataStruct
         {
-            private SCAddress _contract;
             public SCAddress contract
             {
                 get => _contract;
@@ -410,8 +409,8 @@ namespace Stellar.XDR {
                     _contract = value;
                 }
             }
+            private SCAddress _contract;
 
-            private SCVal _key;
             public SCVal key
             {
                 get => _key;
@@ -420,8 +419,8 @@ namespace Stellar.XDR {
                     _key = value;
                 }
             }
+            private SCVal _key;
 
-            private ContractDataDurability _durability;
             public ContractDataDurability durability
             {
                 get => _durability;
@@ -430,6 +429,7 @@ namespace Stellar.XDR {
                     _durability = value;
                 }
             }
+            private ContractDataDurability _durability;
 
             public contractDataStruct()
             {
@@ -472,7 +472,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class contractCodeStruct
         {
-            private Hash _hash;
             public Hash hash
             {
                 get => _hash;
@@ -481,6 +480,7 @@ namespace Stellar.XDR {
                     _hash = value;
                 }
             }
+            private Hash _hash;
 
             public contractCodeStruct()
             {
@@ -519,7 +519,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class configSettingStruct
         {
-            private ConfigSettingID _configSettingID;
             public ConfigSettingID configSettingID
             {
                 get => _configSettingID;
@@ -528,6 +527,7 @@ namespace Stellar.XDR {
                     _configSettingID = value;
                 }
             }
+            private ConfigSettingID _configSettingID;
 
             public configSettingStruct()
             {
@@ -566,7 +566,9 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class ttlStruct
         {
-            private Hash _keyHash;
+            /// <summary>
+            /// Hash of the LedgerKey that is associated with this TTLEntry
+            /// </summary>
             public Hash keyHash
             {
                 get => _keyHash;
@@ -575,6 +577,7 @@ namespace Stellar.XDR {
                     _keyHash = value;
                 }
             }
+            private Hash _keyHash;
 
             public ttlStruct()
             {
@@ -610,156 +613,156 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class LedgerKey_ACCOUNT : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
-        private accountStruct _account;
-        public accountStruct account
+        public sealed partial class Account : LedgerKey
         {
-            get => _account;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
+            public accountStruct account
             {
-                _account = value;
+                get => _account;
+                set
+                {
+                    _account = value;
+                }
             }
-        }
+            private accountStruct _account;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_TRUSTLINE : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
-        private trustLineStruct _trustLine;
-        public trustLineStruct trustLine
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Trustline : LedgerKey
         {
-            get => _trustLine;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
+            public trustLineStruct trustLine
             {
-                _trustLine = value;
+                get => _trustLine;
+                set
+                {
+                    _trustLine = value;
+                }
             }
-        }
+            private trustLineStruct _trustLine;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_OFFER : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
-        private offerStruct _offer;
-        public offerStruct offer
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Offer : LedgerKey
         {
-            get => _offer;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
+            public offerStruct offer
             {
-                _offer = value;
+                get => _offer;
+                set
+                {
+                    _offer = value;
+                }
             }
-        }
+            private offerStruct _offer;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_DATA : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
-        private dataStruct _data;
-        public dataStruct data
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Data : LedgerKey
         {
-            get => _data;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
+            public dataStruct data
             {
-                _data = value;
+                get => _data;
+                set
+                {
+                    _data = value;
+                }
             }
-        }
+            private dataStruct _data;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_CLAIMABLE_BALANCE : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
-        private claimableBalanceStruct _claimableBalance;
-        public claimableBalanceStruct claimableBalance
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimableBalance : LedgerKey
         {
-            get => _claimableBalance;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
+            public claimableBalanceStruct claimableBalance
             {
-                _claimableBalance = value;
+                get => _claimableBalance;
+                set
+                {
+                    _claimableBalance = value;
+                }
             }
-        }
+            private claimableBalanceStruct _claimableBalance;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_LIQUIDITY_POOL : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
-        private liquidityPoolStruct _liquidityPool;
-        public liquidityPoolStruct liquidityPool
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPool : LedgerKey
         {
-            get => _liquidityPool;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
+            public liquidityPoolStruct liquidityPool
             {
-                _liquidityPool = value;
+                get => _liquidityPool;
+                set
+                {
+                    _liquidityPool = value;
+                }
             }
-        }
+            private liquidityPoolStruct _liquidityPool;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_CONTRACT_DATA : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
-        private contractDataStruct _contractData;
-        public contractDataStruct contractData
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ContractData : LedgerKey
         {
-            get => _contractData;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
+            public contractDataStruct contractData
             {
-                _contractData = value;
+                get => _contractData;
+                set
+                {
+                    _contractData = value;
+                }
             }
-        }
+            private contractDataStruct _contractData;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_CONTRACT_CODE : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
-        private contractCodeStruct _contractCode;
-        public contractCodeStruct contractCode
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ContractCode : LedgerKey
         {
-            get => _contractCode;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
+            public contractCodeStruct contractCode
             {
-                _contractCode = value;
+                get => _contractCode;
+                set
+                {
+                    _contractCode = value;
+                }
             }
-        }
+            private contractCodeStruct _contractCode;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_CONFIG_SETTING : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
-        private configSettingStruct _configSetting;
-        public configSettingStruct configSetting
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSetting : LedgerKey
         {
-            get => _configSetting;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
+            public configSettingStruct configSetting
             {
-                _configSetting = value;
+                get => _configSetting;
+                set
+                {
+                    _configSetting = value;
+                }
             }
-        }
+            private configSettingStruct _configSetting;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerKey_TTL : LedgerKey
-    {
-        public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
-        private ttlStruct _ttl;
-        public ttlStruct ttl
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Ttl : LedgerKey
         {
-            get => _ttl;
-            set
+            public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
+            public ttlStruct ttl
             {
-                _ttl = value;
+                get => _ttl;
+                set
+                {
+                    _ttl = value;
+                }
             }
-        }
+            private ttlStruct _ttl;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LedgerKeyXdr
     {
@@ -779,34 +782,34 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LedgerKey_ACCOUNT case_ACCOUNT:
+                case LedgerKey.Account case_ACCOUNT:
                 LedgerKey.accountStructXdr.Encode(stream, case_ACCOUNT.account);
                 break;
-                case LedgerKey_TRUSTLINE case_TRUSTLINE:
+                case LedgerKey.Trustline case_TRUSTLINE:
                 LedgerKey.trustLineStructXdr.Encode(stream, case_TRUSTLINE.trustLine);
                 break;
-                case LedgerKey_OFFER case_OFFER:
+                case LedgerKey.Offer case_OFFER:
                 LedgerKey.offerStructXdr.Encode(stream, case_OFFER.offer);
                 break;
-                case LedgerKey_DATA case_DATA:
+                case LedgerKey.Data case_DATA:
                 LedgerKey.dataStructXdr.Encode(stream, case_DATA.data);
                 break;
-                case LedgerKey_CLAIMABLE_BALANCE case_CLAIMABLE_BALANCE:
+                case LedgerKey.ClaimableBalance case_CLAIMABLE_BALANCE:
                 LedgerKey.claimableBalanceStructXdr.Encode(stream, case_CLAIMABLE_BALANCE.claimableBalance);
                 break;
-                case LedgerKey_LIQUIDITY_POOL case_LIQUIDITY_POOL:
+                case LedgerKey.LiquidityPool case_LIQUIDITY_POOL:
                 LedgerKey.liquidityPoolStructXdr.Encode(stream, case_LIQUIDITY_POOL.liquidityPool);
                 break;
-                case LedgerKey_CONTRACT_DATA case_CONTRACT_DATA:
+                case LedgerKey.ContractData case_CONTRACT_DATA:
                 LedgerKey.contractDataStructXdr.Encode(stream, case_CONTRACT_DATA.contractData);
                 break;
-                case LedgerKey_CONTRACT_CODE case_CONTRACT_CODE:
+                case LedgerKey.ContractCode case_CONTRACT_CODE:
                 LedgerKey.contractCodeStructXdr.Encode(stream, case_CONTRACT_CODE.contractCode);
                 break;
-                case LedgerKey_CONFIG_SETTING case_CONFIG_SETTING:
+                case LedgerKey.ConfigSetting case_CONFIG_SETTING:
                 LedgerKey.configSettingStructXdr.Encode(stream, case_CONFIG_SETTING.configSetting);
                 break;
-                case LedgerKey_TTL case_TTL:
+                case LedgerKey.Ttl case_TTL:
                 LedgerKey.ttlStructXdr.Encode(stream, case_TTL.ttl);
                 break;
             }
@@ -817,43 +820,43 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case LedgerEntryType.ACCOUNT:
-                var result_ACCOUNT = new LedgerKey_ACCOUNT();
+                var result_ACCOUNT = new LedgerKey.Account();
                 result_ACCOUNT.account = LedgerKey.accountStructXdr.Decode(stream);
                 return result_ACCOUNT;
                 case LedgerEntryType.TRUSTLINE:
-                var result_TRUSTLINE = new LedgerKey_TRUSTLINE();
+                var result_TRUSTLINE = new LedgerKey.Trustline();
                 result_TRUSTLINE.trustLine = LedgerKey.trustLineStructXdr.Decode(stream);
                 return result_TRUSTLINE;
                 case LedgerEntryType.OFFER:
-                var result_OFFER = new LedgerKey_OFFER();
+                var result_OFFER = new LedgerKey.Offer();
                 result_OFFER.offer = LedgerKey.offerStructXdr.Decode(stream);
                 return result_OFFER;
                 case LedgerEntryType.DATA:
-                var result_DATA = new LedgerKey_DATA();
+                var result_DATA = new LedgerKey.Data();
                 result_DATA.data = LedgerKey.dataStructXdr.Decode(stream);
                 return result_DATA;
                 case LedgerEntryType.CLAIMABLE_BALANCE:
-                var result_CLAIMABLE_BALANCE = new LedgerKey_CLAIMABLE_BALANCE();
+                var result_CLAIMABLE_BALANCE = new LedgerKey.ClaimableBalance();
                 result_CLAIMABLE_BALANCE.claimableBalance = LedgerKey.claimableBalanceStructXdr.Decode(stream);
                 return result_CLAIMABLE_BALANCE;
                 case LedgerEntryType.LIQUIDITY_POOL:
-                var result_LIQUIDITY_POOL = new LedgerKey_LIQUIDITY_POOL();
+                var result_LIQUIDITY_POOL = new LedgerKey.LiquidityPool();
                 result_LIQUIDITY_POOL.liquidityPool = LedgerKey.liquidityPoolStructXdr.Decode(stream);
                 return result_LIQUIDITY_POOL;
                 case LedgerEntryType.CONTRACT_DATA:
-                var result_CONTRACT_DATA = new LedgerKey_CONTRACT_DATA();
+                var result_CONTRACT_DATA = new LedgerKey.ContractData();
                 result_CONTRACT_DATA.contractData = LedgerKey.contractDataStructXdr.Decode(stream);
                 return result_CONTRACT_DATA;
                 case LedgerEntryType.CONTRACT_CODE:
-                var result_CONTRACT_CODE = new LedgerKey_CONTRACT_CODE();
+                var result_CONTRACT_CODE = new LedgerKey.ContractCode();
                 result_CONTRACT_CODE.contractCode = LedgerKey.contractCodeStructXdr.Decode(stream);
                 return result_CONTRACT_CODE;
                 case LedgerEntryType.CONFIG_SETTING:
-                var result_CONFIG_SETTING = new LedgerKey_CONFIG_SETTING();
+                var result_CONFIG_SETTING = new LedgerKey.ConfigSetting();
                 result_CONFIG_SETTING.configSetting = LedgerKey.configSettingStructXdr.Decode(stream);
                 return result_CONFIG_SETTING;
                 case LedgerEntryType.TTL:
-                var result_TTL = new LedgerKey_TTL();
+                var result_TTL = new LedgerKey.Ttl();
                 result_TTL.ttl = LedgerKey.ttlStructXdr.Decode(stream);
                 return result_TTL;
                 default:

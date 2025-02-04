@@ -17,6 +17,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ClaimableBalanceFlags
     {
+        /// <summary>
+        /// clawback the claimable balance
+        /// </summary>
         CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 0x1,
     }
 

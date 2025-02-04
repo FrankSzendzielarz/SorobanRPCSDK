@@ -23,7 +23,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Hello
     {
-        private uint32 _ledgerVersion;
         public uint32 ledgerVersion
         {
             get => _ledgerVersion;
@@ -32,8 +31,8 @@ namespace Stellar.XDR {
                 _ledgerVersion = value;
             }
         }
+        private uint32 _ledgerVersion;
 
-        private uint32 _overlayVersion;
         public uint32 overlayVersion
         {
             get => _overlayVersion;
@@ -42,8 +41,8 @@ namespace Stellar.XDR {
                 _overlayVersion = value;
             }
         }
+        private uint32 _overlayVersion;
 
-        private uint32 _overlayMinVersion;
         public uint32 overlayMinVersion
         {
             get => _overlayMinVersion;
@@ -52,8 +51,8 @@ namespace Stellar.XDR {
                 _overlayMinVersion = value;
             }
         }
+        private uint32 _overlayMinVersion;
 
-        private Hash _networkID;
         public Hash networkID
         {
             get => _networkID;
@@ -62,8 +61,8 @@ namespace Stellar.XDR {
                 _networkID = value;
             }
         }
+        private Hash _networkID;
 
-        private string _versionStr;
         public string versionStr
         {
             get => _versionStr;
@@ -74,8 +73,8 @@ namespace Stellar.XDR {
                 _versionStr = value;
             }
         }
+        private string _versionStr;
 
-        private int _listeningPort;
         public int listeningPort
         {
             get => _listeningPort;
@@ -84,8 +83,8 @@ namespace Stellar.XDR {
                 _listeningPort = value;
             }
         }
+        private int _listeningPort;
 
-        private NodeID _peerID;
         public NodeID peerID
         {
             get => _peerID;
@@ -94,8 +93,8 @@ namespace Stellar.XDR {
                 _peerID = value;
             }
         }
+        private NodeID _peerID;
 
-        private AuthCert _cert;
         public AuthCert cert
         {
             get => _cert;
@@ -104,8 +103,8 @@ namespace Stellar.XDR {
                 _cert = value;
             }
         }
+        private AuthCert _cert;
 
-        private uint256 _nonce;
         public uint256 nonce
         {
             get => _nonce;
@@ -114,6 +113,7 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private uint256 _nonce;
 
         public Hello()
         {

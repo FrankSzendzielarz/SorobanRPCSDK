@@ -21,21 +21,21 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class TransactionPhase_0 : TransactionPhase
-    {
-        public override int Discriminator => 0;
-        private TxSetComponent[] _v0Components;
-        public TxSetComponent[] v0Components
+        public sealed partial class case_0 : TransactionPhase
         {
-            get => _v0Components;
-            set
+            public override int Discriminator => 0;
+            public TxSetComponent[] v0Components
             {
-                _v0Components = value;
+                get => _v0Components;
+                set
+                {
+                    _v0Components = value;
+                }
             }
-        }
+            private TxSetComponent[] _v0Components;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class TransactionPhaseXdr
     {
@@ -55,7 +55,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case TransactionPhase_0 case_0:
+                case TransactionPhase.case_0 case_0:
                 stream.WriteInt(case_0.v0Components.Length);
                 foreach (var item in case_0.v0Components)
                 {
@@ -70,7 +70,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new TransactionPhase_0();
+                var result_0 = new TransactionPhase.case_0();
                 {
                     var length = stream.ReadInt();
                     result_0.v0Components = new TxSetComponent[length];

@@ -15,10 +15,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Contract event-related settings.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractEventsV0
     {
-        private uint32 _txMaxContractEventsSizeBytes;
+        /// <summary>
+        /// Maximum size of events that a contract call can emit.
+        /// </summary>
         public uint32 txMaxContractEventsSizeBytes
         {
             get => _txMaxContractEventsSizeBytes;
@@ -27,8 +32,11 @@ namespace Stellar.XDR {
                 _txMaxContractEventsSizeBytes = value;
             }
         }
+        private uint32 _txMaxContractEventsSizeBytes;
 
-        private int64 _feeContractEvents1KB;
+        /// <summary>
+        /// Fee for generating 1KB of contract events.
+        /// </summary>
         public int64 feeContractEvents1KB
         {
             get => _feeContractEvents1KB;
@@ -37,6 +45,7 @@ namespace Stellar.XDR {
                 _feeContractEvents1KB = value;
             }
         }
+        private int64 _feeContractEvents1KB;
 
         public ConfigSettingContractEventsV0()
         {

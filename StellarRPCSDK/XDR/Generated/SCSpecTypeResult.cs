@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeResult
     {
-        private SCSpecTypeDef _okType;
         public SCSpecTypeDef okType
         {
             get => _okType;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _okType = value;
             }
         }
+        private SCSpecTypeDef _okType;
 
-        private SCSpecTypeDef _errorType;
         public SCSpecTypeDef errorType
         {
             get => _errorType;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _errorType = value;
             }
         }
+        private SCSpecTypeDef _errorType;
 
         public SCSpecTypeResult()
         {

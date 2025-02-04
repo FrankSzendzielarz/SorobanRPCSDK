@@ -18,10 +18,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// this concerns only transaction sizes.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractBandwidthV0
     {
-        private uint32 _ledgerMaxTxsSizeBytes;
+        /// <summary>
+        /// Maximum sum of all transaction sizes in the ledger in bytes
+        /// </summary>
         public uint32 ledgerMaxTxsSizeBytes
         {
             get => _ledgerMaxTxsSizeBytes;
@@ -30,8 +35,11 @@ namespace Stellar.XDR {
                 _ledgerMaxTxsSizeBytes = value;
             }
         }
+        private uint32 _ledgerMaxTxsSizeBytes;
 
-        private uint32 _txMaxSizeBytes;
+        /// <summary>
+        /// Maximum size in bytes for a transaction
+        /// </summary>
         public uint32 txMaxSizeBytes
         {
             get => _txMaxSizeBytes;
@@ -40,8 +48,11 @@ namespace Stellar.XDR {
                 _txMaxSizeBytes = value;
             }
         }
+        private uint32 _txMaxSizeBytes;
 
-        private int64 _feeTxSize1KB;
+        /// <summary>
+        /// Fee for 1 KB of transaction size
+        /// </summary>
         public int64 feeTxSize1KB
         {
             get => _feeTxSize1KB;
@@ -50,6 +61,7 @@ namespace Stellar.XDR {
                 _feeTxSize1KB = value;
             }
         }
+        private int64 _feeTxSize1KB;
 
         public ConfigSettingContractBandwidthV0()
         {

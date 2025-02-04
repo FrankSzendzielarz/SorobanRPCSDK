@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// upgrade
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class UpgradeEntryMeta
     {
-        private LedgerUpgrade _upgrade;
         public LedgerUpgrade upgrade
         {
             get => _upgrade;
@@ -25,8 +27,8 @@ namespace Stellar.XDR {
                 _upgrade = value;
             }
         }
+        private LedgerUpgrade _upgrade;
 
-        private LedgerEntryChanges _changes;
         public LedgerEntryChanges changes
         {
             get => _changes;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _changes = value;
             }
         }
+        private LedgerEntryChanges _changes;
 
         public UpgradeEntryMeta()
         {

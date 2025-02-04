@@ -14,7 +14,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCNonceKey
     {
-        private int64 _nonce;
         public int64 nonce
         {
             get => _nonce;
@@ -23,6 +22,7 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private int64 _nonce;
 
         public SCNonceKey()
         {

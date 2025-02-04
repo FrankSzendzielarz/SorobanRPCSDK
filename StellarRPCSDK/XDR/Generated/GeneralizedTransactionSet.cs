@@ -22,21 +22,24 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class GeneralizedTransactionSet_1 : GeneralizedTransactionSet
-    {
-        public override int Discriminator => 1;
-        private TransactionSetV1 _v1TxSet;
-        public TransactionSetV1 v1TxSet
+        /// <summary>
+        /// We consider the legacy TransactionSet to be v0.
+        /// </summary>
+        public sealed partial class case_1 : GeneralizedTransactionSet
         {
-            get => _v1TxSet;
-            set
+            public override int Discriminator => 1;
+            public TransactionSetV1 v1TxSet
             {
-                _v1TxSet = value;
+                get => _v1TxSet;
+                set
+                {
+                    _v1TxSet = value;
+                }
             }
-        }
+            private TransactionSetV1 _v1TxSet;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class GeneralizedTransactionSetXdr
     {
@@ -56,7 +59,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case GeneralizedTransactionSet_1 case_1:
+                case GeneralizedTransactionSet.case_1 case_1:
                 TransactionSetV1Xdr.Encode(stream, case_1.v1TxSet);
                 break;
             }
@@ -67,7 +70,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 1:
-                var result_1 = new GeneralizedTransactionSet_1();
+                var result_1 = new GeneralizedTransactionSet.case_1();
                 result_1.v1TxSet = TransactionSetV1Xdr.Decode(stream);
                 return result_1;
                 default:

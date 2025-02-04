@@ -163,75 +163,285 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ContractCostType
     {
+        /// <summary>
+        /// Cost of running 1 wasm instruction
+        /// </summary>
         WasmInsnExec = 0,
+        /// <summary>
+        /// Cost of allocating a slice of memory (in bytes)
+        /// </summary>
         MemAlloc = 1,
+        /// <summary>
+        /// Cost of copying a slice of bytes into a pre-allocated memory
+        /// </summary>
         MemCpy = 2,
+        /// <summary>
+        /// Cost of comparing two slices of memory
+        /// </summary>
         MemCmp = 3,
+        /// <summary>
+        /// the function nor the cost of VM invocation machinary
+        /// </summary>
         DispatchHostFunction = 4,
+        /// <summary>
+        /// by the guest will always incur some charges.
+        /// </summary>
         VisitObject = 5,
+        /// <summary>
+        /// Cost of serializing an xdr object to bytes
+        /// </summary>
         ValSer = 6,
+        /// <summary>
+        /// Cost of deserializing an xdr object from bytes
+        /// </summary>
         ValDeser = 7,
+        /// <summary>
+        /// Cost of computing the sha256 hash from bytes
+        /// </summary>
         ComputeSha256Hash = 8,
+        /// <summary>
+        /// Cost of computing the ed25519 pubkey from bytes
+        /// </summary>
         ComputeEd25519PubKey = 9,
+        /// <summary>
+        /// Cost of verifying ed25519 signature of a payload.
+        /// </summary>
         VerifyEd25519Sig = 10,
+        /// <summary>
+        /// Cost of instantiation a VM from wasm bytes code.
+        /// </summary>
         VmInstantiation = 11,
+        /// <summary>
+        /// Cost of instantiation a VM from a cached state.
+        /// </summary>
         VmCachedInstantiation = 12,
+        /// <summary>
+        /// additional cost will be covered by `DispatchHostFunction`.
+        /// </summary>
         InvokeVmFunction = 13,
+        /// <summary>
+        /// Cost of computing a keccak256 hash from bytes.
+        /// </summary>
         ComputeKeccak256Hash = 14,
+        /// <summary>
+        /// curve (e.g. secp256k1 and secp256r1)
+        /// </summary>
         DecodeEcdsaCurve256Sig = 15,
+        /// <summary>
+        /// Cost of recovering an ECDSA secp256k1 key from a signature.
+        /// </summary>
         RecoverEcdsaSecp256k1Key = 16,
+        /// <summary>
+        /// Cost of int256 addition (`+`) and subtraction (`-`) operations
+        /// </summary>
         Int256AddSub = 17,
+        /// <summary>
+        /// Cost of int256 multiplication (`*`) operation
+        /// </summary>
         Int256Mul = 18,
+        /// <summary>
+        /// Cost of int256 division (`/`) operation
+        /// </summary>
         Int256Div = 19,
+        /// <summary>
+        /// Cost of int256 power (`exp`) operation
+        /// </summary>
         Int256Pow = 20,
+        /// <summary>
+        /// Cost of int256 shift (`shl`, `shr`) operation
+        /// </summary>
         Int256Shift = 21,
+        /// <summary>
+        /// Cost of drawing random bytes using a ChaCha20 PRNG
+        /// </summary>
         ChaCha20DrawBytes = 22,
+        /// <summary>
+        /// Cost of parsing wasm bytes that only encode instructions.
+        /// </summary>
         ParseWasmInstructions = 23,
+        /// <summary>
+        /// Cost of parsing a known number of wasm functions.
+        /// </summary>
         ParseWasmFunctions = 24,
+        /// <summary>
+        /// Cost of parsing a known number of wasm globals.
+        /// </summary>
         ParseWasmGlobals = 25,
+        /// <summary>
+        /// Cost of parsing a known number of wasm table entries.
+        /// </summary>
         ParseWasmTableEntries = 26,
+        /// <summary>
+        /// Cost of parsing a known number of wasm types.
+        /// </summary>
         ParseWasmTypes = 27,
+        /// <summary>
+        /// Cost of parsing a known number of wasm data segments.
+        /// </summary>
         ParseWasmDataSegments = 28,
+        /// <summary>
+        /// Cost of parsing a known number of wasm element segments.
+        /// </summary>
         ParseWasmElemSegments = 29,
+        /// <summary>
+        /// Cost of parsing a known number of wasm imports.
+        /// </summary>
         ParseWasmImports = 30,
+        /// <summary>
+        /// Cost of parsing a known number of wasm exports.
+        /// </summary>
         ParseWasmExports = 31,
+        /// <summary>
+        /// Cost of parsing a known number of data segment bytes.
+        /// </summary>
         ParseWasmDataSegmentBytes = 32,
+        /// <summary>
+        /// Cost of instantiating wasm bytes that only encode instructions.
+        /// </summary>
         InstantiateWasmInstructions = 33,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm functions.
+        /// </summary>
         InstantiateWasmFunctions = 34,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm globals.
+        /// </summary>
         InstantiateWasmGlobals = 35,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm table entries.
+        /// </summary>
         InstantiateWasmTableEntries = 36,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm types.
+        /// </summary>
         InstantiateWasmTypes = 37,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm data segments.
+        /// </summary>
         InstantiateWasmDataSegments = 38,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm element segments.
+        /// </summary>
         InstantiateWasmElemSegments = 39,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm imports.
+        /// </summary>
         InstantiateWasmImports = 40,
+        /// <summary>
+        /// Cost of instantiating a known number of wasm exports.
+        /// </summary>
         InstantiateWasmExports = 41,
+        /// <summary>
+        /// Cost of instantiating a known number of data segment bytes.
+        /// </summary>
         InstantiateWasmDataSegmentBytes = 42,
+        /// <summary>
+        /// point on a 256-bit elliptic curve
+        /// </summary>
         Sec1DecodePointUncompressed = 43,
+        /// <summary>
+        /// Cost of verifying an ECDSA Secp256r1 signature
+        /// </summary>
         VerifyEcdsaSecp256r1Sig = 44,
+        /// <summary>
+        /// Cost of encoding a BLS12-381 Fp (base field element)
+        /// </summary>
         Bls12381EncodeFp = 45,
+        /// <summary>
+        /// Cost of decoding a BLS12-381 Fp (base field element)
+        /// </summary>
         Bls12381DecodeFp = 46,
+        /// <summary>
+        /// Cost of checking a G1 point lies on the curve
+        /// </summary>
         Bls12381G1CheckPointOnCurve = 47,
+        /// <summary>
+        /// Cost of checking a G1 point belongs to the correct subgroup
+        /// </summary>
         Bls12381G1CheckPointInSubgroup = 48,
+        /// <summary>
+        /// Cost of checking a G2 point lies on the curve
+        /// </summary>
         Bls12381G2CheckPointOnCurve = 49,
+        /// <summary>
+        /// Cost of checking a G2 point belongs to the correct subgroup
+        /// </summary>
         Bls12381G2CheckPointInSubgroup = 50,
+        /// <summary>
+        /// Cost of converting a BLS12-381 G1 point from projective to affine coordinates
+        /// </summary>
         Bls12381G1ProjectiveToAffine = 51,
+        /// <summary>
+        /// Cost of converting a BLS12-381 G2 point from projective to affine coordinates
+        /// </summary>
         Bls12381G2ProjectiveToAffine = 52,
+        /// <summary>
+        /// Cost of performing BLS12-381 G1 point addition
+        /// </summary>
         Bls12381G1Add = 53,
+        /// <summary>
+        /// Cost of performing BLS12-381 G1 scalar multiplication
+        /// </summary>
         Bls12381G1Mul = 54,
+        /// <summary>
+        /// Cost of performing BLS12-381 G1 multi-scalar multiplication (MSM)
+        /// </summary>
         Bls12381G1Msm = 55,
+        /// <summary>
+        /// Cost of mapping a BLS12-381 Fp field element to a G1 point
+        /// </summary>
         Bls12381MapFpToG1 = 56,
+        /// <summary>
+        /// Cost of hashing to a BLS12-381 G1 point
+        /// </summary>
         Bls12381HashToG1 = 57,
+        /// <summary>
+        /// Cost of performing BLS12-381 G2 point addition
+        /// </summary>
         Bls12381G2Add = 58,
+        /// <summary>
+        /// Cost of performing BLS12-381 G2 scalar multiplication
+        /// </summary>
         Bls12381G2Mul = 59,
+        /// <summary>
+        /// Cost of performing BLS12-381 G2 multi-scalar multiplication (MSM)
+        /// </summary>
         Bls12381G2Msm = 60,
+        /// <summary>
+        /// Cost of mapping a BLS12-381 Fp2 field element to a G2 point
+        /// </summary>
         Bls12381MapFp2ToG2 = 61,
+        /// <summary>
+        /// Cost of hashing to a BLS12-381 G2 point
+        /// </summary>
         Bls12381HashToG2 = 62,
+        /// <summary>
+        /// Cost of performing BLS12-381 pairing operation
+        /// </summary>
         Bls12381Pairing = 63,
+        /// <summary>
+        /// Cost of converting a BLS12-381 scalar element from U256
+        /// </summary>
         Bls12381FrFromU256 = 64,
+        /// <summary>
+        /// Cost of converting a BLS12-381 scalar element to U256
+        /// </summary>
         Bls12381FrToU256 = 65,
+        /// <summary>
+        /// Cost of performing BLS12-381 scalar element addition/subtraction
+        /// </summary>
         Bls12381FrAddSub = 66,
+        /// <summary>
+        /// Cost of performing BLS12-381 scalar element multiplication
+        /// </summary>
         Bls12381FrMul = 67,
+        /// <summary>
+        /// Cost of performing BLS12-381 scalar element exponentiation
+        /// </summary>
         Bls12381FrPow = 68,
+        /// <summary>
+        /// Cost of performing BLS12-381 scalar element inversion
+        /// </summary>
         Bls12381FrInv = 69,
     }
 

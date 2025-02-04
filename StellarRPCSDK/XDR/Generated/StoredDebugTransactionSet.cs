@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class StoredDebugTransactionSet
     {
-        private StoredTransactionSet _txSet;
         public StoredTransactionSet txSet
         {
             get => _txSet;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _txSet = value;
             }
         }
+        private StoredTransactionSet _txSet;
 
-        private uint32 _ledgerSeq;
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _ledgerSeq = value;
             }
         }
+        private uint32 _ledgerSeq;
 
-        private StellarValue _scpValue;
         public StellarValue scpValue
         {
             get => _scpValue;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                 _scpValue = value;
             }
         }
+        private StellarValue _scpValue;
 
         public StoredDebugTransactionSet()
         {

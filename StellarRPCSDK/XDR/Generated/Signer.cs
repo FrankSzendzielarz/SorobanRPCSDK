@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Signer
     {
-        private SignerKey _key;
         public SignerKey key
         {
             get => _key;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _key = value;
             }
         }
+        private SignerKey _key;
 
-        private uint32 _weight;
         public uint32 weight
         {
             get => _weight;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _weight = value;
             }
         }
+        private uint32 _weight;
 
         public Signer()
         {

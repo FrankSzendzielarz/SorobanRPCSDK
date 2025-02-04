@@ -24,18 +24,18 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS : EndSponsoringFutureReservesResult
-    {
-        public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
+        public sealed partial class EndSponsoringFutureReservesSuccess : EndSponsoringFutureReservesResult
+        {
+            public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED : EndSponsoringFutureReservesResult
-    {
-        public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EndSponsoringFutureReservesNotSponsored : EndSponsoringFutureReservesResult
+        {
+            public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class EndSponsoringFutureReservesResultXdr
     {
@@ -55,9 +55,9 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS case_END_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                case EndSponsoringFutureReservesResult.EndSponsoringFutureReservesSuccess case_END_SPONSORING_FUTURE_RESERVES_SUCCESS:
                 break;
-                case EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED case_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
+                case EndSponsoringFutureReservesResult.EndSponsoringFutureReservesNotSponsored case_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
                 break;
             }
         }
@@ -67,10 +67,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS:
-                var result_END_SPONSORING_FUTURE_RESERVES_SUCCESS = new EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_SUCCESS();
+                var result_END_SPONSORING_FUTURE_RESERVES_SUCCESS = new EndSponsoringFutureReservesResult.EndSponsoringFutureReservesSuccess();
                 return result_END_SPONSORING_FUTURE_RESERVES_SUCCESS;
                 case EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED:
-                var result_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED = new EndSponsoringFutureReservesResult_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED();
+                var result_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED = new EndSponsoringFutureReservesResult.EndSponsoringFutureReservesNotSponsored();
                 return result_END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;
                 default:
                 throw new Exception($"Unknown discriminator for EndSponsoringFutureReservesResult: {discriminator}");

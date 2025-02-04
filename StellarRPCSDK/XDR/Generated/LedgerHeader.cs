@@ -50,7 +50,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerHeader
     {
-        private uint32 _ledgerVersion;
         public uint32 ledgerVersion
         {
             get => _ledgerVersion;
@@ -59,8 +58,11 @@ namespace Stellar.XDR {
                 _ledgerVersion = value;
             }
         }
+        private uint32 _ledgerVersion;
 
-        private Hash _previousLedgerHash;
+        /// <summary>
+        /// the protocol version of the ledger
+        /// </summary>
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -69,8 +71,11 @@ namespace Stellar.XDR {
                 _previousLedgerHash = value;
             }
         }
+        private Hash _previousLedgerHash;
 
-        private StellarValue _scpValue;
+        /// <summary>
+        /// hash of the previous ledger header
+        /// </summary>
         public StellarValue scpValue
         {
             get => _scpValue;
@@ -79,8 +84,11 @@ namespace Stellar.XDR {
                 _scpValue = value;
             }
         }
+        private StellarValue _scpValue;
 
-        private Hash _txSetResultHash;
+        /// <summary>
+        /// what consensus agreed to
+        /// </summary>
         public Hash txSetResultHash
         {
             get => _txSetResultHash;
@@ -89,8 +97,11 @@ namespace Stellar.XDR {
                 _txSetResultHash = value;
             }
         }
+        private Hash _txSetResultHash;
 
-        private Hash _bucketListHash;
+        /// <summary>
+        /// the TransactionResultSet that led to this ledger
+        /// </summary>
         public Hash bucketListHash
         {
             get => _bucketListHash;
@@ -99,8 +110,8 @@ namespace Stellar.XDR {
                 _bucketListHash = value;
             }
         }
+        private Hash _bucketListHash;
 
-        private uint32 _ledgerSeq;
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -109,8 +120,8 @@ namespace Stellar.XDR {
                 _ledgerSeq = value;
             }
         }
+        private uint32 _ledgerSeq;
 
-        private int64 _totalCoins;
         public int64 totalCoins
         {
             get => _totalCoins;
@@ -119,8 +130,8 @@ namespace Stellar.XDR {
                 _totalCoins = value;
             }
         }
+        private int64 _totalCoins;
 
-        private int64 _feePool;
         public int64 feePool
         {
             get => _feePool;
@@ -129,8 +140,11 @@ namespace Stellar.XDR {
                 _feePool = value;
             }
         }
+        private int64 _feePool;
 
-        private uint32 _inflationSeq;
+        /// <summary>
+        /// fees burned since last inflation run
+        /// </summary>
         public uint32 inflationSeq
         {
             get => _inflationSeq;
@@ -139,8 +153,8 @@ namespace Stellar.XDR {
                 _inflationSeq = value;
             }
         }
+        private uint32 _inflationSeq;
 
-        private uint64 _idPool;
         public uint64 idPool
         {
             get => _idPool;
@@ -149,8 +163,8 @@ namespace Stellar.XDR {
                 _idPool = value;
             }
         }
+        private uint64 _idPool;
 
-        private uint32 _baseFee;
         public uint32 baseFee
         {
             get => _baseFee;
@@ -159,8 +173,11 @@ namespace Stellar.XDR {
                 _baseFee = value;
             }
         }
+        private uint32 _baseFee;
 
-        private uint32 _baseReserve;
+        /// <summary>
+        /// base fee per operation in stroops
+        /// </summary>
         public uint32 baseReserve
         {
             get => _baseReserve;
@@ -169,8 +186,8 @@ namespace Stellar.XDR {
                 _baseReserve = value;
             }
         }
+        private uint32 _baseReserve;
 
-        private uint32 _maxTxSetSize;
         public uint32 maxTxSetSize
         {
             get => _maxTxSetSize;
@@ -179,8 +196,8 @@ namespace Stellar.XDR {
                 _maxTxSetSize = value;
             }
         }
+        private uint32 _maxTxSetSize;
 
-        private Hash[] _skipList = new Hash[4];
         public Hash[] skipList
         {
             get => _skipList;
@@ -191,8 +208,11 @@ namespace Stellar.XDR {
                 _skipList = value;
             }
         }
+        private Hash[] _skipList = new Hash[4];
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -201,6 +221,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public LedgerHeader()
         {
@@ -220,27 +241,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_1 : extUnion
-        {
-            public override int Discriminator => 1;
-            private LedgerHeaderExtensionV1 _v1;
-            public LedgerHeaderExtensionV1 v1
+            public sealed partial class case_0 : extUnion
             {
-                get => _v1;
-                set
-                {
-                    _v1 = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_1 : extUnion
+            {
+                public override int Discriminator => 1;
+                public LedgerHeaderExtensionV1 v1
+                {
+                    get => _v1;
+                    set
+                    {
+                        _v1 = value;
+                    }
+                }
+                private LedgerHeaderExtensionV1 _v1;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -260,9 +281,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_1 case_1:
+                    case extUnion.case_1 case_1:
                     LedgerHeaderExtensionV1Xdr.Encode(stream, case_1.v1);
                     break;
                 }
@@ -273,10 +294,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 1:
-                    var result_1 = new extUnion_1();
+                    var result_1 = new extUnion.case_1();
                     result_1.v1 = LedgerHeaderExtensionV1Xdr.Decode(stream);
                     return result_1;
                     default:

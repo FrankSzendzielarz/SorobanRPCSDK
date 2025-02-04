@@ -19,6 +19,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Source or destination of a payment operation
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class MuxedAccount
     {
@@ -30,7 +33,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class med25519Struct
         {
-            private uint64 _id;
             public uint64 id
             {
                 get => _id;
@@ -39,8 +41,8 @@ namespace Stellar.XDR {
                     _id = value;
                 }
             }
+            private uint64 _id;
 
-            private uint256 _ed25519;
             public uint256 ed25519
             {
                 get => _ed25519;
@@ -49,6 +51,7 @@ namespace Stellar.XDR {
                     _ed25519 = value;
                 }
             }
+            private uint256 _ed25519;
 
             public med25519Struct()
             {
@@ -86,36 +89,36 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class MuxedAccount_KEY_TYPE_ED25519 : MuxedAccount
-    {
-        public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
-        private uint256 _ed25519;
-        public uint256 ed25519
+        public sealed partial class KeyTypeEd25519 : MuxedAccount
         {
-            get => _ed25519;
-            set
+            public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
+            public uint256 ed25519
             {
-                _ed25519 = value;
+                get => _ed25519;
+                set
+                {
+                    _ed25519 = value;
+                }
             }
-        }
+            private uint256 _ed25519;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class MuxedAccount_KEY_TYPE_MUXED_ED25519 : MuxedAccount
-    {
-        public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
-        private med25519Struct _med25519;
-        public med25519Struct med25519
+            public override void ValidateCase() {}
+        }
+        public sealed partial class KeyTypeMuxedEd25519 : MuxedAccount
         {
-            get => _med25519;
-            set
+            public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
+            public med25519Struct med25519
             {
-                _med25519 = value;
+                get => _med25519;
+                set
+                {
+                    _med25519 = value;
+                }
             }
-        }
+            private med25519Struct _med25519;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class MuxedAccountXdr
     {
@@ -135,10 +138,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case MuxedAccount_KEY_TYPE_ED25519 case_KEY_TYPE_ED25519:
+                case MuxedAccount.KeyTypeEd25519 case_KEY_TYPE_ED25519:
                 uint256Xdr.Encode(stream, case_KEY_TYPE_ED25519.ed25519);
                 break;
-                case MuxedAccount_KEY_TYPE_MUXED_ED25519 case_KEY_TYPE_MUXED_ED25519:
+                case MuxedAccount.KeyTypeMuxedEd25519 case_KEY_TYPE_MUXED_ED25519:
                 MuxedAccount.med25519StructXdr.Encode(stream, case_KEY_TYPE_MUXED_ED25519.med25519);
                 break;
             }
@@ -149,11 +152,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case CryptoKeyType.KEY_TYPE_ED25519:
-                var result_KEY_TYPE_ED25519 = new MuxedAccount_KEY_TYPE_ED25519();
+                var result_KEY_TYPE_ED25519 = new MuxedAccount.KeyTypeEd25519();
                 result_KEY_TYPE_ED25519.ed25519 = uint256Xdr.Decode(stream);
                 return result_KEY_TYPE_ED25519;
                 case CryptoKeyType.KEY_TYPE_MUXED_ED25519:
-                var result_KEY_TYPE_MUXED_ED25519 = new MuxedAccount_KEY_TYPE_MUXED_ED25519();
+                var result_KEY_TYPE_MUXED_ED25519 = new MuxedAccount.KeyTypeMuxedEd25519();
                 result_KEY_TYPE_MUXED_ED25519.med25519 = MuxedAccount.med25519StructXdr.Decode(stream);
                 return result_KEY_TYPE_MUXED_ED25519;
                 default:

@@ -30,7 +30,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class fromAddressStruct
         {
-            private SCAddress _address;
             public SCAddress address
             {
                 get => _address;
@@ -39,8 +38,8 @@ namespace Stellar.XDR {
                     _address = value;
                 }
             }
+            private SCAddress _address;
 
-            private uint256 _salt;
             public uint256 salt
             {
                 get => _salt;
@@ -49,6 +48,7 @@ namespace Stellar.XDR {
                     _salt = value;
                 }
             }
+            private uint256 _salt;
 
             public fromAddressStruct()
             {
@@ -86,36 +86,36 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS : ContractIDPreimage
-    {
-        public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
-        private fromAddressStruct _fromAddress;
-        public fromAddressStruct fromAddress
+        public sealed partial class ContractIdPreimageFromAddress : ContractIDPreimage
         {
-            get => _fromAddress;
-            set
+            public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
+            public fromAddressStruct fromAddress
             {
-                _fromAddress = value;
+                get => _fromAddress;
+                set
+                {
+                    _fromAddress = value;
+                }
             }
-        }
+            private fromAddressStruct _fromAddress;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET : ContractIDPreimage
-    {
-        public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET;
-        private Asset _fromAsset;
-        public Asset fromAsset
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ContractIdPreimageFromAsset : ContractIDPreimage
         {
-            get => _fromAsset;
-            set
+            public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET;
+            public Asset fromAsset
             {
-                _fromAsset = value;
+                get => _fromAsset;
+                set
+                {
+                    _fromAsset = value;
+                }
             }
-        }
+            private Asset _fromAsset;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ContractIDPreimageXdr
     {
@@ -135,10 +135,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
+                case ContractIDPreimage.ContractIdPreimageFromAddress case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
                 ContractIDPreimage.fromAddressStructXdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress);
                 break;
-                case ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET case_CONTRACT_ID_PREIMAGE_FROM_ASSET:
+                case ContractIDPreimage.ContractIdPreimageFromAsset case_CONTRACT_ID_PREIMAGE_FROM_ASSET:
                 AssetXdr.Encode(stream, case_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset);
                 break;
             }
@@ -149,11 +149,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS:
-                var result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ADDRESS();
+                var result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS = new ContractIDPreimage.ContractIdPreimageFromAddress();
                 result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS.fromAddress = ContractIDPreimage.fromAddressStructXdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
                 case ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET:
-                var result_CONTRACT_ID_PREIMAGE_FROM_ASSET = new ContractIDPreimage_CONTRACT_ID_PREIMAGE_FROM_ASSET();
+                var result_CONTRACT_ID_PREIMAGE_FROM_ASSET = new ContractIDPreimage.ContractIdPreimageFromAsset();
                 result_CONTRACT_ID_PREIMAGE_FROM_ASSET.fromAsset = AssetXdr.Decode(stream);
                 return result_CONTRACT_ID_PREIMAGE_FROM_ASSET;
                 default:

@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerSCPMessages
     {
-        private uint32 _ledgerSeq;
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _ledgerSeq = value;
             }
         }
+        private uint32 _ledgerSeq;
 
-        private SCPEnvelope[] _messages;
         public SCPEnvelope[] messages
         {
             get => _messages;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _messages = value;
             }
         }
+        private SCPEnvelope[] _messages;
 
         public LedgerSCPMessages()
         {

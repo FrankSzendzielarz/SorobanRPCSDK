@@ -25,14 +25,41 @@ namespace Stellar.XDR {
     public enum SCErrorCode
     {
         SCEC_ARITH_DOMAIN = 0,
+        /// <summary>
+        /// Some arithmetic was undefined (overflow, divide-by-zero).
+        /// </summary>
         SCEC_INDEX_BOUNDS = 1,
+        /// <summary>
+        /// Something was indexed beyond its bounds.
+        /// </summary>
         SCEC_INVALID_INPUT = 2,
+        /// <summary>
+        /// User provided some otherwise-bad data.
+        /// </summary>
         SCEC_MISSING_VALUE = 3,
+        /// <summary>
+        /// Some value was required but not provided.
+        /// </summary>
         SCEC_EXISTING_VALUE = 4,
+        /// <summary>
+        /// Some value was provided where not allowed.
+        /// </summary>
         SCEC_EXCEEDED_LIMIT = 5,
+        /// <summary>
+        /// Some arbitrary limit -- gas or otherwise -- was hit.
+        /// </summary>
         SCEC_INVALID_ACTION = 6,
+        /// <summary>
+        /// Data was valid but action requested was not.
+        /// </summary>
         SCEC_INTERNAL_ERROR = 7,
+        /// <summary>
+        /// The host detected an error in its own logic.
+        /// </summary>
         SCEC_UNEXPECTED_TYPE = 8,
+        /// <summary>
+        /// Some type wasn't as expected.
+        /// </summary>
         SCEC_UNEXPECTED_SIZE = 9,
     }
 

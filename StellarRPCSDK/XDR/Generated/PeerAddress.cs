@@ -24,7 +24,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PeerAddress
     {
-        private ipUnion _ip;
         public ipUnion ip
         {
             get => _ip;
@@ -33,8 +32,8 @@ namespace Stellar.XDR {
                 _ip = value;
             }
         }
+        private ipUnion _ip;
 
-        private uint32 _port;
         public uint32 port
         {
             get => _port;
@@ -43,8 +42,8 @@ namespace Stellar.XDR {
                 _port = value;
             }
         }
+        private uint32 _port;
 
-        private uint32 _numFailures;
         public uint32 numFailures
         {
             get => _numFailures;
@@ -53,6 +52,7 @@ namespace Stellar.XDR {
                 _numFailures = value;
             }
         }
+        private uint32 _numFailures;
 
         public PeerAddress()
         {
@@ -69,40 +69,40 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class ipUnion_IPv4 : ipUnion
-        {
-            public override IPAddrType Discriminator => IPAddrType.IPv4;
-            private byte[] _ipv4 = new byte[4];
-            public byte[] ipv4
+            public sealed partial class IPv4 : ipUnion
             {
-                get => _ipv4;
-                set
+                public override IPAddrType Discriminator => IPAddrType.IPv4;
+                public byte[] ipv4
                 {
-                    if (value.Length != 4)
-                    	throw new ArgumentException($"Must be exactly 4 bytes");
-                    _ipv4 = value;
+                    get => _ipv4;
+                    set
+                    {
+                        if (value.Length != 4)
+                        	throw new ArgumentException($"Must be exactly 4 bytes");
+                        _ipv4 = value;
+                    }
                 }
-            }
+                private byte[] _ipv4 = new byte[4];
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class ipUnion_IPv6 : ipUnion
-        {
-            public override IPAddrType Discriminator => IPAddrType.IPv6;
-            private byte[] _ipv6 = new byte[16];
-            public byte[] ipv6
+                public override void ValidateCase() {}
+            }
+            public sealed partial class IPv6 : ipUnion
             {
-                get => _ipv6;
-                set
+                public override IPAddrType Discriminator => IPAddrType.IPv6;
+                public byte[] ipv6
                 {
-                    if (value.Length != 16)
-                    	throw new ArgumentException($"Must be exactly 16 bytes");
-                    _ipv6 = value;
+                    get => _ipv6;
+                    set
+                    {
+                        if (value.Length != 16)
+                        	throw new ArgumentException($"Must be exactly 16 bytes");
+                        _ipv6 = value;
+                    }
                 }
-            }
+                private byte[] _ipv6 = new byte[16];
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class ipUnionXdr
         {
@@ -122,9 +122,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case ipUnion_IPv4 case_IPv4:
+                    case ipUnion.IPv4 case_IPv4:
                     break;
-                    case ipUnion_IPv6 case_IPv6:
+                    case ipUnion.IPv6 case_IPv6:
                     break;
                 }
             }
@@ -134,10 +134,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case IPAddrType.IPv4:
-                    var result_IPv4 = new ipUnion_IPv4();
+                    var result_IPv4 = new ipUnion.IPv4();
                     return result_IPv4;
                     case IPAddrType.IPv6:
-                    var result_IPv6 = new ipUnion_IPv6();
+                    var result_IPv6 = new ipUnion.IPv6();
                     return result_IPv6;
                     default:
                     throw new Exception($"Unknown discriminator for ipUnion: {discriminator}");

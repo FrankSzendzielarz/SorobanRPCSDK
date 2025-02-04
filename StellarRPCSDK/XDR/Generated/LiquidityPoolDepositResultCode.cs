@@ -29,13 +29,37 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum LiquidityPoolDepositResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_MALFORMED = -1,
+        /// <summary>
+        /// bad input
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_NO_TRUST = -2,
+        /// <summary>
+        /// assets
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = -3,
+        /// <summary>
+        /// assets
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = -4,
+        /// <summary>
+        /// the assets
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_LINE_FULL = -5,
+        /// <summary>
+        /// have sufficient limit
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = -6,
+        /// <summary>
+        /// deposit price outside bounds
+        /// </summary>
         LIQUIDITY_POOL_DEPOSIT_POOL_FULL = -7,
     }
 

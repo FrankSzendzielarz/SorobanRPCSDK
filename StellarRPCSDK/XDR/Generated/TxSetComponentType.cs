@@ -17,6 +17,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum TxSetComponentType
     {
+        /// <summary>
+        /// If base fee is not specified, no discount is applied.
+        /// </summary>
         TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE = 0,
     }
 

@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClawbackClaimableBalanceOp
     {
-        private ClaimableBalanceID _balanceID;
         public ClaimableBalanceID balanceID
         {
             get => _balanceID;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _balanceID = value;
             }
         }
+        private ClaimableBalanceID _balanceID;
 
         public ClawbackClaimableBalanceOp()
         {

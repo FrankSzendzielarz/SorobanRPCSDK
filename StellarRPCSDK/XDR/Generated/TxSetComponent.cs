@@ -28,7 +28,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class txsMaybeDiscountedFeeStruct
         {
-            private int64 _baseFee;
             public int64 baseFee
             {
                 get => _baseFee;
@@ -37,8 +36,8 @@ namespace Stellar.XDR {
                     _baseFee = value;
                 }
             }
+            private int64 _baseFee;
 
-            private TransactionEnvelope[] _txs;
             public TransactionEnvelope[] txs
             {
                 get => _txs;
@@ -47,6 +46,7 @@ namespace Stellar.XDR {
                     _txs = value;
                 }
             }
+            private TransactionEnvelope[] _txs;
 
             public txsMaybeDiscountedFeeStruct()
             {
@@ -105,21 +105,21 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class TxSetComponent_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE : TxSetComponent
-    {
-        public override TxSetComponentType Discriminator => TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
-        private txsMaybeDiscountedFeeStruct _txsMaybeDiscountedFee;
-        public txsMaybeDiscountedFeeStruct txsMaybeDiscountedFee
+        public sealed partial class TxsetCompTxsMaybeDiscountedFee : TxSetComponent
         {
-            get => _txsMaybeDiscountedFee;
-            set
+            public override TxSetComponentType Discriminator => TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
+            public txsMaybeDiscountedFeeStruct txsMaybeDiscountedFee
             {
-                _txsMaybeDiscountedFee = value;
+                get => _txsMaybeDiscountedFee;
+                set
+                {
+                    _txsMaybeDiscountedFee = value;
+                }
             }
-        }
+            private txsMaybeDiscountedFeeStruct _txsMaybeDiscountedFee;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class TxSetComponentXdr
     {
@@ -139,7 +139,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case TxSetComponent_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE case_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE:
+                case TxSetComponent.TxsetCompTxsMaybeDiscountedFee case_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE:
                 TxSetComponent.txsMaybeDiscountedFeeStructXdr.Encode(stream, case_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE.txsMaybeDiscountedFee);
                 break;
             }
@@ -150,7 +150,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE:
-                var result_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE = new TxSetComponent_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE();
+                var result_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE = new TxSetComponent.TxsetCompTxsMaybeDiscountedFee();
                 result_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE.txsMaybeDiscountedFee = TxSetComponent.txsMaybeDiscountedFeeStructXdr.Decode(stream);
                 return result_TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
                 default:

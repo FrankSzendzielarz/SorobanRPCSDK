@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedSurveyRequestMessage
     {
-        private SurveyRequestMessage _request;
         public SurveyRequestMessage request
         {
             get => _request;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _request = value;
             }
         }
+        private SurveyRequestMessage _request;
 
-        private uint32 _nonce;
         public uint32 nonce
         {
             get => _nonce;
@@ -37,8 +36,8 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private uint32 _nonce;
 
-        private uint32 _inboundPeersIndex;
         public uint32 inboundPeersIndex
         {
             get => _inboundPeersIndex;
@@ -47,8 +46,8 @@ namespace Stellar.XDR {
                 _inboundPeersIndex = value;
             }
         }
+        private uint32 _inboundPeersIndex;
 
-        private uint32 _outboundPeersIndex;
         public uint32 outboundPeersIndex
         {
             get => _outboundPeersIndex;
@@ -57,6 +56,7 @@ namespace Stellar.XDR {
                 _outboundPeersIndex = value;
             }
         }
+        private uint32 _outboundPeersIndex;
 
         public TimeSlicedSurveyRequestMessage()
         {

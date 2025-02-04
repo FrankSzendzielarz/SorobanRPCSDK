@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LiquidityPoolWithdrawOp
     {
-        private PoolID _liquidityPoolID;
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _liquidityPoolID = value;
             }
         }
+        private PoolID _liquidityPoolID;
 
-        private int64 _amount;
         public int64 amount
         {
             get => _amount;
@@ -37,8 +36,11 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private int64 _minAmountA;
+        /// <summary>
+        /// amount of pool shares to withdraw
+        /// </summary>
         public int64 minAmountA
         {
             get => _minAmountA;
@@ -47,8 +49,11 @@ namespace Stellar.XDR {
                 _minAmountA = value;
             }
         }
+        private int64 _minAmountA;
 
-        private int64 _minAmountB;
+        /// <summary>
+        /// minimum amount of first asset to withdraw
+        /// </summary>
         public int64 minAmountB
         {
             get => _minAmountB;
@@ -57,6 +62,7 @@ namespace Stellar.XDR {
                 _minAmountB = value;
             }
         }
+        private int64 _minAmountB;
 
         public LiquidityPoolWithdrawOp()
         {

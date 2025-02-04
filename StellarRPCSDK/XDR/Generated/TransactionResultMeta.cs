@@ -14,10 +14,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// phases
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionResultMeta
     {
-        private TransactionResultPair _result;
         public TransactionResultPair result
         {
             get => _result;
@@ -26,8 +28,8 @@ namespace Stellar.XDR {
                 _result = value;
             }
         }
+        private TransactionResultPair _result;
 
-        private LedgerEntryChanges _feeProcessing;
         public LedgerEntryChanges feeProcessing
         {
             get => _feeProcessing;
@@ -36,8 +38,8 @@ namespace Stellar.XDR {
                 _feeProcessing = value;
             }
         }
+        private LedgerEntryChanges _feeProcessing;
 
-        private TransactionMeta _txApplyProcessing;
         public TransactionMeta txApplyProcessing
         {
             get => _txApplyProcessing;
@@ -46,6 +48,7 @@ namespace Stellar.XDR {
                 _txApplyProcessing = value;
             }
         }
+        private TransactionMeta _txApplyProcessing;
 
         public TransactionResultMeta()
         {

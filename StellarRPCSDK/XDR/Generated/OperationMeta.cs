@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class OperationMeta
     {
-        private LedgerEntryChanges _changes;
         public LedgerEntryChanges changes
         {
             get => _changes;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _changes = value;
             }
         }
+        private LedgerEntryChanges _changes;
 
         public OperationMeta()
         {

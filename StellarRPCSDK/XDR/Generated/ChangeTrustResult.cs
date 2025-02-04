@@ -30,60 +30,60 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_SUCCESS : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SUCCESS;
+        public sealed partial class ChangeTrustSuccess : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_MALFORMED : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustMalformed : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_NO_ISSUER : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustNoIssuer : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_INVALID_LIMIT : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustInvalidLimit : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_LOW_RESERVE : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustLowReserve : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_SELF_NOT_ALLOWED : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustSelfNotAllowed : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_TRUST_LINE_MISSING : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustTrustLineMissing : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_CANNOT_DELETE : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustCannotDelete : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustResult_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES : ChangeTrustResult
-    {
-        public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ChangeTrustNotAuthMaintainLiabilities : ChangeTrustResult
+        {
+            public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ChangeTrustResultXdr
     {
@@ -103,23 +103,23 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ChangeTrustResult_CHANGE_TRUST_SUCCESS case_CHANGE_TRUST_SUCCESS:
+                case ChangeTrustResult.ChangeTrustSuccess case_CHANGE_TRUST_SUCCESS:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_MALFORMED case_CHANGE_TRUST_MALFORMED:
+                case ChangeTrustResult.ChangeTrustMalformed case_CHANGE_TRUST_MALFORMED:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_NO_ISSUER case_CHANGE_TRUST_NO_ISSUER:
+                case ChangeTrustResult.ChangeTrustNoIssuer case_CHANGE_TRUST_NO_ISSUER:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_INVALID_LIMIT case_CHANGE_TRUST_INVALID_LIMIT:
+                case ChangeTrustResult.ChangeTrustInvalidLimit case_CHANGE_TRUST_INVALID_LIMIT:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_LOW_RESERVE case_CHANGE_TRUST_LOW_RESERVE:
+                case ChangeTrustResult.ChangeTrustLowReserve case_CHANGE_TRUST_LOW_RESERVE:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_SELF_NOT_ALLOWED case_CHANGE_TRUST_SELF_NOT_ALLOWED:
+                case ChangeTrustResult.ChangeTrustSelfNotAllowed case_CHANGE_TRUST_SELF_NOT_ALLOWED:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_TRUST_LINE_MISSING case_CHANGE_TRUST_TRUST_LINE_MISSING:
+                case ChangeTrustResult.ChangeTrustTrustLineMissing case_CHANGE_TRUST_TRUST_LINE_MISSING:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_CANNOT_DELETE case_CHANGE_TRUST_CANNOT_DELETE:
+                case ChangeTrustResult.ChangeTrustCannotDelete case_CHANGE_TRUST_CANNOT_DELETE:
                 break;
-                case ChangeTrustResult_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES case_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
+                case ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities case_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
                 break;
             }
         }
@@ -129,31 +129,31 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ChangeTrustResultCode.CHANGE_TRUST_SUCCESS:
-                var result_CHANGE_TRUST_SUCCESS = new ChangeTrustResult_CHANGE_TRUST_SUCCESS();
+                var result_CHANGE_TRUST_SUCCESS = new ChangeTrustResult.ChangeTrustSuccess();
                 return result_CHANGE_TRUST_SUCCESS;
                 case ChangeTrustResultCode.CHANGE_TRUST_MALFORMED:
-                var result_CHANGE_TRUST_MALFORMED = new ChangeTrustResult_CHANGE_TRUST_MALFORMED();
+                var result_CHANGE_TRUST_MALFORMED = new ChangeTrustResult.ChangeTrustMalformed();
                 return result_CHANGE_TRUST_MALFORMED;
                 case ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER:
-                var result_CHANGE_TRUST_NO_ISSUER = new ChangeTrustResult_CHANGE_TRUST_NO_ISSUER();
+                var result_CHANGE_TRUST_NO_ISSUER = new ChangeTrustResult.ChangeTrustNoIssuer();
                 return result_CHANGE_TRUST_NO_ISSUER;
                 case ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT:
-                var result_CHANGE_TRUST_INVALID_LIMIT = new ChangeTrustResult_CHANGE_TRUST_INVALID_LIMIT();
+                var result_CHANGE_TRUST_INVALID_LIMIT = new ChangeTrustResult.ChangeTrustInvalidLimit();
                 return result_CHANGE_TRUST_INVALID_LIMIT;
                 case ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE:
-                var result_CHANGE_TRUST_LOW_RESERVE = new ChangeTrustResult_CHANGE_TRUST_LOW_RESERVE();
+                var result_CHANGE_TRUST_LOW_RESERVE = new ChangeTrustResult.ChangeTrustLowReserve();
                 return result_CHANGE_TRUST_LOW_RESERVE;
                 case ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED:
-                var result_CHANGE_TRUST_SELF_NOT_ALLOWED = new ChangeTrustResult_CHANGE_TRUST_SELF_NOT_ALLOWED();
+                var result_CHANGE_TRUST_SELF_NOT_ALLOWED = new ChangeTrustResult.ChangeTrustSelfNotAllowed();
                 return result_CHANGE_TRUST_SELF_NOT_ALLOWED;
                 case ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING:
-                var result_CHANGE_TRUST_TRUST_LINE_MISSING = new ChangeTrustResult_CHANGE_TRUST_TRUST_LINE_MISSING();
+                var result_CHANGE_TRUST_TRUST_LINE_MISSING = new ChangeTrustResult.ChangeTrustTrustLineMissing();
                 return result_CHANGE_TRUST_TRUST_LINE_MISSING;
                 case ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE:
-                var result_CHANGE_TRUST_CANNOT_DELETE = new ChangeTrustResult_CHANGE_TRUST_CANNOT_DELETE();
+                var result_CHANGE_TRUST_CANNOT_DELETE = new ChangeTrustResult.ChangeTrustCannotDelete();
                 return result_CHANGE_TRUST_CANNOT_DELETE;
                 case ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES:
-                var result_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES = new ChangeTrustResult_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES();
+                var result_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES = new ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities();
                 return result_CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;
                 default:
                 throw new Exception($"Unknown discriminator for ChangeTrustResult: {discriminator}");

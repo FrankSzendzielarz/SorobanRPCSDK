@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCPNomination
     {
-        private Hash _quorumSetHash;
         public Hash quorumSetHash
         {
             get => _quorumSetHash;
@@ -26,8 +25,11 @@ namespace Stellar.XDR {
                 _quorumSetHash = value;
             }
         }
+        private Hash _quorumSetHash;
 
-        private Value[] _votes;
+        /// <summary>
+        /// D
+        /// </summary>
         public Value[] votes
         {
             get => _votes;
@@ -36,8 +38,11 @@ namespace Stellar.XDR {
                 _votes = value;
             }
         }
+        private Value[] _votes;
 
-        private Value[] _accepted;
+        /// <summary>
+        /// X
+        /// </summary>
         public Value[] accepted
         {
             get => _accepted;
@@ -46,6 +51,7 @@ namespace Stellar.XDR {
                 _accepted = value;
             }
         }
+        private Value[] _accepted;
 
         public SCPNomination()
         {

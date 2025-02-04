@@ -9,10 +9,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// variable size as the size depends on the signature scheme used
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Signature
     {
-        private byte[] _innerValue;
         public byte[] InnerValue
         {
             get => _innerValue;
@@ -23,6 +25,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private byte[] _innerValue;
 
         public Signature() { }
 

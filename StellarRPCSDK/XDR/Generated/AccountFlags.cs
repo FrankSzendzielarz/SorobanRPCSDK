@@ -28,9 +28,21 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum AccountFlags
     {
+        /// <summary>
+        /// the issuer to set it for each TrustLine
+        /// </summary>
         AUTH_REQUIRED_FLAG = 0x1,
+        /// <summary>
+        /// otherwise, authorization cannot be revoked
+        /// </summary>
         AUTH_REVOCABLE_FLAG = 0x2,
+        /// <summary>
+        /// Once set, causes all AUTH_* flags to be read-only
+        /// </summary>
         AUTH_IMMUTABLE_FLAG = 0x4,
+        /// <summary>
+        /// with clawback enabled set to "true"
+        /// </summary>
         AUTH_CLAWBACK_ENABLED_FLAG = 0x8,
     }
 

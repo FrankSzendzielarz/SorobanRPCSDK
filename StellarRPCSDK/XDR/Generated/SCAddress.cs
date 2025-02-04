@@ -23,36 +23,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SCAddress_SC_ADDRESS_TYPE_ACCOUNT : SCAddress
-    {
-        public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
-        private AccountID _accountId;
-        public AccountID accountId
+        public sealed partial class ScAddressTypeAccount : SCAddress
         {
-            get => _accountId;
-            set
+            public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
+            public AccountID accountId
             {
-                _accountId = value;
+                get => _accountId;
+                set
+                {
+                    _accountId = value;
+                }
             }
-        }
+            private AccountID _accountId;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCAddress_SC_ADDRESS_TYPE_CONTRACT : SCAddress
-    {
-        public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;
-        private Hash _contractId;
-        public Hash contractId
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ScAddressTypeContract : SCAddress
         {
-            get => _contractId;
-            set
+            public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;
+            public Hash contractId
             {
-                _contractId = value;
+                get => _contractId;
+                set
+                {
+                    _contractId = value;
+                }
             }
-        }
+            private Hash _contractId;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCAddressXdr
     {
@@ -72,10 +72,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCAddress_SC_ADDRESS_TYPE_ACCOUNT case_SC_ADDRESS_TYPE_ACCOUNT:
+                case SCAddress.ScAddressTypeAccount case_SC_ADDRESS_TYPE_ACCOUNT:
                 AccountIDXdr.Encode(stream, case_SC_ADDRESS_TYPE_ACCOUNT.accountId);
                 break;
-                case SCAddress_SC_ADDRESS_TYPE_CONTRACT case_SC_ADDRESS_TYPE_CONTRACT:
+                case SCAddress.ScAddressTypeContract case_SC_ADDRESS_TYPE_CONTRACT:
                 HashXdr.Encode(stream, case_SC_ADDRESS_TYPE_CONTRACT.contractId);
                 break;
             }
@@ -86,11 +86,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SCAddressType.SC_ADDRESS_TYPE_ACCOUNT:
-                var result_SC_ADDRESS_TYPE_ACCOUNT = new SCAddress_SC_ADDRESS_TYPE_ACCOUNT();
+                var result_SC_ADDRESS_TYPE_ACCOUNT = new SCAddress.ScAddressTypeAccount();
                 result_SC_ADDRESS_TYPE_ACCOUNT.accountId = AccountIDXdr.Decode(stream);
                 return result_SC_ADDRESS_TYPE_ACCOUNT;
                 case SCAddressType.SC_ADDRESS_TYPE_CONTRACT:
-                var result_SC_ADDRESS_TYPE_CONTRACT = new SCAddress_SC_ADDRESS_TYPE_CONTRACT();
+                var result_SC_ADDRESS_TYPE_CONTRACT = new SCAddress.ScAddressTypeContract();
                 result_SC_ADDRESS_TYPE_CONTRACT.contractId = HashXdr.Decode(stream);
                 return result_SC_ADDRESS_TYPE_CONTRACT;
                 default:

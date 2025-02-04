@@ -25,42 +25,42 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class Preconditions_PRECOND_NONE : Preconditions
-    {
-        public override PreconditionType Discriminator => PreconditionType.PRECOND_NONE;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Preconditions_PRECOND_TIME : Preconditions
-    {
-        public override PreconditionType Discriminator => PreconditionType.PRECOND_TIME;
-        private TimeBounds _timeBounds;
-        public TimeBounds timeBounds
+        public sealed partial class PrecondNone : Preconditions
         {
-            get => _timeBounds;
-            set
-            {
-                _timeBounds = value;
-            }
-        }
+            public override PreconditionType Discriminator => PreconditionType.PRECOND_NONE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class Preconditions_PRECOND_V2 : Preconditions
-    {
-        public override PreconditionType Discriminator => PreconditionType.PRECOND_V2;
-        private PreconditionsV2 _v2;
-        public PreconditionsV2 v2
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PrecondTime : Preconditions
         {
-            get => _v2;
-            set
+            public override PreconditionType Discriminator => PreconditionType.PRECOND_TIME;
+            public TimeBounds timeBounds
             {
-                _v2 = value;
+                get => _timeBounds;
+                set
+                {
+                    _timeBounds = value;
+                }
             }
-        }
+            private TimeBounds _timeBounds;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PrecondV2 : Preconditions
+        {
+            public override PreconditionType Discriminator => PreconditionType.PRECOND_V2;
+            public PreconditionsV2 v2
+            {
+                get => _v2;
+                set
+                {
+                    _v2 = value;
+                }
+            }
+            private PreconditionsV2 _v2;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class PreconditionsXdr
     {
@@ -80,12 +80,12 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case Preconditions_PRECOND_NONE case_PRECOND_NONE:
+                case Preconditions.PrecondNone case_PRECOND_NONE:
                 break;
-                case Preconditions_PRECOND_TIME case_PRECOND_TIME:
+                case Preconditions.PrecondTime case_PRECOND_TIME:
                 TimeBoundsXdr.Encode(stream, case_PRECOND_TIME.timeBounds);
                 break;
-                case Preconditions_PRECOND_V2 case_PRECOND_V2:
+                case Preconditions.PrecondV2 case_PRECOND_V2:
                 PreconditionsV2Xdr.Encode(stream, case_PRECOND_V2.v2);
                 break;
             }
@@ -96,14 +96,14 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case PreconditionType.PRECOND_NONE:
-                var result_PRECOND_NONE = new Preconditions_PRECOND_NONE();
+                var result_PRECOND_NONE = new Preconditions.PrecondNone();
                 return result_PRECOND_NONE;
                 case PreconditionType.PRECOND_TIME:
-                var result_PRECOND_TIME = new Preconditions_PRECOND_TIME();
+                var result_PRECOND_TIME = new Preconditions.PrecondTime();
                 result_PRECOND_TIME.timeBounds = TimeBoundsXdr.Decode(stream);
                 return result_PRECOND_TIME;
                 case PreconditionType.PRECOND_V2:
-                var result_PRECOND_V2 = new Preconditions_PRECOND_V2();
+                var result_PRECOND_V2 = new Preconditions.PrecondV2();
                 result_PRECOND_V2.v2 = PreconditionsV2Xdr.Decode(stream);
                 return result_PRECOND_V2;
                 default:

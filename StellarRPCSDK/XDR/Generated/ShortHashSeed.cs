@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ShortHashSeed
     {
-        private byte[] _seed = new byte[16];
         public byte[] seed
         {
             get => _seed;
@@ -26,6 +25,7 @@ namespace Stellar.XDR {
                 _seed = value;
             }
         }
+        private byte[] _seed = new byte[16];
 
         public ShortHashSeed()
         {

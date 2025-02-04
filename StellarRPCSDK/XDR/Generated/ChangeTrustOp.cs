@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ChangeTrustOp
     {
-        private ChangeTrustAsset _line;
         public ChangeTrustAsset line
         {
             get => _line;
@@ -27,8 +26,11 @@ namespace Stellar.XDR {
                 _line = value;
             }
         }
+        private ChangeTrustAsset _line;
 
-        private int64 _limit;
+        /// <summary>
+        /// if limit is set to 0, deletes the trust line
+        /// </summary>
         public int64 limit
         {
             get => _limit;
@@ -37,6 +39,7 @@ namespace Stellar.XDR {
                 _limit = value;
             }
         }
+        private int64 _limit;
 
         public ChangeTrustOp()
         {

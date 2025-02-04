@@ -23,36 +23,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class StoredTransactionSet_0 : StoredTransactionSet
-    {
-        public override int Discriminator => 0;
-        private TransactionSet _txSet;
-        public TransactionSet txSet
+        public sealed partial class case_0 : StoredTransactionSet
         {
-            get => _txSet;
-            set
+            public override int Discriminator => 0;
+            public TransactionSet txSet
             {
-                _txSet = value;
+                get => _txSet;
+                set
+                {
+                    _txSet = value;
+                }
             }
-        }
+            private TransactionSet _txSet;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class StoredTransactionSet_1 : StoredTransactionSet
-    {
-        public override int Discriminator => 1;
-        private GeneralizedTransactionSet _generalizedTxSet;
-        public GeneralizedTransactionSet generalizedTxSet
+            public override void ValidateCase() {}
+        }
+        public sealed partial class case_1 : StoredTransactionSet
         {
-            get => _generalizedTxSet;
-            set
+            public override int Discriminator => 1;
+            public GeneralizedTransactionSet generalizedTxSet
             {
-                _generalizedTxSet = value;
+                get => _generalizedTxSet;
+                set
+                {
+                    _generalizedTxSet = value;
+                }
             }
-        }
+            private GeneralizedTransactionSet _generalizedTxSet;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class StoredTransactionSetXdr
     {
@@ -72,10 +72,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case StoredTransactionSet_0 case_0:
+                case StoredTransactionSet.case_0 case_0:
                 TransactionSetXdr.Encode(stream, case_0.txSet);
                 break;
-                case StoredTransactionSet_1 case_1:
+                case StoredTransactionSet.case_1 case_1:
                 GeneralizedTransactionSetXdr.Encode(stream, case_1.generalizedTxSet);
                 break;
             }
@@ -86,11 +86,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new StoredTransactionSet_0();
+                var result_0 = new StoredTransactionSet.case_0();
                 result_0.txSet = TransactionSetXdr.Decode(stream);
                 return result_0;
                 case 1:
-                var result_1 = new StoredTransactionSet_1();
+                var result_1 = new StoredTransactionSet.case_1();
                 result_1.generalizedTxSet = GeneralizedTransactionSetXdr.Decode(stream);
                 return result_1;
                 default:

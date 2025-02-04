@@ -21,10 +21,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// "Compute" settings for contracts (instructions and memory).
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractComputeV0
     {
-        private int64 _ledgerMaxInstructions;
+        /// <summary>
+        /// Maximum instructions per ledger
+        /// </summary>
         public int64 ledgerMaxInstructions
         {
             get => _ledgerMaxInstructions;
@@ -33,8 +38,11 @@ namespace Stellar.XDR {
                 _ledgerMaxInstructions = value;
             }
         }
+        private int64 _ledgerMaxInstructions;
 
-        private int64 _txMaxInstructions;
+        /// <summary>
+        /// Maximum instructions per transaction
+        /// </summary>
         public int64 txMaxInstructions
         {
             get => _txMaxInstructions;
@@ -43,8 +51,11 @@ namespace Stellar.XDR {
                 _txMaxInstructions = value;
             }
         }
+        private int64 _txMaxInstructions;
 
-        private int64 _feeRatePerInstructionsIncrement;
+        /// <summary>
+        /// Cost of 10000 instructions
+        /// </summary>
         public int64 feeRatePerInstructionsIncrement
         {
             get => _feeRatePerInstructionsIncrement;
@@ -53,8 +64,11 @@ namespace Stellar.XDR {
                 _feeRatePerInstructionsIncrement = value;
             }
         }
+        private int64 _feeRatePerInstructionsIncrement;
 
-        private uint32 _txMemoryLimit;
+        /// <summary>
+        /// for memory, just the limit.
+        /// </summary>
         public uint32 txMemoryLimit
         {
             get => _txMemoryLimit;
@@ -63,6 +77,7 @@ namespace Stellar.XDR {
                 _txMemoryLimit = value;
             }
         }
+        private uint32 _txMemoryLimit;
 
         public ConfigSettingContractComputeV0()
         {

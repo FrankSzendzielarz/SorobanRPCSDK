@@ -56,34 +56,80 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
      
     }
 
+    //public void BuildCommentMap(CommonTokenStream tokenStream)
+    //{
+    //    _commentMap = new();
+    //    var tokens = tokenStream.GetTokens();
+    //    IToken? lastToken = null;
+
+    //    foreach (var token in tokens)
+    //    {
+    //        if (token.Channel == Lexer.Hidden)
+    //        {
+    //            if (token.Type == StellarXdrLexer.BLOCK_COMMENT ||
+    //                token.Type == StellarXdrLexer.LINE_COMMENT)
+    //            {
+    //                if (lastToken != null)
+    //                {
+    //                    string comment = token.Text;
+    //                    comment = comment.Replace("/*", "").Replace("*/", "")
+    //                                  .Replace("//", "").Trim();
+    //                    if (!string.IsNullOrWhiteSpace(comment))
+    //                    {
+    //                        _commentMap[lastToken] = comment;
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        lastToken = token;
+    //    }
+    //}
     public void BuildCommentMap(CommonTokenStream tokenStream)
     {
         _commentMap = new();
         var tokens = tokenStream.GetTokens();
-        IToken? lastToken = null;
+
+        // Dictionary to store pending comments keyed by line number
+        Dictionary<int, string> pendingComments = new();
 
         foreach (var token in tokens)
         {
-            if (token.Channel == Lexer.Hidden)
+            if (token.Channel == TokenConstants.HiddenChannel)
             {
                 if (token.Type == StellarXdrLexer.BLOCK_COMMENT ||
                     token.Type == StellarXdrLexer.LINE_COMMENT)
                 {
-                    if (lastToken != null)
+                    string comment = token.Text;
+                    comment = comment.Replace("/*", "").Replace("*/", "")
+                                   .Replace("//", "").Trim();
+
+                    if (!string.IsNullOrWhiteSpace(comment))
                     {
-                        string comment = token.Text;
-                        comment = comment.Replace("/*", "").Replace("*/", "")
-                                      .Replace("//", "").Trim();
-                        if (!string.IsNullOrWhiteSpace(comment))
+                        // Store comment for next non-hidden token
+                        int nextLine = token.Line + 1;
+                        if (!pendingComments.ContainsKey(nextLine))
                         {
-                            _commentMap[lastToken] = comment;
+                            pendingComments[nextLine] = comment;
+                        }
+                        else
+                        {
+                            pendingComments[nextLine] += Environment.NewLine + comment;
                         }
                     }
                 }
             }
-            lastToken = token;
+            else // Non-hidden token
+            {
+                // If we have pending comments for this line, associate them with this token
+                if (pendingComments.TryGetValue(token.Line, out var comment))
+                {
+                    _commentMap[token] = comment;
+                    pendingComments.Remove(token.Line);
+                }
+            }
         }
     }
+
 
     public override object VisitNamespaceDefinition([NotNull] StellarXdrParser.NamespaceDefinitionContext context)
     {

@@ -26,30 +26,30 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS : ClawbackClaimableBalanceResult
-    {
-        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
+        public sealed partial class ClawbackClaimableBalanceSuccess : ClawbackClaimableBalanceResult
+        {
+            public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST : ClawbackClaimableBalanceResult
-    {
-        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackClaimableBalanceDoesNotExist : ClawbackClaimableBalanceResult
+        {
+            public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER : ClawbackClaimableBalanceResult
-    {
-        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackClaimableBalanceNotIssuer : ClawbackClaimableBalanceResult
+        {
+            public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED : ClawbackClaimableBalanceResult
-    {
-        public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackClaimableBalanceNotClawbackEnabled : ClawbackClaimableBalanceResult
+        {
+            public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClawbackClaimableBalanceResultXdr
     {
@@ -69,13 +69,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS case_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
+                case ClawbackClaimableBalanceResult.ClawbackClaimableBalanceSuccess case_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
                 break;
-                case ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST case_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClawbackClaimableBalanceResult.ClawbackClaimableBalanceDoesNotExist case_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
                 break;
-                case ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER case_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
+                case ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotIssuer case_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
                 break;
-                case ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED case_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
+                case ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotClawbackEnabled case_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
                 break;
             }
         }
@@ -85,16 +85,16 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS:
-                var result_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS();
+                var result_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = new ClawbackClaimableBalanceResult.ClawbackClaimableBalanceSuccess();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
                 case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
-                var result_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST();
+                var result_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClawbackClaimableBalanceResult.ClawbackClaimableBalanceDoesNotExist();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
                 case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER:
-                var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER();
+                var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = new ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotIssuer();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
                 case ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED:
-                var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = new ClawbackClaimableBalanceResult_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED();
+                var result_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = new ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotClawbackEnabled();
                 return result_CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;
                 default:
                 throw new Exception($"Unknown discriminator for ClawbackClaimableBalanceResult: {discriminator}");

@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class RestoreFootprintOp
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
         public RestoreFootprintOp()
         {

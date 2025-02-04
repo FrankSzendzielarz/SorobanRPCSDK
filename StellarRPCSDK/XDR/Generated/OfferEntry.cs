@@ -35,7 +35,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class OfferEntry
     {
-        private AccountID _sellerID;
         public AccountID sellerID
         {
             get => _sellerID;
@@ -44,8 +43,8 @@ namespace Stellar.XDR {
                 _sellerID = value;
             }
         }
+        private AccountID _sellerID;
 
-        private int64 _offerID;
         public int64 offerID
         {
             get => _offerID;
@@ -54,8 +53,8 @@ namespace Stellar.XDR {
                 _offerID = value;
             }
         }
+        private int64 _offerID;
 
-        private Asset _selling;
         public Asset selling
         {
             get => _selling;
@@ -64,8 +63,11 @@ namespace Stellar.XDR {
                 _selling = value;
             }
         }
+        private Asset _selling;
 
-        private Asset _buying;
+        /// <summary>
+        /// A
+        /// </summary>
         public Asset buying
         {
             get => _buying;
@@ -74,8 +76,11 @@ namespace Stellar.XDR {
                 _buying = value;
             }
         }
+        private Asset _buying;
 
-        private int64 _amount;
+        /// <summary>
+        /// B
+        /// </summary>
         public int64 amount
         {
             get => _amount;
@@ -84,8 +89,8 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private Price _price;
         public Price price
         {
             get => _price;
@@ -94,8 +99,8 @@ namespace Stellar.XDR {
                 _price = value;
             }
         }
+        private Price _price;
 
-        private uint32 _flags;
         public uint32 flags
         {
             get => _flags;
@@ -104,8 +109,11 @@ namespace Stellar.XDR {
                 _flags = value;
             }
         }
+        private uint32 _flags;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -114,6 +122,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public OfferEntry()
         {
@@ -130,12 +139,12 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
+            public sealed partial class case_0 : extUnion
+            {
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -155,7 +164,7 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
                 }
             }
@@ -165,7 +174,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");

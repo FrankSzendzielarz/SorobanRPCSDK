@@ -27,42 +27,42 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS;
+        public sealed partial class LiquidityPoolWithdrawSuccess : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_MALFORMED : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolWithdrawMalformed : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_NO_TRUST : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolWithdrawNoTrust : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolWithdrawUnderfunded : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_LINE_FULL : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolWithdrawLineFull : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM : LiquidityPoolWithdrawResult
-    {
-        public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolWithdrawUnderMinimum : LiquidityPoolWithdrawResult
+        {
+            public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LiquidityPoolWithdrawResultXdr
     {
@@ -82,17 +82,17 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS case_LIQUIDITY_POOL_WITHDRAW_SUCCESS:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawSuccess case_LIQUIDITY_POOL_WITHDRAW_SUCCESS:
                 break;
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_MALFORMED case_LIQUIDITY_POOL_WITHDRAW_MALFORMED:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed case_LIQUIDITY_POOL_WITHDRAW_MALFORMED:
                 break;
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_NO_TRUST case_LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawNoTrust case_LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
                 break;
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED case_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderfunded case_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
                 break;
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_LINE_FULL case_LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawLineFull case_LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
                 break;
-                case LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM case_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
+                case LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum case_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
                 break;
             }
         }
@@ -102,22 +102,22 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS:
-                var result_LIQUIDITY_POOL_WITHDRAW_SUCCESS = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_SUCCESS();
+                var result_LIQUIDITY_POOL_WITHDRAW_SUCCESS = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawSuccess();
                 return result_LIQUIDITY_POOL_WITHDRAW_SUCCESS;
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED:
-                var result_LIQUIDITY_POOL_WITHDRAW_MALFORMED = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_MALFORMED();
+                var result_LIQUIDITY_POOL_WITHDRAW_MALFORMED = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed();
                 return result_LIQUIDITY_POOL_WITHDRAW_MALFORMED;
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST:
-                var result_LIQUIDITY_POOL_WITHDRAW_NO_TRUST = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_NO_TRUST();
+                var result_LIQUIDITY_POOL_WITHDRAW_NO_TRUST = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawNoTrust();
                 return result_LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED:
-                var result_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED();
+                var result_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderfunded();
                 return result_LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL:
-                var result_LIQUIDITY_POOL_WITHDRAW_LINE_FULL = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_LINE_FULL();
+                var result_LIQUIDITY_POOL_WITHDRAW_LINE_FULL = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawLineFull();
                 return result_LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
                 case LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM:
-                var result_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM = new LiquidityPoolWithdrawResult_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM();
+                var result_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM = new LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum();
                 return result_LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;
                 default:
                 throw new Exception($"Unknown discriminator for LiquidityPoolWithdrawResult: {discriminator}");

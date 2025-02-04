@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCMetaV0
     {
-        private string _key;
         public string key
         {
             get => _key;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _key = value;
             }
         }
+        private string _key;
 
-        private string _val;
         public string val
         {
             get => _val;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _val = value;
             }
         }
+        private string _val;
 
         public SCMetaV0()
         {

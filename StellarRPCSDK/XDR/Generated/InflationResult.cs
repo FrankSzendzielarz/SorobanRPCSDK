@@ -23,27 +23,27 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class InflationResult_INFLATION_SUCCESS : InflationResult
-    {
-        public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
-        private InflationPayout[] _payouts;
-        public InflationPayout[] payouts
+        public sealed partial class InflationSuccess : InflationResult
         {
-            get => _payouts;
-            set
+            public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
+            public InflationPayout[] payouts
             {
-                _payouts = value;
+                get => _payouts;
+                set
+                {
+                    _payouts = value;
+                }
             }
+            private InflationPayout[] _payouts;
+
+            public override void ValidateCase() {}
         }
+        public sealed partial class InflationNotTime : InflationResult
+        {
+            public override InflationResultCode Discriminator => InflationResultCode.INFLATION_NOT_TIME;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InflationResult_INFLATION_NOT_TIME : InflationResult
-    {
-        public override InflationResultCode Discriminator => InflationResultCode.INFLATION_NOT_TIME;
-
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class InflationResultXdr
     {
@@ -63,14 +63,14 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case InflationResult_INFLATION_SUCCESS case_INFLATION_SUCCESS:
+                case InflationResult.InflationSuccess case_INFLATION_SUCCESS:
                 stream.WriteInt(case_INFLATION_SUCCESS.payouts.Length);
                 foreach (var item in case_INFLATION_SUCCESS.payouts)
                 {
                         InflationPayoutXdr.Encode(stream, item);
                 }
                 break;
-                case InflationResult_INFLATION_NOT_TIME case_INFLATION_NOT_TIME:
+                case InflationResult.InflationNotTime case_INFLATION_NOT_TIME:
                 break;
             }
         }
@@ -80,7 +80,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case InflationResultCode.INFLATION_SUCCESS:
-                var result_INFLATION_SUCCESS = new InflationResult_INFLATION_SUCCESS();
+                var result_INFLATION_SUCCESS = new InflationResult.InflationSuccess();
                 {
                     var length = stream.ReadInt();
                     result_INFLATION_SUCCESS.payouts = new InflationPayout[length];
@@ -91,7 +91,7 @@ namespace Stellar.XDR {
                 }
                 return result_INFLATION_SUCCESS;
                 case InflationResultCode.INFLATION_NOT_TIME:
-                var result_INFLATION_NOT_TIME = new InflationResult_INFLATION_NOT_TIME();
+                var result_INFLATION_NOT_TIME = new InflationResult.InflationNotTime();
                 return result_INFLATION_NOT_TIME;
                 default:
                 throw new Exception($"Unknown discriminator for InflationResult: {discriminator}");

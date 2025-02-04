@@ -21,6 +21,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// the respective envelopes
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum EnvelopeType
     {

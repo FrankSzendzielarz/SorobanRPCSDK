@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InflationPayout
     {
-        private AccountID _destination;
         public AccountID destination
         {
             get => _destination;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _destination = value;
             }
         }
+        private AccountID _destination;
 
-        private int64 _amount;
         public int64 amount
         {
             get => _amount;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
         public InflationPayout()
         {

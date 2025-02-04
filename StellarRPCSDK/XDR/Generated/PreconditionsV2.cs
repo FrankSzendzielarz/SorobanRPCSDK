@@ -43,7 +43,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PreconditionsV2
     {
-        private TimeBounds _timeBounds;
         public TimeBounds timeBounds
         {
             get => _timeBounds;
@@ -52,8 +51,11 @@ namespace Stellar.XDR {
                 _timeBounds = value;
             }
         }
+        private TimeBounds _timeBounds;
 
-        private LedgerBounds _ledgerBounds;
+        /// <summary>
+        /// only minLedger is checked)
+        /// </summary>
         public LedgerBounds ledgerBounds
         {
             get => _ledgerBounds;
@@ -62,8 +64,11 @@ namespace Stellar.XDR {
                 _ledgerBounds = value;
             }
         }
+        private LedgerBounds _ledgerBounds;
 
-        private SequenceNumber _minSeqNum;
+        /// <summary>
+        /// valid if tx.seqNum is too high to ensure replay protection.
+        /// </summary>
         public SequenceNumber minSeqNum
         {
             get => _minSeqNum;
@@ -72,8 +77,11 @@ namespace Stellar.XDR {
                 _minSeqNum = value;
             }
         }
+        private SequenceNumber _minSeqNum;
 
-        private Duration _minSeqAge;
+        /// <summary>
+        /// be at least minSeqAge greater than sourceAccount's seqTime.
+        /// </summary>
         public Duration minSeqAge
         {
             get => _minSeqAge;
@@ -82,8 +90,11 @@ namespace Stellar.XDR {
                 _minSeqAge = value;
             }
         }
+        private Duration _minSeqAge;
 
-        private uint32 _minSeqLedgerGap;
+        /// <summary>
+        /// seqLedger.
+        /// </summary>
         public uint32 minSeqLedgerGap
         {
             get => _minSeqLedgerGap;
@@ -92,8 +103,11 @@ namespace Stellar.XDR {
                 _minSeqLedgerGap = value;
             }
         }
+        private uint32 _minSeqLedgerGap;
 
-        private SignerKey[] _extraSigners;
+        /// <summary>
+        /// operations.
+        /// </summary>
         public SignerKey[] extraSigners
         {
             get => _extraSigners;
@@ -104,6 +118,7 @@ namespace Stellar.XDR {
                 _extraSigners = value;
             }
         }
+        private SignerKey[] _extraSigners;
 
         public PreconditionsV2()
         {

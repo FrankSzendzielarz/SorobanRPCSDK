@@ -21,7 +21,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ClawbackClaimableBalanceResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         CLAWBACK_CLAIMABLE_BALANCE_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST = -1,
         CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER = -2,
         CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED = -3,

@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PaymentOp
     {
-        private MuxedAccount _destination;
         public MuxedAccount destination
         {
             get => _destination;
@@ -26,8 +25,11 @@ namespace Stellar.XDR {
                 _destination = value;
             }
         }
+        private MuxedAccount _destination;
 
-        private Asset _asset;
+        /// <summary>
+        /// recipient of the payment
+        /// </summary>
         public Asset asset
         {
             get => _asset;
@@ -36,8 +38,11 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private Asset _asset;
 
-        private int64 _amount;
+        /// <summary>
+        /// what they end up with
+        /// </summary>
         public int64 amount
         {
             get => _amount;
@@ -46,6 +51,7 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
         public PaymentOp()
         {

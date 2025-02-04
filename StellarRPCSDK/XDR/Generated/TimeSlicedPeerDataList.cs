@@ -12,7 +12,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedPeerDataList
     {
-        private TimeSlicedPeerData[] _innerValue;
         public TimeSlicedPeerData[] InnerValue
         {
             get => _innerValue;
@@ -23,6 +22,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private TimeSlicedPeerData[] _innerValue;
 
         public TimeSlicedPeerDataList() { }
 

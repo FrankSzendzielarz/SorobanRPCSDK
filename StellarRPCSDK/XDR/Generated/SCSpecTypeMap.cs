@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeMap
     {
-        private SCSpecTypeDef _keyType;
         public SCSpecTypeDef keyType
         {
             get => _keyType;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _keyType = value;
             }
         }
+        private SCSpecTypeDef _keyType;
 
-        private SCSpecTypeDef _valueType;
         public SCSpecTypeDef valueType
         {
             get => _valueType;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _valueType = value;
             }
         }
+        private SCSpecTypeDef _valueType;
 
         public SCSpecTypeMap()
         {

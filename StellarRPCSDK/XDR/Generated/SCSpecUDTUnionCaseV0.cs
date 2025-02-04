@@ -23,36 +23,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0 : SCSpecUDTUnionCaseV0
-    {
-        public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
-        private SCSpecUDTUnionCaseVoidV0 _voidCase;
-        public SCSpecUDTUnionCaseVoidV0 voidCase
+        public sealed partial class ScSpecUdtUnionCaseVoidV0 : SCSpecUDTUnionCaseV0
         {
-            get => _voidCase;
-            set
+            public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
+            public SCSpecUDTUnionCaseVoidV0 voidCase
             {
-                _voidCase = value;
+                get => _voidCase;
+                set
+                {
+                    _voidCase = value;
+                }
             }
-        }
+            private SCSpecUDTUnionCaseVoidV0 _voidCase;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 : SCSpecUDTUnionCaseV0
-    {
-        public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
-        private SCSpecUDTUnionCaseTupleV0 _tupleCase;
-        public SCSpecUDTUnionCaseTupleV0 tupleCase
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ScSpecUdtUnionCaseTupleV0 : SCSpecUDTUnionCaseV0
         {
-            get => _tupleCase;
-            set
+            public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
+            public SCSpecUDTUnionCaseTupleV0 tupleCase
             {
-                _tupleCase = value;
+                get => _tupleCase;
+                set
+                {
+                    _tupleCase = value;
+                }
             }
-        }
+            private SCSpecUDTUnionCaseTupleV0 _tupleCase;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCSpecUDTUnionCaseV0Xdr
     {
@@ -72,10 +72,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0 case_SC_SPEC_UDT_UNION_CASE_VOID_V0:
+                case SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseVoidV0 case_SC_SPEC_UDT_UNION_CASE_VOID_V0:
                 SCSpecUDTUnionCaseVoidV0Xdr.Encode(stream, case_SC_SPEC_UDT_UNION_CASE_VOID_V0.voidCase);
                 break;
-                case SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 case_SC_SPEC_UDT_UNION_CASE_TUPLE_V0:
+                case SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseTupleV0 case_SC_SPEC_UDT_UNION_CASE_TUPLE_V0:
                 SCSpecUDTUnionCaseTupleV0Xdr.Encode(stream, case_SC_SPEC_UDT_UNION_CASE_TUPLE_V0.tupleCase);
                 break;
             }
@@ -86,11 +86,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0:
-                var result_SC_SPEC_UDT_UNION_CASE_VOID_V0 = new SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_VOID_V0();
+                var result_SC_SPEC_UDT_UNION_CASE_VOID_V0 = new SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseVoidV0();
                 result_SC_SPEC_UDT_UNION_CASE_VOID_V0.voidCase = SCSpecUDTUnionCaseVoidV0Xdr.Decode(stream);
                 return result_SC_SPEC_UDT_UNION_CASE_VOID_V0;
                 case SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0:
-                var result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 = new SCSpecUDTUnionCaseV0_SC_SPEC_UDT_UNION_CASE_TUPLE_V0();
+                var result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0 = new SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseTupleV0();
                 result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0.tupleCase = SCSpecUDTUnionCaseTupleV0Xdr.Decode(stream);
                 return result_SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
                 default:

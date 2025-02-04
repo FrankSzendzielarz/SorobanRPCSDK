@@ -23,7 +23,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AccountEntryExtensionV3
     {
-        private ExtensionPoint _ext;
+        /// <summary>
+        /// change AccountEntryExtensionV3 into a union.
+        /// </summary>
         public ExtensionPoint ext
         {
             get => _ext;
@@ -32,8 +34,11 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private uint32 _seqLedger;
+        /// <summary>
+        /// Ledger number at which `seqNum` took on its present value.
+        /// </summary>
         public uint32 seqLedger
         {
             get => _seqLedger;
@@ -42,8 +47,11 @@ namespace Stellar.XDR {
                 _seqLedger = value;
             }
         }
+        private uint32 _seqLedger;
 
-        private TimePoint _seqTime;
+        /// <summary>
+        /// Time at which `seqNum` took on its present value.
+        /// </summary>
         public TimePoint seqTime
         {
             get => _seqTime;
@@ -52,6 +60,7 @@ namespace Stellar.XDR {
                 _seqTime = value;
             }
         }
+        private TimePoint _seqTime;
 
         public AccountEntryExtensionV3()
         {

@@ -25,51 +25,51 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V0 : SurveyResponseBody
-    {
-        public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0;
-        private TopologyResponseBodyV0 _topologyResponseBodyV0;
-        public TopologyResponseBodyV0 topologyResponseBodyV0
+        public sealed partial class SurveyTopologyResponseV0 : SurveyResponseBody
         {
-            get => _topologyResponseBodyV0;
-            set
+            public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0;
+            public TopologyResponseBodyV0 topologyResponseBodyV0
             {
-                _topologyResponseBodyV0 = value;
+                get => _topologyResponseBodyV0;
+                set
+                {
+                    _topologyResponseBodyV0 = value;
+                }
             }
-        }
+            private TopologyResponseBodyV0 _topologyResponseBodyV0;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V1 : SurveyResponseBody
-    {
-        public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1;
-        private TopologyResponseBodyV1 _topologyResponseBodyV1;
-        public TopologyResponseBodyV1 topologyResponseBodyV1
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SurveyTopologyResponseV1 : SurveyResponseBody
         {
-            get => _topologyResponseBodyV1;
-            set
+            public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1;
+            public TopologyResponseBodyV1 topologyResponseBodyV1
             {
-                _topologyResponseBodyV1 = value;
+                get => _topologyResponseBodyV1;
+                set
+                {
+                    _topologyResponseBodyV1 = value;
+                }
             }
-        }
+            private TopologyResponseBodyV1 _topologyResponseBodyV1;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V2 : SurveyResponseBody
-    {
-        public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2;
-        private TopologyResponseBodyV2 _topologyResponseBodyV2;
-        public TopologyResponseBodyV2 topologyResponseBodyV2
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SurveyTopologyResponseV2 : SurveyResponseBody
         {
-            get => _topologyResponseBodyV2;
-            set
+            public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2;
+            public TopologyResponseBodyV2 topologyResponseBodyV2
             {
-                _topologyResponseBodyV2 = value;
+                get => _topologyResponseBodyV2;
+                set
+                {
+                    _topologyResponseBodyV2 = value;
+                }
             }
-        }
+            private TopologyResponseBodyV2 _topologyResponseBodyV2;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SurveyResponseBodyXdr
     {
@@ -89,13 +89,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V0 case_SURVEY_TOPOLOGY_RESPONSE_V0:
+                case SurveyResponseBody.SurveyTopologyResponseV0 case_SURVEY_TOPOLOGY_RESPONSE_V0:
                 TopologyResponseBodyV0Xdr.Encode(stream, case_SURVEY_TOPOLOGY_RESPONSE_V0.topologyResponseBodyV0);
                 break;
-                case SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V1 case_SURVEY_TOPOLOGY_RESPONSE_V1:
+                case SurveyResponseBody.SurveyTopologyResponseV1 case_SURVEY_TOPOLOGY_RESPONSE_V1:
                 TopologyResponseBodyV1Xdr.Encode(stream, case_SURVEY_TOPOLOGY_RESPONSE_V1.topologyResponseBodyV1);
                 break;
-                case SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V2 case_SURVEY_TOPOLOGY_RESPONSE_V2:
+                case SurveyResponseBody.SurveyTopologyResponseV2 case_SURVEY_TOPOLOGY_RESPONSE_V2:
                 TopologyResponseBodyV2Xdr.Encode(stream, case_SURVEY_TOPOLOGY_RESPONSE_V2.topologyResponseBodyV2);
                 break;
             }
@@ -106,15 +106,15 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0:
-                var result_SURVEY_TOPOLOGY_RESPONSE_V0 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V0();
+                var result_SURVEY_TOPOLOGY_RESPONSE_V0 = new SurveyResponseBody.SurveyTopologyResponseV0();
                 result_SURVEY_TOPOLOGY_RESPONSE_V0.topologyResponseBodyV0 = TopologyResponseBodyV0Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V0;
                 case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1:
-                var result_SURVEY_TOPOLOGY_RESPONSE_V1 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V1();
+                var result_SURVEY_TOPOLOGY_RESPONSE_V1 = new SurveyResponseBody.SurveyTopologyResponseV1();
                 result_SURVEY_TOPOLOGY_RESPONSE_V1.topologyResponseBodyV1 = TopologyResponseBodyV1Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V1;
                 case SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2:
-                var result_SURVEY_TOPOLOGY_RESPONSE_V2 = new SurveyResponseBody_SURVEY_TOPOLOGY_RESPONSE_V2();
+                var result_SURVEY_TOPOLOGY_RESPONSE_V2 = new SurveyResponseBody.SurveyTopologyResponseV2();
                 result_SURVEY_TOPOLOGY_RESPONSE_V2.topologyResponseBodyV2 = TopologyResponseBodyV2Xdr.Decode(stream);
                 return result_SURVEY_TOPOLOGY_RESPONSE_V2;
                 default:

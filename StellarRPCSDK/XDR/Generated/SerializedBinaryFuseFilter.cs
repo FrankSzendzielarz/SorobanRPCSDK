@@ -29,7 +29,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SerializedBinaryFuseFilter
     {
-        private BinaryFuseFilterType _type;
         public BinaryFuseFilterType type
         {
             get => _type;
@@ -38,8 +37,11 @@ namespace Stellar.XDR {
                 _type = value;
             }
         }
+        private BinaryFuseFilterType _type;
 
-        private ShortHashSeed _inputHashSeed;
+        /// <summary>
+        /// Seed used to hash input to filter
+        /// </summary>
         public ShortHashSeed inputHashSeed
         {
             get => _inputHashSeed;
@@ -48,8 +50,11 @@ namespace Stellar.XDR {
                 _inputHashSeed = value;
             }
         }
+        private ShortHashSeed _inputHashSeed;
 
-        private ShortHashSeed _filterSeed;
+        /// <summary>
+        /// Seed used for internal filter hash operations
+        /// </summary>
         public ShortHashSeed filterSeed
         {
             get => _filterSeed;
@@ -58,8 +63,8 @@ namespace Stellar.XDR {
                 _filterSeed = value;
             }
         }
+        private ShortHashSeed _filterSeed;
 
-        private uint32 _segmentLength;
         public uint32 segmentLength
         {
             get => _segmentLength;
@@ -68,8 +73,8 @@ namespace Stellar.XDR {
                 _segmentLength = value;
             }
         }
+        private uint32 _segmentLength;
 
-        private uint32 _segementLengthMask;
         public uint32 segementLengthMask
         {
             get => _segementLengthMask;
@@ -78,8 +83,8 @@ namespace Stellar.XDR {
                 _segementLengthMask = value;
             }
         }
+        private uint32 _segementLengthMask;
 
-        private uint32 _segmentCount;
         public uint32 segmentCount
         {
             get => _segmentCount;
@@ -88,8 +93,8 @@ namespace Stellar.XDR {
                 _segmentCount = value;
             }
         }
+        private uint32 _segmentCount;
 
-        private uint32 _segmentCountLength;
         public uint32 segmentCountLength
         {
             get => _segmentCountLength;
@@ -98,8 +103,8 @@ namespace Stellar.XDR {
                 _segmentCountLength = value;
             }
         }
+        private uint32 _segmentCountLength;
 
-        private uint32 _fingerprintLength;
         public uint32 fingerprintLength
         {
             get => _fingerprintLength;
@@ -108,8 +113,11 @@ namespace Stellar.XDR {
                 _fingerprintLength = value;
             }
         }
+        private uint32 _fingerprintLength;
 
-        private byte[] _fingerprints;
+        /// <summary>
+        /// Array of uint8_t, uint16_t, or uint32_t depending on filter type
+        /// </summary>
         public byte[] fingerprints
         {
             get => _fingerprints;
@@ -118,6 +126,7 @@ namespace Stellar.XDR {
                 _fingerprints = value;
             }
         }
+        private byte[] _fingerprints;
 
         public SerializedBinaryFuseFilter()
         {

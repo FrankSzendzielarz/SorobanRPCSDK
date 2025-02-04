@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SignedTimeSlicedSurveyResponseMessage
     {
-        private Signature _responseSignature;
         public Signature responseSignature
         {
             get => _responseSignature;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _responseSignature = value;
             }
         }
+        private Signature _responseSignature;
 
-        private TimeSlicedSurveyResponseMessage _response;
         public TimeSlicedSurveyResponseMessage response
         {
             get => _response;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _response = value;
             }
         }
+        private TimeSlicedSurveyResponseMessage _response;
 
         public SignedTimeSlicedSurveyResponseMessage()
         {

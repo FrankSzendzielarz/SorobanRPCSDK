@@ -24,7 +24,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractCodeCostInputs
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -33,8 +32,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private uint32 _nInstructions;
         public uint32 nInstructions
         {
             get => _nInstructions;
@@ -43,8 +42,8 @@ namespace Stellar.XDR {
                 _nInstructions = value;
             }
         }
+        private uint32 _nInstructions;
 
-        private uint32 _nFunctions;
         public uint32 nFunctions
         {
             get => _nFunctions;
@@ -53,8 +52,8 @@ namespace Stellar.XDR {
                 _nFunctions = value;
             }
         }
+        private uint32 _nFunctions;
 
-        private uint32 _nGlobals;
         public uint32 nGlobals
         {
             get => _nGlobals;
@@ -63,8 +62,8 @@ namespace Stellar.XDR {
                 _nGlobals = value;
             }
         }
+        private uint32 _nGlobals;
 
-        private uint32 _nTableEntries;
         public uint32 nTableEntries
         {
             get => _nTableEntries;
@@ -73,8 +72,8 @@ namespace Stellar.XDR {
                 _nTableEntries = value;
             }
         }
+        private uint32 _nTableEntries;
 
-        private uint32 _nTypes;
         public uint32 nTypes
         {
             get => _nTypes;
@@ -83,8 +82,8 @@ namespace Stellar.XDR {
                 _nTypes = value;
             }
         }
+        private uint32 _nTypes;
 
-        private uint32 _nDataSegments;
         public uint32 nDataSegments
         {
             get => _nDataSegments;
@@ -93,8 +92,8 @@ namespace Stellar.XDR {
                 _nDataSegments = value;
             }
         }
+        private uint32 _nDataSegments;
 
-        private uint32 _nElemSegments;
         public uint32 nElemSegments
         {
             get => _nElemSegments;
@@ -103,8 +102,8 @@ namespace Stellar.XDR {
                 _nElemSegments = value;
             }
         }
+        private uint32 _nElemSegments;
 
-        private uint32 _nImports;
         public uint32 nImports
         {
             get => _nImports;
@@ -113,8 +112,8 @@ namespace Stellar.XDR {
                 _nImports = value;
             }
         }
+        private uint32 _nImports;
 
-        private uint32 _nExports;
         public uint32 nExports
         {
             get => _nExports;
@@ -123,8 +122,8 @@ namespace Stellar.XDR {
                 _nExports = value;
             }
         }
+        private uint32 _nExports;
 
-        private uint32 _nDataSegmentBytes;
         public uint32 nDataSegmentBytes
         {
             get => _nDataSegmentBytes;
@@ -133,6 +132,7 @@ namespace Stellar.XDR {
                 _nDataSegmentBytes = value;
             }
         }
+        private uint32 _nDataSegmentBytes;
 
         public ContractCodeCostInputs()
         {

@@ -12,10 +12,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// generated code in the same order the underlying int128 sorts.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Int128Parts
     {
-        private int64 _hi;
         public int64 hi
         {
             get => _hi;
@@ -24,8 +26,8 @@ namespace Stellar.XDR {
                 _hi = value;
             }
         }
+        private int64 _hi;
 
-        private uint64 _lo;
         public uint64 lo
         {
             get => _lo;
@@ -34,6 +36,7 @@ namespace Stellar.XDR {
                 _lo = value;
             }
         }
+        private uint64 _lo;
 
         public Int128Parts()
         {

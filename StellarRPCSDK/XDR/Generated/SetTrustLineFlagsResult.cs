@@ -27,42 +27,42 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_SUCCESS : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_SUCCESS;
+        public sealed partial class SetTrustLineFlagsSuccess : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_MALFORMED : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SetTrustLineFlagsMalformed : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SetTrustLineFlagsNoTrustLine : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_CANT_REVOKE : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_CANT_REVOKE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SetTrustLineFlagsCantRevoke : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_CANT_REVOKE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_INVALID_STATE : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_INVALID_STATE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SetTrustLineFlagsInvalidState : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_INVALID_STATE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_LOW_RESERVE : SetTrustLineFlagsResult
-    {
-        public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_LOW_RESERVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SetTrustLineFlagsLowReserve : SetTrustLineFlagsResult
+        {
+            public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_LOW_RESERVE;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SetTrustLineFlagsResultXdr
     {
@@ -82,17 +82,17 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_SUCCESS case_SET_TRUST_LINE_FLAGS_SUCCESS:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsSuccess case_SET_TRUST_LINE_FLAGS_SUCCESS:
                 break;
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_MALFORMED case_SET_TRUST_LINE_FLAGS_MALFORMED:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsMalformed case_SET_TRUST_LINE_FLAGS_MALFORMED:
                 break;
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE case_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsNoTrustLine case_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
                 break;
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_CANT_REVOKE case_SET_TRUST_LINE_FLAGS_CANT_REVOKE:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke case_SET_TRUST_LINE_FLAGS_CANT_REVOKE:
                 break;
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_INVALID_STATE case_SET_TRUST_LINE_FLAGS_INVALID_STATE:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsInvalidState case_SET_TRUST_LINE_FLAGS_INVALID_STATE:
                 break;
-                case SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_LOW_RESERVE case_SET_TRUST_LINE_FLAGS_LOW_RESERVE:
+                case SetTrustLineFlagsResult.SetTrustLineFlagsLowReserve case_SET_TRUST_LINE_FLAGS_LOW_RESERVE:
                 break;
             }
         }
@@ -102,22 +102,22 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_SUCCESS:
-                var result_SET_TRUST_LINE_FLAGS_SUCCESS = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_SUCCESS();
+                var result_SET_TRUST_LINE_FLAGS_SUCCESS = new SetTrustLineFlagsResult.SetTrustLineFlagsSuccess();
                 return result_SET_TRUST_LINE_FLAGS_SUCCESS;
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_MALFORMED:
-                var result_SET_TRUST_LINE_FLAGS_MALFORMED = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_MALFORMED();
+                var result_SET_TRUST_LINE_FLAGS_MALFORMED = new SetTrustLineFlagsResult.SetTrustLineFlagsMalformed();
                 return result_SET_TRUST_LINE_FLAGS_MALFORMED;
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE:
-                var result_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE();
+                var result_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = new SetTrustLineFlagsResult.SetTrustLineFlagsNoTrustLine();
                 return result_SET_TRUST_LINE_FLAGS_NO_TRUST_LINE;
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_CANT_REVOKE:
-                var result_SET_TRUST_LINE_FLAGS_CANT_REVOKE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_CANT_REVOKE();
+                var result_SET_TRUST_LINE_FLAGS_CANT_REVOKE = new SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke();
                 return result_SET_TRUST_LINE_FLAGS_CANT_REVOKE;
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_INVALID_STATE:
-                var result_SET_TRUST_LINE_FLAGS_INVALID_STATE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_INVALID_STATE();
+                var result_SET_TRUST_LINE_FLAGS_INVALID_STATE = new SetTrustLineFlagsResult.SetTrustLineFlagsInvalidState();
                 return result_SET_TRUST_LINE_FLAGS_INVALID_STATE;
                 case SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_LOW_RESERVE:
-                var result_SET_TRUST_LINE_FLAGS_LOW_RESERVE = new SetTrustLineFlagsResult_SET_TRUST_LINE_FLAGS_LOW_RESERVE();
+                var result_SET_TRUST_LINE_FLAGS_LOW_RESERVE = new SetTrustLineFlagsResult.SetTrustLineFlagsLowReserve();
                 return result_SET_TRUST_LINE_FLAGS_LOW_RESERVE;
                 default:
                 throw new Exception($"Unknown discriminator for SetTrustLineFlagsResult: {discriminator}");

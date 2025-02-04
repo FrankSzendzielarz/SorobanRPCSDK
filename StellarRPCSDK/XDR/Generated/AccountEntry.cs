@@ -39,7 +39,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AccountEntry
     {
-        private AccountID _accountID;
         public AccountID accountID
         {
             get => _accountID;
@@ -48,8 +47,11 @@ namespace Stellar.XDR {
                 _accountID = value;
             }
         }
+        private AccountID _accountID;
 
-        private int64 _balance;
+        /// <summary>
+        /// master public key for this account
+        /// </summary>
         public int64 balance
         {
             get => _balance;
@@ -58,8 +60,11 @@ namespace Stellar.XDR {
                 _balance = value;
             }
         }
+        private int64 _balance;
 
-        private SequenceNumber _seqNum;
+        /// <summary>
+        /// in stroops
+        /// </summary>
         public SequenceNumber seqNum
         {
             get => _seqNum;
@@ -68,8 +73,11 @@ namespace Stellar.XDR {
                 _seqNum = value;
             }
         }
+        private SequenceNumber _seqNum;
 
-        private uint32 _numSubEntries;
+        /// <summary>
+        /// last sequence number used for this account
+        /// </summary>
         public uint32 numSubEntries
         {
             get => _numSubEntries;
@@ -78,8 +86,11 @@ namespace Stellar.XDR {
                 _numSubEntries = value;
             }
         }
+        private uint32 _numSubEntries;
 
-        private AccountID _inflationDest;
+        /// <summary>
+        /// drives the reserve
+        /// </summary>
         public AccountID inflationDest
         {
             get => _inflationDest;
@@ -88,8 +99,11 @@ namespace Stellar.XDR {
                 _inflationDest = value;
             }
         }
+        private AccountID _inflationDest;
 
-        private uint32 _flags;
+        /// <summary>
+        /// Account to vote for during inflation
+        /// </summary>
         public uint32 flags
         {
             get => _flags;
@@ -98,8 +112,8 @@ namespace Stellar.XDR {
                 _flags = value;
             }
         }
+        private uint32 _flags;
 
-        private string32 _homeDomain;
         public string32 homeDomain
         {
             get => _homeDomain;
@@ -108,8 +122,11 @@ namespace Stellar.XDR {
                 _homeDomain = value;
             }
         }
+        private string32 _homeDomain;
 
-        private Thresholds _thresholds;
+        /// <summary>
+        /// thresholds stores unsigned bytes: [weight of master|low|medium|high]
+        /// </summary>
         public Thresholds thresholds
         {
             get => _thresholds;
@@ -118,8 +135,8 @@ namespace Stellar.XDR {
                 _thresholds = value;
             }
         }
+        private Thresholds _thresholds;
 
-        private Signer[] _signers;
         public Signer[] signers
         {
             get => _signers;
@@ -128,8 +145,11 @@ namespace Stellar.XDR {
                 _signers = value;
             }
         }
+        private Signer[] _signers;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -138,6 +158,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public AccountEntry()
         {
@@ -154,27 +175,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_1 : extUnion
-        {
-            public override int Discriminator => 1;
-            private AccountEntryExtensionV1 _v1;
-            public AccountEntryExtensionV1 v1
+            public sealed partial class case_0 : extUnion
             {
-                get => _v1;
-                set
-                {
-                    _v1 = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_1 : extUnion
+            {
+                public override int Discriminator => 1;
+                public AccountEntryExtensionV1 v1
+                {
+                    get => _v1;
+                    set
+                    {
+                        _v1 = value;
+                    }
+                }
+                private AccountEntryExtensionV1 _v1;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -194,9 +215,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_1 case_1:
+                    case extUnion.case_1 case_1:
                     AccountEntryExtensionV1Xdr.Encode(stream, case_1.v1);
                     break;
                 }
@@ -207,10 +228,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 1:
-                    var result_1 = new extUnion_1();
+                    var result_1 = new extUnion.case_1();
                     result_1.v1 = AccountEntryExtensionV1Xdr.Decode(stream);
                     return result_1;
                     default:

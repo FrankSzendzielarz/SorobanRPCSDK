@@ -18,7 +18,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InvokeHostFunctionOp
     {
-        private HostFunction _hostFunction;
+        /// <summary>
+        /// Host function to invoke.
+        /// </summary>
         public HostFunction hostFunction
         {
             get => _hostFunction;
@@ -27,8 +29,11 @@ namespace Stellar.XDR {
                 _hostFunction = value;
             }
         }
+        private HostFunction _hostFunction;
 
-        private SorobanAuthorizationEntry[] _auth;
+        /// <summary>
+        /// Per-address authorizations for this host function.
+        /// </summary>
         public SorobanAuthorizationEntry[] auth
         {
             get => _auth;
@@ -37,6 +42,7 @@ namespace Stellar.XDR {
                 _auth = value;
             }
         }
+        private SorobanAuthorizationEntry[] _auth;
 
         public InvokeHostFunctionOp()
         {

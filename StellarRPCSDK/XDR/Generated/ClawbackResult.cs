@@ -26,36 +26,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClawbackResult_CLAWBACK_SUCCESS : ClawbackResult
-    {
-        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
+        public sealed partial class ClawbackSuccess : ClawbackResult
+        {
+            public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackResult_CLAWBACK_MALFORMED : ClawbackResult
-    {
-        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackMalformed : ClawbackResult
+        {
+            public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackResult_CLAWBACK_NOT_CLAWBACK_ENABLED : ClawbackResult
-    {
-        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackNotClawbackEnabled : ClawbackResult
+        {
+            public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackResult_CLAWBACK_NO_TRUST : ClawbackResult
-    {
-        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackNoTrust : ClawbackResult
+        {
+            public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClawbackResult_CLAWBACK_UNDERFUNDED : ClawbackResult
-    {
-        public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClawbackUnderfunded : ClawbackResult
+        {
+            public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClawbackResultXdr
     {
@@ -75,15 +75,15 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClawbackResult_CLAWBACK_SUCCESS case_CLAWBACK_SUCCESS:
+                case ClawbackResult.ClawbackSuccess case_CLAWBACK_SUCCESS:
                 break;
-                case ClawbackResult_CLAWBACK_MALFORMED case_CLAWBACK_MALFORMED:
+                case ClawbackResult.ClawbackMalformed case_CLAWBACK_MALFORMED:
                 break;
-                case ClawbackResult_CLAWBACK_NOT_CLAWBACK_ENABLED case_CLAWBACK_NOT_CLAWBACK_ENABLED:
+                case ClawbackResult.ClawbackNotClawbackEnabled case_CLAWBACK_NOT_CLAWBACK_ENABLED:
                 break;
-                case ClawbackResult_CLAWBACK_NO_TRUST case_CLAWBACK_NO_TRUST:
+                case ClawbackResult.ClawbackNoTrust case_CLAWBACK_NO_TRUST:
                 break;
-                case ClawbackResult_CLAWBACK_UNDERFUNDED case_CLAWBACK_UNDERFUNDED:
+                case ClawbackResult.ClawbackUnderfunded case_CLAWBACK_UNDERFUNDED:
                 break;
             }
         }
@@ -93,19 +93,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClawbackResultCode.CLAWBACK_SUCCESS:
-                var result_CLAWBACK_SUCCESS = new ClawbackResult_CLAWBACK_SUCCESS();
+                var result_CLAWBACK_SUCCESS = new ClawbackResult.ClawbackSuccess();
                 return result_CLAWBACK_SUCCESS;
                 case ClawbackResultCode.CLAWBACK_MALFORMED:
-                var result_CLAWBACK_MALFORMED = new ClawbackResult_CLAWBACK_MALFORMED();
+                var result_CLAWBACK_MALFORMED = new ClawbackResult.ClawbackMalformed();
                 return result_CLAWBACK_MALFORMED;
                 case ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED:
-                var result_CLAWBACK_NOT_CLAWBACK_ENABLED = new ClawbackResult_CLAWBACK_NOT_CLAWBACK_ENABLED();
+                var result_CLAWBACK_NOT_CLAWBACK_ENABLED = new ClawbackResult.ClawbackNotClawbackEnabled();
                 return result_CLAWBACK_NOT_CLAWBACK_ENABLED;
                 case ClawbackResultCode.CLAWBACK_NO_TRUST:
-                var result_CLAWBACK_NO_TRUST = new ClawbackResult_CLAWBACK_NO_TRUST();
+                var result_CLAWBACK_NO_TRUST = new ClawbackResult.ClawbackNoTrust();
                 return result_CLAWBACK_NO_TRUST;
                 case ClawbackResultCode.CLAWBACK_UNDERFUNDED:
-                var result_CLAWBACK_UNDERFUNDED = new ClawbackResult_CLAWBACK_UNDERFUNDED();
+                var result_CLAWBACK_UNDERFUNDED = new ClawbackResult.ClawbackUnderfunded();
                 return result_CLAWBACK_UNDERFUNDED;
                 default:
                 throw new Exception($"Unknown discriminator for ClawbackResult: {discriminator}");

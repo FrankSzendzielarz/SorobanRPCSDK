@@ -17,7 +17,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PersistedSCPStateV1
     {
-        private SCPEnvelope[] _scpEnvelopes;
+        /// <summary>
+        /// Tx sets are saved separately
+        /// </summary>
         public SCPEnvelope[] scpEnvelopes
         {
             get => _scpEnvelopes;
@@ -26,8 +28,8 @@ namespace Stellar.XDR {
                 _scpEnvelopes = value;
             }
         }
+        private SCPEnvelope[] _scpEnvelopes;
 
-        private SCPQuorumSet[] _quorumSets;
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;
@@ -36,6 +38,7 @@ namespace Stellar.XDR {
                 _quorumSets = value;
             }
         }
+        private SCPQuorumSet[] _quorumSets;
 
         public PersistedSCPStateV1()
         {

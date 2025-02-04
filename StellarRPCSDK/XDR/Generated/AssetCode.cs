@@ -26,36 +26,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4 : AssetCode
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
-        private AssetCode4 _assetCode4;
-        public AssetCode4 assetCode4
+        public sealed partial class AssetTypeCreditAlphanum4 : AssetCode
         {
-            get => _assetCode4;
-            set
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
+            public AssetCode4 assetCode4
             {
-                _assetCode4 = value;
+                get => _assetCode4;
+                set
+                {
+                    _assetCode4 = value;
+                }
             }
-        }
+            private AssetCode4 _assetCode4;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AssetCode_ASSET_TYPE_CREDIT_ALPHANUM12 : AssetCode
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
-        private AssetCode12 _assetCode12;
-        public AssetCode12 assetCode12
+            public override void ValidateCase() {}
+        }
+        public sealed partial class AssetTypeCreditAlphanum12 : AssetCode
         {
-            get => _assetCode12;
-            set
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
+            public AssetCode12 assetCode12
             {
-                _assetCode12 = value;
+                get => _assetCode12;
+                set
+                {
+                    _assetCode12 = value;
+                }
             }
-        }
+            private AssetCode12 _assetCode12;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class AssetCodeXdr
     {
@@ -75,10 +75,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4 case_ASSET_TYPE_CREDIT_ALPHANUM4:
+                case AssetCode.AssetTypeCreditAlphanum4 case_ASSET_TYPE_CREDIT_ALPHANUM4:
                 AssetCode4Xdr.Encode(stream, case_ASSET_TYPE_CREDIT_ALPHANUM4.assetCode4);
                 break;
-                case AssetCode_ASSET_TYPE_CREDIT_ALPHANUM12 case_ASSET_TYPE_CREDIT_ALPHANUM12:
+                case AssetCode.AssetTypeCreditAlphanum12 case_ASSET_TYPE_CREDIT_ALPHANUM12:
                 AssetCode12Xdr.Encode(stream, case_ASSET_TYPE_CREDIT_ALPHANUM12.assetCode12);
                 break;
             }
@@ -89,11 +89,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case AssetType.ASSET_TYPE_CREDIT_ALPHANUM4:
-                var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new AssetCode_ASSET_TYPE_CREDIT_ALPHANUM4();
+                var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new AssetCode.AssetTypeCreditAlphanum4();
                 result_ASSET_TYPE_CREDIT_ALPHANUM4.assetCode4 = AssetCode4Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM4;
                 case AssetType.ASSET_TYPE_CREDIT_ALPHANUM12:
-                var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new AssetCode_ASSET_TYPE_CREDIT_ALPHANUM12();
+                var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new AssetCode.AssetTypeCreditAlphanum12();
                 result_ASSET_TYPE_CREDIT_ALPHANUM12.assetCode12 = AssetCode12Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM12;
                 default:

@@ -12,7 +12,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SequenceNumber
     {
-        private int64 _innerValue;
         public int64 InnerValue
         {
             get => _innerValue;
@@ -21,6 +20,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private int64 _innerValue;
 
         public SequenceNumber() { }
 

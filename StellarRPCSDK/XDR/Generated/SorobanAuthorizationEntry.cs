@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanAuthorizationEntry
     {
-        private SorobanCredentials _credentials;
         public SorobanCredentials credentials
         {
             get => _credentials;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _credentials = value;
             }
         }
+        private SorobanCredentials _credentials;
 
-        private SorobanAuthorizedInvocation _rootInvocation;
         public SorobanAuthorizedInvocation rootInvocation
         {
             get => _rootInvocation;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _rootInvocation = value;
             }
         }
+        private SorobanAuthorizedInvocation _rootInvocation;
 
         public SorobanAuthorizationEntry()
         {

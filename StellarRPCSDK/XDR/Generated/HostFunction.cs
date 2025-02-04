@@ -27,66 +27,66 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT : HostFunction
-    {
-        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
-        private InvokeContractArgs _invokeContract;
-        public InvokeContractArgs invokeContract
+        public sealed partial class HostFunctionTypeInvokeContract : HostFunction
         {
-            get => _invokeContract;
-            set
+            public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
+            public InvokeContractArgs invokeContract
             {
-                _invokeContract = value;
+                get => _invokeContract;
+                set
+                {
+                    _invokeContract = value;
+                }
             }
-        }
+            private InvokeContractArgs _invokeContract;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT : HostFunction
-    {
-        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
-        private CreateContractArgs _createContract;
-        public CreateContractArgs createContract
+            public override void ValidateCase() {}
+        }
+        public sealed partial class HostFunctionTypeCreateContract : HostFunction
         {
-            get => _createContract;
-            set
+            public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
+            public CreateContractArgs createContract
             {
-                _createContract = value;
+                get => _createContract;
+                set
+                {
+                    _createContract = value;
+                }
             }
-        }
+            private CreateContractArgs _createContract;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM : HostFunction
-    {
-        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
-        private byte[] _wasm;
-        public byte[] wasm
+            public override void ValidateCase() {}
+        }
+        public sealed partial class HostFunctionTypeUploadContractWasm : HostFunction
         {
-            get => _wasm;
-            set
+            public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
+            public byte[] wasm
             {
-                _wasm = value;
+                get => _wasm;
+                set
+                {
+                    _wasm = value;
+                }
             }
-        }
+            private byte[] _wasm;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 : HostFunction
-    {
-        public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
-        private CreateContractArgsV2 _createContractV2;
-        public CreateContractArgsV2 createContractV2
+            public override void ValidateCase() {}
+        }
+        public sealed partial class HostFunctionTypeCreateContractV2 : HostFunction
         {
-            get => _createContractV2;
-            set
+            public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
+            public CreateContractArgsV2 createContractV2
             {
-                _createContractV2 = value;
+                get => _createContractV2;
+                set
+                {
+                    _createContractV2 = value;
+                }
             }
-        }
+            private CreateContractArgsV2 _createContractV2;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class HostFunctionXdr
     {
@@ -106,15 +106,15 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT case_HOST_FUNCTION_TYPE_INVOKE_CONTRACT:
+                case HostFunction.HostFunctionTypeInvokeContract case_HOST_FUNCTION_TYPE_INVOKE_CONTRACT:
                 InvokeContractArgsXdr.Encode(stream, case_HOST_FUNCTION_TYPE_INVOKE_CONTRACT.invokeContract);
                 break;
-                case HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT case_HOST_FUNCTION_TYPE_CREATE_CONTRACT:
+                case HostFunction.HostFunctionTypeCreateContract case_HOST_FUNCTION_TYPE_CREATE_CONTRACT:
                 CreateContractArgsXdr.Encode(stream, case_HOST_FUNCTION_TYPE_CREATE_CONTRACT.createContract);
                 break;
-                case HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM case_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
+                case HostFunction.HostFunctionTypeUploadContractWasm case_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
                 break;
-                case HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 case_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
+                case HostFunction.HostFunctionTypeCreateContractV2 case_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
                 CreateContractArgsV2Xdr.Encode(stream, case_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2.createContractV2);
                 break;
             }
@@ -125,18 +125,18 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT:
-                var result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT = new HostFunction_HOST_FUNCTION_TYPE_INVOKE_CONTRACT();
+                var result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT = new HostFunction.HostFunctionTypeInvokeContract();
                 result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT.invokeContract = InvokeContractArgsXdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
                 case HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT:
-                var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT = new HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT();
+                var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT = new HostFunction.HostFunctionTypeCreateContract();
                 result_HOST_FUNCTION_TYPE_CREATE_CONTRACT.createContract = CreateContractArgsXdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_CREATE_CONTRACT;
                 case HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
-                var result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM = new HostFunction_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM();
+                var result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM = new HostFunction.HostFunctionTypeUploadContractWasm();
                 return result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
                 case HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
-                var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 = new HostFunction_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2();
+                var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 = new HostFunction.HostFunctionTypeCreateContractV2();
                 result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2.createContractV2 = CreateContractArgsV2Xdr.Decode(stream);
                 return result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
                 default:

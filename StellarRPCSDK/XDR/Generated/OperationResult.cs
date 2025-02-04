@@ -93,411 +93,411 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class trUnion_CREATE_ACCOUNT : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
-            private CreateAccountResult _createAccountResult;
-            public CreateAccountResult createAccountResult
+            public sealed partial class CreateAccount : trUnion
             {
-                get => _createAccountResult;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
+                public CreateAccountResult createAccountResult
                 {
-                    _createAccountResult = value;
+                    get => _createAccountResult;
+                    set
+                    {
+                        _createAccountResult = value;
+                    }
                 }
-            }
+                private CreateAccountResult _createAccountResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_PAYMENT : trUnion
-        {
-            public override OperationType Discriminator => OperationType.PAYMENT;
-            private PaymentResult _paymentResult;
-            public PaymentResult paymentResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Payment : trUnion
             {
-                get => _paymentResult;
-                set
+                public override OperationType Discriminator => OperationType.PAYMENT;
+                public PaymentResult paymentResult
                 {
-                    _paymentResult = value;
+                    get => _paymentResult;
+                    set
+                    {
+                        _paymentResult = value;
+                    }
                 }
-            }
+                private PaymentResult _paymentResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_PATH_PAYMENT_STRICT_RECEIVE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
-            private PathPaymentStrictReceiveResult _pathPaymentStrictReceiveResult;
-            public PathPaymentStrictReceiveResult pathPaymentStrictReceiveResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class PathPaymentStrictReceive : trUnion
             {
-                get => _pathPaymentStrictReceiveResult;
-                set
+                public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
+                public PathPaymentStrictReceiveResult pathPaymentStrictReceiveResult
                 {
-                    _pathPaymentStrictReceiveResult = value;
+                    get => _pathPaymentStrictReceiveResult;
+                    set
+                    {
+                        _pathPaymentStrictReceiveResult = value;
+                    }
                 }
-            }
+                private PathPaymentStrictReceiveResult _pathPaymentStrictReceiveResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_MANAGE_SELL_OFFER : trUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
-            private ManageSellOfferResult _manageSellOfferResult;
-            public ManageSellOfferResult manageSellOfferResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageSellOffer : trUnion
             {
-                get => _manageSellOfferResult;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
+                public ManageSellOfferResult manageSellOfferResult
                 {
-                    _manageSellOfferResult = value;
+                    get => _manageSellOfferResult;
+                    set
+                    {
+                        _manageSellOfferResult = value;
+                    }
                 }
-            }
+                private ManageSellOfferResult _manageSellOfferResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CREATE_PASSIVE_SELL_OFFER : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
-            private ManageSellOfferResult _createPassiveSellOfferResult;
-            public ManageSellOfferResult createPassiveSellOfferResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class CreatePassiveSellOffer : trUnion
             {
-                get => _createPassiveSellOfferResult;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
+                public ManageSellOfferResult createPassiveSellOfferResult
                 {
-                    _createPassiveSellOfferResult = value;
+                    get => _createPassiveSellOfferResult;
+                    set
+                    {
+                        _createPassiveSellOfferResult = value;
+                    }
                 }
-            }
+                private ManageSellOfferResult _createPassiveSellOfferResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_SET_OPTIONS : trUnion
-        {
-            public override OperationType Discriminator => OperationType.SET_OPTIONS;
-            private SetOptionsResult _setOptionsResult;
-            public SetOptionsResult setOptionsResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class SetOptions : trUnion
             {
-                get => _setOptionsResult;
-                set
+                public override OperationType Discriminator => OperationType.SET_OPTIONS;
+                public SetOptionsResult setOptionsResult
                 {
-                    _setOptionsResult = value;
+                    get => _setOptionsResult;
+                    set
+                    {
+                        _setOptionsResult = value;
+                    }
                 }
-            }
+                private SetOptionsResult _setOptionsResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CHANGE_TRUST : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CHANGE_TRUST;
-            private ChangeTrustResult _changeTrustResult;
-            public ChangeTrustResult changeTrustResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ChangeTrust : trUnion
             {
-                get => _changeTrustResult;
-                set
+                public override OperationType Discriminator => OperationType.CHANGE_TRUST;
+                public ChangeTrustResult changeTrustResult
                 {
-                    _changeTrustResult = value;
+                    get => _changeTrustResult;
+                    set
+                    {
+                        _changeTrustResult = value;
+                    }
                 }
-            }
+                private ChangeTrustResult _changeTrustResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_ALLOW_TRUST : trUnion
-        {
-            public override OperationType Discriminator => OperationType.ALLOW_TRUST;
-            private AllowTrustResult _allowTrustResult;
-            public AllowTrustResult allowTrustResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class AllowTrust : trUnion
             {
-                get => _allowTrustResult;
-                set
+                public override OperationType Discriminator => OperationType.ALLOW_TRUST;
+                public AllowTrustResult allowTrustResult
                 {
-                    _allowTrustResult = value;
+                    get => _allowTrustResult;
+                    set
+                    {
+                        _allowTrustResult = value;
+                    }
                 }
-            }
+                private AllowTrustResult _allowTrustResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_ACCOUNT_MERGE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
-            private AccountMergeResult _accountMergeResult;
-            public AccountMergeResult accountMergeResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class AccountMerge : trUnion
             {
-                get => _accountMergeResult;
-                set
+                public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
+                public AccountMergeResult accountMergeResult
                 {
-                    _accountMergeResult = value;
+                    get => _accountMergeResult;
+                    set
+                    {
+                        _accountMergeResult = value;
+                    }
                 }
-            }
+                private AccountMergeResult _accountMergeResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_INFLATION : trUnion
-        {
-            public override OperationType Discriminator => OperationType.INFLATION;
-            private InflationResult _inflationResult;
-            public InflationResult inflationResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Inflation : trUnion
             {
-                get => _inflationResult;
-                set
+                public override OperationType Discriminator => OperationType.INFLATION;
+                public InflationResult inflationResult
                 {
-                    _inflationResult = value;
+                    get => _inflationResult;
+                    set
+                    {
+                        _inflationResult = value;
+                    }
                 }
-            }
+                private InflationResult _inflationResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_MANAGE_DATA : trUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_DATA;
-            private ManageDataResult _manageDataResult;
-            public ManageDataResult manageDataResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageData : trUnion
             {
-                get => _manageDataResult;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_DATA;
+                public ManageDataResult manageDataResult
                 {
-                    _manageDataResult = value;
+                    get => _manageDataResult;
+                    set
+                    {
+                        _manageDataResult = value;
+                    }
                 }
-            }
+                private ManageDataResult _manageDataResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_BUMP_SEQUENCE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
-            private BumpSequenceResult _bumpSeqResult;
-            public BumpSequenceResult bumpSeqResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class BumpSequence : trUnion
             {
-                get => _bumpSeqResult;
-                set
+                public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
+                public BumpSequenceResult bumpSeqResult
                 {
-                    _bumpSeqResult = value;
+                    get => _bumpSeqResult;
+                    set
+                    {
+                        _bumpSeqResult = value;
+                    }
                 }
-            }
+                private BumpSequenceResult _bumpSeqResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_MANAGE_BUY_OFFER : trUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
-            private ManageBuyOfferResult _manageBuyOfferResult;
-            public ManageBuyOfferResult manageBuyOfferResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageBuyOffer : trUnion
             {
-                get => _manageBuyOfferResult;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
+                public ManageBuyOfferResult manageBuyOfferResult
                 {
-                    _manageBuyOfferResult = value;
+                    get => _manageBuyOfferResult;
+                    set
+                    {
+                        _manageBuyOfferResult = value;
+                    }
                 }
-            }
+                private ManageBuyOfferResult _manageBuyOfferResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_PATH_PAYMENT_STRICT_SEND : trUnion
-        {
-            public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
-            private PathPaymentStrictSendResult _pathPaymentStrictSendResult;
-            public PathPaymentStrictSendResult pathPaymentStrictSendResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class PathPaymentStrictSend : trUnion
             {
-                get => _pathPaymentStrictSendResult;
-                set
+                public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
+                public PathPaymentStrictSendResult pathPaymentStrictSendResult
                 {
-                    _pathPaymentStrictSendResult = value;
+                    get => _pathPaymentStrictSendResult;
+                    set
+                    {
+                        _pathPaymentStrictSendResult = value;
+                    }
                 }
-            }
+                private PathPaymentStrictSendResult _pathPaymentStrictSendResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CREATE_CLAIMABLE_BALANCE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
-            private CreateClaimableBalanceResult _createClaimableBalanceResult;
-            public CreateClaimableBalanceResult createClaimableBalanceResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class CreateClaimableBalance : trUnion
             {
-                get => _createClaimableBalanceResult;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
+                public CreateClaimableBalanceResult createClaimableBalanceResult
                 {
-                    _createClaimableBalanceResult = value;
+                    get => _createClaimableBalanceResult;
+                    set
+                    {
+                        _createClaimableBalanceResult = value;
+                    }
                 }
-            }
+                private CreateClaimableBalanceResult _createClaimableBalanceResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CLAIM_CLAIMABLE_BALANCE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
-            private ClaimClaimableBalanceResult _claimClaimableBalanceResult;
-            public ClaimClaimableBalanceResult claimClaimableBalanceResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ClaimClaimableBalance : trUnion
             {
-                get => _claimClaimableBalanceResult;
-                set
+                public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
+                public ClaimClaimableBalanceResult claimClaimableBalanceResult
                 {
-                    _claimClaimableBalanceResult = value;
+                    get => _claimClaimableBalanceResult;
+                    set
+                    {
+                        _claimClaimableBalanceResult = value;
+                    }
                 }
-            }
+                private ClaimClaimableBalanceResult _claimClaimableBalanceResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_BEGIN_SPONSORING_FUTURE_RESERVES : trUnion
-        {
-            public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
-            private BeginSponsoringFutureReservesResult _beginSponsoringFutureReservesResult;
-            public BeginSponsoringFutureReservesResult beginSponsoringFutureReservesResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class BeginSponsoringFutureReserves : trUnion
             {
-                get => _beginSponsoringFutureReservesResult;
-                set
+                public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
+                public BeginSponsoringFutureReservesResult beginSponsoringFutureReservesResult
                 {
-                    _beginSponsoringFutureReservesResult = value;
+                    get => _beginSponsoringFutureReservesResult;
+                    set
+                    {
+                        _beginSponsoringFutureReservesResult = value;
+                    }
                 }
-            }
+                private BeginSponsoringFutureReservesResult _beginSponsoringFutureReservesResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_END_SPONSORING_FUTURE_RESERVES : trUnion
-        {
-            public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
-            private EndSponsoringFutureReservesResult _endSponsoringFutureReservesResult;
-            public EndSponsoringFutureReservesResult endSponsoringFutureReservesResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class EndSponsoringFutureReserves : trUnion
             {
-                get => _endSponsoringFutureReservesResult;
-                set
+                public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
+                public EndSponsoringFutureReservesResult endSponsoringFutureReservesResult
                 {
-                    _endSponsoringFutureReservesResult = value;
+                    get => _endSponsoringFutureReservesResult;
+                    set
+                    {
+                        _endSponsoringFutureReservesResult = value;
+                    }
                 }
-            }
+                private EndSponsoringFutureReservesResult _endSponsoringFutureReservesResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_REVOKE_SPONSORSHIP : trUnion
-        {
-            public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
-            private RevokeSponsorshipResult _revokeSponsorshipResult;
-            public RevokeSponsorshipResult revokeSponsorshipResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class RevokeSponsorship : trUnion
             {
-                get => _revokeSponsorshipResult;
-                set
+                public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
+                public RevokeSponsorshipResult revokeSponsorshipResult
                 {
-                    _revokeSponsorshipResult = value;
+                    get => _revokeSponsorshipResult;
+                    set
+                    {
+                        _revokeSponsorshipResult = value;
+                    }
                 }
-            }
+                private RevokeSponsorshipResult _revokeSponsorshipResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CLAWBACK : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAWBACK;
-            private ClawbackResult _clawbackResult;
-            public ClawbackResult clawbackResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Clawback : trUnion
             {
-                get => _clawbackResult;
-                set
+                public override OperationType Discriminator => OperationType.CLAWBACK;
+                public ClawbackResult clawbackResult
                 {
-                    _clawbackResult = value;
+                    get => _clawbackResult;
+                    set
+                    {
+                        _clawbackResult = value;
+                    }
                 }
-            }
+                private ClawbackResult _clawbackResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_CLAWBACK_CLAIMABLE_BALANCE : trUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
-            private ClawbackClaimableBalanceResult _clawbackClaimableBalanceResult;
-            public ClawbackClaimableBalanceResult clawbackClaimableBalanceResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ClawbackClaimableBalance : trUnion
             {
-                get => _clawbackClaimableBalanceResult;
-                set
+                public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
+                public ClawbackClaimableBalanceResult clawbackClaimableBalanceResult
                 {
-                    _clawbackClaimableBalanceResult = value;
+                    get => _clawbackClaimableBalanceResult;
+                    set
+                    {
+                        _clawbackClaimableBalanceResult = value;
+                    }
                 }
-            }
+                private ClawbackClaimableBalanceResult _clawbackClaimableBalanceResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_SET_TRUST_LINE_FLAGS : trUnion
-        {
-            public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
-            private SetTrustLineFlagsResult _setTrustLineFlagsResult;
-            public SetTrustLineFlagsResult setTrustLineFlagsResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class SetTrustLineFlags : trUnion
             {
-                get => _setTrustLineFlagsResult;
-                set
+                public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
+                public SetTrustLineFlagsResult setTrustLineFlagsResult
                 {
-                    _setTrustLineFlagsResult = value;
+                    get => _setTrustLineFlagsResult;
+                    set
+                    {
+                        _setTrustLineFlagsResult = value;
+                    }
                 }
-            }
+                private SetTrustLineFlagsResult _setTrustLineFlagsResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_LIQUIDITY_POOL_DEPOSIT : trUnion
-        {
-            public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
-            private LiquidityPoolDepositResult _liquidityPoolDepositResult;
-            public LiquidityPoolDepositResult liquidityPoolDepositResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class LiquidityPoolDeposit : trUnion
             {
-                get => _liquidityPoolDepositResult;
-                set
+                public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
+                public LiquidityPoolDepositResult liquidityPoolDepositResult
                 {
-                    _liquidityPoolDepositResult = value;
+                    get => _liquidityPoolDepositResult;
+                    set
+                    {
+                        _liquidityPoolDepositResult = value;
+                    }
                 }
-            }
+                private LiquidityPoolDepositResult _liquidityPoolDepositResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_LIQUIDITY_POOL_WITHDRAW : trUnion
-        {
-            public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
-            private LiquidityPoolWithdrawResult _liquidityPoolWithdrawResult;
-            public LiquidityPoolWithdrawResult liquidityPoolWithdrawResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class LiquidityPoolWithdraw : trUnion
             {
-                get => _liquidityPoolWithdrawResult;
-                set
+                public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
+                public LiquidityPoolWithdrawResult liquidityPoolWithdrawResult
                 {
-                    _liquidityPoolWithdrawResult = value;
+                    get => _liquidityPoolWithdrawResult;
+                    set
+                    {
+                        _liquidityPoolWithdrawResult = value;
+                    }
                 }
-            }
+                private LiquidityPoolWithdrawResult _liquidityPoolWithdrawResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_INVOKE_HOST_FUNCTION : trUnion
-        {
-            public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
-            private InvokeHostFunctionResult _invokeHostFunctionResult;
-            public InvokeHostFunctionResult invokeHostFunctionResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class InvokeHostFunction : trUnion
             {
-                get => _invokeHostFunctionResult;
-                set
+                public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
+                public InvokeHostFunctionResult invokeHostFunctionResult
                 {
-                    _invokeHostFunctionResult = value;
+                    get => _invokeHostFunctionResult;
+                    set
+                    {
+                        _invokeHostFunctionResult = value;
+                    }
                 }
-            }
+                private InvokeHostFunctionResult _invokeHostFunctionResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_EXTEND_FOOTPRINT_TTL : trUnion
-        {
-            public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
-            private ExtendFootprintTTLResult _extendFootprintTTLResult;
-            public ExtendFootprintTTLResult extendFootprintTTLResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ExtendFootprintTtl : trUnion
             {
-                get => _extendFootprintTTLResult;
-                set
+                public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
+                public ExtendFootprintTTLResult extendFootprintTTLResult
                 {
-                    _extendFootprintTTLResult = value;
+                    get => _extendFootprintTTLResult;
+                    set
+                    {
+                        _extendFootprintTTLResult = value;
+                    }
                 }
-            }
+                private ExtendFootprintTTLResult _extendFootprintTTLResult;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class trUnion_RESTORE_FOOTPRINT : trUnion
-        {
-            public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;
-            private RestoreFootprintResult _restoreFootprintResult;
-            public RestoreFootprintResult restoreFootprintResult
+                public override void ValidateCase() {}
+            }
+            public sealed partial class RestoreFootprint : trUnion
             {
-                get => _restoreFootprintResult;
-                set
+                public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;
+                public RestoreFootprintResult restoreFootprintResult
                 {
-                    _restoreFootprintResult = value;
+                    get => _restoreFootprintResult;
+                    set
+                    {
+                        _restoreFootprintResult = value;
+                    }
                 }
-            }
+                private RestoreFootprintResult _restoreFootprintResult;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class trUnionXdr
         {
@@ -517,85 +517,85 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case trUnion_CREATE_ACCOUNT case_CREATE_ACCOUNT:
+                    case trUnion.CreateAccount case_CREATE_ACCOUNT:
                     CreateAccountResultXdr.Encode(stream, case_CREATE_ACCOUNT.createAccountResult);
                     break;
-                    case trUnion_PAYMENT case_PAYMENT:
+                    case trUnion.Payment case_PAYMENT:
                     PaymentResultXdr.Encode(stream, case_PAYMENT.paymentResult);
                     break;
-                    case trUnion_PATH_PAYMENT_STRICT_RECEIVE case_PATH_PAYMENT_STRICT_RECEIVE:
+                    case trUnion.PathPaymentStrictReceive case_PATH_PAYMENT_STRICT_RECEIVE:
                     PathPaymentStrictReceiveResultXdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE.pathPaymentStrictReceiveResult);
                     break;
-                    case trUnion_MANAGE_SELL_OFFER case_MANAGE_SELL_OFFER:
+                    case trUnion.ManageSellOffer case_MANAGE_SELL_OFFER:
                     ManageSellOfferResultXdr.Encode(stream, case_MANAGE_SELL_OFFER.manageSellOfferResult);
                     break;
-                    case trUnion_CREATE_PASSIVE_SELL_OFFER case_CREATE_PASSIVE_SELL_OFFER:
+                    case trUnion.CreatePassiveSellOffer case_CREATE_PASSIVE_SELL_OFFER:
                     ManageSellOfferResultXdr.Encode(stream, case_CREATE_PASSIVE_SELL_OFFER.createPassiveSellOfferResult);
                     break;
-                    case trUnion_SET_OPTIONS case_SET_OPTIONS:
+                    case trUnion.SetOptions case_SET_OPTIONS:
                     SetOptionsResultXdr.Encode(stream, case_SET_OPTIONS.setOptionsResult);
                     break;
-                    case trUnion_CHANGE_TRUST case_CHANGE_TRUST:
+                    case trUnion.ChangeTrust case_CHANGE_TRUST:
                     ChangeTrustResultXdr.Encode(stream, case_CHANGE_TRUST.changeTrustResult);
                     break;
-                    case trUnion_ALLOW_TRUST case_ALLOW_TRUST:
+                    case trUnion.AllowTrust case_ALLOW_TRUST:
                     AllowTrustResultXdr.Encode(stream, case_ALLOW_TRUST.allowTrustResult);
                     break;
-                    case trUnion_ACCOUNT_MERGE case_ACCOUNT_MERGE:
+                    case trUnion.AccountMerge case_ACCOUNT_MERGE:
                     AccountMergeResultXdr.Encode(stream, case_ACCOUNT_MERGE.accountMergeResult);
                     break;
-                    case trUnion_INFLATION case_INFLATION:
+                    case trUnion.Inflation case_INFLATION:
                     InflationResultXdr.Encode(stream, case_INFLATION.inflationResult);
                     break;
-                    case trUnion_MANAGE_DATA case_MANAGE_DATA:
+                    case trUnion.ManageData case_MANAGE_DATA:
                     ManageDataResultXdr.Encode(stream, case_MANAGE_DATA.manageDataResult);
                     break;
-                    case trUnion_BUMP_SEQUENCE case_BUMP_SEQUENCE:
+                    case trUnion.BumpSequence case_BUMP_SEQUENCE:
                     BumpSequenceResultXdr.Encode(stream, case_BUMP_SEQUENCE.bumpSeqResult);
                     break;
-                    case trUnion_MANAGE_BUY_OFFER case_MANAGE_BUY_OFFER:
+                    case trUnion.ManageBuyOffer case_MANAGE_BUY_OFFER:
                     ManageBuyOfferResultXdr.Encode(stream, case_MANAGE_BUY_OFFER.manageBuyOfferResult);
                     break;
-                    case trUnion_PATH_PAYMENT_STRICT_SEND case_PATH_PAYMENT_STRICT_SEND:
+                    case trUnion.PathPaymentStrictSend case_PATH_PAYMENT_STRICT_SEND:
                     PathPaymentStrictSendResultXdr.Encode(stream, case_PATH_PAYMENT_STRICT_SEND.pathPaymentStrictSendResult);
                     break;
-                    case trUnion_CREATE_CLAIMABLE_BALANCE case_CREATE_CLAIMABLE_BALANCE:
+                    case trUnion.CreateClaimableBalance case_CREATE_CLAIMABLE_BALANCE:
                     CreateClaimableBalanceResultXdr.Encode(stream, case_CREATE_CLAIMABLE_BALANCE.createClaimableBalanceResult);
                     break;
-                    case trUnion_CLAIM_CLAIMABLE_BALANCE case_CLAIM_CLAIMABLE_BALANCE:
+                    case trUnion.ClaimClaimableBalance case_CLAIM_CLAIMABLE_BALANCE:
                     ClaimClaimableBalanceResultXdr.Encode(stream, case_CLAIM_CLAIMABLE_BALANCE.claimClaimableBalanceResult);
                     break;
-                    case trUnion_BEGIN_SPONSORING_FUTURE_RESERVES case_BEGIN_SPONSORING_FUTURE_RESERVES:
+                    case trUnion.BeginSponsoringFutureReserves case_BEGIN_SPONSORING_FUTURE_RESERVES:
                     BeginSponsoringFutureReservesResultXdr.Encode(stream, case_BEGIN_SPONSORING_FUTURE_RESERVES.beginSponsoringFutureReservesResult);
                     break;
-                    case trUnion_END_SPONSORING_FUTURE_RESERVES case_END_SPONSORING_FUTURE_RESERVES:
+                    case trUnion.EndSponsoringFutureReserves case_END_SPONSORING_FUTURE_RESERVES:
                     EndSponsoringFutureReservesResultXdr.Encode(stream, case_END_SPONSORING_FUTURE_RESERVES.endSponsoringFutureReservesResult);
                     break;
-                    case trUnion_REVOKE_SPONSORSHIP case_REVOKE_SPONSORSHIP:
+                    case trUnion.RevokeSponsorship case_REVOKE_SPONSORSHIP:
                     RevokeSponsorshipResultXdr.Encode(stream, case_REVOKE_SPONSORSHIP.revokeSponsorshipResult);
                     break;
-                    case trUnion_CLAWBACK case_CLAWBACK:
+                    case trUnion.Clawback case_CLAWBACK:
                     ClawbackResultXdr.Encode(stream, case_CLAWBACK.clawbackResult);
                     break;
-                    case trUnion_CLAWBACK_CLAIMABLE_BALANCE case_CLAWBACK_CLAIMABLE_BALANCE:
+                    case trUnion.ClawbackClaimableBalance case_CLAWBACK_CLAIMABLE_BALANCE:
                     ClawbackClaimableBalanceResultXdr.Encode(stream, case_CLAWBACK_CLAIMABLE_BALANCE.clawbackClaimableBalanceResult);
                     break;
-                    case trUnion_SET_TRUST_LINE_FLAGS case_SET_TRUST_LINE_FLAGS:
+                    case trUnion.SetTrustLineFlags case_SET_TRUST_LINE_FLAGS:
                     SetTrustLineFlagsResultXdr.Encode(stream, case_SET_TRUST_LINE_FLAGS.setTrustLineFlagsResult);
                     break;
-                    case trUnion_LIQUIDITY_POOL_DEPOSIT case_LIQUIDITY_POOL_DEPOSIT:
+                    case trUnion.LiquidityPoolDeposit case_LIQUIDITY_POOL_DEPOSIT:
                     LiquidityPoolDepositResultXdr.Encode(stream, case_LIQUIDITY_POOL_DEPOSIT.liquidityPoolDepositResult);
                     break;
-                    case trUnion_LIQUIDITY_POOL_WITHDRAW case_LIQUIDITY_POOL_WITHDRAW:
+                    case trUnion.LiquidityPoolWithdraw case_LIQUIDITY_POOL_WITHDRAW:
                     LiquidityPoolWithdrawResultXdr.Encode(stream, case_LIQUIDITY_POOL_WITHDRAW.liquidityPoolWithdrawResult);
                     break;
-                    case trUnion_INVOKE_HOST_FUNCTION case_INVOKE_HOST_FUNCTION:
+                    case trUnion.InvokeHostFunction case_INVOKE_HOST_FUNCTION:
                     InvokeHostFunctionResultXdr.Encode(stream, case_INVOKE_HOST_FUNCTION.invokeHostFunctionResult);
                     break;
-                    case trUnion_EXTEND_FOOTPRINT_TTL case_EXTEND_FOOTPRINT_TTL:
+                    case trUnion.ExtendFootprintTtl case_EXTEND_FOOTPRINT_TTL:
                     ExtendFootprintTTLResultXdr.Encode(stream, case_EXTEND_FOOTPRINT_TTL.extendFootprintTTLResult);
                     break;
-                    case trUnion_RESTORE_FOOTPRINT case_RESTORE_FOOTPRINT:
+                    case trUnion.RestoreFootprint case_RESTORE_FOOTPRINT:
                     RestoreFootprintResultXdr.Encode(stream, case_RESTORE_FOOTPRINT.restoreFootprintResult);
                     break;
                 }
@@ -606,111 +606,111 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case OperationType.CREATE_ACCOUNT:
-                    var result_CREATE_ACCOUNT = new trUnion_CREATE_ACCOUNT();
+                    var result_CREATE_ACCOUNT = new trUnion.CreateAccount();
                     result_CREATE_ACCOUNT.createAccountResult = CreateAccountResultXdr.Decode(stream);
                     return result_CREATE_ACCOUNT;
                     case OperationType.PAYMENT:
-                    var result_PAYMENT = new trUnion_PAYMENT();
+                    var result_PAYMENT = new trUnion.Payment();
                     result_PAYMENT.paymentResult = PaymentResultXdr.Decode(stream);
                     return result_PAYMENT;
                     case OperationType.PATH_PAYMENT_STRICT_RECEIVE:
-                    var result_PATH_PAYMENT_STRICT_RECEIVE = new trUnion_PATH_PAYMENT_STRICT_RECEIVE();
+                    var result_PATH_PAYMENT_STRICT_RECEIVE = new trUnion.PathPaymentStrictReceive();
                     result_PATH_PAYMENT_STRICT_RECEIVE.pathPaymentStrictReceiveResult = PathPaymentStrictReceiveResultXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_RECEIVE;
                     case OperationType.MANAGE_SELL_OFFER:
-                    var result_MANAGE_SELL_OFFER = new trUnion_MANAGE_SELL_OFFER();
+                    var result_MANAGE_SELL_OFFER = new trUnion.ManageSellOffer();
                     result_MANAGE_SELL_OFFER.manageSellOfferResult = ManageSellOfferResultXdr.Decode(stream);
                     return result_MANAGE_SELL_OFFER;
                     case OperationType.CREATE_PASSIVE_SELL_OFFER:
-                    var result_CREATE_PASSIVE_SELL_OFFER = new trUnion_CREATE_PASSIVE_SELL_OFFER();
+                    var result_CREATE_PASSIVE_SELL_OFFER = new trUnion.CreatePassiveSellOffer();
                     result_CREATE_PASSIVE_SELL_OFFER.createPassiveSellOfferResult = ManageSellOfferResultXdr.Decode(stream);
                     return result_CREATE_PASSIVE_SELL_OFFER;
                     case OperationType.SET_OPTIONS:
-                    var result_SET_OPTIONS = new trUnion_SET_OPTIONS();
+                    var result_SET_OPTIONS = new trUnion.SetOptions();
                     result_SET_OPTIONS.setOptionsResult = SetOptionsResultXdr.Decode(stream);
                     return result_SET_OPTIONS;
                     case OperationType.CHANGE_TRUST:
-                    var result_CHANGE_TRUST = new trUnion_CHANGE_TRUST();
+                    var result_CHANGE_TRUST = new trUnion.ChangeTrust();
                     result_CHANGE_TRUST.changeTrustResult = ChangeTrustResultXdr.Decode(stream);
                     return result_CHANGE_TRUST;
                     case OperationType.ALLOW_TRUST:
-                    var result_ALLOW_TRUST = new trUnion_ALLOW_TRUST();
+                    var result_ALLOW_TRUST = new trUnion.AllowTrust();
                     result_ALLOW_TRUST.allowTrustResult = AllowTrustResultXdr.Decode(stream);
                     return result_ALLOW_TRUST;
                     case OperationType.ACCOUNT_MERGE:
-                    var result_ACCOUNT_MERGE = new trUnion_ACCOUNT_MERGE();
+                    var result_ACCOUNT_MERGE = new trUnion.AccountMerge();
                     result_ACCOUNT_MERGE.accountMergeResult = AccountMergeResultXdr.Decode(stream);
                     return result_ACCOUNT_MERGE;
                     case OperationType.INFLATION:
-                    var result_INFLATION = new trUnion_INFLATION();
+                    var result_INFLATION = new trUnion.Inflation();
                     result_INFLATION.inflationResult = InflationResultXdr.Decode(stream);
                     return result_INFLATION;
                     case OperationType.MANAGE_DATA:
-                    var result_MANAGE_DATA = new trUnion_MANAGE_DATA();
+                    var result_MANAGE_DATA = new trUnion.ManageData();
                     result_MANAGE_DATA.manageDataResult = ManageDataResultXdr.Decode(stream);
                     return result_MANAGE_DATA;
                     case OperationType.BUMP_SEQUENCE:
-                    var result_BUMP_SEQUENCE = new trUnion_BUMP_SEQUENCE();
+                    var result_BUMP_SEQUENCE = new trUnion.BumpSequence();
                     result_BUMP_SEQUENCE.bumpSeqResult = BumpSequenceResultXdr.Decode(stream);
                     return result_BUMP_SEQUENCE;
                     case OperationType.MANAGE_BUY_OFFER:
-                    var result_MANAGE_BUY_OFFER = new trUnion_MANAGE_BUY_OFFER();
+                    var result_MANAGE_BUY_OFFER = new trUnion.ManageBuyOffer();
                     result_MANAGE_BUY_OFFER.manageBuyOfferResult = ManageBuyOfferResultXdr.Decode(stream);
                     return result_MANAGE_BUY_OFFER;
                     case OperationType.PATH_PAYMENT_STRICT_SEND:
-                    var result_PATH_PAYMENT_STRICT_SEND = new trUnion_PATH_PAYMENT_STRICT_SEND();
+                    var result_PATH_PAYMENT_STRICT_SEND = new trUnion.PathPaymentStrictSend();
                     result_PATH_PAYMENT_STRICT_SEND.pathPaymentStrictSendResult = PathPaymentStrictSendResultXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_SEND;
                     case OperationType.CREATE_CLAIMABLE_BALANCE:
-                    var result_CREATE_CLAIMABLE_BALANCE = new trUnion_CREATE_CLAIMABLE_BALANCE();
+                    var result_CREATE_CLAIMABLE_BALANCE = new trUnion.CreateClaimableBalance();
                     result_CREATE_CLAIMABLE_BALANCE.createClaimableBalanceResult = CreateClaimableBalanceResultXdr.Decode(stream);
                     return result_CREATE_CLAIMABLE_BALANCE;
                     case OperationType.CLAIM_CLAIMABLE_BALANCE:
-                    var result_CLAIM_CLAIMABLE_BALANCE = new trUnion_CLAIM_CLAIMABLE_BALANCE();
+                    var result_CLAIM_CLAIMABLE_BALANCE = new trUnion.ClaimClaimableBalance();
                     result_CLAIM_CLAIMABLE_BALANCE.claimClaimableBalanceResult = ClaimClaimableBalanceResultXdr.Decode(stream);
                     return result_CLAIM_CLAIMABLE_BALANCE;
                     case OperationType.BEGIN_SPONSORING_FUTURE_RESERVES:
-                    var result_BEGIN_SPONSORING_FUTURE_RESERVES = new trUnion_BEGIN_SPONSORING_FUTURE_RESERVES();
+                    var result_BEGIN_SPONSORING_FUTURE_RESERVES = new trUnion.BeginSponsoringFutureReserves();
                     result_BEGIN_SPONSORING_FUTURE_RESERVES.beginSponsoringFutureReservesResult = BeginSponsoringFutureReservesResultXdr.Decode(stream);
                     return result_BEGIN_SPONSORING_FUTURE_RESERVES;
                     case OperationType.END_SPONSORING_FUTURE_RESERVES:
-                    var result_END_SPONSORING_FUTURE_RESERVES = new trUnion_END_SPONSORING_FUTURE_RESERVES();
+                    var result_END_SPONSORING_FUTURE_RESERVES = new trUnion.EndSponsoringFutureReserves();
                     result_END_SPONSORING_FUTURE_RESERVES.endSponsoringFutureReservesResult = EndSponsoringFutureReservesResultXdr.Decode(stream);
                     return result_END_SPONSORING_FUTURE_RESERVES;
                     case OperationType.REVOKE_SPONSORSHIP:
-                    var result_REVOKE_SPONSORSHIP = new trUnion_REVOKE_SPONSORSHIP();
+                    var result_REVOKE_SPONSORSHIP = new trUnion.RevokeSponsorship();
                     result_REVOKE_SPONSORSHIP.revokeSponsorshipResult = RevokeSponsorshipResultXdr.Decode(stream);
                     return result_REVOKE_SPONSORSHIP;
                     case OperationType.CLAWBACK:
-                    var result_CLAWBACK = new trUnion_CLAWBACK();
+                    var result_CLAWBACK = new trUnion.Clawback();
                     result_CLAWBACK.clawbackResult = ClawbackResultXdr.Decode(stream);
                     return result_CLAWBACK;
                     case OperationType.CLAWBACK_CLAIMABLE_BALANCE:
-                    var result_CLAWBACK_CLAIMABLE_BALANCE = new trUnion_CLAWBACK_CLAIMABLE_BALANCE();
+                    var result_CLAWBACK_CLAIMABLE_BALANCE = new trUnion.ClawbackClaimableBalance();
                     result_CLAWBACK_CLAIMABLE_BALANCE.clawbackClaimableBalanceResult = ClawbackClaimableBalanceResultXdr.Decode(stream);
                     return result_CLAWBACK_CLAIMABLE_BALANCE;
                     case OperationType.SET_TRUST_LINE_FLAGS:
-                    var result_SET_TRUST_LINE_FLAGS = new trUnion_SET_TRUST_LINE_FLAGS();
+                    var result_SET_TRUST_LINE_FLAGS = new trUnion.SetTrustLineFlags();
                     result_SET_TRUST_LINE_FLAGS.setTrustLineFlagsResult = SetTrustLineFlagsResultXdr.Decode(stream);
                     return result_SET_TRUST_LINE_FLAGS;
                     case OperationType.LIQUIDITY_POOL_DEPOSIT:
-                    var result_LIQUIDITY_POOL_DEPOSIT = new trUnion_LIQUIDITY_POOL_DEPOSIT();
+                    var result_LIQUIDITY_POOL_DEPOSIT = new trUnion.LiquidityPoolDeposit();
                     result_LIQUIDITY_POOL_DEPOSIT.liquidityPoolDepositResult = LiquidityPoolDepositResultXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_DEPOSIT;
                     case OperationType.LIQUIDITY_POOL_WITHDRAW:
-                    var result_LIQUIDITY_POOL_WITHDRAW = new trUnion_LIQUIDITY_POOL_WITHDRAW();
+                    var result_LIQUIDITY_POOL_WITHDRAW = new trUnion.LiquidityPoolWithdraw();
                     result_LIQUIDITY_POOL_WITHDRAW.liquidityPoolWithdrawResult = LiquidityPoolWithdrawResultXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_WITHDRAW;
                     case OperationType.INVOKE_HOST_FUNCTION:
-                    var result_INVOKE_HOST_FUNCTION = new trUnion_INVOKE_HOST_FUNCTION();
+                    var result_INVOKE_HOST_FUNCTION = new trUnion.InvokeHostFunction();
                     result_INVOKE_HOST_FUNCTION.invokeHostFunctionResult = InvokeHostFunctionResultXdr.Decode(stream);
                     return result_INVOKE_HOST_FUNCTION;
                     case OperationType.EXTEND_FOOTPRINT_TTL:
-                    var result_EXTEND_FOOTPRINT_TTL = new trUnion_EXTEND_FOOTPRINT_TTL();
+                    var result_EXTEND_FOOTPRINT_TTL = new trUnion.ExtendFootprintTtl();
                     result_EXTEND_FOOTPRINT_TTL.extendFootprintTTLResult = ExtendFootprintTTLResultXdr.Decode(stream);
                     return result_EXTEND_FOOTPRINT_TTL;
                     case OperationType.RESTORE_FOOTPRINT:
-                    var result_RESTORE_FOOTPRINT = new trUnion_RESTORE_FOOTPRINT();
+                    var result_RESTORE_FOOTPRINT = new trUnion.RestoreFootprint();
                     result_RESTORE_FOOTPRINT.restoreFootprintResult = RestoreFootprintResultXdr.Decode(stream);
                     return result_RESTORE_FOOTPRINT;
                     default:
@@ -718,57 +718,57 @@ namespace Stellar.XDR {
                 }
             }
         }
-    }
-    public sealed partial class OperationResult_opINNER : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opINNER;
-        private trUnion _tr;
-        public trUnion tr
+        public sealed partial class OpINNER : OperationResult
         {
-            get => _tr;
-            set
+            public override OperationResultCode Discriminator => OperationResultCode.opINNER;
+            public trUnion tr
             {
-                _tr = value;
+                get => _tr;
+                set
+                {
+                    _tr = value;
+                }
             }
+            private trUnion _tr;
+
+            public override void ValidateCase() {}
         }
+        public sealed partial class OpbadAuth : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opBAD_AUTH;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opBAD_AUTH : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opBAD_AUTH;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class OpnoAccount : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opNO_ACCOUNT;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opNO_ACCOUNT : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opNO_ACCOUNT;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class OpnotSupported : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opNOT_SUPPORTED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opNOT_SUPPORTED : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opNOT_SUPPORTED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class OptooManySubentries : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SUBENTRIES;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opTOO_MANY_SUBENTRIES : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SUBENTRIES;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class OpexceededWorkLimit : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opEXCEEDED_WORK_LIMIT;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opEXCEEDED_WORK_LIMIT : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opEXCEEDED_WORK_LIMIT;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class OptooManySponsoring : OperationResult
+        {
+            public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SPONSORING;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class OperationResult_opTOO_MANY_SPONSORING : OperationResult
-    {
-        public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SPONSORING;
-
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class OperationResultXdr
     {
@@ -788,20 +788,20 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case OperationResult_opINNER case_opINNER:
+                case OperationResult.OpINNER case_opINNER:
                 OperationResult.trUnionXdr.Encode(stream, case_opINNER.tr);
                 break;
-                case OperationResult_opBAD_AUTH case_opBAD_AUTH:
+                case OperationResult.OpbadAuth case_opBAD_AUTH:
                 break;
-                case OperationResult_opNO_ACCOUNT case_opNO_ACCOUNT:
+                case OperationResult.OpnoAccount case_opNO_ACCOUNT:
                 break;
-                case OperationResult_opNOT_SUPPORTED case_opNOT_SUPPORTED:
+                case OperationResult.OpnotSupported case_opNOT_SUPPORTED:
                 break;
-                case OperationResult_opTOO_MANY_SUBENTRIES case_opTOO_MANY_SUBENTRIES:
+                case OperationResult.OptooManySubentries case_opTOO_MANY_SUBENTRIES:
                 break;
-                case OperationResult_opEXCEEDED_WORK_LIMIT case_opEXCEEDED_WORK_LIMIT:
+                case OperationResult.OpexceededWorkLimit case_opEXCEEDED_WORK_LIMIT:
                 break;
-                case OperationResult_opTOO_MANY_SPONSORING case_opTOO_MANY_SPONSORING:
+                case OperationResult.OptooManySponsoring case_opTOO_MANY_SPONSORING:
                 break;
             }
         }
@@ -811,26 +811,26 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case OperationResultCode.opINNER:
-                var result_opINNER = new OperationResult_opINNER();
+                var result_opINNER = new OperationResult.OpINNER();
                 result_opINNER.tr = OperationResult.trUnionXdr.Decode(stream);
                 return result_opINNER;
                 case OperationResultCode.opBAD_AUTH:
-                var result_opBAD_AUTH = new OperationResult_opBAD_AUTH();
+                var result_opBAD_AUTH = new OperationResult.OpbadAuth();
                 return result_opBAD_AUTH;
                 case OperationResultCode.opNO_ACCOUNT:
-                var result_opNO_ACCOUNT = new OperationResult_opNO_ACCOUNT();
+                var result_opNO_ACCOUNT = new OperationResult.OpnoAccount();
                 return result_opNO_ACCOUNT;
                 case OperationResultCode.opNOT_SUPPORTED:
-                var result_opNOT_SUPPORTED = new OperationResult_opNOT_SUPPORTED();
+                var result_opNOT_SUPPORTED = new OperationResult.OpnotSupported();
                 return result_opNOT_SUPPORTED;
                 case OperationResultCode.opTOO_MANY_SUBENTRIES:
-                var result_opTOO_MANY_SUBENTRIES = new OperationResult_opTOO_MANY_SUBENTRIES();
+                var result_opTOO_MANY_SUBENTRIES = new OperationResult.OptooManySubentries();
                 return result_opTOO_MANY_SUBENTRIES;
                 case OperationResultCode.opEXCEEDED_WORK_LIMIT:
-                var result_opEXCEEDED_WORK_LIMIT = new OperationResult_opEXCEEDED_WORK_LIMIT();
+                var result_opEXCEEDED_WORK_LIMIT = new OperationResult.OpexceededWorkLimit();
                 return result_opEXCEEDED_WORK_LIMIT;
                 case OperationResultCode.opTOO_MANY_SPONSORING:
-                var result_opTOO_MANY_SPONSORING = new OperationResult_opTOO_MANY_SPONSORING();
+                var result_opTOO_MANY_SPONSORING = new OperationResult.OptooManySponsoring();
                 return result_opTOO_MANY_SPONSORING;
                 default:
                 throw new Exception($"Unknown discriminator for OperationResult: {discriminator}");

@@ -46,6 +46,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Next ID: 25
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum MessageType
     {
@@ -54,13 +57,22 @@ namespace Stellar.XDR {
         DONT_HAVE = 3,
         PEERS = 5,
         GET_TX_SET = 6,
+        /// <summary>
+        /// gets a particular txset by hash
+        /// </summary>
         TX_SET = 7,
         GENERALIZED_TX_SET = 17,
         TRANSACTION = 8,
+        /// <summary>
+        /// SCP
+        /// </summary>
         GET_SCP_QUORUMSET = 9,
         SCP_QUORUMSET = 10,
         SCP_MESSAGE = 11,
         GET_SCP_STATE = 12,
+        /// <summary>
+        /// new messages
+        /// </summary>
         HELLO = 13,
         SURVEY_REQUEST = 14,
         SURVEY_RESPONSE = 15,

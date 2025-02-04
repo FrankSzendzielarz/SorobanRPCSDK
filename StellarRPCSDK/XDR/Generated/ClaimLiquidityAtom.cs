@@ -23,7 +23,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClaimLiquidityAtom
     {
-        private PoolID _liquidityPoolID;
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -32,8 +31,11 @@ namespace Stellar.XDR {
                 _liquidityPoolID = value;
             }
         }
+        private PoolID _liquidityPoolID;
 
-        private Asset _assetSold;
+        /// <summary>
+        /// amount and asset taken from the pool
+        /// </summary>
         public Asset assetSold
         {
             get => _assetSold;
@@ -42,8 +44,8 @@ namespace Stellar.XDR {
                 _assetSold = value;
             }
         }
+        private Asset _assetSold;
 
-        private int64 _amountSold;
         public int64 amountSold
         {
             get => _amountSold;
@@ -52,8 +54,11 @@ namespace Stellar.XDR {
                 _amountSold = value;
             }
         }
+        private int64 _amountSold;
 
-        private Asset _assetBought;
+        /// <summary>
+        /// amount and asset sent to the pool
+        /// </summary>
         public Asset assetBought
         {
             get => _assetBought;
@@ -62,8 +67,8 @@ namespace Stellar.XDR {
                 _assetBought = value;
             }
         }
+        private Asset _assetBought;
 
-        private int64 _amountBought;
         public int64 amountBought
         {
             get => _amountBought;
@@ -72,6 +77,7 @@ namespace Stellar.XDR {
                 _amountBought = value;
             }
         }
+        private int64 _amountBought;
 
         public ClaimLiquidityAtom()
         {

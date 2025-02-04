@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class UInt128Parts
     {
-        private uint64 _hi;
         public uint64 hi
         {
             get => _hi;
@@ -24,8 +23,8 @@ namespace Stellar.XDR {
                 _hi = value;
             }
         }
+        private uint64 _hi;
 
-        private uint64 _lo;
         public uint64 lo
         {
             get => _lo;
@@ -34,6 +33,7 @@ namespace Stellar.XDR {
                 _lo = value;
             }
         }
+        private uint64 _lo;
 
         public UInt128Parts()
         {

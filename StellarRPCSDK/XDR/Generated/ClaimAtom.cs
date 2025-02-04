@@ -25,51 +25,51 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_V0 : ClaimAtom
-    {
-        public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_V0;
-        private ClaimOfferAtomV0 _v0;
-        public ClaimOfferAtomV0 v0
+        public sealed partial class ClaimAtomTypeV0 : ClaimAtom
         {
-            get => _v0;
-            set
+            public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_V0;
+            public ClaimOfferAtomV0 v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private ClaimOfferAtomV0 _v0;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_ORDER_BOOK : ClaimAtom
-    {
-        public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK;
-        private ClaimOfferAtom _orderBook;
-        public ClaimOfferAtom orderBook
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimAtomTypeOrderBook : ClaimAtom
         {
-            get => _orderBook;
-            set
+            public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK;
+            public ClaimOfferAtom orderBook
             {
-                _orderBook = value;
+                get => _orderBook;
+                set
+                {
+                    _orderBook = value;
+                }
             }
-        }
+            private ClaimOfferAtom _orderBook;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimAtom_CLAIM_ATOM_TYPE_LIQUIDITY_POOL : ClaimAtom
-    {
-        public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
-        private ClaimLiquidityAtom _liquidityPool;
-        public ClaimLiquidityAtom liquidityPool
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimAtomTypeLiquidityPool : ClaimAtom
         {
-            get => _liquidityPool;
-            set
+            public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
+            public ClaimLiquidityAtom liquidityPool
             {
-                _liquidityPool = value;
+                get => _liquidityPool;
+                set
+                {
+                    _liquidityPool = value;
+                }
             }
-        }
+            private ClaimLiquidityAtom _liquidityPool;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClaimAtomXdr
     {
@@ -89,13 +89,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClaimAtom_CLAIM_ATOM_TYPE_V0 case_CLAIM_ATOM_TYPE_V0:
+                case ClaimAtom.ClaimAtomTypeV0 case_CLAIM_ATOM_TYPE_V0:
                 ClaimOfferAtomV0Xdr.Encode(stream, case_CLAIM_ATOM_TYPE_V0.v0);
                 break;
-                case ClaimAtom_CLAIM_ATOM_TYPE_ORDER_BOOK case_CLAIM_ATOM_TYPE_ORDER_BOOK:
+                case ClaimAtom.ClaimAtomTypeOrderBook case_CLAIM_ATOM_TYPE_ORDER_BOOK:
                 ClaimOfferAtomXdr.Encode(stream, case_CLAIM_ATOM_TYPE_ORDER_BOOK.orderBook);
                 break;
-                case ClaimAtom_CLAIM_ATOM_TYPE_LIQUIDITY_POOL case_CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
+                case ClaimAtom.ClaimAtomTypeLiquidityPool case_CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
                 ClaimLiquidityAtomXdr.Encode(stream, case_CLAIM_ATOM_TYPE_LIQUIDITY_POOL.liquidityPool);
                 break;
             }
@@ -106,15 +106,15 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClaimAtomType.CLAIM_ATOM_TYPE_V0:
-                var result_CLAIM_ATOM_TYPE_V0 = new ClaimAtom_CLAIM_ATOM_TYPE_V0();
+                var result_CLAIM_ATOM_TYPE_V0 = new ClaimAtom.ClaimAtomTypeV0();
                 result_CLAIM_ATOM_TYPE_V0.v0 = ClaimOfferAtomV0Xdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_V0;
                 case ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK:
-                var result_CLAIM_ATOM_TYPE_ORDER_BOOK = new ClaimAtom_CLAIM_ATOM_TYPE_ORDER_BOOK();
+                var result_CLAIM_ATOM_TYPE_ORDER_BOOK = new ClaimAtom.ClaimAtomTypeOrderBook();
                 result_CLAIM_ATOM_TYPE_ORDER_BOOK.orderBook = ClaimOfferAtomXdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_ORDER_BOOK;
                 case ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL:
-                var result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL = new ClaimAtom_CLAIM_ATOM_TYPE_LIQUIDITY_POOL();
+                var result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL = new ClaimAtom.ClaimAtomTypeLiquidityPool();
                 result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL.liquidityPool = ClaimLiquidityAtomXdr.Decode(stream);
                 return result_CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
                 default:

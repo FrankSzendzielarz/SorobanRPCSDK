@@ -16,7 +16,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TTLEntry
     {
-        private Hash _keyHash;
+        /// <summary>
+        /// Hash of the LedgerKey that is associated with this TTLEntry
+        /// </summary>
         public Hash keyHash
         {
             get => _keyHash;
@@ -25,8 +27,8 @@ namespace Stellar.XDR {
                 _keyHash = value;
             }
         }
+        private Hash _keyHash;
 
-        private uint32 _liveUntilLedgerSeq;
         public uint32 liveUntilLedgerSeq
         {
             get => _liveUntilLedgerSeq;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _liveUntilLedgerSeq = value;
             }
         }
+        private uint32 _liveUntilLedgerSeq;
 
         public TTLEntry()
         {

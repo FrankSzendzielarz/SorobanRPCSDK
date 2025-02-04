@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractDataEntry
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -28,8 +27,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private SCAddress _contract;
         public SCAddress contract
         {
             get => _contract;
@@ -38,8 +37,8 @@ namespace Stellar.XDR {
                 _contract = value;
             }
         }
+        private SCAddress _contract;
 
-        private SCVal _key;
         public SCVal key
         {
             get => _key;
@@ -48,8 +47,8 @@ namespace Stellar.XDR {
                 _key = value;
             }
         }
+        private SCVal _key;
 
-        private ContractDataDurability _durability;
         public ContractDataDurability durability
         {
             get => _durability;
@@ -58,8 +57,8 @@ namespace Stellar.XDR {
                 _durability = value;
             }
         }
+        private ContractDataDurability _durability;
 
-        private SCVal _val;
         public SCVal val
         {
             get => _val;
@@ -68,6 +67,7 @@ namespace Stellar.XDR {
                 _val = value;
             }
         }
+        private SCVal _val;
 
         public ContractDataEntry()
         {

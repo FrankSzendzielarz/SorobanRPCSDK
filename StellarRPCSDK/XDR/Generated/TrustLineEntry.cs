@@ -43,7 +43,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TrustLineEntry
     {
-        private AccountID _accountID;
         public AccountID accountID
         {
             get => _accountID;
@@ -52,8 +51,11 @@ namespace Stellar.XDR {
                 _accountID = value;
             }
         }
+        private AccountID _accountID;
 
-        private TrustLineAsset _asset;
+        /// <summary>
+        /// account this trustline belongs to
+        /// </summary>
         public TrustLineAsset asset
         {
             get => _asset;
@@ -62,8 +64,11 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private TrustLineAsset _asset;
 
-        private int64 _balance;
+        /// <summary>
+        /// type of asset (with issuer)
+        /// </summary>
         public int64 balance
         {
             get => _balance;
@@ -72,8 +77,8 @@ namespace Stellar.XDR {
                 _balance = value;
             }
         }
+        private int64 _balance;
 
-        private int64 _limit;
         public int64 limit
         {
             get => _limit;
@@ -82,8 +87,11 @@ namespace Stellar.XDR {
                 _limit = value;
             }
         }
+        private int64 _limit;
 
-        private uint32 _flags;
+        /// <summary>
+        /// balance cannot be above this
+        /// </summary>
         public uint32 flags
         {
             get => _flags;
@@ -92,8 +100,11 @@ namespace Stellar.XDR {
                 _flags = value;
             }
         }
+        private uint32 _flags;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -102,6 +113,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public TrustLineEntry()
         {
@@ -121,7 +133,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class v1Struct
             {
-                private Liabilities _liabilities;
                 public Liabilities liabilities
                 {
                     get => _liabilities;
@@ -130,8 +141,8 @@ namespace Stellar.XDR {
                         _liabilities = value;
                     }
                 }
+                private Liabilities _liabilities;
 
-                private extUnion _ext;
                 public extUnion ext
                 {
                     get => _ext;
@@ -140,6 +151,7 @@ namespace Stellar.XDR {
                         _ext = value;
                     }
                 }
+                private extUnion _ext;
 
                 public v1Struct()
                 {
@@ -156,27 +168,27 @@ namespace Stellar.XDR {
                     /// <summary>Validates the union case matches its discriminator</summary>
                     public abstract void ValidateCase();
 
-                }
-                public sealed partial class extUnion_0 : extUnion
-                {
-                    public override int Discriminator => 0;
-
-                    public override void ValidateCase() {}
-                }
-                public sealed partial class extUnion_2 : extUnion
-                {
-                    public override int Discriminator => 2;
-                    private TrustLineEntryExtensionV2 _v2;
-                    public TrustLineEntryExtensionV2 v2
+                    public sealed partial class case_0 : extUnion
                     {
-                        get => _v2;
-                        set
-                        {
-                            _v2 = value;
-                        }
-                    }
+                        public override int Discriminator => 0;
 
-                    public override void ValidateCase() {}
+                        public override void ValidateCase() {}
+                    }
+                    public sealed partial class case_2 : extUnion
+                    {
+                        public override int Discriminator => 2;
+                        public TrustLineEntryExtensionV2 v2
+                        {
+                            get => _v2;
+                            set
+                            {
+                                _v2 = value;
+                            }
+                        }
+                        private TrustLineEntryExtensionV2 _v2;
+
+                        public override void ValidateCase() {}
+                    }
                 }
                 public static partial class extUnionXdr
                 {
@@ -196,9 +208,9 @@ namespace Stellar.XDR {
                         stream.WriteInt((int)value.Discriminator);
                         switch (value)
                         {
-                            case extUnion_0 case_0:
+                            case extUnion.case_0 case_0:
                             break;
-                            case extUnion_2 case_2:
+                            case extUnion.case_2 case_2:
                             TrustLineEntryExtensionV2Xdr.Encode(stream, case_2.v2);
                             break;
                         }
@@ -209,10 +221,10 @@ namespace Stellar.XDR {
                         switch (discriminator)
                         {
                             case 0:
-                            var result_0 = new extUnion_0();
+                            var result_0 = new extUnion.case_0();
                             return result_0;
                             case 2:
-                            var result_2 = new extUnion_2();
+                            var result_2 = new extUnion.case_2();
                             result_2.v2 = TrustLineEntryExtensionV2Xdr.Decode(stream);
                             return result_2;
                             default:
@@ -249,27 +261,27 @@ namespace Stellar.XDR {
                     return result;
                 }
             }
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_1 : extUnion
-        {
-            public override int Discriminator => 1;
-            private v1Struct _v1;
-            public v1Struct v1
+            public sealed partial class case_0 : extUnion
             {
-                get => _v1;
-                set
-                {
-                    _v1 = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_1 : extUnion
+            {
+                public override int Discriminator => 1;
+                public v1Struct v1
+                {
+                    get => _v1;
+                    set
+                    {
+                        _v1 = value;
+                    }
+                }
+                private v1Struct _v1;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -289,9 +301,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_1 case_1:
+                    case extUnion.case_1 case_1:
                     extUnion.v1StructXdr.Encode(stream, case_1.v1);
                     break;
                 }
@@ -302,10 +314,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 1:
-                    var result_1 = new extUnion_1();
+                    var result_1 = new extUnion.case_1();
                     result_1.v1 = extUnion.v1StructXdr.Decode(stream);
                     return result_1;
                     default:

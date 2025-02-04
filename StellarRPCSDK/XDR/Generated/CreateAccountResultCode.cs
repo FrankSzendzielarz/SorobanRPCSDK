@@ -23,10 +23,25 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum CreateAccountResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         CREATE_ACCOUNT_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         CREATE_ACCOUNT_MALFORMED = -1,
+        /// <summary>
+        /// invalid destination
+        /// </summary>
         CREATE_ACCOUNT_UNDERFUNDED = -2,
+        /// <summary>
+        /// not enough funds in source account
+        /// </summary>
         CREATE_ACCOUNT_LOW_RESERVE = -3,
+        /// <summary>
+        /// would create an account below the min reserve
+        /// </summary>
         CREATE_ACCOUNT_ALREADY_EXIST = -4,
     }
 

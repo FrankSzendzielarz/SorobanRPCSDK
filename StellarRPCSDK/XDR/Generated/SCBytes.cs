@@ -12,7 +12,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCBytes
     {
-        private byte[] _innerValue;
         public byte[] InnerValue
         {
             get => _innerValue;
@@ -21,6 +20,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private byte[] _innerValue;
 
         public SCBytes() { }
 

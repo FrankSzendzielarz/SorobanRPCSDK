@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Ledger key sets touched by a smart contract transaction.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerFootprint
     {
-        private LedgerKey[] _readOnly;
         public LedgerKey[] readOnly
         {
             get => _readOnly;
@@ -25,8 +27,8 @@ namespace Stellar.XDR {
                 _readOnly = value;
             }
         }
+        private LedgerKey[] _readOnly;
 
-        private LedgerKey[] _readWrite;
         public LedgerKey[] readWrite
         {
             get => _readWrite;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _readWrite = value;
             }
         }
+        private LedgerKey[] _readWrite;
 
         public LedgerFootprint()
         {

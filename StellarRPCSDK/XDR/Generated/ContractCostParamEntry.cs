@@ -18,7 +18,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractCostParamEntry
     {
-        private ExtensionPoint _ext;
+        /// <summary>
+        /// use `ext` to add more terms (e.g. higher order polynomials) in the future
+        /// </summary>
         public ExtensionPoint ext
         {
             get => _ext;
@@ -27,8 +29,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private int64 _constTerm;
         public int64 constTerm
         {
             get => _constTerm;
@@ -37,8 +39,8 @@ namespace Stellar.XDR {
                 _constTerm = value;
             }
         }
+        private int64 _constTerm;
 
-        private int64 _linearTerm;
         public int64 linearTerm
         {
             get => _linearTerm;
@@ -47,6 +49,7 @@ namespace Stellar.XDR {
                 _linearTerm = value;
             }
         }
+        private int64 _linearTerm;
 
         public ContractCostParamEntry()
         {

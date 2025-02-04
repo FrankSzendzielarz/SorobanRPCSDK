@@ -24,7 +24,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ExistenceProofBody
     {
-        private LedgerKey[] _keysToProve;
         public LedgerKey[] keysToProve
         {
             get => _keysToProve;
@@ -33,8 +32,11 @@ namespace Stellar.XDR {
                 _keysToProve = value;
             }
         }
+        private LedgerKey[] _keysToProve;
 
-        private ColdArchiveBucketEntry[] _lowBoundEntries;
+        /// <summary>
+        /// corresponds to keysToProve[n]
+        /// </summary>
         public ColdArchiveBucketEntry[] lowBoundEntries
         {
             get => _lowBoundEntries;
@@ -43,8 +45,8 @@ namespace Stellar.XDR {
                 _lowBoundEntries = value;
             }
         }
+        private ColdArchiveBucketEntry[] _lowBoundEntries;
 
-        private ColdArchiveBucketEntry[] _highBoundEntries;
         public ColdArchiveBucketEntry[] highBoundEntries
         {
             get => _highBoundEntries;
@@ -53,8 +55,11 @@ namespace Stellar.XDR {
                 _highBoundEntries = value;
             }
         }
+        private ColdArchiveBucketEntry[] _highBoundEntries;
 
-        private ProofLevel[] _proofLevels;
+        /// <summary>
+        /// contains all HashNodes that correspond with that level
+        /// </summary>
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;
@@ -63,6 +68,7 @@ namespace Stellar.XDR {
                 _proofLevels = value;
             }
         }
+        private ProofLevel[] _proofLevels;
 
         public ExistenceProofBody()
         {

@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class CreatePassiveSellOfferOp
     {
-        private Asset _selling;
         public Asset selling
         {
             get => _selling;
@@ -27,8 +26,11 @@ namespace Stellar.XDR {
                 _selling = value;
             }
         }
+        private Asset _selling;
 
-        private Asset _buying;
+        /// <summary>
+        /// A
+        /// </summary>
         public Asset buying
         {
             get => _buying;
@@ -37,8 +39,11 @@ namespace Stellar.XDR {
                 _buying = value;
             }
         }
+        private Asset _buying;
 
-        private int64 _amount;
+        /// <summary>
+        /// B
+        /// </summary>
         public int64 amount
         {
             get => _amount;
@@ -47,8 +52,11 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private Price _price;
+        /// <summary>
+        /// amount taker gets
+        /// </summary>
         public Price price
         {
             get => _price;
@@ -57,6 +65,7 @@ namespace Stellar.XDR {
                 _price = value;
             }
         }
+        private Price _price;
 
         public CreatePassiveSellOfferOp()
         {

@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LiquidityPoolDepositOp
     {
-        private PoolID _liquidityPoolID;
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -28,8 +27,8 @@ namespace Stellar.XDR {
                 _liquidityPoolID = value;
             }
         }
+        private PoolID _liquidityPoolID;
 
-        private int64 _maxAmountA;
         public int64 maxAmountA
         {
             get => _maxAmountA;
@@ -38,8 +37,11 @@ namespace Stellar.XDR {
                 _maxAmountA = value;
             }
         }
+        private int64 _maxAmountA;
 
-        private int64 _maxAmountB;
+        /// <summary>
+        /// maximum amount of first asset to deposit
+        /// </summary>
         public int64 maxAmountB
         {
             get => _maxAmountB;
@@ -48,8 +50,11 @@ namespace Stellar.XDR {
                 _maxAmountB = value;
             }
         }
+        private int64 _maxAmountB;
 
-        private Price _minPrice;
+        /// <summary>
+        /// maximum amount of second asset to deposit
+        /// </summary>
         public Price minPrice
         {
             get => _minPrice;
@@ -58,8 +63,11 @@ namespace Stellar.XDR {
                 _minPrice = value;
             }
         }
+        private Price _minPrice;
 
-        private Price _maxPrice;
+        /// <summary>
+        /// minimum depositA/depositB
+        /// </summary>
         public Price maxPrice
         {
             get => _maxPrice;
@@ -68,6 +76,7 @@ namespace Stellar.XDR {
                 _maxPrice = value;
             }
         }
+        private Price _maxPrice;
 
         public LiquidityPoolDepositOp()
         {

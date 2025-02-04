@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class FloodDemand
     {
-        private TxDemandVector _txHashes;
         public TxDemandVector txHashes
         {
             get => _txHashes;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _txHashes = value;
             }
         }
+        private TxDemandVector _txHashes;
 
         public FloodDemand()
         {

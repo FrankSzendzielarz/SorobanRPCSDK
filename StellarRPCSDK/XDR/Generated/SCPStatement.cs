@@ -49,7 +49,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCPStatement
     {
-        private NodeID _nodeID;
         public NodeID nodeID
         {
             get => _nodeID;
@@ -58,8 +57,11 @@ namespace Stellar.XDR {
                 _nodeID = value;
             }
         }
+        private NodeID _nodeID;
 
-        private uint64 _slotIndex;
+        /// <summary>
+        /// v
+        /// </summary>
         public uint64 slotIndex
         {
             get => _slotIndex;
@@ -68,8 +70,8 @@ namespace Stellar.XDR {
                 _slotIndex = value;
             }
         }
+        private uint64 _slotIndex;
 
-        private pledgesUnion _pledges;
         public pledgesUnion pledges
         {
             get => _pledges;
@@ -78,6 +80,7 @@ namespace Stellar.XDR {
                 _pledges = value;
             }
         }
+        private pledgesUnion _pledges;
 
         public SCPStatement()
         {
@@ -97,7 +100,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class prepareStruct
             {
-                private Hash _quorumSetHash;
                 public Hash quorumSetHash
                 {
                     get => _quorumSetHash;
@@ -106,8 +108,11 @@ namespace Stellar.XDR {
                         _quorumSetHash = value;
                     }
                 }
+                private Hash _quorumSetHash;
 
-                private SCPBallot _ballot;
+                /// <summary>
+                /// D
+                /// </summary>
                 public SCPBallot ballot
                 {
                     get => _ballot;
@@ -116,8 +121,11 @@ namespace Stellar.XDR {
                         _ballot = value;
                     }
                 }
+                private SCPBallot _ballot;
 
-                private SCPBallot _prepared;
+                /// <summary>
+                /// b
+                /// </summary>
                 public SCPBallot prepared
                 {
                     get => _prepared;
@@ -126,8 +134,11 @@ namespace Stellar.XDR {
                         _prepared = value;
                     }
                 }
+                private SCPBallot _prepared;
 
-                private SCPBallot _preparedPrime;
+                /// <summary>
+                /// p
+                /// </summary>
                 public SCPBallot preparedPrime
                 {
                     get => _preparedPrime;
@@ -136,8 +147,11 @@ namespace Stellar.XDR {
                         _preparedPrime = value;
                     }
                 }
+                private SCPBallot _preparedPrime;
 
-                private uint32 _nC;
+                /// <summary>
+                /// p'
+                /// </summary>
                 public uint32 nC
                 {
                     get => _nC;
@@ -146,8 +160,11 @@ namespace Stellar.XDR {
                         _nC = value;
                     }
                 }
+                private uint32 _nC;
 
-                private uint32 _nH;
+                /// <summary>
+                /// c.n
+                /// </summary>
                 public uint32 nH
                 {
                     get => _nH;
@@ -156,6 +173,7 @@ namespace Stellar.XDR {
                         _nH = value;
                     }
                 }
+                private uint32 _nH;
 
                 public prepareStruct()
                 {
@@ -224,7 +242,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class confirmStruct
             {
-                private SCPBallot _ballot;
                 public SCPBallot ballot
                 {
                     get => _ballot;
@@ -233,8 +250,11 @@ namespace Stellar.XDR {
                         _ballot = value;
                     }
                 }
+                private SCPBallot _ballot;
 
-                private uint32 _nPrepared;
+                /// <summary>
+                /// b
+                /// </summary>
                 public uint32 nPrepared
                 {
                     get => _nPrepared;
@@ -243,8 +263,11 @@ namespace Stellar.XDR {
                         _nPrepared = value;
                     }
                 }
+                private uint32 _nPrepared;
 
-                private uint32 _nCommit;
+                /// <summary>
+                /// p.n
+                /// </summary>
                 public uint32 nCommit
                 {
                     get => _nCommit;
@@ -253,8 +276,11 @@ namespace Stellar.XDR {
                         _nCommit = value;
                     }
                 }
+                private uint32 _nCommit;
 
-                private uint32 _nH;
+                /// <summary>
+                /// c.n
+                /// </summary>
                 public uint32 nH
                 {
                     get => _nH;
@@ -263,8 +289,11 @@ namespace Stellar.XDR {
                         _nH = value;
                     }
                 }
+                private uint32 _nH;
 
-                private Hash _quorumSetHash;
+                /// <summary>
+                /// h.n
+                /// </summary>
                 public Hash quorumSetHash
                 {
                     get => _quorumSetHash;
@@ -273,6 +302,7 @@ namespace Stellar.XDR {
                         _quorumSetHash = value;
                     }
                 }
+                private Hash _quorumSetHash;
 
                 public confirmStruct()
                 {
@@ -319,7 +349,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class externalizeStruct
             {
-                private SCPBallot _commit;
                 public SCPBallot commit
                 {
                     get => _commit;
@@ -328,8 +357,11 @@ namespace Stellar.XDR {
                         _commit = value;
                     }
                 }
+                private SCPBallot _commit;
 
-                private uint32 _nH;
+                /// <summary>
+                /// c
+                /// </summary>
                 public uint32 nH
                 {
                     get => _nH;
@@ -338,8 +370,11 @@ namespace Stellar.XDR {
                         _nH = value;
                     }
                 }
+                private uint32 _nH;
 
-                private Hash _commitQuorumSetHash;
+                /// <summary>
+                /// h.n
+                /// </summary>
                 public Hash commitQuorumSetHash
                 {
                     get => _commitQuorumSetHash;
@@ -348,6 +383,7 @@ namespace Stellar.XDR {
                         _commitQuorumSetHash = value;
                     }
                 }
+                private Hash _commitQuorumSetHash;
 
                 public externalizeStruct()
                 {
@@ -387,66 +423,66 @@ namespace Stellar.XDR {
                     return result;
                 }
             }
-        }
-        public sealed partial class pledgesUnion_SCP_ST_PREPARE : pledgesUnion
-        {
-            public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_PREPARE;
-            private prepareStruct _prepare;
-            public prepareStruct prepare
+            public sealed partial class ScpStPrepare : pledgesUnion
             {
-                get => _prepare;
-                set
+                public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_PREPARE;
+                public prepareStruct prepare
                 {
-                    _prepare = value;
+                    get => _prepare;
+                    set
+                    {
+                        _prepare = value;
+                    }
                 }
-            }
+                private prepareStruct _prepare;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class pledgesUnion_SCP_ST_CONFIRM : pledgesUnion
-        {
-            public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_CONFIRM;
-            private confirmStruct _confirm;
-            public confirmStruct confirm
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ScpStConfirm : pledgesUnion
             {
-                get => _confirm;
-                set
+                public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_CONFIRM;
+                public confirmStruct confirm
                 {
-                    _confirm = value;
+                    get => _confirm;
+                    set
+                    {
+                        _confirm = value;
+                    }
                 }
-            }
+                private confirmStruct _confirm;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class pledgesUnion_SCP_ST_EXTERNALIZE : pledgesUnion
-        {
-            public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_EXTERNALIZE;
-            private externalizeStruct _externalize;
-            public externalizeStruct externalize
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ScpStExternalize : pledgesUnion
             {
-                get => _externalize;
-                set
+                public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_EXTERNALIZE;
+                public externalizeStruct externalize
                 {
-                    _externalize = value;
+                    get => _externalize;
+                    set
+                    {
+                        _externalize = value;
+                    }
                 }
-            }
+                private externalizeStruct _externalize;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class pledgesUnion_SCP_ST_NOMINATE : pledgesUnion
-        {
-            public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_NOMINATE;
-            private SCPNomination _nominate;
-            public SCPNomination nominate
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ScpStNominate : pledgesUnion
             {
-                get => _nominate;
-                set
+                public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_NOMINATE;
+                public SCPNomination nominate
                 {
-                    _nominate = value;
+                    get => _nominate;
+                    set
+                    {
+                        _nominate = value;
+                    }
                 }
-            }
+                private SCPNomination _nominate;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class pledgesUnionXdr
         {
@@ -466,16 +502,16 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case pledgesUnion_SCP_ST_PREPARE case_SCP_ST_PREPARE:
+                    case pledgesUnion.ScpStPrepare case_SCP_ST_PREPARE:
                     pledgesUnion.prepareStructXdr.Encode(stream, case_SCP_ST_PREPARE.prepare);
                     break;
-                    case pledgesUnion_SCP_ST_CONFIRM case_SCP_ST_CONFIRM:
+                    case pledgesUnion.ScpStConfirm case_SCP_ST_CONFIRM:
                     pledgesUnion.confirmStructXdr.Encode(stream, case_SCP_ST_CONFIRM.confirm);
                     break;
-                    case pledgesUnion_SCP_ST_EXTERNALIZE case_SCP_ST_EXTERNALIZE:
+                    case pledgesUnion.ScpStExternalize case_SCP_ST_EXTERNALIZE:
                     pledgesUnion.externalizeStructXdr.Encode(stream, case_SCP_ST_EXTERNALIZE.externalize);
                     break;
-                    case pledgesUnion_SCP_ST_NOMINATE case_SCP_ST_NOMINATE:
+                    case pledgesUnion.ScpStNominate case_SCP_ST_NOMINATE:
                     SCPNominationXdr.Encode(stream, case_SCP_ST_NOMINATE.nominate);
                     break;
                 }
@@ -486,19 +522,19 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case SCPStatementType.SCP_ST_PREPARE:
-                    var result_SCP_ST_PREPARE = new pledgesUnion_SCP_ST_PREPARE();
+                    var result_SCP_ST_PREPARE = new pledgesUnion.ScpStPrepare();
                     result_SCP_ST_PREPARE.prepare = pledgesUnion.prepareStructXdr.Decode(stream);
                     return result_SCP_ST_PREPARE;
                     case SCPStatementType.SCP_ST_CONFIRM:
-                    var result_SCP_ST_CONFIRM = new pledgesUnion_SCP_ST_CONFIRM();
+                    var result_SCP_ST_CONFIRM = new pledgesUnion.ScpStConfirm();
                     result_SCP_ST_CONFIRM.confirm = pledgesUnion.confirmStructXdr.Decode(stream);
                     return result_SCP_ST_CONFIRM;
                     case SCPStatementType.SCP_ST_EXTERNALIZE:
-                    var result_SCP_ST_EXTERNALIZE = new pledgesUnion_SCP_ST_EXTERNALIZE();
+                    var result_SCP_ST_EXTERNALIZE = new pledgesUnion.ScpStExternalize();
                     result_SCP_ST_EXTERNALIZE.externalize = pledgesUnion.externalizeStructXdr.Decode(stream);
                     return result_SCP_ST_EXTERNALIZE;
                     case SCPStatementType.SCP_ST_NOMINATE:
-                    var result_SCP_ST_NOMINATE = new pledgesUnion_SCP_ST_NOMINATE();
+                    var result_SCP_ST_NOMINATE = new pledgesUnion.ScpStNominate();
                     result_SCP_ST_NOMINATE.nominate = SCPNominationXdr.Decode(stream);
                     return result_SCP_ST_NOMINATE;
                     default:

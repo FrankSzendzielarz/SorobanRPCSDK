@@ -27,7 +27,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class interfaceVersionStruct
         {
-            private uint32 _protocol;
             public uint32 protocol
             {
                 get => _protocol;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                     _protocol = value;
                 }
             }
+            private uint32 _protocol;
 
-            private uint32 _preRelease;
             public uint32 preRelease
             {
                 get => _preRelease;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                     _preRelease = value;
                 }
             }
+            private uint32 _preRelease;
 
             public interfaceVersionStruct()
             {
@@ -83,21 +83,21 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION : SCEnvMetaEntry
-    {
-        public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
-        private interfaceVersionStruct _interfaceVersion;
-        public interfaceVersionStruct interfaceVersion
+        public sealed partial class ScEnvMetaKindInterfaceVersion : SCEnvMetaEntry
         {
-            get => _interfaceVersion;
-            set
+            public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
+            public interfaceVersionStruct interfaceVersion
             {
-                _interfaceVersion = value;
+                get => _interfaceVersion;
+                set
+                {
+                    _interfaceVersion = value;
+                }
             }
-        }
+            private interfaceVersionStruct _interfaceVersion;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCEnvMetaEntryXdr
     {
@@ -117,7 +117,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION case_SC_ENV_META_KIND_INTERFACE_VERSION:
+                case SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion case_SC_ENV_META_KIND_INTERFACE_VERSION:
                 SCEnvMetaEntry.interfaceVersionStructXdr.Encode(stream, case_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion);
                 break;
             }
@@ -128,7 +128,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION:
-                var result_SC_ENV_META_KIND_INTERFACE_VERSION = new SCEnvMetaEntry_SC_ENV_META_KIND_INTERFACE_VERSION();
+                var result_SC_ENV_META_KIND_INTERFACE_VERSION = new SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion();
                 result_SC_ENV_META_KIND_INTERFACE_VERSION.interfaceVersion = SCEnvMetaEntry.interfaceVersionStructXdr.Decode(stream);
                 return result_SC_ENV_META_KIND_INTERFACE_VERSION;
                 default:

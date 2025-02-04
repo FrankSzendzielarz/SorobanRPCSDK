@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AuthCert
     {
-        private Curve25519Public _pubkey;
         public Curve25519Public pubkey
         {
             get => _pubkey;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _pubkey = value;
             }
         }
+        private Curve25519Public _pubkey;
 
-        private uint64 _expiration;
         public uint64 expiration
         {
             get => _expiration;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _expiration = value;
             }
         }
+        private uint64 _expiration;
 
-        private Signature _sig;
         public Signature sig
         {
             get => _sig;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                 _sig = value;
             }
         }
+        private Signature _sig;
 
         public AuthCert()
         {

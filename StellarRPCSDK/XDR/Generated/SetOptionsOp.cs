@@ -30,7 +30,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SetOptionsOp
     {
-        private AccountID _inflationDest;
         public AccountID inflationDest
         {
             get => _inflationDest;
@@ -39,8 +38,8 @@ namespace Stellar.XDR {
                 _inflationDest = value;
             }
         }
+        private AccountID _inflationDest;
 
-        private uint32 _clearFlags;
         public uint32 clearFlags
         {
             get => _clearFlags;
@@ -49,8 +48,11 @@ namespace Stellar.XDR {
                 _clearFlags = value;
             }
         }
+        private uint32 _clearFlags;
 
-        private uint32 _setFlags;
+        /// <summary>
+        /// which flags to clear
+        /// </summary>
         public uint32 setFlags
         {
             get => _setFlags;
@@ -59,8 +61,11 @@ namespace Stellar.XDR {
                 _setFlags = value;
             }
         }
+        private uint32 _setFlags;
 
-        private uint32 _masterWeight;
+        /// <summary>
+        /// account threshold manipulation
+        /// </summary>
         public uint32 masterWeight
         {
             get => _masterWeight;
@@ -69,8 +74,11 @@ namespace Stellar.XDR {
                 _masterWeight = value;
             }
         }
+        private uint32 _masterWeight;
 
-        private uint32 _lowThreshold;
+        /// <summary>
+        /// weight of the master account
+        /// </summary>
         public uint32 lowThreshold
         {
             get => _lowThreshold;
@@ -79,8 +87,8 @@ namespace Stellar.XDR {
                 _lowThreshold = value;
             }
         }
+        private uint32 _lowThreshold;
 
-        private uint32 _medThreshold;
         public uint32 medThreshold
         {
             get => _medThreshold;
@@ -89,8 +97,8 @@ namespace Stellar.XDR {
                 _medThreshold = value;
             }
         }
+        private uint32 _medThreshold;
 
-        private uint32 _highThreshold;
         public uint32 highThreshold
         {
             get => _highThreshold;
@@ -99,8 +107,8 @@ namespace Stellar.XDR {
                 _highThreshold = value;
             }
         }
+        private uint32 _highThreshold;
 
-        private string32 _homeDomain;
         public string32 homeDomain
         {
             get => _homeDomain;
@@ -109,8 +117,11 @@ namespace Stellar.XDR {
                 _homeDomain = value;
             }
         }
+        private string32 _homeDomain;
 
-        private Signer _signer;
+        /// <summary>
+        /// signer is deleted if the weight is 0
+        /// </summary>
         public Signer signer
         {
             get => _signer;
@@ -119,6 +130,7 @@ namespace Stellar.XDR {
                 _signer = value;
             }
         }
+        private Signer _signer;
 
         public SetOptionsOp()
         {

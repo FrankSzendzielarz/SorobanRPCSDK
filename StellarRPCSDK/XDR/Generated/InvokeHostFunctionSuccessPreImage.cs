@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// This is in Stellar-ledger.x to due to a circular dependency
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InvokeHostFunctionSuccessPreImage
     {
-        private SCVal _returnValue;
         public SCVal returnValue
         {
             get => _returnValue;
@@ -25,8 +27,8 @@ namespace Stellar.XDR {
                 _returnValue = value;
             }
         }
+        private SCVal _returnValue;
 
-        private ContractEvent[] _events;
         public ContractEvent[] events
         {
             get => _events;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _events = value;
             }
         }
+        private ContractEvent[] _events;
 
         public InvokeHostFunctionSuccessPreImage()
         {

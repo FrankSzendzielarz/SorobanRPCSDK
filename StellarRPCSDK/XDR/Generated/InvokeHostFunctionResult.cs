@@ -27,51 +27,66 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS;
-        private Hash _success;
-        public Hash success
+        public sealed partial class InvokeHostFunctionSuccess : InvokeHostFunctionResult
         {
-            get => _success;
-            set
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS;
+            public Hash success
             {
-                _success = value;
+                get => _success;
+                set
+                {
+                    _success = value;
+                }
             }
+            private Hash _success;
+
+            public override void ValidateCase() {}
         }
+        /// <summary>
+        /// sha256(InvokeHostFunctionSuccessPreImage)
+        /// </summary>
+        public sealed partial class InvokeHostFunctionMalformed : InvokeHostFunctionResult
+        {
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_MALFORMED : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// sha256(InvokeHostFunctionSuccessPreImage)
+        /// </summary>
+        public sealed partial class InvokeHostFunctionTrapped : InvokeHostFunctionResult
+        {
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_TRAPPED : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// sha256(InvokeHostFunctionSuccessPreImage)
+        /// </summary>
+        public sealed partial class InvokeHostFunctionResourceLimitExceeded : InvokeHostFunctionResult
+        {
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// sha256(InvokeHostFunctionSuccessPreImage)
+        /// </summary>
+        public sealed partial class InvokeHostFunctionEntryArchived : InvokeHostFunctionResult
+        {
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// sha256(InvokeHostFunctionSuccessPreImage)
+        /// </summary>
+        public sealed partial class InvokeHostFunctionInsufficientRefundableFee : InvokeHostFunctionResult
+        {
+            public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE : InvokeHostFunctionResult
-    {
-        public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
-
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class InvokeHostFunctionResultXdr
     {
@@ -91,18 +106,18 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS case_INVOKE_HOST_FUNCTION_SUCCESS:
+                case InvokeHostFunctionResult.InvokeHostFunctionSuccess case_INVOKE_HOST_FUNCTION_SUCCESS:
                 HashXdr.Encode(stream, case_INVOKE_HOST_FUNCTION_SUCCESS.success);
                 break;
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_MALFORMED case_INVOKE_HOST_FUNCTION_MALFORMED:
+                case InvokeHostFunctionResult.InvokeHostFunctionMalformed case_INVOKE_HOST_FUNCTION_MALFORMED:
                 break;
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_TRAPPED case_INVOKE_HOST_FUNCTION_TRAPPED:
+                case InvokeHostFunctionResult.InvokeHostFunctionTrapped case_INVOKE_HOST_FUNCTION_TRAPPED:
                 break;
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED case_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED:
+                case InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded case_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED:
                 break;
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED case_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED:
+                case InvokeHostFunctionResult.InvokeHostFunctionEntryArchived case_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED:
                 break;
-                case InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE case_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE:
+                case InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee case_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE:
                 break;
             }
         }
@@ -112,23 +127,23 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS:
-                var result_INVOKE_HOST_FUNCTION_SUCCESS = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_SUCCESS();
+                var result_INVOKE_HOST_FUNCTION_SUCCESS = new InvokeHostFunctionResult.InvokeHostFunctionSuccess();
                 result_INVOKE_HOST_FUNCTION_SUCCESS.success = HashXdr.Decode(stream);
                 return result_INVOKE_HOST_FUNCTION_SUCCESS;
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED:
-                var result_INVOKE_HOST_FUNCTION_MALFORMED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_MALFORMED();
+                var result_INVOKE_HOST_FUNCTION_MALFORMED = new InvokeHostFunctionResult.InvokeHostFunctionMalformed();
                 return result_INVOKE_HOST_FUNCTION_MALFORMED;
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED:
-                var result_INVOKE_HOST_FUNCTION_TRAPPED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_TRAPPED();
+                var result_INVOKE_HOST_FUNCTION_TRAPPED = new InvokeHostFunctionResult.InvokeHostFunctionTrapped();
                 return result_INVOKE_HOST_FUNCTION_TRAPPED;
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED:
-                var result_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED();
+                var result_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED = new InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded();
                 return result_INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED:
-                var result_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED();
+                var result_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED = new InvokeHostFunctionResult.InvokeHostFunctionEntryArchived();
                 return result_INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
                 case InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE:
-                var result_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE = new InvokeHostFunctionResult_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE();
+                var result_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE = new InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee();
                 return result_INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;
                 default:
                 throw new Exception($"Unknown discriminator for InvokeHostFunctionResult: {discriminator}");

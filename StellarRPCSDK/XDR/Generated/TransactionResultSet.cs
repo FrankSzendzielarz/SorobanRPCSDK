@@ -12,10 +12,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// TransactionResultSet is used to recover results between ledgers
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionResultSet
     {
-        private TransactionResultPair[] _results;
         public TransactionResultPair[] results
         {
             get => _results;
@@ -24,6 +26,7 @@ namespace Stellar.XDR {
                 _results = value;
             }
         }
+        private TransactionResultPair[] _results;
 
         public TransactionResultSet()
         {

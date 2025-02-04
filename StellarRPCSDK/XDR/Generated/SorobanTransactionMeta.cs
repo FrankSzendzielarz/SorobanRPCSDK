@@ -24,7 +24,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanTransactionMeta
     {
-        private SorobanTransactionMetaExt _ext;
         public SorobanTransactionMetaExt ext
         {
             get => _ext;
@@ -33,8 +32,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private SorobanTransactionMetaExt _ext;
 
-        private ContractEvent[] _events;
         public ContractEvent[] events
         {
             get => _events;
@@ -43,8 +42,11 @@ namespace Stellar.XDR {
                 _events = value;
             }
         }
+        private ContractEvent[] _events;
 
-        private SCVal _returnValue;
+        /// <summary>
+        /// contracts themselves.
+        /// </summary>
         public SCVal returnValue
         {
             get => _returnValue;
@@ -53,8 +55,11 @@ namespace Stellar.XDR {
                 _returnValue = value;
             }
         }
+        private SCVal _returnValue;
 
-        private DiagnosticEvent[] _diagnosticEvents;
+        /// <summary>
+        /// that were emitted in a failed contract call.
+        /// </summary>
         public DiagnosticEvent[] diagnosticEvents
         {
             get => _diagnosticEvents;
@@ -63,6 +68,7 @@ namespace Stellar.XDR {
                 _diagnosticEvents = value;
             }
         }
+        private DiagnosticEvent[] _diagnosticEvents;
 
         public SorobanTransactionMeta()
         {

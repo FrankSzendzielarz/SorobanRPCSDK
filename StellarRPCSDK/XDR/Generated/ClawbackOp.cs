@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClawbackOp
     {
-        private Asset _asset;
         public Asset asset
         {
             get => _asset;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private Asset _asset;
 
-        private MuxedAccount _from;
         public MuxedAccount from
         {
             get => _from;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _from = value;
             }
         }
+        private MuxedAccount _from;
 
-        private int64 _amount;
         public int64 amount
         {
             get => _amount;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
         public ClawbackOp()
         {

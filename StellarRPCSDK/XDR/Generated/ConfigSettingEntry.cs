@@ -47,216 +47,216 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
-        private uint32 _contractMaxSizeBytes;
-        public uint32 contractMaxSizeBytes
+        public sealed partial class ConfigSettingContractMaxSizeBytes : ConfigSettingEntry
         {
-            get => _contractMaxSizeBytes;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
+            public uint32 contractMaxSizeBytes
             {
-                _contractMaxSizeBytes = value;
+                get => _contractMaxSizeBytes;
+                set
+                {
+                    _contractMaxSizeBytes = value;
+                }
             }
-        }
+            private uint32 _contractMaxSizeBytes;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COMPUTE_V0 : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
-        private ConfigSettingContractComputeV0 _contractCompute;
-        public ConfigSettingContractComputeV0 contractCompute
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractComputeV0Case : ConfigSettingEntry
         {
-            get => _contractCompute;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
+            public ConfigSettingContractComputeV0 contractCompute
             {
-                _contractCompute = value;
+                get => _contractCompute;
+                set
+                {
+                    _contractCompute = value;
+                }
             }
-        }
+            private ConfigSettingContractComputeV0 _contractCompute;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
-        private ConfigSettingContractLedgerCostV0 _contractLedgerCost;
-        public ConfigSettingContractLedgerCostV0 contractLedgerCost
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractLedgerCostV0Case : ConfigSettingEntry
         {
-            get => _contractLedgerCost;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
+            public ConfigSettingContractLedgerCostV0 contractLedgerCost
             {
-                _contractLedgerCost = value;
+                get => _contractLedgerCost;
+                set
+                {
+                    _contractLedgerCost = value;
+                }
             }
-        }
+            private ConfigSettingContractLedgerCostV0 _contractLedgerCost;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
-        private ConfigSettingContractHistoricalDataV0 _contractHistoricalData;
-        public ConfigSettingContractHistoricalDataV0 contractHistoricalData
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractHistoricalDataV0Case : ConfigSettingEntry
         {
-            get => _contractHistoricalData;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
+            public ConfigSettingContractHistoricalDataV0 contractHistoricalData
             {
-                _contractHistoricalData = value;
+                get => _contractHistoricalData;
+                set
+                {
+                    _contractHistoricalData = value;
+                }
             }
-        }
+            private ConfigSettingContractHistoricalDataV0 _contractHistoricalData;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EVENTS_V0 : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
-        private ConfigSettingContractEventsV0 _contractEvents;
-        public ConfigSettingContractEventsV0 contractEvents
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractEventsV0Case : ConfigSettingEntry
         {
-            get => _contractEvents;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
+            public ConfigSettingContractEventsV0 contractEvents
             {
-                _contractEvents = value;
+                get => _contractEvents;
+                set
+                {
+                    _contractEvents = value;
+                }
             }
-        }
+            private ConfigSettingContractEventsV0 _contractEvents;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
-        private ConfigSettingContractBandwidthV0 _contractBandwidth;
-        public ConfigSettingContractBandwidthV0 contractBandwidth
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractBandwidthV0Case : ConfigSettingEntry
         {
-            get => _contractBandwidth;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
+            public ConfigSettingContractBandwidthV0 contractBandwidth
             {
-                _contractBandwidth = value;
+                get => _contractBandwidth;
+                set
+                {
+                    _contractBandwidth = value;
+                }
             }
-        }
+            private ConfigSettingContractBandwidthV0 _contractBandwidth;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
-        private ContractCostParams _contractCostParamsCpuInsns;
-        public ContractCostParams contractCostParamsCpuInsns
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractCostParamsCpuInstructions : ConfigSettingEntry
         {
-            get => _contractCostParamsCpuInsns;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
+            public ContractCostParams contractCostParamsCpuInsns
             {
-                _contractCostParamsCpuInsns = value;
+                get => _contractCostParamsCpuInsns;
+                set
+                {
+                    _contractCostParamsCpuInsns = value;
+                }
             }
-        }
+            private ContractCostParams _contractCostParamsCpuInsns;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
-        private ContractCostParams _contractCostParamsMemBytes;
-        public ContractCostParams contractCostParamsMemBytes
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractCostParamsMemoryBytes : ConfigSettingEntry
         {
-            get => _contractCostParamsMemBytes;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
+            public ContractCostParams contractCostParamsMemBytes
             {
-                _contractCostParamsMemBytes = value;
+                get => _contractCostParamsMemBytes;
+                set
+                {
+                    _contractCostParamsMemBytes = value;
+                }
             }
-        }
+            private ContractCostParams _contractCostParamsMemBytes;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
-        private uint32 _contractDataKeySizeBytes;
-        public uint32 contractDataKeySizeBytes
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractDataKeySizeBytes : ConfigSettingEntry
         {
-            get => _contractDataKeySizeBytes;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
+            public uint32 contractDataKeySizeBytes
             {
-                _contractDataKeySizeBytes = value;
+                get => _contractDataKeySizeBytes;
+                set
+                {
+                    _contractDataKeySizeBytes = value;
+                }
             }
-        }
+            private uint32 _contractDataKeySizeBytes;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
-        private uint32 _contractDataEntrySizeBytes;
-        public uint32 contractDataEntrySizeBytes
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractDataEntrySizeBytes : ConfigSettingEntry
         {
-            get => _contractDataEntrySizeBytes;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
+            public uint32 contractDataEntrySizeBytes
             {
-                _contractDataEntrySizeBytes = value;
+                get => _contractDataEntrySizeBytes;
+                set
+                {
+                    _contractDataEntrySizeBytes = value;
+                }
             }
-        }
+            private uint32 _contractDataEntrySizeBytes;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_STATE_ARCHIVAL : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
-        private StateArchivalSettings _stateArchivalSettings;
-        public StateArchivalSettings stateArchivalSettings
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingStateArchival : ConfigSettingEntry
         {
-            get => _stateArchivalSettings;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
+            public StateArchivalSettings stateArchivalSettings
             {
-                _stateArchivalSettings = value;
+                get => _stateArchivalSettings;
+                set
+                {
+                    _stateArchivalSettings = value;
+                }
             }
-        }
+            private StateArchivalSettings _stateArchivalSettings;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EXECUTION_LANES : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
-        private ConfigSettingContractExecutionLanesV0 _contractExecutionLanes;
-        public ConfigSettingContractExecutionLanesV0 contractExecutionLanes
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingContractExecutionLanes : ConfigSettingEntry
         {
-            get => _contractExecutionLanes;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
+            public ConfigSettingContractExecutionLanesV0 contractExecutionLanes
             {
-                _contractExecutionLanes = value;
+                get => _contractExecutionLanes;
+                set
+                {
+                    _contractExecutionLanes = value;
+                }
             }
-        }
+            private ConfigSettingContractExecutionLanesV0 _contractExecutionLanes;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
-        private uint64[] _bucketListSizeWindow;
-        public uint64[] bucketListSizeWindow
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingBucketlistSizeWindow : ConfigSettingEntry
         {
-            get => _bucketListSizeWindow;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
+            public uint64[] bucketListSizeWindow
             {
-                _bucketListSizeWindow = value;
+                get => _bucketListSizeWindow;
+                set
+                {
+                    _bucketListSizeWindow = value;
+                }
             }
-        }
+            private uint64[] _bucketListSizeWindow;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ConfigSettingEntry_CONFIG_SETTING_EVICTION_ITERATOR : ConfigSettingEntry
-    {
-        public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;
-        private EvictionIterator _evictionIterator;
-        public EvictionIterator evictionIterator
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ConfigSettingEvictionIterator : ConfigSettingEntry
         {
-            get => _evictionIterator;
-            set
+            public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;
+            public EvictionIterator evictionIterator
             {
-                _evictionIterator = value;
+                get => _evictionIterator;
+                set
+                {
+                    _evictionIterator = value;
+                }
             }
-        }
+            private EvictionIterator _evictionIterator;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ConfigSettingEntryXdr
     {
@@ -276,50 +276,50 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES case_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:
+                case ConfigSettingEntry.ConfigSettingContractMaxSizeBytes case_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:
                 uint32Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES.contractMaxSizeBytes);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COMPUTE_V0 case_CONFIG_SETTING_CONTRACT_COMPUTE_V0:
+                case ConfigSettingEntry.ConfigSettingContractComputeV0Case case_CONFIG_SETTING_CONTRACT_COMPUTE_V0:
                 ConfigSettingContractComputeV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_COMPUTE_V0.contractCompute);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 case_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0:
+                case ConfigSettingEntry.ConfigSettingContractLedgerCostV0Case case_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0:
                 ConfigSettingContractLedgerCostV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0.contractLedgerCost);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 case_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0:
+                case ConfigSettingEntry.ConfigSettingContractHistoricalDataV0Case case_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0:
                 ConfigSettingContractHistoricalDataV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0.contractHistoricalData);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EVENTS_V0 case_CONFIG_SETTING_CONTRACT_EVENTS_V0:
+                case ConfigSettingEntry.ConfigSettingContractEventsV0Case case_CONFIG_SETTING_CONTRACT_EVENTS_V0:
                 ConfigSettingContractEventsV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_EVENTS_V0.contractEvents);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 case_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0:
+                case ConfigSettingEntry.ConfigSettingContractBandwidthV0Case case_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0:
                 ConfigSettingContractBandwidthV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0.contractBandwidth);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS case_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS:
+                case ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions case_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS:
                 ContractCostParamsXdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS.contractCostParamsCpuInsns);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES case_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES:
+                case ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes case_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES:
                 ContractCostParamsXdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES.contractCostParamsMemBytes);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES case_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES:
+                case ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes case_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES:
                 uint32Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES.contractDataKeySizeBytes);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES case_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES:
+                case ConfigSettingEntry.ConfigSettingContractDataEntrySizeBytes case_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES:
                 uint32Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES.contractDataEntrySizeBytes);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_STATE_ARCHIVAL case_CONFIG_SETTING_STATE_ARCHIVAL:
+                case ConfigSettingEntry.ConfigSettingStateArchival case_CONFIG_SETTING_STATE_ARCHIVAL:
                 StateArchivalSettingsXdr.Encode(stream, case_CONFIG_SETTING_STATE_ARCHIVAL.stateArchivalSettings);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EXECUTION_LANES case_CONFIG_SETTING_CONTRACT_EXECUTION_LANES:
+                case ConfigSettingEntry.ConfigSettingContractExecutionLanes case_CONFIG_SETTING_CONTRACT_EXECUTION_LANES:
                 ConfigSettingContractExecutionLanesV0Xdr.Encode(stream, case_CONFIG_SETTING_CONTRACT_EXECUTION_LANES.contractExecutionLanes);
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW case_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
+                case ConfigSettingEntry.ConfigSettingBucketlistSizeWindow case_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
                 stream.WriteInt(case_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow.Length);
                 foreach (var item in case_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow)
                 {
                         uint64Xdr.Encode(stream, item);
                 }
                 break;
-                case ConfigSettingEntry_CONFIG_SETTING_EVICTION_ITERATOR case_CONFIG_SETTING_EVICTION_ITERATOR:
+                case ConfigSettingEntry.ConfigSettingEvictionIterator case_CONFIG_SETTING_EVICTION_ITERATOR:
                 EvictionIteratorXdr.Encode(stream, case_CONFIG_SETTING_EVICTION_ITERATOR.evictionIterator);
                 break;
             }
@@ -330,55 +330,55 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES:
-                var result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES();
+                var result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES = new ConfigSettingEntry.ConfigSettingContractMaxSizeBytes();
                 result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES.contractMaxSizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0:
-                var result_CONFIG_SETTING_CONTRACT_COMPUTE_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COMPUTE_V0();
+                var result_CONFIG_SETTING_CONTRACT_COMPUTE_V0 = new ConfigSettingEntry.ConfigSettingContractComputeV0Case();
                 result_CONFIG_SETTING_CONTRACT_COMPUTE_V0.contractCompute = ConfigSettingContractComputeV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COMPUTE_V0;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0:
-                var result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0();
+                var result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 = new ConfigSettingEntry.ConfigSettingContractLedgerCostV0Case();
                 result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0.contractLedgerCost = ConfigSettingContractLedgerCostV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0:
-                var result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0();
+                var result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 = new ConfigSettingEntry.ConfigSettingContractHistoricalDataV0Case();
                 result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0.contractHistoricalData = ConfigSettingContractHistoricalDataV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0:
-                var result_CONFIG_SETTING_CONTRACT_EVENTS_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EVENTS_V0();
+                var result_CONFIG_SETTING_CONTRACT_EVENTS_V0 = new ConfigSettingEntry.ConfigSettingContractEventsV0Case();
                 result_CONFIG_SETTING_CONTRACT_EVENTS_V0.contractEvents = ConfigSettingContractEventsV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_EVENTS_V0;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0:
-                var result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0();
+                var result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 = new ConfigSettingEntry.ConfigSettingContractBandwidthV0Case();
                 result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0.contractBandwidth = ConfigSettingContractBandwidthV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS:
-                var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS();
+                var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS = new ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions();
                 result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS.contractCostParamsCpuInsns = ContractCostParamsXdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES:
-                var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES();
+                var result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES = new ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes();
                 result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES.contractCostParamsMemBytes = ContractCostParamsXdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES:
-                var result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES();
+                var result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES = new ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes();
                 result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES.contractDataKeySizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES:
-                var result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES();
+                var result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES = new ConfigSettingEntry.ConfigSettingContractDataEntrySizeBytes();
                 result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES.contractDataEntrySizeBytes = uint32Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
                 case ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL:
-                var result_CONFIG_SETTING_STATE_ARCHIVAL = new ConfigSettingEntry_CONFIG_SETTING_STATE_ARCHIVAL();
+                var result_CONFIG_SETTING_STATE_ARCHIVAL = new ConfigSettingEntry.ConfigSettingStateArchival();
                 result_CONFIG_SETTING_STATE_ARCHIVAL.stateArchivalSettings = StateArchivalSettingsXdr.Decode(stream);
                 return result_CONFIG_SETTING_STATE_ARCHIVAL;
                 case ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES:
-                var result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES = new ConfigSettingEntry_CONFIG_SETTING_CONTRACT_EXECUTION_LANES();
+                var result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES = new ConfigSettingEntry.ConfigSettingContractExecutionLanes();
                 result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES.contractExecutionLanes = ConfigSettingContractExecutionLanesV0Xdr.Decode(stream);
                 return result_CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
                 case ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW:
-                var result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW = new ConfigSettingEntry_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW();
+                var result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW = new ConfigSettingEntry.ConfigSettingBucketlistSizeWindow();
                 {
                     var length = stream.ReadInt();
                     result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW.bucketListSizeWindow = new uint64[length];
@@ -389,7 +389,7 @@ namespace Stellar.XDR {
                 }
                 return result_CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
                 case ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR:
-                var result_CONFIG_SETTING_EVICTION_ITERATOR = new ConfigSettingEntry_CONFIG_SETTING_EVICTION_ITERATOR();
+                var result_CONFIG_SETTING_EVICTION_ITERATOR = new ConfigSettingEntry.ConfigSettingEvictionIterator();
                 result_CONFIG_SETTING_EVICTION_ITERATOR.evictionIterator = EvictionIteratorXdr.Decode(stream);
                 return result_CONFIG_SETTING_EVICTION_ITERATOR;
                 default:

@@ -9,10 +9,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// 5-12 alphanumeric characters right-padded with 0 bytes
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AssetCode12
     {
-        private byte[] _innerValue = new byte[12];
         public byte[] InnerValue
         {
             get => _innerValue;
@@ -23,6 +25,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private byte[] _innerValue = new byte[12];
 
         public AssetCode12() { }
 

@@ -23,18 +23,18 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class BumpSequenceResult_BUMP_SEQUENCE_SUCCESS : BumpSequenceResult
-    {
-        public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
+        public sealed partial class BumpSequenceSuccess : BumpSequenceResult
+        {
+            public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BumpSequenceResult_BUMP_SEQUENCE_BAD_SEQ : BumpSequenceResult
-    {
-        public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class BumpSequenceBadSeq : BumpSequenceResult
+        {
+            public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class BumpSequenceResultXdr
     {
@@ -54,9 +54,9 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case BumpSequenceResult_BUMP_SEQUENCE_SUCCESS case_BUMP_SEQUENCE_SUCCESS:
+                case BumpSequenceResult.BumpSequenceSuccess case_BUMP_SEQUENCE_SUCCESS:
                 break;
-                case BumpSequenceResult_BUMP_SEQUENCE_BAD_SEQ case_BUMP_SEQUENCE_BAD_SEQ:
+                case BumpSequenceResult.BumpSequenceBadSeq case_BUMP_SEQUENCE_BAD_SEQ:
                 break;
             }
         }
@@ -66,10 +66,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS:
-                var result_BUMP_SEQUENCE_SUCCESS = new BumpSequenceResult_BUMP_SEQUENCE_SUCCESS();
+                var result_BUMP_SEQUENCE_SUCCESS = new BumpSequenceResult.BumpSequenceSuccess();
                 return result_BUMP_SEQUENCE_SUCCESS;
                 case BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ:
-                var result_BUMP_SEQUENCE_BAD_SEQ = new BumpSequenceResult_BUMP_SEQUENCE_BAD_SEQ();
+                var result_BUMP_SEQUENCE_BAD_SEQ = new BumpSequenceResult.BumpSequenceBadSeq();
                 return result_BUMP_SEQUENCE_BAD_SEQ;
                 default:
                 throw new Exception($"Unknown discriminator for BumpSequenceResult: {discriminator}");

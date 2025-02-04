@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SendMoreExtended
     {
-        private uint32 _numMessages;
         public uint32 numMessages
         {
             get => _numMessages;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _numMessages = value;
             }
         }
+        private uint32 _numMessages;
 
-        private uint32 _numBytes;
         public uint32 numBytes
         {
             get => _numBytes;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _numBytes = value;
             }
         }
+        private uint32 _numBytes;
 
         public SendMoreExtended()
         {

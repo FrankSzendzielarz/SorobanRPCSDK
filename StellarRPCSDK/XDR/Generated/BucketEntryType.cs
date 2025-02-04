@@ -17,11 +17,20 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Entries used to define the bucket list
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum BucketEntryType
     {
         METAENTRY = -1,
+        /// <summary>
+        /// At-and-after protocol 11: bucket metadata, should come first.
+        /// </summary>
         LIVEENTRY = 0,
+        /// <summary>
+        /// At-and-after protocol 11: only updated.
+        /// </summary>
         DEADENTRY = 1,
         INITENTRY = 2,
     }

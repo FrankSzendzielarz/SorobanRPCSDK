@@ -25,7 +25,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClaimOfferAtom
     {
-        private AccountID _sellerID;
+        /// <summary>
+        /// emitted to identify the offer
+        /// </summary>
         public AccountID sellerID
         {
             get => _sellerID;
@@ -34,8 +36,11 @@ namespace Stellar.XDR {
                 _sellerID = value;
             }
         }
+        private AccountID _sellerID;
 
-        private int64 _offerID;
+        /// <summary>
+        /// Account that owns the offer
+        /// </summary>
         public int64 offerID
         {
             get => _offerID;
@@ -44,8 +49,11 @@ namespace Stellar.XDR {
                 _offerID = value;
             }
         }
+        private int64 _offerID;
 
-        private Asset _assetSold;
+        /// <summary>
+        /// amount and asset taken from the owner
+        /// </summary>
         public Asset assetSold
         {
             get => _assetSold;
@@ -54,8 +62,8 @@ namespace Stellar.XDR {
                 _assetSold = value;
             }
         }
+        private Asset _assetSold;
 
-        private int64 _amountSold;
         public int64 amountSold
         {
             get => _amountSold;
@@ -64,8 +72,11 @@ namespace Stellar.XDR {
                 _amountSold = value;
             }
         }
+        private int64 _amountSold;
 
-        private Asset _assetBought;
+        /// <summary>
+        /// amount and asset sent to the owner
+        /// </summary>
         public Asset assetBought
         {
             get => _assetBought;
@@ -74,8 +85,8 @@ namespace Stellar.XDR {
                 _assetBought = value;
             }
         }
+        private Asset _assetBought;
 
-        private int64 _amountBought;
         public int64 amountBought
         {
             get => _amountBought;
@@ -84,6 +95,7 @@ namespace Stellar.XDR {
                 _amountBought = value;
             }
         }
+        private int64 _amountBought;
 
         public ClaimOfferAtom()
         {

@@ -29,63 +29,84 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_SUCCESS : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS;
-        private int64 _sourceAccountBalance;
-        public int64 sourceAccountBalance
+        public sealed partial class AccountMergeSuccess : AccountMergeResult
         {
-            get => _sourceAccountBalance;
-            set
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS;
+            public int64 sourceAccountBalance
             {
-                _sourceAccountBalance = value;
+                get => _sourceAccountBalance;
+                set
+                {
+                    _sourceAccountBalance = value;
+                }
             }
+            private int64 _sourceAccountBalance;
+
+            public override void ValidateCase() {}
         }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeMalformed : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_MALFORMED : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeNoAccount : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_NO_ACCOUNT : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeImmutableSet : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_IMMUTABLE_SET : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeHasSubEntries : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_HAS_SUB_ENTRIES : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeSeqnumTooFar : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_SEQNUM_TOO_FAR : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeDestFull : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_DEST_FULL : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL;
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// how much got transferred from source account
+        /// </summary>
+        public sealed partial class AccountMergeIsSponsor : AccountMergeResult
+        {
+            public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class AccountMergeResult_ACCOUNT_MERGE_IS_SPONSOR : AccountMergeResult
-    {
-        public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR;
-
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class AccountMergeResultXdr
     {
@@ -105,22 +126,22 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case AccountMergeResult_ACCOUNT_MERGE_SUCCESS case_ACCOUNT_MERGE_SUCCESS:
+                case AccountMergeResult.AccountMergeSuccess case_ACCOUNT_MERGE_SUCCESS:
                 int64Xdr.Encode(stream, case_ACCOUNT_MERGE_SUCCESS.sourceAccountBalance);
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_MALFORMED case_ACCOUNT_MERGE_MALFORMED:
+                case AccountMergeResult.AccountMergeMalformed case_ACCOUNT_MERGE_MALFORMED:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_NO_ACCOUNT case_ACCOUNT_MERGE_NO_ACCOUNT:
+                case AccountMergeResult.AccountMergeNoAccount case_ACCOUNT_MERGE_NO_ACCOUNT:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_IMMUTABLE_SET case_ACCOUNT_MERGE_IMMUTABLE_SET:
+                case AccountMergeResult.AccountMergeImmutableSet case_ACCOUNT_MERGE_IMMUTABLE_SET:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_HAS_SUB_ENTRIES case_ACCOUNT_MERGE_HAS_SUB_ENTRIES:
+                case AccountMergeResult.AccountMergeHasSubEntries case_ACCOUNT_MERGE_HAS_SUB_ENTRIES:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_SEQNUM_TOO_FAR case_ACCOUNT_MERGE_SEQNUM_TOO_FAR:
+                case AccountMergeResult.AccountMergeSeqnumTooFar case_ACCOUNT_MERGE_SEQNUM_TOO_FAR:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_DEST_FULL case_ACCOUNT_MERGE_DEST_FULL:
+                case AccountMergeResult.AccountMergeDestFull case_ACCOUNT_MERGE_DEST_FULL:
                 break;
-                case AccountMergeResult_ACCOUNT_MERGE_IS_SPONSOR case_ACCOUNT_MERGE_IS_SPONSOR:
+                case AccountMergeResult.AccountMergeIsSponsor case_ACCOUNT_MERGE_IS_SPONSOR:
                 break;
             }
         }
@@ -130,29 +151,29 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS:
-                var result_ACCOUNT_MERGE_SUCCESS = new AccountMergeResult_ACCOUNT_MERGE_SUCCESS();
+                var result_ACCOUNT_MERGE_SUCCESS = new AccountMergeResult.AccountMergeSuccess();
                 result_ACCOUNT_MERGE_SUCCESS.sourceAccountBalance = int64Xdr.Decode(stream);
                 return result_ACCOUNT_MERGE_SUCCESS;
                 case AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED:
-                var result_ACCOUNT_MERGE_MALFORMED = new AccountMergeResult_ACCOUNT_MERGE_MALFORMED();
+                var result_ACCOUNT_MERGE_MALFORMED = new AccountMergeResult.AccountMergeMalformed();
                 return result_ACCOUNT_MERGE_MALFORMED;
                 case AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT:
-                var result_ACCOUNT_MERGE_NO_ACCOUNT = new AccountMergeResult_ACCOUNT_MERGE_NO_ACCOUNT();
+                var result_ACCOUNT_MERGE_NO_ACCOUNT = new AccountMergeResult.AccountMergeNoAccount();
                 return result_ACCOUNT_MERGE_NO_ACCOUNT;
                 case AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET:
-                var result_ACCOUNT_MERGE_IMMUTABLE_SET = new AccountMergeResult_ACCOUNT_MERGE_IMMUTABLE_SET();
+                var result_ACCOUNT_MERGE_IMMUTABLE_SET = new AccountMergeResult.AccountMergeImmutableSet();
                 return result_ACCOUNT_MERGE_IMMUTABLE_SET;
                 case AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES:
-                var result_ACCOUNT_MERGE_HAS_SUB_ENTRIES = new AccountMergeResult_ACCOUNT_MERGE_HAS_SUB_ENTRIES();
+                var result_ACCOUNT_MERGE_HAS_SUB_ENTRIES = new AccountMergeResult.AccountMergeHasSubEntries();
                 return result_ACCOUNT_MERGE_HAS_SUB_ENTRIES;
                 case AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR:
-                var result_ACCOUNT_MERGE_SEQNUM_TOO_FAR = new AccountMergeResult_ACCOUNT_MERGE_SEQNUM_TOO_FAR();
+                var result_ACCOUNT_MERGE_SEQNUM_TOO_FAR = new AccountMergeResult.AccountMergeSeqnumTooFar();
                 return result_ACCOUNT_MERGE_SEQNUM_TOO_FAR;
                 case AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL:
-                var result_ACCOUNT_MERGE_DEST_FULL = new AccountMergeResult_ACCOUNT_MERGE_DEST_FULL();
+                var result_ACCOUNT_MERGE_DEST_FULL = new AccountMergeResult.AccountMergeDestFull();
                 return result_ACCOUNT_MERGE_DEST_FULL;
                 case AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR:
-                var result_ACCOUNT_MERGE_IS_SPONSOR = new AccountMergeResult_ACCOUNT_MERGE_IS_SPONSOR();
+                var result_ACCOUNT_MERGE_IS_SPONSOR = new AccountMergeResult.AccountMergeIsSponsor();
                 return result_ACCOUNT_MERGE_IS_SPONSOR;
                 default:
                 throw new Exception($"Unknown discriminator for AccountMergeResult: {discriminator}");

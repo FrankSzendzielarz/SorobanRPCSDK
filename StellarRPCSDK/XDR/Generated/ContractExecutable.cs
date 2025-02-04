@@ -23,27 +23,27 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ContractExecutable_CONTRACT_EXECUTABLE_WASM : ContractExecutable
-    {
-        public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_WASM;
-        private Hash _wasm_hash;
-        public Hash wasm_hash
+        public sealed partial class ContractExecutableWasm : ContractExecutable
         {
-            get => _wasm_hash;
-            set
+            public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_WASM;
+            public Hash wasm_hash
             {
-                _wasm_hash = value;
+                get => _wasm_hash;
+                set
+                {
+                    _wasm_hash = value;
+                }
             }
+            private Hash _wasm_hash;
+
+            public override void ValidateCase() {}
         }
+        public sealed partial class ContractExecutableStellarAsset : ContractExecutable
+        {
+            public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ContractExecutable_CONTRACT_EXECUTABLE_STELLAR_ASSET : ContractExecutable
-    {
-        public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET;
-
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ContractExecutableXdr
     {
@@ -63,10 +63,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ContractExecutable_CONTRACT_EXECUTABLE_WASM case_CONTRACT_EXECUTABLE_WASM:
+                case ContractExecutable.ContractExecutableWasm case_CONTRACT_EXECUTABLE_WASM:
                 HashXdr.Encode(stream, case_CONTRACT_EXECUTABLE_WASM.wasm_hash);
                 break;
-                case ContractExecutable_CONTRACT_EXECUTABLE_STELLAR_ASSET case_CONTRACT_EXECUTABLE_STELLAR_ASSET:
+                case ContractExecutable.ContractExecutableStellarAsset case_CONTRACT_EXECUTABLE_STELLAR_ASSET:
                 break;
             }
         }
@@ -76,11 +76,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ContractExecutableType.CONTRACT_EXECUTABLE_WASM:
-                var result_CONTRACT_EXECUTABLE_WASM = new ContractExecutable_CONTRACT_EXECUTABLE_WASM();
+                var result_CONTRACT_EXECUTABLE_WASM = new ContractExecutable.ContractExecutableWasm();
                 result_CONTRACT_EXECUTABLE_WASM.wasm_hash = HashXdr.Decode(stream);
                 return result_CONTRACT_EXECUTABLE_WASM;
                 case ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET:
-                var result_CONTRACT_EXECUTABLE_STELLAR_ASSET = new ContractExecutable_CONTRACT_EXECUTABLE_STELLAR_ASSET();
+                var result_CONTRACT_EXECUTABLE_STELLAR_ASSET = new ContractExecutable.ContractExecutableStellarAsset();
                 return result_CONTRACT_EXECUTABLE_STELLAR_ASSET;
                 default:
                 throw new Exception($"Unknown discriminator for ContractExecutable: {discriminator}");

@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedSurveyResponseMessage
     {
-        private SurveyResponseMessage _response;
         public SurveyResponseMessage response
         {
             get => _response;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _response = value;
             }
         }
+        private SurveyResponseMessage _response;
 
-        private uint32 _nonce;
         public uint32 nonce
         {
             get => _nonce;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private uint32 _nonce;
 
         public TimeSlicedSurveyResponseMessage()
         {

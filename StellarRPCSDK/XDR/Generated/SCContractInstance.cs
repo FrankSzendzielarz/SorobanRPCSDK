@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCContractInstance
     {
-        private ContractExecutable _executable;
         public ContractExecutable executable
         {
             get => _executable;
@@ -24,8 +23,8 @@ namespace Stellar.XDR {
                 _executable = value;
             }
         }
+        private ContractExecutable _executable;
 
-        private SCMap _storage;
         public SCMap storage
         {
             get => _storage;
@@ -34,6 +33,7 @@ namespace Stellar.XDR {
                 _storage = value;
             }
         }
+        private SCMap _storage;
 
         public SCContractInstance()
         {

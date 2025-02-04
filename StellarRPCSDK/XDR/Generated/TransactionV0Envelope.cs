@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionV0Envelope
     {
-        private TransactionV0 _tx;
         public TransactionV0 tx
         {
             get => _tx;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _tx = value;
             }
         }
+        private TransactionV0 _tx;
 
-        private DecoratedSignature[] _signatures;
         public DecoratedSignature[] signatures
         {
             get => _signatures;
@@ -39,6 +38,7 @@ namespace Stellar.XDR {
                 _signatures = value;
             }
         }
+        private DecoratedSignature[] _signatures;
 
         public TransactionV0Envelope()
         {

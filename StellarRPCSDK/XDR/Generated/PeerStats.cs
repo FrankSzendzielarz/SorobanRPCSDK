@@ -31,7 +31,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PeerStats
     {
-        private NodeID _id;
         public NodeID id
         {
             get => _id;
@@ -40,8 +39,8 @@ namespace Stellar.XDR {
                 _id = value;
             }
         }
+        private NodeID _id;
 
-        private string _versionStr;
         public string versionStr
         {
             get => _versionStr;
@@ -52,8 +51,8 @@ namespace Stellar.XDR {
                 _versionStr = value;
             }
         }
+        private string _versionStr;
 
-        private uint64 _messagesRead;
         public uint64 messagesRead
         {
             get => _messagesRead;
@@ -62,8 +61,8 @@ namespace Stellar.XDR {
                 _messagesRead = value;
             }
         }
+        private uint64 _messagesRead;
 
-        private uint64 _messagesWritten;
         public uint64 messagesWritten
         {
             get => _messagesWritten;
@@ -72,8 +71,8 @@ namespace Stellar.XDR {
                 _messagesWritten = value;
             }
         }
+        private uint64 _messagesWritten;
 
-        private uint64 _bytesRead;
         public uint64 bytesRead
         {
             get => _bytesRead;
@@ -82,8 +81,8 @@ namespace Stellar.XDR {
                 _bytesRead = value;
             }
         }
+        private uint64 _bytesRead;
 
-        private uint64 _bytesWritten;
         public uint64 bytesWritten
         {
             get => _bytesWritten;
@@ -92,8 +91,8 @@ namespace Stellar.XDR {
                 _bytesWritten = value;
             }
         }
+        private uint64 _bytesWritten;
 
-        private uint64 _secondsConnected;
         public uint64 secondsConnected
         {
             get => _secondsConnected;
@@ -102,8 +101,8 @@ namespace Stellar.XDR {
                 _secondsConnected = value;
             }
         }
+        private uint64 _secondsConnected;
 
-        private uint64 _uniqueFloodBytesRecv;
         public uint64 uniqueFloodBytesRecv
         {
             get => _uniqueFloodBytesRecv;
@@ -112,8 +111,8 @@ namespace Stellar.XDR {
                 _uniqueFloodBytesRecv = value;
             }
         }
+        private uint64 _uniqueFloodBytesRecv;
 
-        private uint64 _duplicateFloodBytesRecv;
         public uint64 duplicateFloodBytesRecv
         {
             get => _duplicateFloodBytesRecv;
@@ -122,8 +121,8 @@ namespace Stellar.XDR {
                 _duplicateFloodBytesRecv = value;
             }
         }
+        private uint64 _duplicateFloodBytesRecv;
 
-        private uint64 _uniqueFetchBytesRecv;
         public uint64 uniqueFetchBytesRecv
         {
             get => _uniqueFetchBytesRecv;
@@ -132,8 +131,8 @@ namespace Stellar.XDR {
                 _uniqueFetchBytesRecv = value;
             }
         }
+        private uint64 _uniqueFetchBytesRecv;
 
-        private uint64 _duplicateFetchBytesRecv;
         public uint64 duplicateFetchBytesRecv
         {
             get => _duplicateFetchBytesRecv;
@@ -142,8 +141,8 @@ namespace Stellar.XDR {
                 _duplicateFetchBytesRecv = value;
             }
         }
+        private uint64 _duplicateFetchBytesRecv;
 
-        private uint64 _uniqueFloodMessageRecv;
         public uint64 uniqueFloodMessageRecv
         {
             get => _uniqueFloodMessageRecv;
@@ -152,8 +151,8 @@ namespace Stellar.XDR {
                 _uniqueFloodMessageRecv = value;
             }
         }
+        private uint64 _uniqueFloodMessageRecv;
 
-        private uint64 _duplicateFloodMessageRecv;
         public uint64 duplicateFloodMessageRecv
         {
             get => _duplicateFloodMessageRecv;
@@ -162,8 +161,8 @@ namespace Stellar.XDR {
                 _duplicateFloodMessageRecv = value;
             }
         }
+        private uint64 _duplicateFloodMessageRecv;
 
-        private uint64 _uniqueFetchMessageRecv;
         public uint64 uniqueFetchMessageRecv
         {
             get => _uniqueFetchMessageRecv;
@@ -172,8 +171,8 @@ namespace Stellar.XDR {
                 _uniqueFetchMessageRecv = value;
             }
         }
+        private uint64 _uniqueFetchMessageRecv;
 
-        private uint64 _duplicateFetchMessageRecv;
         public uint64 duplicateFetchMessageRecv
         {
             get => _duplicateFetchMessageRecv;
@@ -182,6 +181,7 @@ namespace Stellar.XDR {
                 _duplicateFetchMessageRecv = value;
             }
         }
+        private uint64 _duplicateFetchMessageRecv;
 
         public PeerStats()
         {

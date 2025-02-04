@@ -25,7 +25,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class DataEntry
     {
-        private AccountID _accountID;
         public AccountID accountID
         {
             get => _accountID;
@@ -34,8 +33,11 @@ namespace Stellar.XDR {
                 _accountID = value;
             }
         }
+        private AccountID _accountID;
 
-        private string64 _dataName;
+        /// <summary>
+        /// account this data belongs to
+        /// </summary>
         public string64 dataName
         {
             get => _dataName;
@@ -44,8 +46,8 @@ namespace Stellar.XDR {
                 _dataName = value;
             }
         }
+        private string64 _dataName;
 
-        private DataValue _dataValue;
         public DataValue dataValue
         {
             get => _dataValue;
@@ -54,8 +56,11 @@ namespace Stellar.XDR {
                 _dataValue = value;
             }
         }
+        private DataValue _dataValue;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -64,6 +69,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public DataEntry()
         {
@@ -80,12 +86,12 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
+            public sealed partial class case_0 : extUnion
+            {
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -105,7 +111,7 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
                 }
             }
@@ -115,7 +121,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");

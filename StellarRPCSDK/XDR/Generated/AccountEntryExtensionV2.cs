@@ -26,7 +26,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AccountEntryExtensionV2
     {
-        private uint32 _numSponsored;
         public uint32 numSponsored
         {
             get => _numSponsored;
@@ -35,8 +34,8 @@ namespace Stellar.XDR {
                 _numSponsored = value;
             }
         }
+        private uint32 _numSponsored;
 
-        private uint32 _numSponsoring;
         public uint32 numSponsoring
         {
             get => _numSponsoring;
@@ -45,8 +44,8 @@ namespace Stellar.XDR {
                 _numSponsoring = value;
             }
         }
+        private uint32 _numSponsoring;
 
-        private SponsorshipDescriptor[] _signerSponsoringIDs;
         public SponsorshipDescriptor[] signerSponsoringIDs
         {
             get => _signerSponsoringIDs;
@@ -55,8 +54,8 @@ namespace Stellar.XDR {
                 _signerSponsoringIDs = value;
             }
         }
+        private SponsorshipDescriptor[] _signerSponsoringIDs;
 
-        private extUnion _ext;
         public extUnion ext
         {
             get => _ext;
@@ -65,6 +64,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public AccountEntryExtensionV2()
         {
@@ -81,27 +81,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_3 : extUnion
-        {
-            public override int Discriminator => 3;
-            private AccountEntryExtensionV3 _v3;
-            public AccountEntryExtensionV3 v3
+            public sealed partial class case_0 : extUnion
             {
-                get => _v3;
-                set
-                {
-                    _v3 = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_3 : extUnion
+            {
+                public override int Discriminator => 3;
+                public AccountEntryExtensionV3 v3
+                {
+                    get => _v3;
+                    set
+                    {
+                        _v3 = value;
+                    }
+                }
+                private AccountEntryExtensionV3 _v3;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -121,9 +121,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_3 case_3:
+                    case extUnion.case_3 case_3:
                     AccountEntryExtensionV3Xdr.Encode(stream, case_3.v3);
                     break;
                 }
@@ -134,10 +134,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 3:
-                    var result_3 = new extUnion_3();
+                    var result_3 = new extUnion.case_3();
                     result_3.v3 = AccountEntryExtensionV3Xdr.Decode(stream);
                     return result_3;
                     default:

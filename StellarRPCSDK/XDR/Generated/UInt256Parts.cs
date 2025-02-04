@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class UInt256Parts
     {
-        private uint64 _hi_hi;
         public uint64 hi_hi
         {
             get => _hi_hi;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _hi_hi = value;
             }
         }
+        private uint64 _hi_hi;
 
-        private uint64 _hi_lo;
         public uint64 hi_lo
         {
             get => _hi_lo;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _hi_lo = value;
             }
         }
+        private uint64 _hi_lo;
 
-        private uint64 _lo_hi;
         public uint64 lo_hi
         {
             get => _lo_hi;
@@ -46,8 +45,8 @@ namespace Stellar.XDR {
                 _lo_hi = value;
             }
         }
+        private uint64 _lo_hi;
 
-        private uint64 _lo_lo;
         public uint64 lo_lo
         {
             get => _lo_lo;
@@ -56,6 +55,7 @@ namespace Stellar.XDR {
                 _lo_lo = value;
             }
         }
+        private uint64 _lo_lo;
 
         public UInt256Parts()
         {

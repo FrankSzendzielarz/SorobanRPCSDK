@@ -26,30 +26,30 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS : BeginSponsoringFutureReservesResult
-    {
-        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
+        public sealed partial class BeginSponsoringFutureReservesSuccess : BeginSponsoringFutureReservesResult
+        {
+            public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED : BeginSponsoringFutureReservesResult
-    {
-        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class BeginSponsoringFutureReservesMalformed : BeginSponsoringFutureReservesResult
+        {
+            public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED : BeginSponsoringFutureReservesResult
-    {
-        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class BeginSponsoringFutureReservesAlreadySponsored : BeginSponsoringFutureReservesResult
+        {
+            public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE : BeginSponsoringFutureReservesResult
-    {
-        public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class BeginSponsoringFutureReservesRecursive : BeginSponsoringFutureReservesResult
+        {
+            public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class BeginSponsoringFutureReservesResultXdr
     {
@@ -69,13 +69,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS case_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:
+                case BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess case_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:
                 break;
-                case BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED case_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED:
+                case BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesMalformed case_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED:
                 break;
-                case BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED case_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED:
+                case BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesAlreadySponsored case_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED:
                 break;
-                case BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE case_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE:
+                case BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive case_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE:
                 break;
             }
         }
@@ -85,16 +85,16 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS:
-                var result_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS();
+                var result_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS = new BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
                 case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED:
-                var result_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED();
+                var result_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED = new BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesMalformed();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
                 case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED:
-                var result_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED();
+                var result_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED = new BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesAlreadySponsored();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
                 case BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE:
-                var result_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE = new BeginSponsoringFutureReservesResult_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE();
+                var result_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE = new BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive();
                 return result_BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;
                 default:
                 throw new Exception($"Unknown discriminator for BeginSponsoringFutureReservesResult: {discriminator}");

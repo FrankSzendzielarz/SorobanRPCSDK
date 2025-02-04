@@ -32,91 +32,94 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_AND : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
-        private ClaimPredicate[] _andPredicates;
-        public ClaimPredicate[] andPredicates
+        public sealed partial class ClaimPredicateUnconditional : ClaimPredicate
         {
-            get => _andPredicates;
-            set
-            {
-                if (value.Length > 2)
-                	throw new ArgumentException($"Cannot exceed 2 bytes");
-                _andPredicates = value;
-            }
-        }
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_OR : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
-        private ClaimPredicate[] _orPredicates;
-        public ClaimPredicate[] orPredicates
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimPredicateAnd : ClaimPredicate
         {
-            get => _orPredicates;
-            set
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
+            public ClaimPredicate[] andPredicates
             {
-                if (value.Length > 2)
-                	throw new ArgumentException($"Cannot exceed 2 bytes");
-                _orPredicates = value;
+                get => _andPredicates;
+                set
+                {
+                    if (value.Length > 2)
+                    	throw new ArgumentException($"Cannot exceed 2 bytes");
+                    _andPredicates = value;
+                }
             }
-        }
+            private ClaimPredicate[] _andPredicates;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_NOT : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_NOT;
-        private ClaimPredicate _notPredicate;
-        public ClaimPredicate notPredicate
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimPredicateOr : ClaimPredicate
         {
-            get => _notPredicate;
-            set
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
+            public ClaimPredicate[] orPredicates
             {
-                _notPredicate = value;
+                get => _orPredicates;
+                set
+                {
+                    if (value.Length > 2)
+                    	throw new ArgumentException($"Cannot exceed 2 bytes");
+                    _orPredicates = value;
+                }
             }
-        }
+            private ClaimPredicate[] _orPredicates;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
-        private int64 _absBefore;
-        public int64 absBefore
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimPredicateNot : ClaimPredicate
         {
-            get => _absBefore;
-            set
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_NOT;
+            public ClaimPredicate notPredicate
             {
-                _absBefore = value;
+                get => _notPredicate;
+                set
+                {
+                    _notPredicate = value;
+                }
             }
-        }
+            private ClaimPredicate _notPredicate;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimPredicate_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME : ClaimPredicate
-    {
-        public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
-        private int64 _relBefore;
-        public int64 relBefore
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimPredicateBeforeAbsoluteTime : ClaimPredicate
         {
-            get => _relBefore;
-            set
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
+            public int64 absBefore
             {
-                _relBefore = value;
+                get => _absBefore;
+                set
+                {
+                    _absBefore = value;
+                }
             }
-        }
+            private int64 _absBefore;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// Predicate will be true if closeTime < absBefore
+        /// </summary>
+        public sealed partial class ClaimPredicateBeforeRelativeTime : ClaimPredicate
+        {
+            public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
+            public int64 relBefore
+            {
+                get => _relBefore;
+                set
+                {
+                    _relBefore = value;
+                }
+            }
+            private int64 _relBefore;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClaimPredicateXdr
     {
@@ -136,23 +139,23 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL case_CLAIM_PREDICATE_UNCONDITIONAL:
+                case ClaimPredicate.ClaimPredicateUnconditional case_CLAIM_PREDICATE_UNCONDITIONAL:
                 break;
-                case ClaimPredicate_CLAIM_PREDICATE_AND case_CLAIM_PREDICATE_AND:
+                case ClaimPredicate.ClaimPredicateAnd case_CLAIM_PREDICATE_AND:
                 stream.WriteInt(case_CLAIM_PREDICATE_AND.andPredicates.Length);
                 foreach (var item in case_CLAIM_PREDICATE_AND.andPredicates)
                 {
                         ClaimPredicateXdr.Encode(stream, item);
                 }
                 break;
-                case ClaimPredicate_CLAIM_PREDICATE_OR case_CLAIM_PREDICATE_OR:
+                case ClaimPredicate.ClaimPredicateOr case_CLAIM_PREDICATE_OR:
                 stream.WriteInt(case_CLAIM_PREDICATE_OR.orPredicates.Length);
                 foreach (var item in case_CLAIM_PREDICATE_OR.orPredicates)
                 {
                         ClaimPredicateXdr.Encode(stream, item);
                 }
                 break;
-                case ClaimPredicate_CLAIM_PREDICATE_NOT case_CLAIM_PREDICATE_NOT:
+                case ClaimPredicate.ClaimPredicateNot case_CLAIM_PREDICATE_NOT:
                 if (case_CLAIM_PREDICATE_NOT.notPredicate==null){
                 	stream.WriteInt(0);
                 }
@@ -162,10 +165,10 @@ namespace Stellar.XDR {
                     ClaimPredicateXdr.Encode(stream, case_CLAIM_PREDICATE_NOT.notPredicate);
                 }
                 break;
-                case ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME case_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
+                case ClaimPredicate.ClaimPredicateBeforeAbsoluteTime case_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
                 int64Xdr.Encode(stream, case_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME.absBefore);
                 break;
-                case ClaimPredicate_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME case_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME:
+                case ClaimPredicate.ClaimPredicateBeforeRelativeTime case_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME:
                 int64Xdr.Encode(stream, case_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME.relBefore);
                 break;
             }
@@ -176,10 +179,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL:
-                var result_CLAIM_PREDICATE_UNCONDITIONAL = new ClaimPredicate_CLAIM_PREDICATE_UNCONDITIONAL();
+                var result_CLAIM_PREDICATE_UNCONDITIONAL = new ClaimPredicate.ClaimPredicateUnconditional();
                 return result_CLAIM_PREDICATE_UNCONDITIONAL;
                 case ClaimPredicateType.CLAIM_PREDICATE_AND:
-                var result_CLAIM_PREDICATE_AND = new ClaimPredicate_CLAIM_PREDICATE_AND();
+                var result_CLAIM_PREDICATE_AND = new ClaimPredicate.ClaimPredicateAnd();
                 {
                     var length = stream.ReadInt();
                     result_CLAIM_PREDICATE_AND.andPredicates = new ClaimPredicate[length];
@@ -190,7 +193,7 @@ namespace Stellar.XDR {
                 }
                 return result_CLAIM_PREDICATE_AND;
                 case ClaimPredicateType.CLAIM_PREDICATE_OR:
-                var result_CLAIM_PREDICATE_OR = new ClaimPredicate_CLAIM_PREDICATE_OR();
+                var result_CLAIM_PREDICATE_OR = new ClaimPredicate.ClaimPredicateOr();
                 {
                     var length = stream.ReadInt();
                     result_CLAIM_PREDICATE_OR.orPredicates = new ClaimPredicate[length];
@@ -201,18 +204,18 @@ namespace Stellar.XDR {
                 }
                 return result_CLAIM_PREDICATE_OR;
                 case ClaimPredicateType.CLAIM_PREDICATE_NOT:
-                var result_CLAIM_PREDICATE_NOT = new ClaimPredicate_CLAIM_PREDICATE_NOT();
+                var result_CLAIM_PREDICATE_NOT = new ClaimPredicate.ClaimPredicateNot();
                 if (stream.ReadInt()==1)
                 {
                     result_CLAIM_PREDICATE_NOT.notPredicate = ClaimPredicateXdr.Decode(stream);
                 }
                 return result_CLAIM_PREDICATE_NOT;
                 case ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME:
-                var result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME = new ClaimPredicate_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME();
+                var result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME = new ClaimPredicate.ClaimPredicateBeforeAbsoluteTime();
                 result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME.absBefore = int64Xdr.Decode(stream);
                 return result_CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
                 case ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME:
-                var result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME = new ClaimPredicate_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME();
+                var result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME = new ClaimPredicate.ClaimPredicateBeforeRelativeTime();
                 result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME.relBefore = int64Xdr.Decode(stream);
                 return result_CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
                 default:

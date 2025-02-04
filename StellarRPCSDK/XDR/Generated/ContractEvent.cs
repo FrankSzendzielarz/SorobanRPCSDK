@@ -31,7 +31,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractEvent
     {
-        private ExtensionPoint _ext;
+        /// <summary>
+        /// is first, to change ContractEvent into a union.
+        /// </summary>
         public ExtensionPoint ext
         {
             get => _ext;
@@ -40,8 +42,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private Hash _contractID;
         public Hash contractID
         {
             get => _contractID;
@@ -50,8 +52,8 @@ namespace Stellar.XDR {
                 _contractID = value;
             }
         }
+        private Hash _contractID;
 
-        private ContractEventType _type;
         public ContractEventType type
         {
             get => _type;
@@ -60,8 +62,8 @@ namespace Stellar.XDR {
                 _type = value;
             }
         }
+        private ContractEventType _type;
 
-        private bodyUnion _body;
         public bodyUnion body
         {
             get => _body;
@@ -70,6 +72,7 @@ namespace Stellar.XDR {
                 _body = value;
             }
         }
+        private bodyUnion _body;
 
         public ContractEvent()
         {
@@ -89,7 +92,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class v0Struct
             {
-                private SCVal[] _topics;
                 public SCVal[] topics
                 {
                     get => _topics;
@@ -98,8 +100,8 @@ namespace Stellar.XDR {
                         _topics = value;
                     }
                 }
+                private SCVal[] _topics;
 
-                private SCVal _data;
                 public SCVal data
                 {
                     get => _data;
@@ -108,6 +110,7 @@ namespace Stellar.XDR {
                         _data = value;
                     }
                 }
+                private SCVal _data;
 
                 public v0Struct()
                 {
@@ -156,21 +159,21 @@ namespace Stellar.XDR {
                     return result;
                 }
             }
-        }
-        public sealed partial class bodyUnion_0 : bodyUnion
-        {
-            public override int Discriminator => 0;
-            private v0Struct _v0;
-            public v0Struct v0
+            public sealed partial class case_0 : bodyUnion
             {
-                get => _v0;
-                set
+                public override int Discriminator => 0;
+                public v0Struct v0
                 {
-                    _v0 = value;
+                    get => _v0;
+                    set
+                    {
+                        _v0 = value;
+                    }
                 }
-            }
+                private v0Struct _v0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class bodyUnionXdr
         {
@@ -190,7 +193,7 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case bodyUnion_0 case_0:
+                    case bodyUnion.case_0 case_0:
                     bodyUnion.v0StructXdr.Encode(stream, case_0.v0);
                     break;
                 }
@@ -201,7 +204,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new bodyUnion_0();
+                    var result_0 = new bodyUnion.case_0();
                     result_0.v0 = bodyUnion.v0StructXdr.Decode(stream);
                     return result_0;
                     default:

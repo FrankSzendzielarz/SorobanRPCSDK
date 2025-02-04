@@ -13,6 +13,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// SCP history file is an array of these
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class SCPHistoryEntry
     {
@@ -21,21 +24,21 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SCPHistoryEntry_0 : SCPHistoryEntry
-    {
-        public override int Discriminator => 0;
-        private SCPHistoryEntryV0 _v0;
-        public SCPHistoryEntryV0 v0
+        public sealed partial class case_0 : SCPHistoryEntry
         {
-            get => _v0;
-            set
+            public override int Discriminator => 0;
+            public SCPHistoryEntryV0 v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private SCPHistoryEntryV0 _v0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCPHistoryEntryXdr
     {
@@ -55,7 +58,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCPHistoryEntry_0 case_0:
+                case SCPHistoryEntry.case_0 case_0:
                 SCPHistoryEntryV0Xdr.Encode(stream, case_0.v0);
                 break;
             }
@@ -66,7 +69,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new SCPHistoryEntry_0();
+                var result_0 = new SCPHistoryEntry.case_0();
                 result_0.v0 = SCPHistoryEntryV0Xdr.Decode(stream);
                 return result_0;
                 default:

@@ -19,15 +19,33 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// High level Operation Result
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum OperationResultCode
     {
         opINNER = 0,
         opBAD_AUTH = -1,
+        /// <summary>
+        /// too few valid signatures / wrong network
+        /// </summary>
         opNO_ACCOUNT = -2,
+        /// <summary>
+        /// source account was not found
+        /// </summary>
         opNOT_SUPPORTED = -3,
+        /// <summary>
+        /// operation not supported at this time
+        /// </summary>
         opTOO_MANY_SUBENTRIES = -4,
+        /// <summary>
+        /// max number of subentries already reached
+        /// </summary>
         opEXCEEDED_WORK_LIMIT = -5,
+        /// <summary>
+        /// operation did too much work
+        /// </summary>
         opTOO_MANY_SPONSORING = -6,
     }
 

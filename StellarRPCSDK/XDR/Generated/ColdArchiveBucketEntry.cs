@@ -29,81 +29,81 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY : ColdArchiveBucketEntry
-    {
-        public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY;
-        private BucketMetadata _metaEntry;
-        public BucketMetadata metaEntry
+        public sealed partial class ColdArchiveMetaentry : ColdArchiveBucketEntry
         {
-            get => _metaEntry;
-            set
+            public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY;
+            public BucketMetadata metaEntry
             {
-                _metaEntry = value;
+                get => _metaEntry;
+                set
+                {
+                    _metaEntry = value;
+                }
             }
-        }
+            private BucketMetadata _metaEntry;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_ARCHIVED_LEAF : ColdArchiveBucketEntry
-    {
-        public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF;
-        private ColdArchiveArchivedLeaf _archivedLeaf;
-        public ColdArchiveArchivedLeaf archivedLeaf
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ColdArchiveArchivedLeafCase : ColdArchiveBucketEntry
         {
-            get => _archivedLeaf;
-            set
+            public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF;
+            public ColdArchiveArchivedLeaf archivedLeaf
             {
-                _archivedLeaf = value;
+                get => _archivedLeaf;
+                set
+                {
+                    _archivedLeaf = value;
+                }
             }
-        }
+            private ColdArchiveArchivedLeaf _archivedLeaf;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_DELETED_LEAF : ColdArchiveBucketEntry
-    {
-        public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF;
-        private ColdArchiveDeletedLeaf _deletedLeaf;
-        public ColdArchiveDeletedLeaf deletedLeaf
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ColdArchiveDeletedLeafCase : ColdArchiveBucketEntry
         {
-            get => _deletedLeaf;
-            set
+            public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF;
+            public ColdArchiveDeletedLeaf deletedLeaf
             {
-                _deletedLeaf = value;
+                get => _deletedLeaf;
+                set
+                {
+                    _deletedLeaf = value;
+                }
             }
-        }
+            private ColdArchiveDeletedLeaf _deletedLeaf;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_BOUNDARY_LEAF : ColdArchiveBucketEntry
-    {
-        public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF;
-        private ColdArchiveBoundaryLeaf _boundaryLeaf;
-        public ColdArchiveBoundaryLeaf boundaryLeaf
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ColdArchiveBoundaryLeafCase : ColdArchiveBucketEntry
         {
-            get => _boundaryLeaf;
-            set
+            public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF;
+            public ColdArchiveBoundaryLeaf boundaryLeaf
             {
-                _boundaryLeaf = value;
+                get => _boundaryLeaf;
+                set
+                {
+                    _boundaryLeaf = value;
+                }
             }
-        }
+            private ColdArchiveBoundaryLeaf _boundaryLeaf;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ColdArchiveBucketEntry_COLD_ARCHIVE_HASH : ColdArchiveBucketEntry
-    {
-        public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH;
-        private ColdArchiveHashEntry _hashEntry;
-        public ColdArchiveHashEntry hashEntry
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ColdArchiveHash : ColdArchiveBucketEntry
         {
-            get => _hashEntry;
-            set
+            public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH;
+            public ColdArchiveHashEntry hashEntry
             {
-                _hashEntry = value;
+                get => _hashEntry;
+                set
+                {
+                    _hashEntry = value;
+                }
             }
-        }
+            private ColdArchiveHashEntry _hashEntry;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ColdArchiveBucketEntryXdr
     {
@@ -123,19 +123,19 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY case_COLD_ARCHIVE_METAENTRY:
+                case ColdArchiveBucketEntry.ColdArchiveMetaentry case_COLD_ARCHIVE_METAENTRY:
                 BucketMetadataXdr.Encode(stream, case_COLD_ARCHIVE_METAENTRY.metaEntry);
                 break;
-                case ColdArchiveBucketEntry_COLD_ARCHIVE_ARCHIVED_LEAF case_COLD_ARCHIVE_ARCHIVED_LEAF:
+                case ColdArchiveBucketEntry.ColdArchiveArchivedLeafCase case_COLD_ARCHIVE_ARCHIVED_LEAF:
                 ColdArchiveArchivedLeafXdr.Encode(stream, case_COLD_ARCHIVE_ARCHIVED_LEAF.archivedLeaf);
                 break;
-                case ColdArchiveBucketEntry_COLD_ARCHIVE_DELETED_LEAF case_COLD_ARCHIVE_DELETED_LEAF:
+                case ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase case_COLD_ARCHIVE_DELETED_LEAF:
                 ColdArchiveDeletedLeafXdr.Encode(stream, case_COLD_ARCHIVE_DELETED_LEAF.deletedLeaf);
                 break;
-                case ColdArchiveBucketEntry_COLD_ARCHIVE_BOUNDARY_LEAF case_COLD_ARCHIVE_BOUNDARY_LEAF:
+                case ColdArchiveBucketEntry.ColdArchiveBoundaryLeafCase case_COLD_ARCHIVE_BOUNDARY_LEAF:
                 ColdArchiveBoundaryLeafXdr.Encode(stream, case_COLD_ARCHIVE_BOUNDARY_LEAF.boundaryLeaf);
                 break;
-                case ColdArchiveBucketEntry_COLD_ARCHIVE_HASH case_COLD_ARCHIVE_HASH:
+                case ColdArchiveBucketEntry.ColdArchiveHash case_COLD_ARCHIVE_HASH:
                 ColdArchiveHashEntryXdr.Encode(stream, case_COLD_ARCHIVE_HASH.hashEntry);
                 break;
             }
@@ -146,23 +146,23 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY:
-                var result_COLD_ARCHIVE_METAENTRY = new ColdArchiveBucketEntry_COLD_ARCHIVE_METAENTRY();
+                var result_COLD_ARCHIVE_METAENTRY = new ColdArchiveBucketEntry.ColdArchiveMetaentry();
                 result_COLD_ARCHIVE_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
                 return result_COLD_ARCHIVE_METAENTRY;
                 case ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF:
-                var result_COLD_ARCHIVE_ARCHIVED_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_ARCHIVED_LEAF();
+                var result_COLD_ARCHIVE_ARCHIVED_LEAF = new ColdArchiveBucketEntry.ColdArchiveArchivedLeafCase();
                 result_COLD_ARCHIVE_ARCHIVED_LEAF.archivedLeaf = ColdArchiveArchivedLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_ARCHIVED_LEAF;
                 case ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF:
-                var result_COLD_ARCHIVE_DELETED_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_DELETED_LEAF();
+                var result_COLD_ARCHIVE_DELETED_LEAF = new ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase();
                 result_COLD_ARCHIVE_DELETED_LEAF.deletedLeaf = ColdArchiveDeletedLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_DELETED_LEAF;
                 case ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF:
-                var result_COLD_ARCHIVE_BOUNDARY_LEAF = new ColdArchiveBucketEntry_COLD_ARCHIVE_BOUNDARY_LEAF();
+                var result_COLD_ARCHIVE_BOUNDARY_LEAF = new ColdArchiveBucketEntry.ColdArchiveBoundaryLeafCase();
                 result_COLD_ARCHIVE_BOUNDARY_LEAF.boundaryLeaf = ColdArchiveBoundaryLeafXdr.Decode(stream);
                 return result_COLD_ARCHIVE_BOUNDARY_LEAF;
                 case ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH:
-                var result_COLD_ARCHIVE_HASH = new ColdArchiveBucketEntry_COLD_ARCHIVE_HASH();
+                var result_COLD_ARCHIVE_HASH = new ColdArchiveBucketEntry.ColdArchiveHash();
                 result_COLD_ARCHIVE_HASH.hashEntry = ColdArchiveHashEntryXdr.Decode(stream);
                 return result_COLD_ARCHIVE_HASH;
                 default:

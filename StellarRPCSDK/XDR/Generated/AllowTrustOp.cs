@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AllowTrustOp
     {
-        private AccountID _trustor;
         public AccountID trustor
         {
             get => _trustor;
@@ -28,8 +27,8 @@ namespace Stellar.XDR {
                 _trustor = value;
             }
         }
+        private AccountID _trustor;
 
-        private AssetCode _asset;
         public AssetCode asset
         {
             get => _asset;
@@ -38,8 +37,11 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private AssetCode _asset;
 
-        private uint32 _authorize;
+        /// <summary>
+        /// One of 0, AUTHORIZED_FLAG, or AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG
+        /// </summary>
         public uint32 authorize
         {
             get => _authorize;
@@ -48,6 +50,7 @@ namespace Stellar.XDR {
                 _authorize = value;
             }
         }
+        private uint32 _authorize;
 
         public AllowTrustOp()
         {

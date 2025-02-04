@@ -20,10 +20,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// The transaction will fail if it exceeds any of these limits.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanResources
     {
-        private LedgerFootprint _footprint;
+        /// <summary>
+        /// The ledger footprint of the transaction.
+        /// </summary>
         public LedgerFootprint footprint
         {
             get => _footprint;
@@ -32,8 +37,11 @@ namespace Stellar.XDR {
                 _footprint = value;
             }
         }
+        private LedgerFootprint _footprint;
 
-        private uint32 _instructions;
+        /// <summary>
+        /// The maximum number of instructions this transaction can use
+        /// </summary>
         public uint32 instructions
         {
             get => _instructions;
@@ -42,8 +50,11 @@ namespace Stellar.XDR {
                 _instructions = value;
             }
         }
+        private uint32 _instructions;
 
-        private uint32 _readBytes;
+        /// <summary>
+        /// The maximum number of bytes this transaction can read from ledger
+        /// </summary>
         public uint32 readBytes
         {
             get => _readBytes;
@@ -52,8 +63,11 @@ namespace Stellar.XDR {
                 _readBytes = value;
             }
         }
+        private uint32 _readBytes;
 
-        private uint32 _writeBytes;
+        /// <summary>
+        /// The maximum number of bytes this transaction can write to ledger
+        /// </summary>
         public uint32 writeBytes
         {
             get => _writeBytes;
@@ -62,6 +76,7 @@ namespace Stellar.XDR {
                 _writeBytes = value;
             }
         }
+        private uint32 _writeBytes;
 
         public SorobanResources()
         {

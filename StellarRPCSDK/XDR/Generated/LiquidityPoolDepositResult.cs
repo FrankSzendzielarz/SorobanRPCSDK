@@ -29,54 +29,54 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS;
+        public sealed partial class LiquidityPoolDepositSuccess : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_MALFORMED : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositMalformed : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NO_TRUST : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositNoTrust : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositNotAuthorized : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositUnderfunded : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_LINE_FULL : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositLineFull : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositBadPrice : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_POOL_FULL : LiquidityPoolDepositResult
-    {
-        public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LiquidityPoolDepositPoolFull : LiquidityPoolDepositResult
+        {
+            public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LiquidityPoolDepositResultXdr
     {
@@ -96,21 +96,21 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS case_LIQUIDITY_POOL_DEPOSIT_SUCCESS:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositSuccess case_LIQUIDITY_POOL_DEPOSIT_SUCCESS:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_MALFORMED case_LIQUIDITY_POOL_DEPOSIT_MALFORMED:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositMalformed case_LIQUIDITY_POOL_DEPOSIT_MALFORMED:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NO_TRUST case_LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositNoTrust case_LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED case_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositNotAuthorized case_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED case_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositUnderfunded case_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_LINE_FULL case_LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositLineFull case_LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE case_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositBadPrice case_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
                 break;
-                case LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_POOL_FULL case_LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
+                case LiquidityPoolDepositResult.LiquidityPoolDepositPoolFull case_LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
                 break;
             }
         }
@@ -120,28 +120,28 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS:
-                var result_LIQUIDITY_POOL_DEPOSIT_SUCCESS = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_SUCCESS();
+                var result_LIQUIDITY_POOL_DEPOSIT_SUCCESS = new LiquidityPoolDepositResult.LiquidityPoolDepositSuccess();
                 return result_LIQUIDITY_POOL_DEPOSIT_SUCCESS;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED:
-                var result_LIQUIDITY_POOL_DEPOSIT_MALFORMED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_MALFORMED();
+                var result_LIQUIDITY_POOL_DEPOSIT_MALFORMED = new LiquidityPoolDepositResult.LiquidityPoolDepositMalformed();
                 return result_LIQUIDITY_POOL_DEPOSIT_MALFORMED;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST:
-                var result_LIQUIDITY_POOL_DEPOSIT_NO_TRUST = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NO_TRUST();
+                var result_LIQUIDITY_POOL_DEPOSIT_NO_TRUST = new LiquidityPoolDepositResult.LiquidityPoolDepositNoTrust();
                 return result_LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED:
-                var result_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED();
+                var result_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED = new LiquidityPoolDepositResult.LiquidityPoolDepositNotAuthorized();
                 return result_LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED:
-                var result_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED();
+                var result_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED = new LiquidityPoolDepositResult.LiquidityPoolDepositUnderfunded();
                 return result_LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL:
-                var result_LIQUIDITY_POOL_DEPOSIT_LINE_FULL = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_LINE_FULL();
+                var result_LIQUIDITY_POOL_DEPOSIT_LINE_FULL = new LiquidityPoolDepositResult.LiquidityPoolDepositLineFull();
                 return result_LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE:
-                var result_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE();
+                var result_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE = new LiquidityPoolDepositResult.LiquidityPoolDepositBadPrice();
                 return result_LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
                 case LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL:
-                var result_LIQUIDITY_POOL_DEPOSIT_POOL_FULL = new LiquidityPoolDepositResult_LIQUIDITY_POOL_DEPOSIT_POOL_FULL();
+                var result_LIQUIDITY_POOL_DEPOSIT_POOL_FULL = new LiquidityPoolDepositResult.LiquidityPoolDepositPoolFull();
                 return result_LIQUIDITY_POOL_DEPOSIT_POOL_FULL;
                 default:
                 throw new Exception($"Unknown discriminator for LiquidityPoolDepositResult: {discriminator}");

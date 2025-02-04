@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class DecoratedSignature
     {
-        private SignatureHint _hint;
         public SignatureHint hint
         {
             get => _hint;
@@ -25,8 +24,11 @@ namespace Stellar.XDR {
                 _hint = value;
             }
         }
+        private SignatureHint _hint;
 
-        private Signature _signature;
+        /// <summary>
+        /// last 4 bytes of the public key, used as a hint
+        /// </summary>
         public Signature signature
         {
             get => _signature;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _signature = value;
             }
         }
+        private Signature _signature;
 
         public DecoratedSignature()
         {

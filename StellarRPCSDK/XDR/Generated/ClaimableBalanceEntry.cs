@@ -35,7 +35,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ClaimableBalanceEntry
     {
-        private ClaimableBalanceID _balanceID;
+        /// <summary>
+        /// Unique identifier for this ClaimableBalanceEntry
+        /// </summary>
         public ClaimableBalanceID balanceID
         {
             get => _balanceID;
@@ -44,8 +46,11 @@ namespace Stellar.XDR {
                 _balanceID = value;
             }
         }
+        private ClaimableBalanceID _balanceID;
 
-        private Claimant[] _claimants;
+        /// <summary>
+        /// List of claimants with associated predicate
+        /// </summary>
         public Claimant[] claimants
         {
             get => _claimants;
@@ -56,8 +61,11 @@ namespace Stellar.XDR {
                 _claimants = value;
             }
         }
+        private Claimant[] _claimants;
 
-        private Asset _asset;
+        /// <summary>
+        /// Any asset including native
+        /// </summary>
         public Asset asset
         {
             get => _asset;
@@ -66,8 +74,11 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private Asset _asset;
 
-        private int64 _amount;
+        /// <summary>
+        /// Amount of asset
+        /// </summary>
         public int64 amount
         {
             get => _amount;
@@ -76,8 +87,11 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -86,6 +100,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public ClaimableBalanceEntry()
         {
@@ -104,27 +119,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_1 : extUnion
-        {
-            public override int Discriminator => 1;
-            private ClaimableBalanceEntryExtensionV1 _v1;
-            public ClaimableBalanceEntryExtensionV1 v1
+            public sealed partial class case_0 : extUnion
             {
-                get => _v1;
-                set
-                {
-                    _v1 = value;
-                }
-            }
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class case_1 : extUnion
+            {
+                public override int Discriminator => 1;
+                public ClaimableBalanceEntryExtensionV1 v1
+                {
+                    get => _v1;
+                    set
+                    {
+                        _v1 = value;
+                    }
+                }
+                private ClaimableBalanceEntryExtensionV1 _v1;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -144,9 +159,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
-                    case extUnion_1 case_1:
+                    case extUnion.case_1 case_1:
                     ClaimableBalanceEntryExtensionV1Xdr.Encode(stream, case_1.v1);
                     break;
                 }
@@ -157,10 +172,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     case 1:
-                    var result_1 = new extUnion_1();
+                    var result_1 = new extUnion.case_1();
                     result_1.v1 = ClaimableBalanceEntryExtensionV1Xdr.Decode(stream);
                     return result_1;
                     default:

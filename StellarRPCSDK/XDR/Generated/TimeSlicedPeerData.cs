@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedPeerData
     {
-        private PeerStats _peerStats;
         public PeerStats peerStats
         {
             get => _peerStats;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _peerStats = value;
             }
         }
+        private PeerStats _peerStats;
 
-        private uint32 _averageLatencyMs;
         public uint32 averageLatencyMs
         {
             get => _averageLatencyMs;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _averageLatencyMs = value;
             }
         }
+        private uint32 _averageLatencyMs;
 
         public TimeSlicedPeerData()
         {

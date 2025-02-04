@@ -12,7 +12,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ProofLevel
     {
-        private ArchivalProofNode[] _innerValue;
         public ArchivalProofNode[] InnerValue
         {
             get => _innerValue;
@@ -21,6 +20,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private ArchivalProofNode[] _innerValue;
 
         public ProofLevel() { }
 

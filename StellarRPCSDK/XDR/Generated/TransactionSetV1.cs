@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionSetV1
     {
-        private Hash _previousLedgerHash;
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _previousLedgerHash = value;
             }
         }
+        private Hash _previousLedgerHash;
 
-        private TransactionPhase[] _phases;
         public TransactionPhase[] phases
         {
             get => _phases;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _phases = value;
             }
         }
+        private TransactionPhase[] _phases;
 
         public TransactionSetV1()
         {

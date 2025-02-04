@@ -25,14 +25,41 @@ namespace Stellar.XDR {
     public enum SCErrorType
     {
         SCE_CONTRACT = 0,
+        /// <summary>
+        /// Contract-specific, user-defined codes.
+        /// </summary>
         SCE_WASM_VM = 1,
+        /// <summary>
+        /// Errors while interpreting WASM bytecode.
+        /// </summary>
         SCE_CONTEXT = 2,
+        /// <summary>
+        /// Errors in the contract's host context.
+        /// </summary>
         SCE_STORAGE = 3,
+        /// <summary>
+        /// Errors accessing host storage.
+        /// </summary>
         SCE_OBJECT = 4,
+        /// <summary>
+        /// Errors working with host objects.
+        /// </summary>
         SCE_CRYPTO = 5,
+        /// <summary>
+        /// Errors in cryptographic operations.
+        /// </summary>
         SCE_EVENTS = 6,
+        /// <summary>
+        /// Errors while emitting events.
+        /// </summary>
         SCE_BUDGET = 7,
+        /// <summary>
+        /// Errors relating to budget limits.
+        /// </summary>
         SCE_VALUE = 8,
+        /// <summary>
+        /// Errors working with host values or SCVals.
+        /// </summary>
         SCE_AUTH = 9,
     }
 

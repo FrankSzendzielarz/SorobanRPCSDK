@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TopologyResponseBodyV2
     {
-        private TimeSlicedPeerDataList _inboundPeers;
         public TimeSlicedPeerDataList inboundPeers
         {
             get => _inboundPeers;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _inboundPeers = value;
             }
         }
+        private TimeSlicedPeerDataList _inboundPeers;
 
-        private TimeSlicedPeerDataList _outboundPeers;
         public TimeSlicedPeerDataList outboundPeers
         {
             get => _outboundPeers;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _outboundPeers = value;
             }
         }
+        private TimeSlicedPeerDataList _outboundPeers;
 
-        private TimeSlicedNodeData _nodeData;
         public TimeSlicedNodeData nodeData
         {
             get => _nodeData;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                 _nodeData = value;
             }
         }
+        private TimeSlicedNodeData _nodeData;
 
         public TopologyResponseBodyV2()
         {

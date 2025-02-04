@@ -23,27 +23,27 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LedgerCloseMetaExt_0 : LedgerCloseMetaExt
-    {
-        public override int Discriminator => 0;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerCloseMetaExt_1 : LedgerCloseMetaExt
-    {
-        public override int Discriminator => 1;
-        private LedgerCloseMetaExtV1 _v1;
-        public LedgerCloseMetaExtV1 v1
+        public sealed partial class case_0 : LedgerCloseMetaExt
         {
-            get => _v1;
-            set
-            {
-                _v1 = value;
-            }
-        }
+            public override int Discriminator => 0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class case_1 : LedgerCloseMetaExt
+        {
+            public override int Discriminator => 1;
+            public LedgerCloseMetaExtV1 v1
+            {
+                get => _v1;
+                set
+                {
+                    _v1 = value;
+                }
+            }
+            private LedgerCloseMetaExtV1 _v1;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LedgerCloseMetaExtXdr
     {
@@ -63,9 +63,9 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LedgerCloseMetaExt_0 case_0:
+                case LedgerCloseMetaExt.case_0 case_0:
                 break;
-                case LedgerCloseMetaExt_1 case_1:
+                case LedgerCloseMetaExt.case_1 case_1:
                 LedgerCloseMetaExtV1Xdr.Encode(stream, case_1.v1);
                 break;
             }
@@ -76,10 +76,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new LedgerCloseMetaExt_0();
+                var result_0 = new LedgerCloseMetaExt.case_0();
                 return result_0;
                 case 1:
-                var result_1 = new LedgerCloseMetaExt_1();
+                var result_1 = new LedgerCloseMetaExt.case_1();
                 result_1.v1 = LedgerCloseMetaExtV1Xdr.Decode(stream);
                 return result_1;
                 default:

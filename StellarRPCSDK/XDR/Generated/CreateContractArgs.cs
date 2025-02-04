@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class CreateContractArgs
     {
-        private ContractIDPreimage _contractIDPreimage;
         public ContractIDPreimage contractIDPreimage
         {
             get => _contractIDPreimage;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _contractIDPreimage = value;
             }
         }
+        private ContractIDPreimage _contractIDPreimage;
 
-        private ContractExecutable _executable;
         public ContractExecutable executable
         {
             get => _executable;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _executable = value;
             }
         }
+        private ContractExecutable _executable;
 
         public CreateContractArgs()
         {

@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeBytesN
     {
-        private uint32 _n;
         public uint32 n
         {
             get => _n;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _n = value;
             }
         }
+        private uint32 _n;
 
         public SCSpecTypeBytesN()
         {

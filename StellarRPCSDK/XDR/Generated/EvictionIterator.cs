@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class EvictionIterator
     {
-        private uint32 _bucketListLevel;
         public uint32 bucketListLevel
         {
             get => _bucketListLevel;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _bucketListLevel = value;
             }
         }
+        private uint32 _bucketListLevel;
 
-        private bool _isCurrBucket;
         public bool isCurrBucket
         {
             get => _isCurrBucket;
@@ -35,8 +34,8 @@ namespace Stellar.XDR {
                 _isCurrBucket = value;
             }
         }
+        private bool _isCurrBucket;
 
-        private uint64 _bucketFileOffset;
         public uint64 bucketFileOffset
         {
             get => _bucketFileOffset;
@@ -45,6 +44,7 @@ namespace Stellar.XDR {
                 _bucketFileOffset = value;
             }
         }
+        private uint64 _bucketFileOffset;
 
         public EvictionIterator()
         {

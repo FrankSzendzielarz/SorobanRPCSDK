@@ -27,15 +27,45 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum PaymentResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         PAYMENT_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         PAYMENT_MALFORMED = -1,
+        /// <summary>
+        /// bad input
+        /// </summary>
         PAYMENT_UNDERFUNDED = -2,
+        /// <summary>
+        /// not enough funds in source account
+        /// </summary>
         PAYMENT_SRC_NO_TRUST = -3,
+        /// <summary>
+        /// no trust line on source account
+        /// </summary>
         PAYMENT_SRC_NOT_AUTHORIZED = -4,
+        /// <summary>
+        /// source not authorized to transfer
+        /// </summary>
         PAYMENT_NO_DESTINATION = -5,
+        /// <summary>
+        /// destination account does not exist
+        /// </summary>
         PAYMENT_NO_TRUST = -6,
+        /// <summary>
+        /// destination missing a trust line for asset
+        /// </summary>
         PAYMENT_NOT_AUTHORIZED = -7,
+        /// <summary>
+        /// destination not authorized to hold asset
+        /// </summary>
         PAYMENT_LINE_FULL = -8,
+        /// <summary>
+        /// destination would go above their limit
+        /// </summary>
         PAYMENT_NO_ISSUER = -9,
     }
 

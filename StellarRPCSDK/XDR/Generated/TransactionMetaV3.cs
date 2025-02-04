@@ -23,7 +23,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionMetaV3
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -32,8 +31,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private LedgerEntryChanges _txChangesBefore;
         public LedgerEntryChanges txChangesBefore
         {
             get => _txChangesBefore;
@@ -42,8 +41,11 @@ namespace Stellar.XDR {
                 _txChangesBefore = value;
             }
         }
+        private LedgerEntryChanges _txChangesBefore;
 
-        private OperationMeta[] _operations;
+        /// <summary>
+        /// are applied if any
+        /// </summary>
         public OperationMeta[] operations
         {
             get => _operations;
@@ -52,8 +54,11 @@ namespace Stellar.XDR {
                 _operations = value;
             }
         }
+        private OperationMeta[] _operations;
 
-        private LedgerEntryChanges _txChangesAfter;
+        /// <summary>
+        /// meta for each operation
+        /// </summary>
         public LedgerEntryChanges txChangesAfter
         {
             get => _txChangesAfter;
@@ -62,8 +67,11 @@ namespace Stellar.XDR {
                 _txChangesAfter = value;
             }
         }
+        private LedgerEntryChanges _txChangesAfter;
 
-        private SorobanTransactionMeta _sorobanMeta;
+        /// <summary>
+        /// applied if any
+        /// </summary>
         public SorobanTransactionMeta sorobanMeta
         {
             get => _sorobanMeta;
@@ -72,6 +80,7 @@ namespace Stellar.XDR {
                 _sorobanMeta = value;
             }
         }
+        private SorobanTransactionMeta _sorobanMeta;
 
         public TransactionMetaV3()
         {

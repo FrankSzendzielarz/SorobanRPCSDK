@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class DontHave
     {
-        private MessageType _type;
         public MessageType type
         {
             get => _type;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _type = value;
             }
         }
+        private MessageType _type;
 
-        private uint256 _reqHash;
         public uint256 reqHash
         {
             get => _reqHash;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _reqHash = value;
             }
         }
+        private uint256 _reqHash;
 
         public DontHave()
         {

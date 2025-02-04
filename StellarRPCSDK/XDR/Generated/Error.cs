@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Error
     {
-        private ErrorCode _code;
         public ErrorCode code
         {
             get => _code;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _code = value;
             }
         }
+        private ErrorCode _code;
 
-        private string _msg;
         public string msg
         {
             get => _msg;
@@ -37,6 +36,7 @@ namespace Stellar.XDR {
                 _msg = value;
             }
         }
+        private string _msg;
 
         public Error()
         {

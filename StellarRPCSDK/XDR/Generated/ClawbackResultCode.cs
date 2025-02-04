@@ -22,7 +22,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ClawbackResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         CLAWBACK_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         CLAWBACK_MALFORMED = -1,
         CLAWBACK_NOT_CLAWBACK_ENABLED = -2,
         CLAWBACK_NO_TRUST = -3,

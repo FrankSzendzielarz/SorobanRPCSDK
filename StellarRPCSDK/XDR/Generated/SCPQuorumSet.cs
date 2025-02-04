@@ -14,10 +14,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// only allows 2 levels of nesting
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCPQuorumSet
     {
-        private uint32 _threshold;
         public uint32 threshold
         {
             get => _threshold;
@@ -26,8 +28,8 @@ namespace Stellar.XDR {
                 _threshold = value;
             }
         }
+        private uint32 _threshold;
 
-        private NodeID[] _validators;
         public NodeID[] validators
         {
             get => _validators;
@@ -36,8 +38,8 @@ namespace Stellar.XDR {
                 _validators = value;
             }
         }
+        private NodeID[] _validators;
 
-        private SCPQuorumSet[] _innerSets;
         public SCPQuorumSet[] innerSets
         {
             get => _innerSets;
@@ -46,6 +48,7 @@ namespace Stellar.XDR {
                 _innerSets = value;
             }
         }
+        private SCPQuorumSet[] _innerSets;
 
         public SCPQuorumSet()
         {

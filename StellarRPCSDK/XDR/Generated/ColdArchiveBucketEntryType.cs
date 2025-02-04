@@ -20,9 +20,21 @@ namespace Stellar.XDR {
     public enum ColdArchiveBucketEntryType
     {
         COLD_ARCHIVE_METAENTRY = -1,
+        /// <summary>
+        /// Bucket metadata, should come first.
+        /// </summary>
         COLD_ARCHIVE_ARCHIVED_LEAF = 0,
+        /// <summary>
+        /// Full LedgerEntry that was archived during the epoch
+        /// </summary>
         COLD_ARCHIVE_DELETED_LEAF = 1,
+        /// <summary>
+        /// LedgerKey that was deleted during the epoch
+        /// </summary>
         COLD_ARCHIVE_BOUNDARY_LEAF = 2,
+        /// <summary>
+        /// Dummy leaf representing low/high bound
+        /// </summary>
         COLD_ARCHIVE_HASH = 3,
     }
 

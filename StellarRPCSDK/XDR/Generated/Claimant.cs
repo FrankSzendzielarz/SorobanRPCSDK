@@ -28,7 +28,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class v0Struct
         {
-            private AccountID _destination;
             public AccountID destination
             {
                 get => _destination;
@@ -37,8 +36,11 @@ namespace Stellar.XDR {
                     _destination = value;
                 }
             }
+            private AccountID _destination;
 
-            private ClaimPredicate _predicate;
+            /// <summary>
+            /// The account that can use this condition
+            /// </summary>
             public ClaimPredicate predicate
             {
                 get => _predicate;
@@ -47,6 +49,7 @@ namespace Stellar.XDR {
                     _predicate = value;
                 }
             }
+            private ClaimPredicate _predicate;
 
             public v0Struct()
             {
@@ -84,21 +87,21 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class Claimant_CLAIMANT_TYPE_V0 : Claimant
-    {
-        public override ClaimantType Discriminator => ClaimantType.CLAIMANT_TYPE_V0;
-        private v0Struct _v0;
-        public v0Struct v0
+        public sealed partial class ClaimantTypeV0 : Claimant
         {
-            get => _v0;
-            set
+            public override ClaimantType Discriminator => ClaimantType.CLAIMANT_TYPE_V0;
+            public v0Struct v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private v0Struct _v0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClaimantXdr
     {
@@ -118,7 +121,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case Claimant_CLAIMANT_TYPE_V0 case_CLAIMANT_TYPE_V0:
+                case Claimant.ClaimantTypeV0 case_CLAIMANT_TYPE_V0:
                 Claimant.v0StructXdr.Encode(stream, case_CLAIMANT_TYPE_V0.v0);
                 break;
             }
@@ -129,7 +132,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClaimantType.CLAIMANT_TYPE_V0:
-                var result_CLAIMANT_TYPE_V0 = new Claimant_CLAIMANT_TYPE_V0();
+                var result_CLAIMANT_TYPE_V0 = new Claimant.ClaimantTypeV0();
                 result_CLAIMANT_TYPE_V0.v0 = Claimant.v0StructXdr.Decode(stream);
                 return result_CLAIMANT_TYPE_V0;
                 default:

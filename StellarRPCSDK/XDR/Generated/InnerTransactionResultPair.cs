@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InnerTransactionResultPair
     {
-        private Hash _transactionHash;
         public Hash transactionHash
         {
             get => _transactionHash;
@@ -25,8 +24,11 @@ namespace Stellar.XDR {
                 _transactionHash = value;
             }
         }
+        private Hash _transactionHash;
 
-        private InnerTransactionResult _result;
+        /// <summary>
+        /// hash of the inner transaction
+        /// </summary>
         public InnerTransactionResult result
         {
             get => _result;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _result = value;
             }
         }
+        private InnerTransactionResult _result;
 
         public InnerTransactionResultPair()
         {

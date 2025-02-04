@@ -26,36 +26,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class CreateAccountResult_CREATE_ACCOUNT_SUCCESS : CreateAccountResult
-    {
-        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
+        public sealed partial class CreateAccountSuccess : CreateAccountResult
+        {
+            public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class CreateAccountResult_CREATE_ACCOUNT_MALFORMED : CreateAccountResult
-    {
-        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class CreateAccountMalformed : CreateAccountResult
+        {
+            public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class CreateAccountResult_CREATE_ACCOUNT_UNDERFUNDED : CreateAccountResult
-    {
-        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class CreateAccountUnderfunded : CreateAccountResult
+        {
+            public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class CreateAccountResult_CREATE_ACCOUNT_LOW_RESERVE : CreateAccountResult
-    {
-        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class CreateAccountLowReserve : CreateAccountResult
+        {
+            public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class CreateAccountResult_CREATE_ACCOUNT_ALREADY_EXIST : CreateAccountResult
-    {
-        public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class CreateAccountAlreadyExist : CreateAccountResult
+        {
+            public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class CreateAccountResultXdr
     {
@@ -75,15 +75,15 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case CreateAccountResult_CREATE_ACCOUNT_SUCCESS case_CREATE_ACCOUNT_SUCCESS:
+                case CreateAccountResult.CreateAccountSuccess case_CREATE_ACCOUNT_SUCCESS:
                 break;
-                case CreateAccountResult_CREATE_ACCOUNT_MALFORMED case_CREATE_ACCOUNT_MALFORMED:
+                case CreateAccountResult.CreateAccountMalformed case_CREATE_ACCOUNT_MALFORMED:
                 break;
-                case CreateAccountResult_CREATE_ACCOUNT_UNDERFUNDED case_CREATE_ACCOUNT_UNDERFUNDED:
+                case CreateAccountResult.CreateAccountUnderfunded case_CREATE_ACCOUNT_UNDERFUNDED:
                 break;
-                case CreateAccountResult_CREATE_ACCOUNT_LOW_RESERVE case_CREATE_ACCOUNT_LOW_RESERVE:
+                case CreateAccountResult.CreateAccountLowReserve case_CREATE_ACCOUNT_LOW_RESERVE:
                 break;
-                case CreateAccountResult_CREATE_ACCOUNT_ALREADY_EXIST case_CREATE_ACCOUNT_ALREADY_EXIST:
+                case CreateAccountResult.CreateAccountAlreadyExist case_CREATE_ACCOUNT_ALREADY_EXIST:
                 break;
             }
         }
@@ -93,19 +93,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS:
-                var result_CREATE_ACCOUNT_SUCCESS = new CreateAccountResult_CREATE_ACCOUNT_SUCCESS();
+                var result_CREATE_ACCOUNT_SUCCESS = new CreateAccountResult.CreateAccountSuccess();
                 return result_CREATE_ACCOUNT_SUCCESS;
                 case CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED:
-                var result_CREATE_ACCOUNT_MALFORMED = new CreateAccountResult_CREATE_ACCOUNT_MALFORMED();
+                var result_CREATE_ACCOUNT_MALFORMED = new CreateAccountResult.CreateAccountMalformed();
                 return result_CREATE_ACCOUNT_MALFORMED;
                 case CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED:
-                var result_CREATE_ACCOUNT_UNDERFUNDED = new CreateAccountResult_CREATE_ACCOUNT_UNDERFUNDED();
+                var result_CREATE_ACCOUNT_UNDERFUNDED = new CreateAccountResult.CreateAccountUnderfunded();
                 return result_CREATE_ACCOUNT_UNDERFUNDED;
                 case CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE:
-                var result_CREATE_ACCOUNT_LOW_RESERVE = new CreateAccountResult_CREATE_ACCOUNT_LOW_RESERVE();
+                var result_CREATE_ACCOUNT_LOW_RESERVE = new CreateAccountResult.CreateAccountLowReserve();
                 return result_CREATE_ACCOUNT_LOW_RESERVE;
                 case CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST:
-                var result_CREATE_ACCOUNT_ALREADY_EXIST = new CreateAccountResult_CREATE_ACCOUNT_ALREADY_EXIST();
+                var result_CREATE_ACCOUNT_ALREADY_EXIST = new CreateAccountResult.CreateAccountAlreadyExist();
                 return result_CREATE_ACCOUNT_ALREADY_EXIST;
                 default:
                 throw new Exception($"Unknown discriminator for CreateAccountResult: {discriminator}");

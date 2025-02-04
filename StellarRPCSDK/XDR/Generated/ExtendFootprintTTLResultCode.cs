@@ -21,7 +21,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ExtendFootprintTTLResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         EXTEND_FOOTPRINT_TTL_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         EXTEND_FOOTPRINT_TTL_MALFORMED = -1,
         EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED = -2,
         EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE = -3,

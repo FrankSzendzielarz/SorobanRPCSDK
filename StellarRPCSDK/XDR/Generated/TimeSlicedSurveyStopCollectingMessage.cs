@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedSurveyStopCollectingMessage
     {
-        private NodeID _surveyorID;
         public NodeID surveyorID
         {
             get => _surveyorID;
@@ -26,8 +25,8 @@ namespace Stellar.XDR {
                 _surveyorID = value;
             }
         }
+        private NodeID _surveyorID;
 
-        private uint32 _nonce;
         public uint32 nonce
         {
             get => _nonce;
@@ -36,8 +35,8 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private uint32 _nonce;
 
-        private uint32 _ledgerNum;
         public uint32 ledgerNum
         {
             get => _ledgerNum;
@@ -46,6 +45,7 @@ namespace Stellar.XDR {
                 _ledgerNum = value;
             }
         }
+        private uint32 _ledgerNum;
 
         public TimeSlicedSurveyStopCollectingMessage()
         {

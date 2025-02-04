@@ -31,156 +31,156 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SCError_SCE_CONTRACT : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_CONTRACT;
-        private uint32 _contractCode;
-        public uint32 contractCode
+        public sealed partial class SceContract : SCError
         {
-            get => _contractCode;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_CONTRACT;
+            public uint32 contractCode
             {
-                _contractCode = value;
+                get => _contractCode;
+                set
+                {
+                    _contractCode = value;
+                }
             }
-        }
+            private uint32 _contractCode;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_WASM_VM : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_WASM_VM;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceWasmVm : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_WASM_VM;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_CONTEXT : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_CONTEXT;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceContext : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_CONTEXT;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_STORAGE : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_STORAGE;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceStorage : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_STORAGE;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_OBJECT : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_OBJECT;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceObject : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_OBJECT;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_CRYPTO : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_CRYPTO;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceCrypto : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_CRYPTO;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_EVENTS : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_EVENTS;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceEvents : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_EVENTS;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_BUDGET : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_BUDGET;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceBudget : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_BUDGET;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_VALUE : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_VALUE;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceValue : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_VALUE;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SCError_SCE_AUTH : SCError
-    {
-        public override SCErrorType Discriminator => SCErrorType.SCE_AUTH;
-        private SCErrorCode _code;
-        public SCErrorCode code
+            public override void ValidateCase() {}
+        }
+        public sealed partial class SceAuth : SCError
         {
-            get => _code;
-            set
+            public override SCErrorType Discriminator => SCErrorType.SCE_AUTH;
+            public SCErrorCode code
             {
-                _code = value;
+                get => _code;
+                set
+                {
+                    _code = value;
+                }
             }
-        }
+            private SCErrorCode _code;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SCErrorXdr
     {
@@ -200,34 +200,34 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SCError_SCE_CONTRACT case_SCE_CONTRACT:
+                case SCError.SceContract case_SCE_CONTRACT:
                 uint32Xdr.Encode(stream, case_SCE_CONTRACT.contractCode);
                 break;
-                case SCError_SCE_WASM_VM case_SCE_WASM_VM:
+                case SCError.SceWasmVm case_SCE_WASM_VM:
                 SCErrorCodeXdr.Encode(stream, case_SCE_WASM_VM.code);
                 break;
-                case SCError_SCE_CONTEXT case_SCE_CONTEXT:
+                case SCError.SceContext case_SCE_CONTEXT:
                 SCErrorCodeXdr.Encode(stream, case_SCE_CONTEXT.code);
                 break;
-                case SCError_SCE_STORAGE case_SCE_STORAGE:
+                case SCError.SceStorage case_SCE_STORAGE:
                 SCErrorCodeXdr.Encode(stream, case_SCE_STORAGE.code);
                 break;
-                case SCError_SCE_OBJECT case_SCE_OBJECT:
+                case SCError.SceObject case_SCE_OBJECT:
                 SCErrorCodeXdr.Encode(stream, case_SCE_OBJECT.code);
                 break;
-                case SCError_SCE_CRYPTO case_SCE_CRYPTO:
+                case SCError.SceCrypto case_SCE_CRYPTO:
                 SCErrorCodeXdr.Encode(stream, case_SCE_CRYPTO.code);
                 break;
-                case SCError_SCE_EVENTS case_SCE_EVENTS:
+                case SCError.SceEvents case_SCE_EVENTS:
                 SCErrorCodeXdr.Encode(stream, case_SCE_EVENTS.code);
                 break;
-                case SCError_SCE_BUDGET case_SCE_BUDGET:
+                case SCError.SceBudget case_SCE_BUDGET:
                 SCErrorCodeXdr.Encode(stream, case_SCE_BUDGET.code);
                 break;
-                case SCError_SCE_VALUE case_SCE_VALUE:
+                case SCError.SceValue case_SCE_VALUE:
                 SCErrorCodeXdr.Encode(stream, case_SCE_VALUE.code);
                 break;
-                case SCError_SCE_AUTH case_SCE_AUTH:
+                case SCError.SceAuth case_SCE_AUTH:
                 SCErrorCodeXdr.Encode(stream, case_SCE_AUTH.code);
                 break;
             }
@@ -238,43 +238,43 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SCErrorType.SCE_CONTRACT:
-                var result_SCE_CONTRACT = new SCError_SCE_CONTRACT();
+                var result_SCE_CONTRACT = new SCError.SceContract();
                 result_SCE_CONTRACT.contractCode = uint32Xdr.Decode(stream);
                 return result_SCE_CONTRACT;
                 case SCErrorType.SCE_WASM_VM:
-                var result_SCE_WASM_VM = new SCError_SCE_WASM_VM();
+                var result_SCE_WASM_VM = new SCError.SceWasmVm();
                 result_SCE_WASM_VM.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_WASM_VM;
                 case SCErrorType.SCE_CONTEXT:
-                var result_SCE_CONTEXT = new SCError_SCE_CONTEXT();
+                var result_SCE_CONTEXT = new SCError.SceContext();
                 result_SCE_CONTEXT.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_CONTEXT;
                 case SCErrorType.SCE_STORAGE:
-                var result_SCE_STORAGE = new SCError_SCE_STORAGE();
+                var result_SCE_STORAGE = new SCError.SceStorage();
                 result_SCE_STORAGE.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_STORAGE;
                 case SCErrorType.SCE_OBJECT:
-                var result_SCE_OBJECT = new SCError_SCE_OBJECT();
+                var result_SCE_OBJECT = new SCError.SceObject();
                 result_SCE_OBJECT.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_OBJECT;
                 case SCErrorType.SCE_CRYPTO:
-                var result_SCE_CRYPTO = new SCError_SCE_CRYPTO();
+                var result_SCE_CRYPTO = new SCError.SceCrypto();
                 result_SCE_CRYPTO.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_CRYPTO;
                 case SCErrorType.SCE_EVENTS:
-                var result_SCE_EVENTS = new SCError_SCE_EVENTS();
+                var result_SCE_EVENTS = new SCError.SceEvents();
                 result_SCE_EVENTS.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_EVENTS;
                 case SCErrorType.SCE_BUDGET:
-                var result_SCE_BUDGET = new SCError_SCE_BUDGET();
+                var result_SCE_BUDGET = new SCError.SceBudget();
                 result_SCE_BUDGET.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_BUDGET;
                 case SCErrorType.SCE_VALUE:
-                var result_SCE_VALUE = new SCError_SCE_VALUE();
+                var result_SCE_VALUE = new SCError.SceValue();
                 result_SCE_VALUE.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_VALUE;
                 case SCErrorType.SCE_AUTH:
-                var result_SCE_AUTH = new SCError_SCE_AUTH();
+                var result_SCE_AUTH = new SCError.SceAuth();
                 result_SCE_AUTH.code = SCErrorCodeXdr.Decode(stream);
                 return result_SCE_AUTH;
                 default:

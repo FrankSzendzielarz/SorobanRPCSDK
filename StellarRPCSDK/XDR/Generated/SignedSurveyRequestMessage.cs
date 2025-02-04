@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SignedSurveyRequestMessage
     {
-        private Signature _requestSignature;
         public Signature requestSignature
         {
             get => _requestSignature;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _requestSignature = value;
             }
         }
+        private Signature _requestSignature;
 
-        private SurveyRequestMessage _request;
         public SurveyRequestMessage request
         {
             get => _request;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _request = value;
             }
         }
+        private SurveyRequestMessage _request;
 
         public SignedSurveyRequestMessage()
         {

@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SetTrustLineFlagsOp
     {
-        private AccountID _trustor;
         public AccountID trustor
         {
             get => _trustor;
@@ -28,8 +27,8 @@ namespace Stellar.XDR {
                 _trustor = value;
             }
         }
+        private AccountID _trustor;
 
-        private Asset _asset;
         public Asset asset
         {
             get => _asset;
@@ -38,8 +37,8 @@ namespace Stellar.XDR {
                 _asset = value;
             }
         }
+        private Asset _asset;
 
-        private uint32 _clearFlags;
         public uint32 clearFlags
         {
             get => _clearFlags;
@@ -48,8 +47,11 @@ namespace Stellar.XDR {
                 _clearFlags = value;
             }
         }
+        private uint32 _clearFlags;
 
-        private uint32 _setFlags;
+        /// <summary>
+        /// which flags to clear
+        /// </summary>
         public uint32 setFlags
         {
             get => _setFlags;
@@ -58,6 +60,7 @@ namespace Stellar.XDR {
                 _setFlags = value;
             }
         }
+        private uint32 _setFlags;
 
         public SetTrustLineFlagsOp()
         {

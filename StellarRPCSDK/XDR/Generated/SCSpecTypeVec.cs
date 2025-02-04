@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeVec
     {
-        private SCSpecTypeDef _elementType;
         public SCSpecTypeDef elementType
         {
             get => _elementType;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _elementType = value;
             }
         }
+        private SCSpecTypeDef _elementType;
 
         public SCSpecTypeVec()
         {

@@ -13,10 +13,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// General “Soroban execution lane” settings
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractExecutionLanesV0
     {
-        private uint32 _ledgerMaxTxCount;
+        /// <summary>
+        /// maximum number of Soroban transactions per ledger
+        /// </summary>
         public uint32 ledgerMaxTxCount
         {
             get => _ledgerMaxTxCount;
@@ -25,6 +30,7 @@ namespace Stellar.XDR {
                 _ledgerMaxTxCount = value;
             }
         }
+        private uint32 _ledgerMaxTxCount;
 
         public ConfigSettingContractExecutionLanesV0()
         {

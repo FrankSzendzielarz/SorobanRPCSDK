@@ -47,10 +47,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// because it is be used to represent the result of a Transaction.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InnerTransactionResult
     {
-        private int64 _feeCharged;
+        /// <summary>
+        /// Always 0. Here for binary compatibility.
+        /// </summary>
         public int64 feeCharged
         {
             get => _feeCharged;
@@ -59,8 +64,8 @@ namespace Stellar.XDR {
                 _feeCharged = value;
             }
         }
+        private int64 _feeCharged;
 
-        private resultUnion _result;
         public resultUnion result
         {
             get => _result;
@@ -69,8 +74,11 @@ namespace Stellar.XDR {
                 _result = value;
             }
         }
+        private resultUnion _result;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -79,6 +87,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public InnerTransactionResult()
         {
@@ -95,126 +104,132 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class resultUnion_txSUCCESS : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
-            private OperationResult[] _results;
-            public OperationResult[] results
+            /// <summary>
+            /// txFEE_BUMP_INNER_SUCCESS is not included
+            /// </summary>
+            public sealed partial class TxSUCCESS : resultUnion
             {
-                get => _results;
-                set
+                public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
+                public OperationResult[] results
                 {
-                    _results = value;
+                    get => _results;
+                    set
+                    {
+                        _results = value;
+                    }
                 }
-            }
+                private OperationResult[] _results;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txFAILED : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
-            private OperationResult[] _results;
-            public OperationResult[] results
+                public override void ValidateCase() {}
+            }
+            /// <summary>
+            /// txFEE_BUMP_INNER_SUCCESS is not included
+            /// </summary>
+            public sealed partial class TxFAILED : resultUnion
             {
-                get => _results;
-                set
+                public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
+                public OperationResult[] results
                 {
-                    _results = value;
+                    get => _results;
+                    set
+                    {
+                        _results = value;
+                    }
                 }
+                private OperationResult[] _results;
+
+                public override void ValidateCase() {}
             }
+            public sealed partial class TxtooEarly : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_EARLY;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txTOO_EARLY : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_EARLY;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxtooLate : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_LATE;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txTOO_LATE : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_LATE;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxmissingOperation : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txMISSING_OPERATION;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txMISSING_OPERATION : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txMISSING_OPERATION;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxbadSeq : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SEQ;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txBAD_SEQ : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SEQ;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxbadAuth : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txBAD_AUTH : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxinsufficientBalance : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_BALANCE;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txINSUFFICIENT_BALANCE : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_BALANCE;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxnoAccount : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txNO_ACCOUNT;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txNO_ACCOUNT : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txNO_ACCOUNT;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxinsufficientFee : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_FEE;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txINSUFFICIENT_FEE : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_FEE;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxbadAuthExtra : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH_EXTRA;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txBAD_AUTH_EXTRA : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH_EXTRA;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxinternalError : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txINTERNAL_ERROR;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txINTERNAL_ERROR : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txINTERNAL_ERROR;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxnotSupported : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txNOT_SUPPORTED;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txNOT_SUPPORTED : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txNOT_SUPPORTED;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxbadSponsorship : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SPONSORSHIP;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txBAD_SPONSORSHIP : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SPONSORSHIP;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxbadMinSeqAgeOrGap : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txBAD_MIN_SEQ_AGE_OR_GAP : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxMALFORMED : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txMALFORMED;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txMALFORMED : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txMALFORMED;
+                public override void ValidateCase() {}
+            }
+            public sealed partial class TxsorobanInvalid : resultUnion
+            {
+                public override TransactionResultCode Discriminator => TransactionResultCode.txSOROBAN_INVALID;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class resultUnion_txSOROBAN_INVALID : resultUnion
-        {
-            public override TransactionResultCode Discriminator => TransactionResultCode.txSOROBAN_INVALID;
-
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class resultUnionXdr
         {
@@ -234,49 +249,49 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case resultUnion_txSUCCESS case_txSUCCESS:
+                    case resultUnion.TxSUCCESS case_txSUCCESS:
                     stream.WriteInt(case_txSUCCESS.results.Length);
                     foreach (var item in case_txSUCCESS.results)
                     {
                             OperationResultXdr.Encode(stream, item);
                     }
                     break;
-                    case resultUnion_txFAILED case_txFAILED:
+                    case resultUnion.TxFAILED case_txFAILED:
                     stream.WriteInt(case_txFAILED.results.Length);
                     foreach (var item in case_txFAILED.results)
                     {
                             OperationResultXdr.Encode(stream, item);
                     }
                     break;
-                    case resultUnion_txTOO_EARLY case_txTOO_EARLY:
+                    case resultUnion.TxtooEarly case_txTOO_EARLY:
                     break;
-                    case resultUnion_txTOO_LATE case_txTOO_LATE:
+                    case resultUnion.TxtooLate case_txTOO_LATE:
                     break;
-                    case resultUnion_txMISSING_OPERATION case_txMISSING_OPERATION:
+                    case resultUnion.TxmissingOperation case_txMISSING_OPERATION:
                     break;
-                    case resultUnion_txBAD_SEQ case_txBAD_SEQ:
+                    case resultUnion.TxbadSeq case_txBAD_SEQ:
                     break;
-                    case resultUnion_txBAD_AUTH case_txBAD_AUTH:
+                    case resultUnion.TxbadAuth case_txBAD_AUTH:
                     break;
-                    case resultUnion_txINSUFFICIENT_BALANCE case_txINSUFFICIENT_BALANCE:
+                    case resultUnion.TxinsufficientBalance case_txINSUFFICIENT_BALANCE:
                     break;
-                    case resultUnion_txNO_ACCOUNT case_txNO_ACCOUNT:
+                    case resultUnion.TxnoAccount case_txNO_ACCOUNT:
                     break;
-                    case resultUnion_txINSUFFICIENT_FEE case_txINSUFFICIENT_FEE:
+                    case resultUnion.TxinsufficientFee case_txINSUFFICIENT_FEE:
                     break;
-                    case resultUnion_txBAD_AUTH_EXTRA case_txBAD_AUTH_EXTRA:
+                    case resultUnion.TxbadAuthExtra case_txBAD_AUTH_EXTRA:
                     break;
-                    case resultUnion_txINTERNAL_ERROR case_txINTERNAL_ERROR:
+                    case resultUnion.TxinternalError case_txINTERNAL_ERROR:
                     break;
-                    case resultUnion_txNOT_SUPPORTED case_txNOT_SUPPORTED:
+                    case resultUnion.TxnotSupported case_txNOT_SUPPORTED:
                     break;
-                    case resultUnion_txBAD_SPONSORSHIP case_txBAD_SPONSORSHIP:
+                    case resultUnion.TxbadSponsorship case_txBAD_SPONSORSHIP:
                     break;
-                    case resultUnion_txBAD_MIN_SEQ_AGE_OR_GAP case_txBAD_MIN_SEQ_AGE_OR_GAP:
+                    case resultUnion.TxbadMinSeqAgeOrGap case_txBAD_MIN_SEQ_AGE_OR_GAP:
                     break;
-                    case resultUnion_txMALFORMED case_txMALFORMED:
+                    case resultUnion.TxMALFORMED case_txMALFORMED:
                     break;
-                    case resultUnion_txSOROBAN_INVALID case_txSOROBAN_INVALID:
+                    case resultUnion.TxsorobanInvalid case_txSOROBAN_INVALID:
                     break;
                 }
             }
@@ -286,7 +301,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case TransactionResultCode.txSUCCESS:
-                    var result_txSUCCESS = new resultUnion_txSUCCESS();
+                    var result_txSUCCESS = new resultUnion.TxSUCCESS();
                     {
                         var length = stream.ReadInt();
                         result_txSUCCESS.results = new OperationResult[length];
@@ -297,7 +312,7 @@ namespace Stellar.XDR {
                     }
                     return result_txSUCCESS;
                     case TransactionResultCode.txFAILED:
-                    var result_txFAILED = new resultUnion_txFAILED();
+                    var result_txFAILED = new resultUnion.TxFAILED();
                     {
                         var length = stream.ReadInt();
                         result_txFAILED.results = new OperationResult[length];
@@ -308,49 +323,49 @@ namespace Stellar.XDR {
                     }
                     return result_txFAILED;
                     case TransactionResultCode.txTOO_EARLY:
-                    var result_txTOO_EARLY = new resultUnion_txTOO_EARLY();
+                    var result_txTOO_EARLY = new resultUnion.TxtooEarly();
                     return result_txTOO_EARLY;
                     case TransactionResultCode.txTOO_LATE:
-                    var result_txTOO_LATE = new resultUnion_txTOO_LATE();
+                    var result_txTOO_LATE = new resultUnion.TxtooLate();
                     return result_txTOO_LATE;
                     case TransactionResultCode.txMISSING_OPERATION:
-                    var result_txMISSING_OPERATION = new resultUnion_txMISSING_OPERATION();
+                    var result_txMISSING_OPERATION = new resultUnion.TxmissingOperation();
                     return result_txMISSING_OPERATION;
                     case TransactionResultCode.txBAD_SEQ:
-                    var result_txBAD_SEQ = new resultUnion_txBAD_SEQ();
+                    var result_txBAD_SEQ = new resultUnion.TxbadSeq();
                     return result_txBAD_SEQ;
                     case TransactionResultCode.txBAD_AUTH:
-                    var result_txBAD_AUTH = new resultUnion_txBAD_AUTH();
+                    var result_txBAD_AUTH = new resultUnion.TxbadAuth();
                     return result_txBAD_AUTH;
                     case TransactionResultCode.txINSUFFICIENT_BALANCE:
-                    var result_txINSUFFICIENT_BALANCE = new resultUnion_txINSUFFICIENT_BALANCE();
+                    var result_txINSUFFICIENT_BALANCE = new resultUnion.TxinsufficientBalance();
                     return result_txINSUFFICIENT_BALANCE;
                     case TransactionResultCode.txNO_ACCOUNT:
-                    var result_txNO_ACCOUNT = new resultUnion_txNO_ACCOUNT();
+                    var result_txNO_ACCOUNT = new resultUnion.TxnoAccount();
                     return result_txNO_ACCOUNT;
                     case TransactionResultCode.txINSUFFICIENT_FEE:
-                    var result_txINSUFFICIENT_FEE = new resultUnion_txINSUFFICIENT_FEE();
+                    var result_txINSUFFICIENT_FEE = new resultUnion.TxinsufficientFee();
                     return result_txINSUFFICIENT_FEE;
                     case TransactionResultCode.txBAD_AUTH_EXTRA:
-                    var result_txBAD_AUTH_EXTRA = new resultUnion_txBAD_AUTH_EXTRA();
+                    var result_txBAD_AUTH_EXTRA = new resultUnion.TxbadAuthExtra();
                     return result_txBAD_AUTH_EXTRA;
                     case TransactionResultCode.txINTERNAL_ERROR:
-                    var result_txINTERNAL_ERROR = new resultUnion_txINTERNAL_ERROR();
+                    var result_txINTERNAL_ERROR = new resultUnion.TxinternalError();
                     return result_txINTERNAL_ERROR;
                     case TransactionResultCode.txNOT_SUPPORTED:
-                    var result_txNOT_SUPPORTED = new resultUnion_txNOT_SUPPORTED();
+                    var result_txNOT_SUPPORTED = new resultUnion.TxnotSupported();
                     return result_txNOT_SUPPORTED;
                     case TransactionResultCode.txBAD_SPONSORSHIP:
-                    var result_txBAD_SPONSORSHIP = new resultUnion_txBAD_SPONSORSHIP();
+                    var result_txBAD_SPONSORSHIP = new resultUnion.TxbadSponsorship();
                     return result_txBAD_SPONSORSHIP;
                     case TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP:
-                    var result_txBAD_MIN_SEQ_AGE_OR_GAP = new resultUnion_txBAD_MIN_SEQ_AGE_OR_GAP();
+                    var result_txBAD_MIN_SEQ_AGE_OR_GAP = new resultUnion.TxbadMinSeqAgeOrGap();
                     return result_txBAD_MIN_SEQ_AGE_OR_GAP;
                     case TransactionResultCode.txMALFORMED:
-                    var result_txMALFORMED = new resultUnion_txMALFORMED();
+                    var result_txMALFORMED = new resultUnion.TxMALFORMED();
                     return result_txMALFORMED;
                     case TransactionResultCode.txSOROBAN_INVALID:
-                    var result_txSOROBAN_INVALID = new resultUnion_txSOROBAN_INVALID();
+                    var result_txSOROBAN_INVALID = new resultUnion.TxsorobanInvalid();
                     return result_txSOROBAN_INVALID;
                     default:
                     throw new Exception($"Unknown discriminator for resultUnion: {discriminator}");
@@ -365,12 +380,12 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_0 : extUnion
-        {
-            public override int Discriminator => 0;
+            public sealed partial class case_0 : extUnion
+            {
+                public override int Discriminator => 0;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -390,7 +405,7 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_0 case_0:
+                    case extUnion.case_0 case_0:
                     break;
                 }
             }
@@ -400,7 +415,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case 0:
-                    var result_0 = new extUnion_0();
+                    var result_0 = new extUnion.case_0();
                     return result_0;
                     default:
                     throw new Exception($"Unknown discriminator for extUnion: {discriminator}");

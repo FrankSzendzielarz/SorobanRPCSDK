@@ -74,10 +74,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// An operation is the lowest unit of work that a transaction does
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Operation
     {
-        private MuxedAccount _sourceAccount;
+        /// <summary>
+        /// the transaction level
+        /// </summary>
         public MuxedAccount sourceAccount
         {
             get => _sourceAccount;
@@ -86,8 +91,8 @@ namespace Stellar.XDR {
                 _sourceAccount = value;
             }
         }
+        private MuxedAccount _sourceAccount;
 
-        private bodyUnion _body;
         public bodyUnion body
         {
             get => _body;
@@ -96,6 +101,7 @@ namespace Stellar.XDR {
                 _body = value;
             }
         }
+        private bodyUnion _body;
 
         public Operation()
         {
@@ -112,393 +118,393 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class bodyUnion_CREATE_ACCOUNT : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
-            private CreateAccountOp _createAccountOp;
-            public CreateAccountOp createAccountOp
+            public sealed partial class CreateAccount : bodyUnion
             {
-                get => _createAccountOp;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
+                public CreateAccountOp createAccountOp
                 {
-                    _createAccountOp = value;
+                    get => _createAccountOp;
+                    set
+                    {
+                        _createAccountOp = value;
+                    }
                 }
-            }
+                private CreateAccountOp _createAccountOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_PAYMENT : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.PAYMENT;
-            private PaymentOp _paymentOp;
-            public PaymentOp paymentOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Payment : bodyUnion
             {
-                get => _paymentOp;
-                set
+                public override OperationType Discriminator => OperationType.PAYMENT;
+                public PaymentOp paymentOp
                 {
-                    _paymentOp = value;
+                    get => _paymentOp;
+                    set
+                    {
+                        _paymentOp = value;
+                    }
                 }
-            }
+                private PaymentOp _paymentOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_PATH_PAYMENT_STRICT_RECEIVE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
-            private PathPaymentStrictReceiveOp _pathPaymentStrictReceiveOp;
-            public PathPaymentStrictReceiveOp pathPaymentStrictReceiveOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class PathPaymentStrictReceive : bodyUnion
             {
-                get => _pathPaymentStrictReceiveOp;
-                set
+                public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
+                public PathPaymentStrictReceiveOp pathPaymentStrictReceiveOp
                 {
-                    _pathPaymentStrictReceiveOp = value;
+                    get => _pathPaymentStrictReceiveOp;
+                    set
+                    {
+                        _pathPaymentStrictReceiveOp = value;
+                    }
                 }
-            }
+                private PathPaymentStrictReceiveOp _pathPaymentStrictReceiveOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_MANAGE_SELL_OFFER : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
-            private ManageSellOfferOp _manageSellOfferOp;
-            public ManageSellOfferOp manageSellOfferOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageSellOffer : bodyUnion
             {
-                get => _manageSellOfferOp;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
+                public ManageSellOfferOp manageSellOfferOp
                 {
-                    _manageSellOfferOp = value;
+                    get => _manageSellOfferOp;
+                    set
+                    {
+                        _manageSellOfferOp = value;
+                    }
                 }
-            }
+                private ManageSellOfferOp _manageSellOfferOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CREATE_PASSIVE_SELL_OFFER : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
-            private CreatePassiveSellOfferOp _createPassiveSellOfferOp;
-            public CreatePassiveSellOfferOp createPassiveSellOfferOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class CreatePassiveSellOffer : bodyUnion
             {
-                get => _createPassiveSellOfferOp;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
+                public CreatePassiveSellOfferOp createPassiveSellOfferOp
                 {
-                    _createPassiveSellOfferOp = value;
+                    get => _createPassiveSellOfferOp;
+                    set
+                    {
+                        _createPassiveSellOfferOp = value;
+                    }
                 }
-            }
+                private CreatePassiveSellOfferOp _createPassiveSellOfferOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_SET_OPTIONS : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.SET_OPTIONS;
-            private SetOptionsOp _setOptionsOp;
-            public SetOptionsOp setOptionsOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class SetOptions : bodyUnion
             {
-                get => _setOptionsOp;
-                set
+                public override OperationType Discriminator => OperationType.SET_OPTIONS;
+                public SetOptionsOp setOptionsOp
                 {
-                    _setOptionsOp = value;
+                    get => _setOptionsOp;
+                    set
+                    {
+                        _setOptionsOp = value;
+                    }
                 }
-            }
+                private SetOptionsOp _setOptionsOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CHANGE_TRUST : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CHANGE_TRUST;
-            private ChangeTrustOp _changeTrustOp;
-            public ChangeTrustOp changeTrustOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ChangeTrust : bodyUnion
             {
-                get => _changeTrustOp;
-                set
+                public override OperationType Discriminator => OperationType.CHANGE_TRUST;
+                public ChangeTrustOp changeTrustOp
                 {
-                    _changeTrustOp = value;
+                    get => _changeTrustOp;
+                    set
+                    {
+                        _changeTrustOp = value;
+                    }
                 }
-            }
+                private ChangeTrustOp _changeTrustOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_ALLOW_TRUST : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.ALLOW_TRUST;
-            private AllowTrustOp _allowTrustOp;
-            public AllowTrustOp allowTrustOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class AllowTrust : bodyUnion
             {
-                get => _allowTrustOp;
-                set
+                public override OperationType Discriminator => OperationType.ALLOW_TRUST;
+                public AllowTrustOp allowTrustOp
                 {
-                    _allowTrustOp = value;
+                    get => _allowTrustOp;
+                    set
+                    {
+                        _allowTrustOp = value;
+                    }
                 }
-            }
+                private AllowTrustOp _allowTrustOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_ACCOUNT_MERGE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
-            private MuxedAccount _destination;
-            public MuxedAccount destination
+                public override void ValidateCase() {}
+            }
+            public sealed partial class AccountMerge : bodyUnion
             {
-                get => _destination;
-                set
+                public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
+                public MuxedAccount destination
                 {
-                    _destination = value;
+                    get => _destination;
+                    set
+                    {
+                        _destination = value;
+                    }
                 }
+                private MuxedAccount _destination;
+
+                public override void ValidateCase() {}
             }
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_INFLATION : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.INFLATION;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_MANAGE_DATA : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_DATA;
-            private ManageDataOp _manageDataOp;
-            public ManageDataOp manageDataOp
+            public sealed partial class Inflation : bodyUnion
             {
-                get => _manageDataOp;
-                set
-                {
-                    _manageDataOp = value;
-                }
-            }
+                public override OperationType Discriminator => OperationType.INFLATION;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_BUMP_SEQUENCE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
-            private BumpSequenceOp _bumpSequenceOp;
-            public BumpSequenceOp bumpSequenceOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageData : bodyUnion
             {
-                get => _bumpSequenceOp;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_DATA;
+                public ManageDataOp manageDataOp
                 {
-                    _bumpSequenceOp = value;
+                    get => _manageDataOp;
+                    set
+                    {
+                        _manageDataOp = value;
+                    }
                 }
-            }
+                private ManageDataOp _manageDataOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_MANAGE_BUY_OFFER : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
-            private ManageBuyOfferOp _manageBuyOfferOp;
-            public ManageBuyOfferOp manageBuyOfferOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class BumpSequence : bodyUnion
             {
-                get => _manageBuyOfferOp;
-                set
+                public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
+                public BumpSequenceOp bumpSequenceOp
                 {
-                    _manageBuyOfferOp = value;
+                    get => _bumpSequenceOp;
+                    set
+                    {
+                        _bumpSequenceOp = value;
+                    }
                 }
-            }
+                private BumpSequenceOp _bumpSequenceOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_PATH_PAYMENT_STRICT_SEND : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
-            private PathPaymentStrictSendOp _pathPaymentStrictSendOp;
-            public PathPaymentStrictSendOp pathPaymentStrictSendOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageBuyOffer : bodyUnion
             {
-                get => _pathPaymentStrictSendOp;
-                set
+                public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
+                public ManageBuyOfferOp manageBuyOfferOp
                 {
-                    _pathPaymentStrictSendOp = value;
+                    get => _manageBuyOfferOp;
+                    set
+                    {
+                        _manageBuyOfferOp = value;
+                    }
                 }
-            }
+                private ManageBuyOfferOp _manageBuyOfferOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CREATE_CLAIMABLE_BALANCE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
-            private CreateClaimableBalanceOp _createClaimableBalanceOp;
-            public CreateClaimableBalanceOp createClaimableBalanceOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class PathPaymentStrictSend : bodyUnion
             {
-                get => _createClaimableBalanceOp;
-                set
+                public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
+                public PathPaymentStrictSendOp pathPaymentStrictSendOp
                 {
-                    _createClaimableBalanceOp = value;
+                    get => _pathPaymentStrictSendOp;
+                    set
+                    {
+                        _pathPaymentStrictSendOp = value;
+                    }
                 }
-            }
+                private PathPaymentStrictSendOp _pathPaymentStrictSendOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CLAIM_CLAIMABLE_BALANCE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
-            private ClaimClaimableBalanceOp _claimClaimableBalanceOp;
-            public ClaimClaimableBalanceOp claimClaimableBalanceOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class CreateClaimableBalance : bodyUnion
             {
-                get => _claimClaimableBalanceOp;
-                set
+                public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
+                public CreateClaimableBalanceOp createClaimableBalanceOp
                 {
-                    _claimClaimableBalanceOp = value;
+                    get => _createClaimableBalanceOp;
+                    set
+                    {
+                        _createClaimableBalanceOp = value;
+                    }
                 }
-            }
+                private CreateClaimableBalanceOp _createClaimableBalanceOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_BEGIN_SPONSORING_FUTURE_RESERVES : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
-            private BeginSponsoringFutureReservesOp _beginSponsoringFutureReservesOp;
-            public BeginSponsoringFutureReservesOp beginSponsoringFutureReservesOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ClaimClaimableBalance : bodyUnion
             {
-                get => _beginSponsoringFutureReservesOp;
-                set
+                public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
+                public ClaimClaimableBalanceOp claimClaimableBalanceOp
                 {
-                    _beginSponsoringFutureReservesOp = value;
+                    get => _claimClaimableBalanceOp;
+                    set
+                    {
+                        _claimClaimableBalanceOp = value;
+                    }
                 }
+                private ClaimClaimableBalanceOp _claimClaimableBalanceOp;
+
+                public override void ValidateCase() {}
             }
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_END_SPONSORING_FUTURE_RESERVES : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_REVOKE_SPONSORSHIP : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
-            private RevokeSponsorshipOp _revokeSponsorshipOp;
-            public RevokeSponsorshipOp revokeSponsorshipOp
+            public sealed partial class BeginSponsoringFutureReserves : bodyUnion
             {
-                get => _revokeSponsorshipOp;
-                set
+                public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
+                public BeginSponsoringFutureReservesOp beginSponsoringFutureReservesOp
                 {
-                    _revokeSponsorshipOp = value;
+                    get => _beginSponsoringFutureReservesOp;
+                    set
+                    {
+                        _beginSponsoringFutureReservesOp = value;
+                    }
                 }
-            }
+                private BeginSponsoringFutureReservesOp _beginSponsoringFutureReservesOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CLAWBACK : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAWBACK;
-            private ClawbackOp _clawbackOp;
-            public ClawbackOp clawbackOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class EndSponsoringFutureReserves : bodyUnion
             {
-                get => _clawbackOp;
-                set
-                {
-                    _clawbackOp = value;
-                }
-            }
+                public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_CLAWBACK_CLAIMABLE_BALANCE : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
-            private ClawbackClaimableBalanceOp _clawbackClaimableBalanceOp;
-            public ClawbackClaimableBalanceOp clawbackClaimableBalanceOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class RevokeSponsorship : bodyUnion
             {
-                get => _clawbackClaimableBalanceOp;
-                set
+                public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
+                public RevokeSponsorshipOp revokeSponsorshipOp
                 {
-                    _clawbackClaimableBalanceOp = value;
+                    get => _revokeSponsorshipOp;
+                    set
+                    {
+                        _revokeSponsorshipOp = value;
+                    }
                 }
-            }
+                private RevokeSponsorshipOp _revokeSponsorshipOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_SET_TRUST_LINE_FLAGS : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
-            private SetTrustLineFlagsOp _setTrustLineFlagsOp;
-            public SetTrustLineFlagsOp setTrustLineFlagsOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class Clawback : bodyUnion
             {
-                get => _setTrustLineFlagsOp;
-                set
+                public override OperationType Discriminator => OperationType.CLAWBACK;
+                public ClawbackOp clawbackOp
                 {
-                    _setTrustLineFlagsOp = value;
+                    get => _clawbackOp;
+                    set
+                    {
+                        _clawbackOp = value;
+                    }
                 }
-            }
+                private ClawbackOp _clawbackOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_LIQUIDITY_POOL_DEPOSIT : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
-            private LiquidityPoolDepositOp _liquidityPoolDepositOp;
-            public LiquidityPoolDepositOp liquidityPoolDepositOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ClawbackClaimableBalance : bodyUnion
             {
-                get => _liquidityPoolDepositOp;
-                set
+                public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
+                public ClawbackClaimableBalanceOp clawbackClaimableBalanceOp
                 {
-                    _liquidityPoolDepositOp = value;
+                    get => _clawbackClaimableBalanceOp;
+                    set
+                    {
+                        _clawbackClaimableBalanceOp = value;
+                    }
                 }
-            }
+                private ClawbackClaimableBalanceOp _clawbackClaimableBalanceOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_LIQUIDITY_POOL_WITHDRAW : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
-            private LiquidityPoolWithdrawOp _liquidityPoolWithdrawOp;
-            public LiquidityPoolWithdrawOp liquidityPoolWithdrawOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class SetTrustLineFlags : bodyUnion
             {
-                get => _liquidityPoolWithdrawOp;
-                set
+                public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
+                public SetTrustLineFlagsOp setTrustLineFlagsOp
                 {
-                    _liquidityPoolWithdrawOp = value;
+                    get => _setTrustLineFlagsOp;
+                    set
+                    {
+                        _setTrustLineFlagsOp = value;
+                    }
                 }
-            }
+                private SetTrustLineFlagsOp _setTrustLineFlagsOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_INVOKE_HOST_FUNCTION : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
-            private InvokeHostFunctionOp _invokeHostFunctionOp;
-            public InvokeHostFunctionOp invokeHostFunctionOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class LiquidityPoolDeposit : bodyUnion
             {
-                get => _invokeHostFunctionOp;
-                set
+                public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
+                public LiquidityPoolDepositOp liquidityPoolDepositOp
                 {
-                    _invokeHostFunctionOp = value;
+                    get => _liquidityPoolDepositOp;
+                    set
+                    {
+                        _liquidityPoolDepositOp = value;
+                    }
                 }
-            }
+                private LiquidityPoolDepositOp _liquidityPoolDepositOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_EXTEND_FOOTPRINT_TTL : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
-            private ExtendFootprintTTLOp _extendFootprintTTLOp;
-            public ExtendFootprintTTLOp extendFootprintTTLOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class LiquidityPoolWithdraw : bodyUnion
             {
-                get => _extendFootprintTTLOp;
-                set
+                public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
+                public LiquidityPoolWithdrawOp liquidityPoolWithdrawOp
                 {
-                    _extendFootprintTTLOp = value;
+                    get => _liquidityPoolWithdrawOp;
+                    set
+                    {
+                        _liquidityPoolWithdrawOp = value;
+                    }
                 }
-            }
+                private LiquidityPoolWithdrawOp _liquidityPoolWithdrawOp;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class bodyUnion_RESTORE_FOOTPRINT : bodyUnion
-        {
-            public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;
-            private RestoreFootprintOp _restoreFootprintOp;
-            public RestoreFootprintOp restoreFootprintOp
+                public override void ValidateCase() {}
+            }
+            public sealed partial class InvokeHostFunction : bodyUnion
             {
-                get => _restoreFootprintOp;
-                set
+                public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
+                public InvokeHostFunctionOp invokeHostFunctionOp
                 {
-                    _restoreFootprintOp = value;
+                    get => _invokeHostFunctionOp;
+                    set
+                    {
+                        _invokeHostFunctionOp = value;
+                    }
                 }
-            }
+                private InvokeHostFunctionOp _invokeHostFunctionOp;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ExtendFootprintTtl : bodyUnion
+            {
+                public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
+                public ExtendFootprintTTLOp extendFootprintTTLOp
+                {
+                    get => _extendFootprintTTLOp;
+                    set
+                    {
+                        _extendFootprintTTLOp = value;
+                    }
+                }
+                private ExtendFootprintTTLOp _extendFootprintTTLOp;
+
+                public override void ValidateCase() {}
+            }
+            public sealed partial class RestoreFootprint : bodyUnion
+            {
+                public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;
+                public RestoreFootprintOp restoreFootprintOp
+                {
+                    get => _restoreFootprintOp;
+                    set
+                    {
+                        _restoreFootprintOp = value;
+                    }
+                }
+                private RestoreFootprintOp _restoreFootprintOp;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class bodyUnionXdr
         {
@@ -518,83 +524,83 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case bodyUnion_CREATE_ACCOUNT case_CREATE_ACCOUNT:
+                    case bodyUnion.CreateAccount case_CREATE_ACCOUNT:
                     CreateAccountOpXdr.Encode(stream, case_CREATE_ACCOUNT.createAccountOp);
                     break;
-                    case bodyUnion_PAYMENT case_PAYMENT:
+                    case bodyUnion.Payment case_PAYMENT:
                     PaymentOpXdr.Encode(stream, case_PAYMENT.paymentOp);
                     break;
-                    case bodyUnion_PATH_PAYMENT_STRICT_RECEIVE case_PATH_PAYMENT_STRICT_RECEIVE:
+                    case bodyUnion.PathPaymentStrictReceive case_PATH_PAYMENT_STRICT_RECEIVE:
                     PathPaymentStrictReceiveOpXdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE.pathPaymentStrictReceiveOp);
                     break;
-                    case bodyUnion_MANAGE_SELL_OFFER case_MANAGE_SELL_OFFER:
+                    case bodyUnion.ManageSellOffer case_MANAGE_SELL_OFFER:
                     ManageSellOfferOpXdr.Encode(stream, case_MANAGE_SELL_OFFER.manageSellOfferOp);
                     break;
-                    case bodyUnion_CREATE_PASSIVE_SELL_OFFER case_CREATE_PASSIVE_SELL_OFFER:
+                    case bodyUnion.CreatePassiveSellOffer case_CREATE_PASSIVE_SELL_OFFER:
                     CreatePassiveSellOfferOpXdr.Encode(stream, case_CREATE_PASSIVE_SELL_OFFER.createPassiveSellOfferOp);
                     break;
-                    case bodyUnion_SET_OPTIONS case_SET_OPTIONS:
+                    case bodyUnion.SetOptions case_SET_OPTIONS:
                     SetOptionsOpXdr.Encode(stream, case_SET_OPTIONS.setOptionsOp);
                     break;
-                    case bodyUnion_CHANGE_TRUST case_CHANGE_TRUST:
+                    case bodyUnion.ChangeTrust case_CHANGE_TRUST:
                     ChangeTrustOpXdr.Encode(stream, case_CHANGE_TRUST.changeTrustOp);
                     break;
-                    case bodyUnion_ALLOW_TRUST case_ALLOW_TRUST:
+                    case bodyUnion.AllowTrust case_ALLOW_TRUST:
                     AllowTrustOpXdr.Encode(stream, case_ALLOW_TRUST.allowTrustOp);
                     break;
-                    case bodyUnion_ACCOUNT_MERGE case_ACCOUNT_MERGE:
+                    case bodyUnion.AccountMerge case_ACCOUNT_MERGE:
                     MuxedAccountXdr.Encode(stream, case_ACCOUNT_MERGE.destination);
                     break;
-                    case bodyUnion_INFLATION case_INFLATION:
+                    case bodyUnion.Inflation case_INFLATION:
                     break;
-                    case bodyUnion_MANAGE_DATA case_MANAGE_DATA:
+                    case bodyUnion.ManageData case_MANAGE_DATA:
                     ManageDataOpXdr.Encode(stream, case_MANAGE_DATA.manageDataOp);
                     break;
-                    case bodyUnion_BUMP_SEQUENCE case_BUMP_SEQUENCE:
+                    case bodyUnion.BumpSequence case_BUMP_SEQUENCE:
                     BumpSequenceOpXdr.Encode(stream, case_BUMP_SEQUENCE.bumpSequenceOp);
                     break;
-                    case bodyUnion_MANAGE_BUY_OFFER case_MANAGE_BUY_OFFER:
+                    case bodyUnion.ManageBuyOffer case_MANAGE_BUY_OFFER:
                     ManageBuyOfferOpXdr.Encode(stream, case_MANAGE_BUY_OFFER.manageBuyOfferOp);
                     break;
-                    case bodyUnion_PATH_PAYMENT_STRICT_SEND case_PATH_PAYMENT_STRICT_SEND:
+                    case bodyUnion.PathPaymentStrictSend case_PATH_PAYMENT_STRICT_SEND:
                     PathPaymentStrictSendOpXdr.Encode(stream, case_PATH_PAYMENT_STRICT_SEND.pathPaymentStrictSendOp);
                     break;
-                    case bodyUnion_CREATE_CLAIMABLE_BALANCE case_CREATE_CLAIMABLE_BALANCE:
+                    case bodyUnion.CreateClaimableBalance case_CREATE_CLAIMABLE_BALANCE:
                     CreateClaimableBalanceOpXdr.Encode(stream, case_CREATE_CLAIMABLE_BALANCE.createClaimableBalanceOp);
                     break;
-                    case bodyUnion_CLAIM_CLAIMABLE_BALANCE case_CLAIM_CLAIMABLE_BALANCE:
+                    case bodyUnion.ClaimClaimableBalance case_CLAIM_CLAIMABLE_BALANCE:
                     ClaimClaimableBalanceOpXdr.Encode(stream, case_CLAIM_CLAIMABLE_BALANCE.claimClaimableBalanceOp);
                     break;
-                    case bodyUnion_BEGIN_SPONSORING_FUTURE_RESERVES case_BEGIN_SPONSORING_FUTURE_RESERVES:
+                    case bodyUnion.BeginSponsoringFutureReserves case_BEGIN_SPONSORING_FUTURE_RESERVES:
                     BeginSponsoringFutureReservesOpXdr.Encode(stream, case_BEGIN_SPONSORING_FUTURE_RESERVES.beginSponsoringFutureReservesOp);
                     break;
-                    case bodyUnion_END_SPONSORING_FUTURE_RESERVES case_END_SPONSORING_FUTURE_RESERVES:
+                    case bodyUnion.EndSponsoringFutureReserves case_END_SPONSORING_FUTURE_RESERVES:
                     break;
-                    case bodyUnion_REVOKE_SPONSORSHIP case_REVOKE_SPONSORSHIP:
+                    case bodyUnion.RevokeSponsorship case_REVOKE_SPONSORSHIP:
                     RevokeSponsorshipOpXdr.Encode(stream, case_REVOKE_SPONSORSHIP.revokeSponsorshipOp);
                     break;
-                    case bodyUnion_CLAWBACK case_CLAWBACK:
+                    case bodyUnion.Clawback case_CLAWBACK:
                     ClawbackOpXdr.Encode(stream, case_CLAWBACK.clawbackOp);
                     break;
-                    case bodyUnion_CLAWBACK_CLAIMABLE_BALANCE case_CLAWBACK_CLAIMABLE_BALANCE:
+                    case bodyUnion.ClawbackClaimableBalance case_CLAWBACK_CLAIMABLE_BALANCE:
                     ClawbackClaimableBalanceOpXdr.Encode(stream, case_CLAWBACK_CLAIMABLE_BALANCE.clawbackClaimableBalanceOp);
                     break;
-                    case bodyUnion_SET_TRUST_LINE_FLAGS case_SET_TRUST_LINE_FLAGS:
+                    case bodyUnion.SetTrustLineFlags case_SET_TRUST_LINE_FLAGS:
                     SetTrustLineFlagsOpXdr.Encode(stream, case_SET_TRUST_LINE_FLAGS.setTrustLineFlagsOp);
                     break;
-                    case bodyUnion_LIQUIDITY_POOL_DEPOSIT case_LIQUIDITY_POOL_DEPOSIT:
+                    case bodyUnion.LiquidityPoolDeposit case_LIQUIDITY_POOL_DEPOSIT:
                     LiquidityPoolDepositOpXdr.Encode(stream, case_LIQUIDITY_POOL_DEPOSIT.liquidityPoolDepositOp);
                     break;
-                    case bodyUnion_LIQUIDITY_POOL_WITHDRAW case_LIQUIDITY_POOL_WITHDRAW:
+                    case bodyUnion.LiquidityPoolWithdraw case_LIQUIDITY_POOL_WITHDRAW:
                     LiquidityPoolWithdrawOpXdr.Encode(stream, case_LIQUIDITY_POOL_WITHDRAW.liquidityPoolWithdrawOp);
                     break;
-                    case bodyUnion_INVOKE_HOST_FUNCTION case_INVOKE_HOST_FUNCTION:
+                    case bodyUnion.InvokeHostFunction case_INVOKE_HOST_FUNCTION:
                     InvokeHostFunctionOpXdr.Encode(stream, case_INVOKE_HOST_FUNCTION.invokeHostFunctionOp);
                     break;
-                    case bodyUnion_EXTEND_FOOTPRINT_TTL case_EXTEND_FOOTPRINT_TTL:
+                    case bodyUnion.ExtendFootprintTtl case_EXTEND_FOOTPRINT_TTL:
                     ExtendFootprintTTLOpXdr.Encode(stream, case_EXTEND_FOOTPRINT_TTL.extendFootprintTTLOp);
                     break;
-                    case bodyUnion_RESTORE_FOOTPRINT case_RESTORE_FOOTPRINT:
+                    case bodyUnion.RestoreFootprint case_RESTORE_FOOTPRINT:
                     RestoreFootprintOpXdr.Encode(stream, case_RESTORE_FOOTPRINT.restoreFootprintOp);
                     break;
                 }
@@ -605,109 +611,109 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case OperationType.CREATE_ACCOUNT:
-                    var result_CREATE_ACCOUNT = new bodyUnion_CREATE_ACCOUNT();
+                    var result_CREATE_ACCOUNT = new bodyUnion.CreateAccount();
                     result_CREATE_ACCOUNT.createAccountOp = CreateAccountOpXdr.Decode(stream);
                     return result_CREATE_ACCOUNT;
                     case OperationType.PAYMENT:
-                    var result_PAYMENT = new bodyUnion_PAYMENT();
+                    var result_PAYMENT = new bodyUnion.Payment();
                     result_PAYMENT.paymentOp = PaymentOpXdr.Decode(stream);
                     return result_PAYMENT;
                     case OperationType.PATH_PAYMENT_STRICT_RECEIVE:
-                    var result_PATH_PAYMENT_STRICT_RECEIVE = new bodyUnion_PATH_PAYMENT_STRICT_RECEIVE();
+                    var result_PATH_PAYMENT_STRICT_RECEIVE = new bodyUnion.PathPaymentStrictReceive();
                     result_PATH_PAYMENT_STRICT_RECEIVE.pathPaymentStrictReceiveOp = PathPaymentStrictReceiveOpXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_RECEIVE;
                     case OperationType.MANAGE_SELL_OFFER:
-                    var result_MANAGE_SELL_OFFER = new bodyUnion_MANAGE_SELL_OFFER();
+                    var result_MANAGE_SELL_OFFER = new bodyUnion.ManageSellOffer();
                     result_MANAGE_SELL_OFFER.manageSellOfferOp = ManageSellOfferOpXdr.Decode(stream);
                     return result_MANAGE_SELL_OFFER;
                     case OperationType.CREATE_PASSIVE_SELL_OFFER:
-                    var result_CREATE_PASSIVE_SELL_OFFER = new bodyUnion_CREATE_PASSIVE_SELL_OFFER();
+                    var result_CREATE_PASSIVE_SELL_OFFER = new bodyUnion.CreatePassiveSellOffer();
                     result_CREATE_PASSIVE_SELL_OFFER.createPassiveSellOfferOp = CreatePassiveSellOfferOpXdr.Decode(stream);
                     return result_CREATE_PASSIVE_SELL_OFFER;
                     case OperationType.SET_OPTIONS:
-                    var result_SET_OPTIONS = new bodyUnion_SET_OPTIONS();
+                    var result_SET_OPTIONS = new bodyUnion.SetOptions();
                     result_SET_OPTIONS.setOptionsOp = SetOptionsOpXdr.Decode(stream);
                     return result_SET_OPTIONS;
                     case OperationType.CHANGE_TRUST:
-                    var result_CHANGE_TRUST = new bodyUnion_CHANGE_TRUST();
+                    var result_CHANGE_TRUST = new bodyUnion.ChangeTrust();
                     result_CHANGE_TRUST.changeTrustOp = ChangeTrustOpXdr.Decode(stream);
                     return result_CHANGE_TRUST;
                     case OperationType.ALLOW_TRUST:
-                    var result_ALLOW_TRUST = new bodyUnion_ALLOW_TRUST();
+                    var result_ALLOW_TRUST = new bodyUnion.AllowTrust();
                     result_ALLOW_TRUST.allowTrustOp = AllowTrustOpXdr.Decode(stream);
                     return result_ALLOW_TRUST;
                     case OperationType.ACCOUNT_MERGE:
-                    var result_ACCOUNT_MERGE = new bodyUnion_ACCOUNT_MERGE();
+                    var result_ACCOUNT_MERGE = new bodyUnion.AccountMerge();
                     result_ACCOUNT_MERGE.destination = MuxedAccountXdr.Decode(stream);
                     return result_ACCOUNT_MERGE;
                     case OperationType.INFLATION:
-                    var result_INFLATION = new bodyUnion_INFLATION();
+                    var result_INFLATION = new bodyUnion.Inflation();
                     return result_INFLATION;
                     case OperationType.MANAGE_DATA:
-                    var result_MANAGE_DATA = new bodyUnion_MANAGE_DATA();
+                    var result_MANAGE_DATA = new bodyUnion.ManageData();
                     result_MANAGE_DATA.manageDataOp = ManageDataOpXdr.Decode(stream);
                     return result_MANAGE_DATA;
                     case OperationType.BUMP_SEQUENCE:
-                    var result_BUMP_SEQUENCE = new bodyUnion_BUMP_SEQUENCE();
+                    var result_BUMP_SEQUENCE = new bodyUnion.BumpSequence();
                     result_BUMP_SEQUENCE.bumpSequenceOp = BumpSequenceOpXdr.Decode(stream);
                     return result_BUMP_SEQUENCE;
                     case OperationType.MANAGE_BUY_OFFER:
-                    var result_MANAGE_BUY_OFFER = new bodyUnion_MANAGE_BUY_OFFER();
+                    var result_MANAGE_BUY_OFFER = new bodyUnion.ManageBuyOffer();
                     result_MANAGE_BUY_OFFER.manageBuyOfferOp = ManageBuyOfferOpXdr.Decode(stream);
                     return result_MANAGE_BUY_OFFER;
                     case OperationType.PATH_PAYMENT_STRICT_SEND:
-                    var result_PATH_PAYMENT_STRICT_SEND = new bodyUnion_PATH_PAYMENT_STRICT_SEND();
+                    var result_PATH_PAYMENT_STRICT_SEND = new bodyUnion.PathPaymentStrictSend();
                     result_PATH_PAYMENT_STRICT_SEND.pathPaymentStrictSendOp = PathPaymentStrictSendOpXdr.Decode(stream);
                     return result_PATH_PAYMENT_STRICT_SEND;
                     case OperationType.CREATE_CLAIMABLE_BALANCE:
-                    var result_CREATE_CLAIMABLE_BALANCE = new bodyUnion_CREATE_CLAIMABLE_BALANCE();
+                    var result_CREATE_CLAIMABLE_BALANCE = new bodyUnion.CreateClaimableBalance();
                     result_CREATE_CLAIMABLE_BALANCE.createClaimableBalanceOp = CreateClaimableBalanceOpXdr.Decode(stream);
                     return result_CREATE_CLAIMABLE_BALANCE;
                     case OperationType.CLAIM_CLAIMABLE_BALANCE:
-                    var result_CLAIM_CLAIMABLE_BALANCE = new bodyUnion_CLAIM_CLAIMABLE_BALANCE();
+                    var result_CLAIM_CLAIMABLE_BALANCE = new bodyUnion.ClaimClaimableBalance();
                     result_CLAIM_CLAIMABLE_BALANCE.claimClaimableBalanceOp = ClaimClaimableBalanceOpXdr.Decode(stream);
                     return result_CLAIM_CLAIMABLE_BALANCE;
                     case OperationType.BEGIN_SPONSORING_FUTURE_RESERVES:
-                    var result_BEGIN_SPONSORING_FUTURE_RESERVES = new bodyUnion_BEGIN_SPONSORING_FUTURE_RESERVES();
+                    var result_BEGIN_SPONSORING_FUTURE_RESERVES = new bodyUnion.BeginSponsoringFutureReserves();
                     result_BEGIN_SPONSORING_FUTURE_RESERVES.beginSponsoringFutureReservesOp = BeginSponsoringFutureReservesOpXdr.Decode(stream);
                     return result_BEGIN_SPONSORING_FUTURE_RESERVES;
                     case OperationType.END_SPONSORING_FUTURE_RESERVES:
-                    var result_END_SPONSORING_FUTURE_RESERVES = new bodyUnion_END_SPONSORING_FUTURE_RESERVES();
+                    var result_END_SPONSORING_FUTURE_RESERVES = new bodyUnion.EndSponsoringFutureReserves();
                     return result_END_SPONSORING_FUTURE_RESERVES;
                     case OperationType.REVOKE_SPONSORSHIP:
-                    var result_REVOKE_SPONSORSHIP = new bodyUnion_REVOKE_SPONSORSHIP();
+                    var result_REVOKE_SPONSORSHIP = new bodyUnion.RevokeSponsorship();
                     result_REVOKE_SPONSORSHIP.revokeSponsorshipOp = RevokeSponsorshipOpXdr.Decode(stream);
                     return result_REVOKE_SPONSORSHIP;
                     case OperationType.CLAWBACK:
-                    var result_CLAWBACK = new bodyUnion_CLAWBACK();
+                    var result_CLAWBACK = new bodyUnion.Clawback();
                     result_CLAWBACK.clawbackOp = ClawbackOpXdr.Decode(stream);
                     return result_CLAWBACK;
                     case OperationType.CLAWBACK_CLAIMABLE_BALANCE:
-                    var result_CLAWBACK_CLAIMABLE_BALANCE = new bodyUnion_CLAWBACK_CLAIMABLE_BALANCE();
+                    var result_CLAWBACK_CLAIMABLE_BALANCE = new bodyUnion.ClawbackClaimableBalance();
                     result_CLAWBACK_CLAIMABLE_BALANCE.clawbackClaimableBalanceOp = ClawbackClaimableBalanceOpXdr.Decode(stream);
                     return result_CLAWBACK_CLAIMABLE_BALANCE;
                     case OperationType.SET_TRUST_LINE_FLAGS:
-                    var result_SET_TRUST_LINE_FLAGS = new bodyUnion_SET_TRUST_LINE_FLAGS();
+                    var result_SET_TRUST_LINE_FLAGS = new bodyUnion.SetTrustLineFlags();
                     result_SET_TRUST_LINE_FLAGS.setTrustLineFlagsOp = SetTrustLineFlagsOpXdr.Decode(stream);
                     return result_SET_TRUST_LINE_FLAGS;
                     case OperationType.LIQUIDITY_POOL_DEPOSIT:
-                    var result_LIQUIDITY_POOL_DEPOSIT = new bodyUnion_LIQUIDITY_POOL_DEPOSIT();
+                    var result_LIQUIDITY_POOL_DEPOSIT = new bodyUnion.LiquidityPoolDeposit();
                     result_LIQUIDITY_POOL_DEPOSIT.liquidityPoolDepositOp = LiquidityPoolDepositOpXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_DEPOSIT;
                     case OperationType.LIQUIDITY_POOL_WITHDRAW:
-                    var result_LIQUIDITY_POOL_WITHDRAW = new bodyUnion_LIQUIDITY_POOL_WITHDRAW();
+                    var result_LIQUIDITY_POOL_WITHDRAW = new bodyUnion.LiquidityPoolWithdraw();
                     result_LIQUIDITY_POOL_WITHDRAW.liquidityPoolWithdrawOp = LiquidityPoolWithdrawOpXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_WITHDRAW;
                     case OperationType.INVOKE_HOST_FUNCTION:
-                    var result_INVOKE_HOST_FUNCTION = new bodyUnion_INVOKE_HOST_FUNCTION();
+                    var result_INVOKE_HOST_FUNCTION = new bodyUnion.InvokeHostFunction();
                     result_INVOKE_HOST_FUNCTION.invokeHostFunctionOp = InvokeHostFunctionOpXdr.Decode(stream);
                     return result_INVOKE_HOST_FUNCTION;
                     case OperationType.EXTEND_FOOTPRINT_TTL:
-                    var result_EXTEND_FOOTPRINT_TTL = new bodyUnion_EXTEND_FOOTPRINT_TTL();
+                    var result_EXTEND_FOOTPRINT_TTL = new bodyUnion.ExtendFootprintTtl();
                     result_EXTEND_FOOTPRINT_TTL.extendFootprintTTLOp = ExtendFootprintTTLOpXdr.Decode(stream);
                     return result_EXTEND_FOOTPRINT_TTL;
                     case OperationType.RESTORE_FOOTPRINT:
-                    var result_RESTORE_FOOTPRINT = new bodyUnion_RESTORE_FOOTPRINT();
+                    var result_RESTORE_FOOTPRINT = new bodyUnion.RestoreFootprint();
                     result_RESTORE_FOOTPRINT.restoreFootprintOp = RestoreFootprintOpXdr.Decode(stream);
                     return result_RESTORE_FOOTPRINT;
                     default:

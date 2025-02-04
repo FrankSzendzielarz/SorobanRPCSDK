@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ManageDataOp
     {
-        private string64 _dataName;
         public string64 dataName
         {
             get => _dataName;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _dataName = value;
             }
         }
+        private string64 _dataName;
 
-        private DataValue _dataValue;
         public DataValue dataValue
         {
             get => _dataValue;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _dataValue = value;
             }
         }
+        private DataValue _dataValue;
 
         public ManageDataOp()
         {

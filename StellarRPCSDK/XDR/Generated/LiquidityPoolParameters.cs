@@ -21,21 +21,21 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT : LiquidityPoolParameters
-    {
-        public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
-        private LiquidityPoolConstantProductParameters _constantProduct;
-        public LiquidityPoolConstantProductParameters constantProduct
+        public sealed partial class LiquidityPoolConstantProduct : LiquidityPoolParameters
         {
-            get => _constantProduct;
-            set
+            public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
+            public LiquidityPoolConstantProductParameters constantProduct
             {
-                _constantProduct = value;
+                get => _constantProduct;
+                set
+                {
+                    _constantProduct = value;
+                }
             }
-        }
+            private LiquidityPoolConstantProductParameters _constantProduct;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LiquidityPoolParametersXdr
     {
@@ -55,7 +55,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                case LiquidityPoolParameters.LiquidityPoolConstantProduct case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
                 LiquidityPoolConstantProductParametersXdr.Encode(stream, case_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct);
                 break;
             }
@@ -66,7 +66,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT:
-                var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new LiquidityPoolParameters_LIQUIDITY_POOL_CONSTANT_PRODUCT();
+                var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new LiquidityPoolParameters.LiquidityPoolConstantProduct();
                 result_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct = LiquidityPoolConstantProductParametersXdr.Decode(stream);
                 return result_LIQUIDITY_POOL_CONSTANT_PRODUCT;
                 default:

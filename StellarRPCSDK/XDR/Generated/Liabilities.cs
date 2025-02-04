@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Liabilities
     {
-        private int64 _buying;
         public int64 buying
         {
             get => _buying;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _buying = value;
             }
         }
+        private int64 _buying;
 
-        private int64 _selling;
         public int64 selling
         {
             get => _selling;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _selling = value;
             }
         }
+        private int64 _selling;
 
         public Liabilities()
         {

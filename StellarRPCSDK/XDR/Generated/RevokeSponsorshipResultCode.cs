@@ -23,7 +23,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum RevokeSponsorshipResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         REVOKE_SPONSORSHIP_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         REVOKE_SPONSORSHIP_DOES_NOT_EXIST = -1,
         REVOKE_SPONSORSHIP_NOT_SPONSOR = -2,
         REVOKE_SPONSORSHIP_LOW_RESERVE = -3,

@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class NonexistenceProofBody
     {
-        private ColdArchiveBucketEntry[] _entriesToProve;
         public ColdArchiveBucketEntry[] entriesToProve
         {
             get => _entriesToProve;
@@ -28,8 +27,11 @@ namespace Stellar.XDR {
                 _entriesToProve = value;
             }
         }
+        private ColdArchiveBucketEntry[] _entriesToProve;
 
-        private ProofLevel[] _proofLevels;
+        /// <summary>
+        /// contains all HashNodes that correspond with that level
+        /// </summary>
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;
@@ -38,6 +40,7 @@ namespace Stellar.XDR {
                 _proofLevels = value;
             }
         }
+        private ProofLevel[] _proofLevels;
 
         public NonexistenceProofBody()
         {

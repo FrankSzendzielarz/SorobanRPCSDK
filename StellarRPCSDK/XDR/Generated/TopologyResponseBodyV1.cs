@@ -22,7 +22,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TopologyResponseBodyV1
     {
-        private PeerStatList _inboundPeers;
         public PeerStatList inboundPeers
         {
             get => _inboundPeers;
@@ -31,8 +30,8 @@ namespace Stellar.XDR {
                 _inboundPeers = value;
             }
         }
+        private PeerStatList _inboundPeers;
 
-        private PeerStatList _outboundPeers;
         public PeerStatList outboundPeers
         {
             get => _outboundPeers;
@@ -41,8 +40,8 @@ namespace Stellar.XDR {
                 _outboundPeers = value;
             }
         }
+        private PeerStatList _outboundPeers;
 
-        private uint32 _totalInboundPeerCount;
         public uint32 totalInboundPeerCount
         {
             get => _totalInboundPeerCount;
@@ -51,8 +50,8 @@ namespace Stellar.XDR {
                 _totalInboundPeerCount = value;
             }
         }
+        private uint32 _totalInboundPeerCount;
 
-        private uint32 _totalOutboundPeerCount;
         public uint32 totalOutboundPeerCount
         {
             get => _totalOutboundPeerCount;
@@ -61,8 +60,8 @@ namespace Stellar.XDR {
                 _totalOutboundPeerCount = value;
             }
         }
+        private uint32 _totalOutboundPeerCount;
 
-        private uint32 _maxInboundPeerCount;
         public uint32 maxInboundPeerCount
         {
             get => _maxInboundPeerCount;
@@ -71,8 +70,8 @@ namespace Stellar.XDR {
                 _maxInboundPeerCount = value;
             }
         }
+        private uint32 _maxInboundPeerCount;
 
-        private uint32 _maxOutboundPeerCount;
         public uint32 maxOutboundPeerCount
         {
             get => _maxOutboundPeerCount;
@@ -81,6 +80,7 @@ namespace Stellar.XDR {
                 _maxOutboundPeerCount = value;
             }
         }
+        private uint32 _maxOutboundPeerCount;
 
         public TopologyResponseBodyV1()
         {

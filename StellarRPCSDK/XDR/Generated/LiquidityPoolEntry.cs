@@ -31,7 +31,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LiquidityPoolEntry
     {
-        private PoolID _liquidityPoolID;
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -40,8 +39,8 @@ namespace Stellar.XDR {
                 _liquidityPoolID = value;
             }
         }
+        private PoolID _liquidityPoolID;
 
-        private bodyUnion _body;
         public bodyUnion body
         {
             get => _body;
@@ -50,6 +49,7 @@ namespace Stellar.XDR {
                 _body = value;
             }
         }
+        private bodyUnion _body;
 
         public LiquidityPoolEntry()
         {
@@ -69,7 +69,6 @@ namespace Stellar.XDR {
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             public partial class constantProductStruct
             {
-                private LiquidityPoolConstantProductParameters __params;
                 public LiquidityPoolConstantProductParameters _params
                 {
                     get => __params;
@@ -78,8 +77,8 @@ namespace Stellar.XDR {
                         __params = value;
                     }
                 }
+                private LiquidityPoolConstantProductParameters __params;
 
-                private int64 _reserveA;
                 public int64 reserveA
                 {
                     get => _reserveA;
@@ -88,8 +87,11 @@ namespace Stellar.XDR {
                         _reserveA = value;
                     }
                 }
+                private int64 _reserveA;
 
-                private int64 _reserveB;
+                /// <summary>
+                /// amount of A in the pool
+                /// </summary>
                 public int64 reserveB
                 {
                     get => _reserveB;
@@ -98,8 +100,11 @@ namespace Stellar.XDR {
                         _reserveB = value;
                     }
                 }
+                private int64 _reserveB;
 
-                private int64 _totalPoolShares;
+                /// <summary>
+                /// amount of B in the pool
+                /// </summary>
                 public int64 totalPoolShares
                 {
                     get => _totalPoolShares;
@@ -108,8 +113,11 @@ namespace Stellar.XDR {
                         _totalPoolShares = value;
                     }
                 }
+                private int64 _totalPoolShares;
 
-                private int64 _poolSharesTrustLineCount;
+                /// <summary>
+                /// total number of pool shares issued
+                /// </summary>
                 public int64 poolSharesTrustLineCount
                 {
                     get => _poolSharesTrustLineCount;
@@ -118,6 +126,7 @@ namespace Stellar.XDR {
                         _poolSharesTrustLineCount = value;
                     }
                 }
+                private int64 _poolSharesTrustLineCount;
 
                 public constantProductStruct()
                 {
@@ -161,21 +170,21 @@ namespace Stellar.XDR {
                     return result;
                 }
             }
-        }
-        public sealed partial class bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT : bodyUnion
-        {
-            public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
-            private constantProductStruct _constantProduct;
-            public constantProductStruct constantProduct
+            public sealed partial class LiquidityPoolConstantProduct : bodyUnion
             {
-                get => _constantProduct;
-                set
+                public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
+                public constantProductStruct constantProduct
                 {
-                    _constantProduct = value;
+                    get => _constantProduct;
+                    set
+                    {
+                        _constantProduct = value;
+                    }
                 }
-            }
+                private constantProductStruct _constantProduct;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class bodyUnionXdr
         {
@@ -195,7 +204,7 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
+                    case bodyUnion.LiquidityPoolConstantProduct case_LIQUIDITY_POOL_CONSTANT_PRODUCT:
                     bodyUnion.constantProductStructXdr.Encode(stream, case_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct);
                     break;
                 }
@@ -206,7 +215,7 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT:
-                    var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new bodyUnion_LIQUIDITY_POOL_CONSTANT_PRODUCT();
+                    var result_LIQUIDITY_POOL_CONSTANT_PRODUCT = new bodyUnion.LiquidityPoolConstantProduct();
                     result_LIQUIDITY_POOL_CONSTANT_PRODUCT.constantProduct = bodyUnion.constantProductStructXdr.Decode(stream);
                     return result_LIQUIDITY_POOL_CONSTANT_PRODUCT;
                     default:

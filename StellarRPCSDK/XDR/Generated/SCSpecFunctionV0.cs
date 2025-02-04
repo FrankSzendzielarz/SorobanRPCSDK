@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecFunctionV0
     {
-        private string _doc;
         public string doc
         {
             get => _doc;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _doc = value;
             }
         }
+        private string _doc;
 
-        private SCSymbol _name;
         public SCSymbol name
         {
             get => _name;
@@ -37,8 +36,8 @@ namespace Stellar.XDR {
                 _name = value;
             }
         }
+        private SCSymbol _name;
 
-        private SCSpecFunctionInputV0[] _inputs;
         public SCSpecFunctionInputV0[] inputs
         {
             get => _inputs;
@@ -49,8 +48,8 @@ namespace Stellar.XDR {
                 _inputs = value;
             }
         }
+        private SCSpecFunctionInputV0[] _inputs;
 
-        private SCSpecTypeDef[] _outputs;
         public SCSpecTypeDef[] outputs
         {
             get => _outputs;
@@ -61,6 +60,7 @@ namespace Stellar.XDR {
                 _outputs = value;
             }
         }
+        private SCSpecTypeDef[] _outputs;
 
         public SCSpecFunctionV0()
         {

@@ -25,30 +25,30 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS : ExtendFootprintTTLResult
-    {
-        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
+        public sealed partial class ExtendFootprintTtlSuccess : ExtendFootprintTTLResult
+        {
+            public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_MALFORMED : ExtendFootprintTTLResult
-    {
-        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ExtendFootprintTtlMalformed : ExtendFootprintTTLResult
+        {
+            public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED : ExtendFootprintTTLResult
-    {
-        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ExtendFootprintTtlResourceLimitExceeded : ExtendFootprintTTLResult
+        {
+            public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE : ExtendFootprintTTLResult
-    {
-        public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ExtendFootprintTtlInsufficientRefundableFee : ExtendFootprintTTLResult
+        {
+            public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ExtendFootprintTTLResultXdr
     {
@@ -68,13 +68,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS case_EXTEND_FOOTPRINT_TTL_SUCCESS:
+                case ExtendFootprintTTLResult.ExtendFootprintTtlSuccess case_EXTEND_FOOTPRINT_TTL_SUCCESS:
                 break;
-                case ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_MALFORMED case_EXTEND_FOOTPRINT_TTL_MALFORMED:
+                case ExtendFootprintTTLResult.ExtendFootprintTtlMalformed case_EXTEND_FOOTPRINT_TTL_MALFORMED:
                 break;
-                case ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED case_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED:
+                case ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded case_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED:
                 break;
-                case ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE case_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE:
+                case ExtendFootprintTTLResult.ExtendFootprintTtlInsufficientRefundableFee case_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE:
                 break;
             }
         }
@@ -84,16 +84,16 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS:
-                var result_EXTEND_FOOTPRINT_TTL_SUCCESS = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_SUCCESS();
+                var result_EXTEND_FOOTPRINT_TTL_SUCCESS = new ExtendFootprintTTLResult.ExtendFootprintTtlSuccess();
                 return result_EXTEND_FOOTPRINT_TTL_SUCCESS;
                 case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED:
-                var result_EXTEND_FOOTPRINT_TTL_MALFORMED = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_MALFORMED();
+                var result_EXTEND_FOOTPRINT_TTL_MALFORMED = new ExtendFootprintTTLResult.ExtendFootprintTtlMalformed();
                 return result_EXTEND_FOOTPRINT_TTL_MALFORMED;
                 case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED:
-                var result_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED();
+                var result_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED = new ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded();
                 return result_EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
                 case ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE:
-                var result_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE = new ExtendFootprintTTLResult_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE();
+                var result_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE = new ExtendFootprintTTLResult.ExtendFootprintTtlInsufficientRefundableFee();
                 return result_EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;
                 default:
                 throw new Exception($"Unknown discriminator for ExtendFootprintTTLResult: {discriminator}");

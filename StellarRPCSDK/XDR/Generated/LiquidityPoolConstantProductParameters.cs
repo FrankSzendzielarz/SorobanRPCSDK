@@ -17,7 +17,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LiquidityPoolConstantProductParameters
     {
-        private Asset _assetA;
         public Asset assetA
         {
             get => _assetA;
@@ -26,8 +25,11 @@ namespace Stellar.XDR {
                 _assetA = value;
             }
         }
+        private Asset _assetA;
 
-        private Asset _assetB;
+        /// <summary>
+        /// assetA < assetB
+        /// </summary>
         public Asset assetB
         {
             get => _assetB;
@@ -36,8 +38,8 @@ namespace Stellar.XDR {
                 _assetB = value;
             }
         }
+        private Asset _assetB;
 
-        private int32 _fee;
         public int32 fee
         {
             get => _fee;
@@ -46,6 +48,7 @@ namespace Stellar.XDR {
                 _fee = value;
             }
         }
+        private int32 _fee;
 
         public LiquidityPoolConstantProductParameters()
         {

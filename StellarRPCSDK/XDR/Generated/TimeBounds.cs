@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeBounds
     {
-        private TimePoint _minTime;
         public TimePoint minTime
         {
             get => _minTime;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _minTime = value;
             }
         }
+        private TimePoint _minTime;
 
-        private TimePoint _maxTime;
         public TimePoint maxTime
         {
             get => _maxTime;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _maxTime = value;
             }
         }
+        private TimePoint _maxTime;
 
         public TimeBounds()
         {

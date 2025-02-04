@@ -23,27 +23,27 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SorobanTransactionMetaExt_0 : SorobanTransactionMetaExt
-    {
-        public override int Discriminator => 0;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SorobanTransactionMetaExt_1 : SorobanTransactionMetaExt
-    {
-        public override int Discriminator => 1;
-        private SorobanTransactionMetaExtV1 _v1;
-        public SorobanTransactionMetaExtV1 v1
+        public sealed partial class case_0 : SorobanTransactionMetaExt
         {
-            get => _v1;
-            set
-            {
-                _v1 = value;
-            }
-        }
+            public override int Discriminator => 0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class case_1 : SorobanTransactionMetaExt
+        {
+            public override int Discriminator => 1;
+            public SorobanTransactionMetaExtV1 v1
+            {
+                get => _v1;
+                set
+                {
+                    _v1 = value;
+                }
+            }
+            private SorobanTransactionMetaExtV1 _v1;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SorobanTransactionMetaExtXdr
     {
@@ -63,9 +63,9 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SorobanTransactionMetaExt_0 case_0:
+                case SorobanTransactionMetaExt.case_0 case_0:
                 break;
-                case SorobanTransactionMetaExt_1 case_1:
+                case SorobanTransactionMetaExt.case_1 case_1:
                 SorobanTransactionMetaExtV1Xdr.Encode(stream, case_1.v1);
                 break;
             }
@@ -76,10 +76,10 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new SorobanTransactionMetaExt_0();
+                var result_0 = new SorobanTransactionMetaExt.case_0();
                 return result_0;
                 case 1:
-                var result_1 = new SorobanTransactionMetaExt_1();
+                var result_1 = new SorobanTransactionMetaExt.case_1();
                 result_1.v1 = SorobanTransactionMetaExtV1Xdr.Decode(stream);
                 return result_1;
                 default:

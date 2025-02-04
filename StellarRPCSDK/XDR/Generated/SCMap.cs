@@ -12,7 +12,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCMap
     {
-        private SCMapEntry[] _innerValue;
         public SCMapEntry[] InnerValue
         {
             get => _innerValue;
@@ -21,6 +20,7 @@ namespace Stellar.XDR {
                 _innerValue = value;
             }
         }
+        private SCMapEntry[] _innerValue;
 
         public SCMap() { }
 

@@ -13,6 +13,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// extend a structure.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class ExtensionPoint
     {
@@ -21,12 +24,12 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ExtensionPoint_0 : ExtensionPoint
-    {
-        public override int Discriminator => 0;
+        public sealed partial class case_0 : ExtensionPoint
+        {
+            public override int Discriminator => 0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ExtensionPointXdr
     {
@@ -46,7 +49,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ExtensionPoint_0 case_0:
+                case ExtensionPoint.case_0 case_0:
                 break;
             }
         }
@@ -56,7 +59,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new ExtensionPoint_0();
+                var result_0 = new ExtensionPoint.case_0();
                 return result_0;
                 default:
                 throw new Exception($"Unknown discriminator for ExtensionPoint: {discriminator}");

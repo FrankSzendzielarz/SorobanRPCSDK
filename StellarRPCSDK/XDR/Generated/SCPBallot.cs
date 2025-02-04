@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCPBallot
     {
-        private uint32 _counter;
         public uint32 counter
         {
             get => _counter;
@@ -25,8 +24,11 @@ namespace Stellar.XDR {
                 _counter = value;
             }
         }
+        private uint32 _counter;
 
-        private Value _value;
+        /// <summary>
+        /// n
+        /// </summary>
         public Value value
         {
             get => _value;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _value = value;
             }
         }
+        private Value _value;
 
         public SCPBallot()
         {

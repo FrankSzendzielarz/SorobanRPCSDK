@@ -27,42 +27,42 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS;
+        public sealed partial class RevokeSponsorshipSuccess : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_DOES_NOT_EXIST : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipDoesNotExist : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_NOT_SPONSOR : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipNotSponsor : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_LOW_RESERVE : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipLowReserve : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipOnlyTransferable : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class RevokeSponsorshipResult_REVOKE_SPONSORSHIP_MALFORMED : RevokeSponsorshipResult
-    {
-        public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class RevokeSponsorshipMalformed : RevokeSponsorshipResult
+        {
+            public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class RevokeSponsorshipResultXdr
     {
@@ -82,17 +82,17 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS case_REVOKE_SPONSORSHIP_SUCCESS:
+                case RevokeSponsorshipResult.RevokeSponsorshipSuccess case_REVOKE_SPONSORSHIP_SUCCESS:
                 break;
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_DOES_NOT_EXIST case_REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
+                case RevokeSponsorshipResult.RevokeSponsorshipDoesNotExist case_REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
                 break;
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_NOT_SPONSOR case_REVOKE_SPONSORSHIP_NOT_SPONSOR:
+                case RevokeSponsorshipResult.RevokeSponsorshipNotSponsor case_REVOKE_SPONSORSHIP_NOT_SPONSOR:
                 break;
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_LOW_RESERVE case_REVOKE_SPONSORSHIP_LOW_RESERVE:
+                case RevokeSponsorshipResult.RevokeSponsorshipLowReserve case_REVOKE_SPONSORSHIP_LOW_RESERVE:
                 break;
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE case_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
+                case RevokeSponsorshipResult.RevokeSponsorshipOnlyTransferable case_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
                 break;
-                case RevokeSponsorshipResult_REVOKE_SPONSORSHIP_MALFORMED case_REVOKE_SPONSORSHIP_MALFORMED:
+                case RevokeSponsorshipResult.RevokeSponsorshipMalformed case_REVOKE_SPONSORSHIP_MALFORMED:
                 break;
             }
         }
@@ -102,22 +102,22 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS:
-                var result_REVOKE_SPONSORSHIP_SUCCESS = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_SUCCESS();
+                var result_REVOKE_SPONSORSHIP_SUCCESS = new RevokeSponsorshipResult.RevokeSponsorshipSuccess();
                 return result_REVOKE_SPONSORSHIP_SUCCESS;
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST:
-                var result_REVOKE_SPONSORSHIP_DOES_NOT_EXIST = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_DOES_NOT_EXIST();
+                var result_REVOKE_SPONSORSHIP_DOES_NOT_EXIST = new RevokeSponsorshipResult.RevokeSponsorshipDoesNotExist();
                 return result_REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR:
-                var result_REVOKE_SPONSORSHIP_NOT_SPONSOR = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_NOT_SPONSOR();
+                var result_REVOKE_SPONSORSHIP_NOT_SPONSOR = new RevokeSponsorshipResult.RevokeSponsorshipNotSponsor();
                 return result_REVOKE_SPONSORSHIP_NOT_SPONSOR;
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE:
-                var result_REVOKE_SPONSORSHIP_LOW_RESERVE = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_LOW_RESERVE();
+                var result_REVOKE_SPONSORSHIP_LOW_RESERVE = new RevokeSponsorshipResult.RevokeSponsorshipLowReserve();
                 return result_REVOKE_SPONSORSHIP_LOW_RESERVE;
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE:
-                var result_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE();
+                var result_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE = new RevokeSponsorshipResult.RevokeSponsorshipOnlyTransferable();
                 return result_REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
                 case RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED:
-                var result_REVOKE_SPONSORSHIP_MALFORMED = new RevokeSponsorshipResult_REVOKE_SPONSORSHIP_MALFORMED();
+                var result_REVOKE_SPONSORSHIP_MALFORMED = new RevokeSponsorshipResult.RevokeSponsorshipMalformed();
                 return result_REVOKE_SPONSORSHIP_MALFORMED;
                 default:
                 throw new Exception($"Unknown discriminator for RevokeSponsorshipResult: {discriminator}");

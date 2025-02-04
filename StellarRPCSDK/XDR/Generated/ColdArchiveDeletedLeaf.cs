@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ColdArchiveDeletedLeaf
     {
-        private uint32 _index;
         public uint32 index
         {
             get => _index;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _index = value;
             }
         }
+        private uint32 _index;
 
-        private LedgerKey _deletedKey;
         public LedgerKey deletedKey
         {
             get => _deletedKey;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _deletedKey = value;
             }
         }
+        private LedgerKey _deletedKey;
 
         public ColdArchiveDeletedLeaf()
         {

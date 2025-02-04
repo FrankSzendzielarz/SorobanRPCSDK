@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecUDTUnionV0
     {
-        private string _doc;
         public string doc
         {
             get => _doc;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _doc = value;
             }
         }
+        private string _doc;
 
-        private string _lib;
         public string lib
         {
             get => _lib;
@@ -39,8 +38,8 @@ namespace Stellar.XDR {
                 _lib = value;
             }
         }
+        private string _lib;
 
-        private string _name;
         public string name
         {
             get => _name;
@@ -51,8 +50,8 @@ namespace Stellar.XDR {
                 _name = value;
             }
         }
+        private string _name;
 
-        private SCSpecUDTUnionCaseV0[] _cases;
         public SCSpecUDTUnionCaseV0[] cases
         {
             get => _cases;
@@ -63,6 +62,7 @@ namespace Stellar.XDR {
                 _cases = value;
             }
         }
+        private SCSpecUDTUnionCaseV0[] _cases;
 
         public SCSpecUDTUnionV0()
         {

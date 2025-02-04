@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// price in fractional representation
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Price
     {
-        private int32 _n;
         public int32 n
         {
             get => _n;
@@ -25,8 +27,11 @@ namespace Stellar.XDR {
                 _n = value;
             }
         }
+        private int32 _n;
 
-        private int32 _d;
+        /// <summary>
+        /// numerator
+        /// </summary>
         public int32 d
         {
             get => _d;
@@ -35,6 +40,7 @@ namespace Stellar.XDR {
                 _d = value;
             }
         }
+        private int32 _d;
 
         public Price()
         {

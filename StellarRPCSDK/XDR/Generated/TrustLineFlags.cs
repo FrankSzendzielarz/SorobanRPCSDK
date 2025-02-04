@@ -22,8 +22,17 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum TrustLineFlags
     {
+        /// <summary>
+        /// issuer has authorized account to perform transactions with its credit
+        /// </summary>
         AUTHORIZED_FLAG = 1,
+        /// <summary>
+        /// credit
+        /// </summary>
         AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG = 2,
+        /// <summary>
+        /// balances created with its credit may also be clawed back
+        /// </summary>
         TRUSTLINE_CLAWBACK_ENABLED_FLAG = 4,
     }
 

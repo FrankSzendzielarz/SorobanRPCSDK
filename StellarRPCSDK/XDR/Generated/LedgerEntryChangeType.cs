@@ -19,8 +19,17 @@ namespace Stellar.XDR {
     public enum LedgerEntryChangeType
     {
         LEDGER_ENTRY_CREATED = 0,
+        /// <summary>
+        /// entry was added to the ledger
+        /// </summary>
         LEDGER_ENTRY_UPDATED = 1,
+        /// <summary>
+        /// entry was modified in the ledger
+        /// </summary>
         LEDGER_ENTRY_REMOVED = 2,
+        /// <summary>
+        /// entry was removed from the ledger
+        /// </summary>
         LEDGER_ENTRY_STATE = 3,
     }
 

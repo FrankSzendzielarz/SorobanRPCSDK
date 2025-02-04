@@ -23,10 +23,25 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ManageDataResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         MANAGE_DATA_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         MANAGE_DATA_NOT_SUPPORTED_YET = -1,
+        /// <summary>
+        /// The network hasn't moved to this protocol change yet
+        /// </summary>
         MANAGE_DATA_NAME_NOT_FOUND = -2,
+        /// <summary>
+        /// Trying to remove a Data Entry that isn't there
+        /// </summary>
         MANAGE_DATA_LOW_RESERVE = -3,
+        /// <summary>
+        /// not enough funds to create a new Data Entry
+        /// </summary>
         MANAGE_DATA_INVALID_NAME = -4,
     }
 

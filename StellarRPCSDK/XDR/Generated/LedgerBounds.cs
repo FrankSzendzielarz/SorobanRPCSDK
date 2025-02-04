@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerBounds
     {
-        private uint32 _minLedger;
         public uint32 minLedger
         {
             get => _minLedger;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _minLedger = value;
             }
         }
+        private uint32 _minLedger;
 
-        private uint32 _maxLedger;
         public uint32 maxLedger
         {
             get => _maxLedger;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _maxLedger = value;
             }
         }
+        private uint32 _maxLedger;
 
         public LedgerBounds()
         {

@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// in the file so far, not just the one from this entry
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCPHistoryEntryV0
     {
-        private SCPQuorumSet[] _quorumSets;
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;
@@ -25,8 +27,11 @@ namespace Stellar.XDR {
                 _quorumSets = value;
             }
         }
+        private SCPQuorumSet[] _quorumSets;
 
-        private LedgerSCPMessages _ledgerMessages;
+        /// <summary>
+        /// additional quorum sets used by ledgerMessages
+        /// </summary>
         public LedgerSCPMessages ledgerMessages
         {
             get => _ledgerMessages;
@@ -35,6 +40,7 @@ namespace Stellar.XDR {
                 _ledgerMessages = value;
             }
         }
+        private LedgerSCPMessages _ledgerMessages;
 
         public SCPHistoryEntryV0()
         {

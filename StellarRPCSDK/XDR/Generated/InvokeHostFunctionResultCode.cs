@@ -23,7 +23,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum InvokeHostFunctionResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         INVOKE_HOST_FUNCTION_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         INVOKE_HOST_FUNCTION_MALFORMED = -1,
         INVOKE_HOST_FUNCTION_TRAPPED = -2,
         INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED = -3,

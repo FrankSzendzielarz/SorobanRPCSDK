@@ -18,7 +18,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum InflationResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         INFLATION_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         INFLATION_NOT_TIME = -1,
     }
 

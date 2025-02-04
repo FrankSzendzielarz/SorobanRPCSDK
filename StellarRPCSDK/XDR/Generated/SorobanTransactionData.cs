@@ -23,10 +23,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// The transaction extension for Soroban.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanTransactionData
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -35,8 +37,8 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private SorobanResources _resources;
         public SorobanResources resources
         {
             get => _resources;
@@ -45,8 +47,11 @@ namespace Stellar.XDR {
                 _resources = value;
             }
         }
+        private SorobanResources _resources;
 
-        private int64 _resourceFee;
+        /// <summary>
+        /// as `tx.fee - resourceFee`.
+        /// </summary>
         public int64 resourceFee
         {
             get => _resourceFee;
@@ -55,6 +60,7 @@ namespace Stellar.XDR {
                 _resourceFee = value;
             }
         }
+        private int64 _resourceFee;
 
         public SorobanTransactionData()
         {

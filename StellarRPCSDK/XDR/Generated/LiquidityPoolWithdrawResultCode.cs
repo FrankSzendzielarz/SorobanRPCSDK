@@ -26,11 +26,29 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum LiquidityPoolWithdrawResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_MALFORMED = -1,
+        /// <summary>
+        /// bad input
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_NO_TRUST = -2,
+        /// <summary>
+        /// assets
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED = -3,
+        /// <summary>
+        /// pool share
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_LINE_FULL = -4,
+        /// <summary>
+        /// of the assets
+        /// </summary>
         LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM = -5,
     }
 

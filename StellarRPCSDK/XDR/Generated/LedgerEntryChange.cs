@@ -27,66 +27,66 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LedgerEntryChange_LEDGER_ENTRY_CREATED : LedgerEntryChange
-    {
-        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
-        private LedgerEntry _created;
-        public LedgerEntry created
+        public sealed partial class LedgerEntryCreated : LedgerEntryChange
         {
-            get => _created;
-            set
+            public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
+            public LedgerEntry created
             {
-                _created = value;
+                get => _created;
+                set
+                {
+                    _created = value;
+                }
             }
-        }
+            private LedgerEntry _created;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerEntryChange_LEDGER_ENTRY_UPDATED : LedgerEntryChange
-    {
-        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
-        private LedgerEntry _updated;
-        public LedgerEntry updated
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LedgerEntryUpdated : LedgerEntryChange
         {
-            get => _updated;
-            set
+            public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
+            public LedgerEntry updated
             {
-                _updated = value;
+                get => _updated;
+                set
+                {
+                    _updated = value;
+                }
             }
-        }
+            private LedgerEntry _updated;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerEntryChange_LEDGER_ENTRY_REMOVED : LedgerEntryChange
-    {
-        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
-        private LedgerKey _removed;
-        public LedgerKey removed
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LedgerEntryRemoved : LedgerEntryChange
         {
-            get => _removed;
-            set
+            public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
+            public LedgerKey removed
             {
-                _removed = value;
+                get => _removed;
+                set
+                {
+                    _removed = value;
+                }
             }
-        }
+            private LedgerKey _removed;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerEntryChange_LEDGER_ENTRY_STATE : LedgerEntryChange
-    {
-        public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;
-        private LedgerEntry _state;
-        public LedgerEntry state
+            public override void ValidateCase() {}
+        }
+        public sealed partial class LedgerEntryState : LedgerEntryChange
         {
-            get => _state;
-            set
+            public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;
+            public LedgerEntry state
             {
-                _state = value;
+                get => _state;
+                set
+                {
+                    _state = value;
+                }
             }
-        }
+            private LedgerEntry _state;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LedgerEntryChangeXdr
     {
@@ -106,16 +106,16 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LedgerEntryChange_LEDGER_ENTRY_CREATED case_LEDGER_ENTRY_CREATED:
+                case LedgerEntryChange.LedgerEntryCreated case_LEDGER_ENTRY_CREATED:
                 LedgerEntryXdr.Encode(stream, case_LEDGER_ENTRY_CREATED.created);
                 break;
-                case LedgerEntryChange_LEDGER_ENTRY_UPDATED case_LEDGER_ENTRY_UPDATED:
+                case LedgerEntryChange.LedgerEntryUpdated case_LEDGER_ENTRY_UPDATED:
                 LedgerEntryXdr.Encode(stream, case_LEDGER_ENTRY_UPDATED.updated);
                 break;
-                case LedgerEntryChange_LEDGER_ENTRY_REMOVED case_LEDGER_ENTRY_REMOVED:
+                case LedgerEntryChange.LedgerEntryRemoved case_LEDGER_ENTRY_REMOVED:
                 LedgerKeyXdr.Encode(stream, case_LEDGER_ENTRY_REMOVED.removed);
                 break;
-                case LedgerEntryChange_LEDGER_ENTRY_STATE case_LEDGER_ENTRY_STATE:
+                case LedgerEntryChange.LedgerEntryState case_LEDGER_ENTRY_STATE:
                 LedgerEntryXdr.Encode(stream, case_LEDGER_ENTRY_STATE.state);
                 break;
             }
@@ -126,19 +126,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case LedgerEntryChangeType.LEDGER_ENTRY_CREATED:
-                var result_LEDGER_ENTRY_CREATED = new LedgerEntryChange_LEDGER_ENTRY_CREATED();
+                var result_LEDGER_ENTRY_CREATED = new LedgerEntryChange.LedgerEntryCreated();
                 result_LEDGER_ENTRY_CREATED.created = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_CREATED;
                 case LedgerEntryChangeType.LEDGER_ENTRY_UPDATED:
-                var result_LEDGER_ENTRY_UPDATED = new LedgerEntryChange_LEDGER_ENTRY_UPDATED();
+                var result_LEDGER_ENTRY_UPDATED = new LedgerEntryChange.LedgerEntryUpdated();
                 result_LEDGER_ENTRY_UPDATED.updated = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_UPDATED;
                 case LedgerEntryChangeType.LEDGER_ENTRY_REMOVED:
-                var result_LEDGER_ENTRY_REMOVED = new LedgerEntryChange_LEDGER_ENTRY_REMOVED();
+                var result_LEDGER_ENTRY_REMOVED = new LedgerEntryChange.LedgerEntryRemoved();
                 result_LEDGER_ENTRY_REMOVED.removed = LedgerKeyXdr.Decode(stream);
                 return result_LEDGER_ENTRY_REMOVED;
                 case LedgerEntryChangeType.LEDGER_ENTRY_STATE:
-                var result_LEDGER_ENTRY_STATE = new LedgerEntryChange_LEDGER_ENTRY_STATE();
+                var result_LEDGER_ENTRY_STATE = new LedgerEntryChange.LedgerEntryState();
                 result_LEDGER_ENTRY_STATE.state = LedgerEntryXdr.Decode(stream);
                 return result_LEDGER_ENTRY_STATE;
                 default:

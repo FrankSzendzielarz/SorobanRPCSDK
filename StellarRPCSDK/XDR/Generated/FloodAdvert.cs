@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class FloodAdvert
     {
-        private TxAdvertVector _txHashes;
         public TxAdvertVector txHashes
         {
             get => _txHashes;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _txHashes = value;
             }
         }
+        private TxAdvertVector _txHashes;
 
         public FloodAdvert()
         {

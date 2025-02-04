@@ -26,7 +26,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ManageOfferSuccessResult
     {
-        private ClaimAtom[] _offersClaimed;
+        /// <summary>
+        /// offers that got claimed while creating this offer
+        /// </summary>
         public ClaimAtom[] offersClaimed
         {
             get => _offersClaimed;
@@ -35,8 +37,8 @@ namespace Stellar.XDR {
                 _offersClaimed = value;
             }
         }
+        private ClaimAtom[] _offersClaimed;
 
-        private offerUnion _offer;
         public offerUnion offer
         {
             get => _offer;
@@ -45,6 +47,7 @@ namespace Stellar.XDR {
                 _offer = value;
             }
         }
+        private offerUnion _offer;
 
         public ManageOfferSuccessResult()
         {
@@ -61,42 +64,42 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class offerUnion_MANAGE_OFFER_CREATED : offerUnion
-        {
-            public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_CREATED;
-            private OfferEntry _offer;
-            public OfferEntry offer
+            public sealed partial class ManageOfferCreated : offerUnion
             {
-                get => _offer;
-                set
+                public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_CREATED;
+                public OfferEntry offer
                 {
-                    _offer = value;
+                    get => _offer;
+                    set
+                    {
+                        _offer = value;
+                    }
                 }
-            }
+                private OfferEntry _offer;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class offerUnion_MANAGE_OFFER_UPDATED : offerUnion
-        {
-            public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_UPDATED;
-            private OfferEntry _offer;
-            public OfferEntry offer
+                public override void ValidateCase() {}
+            }
+            public sealed partial class ManageOfferUpdated : offerUnion
             {
-                get => _offer;
-                set
+                public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_UPDATED;
+                public OfferEntry offer
                 {
-                    _offer = value;
+                    get => _offer;
+                    set
+                    {
+                        _offer = value;
+                    }
                 }
+                private OfferEntry _offer;
+
+                public override void ValidateCase() {}
             }
+            public sealed partial class ManageOfferDeleted : offerUnion
+            {
+                public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_DELETED;
 
-            public override void ValidateCase() {}
-        }
-        public sealed partial class offerUnion_MANAGE_OFFER_DELETED : offerUnion
-        {
-            public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_DELETED;
-
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
         }
         public static partial class offerUnionXdr
         {
@@ -116,13 +119,13 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case offerUnion_MANAGE_OFFER_CREATED case_MANAGE_OFFER_CREATED:
+                    case offerUnion.ManageOfferCreated case_MANAGE_OFFER_CREATED:
                     OfferEntryXdr.Encode(stream, case_MANAGE_OFFER_CREATED.offer);
                     break;
-                    case offerUnion_MANAGE_OFFER_UPDATED case_MANAGE_OFFER_UPDATED:
+                    case offerUnion.ManageOfferUpdated case_MANAGE_OFFER_UPDATED:
                     OfferEntryXdr.Encode(stream, case_MANAGE_OFFER_UPDATED.offer);
                     break;
-                    case offerUnion_MANAGE_OFFER_DELETED case_MANAGE_OFFER_DELETED:
+                    case offerUnion.ManageOfferDeleted case_MANAGE_OFFER_DELETED:
                     break;
                 }
             }
@@ -132,15 +135,15 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case ManageOfferEffect.MANAGE_OFFER_CREATED:
-                    var result_MANAGE_OFFER_CREATED = new offerUnion_MANAGE_OFFER_CREATED();
+                    var result_MANAGE_OFFER_CREATED = new offerUnion.ManageOfferCreated();
                     result_MANAGE_OFFER_CREATED.offer = OfferEntryXdr.Decode(stream);
                     return result_MANAGE_OFFER_CREATED;
                     case ManageOfferEffect.MANAGE_OFFER_UPDATED:
-                    var result_MANAGE_OFFER_UPDATED = new offerUnion_MANAGE_OFFER_UPDATED();
+                    var result_MANAGE_OFFER_UPDATED = new offerUnion.ManageOfferUpdated();
                     result_MANAGE_OFFER_UPDATED.offer = OfferEntryXdr.Decode(stream);
                     return result_MANAGE_OFFER_UPDATED;
                     case ManageOfferEffect.MANAGE_OFFER_DELETED:
-                    var result_MANAGE_OFFER_DELETED = new offerUnion_MANAGE_OFFER_DELETED();
+                    var result_MANAGE_OFFER_DELETED = new offerUnion.ManageOfferDeleted();
                     return result_MANAGE_OFFER_DELETED;
                     default:
                     throw new Exception($"Unknown discriminator for offerUnion: {discriminator}");

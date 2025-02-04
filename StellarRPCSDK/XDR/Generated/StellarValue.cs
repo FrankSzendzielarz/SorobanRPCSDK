@@ -33,7 +33,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class StellarValue
     {
-        private Hash _txSetHash;
         public Hash txSetHash
         {
             get => _txSetHash;
@@ -42,8 +41,11 @@ namespace Stellar.XDR {
                 _txSetHash = value;
             }
         }
+        private Hash _txSetHash;
 
-        private TimePoint _closeTime;
+        /// <summary>
+        /// transaction set to apply to previous ledger
+        /// </summary>
         public TimePoint closeTime
         {
             get => _closeTime;
@@ -52,8 +54,11 @@ namespace Stellar.XDR {
                 _closeTime = value;
             }
         }
+        private TimePoint _closeTime;
 
-        private UpgradeType[] _upgrades;
+        /// <summary>
+        /// max size is dictated by number of upgrade types (+ room for future)
+        /// </summary>
         public UpgradeType[] upgrades
         {
             get => _upgrades;
@@ -64,8 +69,11 @@ namespace Stellar.XDR {
                 _upgrades = value;
             }
         }
+        private UpgradeType[] _upgrades;
 
-        private extUnion _ext;
+        /// <summary>
+        /// reserved for future use
+        /// </summary>
         public extUnion ext
         {
             get => _ext;
@@ -74,6 +82,7 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private extUnion _ext;
 
         public StellarValue()
         {
@@ -92,27 +101,27 @@ namespace Stellar.XDR {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
-        }
-        public sealed partial class extUnion_STELLAR_VALUE_BASIC : extUnion
-        {
-            public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_BASIC;
-
-            public override void ValidateCase() {}
-        }
-        public sealed partial class extUnion_STELLAR_VALUE_SIGNED : extUnion
-        {
-            public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_SIGNED;
-            private LedgerCloseValueSignature _lcValueSignature;
-            public LedgerCloseValueSignature lcValueSignature
+            public sealed partial class StellarValueBasic : extUnion
             {
-                get => _lcValueSignature;
-                set
-                {
-                    _lcValueSignature = value;
-                }
-            }
+                public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_BASIC;
 
-            public override void ValidateCase() {}
+                public override void ValidateCase() {}
+            }
+            public sealed partial class StellarValueSigned : extUnion
+            {
+                public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_SIGNED;
+                public LedgerCloseValueSignature lcValueSignature
+                {
+                    get => _lcValueSignature;
+                    set
+                    {
+                        _lcValueSignature = value;
+                    }
+                }
+                private LedgerCloseValueSignature _lcValueSignature;
+
+                public override void ValidateCase() {}
+            }
         }
         public static partial class extUnionXdr
         {
@@ -132,9 +141,9 @@ namespace Stellar.XDR {
                 stream.WriteInt((int)value.Discriminator);
                 switch (value)
                 {
-                    case extUnion_STELLAR_VALUE_BASIC case_STELLAR_VALUE_BASIC:
+                    case extUnion.StellarValueBasic case_STELLAR_VALUE_BASIC:
                     break;
-                    case extUnion_STELLAR_VALUE_SIGNED case_STELLAR_VALUE_SIGNED:
+                    case extUnion.StellarValueSigned case_STELLAR_VALUE_SIGNED:
                     LedgerCloseValueSignatureXdr.Encode(stream, case_STELLAR_VALUE_SIGNED.lcValueSignature);
                     break;
                 }
@@ -145,10 +154,10 @@ namespace Stellar.XDR {
                 switch (discriminator)
                 {
                     case StellarValueType.STELLAR_VALUE_BASIC:
-                    var result_STELLAR_VALUE_BASIC = new extUnion_STELLAR_VALUE_BASIC();
+                    var result_STELLAR_VALUE_BASIC = new extUnion.StellarValueBasic();
                     return result_STELLAR_VALUE_BASIC;
                     case StellarValueType.STELLAR_VALUE_SIGNED:
-                    var result_STELLAR_VALUE_SIGNED = new extUnion_STELLAR_VALUE_SIGNED();
+                    var result_STELLAR_VALUE_SIGNED = new extUnion.StellarValueSigned();
                     result_STELLAR_VALUE_SIGNED.lcValueSignature = LedgerCloseValueSignatureXdr.Decode(stream);
                     return result_STELLAR_VALUE_SIGNED;
                     default:

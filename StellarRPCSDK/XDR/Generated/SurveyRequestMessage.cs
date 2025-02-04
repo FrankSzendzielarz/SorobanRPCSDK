@@ -19,7 +19,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SurveyRequestMessage
     {
-        private NodeID _surveyorPeerID;
         public NodeID surveyorPeerID
         {
             get => _surveyorPeerID;
@@ -28,8 +27,8 @@ namespace Stellar.XDR {
                 _surveyorPeerID = value;
             }
         }
+        private NodeID _surveyorPeerID;
 
-        private NodeID _surveyedPeerID;
         public NodeID surveyedPeerID
         {
             get => _surveyedPeerID;
@@ -38,8 +37,8 @@ namespace Stellar.XDR {
                 _surveyedPeerID = value;
             }
         }
+        private NodeID _surveyedPeerID;
 
-        private uint32 _ledgerNum;
         public uint32 ledgerNum
         {
             get => _ledgerNum;
@@ -48,8 +47,8 @@ namespace Stellar.XDR {
                 _ledgerNum = value;
             }
         }
+        private uint32 _ledgerNum;
 
-        private Curve25519Public _encryptionKey;
         public Curve25519Public encryptionKey
         {
             get => _encryptionKey;
@@ -58,8 +57,8 @@ namespace Stellar.XDR {
                 _encryptionKey = value;
             }
         }
+        private Curve25519Public _encryptionKey;
 
-        private SurveyMessageCommandType _commandType;
         public SurveyMessageCommandType commandType
         {
             get => _commandType;
@@ -68,6 +67,7 @@ namespace Stellar.XDR {
                 _commandType = value;
             }
         }
+        private SurveyMessageCommandType _commandType;
 
         public SurveyRequestMessage()
         {

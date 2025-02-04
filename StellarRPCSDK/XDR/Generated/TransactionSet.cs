@@ -13,10 +13,12 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// between ledgers
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TransactionSet
     {
-        private Hash _previousLedgerHash;
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -25,8 +27,8 @@ namespace Stellar.XDR {
                 _previousLedgerHash = value;
             }
         }
+        private Hash _previousLedgerHash;
 
-        private TransactionEnvelope[] _txs;
         public TransactionEnvelope[] txs
         {
             get => _txs;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _txs = value;
             }
         }
+        private TransactionEnvelope[] _txs;
 
         public TransactionSet()
         {

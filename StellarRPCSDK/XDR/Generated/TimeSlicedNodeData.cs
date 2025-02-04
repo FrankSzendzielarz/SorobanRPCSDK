@@ -30,7 +30,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TimeSlicedNodeData
     {
-        private uint32 _addedAuthenticatedPeers;
         public uint32 addedAuthenticatedPeers
         {
             get => _addedAuthenticatedPeers;
@@ -39,8 +38,8 @@ namespace Stellar.XDR {
                 _addedAuthenticatedPeers = value;
             }
         }
+        private uint32 _addedAuthenticatedPeers;
 
-        private uint32 _droppedAuthenticatedPeers;
         public uint32 droppedAuthenticatedPeers
         {
             get => _droppedAuthenticatedPeers;
@@ -49,8 +48,8 @@ namespace Stellar.XDR {
                 _droppedAuthenticatedPeers = value;
             }
         }
+        private uint32 _droppedAuthenticatedPeers;
 
-        private uint32 _totalInboundPeerCount;
         public uint32 totalInboundPeerCount
         {
             get => _totalInboundPeerCount;
@@ -59,8 +58,8 @@ namespace Stellar.XDR {
                 _totalInboundPeerCount = value;
             }
         }
+        private uint32 _totalInboundPeerCount;
 
-        private uint32 _totalOutboundPeerCount;
         public uint32 totalOutboundPeerCount
         {
             get => _totalOutboundPeerCount;
@@ -69,8 +68,11 @@ namespace Stellar.XDR {
                 _totalOutboundPeerCount = value;
             }
         }
+        private uint32 _totalOutboundPeerCount;
 
-        private uint32 _p75SCPFirstToSelfLatencyMs;
+        /// <summary>
+        /// SCP stats
+        /// </summary>
         public uint32 p75SCPFirstToSelfLatencyMs
         {
             get => _p75SCPFirstToSelfLatencyMs;
@@ -79,8 +81,8 @@ namespace Stellar.XDR {
                 _p75SCPFirstToSelfLatencyMs = value;
             }
         }
+        private uint32 _p75SCPFirstToSelfLatencyMs;
 
-        private uint32 _p75SCPSelfToOtherLatencyMs;
         public uint32 p75SCPSelfToOtherLatencyMs
         {
             get => _p75SCPSelfToOtherLatencyMs;
@@ -89,8 +91,11 @@ namespace Stellar.XDR {
                 _p75SCPSelfToOtherLatencyMs = value;
             }
         }
+        private uint32 _p75SCPSelfToOtherLatencyMs;
 
-        private uint32 _lostSyncCount;
+        /// <summary>
+        /// How many times the node lost sync in the time slice
+        /// </summary>
         public uint32 lostSyncCount
         {
             get => _lostSyncCount;
@@ -99,8 +104,11 @@ namespace Stellar.XDR {
                 _lostSyncCount = value;
             }
         }
+        private uint32 _lostSyncCount;
 
-        private bool _isValidator;
+        /// <summary>
+        /// Config data
+        /// </summary>
         public bool isValidator
         {
             get => _isValidator;
@@ -109,8 +117,8 @@ namespace Stellar.XDR {
                 _isValidator = value;
             }
         }
+        private bool _isValidator;
 
-        private uint32 _maxInboundPeerCount;
         public uint32 maxInboundPeerCount
         {
             get => _maxInboundPeerCount;
@@ -119,8 +127,8 @@ namespace Stellar.XDR {
                 _maxInboundPeerCount = value;
             }
         }
+        private uint32 _maxInboundPeerCount;
 
-        private uint32 _maxOutboundPeerCount;
         public uint32 maxOutboundPeerCount
         {
             get => _maxOutboundPeerCount;
@@ -129,6 +137,7 @@ namespace Stellar.XDR {
                 _maxOutboundPeerCount = value;
             }
         }
+        private uint32 _maxOutboundPeerCount;
 
         public TimeSlicedNodeData()
         {

@@ -21,8 +21,17 @@ namespace Stellar.XDR {
     public enum HotArchiveBucketEntryType
     {
         HOT_ARCHIVE_METAENTRY = -1,
+        /// <summary>
+        /// Bucket metadata, should come first.
+        /// </summary>
         HOT_ARCHIVE_ARCHIVED = 0,
+        /// <summary>
+        /// Entry is Archived
+        /// </summary>
         HOT_ARCHIVE_LIVE = 1,
+        /// <summary>
+        /// Does not need to be persisted.
+        /// </summary>
         HOT_ARCHIVE_DELETED = 2,
     }
 

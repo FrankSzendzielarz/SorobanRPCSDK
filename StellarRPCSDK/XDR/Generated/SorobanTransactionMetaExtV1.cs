@@ -44,7 +44,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanTransactionMetaExtV1
     {
-        private ExtensionPoint _ext;
         public ExtensionPoint ext
         {
             get => _ext;
@@ -53,8 +52,11 @@ namespace Stellar.XDR {
                 _ext = value;
             }
         }
+        private ExtensionPoint _ext;
 
-        private int64 _totalNonRefundableResourceFeeCharged;
+        /// <summary>
+        /// is charged regardless of the success of the transaction.
+        /// </summary>
         public int64 totalNonRefundableResourceFeeCharged
         {
             get => _totalNonRefundableResourceFeeCharged;
@@ -63,8 +65,11 @@ namespace Stellar.XDR {
                 _totalNonRefundableResourceFeeCharged = value;
             }
         }
+        private int64 _totalNonRefundableResourceFeeCharged;
 
-        private int64 _totalRefundableResourceFeeCharged;
+        /// <summary>
+        /// transactions, this will be `0` for failed transactions.
+        /// </summary>
         public int64 totalRefundableResourceFeeCharged
         {
             get => _totalRefundableResourceFeeCharged;
@@ -73,8 +78,11 @@ namespace Stellar.XDR {
                 _totalRefundableResourceFeeCharged = value;
             }
         }
+        private int64 _totalRefundableResourceFeeCharged;
 
-        private int64 _rentFeeCharged;
+        /// <summary>
+        /// This is a part of `totalNonRefundableResourceFeeCharged`.
+        /// </summary>
         public int64 rentFeeCharged
         {
             get => _rentFeeCharged;
@@ -83,6 +91,7 @@ namespace Stellar.XDR {
                 _rentFeeCharged = value;
             }
         }
+        private int64 _rentFeeCharged;
 
         public SorobanTransactionMetaExtV1()
         {

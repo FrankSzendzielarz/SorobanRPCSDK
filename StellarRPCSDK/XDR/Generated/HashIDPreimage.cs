@@ -52,7 +52,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class operationIDStruct
         {
-            private AccountID _sourceAccount;
             public AccountID sourceAccount
             {
                 get => _sourceAccount;
@@ -61,8 +60,8 @@ namespace Stellar.XDR {
                     _sourceAccount = value;
                 }
             }
+            private AccountID _sourceAccount;
 
-            private SequenceNumber _seqNum;
             public SequenceNumber seqNum
             {
                 get => _seqNum;
@@ -71,8 +70,8 @@ namespace Stellar.XDR {
                     _seqNum = value;
                 }
             }
+            private SequenceNumber _seqNum;
 
-            private uint32 _opNum;
             public uint32 opNum
             {
                 get => _opNum;
@@ -81,6 +80,7 @@ namespace Stellar.XDR {
                     _opNum = value;
                 }
             }
+            private uint32 _opNum;
 
             public operationIDStruct()
             {
@@ -123,7 +123,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class revokeIDStruct
         {
-            private AccountID _sourceAccount;
             public AccountID sourceAccount
             {
                 get => _sourceAccount;
@@ -132,8 +131,8 @@ namespace Stellar.XDR {
                     _sourceAccount = value;
                 }
             }
+            private AccountID _sourceAccount;
 
-            private SequenceNumber _seqNum;
             public SequenceNumber seqNum
             {
                 get => _seqNum;
@@ -142,8 +141,8 @@ namespace Stellar.XDR {
                     _seqNum = value;
                 }
             }
+            private SequenceNumber _seqNum;
 
-            private uint32 _opNum;
             public uint32 opNum
             {
                 get => _opNum;
@@ -152,8 +151,8 @@ namespace Stellar.XDR {
                     _opNum = value;
                 }
             }
+            private uint32 _opNum;
 
-            private PoolID _liquidityPoolID;
             public PoolID liquidityPoolID
             {
                 get => _liquidityPoolID;
@@ -162,8 +161,8 @@ namespace Stellar.XDR {
                     _liquidityPoolID = value;
                 }
             }
+            private PoolID _liquidityPoolID;
 
-            private Asset _asset;
             public Asset asset
             {
                 get => _asset;
@@ -172,6 +171,7 @@ namespace Stellar.XDR {
                     _asset = value;
                 }
             }
+            private Asset _asset;
 
             public revokeIDStruct()
             {
@@ -218,7 +218,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class contractIDStruct
         {
-            private Hash _networkID;
             public Hash networkID
             {
                 get => _networkID;
@@ -227,8 +226,8 @@ namespace Stellar.XDR {
                     _networkID = value;
                 }
             }
+            private Hash _networkID;
 
-            private ContractIDPreimage _contractIDPreimage;
             public ContractIDPreimage contractIDPreimage
             {
                 get => _contractIDPreimage;
@@ -237,6 +236,7 @@ namespace Stellar.XDR {
                     _contractIDPreimage = value;
                 }
             }
+            private ContractIDPreimage _contractIDPreimage;
 
             public contractIDStruct()
             {
@@ -277,7 +277,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class sorobanAuthorizationStruct
         {
-            private Hash _networkID;
             public Hash networkID
             {
                 get => _networkID;
@@ -286,8 +285,8 @@ namespace Stellar.XDR {
                     _networkID = value;
                 }
             }
+            private Hash _networkID;
 
-            private int64 _nonce;
             public int64 nonce
             {
                 get => _nonce;
@@ -296,8 +295,8 @@ namespace Stellar.XDR {
                     _nonce = value;
                 }
             }
+            private int64 _nonce;
 
-            private uint32 _signatureExpirationLedger;
             public uint32 signatureExpirationLedger
             {
                 get => _signatureExpirationLedger;
@@ -306,8 +305,8 @@ namespace Stellar.XDR {
                     _signatureExpirationLedger = value;
                 }
             }
+            private uint32 _signatureExpirationLedger;
 
-            private SorobanAuthorizedInvocation _invocation;
             public SorobanAuthorizedInvocation invocation
             {
                 get => _invocation;
@@ -316,6 +315,7 @@ namespace Stellar.XDR {
                     _invocation = value;
                 }
             }
+            private SorobanAuthorizedInvocation _invocation;
 
             public sorobanAuthorizationStruct()
             {
@@ -357,66 +357,66 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class HashIDPreimage_ENVELOPE_TYPE_OP_ID : HashIDPreimage
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
-        private operationIDStruct _operationID;
-        public operationIDStruct operationID
+        public sealed partial class EnvelopeTypeOpId : HashIDPreimage
         {
-            get => _operationID;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
+            public operationIDStruct operationID
             {
-                _operationID = value;
+                get => _operationID;
+                set
+                {
+                    _operationID = value;
+                }
             }
-        }
+            private operationIDStruct _operationID;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HashIDPreimage_ENVELOPE_TYPE_POOL_REVOKE_OP_ID : HashIDPreimage
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
-        private revokeIDStruct _revokeID;
-        public revokeIDStruct revokeID
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EnvelopeTypePoolRevokeOpId : HashIDPreimage
         {
-            get => _revokeID;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
+            public revokeIDStruct revokeID
             {
-                _revokeID = value;
+                get => _revokeID;
+                set
+                {
+                    _revokeID = value;
+                }
             }
-        }
+            private revokeIDStruct _revokeID;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HashIDPreimage_ENVELOPE_TYPE_CONTRACT_ID : HashIDPreimage
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
-        private contractIDStruct _contractID;
-        public contractIDStruct contractID
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EnvelopeTypeContractId : HashIDPreimage
         {
-            get => _contractID;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
+            public contractIDStruct contractID
             {
-                _contractID = value;
+                get => _contractID;
+                set
+                {
+                    _contractID = value;
+                }
             }
-        }
+            private contractIDStruct _contractID;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class HashIDPreimage_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION : HashIDPreimage
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
-        private sorobanAuthorizationStruct _sorobanAuthorization;
-        public sorobanAuthorizationStruct sorobanAuthorization
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EnvelopeTypeSorobanAuthorization : HashIDPreimage
         {
-            get => _sorobanAuthorization;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
+            public sorobanAuthorizationStruct sorobanAuthorization
             {
-                _sorobanAuthorization = value;
+                get => _sorobanAuthorization;
+                set
+                {
+                    _sorobanAuthorization = value;
+                }
             }
-        }
+            private sorobanAuthorizationStruct _sorobanAuthorization;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class HashIDPreimageXdr
     {
@@ -436,16 +436,16 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case HashIDPreimage_ENVELOPE_TYPE_OP_ID case_ENVELOPE_TYPE_OP_ID:
+                case HashIDPreimage.EnvelopeTypeOpId case_ENVELOPE_TYPE_OP_ID:
                 HashIDPreimage.operationIDStructXdr.Encode(stream, case_ENVELOPE_TYPE_OP_ID.operationID);
                 break;
-                case HashIDPreimage_ENVELOPE_TYPE_POOL_REVOKE_OP_ID case_ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
+                case HashIDPreimage.EnvelopeTypePoolRevokeOpId case_ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
                 HashIDPreimage.revokeIDStructXdr.Encode(stream, case_ENVELOPE_TYPE_POOL_REVOKE_OP_ID.revokeID);
                 break;
-                case HashIDPreimage_ENVELOPE_TYPE_CONTRACT_ID case_ENVELOPE_TYPE_CONTRACT_ID:
+                case HashIDPreimage.EnvelopeTypeContractId case_ENVELOPE_TYPE_CONTRACT_ID:
                 HashIDPreimage.contractIDStructXdr.Encode(stream, case_ENVELOPE_TYPE_CONTRACT_ID.contractID);
                 break;
-                case HashIDPreimage_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION case_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION:
+                case HashIDPreimage.EnvelopeTypeSorobanAuthorization case_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION:
                 HashIDPreimage.sorobanAuthorizationStructXdr.Encode(stream, case_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION.sorobanAuthorization);
                 break;
             }
@@ -456,19 +456,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case EnvelopeType.ENVELOPE_TYPE_OP_ID:
-                var result_ENVELOPE_TYPE_OP_ID = new HashIDPreimage_ENVELOPE_TYPE_OP_ID();
+                var result_ENVELOPE_TYPE_OP_ID = new HashIDPreimage.EnvelopeTypeOpId();
                 result_ENVELOPE_TYPE_OP_ID.operationID = HashIDPreimage.operationIDStructXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_OP_ID;
                 case EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID:
-                var result_ENVELOPE_TYPE_POOL_REVOKE_OP_ID = new HashIDPreimage_ENVELOPE_TYPE_POOL_REVOKE_OP_ID();
+                var result_ENVELOPE_TYPE_POOL_REVOKE_OP_ID = new HashIDPreimage.EnvelopeTypePoolRevokeOpId();
                 result_ENVELOPE_TYPE_POOL_REVOKE_OP_ID.revokeID = HashIDPreimage.revokeIDStructXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
                 case EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID:
-                var result_ENVELOPE_TYPE_CONTRACT_ID = new HashIDPreimage_ENVELOPE_TYPE_CONTRACT_ID();
+                var result_ENVELOPE_TYPE_CONTRACT_ID = new HashIDPreimage.EnvelopeTypeContractId();
                 result_ENVELOPE_TYPE_CONTRACT_ID.contractID = HashIDPreimage.contractIDStructXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_CONTRACT_ID;
                 case EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION:
-                var result_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION = new HashIDPreimage_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION();
+                var result_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION = new HashIDPreimage.EnvelopeTypeSorobanAuthorization();
                 result_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION.sorobanAuthorization = HashIDPreimage.sorobanAuthorizationStructXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
                 default:

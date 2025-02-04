@@ -38,23 +38,65 @@ namespace Stellar.XDR {
     public enum TransactionResultCode
     {
         txFEE_BUMP_INNER_SUCCESS = 1,
+        /// <summary>
+        /// fee bump inner transaction succeeded
+        /// </summary>
         txSUCCESS = 0,
         txFAILED = -1,
         txTOO_EARLY = -2,
+        /// <summary>
+        /// ledger closeTime before minTime
+        /// </summary>
         txTOO_LATE = -3,
+        /// <summary>
+        /// ledger closeTime after maxTime
+        /// </summary>
         txMISSING_OPERATION = -4,
+        /// <summary>
+        /// no operation was specified
+        /// </summary>
         txBAD_SEQ = -5,
         txBAD_AUTH = -6,
+        /// <summary>
+        /// too few valid signatures / wrong network
+        /// </summary>
         txINSUFFICIENT_BALANCE = -7,
+        /// <summary>
+        /// fee would bring account below reserve
+        /// </summary>
         txNO_ACCOUNT = -8,
+        /// <summary>
+        /// source account not found
+        /// </summary>
         txINSUFFICIENT_FEE = -9,
+        /// <summary>
+        /// fee is too small
+        /// </summary>
         txBAD_AUTH_EXTRA = -10,
+        /// <summary>
+        /// unused signatures attached to transaction
+        /// </summary>
         txINTERNAL_ERROR = -11,
         txNOT_SUPPORTED = -12,
+        /// <summary>
+        /// transaction type not supported
+        /// </summary>
         txFEE_BUMP_INNER_FAILED = -13,
+        /// <summary>
+        /// fee bump inner transaction failed
+        /// </summary>
         txBAD_SPONSORSHIP = -14,
+        /// <summary>
+        /// sponsorship not confirmed
+        /// </summary>
         txBAD_MIN_SEQ_AGE_OR_GAP = -15,
+        /// <summary>
+        /// minSeqAge or minSeqLedgerGap conditions not met
+        /// </summary>
         txMALFORMED = -16,
+        /// <summary>
+        /// precondition is invalid
+        /// </summary>
         txSOROBAN_INVALID = -17,
     }
 

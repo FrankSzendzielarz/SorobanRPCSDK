@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class BeginSponsoringFutureReservesOp
     {
-        private AccountID _sponsoredID;
         public AccountID sponsoredID
         {
             get => _sponsoredID;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _sponsoredID = value;
             }
         }
+        private AccountID _sponsoredID;
 
         public BeginSponsoringFutureReservesOp()
         {

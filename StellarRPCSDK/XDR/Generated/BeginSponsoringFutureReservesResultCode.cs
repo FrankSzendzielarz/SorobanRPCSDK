@@ -21,7 +21,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum BeginSponsoringFutureReservesResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED = -1,
         BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED = -2,
         BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE = -3,

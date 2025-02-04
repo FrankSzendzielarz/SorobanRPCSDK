@@ -32,57 +32,57 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ChangeTrustAsset_ASSET_TYPE_NATIVE : ChangeTrustAsset
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM4 : ChangeTrustAsset
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
-        private AlphaNum4 _alphaNum4;
-        public AlphaNum4 alphaNum4
+        public sealed partial class AssetTypeNative : ChangeTrustAsset
         {
-            get => _alphaNum4;
-            set
-            {
-                _alphaNum4 = value;
-            }
-        }
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM12 : ChangeTrustAsset
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
-        private AlphaNum12 _alphaNum12;
-        public AlphaNum12 alphaNum12
+            public override void ValidateCase() {}
+        }
+        public sealed partial class AssetTypeCreditAlphanum4 : ChangeTrustAsset
         {
-            get => _alphaNum12;
-            set
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
+            public AlphaNum4 alphaNum4
             {
-                _alphaNum12 = value;
+                get => _alphaNum4;
+                set
+                {
+                    _alphaNum4 = value;
+                }
             }
-        }
+            private AlphaNum4 _alphaNum4;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ChangeTrustAsset_ASSET_TYPE_POOL_SHARE : ChangeTrustAsset
-    {
-        public override AssetType Discriminator => AssetType.ASSET_TYPE_POOL_SHARE;
-        private LiquidityPoolParameters _liquidityPool;
-        public LiquidityPoolParameters liquidityPool
+            public override void ValidateCase() {}
+        }
+        public sealed partial class AssetTypeCreditAlphanum12 : ChangeTrustAsset
         {
-            get => _liquidityPool;
-            set
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
+            public AlphaNum12 alphaNum12
             {
-                _liquidityPool = value;
+                get => _alphaNum12;
+                set
+                {
+                    _alphaNum12 = value;
+                }
             }
-        }
+            private AlphaNum12 _alphaNum12;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class AssetTypePoolShare : ChangeTrustAsset
+        {
+            public override AssetType Discriminator => AssetType.ASSET_TYPE_POOL_SHARE;
+            public LiquidityPoolParameters liquidityPool
+            {
+                get => _liquidityPool;
+                set
+                {
+                    _liquidityPool = value;
+                }
+            }
+            private LiquidityPoolParameters _liquidityPool;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ChangeTrustAssetXdr
     {
@@ -102,15 +102,15 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ChangeTrustAsset_ASSET_TYPE_NATIVE case_ASSET_TYPE_NATIVE:
+                case ChangeTrustAsset.AssetTypeNative case_ASSET_TYPE_NATIVE:
                 break;
-                case ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM4 case_ASSET_TYPE_CREDIT_ALPHANUM4:
+                case ChangeTrustAsset.AssetTypeCreditAlphanum4 case_ASSET_TYPE_CREDIT_ALPHANUM4:
                 AlphaNum4Xdr.Encode(stream, case_ASSET_TYPE_CREDIT_ALPHANUM4.alphaNum4);
                 break;
-                case ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM12 case_ASSET_TYPE_CREDIT_ALPHANUM12:
+                case ChangeTrustAsset.AssetTypeCreditAlphanum12 case_ASSET_TYPE_CREDIT_ALPHANUM12:
                 AlphaNum12Xdr.Encode(stream, case_ASSET_TYPE_CREDIT_ALPHANUM12.alphaNum12);
                 break;
-                case ChangeTrustAsset_ASSET_TYPE_POOL_SHARE case_ASSET_TYPE_POOL_SHARE:
+                case ChangeTrustAsset.AssetTypePoolShare case_ASSET_TYPE_POOL_SHARE:
                 LiquidityPoolParametersXdr.Encode(stream, case_ASSET_TYPE_POOL_SHARE.liquidityPool);
                 break;
             }
@@ -121,18 +121,18 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case AssetType.ASSET_TYPE_NATIVE:
-                var result_ASSET_TYPE_NATIVE = new ChangeTrustAsset_ASSET_TYPE_NATIVE();
+                var result_ASSET_TYPE_NATIVE = new ChangeTrustAsset.AssetTypeNative();
                 return result_ASSET_TYPE_NATIVE;
                 case AssetType.ASSET_TYPE_CREDIT_ALPHANUM4:
-                var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM4();
+                var result_ASSET_TYPE_CREDIT_ALPHANUM4 = new ChangeTrustAsset.AssetTypeCreditAlphanum4();
                 result_ASSET_TYPE_CREDIT_ALPHANUM4.alphaNum4 = AlphaNum4Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM4;
                 case AssetType.ASSET_TYPE_CREDIT_ALPHANUM12:
-                var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new ChangeTrustAsset_ASSET_TYPE_CREDIT_ALPHANUM12();
+                var result_ASSET_TYPE_CREDIT_ALPHANUM12 = new ChangeTrustAsset.AssetTypeCreditAlphanum12();
                 result_ASSET_TYPE_CREDIT_ALPHANUM12.alphaNum12 = AlphaNum12Xdr.Decode(stream);
                 return result_ASSET_TYPE_CREDIT_ALPHANUM12;
                 case AssetType.ASSET_TYPE_POOL_SHARE:
-                var result_ASSET_TYPE_POOL_SHARE = new ChangeTrustAsset_ASSET_TYPE_POOL_SHARE();
+                var result_ASSET_TYPE_POOL_SHARE = new ChangeTrustAsset.AssetTypePoolShare();
                 result_ASSET_TYPE_POOL_SHARE.liquidityPool = LiquidityPoolParametersXdr.Decode(stream);
                 return result_ASSET_TYPE_POOL_SHARE;
                 default:

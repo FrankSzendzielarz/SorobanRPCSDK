@@ -21,21 +21,21 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClaimableBalanceID_CLAIMABLE_BALANCE_ID_TYPE_V0 : ClaimableBalanceID
-    {
-        public override ClaimableBalanceIDType Discriminator => ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0;
-        private Hash _v0;
-        public Hash v0
+        public sealed partial class ClaimableBalanceIdTypeV0 : ClaimableBalanceID
         {
-            get => _v0;
-            set
+            public override ClaimableBalanceIDType Discriminator => ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0;
+            public Hash v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private Hash _v0;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClaimableBalanceIDXdr
     {
@@ -55,7 +55,7 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClaimableBalanceID_CLAIMABLE_BALANCE_ID_TYPE_V0 case_CLAIMABLE_BALANCE_ID_TYPE_V0:
+                case ClaimableBalanceID.ClaimableBalanceIdTypeV0 case_CLAIMABLE_BALANCE_ID_TYPE_V0:
                 HashXdr.Encode(stream, case_CLAIMABLE_BALANCE_ID_TYPE_V0.v0);
                 break;
             }
@@ -66,7 +66,7 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0:
-                var result_CLAIMABLE_BALANCE_ID_TYPE_V0 = new ClaimableBalanceID_CLAIMABLE_BALANCE_ID_TYPE_V0();
+                var result_CLAIMABLE_BALANCE_ID_TYPE_V0 = new ClaimableBalanceID.ClaimableBalanceIdTypeV0();
                 result_CLAIMABLE_BALANCE_ID_TYPE_V0.v0 = HashXdr.Decode(stream);
                 return result_CLAIMABLE_BALANCE_ID_TYPE_V0;
                 default:

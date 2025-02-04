@@ -44,7 +44,6 @@ namespace Stellar.XDR {
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public partial class successStruct
         {
-            private ClaimAtom[] _offers;
             public ClaimAtom[] offers
             {
                 get => _offers;
@@ -53,8 +52,8 @@ namespace Stellar.XDR {
                     _offers = value;
                 }
             }
+            private ClaimAtom[] _offers;
 
-            private SimplePaymentResult _last;
             public SimplePaymentResult last
             {
                 get => _last;
@@ -63,6 +62,7 @@ namespace Stellar.XDR {
                     _last = value;
                 }
             }
+            private SimplePaymentResult _last;
 
             public successStruct()
             {
@@ -111,102 +111,111 @@ namespace Stellar.XDR {
                 return result;
             }
         }
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
-        private successStruct _success;
-        public successStruct success
+        public sealed partial class PathPaymentStrictReceiveSuccess : PathPaymentStrictReceiveResult
         {
-            get => _success;
-            set
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
+            public successStruct success
             {
-                _success = value;
+                get => _success;
+                set
+                {
+                    _success = value;
+                }
             }
+            private successStruct _success;
+
+            public override void ValidateCase() {}
         }
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL;
-
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER;
-        private Asset _noIssuer;
-        public Asset noIssuer
+        public sealed partial class PathPaymentStrictReceiveMalformed : PathPaymentStrictReceiveResult
         {
-            get => _noIssuer;
-            set
-            {
-                _noIssuer = value;
-            }
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED;
+
+            public override void ValidateCase() {}
         }
+        public sealed partial class PathPaymentStrictReceiveUnderfunded : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveSrcNoTrust : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveSrcNotAuthorized : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX : PathPaymentStrictReceiveResult
-    {
-        public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveNoDestination : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveNoTrust : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST;
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveNotAuthorized : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED;
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveLineFull : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL;
+
+            public override void ValidateCase() {}
+        }
+        public sealed partial class PathPaymentStrictReceiveNoIssuer : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER;
+            public Asset noIssuer
+            {
+                get => _noIssuer;
+                set
+                {
+                    _noIssuer = value;
+                }
+            }
+            private Asset _noIssuer;
+
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// the asset that caused the error
+        /// </summary>
+        public sealed partial class PathPaymentStrictReceiveTooFewOffers : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS;
+
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// the asset that caused the error
+        /// </summary>
+        public sealed partial class PathPaymentStrictReceiveOfferCrossSelf : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF;
+
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// the asset that caused the error
+        /// </summary>
+        public sealed partial class PathPaymentStrictReceiveOverSendmax : PathPaymentStrictReceiveResult
+        {
+            public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX;
+
+            public override void ValidateCase() {}
+        }
     }
     public static partial class PathPaymentStrictReceiveResultXdr
     {
@@ -226,33 +235,33 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSuccess case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
                 PathPaymentStrictReceiveResult.successStructXdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.success);
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED case_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveMalformed case_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED case_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveUnderfunded case_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST case_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSrcNoTrust case_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED case_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSrcNotAuthorized case_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION case_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoDestination case_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST case_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoTrust case_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED case_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNotAuthorized case_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL case_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveLineFull case_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER case_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoIssuer case_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
                 AssetXdr.Encode(stream, case_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER.noIssuer);
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS case_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveTooFewOffers case_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF case_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf case_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
                 break;
-                case PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX case_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
+                case PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOverSendmax case_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
                 break;
             }
         }
@@ -262,45 +271,45 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSuccess();
                 result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS.success = PathPaymentStrictReceiveResult.successStructXdr.Decode(stream);
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveMalformed();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_MALFORMED;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveUnderfunded();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSrcNoTrust();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveSrcNotAuthorized();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoDestination();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoTrust();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNotAuthorized();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveLineFull();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveNoIssuer();
                 result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER.noIssuer = AssetXdr.Decode(stream);
                 return result_PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveTooFewOffers();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF;
                 case PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX:
-                var result_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX = new PathPaymentStrictReceiveResult_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX();
+                var result_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX = new PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOverSendmax();
                 return result_PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX;
                 default:
                 throw new Exception($"Unknown discriminator for PathPaymentStrictReceiveResult: {discriminator}");

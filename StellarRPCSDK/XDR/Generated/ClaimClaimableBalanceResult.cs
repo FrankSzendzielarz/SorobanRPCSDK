@@ -27,42 +27,42 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_SUCCESS;
+        public sealed partial class ClaimClaimableBalanceSuccess : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_SUCCESS;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimClaimableBalanceDoesNotExist : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimClaimableBalanceCannotClaim : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_LINE_FULL : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimClaimableBalanceLineFull : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NO_TRUST : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimClaimableBalanceNoTrust : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED : ClaimClaimableBalanceResult
-    {
-        public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
+            public override void ValidateCase() {}
+        }
+        public sealed partial class ClaimClaimableBalanceNotAuthorized : ClaimClaimableBalanceResult
+        {
+            public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class ClaimClaimableBalanceResultXdr
     {
@@ -82,17 +82,17 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS case_CLAIM_CLAIMABLE_BALANCE_SUCCESS:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess case_CLAIM_CLAIMABLE_BALANCE_SUCCESS:
                 break;
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST case_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceDoesNotExist case_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
                 break;
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM case_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceCannotClaim case_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
                 break;
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_LINE_FULL case_CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceLineFull case_CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
                 break;
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NO_TRUST case_CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceNoTrust case_CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
                 break;
-                case ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED case_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
+                case ClaimClaimableBalanceResult.ClaimClaimableBalanceNotAuthorized case_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
                 break;
             }
         }
@@ -102,22 +102,22 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_SUCCESS:
-                var result_CLAIM_CLAIMABLE_BALANCE_SUCCESS = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_SUCCESS();
+                var result_CLAIM_CLAIMABLE_BALANCE_SUCCESS = new ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess();
                 return result_CLAIM_CLAIMABLE_BALANCE_SUCCESS;
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST:
-                var result_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST();
+                var result_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST = new ClaimClaimableBalanceResult.ClaimClaimableBalanceDoesNotExist();
                 return result_CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM:
-                var result_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM();
+                var result_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM = new ClaimClaimableBalanceResult.ClaimClaimableBalanceCannotClaim();
                 return result_CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_LINE_FULL:
-                var result_CLAIM_CLAIMABLE_BALANCE_LINE_FULL = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_LINE_FULL();
+                var result_CLAIM_CLAIMABLE_BALANCE_LINE_FULL = new ClaimClaimableBalanceResult.ClaimClaimableBalanceLineFull();
                 return result_CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NO_TRUST:
-                var result_CLAIM_CLAIMABLE_BALANCE_NO_TRUST = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NO_TRUST();
+                var result_CLAIM_CLAIMABLE_BALANCE_NO_TRUST = new ClaimClaimableBalanceResult.ClaimClaimableBalanceNoTrust();
                 return result_CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
                 case ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED:
-                var result_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED = new ClaimClaimableBalanceResult_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED();
+                var result_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED = new ClaimClaimableBalanceResult.ClaimClaimableBalanceNotAuthorized();
                 return result_CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
                 default:
                 throw new Exception($"Unknown discriminator for ClaimClaimableBalanceResult: {discriminator}");

@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ColdArchiveArchivedLeaf
     {
-        private uint32 _index;
         public uint32 index
         {
             get => _index;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _index = value;
             }
         }
+        private uint32 _index;
 
-        private LedgerEntry _archivedEntry;
         public LedgerEntry archivedEntry
         {
             get => _archivedEntry;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _archivedEntry = value;
             }
         }
+        private LedgerEntry _archivedEntry;
 
         public ColdArchiveArchivedLeaf()
         {

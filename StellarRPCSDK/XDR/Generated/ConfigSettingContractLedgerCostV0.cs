@@ -43,10 +43,15 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// Ledger access settings for contracts.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigSettingContractLedgerCostV0
     {
-        private uint32 _ledgerMaxReadLedgerEntries;
+        /// <summary>
+        /// Maximum number of ledger entry read operations per ledger
+        /// </summary>
         public uint32 ledgerMaxReadLedgerEntries
         {
             get => _ledgerMaxReadLedgerEntries;
@@ -55,8 +60,11 @@ namespace Stellar.XDR {
                 _ledgerMaxReadLedgerEntries = value;
             }
         }
+        private uint32 _ledgerMaxReadLedgerEntries;
 
-        private uint32 _ledgerMaxReadBytes;
+        /// <summary>
+        /// Maximum number of bytes that can be read per ledger
+        /// </summary>
         public uint32 ledgerMaxReadBytes
         {
             get => _ledgerMaxReadBytes;
@@ -65,8 +73,11 @@ namespace Stellar.XDR {
                 _ledgerMaxReadBytes = value;
             }
         }
+        private uint32 _ledgerMaxReadBytes;
 
-        private uint32 _ledgerMaxWriteLedgerEntries;
+        /// <summary>
+        /// Maximum number of ledger entry write operations per ledger
+        /// </summary>
         public uint32 ledgerMaxWriteLedgerEntries
         {
             get => _ledgerMaxWriteLedgerEntries;
@@ -75,8 +86,11 @@ namespace Stellar.XDR {
                 _ledgerMaxWriteLedgerEntries = value;
             }
         }
+        private uint32 _ledgerMaxWriteLedgerEntries;
 
-        private uint32 _ledgerMaxWriteBytes;
+        /// <summary>
+        /// Maximum number of bytes that can be written per ledger
+        /// </summary>
         public uint32 ledgerMaxWriteBytes
         {
             get => _ledgerMaxWriteBytes;
@@ -85,8 +99,11 @@ namespace Stellar.XDR {
                 _ledgerMaxWriteBytes = value;
             }
         }
+        private uint32 _ledgerMaxWriteBytes;
 
-        private uint32 _txMaxReadLedgerEntries;
+        /// <summary>
+        /// Maximum number of ledger entry read operations per transaction
+        /// </summary>
         public uint32 txMaxReadLedgerEntries
         {
             get => _txMaxReadLedgerEntries;
@@ -95,8 +112,11 @@ namespace Stellar.XDR {
                 _txMaxReadLedgerEntries = value;
             }
         }
+        private uint32 _txMaxReadLedgerEntries;
 
-        private uint32 _txMaxReadBytes;
+        /// <summary>
+        /// Maximum number of bytes that can be read per transaction
+        /// </summary>
         public uint32 txMaxReadBytes
         {
             get => _txMaxReadBytes;
@@ -105,8 +125,11 @@ namespace Stellar.XDR {
                 _txMaxReadBytes = value;
             }
         }
+        private uint32 _txMaxReadBytes;
 
-        private uint32 _txMaxWriteLedgerEntries;
+        /// <summary>
+        /// Maximum number of ledger entry write operations per transaction
+        /// </summary>
         public uint32 txMaxWriteLedgerEntries
         {
             get => _txMaxWriteLedgerEntries;
@@ -115,8 +138,11 @@ namespace Stellar.XDR {
                 _txMaxWriteLedgerEntries = value;
             }
         }
+        private uint32 _txMaxWriteLedgerEntries;
 
-        private uint32 _txMaxWriteBytes;
+        /// <summary>
+        /// Maximum number of bytes that can be written per transaction
+        /// </summary>
         public uint32 txMaxWriteBytes
         {
             get => _txMaxWriteBytes;
@@ -125,8 +151,8 @@ namespace Stellar.XDR {
                 _txMaxWriteBytes = value;
             }
         }
+        private uint32 _txMaxWriteBytes;
 
-        private int64 _feeReadLedgerEntry;
         public int64 feeReadLedgerEntry
         {
             get => _feeReadLedgerEntry;
@@ -135,8 +161,11 @@ namespace Stellar.XDR {
                 _feeReadLedgerEntry = value;
             }
         }
+        private int64 _feeReadLedgerEntry;
 
-        private int64 _feeWriteLedgerEntry;
+        /// <summary>
+        /// Fee per ledger entry read
+        /// </summary>
         public int64 feeWriteLedgerEntry
         {
             get => _feeWriteLedgerEntry;
@@ -145,8 +174,8 @@ namespace Stellar.XDR {
                 _feeWriteLedgerEntry = value;
             }
         }
+        private int64 _feeWriteLedgerEntry;
 
-        private int64 _feeRead1KB;
         public int64 feeRead1KB
         {
             get => _feeRead1KB;
@@ -155,8 +184,11 @@ namespace Stellar.XDR {
                 _feeRead1KB = value;
             }
         }
+        private int64 _feeRead1KB;
 
-        private int64 _bucketListTargetSizeBytes;
+        /// <summary>
+        /// Write fee grows linearly until bucket list reaches this size
+        /// </summary>
         public int64 bucketListTargetSizeBytes
         {
             get => _bucketListTargetSizeBytes;
@@ -165,8 +197,11 @@ namespace Stellar.XDR {
                 _bucketListTargetSizeBytes = value;
             }
         }
+        private int64 _bucketListTargetSizeBytes;
 
-        private int64 _writeFee1KBBucketListLow;
+        /// <summary>
+        /// Fee per 1KB write when the bucket list is empty
+        /// </summary>
         public int64 writeFee1KBBucketListLow
         {
             get => _writeFee1KBBucketListLow;
@@ -175,8 +210,11 @@ namespace Stellar.XDR {
                 _writeFee1KBBucketListLow = value;
             }
         }
+        private int64 _writeFee1KBBucketListLow;
 
-        private int64 _writeFee1KBBucketListHigh;
+        /// <summary>
+        /// Fee per 1KB write when the bucket list has reached `bucketListTargetSizeBytes`
+        /// </summary>
         public int64 writeFee1KBBucketListHigh
         {
             get => _writeFee1KBBucketListHigh;
@@ -185,8 +223,11 @@ namespace Stellar.XDR {
                 _writeFee1KBBucketListHigh = value;
             }
         }
+        private int64 _writeFee1KBBucketListHigh;
 
-        private uint32 _bucketListWriteFeeGrowthFactor;
+        /// <summary>
+        /// Write fee multiplier for any additional data past the first `bucketListTargetSizeBytes`
+        /// </summary>
         public uint32 bucketListWriteFeeGrowthFactor
         {
             get => _bucketListWriteFeeGrowthFactor;
@@ -195,6 +236,7 @@ namespace Stellar.XDR {
                 _bucketListWriteFeeGrowthFactor = value;
             }
         }
+        private uint32 _bucketListWriteFeeGrowthFactor;
 
         public ConfigSettingContractLedgerCostV0()
         {

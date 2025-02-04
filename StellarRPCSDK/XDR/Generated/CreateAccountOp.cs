@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class CreateAccountOp
     {
-        private AccountID _destination;
         public AccountID destination
         {
             get => _destination;
@@ -25,8 +24,11 @@ namespace Stellar.XDR {
                 _destination = value;
             }
         }
+        private AccountID _destination;
 
-        private int64 _startingBalance;
+        /// <summary>
+        /// account to create
+        /// </summary>
         public int64 startingBalance
         {
             get => _startingBalance;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _startingBalance = value;
             }
         }
+        private int64 _startingBalance;
 
         public CreateAccountOp()
         {

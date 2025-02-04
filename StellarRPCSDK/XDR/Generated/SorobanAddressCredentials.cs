@@ -18,7 +18,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SorobanAddressCredentials
     {
-        private SCAddress _address;
         public SCAddress address
         {
             get => _address;
@@ -27,8 +26,8 @@ namespace Stellar.XDR {
                 _address = value;
             }
         }
+        private SCAddress _address;
 
-        private int64 _nonce;
         public int64 nonce
         {
             get => _nonce;
@@ -37,8 +36,8 @@ namespace Stellar.XDR {
                 _nonce = value;
             }
         }
+        private int64 _nonce;
 
-        private uint32 _signatureExpirationLedger;
         public uint32 signatureExpirationLedger
         {
             get => _signatureExpirationLedger;
@@ -47,8 +46,8 @@ namespace Stellar.XDR {
                 _signatureExpirationLedger = value;
             }
         }
+        private uint32 _signatureExpirationLedger;
 
-        private SCVal _signature;
         public SCVal signature
         {
             get => _signature;
@@ -57,6 +56,7 @@ namespace Stellar.XDR {
                 _signature = value;
             }
         }
+        private SCVal _signature;
 
         public SorobanAddressCredentials()
         {

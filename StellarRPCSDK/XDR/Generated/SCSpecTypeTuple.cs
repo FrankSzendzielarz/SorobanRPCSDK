@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeTuple
     {
-        private SCSpecTypeDef[] _valueTypes;
         public SCSpecTypeDef[] valueTypes
         {
             get => _valueTypes;
@@ -26,6 +25,7 @@ namespace Stellar.XDR {
                 _valueTypes = value;
             }
         }
+        private SCSpecTypeDef[] _valueTypes;
 
         public SCSpecTypeTuple()
         {

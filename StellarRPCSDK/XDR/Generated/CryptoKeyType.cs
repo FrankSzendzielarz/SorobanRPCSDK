@@ -25,6 +25,9 @@ namespace Stellar.XDR {
         KEY_TYPE_PRE_AUTH_TX = 1,
         KEY_TYPE_HASH_X = 2,
         KEY_TYPE_ED25519_SIGNED_PAYLOAD = 3,
+        /// <summary>
+        /// above by ORing them with 0x100
+        /// </summary>
         KEY_TYPE_MUXED_ED25519 = 0x100,
     }
 

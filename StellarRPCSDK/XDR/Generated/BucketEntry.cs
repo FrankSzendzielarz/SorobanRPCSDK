@@ -27,66 +27,66 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class BucketEntry_LIVEENTRY : BucketEntry
-    {
-        public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
-        private LedgerEntry _liveEntry;
-        public LedgerEntry liveEntry
+        public sealed partial class Liveentry : BucketEntry
         {
-            get => _liveEntry;
-            set
+            public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
+            public LedgerEntry liveEntry
             {
-                _liveEntry = value;
+                get => _liveEntry;
+                set
+                {
+                    _liveEntry = value;
+                }
             }
-        }
+            private LedgerEntry _liveEntry;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BucketEntry_INITENTRY : BucketEntry
-    {
-        public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
-        private LedgerEntry _liveEntry;
-        public LedgerEntry liveEntry
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Initentry : BucketEntry
         {
-            get => _liveEntry;
-            set
+            public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
+            public LedgerEntry liveEntry
             {
-                _liveEntry = value;
+                get => _liveEntry;
+                set
+                {
+                    _liveEntry = value;
+                }
             }
-        }
+            private LedgerEntry _liveEntry;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BucketEntry_DEADENTRY : BucketEntry
-    {
-        public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
-        private LedgerKey _deadEntry;
-        public LedgerKey deadEntry
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Deadentry : BucketEntry
         {
-            get => _deadEntry;
-            set
+            public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
+            public LedgerKey deadEntry
             {
-                _deadEntry = value;
+                get => _deadEntry;
+                set
+                {
+                    _deadEntry = value;
+                }
             }
-        }
+            private LedgerKey _deadEntry;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class BucketEntry_METAENTRY : BucketEntry
-    {
-        public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;
-        private BucketMetadata _metaEntry;
-        public BucketMetadata metaEntry
+            public override void ValidateCase() {}
+        }
+        public sealed partial class Metaentry : BucketEntry
         {
-            get => _metaEntry;
-            set
+            public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;
+            public BucketMetadata metaEntry
             {
-                _metaEntry = value;
+                get => _metaEntry;
+                set
+                {
+                    _metaEntry = value;
+                }
             }
-        }
+            private BucketMetadata _metaEntry;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class BucketEntryXdr
     {
@@ -106,16 +106,16 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case BucketEntry_LIVEENTRY case_LIVEENTRY:
+                case BucketEntry.Liveentry case_LIVEENTRY:
                 LedgerEntryXdr.Encode(stream, case_LIVEENTRY.liveEntry);
                 break;
-                case BucketEntry_INITENTRY case_INITENTRY:
+                case BucketEntry.Initentry case_INITENTRY:
                 LedgerEntryXdr.Encode(stream, case_INITENTRY.liveEntry);
                 break;
-                case BucketEntry_DEADENTRY case_DEADENTRY:
+                case BucketEntry.Deadentry case_DEADENTRY:
                 LedgerKeyXdr.Encode(stream, case_DEADENTRY.deadEntry);
                 break;
-                case BucketEntry_METAENTRY case_METAENTRY:
+                case BucketEntry.Metaentry case_METAENTRY:
                 BucketMetadataXdr.Encode(stream, case_METAENTRY.metaEntry);
                 break;
             }
@@ -126,19 +126,19 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case BucketEntryType.LIVEENTRY:
-                var result_LIVEENTRY = new BucketEntry_LIVEENTRY();
+                var result_LIVEENTRY = new BucketEntry.Liveentry();
                 result_LIVEENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
                 return result_LIVEENTRY;
                 case BucketEntryType.INITENTRY:
-                var result_INITENTRY = new BucketEntry_INITENTRY();
+                var result_INITENTRY = new BucketEntry.Initentry();
                 result_INITENTRY.liveEntry = LedgerEntryXdr.Decode(stream);
                 return result_INITENTRY;
                 case BucketEntryType.DEADENTRY:
-                var result_DEADENTRY = new BucketEntry_DEADENTRY();
+                var result_DEADENTRY = new BucketEntry.Deadentry();
                 result_DEADENTRY.deadEntry = LedgerKeyXdr.Decode(stream);
                 return result_DEADENTRY;
                 case BucketEntryType.METAENTRY:
-                var result_METAENTRY = new BucketEntry_METAENTRY();
+                var result_METAENTRY = new BucketEntry.Metaentry();
                 result_METAENTRY.metaEntry = BucketMetadataXdr.Decode(stream);
                 return result_METAENTRY;
                 default:

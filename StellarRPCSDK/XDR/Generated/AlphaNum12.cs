@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AlphaNum12
     {
-        private AssetCode12 _assetCode;
         public AssetCode12 assetCode
         {
             get => _assetCode;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _assetCode = value;
             }
         }
+        private AssetCode12 _assetCode;
 
-        private AccountID _issuer;
         public AccountID issuer
         {
             get => _issuer;
@@ -35,6 +34,7 @@ namespace Stellar.XDR {
                 _issuer = value;
             }
         }
+        private AccountID _issuer;
 
         public AlphaNum12()
         {

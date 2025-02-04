@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Auth
     {
-        private int _flags;
         public int flags
         {
             get => _flags;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _flags = value;
             }
         }
+        private int _flags;
 
         public Auth()
         {

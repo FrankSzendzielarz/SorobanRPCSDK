@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class LedgerCloseValueSignature
     {
-        private NodeID _nodeID;
         public NodeID nodeID
         {
             get => _nodeID;
@@ -25,8 +24,11 @@ namespace Stellar.XDR {
                 _nodeID = value;
             }
         }
+        private NodeID _nodeID;
 
-        private Signature _signature;
+        /// <summary>
+        /// which node introduced the value
+        /// </summary>
         public Signature signature
         {
             get => _signature;
@@ -35,6 +37,7 @@ namespace Stellar.XDR {
                 _signature = value;
             }
         }
+        private Signature _signature;
 
         public LedgerCloseValueSignature()
         {

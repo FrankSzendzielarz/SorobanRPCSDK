@@ -14,7 +14,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigUpgradeSet
     {
-        private ConfigSettingEntry[] _updatedEntry;
         public ConfigSettingEntry[] updatedEntry
         {
             get => _updatedEntry;
@@ -23,6 +22,7 @@ namespace Stellar.XDR {
                 _updatedEntry = value;
             }
         }
+        private ConfigSettingEntry[] _updatedEntry;
 
         public ConfigUpgradeSet()
         {

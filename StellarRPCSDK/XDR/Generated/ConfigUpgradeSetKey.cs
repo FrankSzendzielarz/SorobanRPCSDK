@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ConfigUpgradeSetKey
     {
-        private Hash _contractID;
         public Hash contractID
         {
             get => _contractID;
@@ -24,8 +23,8 @@ namespace Stellar.XDR {
                 _contractID = value;
             }
         }
+        private Hash _contractID;
 
-        private Hash _contentHash;
         public Hash contentHash
         {
             get => _contentHash;
@@ -34,6 +33,7 @@ namespace Stellar.XDR {
                 _contentHash = value;
             }
         }
+        private Hash _contentHash;
 
         public ConfigUpgradeSetKey()
         {

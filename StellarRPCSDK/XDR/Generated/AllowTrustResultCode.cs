@@ -25,12 +25,30 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum AllowTrustResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         ALLOW_TRUST_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         ALLOW_TRUST_MALFORMED = -1,
+        /// <summary>
+        /// asset is not ASSET_TYPE_ALPHANUM
+        /// </summary>
         ALLOW_TRUST_NO_TRUST_LINE = -2,
+        /// <summary>
+        /// source account does not require trust
+        /// </summary>
         ALLOW_TRUST_TRUST_NOT_REQUIRED = -3,
         ALLOW_TRUST_CANT_REVOKE = -4,
+        /// <summary>
+        /// source account can't revoke trust,
+        /// </summary>
         ALLOW_TRUST_SELF_NOT_ALLOWED = -5,
+        /// <summary>
+        /// trusting self is not allowed
+        /// </summary>
         ALLOW_TRUST_LOW_RESERVE = -6,
     }
 

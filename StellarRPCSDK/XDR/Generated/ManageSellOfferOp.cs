@@ -21,7 +21,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ManageSellOfferOp
     {
-        private Asset _selling;
         public Asset selling
         {
             get => _selling;
@@ -30,8 +29,8 @@ namespace Stellar.XDR {
                 _selling = value;
             }
         }
+        private Asset _selling;
 
-        private Asset _buying;
         public Asset buying
         {
             get => _buying;
@@ -40,8 +39,8 @@ namespace Stellar.XDR {
                 _buying = value;
             }
         }
+        private Asset _buying;
 
-        private int64 _amount;
         public int64 amount
         {
             get => _amount;
@@ -50,8 +49,11 @@ namespace Stellar.XDR {
                 _amount = value;
             }
         }
+        private int64 _amount;
 
-        private Price _price;
+        /// <summary>
+        /// amount being sold. if set to 0, delete the offer
+        /// </summary>
         public Price price
         {
             get => _price;
@@ -60,8 +62,11 @@ namespace Stellar.XDR {
                 _price = value;
             }
         }
+        private Price _price;
 
-        private int64 _offerID;
+        /// <summary>
+        /// 0=create a new offer, otherwise edit an existing offer
+        /// </summary>
         public int64 offerID
         {
             get => _offerID;
@@ -70,6 +75,7 @@ namespace Stellar.XDR {
                 _offerID = value;
             }
         }
+        private int64 _offerID;
 
         public ManageSellOfferOp()
         {

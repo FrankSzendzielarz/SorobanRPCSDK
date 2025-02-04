@@ -17,6 +17,9 @@ using System.IO;
 
 namespace Stellar.XDR {
 
+    /// <summary>
+    /// A TransactionEnvelope wraps a transaction with signatures.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public abstract partial class TransactionEnvelope
     {
@@ -25,51 +28,51 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX_V0 : TransactionEnvelope
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
-        private TransactionV0Envelope _v0;
-        public TransactionV0Envelope v0
+        public sealed partial class EnvelopeTypeTxV0 : TransactionEnvelope
         {
-            get => _v0;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
+            public TransactionV0Envelope v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private TransactionV0Envelope _v0;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX : TransactionEnvelope
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
-        private TransactionV1Envelope _v1;
-        public TransactionV1Envelope v1
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EnvelopeTypeTx : TransactionEnvelope
         {
-            get => _v1;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
+            public TransactionV1Envelope v1
             {
-                _v1 = value;
+                get => _v1;
+                set
+                {
+                    _v1 = value;
+                }
             }
-        }
+            private TransactionV1Envelope _v1;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class TransactionEnvelope_ENVELOPE_TYPE_TX_FEE_BUMP : TransactionEnvelope
-    {
-        public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
-        private FeeBumpTransactionEnvelope _feeBump;
-        public FeeBumpTransactionEnvelope feeBump
+            public override void ValidateCase() {}
+        }
+        public sealed partial class EnvelopeTypeTxFeeBump : TransactionEnvelope
         {
-            get => _feeBump;
-            set
+            public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
+            public FeeBumpTransactionEnvelope feeBump
             {
-                _feeBump = value;
+                get => _feeBump;
+                set
+                {
+                    _feeBump = value;
+                }
             }
-        }
+            private FeeBumpTransactionEnvelope _feeBump;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class TransactionEnvelopeXdr
     {
@@ -89,13 +92,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case TransactionEnvelope_ENVELOPE_TYPE_TX_V0 case_ENVELOPE_TYPE_TX_V0:
+                case TransactionEnvelope.EnvelopeTypeTxV0 case_ENVELOPE_TYPE_TX_V0:
                 TransactionV0EnvelopeXdr.Encode(stream, case_ENVELOPE_TYPE_TX_V0.v0);
                 break;
-                case TransactionEnvelope_ENVELOPE_TYPE_TX case_ENVELOPE_TYPE_TX:
+                case TransactionEnvelope.EnvelopeTypeTx case_ENVELOPE_TYPE_TX:
                 TransactionV1EnvelopeXdr.Encode(stream, case_ENVELOPE_TYPE_TX.v1);
                 break;
-                case TransactionEnvelope_ENVELOPE_TYPE_TX_FEE_BUMP case_ENVELOPE_TYPE_TX_FEE_BUMP:
+                case TransactionEnvelope.EnvelopeTypeTxFeeBump case_ENVELOPE_TYPE_TX_FEE_BUMP:
                 FeeBumpTransactionEnvelopeXdr.Encode(stream, case_ENVELOPE_TYPE_TX_FEE_BUMP.feeBump);
                 break;
             }
@@ -106,15 +109,15 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case EnvelopeType.ENVELOPE_TYPE_TX_V0:
-                var result_ENVELOPE_TYPE_TX_V0 = new TransactionEnvelope_ENVELOPE_TYPE_TX_V0();
+                var result_ENVELOPE_TYPE_TX_V0 = new TransactionEnvelope.EnvelopeTypeTxV0();
                 result_ENVELOPE_TYPE_TX_V0.v0 = TransactionV0EnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX_V0;
                 case EnvelopeType.ENVELOPE_TYPE_TX:
-                var result_ENVELOPE_TYPE_TX = new TransactionEnvelope_ENVELOPE_TYPE_TX();
+                var result_ENVELOPE_TYPE_TX = new TransactionEnvelope.EnvelopeTypeTx();
                 result_ENVELOPE_TYPE_TX.v1 = TransactionV1EnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX;
                 case EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP:
-                var result_ENVELOPE_TYPE_TX_FEE_BUMP = new TransactionEnvelope_ENVELOPE_TYPE_TX_FEE_BUMP();
+                var result_ENVELOPE_TYPE_TX_FEE_BUMP = new TransactionEnvelope.EnvelopeTypeTxFeeBump();
                 result_ENVELOPE_TYPE_TX_FEE_BUMP.feeBump = FeeBumpTransactionEnvelopeXdr.Decode(stream);
                 return result_ENVELOPE_TYPE_TX_FEE_BUMP;
                 default:

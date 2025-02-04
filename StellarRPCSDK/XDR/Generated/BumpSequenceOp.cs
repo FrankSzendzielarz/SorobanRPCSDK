@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class BumpSequenceOp
     {
-        private SequenceNumber _bumpTo;
         public SequenceNumber bumpTo
         {
             get => _bumpTo;
@@ -24,6 +23,7 @@ namespace Stellar.XDR {
                 _bumpTo = value;
             }
         }
+        private SequenceNumber _bumpTo;
 
         public BumpSequenceOp()
         {

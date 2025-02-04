@@ -37,17 +37,53 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ManageSellOfferResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         MANAGE_SELL_OFFER_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         MANAGE_SELL_OFFER_MALFORMED = -1,
+        /// <summary>
+        /// generated offer would be invalid
+        /// </summary>
         MANAGE_SELL_OFFER_SELL_NO_TRUST = -2,
+        /// <summary>
+        /// no trust line for what we're selling
+        /// </summary>
         MANAGE_SELL_OFFER_BUY_NO_TRUST = -3,
+        /// <summary>
+        /// no trust line for what we're buying
+        /// </summary>
         MANAGE_SELL_OFFER_SELL_NOT_AUTHORIZED = -4,
+        /// <summary>
+        /// not authorized to sell
+        /// </summary>
         MANAGE_SELL_OFFER_BUY_NOT_AUTHORIZED = -5,
+        /// <summary>
+        /// not authorized to buy
+        /// </summary>
         MANAGE_SELL_OFFER_LINE_FULL = -6,
+        /// <summary>
+        /// can't receive more of what it's buying
+        /// </summary>
         MANAGE_SELL_OFFER_UNDERFUNDED = -7,
+        /// <summary>
+        /// doesn't hold what it's trying to sell
+        /// </summary>
         MANAGE_SELL_OFFER_CROSS_SELF = -8,
+        /// <summary>
+        /// would cross an offer from the same user
+        /// </summary>
         MANAGE_SELL_OFFER_SELL_NO_ISSUER = -9,
+        /// <summary>
+        /// no issuer for what we're selling
+        /// </summary>
         MANAGE_SELL_OFFER_BUY_NO_ISSUER = -10,
+        /// <summary>
+        /// update errors
+        /// </summary>
         MANAGE_SELL_OFFER_NOT_FOUND = -11,
         MANAGE_SELL_OFFER_LOW_RESERVE = -12,
     }

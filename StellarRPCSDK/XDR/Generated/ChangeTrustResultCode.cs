@@ -29,14 +29,41 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum ChangeTrustResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         CHANGE_TRUST_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         CHANGE_TRUST_MALFORMED = -1,
+        /// <summary>
+        /// bad input
+        /// </summary>
         CHANGE_TRUST_NO_ISSUER = -2,
+        /// <summary>
+        /// could not find issuer
+        /// </summary>
         CHANGE_TRUST_INVALID_LIMIT = -3,
+        /// <summary>
+        /// cannot create with a limit of 0
+        /// </summary>
         CHANGE_TRUST_LOW_RESERVE = -4,
+        /// <summary>
+        /// not enough funds to create a new trust line,
+        /// </summary>
         CHANGE_TRUST_SELF_NOT_ALLOWED = -5,
+        /// <summary>
+        /// trusting self is not allowed
+        /// </summary>
         CHANGE_TRUST_TRUST_LINE_MISSING = -6,
+        /// <summary>
+        /// Asset trustline is missing for pool
+        /// </summary>
         CHANGE_TRUST_CANNOT_DELETE = -7,
+        /// <summary>
+        /// Asset trustline is still referenced in a pool
+        /// </summary>
         CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES = -8,
     }
 

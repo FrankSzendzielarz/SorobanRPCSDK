@@ -24,7 +24,13 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum SetTrustLineFlagsResultCode
     {
+        /// <summary>
+        /// codes considered as "success" for the operation
+        /// </summary>
         SET_TRUST_LINE_FLAGS_SUCCESS = 0,
+        /// <summary>
+        /// codes considered as "failure" for the operation
+        /// </summary>
         SET_TRUST_LINE_FLAGS_MALFORMED = -1,
         SET_TRUST_LINE_FLAGS_NO_TRUST_LINE = -2,
         SET_TRUST_LINE_FLAGS_CANT_REVOKE = -3,

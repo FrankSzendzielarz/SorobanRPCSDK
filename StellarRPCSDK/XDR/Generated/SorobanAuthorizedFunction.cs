@@ -33,51 +33,57 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN : SorobanAuthorizedFunction
-    {
-        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
-        private InvokeContractArgs _contractFn;
-        public InvokeContractArgs contractFn
+        public sealed partial class SorobanAuthorizedFunctionTypeContractFn : SorobanAuthorizedFunction
         {
-            get => _contractFn;
-            set
+            public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
+            public InvokeContractArgs contractFn
             {
-                _contractFn = value;
+                get => _contractFn;
+                set
+                {
+                    _contractFn = value;
+                }
             }
-        }
+            private InvokeContractArgs _contractFn;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN : SorobanAuthorizedFunction
-    {
-        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
-        private CreateContractArgs _createContractHostFn;
-        public CreateContractArgs createContractHostFn
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// (protocol 22+).
+        /// </summary>
+        public sealed partial class SorobanAuthorizedFunctionTypeCreateContractHostFn : SorobanAuthorizedFunction
         {
-            get => _createContractHostFn;
-            set
+            public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
+            public CreateContractArgs createContractHostFn
             {
-                _createContractHostFn = value;
+                get => _createContractHostFn;
+                set
+                {
+                    _createContractHostFn = value;
+                }
             }
-        }
+            private CreateContractArgs _createContractHostFn;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN : SorobanAuthorizedFunction
-    {
-        public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
-        private CreateContractArgsV2 _createContractV2HostFn;
-        public CreateContractArgsV2 createContractV2HostFn
+            public override void ValidateCase() {}
+        }
+        /// <summary>
+        /// contract constructor arguments.
+        /// </summary>
+        public sealed partial class SorobanAuthorizedFunctionTypeCreateContractV2HostFn : SorobanAuthorizedFunction
         {
-            get => _createContractV2HostFn;
-            set
+            public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
+            public CreateContractArgsV2 createContractV2HostFn
             {
-                _createContractV2HostFn = value;
+                get => _createContractV2HostFn;
+                set
+                {
+                    _createContractV2HostFn = value;
+                }
             }
-        }
+            private CreateContractArgsV2 _createContractV2HostFn;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class SorobanAuthorizedFunctionXdr
     {
@@ -97,13 +103,13 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:
+                case SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:
                 InvokeContractArgsXdr.Encode(stream, case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN.contractFn);
                 break;
-                case SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN:
+                case SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractHostFn case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN:
                 CreateContractArgsXdr.Encode(stream, case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN.createContractHostFn);
                 break;
-                case SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN:
+                case SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractV2HostFn case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN:
                 CreateContractArgsV2Xdr.Encode(stream, case_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN.createContractV2HostFn);
                 break;
             }
@@ -114,15 +120,15 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN:
-                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN();
+                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN = new SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn();
                 result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN.contractFn = InvokeContractArgsXdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
                 case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN:
-                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN();
+                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN = new SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractHostFn();
                 result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN.createContractHostFn = CreateContractArgsXdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
                 case SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN:
-                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN = new SorobanAuthorizedFunction_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN();
+                var result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN = new SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractV2HostFn();
                 result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN.createContractV2HostFn = CreateContractArgsV2Xdr.Decode(stream);
                 return result_SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
                 default:

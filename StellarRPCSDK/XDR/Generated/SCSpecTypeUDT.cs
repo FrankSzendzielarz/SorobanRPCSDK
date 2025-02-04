@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeUDT
     {
-        private string _name;
         public string name
         {
             get => _name;
@@ -26,6 +25,7 @@ namespace Stellar.XDR {
                 _name = value;
             }
         }
+        private string _name;
 
         public SCSpecTypeUDT()
         {

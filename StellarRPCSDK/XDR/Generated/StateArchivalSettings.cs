@@ -35,7 +35,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class StateArchivalSettings
     {
-        private uint32 _maxEntryTTL;
         public uint32 maxEntryTTL
         {
             get => _maxEntryTTL;
@@ -44,8 +43,8 @@ namespace Stellar.XDR {
                 _maxEntryTTL = value;
             }
         }
+        private uint32 _maxEntryTTL;
 
-        private uint32 _minTemporaryTTL;
         public uint32 minTemporaryTTL
         {
             get => _minTemporaryTTL;
@@ -54,8 +53,8 @@ namespace Stellar.XDR {
                 _minTemporaryTTL = value;
             }
         }
+        private uint32 _minTemporaryTTL;
 
-        private uint32 _minPersistentTTL;
         public uint32 minPersistentTTL
         {
             get => _minPersistentTTL;
@@ -64,8 +63,11 @@ namespace Stellar.XDR {
                 _minPersistentTTL = value;
             }
         }
+        private uint32 _minPersistentTTL;
 
-        private int64 _persistentRentRateDenominator;
+        /// <summary>
+        /// rent_fee = wfee_rate_average / rent_rate_denominator_for_type
+        /// </summary>
         public int64 persistentRentRateDenominator
         {
             get => _persistentRentRateDenominator;
@@ -74,8 +76,8 @@ namespace Stellar.XDR {
                 _persistentRentRateDenominator = value;
             }
         }
+        private int64 _persistentRentRateDenominator;
 
-        private int64 _tempRentRateDenominator;
         public int64 tempRentRateDenominator
         {
             get => _tempRentRateDenominator;
@@ -84,8 +86,11 @@ namespace Stellar.XDR {
                 _tempRentRateDenominator = value;
             }
         }
+        private int64 _tempRentRateDenominator;
 
-        private uint32 _maxEntriesToArchive;
+        /// <summary>
+        /// max number of entries that emit archival meta in a single ledger
+        /// </summary>
         public uint32 maxEntriesToArchive
         {
             get => _maxEntriesToArchive;
@@ -94,8 +99,11 @@ namespace Stellar.XDR {
                 _maxEntriesToArchive = value;
             }
         }
+        private uint32 _maxEntriesToArchive;
 
-        private uint32 _bucketListSizeWindowSampleSize;
+        /// <summary>
+        /// Number of snapshots to use when calculating average BucketList size
+        /// </summary>
         public uint32 bucketListSizeWindowSampleSize
         {
             get => _bucketListSizeWindowSampleSize;
@@ -104,8 +112,11 @@ namespace Stellar.XDR {
                 _bucketListSizeWindowSampleSize = value;
             }
         }
+        private uint32 _bucketListSizeWindowSampleSize;
 
-        private uint32 _bucketListWindowSamplePeriod;
+        /// <summary>
+        /// How often to sample the BucketList size for the average, in ledgers
+        /// </summary>
         public uint32 bucketListWindowSamplePeriod
         {
             get => _bucketListWindowSamplePeriod;
@@ -114,8 +125,11 @@ namespace Stellar.XDR {
                 _bucketListWindowSamplePeriod = value;
             }
         }
+        private uint32 _bucketListWindowSamplePeriod;
 
-        private uint32 _evictionScanSize;
+        /// <summary>
+        /// Maximum number of bytes that we scan for eviction per ledger
+        /// </summary>
         public uint32 evictionScanSize
         {
             get => _evictionScanSize;
@@ -124,8 +138,11 @@ namespace Stellar.XDR {
                 _evictionScanSize = value;
             }
         }
+        private uint32 _evictionScanSize;
 
-        private uint32 _startingEvictionScanLevel;
+        /// <summary>
+        /// Lowest BucketList level to be scanned to evict entries
+        /// </summary>
         public uint32 startingEvictionScanLevel
         {
             get => _startingEvictionScanLevel;
@@ -134,6 +151,7 @@ namespace Stellar.XDR {
                 _startingEvictionScanLevel = value;
             }
         }
+        private uint32 _startingEvictionScanLevel;
 
         public StateArchivalSettings()
         {

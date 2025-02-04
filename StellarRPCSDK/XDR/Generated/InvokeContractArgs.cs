@@ -16,7 +16,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class InvokeContractArgs
     {
-        private SCAddress _contractAddress;
         public SCAddress contractAddress
         {
             get => _contractAddress;
@@ -25,8 +24,8 @@ namespace Stellar.XDR {
                 _contractAddress = value;
             }
         }
+        private SCAddress _contractAddress;
 
-        private SCSymbol _functionName;
         public SCSymbol functionName
         {
             get => _functionName;
@@ -35,8 +34,8 @@ namespace Stellar.XDR {
                 _functionName = value;
             }
         }
+        private SCSymbol _functionName;
 
-        private SCVal[] _args;
         public SCVal[] args
         {
             get => _args;
@@ -45,6 +44,7 @@ namespace Stellar.XDR {
                 _args = value;
             }
         }
+        private SCVal[] _args;
 
         public InvokeContractArgs()
         {

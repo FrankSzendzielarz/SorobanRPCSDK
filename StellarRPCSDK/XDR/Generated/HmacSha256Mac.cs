@@ -15,7 +15,6 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class HmacSha256Mac
     {
-        private byte[] _mac = new byte[32];
         public byte[] mac
         {
             get => _mac;
@@ -26,6 +25,7 @@ namespace Stellar.XDR {
                 _mac = value;
             }
         }
+        private byte[] _mac = new byte[32];
 
         public HmacSha256Mac()
         {

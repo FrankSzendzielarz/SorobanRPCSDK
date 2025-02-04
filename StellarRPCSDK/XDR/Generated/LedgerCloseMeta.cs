@@ -23,36 +23,36 @@ namespace Stellar.XDR {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
-    }
-    public sealed partial class LedgerCloseMeta_0 : LedgerCloseMeta
-    {
-        public override int Discriminator => 0;
-        private LedgerCloseMetaV0 _v0;
-        public LedgerCloseMetaV0 v0
+        public sealed partial class case_0 : LedgerCloseMeta
         {
-            get => _v0;
-            set
+            public override int Discriminator => 0;
+            public LedgerCloseMetaV0 v0
             {
-                _v0 = value;
+                get => _v0;
+                set
+                {
+                    _v0 = value;
+                }
             }
-        }
+            private LedgerCloseMetaV0 _v0;
 
-        public override void ValidateCase() {}
-    }
-    public sealed partial class LedgerCloseMeta_1 : LedgerCloseMeta
-    {
-        public override int Discriminator => 1;
-        private LedgerCloseMetaV1 _v1;
-        public LedgerCloseMetaV1 v1
+            public override void ValidateCase() {}
+        }
+        public sealed partial class case_1 : LedgerCloseMeta
         {
-            get => _v1;
-            set
+            public override int Discriminator => 1;
+            public LedgerCloseMetaV1 v1
             {
-                _v1 = value;
+                get => _v1;
+                set
+                {
+                    _v1 = value;
+                }
             }
-        }
+            private LedgerCloseMetaV1 _v1;
 
-        public override void ValidateCase() {}
+            public override void ValidateCase() {}
+        }
     }
     public static partial class LedgerCloseMetaXdr
     {
@@ -72,10 +72,10 @@ namespace Stellar.XDR {
             stream.WriteInt((int)value.Discriminator);
             switch (value)
             {
-                case LedgerCloseMeta_0 case_0:
+                case LedgerCloseMeta.case_0 case_0:
                 LedgerCloseMetaV0Xdr.Encode(stream, case_0.v0);
                 break;
-                case LedgerCloseMeta_1 case_1:
+                case LedgerCloseMeta.case_1 case_1:
                 LedgerCloseMetaV1Xdr.Encode(stream, case_1.v1);
                 break;
             }
@@ -86,11 +86,11 @@ namespace Stellar.XDR {
             switch (discriminator)
             {
                 case 0:
-                var result_0 = new LedgerCloseMeta_0();
+                var result_0 = new LedgerCloseMeta.case_0();
                 result_0.v0 = LedgerCloseMetaV0Xdr.Decode(stream);
                 return result_0;
                 case 1:
-                var result_1 = new LedgerCloseMeta_1();
+                var result_1 = new LedgerCloseMeta.case_1();
                 result_1.v1 = LedgerCloseMetaV1Xdr.Decode(stream);
                 return result_1;
                 default:
