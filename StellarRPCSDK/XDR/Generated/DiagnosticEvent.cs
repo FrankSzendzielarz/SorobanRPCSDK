@@ -9,6 +9,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -45,6 +46,16 @@ namespace Stellar.XDR {
     }
     public static partial class DiagnosticEventXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(DiagnosticEvent value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                DiagnosticEventXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, DiagnosticEvent value)
         {

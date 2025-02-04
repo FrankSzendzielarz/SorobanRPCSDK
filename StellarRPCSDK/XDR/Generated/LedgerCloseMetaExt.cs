@@ -11,6 +11,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -46,6 +47,16 @@ namespace Stellar.XDR {
     }
     public static partial class LedgerCloseMetaExtXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(LedgerCloseMetaExt value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                LedgerCloseMetaExtXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, LedgerCloseMetaExt value)
         {
             value.ValidateCase();

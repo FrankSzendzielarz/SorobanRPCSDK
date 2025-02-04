@@ -37,6 +37,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -91,6 +92,16 @@ namespace Stellar.XDR {
         }
         public static partial class operationIDStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(operationIDStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    operationIDStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, operationIDStruct value)
             {
@@ -172,6 +183,16 @@ namespace Stellar.XDR {
         }
         public static partial class revokeIDStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(revokeIDStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    revokeIDStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, revokeIDStruct value)
             {
@@ -227,6 +248,16 @@ namespace Stellar.XDR {
         }
         public static partial class contractIDStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(contractIDStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    contractIDStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, contractIDStruct value)
             {
@@ -296,6 +327,16 @@ namespace Stellar.XDR {
         }
         public static partial class sorobanAuthorizationStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(sorobanAuthorizationStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    sorobanAuthorizationStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, sorobanAuthorizationStruct value)
             {
@@ -379,6 +420,16 @@ namespace Stellar.XDR {
     }
     public static partial class HashIDPreimageXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(HashIDPreimage value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                HashIDPreimageXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, HashIDPreimage value)
         {
             value.ValidateCase();

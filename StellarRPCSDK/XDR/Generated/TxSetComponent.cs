@@ -13,6 +13,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -57,6 +58,16 @@ namespace Stellar.XDR {
         }
         public static partial class txsMaybeDiscountedFeeStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(txsMaybeDiscountedFeeStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    txsMaybeDiscountedFeeStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, txsMaybeDiscountedFeeStruct value)
             {
@@ -112,6 +123,16 @@ namespace Stellar.XDR {
     }
     public static partial class TxSetComponentXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(TxSetComponent value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                TxSetComponentXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, TxSetComponent value)
         {
             value.ValidateCase();

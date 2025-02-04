@@ -5,6 +5,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -32,6 +33,16 @@ namespace Stellar.XDR {
     }
     public static partial class string32Xdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(string32 value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                string32Xdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, string32 value)
         {
             stream.WriteString(value.InnerValue);

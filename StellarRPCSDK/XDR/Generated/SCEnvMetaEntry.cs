@@ -12,6 +12,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -56,6 +57,16 @@ namespace Stellar.XDR {
         }
         public static partial class interfaceVersionStructXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(interfaceVersionStruct value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    interfaceVersionStructXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, interfaceVersionStruct value)
             {
@@ -90,6 +101,16 @@ namespace Stellar.XDR {
     }
     public static partial class SCEnvMetaEntryXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(SCEnvMetaEntry value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                SCEnvMetaEntryXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, SCEnvMetaEntry value)
         {
             value.ValidateCase();

@@ -17,6 +17,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -91,6 +92,16 @@ namespace Stellar.XDR {
         }
         public static partial class taggedTransactionUnionXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(taggedTransactionUnion value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    taggedTransactionUnionXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             public static void Encode(XdrWriter stream, taggedTransactionUnion value)
             {
                 value.ValidateCase();
@@ -126,6 +137,16 @@ namespace Stellar.XDR {
     }
     public static partial class TransactionSignaturePayloadXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(TransactionSignaturePayload value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                TransactionSignaturePayloadXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, TransactionSignaturePayload value)
         {

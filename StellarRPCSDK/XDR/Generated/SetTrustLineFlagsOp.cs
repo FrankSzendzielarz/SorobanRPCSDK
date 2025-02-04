@@ -12,6 +12,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -68,6 +69,16 @@ namespace Stellar.XDR {
     }
     public static partial class SetTrustLineFlagsOpXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(SetTrustLineFlagsOp value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                SetTrustLineFlagsOpXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, SetTrustLineFlagsOp value)
         {

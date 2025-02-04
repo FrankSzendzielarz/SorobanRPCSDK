@@ -24,6 +24,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -143,6 +144,16 @@ namespace Stellar.XDR {
     }
     public static partial class LedgerUpgradeXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(LedgerUpgrade value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                LedgerUpgradeXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, LedgerUpgrade value)
         {
             value.ValidateCase();

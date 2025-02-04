@@ -27,6 +27,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -50,6 +51,16 @@ namespace Stellar.XDR {
 
     public static partial class ManageBuyOfferResultCodeXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(ManageBuyOfferResultCode value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                ManageBuyOfferResultCodeXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes enum value to XDR stream</summary>
         public static void Encode(XdrWriter stream, ManageBuyOfferResultCode value)
         {

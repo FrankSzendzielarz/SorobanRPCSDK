@@ -24,6 +24,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -128,6 +129,16 @@ namespace Stellar.XDR {
             }
             public static partial class constantProductStructXdr
             {
+                /// <summary>Encodes value to XDR base64 string</summary>
+                public static string EncodeToBase64(constantProductStruct value)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        XdrWriter writer = new XdrWriter(memoryStream);
+                        constantProductStructXdr.Encode(writer, value);
+                        return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, constantProductStruct value)
                 {
@@ -168,6 +179,16 @@ namespace Stellar.XDR {
         }
         public static partial class bodyUnionXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(bodyUnion value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    bodyUnionXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             public static void Encode(XdrWriter stream, bodyUnion value)
             {
                 value.ValidateCase();
@@ -196,6 +217,16 @@ namespace Stellar.XDR {
     }
     public static partial class LiquidityPoolEntryXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(LiquidityPoolEntry value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                LiquidityPoolEntryXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, LiquidityPoolEntry value)
         {

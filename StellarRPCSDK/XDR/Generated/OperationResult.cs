@@ -73,6 +73,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -500,6 +501,16 @@ namespace Stellar.XDR {
         }
         public static partial class trUnionXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(trUnion value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    trUnionXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             public static void Encode(XdrWriter stream, trUnion value)
             {
                 value.ValidateCase();
@@ -761,6 +772,16 @@ namespace Stellar.XDR {
     }
     public static partial class OperationResultXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(OperationResult value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                OperationResultXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, OperationResult value)
         {
             value.ValidateCase();

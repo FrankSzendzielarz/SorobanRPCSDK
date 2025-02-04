@@ -13,6 +13,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -51,6 +52,16 @@ namespace Stellar.XDR {
     }
     public static partial class ExtendFootprintTTLResultXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(ExtendFootprintTTLResult value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                ExtendFootprintTTLResultXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, ExtendFootprintTTLResult value)
         {
             value.ValidateCase();

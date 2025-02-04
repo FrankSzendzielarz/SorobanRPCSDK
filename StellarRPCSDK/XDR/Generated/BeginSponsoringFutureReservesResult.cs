@@ -14,6 +14,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -52,6 +53,16 @@ namespace Stellar.XDR {
     }
     public static partial class BeginSponsoringFutureReservesResultXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(BeginSponsoringFutureReservesResult value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                BeginSponsoringFutureReservesResultXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, BeginSponsoringFutureReservesResult value)
         {
             value.ValidateCase();

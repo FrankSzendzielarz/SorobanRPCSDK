@@ -28,22 +28,14 @@ namespace SDKTest
             // Get account
             LedgerKey myAccount = new LedgerKey_ACCOUNT()
             {
-                account = new LedgerKey.accountStruct()
+                account = new LedgerKey.accountStruct() //TODO - this is an artifact of the XDR where unnecessary structs are added into union case arms.
                 {
                     accountID = testAccountId
                 }
             };
-            //TODO - think of some way of making encoding and decoding easier
-            string encodedAccount;
-            using (var memoryStream = new MemoryStream())
-            {
-                XdrWriter writer = new XdrWriter(memoryStream);
-                LedgerKeyXdr.Encode(writer, myAccount);
-                //Eg: above we can in codegen add a EncodeToBase64 string method that references LedgerKeyXdr
-                writer.Flush();
-                encodedAccount = Convert.ToBase64String(memoryStream.ToArray());
-            }
 
+            var encodedAccount = LedgerKeyXdr.EncodeToBase64(myAccount);
+      
             var accountLedgerEntriesArgument = new GetLedgerEntriesParams()
             {
                 Keys = [encodedAccount]

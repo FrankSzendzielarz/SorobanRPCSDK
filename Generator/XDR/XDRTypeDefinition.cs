@@ -87,12 +87,13 @@ namespace Generator.XDR
                 );
             foreach (var comment in source.Split("\n"))
             {
-                code.AppendLine($"// {comment}");
+                code.AppendLine($"// {comment.Trim('\r', '\n')}");
             }
 
             code.AppendLine();
             code.AppendLine();
             code.AppendLine("using System;");
+            code.AppendLine("using System.IO;");
             code.AppendLine();
             code.AppendLine($"namespace {Namespace} {{");
             code.AppendLine();
@@ -137,7 +138,7 @@ namespace Generator.XDR
 
             string enumName = Name;
 
-            var code =  CodeFile;
+            var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine($"public enum {enumName}");
             code.OpenBlock();
@@ -152,7 +153,7 @@ namespace Generator.XDR
                 if (member.constant() != null)
                     value = member.constant().GetText();
                 else if (member.identifier().Length > 1)
-                    value = LookUpEnumAlias(member.identifier(1).GetText(),allTypes);
+                    value = LookUpEnumAlias(member.identifier(1).GetText(), allTypes);
                 else
                     value = "0";
 
@@ -164,6 +165,8 @@ namespace Generator.XDR
             // Generate static XDR helper class
             code.AppendLine($"public static partial class {enumName}Xdr");
             code.OpenBlock();
+
+            AddGeneralBase64EncodeBlock(enumName, code);
 
             code.AppendLine("/// <summary>Encodes enum value to XDR stream</summary>");
             code.AppendLine($"public static void Encode(XdrWriter stream, {enumName} value)");
@@ -192,6 +195,22 @@ namespace Generator.XDR
 
 
         }
+
+        private static void AddGeneralBase64EncodeBlock(string typeName, CodeFile? code)
+        {
+            code.AppendLine("/// <summary>Encodes value to XDR base64 string</summary>");
+            code.AppendLine($"public static string EncodeToBase64({typeName} value)");
+            code.OpenBlock();
+            code.AppendLine("using (var memoryStream = new MemoryStream())");
+            code.OpenBlock();
+            code.AppendLine("XdrWriter writer = new XdrWriter(memoryStream);");
+            code.AppendLine($"{typeName}Xdr.Encode(writer, value);");
+            code.AppendLine("return Convert.ToBase64String(memoryStream.ToArray());");
+            code.CloseBlock();
+            code.CloseBlock();
+        }
+
+    
 
         private string LookUpEnumAlias(string enumMember, List<XDRTypeDefinition> allTypes)
         {
@@ -343,6 +362,8 @@ namespace Generator.XDR
             var code = CodeFile;
             code.AppendLine($"public static partial class {structName}Xdr");
             code.OpenBlock();
+
+            AddGeneralBase64EncodeBlock(structName, code);
 
             // Generate Encode method
             code.AppendLine("/// <summary>Encodes struct to XDR stream</summary>");
@@ -544,6 +565,7 @@ namespace Generator.XDR
             // Generate XDR helper class
             code.AppendLine($"public static partial class {Name}Xdr");
             code.OpenBlock();
+            AddGeneralBase64EncodeBlock(Name, code);
             GenerateUnionEncodeMethods(Name, context);
             GenerateUnionDecodeMethods(Name, discriminatorString, context,allTypes);
             code.CloseBlock();
@@ -581,6 +603,7 @@ namespace Generator.XDR
             // Generate XDR helper class
             code.AppendLine($"public static partial class {Name}Xdr");
             code.OpenBlock();
+            AddGeneralBase64EncodeBlock(Name, code);
             GenerateTypedefEncodeMethods(Name, declaration);
             GenerateTypedefDecodeMethods(Name, declaration);
             code.CloseBlock();

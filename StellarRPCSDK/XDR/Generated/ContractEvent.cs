@@ -24,6 +24,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -118,6 +119,16 @@ namespace Stellar.XDR {
             }
             public static partial class v0StructXdr
             {
+                /// <summary>Encodes value to XDR base64 string</summary>
+                public static string EncodeToBase64(v0Struct value)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        XdrWriter writer = new XdrWriter(memoryStream);
+                        v0StructXdr.Encode(writer, value);
+                        return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, v0Struct value)
                 {
@@ -163,6 +174,16 @@ namespace Stellar.XDR {
         }
         public static partial class bodyUnionXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(bodyUnion value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    bodyUnionXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             public static void Encode(XdrWriter stream, bodyUnion value)
             {
                 value.ValidateCase();
@@ -191,6 +212,16 @@ namespace Stellar.XDR {
     }
     public static partial class ContractEventXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(ContractEvent value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                ContractEventXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, ContractEvent value)
         {

@@ -42,6 +42,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -166,6 +167,16 @@ namespace Stellar.XDR {
             }
             public static partial class prepareStructXdr
             {
+                /// <summary>Encodes value to XDR base64 string</summary>
+                public static string EncodeToBase64(prepareStruct value)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        XdrWriter writer = new XdrWriter(memoryStream);
+                        prepareStructXdr.Encode(writer, value);
+                        return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, prepareStruct value)
                 {
@@ -273,6 +284,16 @@ namespace Stellar.XDR {
             }
             public static partial class confirmStructXdr
             {
+                /// <summary>Encodes value to XDR base64 string</summary>
+                public static string EncodeToBase64(confirmStruct value)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        XdrWriter writer = new XdrWriter(memoryStream);
+                        confirmStructXdr.Encode(writer, value);
+                        return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, confirmStruct value)
                 {
@@ -338,6 +359,16 @@ namespace Stellar.XDR {
             }
             public static partial class externalizeStructXdr
             {
+                /// <summary>Encodes value to XDR base64 string</summary>
+                public static string EncodeToBase64(externalizeStruct value)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        XdrWriter writer = new XdrWriter(memoryStream);
+                        externalizeStructXdr.Encode(writer, value);
+                        return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, externalizeStruct value)
                 {
@@ -419,6 +450,16 @@ namespace Stellar.XDR {
         }
         public static partial class pledgesUnionXdr
         {
+            /// <summary>Encodes value to XDR base64 string</summary>
+            public static string EncodeToBase64(pledgesUnion value)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    pledgesUnionXdr.Encode(writer, value);
+                    return Convert.ToBase64String(memoryStream.ToArray());
+                }
+            }
             public static void Encode(XdrWriter stream, pledgesUnion value)
             {
                 value.ValidateCase();
@@ -468,6 +509,16 @@ namespace Stellar.XDR {
     }
     public static partial class SCPStatementXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(SCPStatement value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                SCPStatementXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         /// <summary>Encodes struct to XDR stream</summary>
         public static void Encode(XdrWriter stream, SCPStatement value)
         {

@@ -17,6 +17,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -79,6 +80,16 @@ namespace Stellar.XDR {
     }
     public static partial class LiquidityPoolDepositResultXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(LiquidityPoolDepositResult value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                LiquidityPoolDepositResultXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, LiquidityPoolDepositResult value)
         {
             value.ValidateCase();

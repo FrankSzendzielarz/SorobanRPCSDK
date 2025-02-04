@@ -40,6 +40,7 @@
 
 
 using System;
+using System.IO;
 
 namespace Stellar.XDR {
 
@@ -267,6 +268,16 @@ namespace Stellar.XDR {
     }
     public static partial class SCSpecTypeDefXdr
     {
+        /// <summary>Encodes value to XDR base64 string</summary>
+        public static string EncodeToBase64(SCSpecTypeDef value)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                SCSpecTypeDefXdr.Encode(writer, value);
+                return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
         public static void Encode(XdrWriter stream, SCSpecTypeDef value)
         {
             value.ValidateCase();
