@@ -3,8 +3,10 @@
 ################################################################################
 
 /.vs
-/Generator/bin/Debug/net8.0
+/Generator/bin
 /Generator/obj
 /Generator/.vs/Generator
 /StellarRPCSDK/obj
+/StellarRPCSDK/bin
+/SDKTest/obj
 /SDKTest/obj
