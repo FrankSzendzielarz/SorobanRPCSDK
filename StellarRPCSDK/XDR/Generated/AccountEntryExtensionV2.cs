@@ -51,6 +51,8 @@ namespace Stellar.XDR {
             get => _signerSponsoringIDs;
             set
             {
+                if (value.Length > Constants.MAX_SIGNERS)
+                	throw new ArgumentException($"Cannot exceed Constants.MAX_SIGNERS bytes");
                 _signerSponsoringIDs = value;
             }
         }
@@ -72,6 +74,8 @@ namespace Stellar.XDR {
         /// <summary>Validates all fields have valid values</summary>
         public virtual void Validate()
         {
+            if (signerSponsoringIDs.Length > Constants.MAX_SIGNERS)
+            	throw new InvalidOperationException($"signerSponsoringIDs cannot exceed Constants.MAX_SIGNERS elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public abstract partial class extUnion

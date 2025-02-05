@@ -17,6 +17,8 @@ namespace Stellar.XDR {
             get => _innerValue;
             set
             {
+                if (value.Length > Constants.CONTRACT_COST_COUNT_LIMIT)
+                	throw new ArgumentException($"Cannot exceed Constants.CONTRACT_COST_COUNT_LIMIT bytes");
                 _innerValue = value;
             }
         }

@@ -23,6 +23,8 @@ namespace Stellar.XDR {
             get => _doc;
             set
             {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > Constants.SC_SPEC_DOC_LIMIT)
+                	throw new ArgumentException($"String exceeds Constants.SC_SPEC_DOC_LIMIT bytes when UTF8 encoded");
                 _doc = value;
             }
         }

@@ -20,16 +20,16 @@ namespace Generator.XDR
     public class CSharpTypeInfo
     {
         public string CSharpType { get; private set; }     // The base C# type (byte, int, string, etc.)
-        public bool IsOptional { get; private set; } = false;
+        public bool IsOptional { get; private set; } =  false;
         public bool IsOpaque { get; private set; } = false;
         public bool IsString { get; private set; } = false;
         public bool IsVoid { get; private set; } = false;   
         public ArrayType ArrayType { get; private set; } = ArrayType.None;
-        public int? MaxLength { get; private set; }        // Max length for arrays/strings, null if unbounded
+        public string? MaxLength { get; private set; }        // Max length for arrays/strings, null if unbounded
         public string FullCSharpType => ArrayType!=ArrayType.None ? $"{CSharpType}[]" : CSharpType;
         public TypeSpecifierContext TypeSpecifierContext { get; private set; }
        
-        public CSharpTypeInfo(StellarXdrParser.DeclarationContext decl)
+        public CSharpTypeInfo(StellarXdrParser.DeclarationContext decl, TypeExtractorVisitor generationContext)
         {
             switch (decl)
             {
@@ -63,8 +63,8 @@ namespace Generator.XDR
                                 throw new ArgumentException($"String declaration context attemps to be a fixed length array {s.GetText()}");
 
                             case VarArraySizeContext varArraySizeSpec:
-                                MaxLength = varArraySizeSpec?.value()?.constant() != null ? int.Parse(varArraySizeSpec.value().constant().GetText()) : null;
-                                //RFC4506 specifies a default max size, which we ignore.
+                                MaxLength = varArraySizeSpec?.value() != null ? XDRTypeDefinition.GetValue(varArraySizeSpec.value(), generationContext.AllTypes) : null; //int.Parse(varArraySizeSpec.value().constant().GetText()) : null;
+                           
                                 break;
                         }
                         CSharpType = "string";
@@ -89,14 +89,18 @@ namespace Generator.XDR
                 {
                     // Fixed size arrays (square brackets) always mean fixed array
                     ArrayType = ArrayType.Fixed;
-                    MaxLength = int.Parse(fixedArray.value().GetText());
+                    MaxLength = XDRTypeDefinition.GetValue(fixedArray.value(), generationContext.AllTypes);
                 }
                 else
                 {
                     // For opaque and other types, angle brackets specify variable array
                     ArrayType = ArrayType.Variable;
-                    MaxLength = ((VarArraySizeContext)arraySizeSpec)?.value()?.constant() != null ?
-                    int.Parse(((VarArraySizeContext)arraySizeSpec).value().constant().GetText()) : null;
+                    var value = ((VarArraySizeContext)arraySizeSpec).value();
+                    if (value != null) MaxLength = XDRTypeDefinition.GetValue(((VarArraySizeContext)arraySizeSpec).value(),generationContext.AllTypes);
+                    else
+                    {
+                        MaxLength = null;
+                    }
                 }
             }
 

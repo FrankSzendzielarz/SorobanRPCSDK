@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Folder Include="OpenRPC\Generated\" />
+    <Folder Include="XDR\Generated\" />
   </ItemGroup>
 
   <ItemGroup>

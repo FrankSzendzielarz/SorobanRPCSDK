@@ -39,7 +39,7 @@ enumBody
     ;
 
 enumMember
-    : identifier ('=' (constant | identifier))?
+    : identifier ('=' value)?
     ;
 
 structDefinition

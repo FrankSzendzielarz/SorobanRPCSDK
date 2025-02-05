@@ -17,9 +17,9 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public enum LedgerHeaderFlags
     {
-        DISABLE_LIQUIDITY_POOL_TRADING_FLAG = 0x1,
-        DISABLE_LIQUIDITY_POOL_DEPOSIT_FLAG = 0x2,
-        DISABLE_LIQUIDITY_POOL_WITHDRAWAL_FLAG = 0x4,
+        DISABLE_LIQUIDITY_POOL_TRADING_FLAG = 1,
+        DISABLE_LIQUIDITY_POOL_DEPOSIT_FLAG = 2,
+        DISABLE_LIQUIDITY_POOL_WITHDRAWAL_FLAG = 4,
     }
 
     public static partial class LedgerHeaderFlagsXdr

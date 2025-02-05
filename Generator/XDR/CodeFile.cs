@@ -80,6 +80,7 @@ public class CodeFile
 
     internal void Write()
     {
+        CloseBlock(); //footer
         File.WriteAllText(_fileName, _builder.ToString());
     }
 }

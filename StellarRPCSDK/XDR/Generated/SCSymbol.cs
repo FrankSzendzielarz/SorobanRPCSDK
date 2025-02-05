@@ -17,6 +17,8 @@ namespace Stellar.XDR {
             get => _innerValue;
             set
             {
+                if (System.Text.Encoding.UTF8.GetByteCount(value) > Constants.SCSYMBOL_LIMIT)
+                	throw new ArgumentException($"String exceeds Constants.SCSYMBOL_LIMIT bytes when UTF8 encoded");
                 _innerValue = value;
             }
         }

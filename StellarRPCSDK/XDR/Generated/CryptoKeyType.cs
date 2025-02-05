@@ -28,7 +28,7 @@ namespace Stellar.XDR {
         /// <summary>
         /// above by ORing them with 0x100
         /// </summary>
-        KEY_TYPE_MUXED_ED25519 = 0x100,
+        KEY_TYPE_MUXED_ED25519 = 256,
     }
 
     public static partial class CryptoKeyTypeXdr

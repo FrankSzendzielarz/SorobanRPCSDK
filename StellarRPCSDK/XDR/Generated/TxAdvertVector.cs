@@ -17,6 +17,8 @@ namespace Stellar.XDR {
             get => _innerValue;
             set
             {
+                if (value.Length > Constants.TX_ADVERT_VECTOR_MAX_SIZE)
+                	throw new ArgumentException($"Cannot exceed Constants.TX_ADVERT_VECTOR_MAX_SIZE bytes");
                 _innerValue = value;
             }
         }

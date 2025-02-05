@@ -20,7 +20,7 @@ namespace Stellar.XDR {
         /// <summary>
         /// clawback the claimable balance
         /// </summary>
-        CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 0x1,
+        CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 1,
     }
 
     public static partial class ClaimableBalanceFlagsXdr

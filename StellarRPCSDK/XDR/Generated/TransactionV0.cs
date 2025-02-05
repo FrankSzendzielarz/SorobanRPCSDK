@@ -84,6 +84,8 @@ namespace Stellar.XDR {
             get => _operations;
             set
             {
+                if (value.Length > Constants.MAX_OPS_PER_TX)
+                	throw new ArgumentException($"Cannot exceed Constants.MAX_OPS_PER_TX bytes");
                 _operations = value;
             }
         }
@@ -105,6 +107,8 @@ namespace Stellar.XDR {
         /// <summary>Validates all fields have valid values</summary>
         public virtual void Validate()
         {
+            if (operations.Length > Constants.MAX_OPS_PER_TX)
+            	throw new InvalidOperationException($"operations cannot exceed Constants.MAX_OPS_PER_TX elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         public abstract partial class extUnion

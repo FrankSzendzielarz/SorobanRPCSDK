@@ -31,19 +31,19 @@ namespace Stellar.XDR {
         /// <summary>
         /// the issuer to set it for each TrustLine
         /// </summary>
-        AUTH_REQUIRED_FLAG = 0x1,
+        AUTH_REQUIRED_FLAG = 1,
         /// <summary>
         /// otherwise, authorization cannot be revoked
         /// </summary>
-        AUTH_REVOCABLE_FLAG = 0x2,
+        AUTH_REVOCABLE_FLAG = 2,
         /// <summary>
         /// Once set, causes all AUTH_* flags to be read-only
         /// </summary>
-        AUTH_IMMUTABLE_FLAG = 0x4,
+        AUTH_IMMUTABLE_FLAG = 4,
         /// <summary>
         /// with clawback enabled set to "true"
         /// </summary>
-        AUTH_CLAWBACK_ENABLED_FLAG = 0x8,
+        AUTH_CLAWBACK_ENABLED_FLAG = 8,
     }
 
     public static partial class AccountFlagsXdr
