@@ -16,9 +16,18 @@ namespace SDKTest
              *        XDR Serialisation Tests       *
              *                                      * 
              ****************************************/
-
-            var runner = new XdrTestRunner();
-            await runner.RunAllTests();
+            StreamWriter writer = new StreamWriter("xdr.txt");
+            try
+            {
+                Console.SetOut(writer);
+                var runner = new XdrTestRunner();
+                await runner.RunAllTests();
+            }
+            finally
+            {
+                Console.SetOut(Console.Out);
+                writer.Close();
+            }
 
             /****************************************
              *                                      *
