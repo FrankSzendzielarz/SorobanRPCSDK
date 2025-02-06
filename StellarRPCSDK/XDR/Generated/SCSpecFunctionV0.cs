@@ -19,6 +19,7 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecFunctionV0
     {
+        [MaxLength(1024)]
         public string doc
         {
             get => _doc;

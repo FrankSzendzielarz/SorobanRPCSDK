@@ -329,7 +329,10 @@ namespace Generator.XDR
              
                     break;
                 case ArrayType.None:
-                    
+                    if (fieldType.HasMaxLength)
+                    {
+                        code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
+                    }
                     break;
 
             }

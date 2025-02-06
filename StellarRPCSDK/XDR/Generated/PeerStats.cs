@@ -42,6 +42,7 @@ namespace Stellar.XDR {
         }
         private NodeID _id;
 
+        [MaxLength(100)]
         public string versionStr
         {
             get => _versionStr;

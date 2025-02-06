@@ -27,6 +27,7 @@ namespace Stellar.XDR {
         }
         private ErrorCode _code;
 
+        [MaxLength(100)]
         public string msg
         {
             get => _msg;

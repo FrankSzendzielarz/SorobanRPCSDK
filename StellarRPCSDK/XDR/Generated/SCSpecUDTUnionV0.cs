@@ -19,6 +19,7 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecUDTUnionV0
     {
+        [MaxLength(1024)]
         public string doc
         {
             get => _doc;
@@ -31,6 +32,7 @@ namespace Stellar.XDR {
         }
         private string _doc;
 
+        [MaxLength(80)]
         public string lib
         {
             get => _lib;
@@ -43,6 +45,7 @@ namespace Stellar.XDR {
         }
         private string _lib;
 
+        [MaxLength(60)]
         public string name
         {
             get => _name;

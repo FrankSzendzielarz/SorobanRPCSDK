@@ -13,6 +13,7 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class string64
     {
+        [MaxLength(64)]
         public string InnerValue
         {
             get => _innerValue;

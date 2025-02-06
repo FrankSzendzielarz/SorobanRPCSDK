@@ -13,6 +13,7 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSymbol
     {
+        [MaxLength(32)]
         public string InnerValue
         {
             get => _innerValue;

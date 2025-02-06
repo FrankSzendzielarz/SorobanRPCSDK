@@ -18,6 +18,7 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecUDTUnionCaseTupleV0
     {
+        [MaxLength(1024)]
         public string doc
         {
             get => _doc;
@@ -30,6 +31,7 @@ namespace Stellar.XDR {
         }
         private string _doc;
 
+        [MaxLength(60)]
         public string name
         {
             get => _name;

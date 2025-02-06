@@ -64,6 +64,7 @@ namespace Stellar.XDR {
         }
         private Hash _networkID;
 
+        [MaxLength(100)]
         public string versionStr
         {
             get => _versionStr;

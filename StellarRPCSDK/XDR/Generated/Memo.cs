@@ -39,6 +39,7 @@ namespace Stellar.XDR {
         public sealed partial class MemoText : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_TEXT;
+            [MaxLength(28)]
             public string text
             {
                 get => _text;
