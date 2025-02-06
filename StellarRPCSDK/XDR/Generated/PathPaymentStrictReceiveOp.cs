@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -83,13 +84,14 @@ namespace Stellar.XDR {
         }
         private int64 _destAmount;
 
+        [MaxLength(5)]
         public Asset[] path
         {
             get => _path;
             set
             {
                 if (value.Length > 5)
-                	throw new ArgumentException($"Cannot exceed 5 bytes");
+                	throw new ArgumentException($"Cannot exceed 5 in length");
                 _path = value;
             }
         }

@@ -6,6 +6,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -15,13 +16,15 @@ namespace Stellar.XDR {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class AssetCode12
     {
+        [MinLength(12)]
+        [MaxLength(12)]
         public byte[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length != 12)
-                	throw new ArgumentException($"Must be exactly 12 bytes");
+                	throw new ArgumentException($"Must be exactly 12 in length");
                 _innerValue = value;
             }
         }

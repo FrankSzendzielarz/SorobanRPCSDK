@@ -6,6 +6,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -17,8 +18,8 @@ namespace Stellar.XDR {
             get => _innerValue;
             set
             {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > 64)
-                	throw new ArgumentException($"String exceeds 64 bytes when UTF8 encoded");
+                if (System.Text.Encoding.ASCII.GetByteCount(value) > 64)
+                	throw new ArgumentException($"String exceeds 64 bytes when ASCII encoded");
                 _innerValue = value;
             }
         }

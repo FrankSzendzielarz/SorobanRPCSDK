@@ -22,6 +22,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 

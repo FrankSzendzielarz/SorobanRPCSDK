@@ -9,19 +9,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class SCSpecTypeTuple
     {
+        [MaxLength(12)]
         public SCSpecTypeDef[] valueTypes
         {
             get => _valueTypes;
             set
             {
                 if (value.Length > 12)
-                	throw new ArgumentException($"Cannot exceed 12 bytes");
+                	throw new ArgumentException($"Cannot exceed 12 in length");
                 _valueTypes = value;
             }
         }

@@ -27,6 +27,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -59,13 +60,14 @@ namespace Stellar.XDR {
         /// <summary>
         /// max size is dictated by number of upgrade types (+ room for future)
         /// </summary>
+        [MaxLength(6)]
         public UpgradeType[] upgrades
         {
             get => _upgrades;
             set
             {
                 if (value.Length > 6)
-                	throw new ArgumentException($"Cannot exceed 6 bytes");
+                	throw new ArgumentException($"Cannot exceed 6 in length");
                 _upgrades = value;
             }
         }

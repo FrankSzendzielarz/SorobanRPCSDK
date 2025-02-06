@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -72,13 +73,15 @@ namespace Stellar.XDR {
             public sealed partial class IPv4 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv4;
+                [MinLength(4)]
+                [MaxLength(4)]
                 public byte[] ipv4
                 {
                     get => _ipv4;
                     set
                     {
                         if (value.Length != 4)
-                        	throw new ArgumentException($"Must be exactly 4 bytes");
+                        	throw new ArgumentException($"Must be exactly 4 in length");
                         _ipv4 = value;
                     }
                 }
@@ -89,13 +92,15 @@ namespace Stellar.XDR {
             public sealed partial class IPv6 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv6;
+                [MinLength(16)]
+                [MaxLength(16)]
                 public byte[] ipv6
                 {
                     get => _ipv6;
                     set
                     {
                         if (value.Length != 16)
-                        	throw new ArgumentException($"Must be exactly 16 bytes");
+                        	throw new ArgumentException($"Must be exactly 16 in length");
                         _ipv6 = value;
                     }
                 }

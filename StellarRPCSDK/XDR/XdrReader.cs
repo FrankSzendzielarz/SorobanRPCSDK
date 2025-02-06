@@ -88,7 +88,7 @@ namespace Stellar.XDR
         public string ReadString()
         {
             var bytes = ReadOpaque();
-            return Encoding.UTF8.GetString(bytes);
+            return Encoding.ASCII.GetString(bytes);
         }
 
         public void Skip(int count)

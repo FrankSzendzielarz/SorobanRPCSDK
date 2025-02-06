@@ -6,19 +6,22 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Thresholds
     {
+        [MinLength(4)]
+        [MaxLength(4)]
         public byte[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length != 4)
-                	throw new ArgumentException($"Must be exactly 4 bytes");
+                	throw new ArgumentException($"Must be exactly 4 in length");
                 _innerValue = value;
             }
         }

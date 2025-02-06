@@ -6,19 +6,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class DataValue
     {
+        [MaxLength(64)]
         public byte[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length > 64)
-                	throw new ArgumentException($"Cannot exceed 64 bytes");
+                	throw new ArgumentException($"Cannot exceed 64 in length");
                 _innerValue = value;
             }
         }

@@ -6,19 +6,22 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class Hash
     {
+        [MinLength(32)]
+        [MaxLength(32)]
         public byte[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length != 32)
-                	throw new ArgumentException($"Must be exactly 32 bytes");
+                	throw new ArgumentException($"Must be exactly 32 in length");
                 _innerValue = value;
             }
         }

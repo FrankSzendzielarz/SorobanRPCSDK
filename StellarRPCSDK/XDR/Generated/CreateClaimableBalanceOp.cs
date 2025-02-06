@@ -11,6 +11,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -37,13 +38,14 @@ namespace Stellar.XDR {
         }
         private int64 _amount;
 
+        [MaxLength(10)]
         public Claimant[] claimants
         {
             get => _claimants;
             set
             {
                 if (value.Length > 10)
-                	throw new ArgumentException($"Cannot exceed 10 bytes");
+                	throw new ArgumentException($"Cannot exceed 10 in length");
                 _claimants = value;
             }
         }

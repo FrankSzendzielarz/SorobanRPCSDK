@@ -44,6 +44,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -198,13 +199,15 @@ namespace Stellar.XDR {
         }
         private uint32 _maxTxSetSize;
 
+        [MinLength(4)]
+        [MaxLength(4)]
         public Hash[] skipList
         {
             get => _skipList;
             set
             {
                 if (value.Length != 4)
-                	throw new ArgumentException($"Must be exactly 4 bytes");
+                	throw new ArgumentException($"Must be exactly 4 in length");
                 _skipList = value;
             }
         }

@@ -9,19 +9,22 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ShortHashSeed
     {
+        [MinLength(16)]
+        [MaxLength(16)]
         public byte[] seed
         {
             get => _seed;
             set
             {
                 if (value.Length != 16)
-                	throw new ArgumentException($"Must be exactly 16 bytes");
+                	throw new ArgumentException($"Must be exactly 16 in length");
                 _seed = value;
             }
         }

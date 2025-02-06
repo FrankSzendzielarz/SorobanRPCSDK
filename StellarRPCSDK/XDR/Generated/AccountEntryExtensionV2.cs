@@ -20,6 +20,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -46,13 +47,14 @@ namespace Stellar.XDR {
         }
         private uint32 _numSponsoring;
 
+        [MaxLength(20)]
         public SponsorshipDescriptor[] signerSponsoringIDs
         {
             get => _signerSponsoringIDs;
             set
             {
                 if (value.Length > Constants.MAX_SIGNERS)
-                	throw new ArgumentException($"Cannot exceed Constants.MAX_SIGNERS bytes");
+                	throw new ArgumentException($"Cannot exceed Constants.MAX_SIGNERS in length");
                 _signerSponsoringIDs = value;
             }
         }

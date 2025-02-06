@@ -37,6 +37,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -108,13 +109,14 @@ namespace Stellar.XDR {
         /// <summary>
         /// operations.
         /// </summary>
+        [MaxLength(2)]
         public SignerKey[] extraSigners
         {
             get => _extraSigners;
             set
             {
                 if (value.Length > 2)
-                	throw new ArgumentException($"Cannot exceed 2 bytes");
+                	throw new ArgumentException($"Cannot exceed 2 in length");
                 _extraSigners = value;
             }
         }

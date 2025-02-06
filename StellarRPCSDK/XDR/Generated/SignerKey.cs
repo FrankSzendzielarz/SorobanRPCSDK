@@ -24,6 +24,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -54,13 +55,14 @@ namespace Stellar.XDR {
             /// <summary>
             /// Payload to be raw signed by ed25519.
             /// </summary>
+            [MaxLength(64)]
             public byte[] payload
             {
                 get => _payload;
                 set
                 {
                     if (value.Length > 64)
-                    	throw new ArgumentException($"Cannot exceed 64 bytes");
+                    	throw new ArgumentException($"Cannot exceed 64 in length");
                     _payload = value;
                 }
             }

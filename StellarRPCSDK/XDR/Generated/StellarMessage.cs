@@ -67,6 +67,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -141,13 +142,14 @@ namespace Stellar.XDR {
         public sealed partial class Peers : StellarMessage
         {
             public override MessageType Discriminator => MessageType.PEERS;
+            [MaxLength(100)]
             public PeerAddress[] peers
             {
                 get => _peers;
                 set
                 {
                     if (value.Length > 100)
-                    	throw new ArgumentException($"Cannot exceed 100 bytes");
+                    	throw new ArgumentException($"Cannot exceed 100 in length");
                     _peers = value;
                 }
             }

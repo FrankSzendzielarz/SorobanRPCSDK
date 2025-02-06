@@ -42,7 +42,7 @@ namespace SDKTest
             };
             var ledgerEntriesAccount = await sorobanClient.GetLedgerEntriesAsync(accountLedgerEntriesArgument);
 
-            var test = ledgerEntriesAccount.Entries.First().LedgerEntryData;
+            var test = ledgerEntriesAccount.Entries.First().LedgerEntryData as LedgerEntry.dataUnion.Account;
 
 
             PaymentOp paymentOp = new PaymentOp();

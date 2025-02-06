@@ -12,6 +12,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -28,13 +29,14 @@ namespace Stellar.XDR {
         }
         private FeeBumpTransaction _tx;
 
+        [MaxLength(20)]
         public DecoratedSignature[] signatures
         {
             get => _signatures;
             set
             {
                 if (value.Length > 20)
-                	throw new ArgumentException($"Cannot exceed 20 bytes");
+                	throw new ArgumentException($"Cannot exceed 20 in length");
                 _signatures = value;
             }
         }

@@ -21,6 +21,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -41,13 +42,14 @@ namespace Stellar.XDR {
         public sealed partial class ClaimPredicateAnd : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
+            [MaxLength(2)]
             public ClaimPredicate[] andPredicates
             {
                 get => _andPredicates;
                 set
                 {
                     if (value.Length > 2)
-                    	throw new ArgumentException($"Cannot exceed 2 bytes");
+                    	throw new ArgumentException($"Cannot exceed 2 in length");
                     _andPredicates = value;
                 }
             }
@@ -58,13 +60,14 @@ namespace Stellar.XDR {
         public sealed partial class ClaimPredicateOr : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
+            [MaxLength(2)]
             public ClaimPredicate[] orPredicates
             {
                 get => _orPredicates;
                 set
                 {
                     if (value.Length > 2)
-                    	throw new ArgumentException($"Cannot exceed 2 bytes");
+                    	throw new ArgumentException($"Cannot exceed 2 in length");
                     _orPredicates = value;
                 }
             }

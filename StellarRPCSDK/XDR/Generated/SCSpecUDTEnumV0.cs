@@ -12,6 +12,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -23,8 +24,8 @@ namespace Stellar.XDR {
             get => _doc;
             set
             {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > Constants.SC_SPEC_DOC_LIMIT)
-                	throw new ArgumentException($"String exceeds Constants.SC_SPEC_DOC_LIMIT bytes when UTF8 encoded");
+                if (System.Text.Encoding.ASCII.GetByteCount(value) > Constants.SC_SPEC_DOC_LIMIT)
+                	throw new ArgumentException($"String exceeds Constants.SC_SPEC_DOC_LIMIT bytes when ASCII encoded");
                 _doc = value;
             }
         }
@@ -35,8 +36,8 @@ namespace Stellar.XDR {
             get => _lib;
             set
             {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > 80)
-                	throw new ArgumentException($"String exceeds 80 bytes when UTF8 encoded");
+                if (System.Text.Encoding.ASCII.GetByteCount(value) > 80)
+                	throw new ArgumentException($"String exceeds 80 bytes when ASCII encoded");
                 _lib = value;
             }
         }
@@ -47,20 +48,21 @@ namespace Stellar.XDR {
             get => _name;
             set
             {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > 60)
-                	throw new ArgumentException($"String exceeds 60 bytes when UTF8 encoded");
+                if (System.Text.Encoding.ASCII.GetByteCount(value) > 60)
+                	throw new ArgumentException($"String exceeds 60 bytes when ASCII encoded");
                 _name = value;
             }
         }
         private string _name;
 
+        [MaxLength(50)]
         public SCSpecUDTEnumCaseV0[] cases
         {
             get => _cases;
             set
             {
                 if (value.Length > 50)
-                	throw new ArgumentException($"Cannot exceed 50 bytes");
+                	throw new ArgumentException($"Cannot exceed 50 in length");
                 _cases = value;
             }
         }

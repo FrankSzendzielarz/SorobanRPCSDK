@@ -12,6 +12,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -23,8 +24,8 @@ namespace Stellar.XDR {
             get => _doc;
             set
             {
-                if (System.Text.Encoding.UTF8.GetByteCount(value) > Constants.SC_SPEC_DOC_LIMIT)
-                	throw new ArgumentException($"String exceeds Constants.SC_SPEC_DOC_LIMIT bytes when UTF8 encoded");
+                if (System.Text.Encoding.ASCII.GetByteCount(value) > Constants.SC_SPEC_DOC_LIMIT)
+                	throw new ArgumentException($"String exceeds Constants.SC_SPEC_DOC_LIMIT bytes when ASCII encoded");
                 _doc = value;
             }
         }
@@ -40,25 +41,27 @@ namespace Stellar.XDR {
         }
         private SCSymbol _name;
 
+        [MaxLength(10)]
         public SCSpecFunctionInputV0[] inputs
         {
             get => _inputs;
             set
             {
                 if (value.Length > 10)
-                	throw new ArgumentException($"Cannot exceed 10 bytes");
+                	throw new ArgumentException($"Cannot exceed 10 in length");
                 _inputs = value;
             }
         }
         private SCSpecFunctionInputV0[] _inputs;
 
+        [MaxLength(1)]
         public SCSpecTypeDef[] outputs
         {
             get => _outputs;
             set
             {
                 if (value.Length > 1)
-                	throw new ArgumentException($"Cannot exceed 1 bytes");
+                	throw new ArgumentException($"Cannot exceed 1 in length");
                 _outputs = value;
             }
         }

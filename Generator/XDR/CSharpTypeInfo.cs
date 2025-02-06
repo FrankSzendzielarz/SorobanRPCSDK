@@ -26,11 +26,14 @@ namespace Generator.XDR
         public bool IsVoid { get; private set; } = false;   
         public ArrayType ArrayType { get; private set; } = ArrayType.None;
         public string? MaxLength { get; private set; }        // Max length for arrays/strings, null if unbounded
+        public bool HasMaxLength => MaxLength != null;
         public string FullCSharpType => ArrayType!=ArrayType.None ? $"{CSharpType}[]" : CSharpType;
         public TypeSpecifierContext TypeSpecifierContext { get; private set; }
-       
+        private TypeExtractorVisitor GenerationContext { get; }
+
         public CSharpTypeInfo(StellarXdrParser.DeclarationContext decl, TypeExtractorVisitor generationContext)
         {
+            GenerationContext = generationContext;
             switch (decl)
             {
                 case (GeneralDeclarationContext g):
@@ -130,5 +133,19 @@ namespace Generator.XDR
                 CSharpType = baseType;
             }
         }
+
+        public long? ResolveMaxLengthToInteger()
+        {
+            if (long.TryParse(MaxLength, out var maxLength)) return maxLength;
+            else
+            {
+                var constname = MaxLength?.Replace("Constants.","");
+                var constant = GenerationContext.AllTypes.Where(t=>t.XDRType==TypeExtractorVisitor.XDRType.Const && t.Name==constname).FirstOrDefault();
+                if (constant != null) return constant.ConstValue??0;
+            }
+            return null;
+        }
+
+      
     }
 }

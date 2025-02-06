@@ -6,19 +6,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class PeerStatList
     {
+        [MaxLength(25)]
         public PeerStats[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length > 25)
-                	throw new ArgumentException($"Cannot exceed 25 bytes");
+                	throw new ArgumentException($"Cannot exceed 25 in length");
                 _innerValue = value;
             }
         }

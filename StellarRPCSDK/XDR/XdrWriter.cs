@@ -86,7 +86,7 @@ namespace Stellar.XDR
 
         public void WriteString(string value)
         {
-            var bytes = Encoding.UTF8.GetBytes(value);
+            var bytes = Encoding.ASCII.GetBytes(value);
             WriteOpaque(bytes);
         }
 

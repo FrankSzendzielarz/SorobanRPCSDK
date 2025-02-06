@@ -33,6 +33,7 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
@@ -101,13 +102,14 @@ namespace Stellar.XDR {
         }
         private Memo _memo;
 
+        [MaxLength(100)]
         public Operation[] operations
         {
             get => _operations;
             set
             {
                 if (value.Length > Constants.MAX_OPS_PER_TX)
-                	throw new ArgumentException($"Cannot exceed Constants.MAX_OPS_PER_TX bytes");
+                	throw new ArgumentException($"Cannot exceed Constants.MAX_OPS_PER_TX in length");
                 _operations = value;
             }
         }

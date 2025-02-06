@@ -6,19 +6,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class TxDemandVector
     {
+        [MaxLength(1000)]
         public Hash[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length > Constants.TX_DEMAND_VECTOR_MAX_SIZE)
-                	throw new ArgumentException($"Cannot exceed Constants.TX_DEMAND_VECTOR_MAX_SIZE bytes");
+                	throw new ArgumentException($"Cannot exceed Constants.TX_DEMAND_VECTOR_MAX_SIZE in length");
                 _innerValue = value;
             }
         }

@@ -109,6 +109,7 @@ namespace Generator.XDR
             code.AppendLine();
             code.AppendLine("using System;");
             code.AppendLine("using System.IO;");
+            code.AppendLine("using System.ComponentModel.DataAnnotations;");
             code.AppendLine();
             code.AppendLine($"namespace {Namespace} {{");
             code.AppendLine();
@@ -314,7 +315,24 @@ namespace Generator.XDR
             if (fieldType.IsVoid) return;
 
             var code = CodeFile;
+            switch (fieldType.ArrayType)
+            {
+                case ArrayType.Fixed:
+                    code.AppendLine($"[MinLength({fieldType.ResolveMaxLengthToInteger()})]");
+                    code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
+                    break;
+                case ArrayType.Variable:
+                    if (fieldType.HasMaxLength)
+                    {
+                        code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
+                    }
+             
+                    break;
+                case ArrayType.None:
+                    
+                    break;
 
+            }
             code.AppendLine($"public {fieldType.FullCSharpType} {fieldName}");
             code.OpenBlock();
             code.AppendLine($"get => _{fieldName.ToCamelCase()};");
@@ -428,8 +446,8 @@ namespace Generator.XDR
                 var maxLength = typeInfo.MaxLength;
                 if (maxLength != null)
                 {
-                    code.AppendLine($"if (System.Text.Encoding.UTF8.GetByteCount({valueName}) > {maxLength})");
-                    code.AppendLine($"\tthrow new ArgumentException($\"String exceeds {maxLength} bytes when UTF8 encoded\");");
+                    code.AppendLine($"if (System.Text.Encoding.ASCII.GetByteCount({valueName}) > {maxLength})");
+                    code.AppendLine($"\tthrow new ArgumentException($\"String exceeds {maxLength} bytes when ASCII encoded\");");
                 }
             }
             else
@@ -438,7 +456,7 @@ namespace Generator.XDR
                 {
                     var size = typeInfo.MaxLength;
                     code.AppendLine($"if ({valueName}.Length != {size})");
-                    code.AppendLine($"\tthrow new ArgumentException($\"Must be exactly {size} bytes\");");
+                    code.AppendLine($"\tthrow new ArgumentException($\"Must be exactly {size} in length\");");
                 }
                 else if (typeInfo.ArrayType == ArrayType.Variable)
                 {
@@ -446,7 +464,7 @@ namespace Generator.XDR
                     if (maxSize != null)
                     {
                         code.AppendLine($"if ({valueName}.Length > {maxSize})");
-                        code.AppendLine($"\tthrow new ArgumentException($\"Cannot exceed {maxSize} bytes\");");
+                        code.AppendLine($"\tthrow new ArgumentException($\"Cannot exceed {maxSize} in length\");");
                     }
                 }
             }

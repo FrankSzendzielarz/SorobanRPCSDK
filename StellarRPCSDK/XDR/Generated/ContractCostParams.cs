@@ -6,19 +6,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class ContractCostParams
     {
+        [MaxLength(1024)]
         public ContractCostParamEntry[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length > Constants.CONTRACT_COST_COUNT_LIMIT)
-                	throw new ArgumentException($"Cannot exceed Constants.CONTRACT_COST_COUNT_LIMIT bytes");
+                	throw new ArgumentException($"Cannot exceed Constants.CONTRACT_COST_COUNT_LIMIT in length");
                 _innerValue = value;
             }
         }

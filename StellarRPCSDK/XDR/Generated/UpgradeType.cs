@@ -6,19 +6,21 @@
 
 using System;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace Stellar.XDR {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     public partial class UpgradeType
     {
+        [MaxLength(128)]
         public byte[] InnerValue
         {
             get => _innerValue;
             set
             {
                 if (value.Length > 128)
-                	throw new ArgumentException($"Cannot exceed 128 bytes");
+                	throw new ArgumentException($"Cannot exceed 128 in length");
                 _innerValue = value;
             }
         }
