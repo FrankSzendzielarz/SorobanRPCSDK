@@ -25,7 +25,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("protocolVersion")]
-        public double ProtocolVersion { get; set; }
+        public long ProtocolVersion { get; set; }
 
         /// <summary>
         /// (optional) The URL of this network's "friendbot" faucet

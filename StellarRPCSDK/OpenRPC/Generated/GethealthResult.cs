@@ -24,21 +24,21 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// Oldest ledger sequence kept in history
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedger")]
-        public double OldestLedger { get; set; }
+        public long OldestLedger { get; set; }
 
         /// <summary>
         /// Maximum retention window configured. A full window state can be determined via: ledgerRetentionWindow = latestLedger - oldestLedger + 1
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledgerRetentionWindow")]
-        public double LedgerRetentionWindow { get; set; }
+        public long LedgerRetentionWindow { get; set; }
 
 
 

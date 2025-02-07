@@ -21,28 +21,28 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedgerCloseTimestamp")]
-        public string LatestLedgerCloseTimestamp { get; set; }
+        public long LatestLedgerCloseTimestamp { get; set; }
 
         /// <summary>
         /// The sequence number of the oldest ledger ingested by Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedger")]
-        public double OldestLedger { get; set; }
+        public long OldestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedgerCloseTimestamp")]
-        public string OldestLedgerCloseTimestamp { get; set; }
+        public long OldestLedgerCloseTimestamp { get; set; }
 
 
 
@@ -89,7 +89,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationOrder")]
-        public double ApplicationOrder { get; set; }
+        public long ApplicationOrder { get; set; }
 
         /// <summary>
         /// Indicates whether the transaction was fee bumped.
@@ -131,14 +131,14 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledger")]
-        public double Ledger { get; set; }
+        public long Ledger { get; set; }
 
         /// <summary>
         /// The unix timestamp of when the transaction was included in the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("createdAt")]
-        public double CreatedAt { get; set; }
+        public long CreatedAt { get; set; }
 
 
 

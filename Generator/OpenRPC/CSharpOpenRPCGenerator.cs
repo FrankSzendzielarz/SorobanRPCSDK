@@ -26,11 +26,7 @@ namespace Generator.OpenRPC
                 JsonLibrary = CSharpJsonLibrary.SystemTextJson,
                 ArrayType = "System.Collections.Generic.ICollection", 
                 ArrayBaseType = "System.Collections.Generic.ICollection<{0}>", 
-                 
-               
-    
-
-
+                NumberType = "long",
             };
         }
 
@@ -308,6 +304,7 @@ namespace Generator.OpenRPC
 
             return schema;
         }
+    
     }
     public class RpcResult
     {

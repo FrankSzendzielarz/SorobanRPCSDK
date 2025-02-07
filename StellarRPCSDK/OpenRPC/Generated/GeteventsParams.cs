@@ -20,7 +20,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("startLedger")]
-        public double StartLedger { get; set; }
+        public long StartLedger { get; set; }
 
         /// <summary>
         /// List of filters for the returned events. Events matching any of the filters are included. To match a filter, an event must match both a contractId and a topic. Maximum 5 filters are allowed per request.

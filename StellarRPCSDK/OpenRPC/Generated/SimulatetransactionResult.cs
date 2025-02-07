@@ -17,7 +17,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// (optional) Stringified number - Recommended minimum resource fee to add when submitting the transaction. This fee is to be added on top of the [Stellar network fee](https://developers.stellar.org/docs/learn/fundamentals/fees-resource-limits-metering#inclusion-fee). Not present in case of error.

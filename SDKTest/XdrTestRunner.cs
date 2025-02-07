@@ -254,11 +254,7 @@ namespace SDKTest
 
             Console.WriteLine(json);
 
-            // Optionally write to file
-            await File.AppendAllTextAsync(
-                $"xdr_tests_{DateTime.Now:yyyyMMdd}.log",
-                json + "\n\n"
-            );
+   
         }
     }
 }

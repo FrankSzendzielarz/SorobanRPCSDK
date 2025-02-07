@@ -36,7 +36,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.

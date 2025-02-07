@@ -17,7 +17,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
 
         [System.Text.Json.Serialization.JsonPropertyName("events")]
@@ -69,7 +69,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledger")]
-        public double Ledger { get; set; }
+        public long Ledger { get; set; }
 
         /// <summary>
         /// [ISO-8601](https://www.iso.org/iso-8601-date-and-time-format.html) timestamp of the ledger closing time

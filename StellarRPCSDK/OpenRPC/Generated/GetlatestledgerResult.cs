@@ -26,14 +26,14 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("protocolVersion")]
-        public double ProtocolVersion { get; set; }
+        public long ProtocolVersion { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("sequence")]
-        public double Sequence { get; set; }
+        public long Sequence { get; set; }
 
 
 

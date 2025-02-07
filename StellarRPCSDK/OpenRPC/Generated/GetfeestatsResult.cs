@@ -31,7 +31,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
 
 
@@ -169,14 +169,14 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("transactionCount")]
-        public double TransactionCount { get; set; }
+        public string TransactionCount { get; set; }
 
         /// <summary>
         /// How many consecutive ledgers form the distribution
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledgerCount")]
-        public double LedgerCount { get; set; }
+        public long LedgerCount { get; set; }
 
 
 
@@ -314,14 +314,14 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("transactionCount")]
-        public double TransactionCount { get; set; }
+        public string TransactionCount { get; set; }
 
         /// <summary>
         /// How many consecutive ledgers form the distribution
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledgerCount")]
-        public double LedgerCount { get; set; }
+        public long LedgerCount { get; set; }
 
 
 

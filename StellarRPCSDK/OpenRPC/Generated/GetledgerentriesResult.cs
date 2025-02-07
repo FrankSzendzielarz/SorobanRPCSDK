@@ -17,7 +17,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// Array of objects containing all found ledger entries
@@ -81,14 +81,14 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("lastModifiedLedgerSeq")]
-        public double LastModifiedLedgerSeq { get; set; }
+        public long LastModifiedLedgerSeq { get; set; }
 
         /// <summary>
         /// Sequence number of the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("liveUntilLedgerSeq")]
-        public double LiveUntilLedgerSeq { get; set; }
+        public long LiveUntilLedgerSeq { get; set; }
 
 
 

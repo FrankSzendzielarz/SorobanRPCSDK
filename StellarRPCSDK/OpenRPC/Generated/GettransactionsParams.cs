@@ -20,7 +20,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("startLedger")]
-        public double StartLedger { get; set; }
+        public long StartLedger { get; set; }
 
         /// <summary>
         /// Pagination in RPC is similar to pagination in Horizon. See [Pagination](https://developers.stellar.org/docs/data/rpc/api-reference/pagination).

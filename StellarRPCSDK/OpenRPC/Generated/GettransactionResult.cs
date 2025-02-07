@@ -26,7 +26,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public double LatestLedger { get; set; }
+        public long LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
@@ -41,7 +41,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedger")]
-        public double OldestLedger { get; set; }
+        public long OldestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
@@ -56,7 +56,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledger")]
-        public double Ledger { get; set; }
+        public long Ledger { get; set; }
 
         /// <summary>
         /// (optional) The unix timestamp of when the transaction was included in the ledger. This field is only present if `status` is `SUCCESS` or `FAILED`.
@@ -70,7 +70,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationOrder")]
-        public double ApplicationOrder { get; set; }
+        public long ApplicationOrder { get; set; }
 
         /// <summary>
         /// (optional) Indicates whether the transaction was fee bumped. This field is only present if `status` is `SUCCESS` or `FAILED`.

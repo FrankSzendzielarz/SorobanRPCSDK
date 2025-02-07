@@ -411,7 +411,7 @@
                 },
                 "transactionCount": {
                   "description": "How many transactions are part of the distribution",
-                  "type": "number"
+                  "type": "string"
                 },
                 "ledgerCount": {
                   "description": "How many consecutive ledgers form the distribution",
@@ -481,7 +481,7 @@
                 },
                 "transactionCount": {
                   "description": "How many transactions are part of the distribution",
-                  "type": "number"
+                  "type": "string"
                 },
                 "ledgerCount": {
                   "description": "How many consecutive ledgers form the distribution",
@@ -1153,7 +1153,7 @@
             "latestLedgerCloseTimestamp": {
               "title": "latestLedgerCloseTime",
               "description": "The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.",
-              "type": "string"
+              "type": "number"
             },
             "oldestLedger": {
               "title": "oldestLedger",
@@ -1163,7 +1163,7 @@
             "oldestLedgerCloseTimestamp": {
               "title": "oldestLedgerCloseTime",
               "description": "The unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.",
-              "type": "string"
+              "type": "number"
             }
           }
         }
