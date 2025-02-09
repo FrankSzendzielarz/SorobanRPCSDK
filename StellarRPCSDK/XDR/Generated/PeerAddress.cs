@@ -128,8 +128,10 @@ namespace Stellar.XDR {
                 switch (value)
                 {
                     case ipUnion.IPv4 case_IPv4:
+                    stream.WriteFixedOpaque(case_IPv4.ipv4);
                     break;
                     case ipUnion.IPv6 case_IPv6:
+                    stream.WriteFixedOpaque(case_IPv6.ipv6);
                     break;
                 }
             }
@@ -140,9 +142,11 @@ namespace Stellar.XDR {
                 {
                     case IPAddrType.IPv4:
                     var result_IPv4 = new ipUnion.IPv4();
+                    stream.ReadFixedOpaque(result_IPv4.ipv4);
                     return result_IPv4;
                     case IPAddrType.IPv6:
                     var result_IPv6 = new ipUnion.IPv6();
+                    stream.ReadFixedOpaque(result_IPv6.ipv6);
                     return result_IPv6;
                     default:
                     throw new Exception($"Unknown discriminator for ipUnion: {discriminator}");

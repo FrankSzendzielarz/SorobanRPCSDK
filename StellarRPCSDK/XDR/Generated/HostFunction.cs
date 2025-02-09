@@ -114,6 +114,7 @@ namespace Stellar.XDR {
                 CreateContractArgsXdr.Encode(stream, case_HOST_FUNCTION_TYPE_CREATE_CONTRACT.createContract);
                 break;
                 case HostFunction.HostFunctionTypeUploadContractWasm case_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
+                stream.WriteOpaque(case_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM.wasm);
                 break;
                 case HostFunction.HostFunctionTypeCreateContractV2 case_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
                 CreateContractArgsV2Xdr.Encode(stream, case_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2.createContractV2);
@@ -135,6 +136,7 @@ namespace Stellar.XDR {
                 return result_HOST_FUNCTION_TYPE_CREATE_CONTRACT;
                 case HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM:
                 var result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM = new HostFunction.HostFunctionTypeUploadContractWasm();
+                result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM.wasm = stream.ReadOpaque();
                 return result_HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
                 case HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2:
                 var result_HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2 = new HostFunction.HostFunctionTypeCreateContractV2();

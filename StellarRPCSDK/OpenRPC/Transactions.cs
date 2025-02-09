@@ -52,6 +52,7 @@ namespace Stellar.RPC
         {
             get
             {
+
                 if (_transactionEnvelope == null)
                 {
                     byte[] bytes = Convert.FromBase64String(EnvelopeXdr);

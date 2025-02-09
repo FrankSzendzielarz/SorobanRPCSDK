@@ -699,7 +699,8 @@ namespace Generator.XDR
                 {
                     code.AppendLine($"case {unionName}.{UnionCaseToClassName(value.GetText(),isEnum,generationContext.AllTypes)} case_{value.GetText()}:");
                     var decl = caseSpec.declaration();
-                    if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext)
+                    // if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext)  //TODO - What the hell was the thinking behind this?
+                    if (decl is not VoidDeclarationContext)
                     {
                         var fieldName = getFieldName(decl);
                         GenerateEncodeStatement(decl, $"case_{value.GetText()}", fieldName,generationContext);
@@ -713,7 +714,8 @@ namespace Generator.XDR
             {
                 code.AppendLine("case var defaultCase:");
                 var defaultDecl = context.defaultCase().declaration();
-                if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext)
+                //if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext) //  //TODO - What the hell was the thinking behind this?
+                if (defaultDecl is not VoidDeclarationContext)
                 {
                     var fieldName = getFieldName(defaultDecl);
                     GenerateEncodeStatement(defaultDecl, "defaultCase", fieldName,generationContext);
@@ -751,7 +753,8 @@ namespace Generator.XDR
                     
                     code.AppendLine($"var result_{value.GetText()} = new {unionName}.{UnionCaseToClassName(value.GetText(),en,generationContext.AllTypes)}();");
                     var decl = caseSpec.declaration();
-                    if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext)
+                    //if (decl is GeneralDeclarationContext || decl is OptionalDeclarationContext) // //TODO - What the hell was the thinking behind this?
+                    if (decl is not VoidDeclarationContext)
                     {
                         var fieldName = getFieldName(decl);
                         GenerateDecodeStatement(decl, $"result_{value.GetText()}",generationContext,fieldName);
@@ -765,7 +768,8 @@ namespace Generator.XDR
                 code.AppendLine("default:");
                 code.AppendLine($"var defaultResult = new {unionName}.Default(discriminator);");
                 var defaultDecl = context.defaultCase().declaration();
-                if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext)
+                //if (defaultDecl is GeneralDeclarationContext || defaultDecl is OptionalDeclarationContext) //TODO - What the hell was the thinking behind this?
+                if (defaultDecl is not VoidDeclarationContext)
                 {
                     var fieldName = getFieldName(defaultDecl);
                     GenerateDecodeStatement(defaultDecl, "defaultResult",generationContext,fieldName);

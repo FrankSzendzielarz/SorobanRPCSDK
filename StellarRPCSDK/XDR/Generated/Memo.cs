@@ -124,6 +124,7 @@ namespace Stellar.XDR {
                 case Memo.MemoNone case_MEMO_NONE:
                 break;
                 case Memo.MemoText case_MEMO_TEXT:
+                stream.WriteString(case_MEMO_TEXT.text);
                 break;
                 case Memo.MemoId case_MEMO_ID:
                 uint64Xdr.Encode(stream, case_MEMO_ID.id);
@@ -146,6 +147,7 @@ namespace Stellar.XDR {
                 return result_MEMO_NONE;
                 case MemoType.MEMO_TEXT:
                 var result_MEMO_TEXT = new Memo.MemoText();
+                result_MEMO_TEXT.text = stream.ReadString();
                 return result_MEMO_TEXT;
                 case MemoType.MEMO_ID:
                 var result_MEMO_ID = new Memo.MemoId();
