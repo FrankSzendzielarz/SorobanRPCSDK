@@ -33,7 +33,7 @@ namespace Stellar.RPC
         {
             get
             {
-                if (_transactionResult == null)
+                if (_transactionResultMeta == null)
                 {
                     byte[] bytes = Convert.FromBase64String(ResultMetaXdr);
                     using (MemoryStream stream = new MemoryStream(bytes))
