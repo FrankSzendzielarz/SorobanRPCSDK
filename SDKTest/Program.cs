@@ -43,25 +43,77 @@ namespace SDKTest
             MuxedAccount.KeyTypeEd25519 testAccount = MuxedAccount.FromSecretSeed("SAZEWZ7VSEMZI35JROGXVGLDH4XAFZHY6HB2MO3NQXOY6K5WFSSG7PRH");
             AccountID testAccountId = new AccountID(testAccount.XdrPublicKey);
 
+            // Create a recipient test account for a payment transaction that has already been pre-funded
+            MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+            AccountID recipientAccountId = recipientAccount.XdrPublicKey;
+
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
             AccountEntry accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
             await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
             await GetFeeStatsUseCase(sorobanClient);
             await GetLatestLedgerUseCase(sorobanClient, lastLedger);
             await GetNetworkUseCase(sorobanClient);
             await GetTransactions(sorobanClient, lastLedger);
             await GetServerVersionInfo(sorobanClient);
+            SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
+            await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
+            await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
+            // Simulate a Soroban transaction
 
+
+            // Deploy a contract, compile a contract
+
+            // Execute a contract,
+            // add utility for Authorising the Operation (signing)
+            // add utility for Assemble Transaction - does the modification of the footprint etc
+
+
+        }
+
+        private static async Task VerifyBalanceChangeUseCase(StellarRPCClient sorobanClient, AccountID testAccountId, AccountID recipientAccountId, AccountEntry accountEntry, AccountEntry accountEntryRecipient)
+        {
+            AccountEntry accountEntryNew = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            AccountEntry accountEntryRecipientNew = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
+            Assert.MustBe(accountEntry.balance - accountEntryNew.balance == 100 + 17, "Balance reduction is incorrect");
+            Assert.MustBe(accountEntryRecipientNew.balance - accountEntryRecipient.balance == 17, "Balance increase is incorrect");
+        }
+
+        private static async Task GetTransactionAndWaitForStatusUseCase(StellarRPCClient sorobanClient, SendTransactionResult result)
+        {
+            bool complete = false;
+            int attempts = 10;
+            while (!complete)
+            {
+                var completion = await sorobanClient.GetTransactionAsync(new GetTransactionParams()
+                {
+                    Hash = result.Hash
+                });
+                switch (completion.Status)
+                {
+                    case GetTransactionResultStatus.NOT_FOUND:
+                        attempts--;
+                        Assert.MustBe(attempts >= 0, "Could not find transaction.");
+                        await Task.Delay(500);
+                        break;
+                    case GetTransactionResultStatus.FAILED:
+                        Assert.MustBe(false, "Transaction failed");
+                        break;
+                    case GetTransactionResultStatus.SUCCESS:
+                        complete = true;
+                        break;
+                }
+            }
+        }
+
+        private static async Task<SendTransactionResult> SignAndSendAPaymentTransactionUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, MuxedAccount.KeyTypeEd25519 recipientAccount,  AccountEntry accountEntry)
+        {
             //For transaction processing we need to set the Network
             Network.UseTestNetwork();
 
+          
 
-
-            // Get a recipient account (pre funded test account)
-            MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
-            AccountID recipientAccountId = recipientAccount.XdrPublicKey;
-            
             // Increment the sender's sequence number
             int64 currentSequenceNumber = accountEntry.seqNum;
             currentSequenceNumber++;
@@ -109,18 +161,8 @@ namespace SDKTest
             {
                 Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
             });
-
-
-            // Simulate a Soroban transaction
-
-
-            // Deploy a contract, compile a contract
-
-            // Execute a contract,
-            // add utility for Authorising the Operation (signing)
-            // add utility for Assemble Transaction - does the modification of the footprint etc
-
-
+            Assert.MustBe(result.Status == SendTransactionResultStatus.PENDING,$"Transaction failed {result?.ErrorResult?.result}");
+            return result;
         }
 
         private static async Task GetServerVersionInfo(StellarRPCClient sorobanClient)
