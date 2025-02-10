@@ -40,12 +40,12 @@ namespace SDKTest
             StellarRPCClient sorobanClient = new StellarRPCClient(httpClient);
 
             // Use a test account that has already been pre-funded
-            MuxedAccount.KeyTypeEd25519 account = MuxedAccount.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
-            AccountID testAccountId = new AccountID(account.XdrPublicKey);
+            MuxedAccount.KeyTypeEd25519 testAccount = MuxedAccount.FromSecretSeed("SAZEWZ7VSEMZI35JROGXVGLDH4XAFZHY6HB2MO3NQXOY6K5WFSSG7PRH");
+            AccountID testAccountId = new AccountID(testAccount.XdrPublicKey);
 
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
-            await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            AccountEntry accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
             await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
             await GetFeeStatsUseCase(sorobanClient);
             await GetLatestLedgerUseCase(sorobanClient, lastLedger);
@@ -53,16 +53,65 @@ namespace SDKTest
             await GetTransactions(sorobanClient, lastLedger);
             await GetServerVersionInfo(sorobanClient);
 
-            // Simulate a transaction.
+            //For transaction processing we need to set the Network
+            Network.UseTestNetwork();
 
-            // Make a payment from A to B, get transaction using hash
+
 
             // Get a recipient account (pre funded test account)
             MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
-            AccountID recipientAccountId = recipientAccount.XdrPublicKey;   
+            AccountID recipientAccountId = recipientAccount.XdrPublicKey;
             
-            // Create a payment transaction from testAccountId to recipientAccountId
+            // Increment the sender's sequence number
+            int64 currentSequenceNumber = accountEntry.seqNum;
+            currentSequenceNumber++;
 
+            // Create a payment transaction from testAccountId to recipientAccountId
+            Transaction payment = new Transaction()
+            {
+                sourceAccount = testAccount,
+                fee = 100,
+                memo = new Memo.MemoNone(),
+                seqNum = new SequenceNumber(currentSequenceNumber),
+                cond = new Preconditions.PrecondNone(),
+                ext = new Transaction.extUnion.case_0(),
+                operations =
+                        [
+                            new Operation()
+                            {
+                                sourceAccount=testAccount,
+                                body = new Operation.bodyUnion.Payment()
+                                {
+                                    paymentOp = new PaymentOp()
+                                    {
+                                        amount= 17,
+                                        destination = recipientAccount,
+                                        asset = new Asset.AssetTypeNative()
+                                    }
+                                }
+                            }
+                        ]
+            };
+            // Sign it with the sender account
+            var signature = payment.Sign(testAccount);
+
+            // Wrap it an envelope to send to Stellar
+            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = payment,
+                    signatures = [signature]
+                }
+            };
+
+            SendTransactionResult result = await sorobanClient.SendTransactionAsync(new SendTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
+            });
+
+
+            // Simulate a Soroban transaction
 
 
             // Deploy a contract, compile a contract
@@ -140,7 +189,7 @@ namespace SDKTest
             Assert.MustBe(getEventsResult != null, "Get events failed.");
         }
 
-        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
+        private static async Task<AccountEntry> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
         {
             LedgerKey myAccount = new LedgerKey.Account()
             {
@@ -157,7 +206,7 @@ namespace SDKTest
             var ledgerEntriesAccount = await sorobanClient.GetLedgerEntriesAsync(accountLedgerEntriesArgument);
             var test = ledgerEntriesAccount.Entries.First().LedgerEntryData as LedgerEntry.dataUnion.Account;
             Assert.MustBe(test != null && test.account.balance > 0, "Account data retrieval failed.");
-            return test.account.balance;
+            return test.account;
         }
 
         private static async Task<long> ServerHealthCheckUseCase(StellarRPCClient sorobanClient)

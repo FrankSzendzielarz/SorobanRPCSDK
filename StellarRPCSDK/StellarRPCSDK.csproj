@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="OpenRPC\Generated\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
     <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />

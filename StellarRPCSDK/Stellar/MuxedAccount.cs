@@ -3,6 +3,7 @@ using dotnetstandard_bip32;
 using Stellar.Utilities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
@@ -111,24 +112,7 @@ namespace Stellar
         /// </summary>
         public string SecretSeed => SeedBytes != null ? StrKey.EncodeStellarSecretSeed(SeedBytes) : null;
 
-        /// <summary>
-        ///     XDR Signature Hint
-        /// </summary>
-        //public SignatureHint SignatureHint
-        //{
-        //    get
-        //    {
-        //        var stream = new XdrDataOutputStream();
-        //        var accountId = new AccountID(XdrPublicKey);
-        //        AccountID.Encode(stream, accountId);
-        //        var bytes = stream.ToArray();
-        //        var length = bytes.Length;
-        //        var signatureHintBytes = bytes.Skip(length - 4).Take(4).ToArray();
-
-        //        var signatureHint = new SignatureHint(signatureHintBytes);
-        //        return signatureHint;
-        //    }
-        //}
+    
 
         /// <summary>
         ///     To XDR Public Key
@@ -270,20 +254,38 @@ namespace Stellar
         /// <summary>
         ///     Sign a message and return an XDR Decorated Signature
         /// </summary>
-        /// <param name="message"></param>
-        /// <returns>
-        ///     <see cref="DecoratedSignature" />
-        /// </returns>
-        //public DecoratedSignature SignDecorated(byte[] message)
-        //{
-        //    var rawSig = Sign(message);
+        /// <param name="message">Message bytes</param>
+        public DecoratedSignature SignDecorated(byte[] message)
+        {
+            var rawSig = Sign(message);
 
-        //    return new DecoratedSignature
-        //    {
-        //        Hint = new SignatureHint(SignatureHint.InnerValue),
-        //        Signature = new Signature(rawSig),
-        //    };
-        //}
+            return new DecoratedSignature
+            {
+                hint = new SignatureHint(SignatureHint.InnerValue),
+                signature = new Signature(rawSig),
+            };
+        }
+        /// <summary>
+        ///     XDR Signature Hint
+        /// </summary>
+        public SignatureHint SignatureHint
+        {
+            get
+            {
+                AccountID accountId = new AccountID(XdrPublicKey);
+                using (var memoryStream = new MemoryStream())
+                {
+                    XdrWriter writer = new XdrWriter(memoryStream);
+                    AccountIDXdr.Encode(writer, accountId);
+                    var hintBytes = memoryStream.ToArray();
+                    var length = hintBytes.Length;
+                    var signatureHintBytes = hintBytes.Skip(length - 4).Take(4).ToArray();
+                    var signatureHint = new SignatureHint(signatureHintBytes);
+                    return signatureHint;
+                }
+            }
+        }
+
 
         /// <summary>
         ///     Sign the provided payload data for payload signer where the input is the data being signed.
@@ -323,17 +325,17 @@ namespace Stellar
         /// <param name="data">The data that was signed.</param>
         /// <param name="signature">The signature.</param>
         /// <returns>True if they match, false otherwise.</returns>
-        //public bool Verify(byte[] data, byte[] signature)
-        //{
-        //    try
-        //    {
-        //        return Ed25519.Verify(signature, data, _publicKey);
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //}
+        public bool Verify(byte[] data, byte[] signature)
+        {
+            try
+            {
+                return Ed25519.Verify(signature, data, PublicKey);
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         ///     Verify the provided data and signature match this key pair's public key.
@@ -341,35 +343,10 @@ namespace Stellar
         /// <param name="data">The data that was signed.</param>
         /// <param name="signature">The signature.</param>
         /// <returns>True if they match, false otherwise.</returns>
-        //public bool Verify(byte[] data, Signature signature)
-        //{
-        //    return Verify(data, signature.InnerValue);
-        //}
+        public bool Verify(byte[] data, Signature signature)
+        {
+            return Verify(data, signature.InnerValue);
+        }
     }
-    //public partial class MuxedAccount 
-    //{
-    //    private MuxedAccount() { }
-    //    public ulong Id { get; private set; }
-    //    public AccountID Key { get; private set; }
-    //    public MuxedAccount(AccountID keyPair, ulong id)
-    //    {
-    //        Id = id;
-    //        Key = keyPair;
-    //    }
-    //    // <summary>
-    //    //     Get the MuxedAccount address, starting with M.
-    //    // </summary>
-    //    public string Address => StrKey.EncodeStellarMuxedAccount(this);
-
-    //    // <summary>
-    //    //     Get the MuxedAccount account id, starting with M.
-    //    // </summary>
-    //    public string AccountId => Address;
-
-    //    // <summary>
-    //    //     Return the signing key for the muxed account.
-    //    // </summary>
-    //    public AccountID SigningKey => Key;
-
-    //}
+   
 }
