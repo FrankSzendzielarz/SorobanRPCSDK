@@ -28,8 +28,8 @@ namespace Stellar.RPC
 
         }
 
-        private TransactionResultMeta _transactionResultMeta;
-        public TransactionResultMeta TransactionResultMeta
+        private TransactionMeta _transactionResultMeta;
+        public TransactionMeta TransactionResultMeta
         {
             get
             {
@@ -38,7 +38,7 @@ namespace Stellar.RPC
                     byte[] bytes = Convert.FromBase64String(ResultMetaXdr);
                     using (MemoryStream stream = new MemoryStream(bytes))
                     {
-                        _transactionResultMeta = TransactionResultMetaXdr.Decode(new XdrReader(stream));
+                        _transactionResultMeta = TransactionMetaXdr.Decode(new XdrReader(stream));
 
                     }
                 }

@@ -63,11 +63,10 @@ namespace SDKTest
             };
 
             var getTransactionsResult = await sorobanClient.GetTransactionsAsync(getTransactionsArguments);
-            var env = getTransactionsResult.Transactions.Skip(26).FirstOrDefault()?.TransactionEnvelope;
+            var env = getTransactionsResult.Transactions.Skip(26).FirstOrDefault()?.TransactionResultMeta;
 
 
-            //TODO BUG WITH TRANSACTION ENVELOPE XDR
-            // AAAAAgAAAABraisBXNgRPYfB16c3fe+AGAH6D/XrJTZJy4wMfKBEYAAehIAAACHFAAShuQAAAAEAAAAAAAAAAAAAAABnphUxAAAAAQAAAAhwc3BiOjY4MQAAAAIAAAABAAAAAIqW61Q3kZPdQ6gTYFSQ20kTCiKkY6KcEWxC1eCkhkzFAAAAAQAAAADjfej7Kt6ZZTe3zxwql+kdH4kwVHjgkfOYEaeLqGoIRgAAAAJBVFVTRAAAAAAAAAAAAAAAZ8rWY3iaDnWNtfpvLpNaCEbKdDjrd2gQODOuKpmj1vMAAAAAADh1IAAAAAEAAAAAipbrVDeRk91DqBNgVJDbSRMKIqRjopwRbELV4KSGTMUAAAABAAAAAON96Psq3pllN7fPHCqX6R0fiTBUeOCR85gRp4uoaghGAAAAAkFUVUFIAAAAAAAAAAAAAABnytZjeJoOdY21+m8uk1oIRsp0OOt3aBA4M64qmaPW8wAAAAAGjneAAAAAAAAAAAJ8oERgAAAAQBQJ7q0nrYaKsdlvkepxVpbrpwmX3/UJL6cHdEfQjeUcaPtDQ7xCUvRK8ISdjwnRmd8IMXqV2Svo6/5BJXKJCQSkhkzFAAAAQHY0/ecQ3GKRFVHAMeLINaRAUKVc8pAC7j96YRL/7dVspq2WNbzlU88Mm5tpAo4QwrQV29q0zgkiqk2oeyXrZwM=
+            
         }
 
         private static async Task GetNetworkUseCase(StellarRPCClient sorobanClient)
