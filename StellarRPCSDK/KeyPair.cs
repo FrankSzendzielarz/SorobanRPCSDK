@@ -75,57 +75,33 @@ namespace Stellar
         //}
 
         /// <summary>
-        ///     XDR Public Key
+        ///     To XDR Public Key
         /// </summary>
-        //public xdr_PublicKey XdrPublicKey
-        //{
-        //    get
-        //    {
-        //        var publicKey = new xdr_PublicKey
-        //        {
-        //            Discriminant = new PublicKeyType
-        //            { InnerValue = PublicKeyType.PublicKeyTypeEnum.PUBLIC_KEY_TYPE_ED25519 },
-        //        };
-
-        //        var uint256 = new Uint256(PublicKey);
-        //        publicKey.Ed25519 = uint256;
-
-        //        return publicKey;
-        //    }
-        //}
+        public XDR.PublicKey.PublicKeyTypeEd25519 XdrPublicKey => new XDR.PublicKey.PublicKeyTypeEd25519()
+        {
+            ed25519 = PublicKey
+        };
 
         /// <summary>
         ///     XDR Signer Key
         /// </summary>
-        //public SignerKey XdrSignerKey
-        //{
-        //    get
-        //    {
-        //        var signerKey = new SignerKey
-        //        {
-        //            Discriminant = new SignerKeyType
-        //            { InnerValue = SignerKeyType.SignerKeyTypeEnum.SIGNER_KEY_TYPE_ED25519 },
-        //        };
-
-        //        var uint256 = new Uint256(PublicKey);
-        //        signerKey.Ed25519 = uint256;
-
-        //        return signerKey;
-        //    }
-        //}
-
+        public XDR.SignerKey XdrSignerKey => new XDR.SignerKey.SignerKeyTypeEd25519()
+        {
+            ed25519 = PublicKey
+        };
+       
         /// <summary>
         ///     The public key.
         /// </summary>
         public byte[] PublicKey => _publicKey;
 
         /// <summary>
-        ///     AccountId
+        ///     AccountId in StrKey encoding
         /// </summary>
         public string AccountId => StrKey.EncodeStellarAccountId(PublicKey);
 
         /// <summary>
-        ///     Address
+        ///     Address in encoded form
         /// </summary>
         public string Address => StrKey.EncodeCheck(StrKey.VersionByte.ACCOUNT_ID, PublicKey);
 
@@ -137,21 +113,12 @@ namespace Stellar
         /// <summary>
         ///     XDR MuxedAccount
         /// </summary>
-        //public Xdr.MuxedAccount MuxedAccount
-        //{
-        //    get
-        //    {
-        //        var uint256 = new Uint256(PublicKey);
-        //        var muxedAccount = new Xdr.MuxedAccount
-        //        {
-        //            Discriminant = new CryptoKeyType { InnerValue = CryptoKeyType.CryptoKeyTypeEnum.KEY_TYPE_ED25519 },
-        //            Ed25519 = uint256,
-        //        };
-        //        return muxedAccount;
-        //    }
-        //}
+        public XDR.MuxedAccount MuxedAccount => new XDR.MuxedAccount.KeyTypeEd25519()
+        {
+            ed25519 = PublicKey
+        };
 
-        public bool IsMuxedAccount => false;
+
 
         public bool Equals(KeyPair other)
         {

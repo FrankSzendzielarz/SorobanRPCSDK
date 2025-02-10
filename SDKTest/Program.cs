@@ -21,6 +21,7 @@ namespace SDKTest
             try
             {
                 Console.SetOut(writer);
+                // Tests round trip serialisation for all XDR objects.
                 var runner = new XdrTestRunner();
                 await runner.RunAllTests();
             }
@@ -43,10 +44,7 @@ namespace SDKTest
 
             // Use a test account that has already been pre-funded
             KeyPair keyPair = KeyPair.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
-            PublicKey.PublicKeyTypeEd25519 testAccountPubKey = new PublicKey.PublicKeyTypeEd25519()
-            {
-                ed25519 = keyPair.PublicKey
-            };
+            PublicKey.PublicKeyTypeEd25519 testAccountPubKey = keyPair.XdrPublicKey;
             AccountID testAccountId = testAccountPubKey;
 
             // Use cases
@@ -56,17 +54,48 @@ namespace SDKTest
             await GetFeeStatsUseCase(sorobanClient);
             await GetLatestLedgerUseCase(sorobanClient, lastLedger);
             await GetNetworkUseCase(sorobanClient);
+            await GetTransactions(sorobanClient, lastLedger);
+            await GetServerVersionInfo(sorobanClient);
 
+            // Simulate a transaction.
+
+            // Make a payment from A to B, get transaction using hash
+            
+            // Get a recipient account (pre funded test account)
+            KeyPair recepientKeyPair = KeyPair.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+            PublicKey.PublicKeyTypeEd25519 recipientPubKey = new PublicKey.PublicKeyTypeEd25519()
+            {
+                ed25519 = keyPair.PublicKey
+            };
+            AccountID recipientAccountId = testAccountPubKey;
+            // Create a payment transaction from testAccountId to recipientAccountId
+
+
+
+            // Deploy a contract, compile a contract
+
+            // Execute a contract,
+            // add utility for Authorising the Operation (signing)
+            // add utility for Assemble Transaction - does the modification of the footprint etc
+
+
+        }
+
+        private static async Task GetServerVersionInfo(StellarRPCClient sorobanClient)
+        {
+            var versionInfoResult = await sorobanClient.GetVersionInfoAsync();
+            Assert.MustBe(versionInfoResult != null && versionInfoResult.Protocol_version > 21, "Get version info failed");
+        }
+
+        private static async Task GetTransactions(StellarRPCClient sorobanClient, long lastLedger)
+        {
             GetTransactionsParams getTransactionsArguments = new GetTransactionsParams()
             {
                 StartLedger = lastLedger - 100
             };
 
             var getTransactionsResult = await sorobanClient.GetTransactionsAsync(getTransactionsArguments);
-   
-
-
-            
+            Assert.MustBe(getTransactionsResult != null && getTransactionsResult.Transactions.Count > 0, "Get transactions failed.");
         }
 
         private static async Task GetNetworkUseCase(StellarRPCClient sorobanClient)
@@ -118,7 +147,7 @@ namespace SDKTest
             Assert.MustBe(getEventsResult != null, "Get events failed.");
         }
 
-        private static async Task GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
+        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
         {
             LedgerKey myAccount = new LedgerKey.Account()
             {
@@ -134,6 +163,8 @@ namespace SDKTest
             };
             var ledgerEntriesAccount = await sorobanClient.GetLedgerEntriesAsync(accountLedgerEntriesArgument);
             var test = ledgerEntriesAccount.Entries.First().LedgerEntryData as LedgerEntry.dataUnion.Account;
+            Assert.MustBe(test != null && test.account.balance > 0, "Account data retrieval failed.");
+            return test.account.balance;
         }
 
         private static async Task<long> ServerHealthCheckUseCase(StellarRPCClient sorobanClient)
