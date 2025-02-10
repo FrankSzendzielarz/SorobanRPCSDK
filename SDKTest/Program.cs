@@ -43,9 +43,8 @@ namespace SDKTest
             StellarRPCClient sorobanClient = new StellarRPCClient(httpClient);
 
             // Use a test account that has already been pre-funded
-            KeyPair keyPair = KeyPair.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
-            PublicKey.PublicKeyTypeEd25519 testAccountPubKey = keyPair.XdrPublicKey;
-            AccountID testAccountId = testAccountPubKey;
+            AccountID testAccountId = AccountID.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
+
 
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
@@ -60,14 +59,10 @@ namespace SDKTest
             // Simulate a transaction.
 
             // Make a payment from A to B, get transaction using hash
-            
+
             // Get a recipient account (pre funded test account)
-            KeyPair recepientKeyPair = KeyPair.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
-            PublicKey.PublicKeyTypeEd25519 recipientPubKey = new PublicKey.PublicKeyTypeEd25519()
-            {
-                ed25519 = keyPair.PublicKey
-            };
-            AccountID recipientAccountId = testAccountPubKey;
+            AccountID recipientAccountId = AccountID.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+           
             // Create a payment transaction from testAccountId to recipientAccountId
 
 
@@ -147,7 +142,7 @@ namespace SDKTest
             Assert.MustBe(getEventsResult != null, "Get events failed.");
         }
 
-        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
+        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, Stellar.XDR.AccountID testAccountId)
         {
             LedgerKey myAccount = new LedgerKey.Account()
             {

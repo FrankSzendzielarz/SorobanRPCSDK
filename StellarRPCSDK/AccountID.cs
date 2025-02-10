@@ -3,41 +3,35 @@
 using Chaos.NaCl;
 using dotnetstandard_bip32;
 using System;
+using System.Linq;
 using System.Security.Cryptography;
 
 
-namespace Stellar
+namespace Stellar.XDR
 {
     /// <summary>
     ///  
     /// </summary>
-    public class KeyPair : IEquatable<KeyPair>
+    public partial class AccountID : IEquatable<AccountID>
     {
-        private readonly byte[] _publicKey;
+
         private readonly byte[] _secretKey;
         private readonly byte[] _seed;
 
-        /// <summary>
-        /// Creates a new Keypair object from public key.
-        /// </summary>
-        public KeyPair(byte[] publicKey)
-            : this(publicKey, null)
-        {
-        }
+
 
         /// <summary>
         /// Creates a new Keypair instance from secret.
         /// </summary>
-        public KeyPair(byte[] publicKey, byte[] seed)
+        public AccountID(byte[] publicKey, byte[] seed)
         {
-
-            _publicKey = publicKey;
             _seed = seed;
             if (publicKey == null)
             {
-                if (seed != null) Ed25519.KeyPairFromSeed(out _publicKey, out _secretKey, _seed);
+                if (seed != null) Ed25519.KeyPairFromSeed(out publicKey, out _secretKey, _seed);
 
             }
+            InnerValue = new PublicKey.PublicKeyTypeEd25519() { ed25519 = publicKey };
         }
 
         /// <summary>
@@ -93,7 +87,7 @@ namespace Stellar
         /// <summary>
         ///     The public key.
         /// </summary>
-        public byte[] PublicKey => _publicKey;
+        public byte[] PublicKey => (InnerValue as PublicKey.PublicKeyTypeEd25519)?.ed25519 ;
 
         /// <summary>
         ///     AccountId in StrKey encoding
@@ -108,7 +102,7 @@ namespace Stellar
         /// <summary>
         ///     The signing key.
         /// </summary>
-        public KeyPair SigningKey => this;
+        public AccountID SigningKey => this;
 
         /// <summary>
         ///     XDR MuxedAccount
@@ -120,7 +114,7 @@ namespace Stellar
 
 
 
-        public bool Equals(KeyPair other)
+        public bool Equals(AccountID other)
         {
             if (other == null)
             {
@@ -134,32 +128,12 @@ namespace Stellar
             {
                 return false;
             }
-            return _publicKey.Equals(other._publicKey);
+            return PublicKey.SequenceEqual(other.PublicKey);
         }
 
-        /// <summary>
-        ///     Returns a KeyPair from a Public Key
-        /// </summary>
-        /// <param name="publicKey"></param>
-        /// <returns>
-        ///     <see cref="KeyPair" />
-        /// </returns>
-        //public static KeyPair FromXdrPublicKey(xdr_PublicKey publicKey)
-        //{
-        //    return FromPublicKey(publicKey.Ed25519.InnerValue);
-        //}
+     
 
-        /// <summary>
-        ///     Returns a KeyPair from an XDR SignerKey
-        /// </summary>
-        /// <param name="signerKey"></param>
-        /// <returns>
-        ///     <see cref="KeyPair" />
-        /// </returns>
-        //public static KeyPair FromXdrSignerKey(SignerKey signerKey)
-        //{
-        //    return FromPublicKey(signerKey.Ed25519.InnerValue);
-        //}
+  
 
         /// <summary>
         ///     Returns true if this Keypair is capable of signing
@@ -175,9 +149,9 @@ namespace Stellar
         /// </summary>
         /// <param name="seed">eed Char array containing StrKey encoded Stellar secret seed.</param>
         /// <returns>
-        ///     <see cref="KeyPair" />
+        ///     <see cref="AccountID" />
         /// </returns>
-        public static KeyPair FromSecretSeed(string seed)
+        public static AccountID FromSecretSeed(string seed)
         {
             var bytes = StrKey.DecodeStellarSecretSeed(seed);
             return FromSecretSeed(bytes);
@@ -188,11 +162,11 @@ namespace Stellar
         /// </summary>
         /// <param name="seed">seed The 32 byte secret seed.</param>
         /// <returns>
-        ///     <see cref="KeyPair" />
+        ///     <see cref="AccountID" />
         /// </returns>
-        public static KeyPair FromSecretSeed(byte[] seed)
+        public static AccountID FromSecretSeed(byte[] seed)
         {
-            return new KeyPair(null, seed);
+            return new AccountID(null, seed);
         }
 
         /// <summary>
@@ -200,15 +174,15 @@ namespace Stellar
         /// </summary>
         /// <param name="accountId">accountId The StrKey encoded Stellar account ID.</param>
         /// <returns>
-        ///     <see cref="KeyPair" />
+        ///     <see cref="AccountID" />
         /// </returns>
-        public static KeyPair FromAccountId(string accountId)
+        public static AccountID FromAccountId(string accountId)
         {
             var decoded = StrKey.DecodeStellarAccountId(accountId);
             return FromPublicKey(decoded);
         }
 
-        public static KeyPair FromBIP39Seed(string seed, uint accountIndex)
+        public static AccountID FromBIP39Seed(string seed, uint accountIndex)
         {
             var bip32 = new BIP32();
 
@@ -216,7 +190,7 @@ namespace Stellar
             return FromSecretSeed(bip32.DerivePath(path, seed).Key);
         }
 
-        public static KeyPair FromBIP39Seed(byte[] seedBytes, uint accountIndex)
+        public static AccountID FromBIP39Seed(byte[] seedBytes, uint accountIndex)
         {
             var seed = seedBytes.ToStringHex();
             return FromBIP39Seed(seed, accountIndex);
@@ -227,18 +201,18 @@ namespace Stellar
         /// </summary>
         /// <param name="publicKey">publicKey The 32 byte public key.</param>
         /// <returns>
-        ///     <see cref="KeyPair" />
+        ///     <see cref="AccountID" />
         /// </returns>
-        public static KeyPair FromPublicKey(byte[] publicKey)
+        public static AccountID FromPublicKey(byte[] publicKey)
         {
-            return new KeyPair(publicKey);
+            return new AccountID(publicKey,null);
         }
 
         /// <summary>
         ///     Generates a random Stellar keypair.
         /// </summary>
         /// <returns>a random Stellar keypair</returns>
-        public static KeyPair Random()
+        public static AccountID Random()
         {
             var b = new byte[32];
             using (var rng = RandomNumberGenerator.Create())
