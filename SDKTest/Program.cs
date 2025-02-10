@@ -1,8 +1,5 @@
 ﻿using Stellar;
 using Stellar.RPC;
-using Stellar.XDR;
-using System.Diagnostics;
-using System.Diagnostics.Contracts;
 using System.Text.Json;
 
 namespace SDKTest
@@ -43,8 +40,8 @@ namespace SDKTest
             StellarRPCClient sorobanClient = new StellarRPCClient(httpClient);
 
             // Use a test account that has already been pre-funded
-            AccountID testAccountId = AccountID.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
-
+            MuxedAccount.KeyTypeEd25519 account = MuxedAccount.FromAccountId("GA3RQ7FWMT6INHS2R4KEKWENPYQOPLRNPYDAJFFRY5AUSD2GP6VG3OPY");
+            AccountID testAccountId = new AccountID(account.XdrPublicKey);
 
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
@@ -61,8 +58,9 @@ namespace SDKTest
             // Make a payment from A to B, get transaction using hash
 
             // Get a recipient account (pre funded test account)
-            AccountID recipientAccountId = AccountID.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
-           
+            MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+            AccountID recipientAccountId = recipientAccount.XdrPublicKey;   
+            
             // Create a payment transaction from testAccountId to recipientAccountId
 
 
@@ -109,7 +107,7 @@ namespace SDKTest
         {
             //Example taken from stellar-rpc-openrpc.json
             var feeStats = await sorobanClient.GetFeeStatsAsync();
-            Assert.MustBe(feeStats != null,"Feestats failed to retrieve.");
+            Assert.MustBe(feeStats != null, "Feestats failed to retrieve.");
         }
 
         private static async Task GetEventsAboutAContractUseCase(StellarRPCClient sorobanClient, long lastLedger)
@@ -142,7 +140,7 @@ namespace SDKTest
             Assert.MustBe(getEventsResult != null, "Get events failed.");
         }
 
-        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, Stellar.XDR.AccountID testAccountId)
+        private static async Task<long> GetAccountLedgerEntryUseCase(StellarRPCClient sorobanClient, AccountID testAccountId)
         {
             LedgerKey myAccount = new LedgerKey.Account()
             {
@@ -165,7 +163,7 @@ namespace SDKTest
         private static async Task<long> ServerHealthCheckUseCase(StellarRPCClient sorobanClient)
         {
             var healthResult = await sorobanClient.GetHealthAsync();
-            Assert.MustBe(healthResult != null,"HealthResult was null.");
+            Assert.MustBe(healthResult != null, "HealthResult was null.");
             return healthResult.LatestLedger;
         }
     }

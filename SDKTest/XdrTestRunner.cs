@@ -1,14 +1,8 @@
-﻿using AutoFixture.DataAnnotations;
-using AutoFixture;
-using Stellar.XDR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using AutoFixture;
 using AutoFixture.Kernel;
+using Stellar;
+using System.Reflection;
+using System.Text.Json;
 
 namespace SDKTest
 {
@@ -35,7 +29,7 @@ namespace SDKTest
             _fixture.Customize(new DataAnnotationsCustomization());
 
 
-            var abstractMappings = DiscoverAbstractTypeImplementations(typeof(Stellar.XDR.PublicKey).Assembly);
+            var abstractMappings = DiscoverAbstractTypeImplementations(typeof(Stellar.PublicKey).Assembly);
             foreach (var (abstractType, concreteType) in abstractMappings)
             {
                 _fixture.Customizations.Add(new TypeRelay(abstractType, concreteType));
@@ -254,7 +248,7 @@ namespace SDKTest
 
             Console.WriteLine(json);
 
-   
+
         }
     }
 }

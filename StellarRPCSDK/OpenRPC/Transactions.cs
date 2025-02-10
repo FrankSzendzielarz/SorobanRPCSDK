@@ -1,9 +1,7 @@
-﻿using Stellar.XDR;
+﻿
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace Stellar.RPC
 {
@@ -84,7 +82,7 @@ namespace Stellar.RPC
                             };
                         }
                         ).ToArray();
-                    
+
                 }
                 return _diagnosticEvents;
             }
