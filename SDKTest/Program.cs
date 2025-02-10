@@ -63,7 +63,7 @@ namespace SDKTest
             };
 
             var getTransactionsResult = await sorobanClient.GetTransactionsAsync(getTransactionsArguments);
-            var env = getTransactionsResult.Transactions.Skip(26).FirstOrDefault()?.TransactionResultMeta;
+   
 
 
             
