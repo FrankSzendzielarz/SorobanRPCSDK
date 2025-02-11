@@ -118,7 +118,7 @@ namespace SDKTest
             };
 
             // Simulate a Soroban contract invocation
-            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            TransactionEnvelope simulateEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()
                 {
@@ -128,10 +128,25 @@ namespace SDKTest
             };
             var simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
             {
-                Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
             });
 
-            // Execute a contract
+            Transaction assembledTransaction = simulationResult.ApplyTo(invokeContractTransaction);
+            var signature = assembledTransaction.Sign(testAccount);
+            TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = assembledTransaction,
+                    signatures = [signature]
+                }
+            };
+            SendTransactionResult res = await sorobanClient.SendTransactionAsync(new SendTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
+            });
+
+            var finalResult = await GetTransactionAndWaitForStatusUseCase(sorobanClient, res);
 
             // Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
             // 2nd account.
@@ -150,7 +165,7 @@ namespace SDKTest
             Assert.MustBe(accountEntryRecipientNew.balance - accountEntryRecipient.balance == 17, "Balance increase is incorrect");
         }
 
-        private static async Task GetTransactionAndWaitForStatusUseCase(StellarRPCClient sorobanClient, SendTransactionResult result)
+        private static async Task<GetTransactionResult> GetTransactionAndWaitForStatusUseCase(StellarRPCClient sorobanClient, SendTransactionResult result)
         {
             bool complete = false;
             int attempts = 10;
@@ -171,10 +186,11 @@ namespace SDKTest
                         Assert.MustBe(false, "Transaction failed");
                         break;
                     case GetTransactionResultStatus.SUCCESS:
-                        complete = true;
-                        break;
+                        return completion;
+                        
                 }
             }
+            return null;
         }
 
         private static async Task<SendTransactionResult> SignAndSendAPaymentTransactionUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, MuxedAccount.KeyTypeEd25519 recipientAccount,  AccountEntry accountEntry)
@@ -217,7 +233,7 @@ namespace SDKTest
             // Sign it with the sender account
             var signature = payment.Sign(testAccount);
 
-            // Wrap it an envelope to send to Stellar
+            // Wrap it in an envelope to send to Stellar
             TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()

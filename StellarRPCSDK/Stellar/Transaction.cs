@@ -1,14 +1,47 @@
 ﻿using Stellar.Utilities;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net.NetworkInformation;
-using System.Text;
+using System.Linq;
 
 namespace Stellar
 {
     public partial class Transaction
     {
+
+        public Transaction Clone()
+        {
+            Transaction clone;
+            using (var memoryStream = new MemoryStream())
+            {
+                XdrWriter writer = new XdrWriter(memoryStream);
+                TransactionXdr.Encode(writer, this);
+                memoryStream.Position = 0;
+                clone = TransactionXdr.Decode(new XdrReader(memoryStream));
+            }
+            return clone;
+        }
+
+        public bool IsSoroban()
+        {
+            return
+            (
+                operations != null &&
+                operations.Count() == 1 &&
+                (
+                    (operations[0]?.body is Operation.bodyUnion.InvokeHostFunction) ||
+                    (operations[0]?.body is Operation.bodyUnion.ExtendFootprintTtl) ||
+                    (operations[0]?.body is Operation.bodyUnion.RestoreFootprint)
+                )
+            );
+        }
+        public bool IsSorobanInvocation()
+        {
+            return
+                operations != null &&
+                operations.Count() == 1 &&
+                operations[0]?.body is Operation.bodyUnion.InvokeHostFunction;
+        }
+
+
         /// <summary>
         /// Signs the transaction using an account and the current Network.
         /// </summary>
