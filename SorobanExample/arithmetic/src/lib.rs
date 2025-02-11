@@ -17,7 +17,7 @@ impl ArithmeticContract {
             log!(&env, "Divide by zero failure.");
             return Err(ContractError::DivideByZero);
         }
-
+        log!(&env, "Dividing two numbers.");
         Ok(number1 / number2)
     }
 }

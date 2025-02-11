@@ -1,5 +1,6 @@
 ﻿using Stellar;
 using Stellar.RPC;
+using Stellar.Utilities;
 using System.Text.Json;
 
 namespace SDKTest
@@ -60,12 +61,81 @@ namespace SDKTest
             SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
             await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
             await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
-            // Simulate a Soroban transaction
+
+            string demoContractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT";
 
 
-            // Deploy a contract, compile a contract
+            
+            long val1 = 33;
+            long val2 = 11;
+            long expected = 3;
 
-            // Execute a contract,
+            
+            AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+
+            // Create a soroban contract invocation
+
+            Operation divideTwoNumberInvocation = new Operation()
+            {
+                sourceAccount = testAccount,
+                body = new Operation.bodyUnion.InvokeHostFunction()
+                {
+                    invokeHostFunctionOp = new InvokeHostFunctionOp()
+                    {
+                        auth = [], //no authorisation needed in this scenario
+                        hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
+                        {
+                            invokeContract = new InvokeContractArgs()
+                            {
+                                contractAddress = new SCAddress.ScAddressTypeContract()
+                                {
+                                    contractId = new Hash(StrKey.DecodeContractId(demoContractId))
+                                },
+                                functionName = new SCSymbol("divide_two_numbers"),
+                                args =
+                                [
+                                    new SCVal.ScvI64(){  i64=val1 }  ,
+                                    new SCVal.ScvI64(){  i64=val2 }
+                                ]
+                            }
+                        }
+                    }
+                }
+            };
+
+            Transaction invokeContractTransaction = new Transaction()
+            {
+                sourceAccount = testAccount,
+                fee = 100,
+                memo = new Memo.MemoNone(),
+                seqNum = newAccountEntry.seqNum.Increment(),
+                cond = new Preconditions.PrecondNone(),
+                ext = new Transaction.extUnion.case_0(),
+                operations =
+                [
+                    divideTwoNumberInvocation
+                ]
+            };
+
+            // Simulate a Soroban contract invocation
+            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = invokeContractTransaction,
+                    signatures = []
+                }
+            };
+            var simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
+            });
+
+            // Execute a contract
+
+            // Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
+            // 2nd account.
+
             // add utility for Authorising the Operation (signing)
             // add utility for Assemble Transaction - does the modification of the footprint etc
 
