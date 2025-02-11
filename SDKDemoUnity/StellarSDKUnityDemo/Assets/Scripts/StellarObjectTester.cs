@@ -14,24 +14,19 @@ public class StellarObjectTester : MonoBehaviour
     [SerializeField] private string recipientAccountId = "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T";
 
     [Header("Stellar Objects")]
-    [SerializeField, SerializeReference] private AccountID testAccountId;
+    [SerializeField] private AccountID testAccountId;
     [SerializeField] private AccountID recipientId;
     [SerializeField] private AccountEntry accountEntry;
+    [SerializeField] private MuxedAccount.KeyTypeEd25519 test;
+
 
     private HttpClient httpClient;
     private StellarRPCClient sorobanClient;
+    private bool isProcessing = false;
 
     private async void Start()
     {
-        try
-        {
-            await InitializeStellarClient();
-            await GetAccountDetails();
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Error in Stellar initialization: {e.Message}");
-        }
+     
     }
 
     private async Task InitializeStellarClient()
@@ -53,12 +48,16 @@ public class StellarObjectTester : MonoBehaviour
     {
         try
         {
-            accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            var result = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+
             Debug.Log($"Successfully retrieved account details");
+            // Debug.Log($"Account details: {result}");  // This will use ToString()
+            Debug.Log($"Balance {result.balance}");
         }
         catch (Exception e)
         {
             Debug.LogError($"Error getting account details: {e.Message}");
+            Debug.LogError($"Stack trace: {e.StackTrace}");
         }
     }
 
@@ -86,9 +85,38 @@ public class StellarObjectTester : MonoBehaviour
         httpClient?.Dispose();
     }
 
-    // You might want to add a public method to call from a UI button
-    public async void RefreshAccountDetails()
+    public async void TestAccountDetails()
     {
-        await GetAccountDetails();
+        if (isProcessing)
+        {
+            Debug.Log("Already processing a request...");
+            return;
+        }
+
+        try
+        {
+            isProcessing = true;
+            Debug.Log("Starting account test...");
+
+            using (httpClient = new HttpClient())
+            {
+                httpClient.BaseAddress = new Uri(testnetUrl);
+                sorobanClient = new StellarRPCClient(httpClient);
+
+                await InitializeStellarClient();
+                await GetAccountDetails();
+            }
+            Debug.Log("Account test completed successfully!");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Test failed: {e.Message}\nStack trace: {e.StackTrace}");
+        }
+        finally
+        {
+            isProcessing = false;
+            httpClient?.Dispose();
+            httpClient = null;
+        }
     }
 }
