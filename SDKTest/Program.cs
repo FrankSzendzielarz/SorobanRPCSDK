@@ -7,6 +7,8 @@ namespace SDKTest
 {
     internal class Program
     {
+        static Transaction invokeContractTransaction;
+        static SimulateTransactionResult simulationResult;
         static async Task Main(string[] args)
         {
 
@@ -15,6 +17,7 @@ namespace SDKTest
              *        XDR Serialisation Tests       *
              *                                      * 
              ****************************************/
+            TextWriter originalConsole = Console.Out;
             StreamWriter writer = new StreamWriter("xdr.txt");
             try
             {
@@ -25,8 +28,9 @@ namespace SDKTest
             }
             finally
             {
-                Console.SetOut(Console.Out);
                 writer.Close();
+                Console.SetOut(originalConsole);
+
             }
 
             /****************************************
@@ -34,6 +38,7 @@ namespace SDKTest
              *        Soroban RPC Use Cases         *
              *                                      * 
              ****************************************/
+            string demoContractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT"; // See SorobanExample project in the solution
 
             // Initialise a connection to the RPC Client
             HttpClient httpClient = new HttpClient();
@@ -61,20 +66,51 @@ namespace SDKTest
             SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
             await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
             await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
-
-            string demoContractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT";
-
-
-            
+            AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
             long val1 = 33;
             long val2 = 11;
-            long expected = 3;
+            await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
+            GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
+            AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
+            // Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
+            // 2nd account.
 
-            
-            AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            // add utility for Authorising the Operation (signing)
+            // add utility for Assemble Transaction - does the modification of the footprint etc
 
+
+        }
+
+        private static void AccessSorobanInvocationResultUseCase(long val1, long val2, GetTransactionResult finalResult)
+        {
+            long divisionResult = ((finalResult.TransactionResultMeta as TransactionMeta.case_3).v3.sorobanMeta.returnValue as SCVal.ScvI64).i64;
+            Console.WriteLine($"Soroban says that {val1} divided by {val2} is {divisionResult}");
+        }
+
+        private static async Task<GetTransactionResult> AssembleSorobanInvocationAndExecuteUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, Transaction invokeContractTransaction, SimulateTransactionResult simulationResult)
+        {
+            Transaction assembledTransaction = simulationResult.ApplyTo(invokeContractTransaction);
+            var signature = assembledTransaction.Sign(testAccount);
+            TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = assembledTransaction,
+                    signatures = [signature]
+                }
+            };
+            SendTransactionResult res = await sorobanClient.SendTransactionAsync(new SendTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
+            });
+
+            var finalResult = await GetTransactionAndWaitForStatusUseCase(sorobanClient, res);
+            return finalResult;
+        }
+
+        private static async Task CreateAndSimulateSorobanInvocationUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, AccountEntry newAccountEntry, string demoContractId, long val1, long val2)
+        {
             // Create a soroban contract invocation
-
             Operation divideTwoNumberInvocation = new Operation()
             {
                 sourceAccount = testAccount,
@@ -103,7 +139,7 @@ namespace SDKTest
                 }
             };
 
-            Transaction invokeContractTransaction = new Transaction()
+            invokeContractTransaction = new Transaction()
             {
                 sourceAccount = testAccount,
                 fee = 100,
@@ -126,35 +162,10 @@ namespace SDKTest
                     signatures = []
                 }
             };
-            var simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
+            simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
             {
                 Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
             });
-
-            Transaction assembledTransaction = simulationResult.ApplyTo(invokeContractTransaction);
-            var signature = assembledTransaction.Sign(testAccount);
-            TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
-            {
-                v1 = new TransactionV1Envelope()
-                {
-                    tx = assembledTransaction,
-                    signatures = [signature]
-                }
-            };
-            SendTransactionResult res = await sorobanClient.SendTransactionAsync(new SendTransactionParams()
-            {
-                Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
-            });
-
-            var finalResult = await GetTransactionAndWaitForStatusUseCase(sorobanClient, res);
-
-            // Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
-            // 2nd account.
-
-            // add utility for Authorising the Operation (signing)
-            // add utility for Assemble Transaction - does the modification of the footprint etc
-
-
         }
 
         private static async Task VerifyBalanceChangeUseCase(StellarRPCClient sorobanClient, AccountID testAccountId, AccountID recipientAccountId, AccountEntry accountEntry, AccountEntry accountEntryRecipient)
