@@ -5,4 +5,6 @@ This combines the test suite described in the project roadmap for Tranche 1 Deli
 Tranche 2 deliverable 5 (https://communityfund.stellar.org/dashboard/submissions/recl8E9u3mHSyWh5z).
 
 Further, in the XDR serialisation use case, random XDR is generated for all XDR objects, which can be used by the Community for other 
-testing other SDKs.
+testing other SDKs. See XDR_TEST_CASES.txt for XDR.
+
+Please see Program.cs for the main exe and all Use Case demos, which serve as end to end tests.

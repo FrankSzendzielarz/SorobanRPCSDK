@@ -21,6 +21,7 @@
 		<PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="System.Text.Json" Version="9.0.1" />
+		<PackageReference Include="ILRepack.Lib.MSBuild" Version="2.1.18" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'"/>
 	</ItemGroup>
 
 	<ItemGroup>

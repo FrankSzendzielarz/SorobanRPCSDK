@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="ILRepacker" AfterTargets="CopyFilesToOutputDirectory">
+		<ItemGroup>
+			<InputAssemblies Include="$(TargetPath)" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'dotnetstandard-bip32'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'dotnetstandard-bip39'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.ComponentModel.Annotations'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Text.Json'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Buffers'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Memory'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Threading.Tasks.Extensions'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Numerics.Vectors'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Runtime.CompilerServices.Unsafe'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.Text.Encodings.Web'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'Microsoft.Bcl.AsyncInterfaces'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.IO.Pipelines'" />
+
+		</ItemGroup>
+
+	
+
+		<ILRepack AllowDuplicateResources="false"
+				  DebugInfo="true"
+				  Union="true"
+				  Internalize="true"
+				  InputAssemblies="@(InputAssemblies)"
+				  OutputFile="$(TargetPath)"
+				  Parallel="true"
+				  LibraryPath="UnityLibs"
+				  TargetKind="SameAsPrimaryAssembly" />
+		
+	</Target>
+</Project>
