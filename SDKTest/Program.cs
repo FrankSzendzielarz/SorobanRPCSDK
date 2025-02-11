@@ -72,11 +72,15 @@ namespace SDKTest
             await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
             GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
             AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
-            // Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
-            // 2nd account.
+            
+            // TODO:
+            //  - Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
+            //    2nd account and us
+            //  - Add utility for Authorising the Operation (signing)
+            //  - Add corresponding classes for FeeBumpTransaction : The feebumptransaction is a second transaction
+            //    type that requires a different envelope and different txn signature payload. i.e. it needs a slightly
+            //    different Sign implementation. Also, in ApplyTo, see InnerTransaction
 
-            // add utility for Authorising the Operation (signing)
-            // add utility for Assemble Transaction - does the modification of the footprint etc
 
 
         }
