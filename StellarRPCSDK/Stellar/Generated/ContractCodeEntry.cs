@@ -22,10 +22,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ContractCodeEntry
     {
         public extUnion ext
@@ -36,6 +40,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public Hash hash
@@ -46,6 +54,10 @@ namespace Stellar {
                 _hash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Hash")]
+        #endif
         private Hash _hash;
 
         public byte[] code
@@ -56,6 +68,10 @@ namespace Stellar {
                 _code = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Code")]
+        #endif
         private byte[] _code;
 
         public ContractCodeEntry()
@@ -66,6 +82,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -74,6 +91,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class v1Struct
             {
                 public ExtensionPoint ext
@@ -84,6 +102,10 @@ namespace Stellar {
                         _ext = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ext")]
+                #endif
                 private ExtensionPoint _ext;
 
                 public ContractCodeCostInputs costInputs
@@ -94,6 +116,10 @@ namespace Stellar {
                         _costInputs = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Cost Inputs")]
+                #endif
                 private ContractCodeCostInputs _costInputs;
 
                 public v1Struct()
@@ -132,12 +158,14 @@ namespace Stellar {
                     return result;
                 }
             }
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -149,6 +177,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private v1Struct _v1;
 
                 public override void ValidateCase() {}

@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LiquidityPoolDepositOp
     {
         public PoolID liquidityPoolID
@@ -28,6 +32,10 @@ namespace Stellar {
                 _liquidityPoolID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liquidity Pool I D")]
+        #endif
         private PoolID _liquidityPoolID;
 
         public int64 maxAmountA
@@ -38,6 +46,10 @@ namespace Stellar {
                 _maxAmountA = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Amount A")]
+        #endif
         private int64 _maxAmountA;
 
         /// <summary>
@@ -51,6 +63,10 @@ namespace Stellar {
                 _maxAmountB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Amount B")]
+        #endif
         private int64 _maxAmountB;
 
         /// <summary>
@@ -64,6 +80,10 @@ namespace Stellar {
                 _minPrice = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Price")]
+        #endif
         private Price _minPrice;
 
         /// <summary>
@@ -77,6 +97,10 @@ namespace Stellar {
                 _maxPrice = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Price")]
+        #endif
         private Price _maxPrice;
 
         public LiquidityPoolDepositOp()

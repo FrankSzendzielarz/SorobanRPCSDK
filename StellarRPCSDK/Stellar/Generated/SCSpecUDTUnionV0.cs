@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCSpecUDTUnionV0
     {
         [MaxLength(1024)]
@@ -30,6 +34,10 @@ namespace Stellar {
                 _doc = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Doc")]
+        #endif
         private string _doc;
 
         [MaxLength(80)]
@@ -43,6 +51,10 @@ namespace Stellar {
                 _lib = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Lib")]
+        #endif
         private string _lib;
 
         [MaxLength(60)]
@@ -56,6 +68,10 @@ namespace Stellar {
                 _name = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Name")]
+        #endif
         private string _name;
 
         [MaxLength(50)]
@@ -69,6 +85,10 @@ namespace Stellar {
                 _cases = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Cases")]
+        #endif
         private SCSpecUDTUnionCaseV0[] _cases;
 
         public SCSpecUDTUnionV0()

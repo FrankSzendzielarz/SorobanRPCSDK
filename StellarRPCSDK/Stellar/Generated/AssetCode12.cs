@@ -7,6 +7,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -14,6 +17,7 @@ namespace Stellar {
     /// 5-12 alphanumeric characters right-padded with 0 bytes
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AssetCode12
     {
         [MinLength(12)]
@@ -28,6 +32,10 @@ namespace Stellar {
                 _innerValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inner Value")]
+        #endif
         private byte[] _innerValue = new byte[12];
 
         public AssetCode12() { }

@@ -67,10 +67,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCVal
     {
         public abstract SCValType Discriminator { get; }
@@ -78,6 +82,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ScvBool : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_BOOL;
@@ -89,16 +94,22 @@ namespace Stellar {
                     _b = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"B")]
+            #endif
             private bool _b;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvVoid : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_VOID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvError : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_ERROR;
@@ -110,10 +121,15 @@ namespace Stellar {
                     _error = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Error")]
+            #endif
             private SCError _error;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvU32 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U32;
@@ -125,10 +141,15 @@ namespace Stellar {
                     _u32 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"U32")]
+            #endif
             private uint32 _u32;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvI32 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I32;
@@ -140,10 +161,15 @@ namespace Stellar {
                     _i32 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"I32")]
+            #endif
             private int32 _i32;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvU64 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U64;
@@ -155,10 +181,15 @@ namespace Stellar {
                     _u64 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"U64")]
+            #endif
             private uint64 _u64;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvI64 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I64;
@@ -170,10 +201,15 @@ namespace Stellar {
                     _i64 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"I64")]
+            #endif
             private int64 _i64;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvTimepoint : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_TIMEPOINT;
@@ -185,10 +221,15 @@ namespace Stellar {
                     _timepoint = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Timepoint")]
+            #endif
             private TimePoint _timepoint;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvDuration : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_DURATION;
@@ -200,10 +241,15 @@ namespace Stellar {
                     _duration = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Duration")]
+            #endif
             private Duration _duration;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvU128 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U128;
@@ -215,10 +261,15 @@ namespace Stellar {
                     _u128 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"U128")]
+            #endif
             private UInt128Parts _u128;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvI128 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I128;
@@ -230,10 +281,15 @@ namespace Stellar {
                     _i128 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"I128")]
+            #endif
             private Int128Parts _i128;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvU256 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U256;
@@ -245,10 +301,15 @@ namespace Stellar {
                     _u256 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"U256")]
+            #endif
             private UInt256Parts _u256;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvI256 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I256;
@@ -260,10 +321,15 @@ namespace Stellar {
                     _i256 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"I256")]
+            #endif
             private Int256Parts _i256;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvBytes : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_BYTES;
@@ -275,10 +341,15 @@ namespace Stellar {
                     _bytes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Bytes")]
+            #endif
             private SCBytes _bytes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvString : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_STRING;
@@ -290,10 +361,15 @@ namespace Stellar {
                     _str = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Str")]
+            #endif
             private SCString _str;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvSymbol : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_SYMBOL;
@@ -305,6 +381,10 @@ namespace Stellar {
                     _sym = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Sym")]
+            #endif
             private SCSymbol _sym;
 
             public override void ValidateCase() {}
@@ -312,6 +392,7 @@ namespace Stellar {
         /// <summary>
         /// behind an option, due to xdrpp limitations.
         /// </summary>
+        [System.Serializable]
         public sealed partial class ScvVec : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_VEC;
@@ -323,10 +404,15 @@ namespace Stellar {
                     _vec = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Vec")]
+            #endif
             private SCVec _vec;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvMap : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_MAP;
@@ -338,10 +424,15 @@ namespace Stellar {
                     _map = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Map")]
+            #endif
             private SCMap _map;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvAddress : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_ADDRESS;
@@ -353,6 +444,10 @@ namespace Stellar {
                     _address = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Address")]
+            #endif
             private SCAddress _address;
 
             public override void ValidateCase() {}
@@ -360,12 +455,14 @@ namespace Stellar {
         /// <summary>
         /// ledger keys, not generally usable elsewhere.
         /// </summary>
+        [System.Serializable]
         public sealed partial class ScvLedgerKeyContractInstance : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_LEDGER_KEY_CONTRACT_INSTANCE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvLedgerKeyNonce : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_LEDGER_KEY_NONCE;
@@ -377,10 +474,15 @@ namespace Stellar {
                     _nonce_key = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Nonce_key")]
+            #endif
             private SCNonceKey _nonce_key;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScvContractInstance : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_CONTRACT_INSTANCE;
@@ -392,6 +494,10 @@ namespace Stellar {
                     _instance = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Instance")]
+            #endif
             private SCContractInstance _instance;
 
             public override void ValidateCase() {}

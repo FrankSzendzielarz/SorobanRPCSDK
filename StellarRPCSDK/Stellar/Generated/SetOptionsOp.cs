@@ -25,10 +25,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SetOptionsOp
     {
         public AccountID inflationDest
@@ -39,6 +43,10 @@ namespace Stellar {
                 _inflationDest = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inflation Dest")]
+        #endif
         private AccountID _inflationDest;
 
         public uint32 clearFlags
@@ -49,6 +57,10 @@ namespace Stellar {
                 _clearFlags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Clear Flags")]
+        #endif
         private uint32 _clearFlags;
 
         /// <summary>
@@ -62,6 +74,10 @@ namespace Stellar {
                 _setFlags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Set Flags")]
+        #endif
         private uint32 _setFlags;
 
         /// <summary>
@@ -75,6 +91,10 @@ namespace Stellar {
                 _masterWeight = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Master Weight")]
+        #endif
         private uint32 _masterWeight;
 
         /// <summary>
@@ -88,6 +108,10 @@ namespace Stellar {
                 _lowThreshold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Low Threshold")]
+        #endif
         private uint32 _lowThreshold;
 
         public uint32 medThreshold
@@ -98,6 +122,10 @@ namespace Stellar {
                 _medThreshold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Med Threshold")]
+        #endif
         private uint32 _medThreshold;
 
         public uint32 highThreshold
@@ -108,6 +136,10 @@ namespace Stellar {
                 _highThreshold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"High Threshold")]
+        #endif
         private uint32 _highThreshold;
 
         public string32 homeDomain
@@ -118,6 +150,10 @@ namespace Stellar {
                 _homeDomain = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Home Domain")]
+        #endif
         private string32 _homeDomain;
 
         /// <summary>
@@ -131,6 +167,10 @@ namespace Stellar {
                 _signer = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signer")]
+        #endif
         private Signer _signer;
 
         public SetOptionsOp()

@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ContractExecutable
     {
         public abstract ContractExecutableType Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ContractExecutableWasm : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_WASM;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _wasm_hash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Wasm_hash")]
+            #endif
             private Hash _wasm_hash;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ContractExecutableStellarAsset : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET;

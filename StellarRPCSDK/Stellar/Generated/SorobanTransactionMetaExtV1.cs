@@ -39,10 +39,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SorobanTransactionMetaExtV1
     {
         public ExtensionPoint ext
@@ -53,6 +57,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         /// <summary>
@@ -66,6 +74,10 @@ namespace Stellar {
                 _totalNonRefundableResourceFeeCharged = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Non Refundable Resource Fee Charged")]
+        #endif
         private int64 _totalNonRefundableResourceFeeCharged;
 
         /// <summary>
@@ -79,6 +91,10 @@ namespace Stellar {
                 _totalRefundableResourceFeeCharged = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Refundable Resource Fee Charged")]
+        #endif
         private int64 _totalRefundableResourceFeeCharged;
 
         /// <summary>
@@ -92,6 +108,10 @@ namespace Stellar {
                 _rentFeeCharged = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Rent Fee Charged")]
+        #endif
         private int64 _rentFeeCharged;
 
         public SorobanTransactionMetaExtV1()

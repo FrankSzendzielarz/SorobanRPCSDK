@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class Preconditions
     {
         public abstract PreconditionType Discriminator { get; }
@@ -26,12 +30,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class PrecondNone : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_NONE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PrecondTime : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_TIME;
@@ -43,10 +49,15 @@ namespace Stellar {
                     _timeBounds = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Time Bounds")]
+            #endif
             private TimeBounds _timeBounds;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PrecondV2 : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_V2;
@@ -58,6 +69,10 @@ namespace Stellar {
                     _v2 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V2")]
+            #endif
             private PreconditionsV2 _v2;
 
             public override void ValidateCase() {}

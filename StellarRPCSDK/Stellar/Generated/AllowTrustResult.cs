@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class AllowTrustResult
     {
         public abstract AllowTrustResultCode Discriminator { get; }
@@ -29,42 +33,49 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class AllowTrustSuccess : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustMalformed : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustNoTrustLine : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_NO_TRUST_LINE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustTrustNotRequired : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_TRUST_NOT_REQUIRED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustCantRevoke : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_CANT_REVOKE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustSelfNotAllowed : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SELF_NOT_ALLOWED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AllowTrustLowReserve : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_LOW_RESERVE;

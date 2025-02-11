@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// This is in Stellar-ledger.x to due to a circular dependency
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class InvokeHostFunctionSuccessPreImage
     {
         public SCVal returnValue
@@ -28,6 +32,10 @@ namespace Stellar {
                 _returnValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Return Value")]
+        #endif
         private SCVal _returnValue;
 
         public ContractEvent[] events
@@ -38,6 +46,10 @@ namespace Stellar {
                 _events = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Events")]
+        #endif
         private ContractEvent[] _events;
 
         public InvokeHostFunctionSuccessPreImage()

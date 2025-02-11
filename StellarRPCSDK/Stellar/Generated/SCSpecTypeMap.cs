@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCSpecTypeMap
     {
         public SCSpecTypeDef keyType
@@ -25,6 +29,10 @@ namespace Stellar {
                 _keyType = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key Type")]
+        #endif
         private SCSpecTypeDef _keyType;
 
         public SCSpecTypeDef valueType
@@ -35,6 +43,10 @@ namespace Stellar {
                 _valueType = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Value Type")]
+        #endif
         private SCSpecTypeDef _valueType;
 
         public SCSpecTypeMap()

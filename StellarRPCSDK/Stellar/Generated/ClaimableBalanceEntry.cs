@@ -30,10 +30,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ClaimableBalanceEntry
     {
         /// <summary>
@@ -47,6 +51,10 @@ namespace Stellar {
                 _balanceID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Balance I D")]
+        #endif
         private ClaimableBalanceID _balanceID;
 
         /// <summary>
@@ -63,6 +71,10 @@ namespace Stellar {
                 _claimants = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Claimants")]
+        #endif
         private Claimant[] _claimants;
 
         /// <summary>
@@ -76,6 +88,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private Asset _asset;
 
         /// <summary>
@@ -89,6 +105,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         /// <summary>
@@ -102,6 +122,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public ClaimableBalanceEntry()
@@ -114,6 +138,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"claimants cannot exceed 10 elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -121,12 +146,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -138,6 +165,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private ClaimableBalanceEntryExtensionV1 _v1;
 
                 public override void ValidateCase() {}

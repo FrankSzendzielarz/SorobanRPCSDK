@@ -19,6 +19,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -26,6 +29,7 @@ namespace Stellar {
     /// the respective envelopes
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public enum EnvelopeType
     {
         ENVELOPE_TYPE_TX_V0 = 0,

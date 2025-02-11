@@ -21,10 +21,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCError
     {
         public abstract SCErrorType Discriminator { get; }
@@ -32,6 +36,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class SceContract : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CONTRACT;
@@ -43,10 +48,15 @@ namespace Stellar {
                     _contractCode = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Code")]
+            #endif
             private uint32 _contractCode;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceWasmVm : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_WASM_VM;
@@ -58,10 +68,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceContext : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CONTEXT;
@@ -73,10 +88,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceStorage : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_STORAGE;
@@ -88,10 +108,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceObject : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_OBJECT;
@@ -103,10 +128,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceCrypto : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CRYPTO;
@@ -118,10 +148,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceEvents : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_EVENTS;
@@ -133,10 +168,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceBudget : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_BUDGET;
@@ -148,10 +188,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceValue : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_VALUE;
@@ -163,10 +208,15 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SceAuth : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_AUTH;
@@ -178,6 +228,10 @@ namespace Stellar {
                     _code = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Code")]
+            #endif
             private SCErrorCode _code;
 
             public override void ValidateCase() {}

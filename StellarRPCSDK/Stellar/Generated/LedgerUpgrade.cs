@@ -26,10 +26,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LedgerUpgrade
     {
         public abstract LedgerUpgradeType Discriminator { get; }
@@ -37,6 +41,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class LedgerUpgradeVersion : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_VERSION;
@@ -48,6 +53,10 @@ namespace Stellar {
                     _newLedgerVersion = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Ledger Version")]
+            #endif
             private uint32 _newLedgerVersion;
 
             public override void ValidateCase() {}
@@ -55,6 +64,7 @@ namespace Stellar {
         /// <summary>
         /// update ledgerVersion
         /// </summary>
+        [System.Serializable]
         public sealed partial class LedgerUpgradeBaseFee : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_FEE;
@@ -66,6 +76,10 @@ namespace Stellar {
                     _newBaseFee = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Base Fee")]
+            #endif
             private uint32 _newBaseFee;
 
             public override void ValidateCase() {}
@@ -73,6 +87,7 @@ namespace Stellar {
         /// <summary>
         /// update baseFee
         /// </summary>
+        [System.Serializable]
         public sealed partial class LedgerUpgradeMaxTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_TX_SET_SIZE;
@@ -84,6 +99,10 @@ namespace Stellar {
                     _newMaxTxSetSize = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Max Tx Set Size")]
+            #endif
             private uint32 _newMaxTxSetSize;
 
             public override void ValidateCase() {}
@@ -91,6 +110,7 @@ namespace Stellar {
         /// <summary>
         /// update maxTxSetSize
         /// </summary>
+        [System.Serializable]
         public sealed partial class LedgerUpgradeBaseReserve : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_RESERVE;
@@ -102,6 +122,10 @@ namespace Stellar {
                     _newBaseReserve = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Base Reserve")]
+            #endif
             private uint32 _newBaseReserve;
 
             public override void ValidateCase() {}
@@ -109,6 +133,7 @@ namespace Stellar {
         /// <summary>
         /// update baseReserve
         /// </summary>
+        [System.Serializable]
         public sealed partial class LedgerUpgradeFlags : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_FLAGS;
@@ -120,6 +145,10 @@ namespace Stellar {
                     _newFlags = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Flags")]
+            #endif
             private uint32 _newFlags;
 
             public override void ValidateCase() {}
@@ -127,6 +156,7 @@ namespace Stellar {
         /// <summary>
         /// update flags
         /// </summary>
+        [System.Serializable]
         public sealed partial class LedgerUpgradeConfig : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_CONFIG;
@@ -138,10 +168,15 @@ namespace Stellar {
                     _newConfig = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Config")]
+            #endif
             private ConfigUpgradeSetKey _newConfig;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LedgerUpgradeMaxSorobanTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;
@@ -153,6 +188,10 @@ namespace Stellar {
                     _newMaxSorobanTxSetSize = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"New Max Soroban Tx Set Size")]
+            #endif
             private uint32 _newMaxSorobanTxSetSize;
 
             public override void ValidateCase() {}

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class InflationPayout
     {
         public AccountID destination
@@ -25,6 +29,10 @@ namespace Stellar {
                 _destination = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Destination")]
+        #endif
         private AccountID _destination;
 
         public int64 amount
@@ -35,6 +43,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         public InflationPayout()

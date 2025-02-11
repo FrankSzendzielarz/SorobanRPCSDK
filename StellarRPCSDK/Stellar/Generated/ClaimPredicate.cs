@@ -22,10 +22,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ClaimPredicate
     {
         public abstract ClaimPredicateType Discriminator { get; }
@@ -33,12 +37,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ClaimPredicateUnconditional : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimPredicateAnd : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
@@ -53,10 +59,15 @@ namespace Stellar {
                     _andPredicates = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"And Predicates")]
+            #endif
             private ClaimPredicate[] _andPredicates;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimPredicateOr : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
@@ -71,10 +82,15 @@ namespace Stellar {
                     _orPredicates = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Or Predicates")]
+            #endif
             private ClaimPredicate[] _orPredicates;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimPredicateNot : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_NOT;
@@ -86,10 +102,15 @@ namespace Stellar {
                     _notPredicate = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Not Predicate")]
+            #endif
             private ClaimPredicate _notPredicate;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimPredicateBeforeAbsoluteTime : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
@@ -101,6 +122,10 @@ namespace Stellar {
                     _absBefore = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Abs Before")]
+            #endif
             private int64 _absBefore;
 
             public override void ValidateCase() {}
@@ -108,6 +133,7 @@ namespace Stellar {
         /// <summary>
         /// Predicate will be true if closeTime < absBefore
         /// </summary>
+        [System.Serializable]
         public sealed partial class ClaimPredicateBeforeRelativeTime : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;
@@ -119,6 +145,10 @@ namespace Stellar {
                     _relBefore = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Rel Before")]
+            #endif
             private int64 _relBefore;
 
             public override void ValidateCase() {}

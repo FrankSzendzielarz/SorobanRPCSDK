@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LedgerCloseMeta
     {
         public abstract int Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : LedgerCloseMeta
         {
             public override int Discriminator => 0;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _v0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0")]
+            #endif
             private LedgerCloseMetaV0 _v0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_1 : LedgerCloseMeta
         {
             public override int Discriminator => 1;
@@ -50,6 +60,10 @@ namespace Stellar {
                     _v1 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V1")]
+            #endif
             private LedgerCloseMetaV1 _v1;
 
             public override void ValidateCase() {}

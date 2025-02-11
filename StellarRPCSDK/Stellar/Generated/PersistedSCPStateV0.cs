@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class PersistedSCPStateV0
     {
         public SCPEnvelope[] scpEnvelopes
@@ -26,6 +30,10 @@ namespace Stellar {
                 _scpEnvelopes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Scp Envelopes")]
+        #endif
         private SCPEnvelope[] _scpEnvelopes;
 
         public SCPQuorumSet[] quorumSets
@@ -36,6 +44,10 @@ namespace Stellar {
                 _quorumSets = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Quorum Sets")]
+        #endif
         private SCPQuorumSet[] _quorumSets;
 
         public StoredTransactionSet[] txSets
@@ -46,6 +58,10 @@ namespace Stellar {
                 _txSets = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Sets")]
+        #endif
         private StoredTransactionSet[] _txSets;
 
         public PersistedSCPStateV0()

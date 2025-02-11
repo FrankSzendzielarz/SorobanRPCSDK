@@ -36,10 +36,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerCloseMetaV1
     {
         public LedgerCloseMetaExt ext
@@ -50,6 +54,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private LedgerCloseMetaExt _ext;
 
         public LedgerHeaderHistoryEntry ledgerHeader
@@ -60,6 +68,10 @@ namespace Stellar {
                 _ledgerHeader = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Header")]
+        #endif
         private LedgerHeaderHistoryEntry _ledgerHeader;
 
         public GeneralizedTransactionSet txSet
@@ -70,6 +82,10 @@ namespace Stellar {
                 _txSet = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Set")]
+        #endif
         private GeneralizedTransactionSet _txSet;
 
         /// <summary>
@@ -83,6 +99,10 @@ namespace Stellar {
                 _txProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Processing")]
+        #endif
         private TransactionResultMeta[] _txProcessing;
 
         /// <summary>
@@ -96,6 +116,10 @@ namespace Stellar {
                 _upgradesProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Upgrades Processing")]
+        #endif
         private UpgradeEntryMeta[] _upgradesProcessing;
 
         /// <summary>
@@ -109,6 +133,10 @@ namespace Stellar {
                 _scpInfo = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Scp Info")]
+        #endif
         private SCPHistoryEntry[] _scpInfo;
 
         /// <summary>
@@ -122,6 +150,10 @@ namespace Stellar {
                 _totalByteSizeOfBucketList = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Byte Size Of Bucket List")]
+        #endif
         private uint64 _totalByteSizeOfBucketList;
 
         /// <summary>
@@ -135,6 +167,10 @@ namespace Stellar {
                 _evictedTemporaryLedgerKeys = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Evicted Temporary Ledger Keys")]
+        #endif
         private LedgerKey[] _evictedTemporaryLedgerKeys;
 
         /// <summary>
@@ -148,6 +184,10 @@ namespace Stellar {
                 _evictedPersistentLedgerEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Evicted Persistent Ledger Entries")]
+        #endif
         private LedgerEntry[] _evictedPersistentLedgerEntries;
 
         public LedgerCloseMetaV1()

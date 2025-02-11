@@ -38,10 +38,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class PreconditionsV2
     {
         public TimeBounds timeBounds
@@ -52,6 +56,10 @@ namespace Stellar {
                 _timeBounds = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Time Bounds")]
+        #endif
         private TimeBounds _timeBounds;
 
         /// <summary>
@@ -65,6 +73,10 @@ namespace Stellar {
                 _ledgerBounds = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Bounds")]
+        #endif
         private LedgerBounds _ledgerBounds;
 
         /// <summary>
@@ -78,6 +90,10 @@ namespace Stellar {
                 _minSeqNum = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Seq Num")]
+        #endif
         private SequenceNumber _minSeqNum;
 
         /// <summary>
@@ -91,6 +107,10 @@ namespace Stellar {
                 _minSeqAge = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Seq Age")]
+        #endif
         private Duration _minSeqAge;
 
         /// <summary>
@@ -104,6 +124,10 @@ namespace Stellar {
                 _minSeqLedgerGap = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Seq Ledger Gap")]
+        #endif
         private uint32 _minSeqLedgerGap;
 
         /// <summary>
@@ -120,6 +144,10 @@ namespace Stellar {
                 _extraSigners = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Extra Signers")]
+        #endif
         private SignerKey[] _extraSigners;
 
         public PreconditionsV2()

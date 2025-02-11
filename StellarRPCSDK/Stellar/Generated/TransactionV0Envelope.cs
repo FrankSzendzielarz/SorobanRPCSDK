@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionV0Envelope
     {
         public TransactionV0 tx
@@ -27,6 +31,10 @@ namespace Stellar {
                 _tx = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx")]
+        #endif
         private TransactionV0 _tx;
 
         [MaxLength(20)]
@@ -40,6 +48,10 @@ namespace Stellar {
                 _signatures = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signatures")]
+        #endif
         private DecoratedSignature[] _signatures;
 
         public TransactionV0Envelope()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ArchivalProofNode
     {
         public uint32 index
@@ -25,6 +29,10 @@ namespace Stellar {
                 _index = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Index")]
+        #endif
         private uint32 _index;
 
         public Hash hash
@@ -35,6 +43,10 @@ namespace Stellar {
                 _hash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Hash")]
+        #endif
         private Hash _hash;
 
         public ArchivalProofNode()

@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ClawbackClaimableBalanceResult
     {
         public abstract ClawbackClaimableBalanceResultCode Discriminator { get; }
@@ -27,24 +31,28 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ClawbackClaimableBalanceSuccess : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackClaimableBalanceDoesNotExist : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackClaimableBalanceNotIssuer : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackClaimableBalanceNotClawbackEnabled : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;

@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class CreateClaimableBalanceResult
     {
         public abstract CreateClaimableBalanceResultCode Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceSuccess : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_SUCCESS;
@@ -40,34 +45,43 @@ namespace Stellar {
                     _balanceID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Balance I D")]
+            #endif
             private ClaimableBalanceID _balanceID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceMalformed : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceLowReserve : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_LOW_RESERVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceNoTrust : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceNotAuthorized : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateClaimableBalanceUnderfunded : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_UNDERFUNDED;

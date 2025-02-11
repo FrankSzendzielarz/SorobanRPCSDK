@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ColdArchiveDeletedLeaf
     {
         public uint32 index
@@ -25,6 +29,10 @@ namespace Stellar {
                 _index = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Index")]
+        #endif
         private uint32 _index;
 
         public LedgerKey deletedKey
@@ -35,6 +43,10 @@ namespace Stellar {
                 _deletedKey = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Deleted Key")]
+        #endif
         private LedgerKey _deletedKey;
 
         public ColdArchiveDeletedLeaf()

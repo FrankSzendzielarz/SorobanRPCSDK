@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class NonexistenceProofBody
     {
         public ColdArchiveBucketEntry[] entriesToProve
@@ -28,6 +32,10 @@ namespace Stellar {
                 _entriesToProve = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Entries To Prove")]
+        #endif
         private ColdArchiveBucketEntry[] _entriesToProve;
 
         /// <summary>
@@ -41,6 +49,10 @@ namespace Stellar {
                 _proofLevels = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Proof Levels")]
+        #endif
         private ProofLevel[] _proofLevels;
 
         public NonexistenceProofBody()

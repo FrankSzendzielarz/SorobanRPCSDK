@@ -37,10 +37,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ConfigSettingEntry
     {
         public abstract ConfigSettingID Discriminator { get; }
@@ -48,6 +52,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ConfigSettingContractMaxSizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
@@ -59,10 +64,15 @@ namespace Stellar {
                     _contractMaxSizeBytes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Max Size Bytes")]
+            #endif
             private uint32 _contractMaxSizeBytes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractComputeV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
@@ -74,10 +84,15 @@ namespace Stellar {
                     _contractCompute = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Compute")]
+            #endif
             private ConfigSettingContractComputeV0 _contractCompute;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractLedgerCostV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
@@ -89,10 +104,15 @@ namespace Stellar {
                     _contractLedgerCost = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Ledger Cost")]
+            #endif
             private ConfigSettingContractLedgerCostV0 _contractLedgerCost;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractHistoricalDataV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
@@ -104,10 +124,15 @@ namespace Stellar {
                     _contractHistoricalData = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Historical Data")]
+            #endif
             private ConfigSettingContractHistoricalDataV0 _contractHistoricalData;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractEventsV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
@@ -119,10 +144,15 @@ namespace Stellar {
                     _contractEvents = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Events")]
+            #endif
             private ConfigSettingContractEventsV0 _contractEvents;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractBandwidthV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
@@ -134,10 +164,15 @@ namespace Stellar {
                     _contractBandwidth = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Bandwidth")]
+            #endif
             private ConfigSettingContractBandwidthV0 _contractBandwidth;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractCostParamsCpuInstructions : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
@@ -149,10 +184,15 @@ namespace Stellar {
                     _contractCostParamsCpuInsns = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Cost Params Cpu Insns")]
+            #endif
             private ContractCostParams _contractCostParamsCpuInsns;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractCostParamsMemoryBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
@@ -164,10 +204,15 @@ namespace Stellar {
                     _contractCostParamsMemBytes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Cost Params Mem Bytes")]
+            #endif
             private ContractCostParams _contractCostParamsMemBytes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractDataKeySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
@@ -179,10 +224,15 @@ namespace Stellar {
                     _contractDataKeySizeBytes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Data Key Size Bytes")]
+            #endif
             private uint32 _contractDataKeySizeBytes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractDataEntrySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
@@ -194,10 +244,15 @@ namespace Stellar {
                     _contractDataEntrySizeBytes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Data Entry Size Bytes")]
+            #endif
             private uint32 _contractDataEntrySizeBytes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingStateArchival : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
@@ -209,10 +264,15 @@ namespace Stellar {
                     _stateArchivalSettings = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"State Archival Settings")]
+            #endif
             private StateArchivalSettings _stateArchivalSettings;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingContractExecutionLanes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
@@ -224,10 +284,15 @@ namespace Stellar {
                     _contractExecutionLanes = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Execution Lanes")]
+            #endif
             private ConfigSettingContractExecutionLanesV0 _contractExecutionLanes;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingBucketlistSizeWindow : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
@@ -239,10 +304,15 @@ namespace Stellar {
                     _bucketListSizeWindow = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Bucket List Size Window")]
+            #endif
             private uint64[] _bucketListSizeWindow;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSettingEvictionIterator : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;
@@ -254,6 +324,10 @@ namespace Stellar {
                     _evictionIterator = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Eviction Iterator")]
+            #endif
             private EvictionIterator _evictionIterator;
 
             public override void ValidateCase() {}

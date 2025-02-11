@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ContractCostParamEntry
     {
         /// <summary>
@@ -30,6 +34,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         public int64 constTerm
@@ -40,6 +48,10 @@ namespace Stellar {
                 _constTerm = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Const Term")]
+        #endif
         private int64 _constTerm;
 
         public int64 linearTerm
@@ -50,6 +62,10 @@ namespace Stellar {
                 _linearTerm = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Linear Term")]
+        #endif
         private int64 _linearTerm;
 
         public ContractCostParamEntry()

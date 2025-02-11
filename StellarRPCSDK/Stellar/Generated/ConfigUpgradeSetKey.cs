@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigUpgradeSetKey
     {
         public Hash contractID
@@ -24,6 +28,10 @@ namespace Stellar {
                 _contractID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Contract I D")]
+        #endif
         private Hash _contractID;
 
         public Hash contentHash
@@ -34,6 +42,10 @@ namespace Stellar {
                 _contentHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Content Hash")]
+        #endif
         private Hash _contentHash;
 
         public ConfigUpgradeSetKey()

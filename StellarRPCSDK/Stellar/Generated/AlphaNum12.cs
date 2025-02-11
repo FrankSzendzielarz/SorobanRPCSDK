@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AlphaNum12
     {
         public AssetCode12 assetCode
@@ -25,6 +29,10 @@ namespace Stellar {
                 _assetCode = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset Code")]
+        #endif
         private AssetCode12 _assetCode;
 
         public AccountID issuer
@@ -35,6 +43,10 @@ namespace Stellar {
                 _issuer = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Issuer")]
+        #endif
         private AccountID _issuer;
 
         public AlphaNum12()

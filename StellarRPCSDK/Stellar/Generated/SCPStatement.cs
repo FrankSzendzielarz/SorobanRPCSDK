@@ -44,10 +44,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCPStatement
     {
         public NodeID nodeID
@@ -58,6 +62,10 @@ namespace Stellar {
                 _nodeID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Node I D")]
+        #endif
         private NodeID _nodeID;
 
         /// <summary>
@@ -71,6 +79,10 @@ namespace Stellar {
                 _slotIndex = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Slot Index")]
+        #endif
         private uint64 _slotIndex;
 
         public pledgesUnion pledges
@@ -81,6 +93,10 @@ namespace Stellar {
                 _pledges = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Pledges")]
+        #endif
         private pledgesUnion _pledges;
 
         public SCPStatement()
@@ -91,6 +107,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class pledgesUnion
         {
             public abstract SCPStatementType Discriminator { get; }
@@ -99,6 +116,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class prepareStruct
             {
                 public Hash quorumSetHash
@@ -109,6 +127,10 @@ namespace Stellar {
                         _quorumSetHash = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Quorum Set Hash")]
+                #endif
                 private Hash _quorumSetHash;
 
                 /// <summary>
@@ -122,6 +144,10 @@ namespace Stellar {
                         _ballot = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ballot")]
+                #endif
                 private SCPBallot _ballot;
 
                 /// <summary>
@@ -135,6 +161,10 @@ namespace Stellar {
                         _prepared = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Prepared")]
+                #endif
                 private SCPBallot _prepared;
 
                 /// <summary>
@@ -148,6 +178,10 @@ namespace Stellar {
                         _preparedPrime = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Prepared Prime")]
+                #endif
                 private SCPBallot _preparedPrime;
 
                 /// <summary>
@@ -161,6 +195,10 @@ namespace Stellar {
                         _nC = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N C")]
+                #endif
                 private uint32 _nC;
 
                 /// <summary>
@@ -174,6 +212,10 @@ namespace Stellar {
                         _nH = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N H")]
+                #endif
                 private uint32 _nH;
 
                 public prepareStruct()
@@ -241,6 +283,7 @@ namespace Stellar {
                 }
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class confirmStruct
             {
                 public SCPBallot ballot
@@ -251,6 +294,10 @@ namespace Stellar {
                         _ballot = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ballot")]
+                #endif
                 private SCPBallot _ballot;
 
                 /// <summary>
@@ -264,6 +311,10 @@ namespace Stellar {
                         _nPrepared = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N Prepared")]
+                #endif
                 private uint32 _nPrepared;
 
                 /// <summary>
@@ -277,6 +328,10 @@ namespace Stellar {
                         _nCommit = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N Commit")]
+                #endif
                 private uint32 _nCommit;
 
                 /// <summary>
@@ -290,6 +345,10 @@ namespace Stellar {
                         _nH = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N H")]
+                #endif
                 private uint32 _nH;
 
                 /// <summary>
@@ -303,6 +362,10 @@ namespace Stellar {
                         _quorumSetHash = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Quorum Set Hash")]
+                #endif
                 private Hash _quorumSetHash;
 
                 public confirmStruct()
@@ -348,6 +411,7 @@ namespace Stellar {
                 }
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class externalizeStruct
             {
                 public SCPBallot commit
@@ -358,6 +422,10 @@ namespace Stellar {
                         _commit = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Commit")]
+                #endif
                 private SCPBallot _commit;
 
                 /// <summary>
@@ -371,6 +439,10 @@ namespace Stellar {
                         _nH = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"N H")]
+                #endif
                 private uint32 _nH;
 
                 /// <summary>
@@ -384,6 +456,10 @@ namespace Stellar {
                         _commitQuorumSetHash = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Commit Quorum Set Hash")]
+                #endif
                 private Hash _commitQuorumSetHash;
 
                 public externalizeStruct()
@@ -424,6 +500,7 @@ namespace Stellar {
                     return result;
                 }
             }
+            [System.Serializable]
             public sealed partial class ScpStPrepare : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_PREPARE;
@@ -435,10 +512,15 @@ namespace Stellar {
                         _prepare = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Prepare")]
+                #endif
                 private prepareStruct _prepare;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ScpStConfirm : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_CONFIRM;
@@ -450,10 +532,15 @@ namespace Stellar {
                         _confirm = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Confirm")]
+                #endif
                 private confirmStruct _confirm;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ScpStExternalize : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_EXTERNALIZE;
@@ -465,10 +552,15 @@ namespace Stellar {
                         _externalize = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Externalize")]
+                #endif
                 private externalizeStruct _externalize;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ScpStNominate : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_NOMINATE;
@@ -480,6 +572,10 @@ namespace Stellar {
                         _nominate = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Nominate")]
+                #endif
                 private SCPNomination _nominate;
 
                 public override void ValidateCase() {}

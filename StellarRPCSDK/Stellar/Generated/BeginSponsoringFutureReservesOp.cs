@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class BeginSponsoringFutureReservesOp
     {
         public AccountID sponsoredID
@@ -24,6 +28,10 @@ namespace Stellar {
                 _sponsoredID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Sponsored I D")]
+        #endif
         private AccountID _sponsoredID;
 
         public BeginSponsoringFutureReservesOp()

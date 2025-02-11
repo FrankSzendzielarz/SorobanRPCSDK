@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ClawbackClaimableBalanceOp
     {
         public ClaimableBalanceID balanceID
@@ -24,6 +28,10 @@ namespace Stellar {
                 _balanceID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Balance I D")]
+        #endif
         private ClaimableBalanceID _balanceID;
 
         public ClawbackClaimableBalanceOp()

@@ -45,10 +45,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerHeader
     {
         public uint32 ledgerVersion
@@ -59,6 +63,10 @@ namespace Stellar {
                 _ledgerVersion = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Version")]
+        #endif
         private uint32 _ledgerVersion;
 
         /// <summary>
@@ -72,6 +80,10 @@ namespace Stellar {
                 _previousLedgerHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Previous Ledger Hash")]
+        #endif
         private Hash _previousLedgerHash;
 
         /// <summary>
@@ -85,6 +97,10 @@ namespace Stellar {
                 _scpValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Scp Value")]
+        #endif
         private StellarValue _scpValue;
 
         /// <summary>
@@ -98,6 +114,10 @@ namespace Stellar {
                 _txSetResultHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Set Result Hash")]
+        #endif
         private Hash _txSetResultHash;
 
         /// <summary>
@@ -111,6 +131,10 @@ namespace Stellar {
                 _bucketListHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Hash")]
+        #endif
         private Hash _bucketListHash;
 
         public uint32 ledgerSeq
@@ -121,6 +145,10 @@ namespace Stellar {
                 _ledgerSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Seq")]
+        #endif
         private uint32 _ledgerSeq;
 
         public int64 totalCoins
@@ -131,6 +159,10 @@ namespace Stellar {
                 _totalCoins = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Coins")]
+        #endif
         private int64 _totalCoins;
 
         public int64 feePool
@@ -141,6 +173,10 @@ namespace Stellar {
                 _feePool = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Pool")]
+        #endif
         private int64 _feePool;
 
         /// <summary>
@@ -154,6 +190,10 @@ namespace Stellar {
                 _inflationSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inflation Seq")]
+        #endif
         private uint32 _inflationSeq;
 
         public uint64 idPool
@@ -164,6 +204,10 @@ namespace Stellar {
                 _idPool = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Id Pool")]
+        #endif
         private uint64 _idPool;
 
         public uint32 baseFee
@@ -174,6 +218,10 @@ namespace Stellar {
                 _baseFee = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Base Fee")]
+        #endif
         private uint32 _baseFee;
 
         /// <summary>
@@ -187,6 +235,10 @@ namespace Stellar {
                 _baseReserve = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Base Reserve")]
+        #endif
         private uint32 _baseReserve;
 
         public uint32 maxTxSetSize
@@ -197,6 +249,10 @@ namespace Stellar {
                 _maxTxSetSize = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Tx Set Size")]
+        #endif
         private uint32 _maxTxSetSize;
 
         [MinLength(4)]
@@ -211,6 +267,10 @@ namespace Stellar {
                 _skipList = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Skip List")]
+        #endif
         private Hash[] _skipList = new Hash[4];
 
         /// <summary>
@@ -224,6 +284,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public LedgerHeader()
@@ -237,6 +301,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"skipList must be exactly 4 elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -244,12 +309,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -261,6 +328,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private LedgerHeaderExtensionV1 _v1;
 
                 public override void ValidateCase() {}

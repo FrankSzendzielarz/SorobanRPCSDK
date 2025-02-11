@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TopologyResponseBodyV2
     {
         public TimeSlicedPeerDataList inboundPeers
@@ -26,6 +30,10 @@ namespace Stellar {
                 _inboundPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inbound Peers")]
+        #endif
         private TimeSlicedPeerDataList _inboundPeers;
 
         public TimeSlicedPeerDataList outboundPeers
@@ -36,6 +44,10 @@ namespace Stellar {
                 _outboundPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Outbound Peers")]
+        #endif
         private TimeSlicedPeerDataList _outboundPeers;
 
         public TimeSlicedNodeData nodeData
@@ -46,6 +58,10 @@ namespace Stellar {
                 _nodeData = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Node Data")]
+        #endif
         private TimeSlicedNodeData _nodeData;
 
         public TopologyResponseBodyV2()

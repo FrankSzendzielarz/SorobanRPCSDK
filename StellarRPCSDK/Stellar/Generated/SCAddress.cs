@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCAddress
     {
         public abstract SCAddressType Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ScAddressTypeAccount : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _accountId = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account Id")]
+            #endif
             private AccountID _accountId;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScAddressTypeContract : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;
@@ -50,6 +60,10 @@ namespace Stellar {
                     _contractId = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Id")]
+            #endif
             private Hash _contractId;
 
             public override void ValidateCase() {}

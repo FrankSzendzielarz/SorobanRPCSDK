@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class Hello
     {
         public uint32 ledgerVersion
@@ -32,6 +36,10 @@ namespace Stellar {
                 _ledgerVersion = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Version")]
+        #endif
         private uint32 _ledgerVersion;
 
         public uint32 overlayVersion
@@ -42,6 +50,10 @@ namespace Stellar {
                 _overlayVersion = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Overlay Version")]
+        #endif
         private uint32 _overlayVersion;
 
         public uint32 overlayMinVersion
@@ -52,6 +64,10 @@ namespace Stellar {
                 _overlayMinVersion = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Overlay Min Version")]
+        #endif
         private uint32 _overlayMinVersion;
 
         public Hash networkID
@@ -62,6 +78,10 @@ namespace Stellar {
                 _networkID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Network I D")]
+        #endif
         private Hash _networkID;
 
         [MaxLength(100)]
@@ -75,6 +95,10 @@ namespace Stellar {
                 _versionStr = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Version Str")]
+        #endif
         private string _versionStr;
 
         public int listeningPort
@@ -85,6 +109,10 @@ namespace Stellar {
                 _listeningPort = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Listening Port")]
+        #endif
         private int _listeningPort;
 
         public NodeID peerID
@@ -95,6 +123,10 @@ namespace Stellar {
                 _peerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Peer I D")]
+        #endif
         private NodeID _peerID;
 
         public AuthCert cert
@@ -105,6 +137,10 @@ namespace Stellar {
                 _cert = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Cert")]
+        #endif
         private AuthCert _cert;
 
         public uint256 nonce
@@ -115,6 +151,10 @@ namespace Stellar {
                 _nonce = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Nonce")]
+        #endif
         private uint256 _nonce;
 
         public Hello()

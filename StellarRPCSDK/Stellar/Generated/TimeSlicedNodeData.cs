@@ -25,10 +25,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeSlicedNodeData
     {
         public uint32 addedAuthenticatedPeers
@@ -39,6 +43,10 @@ namespace Stellar {
                 _addedAuthenticatedPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Added Authenticated Peers")]
+        #endif
         private uint32 _addedAuthenticatedPeers;
 
         public uint32 droppedAuthenticatedPeers
@@ -49,6 +57,10 @@ namespace Stellar {
                 _droppedAuthenticatedPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Dropped Authenticated Peers")]
+        #endif
         private uint32 _droppedAuthenticatedPeers;
 
         public uint32 totalInboundPeerCount
@@ -59,6 +71,10 @@ namespace Stellar {
                 _totalInboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Inbound Peer Count")]
+        #endif
         private uint32 _totalInboundPeerCount;
 
         public uint32 totalOutboundPeerCount
@@ -69,6 +85,10 @@ namespace Stellar {
                 _totalOutboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Outbound Peer Count")]
+        #endif
         private uint32 _totalOutboundPeerCount;
 
         /// <summary>
@@ -82,6 +102,10 @@ namespace Stellar {
                 _p75SCPFirstToSelfLatencyMs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"P75 S C P First To Self Latency Ms")]
+        #endif
         private uint32 _p75SCPFirstToSelfLatencyMs;
 
         public uint32 p75SCPSelfToOtherLatencyMs
@@ -92,6 +116,10 @@ namespace Stellar {
                 _p75SCPSelfToOtherLatencyMs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"P75 S C P Self To Other Latency Ms")]
+        #endif
         private uint32 _p75SCPSelfToOtherLatencyMs;
 
         /// <summary>
@@ -105,6 +133,10 @@ namespace Stellar {
                 _lostSyncCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Lost Sync Count")]
+        #endif
         private uint32 _lostSyncCount;
 
         /// <summary>
@@ -118,6 +150,10 @@ namespace Stellar {
                 _isValidator = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Is Validator")]
+        #endif
         private bool _isValidator;
 
         public uint32 maxInboundPeerCount
@@ -128,6 +164,10 @@ namespace Stellar {
                 _maxInboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Inbound Peer Count")]
+        #endif
         private uint32 _maxInboundPeerCount;
 
         public uint32 maxOutboundPeerCount
@@ -138,6 +178,10 @@ namespace Stellar {
                 _maxOutboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Outbound Peer Count")]
+        #endif
         private uint32 _maxOutboundPeerCount;
 
         public TimeSlicedNodeData()

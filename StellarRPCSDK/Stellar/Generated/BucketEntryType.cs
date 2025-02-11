@@ -15,6 +15,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -22,6 +25,7 @@ namespace Stellar {
     /// Entries used to define the bucket list
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public enum BucketEntryType
     {
         METAENTRY = -1,

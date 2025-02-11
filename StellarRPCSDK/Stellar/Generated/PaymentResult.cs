@@ -21,10 +21,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class PaymentResult
     {
         public abstract PaymentResultCode Discriminator { get; }
@@ -32,60 +36,70 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class PaymentSuccess : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentMalformed : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentUnderfunded : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentSrcNoTrust : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentSrcNotAuthorized : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentNoDestination : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_DESTINATION;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentNoTrust : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentNotAuthorized : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentLineFull : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_LINE_FULL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PaymentNoIssuer : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_ISSUER;

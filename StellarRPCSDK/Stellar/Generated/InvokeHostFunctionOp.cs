@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class InvokeHostFunctionOp
     {
         /// <summary>
@@ -30,6 +34,10 @@ namespace Stellar {
                 _hostFunction = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Host Function")]
+        #endif
         private HostFunction _hostFunction;
 
         /// <summary>
@@ -43,6 +51,10 @@ namespace Stellar {
                 _auth = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Auth")]
+        #endif
         private SorobanAuthorizationEntry[] _auth;
 
         public InvokeHostFunctionOp()

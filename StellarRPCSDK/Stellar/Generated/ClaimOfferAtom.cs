@@ -20,10 +20,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ClaimOfferAtom
     {
         /// <summary>
@@ -37,6 +41,10 @@ namespace Stellar {
                 _sellerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seller I D")]
+        #endif
         private AccountID _sellerID;
 
         /// <summary>
@@ -50,6 +58,10 @@ namespace Stellar {
                 _offerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Offer I D")]
+        #endif
         private int64 _offerID;
 
         /// <summary>
@@ -63,6 +75,10 @@ namespace Stellar {
                 _assetSold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset Sold")]
+        #endif
         private Asset _assetSold;
 
         public int64 amountSold
@@ -73,6 +89,10 @@ namespace Stellar {
                 _amountSold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount Sold")]
+        #endif
         private int64 _amountSold;
 
         /// <summary>
@@ -86,6 +106,10 @@ namespace Stellar {
                 _assetBought = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset Bought")]
+        #endif
         private Asset _assetBought;
 
         public int64 amountBought
@@ -96,6 +120,10 @@ namespace Stellar {
                 _amountBought = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount Bought")]
+        #endif
         private int64 _amountBought;
 
         public ClaimOfferAtom()

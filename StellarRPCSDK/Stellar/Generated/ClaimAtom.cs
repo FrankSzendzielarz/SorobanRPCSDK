@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ClaimAtom
     {
         public abstract ClaimAtomType Discriminator { get; }
@@ -26,6 +30,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ClaimAtomTypeV0 : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_V0;
@@ -37,10 +42,15 @@ namespace Stellar {
                     _v0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0")]
+            #endif
             private ClaimOfferAtomV0 _v0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimAtomTypeOrderBook : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK;
@@ -52,10 +62,15 @@ namespace Stellar {
                     _orderBook = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Order Book")]
+            #endif
             private ClaimOfferAtom _orderBook;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimAtomTypeLiquidityPool : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
@@ -67,6 +82,10 @@ namespace Stellar {
                     _liquidityPool = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Liquidity Pool")]
+            #endif
             private ClaimLiquidityAtom _liquidityPool;
 
             public override void ValidateCase() {}

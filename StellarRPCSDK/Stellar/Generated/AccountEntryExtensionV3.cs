@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AccountEntryExtensionV3
     {
         /// <summary>
@@ -35,6 +39,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         /// <summary>
@@ -48,6 +56,10 @@ namespace Stellar {
                 _seqLedger = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seq Ledger")]
+        #endif
         private uint32 _seqLedger;
 
         /// <summary>
@@ -61,6 +73,10 @@ namespace Stellar {
                 _seqTime = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seq Time")]
+        #endif
         private TimePoint _seqTime;
 
         public AccountEntryExtensionV3()

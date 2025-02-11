@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerCloseValueSignature
     {
         public NodeID nodeID
@@ -25,6 +29,10 @@ namespace Stellar {
                 _nodeID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Node I D")]
+        #endif
         private NodeID _nodeID;
 
         /// <summary>
@@ -38,6 +46,10 @@ namespace Stellar {
                 _signature = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signature")]
+        #endif
         private Signature _signature;
 
         public LedgerCloseValueSignature()

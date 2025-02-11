@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class CreateContractArgs
     {
         public ContractIDPreimage contractIDPreimage
@@ -25,6 +29,10 @@ namespace Stellar {
                 _contractIDPreimage = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Contract I D Preimage")]
+        #endif
         private ContractIDPreimage _contractIDPreimage;
 
         public ContractExecutable executable
@@ -35,6 +43,10 @@ namespace Stellar {
                 _executable = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Executable")]
+        #endif
         private ContractExecutable _executable;
 
         public CreateContractArgs()

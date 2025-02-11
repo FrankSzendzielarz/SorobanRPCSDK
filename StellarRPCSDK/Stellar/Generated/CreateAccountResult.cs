@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class CreateAccountResult
     {
         public abstract CreateAccountResultCode Discriminator { get; }
@@ -27,30 +31,35 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class CreateAccountSuccess : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateAccountMalformed : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateAccountUnderfunded : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateAccountLowReserve : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class CreateAccountAlreadyExist : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;

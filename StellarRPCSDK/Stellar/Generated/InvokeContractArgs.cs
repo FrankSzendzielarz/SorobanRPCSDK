@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class InvokeContractArgs
     {
         public SCAddress contractAddress
@@ -25,6 +29,10 @@ namespace Stellar {
                 _contractAddress = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Contract Address")]
+        #endif
         private SCAddress _contractAddress;
 
         public SCSymbol functionName
@@ -35,6 +43,10 @@ namespace Stellar {
                 _functionName = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Function Name")]
+        #endif
         private SCSymbol _functionName;
 
         public SCVal[] args
@@ -45,6 +57,10 @@ namespace Stellar {
                 _args = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Args")]
+        #endif
         private SCVal[] _args;
 
         public InvokeContractArgs()

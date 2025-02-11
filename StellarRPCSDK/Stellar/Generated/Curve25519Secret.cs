@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class Curve25519Secret
     {
         [MinLength(32)]
@@ -28,6 +32,10 @@ namespace Stellar {
                 _key = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key")]
+        #endif
         private byte[] _key = new byte[32];
 
         public Curve25519Secret()

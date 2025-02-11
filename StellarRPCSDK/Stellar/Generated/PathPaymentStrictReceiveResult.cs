@@ -31,10 +31,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class PathPaymentStrictReceiveResult
     {
         public abstract PathPaymentStrictReceiveResultCode Discriminator { get; }
@@ -43,6 +47,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class successStruct
         {
             public ClaimAtom[] offers
@@ -53,6 +58,10 @@ namespace Stellar {
                     _offers = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Offers")]
+            #endif
             private ClaimAtom[] _offers;
 
             public SimplePaymentResult last
@@ -63,6 +72,10 @@ namespace Stellar {
                     _last = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Last")]
+            #endif
             private SimplePaymentResult _last;
 
             public successStruct()
@@ -112,6 +125,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveSuccess : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SUCCESS;
@@ -123,58 +137,71 @@ namespace Stellar {
                     _success = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Success")]
+            #endif
             private successStruct _success;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveMalformed : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveUnderfunded : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveSrcNoTrust : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveSrcNotAuthorized : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_SRC_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveNoDestination : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_DESTINATION;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveNoTrust : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveNotAuthorized : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveLineFull : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_LINE_FULL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveNoIssuer : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_NO_ISSUER;
@@ -186,6 +213,10 @@ namespace Stellar {
                     _noIssuer = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"No Issuer")]
+            #endif
             private Asset _noIssuer;
 
             public override void ValidateCase() {}
@@ -193,6 +224,7 @@ namespace Stellar {
         /// <summary>
         /// the asset that caused the error
         /// </summary>
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveTooFewOffers : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_TOO_FEW_OFFERS;
@@ -202,6 +234,7 @@ namespace Stellar {
         /// <summary>
         /// the asset that caused the error
         /// </summary>
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveOfferCrossSelf : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OFFER_CROSS_SELF;
@@ -211,6 +244,7 @@ namespace Stellar {
         /// <summary>
         /// the asset that caused the error
         /// </summary>
+        [System.Serializable]
         public sealed partial class PathPaymentStrictReceiveOverSendmax : PathPaymentStrictReceiveResult
         {
             public override PathPaymentStrictReceiveResultCode Discriminator => PathPaymentStrictReceiveResultCode.PATH_PAYMENT_STRICT_RECEIVE_OVER_SENDMAX;

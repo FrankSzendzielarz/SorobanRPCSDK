@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class AccountMergeResult
     {
         public abstract AccountMergeResultCode Discriminator { get; }
@@ -30,6 +34,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class AccountMergeSuccess : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS;
@@ -41,6 +46,10 @@ namespace Stellar {
                     _sourceAccountBalance = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Source Account Balance")]
+            #endif
             private int64 _sourceAccountBalance;
 
             public override void ValidateCase() {}
@@ -48,6 +57,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeMalformed : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED;
@@ -57,6 +67,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeNoAccount : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT;
@@ -66,6 +77,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeImmutableSet : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET;
@@ -75,6 +87,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeHasSubEntries : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES;
@@ -84,6 +97,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeSeqnumTooFar : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR;
@@ -93,6 +107,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeDestFull : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL;
@@ -102,6 +117,7 @@ namespace Stellar {
         /// <summary>
         /// how much got transferred from source account
         /// </summary>
+        [System.Serializable]
         public sealed partial class AccountMergeIsSponsor : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR;

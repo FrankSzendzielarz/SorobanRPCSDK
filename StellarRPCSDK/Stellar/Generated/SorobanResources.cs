@@ -18,6 +18,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -25,6 +28,7 @@ namespace Stellar {
     /// The transaction will fail if it exceeds any of these limits.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SorobanResources
     {
         /// <summary>
@@ -38,6 +42,10 @@ namespace Stellar {
                 _footprint = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Footprint")]
+        #endif
         private LedgerFootprint _footprint;
 
         /// <summary>
@@ -51,6 +59,10 @@ namespace Stellar {
                 _instructions = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Instructions")]
+        #endif
         private uint32 _instructions;
 
         /// <summary>
@@ -64,6 +76,10 @@ namespace Stellar {
                 _readBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Read Bytes")]
+        #endif
         private uint32 _readBytes;
 
         /// <summary>
@@ -77,6 +93,10 @@ namespace Stellar {
                 _writeBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Write Bytes")]
+        #endif
         private uint32 _writeBytes;
 
         public SorobanResources()

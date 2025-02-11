@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCSpecFunctionV0
     {
         [MaxLength(1024)]
@@ -30,6 +34,10 @@ namespace Stellar {
                 _doc = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Doc")]
+        #endif
         private string _doc;
 
         public SCSymbol name
@@ -40,6 +48,10 @@ namespace Stellar {
                 _name = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Name")]
+        #endif
         private SCSymbol _name;
 
         [MaxLength(10)]
@@ -53,6 +65,10 @@ namespace Stellar {
                 _inputs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inputs")]
+        #endif
         private SCSpecFunctionInputV0[] _inputs;
 
         [MaxLength(1)]
@@ -66,6 +82,10 @@ namespace Stellar {
                 _outputs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Outputs")]
+        #endif
         private SCSpecTypeDef[] _outputs;
 
         public SCSpecFunctionV0()

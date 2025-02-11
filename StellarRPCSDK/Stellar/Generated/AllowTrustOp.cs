@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AllowTrustOp
     {
         public AccountID trustor
@@ -28,6 +32,10 @@ namespace Stellar {
                 _trustor = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Trustor")]
+        #endif
         private AccountID _trustor;
 
         public AssetCode asset
@@ -38,6 +46,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private AssetCode _asset;
 
         /// <summary>
@@ -51,6 +63,10 @@ namespace Stellar {
                 _authorize = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Authorize")]
+        #endif
         private uint32 _authorize;
 
         public AllowTrustOp()

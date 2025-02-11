@@ -75,10 +75,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class OperationResult
     {
         public abstract OperationResultCode Discriminator { get; }
@@ -87,6 +91,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class trUnion
         {
             public abstract OperationType Discriminator { get; }
@@ -94,6 +99,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class CreateAccount : trUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
@@ -105,10 +111,15 @@ namespace Stellar {
                         _createAccountResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Create Account Result")]
+                #endif
                 private CreateAccountResult _createAccountResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Payment : trUnion
             {
                 public override OperationType Discriminator => OperationType.PAYMENT;
@@ -120,10 +131,15 @@ namespace Stellar {
                         _paymentResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Payment Result")]
+                #endif
                 private PaymentResult _paymentResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class PathPaymentStrictReceive : trUnion
             {
                 public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
@@ -135,10 +151,15 @@ namespace Stellar {
                         _pathPaymentStrictReceiveResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Path Payment Strict Receive Result")]
+                #endif
                 private PathPaymentStrictReceiveResult _pathPaymentStrictReceiveResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ManageSellOffer : trUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
@@ -150,10 +171,15 @@ namespace Stellar {
                         _manageSellOfferResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Manage Sell Offer Result")]
+                #endif
                 private ManageSellOfferResult _manageSellOfferResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class CreatePassiveSellOffer : trUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
@@ -165,10 +191,15 @@ namespace Stellar {
                         _createPassiveSellOfferResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Create Passive Sell Offer Result")]
+                #endif
                 private ManageSellOfferResult _createPassiveSellOfferResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class SetOptions : trUnion
             {
                 public override OperationType Discriminator => OperationType.SET_OPTIONS;
@@ -180,10 +211,15 @@ namespace Stellar {
                         _setOptionsResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Set Options Result")]
+                #endif
                 private SetOptionsResult _setOptionsResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ChangeTrust : trUnion
             {
                 public override OperationType Discriminator => OperationType.CHANGE_TRUST;
@@ -195,10 +231,15 @@ namespace Stellar {
                         _changeTrustResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Change Trust Result")]
+                #endif
                 private ChangeTrustResult _changeTrustResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class AllowTrust : trUnion
             {
                 public override OperationType Discriminator => OperationType.ALLOW_TRUST;
@@ -210,10 +251,15 @@ namespace Stellar {
                         _allowTrustResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Allow Trust Result")]
+                #endif
                 private AllowTrustResult _allowTrustResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class AccountMerge : trUnion
             {
                 public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
@@ -225,10 +271,15 @@ namespace Stellar {
                         _accountMergeResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Account Merge Result")]
+                #endif
                 private AccountMergeResult _accountMergeResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Inflation : trUnion
             {
                 public override OperationType Discriminator => OperationType.INFLATION;
@@ -240,10 +291,15 @@ namespace Stellar {
                         _inflationResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Inflation Result")]
+                #endif
                 private InflationResult _inflationResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ManageData : trUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_DATA;
@@ -255,10 +311,15 @@ namespace Stellar {
                         _manageDataResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Manage Data Result")]
+                #endif
                 private ManageDataResult _manageDataResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class BumpSequence : trUnion
             {
                 public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
@@ -270,10 +331,15 @@ namespace Stellar {
                         _bumpSeqResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Bump Seq Result")]
+                #endif
                 private BumpSequenceResult _bumpSeqResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ManageBuyOffer : trUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
@@ -285,10 +351,15 @@ namespace Stellar {
                         _manageBuyOfferResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Manage Buy Offer Result")]
+                #endif
                 private ManageBuyOfferResult _manageBuyOfferResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class PathPaymentStrictSend : trUnion
             {
                 public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
@@ -300,10 +371,15 @@ namespace Stellar {
                         _pathPaymentStrictSendResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Path Payment Strict Send Result")]
+                #endif
                 private PathPaymentStrictSendResult _pathPaymentStrictSendResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class CreateClaimableBalance : trUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
@@ -315,10 +391,15 @@ namespace Stellar {
                         _createClaimableBalanceResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Create Claimable Balance Result")]
+                #endif
                 private CreateClaimableBalanceResult _createClaimableBalanceResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ClaimClaimableBalance : trUnion
             {
                 public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
@@ -330,10 +411,15 @@ namespace Stellar {
                         _claimClaimableBalanceResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Claim Claimable Balance Result")]
+                #endif
                 private ClaimClaimableBalanceResult _claimClaimableBalanceResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class BeginSponsoringFutureReserves : trUnion
             {
                 public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
@@ -345,10 +431,15 @@ namespace Stellar {
                         _beginSponsoringFutureReservesResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Begin Sponsoring Future Reserves Result")]
+                #endif
                 private BeginSponsoringFutureReservesResult _beginSponsoringFutureReservesResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class EndSponsoringFutureReserves : trUnion
             {
                 public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
@@ -360,10 +451,15 @@ namespace Stellar {
                         _endSponsoringFutureReservesResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"End Sponsoring Future Reserves Result")]
+                #endif
                 private EndSponsoringFutureReservesResult _endSponsoringFutureReservesResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class RevokeSponsorship : trUnion
             {
                 public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
@@ -375,10 +471,15 @@ namespace Stellar {
                         _revokeSponsorshipResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Revoke Sponsorship Result")]
+                #endif
                 private RevokeSponsorshipResult _revokeSponsorshipResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Clawback : trUnion
             {
                 public override OperationType Discriminator => OperationType.CLAWBACK;
@@ -390,10 +491,15 @@ namespace Stellar {
                         _clawbackResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Clawback Result")]
+                #endif
                 private ClawbackResult _clawbackResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ClawbackClaimableBalance : trUnion
             {
                 public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
@@ -405,10 +511,15 @@ namespace Stellar {
                         _clawbackClaimableBalanceResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Clawback Claimable Balance Result")]
+                #endif
                 private ClawbackClaimableBalanceResult _clawbackClaimableBalanceResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class SetTrustLineFlags : trUnion
             {
                 public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
@@ -420,10 +531,15 @@ namespace Stellar {
                         _setTrustLineFlagsResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Set Trust Line Flags Result")]
+                #endif
                 private SetTrustLineFlagsResult _setTrustLineFlagsResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class LiquidityPoolDeposit : trUnion
             {
                 public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
@@ -435,10 +551,15 @@ namespace Stellar {
                         _liquidityPoolDepositResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Liquidity Pool Deposit Result")]
+                #endif
                 private LiquidityPoolDepositResult _liquidityPoolDepositResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class LiquidityPoolWithdraw : trUnion
             {
                 public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
@@ -450,10 +571,15 @@ namespace Stellar {
                         _liquidityPoolWithdrawResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Liquidity Pool Withdraw Result")]
+                #endif
                 private LiquidityPoolWithdrawResult _liquidityPoolWithdrawResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class InvokeHostFunction : trUnion
             {
                 public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
@@ -465,10 +591,15 @@ namespace Stellar {
                         _invokeHostFunctionResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Invoke Host Function Result")]
+                #endif
                 private InvokeHostFunctionResult _invokeHostFunctionResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ExtendFootprintTtl : trUnion
             {
                 public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
@@ -480,10 +611,15 @@ namespace Stellar {
                         _extendFootprintTTLResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Extend Footprint T T L Result")]
+                #endif
                 private ExtendFootprintTTLResult _extendFootprintTTLResult;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class RestoreFootprint : trUnion
             {
                 public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;
@@ -495,6 +631,10 @@ namespace Stellar {
                         _restoreFootprintResult = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Restore Footprint Result")]
+                #endif
                 private RestoreFootprintResult _restoreFootprintResult;
 
                 public override void ValidateCase() {}
@@ -719,6 +859,7 @@ namespace Stellar {
                 }
             }
         }
+        [System.Serializable]
         public sealed partial class OpINNER : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opINNER;
@@ -730,40 +871,50 @@ namespace Stellar {
                     _tr = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tr")]
+            #endif
             private trUnion _tr;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OpbadAuth : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opBAD_AUTH;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OpnoAccount : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opNO_ACCOUNT;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OpnotSupported : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opNOT_SUPPORTED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OptooManySubentries : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SUBENTRIES;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OpexceededWorkLimit : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opEXCEEDED_WORK_LIMIT;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class OptooManySponsoring : OperationResult
         {
             public override OperationResultCode Discriminator => OperationResultCode.opTOO_MANY_SPONSORING;

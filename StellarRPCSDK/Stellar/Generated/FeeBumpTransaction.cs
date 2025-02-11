@@ -23,10 +23,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class FeeBumpTransaction
     {
         public MuxedAccount feeSource
@@ -37,6 +41,10 @@ namespace Stellar {
                 _feeSource = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Source")]
+        #endif
         private MuxedAccount _feeSource;
 
         public int64 fee
@@ -47,6 +55,10 @@ namespace Stellar {
                 _fee = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee")]
+        #endif
         private int64 _fee;
 
         public innerTxUnion innerTx
@@ -57,6 +69,10 @@ namespace Stellar {
                 _innerTx = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inner Tx")]
+        #endif
         private innerTxUnion _innerTx;
 
         public extUnion ext
@@ -67,6 +83,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public FeeBumpTransaction()
@@ -77,6 +97,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class innerTxUnion
         {
             public abstract EnvelopeType Discriminator { get; }
@@ -84,6 +105,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class EnvelopeTypeTx : innerTxUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -95,6 +117,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private TransactionV1Envelope _v1;
 
                 public override void ValidateCase() {}
@@ -138,6 +164,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -145,6 +172,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

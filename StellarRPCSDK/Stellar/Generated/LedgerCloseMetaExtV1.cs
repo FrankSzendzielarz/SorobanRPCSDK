@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerCloseMetaExtV1
     {
         public ExtensionPoint ext
@@ -25,6 +29,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         public int64 sorobanFeeWrite1KB
@@ -35,6 +43,10 @@ namespace Stellar {
                 _sorobanFeeWrite1KB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Soroban Fee Write1 K B")]
+        #endif
         private int64 _sorobanFeeWrite1KB;
 
         public LedgerCloseMetaExtV1()

@@ -12,6 +12,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -19,6 +22,7 @@ namespace Stellar {
     /// phases
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionResultMeta
     {
         public TransactionResultPair result
@@ -29,6 +33,10 @@ namespace Stellar {
                 _result = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Result")]
+        #endif
         private TransactionResultPair _result;
 
         public LedgerEntryChanges feeProcessing
@@ -39,6 +47,10 @@ namespace Stellar {
                 _feeProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Processing")]
+        #endif
         private LedgerEntryChanges _feeProcessing;
 
         public TransactionMeta txApplyProcessing
@@ -49,6 +61,10 @@ namespace Stellar {
                 _txApplyProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Apply Processing")]
+        #endif
         private TransactionMeta _txApplyProcessing;
 
         public TransactionResultMeta()

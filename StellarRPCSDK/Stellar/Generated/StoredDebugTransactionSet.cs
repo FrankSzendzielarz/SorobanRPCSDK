@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class StoredDebugTransactionSet
     {
         public StoredTransactionSet txSet
@@ -26,6 +30,10 @@ namespace Stellar {
                 _txSet = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Set")]
+        #endif
         private StoredTransactionSet _txSet;
 
         public uint32 ledgerSeq
@@ -36,6 +44,10 @@ namespace Stellar {
                 _ledgerSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Seq")]
+        #endif
         private uint32 _ledgerSeq;
 
         public StellarValue scpValue
@@ -46,6 +58,10 @@ namespace Stellar {
                 _scpValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Scp Value")]
+        #endif
         private StellarValue _scpValue;
 
         public StoredDebugTransactionSet()

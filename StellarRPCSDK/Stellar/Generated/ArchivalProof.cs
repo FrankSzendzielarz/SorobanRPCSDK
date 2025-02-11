@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ArchivalProof
     {
         public uint32 epoch
@@ -32,6 +36,10 @@ namespace Stellar {
                 _epoch = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Epoch")]
+        #endif
         private uint32 _epoch;
 
         public bodyUnion body
@@ -42,6 +50,10 @@ namespace Stellar {
                 _body = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Body")]
+        #endif
         private bodyUnion _body;
 
         public ArchivalProof()
@@ -52,6 +64,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class bodyUnion
         {
             public abstract ArchivalProofType Discriminator { get; }
@@ -59,6 +72,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class Existence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
@@ -70,10 +84,15 @@ namespace Stellar {
                         _nonexistenceProof = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Nonexistence Proof")]
+                #endif
                 private NonexistenceProofBody _nonexistenceProof;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Nonexistence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;
@@ -85,6 +104,10 @@ namespace Stellar {
                         _existenceProof = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Existence Proof")]
+                #endif
                 private ExistenceProofBody _existenceProof;
 
                 public override void ValidateCase() {}

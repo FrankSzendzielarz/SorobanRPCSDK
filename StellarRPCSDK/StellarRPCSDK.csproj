@@ -1,15 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Stellar</RootNamespace>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>Stellar</RootNamespace>
+		<Configurations>Debug;Release;Unity;UnityDebug</Configurations>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
-    <PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="9.0.1" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RootNamespace>Stellar</RootNamespace>
+		<Configurations>Debug;Release;Unity;UnityDebug</Configurations>
+	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
+		<DefineConstants>UNITY;$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
+		<PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+		<PackageReference Include="System.Text.Json" Version="9.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
+			<HintPath>UnityLibs\UnityEditor.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='UnityDebug|AnyCPU'">
+			<HintPath>UnityLibs\UnityEditor.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
+			<HintPath>UnityLibs\UnityEngine.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule" Condition="'$(Configuration)|$(Platform)'=='UnityDebug|AnyCPU'">
+			<HintPath>UnityLibs\UnityEngine.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
 </Project>

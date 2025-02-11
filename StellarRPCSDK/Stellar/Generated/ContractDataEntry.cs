@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ContractDataEntry
     {
         public ExtensionPoint ext
@@ -28,6 +32,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         public SCAddress contract
@@ -38,6 +46,10 @@ namespace Stellar {
                 _contract = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Contract")]
+        #endif
         private SCAddress _contract;
 
         public SCVal key
@@ -48,6 +60,10 @@ namespace Stellar {
                 _key = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key")]
+        #endif
         private SCVal _key;
 
         public ContractDataDurability durability
@@ -58,6 +74,10 @@ namespace Stellar {
                 _durability = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Durability")]
+        #endif
         private ContractDataDurability _durability;
 
         public SCVal val
@@ -68,6 +88,10 @@ namespace Stellar {
                 _val = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Val")]
+        #endif
         private SCVal _val;
 
         public ContractDataEntry()

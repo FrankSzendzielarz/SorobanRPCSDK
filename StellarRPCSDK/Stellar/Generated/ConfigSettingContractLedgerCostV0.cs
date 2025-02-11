@@ -41,6 +41,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -48,6 +51,7 @@ namespace Stellar {
     /// Ledger access settings for contracts.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigSettingContractLedgerCostV0
     {
         /// <summary>
@@ -61,6 +65,10 @@ namespace Stellar {
                 _ledgerMaxReadLedgerEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Read Ledger Entries")]
+        #endif
         private uint32 _ledgerMaxReadLedgerEntries;
 
         /// <summary>
@@ -74,6 +82,10 @@ namespace Stellar {
                 _ledgerMaxReadBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Read Bytes")]
+        #endif
         private uint32 _ledgerMaxReadBytes;
 
         /// <summary>
@@ -87,6 +99,10 @@ namespace Stellar {
                 _ledgerMaxWriteLedgerEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Write Ledger Entries")]
+        #endif
         private uint32 _ledgerMaxWriteLedgerEntries;
 
         /// <summary>
@@ -100,6 +116,10 @@ namespace Stellar {
                 _ledgerMaxWriteBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Write Bytes")]
+        #endif
         private uint32 _ledgerMaxWriteBytes;
 
         /// <summary>
@@ -113,6 +133,10 @@ namespace Stellar {
                 _txMaxReadLedgerEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Read Ledger Entries")]
+        #endif
         private uint32 _txMaxReadLedgerEntries;
 
         /// <summary>
@@ -126,6 +150,10 @@ namespace Stellar {
                 _txMaxReadBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Read Bytes")]
+        #endif
         private uint32 _txMaxReadBytes;
 
         /// <summary>
@@ -139,6 +167,10 @@ namespace Stellar {
                 _txMaxWriteLedgerEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Write Ledger Entries")]
+        #endif
         private uint32 _txMaxWriteLedgerEntries;
 
         /// <summary>
@@ -152,6 +184,10 @@ namespace Stellar {
                 _txMaxWriteBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Write Bytes")]
+        #endif
         private uint32 _txMaxWriteBytes;
 
         public int64 feeReadLedgerEntry
@@ -162,6 +198,10 @@ namespace Stellar {
                 _feeReadLedgerEntry = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Read Ledger Entry")]
+        #endif
         private int64 _feeReadLedgerEntry;
 
         /// <summary>
@@ -175,6 +215,10 @@ namespace Stellar {
                 _feeWriteLedgerEntry = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Write Ledger Entry")]
+        #endif
         private int64 _feeWriteLedgerEntry;
 
         public int64 feeRead1KB
@@ -185,6 +229,10 @@ namespace Stellar {
                 _feeRead1KB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Read1 K B")]
+        #endif
         private int64 _feeRead1KB;
 
         /// <summary>
@@ -198,6 +246,10 @@ namespace Stellar {
                 _bucketListTargetSizeBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Target Size Bytes")]
+        #endif
         private int64 _bucketListTargetSizeBytes;
 
         /// <summary>
@@ -211,6 +263,10 @@ namespace Stellar {
                 _writeFee1KBBucketListLow = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Write Fee1 K B Bucket List Low")]
+        #endif
         private int64 _writeFee1KBBucketListLow;
 
         /// <summary>
@@ -224,6 +280,10 @@ namespace Stellar {
                 _writeFee1KBBucketListHigh = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Write Fee1 K B Bucket List High")]
+        #endif
         private int64 _writeFee1KBBucketListHigh;
 
         /// <summary>
@@ -237,6 +297,10 @@ namespace Stellar {
                 _bucketListWriteFeeGrowthFactor = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Write Fee Growth Factor")]
+        #endif
         private uint32 _bucketListWriteFeeGrowthFactor;
 
         public ConfigSettingContractLedgerCostV0()

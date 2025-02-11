@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class PathPaymentStrictSendOp
     {
         public Asset sendAsset
@@ -33,6 +37,10 @@ namespace Stellar {
                 _sendAsset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Send Asset")]
+        #endif
         private Asset _sendAsset;
 
         /// <summary>
@@ -46,6 +54,10 @@ namespace Stellar {
                 _sendAmount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Send Amount")]
+        #endif
         private int64 _sendAmount;
 
         public MuxedAccount destination
@@ -56,6 +68,10 @@ namespace Stellar {
                 _destination = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Destination")]
+        #endif
         private MuxedAccount _destination;
 
         /// <summary>
@@ -69,6 +85,10 @@ namespace Stellar {
                 _destAsset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Dest Asset")]
+        #endif
         private Asset _destAsset;
 
         /// <summary>
@@ -82,6 +102,10 @@ namespace Stellar {
                 _destMin = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Dest Min")]
+        #endif
         private int64 _destMin;
 
         [MaxLength(5)]
@@ -95,6 +119,10 @@ namespace Stellar {
                 _path = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Path")]
+        #endif
         private Asset[] _path;
 
         public PathPaymentStrictSendOp()

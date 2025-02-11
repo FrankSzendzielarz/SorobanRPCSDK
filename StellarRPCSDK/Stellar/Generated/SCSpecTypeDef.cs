@@ -42,10 +42,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCSpecTypeDef
     {
         public abstract SCSpecType Discriminator { get; }
@@ -53,114 +57,133 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ScSpecTypeVal : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VAL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeBool : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BOOL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeVoid : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VOID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeError : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ERROR;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeU32 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U32;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeI32 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I32;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeU64 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U64;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeI64 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I64;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeTimepoint : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TIMEPOINT;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeDuration : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_DURATION;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeU128 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U128;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeI128 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I128;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeU256 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U256;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeI256 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I256;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeBytes : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeString : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_STRING;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeSymbol : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_SYMBOL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeAddress : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ADDRESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeOption : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_OPTION;
@@ -172,10 +195,15 @@ namespace Stellar {
                     _option = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Option")]
+            #endif
             private SCSpecTypeOption _option;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeResult : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_RESULT;
@@ -187,10 +215,15 @@ namespace Stellar {
                     _result = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Result")]
+            #endif
             private SCSpecTypeResult _result;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeVec : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VEC;
@@ -202,10 +235,15 @@ namespace Stellar {
                     _vec = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Vec")]
+            #endif
             private SCSpecTypeVec _vec;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeMap : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_MAP;
@@ -217,10 +255,15 @@ namespace Stellar {
                     _map = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Map")]
+            #endif
             private SCSpecTypeMap _map;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeTuple : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TUPLE;
@@ -232,10 +275,15 @@ namespace Stellar {
                     _tuple = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tuple")]
+            #endif
             private SCSpecTypeTuple _tuple;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeBytesN : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES_N;
@@ -247,10 +295,15 @@ namespace Stellar {
                     _bytesN = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Bytes N")]
+            #endif
             private SCSpecTypeBytesN _bytesN;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecTypeUdt : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_UDT;
@@ -262,6 +315,10 @@ namespace Stellar {
                     _udt = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Udt")]
+            #endif
             private SCSpecTypeUDT _udt;
 
             public override void ValidateCase() {}

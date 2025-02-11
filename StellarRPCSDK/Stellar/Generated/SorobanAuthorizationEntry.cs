@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SorobanAuthorizationEntry
     {
         public SorobanCredentials credentials
@@ -25,6 +29,10 @@ namespace Stellar {
                 _credentials = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Credentials")]
+        #endif
         private SorobanCredentials _credentials;
 
         public SorobanAuthorizedInvocation rootInvocation
@@ -35,6 +43,10 @@ namespace Stellar {
                 _rootInvocation = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Root Invocation")]
+        #endif
         private SorobanAuthorizedInvocation _rootInvocation;
 
         public SorobanAuthorizationEntry()

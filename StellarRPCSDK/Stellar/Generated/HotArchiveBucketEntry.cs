@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class HotArchiveBucketEntry
     {
         public abstract HotArchiveBucketEntryType Discriminator { get; }
@@ -28,6 +32,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class HotArchiveArchived : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_ARCHIVED;
@@ -39,10 +44,15 @@ namespace Stellar {
                     _archivedEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Archived Entry")]
+            #endif
             private LedgerEntry _archivedEntry;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HotArchiveLive : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_LIVE;
@@ -54,10 +64,15 @@ namespace Stellar {
                     _key = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Key")]
+            #endif
             private LedgerKey _key;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HotArchiveDeleted : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_DELETED;
@@ -69,10 +84,15 @@ namespace Stellar {
                     _key = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Key")]
+            #endif
             private LedgerKey _key;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HotArchiveMetaentry : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_METAENTRY;
@@ -84,6 +104,10 @@ namespace Stellar {
                     _metaEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Meta Entry")]
+            #endif
             private BucketMetadata _metaEntry;
 
             public override void ValidateCase() {}

@@ -18,10 +18,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ClaimLiquidityAtom
     {
         public PoolID liquidityPoolID
@@ -32,6 +36,10 @@ namespace Stellar {
                 _liquidityPoolID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liquidity Pool I D")]
+        #endif
         private PoolID _liquidityPoolID;
 
         /// <summary>
@@ -45,6 +53,10 @@ namespace Stellar {
                 _assetSold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset Sold")]
+        #endif
         private Asset _assetSold;
 
         public int64 amountSold
@@ -55,6 +67,10 @@ namespace Stellar {
                 _amountSold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount Sold")]
+        #endif
         private int64 _amountSold;
 
         /// <summary>
@@ -68,6 +84,10 @@ namespace Stellar {
                 _assetBought = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset Bought")]
+        #endif
         private Asset _assetBought;
 
         public int64 amountBought
@@ -78,6 +98,10 @@ namespace Stellar {
                 _amountBought = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount Bought")]
+        #endif
         private int64 _amountBought;
 
         public ClaimLiquidityAtom()

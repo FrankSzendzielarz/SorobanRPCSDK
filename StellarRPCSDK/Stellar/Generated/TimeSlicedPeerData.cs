@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeSlicedPeerData
     {
         public PeerStats peerStats
@@ -25,6 +29,10 @@ namespace Stellar {
                 _peerStats = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Peer Stats")]
+        #endif
         private PeerStats _peerStats;
 
         public uint32 averageLatencyMs
@@ -35,6 +43,10 @@ namespace Stellar {
                 _averageLatencyMs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Average Latency Ms")]
+        #endif
         private uint32 _averageLatencyMs;
 
         public TimeSlicedPeerData()

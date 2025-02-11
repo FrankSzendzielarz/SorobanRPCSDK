@@ -15,6 +15,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -22,6 +25,7 @@ namespace Stellar {
     /// A TransactionEnvelope wraps a transaction with signatures.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class TransactionEnvelope
     {
         public abstract EnvelopeType Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class EnvelopeTypeTxV0 : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
@@ -40,10 +45,15 @@ namespace Stellar {
                     _v0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0")]
+            #endif
             private TransactionV0Envelope _v0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypeTx : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -55,10 +65,15 @@ namespace Stellar {
                     _v1 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V1")]
+            #endif
             private TransactionV1Envelope _v1;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypeTxFeeBump : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
@@ -70,6 +85,10 @@ namespace Stellar {
                     _feeBump = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Fee Bump")]
+            #endif
             private FeeBumpTransactionEnvelope _feeBump;
 
             public override void ValidateCase() {}

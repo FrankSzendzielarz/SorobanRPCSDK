@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TTLEntry
     {
         /// <summary>
@@ -28,6 +32,10 @@ namespace Stellar {
                 _keyHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key Hash")]
+        #endif
         private Hash _keyHash;
 
         public uint32 liveUntilLedgerSeq
@@ -38,6 +46,10 @@ namespace Stellar {
                 _liveUntilLedgerSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Live Until Ledger Seq")]
+        #endif
         private uint32 _liveUntilLedgerSeq;
 
         public TTLEntry()

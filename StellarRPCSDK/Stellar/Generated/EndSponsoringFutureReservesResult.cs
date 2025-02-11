@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class EndSponsoringFutureReservesResult
     {
         public abstract EndSponsoringFutureReservesResultCode Discriminator { get; }
@@ -25,12 +29,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class EndSponsoringFutureReservesSuccess : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EndSponsoringFutureReservesNotSponsored : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;

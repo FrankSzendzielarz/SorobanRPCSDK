@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class EvictionIterator
     {
         public uint32 bucketListLevel
@@ -25,6 +29,10 @@ namespace Stellar {
                 _bucketListLevel = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Level")]
+        #endif
         private uint32 _bucketListLevel;
 
         public bool isCurrBucket
@@ -35,6 +43,10 @@ namespace Stellar {
                 _isCurrBucket = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Is Curr Bucket")]
+        #endif
         private bool _isCurrBucket;
 
         public uint64 bucketFileOffset
@@ -45,6 +57,10 @@ namespace Stellar {
                 _bucketFileOffset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket File Offset")]
+        #endif
         private uint64 _bucketFileOffset;
 
         public EvictionIterator()

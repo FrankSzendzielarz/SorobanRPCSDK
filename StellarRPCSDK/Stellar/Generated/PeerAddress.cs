@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class PeerAddress
     {
         public ipUnion ip
@@ -33,6 +37,10 @@ namespace Stellar {
                 _ip = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ip")]
+        #endif
         private ipUnion _ip;
 
         public uint32 port
@@ -43,6 +51,10 @@ namespace Stellar {
                 _port = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Port")]
+        #endif
         private uint32 _port;
 
         public uint32 numFailures
@@ -53,6 +65,10 @@ namespace Stellar {
                 _numFailures = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Failures")]
+        #endif
         private uint32 _numFailures;
 
         public PeerAddress()
@@ -63,6 +79,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class ipUnion
         {
             public abstract IPAddrType Discriminator { get; }
@@ -70,6 +87,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class IPv4 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv4;
@@ -85,10 +103,15 @@ namespace Stellar {
                         _ipv4 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ipv4")]
+                #endif
                 private byte[] _ipv4 = new byte[4];
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class IPv6 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv6;
@@ -104,6 +127,10 @@ namespace Stellar {
                         _ipv6 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ipv6")]
+                #endif
                 private byte[] _ipv6 = new byte[16];
 
                 public override void ValidateCase() {}

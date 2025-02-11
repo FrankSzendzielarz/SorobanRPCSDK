@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class UInt256Parts
     {
         public uint64 hi_hi
@@ -26,6 +30,10 @@ namespace Stellar {
                 _hi_hi = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Hi_hi")]
+        #endif
         private uint64 _hi_hi;
 
         public uint64 hi_lo
@@ -36,6 +44,10 @@ namespace Stellar {
                 _hi_lo = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Hi_lo")]
+        #endif
         private uint64 _hi_lo;
 
         public uint64 lo_hi
@@ -46,6 +58,10 @@ namespace Stellar {
                 _lo_hi = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Lo_hi")]
+        #endif
         private uint64 _lo_hi;
 
         public uint64 lo_lo
@@ -56,6 +72,10 @@ namespace Stellar {
                 _lo_lo = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Lo_lo")]
+        #endif
         private uint64 _lo_lo;
 
         public UInt256Parts()

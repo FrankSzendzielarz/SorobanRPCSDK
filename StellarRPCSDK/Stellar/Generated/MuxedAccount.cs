@@ -17,6 +17,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -24,6 +27,7 @@ namespace Stellar {
     /// Source or destination of a payment operation
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class MuxedAccount
     {
         public abstract CryptoKeyType Discriminator { get; }
@@ -32,6 +36,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class med25519Struct
         {
             public uint64 id
@@ -42,6 +47,10 @@ namespace Stellar {
                     _id = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Id")]
+            #endif
             private uint64 _id;
 
             public uint256 ed25519
@@ -52,6 +61,10 @@ namespace Stellar {
                     _ed25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519")]
+            #endif
             private uint256 _ed25519;
 
             public med25519Struct()
@@ -90,6 +103,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class KeyTypeEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
@@ -101,11 +115,15 @@ namespace Stellar {
                     _ed25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519")]
+            #endif
             private uint256 _ed25519;
 
             public override void ValidateCase() {}
-
         }
+        [System.Serializable]
         public sealed partial class KeyTypeMuxedEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
@@ -117,11 +135,13 @@ namespace Stellar {
                     _med25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Med25519")]
+            #endif
             private med25519Struct _med25519;
 
             public override void ValidateCase() {}
-
-      
         }
     }
     public static partial class MuxedAccountXdr

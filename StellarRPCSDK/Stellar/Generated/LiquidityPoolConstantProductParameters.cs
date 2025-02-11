@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LiquidityPoolConstantProductParameters
     {
         public Asset assetA
@@ -26,6 +30,10 @@ namespace Stellar {
                 _assetA = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset A")]
+        #endif
         private Asset _assetA;
 
         /// <summary>
@@ -39,6 +47,10 @@ namespace Stellar {
                 _assetB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset B")]
+        #endif
         private Asset _assetB;
 
         public int32 fee
@@ -49,6 +61,10 @@ namespace Stellar {
                 _fee = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee")]
+        #endif
         private int32 _fee;
 
         public LiquidityPoolConstantProductParameters()

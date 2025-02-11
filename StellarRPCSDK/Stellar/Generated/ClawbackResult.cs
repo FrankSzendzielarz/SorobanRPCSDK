@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ClawbackResult
     {
         public abstract ClawbackResultCode Discriminator { get; }
@@ -27,30 +31,35 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ClawbackSuccess : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackMalformed : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackNotClawbackEnabled : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackNoTrust : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClawbackUnderfunded : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;

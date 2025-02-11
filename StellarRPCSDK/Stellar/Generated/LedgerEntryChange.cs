@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LedgerEntryChange
     {
         public abstract LedgerEntryChangeType Discriminator { get; }
@@ -28,6 +32,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class LedgerEntryCreated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
@@ -39,10 +44,15 @@ namespace Stellar {
                     _created = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Created")]
+            #endif
             private LedgerEntry _created;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LedgerEntryUpdated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
@@ -54,10 +64,15 @@ namespace Stellar {
                     _updated = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Updated")]
+            #endif
             private LedgerEntry _updated;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LedgerEntryRemoved : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
@@ -69,10 +84,15 @@ namespace Stellar {
                     _removed = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Removed")]
+            #endif
             private LedgerKey _removed;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LedgerEntryState : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;
@@ -84,6 +104,10 @@ namespace Stellar {
                     _state = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"State")]
+            #endif
             private LedgerEntry _state;
 
             public override void ValidateCase() {}

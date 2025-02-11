@@ -23,10 +23,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerCloseMetaV0
     {
         public LedgerHeaderHistoryEntry ledgerHeader
@@ -37,6 +41,10 @@ namespace Stellar {
                 _ledgerHeader = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Header")]
+        #endif
         private LedgerHeaderHistoryEntry _ledgerHeader;
 
         /// <summary>
@@ -50,6 +58,10 @@ namespace Stellar {
                 _txSet = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Set")]
+        #endif
         private TransactionSet _txSet;
 
         /// <summary>
@@ -63,6 +75,10 @@ namespace Stellar {
                 _txProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Processing")]
+        #endif
         private TransactionResultMeta[] _txProcessing;
 
         /// <summary>
@@ -76,6 +92,10 @@ namespace Stellar {
                 _upgradesProcessing = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Upgrades Processing")]
+        #endif
         private UpgradeEntryMeta[] _upgradesProcessing;
 
         /// <summary>
@@ -89,6 +109,10 @@ namespace Stellar {
                 _scpInfo = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Scp Info")]
+        #endif
         private SCPHistoryEntry[] _scpInfo;
 
         public LedgerCloseMetaV0()

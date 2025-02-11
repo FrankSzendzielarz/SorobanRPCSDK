@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TrustLineEntryExtensionV2
     {
         public int32 liquidityPoolUseCount
@@ -31,6 +35,10 @@ namespace Stellar {
                 _liquidityPoolUseCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liquidity Pool Use Count")]
+        #endif
         private int32 _liquidityPoolUseCount;
 
         public extUnion ext
@@ -41,6 +49,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public TrustLineEntryExtensionV2()
@@ -51,6 +63,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -58,6 +71,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

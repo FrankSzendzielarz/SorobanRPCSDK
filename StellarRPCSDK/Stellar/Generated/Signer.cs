@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class Signer
     {
         public SignerKey key
@@ -25,6 +29,10 @@ namespace Stellar {
                 _key = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key")]
+        #endif
         private SignerKey _key;
 
         public uint32 weight
@@ -35,6 +43,10 @@ namespace Stellar {
                 _weight = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Weight")]
+        #endif
         private uint32 _weight;
 
         public Signer()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCMetaV0
     {
         public string key
@@ -25,6 +29,10 @@ namespace Stellar {
                 _key = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Key")]
+        #endif
         private string _key;
 
         public string val
@@ -35,6 +43,10 @@ namespace Stellar {
                 _val = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Val")]
+        #endif
         private string _val;
 
         public SCMetaV0()

@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerHeaderHistoryEntry
     {
         public Hash hash
@@ -33,6 +37,10 @@ namespace Stellar {
                 _hash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Hash")]
+        #endif
         private Hash _hash;
 
         public LedgerHeader header
@@ -43,6 +51,10 @@ namespace Stellar {
                 _header = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Header")]
+        #endif
         private LedgerHeader _header;
 
         /// <summary>
@@ -56,6 +68,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public LedgerHeaderHistoryEntry()
@@ -66,6 +82,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -73,6 +90,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

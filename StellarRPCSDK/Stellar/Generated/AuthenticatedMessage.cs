@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class AuthenticatedMessage
     {
         public abstract int Discriminator { get; }
@@ -28,6 +32,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class v0Struct
         {
             public uint64 sequence
@@ -38,6 +43,10 @@ namespace Stellar {
                     _sequence = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Sequence")]
+            #endif
             private uint64 _sequence;
 
             public StellarMessage message
@@ -48,6 +57,10 @@ namespace Stellar {
                     _message = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Message")]
+            #endif
             private StellarMessage _message;
 
             public HmacSha256Mac mac
@@ -58,6 +71,10 @@ namespace Stellar {
                     _mac = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Mac")]
+            #endif
             private HmacSha256Mac _mac;
 
             public v0Struct()
@@ -98,6 +115,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class case_0 : AuthenticatedMessage
         {
             public override int Discriminator => 0;
@@ -109,6 +127,10 @@ namespace Stellar {
                     _v0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0")]
+            #endif
             private v0Struct _v0;
 
             public override void ValidateCase() {}

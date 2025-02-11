@@ -24,10 +24,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SerializedBinaryFuseFilter
     {
         public BinaryFuseFilterType type
@@ -38,6 +42,10 @@ namespace Stellar {
                 _type = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Type")]
+        #endif
         private BinaryFuseFilterType _type;
 
         /// <summary>
@@ -51,6 +59,10 @@ namespace Stellar {
                 _inputHashSeed = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Input Hash Seed")]
+        #endif
         private ShortHashSeed _inputHashSeed;
 
         /// <summary>
@@ -64,6 +76,10 @@ namespace Stellar {
                 _filterSeed = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Filter Seed")]
+        #endif
         private ShortHashSeed _filterSeed;
 
         public uint32 segmentLength
@@ -74,6 +90,10 @@ namespace Stellar {
                 _segmentLength = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Segment Length")]
+        #endif
         private uint32 _segmentLength;
 
         public uint32 segementLengthMask
@@ -84,6 +104,10 @@ namespace Stellar {
                 _segementLengthMask = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Segement Length Mask")]
+        #endif
         private uint32 _segementLengthMask;
 
         public uint32 segmentCount
@@ -94,6 +118,10 @@ namespace Stellar {
                 _segmentCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Segment Count")]
+        #endif
         private uint32 _segmentCount;
 
         public uint32 segmentCountLength
@@ -104,6 +132,10 @@ namespace Stellar {
                 _segmentCountLength = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Segment Count Length")]
+        #endif
         private uint32 _segmentCountLength;
 
         public uint32 fingerprintLength
@@ -114,6 +146,10 @@ namespace Stellar {
                 _fingerprintLength = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fingerprint Length")]
+        #endif
         private uint32 _fingerprintLength;
 
         /// <summary>
@@ -127,6 +163,10 @@ namespace Stellar {
                 _fingerprints = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fingerprints")]
+        #endif
         private byte[] _fingerprints;
 
         public SerializedBinaryFuseFilter()

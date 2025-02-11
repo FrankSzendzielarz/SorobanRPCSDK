@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class PublicKey
     {
         public abstract PublicKeyType Discriminator { get; }
@@ -22,6 +26,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class PublicKeyTypeEd25519 : PublicKey
         {
             public override PublicKeyType Discriminator => PublicKeyType.PUBLIC_KEY_TYPE_ED25519;
@@ -33,6 +38,10 @@ namespace Stellar {
                     _ed25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519")]
+            #endif
             private uint256 _ed25519;
 
             public override void ValidateCase() {}

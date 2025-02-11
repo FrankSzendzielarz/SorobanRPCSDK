@@ -26,10 +26,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LiquidityPoolEntry
     {
         public PoolID liquidityPoolID
@@ -40,6 +44,10 @@ namespace Stellar {
                 _liquidityPoolID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liquidity Pool I D")]
+        #endif
         private PoolID _liquidityPoolID;
 
         public bodyUnion body
@@ -50,6 +58,10 @@ namespace Stellar {
                 _body = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Body")]
+        #endif
         private bodyUnion _body;
 
         public LiquidityPoolEntry()
@@ -60,6 +72,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class bodyUnion
         {
             public abstract LiquidityPoolType Discriminator { get; }
@@ -68,6 +81,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class constantProductStruct
             {
                 public LiquidityPoolConstantProductParameters _params
@@ -78,6 +92,10 @@ namespace Stellar {
                         __params = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"_params")]
+                #endif
                 private LiquidityPoolConstantProductParameters __params;
 
                 public int64 reserveA
@@ -88,6 +106,10 @@ namespace Stellar {
                         _reserveA = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Reserve A")]
+                #endif
                 private int64 _reserveA;
 
                 /// <summary>
@@ -101,6 +123,10 @@ namespace Stellar {
                         _reserveB = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Reserve B")]
+                #endif
                 private int64 _reserveB;
 
                 /// <summary>
@@ -114,6 +140,10 @@ namespace Stellar {
                         _totalPoolShares = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Total Pool Shares")]
+                #endif
                 private int64 _totalPoolShares;
 
                 /// <summary>
@@ -127,6 +157,10 @@ namespace Stellar {
                         _poolSharesTrustLineCount = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Pool Shares Trust Line Count")]
+                #endif
                 private int64 _poolSharesTrustLineCount;
 
                 public constantProductStruct()
@@ -171,6 +205,7 @@ namespace Stellar {
                     return result;
                 }
             }
+            [System.Serializable]
             public sealed partial class LiquidityPoolConstantProduct : bodyUnion
             {
                 public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
@@ -182,6 +217,10 @@ namespace Stellar {
                         _constantProduct = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Constant Product")]
+                #endif
                 private constantProductStruct _constantProduct;
 
                 public override void ValidateCase() {}

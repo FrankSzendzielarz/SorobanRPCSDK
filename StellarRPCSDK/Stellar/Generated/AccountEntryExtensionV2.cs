@@ -21,10 +21,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AccountEntryExtensionV2
     {
         public uint32 numSponsored
@@ -35,6 +39,10 @@ namespace Stellar {
                 _numSponsored = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Sponsored")]
+        #endif
         private uint32 _numSponsored;
 
         public uint32 numSponsoring
@@ -45,6 +53,10 @@ namespace Stellar {
                 _numSponsoring = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Sponsoring")]
+        #endif
         private uint32 _numSponsoring;
 
         [MaxLength(20)]
@@ -58,6 +70,10 @@ namespace Stellar {
                 _signerSponsoringIDs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signer Sponsoring I Ds")]
+        #endif
         private SponsorshipDescriptor[] _signerSponsoringIDs;
 
         public extUnion ext
@@ -68,6 +84,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public AccountEntryExtensionV2()
@@ -80,6 +100,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"signerSponsoringIDs cannot exceed Constants.MAX_SIGNERS elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -87,12 +108,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_3 : extUnion
             {
                 public override int Discriminator => 3;
@@ -104,6 +127,10 @@ namespace Stellar {
                         _v3 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V3")]
+                #endif
                 private AccountEntryExtensionV3 _v3;
 
                 public override void ValidateCase() {}

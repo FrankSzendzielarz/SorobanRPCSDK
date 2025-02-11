@@ -25,10 +25,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SignerKey
     {
         public abstract SignerKeyType Discriminator { get; }
@@ -37,6 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class ed25519SignedPayloadStruct
         {
             /// <summary>
@@ -50,6 +55,10 @@ namespace Stellar {
                     _ed25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519")]
+            #endif
             private uint256 _ed25519;
 
             /// <summary>
@@ -66,6 +75,10 @@ namespace Stellar {
                     _payload = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Payload")]
+            #endif
             private byte[] _payload;
 
             public ed25519SignedPayloadStruct()
@@ -106,6 +119,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class SignerKeyTypeEd25519 : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519;
@@ -117,10 +131,15 @@ namespace Stellar {
                     _ed25519 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519")]
+            #endif
             private uint256 _ed25519;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SignerKeyTypePreAuthTx : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_PRE_AUTH_TX;
@@ -132,10 +151,15 @@ namespace Stellar {
                     _preAuthTx = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Pre Auth Tx")]
+            #endif
             private uint256 _preAuthTx;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SignerKeyTypeHashX : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_HASH_X;
@@ -147,10 +171,15 @@ namespace Stellar {
                     _hashX = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Hash X")]
+            #endif
             private uint256 _hashX;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SignerKeyTypeEd25519SignedPayload : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
@@ -162,6 +191,10 @@ namespace Stellar {
                     _ed25519SignedPayload = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ed25519 Signed Payload")]
+            #endif
             private ed25519SignedPayloadStruct _ed25519SignedPayload;
 
             public override void ValidateCase() {}

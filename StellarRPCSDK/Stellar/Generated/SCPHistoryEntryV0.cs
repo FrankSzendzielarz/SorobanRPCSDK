@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// in the file so far, not just the one from this entry
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCPHistoryEntryV0
     {
         public SCPQuorumSet[] quorumSets
@@ -28,6 +32,10 @@ namespace Stellar {
                 _quorumSets = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Quorum Sets")]
+        #endif
         private SCPQuorumSet[] _quorumSets;
 
         /// <summary>
@@ -41,6 +49,10 @@ namespace Stellar {
                 _ledgerMessages = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Messages")]
+        #endif
         private LedgerSCPMessages _ledgerMessages;
 
         public SCPHistoryEntryV0()

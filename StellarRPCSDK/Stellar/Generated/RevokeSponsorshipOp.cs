@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class RevokeSponsorshipOp
     {
         public abstract RevokeSponsorshipType Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class signerStruct
         {
             public AccountID accountID
@@ -39,6 +44,10 @@ namespace Stellar {
                     _accountID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account I D")]
+            #endif
             private AccountID _accountID;
 
             public SignerKey signerKey
@@ -49,6 +58,10 @@ namespace Stellar {
                     _signerKey = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signer Key")]
+            #endif
             private SignerKey _signerKey;
 
             public signerStruct()
@@ -87,6 +100,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipLedgerEntry : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
@@ -98,10 +112,15 @@ namespace Stellar {
                     _ledgerKey = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ledger Key")]
+            #endif
             private LedgerKey _ledgerKey;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipSigner : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
@@ -113,6 +132,10 @@ namespace Stellar {
                     _signer = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signer")]
+            #endif
             private signerStruct _signer;
 
             public override void ValidateCase() {}

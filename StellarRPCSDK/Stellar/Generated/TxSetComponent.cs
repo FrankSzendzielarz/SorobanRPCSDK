@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class TxSetComponent
     {
         public abstract TxSetComponentType Discriminator { get; }
@@ -27,6 +31,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class txsMaybeDiscountedFeeStruct
         {
             public int64 baseFee
@@ -37,6 +42,10 @@ namespace Stellar {
                     _baseFee = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Base Fee")]
+            #endif
             private int64 _baseFee;
 
             public TransactionEnvelope[] txs
@@ -47,6 +56,10 @@ namespace Stellar {
                     _txs = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Txs")]
+            #endif
             private TransactionEnvelope[] _txs;
 
             public txsMaybeDiscountedFeeStruct()
@@ -106,6 +119,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class TxsetCompTxsMaybeDiscountedFee : TxSetComponent
         {
             public override TxSetComponentType Discriminator => TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
@@ -117,6 +131,10 @@ namespace Stellar {
                     _txsMaybeDiscountedFee = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Txs Maybe Discounted Fee")]
+            #endif
             private txsMaybeDiscountedFeeStruct _txsMaybeDiscountedFee;
 
             public override void ValidateCase() {}

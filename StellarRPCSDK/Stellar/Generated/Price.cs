@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// price in fractional representation
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class Price
     {
         public int32 n
@@ -28,6 +32,10 @@ namespace Stellar {
                 _n = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N")]
+        #endif
         private int32 _n;
 
         /// <summary>
@@ -41,6 +49,10 @@ namespace Stellar {
                 _d = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"D")]
+        #endif
         private int32 _d;
 
         public Price()

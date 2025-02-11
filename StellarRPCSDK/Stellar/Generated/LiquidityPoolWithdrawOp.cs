@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LiquidityPoolWithdrawOp
     {
         public PoolID liquidityPoolID
@@ -27,6 +31,10 @@ namespace Stellar {
                 _liquidityPoolID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liquidity Pool I D")]
+        #endif
         private PoolID _liquidityPoolID;
 
         public int64 amount
@@ -37,6 +45,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         /// <summary>
@@ -50,6 +62,10 @@ namespace Stellar {
                 _minAmountA = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Amount A")]
+        #endif
         private int64 _minAmountA;
 
         /// <summary>
@@ -63,6 +79,10 @@ namespace Stellar {
                 _minAmountB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Amount B")]
+        #endif
         private int64 _minAmountB;
 
         public LiquidityPoolWithdrawOp()

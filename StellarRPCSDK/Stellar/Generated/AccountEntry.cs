@@ -34,10 +34,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AccountEntry
     {
         public AccountID accountID
@@ -48,6 +52,10 @@ namespace Stellar {
                 _accountID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Account I D")]
+        #endif
         private AccountID _accountID;
 
         /// <summary>
@@ -61,6 +69,10 @@ namespace Stellar {
                 _balance = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Balance")]
+        #endif
         private int64 _balance;
 
         /// <summary>
@@ -74,6 +86,10 @@ namespace Stellar {
                 _seqNum = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seq Num")]
+        #endif
         private SequenceNumber _seqNum;
 
         /// <summary>
@@ -87,6 +103,10 @@ namespace Stellar {
                 _numSubEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Sub Entries")]
+        #endif
         private uint32 _numSubEntries;
 
         /// <summary>
@@ -100,6 +120,10 @@ namespace Stellar {
                 _inflationDest = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inflation Dest")]
+        #endif
         private AccountID _inflationDest;
 
         /// <summary>
@@ -113,6 +137,10 @@ namespace Stellar {
                 _flags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Flags")]
+        #endif
         private uint32 _flags;
 
         public string32 homeDomain
@@ -123,6 +151,10 @@ namespace Stellar {
                 _homeDomain = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Home Domain")]
+        #endif
         private string32 _homeDomain;
 
         /// <summary>
@@ -136,6 +168,10 @@ namespace Stellar {
                 _thresholds = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Thresholds")]
+        #endif
         private Thresholds _thresholds;
 
         [MaxLength(20)]
@@ -149,6 +185,10 @@ namespace Stellar {
                 _signers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signers")]
+        #endif
         private Signer[] _signers;
 
         /// <summary>
@@ -162,6 +202,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public AccountEntry()
@@ -174,6 +218,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"signers cannot exceed Constants.MAX_SIGNERS elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -181,12 +226,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -198,6 +245,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private AccountEntryExtensionV1 _v1;
 
                 public override void ValidateCase() {}

@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TopologyResponseBodyV0
     {
         public PeerStatList inboundPeers
@@ -28,6 +32,10 @@ namespace Stellar {
                 _inboundPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inbound Peers")]
+        #endif
         private PeerStatList _inboundPeers;
 
         public PeerStatList outboundPeers
@@ -38,6 +46,10 @@ namespace Stellar {
                 _outboundPeers = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Outbound Peers")]
+        #endif
         private PeerStatList _outboundPeers;
 
         public uint32 totalInboundPeerCount
@@ -48,6 +60,10 @@ namespace Stellar {
                 _totalInboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Inbound Peer Count")]
+        #endif
         private uint32 _totalInboundPeerCount;
 
         public uint32 totalOutboundPeerCount
@@ -58,6 +74,10 @@ namespace Stellar {
                 _totalOutboundPeerCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Total Outbound Peer Count")]
+        #endif
         private uint32 _totalOutboundPeerCount;
 
         public TopologyResponseBodyV0()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeSlicedSurveyResponseMessage
     {
         public SurveyResponseMessage response
@@ -25,6 +29,10 @@ namespace Stellar {
                 _response = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Response")]
+        #endif
         private SurveyResponseMessage _response;
 
         public uint32 nonce
@@ -35,6 +43,10 @@ namespace Stellar {
                 _nonce = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Nonce")]
+        #endif
         private uint32 _nonce;
 
         public TimeSlicedSurveyResponseMessage()

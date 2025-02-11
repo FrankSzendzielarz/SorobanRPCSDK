@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class DontHave
     {
         public MessageType type
@@ -25,6 +29,10 @@ namespace Stellar {
                 _type = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Type")]
+        #endif
         private MessageType _type;
 
         public uint256 reqHash
@@ -35,6 +43,10 @@ namespace Stellar {
                 _reqHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Req Hash")]
+        #endif
         private uint256 _reqHash;
 
         public DontHave()

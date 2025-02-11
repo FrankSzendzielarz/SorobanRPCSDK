@@ -24,10 +24,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ManageBuyOfferResult
     {
         public abstract ManageBuyOfferResultCode Discriminator { get; }
@@ -35,6 +39,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ManageBuyOfferSuccess : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SUCCESS;
@@ -46,76 +51,92 @@ namespace Stellar {
                     _success = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Success")]
+            #endif
             private ManageOfferSuccessResult _success;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferMalformed : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferSellNoTrust : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferBuyNoTrust : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferSellNotAuthorized : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferBuyNotAuthorized : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferLineFull : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_LINE_FULL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferUnderfunded : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferCrossSelf : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_CROSS_SELF;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferSellNoIssuer : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NO_ISSUER;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferBuyNoIssuer : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NO_ISSUER;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferNotFound : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_NOT_FOUND;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ManageBuyOfferLowReserve : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_LOW_RESERVE;

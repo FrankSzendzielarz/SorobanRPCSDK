@@ -23,10 +23,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SorobanAuthorizedFunction
     {
         public abstract SorobanAuthorizedFunctionType Discriminator { get; }
@@ -34,6 +38,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class SorobanAuthorizedFunctionTypeContractFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
@@ -45,6 +50,10 @@ namespace Stellar {
                     _contractFn = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Fn")]
+            #endif
             private InvokeContractArgs _contractFn;
 
             public override void ValidateCase() {}
@@ -52,6 +61,7 @@ namespace Stellar {
         /// <summary>
         /// (protocol 22+).
         /// </summary>
+        [System.Serializable]
         public sealed partial class SorobanAuthorizedFunctionTypeCreateContractHostFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
@@ -63,6 +73,10 @@ namespace Stellar {
                     _createContractHostFn = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Create Contract Host Fn")]
+            #endif
             private CreateContractArgs _createContractHostFn;
 
             public override void ValidateCase() {}
@@ -70,6 +84,7 @@ namespace Stellar {
         /// <summary>
         /// contract constructor arguments.
         /// </summary>
+        [System.Serializable]
         public sealed partial class SorobanAuthorizedFunctionTypeCreateContractV2HostFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
@@ -81,6 +96,10 @@ namespace Stellar {
                     _createContractV2HostFn = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Create Contract V2 Host Fn")]
+            #endif
             private CreateContractArgsV2 _createContractV2HostFn;
 
             public override void ValidateCase() {}

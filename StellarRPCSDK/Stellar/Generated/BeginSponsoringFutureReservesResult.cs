@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class BeginSponsoringFutureReservesResult
     {
         public abstract BeginSponsoringFutureReservesResultCode Discriminator { get; }
@@ -27,24 +31,28 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class BeginSponsoringFutureReservesSuccess : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class BeginSponsoringFutureReservesMalformed : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class BeginSponsoringFutureReservesAlreadySponsored : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class BeginSponsoringFutureReservesRecursive : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;

@@ -17,6 +17,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -24,6 +27,7 @@ namespace Stellar {
     /// it does not include pre-apply updates such as fees
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class TransactionMeta
     {
         public abstract int Discriminator { get; }
@@ -31,6 +35,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : TransactionMeta
         {
             public override int Discriminator => 0;
@@ -42,10 +47,15 @@ namespace Stellar {
                     _operations = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Operations")]
+            #endif
             private OperationMeta[] _operations;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_1 : TransactionMeta
         {
             public override int Discriminator => 1;
@@ -57,10 +67,15 @@ namespace Stellar {
                     _v1 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V1")]
+            #endif
             private TransactionMetaV1 _v1;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_2 : TransactionMeta
         {
             public override int Discriminator => 2;
@@ -72,10 +87,15 @@ namespace Stellar {
                     _v2 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V2")]
+            #endif
             private TransactionMetaV2 _v2;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_3 : TransactionMeta
         {
             public override int Discriminator => 3;
@@ -87,6 +107,10 @@ namespace Stellar {
                     _v3 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V3")]
+            #endif
             private TransactionMetaV3 _v3;
 
             public override void ValidateCase() {}

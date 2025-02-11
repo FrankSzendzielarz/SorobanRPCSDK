@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class CreateClaimableBalanceOp
     {
         public Asset asset
@@ -26,6 +30,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private Asset _asset;
 
         public int64 amount
@@ -36,6 +44,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         [MaxLength(10)]
@@ -49,6 +61,10 @@ namespace Stellar {
                 _claimants = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Claimants")]
+        #endif
         private Claimant[] _claimants;
 
         public CreateClaimableBalanceOp()

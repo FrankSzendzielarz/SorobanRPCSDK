@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ColdArchiveBucketEntry
     {
         public abstract ColdArchiveBucketEntryType Discriminator { get; }
@@ -30,6 +34,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ColdArchiveMetaentry : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY;
@@ -41,10 +46,15 @@ namespace Stellar {
                     _metaEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Meta Entry")]
+            #endif
             private BucketMetadata _metaEntry;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ColdArchiveArchivedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF;
@@ -56,10 +66,15 @@ namespace Stellar {
                     _archivedLeaf = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Archived Leaf")]
+            #endif
             private ColdArchiveArchivedLeaf _archivedLeaf;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ColdArchiveDeletedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF;
@@ -71,10 +86,15 @@ namespace Stellar {
                     _deletedLeaf = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Deleted Leaf")]
+            #endif
             private ColdArchiveDeletedLeaf _deletedLeaf;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ColdArchiveBoundaryLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF;
@@ -86,10 +106,15 @@ namespace Stellar {
                     _boundaryLeaf = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Boundary Leaf")]
+            #endif
             private ColdArchiveBoundaryLeaf _boundaryLeaf;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ColdArchiveHash : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH;
@@ -101,6 +126,10 @@ namespace Stellar {
                     _hashEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Hash Entry")]
+            #endif
             private ColdArchiveHashEntry _hashEntry;
 
             public override void ValidateCase() {}

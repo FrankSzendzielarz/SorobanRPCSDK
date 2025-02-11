@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SorobanTransactionMeta
     {
         public SorobanTransactionMetaExt ext
@@ -33,6 +37,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private SorobanTransactionMetaExt _ext;
 
         public ContractEvent[] events
@@ -43,6 +51,10 @@ namespace Stellar {
                 _events = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Events")]
+        #endif
         private ContractEvent[] _events;
 
         /// <summary>
@@ -56,6 +68,10 @@ namespace Stellar {
                 _returnValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Return Value")]
+        #endif
         private SCVal _returnValue;
 
         /// <summary>
@@ -69,6 +85,10 @@ namespace Stellar {
                 _diagnosticEvents = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Diagnostic Events")]
+        #endif
         private DiagnosticEvent[] _diagnosticEvents;
 
         public SorobanTransactionMeta()

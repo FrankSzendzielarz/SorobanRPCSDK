@@ -13,6 +13,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -20,6 +23,7 @@ namespace Stellar {
     /// Contract event-related settings.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigSettingContractEventsV0
     {
         /// <summary>
@@ -33,6 +37,10 @@ namespace Stellar {
                 _txMaxContractEventsSizeBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Contract Events Size Bytes")]
+        #endif
         private uint32 _txMaxContractEventsSizeBytes;
 
         /// <summary>
@@ -46,6 +54,10 @@ namespace Stellar {
                 _feeContractEvents1KB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Contract Events1 K B")]
+        #endif
         private int64 _feeContractEvents1KB;
 
         public ConfigSettingContractEventsV0()

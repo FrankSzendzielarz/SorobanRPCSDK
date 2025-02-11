@@ -70,10 +70,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LedgerKey
     {
         public abstract LedgerEntryType Discriminator { get; }
@@ -82,6 +86,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class accountStruct
         {
             public AccountID accountID
@@ -92,6 +97,10 @@ namespace Stellar {
                     _accountID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account I D")]
+            #endif
             private AccountID _accountID;
 
             public accountStruct()
@@ -129,6 +138,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class trustLineStruct
         {
             public AccountID accountID
@@ -139,6 +149,10 @@ namespace Stellar {
                     _accountID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account I D")]
+            #endif
             private AccountID _accountID;
 
             public TrustLineAsset asset
@@ -149,6 +163,10 @@ namespace Stellar {
                     _asset = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Asset")]
+            #endif
             private TrustLineAsset _asset;
 
             public trustLineStruct()
@@ -188,6 +206,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class offerStruct
         {
             public AccountID sellerID
@@ -198,6 +217,10 @@ namespace Stellar {
                     _sellerID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Seller I D")]
+            #endif
             private AccountID _sellerID;
 
             public int64 offerID
@@ -208,6 +231,10 @@ namespace Stellar {
                     _offerID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Offer I D")]
+            #endif
             private int64 _offerID;
 
             public offerStruct()
@@ -247,6 +274,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class dataStruct
         {
             public AccountID accountID
@@ -257,6 +285,10 @@ namespace Stellar {
                     _accountID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account I D")]
+            #endif
             private AccountID _accountID;
 
             public string64 dataName
@@ -267,6 +299,10 @@ namespace Stellar {
                     _dataName = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Data Name")]
+            #endif
             private string64 _dataName;
 
             public dataStruct()
@@ -306,6 +342,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class claimableBalanceStruct
         {
             public ClaimableBalanceID balanceID
@@ -316,6 +353,10 @@ namespace Stellar {
                     _balanceID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Balance I D")]
+            #endif
             private ClaimableBalanceID _balanceID;
 
             public claimableBalanceStruct()
@@ -353,6 +394,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class liquidityPoolStruct
         {
             public PoolID liquidityPoolID
@@ -363,6 +405,10 @@ namespace Stellar {
                     _liquidityPoolID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Liquidity Pool I D")]
+            #endif
             private PoolID _liquidityPoolID;
 
             public liquidityPoolStruct()
@@ -400,6 +446,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class contractDataStruct
         {
             public SCAddress contract
@@ -410,6 +457,10 @@ namespace Stellar {
                     _contract = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract")]
+            #endif
             private SCAddress _contract;
 
             public SCVal key
@@ -420,6 +471,10 @@ namespace Stellar {
                     _key = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Key")]
+            #endif
             private SCVal _key;
 
             public ContractDataDurability durability
@@ -430,6 +485,10 @@ namespace Stellar {
                     _durability = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Durability")]
+            #endif
             private ContractDataDurability _durability;
 
             public contractDataStruct()
@@ -471,6 +530,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class contractCodeStruct
         {
             public Hash hash
@@ -481,6 +541,10 @@ namespace Stellar {
                     _hash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Hash")]
+            #endif
             private Hash _hash;
 
             public contractCodeStruct()
@@ -518,6 +582,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class configSettingStruct
         {
             public ConfigSettingID configSettingID
@@ -528,6 +593,10 @@ namespace Stellar {
                     _configSettingID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Config Setting I D")]
+            #endif
             private ConfigSettingID _configSettingID;
 
             public configSettingStruct()
@@ -565,6 +634,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class ttlStruct
         {
             /// <summary>
@@ -578,6 +648,10 @@ namespace Stellar {
                     _keyHash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Key Hash")]
+            #endif
             private Hash _keyHash;
 
             public ttlStruct()
@@ -614,6 +688,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class Account : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
@@ -625,10 +700,15 @@ namespace Stellar {
                     _account = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Account")]
+            #endif
             private accountStruct _account;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Trustline : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
@@ -640,10 +720,15 @@ namespace Stellar {
                     _trustLine = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Trust Line")]
+            #endif
             private trustLineStruct _trustLine;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Offer : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
@@ -655,10 +740,15 @@ namespace Stellar {
                     _offer = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Offer")]
+            #endif
             private offerStruct _offer;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Data : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
@@ -670,10 +760,15 @@ namespace Stellar {
                     _data = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Data")]
+            #endif
             private dataStruct _data;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ClaimableBalance : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
@@ -685,10 +780,15 @@ namespace Stellar {
                     _claimableBalance = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Claimable Balance")]
+            #endif
             private claimableBalanceStruct _claimableBalance;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPool : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
@@ -700,10 +800,15 @@ namespace Stellar {
                     _liquidityPool = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Liquidity Pool")]
+            #endif
             private liquidityPoolStruct _liquidityPool;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ContractData : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
@@ -715,10 +820,15 @@ namespace Stellar {
                     _contractData = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Data")]
+            #endif
             private contractDataStruct _contractData;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ContractCode : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
@@ -730,10 +840,15 @@ namespace Stellar {
                     _contractCode = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract Code")]
+            #endif
             private contractCodeStruct _contractCode;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ConfigSetting : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
@@ -745,10 +860,15 @@ namespace Stellar {
                     _configSetting = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Config Setting")]
+            #endif
             private configSettingStruct _configSetting;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Ttl : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
@@ -760,6 +880,10 @@ namespace Stellar {
                     _ttl = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ttl")]
+            #endif
             private ttlStruct _ttl;
 
             public override void ValidateCase() {}

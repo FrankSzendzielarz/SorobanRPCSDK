@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// Ledger key sets touched by a smart contract transaction.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerFootprint
     {
         public LedgerKey[] readOnly
@@ -28,6 +32,10 @@ namespace Stellar {
                 _readOnly = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Read Only")]
+        #endif
         private LedgerKey[] _readOnly;
 
         public LedgerKey[] readWrite
@@ -38,6 +46,10 @@ namespace Stellar {
                 _readWrite = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Read Write")]
+        #endif
         private LedgerKey[] _readWrite;
 
         public LedgerFootprint()

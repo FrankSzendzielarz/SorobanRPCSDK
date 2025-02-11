@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class RevokeSponsorshipResult
     {
         public abstract RevokeSponsorshipResultCode Discriminator { get; }
@@ -28,36 +32,42 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipSuccess : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipDoesNotExist : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipNotSponsor : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipLowReserve : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipOnlyTransferable : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RevokeSponsorshipMalformed : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED;

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SignedSurveyRequestMessage
     {
         public Signature requestSignature
@@ -25,6 +29,10 @@ namespace Stellar {
                 _requestSignature = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Request Signature")]
+        #endif
         private Signature _requestSignature;
 
         public SurveyRequestMessage request
@@ -35,6 +43,10 @@ namespace Stellar {
                 _request = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Request")]
+        #endif
         private SurveyRequestMessage _request;
 
         public SignedSurveyRequestMessage()

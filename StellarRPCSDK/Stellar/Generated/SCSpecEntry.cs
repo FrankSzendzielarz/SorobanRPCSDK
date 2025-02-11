@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCSpecEntry
     {
         public abstract SCSpecEntryKind Discriminator { get; }
@@ -30,6 +34,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ScSpecEntryFunctionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_FUNCTION_V0;
@@ -41,10 +46,15 @@ namespace Stellar {
                     _functionV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Function V0")]
+            #endif
             private SCSpecFunctionV0 _functionV0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecEntryUdtStructV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_STRUCT_V0;
@@ -56,10 +66,15 @@ namespace Stellar {
                     _udtStructV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Udt Struct V0")]
+            #endif
             private SCSpecUDTStructV0 _udtStructV0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecEntryUdtUnionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_UNION_V0;
@@ -71,10 +86,15 @@ namespace Stellar {
                     _udtUnionV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Udt Union V0")]
+            #endif
             private SCSpecUDTUnionV0 _udtUnionV0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecEntryUdtEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ENUM_V0;
@@ -86,10 +106,15 @@ namespace Stellar {
                     _udtEnumV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Udt Enum V0")]
+            #endif
             private SCSpecUDTEnumV0 _udtEnumV0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecEntryUdtErrorEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
@@ -101,6 +126,10 @@ namespace Stellar {
                     _udtErrorEnumV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Udt Error Enum V0")]
+            #endif
             private SCSpecUDTErrorEnumV0 _udtErrorEnumV0;
 
             public override void ValidateCase() {}

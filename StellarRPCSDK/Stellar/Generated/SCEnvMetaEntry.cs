@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCEnvMetaEntry
     {
         public abstract SCEnvMetaKind Discriminator { get; }
@@ -26,6 +30,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class interfaceVersionStruct
         {
             public uint32 protocol
@@ -36,6 +41,10 @@ namespace Stellar {
                     _protocol = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Protocol")]
+            #endif
             private uint32 _protocol;
 
             public uint32 preRelease
@@ -46,6 +55,10 @@ namespace Stellar {
                     _preRelease = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Pre Release")]
+            #endif
             private uint32 _preRelease;
 
             public interfaceVersionStruct()
@@ -84,6 +97,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class ScEnvMetaKindInterfaceVersion : SCEnvMetaEntry
         {
             public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
@@ -95,6 +109,10 @@ namespace Stellar {
                     _interfaceVersion = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Interface Version")]
+            #endif
             private interfaceVersionStruct _interfaceVersion;
 
             public override void ValidateCase() {}

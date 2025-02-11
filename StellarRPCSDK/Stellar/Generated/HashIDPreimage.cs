@@ -39,10 +39,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class HashIDPreimage
     {
         public abstract EnvelopeType Discriminator { get; }
@@ -51,6 +55,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class operationIDStruct
         {
             public AccountID sourceAccount
@@ -61,6 +66,10 @@ namespace Stellar {
                     _sourceAccount = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Source Account")]
+            #endif
             private AccountID _sourceAccount;
 
             public SequenceNumber seqNum
@@ -71,6 +80,10 @@ namespace Stellar {
                     _seqNum = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Seq Num")]
+            #endif
             private SequenceNumber _seqNum;
 
             public uint32 opNum
@@ -81,6 +94,10 @@ namespace Stellar {
                     _opNum = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Op Num")]
+            #endif
             private uint32 _opNum;
 
             public operationIDStruct()
@@ -122,6 +139,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class revokeIDStruct
         {
             public AccountID sourceAccount
@@ -132,6 +150,10 @@ namespace Stellar {
                     _sourceAccount = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Source Account")]
+            #endif
             private AccountID _sourceAccount;
 
             public SequenceNumber seqNum
@@ -142,6 +164,10 @@ namespace Stellar {
                     _seqNum = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Seq Num")]
+            #endif
             private SequenceNumber _seqNum;
 
             public uint32 opNum
@@ -152,6 +178,10 @@ namespace Stellar {
                     _opNum = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Op Num")]
+            #endif
             private uint32 _opNum;
 
             public PoolID liquidityPoolID
@@ -162,6 +192,10 @@ namespace Stellar {
                     _liquidityPoolID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Liquidity Pool I D")]
+            #endif
             private PoolID _liquidityPoolID;
 
             public Asset asset
@@ -172,6 +206,10 @@ namespace Stellar {
                     _asset = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Asset")]
+            #endif
             private Asset _asset;
 
             public revokeIDStruct()
@@ -217,6 +255,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class contractIDStruct
         {
             public Hash networkID
@@ -227,6 +266,10 @@ namespace Stellar {
                     _networkID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Network I D")]
+            #endif
             private Hash _networkID;
 
             public ContractIDPreimage contractIDPreimage
@@ -237,6 +280,10 @@ namespace Stellar {
                     _contractIDPreimage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract I D Preimage")]
+            #endif
             private ContractIDPreimage _contractIDPreimage;
 
             public contractIDStruct()
@@ -276,6 +323,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class sorobanAuthorizationStruct
         {
             public Hash networkID
@@ -286,6 +334,10 @@ namespace Stellar {
                     _networkID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Network I D")]
+            #endif
             private Hash _networkID;
 
             public int64 nonce
@@ -296,6 +348,10 @@ namespace Stellar {
                     _nonce = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Nonce")]
+            #endif
             private int64 _nonce;
 
             public uint32 signatureExpirationLedger
@@ -306,6 +362,10 @@ namespace Stellar {
                     _signatureExpirationLedger = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signature Expiration Ledger")]
+            #endif
             private uint32 _signatureExpirationLedger;
 
             public SorobanAuthorizedInvocation invocation
@@ -316,6 +376,10 @@ namespace Stellar {
                     _invocation = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Invocation")]
+            #endif
             private SorobanAuthorizedInvocation _invocation;
 
             public sorobanAuthorizationStruct()
@@ -358,6 +422,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
@@ -369,10 +434,15 @@ namespace Stellar {
                     _operationID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Operation I D")]
+            #endif
             private operationIDStruct _operationID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypePoolRevokeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
@@ -384,10 +454,15 @@ namespace Stellar {
                     _revokeID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Revoke I D")]
+            #endif
             private revokeIDStruct _revokeID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypeContractId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
@@ -399,10 +474,15 @@ namespace Stellar {
                     _contractID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Contract I D")]
+            #endif
             private contractIDStruct _contractID;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class EnvelopeTypeSorobanAuthorization : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
@@ -414,6 +494,10 @@ namespace Stellar {
                     _sorobanAuthorization = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Soroban Authorization")]
+            #endif
             private sorobanAuthorizationStruct _sorobanAuthorization;
 
             public override void ValidateCase() {}

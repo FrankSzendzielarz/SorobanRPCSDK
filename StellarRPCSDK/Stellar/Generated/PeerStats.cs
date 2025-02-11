@@ -26,10 +26,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class PeerStats
     {
         public NodeID id
@@ -40,6 +44,10 @@ namespace Stellar {
                 _id = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Id")]
+        #endif
         private NodeID _id;
 
         [MaxLength(100)]
@@ -53,6 +61,10 @@ namespace Stellar {
                 _versionStr = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Version Str")]
+        #endif
         private string _versionStr;
 
         public uint64 messagesRead
@@ -63,6 +75,10 @@ namespace Stellar {
                 _messagesRead = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Messages Read")]
+        #endif
         private uint64 _messagesRead;
 
         public uint64 messagesWritten
@@ -73,6 +89,10 @@ namespace Stellar {
                 _messagesWritten = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Messages Written")]
+        #endif
         private uint64 _messagesWritten;
 
         public uint64 bytesRead
@@ -83,6 +103,10 @@ namespace Stellar {
                 _bytesRead = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bytes Read")]
+        #endif
         private uint64 _bytesRead;
 
         public uint64 bytesWritten
@@ -93,6 +117,10 @@ namespace Stellar {
                 _bytesWritten = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bytes Written")]
+        #endif
         private uint64 _bytesWritten;
 
         public uint64 secondsConnected
@@ -103,6 +131,10 @@ namespace Stellar {
                 _secondsConnected = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seconds Connected")]
+        #endif
         private uint64 _secondsConnected;
 
         public uint64 uniqueFloodBytesRecv
@@ -113,6 +145,10 @@ namespace Stellar {
                 _uniqueFloodBytesRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Unique Flood Bytes Recv")]
+        #endif
         private uint64 _uniqueFloodBytesRecv;
 
         public uint64 duplicateFloodBytesRecv
@@ -123,6 +159,10 @@ namespace Stellar {
                 _duplicateFloodBytesRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Duplicate Flood Bytes Recv")]
+        #endif
         private uint64 _duplicateFloodBytesRecv;
 
         public uint64 uniqueFetchBytesRecv
@@ -133,6 +173,10 @@ namespace Stellar {
                 _uniqueFetchBytesRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Unique Fetch Bytes Recv")]
+        #endif
         private uint64 _uniqueFetchBytesRecv;
 
         public uint64 duplicateFetchBytesRecv
@@ -143,6 +187,10 @@ namespace Stellar {
                 _duplicateFetchBytesRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Duplicate Fetch Bytes Recv")]
+        #endif
         private uint64 _duplicateFetchBytesRecv;
 
         public uint64 uniqueFloodMessageRecv
@@ -153,6 +201,10 @@ namespace Stellar {
                 _uniqueFloodMessageRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Unique Flood Message Recv")]
+        #endif
         private uint64 _uniqueFloodMessageRecv;
 
         public uint64 duplicateFloodMessageRecv
@@ -163,6 +215,10 @@ namespace Stellar {
                 _duplicateFloodMessageRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Duplicate Flood Message Recv")]
+        #endif
         private uint64 _duplicateFloodMessageRecv;
 
         public uint64 uniqueFetchMessageRecv
@@ -173,6 +229,10 @@ namespace Stellar {
                 _uniqueFetchMessageRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Unique Fetch Message Recv")]
+        #endif
         private uint64 _uniqueFetchMessageRecv;
 
         public uint64 duplicateFetchMessageRecv
@@ -183,6 +243,10 @@ namespace Stellar {
                 _duplicateFetchMessageRecv = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Duplicate Fetch Message Recv")]
+        #endif
         private uint64 _duplicateFetchMessageRecv;
 
         public PeerStats()

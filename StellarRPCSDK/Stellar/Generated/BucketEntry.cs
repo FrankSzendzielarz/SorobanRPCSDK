@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class BucketEntry
     {
         public abstract BucketEntryType Discriminator { get; }
@@ -28,6 +32,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class Liveentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
@@ -39,10 +44,15 @@ namespace Stellar {
                     _liveEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Live Entry")]
+            #endif
             private LedgerEntry _liveEntry;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Initentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
@@ -54,10 +64,15 @@ namespace Stellar {
                     _liveEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Live Entry")]
+            #endif
             private LedgerEntry _liveEntry;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Deadentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
@@ -69,10 +84,15 @@ namespace Stellar {
                     _deadEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Dead Entry")]
+            #endif
             private LedgerKey _deadEntry;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Metaentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;
@@ -84,6 +104,10 @@ namespace Stellar {
                     _metaEntry = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Meta Entry")]
+            #endif
             private BucketMetadata _metaEntry;
 
             public override void ValidateCase() {}

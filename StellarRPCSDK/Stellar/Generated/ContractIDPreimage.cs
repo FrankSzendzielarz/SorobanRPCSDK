@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ContractIDPreimage
     {
         public abstract ContractIDPreimageType Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public partial class fromAddressStruct
         {
             public SCAddress address
@@ -39,6 +44,10 @@ namespace Stellar {
                     _address = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Address")]
+            #endif
             private SCAddress _address;
 
             public uint256 salt
@@ -49,6 +58,10 @@ namespace Stellar {
                     _salt = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Salt")]
+            #endif
             private uint256 _salt;
 
             public fromAddressStruct()
@@ -87,6 +100,7 @@ namespace Stellar {
                 return result;
             }
         }
+        [System.Serializable]
         public sealed partial class ContractIdPreimageFromAddress : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
@@ -98,10 +112,15 @@ namespace Stellar {
                     _fromAddress = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"From Address")]
+            #endif
             private fromAddressStruct _fromAddress;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ContractIdPreimageFromAsset : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET;
@@ -113,6 +132,10 @@ namespace Stellar {
                     _fromAsset = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"From Asset")]
+            #endif
             private Asset _fromAsset;
 
             public override void ValidateCase() {}

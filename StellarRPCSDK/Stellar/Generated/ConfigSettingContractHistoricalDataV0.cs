@@ -10,6 +10,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -17,6 +20,7 @@ namespace Stellar {
     /// Historical data (pushed to core archives) settings for contracts.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigSettingContractHistoricalDataV0
     {
         public int64 feeHistorical1KB
@@ -27,6 +31,10 @@ namespace Stellar {
                 _feeHistorical1KB = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Historical1 K B")]
+        #endif
         private int64 _feeHistorical1KB;
 
         public ConfigSettingContractHistoricalDataV0()

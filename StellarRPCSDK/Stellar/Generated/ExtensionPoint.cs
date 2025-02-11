@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// extend a structure.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ExtensionPoint
     {
         public abstract int Discriminator { get; }
@@ -25,6 +29,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : ExtensionPoint
         {
             public override int Discriminator => 0;

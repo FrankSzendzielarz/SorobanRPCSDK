@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SCSpecUDTUnionCaseV0
     {
         public abstract SCSpecUDTUnionCaseV0Kind Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ScSpecUdtUnionCaseVoidV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _voidCase = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Void Case")]
+            #endif
             private SCSpecUDTUnionCaseVoidV0 _voidCase;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScSpecUdtUnionCaseTupleV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
@@ -50,6 +60,10 @@ namespace Stellar {
                     _tupleCase = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tuple Case")]
+            #endif
             private SCSpecUDTUnionCaseTupleV0 _tupleCase;
 
             public override void ValidateCase() {}

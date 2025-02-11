@@ -21,6 +21,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -28,6 +31,7 @@ namespace Stellar {
     /// containing a TransactionV0.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionV0
     {
         public uint256 sourceAccountEd25519
@@ -38,6 +42,10 @@ namespace Stellar {
                 _sourceAccountEd25519 = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Source Account Ed25519")]
+        #endif
         private uint256 _sourceAccountEd25519;
 
         public uint32 fee
@@ -48,6 +56,10 @@ namespace Stellar {
                 _fee = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee")]
+        #endif
         private uint32 _fee;
 
         public SequenceNumber seqNum
@@ -58,6 +70,10 @@ namespace Stellar {
                 _seqNum = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seq Num")]
+        #endif
         private SequenceNumber _seqNum;
 
         public TimeBounds timeBounds
@@ -68,6 +84,10 @@ namespace Stellar {
                 _timeBounds = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Time Bounds")]
+        #endif
         private TimeBounds _timeBounds;
 
         public Memo memo
@@ -78,6 +98,10 @@ namespace Stellar {
                 _memo = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Memo")]
+        #endif
         private Memo _memo;
 
         [MaxLength(100)]
@@ -91,6 +115,10 @@ namespace Stellar {
                 _operations = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Operations")]
+        #endif
         private Operation[] _operations;
 
         public extUnion ext
@@ -101,6 +129,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public TransactionV0()
@@ -113,6 +145,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"operations cannot exceed Constants.MAX_OPS_PER_TX elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -120,6 +153,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

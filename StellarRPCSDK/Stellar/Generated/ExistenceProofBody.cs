@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ExistenceProofBody
     {
         public LedgerKey[] keysToProve
@@ -33,6 +37,10 @@ namespace Stellar {
                 _keysToProve = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Keys To Prove")]
+        #endif
         private LedgerKey[] _keysToProve;
 
         /// <summary>
@@ -46,6 +54,10 @@ namespace Stellar {
                 _lowBoundEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Low Bound Entries")]
+        #endif
         private ColdArchiveBucketEntry[] _lowBoundEntries;
 
         public ColdArchiveBucketEntry[] highBoundEntries
@@ -56,6 +68,10 @@ namespace Stellar {
                 _highBoundEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"High Bound Entries")]
+        #endif
         private ColdArchiveBucketEntry[] _highBoundEntries;
 
         /// <summary>
@@ -69,6 +85,10 @@ namespace Stellar {
                 _proofLevels = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Proof Levels")]
+        #endif
         private ProofLevel[] _proofLevels;
 
         public ExistenceProofBody()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class CreateAccountOp
     {
         public AccountID destination
@@ -25,6 +29,10 @@ namespace Stellar {
                 _destination = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Destination")]
+        #endif
         private AccountID _destination;
 
         /// <summary>
@@ -38,6 +46,10 @@ namespace Stellar {
                 _startingBalance = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Starting Balance")]
+        #endif
         private int64 _startingBalance;
 
         public CreateAccountOp()

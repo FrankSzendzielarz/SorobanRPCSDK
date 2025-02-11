@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ContractCodeCostInputs
     {
         public ExtensionPoint ext
@@ -33,6 +37,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         public uint32 nInstructions
@@ -43,6 +51,10 @@ namespace Stellar {
                 _nInstructions = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Instructions")]
+        #endif
         private uint32 _nInstructions;
 
         public uint32 nFunctions
@@ -53,6 +65,10 @@ namespace Stellar {
                 _nFunctions = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Functions")]
+        #endif
         private uint32 _nFunctions;
 
         public uint32 nGlobals
@@ -63,6 +79,10 @@ namespace Stellar {
                 _nGlobals = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Globals")]
+        #endif
         private uint32 _nGlobals;
 
         public uint32 nTableEntries
@@ -73,6 +93,10 @@ namespace Stellar {
                 _nTableEntries = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Table Entries")]
+        #endif
         private uint32 _nTableEntries;
 
         public uint32 nTypes
@@ -83,6 +107,10 @@ namespace Stellar {
                 _nTypes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Types")]
+        #endif
         private uint32 _nTypes;
 
         public uint32 nDataSegments
@@ -93,6 +121,10 @@ namespace Stellar {
                 _nDataSegments = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Data Segments")]
+        #endif
         private uint32 _nDataSegments;
 
         public uint32 nElemSegments
@@ -103,6 +135,10 @@ namespace Stellar {
                 _nElemSegments = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Elem Segments")]
+        #endif
         private uint32 _nElemSegments;
 
         public uint32 nImports
@@ -113,6 +149,10 @@ namespace Stellar {
                 _nImports = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Imports")]
+        #endif
         private uint32 _nImports;
 
         public uint32 nExports
@@ -123,6 +163,10 @@ namespace Stellar {
                 _nExports = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Exports")]
+        #endif
         private uint32 _nExports;
 
         public uint32 nDataSegmentBytes
@@ -133,6 +177,10 @@ namespace Stellar {
                 _nDataSegmentBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"N Data Segment Bytes")]
+        #endif
         private uint32 _nDataSegmentBytes;
 
         public ContractCodeCostInputs()

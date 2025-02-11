@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ShortHashSeed
     {
         [MinLength(16)]
@@ -28,6 +32,10 @@ namespace Stellar {
                 _seed = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seed")]
+        #endif
         private byte[] _seed = new byte[16];
 
         public ShortHashSeed()

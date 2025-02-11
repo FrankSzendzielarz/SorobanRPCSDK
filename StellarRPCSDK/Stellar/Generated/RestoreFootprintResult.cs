@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class RestoreFootprintResult
     {
         public abstract RestoreFootprintResultCode Discriminator { get; }
@@ -26,24 +30,28 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class RestoreFootprintSuccess : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RestoreFootprintMalformed : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RestoreFootprintResourceLimitExceeded : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class RestoreFootprintInsufficientRefundableFee : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;

@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class StoredTransactionSet
     {
         public abstract int Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : StoredTransactionSet
         {
             public override int Discriminator => 0;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _txSet = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tx Set")]
+            #endif
             private TransactionSet _txSet;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_1 : StoredTransactionSet
         {
             public override int Discriminator => 1;
@@ -50,6 +60,10 @@ namespace Stellar {
                     _generalizedTxSet = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Generalized Tx Set")]
+            #endif
             private GeneralizedTransactionSet _generalizedTxSet;
 
             public override void ValidateCase() {}

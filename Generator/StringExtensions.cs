@@ -12,7 +12,16 @@ namespace Generator
             char.ToLowerInvariant(str[0]) + str.Substring(1);
         public static string ToPascalCase(this string str) =>
            char.ToUpperInvariant(str[0]) + str.Substring(1);
+        public static string SplitPascalCase(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return str;
 
+            // Add a space before any uppercase letters, then trim the leading space
+            string result = System.Text.RegularExpressions.Regex.Replace(str, "([A-Z])", " $1").Trim();
+
+            return result;
+        }
         public static string SnakeToPascal(this string str)
         {
             if (string.IsNullOrEmpty(str))

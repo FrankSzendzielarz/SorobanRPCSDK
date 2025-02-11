@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LiquidityPoolWithdrawResult
     {
         public abstract LiquidityPoolWithdrawResultCode Discriminator { get; }
@@ -28,36 +32,42 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawSuccess : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawMalformed : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawNoTrust : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawUnderfunded : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawLineFull : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolWithdrawUnderMinimum : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;

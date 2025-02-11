@@ -10,10 +10,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class HmacSha256Mac
     {
         [MinLength(32)]
@@ -28,6 +32,10 @@ namespace Stellar {
                 _mac = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Mac")]
+        #endif
         private byte[] _mac = new byte[32];
 
         public HmacSha256Mac()

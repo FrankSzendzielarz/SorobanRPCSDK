@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class InflationResult
     {
         public abstract InflationResultCode Discriminator { get; }
@@ -24,6 +28,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class InflationSuccess : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
@@ -35,10 +40,15 @@ namespace Stellar {
                     _payouts = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Payouts")]
+            #endif
             private InflationPayout[] _payouts;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class InflationNotTime : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_NOT_TIME;

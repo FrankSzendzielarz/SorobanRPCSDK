@@ -38,10 +38,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TrustLineEntry
     {
         public AccountID accountID
@@ -52,6 +56,10 @@ namespace Stellar {
                 _accountID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Account I D")]
+        #endif
         private AccountID _accountID;
 
         /// <summary>
@@ -65,6 +73,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private TrustLineAsset _asset;
 
         /// <summary>
@@ -78,6 +90,10 @@ namespace Stellar {
                 _balance = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Balance")]
+        #endif
         private int64 _balance;
 
         public int64 limit
@@ -88,6 +104,10 @@ namespace Stellar {
                 _limit = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Limit")]
+        #endif
         private int64 _limit;
 
         /// <summary>
@@ -101,6 +121,10 @@ namespace Stellar {
                 _flags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Flags")]
+        #endif
         private uint32 _flags;
 
         /// <summary>
@@ -114,6 +138,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public TrustLineEntry()
@@ -124,6 +152,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -132,6 +161,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class v1Struct
             {
                 public Liabilities liabilities
@@ -142,6 +172,10 @@ namespace Stellar {
                         _liabilities = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Liabilities")]
+                #endif
                 private Liabilities _liabilities;
 
                 public extUnion ext
@@ -152,6 +186,10 @@ namespace Stellar {
                         _ext = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ext")]
+                #endif
                 private extUnion _ext;
 
                 public v1Struct()
@@ -162,6 +200,7 @@ namespace Stellar {
                 {
                 }
                 [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+                [System.Serializable]
                 public abstract partial class extUnion
                 {
                     public abstract int Discriminator { get; }
@@ -169,12 +208,14 @@ namespace Stellar {
                     /// <summary>Validates the union case matches its discriminator</summary>
                     public abstract void ValidateCase();
 
+                    [System.Serializable]
                     public sealed partial class case_0 : extUnion
                     {
                         public override int Discriminator => 0;
 
                         public override void ValidateCase() {}
                     }
+                    [System.Serializable]
                     public sealed partial class case_2 : extUnion
                     {
                         public override int Discriminator => 2;
@@ -186,6 +227,10 @@ namespace Stellar {
                                 _v2 = value;
                             }
                         }
+                        #if UNITY
+                        	[SerializeField]
+                        	[InspectorName(@"V2")]
+                        #endif
                         private TrustLineEntryExtensionV2 _v2;
 
                         public override void ValidateCase() {}
@@ -262,12 +307,14 @@ namespace Stellar {
                     return result;
                 }
             }
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -279,6 +326,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private v1Struct _v1;
 
                 public override void ValidateCase() {}

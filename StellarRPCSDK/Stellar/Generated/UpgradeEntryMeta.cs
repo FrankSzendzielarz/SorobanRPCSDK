@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// upgrade
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class UpgradeEntryMeta
     {
         public LedgerUpgrade upgrade
@@ -28,6 +32,10 @@ namespace Stellar {
                 _upgrade = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Upgrade")]
+        #endif
         private LedgerUpgrade _upgrade;
 
         public LedgerEntryChanges changes
@@ -38,6 +46,10 @@ namespace Stellar {
                 _changes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Changes")]
+        #endif
         private LedgerEntryChanges _changes;
 
         public UpgradeEntryMeta()

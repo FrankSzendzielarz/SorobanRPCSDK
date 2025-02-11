@@ -45,10 +45,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerEntry
     {
         public uint32 lastModifiedLedgerSeq
@@ -59,6 +63,10 @@ namespace Stellar {
                 _lastModifiedLedgerSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Last Modified Ledger Seq")]
+        #endif
         private uint32 _lastModifiedLedgerSeq;
 
         public dataUnion data
@@ -69,6 +77,10 @@ namespace Stellar {
                 _data = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Data")]
+        #endif
         private dataUnion _data;
 
         /// <summary>
@@ -82,6 +94,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public LedgerEntry()
@@ -92,6 +108,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class dataUnion
         {
             public abstract LedgerEntryType Discriminator { get; }
@@ -99,6 +116,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class Account : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
@@ -110,10 +128,15 @@ namespace Stellar {
                         _account = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Account")]
+                #endif
                 private AccountEntry _account;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Trustline : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
@@ -125,10 +148,15 @@ namespace Stellar {
                         _trustLine = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Trust Line")]
+                #endif
                 private TrustLineEntry _trustLine;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Offer : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
@@ -140,10 +168,15 @@ namespace Stellar {
                         _offer = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Offer")]
+                #endif
                 private OfferEntry _offer;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Data : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
@@ -155,10 +188,15 @@ namespace Stellar {
                         _data = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Data")]
+                #endif
                 private DataEntry _data;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ClaimableBalance : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
@@ -170,10 +208,15 @@ namespace Stellar {
                         _claimableBalance = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Claimable Balance")]
+                #endif
                 private ClaimableBalanceEntry _claimableBalance;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class LiquidityPool : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
@@ -185,10 +228,15 @@ namespace Stellar {
                         _liquidityPool = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Liquidity Pool")]
+                #endif
                 private LiquidityPoolEntry _liquidityPool;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ContractData : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
@@ -200,10 +248,15 @@ namespace Stellar {
                         _contractData = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Contract Data")]
+                #endif
                 private ContractDataEntry _contractData;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ContractCode : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
@@ -215,10 +268,15 @@ namespace Stellar {
                         _contractCode = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Contract Code")]
+                #endif
                 private ContractCodeEntry _contractCode;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ConfigSetting : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
@@ -230,10 +288,15 @@ namespace Stellar {
                         _configSetting = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Config Setting")]
+                #endif
                 private ConfigSettingEntry _configSetting;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class Ttl : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
@@ -245,6 +308,10 @@ namespace Stellar {
                         _ttl = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Ttl")]
+                #endif
                 private TTLEntry _ttl;
 
                 public override void ValidateCase() {}
@@ -351,6 +418,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -358,12 +426,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
@@ -375,6 +445,10 @@ namespace Stellar {
                         _v1 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V1")]
+                #endif
                 private LedgerEntryExtensionV1 _v1;
 
                 public override void ValidateCase() {}

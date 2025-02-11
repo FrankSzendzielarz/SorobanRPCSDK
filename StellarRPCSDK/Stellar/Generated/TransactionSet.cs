@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// between ledgers
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionSet
     {
         public Hash previousLedgerHash
@@ -28,6 +32,10 @@ namespace Stellar {
                 _previousLedgerHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Previous Ledger Hash")]
+        #endif
         private Hash _previousLedgerHash;
 
         public TransactionEnvelope[] txs
@@ -38,6 +46,10 @@ namespace Stellar {
                 _txs = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Txs")]
+        #endif
         private TransactionEnvelope[] _txs;
 
         public TransactionSet()

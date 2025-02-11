@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCPNomination
     {
         public Hash quorumSetHash
@@ -26,6 +30,10 @@ namespace Stellar {
                 _quorumSetHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Quorum Set Hash")]
+        #endif
         private Hash _quorumSetHash;
 
         /// <summary>
@@ -39,6 +47,10 @@ namespace Stellar {
                 _votes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Votes")]
+        #endif
         private Value[] _votes;
 
         /// <summary>
@@ -52,6 +64,10 @@ namespace Stellar {
                 _accepted = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Accepted")]
+        #endif
         private Value[] _accepted;
 
         public SCPNomination()

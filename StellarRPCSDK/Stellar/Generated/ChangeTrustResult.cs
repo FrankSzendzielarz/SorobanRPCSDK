@@ -20,10 +20,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ChangeTrustResult
     {
         public abstract ChangeTrustResultCode Discriminator { get; }
@@ -31,54 +35,63 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ChangeTrustSuccess : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustMalformed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustNoIssuer : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustInvalidLimit : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustLowReserve : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustSelfNotAllowed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustTrustLineMissing : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustCannotDelete : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ChangeTrustNotAuthMaintainLiabilities : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;

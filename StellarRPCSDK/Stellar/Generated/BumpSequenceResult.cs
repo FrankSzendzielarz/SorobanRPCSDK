@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class BumpSequenceResult
     {
         public abstract BumpSequenceResultCode Discriminator { get; }
@@ -24,12 +28,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class BumpSequenceSuccess : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class BumpSequenceBadSeq : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;

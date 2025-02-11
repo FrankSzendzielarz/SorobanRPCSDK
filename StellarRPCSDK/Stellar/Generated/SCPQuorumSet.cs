@@ -12,6 +12,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -19,6 +22,7 @@ namespace Stellar {
     /// only allows 2 levels of nesting
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCPQuorumSet
     {
         public uint32 threshold
@@ -29,6 +33,10 @@ namespace Stellar {
                 _threshold = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Threshold")]
+        #endif
         private uint32 _threshold;
 
         public NodeID[] validators
@@ -39,6 +47,10 @@ namespace Stellar {
                 _validators = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Validators")]
+        #endif
         private NodeID[] _validators;
 
         public SCPQuorumSet[] innerSets
@@ -49,6 +61,10 @@ namespace Stellar {
                 _innerSets = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inner Sets")]
+        #endif
         private SCPQuorumSet[] _innerSets;
 
         public SCPQuorumSet()

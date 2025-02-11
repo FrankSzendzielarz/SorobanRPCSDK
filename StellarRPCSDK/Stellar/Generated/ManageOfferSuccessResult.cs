@@ -21,10 +21,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ManageOfferSuccessResult
     {
         /// <summary>
@@ -38,6 +42,10 @@ namespace Stellar {
                 _offersClaimed = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Offers Claimed")]
+        #endif
         private ClaimAtom[] _offersClaimed;
 
         public offerUnion offer
@@ -48,6 +56,10 @@ namespace Stellar {
                 _offer = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Offer")]
+        #endif
         private offerUnion _offer;
 
         public ManageOfferSuccessResult()
@@ -58,6 +70,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class offerUnion
         {
             public abstract ManageOfferEffect Discriminator { get; }
@@ -65,6 +78,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class ManageOfferCreated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_CREATED;
@@ -76,10 +90,15 @@ namespace Stellar {
                         _offer = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Offer")]
+                #endif
                 private OfferEntry _offer;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ManageOfferUpdated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_UPDATED;
@@ -91,10 +110,15 @@ namespace Stellar {
                         _offer = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Offer")]
+                #endif
                 private OfferEntry _offer;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class ManageOfferDeleted : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_DELETED;

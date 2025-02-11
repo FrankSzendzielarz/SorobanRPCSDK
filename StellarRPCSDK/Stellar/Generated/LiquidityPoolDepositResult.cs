@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class LiquidityPoolDepositResult
     {
         public abstract LiquidityPoolDepositResultCode Discriminator { get; }
@@ -30,48 +34,56 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositSuccess : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositMalformed : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositNoTrust : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositNotAuthorized : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositUnderfunded : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositLineFull : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositBadPrice : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class LiquidityPoolDepositPoolFull : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL;

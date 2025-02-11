@@ -19,6 +19,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -26,6 +29,7 @@ namespace Stellar {
     /// "Compute" settings for contracts (instructions and memory).
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigSettingContractComputeV0
     {
         /// <summary>
@@ -39,6 +43,10 @@ namespace Stellar {
                 _ledgerMaxInstructions = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Instructions")]
+        #endif
         private int64 _ledgerMaxInstructions;
 
         /// <summary>
@@ -52,6 +60,10 @@ namespace Stellar {
                 _txMaxInstructions = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Max Instructions")]
+        #endif
         private int64 _txMaxInstructions;
 
         /// <summary>
@@ -65,6 +77,10 @@ namespace Stellar {
                 _feeRatePerInstructionsIncrement = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Rate Per Instructions Increment")]
+        #endif
         private int64 _feeRatePerInstructionsIncrement;
 
         /// <summary>
@@ -78,6 +94,10 @@ namespace Stellar {
                 _txMemoryLimit = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Memory Limit")]
+        #endif
         private uint32 _txMemoryLimit;
 
         public ConfigSettingContractComputeV0()

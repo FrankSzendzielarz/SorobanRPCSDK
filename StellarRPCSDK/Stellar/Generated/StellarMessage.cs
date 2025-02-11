@@ -68,10 +68,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class StellarMessage
     {
         public abstract MessageType Discriminator { get; }
@@ -79,6 +83,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ErrorMsg : StellarMessage
         {
             public override MessageType Discriminator => MessageType.ERROR_MSG;
@@ -90,10 +95,15 @@ namespace Stellar {
                     _error = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Error")]
+            #endif
             private Error _error;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HelloCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.HELLO;
@@ -105,10 +115,15 @@ namespace Stellar {
                     _hello = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Hello")]
+            #endif
             private Hello _hello;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AuthCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.AUTH;
@@ -120,10 +135,15 @@ namespace Stellar {
                     _auth = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Auth")]
+            #endif
             private Auth _auth;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class DontHaveCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.DONT_HAVE;
@@ -135,10 +155,15 @@ namespace Stellar {
                     _dontHave = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Dont Have")]
+            #endif
             private DontHave _dontHave;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class Peers : StellarMessage
         {
             public override MessageType Discriminator => MessageType.PEERS;
@@ -153,10 +178,15 @@ namespace Stellar {
                     _peers = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Peers")]
+            #endif
             private PeerAddress[] _peers;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class GetTxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_TX_SET;
@@ -168,10 +198,15 @@ namespace Stellar {
                     _txSetHash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tx Set Hash")]
+            #endif
             private uint256 _txSetHash;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TX_SET;
@@ -183,10 +218,15 @@ namespace Stellar {
                     _txSet = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Tx Set")]
+            #endif
             private TransactionSet _txSet;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class GeneralizedTxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GENERALIZED_TX_SET;
@@ -198,10 +238,15 @@ namespace Stellar {
                     _generalizedTxSet = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Generalized Tx Set")]
+            #endif
             private GeneralizedTransactionSet _generalizedTxSet;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TransactionCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TRANSACTION;
@@ -213,10 +258,15 @@ namespace Stellar {
                     _transaction = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Transaction")]
+            #endif
             private TransactionEnvelope _transaction;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SurveyRequest : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SURVEY_REQUEST;
@@ -228,10 +278,15 @@ namespace Stellar {
                     _signedSurveyRequestMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Survey Request Message")]
+            #endif
             private SignedSurveyRequestMessage _signedSurveyRequestMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SurveyResponse : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SURVEY_RESPONSE;
@@ -243,10 +298,15 @@ namespace Stellar {
                     _signedSurveyResponseMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Survey Response Message")]
+            #endif
             private SignedSurveyResponseMessage _signedSurveyResponseMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TimeSlicedSurveyRequest : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_REQUEST;
@@ -258,10 +318,15 @@ namespace Stellar {
                     _signedTimeSlicedSurveyRequestMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Time Sliced Survey Request Message")]
+            #endif
             private SignedTimeSlicedSurveyRequestMessage _signedTimeSlicedSurveyRequestMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TimeSlicedSurveyResponse : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_RESPONSE;
@@ -273,10 +338,15 @@ namespace Stellar {
                     _signedTimeSlicedSurveyResponseMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Time Sliced Survey Response Message")]
+            #endif
             private SignedTimeSlicedSurveyResponseMessage _signedTimeSlicedSurveyResponseMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TimeSlicedSurveyStartCollecting : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_START_COLLECTING;
@@ -288,10 +358,15 @@ namespace Stellar {
                     _signedTimeSlicedSurveyStartCollectingMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Time Sliced Survey Start Collecting Message")]
+            #endif
             private SignedTimeSlicedSurveyStartCollectingMessage _signedTimeSlicedSurveyStartCollectingMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class TimeSlicedSurveyStopCollecting : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_STOP_COLLECTING;
@@ -303,6 +378,10 @@ namespace Stellar {
                     _signedTimeSlicedSurveyStopCollectingMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Signed Time Sliced Survey Stop Collecting Message")]
+            #endif
             private SignedTimeSlicedSurveyStopCollectingMessage _signedTimeSlicedSurveyStopCollectingMessage;
 
             public override void ValidateCase() {}
@@ -310,6 +389,7 @@ namespace Stellar {
         /// <summary>
         /// SCP
         /// </summary>
+        [System.Serializable]
         public sealed partial class GetScpQuorumset : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_SCP_QUORUMSET;
@@ -321,10 +401,15 @@ namespace Stellar {
                     _qSetHash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Q Set Hash")]
+            #endif
             private uint256 _qSetHash;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScpQuorumset : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SCP_QUORUMSET;
@@ -336,10 +421,15 @@ namespace Stellar {
                     _qSet = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Q Set")]
+            #endif
             private SCPQuorumSet _qSet;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ScpMessage : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SCP_MESSAGE;
@@ -351,10 +441,15 @@ namespace Stellar {
                     _envelope = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Envelope")]
+            #endif
             private SCPEnvelope _envelope;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class GetScpState : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_SCP_STATE;
@@ -366,6 +461,10 @@ namespace Stellar {
                     _getSCPLedgerSeq = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Get S C P Ledger Seq")]
+            #endif
             private uint32 _getSCPLedgerSeq;
 
             public override void ValidateCase() {}
@@ -373,6 +472,7 @@ namespace Stellar {
         /// <summary>
         /// ledger seq requested ; if 0, requests the latest
         /// </summary>
+        [System.Serializable]
         public sealed partial class SendMoreCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SEND_MORE;
@@ -384,10 +484,15 @@ namespace Stellar {
                     _sendMoreMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Send More Message")]
+            #endif
             private SendMore _sendMoreMessage;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SendMoreExtendedCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SEND_MORE_EXTENDED;
@@ -399,6 +504,10 @@ namespace Stellar {
                     _sendMoreExtendedMessage = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Send More Extended Message")]
+            #endif
             private SendMoreExtended _sendMoreExtendedMessage;
 
             public override void ValidateCase() {}
@@ -406,6 +515,7 @@ namespace Stellar {
         /// <summary>
         /// Pull mode
         /// </summary>
+        [System.Serializable]
         public sealed partial class FloodAdvertCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.FLOOD_ADVERT;
@@ -417,10 +527,15 @@ namespace Stellar {
                     _floodAdvert = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Flood Advert")]
+            #endif
             private FloodAdvert _floodAdvert;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class FloodDemandCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.FLOOD_DEMAND;
@@ -432,6 +547,10 @@ namespace Stellar {
                     _floodDemand = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Flood Demand")]
+            #endif
             private FloodDemand _floodDemand;
 
             public override void ValidateCase() {}

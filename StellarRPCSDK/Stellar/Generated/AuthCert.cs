@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AuthCert
     {
         public Curve25519Public pubkey
@@ -26,6 +30,10 @@ namespace Stellar {
                 _pubkey = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Pubkey")]
+        #endif
         private Curve25519Public _pubkey;
 
         public uint64 expiration
@@ -36,6 +44,10 @@ namespace Stellar {
                 _expiration = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Expiration")]
+        #endif
         private uint64 _expiration;
 
         public Signature sig
@@ -46,6 +58,10 @@ namespace Stellar {
                 _sig = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Sig")]
+        #endif
         private Signature _sig;
 
         public AuthCert()

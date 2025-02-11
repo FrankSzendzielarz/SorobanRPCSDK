@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeSlicedSurveyRequestMessage
     {
         public SurveyRequestMessage request
@@ -27,6 +31,10 @@ namespace Stellar {
                 _request = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Request")]
+        #endif
         private SurveyRequestMessage _request;
 
         public uint32 nonce
@@ -37,6 +45,10 @@ namespace Stellar {
                 _nonce = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Nonce")]
+        #endif
         private uint32 _nonce;
 
         public uint32 inboundPeersIndex
@@ -47,6 +59,10 @@ namespace Stellar {
                 _inboundPeersIndex = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Inbound Peers Index")]
+        #endif
         private uint32 _inboundPeersIndex;
 
         public uint32 outboundPeersIndex
@@ -57,6 +73,10 @@ namespace Stellar {
                 _outboundPeersIndex = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Outbound Peers Index")]
+        #endif
         private uint32 _outboundPeersIndex;
 
         public TimeSlicedSurveyRequestMessage()

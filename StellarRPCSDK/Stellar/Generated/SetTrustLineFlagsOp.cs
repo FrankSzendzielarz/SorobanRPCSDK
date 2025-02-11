@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SetTrustLineFlagsOp
     {
         public AccountID trustor
@@ -28,6 +32,10 @@ namespace Stellar {
                 _trustor = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Trustor")]
+        #endif
         private AccountID _trustor;
 
         public Asset asset
@@ -38,6 +46,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private Asset _asset;
 
         public uint32 clearFlags
@@ -48,6 +60,10 @@ namespace Stellar {
                 _clearFlags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Clear Flags")]
+        #endif
         private uint32 _clearFlags;
 
         /// <summary>
@@ -61,6 +77,10 @@ namespace Stellar {
                 _setFlags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Set Flags")]
+        #endif
         private uint32 _setFlags;
 
         public SetTrustLineFlagsOp()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SendMoreExtended
     {
         public uint32 numMessages
@@ -25,6 +29,10 @@ namespace Stellar {
                 _numMessages = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Messages")]
+        #endif
         private uint32 _numMessages;
 
         public uint32 numBytes
@@ -35,6 +43,10 @@ namespace Stellar {
                 _numBytes = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Num Bytes")]
+        #endif
         private uint32 _numBytes;
 
         public SendMoreExtended()

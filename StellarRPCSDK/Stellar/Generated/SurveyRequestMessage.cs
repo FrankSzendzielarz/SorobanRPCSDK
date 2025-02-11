@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SurveyRequestMessage
     {
         public NodeID surveyorPeerID
@@ -28,6 +32,10 @@ namespace Stellar {
                 _surveyorPeerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Surveyor Peer I D")]
+        #endif
         private NodeID _surveyorPeerID;
 
         public NodeID surveyedPeerID
@@ -38,6 +46,10 @@ namespace Stellar {
                 _surveyedPeerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Surveyed Peer I D")]
+        #endif
         private NodeID _surveyedPeerID;
 
         public uint32 ledgerNum
@@ -48,6 +60,10 @@ namespace Stellar {
                 _ledgerNum = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Num")]
+        #endif
         private uint32 _ledgerNum;
 
         public Curve25519Public encryptionKey
@@ -58,6 +74,10 @@ namespace Stellar {
                 _encryptionKey = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Encryption Key")]
+        #endif
         private Curve25519Public _encryptionKey;
 
         public SurveyMessageCommandType commandType
@@ -68,6 +88,10 @@ namespace Stellar {
                 _commandType = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Command Type")]
+        #endif
         private SurveyMessageCommandType _commandType;
 
         public SurveyRequestMessage()

@@ -16,10 +16,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class AssetCode
     {
         public abstract AssetType Discriminator { get; }
@@ -27,6 +31,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class AssetTypeCreditAlphanum4 : AssetCode
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
@@ -38,10 +43,15 @@ namespace Stellar {
                     _assetCode4 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Asset Code4")]
+            #endif
             private AssetCode4 _assetCode4;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AssetTypeCreditAlphanum12 : AssetCode
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
@@ -53,6 +63,10 @@ namespace Stellar {
                     _assetCode12 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Asset Code12")]
+            #endif
             private AssetCode12 _assetCode12;
 
             public override void ValidateCase() {}

@@ -14,10 +14,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionMetaV2
     {
         public LedgerEntryChanges txChangesBefore
@@ -28,6 +32,10 @@ namespace Stellar {
                 _txChangesBefore = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Changes Before")]
+        #endif
         private LedgerEntryChanges _txChangesBefore;
 
         /// <summary>
@@ -41,6 +49,10 @@ namespace Stellar {
                 _operations = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Operations")]
+        #endif
         private OperationMeta[] _operations;
 
         /// <summary>
@@ -54,6 +66,10 @@ namespace Stellar {
                 _txChangesAfter = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Changes After")]
+        #endif
         private LedgerEntryChanges _txChangesAfter;
 
         public TransactionMetaV2()

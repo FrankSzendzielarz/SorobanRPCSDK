@@ -13,6 +13,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -20,6 +23,7 @@ namespace Stellar {
     /// defined by these indexes
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public enum ThresholdIndexes
     {
         THRESHOLD_MASTER_WEIGHT = 0,

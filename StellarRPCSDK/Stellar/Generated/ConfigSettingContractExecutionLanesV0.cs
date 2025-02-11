@@ -11,6 +11,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -18,6 +21,7 @@ namespace Stellar {
     /// General “Soroban execution lane” settings
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigSettingContractExecutionLanesV0
     {
         /// <summary>
@@ -31,6 +35,10 @@ namespace Stellar {
                 _ledgerMaxTxCount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Max Tx Count")]
+        #endif
         private uint32 _ledgerMaxTxCount;
 
         public ConfigSettingContractExecutionLanesV0()

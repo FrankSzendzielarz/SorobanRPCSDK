@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeSlicedSurveyStartCollectingMessage
     {
         public NodeID surveyorID
@@ -26,6 +30,10 @@ namespace Stellar {
                 _surveyorID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Surveyor I D")]
+        #endif
         private NodeID _surveyorID;
 
         public uint32 nonce
@@ -36,6 +44,10 @@ namespace Stellar {
                 _nonce = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Nonce")]
+        #endif
         private uint32 _nonce;
 
         public uint32 ledgerNum
@@ -46,6 +58,10 @@ namespace Stellar {
                 _ledgerNum = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Num")]
+        #endif
         private uint32 _ledgerNum;
 
         public TimeSlicedSurveyStartCollectingMessage()

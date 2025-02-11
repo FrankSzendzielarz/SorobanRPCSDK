@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class TransactionPhase
     {
         public abstract int Discriminator { get; }
@@ -22,6 +26,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : TransactionPhase
         {
             public override int Discriminator => 0;
@@ -33,6 +38,10 @@ namespace Stellar {
                     _v0Components = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0 Components")]
+            #endif
             private TxSetComponent[] _v0Components;
 
             public override void ValidateCase() {}

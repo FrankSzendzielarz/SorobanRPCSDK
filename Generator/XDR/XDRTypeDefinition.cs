@@ -110,6 +110,9 @@ namespace Generator.XDR
             code.AppendLine("using System;");
             code.AppendLine("using System.IO;");
             code.AppendLine("using System.ComponentModel.DataAnnotations;");
+            code.AppendLine("#if UNITY");
+            code.AppendLine("\tusing UnityEngine;");
+            code.AppendLine("#endif");
             code.AppendLine();
             code.AppendLine($"namespace {Namespace} {{");
             code.AppendLine();
@@ -150,6 +153,7 @@ namespace Generator.XDR
 
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
+            code.AppendLine("[System.Serializable]");
             code.AppendLine($"public enum {enumName}");
             code.OpenBlock();
             var enumMembers = context.enumMember();
@@ -257,6 +261,7 @@ namespace Generator.XDR
         {
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
+            code.AppendLine("[System.Serializable]");
             code.AppendLine($"public partial class {Name}");
             code.OpenBlock();
 
@@ -348,6 +353,10 @@ namespace Generator.XDR
             code.CloseBlock();
             code.CloseBlock();
 
+            code.AppendLine("#if UNITY");
+            code.AppendLine("\t[SerializeField]");
+            code.AppendLine($"\t[InspectorName(@\"{fieldName.ToPascalCase().SplitPascalCase()}\")]");
+            code.AppendLine("#endif");
             switch (fieldType.ArrayType)
             {
                 case ArrayType.Fixed:
@@ -507,6 +516,7 @@ namespace Generator.XDR
 
             // Generate abstract base class
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
+            code.AppendLine("[System.Serializable]");
             code.AppendLine($"public abstract partial class {Name}");
             code.OpenBlock();
             bool enumDiscriminator = false;
@@ -539,6 +549,7 @@ namespace Generator.XDR
 
                     // var className = $"{Name}_{value.GetText()}";
                     var className = $"{UnionCaseToClassName(value.GetText(),enumDiscriminator,generationContext.AllTypes)}";
+                    code.AppendLine("[System.Serializable]");
                     code.AppendLine($"public sealed partial class {className} : {Name}");
                     code.OpenBlock();
                     /*
@@ -599,6 +610,7 @@ namespace Generator.XDR
             var defaultCase = context.defaultCase();
             if (defaultCase != null)
             {
+                code.AppendLine("[System.Serializable]");
                 code.AppendLine($"public sealed partial class {Name}_Default : {Name}");
                 code.OpenBlock();
                 code.AppendLine($"private readonly {discriminatorString} _discriminator;");
@@ -644,6 +656,7 @@ namespace Generator.XDR
 
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
+            code.AppendLine("[System.Serializable]");
             code.AppendLine($"public partial class {Name}");
             code.OpenBlock();
 

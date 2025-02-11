@@ -9,10 +9,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ConfigUpgradeSet
     {
         public ConfigSettingEntry[] updatedEntry
@@ -23,6 +27,10 @@ namespace Stellar {
                 _updatedEntry = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Updated Entry")]
+        #endif
         private ConfigSettingEntry[] _updatedEntry;
 
         public ConfigUpgradeSet()

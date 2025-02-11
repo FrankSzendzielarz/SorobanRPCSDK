@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class LedgerSCPMessages
     {
         public uint32 ledgerSeq
@@ -25,6 +29,10 @@ namespace Stellar {
                 _ledgerSeq = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ledger Seq")]
+        #endif
         private uint32 _ledgerSeq;
 
         public SCPEnvelope[] messages
@@ -35,6 +43,10 @@ namespace Stellar {
                 _messages = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Messages")]
+        #endif
         private SCPEnvelope[] _messages;
 
         public LedgerSCPMessages()

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TimeBounds
     {
         public TimePoint minTime
@@ -25,6 +29,10 @@ namespace Stellar {
                 _minTime = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Time")]
+        #endif
         private TimePoint _minTime;
 
         public TimePoint maxTime
@@ -35,6 +43,10 @@ namespace Stellar {
                 _maxTime = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Time")]
+        #endif
         private TimePoint _maxTime;
 
         public TimeBounds()

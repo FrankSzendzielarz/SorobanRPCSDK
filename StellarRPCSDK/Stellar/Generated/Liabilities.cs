@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class Liabilities
     {
         public int64 buying
@@ -25,6 +29,10 @@ namespace Stellar {
                 _buying = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Buying")]
+        #endif
         private int64 _buying;
 
         public int64 selling
@@ -35,6 +43,10 @@ namespace Stellar {
                 _selling = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Selling")]
+        #endif
         private int64 _selling;
 
         public Liabilities()

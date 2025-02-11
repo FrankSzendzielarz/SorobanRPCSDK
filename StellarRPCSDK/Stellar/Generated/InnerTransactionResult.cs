@@ -45,6 +45,9 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
@@ -52,6 +55,7 @@ namespace Stellar {
     /// because it is be used to represent the result of a Transaction.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class InnerTransactionResult
     {
         /// <summary>
@@ -65,6 +69,10 @@ namespace Stellar {
                 _feeCharged = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Fee Charged")]
+        #endif
         private int64 _feeCharged;
 
         public resultUnion result
@@ -75,6 +83,10 @@ namespace Stellar {
                 _result = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Result")]
+        #endif
         private resultUnion _result;
 
         /// <summary>
@@ -88,6 +100,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public InnerTransactionResult()
@@ -98,6 +114,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class resultUnion
         {
             public abstract TransactionResultCode Discriminator { get; }
@@ -108,6 +125,7 @@ namespace Stellar {
             /// <summary>
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
+            [System.Serializable]
             public sealed partial class TxSUCCESS : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
@@ -119,6 +137,10 @@ namespace Stellar {
                         _results = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Results")]
+                #endif
                 private OperationResult[] _results;
 
                 public override void ValidateCase() {}
@@ -126,6 +148,7 @@ namespace Stellar {
             /// <summary>
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
+            [System.Serializable]
             public sealed partial class TxFAILED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
@@ -137,94 +160,113 @@ namespace Stellar {
                         _results = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Results")]
+                #endif
                 private OperationResult[] _results;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxtooEarly : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_EARLY;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxtooLate : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_LATE;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxmissingOperation : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMISSING_OPERATION;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxbadSeq : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SEQ;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxbadAuth : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxinsufficientBalance : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_BALANCE;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxnoAccount : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNO_ACCOUNT;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxinsufficientFee : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_FEE;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxbadAuthExtra : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH_EXTRA;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxinternalError : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINTERNAL_ERROR;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxnotSupported : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNOT_SUPPORTED;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxbadSponsorship : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SPONSORSHIP;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxbadMinSeqAgeOrGap : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxMALFORMED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMALFORMED;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class TxsorobanInvalid : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSOROBAN_INVALID;
@@ -374,6 +416,7 @@ namespace Stellar {
             }
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -381,6 +424,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

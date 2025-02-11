@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SorobanTransactionMetaExt
     {
         public abstract int Discriminator { get; }
@@ -24,12 +28,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class case_0 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class case_1 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 1;
@@ -41,6 +47,10 @@ namespace Stellar {
                     _v1 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V1")]
+            #endif
             private SorobanTransactionMetaExtV1 _v1;
 
             public override void ValidateCase() {}

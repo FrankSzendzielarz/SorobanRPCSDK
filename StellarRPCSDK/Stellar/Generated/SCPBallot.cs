@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCPBallot
     {
         public uint32 counter
@@ -25,6 +29,10 @@ namespace Stellar {
                 _counter = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Counter")]
+        #endif
         private uint32 _counter;
 
         /// <summary>
@@ -38,6 +46,10 @@ namespace Stellar {
                 _value = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Value")]
+        #endif
         private Value _value;
 
         public SCPBallot()

@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class AccountEntryExtensionV1
     {
         public Liabilities liabilities
@@ -33,6 +37,10 @@ namespace Stellar {
                 _liabilities = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Liabilities")]
+        #endif
         private Liabilities _liabilities;
 
         public extUnion ext
@@ -43,6 +51,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public AccountEntryExtensionV1()
@@ -53,6 +65,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -60,12 +73,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class case_2 : extUnion
             {
                 public override int Discriminator => 2;
@@ -77,6 +92,10 @@ namespace Stellar {
                         _v2 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V2")]
+                #endif
                 private AccountEntryExtensionV2 _v2;
 
                 public override void ValidateCase() {}

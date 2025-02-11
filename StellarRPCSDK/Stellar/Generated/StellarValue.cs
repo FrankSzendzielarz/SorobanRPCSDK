@@ -28,10 +28,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class StellarValue
     {
         public Hash txSetHash
@@ -42,6 +46,10 @@ namespace Stellar {
                 _txSetHash = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tx Set Hash")]
+        #endif
         private Hash _txSetHash;
 
         /// <summary>
@@ -55,6 +63,10 @@ namespace Stellar {
                 _closeTime = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Close Time")]
+        #endif
         private TimePoint _closeTime;
 
         /// <summary>
@@ -71,6 +83,10 @@ namespace Stellar {
                 _upgrades = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Upgrades")]
+        #endif
         private UpgradeType[] _upgrades;
 
         /// <summary>
@@ -84,6 +100,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public StellarValue()
@@ -96,6 +116,7 @@ namespace Stellar {
             	throw new InvalidOperationException($"upgrades cannot exceed 6 elements");
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract StellarValueType Discriminator { get; }
@@ -103,12 +124,14 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class StellarValueBasic : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_BASIC;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class StellarValueSigned : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_SIGNED;
@@ -120,6 +143,10 @@ namespace Stellar {
                         _lcValueSignature = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Lc Value Signature")]
+                #endif
                 private LedgerCloseValueSignature _lcValueSignature;
 
                 public override void ValidateCase() {}

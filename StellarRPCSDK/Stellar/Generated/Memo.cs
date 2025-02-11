@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class Memo
     {
         public abstract MemoType Discriminator { get; }
@@ -30,12 +34,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class MemoNone : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_NONE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class MemoText : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_TEXT;
@@ -50,10 +56,15 @@ namespace Stellar {
                     _text = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Text")]
+            #endif
             private string _text;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class MemoId : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_ID;
@@ -65,10 +76,15 @@ namespace Stellar {
                     _id = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Id")]
+            #endif
             private uint64 _id;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class MemoHash : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_HASH;
@@ -80,6 +96,10 @@ namespace Stellar {
                     _hash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Hash")]
+            #endif
             private Hash _hash;
 
             public override void ValidateCase() {}
@@ -87,6 +107,7 @@ namespace Stellar {
         /// <summary>
         /// the hash of what to pull from the content server
         /// </summary>
+        [System.Serializable]
         public sealed partial class MemoReturn : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_RETURN;
@@ -98,6 +119,10 @@ namespace Stellar {
                     _retHash = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Ret Hash")]
+            #endif
             private Hash _retHash;
 
             public override void ValidateCase() {}

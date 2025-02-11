@@ -22,10 +22,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class TrustLineAsset
     {
         public abstract AssetType Discriminator { get; }
@@ -33,12 +37,14 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class AssetTypeNative : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AssetTypeCreditAlphanum4 : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
@@ -50,10 +56,15 @@ namespace Stellar {
                     _alphaNum4 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Alpha Num4")]
+            #endif
             private AlphaNum4 _alphaNum4;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AssetTypeCreditAlphanum12 : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
@@ -65,10 +76,15 @@ namespace Stellar {
                     _alphaNum12 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Alpha Num12")]
+            #endif
             private AlphaNum12 _alphaNum12;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class AssetTypePoolShare : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_POOL_SHARE;
@@ -80,6 +96,10 @@ namespace Stellar {
                     _liquidityPoolID = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Liquidity Pool I D")]
+            #endif
             private PoolID _liquidityPoolID;
 
             public override void ValidateCase() {}

@@ -30,10 +30,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class StateArchivalSettings
     {
         public uint32 maxEntryTTL
@@ -44,6 +48,10 @@ namespace Stellar {
                 _maxEntryTTL = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Entry T T L")]
+        #endif
         private uint32 _maxEntryTTL;
 
         public uint32 minTemporaryTTL
@@ -54,6 +62,10 @@ namespace Stellar {
                 _minTemporaryTTL = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Temporary T T L")]
+        #endif
         private uint32 _minTemporaryTTL;
 
         public uint32 minPersistentTTL
@@ -64,6 +76,10 @@ namespace Stellar {
                 _minPersistentTTL = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Min Persistent T T L")]
+        #endif
         private uint32 _minPersistentTTL;
 
         /// <summary>
@@ -77,6 +93,10 @@ namespace Stellar {
                 _persistentRentRateDenominator = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Persistent Rent Rate Denominator")]
+        #endif
         private int64 _persistentRentRateDenominator;
 
         public int64 tempRentRateDenominator
@@ -87,6 +107,10 @@ namespace Stellar {
                 _tempRentRateDenominator = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Temp Rent Rate Denominator")]
+        #endif
         private int64 _tempRentRateDenominator;
 
         /// <summary>
@@ -100,6 +124,10 @@ namespace Stellar {
                 _maxEntriesToArchive = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Max Entries To Archive")]
+        #endif
         private uint32 _maxEntriesToArchive;
 
         /// <summary>
@@ -113,6 +141,10 @@ namespace Stellar {
                 _bucketListSizeWindowSampleSize = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Size Window Sample Size")]
+        #endif
         private uint32 _bucketListSizeWindowSampleSize;
 
         /// <summary>
@@ -126,6 +158,10 @@ namespace Stellar {
                 _bucketListWindowSamplePeriod = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Bucket List Window Sample Period")]
+        #endif
         private uint32 _bucketListWindowSamplePeriod;
 
         /// <summary>
@@ -139,6 +175,10 @@ namespace Stellar {
                 _evictionScanSize = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Eviction Scan Size")]
+        #endif
         private uint32 _evictionScanSize;
 
         /// <summary>
@@ -152,6 +192,10 @@ namespace Stellar {
                 _startingEvictionScanLevel = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Starting Eviction Scan Level")]
+        #endif
         private uint32 _startingEvictionScanLevel;
 
         public StateArchivalSettings()

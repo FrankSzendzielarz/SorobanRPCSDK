@@ -12,10 +12,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ClawbackOp
     {
         public Asset asset
@@ -26,6 +30,10 @@ namespace Stellar {
                 _asset = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Asset")]
+        #endif
         private Asset _asset;
 
         public MuxedAccount from
@@ -36,6 +44,10 @@ namespace Stellar {
                 _from = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"From")]
+        #endif
         private MuxedAccount _from;
 
         public int64 amount
@@ -46,6 +58,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         public ClawbackOp()

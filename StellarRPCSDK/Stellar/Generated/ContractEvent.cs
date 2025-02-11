@@ -26,10 +26,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ContractEvent
     {
         /// <summary>
@@ -43,6 +47,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private ExtensionPoint _ext;
 
         public Hash contractID
@@ -53,6 +61,10 @@ namespace Stellar {
                 _contractID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Contract I D")]
+        #endif
         private Hash _contractID;
 
         public ContractEventType type
@@ -63,6 +75,10 @@ namespace Stellar {
                 _type = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Type")]
+        #endif
         private ContractEventType _type;
 
         public bodyUnion body
@@ -73,6 +89,10 @@ namespace Stellar {
                 _body = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Body")]
+        #endif
         private bodyUnion _body;
 
         public ContractEvent()
@@ -83,6 +103,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class bodyUnion
         {
             public abstract int Discriminator { get; }
@@ -91,6 +112,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+            [System.Serializable]
             public partial class v0Struct
             {
                 public SCVal[] topics
@@ -101,6 +123,10 @@ namespace Stellar {
                         _topics = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Topics")]
+                #endif
                 private SCVal[] _topics;
 
                 public SCVal data
@@ -111,6 +137,10 @@ namespace Stellar {
                         _data = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Data")]
+                #endif
                 private SCVal _data;
 
                 public v0Struct()
@@ -160,6 +190,7 @@ namespace Stellar {
                     return result;
                 }
             }
+            [System.Serializable]
             public sealed partial class case_0 : bodyUnion
             {
                 public override int Discriminator => 0;
@@ -171,6 +202,10 @@ namespace Stellar {
                         _v0 = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"V0")]
+                #endif
                 private v0Struct _v0;
 
                 public override void ValidateCase() {}

@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SCSpecTypeResult
     {
         public SCSpecTypeDef okType
@@ -25,6 +29,10 @@ namespace Stellar {
                 _okType = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ok Type")]
+        #endif
         private SCSpecTypeDef _okType;
 
         public SCSpecTypeDef errorType
@@ -35,6 +43,10 @@ namespace Stellar {
                 _errorType = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Error Type")]
+        #endif
         private SCSpecTypeDef _errorType;
 
         public SCSpecTypeResult()

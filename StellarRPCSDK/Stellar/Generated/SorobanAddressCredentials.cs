@@ -13,10 +13,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class SorobanAddressCredentials
     {
         public SCAddress address
@@ -27,6 +31,10 @@ namespace Stellar {
                 _address = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Address")]
+        #endif
         private SCAddress _address;
 
         public int64 nonce
@@ -37,6 +45,10 @@ namespace Stellar {
                 _nonce = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Nonce")]
+        #endif
         private int64 _nonce;
 
         public uint32 signatureExpirationLedger
@@ -47,6 +59,10 @@ namespace Stellar {
                 _signatureExpirationLedger = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signature Expiration Ledger")]
+        #endif
         private uint32 _signatureExpirationLedger;
 
         public SCVal signature
@@ -57,6 +73,10 @@ namespace Stellar {
                 _signature = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Signature")]
+        #endif
         private SCVal _signature;
 
         public SorobanAddressCredentials()

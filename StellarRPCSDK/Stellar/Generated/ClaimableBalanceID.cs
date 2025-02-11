@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ClaimableBalanceID
     {
         public abstract ClaimableBalanceIDType Discriminator { get; }
@@ -22,6 +26,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ClaimableBalanceIdTypeV0 : ClaimableBalanceID
         {
             public override ClaimableBalanceIDType Discriminator => ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0;
@@ -33,6 +38,10 @@ namespace Stellar {
                     _v0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"V0")]
+            #endif
             private Hash _v0;
 
             public override void ValidateCase() {}

@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class ExtendFootprintTTLResult
     {
         public abstract ExtendFootprintTTLResultCode Discriminator { get; }
@@ -26,24 +30,28 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class ExtendFootprintTtlSuccess : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ExtendFootprintTtlMalformed : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ExtendFootprintTtlResourceLimitExceeded : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class ExtendFootprintTtlInsufficientRefundableFee : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;

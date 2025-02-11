@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class ManageDataOp
     {
         public string64 dataName
@@ -25,6 +29,10 @@ namespace Stellar {
                 _dataName = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Data Name")]
+        #endif
         private string64 _dataName;
 
         public DataValue dataValue
@@ -35,6 +43,10 @@ namespace Stellar {
                 _dataValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Data Value")]
+        #endif
         private DataValue _dataValue;
 
         public ManageDataOp()

@@ -20,10 +20,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class DataEntry
     {
         public AccountID accountID
@@ -34,6 +38,10 @@ namespace Stellar {
                 _accountID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Account I D")]
+        #endif
         private AccountID _accountID;
 
         /// <summary>
@@ -47,6 +55,10 @@ namespace Stellar {
                 _dataName = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Data Name")]
+        #endif
         private string64 _dataName;
 
         public DataValue dataValue
@@ -57,6 +69,10 @@ namespace Stellar {
                 _dataValue = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Data Value")]
+        #endif
         private DataValue _dataValue;
 
         /// <summary>
@@ -70,6 +86,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public DataEntry()
@@ -80,6 +100,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -87,6 +108,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

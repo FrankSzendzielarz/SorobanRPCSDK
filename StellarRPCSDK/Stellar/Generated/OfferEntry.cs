@@ -30,10 +30,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class OfferEntry
     {
         public AccountID sellerID
@@ -44,6 +48,10 @@ namespace Stellar {
                 _sellerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Seller I D")]
+        #endif
         private AccountID _sellerID;
 
         public int64 offerID
@@ -54,6 +62,10 @@ namespace Stellar {
                 _offerID = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Offer I D")]
+        #endif
         private int64 _offerID;
 
         public Asset selling
@@ -64,6 +76,10 @@ namespace Stellar {
                 _selling = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Selling")]
+        #endif
         private Asset _selling;
 
         /// <summary>
@@ -77,6 +93,10 @@ namespace Stellar {
                 _buying = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Buying")]
+        #endif
         private Asset _buying;
 
         /// <summary>
@@ -90,6 +110,10 @@ namespace Stellar {
                 _amount = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Amount")]
+        #endif
         private int64 _amount;
 
         public Price price
@@ -100,6 +124,10 @@ namespace Stellar {
                 _price = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Price")]
+        #endif
         private Price _price;
 
         public uint32 flags
@@ -110,6 +138,10 @@ namespace Stellar {
                 _flags = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Flags")]
+        #endif
         private uint32 _flags;
 
         /// <summary>
@@ -123,6 +155,10 @@ namespace Stellar {
                 _ext = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Ext")]
+        #endif
         private extUnion _ext;
 
         public OfferEntry()
@@ -133,6 +169,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -140,6 +177,7 @@ namespace Stellar {
             /// <summary>Validates the union case matches its discriminator</summary>
             public abstract void ValidateCase();
 
+            [System.Serializable]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

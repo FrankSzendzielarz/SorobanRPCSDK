@@ -19,10 +19,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class TransactionSignaturePayload
     {
         public Hash networkId
@@ -33,6 +37,10 @@ namespace Stellar {
                 _networkId = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Network Id")]
+        #endif
         private Hash _networkId;
 
         public taggedTransactionUnion taggedTransaction
@@ -43,6 +51,10 @@ namespace Stellar {
                 _taggedTransaction = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"Tagged Transaction")]
+        #endif
         private taggedTransactionUnion _taggedTransaction;
 
         public TransactionSignaturePayload()
@@ -53,6 +65,7 @@ namespace Stellar {
         {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+        [System.Serializable]
         public abstract partial class taggedTransactionUnion
         {
             public abstract EnvelopeType Discriminator { get; }
@@ -63,6 +76,7 @@ namespace Stellar {
             /// <summary>
             /// Backwards Compatibility: Use ENVELOPE_TYPE_TX to sign ENVELOPE_TYPE_TX_V0
             /// </summary>
+            [System.Serializable]
             public sealed partial class EnvelopeTypeTx : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -74,10 +88,15 @@ namespace Stellar {
                         _tx = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Tx")]
+                #endif
                 private Transaction _tx;
 
                 public override void ValidateCase() {}
             }
+            [System.Serializable]
             public sealed partial class EnvelopeTypeTxFeeBump : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
@@ -89,6 +108,10 @@ namespace Stellar {
                         _feeBump = value;
                     }
                 }
+                #if UNITY
+                	[SerializeField]
+                	[InspectorName(@"Fee Bump")]
+                #endif
                 private FeeBumpTransaction _feeBump;
 
                 public override void ValidateCase() {}

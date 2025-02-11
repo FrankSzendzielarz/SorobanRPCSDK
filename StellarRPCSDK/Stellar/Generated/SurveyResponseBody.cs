@@ -15,10 +15,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SurveyResponseBody
     {
         public abstract SurveyMessageResponseType Discriminator { get; }
@@ -26,6 +30,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class SurveyTopologyResponseV0 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0;
@@ -37,10 +42,15 @@ namespace Stellar {
                     _topologyResponseBodyV0 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Topology Response Body V0")]
+            #endif
             private TopologyResponseBodyV0 _topologyResponseBodyV0;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SurveyTopologyResponseV1 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1;
@@ -52,10 +62,15 @@ namespace Stellar {
                     _topologyResponseBodyV1 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Topology Response Body V1")]
+            #endif
             private TopologyResponseBodyV1 _topologyResponseBodyV1;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SurveyTopologyResponseV2 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2;
@@ -67,6 +82,10 @@ namespace Stellar {
                     _topologyResponseBodyV2 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Topology Response Body V2")]
+            #endif
             private TopologyResponseBodyV2 _topologyResponseBodyV2;
 
             public override void ValidateCase() {}

@@ -22,10 +22,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class SetOptionsResult
     {
         public abstract SetOptionsResultCode Discriminator { get; }
@@ -33,66 +37,77 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class SetOptionsSuccess : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_SUCCESS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsLowReserve : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_LOW_RESERVE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsTooManySigners : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_TOO_MANY_SIGNERS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsBadFlags : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_BAD_FLAGS;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsInvalidInflation : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_INVALID_INFLATION;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsCantChange : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_CANT_CHANGE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsUnknownFlag : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_UNKNOWN_FLAG;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsThresholdOutOfRange : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsBadSigner : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_BAD_SIGNER;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsInvalidHomeDomain : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_INVALID_HOME_DOMAIN;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class SetOptionsAuthRevocableRequired : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_AUTH_REVOCABLE_REQUIRED;

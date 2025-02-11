@@ -11,10 +11,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public partial class DiagnosticEvent
     {
         public bool inSuccessfulContractCall
@@ -25,6 +29,10 @@ namespace Stellar {
                 _inSuccessfulContractCall = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"In Successful Contract Call")]
+        #endif
         private bool _inSuccessfulContractCall;
 
         public ContractEvent _event
@@ -35,6 +43,10 @@ namespace Stellar {
                 __event = value;
             }
         }
+        #if UNITY
+        	[SerializeField]
+        	[InspectorName(@"_event")]
+        #endif
         private ContractEvent __event;
 
         public DiagnosticEvent()

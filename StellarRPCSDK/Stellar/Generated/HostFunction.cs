@@ -17,10 +17,14 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+#if UNITY
+	using UnityEngine;
+#endif
 
 namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
+    [System.Serializable]
     public abstract partial class HostFunction
     {
         public abstract HostFunctionType Discriminator { get; }
@@ -28,6 +32,7 @@ namespace Stellar {
         /// <summary>Validates the union case matches its discriminator</summary>
         public abstract void ValidateCase();
 
+        [System.Serializable]
         public sealed partial class HostFunctionTypeInvokeContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
@@ -39,10 +44,15 @@ namespace Stellar {
                     _invokeContract = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Invoke Contract")]
+            #endif
             private InvokeContractArgs _invokeContract;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HostFunctionTypeCreateContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
@@ -54,10 +64,15 @@ namespace Stellar {
                     _createContract = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Create Contract")]
+            #endif
             private CreateContractArgs _createContract;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HostFunctionTypeUploadContractWasm : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
@@ -69,10 +84,15 @@ namespace Stellar {
                     _wasm = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Wasm")]
+            #endif
             private byte[] _wasm;
 
             public override void ValidateCase() {}
         }
+        [System.Serializable]
         public sealed partial class HostFunctionTypeCreateContractV2 : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
@@ -84,6 +104,10 @@ namespace Stellar {
                     _createContractV2 = value;
                 }
             }
+            #if UNITY
+            	[SerializeField]
+            	[InspectorName(@"Create Contract V2")]
+            #endif
             private CreateContractArgsV2 _createContractV2;
 
             public override void ValidateCase() {}
