@@ -24,21 +24,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
+		<Reference Include="UnityEditor" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 			<HintPath>UnityLibs\UnityEditor.CoreModule.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="UnityEditor" Condition="'$(Configuration)|$(Platform)'=='UnityDebug|AnyCPU'">
-			<HintPath>UnityLibs\UnityEditor.CoreModule.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="UnityEngine.CoreModule" Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
+	
+		<Reference Include="UnityEngine.CoreModule" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 			<HintPath>UnityLibs\UnityEngine.CoreModule.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="UnityEngine.CoreModule" Condition="'$(Configuration)|$(Platform)'=='UnityDebug|AnyCPU'">
-			<HintPath>UnityLibs\UnityEngine.CoreModule.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
+
 	</ItemGroup>
 </Project>
