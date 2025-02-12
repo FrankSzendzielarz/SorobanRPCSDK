@@ -4,7 +4,9 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StellarObjectTester : MonoBehaviour
 {
@@ -14,19 +16,29 @@ public class StellarObjectTester : MonoBehaviour
     [SerializeField] private string recipientAccountId = "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T";
 
     [Header("Stellar Objects")]
-    [SerializeField] private AccountID testAccountId;
-    [SerializeField] private AccountID recipientId;
+    [SerializeField] private string testAccountPublicKey;
     [SerializeField] private AccountEntry accountEntry;
     [SerializeField] private MuxedAccount.KeyTypeEd25519 test;
+
+    [Header("UI Bindings")]
+    [SerializeField] private Button uiButton;
+    [SerializeField] private Button uiBackButton;
+    [SerializeField] private ButtonSpinner buttonSpinner;  
 
 
     private HttpClient httpClient;
     private StellarRPCClient sorobanClient;
+    private AccountID recipientId;
+    private AccountID testAccountId;
     private bool isProcessing = false;
 
     private async void Start()
     {
-     
+        var testAccount = MuxedAccount.FromSecretSeed(secretSeed);
+        testAccountId = new AccountID(testAccount.XdrPublicKey);
+        testAccountPublicKey = testAccount.AccountId;
+        TMP_Text buttonText = uiButton.GetComponentInChildren<TMP_Text>();
+        buttonText.text = $"<color=#000080>Click for Stellar account balance! \n\n<b><size=50%><color=#1E90FF>{testAccountPublicKey}";
     }
 
     private async Task InitializeStellarClient()
@@ -37,6 +49,7 @@ public class StellarObjectTester : MonoBehaviour
 
         var testAccount = MuxedAccount.FromSecretSeed(secretSeed);
         testAccountId = new AccountID(testAccount.XdrPublicKey);
+        testAccountPublicKey = testAccount.AccountId;
 
         var recipientAccount = MuxedAccount.FromAccountId(recipientAccountId);
         recipientId = recipientAccount.XdrPublicKey;
@@ -48,11 +61,17 @@ public class StellarObjectTester : MonoBehaviour
     {
         try
         {
+            buttonSpinner.Flip();
             var result = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            
+            
+            accountEntry = result;
+            TMP_Text buttonText = uiBackButton.GetComponentInChildren<TMP_Text>();
+            buttonText.text = $"<color=#000080>Your balance is {result.balance.InnerValue}!";
+
 
             Debug.Log($"Successfully retrieved account details");
-            // Debug.Log($"Account details: {result}");  // This will use ToString()
-            Debug.Log($"Balance {result.balance}");
+            Debug.Log($"Balance {result.balance.InnerValue}");
         }
         catch (Exception e)
         {

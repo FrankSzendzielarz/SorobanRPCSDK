@@ -17,6 +17,7 @@
 				  DebugInfo="true"
 				  Union="true"
 				  Internalize="true"
+			     InternalizeExclude="^Stellar.*"
 				  InputAssemblies="@(InputAssemblies)"
 				  OutputFile="$(TargetPath)"
 				  Parallel="true"
