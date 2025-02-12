@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f815d4accb755c64a8c31c73ca8e9d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDuration: 10
+  rotationDuration: 1.7
   frontButton: {fileID: 1423426681}
   backButton: {fileID: 314629801}
 --- !u!1 &277434224
@@ -993,26 +993,39 @@ MonoBehaviour:
   recipientAccountId: GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T
   testAccountPublicKey: 
   accountEntry:
+    _accountID:
+      rid: -2
     _balance:
-      _innerValue: 0
+      rid: -2
     _seqNum:
-      _innerValue:
-        _innerValue: 0
+      rid: -2
     _numSubEntries:
-      _innerValue: 0
+      rid: -2
+    _inflationDest:
+      rid: -2
     _flags:
-      _innerValue: 0
+      rid: -2
     _homeDomain:
-      _innerValue: 
+      rid: -2
     _thresholds:
-      _innerValue: 00000000
+      rid: -2
     _signers: []
+    _ext:
+      rid: -2
   test:
     _ed25519:
-      _innerValue: 0000000000000000000000000000000000000000000000000000000000000000
+      rid: -2
+  testAccountId:
+    _innerValue:
+      rid: -2
   uiButton: {fileID: 1423426683}
   uiBackButton: {fileID: 314629803}
   buttonSpinner: {fileID: 185880362}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &2002713755
 GameObject:
   m_ObjectHideFlags: 0
