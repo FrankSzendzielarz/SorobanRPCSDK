@@ -1,5 +1,5 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -13,15 +13,15 @@ namespace Stellar.RPC
 public partial class StellarRPCClient
 {
     private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _jsonOptions;
+    private readonly JsonSerializerSettings _jsonSettings;
 
     public StellarRPCClient(HttpClient httpClient)
     {
         _httpClient = httpClient;
-        _jsonOptions = new JsonSerializerOptions
+        _jsonSettings = new JsonSerializerSettings
         {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            NullValueHandling = NullValueHandling.Ignore
         };
     }
 
@@ -42,7 +42,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -51,7 +51,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetEventsResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetEventsResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -74,7 +74,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -83,7 +83,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetFeeStatsResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetFeeStatsResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -106,7 +106,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -115,7 +115,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetHealthResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetHealthResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -138,7 +138,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -147,7 +147,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetLatestLedgerResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetLatestLedgerResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -172,7 +172,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -181,7 +181,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetLedgerEntriesResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetLedgerEntriesResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -204,7 +204,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -213,7 +213,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetNetworkResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetNetworkResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -236,7 +236,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -245,7 +245,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetTransactionResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetTransactionResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -268,7 +268,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -277,7 +277,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetTransactionsResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetTransactionsResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -300,7 +300,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -309,7 +309,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<GetVersionInfoResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<GetVersionInfoResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -334,7 +334,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -343,7 +343,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<SendTransactionResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<SendTransactionResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {
@@ -366,7 +366,7 @@ public partial class StellarRPCClient
             Id = 1
         };
 
-        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);
+        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
@@ -375,7 +375,7 @@ public partial class StellarRPCClient
 
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
-        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<SimulateTransactionResult>>(content, _jsonOptions);
+        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<SimulateTransactionResult>>(content, _jsonSettings);
 
         if (rpcResponse.Error != null)
         {

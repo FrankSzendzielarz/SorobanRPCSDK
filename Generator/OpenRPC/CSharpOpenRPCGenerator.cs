@@ -1,9 +1,6 @@
 ﻿using NJsonSchema;
 using NJsonSchema.CodeGeneration.CSharp;
-using NJsonSchema.Generation.TypeMappers;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Generator.OpenRPC
 {
@@ -12,33 +9,37 @@ namespace Generator.OpenRPC
         private readonly OpenRpcSpec _spec;
         private readonly string _outputDir;
         private readonly CSharpGeneratorSettings _settings;
+        private readonly bool _isUnityBuild;
 
-        public CSharpOpenRPCGenerator(OpenRpcSpec spec, string outputDir)
+        public CSharpOpenRPCGenerator(OpenRpcSpec spec, string outputDir, bool isUnityBuild = false)
         {
             _spec = spec;
             _outputDir = outputDir;
+            _isUnityBuild = isUnityBuild;
+
             _settings = new CSharpGeneratorSettings
             {
                 ClassStyle = CSharpClassStyle.Poco,
-                GenerateDataAnnotations = true,
+          //      GenerateDataAnnotations = true,
                 GenerateJsonMethods = true,
                 Namespace = "Stellar.RPC",
-                JsonLibrary = CSharpJsonLibrary.SystemTextJson,
-                ArrayType = "System.Collections.Generic.ICollection", 
-                ArrayBaseType = "System.Collections.Generic.ICollection<{0}>", 
+                JsonLibrary = isUnityBuild ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                ArrayType = "System.Collections.Generic.ICollection",
+                ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
                 NumberType = "long",
+                 
+                
+                 
             };
         }
 
         public async Task GenerateAsync()
         {
-            // Generate model classes for parameters and results
             foreach (var method in _spec.Methods)
             {
                 await GenerateMethodModelsAsync(method);
             }
 
-            // Generate client class
             await GenerateClientClassAsync();
         }
 
@@ -46,7 +47,6 @@ namespace Generator.OpenRPC
         {
             if (method.Params?.Any() == true)
             {
-                // Create a schema for the parameters
                 var paramSchema = new JsonSchema
                 {
                     Type = JsonObjectType.Object,
@@ -63,11 +63,9 @@ namespace Generator.OpenRPC
                         Item = schemaFromParam.Item
                     };
 
-                    // Handle properties for objects
                     if (schemaFromParam.Type == JsonObjectType.Object && schemaFromParam.Properties != null)
                     {
                         propSchema.Type = JsonObjectType.Object;
-                      
                         foreach (var property in schemaFromParam.Properties)
                         {
                             propSchema.Properties.Add(property.Key, property.Value);
@@ -82,56 +80,82 @@ namespace Generator.OpenRPC
                     }
                 }
 
-                var generator = new NJsonSchema.CodeGeneration.CSharp.CSharpGenerator(paramSchema, _settings);
-          
-                var paramClassName = $"{method.Name.ToPascalCase()}Params";
-                var code = generator.GenerateFile(paramClassName);
-                await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{paramClassName}.cs"), code);
+                var generator = new CSharpGenerator(paramSchema, _settings);
+                var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Params");
+                await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Params.cs"), code);
             }
 
             if (method.Result?.Schema != null)
             {
-                var resultSchema = await JsonSchema.FromJsonAsync(
-                    method.Result.Schema.GetRawText());
-
-                var generator = new NJsonSchema.CodeGeneration.CSharp.CSharpGenerator(resultSchema, _settings);
-                var resultClassName = $"{method.Name.ToPascalCase()}Result";
-                var code = generator.GenerateFile(resultClassName);
-                await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{resultClassName}.cs"), code);
+                var resultSchema = await JsonSchema.FromJsonAsync(method.Result.Schema.GetRawText());
+                var generator = new CSharpGenerator(resultSchema, _settings);
+                var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Result");
+                await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Result.cs"), code);
             }
         }
+
         private async Task GenerateClientClassAsync()
         {
             var sb = new StringBuilder();
+
+            // Add appropriate using statements based on JSON library
+            if (_isUnityBuild)
+            {
+                sb.AppendLine("using Newtonsoft.Json;");
+                sb.AppendLine("using Newtonsoft.Json.Serialization;");
+            }
+            else
+            {
+                sb.AppendLine("using System.Text.Json;");
+                sb.AppendLine("using System.Text.Json.Serialization;");
+            }
+
             sb.AppendLine("using System.Text;");
-            sb.AppendLine("using System.Text.Json;");
-            sb.AppendLine("using System.Text.Json.Serialization;");
             sb.AppendLine("using System.Net.Http;");
             sb.AppendLine("using System.Threading.Tasks;");
-            sb.AppendLine("using Stellar.RPC;"); 
+            sb.AppendLine("using Stellar.RPC;");
             sb.AppendLine();
             sb.AppendLine("namespace Stellar.RPC");
             sb.AppendLine("{");
-            
+
             if (!string.IsNullOrEmpty(_spec.Info.Description))
             {
-                sb.AppendLine(FormatXmlComment(_spec.Info.Description,0));
+                sb.AppendLine(FormatXmlComment(_spec.Info.Description, 0));
             }
 
             sb.AppendLine($"public partial class {_spec.Info.Title.Replace(" ", "")}Client");
             sb.AppendLine("{");
             sb.AppendLine("    private readonly HttpClient _httpClient;");
-            sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
-            sb.AppendLine();
-            sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
-            sb.AppendLine("    {");
-            sb.AppendLine("        _httpClient = httpClient;");
-            sb.AppendLine("        _jsonOptions = new JsonSerializerOptions");
-            sb.AppendLine("        {");
-            sb.AppendLine("            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,");
-            sb.AppendLine("            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull");
-            sb.AppendLine("        };");
-            sb.AppendLine("    }");
+
+            if (_isUnityBuild)
+            {
+                sb.AppendLine("    private readonly JsonSerializerSettings _jsonSettings;");
+                sb.AppendLine();
+                sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                sb.AppendLine("    {");
+                sb.AppendLine("        _httpClient = httpClient;");
+                sb.AppendLine("        _jsonSettings = new JsonSerializerSettings");
+                sb.AppendLine("        {");
+                sb.AppendLine("            ContractResolver = new CamelCasePropertyNamesContractResolver(),");
+                sb.AppendLine("            NullValueHandling = NullValueHandling.Ignore");
+                sb.AppendLine("        };");
+                sb.AppendLine("    }");
+            }
+            else
+            {
+                sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
+                sb.AppendLine();
+                sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                sb.AppendLine("    {");
+                sb.AppendLine("        _httpClient = httpClient;");
+                sb.AppendLine("        _jsonOptions = new JsonSerializerOptions");
+                sb.AppendLine("        {");
+                sb.AppendLine("            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,");
+                sb.AppendLine("            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull");
+                sb.AppendLine("        };");
+                sb.AppendLine("    }");
+            }
+
             sb.AppendLine();
 
             foreach (var method in _spec.Methods)
@@ -141,42 +165,10 @@ namespace Generator.OpenRPC
 
             sb.AppendLine("}");
             sb.AppendLine("}");
+
             await File.WriteAllTextAsync(
                 Path.Combine(_outputDir, $"{_spec.Info.Title.Replace(" ", "")}Client.cs"),
                 sb.ToString());
-        }
-
-        private string FormatXmlComment(string description, int indentationLevel = 1)
-        {
-            if (string.IsNullOrEmpty(description))
-                return string.Empty;
-
-            var sb = new StringBuilder();
-            var indent = new string(' ', indentationLevel * 4);
-
-            // Split by line breaks and handle both \n and \r\n
-            var lines = description.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
-
-            sb.AppendLine($"{indent}/// <summary>");
-            foreach (var line in lines)
-            {
-                // Escape XML special characters and trim any trailing whitespace
-                var escapedLine = line.Trim()
-                    .Replace("&", "&amp;")
-                    .Replace("<", "&lt;")
-                    .Replace(">", "&gt;")
-                    .Replace("\"", "&quot;")
-                    .Replace("'", "&apos;");
-
-                // Skip empty lines in XML comments as they can cause issues
-                if (!string.IsNullOrWhiteSpace(escapedLine))
-                {
-                    sb.AppendLine($"{indent}/// {escapedLine}");
-                }
-            }
-            sb.AppendLine($"{indent}/// </summary>");
-
-            return sb.ToString().TrimEnd();
         }
 
         private async Task GenerateMethodAsync(StringBuilder sb, RpcMethod method)
@@ -200,15 +192,34 @@ namespace Generator.OpenRPC
             sb.AppendLine("            Id = 1");
             sb.AppendLine("        };");
             sb.AppendLine();
+
+            if (_isUnityBuild)
+            {
+                sb.AppendLine("        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);");
+            }
+            else
+            {
+                sb.AppendLine("        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);");
+            }
+
             sb.AppendLine($"        var response = await _httpClient.PostAsync(\"\", ");
             sb.AppendLine("            new StringContent(");
-            sb.AppendLine("                JsonSerializer.Serialize(request, _jsonOptions),");
+            sb.AppendLine("                requestJson,");
             sb.AppendLine("                Encoding.UTF8,");
             sb.AppendLine("                \"application/json\"));");
             sb.AppendLine();
             sb.AppendLine("        response.EnsureSuccessStatusCode();");
             sb.AppendLine("        var content = await response.Content.ReadAsStringAsync();");
-            sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<{resultType}>>(content, _jsonOptions);");
+
+            if (_isUnityBuild)
+            {
+                sb.AppendLine($"        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<{resultType}>>(content, _jsonSettings);");
+            }
+            else
+            {
+                sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<{resultType}>>(content, _jsonOptions);");
+            }
+
             sb.AppendLine();
             sb.AppendLine("        if (rpcResponse.Error != null)");
             sb.AppendLine("        {");
@@ -220,149 +231,34 @@ namespace Generator.OpenRPC
             sb.AppendLine();
         }
 
-        
-    }
-
-    // OpenRPC specific models
-    public class OpenRpcSpec
-    {
-        [JsonPropertyName("openrpc")]
-        public string OpenRpc { get; set; } = "";
-
-        [JsonPropertyName("info")]
-        public InfoObject Info { get; set; } = new();
-
-        [JsonPropertyName("methods")]
-        public List<RpcMethod> Methods { get; set; } = new();
-    }
-
-    public class InfoObject
-    {
-        [JsonPropertyName("title")]
-        public string Title { get; set; } = "";
-
-        [JsonPropertyName("description")]
-        public string Description { get; set; } = "";
-
-        [JsonPropertyName("version")]
-        public string Version { get; set; } = "";
-    }
-
-    public class RpcMethod
-    {
-        [JsonPropertyName("name")]
-        public string Name { get; set; } = "";
-
-        [JsonPropertyName("description")]
-        public string Description { get; set; } = "";
-
-        [JsonPropertyName("params")]
-        public List<RpcParameter>? Params { get; set; }
-
-        [JsonPropertyName("result")]
-        public RpcResult? Result { get; set; }
-    }
-
-    public class RpcParameter
-    {
-        [JsonPropertyName("name")]
-        public string Name { get; set; } = "";
-
-        [JsonPropertyName("description")]
-        public string Description { get; set; } = "";
-
-        [JsonPropertyName("required")]
-        public bool Required { get; set; }
-
-        [JsonPropertyName("schema")]
-        public RpcParameterSchema Schema { get; set; } = new();
-    }
-
-    public class RpcParameterSchema
-    {
-        [JsonPropertyName("type")]
-        public string Type { get; set; } = "";
-
-        [JsonPropertyName("description")]
-        public string Description { get; set; } = "";
-
-        [JsonPropertyName("items")]
-        public RpcParameterSchema? Items { get; set; }
-
-        public JsonSchema ToJsonSchema()
+        private string FormatXmlComment(string description, int indentationLevel = 1)
         {
-            var schema = new JsonSchema
-            {
-                Type = Enum.Parse<JsonObjectType>(Type, true),
-                Description = Description
-            };
+            if (string.IsNullOrEmpty(description))
+                return string.Empty;
 
-            if (Items != null && Type.Equals("array", StringComparison.OrdinalIgnoreCase))
+            var sb = new StringBuilder();
+            var indent = new string(' ', indentationLevel * 4);
+
+            var lines = description.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+
+            sb.AppendLine($"{indent}/// <summary>");
+            foreach (var line in lines)
             {
-                schema.Item = Items.ToJsonSchema();
+                var escapedLine = line.Trim()
+                    .Replace("&", "&amp;")
+                    .Replace("<", "&lt;")
+                    .Replace(">", "&gt;")
+                    .Replace("\"", "&quot;")
+                    .Replace("'", "&apos;");
+
+                if (!string.IsNullOrWhiteSpace(escapedLine))
+                {
+                    sb.AppendLine($"{indent}/// {escapedLine}");
+                }
             }
+            sb.AppendLine($"{indent}/// </summary>");
 
-            return schema;
-        }
-    
-    }
-    public class RpcResult
-    {
-        [JsonPropertyName("name")]
-        public string Name { get; set; } = "";
-
-        [JsonPropertyName("schema")]
-        public JsonElement Schema { get; set; }
-    }
-
-    // JSON-RPC communication models
-    public class JsonRpcRequest
-    {
-        [JsonPropertyName("jsonrpc")]
-        public string JsonRpc { get; set; } = "2.0";
-
-        [JsonPropertyName("method")]
-        public string Method { get; set; } = "";
-
-        [JsonPropertyName("params")]
-        public object? Params { get; set; }
-
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
-    }
-
-    public class JsonRpcResponse<T>
-    {
-        [JsonPropertyName("jsonrpc")]
-        public string JsonRpc { get; set; } = "";
-
-        [JsonPropertyName("result")]
-        public T? Result { get; set; }
-
-        [JsonPropertyName("error")]
-        public JsonRpcError? Error { get; set; }
-
-        [JsonPropertyName("id")]
-        public int Id { get; set; }
-    }
-
-    public class JsonRpcError
-    {
-        [JsonPropertyName("code")]
-        public int Code { get; set; }
-
-        [JsonPropertyName("message")]
-        public string Message { get; set; } = "";
-    }
-
-    public class JsonRpcException : Exception
-    {
-        public int Code { get; }
-
-        public JsonRpcException(JsonRpcError error)
-            : base(error.Message)
-        {
-            Code = error.Code;
+            return sb.ToString().TrimEnd();
         }
     }
 }

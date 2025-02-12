@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StellarRPCSDK", "StellarRPC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKTest", "SDKTest\SDKTest.csproj", "{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorobanExample", "SorobanExample\SorobanExample.csproj", "{F78FC535-67F9-464B-9415-873F6B1B8E1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SorobanExample", "SorobanExample\SorobanExample.csproj", "{F78FC535-67F9-464B-9415-873F6B1B8E1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,7 +25,8 @@ Global
 		{45043F20-7889-40C3-A60D-1E4289F66102}.Debug|Any CPU.Build.0 = UnityDebug|Any CPU
 		{45043F20-7889-40C3-A60D-1E4289F66102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45043F20-7889-40C3-A60D-1E4289F66102}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD2679C1-A3F9-49B0-AFC7-0E31F56F5662}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F78FC535-67F9-464B-9415-873F6B1B8E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

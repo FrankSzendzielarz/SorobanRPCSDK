@@ -89,9 +89,10 @@ public class Program
 
             var jsonContent = await File.ReadAllTextAsync(openRPCFile);
             var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
-            var generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc);
+            var generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc,false);
             await generator.GenerateAsync();
-
+            generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc+"_Unity", true);
+            await generator.GenerateAsync();
             Console.WriteLine($"Successfully generated code in {outputDirXdr} and {outputDirRpc}");
         }
         catch (Exception ex)
