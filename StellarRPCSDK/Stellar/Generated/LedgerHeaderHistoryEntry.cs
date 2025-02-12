@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Hash")]
         #endif
         private Hash _hash;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Header")]
         #endif
         private LedgerHeader _header;
@@ -70,6 +72,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;

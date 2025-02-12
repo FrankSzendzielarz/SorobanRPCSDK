@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ip")]
         #endif
         private ipUnion _ip;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Port")]
         #endif
         private uint32 _port;
@@ -67,6 +69,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Num Failures")]
         #endif
         private uint32 _numFailures;
@@ -105,6 +108,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ipv4")]
                 #endif
                 private byte[] _ipv4 = new byte[4];
@@ -129,6 +133,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ipv6")]
                 #endif
                 private byte[] _ipv6 = new byte[16];

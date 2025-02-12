@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Node I D")]
         #endif
         private NodeID _nodeID;
@@ -48,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signature")]
         #endif
         private Signature _signature;

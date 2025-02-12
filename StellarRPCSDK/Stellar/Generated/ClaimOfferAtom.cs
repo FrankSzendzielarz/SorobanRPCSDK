@@ -43,6 +43,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Seller I D")]
         #endif
         private AccountID _sellerID;
@@ -60,6 +61,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Offer I D")]
         #endif
         private int64 _offerID;
@@ -77,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset Sold")]
         #endif
         private Asset _assetSold;
@@ -91,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Amount Sold")]
         #endif
         private int64 _amountSold;
@@ -108,6 +112,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset Bought")]
         #endif
         private Asset _assetBought;
@@ -122,6 +127,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Amount Bought")]
         #endif
         private int64 _amountBought;

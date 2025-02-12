@@ -30,6 +30,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Element Type")]
         #endif
         private SCSpecTypeDef _elementType;

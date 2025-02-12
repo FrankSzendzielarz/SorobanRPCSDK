@@ -44,6 +44,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Base Fee")]
             #endif
             private int64 _baseFee;
@@ -58,6 +59,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Txs")]
             #endif
             private TransactionEnvelope[] _txs;
@@ -133,6 +135,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Txs Maybe Discounted Fee")]
             #endif
             private txsMaybeDiscountedFeeStruct _txsMaybeDiscountedFee;

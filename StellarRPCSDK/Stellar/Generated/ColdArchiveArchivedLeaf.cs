@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Index")]
         #endif
         private uint32 _index;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Archived Entry")]
         #endif
         private LedgerEntry _archivedEntry;

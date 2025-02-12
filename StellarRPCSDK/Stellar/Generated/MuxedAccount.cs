@@ -49,6 +49,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Id")]
             #endif
             private uint64 _id;
@@ -63,6 +64,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519")]
             #endif
             private uint256 _ed25519;
@@ -117,6 +119,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519")]
             #endif
             private uint256 _ed25519;
@@ -137,6 +140,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Med25519")]
             #endif
             private med25519Struct _med25519;

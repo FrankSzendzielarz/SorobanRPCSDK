@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Wasm_hash")]
             #endif
             private Hash _wasm_hash;

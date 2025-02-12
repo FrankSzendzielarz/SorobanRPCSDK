@@ -43,6 +43,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Header")]
         #endif
         private LedgerHeaderHistoryEntry _ledgerHeader;
@@ -60,6 +61,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Set")]
         #endif
         private TransactionSet _txSet;
@@ -77,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Processing")]
         #endif
         private TransactionResultMeta[] _txProcessing;
@@ -94,6 +97,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Upgrades Processing")]
         #endif
         private UpgradeEntryMeta[] _upgradesProcessing;
@@ -111,6 +115,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Scp Info")]
         #endif
         private SCPHistoryEntry[] _scpInfo;

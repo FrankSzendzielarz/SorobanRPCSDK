@@ -30,6 +30,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Hashes")]
         #endif
         private TxAdvertVector _txHashes;

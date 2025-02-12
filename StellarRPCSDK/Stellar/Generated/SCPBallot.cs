@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Counter")]
         #endif
         private uint32 _counter;
@@ -48,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Value")]
         #endif
         private Value _value;

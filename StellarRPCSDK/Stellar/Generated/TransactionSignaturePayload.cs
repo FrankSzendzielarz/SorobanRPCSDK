@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Network Id")]
         #endif
         private Hash _networkId;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tagged Transaction")]
         #endif
         private taggedTransactionUnion _taggedTransaction;
@@ -90,6 +92,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Tx")]
                 #endif
                 private Transaction _tx;
@@ -110,6 +113,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Fee Bump")]
                 #endif
                 private FeeBumpTransaction _feeBump;

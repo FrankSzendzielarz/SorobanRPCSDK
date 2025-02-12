@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx")]
         #endif
         private FeeBumpTransaction _tx;
@@ -50,6 +51,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signatures")]
         #endif
         private DecoratedSignature[] _signatures;

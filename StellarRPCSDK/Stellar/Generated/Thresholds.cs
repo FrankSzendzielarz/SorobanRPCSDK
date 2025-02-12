@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inner Value")]
         #endif
         private byte[] _innerValue = new byte[4];

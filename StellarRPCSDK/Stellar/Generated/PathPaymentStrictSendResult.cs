@@ -59,6 +59,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Offers")]
             #endif
             private ClaimAtom[] _offers;
@@ -73,6 +74,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Last")]
             #endif
             private SimplePaymentResult _last;
@@ -138,6 +140,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Success")]
             #endif
             private successStruct _success;
@@ -214,6 +217,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"No Issuer")]
             #endif
             private Asset _noIssuer;

@@ -40,6 +40,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private Hash _v0;

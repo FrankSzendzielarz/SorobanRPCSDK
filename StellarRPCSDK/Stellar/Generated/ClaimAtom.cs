@@ -44,6 +44,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private ClaimOfferAtomV0 _v0;
@@ -64,6 +65,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Order Book")]
             #endif
             private ClaimOfferAtom _orderBook;
@@ -84,6 +86,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Liquidity Pool")]
             #endif
             private ClaimLiquidityAtom _liquidityPool;

@@ -43,6 +43,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private SCPHistoryEntryV0 _v0;

@@ -36,6 +36,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Doc")]
         #endif
         private string _doc;
@@ -50,6 +51,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Name")]
         #endif
         private SCSymbol _name;
@@ -67,6 +69,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inputs")]
         #endif
         private SCSpecFunctionInputV0[] _inputs;
@@ -84,6 +87,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Outputs")]
         #endif
         private SCSpecTypeDef[] _outputs;

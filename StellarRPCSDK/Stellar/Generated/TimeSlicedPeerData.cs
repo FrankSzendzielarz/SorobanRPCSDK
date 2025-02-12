@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Peer Stats")]
         #endif
         private PeerStats _peerStats;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Average Latency Ms")]
         #endif
         private uint32 _averageLatencyMs;

@@ -38,6 +38,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private ExtensionPoint _ext;
@@ -52,6 +53,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Changes Before")]
         #endif
         private LedgerEntryChanges _txChangesBefore;
@@ -69,6 +71,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Operations")]
         #endif
         private OperationMeta[] _operations;
@@ -86,6 +89,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Changes After")]
         #endif
         private LedgerEntryChanges _txChangesAfter;
@@ -103,6 +107,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Soroban Meta")]
         #endif
         private SorobanTransactionMeta _sorobanMeta;

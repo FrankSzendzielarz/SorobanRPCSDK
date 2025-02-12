@@ -52,6 +52,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Fn")]
             #endif
             private InvokeContractArgs _contractFn;
@@ -75,6 +76,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Create Contract Host Fn")]
             #endif
             private CreateContractArgs _createContractHostFn;
@@ -98,6 +100,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Create Contract V2 Host Fn")]
             #endif
             private CreateContractArgsV2 _createContractV2HostFn;

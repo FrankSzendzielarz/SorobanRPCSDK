@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Surveyor Peer I D")]
         #endif
         private NodeID _surveyorPeerID;
@@ -48,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Surveyed Peer I D")]
         #endif
         private NodeID _surveyedPeerID;
@@ -62,6 +64,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Num")]
         #endif
         private uint32 _ledgerNum;
@@ -76,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Encryption Key")]
         #endif
         private Curve25519Public _encryptionKey;
@@ -90,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Command Type")]
         #endif
         private SurveyMessageCommandType _commandType;

@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Seq")]
         #endif
         private uint32 _ledgerSeq;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Result Set")]
         #endif
         private TransactionResultSet _txResultSet;
@@ -70,6 +72,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;

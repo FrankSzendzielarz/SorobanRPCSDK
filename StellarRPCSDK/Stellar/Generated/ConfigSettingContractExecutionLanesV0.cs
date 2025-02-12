@@ -37,6 +37,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Tx Count")]
         #endif
         private uint32 _ledgerMaxTxCount;

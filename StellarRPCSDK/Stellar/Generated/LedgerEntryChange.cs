@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Created")]
             #endif
             private LedgerEntry _created;
@@ -66,6 +67,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Updated")]
             #endif
             private LedgerEntry _updated;
@@ -86,6 +88,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Removed")]
             #endif
             private LedgerKey _removed;
@@ -106,6 +109,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"State")]
             #endif
             private LedgerEntry _state;

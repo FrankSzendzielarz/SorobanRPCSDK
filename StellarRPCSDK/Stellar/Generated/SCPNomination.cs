@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Quorum Set Hash")]
         #endif
         private Hash _quorumSetHash;
@@ -49,6 +50,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Votes")]
         #endif
         private Value[] _votes;
@@ -66,6 +68,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Accepted")]
         #endif
         private Value[] _accepted;

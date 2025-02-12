@@ -57,6 +57,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519")]
             #endif
             private uint256 _ed25519;
@@ -77,6 +78,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Payload")]
             #endif
             private byte[] _payload;
@@ -133,6 +135,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519")]
             #endif
             private uint256 _ed25519;
@@ -153,6 +156,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Pre Auth Tx")]
             #endif
             private uint256 _preAuthTx;
@@ -173,6 +177,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Hash X")]
             #endif
             private uint256 _hashX;
@@ -193,6 +198,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519 Signed Payload")]
             #endif
             private ed25519SignedPayloadStruct _ed25519SignedPayload;

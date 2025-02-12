@@ -57,6 +57,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Source Account")]
         #endif
         private MuxedAccount _sourceAccount;
@@ -74,6 +75,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee")]
         #endif
         private uint32 _fee;
@@ -91,6 +93,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Seq Num")]
         #endif
         private SequenceNumber _seqNum;
@@ -108,6 +111,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Cond")]
         #endif
         private Preconditions _cond;
@@ -122,6 +126,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Memo")]
         #endif
         private Memo _memo;
@@ -139,6 +144,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Operations")]
         #endif
         private Operation[] _operations;
@@ -156,6 +162,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -199,6 +206,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Soroban Data")]
                 #endif
                 private SorobanTransactionData _sorobanData;

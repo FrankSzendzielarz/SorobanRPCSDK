@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset Code")]
         #endif
         private AssetCode4 _assetCode;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Issuer")]
         #endif
         private AccountID _issuer;

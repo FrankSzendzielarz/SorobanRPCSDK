@@ -45,6 +45,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Added Authenticated Peers")]
         #endif
         private uint32 _addedAuthenticatedPeers;
@@ -59,6 +60,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Dropped Authenticated Peers")]
         #endif
         private uint32 _droppedAuthenticatedPeers;
@@ -73,6 +75,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Inbound Peer Count")]
         #endif
         private uint32 _totalInboundPeerCount;
@@ -87,6 +90,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Outbound Peer Count")]
         #endif
         private uint32 _totalOutboundPeerCount;
@@ -104,6 +108,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"P75 S C P First To Self Latency Ms")]
         #endif
         private uint32 _p75SCPFirstToSelfLatencyMs;
@@ -118,6 +123,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"P75 S C P Self To Other Latency Ms")]
         #endif
         private uint32 _p75SCPSelfToOtherLatencyMs;
@@ -135,6 +141,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Lost Sync Count")]
         #endif
         private uint32 _lostSyncCount;
@@ -152,6 +159,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Is Validator")]
         #endif
         private bool _isValidator;
@@ -166,6 +174,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Inbound Peer Count")]
         #endif
         private uint32 _maxInboundPeerCount;
@@ -180,6 +189,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Outbound Peer Count")]
         #endif
         private uint32 _maxOutboundPeerCount;

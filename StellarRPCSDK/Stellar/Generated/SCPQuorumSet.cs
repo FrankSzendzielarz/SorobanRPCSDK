@@ -35,6 +35,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Threshold")]
         #endif
         private uint32 _threshold;
@@ -49,6 +50,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Validators")]
         #endif
         private NodeID[] _validators;
@@ -63,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inner Sets")]
         #endif
         private SCPQuorumSet[] _innerSets;

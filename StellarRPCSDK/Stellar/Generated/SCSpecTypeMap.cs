@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Key Type")]
         #endif
         private SCSpecTypeDef _keyType;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Value Type")]
         #endif
         private SCSpecTypeDef _valueType;

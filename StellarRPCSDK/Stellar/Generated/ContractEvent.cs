@@ -49,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private ExtensionPoint _ext;
@@ -63,6 +64,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Contract I D")]
         #endif
         private Hash _contractID;
@@ -77,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Type")]
         #endif
         private ContractEventType _type;
@@ -91,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Body")]
         #endif
         private bodyUnion _body;
@@ -125,6 +129,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Topics")]
                 #endif
                 private SCVal[] _topics;
@@ -139,6 +144,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Data")]
                 #endif
                 private SCVal _data;
@@ -204,6 +210,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V0")]
                 #endif
                 private v0Struct _v0;

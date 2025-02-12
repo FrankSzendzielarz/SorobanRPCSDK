@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N")]
         #endif
         private int32 _n;
@@ -51,6 +52,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"D")]
         #endif
         private int32 _d;

@@ -30,6 +30,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inner Value")]
         #endif
         private TimeSlicedPeerData[] _innerValue;

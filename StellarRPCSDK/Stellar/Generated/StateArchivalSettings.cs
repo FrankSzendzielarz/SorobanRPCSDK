@@ -50,6 +50,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Entry T T L")]
         #endif
         private uint32 _maxEntryTTL;
@@ -64,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Temporary T T L")]
         #endif
         private uint32 _minTemporaryTTL;
@@ -78,6 +80,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Persistent T T L")]
         #endif
         private uint32 _minPersistentTTL;
@@ -95,6 +98,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Persistent Rent Rate Denominator")]
         #endif
         private int64 _persistentRentRateDenominator;
@@ -109,6 +113,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Temp Rent Rate Denominator")]
         #endif
         private int64 _tempRentRateDenominator;
@@ -126,6 +131,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Entries To Archive")]
         #endif
         private uint32 _maxEntriesToArchive;
@@ -143,6 +149,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Size Window Sample Size")]
         #endif
         private uint32 _bucketListSizeWindowSampleSize;
@@ -160,6 +167,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Window Sample Period")]
         #endif
         private uint32 _bucketListWindowSamplePeriod;
@@ -177,6 +185,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Eviction Scan Size")]
         #endif
         private uint32 _evictionScanSize;
@@ -194,6 +203,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Starting Eviction Scan Level")]
         #endif
         private uint32 _startingEvictionScanLevel;

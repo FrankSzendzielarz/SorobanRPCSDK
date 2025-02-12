@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Value Types")]
         #endif
         private SCSpecTypeDef[] _valueTypes;

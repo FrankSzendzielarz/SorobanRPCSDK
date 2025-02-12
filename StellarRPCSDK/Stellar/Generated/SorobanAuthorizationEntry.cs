@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Credentials")]
         #endif
         private SorobanCredentials _credentials;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Root Invocation")]
         #endif
         private SorobanAuthorizedInvocation _rootInvocation;

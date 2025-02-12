@@ -96,6 +96,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"B")]
             #endif
             private bool _b;
@@ -123,6 +124,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Error")]
             #endif
             private SCError _error;
@@ -143,6 +145,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"U32")]
             #endif
             private uint32 _u32;
@@ -163,6 +166,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"I32")]
             #endif
             private int32 _i32;
@@ -183,6 +187,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"U64")]
             #endif
             private uint64 _u64;
@@ -203,6 +208,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"I64")]
             #endif
             private int64 _i64;
@@ -223,6 +229,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Timepoint")]
             #endif
             private TimePoint _timepoint;
@@ -243,6 +250,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Duration")]
             #endif
             private Duration _duration;
@@ -263,6 +271,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"U128")]
             #endif
             private UInt128Parts _u128;
@@ -283,6 +292,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"I128")]
             #endif
             private Int128Parts _i128;
@@ -303,6 +313,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"U256")]
             #endif
             private UInt256Parts _u256;
@@ -323,6 +334,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"I256")]
             #endif
             private Int256Parts _i256;
@@ -343,6 +355,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Bytes")]
             #endif
             private SCBytes _bytes;
@@ -363,6 +376,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Str")]
             #endif
             private SCString _str;
@@ -383,6 +397,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Sym")]
             #endif
             private SCSymbol _sym;
@@ -406,6 +421,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Vec")]
             #endif
             private SCVec _vec;
@@ -426,6 +442,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Map")]
             #endif
             private SCMap _map;
@@ -446,6 +463,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Address")]
             #endif
             private SCAddress _address;
@@ -476,6 +494,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Nonce_key")]
             #endif
             private SCNonceKey _nonce_key;
@@ -496,6 +515,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Instance")]
             #endif
             private SCContractInstance _instance;

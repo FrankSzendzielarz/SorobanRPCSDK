@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Pubkey")]
         #endif
         private Curve25519Public _pubkey;
@@ -46,6 +47,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Expiration")]
         #endif
         private uint64 _expiration;
@@ -60,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Sig")]
         #endif
         private Signature _sig;

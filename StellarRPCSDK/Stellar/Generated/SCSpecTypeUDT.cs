@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Name")]
         #endif
         private string _name;

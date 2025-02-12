@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Entries To Prove")]
         #endif
         private ColdArchiveBucketEntry[] _entriesToProve;
@@ -51,6 +52,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Proof Levels")]
         #endif
         private ProofLevel[] _proofLevels;

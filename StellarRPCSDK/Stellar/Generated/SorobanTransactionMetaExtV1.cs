@@ -59,6 +59,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private ExtensionPoint _ext;
@@ -76,6 +77,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Non Refundable Resource Fee Charged")]
         #endif
         private int64 _totalNonRefundableResourceFeeCharged;
@@ -93,6 +95,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Refundable Resource Fee Charged")]
         #endif
         private int64 _totalRefundableResourceFeeCharged;
@@ -110,6 +113,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Rent Fee Charged")]
         #endif
         private int64 _rentFeeCharged;

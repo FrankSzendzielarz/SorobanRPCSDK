@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset")]
         #endif
         private Asset _asset;
@@ -46,6 +47,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"From")]
         #endif
         private MuxedAccount _from;
@@ -60,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Amount")]
         #endif
         private int64 _amount;

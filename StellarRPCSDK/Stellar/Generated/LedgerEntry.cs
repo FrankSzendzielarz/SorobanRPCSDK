@@ -65,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Last Modified Ledger Seq")]
         #endif
         private uint32 _lastModifiedLedgerSeq;
@@ -79,6 +80,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Data")]
         #endif
         private dataUnion _data;
@@ -96,6 +98,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -130,6 +133,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Account")]
                 #endif
                 private AccountEntry _account;
@@ -150,6 +154,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Trust Line")]
                 #endif
                 private TrustLineEntry _trustLine;
@@ -170,6 +175,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Offer")]
                 #endif
                 private OfferEntry _offer;
@@ -190,6 +196,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Data")]
                 #endif
                 private DataEntry _data;
@@ -210,6 +217,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Claimable Balance")]
                 #endif
                 private ClaimableBalanceEntry _claimableBalance;
@@ -230,6 +238,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liquidity Pool")]
                 #endif
                 private LiquidityPoolEntry _liquidityPool;
@@ -250,6 +259,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Contract Data")]
                 #endif
                 private ContractDataEntry _contractData;
@@ -270,6 +280,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Contract Code")]
                 #endif
                 private ContractCodeEntry _contractCode;
@@ -290,6 +301,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Config Setting")]
                 #endif
                 private ConfigSettingEntry _configSetting;
@@ -310,6 +322,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ttl")]
                 #endif
                 private TTLEntry _ttl;
@@ -447,6 +460,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V1")]
                 #endif
                 private LedgerEntryExtensionV1 _v1;

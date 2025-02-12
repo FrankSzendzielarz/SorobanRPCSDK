@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private ExtensionPoint _ext;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Instructions")]
         #endif
         private uint32 _nInstructions;
@@ -67,6 +69,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Functions")]
         #endif
         private uint32 _nFunctions;
@@ -81,6 +84,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Globals")]
         #endif
         private uint32 _nGlobals;
@@ -95,6 +99,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Table Entries")]
         #endif
         private uint32 _nTableEntries;
@@ -109,6 +114,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Types")]
         #endif
         private uint32 _nTypes;
@@ -123,6 +129,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Data Segments")]
         #endif
         private uint32 _nDataSegments;
@@ -137,6 +144,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Elem Segments")]
         #endif
         private uint32 _nElemSegments;
@@ -151,6 +159,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Imports")]
         #endif
         private uint32 _nImports;
@@ -165,6 +174,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Exports")]
         #endif
         private uint32 _nExports;
@@ -179,6 +189,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"N Data Segment Bytes")]
         #endif
         private uint32 _nDataSegmentBytes;

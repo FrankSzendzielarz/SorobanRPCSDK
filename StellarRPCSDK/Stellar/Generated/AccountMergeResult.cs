@@ -48,6 +48,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Source Account Balance")]
             #endif
             private int64 _sourceAccountBalance;

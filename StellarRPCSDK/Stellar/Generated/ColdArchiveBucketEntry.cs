@@ -48,6 +48,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Meta Entry")]
             #endif
             private BucketMetadata _metaEntry;
@@ -68,6 +69,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Archived Leaf")]
             #endif
             private ColdArchiveArchivedLeaf _archivedLeaf;
@@ -88,6 +90,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Deleted Leaf")]
             #endif
             private ColdArchiveDeletedLeaf _deletedLeaf;
@@ -108,6 +111,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Boundary Leaf")]
             #endif
             private ColdArchiveBoundaryLeaf _boundaryLeaf;
@@ -128,6 +132,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Hash Entry")]
             #endif
             private ColdArchiveHashEntry _hashEntry;

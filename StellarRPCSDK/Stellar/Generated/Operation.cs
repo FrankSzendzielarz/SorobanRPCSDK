@@ -98,6 +98,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Source Account")]
         #endif
         private MuxedAccount _sourceAccount;
@@ -112,6 +113,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Body")]
         #endif
         private bodyUnion _body;
@@ -146,6 +148,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Account Op")]
                 #endif
                 private CreateAccountOp _createAccountOp;
@@ -166,6 +169,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Payment Op")]
                 #endif
                 private PaymentOp _paymentOp;
@@ -186,6 +190,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Path Payment Strict Receive Op")]
                 #endif
                 private PathPaymentStrictReceiveOp _pathPaymentStrictReceiveOp;
@@ -206,6 +211,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Sell Offer Op")]
                 #endif
                 private ManageSellOfferOp _manageSellOfferOp;
@@ -226,6 +232,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Passive Sell Offer Op")]
                 #endif
                 private CreatePassiveSellOfferOp _createPassiveSellOfferOp;
@@ -246,6 +253,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Set Options Op")]
                 #endif
                 private SetOptionsOp _setOptionsOp;
@@ -266,6 +274,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Change Trust Op")]
                 #endif
                 private ChangeTrustOp _changeTrustOp;
@@ -286,6 +295,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Allow Trust Op")]
                 #endif
                 private AllowTrustOp _allowTrustOp;
@@ -306,6 +316,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Destination")]
                 #endif
                 private MuxedAccount _destination;
@@ -333,6 +344,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Data Op")]
                 #endif
                 private ManageDataOp _manageDataOp;
@@ -353,6 +365,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Bump Sequence Op")]
                 #endif
                 private BumpSequenceOp _bumpSequenceOp;
@@ -373,6 +386,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Buy Offer Op")]
                 #endif
                 private ManageBuyOfferOp _manageBuyOfferOp;
@@ -393,6 +407,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Path Payment Strict Send Op")]
                 #endif
                 private PathPaymentStrictSendOp _pathPaymentStrictSendOp;
@@ -413,6 +428,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Claimable Balance Op")]
                 #endif
                 private CreateClaimableBalanceOp _createClaimableBalanceOp;
@@ -433,6 +449,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Claim Claimable Balance Op")]
                 #endif
                 private ClaimClaimableBalanceOp _claimClaimableBalanceOp;
@@ -453,6 +470,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Begin Sponsoring Future Reserves Op")]
                 #endif
                 private BeginSponsoringFutureReservesOp _beginSponsoringFutureReservesOp;
@@ -480,6 +498,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Revoke Sponsorship Op")]
                 #endif
                 private RevokeSponsorshipOp _revokeSponsorshipOp;
@@ -500,6 +519,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Clawback Op")]
                 #endif
                 private ClawbackOp _clawbackOp;
@@ -520,6 +540,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Clawback Claimable Balance Op")]
                 #endif
                 private ClawbackClaimableBalanceOp _clawbackClaimableBalanceOp;
@@ -540,6 +561,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Set Trust Line Flags Op")]
                 #endif
                 private SetTrustLineFlagsOp _setTrustLineFlagsOp;
@@ -560,6 +582,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liquidity Pool Deposit Op")]
                 #endif
                 private LiquidityPoolDepositOp _liquidityPoolDepositOp;
@@ -580,6 +603,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liquidity Pool Withdraw Op")]
                 #endif
                 private LiquidityPoolWithdrawOp _liquidityPoolWithdrawOp;
@@ -600,6 +624,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Invoke Host Function Op")]
                 #endif
                 private InvokeHostFunctionOp _invokeHostFunctionOp;
@@ -620,6 +645,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Extend Footprint T T L Op")]
                 #endif
                 private ExtendFootprintTTLOp _extendFootprintTTLOp;
@@ -640,6 +666,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Restore Footprint Op")]
                 #endif
                 private RestoreFootprintOp _restoreFootprintOp;

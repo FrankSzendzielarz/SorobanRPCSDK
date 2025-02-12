@@ -46,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Liquidity Pool I D")]
         #endif
         private PoolID _liquidityPoolID;
@@ -60,6 +61,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Body")]
         #endif
         private bodyUnion _body;
@@ -94,6 +96,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"_params")]
                 #endif
                 private LiquidityPoolConstantProductParameters __params;
@@ -108,6 +111,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Reserve A")]
                 #endif
                 private int64 _reserveA;
@@ -125,6 +129,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Reserve B")]
                 #endif
                 private int64 _reserveB;
@@ -142,6 +147,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Total Pool Shares")]
                 #endif
                 private int64 _totalPoolShares;
@@ -159,6 +165,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Pool Shares Trust Line Count")]
                 #endif
                 private int64 _poolSharesTrustLineCount;
@@ -219,6 +226,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Constant Product")]
                 #endif
                 private constantProductStruct _constantProduct;

@@ -40,6 +40,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ed25519")]
             #endif
             private uint256 _ed25519;

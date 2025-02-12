@@ -48,6 +48,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Set Hash")]
         #endif
         private Hash _txSetHash;
@@ -65,6 +66,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Close Time")]
         #endif
         private TimePoint _closeTime;
@@ -85,6 +87,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Upgrades")]
         #endif
         private UpgradeType[] _upgrades;
@@ -102,6 +105,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -145,6 +149,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Lc Value Signature")]
                 #endif
                 private LedgerCloseValueSignature _lcValueSignature;

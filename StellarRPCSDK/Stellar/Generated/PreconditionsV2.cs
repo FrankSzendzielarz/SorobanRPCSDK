@@ -58,6 +58,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Time Bounds")]
         #endif
         private TimeBounds _timeBounds;
@@ -75,6 +76,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Bounds")]
         #endif
         private LedgerBounds _ledgerBounds;
@@ -92,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Seq Num")]
         #endif
         private SequenceNumber _minSeqNum;
@@ -109,6 +112,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Seq Age")]
         #endif
         private Duration _minSeqAge;
@@ -126,6 +130,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Seq Ledger Gap")]
         #endif
         private uint32 _minSeqLedgerGap;
@@ -146,6 +151,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Extra Signers")]
         #endif
         private SignerKey[] _extraSigners;

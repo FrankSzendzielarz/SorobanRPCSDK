@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Keys To Prove")]
         #endif
         private LedgerKey[] _keysToProve;
@@ -56,6 +57,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Low Bound Entries")]
         #endif
         private ColdArchiveBucketEntry[] _lowBoundEntries;
@@ -70,6 +72,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"High Bound Entries")]
         #endif
         private ColdArchiveBucketEntry[] _highBoundEntries;
@@ -87,6 +90,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Proof Levels")]
         #endif
         private ProofLevel[] _proofLevels;

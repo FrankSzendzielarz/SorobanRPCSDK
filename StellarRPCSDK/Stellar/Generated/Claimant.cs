@@ -44,6 +44,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Destination")]
             #endif
             private AccountID _destination;
@@ -61,6 +62,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Predicate")]
             #endif
             private ClaimPredicate _predicate;
@@ -115,6 +117,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private v0Struct _v0;

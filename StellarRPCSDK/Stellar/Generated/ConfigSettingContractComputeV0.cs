@@ -45,6 +45,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Instructions")]
         #endif
         private int64 _ledgerMaxInstructions;
@@ -62,6 +63,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Instructions")]
         #endif
         private int64 _txMaxInstructions;
@@ -79,6 +81,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Rate Per Instructions Increment")]
         #endif
         private int64 _feeRatePerInstructionsIncrement;
@@ -96,6 +99,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Memory Limit")]
         #endif
         private uint32 _txMemoryLimit;

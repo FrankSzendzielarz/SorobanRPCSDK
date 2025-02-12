@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Line")]
         #endif
         private ChangeTrustAsset _line;
@@ -50,6 +51,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Limit")]
         #endif
         private int64 _limit;

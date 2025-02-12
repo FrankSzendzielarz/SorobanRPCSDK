@@ -49,6 +49,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V1")]
             #endif
             private SorobanTransactionMetaExtV1 _v1;

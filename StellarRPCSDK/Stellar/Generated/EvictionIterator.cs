@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Level")]
         #endif
         private uint32 _bucketListLevel;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Is Curr Bucket")]
         #endif
         private bool _isCurrBucket;
@@ -59,6 +61,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket File Offset")]
         #endif
         private uint64 _bucketFileOffset;

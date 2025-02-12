@@ -19,6 +19,7 @@ public class StellarObjectTester : MonoBehaviour
     [SerializeField] private string testAccountPublicKey;
     [SerializeField] private AccountEntry accountEntry;
     [SerializeField] private MuxedAccount.KeyTypeEd25519 test;
+    [SerializeField] private AccountID testAccountId;
 
     [Header("UI Bindings")]
     [SerializeField] private Button uiButton;
@@ -29,7 +30,7 @@ public class StellarObjectTester : MonoBehaviour
     private HttpClient httpClient;
     private StellarRPCClient sorobanClient;
     private AccountID recipientId;
-    private AccountID testAccountId;
+    
     private bool isProcessing = false;
 
     private async void Start()

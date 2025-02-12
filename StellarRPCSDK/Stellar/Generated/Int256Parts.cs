@@ -35,6 +35,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Hi_hi")]
         #endif
         private int64 _hi_hi;
@@ -49,6 +50,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Hi_lo")]
         #endif
         private uint64 _hi_lo;
@@ -63,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Lo_hi")]
         #endif
         private uint64 _lo_hi;
@@ -77,6 +80,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Lo_lo")]
         #endif
         private uint64 _lo_lo;

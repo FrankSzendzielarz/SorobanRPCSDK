@@ -40,6 +40,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0 Components")]
             #endif
             private TxSetComponent[] _v0Components;

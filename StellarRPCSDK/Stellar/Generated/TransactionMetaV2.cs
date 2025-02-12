@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Changes Before")]
         #endif
         private LedgerEntryChanges _txChangesBefore;
@@ -51,6 +52,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Operations")]
         #endif
         private OperationMeta[] _operations;
@@ -68,6 +70,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Changes After")]
         #endif
         private LedgerEntryChanges _txChangesAfter;

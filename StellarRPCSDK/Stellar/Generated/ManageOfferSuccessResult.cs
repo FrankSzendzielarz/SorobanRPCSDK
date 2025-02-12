@@ -44,6 +44,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Offers Claimed")]
         #endif
         private ClaimAtom[] _offersClaimed;
@@ -58,6 +59,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Offer")]
         #endif
         private offerUnion _offer;
@@ -92,6 +94,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Offer")]
                 #endif
                 private OfferEntry _offer;
@@ -112,6 +115,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Offer")]
                 #endif
                 private OfferEntry _offer;

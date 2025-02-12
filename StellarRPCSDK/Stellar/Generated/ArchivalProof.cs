@@ -38,6 +38,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Epoch")]
         #endif
         private uint32 _epoch;
@@ -52,6 +53,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Body")]
         #endif
         private bodyUnion _body;
@@ -86,6 +88,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Nonexistence Proof")]
                 #endif
                 private NonexistenceProofBody _nonexistenceProof;
@@ -106,6 +109,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Existence Proof")]
                 #endif
                 private ExistenceProofBody _existenceProof;

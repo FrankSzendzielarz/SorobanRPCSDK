@@ -51,6 +51,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Time Bounds")]
             #endif
             private TimeBounds _timeBounds;
@@ -71,6 +72,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V2")]
             #endif
             private PreconditionsV2 _v2;

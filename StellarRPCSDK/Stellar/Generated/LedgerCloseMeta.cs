@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private LedgerCloseMetaV0 _v0;
@@ -62,6 +63,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V1")]
             #endif
             private LedgerCloseMetaV1 _v1;

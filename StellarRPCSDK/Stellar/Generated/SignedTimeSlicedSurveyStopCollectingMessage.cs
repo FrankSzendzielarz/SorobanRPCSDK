@@ -31,6 +31,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signature")]
         #endif
         private Signature _signature;
@@ -45,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Stop Collecting")]
         #endif
         private TimeSlicedSurveyStopCollectingMessage _stopCollecting;

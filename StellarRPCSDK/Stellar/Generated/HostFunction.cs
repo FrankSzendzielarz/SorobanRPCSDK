@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Invoke Contract")]
             #endif
             private InvokeContractArgs _invokeContract;
@@ -66,6 +67,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Create Contract")]
             #endif
             private CreateContractArgs _createContract;
@@ -86,6 +88,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Wasm")]
             #endif
             private byte[] _wasm;
@@ -106,6 +109,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Create Contract V2")]
             #endif
             private CreateContractArgsV2 _createContractV2;

@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Index")]
         #endif
         private uint32 _index;
@@ -46,6 +47,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Level")]
         #endif
         private uint32 _level;
@@ -60,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Hash")]
         #endif
         private Hash _hash;

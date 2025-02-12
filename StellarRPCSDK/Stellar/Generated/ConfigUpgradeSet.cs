@@ -29,6 +29,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Updated Entry")]
         #endif
         private ConfigSettingEntry[] _updatedEntry;

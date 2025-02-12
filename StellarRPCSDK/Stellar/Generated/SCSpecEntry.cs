@@ -48,6 +48,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Function V0")]
             #endif
             private SCSpecFunctionV0 _functionV0;
@@ -68,6 +69,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Udt Struct V0")]
             #endif
             private SCSpecUDTStructV0 _udtStructV0;
@@ -88,6 +90,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Udt Union V0")]
             #endif
             private SCSpecUDTUnionV0 _udtUnionV0;
@@ -108,6 +111,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Udt Enum V0")]
             #endif
             private SCSpecUDTEnumV0 _udtEnumV0;
@@ -128,6 +132,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Udt Error Enum V0")]
             #endif
             private SCSpecUDTErrorEnumV0 _udtErrorEnumV0;

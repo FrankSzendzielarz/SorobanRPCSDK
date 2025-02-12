@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inbound Peers")]
         #endif
         private TimeSlicedPeerDataList _inboundPeers;
@@ -46,6 +47,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Outbound Peers")]
         #endif
         private TimeSlicedPeerDataList _outboundPeers;
@@ -60,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Node Data")]
         #endif
         private TimeSlicedNodeData _nodeData;

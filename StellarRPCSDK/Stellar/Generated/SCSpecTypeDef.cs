@@ -197,6 +197,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Option")]
             #endif
             private SCSpecTypeOption _option;
@@ -217,6 +218,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Result")]
             #endif
             private SCSpecTypeResult _result;
@@ -237,6 +239,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Vec")]
             #endif
             private SCSpecTypeVec _vec;
@@ -257,6 +260,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Map")]
             #endif
             private SCSpecTypeMap _map;
@@ -277,6 +281,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tuple")]
             #endif
             private SCSpecTypeTuple _tuple;
@@ -297,6 +302,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Bytes N")]
             #endif
             private SCSpecTypeBytesN _bytesN;
@@ -317,6 +323,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Udt")]
             #endif
             private SCSpecTypeUDT _udt;

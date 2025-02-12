@@ -35,6 +35,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Result")]
         #endif
         private TransactionResultPair _result;
@@ -49,6 +50,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Processing")]
         #endif
         private LedgerEntryChanges _feeProcessing;
@@ -63,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Apply Processing")]
         #endif
         private TransactionMeta _txApplyProcessing;

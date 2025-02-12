@@ -42,6 +42,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Txs Size Bytes")]
         #endif
         private uint32 _ledgerMaxTxsSizeBytes;
@@ -59,6 +60,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Size Bytes")]
         #endif
         private uint32 _txMaxSizeBytes;
@@ -76,6 +78,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Tx Size1 K B")]
         #endif
         private int64 _feeTxSize1KB;

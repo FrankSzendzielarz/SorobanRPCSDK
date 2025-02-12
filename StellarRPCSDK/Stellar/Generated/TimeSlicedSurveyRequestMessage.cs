@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Request")]
         #endif
         private SurveyRequestMessage _request;
@@ -47,6 +48,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Nonce")]
         #endif
         private uint32 _nonce;
@@ -61,6 +63,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inbound Peers Index")]
         #endif
         private uint32 _inboundPeersIndex;
@@ -75,6 +78,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Outbound Peers Index")]
         #endif
         private uint32 _outboundPeersIndex;

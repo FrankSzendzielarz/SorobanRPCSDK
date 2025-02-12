@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Archived Entry")]
             #endif
             private LedgerEntry _archivedEntry;
@@ -66,6 +67,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Key")]
             #endif
             private LedgerKey _key;
@@ -86,6 +88,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Key")]
             #endif
             private LedgerKey _key;
@@ -106,6 +109,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Meta Entry")]
             #endif
             private BucketMetadata _metaEntry;

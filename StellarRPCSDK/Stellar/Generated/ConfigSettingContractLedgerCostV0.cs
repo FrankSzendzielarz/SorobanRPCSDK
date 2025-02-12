@@ -67,6 +67,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Read Ledger Entries")]
         #endif
         private uint32 _ledgerMaxReadLedgerEntries;
@@ -84,6 +85,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Read Bytes")]
         #endif
         private uint32 _ledgerMaxReadBytes;
@@ -101,6 +103,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Write Ledger Entries")]
         #endif
         private uint32 _ledgerMaxWriteLedgerEntries;
@@ -118,6 +121,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Max Write Bytes")]
         #endif
         private uint32 _ledgerMaxWriteBytes;
@@ -135,6 +139,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Read Ledger Entries")]
         #endif
         private uint32 _txMaxReadLedgerEntries;
@@ -152,6 +157,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Read Bytes")]
         #endif
         private uint32 _txMaxReadBytes;
@@ -169,6 +175,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Write Ledger Entries")]
         #endif
         private uint32 _txMaxWriteLedgerEntries;
@@ -186,6 +193,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Write Bytes")]
         #endif
         private uint32 _txMaxWriteBytes;
@@ -200,6 +208,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Read Ledger Entry")]
         #endif
         private int64 _feeReadLedgerEntry;
@@ -217,6 +226,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Write Ledger Entry")]
         #endif
         private int64 _feeWriteLedgerEntry;
@@ -231,6 +241,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Read1 K B")]
         #endif
         private int64 _feeRead1KB;
@@ -248,6 +259,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Target Size Bytes")]
         #endif
         private int64 _bucketListTargetSizeBytes;
@@ -265,6 +277,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Write Fee1 K B Bucket List Low")]
         #endif
         private int64 _writeFee1KBBucketListLow;
@@ -282,6 +295,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Write Fee1 K B Bucket List High")]
         #endif
         private int64 _writeFee1KBBucketListHigh;
@@ -299,6 +313,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Write Fee Growth Factor")]
         #endif
         private uint32 _bucketListWriteFeeGrowthFactor;

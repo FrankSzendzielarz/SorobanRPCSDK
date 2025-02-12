@@ -58,6 +58,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Text")]
             #endif
             private string _text;
@@ -78,6 +79,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Id")]
             #endif
             private uint64 _id;
@@ -98,6 +100,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Hash")]
             #endif
             private Hash _hash;
@@ -121,6 +124,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ret Hash")]
             #endif
             private Hash _retHash;

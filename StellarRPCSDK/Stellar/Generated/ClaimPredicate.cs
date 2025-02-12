@@ -61,6 +61,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"And Predicates")]
             #endif
             private ClaimPredicate[] _andPredicates;
@@ -84,6 +85,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Or Predicates")]
             #endif
             private ClaimPredicate[] _orPredicates;
@@ -104,6 +106,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Not Predicate")]
             #endif
             private ClaimPredicate _notPredicate;
@@ -124,6 +127,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Abs Before")]
             #endif
             private int64 _absBefore;
@@ -147,6 +151,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Rel Before")]
             #endif
             private int64 _relBefore;

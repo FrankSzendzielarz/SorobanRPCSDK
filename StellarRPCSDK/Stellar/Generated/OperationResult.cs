@@ -113,6 +113,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Account Result")]
                 #endif
                 private CreateAccountResult _createAccountResult;
@@ -133,6 +134,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Payment Result")]
                 #endif
                 private PaymentResult _paymentResult;
@@ -153,6 +155,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Path Payment Strict Receive Result")]
                 #endif
                 private PathPaymentStrictReceiveResult _pathPaymentStrictReceiveResult;
@@ -173,6 +176,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Sell Offer Result")]
                 #endif
                 private ManageSellOfferResult _manageSellOfferResult;
@@ -193,6 +197,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Passive Sell Offer Result")]
                 #endif
                 private ManageSellOfferResult _createPassiveSellOfferResult;
@@ -213,6 +218,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Set Options Result")]
                 #endif
                 private SetOptionsResult _setOptionsResult;
@@ -233,6 +239,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Change Trust Result")]
                 #endif
                 private ChangeTrustResult _changeTrustResult;
@@ -253,6 +260,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Allow Trust Result")]
                 #endif
                 private AllowTrustResult _allowTrustResult;
@@ -273,6 +281,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Account Merge Result")]
                 #endif
                 private AccountMergeResult _accountMergeResult;
@@ -293,6 +302,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Inflation Result")]
                 #endif
                 private InflationResult _inflationResult;
@@ -313,6 +323,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Data Result")]
                 #endif
                 private ManageDataResult _manageDataResult;
@@ -333,6 +344,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Bump Seq Result")]
                 #endif
                 private BumpSequenceResult _bumpSeqResult;
@@ -353,6 +365,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Manage Buy Offer Result")]
                 #endif
                 private ManageBuyOfferResult _manageBuyOfferResult;
@@ -373,6 +386,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Path Payment Strict Send Result")]
                 #endif
                 private PathPaymentStrictSendResult _pathPaymentStrictSendResult;
@@ -393,6 +407,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Create Claimable Balance Result")]
                 #endif
                 private CreateClaimableBalanceResult _createClaimableBalanceResult;
@@ -413,6 +428,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Claim Claimable Balance Result")]
                 #endif
                 private ClaimClaimableBalanceResult _claimClaimableBalanceResult;
@@ -433,6 +449,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Begin Sponsoring Future Reserves Result")]
                 #endif
                 private BeginSponsoringFutureReservesResult _beginSponsoringFutureReservesResult;
@@ -453,6 +470,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"End Sponsoring Future Reserves Result")]
                 #endif
                 private EndSponsoringFutureReservesResult _endSponsoringFutureReservesResult;
@@ -473,6 +491,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Revoke Sponsorship Result")]
                 #endif
                 private RevokeSponsorshipResult _revokeSponsorshipResult;
@@ -493,6 +512,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Clawback Result")]
                 #endif
                 private ClawbackResult _clawbackResult;
@@ -513,6 +533,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Clawback Claimable Balance Result")]
                 #endif
                 private ClawbackClaimableBalanceResult _clawbackClaimableBalanceResult;
@@ -533,6 +554,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Set Trust Line Flags Result")]
                 #endif
                 private SetTrustLineFlagsResult _setTrustLineFlagsResult;
@@ -553,6 +575,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liquidity Pool Deposit Result")]
                 #endif
                 private LiquidityPoolDepositResult _liquidityPoolDepositResult;
@@ -573,6 +596,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liquidity Pool Withdraw Result")]
                 #endif
                 private LiquidityPoolWithdrawResult _liquidityPoolWithdrawResult;
@@ -593,6 +617,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Invoke Host Function Result")]
                 #endif
                 private InvokeHostFunctionResult _invokeHostFunctionResult;
@@ -613,6 +638,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Extend Footprint T T L Result")]
                 #endif
                 private ExtendFootprintTTLResult _extendFootprintTTLResult;
@@ -633,6 +659,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Restore Footprint Result")]
                 #endif
                 private RestoreFootprintResult _restoreFootprintResult;
@@ -873,6 +900,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tr")]
             #endif
             private trUnion _tr;

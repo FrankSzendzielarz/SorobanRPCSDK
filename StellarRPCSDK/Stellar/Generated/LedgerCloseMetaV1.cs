@@ -56,6 +56,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private LedgerCloseMetaExt _ext;
@@ -70,6 +71,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Header")]
         #endif
         private LedgerHeaderHistoryEntry _ledgerHeader;
@@ -84,6 +86,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Set")]
         #endif
         private GeneralizedTransactionSet _txSet;
@@ -101,6 +104,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Processing")]
         #endif
         private TransactionResultMeta[] _txProcessing;
@@ -118,6 +122,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Upgrades Processing")]
         #endif
         private UpgradeEntryMeta[] _upgradesProcessing;
@@ -135,6 +140,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Scp Info")]
         #endif
         private SCPHistoryEntry[] _scpInfo;
@@ -152,6 +158,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Byte Size Of Bucket List")]
         #endif
         private uint64 _totalByteSizeOfBucketList;
@@ -169,6 +176,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Evicted Temporary Ledger Keys")]
         #endif
         private LedgerKey[] _evictedTemporaryLedgerKeys;
@@ -186,6 +194,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Evicted Persistent Ledger Entries")]
         #endif
         private LedgerEntry[] _evictedPersistentLedgerEntries;

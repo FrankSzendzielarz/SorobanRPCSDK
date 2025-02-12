@@ -49,6 +49,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Operations")]
             #endif
             private OperationMeta[] _operations;
@@ -69,6 +70,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V1")]
             #endif
             private TransactionMetaV1 _v1;
@@ -89,6 +91,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V2")]
             #endif
             private TransactionMetaV2 _v2;
@@ -109,6 +112,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V3")]
             #endif
             private TransactionMetaV3 _v3;

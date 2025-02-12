@@ -45,6 +45,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Sequence")]
             #endif
             private uint64 _sequence;
@@ -59,6 +60,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Message")]
             #endif
             private StellarMessage _message;
@@ -73,6 +75,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Mac")]
             #endif
             private HmacSha256Mac _mac;
@@ -129,6 +132,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private v0Struct _v0;

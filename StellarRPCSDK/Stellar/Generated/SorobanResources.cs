@@ -44,6 +44,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Footprint")]
         #endif
         private LedgerFootprint _footprint;
@@ -61,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Instructions")]
         #endif
         private uint32 _instructions;
@@ -78,6 +80,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Read Bytes")]
         #endif
         private uint32 _readBytes;
@@ -95,6 +98,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Write Bytes")]
         #endif
         private uint32 _writeBytes;

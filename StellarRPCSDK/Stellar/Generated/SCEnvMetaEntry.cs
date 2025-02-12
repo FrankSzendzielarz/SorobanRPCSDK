@@ -43,6 +43,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Protocol")]
             #endif
             private uint32 _protocol;
@@ -57,6 +58,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Pre Release")]
             #endif
             private uint32 _preRelease;
@@ -111,6 +113,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Interface Version")]
             #endif
             private interfaceVersionStruct _interfaceVersion;

@@ -58,6 +58,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Account I D")]
         #endif
         private AccountID _accountID;
@@ -75,6 +76,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset")]
         #endif
         private TrustLineAsset _asset;
@@ -92,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Balance")]
         #endif
         private int64 _balance;
@@ -106,6 +109,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Limit")]
         #endif
         private int64 _limit;
@@ -123,6 +127,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Flags")]
         #endif
         private uint32 _flags;
@@ -140,6 +145,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -174,6 +180,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Liabilities")]
                 #endif
                 private Liabilities _liabilities;
@@ -188,6 +195,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ext")]
                 #endif
                 private extUnion _ext;
@@ -229,6 +237,7 @@ namespace Stellar {
                         }
                         #if UNITY
                         	[SerializeField]
+                        	[SerializeReference]
                         	[InspectorName(@"V2")]
                         #endif
                         private TrustLineEntryExtensionV2 _v2;
@@ -328,6 +337,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V1")]
                 #endif
                 private v1Struct _v1;

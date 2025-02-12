@@ -47,6 +47,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Balance I D")]
             #endif
             private ClaimableBalanceID _balanceID;

@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Success")]
             #endif
             private Hash _success;

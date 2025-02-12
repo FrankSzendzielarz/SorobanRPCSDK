@@ -32,6 +32,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Scp Envelopes")]
         #endif
         private SCPEnvelope[] _scpEnvelopes;
@@ -46,6 +47,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Quorum Sets")]
         #endif
         private SCPQuorumSet[] _quorumSets;
@@ -60,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Sets")]
         #endif
         private StoredTransactionSet[] _txSets;

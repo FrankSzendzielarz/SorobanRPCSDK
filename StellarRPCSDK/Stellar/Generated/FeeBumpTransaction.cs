@@ -43,6 +43,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Source")]
         #endif
         private MuxedAccount _feeSource;
@@ -57,6 +58,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee")]
         #endif
         private int64 _fee;
@@ -71,6 +73,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inner Tx")]
         #endif
         private innerTxUnion _innerTx;
@@ -85,6 +88,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -119,6 +123,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V1")]
                 #endif
                 private TransactionV1Envelope _v1;

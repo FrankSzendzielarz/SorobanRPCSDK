@@ -66,6 +66,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Max Size Bytes")]
             #endif
             private uint32 _contractMaxSizeBytes;
@@ -86,6 +87,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Compute")]
             #endif
             private ConfigSettingContractComputeV0 _contractCompute;
@@ -106,6 +108,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Ledger Cost")]
             #endif
             private ConfigSettingContractLedgerCostV0 _contractLedgerCost;
@@ -126,6 +129,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Historical Data")]
             #endif
             private ConfigSettingContractHistoricalDataV0 _contractHistoricalData;
@@ -146,6 +150,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Events")]
             #endif
             private ConfigSettingContractEventsV0 _contractEvents;
@@ -166,6 +171,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Bandwidth")]
             #endif
             private ConfigSettingContractBandwidthV0 _contractBandwidth;
@@ -186,6 +192,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Cost Params Cpu Insns")]
             #endif
             private ContractCostParams _contractCostParamsCpuInsns;
@@ -206,6 +213,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Cost Params Mem Bytes")]
             #endif
             private ContractCostParams _contractCostParamsMemBytes;
@@ -226,6 +234,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Data Key Size Bytes")]
             #endif
             private uint32 _contractDataKeySizeBytes;
@@ -246,6 +255,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Data Entry Size Bytes")]
             #endif
             private uint32 _contractDataEntrySizeBytes;
@@ -266,6 +276,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"State Archival Settings")]
             #endif
             private StateArchivalSettings _stateArchivalSettings;
@@ -286,6 +297,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Execution Lanes")]
             #endif
             private ConfigSettingContractExecutionLanesV0 _contractExecutionLanes;
@@ -306,6 +318,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Bucket List Size Window")]
             #endif
             private uint64[] _bucketListSizeWindow;
@@ -326,6 +339,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Eviction Iterator")]
             #endif
             private EvictionIterator _evictionIterator;

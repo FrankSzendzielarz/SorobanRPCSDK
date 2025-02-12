@@ -40,6 +40,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Constant Product")]
             #endif
             private LiquidityPoolConstantProductParameters _constantProduct;

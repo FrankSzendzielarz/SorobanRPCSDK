@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Send Asset")]
         #endif
         private Asset _sendAsset;
@@ -56,6 +57,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Send Amount")]
         #endif
         private int64 _sendAmount;
@@ -70,6 +72,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Destination")]
         #endif
         private MuxedAccount _destination;
@@ -87,6 +90,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Dest Asset")]
         #endif
         private Asset _destAsset;
@@ -104,6 +108,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Dest Min")]
         #endif
         private int64 _destMin;
@@ -121,6 +126,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Path")]
         #endif
         private Asset[] _path;

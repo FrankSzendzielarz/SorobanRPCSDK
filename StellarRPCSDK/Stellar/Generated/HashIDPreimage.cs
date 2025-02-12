@@ -68,6 +68,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Source Account")]
             #endif
             private AccountID _sourceAccount;
@@ -82,6 +83,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Seq Num")]
             #endif
             private SequenceNumber _seqNum;
@@ -96,6 +98,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Op Num")]
             #endif
             private uint32 _opNum;
@@ -152,6 +155,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Source Account")]
             #endif
             private AccountID _sourceAccount;
@@ -166,6 +170,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Seq Num")]
             #endif
             private SequenceNumber _seqNum;
@@ -180,6 +185,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Op Num")]
             #endif
             private uint32 _opNum;
@@ -194,6 +200,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Liquidity Pool I D")]
             #endif
             private PoolID _liquidityPoolID;
@@ -208,6 +215,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Asset")]
             #endif
             private Asset _asset;
@@ -268,6 +276,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Network I D")]
             #endif
             private Hash _networkID;
@@ -282,6 +291,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract I D Preimage")]
             #endif
             private ContractIDPreimage _contractIDPreimage;
@@ -336,6 +346,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Network I D")]
             #endif
             private Hash _networkID;
@@ -350,6 +361,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Nonce")]
             #endif
             private int64 _nonce;
@@ -364,6 +376,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signature Expiration Ledger")]
             #endif
             private uint32 _signatureExpirationLedger;
@@ -378,6 +391,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Invocation")]
             #endif
             private SorobanAuthorizedInvocation _invocation;
@@ -436,6 +450,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Operation I D")]
             #endif
             private operationIDStruct _operationID;
@@ -456,6 +471,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Revoke I D")]
             #endif
             private revokeIDStruct _revokeID;
@@ -476,6 +492,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract I D")]
             #endif
             private contractIDStruct _contractID;
@@ -496,6 +513,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Soroban Authorization")]
             #endif
             private sorobanAuthorizationStruct _sorobanAuthorization;

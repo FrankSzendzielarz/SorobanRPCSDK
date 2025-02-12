@@ -355,6 +355,7 @@ namespace Generator.XDR
 
             code.AppendLine("#if UNITY");
             code.AppendLine("\t[SerializeField]");
+            code.AppendLine("\t[SerializeReference]");
             code.AppendLine($"\t[InspectorName(@\"{fieldName.ToPascalCase().SplitPascalCase()}\")]");
             code.AppendLine("#endif");
             switch (fieldType.ArrayType)

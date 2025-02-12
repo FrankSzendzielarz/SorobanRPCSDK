@@ -45,6 +45,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inflation Dest")]
         #endif
         private AccountID _inflationDest;
@@ -59,6 +60,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Clear Flags")]
         #endif
         private uint32 _clearFlags;
@@ -76,6 +78,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Set Flags")]
         #endif
         private uint32 _setFlags;
@@ -93,6 +96,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Master Weight")]
         #endif
         private uint32 _masterWeight;
@@ -110,6 +114,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Low Threshold")]
         #endif
         private uint32 _lowThreshold;
@@ -124,6 +129,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Med Threshold")]
         #endif
         private uint32 _medThreshold;
@@ -138,6 +144,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"High Threshold")]
         #endif
         private uint32 _highThreshold;
@@ -152,6 +159,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Home Domain")]
         #endif
         private string32 _homeDomain;
@@ -169,6 +177,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signer")]
         #endif
         private Signer _signer;

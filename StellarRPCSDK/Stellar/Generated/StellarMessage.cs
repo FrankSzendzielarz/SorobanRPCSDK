@@ -97,6 +97,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Error")]
             #endif
             private Error _error;
@@ -117,6 +118,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Hello")]
             #endif
             private Hello _hello;
@@ -137,6 +139,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Auth")]
             #endif
             private Auth _auth;
@@ -157,6 +160,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Dont Have")]
             #endif
             private DontHave _dontHave;
@@ -180,6 +184,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Peers")]
             #endif
             private PeerAddress[] _peers;
@@ -200,6 +205,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tx Set Hash")]
             #endif
             private uint256 _txSetHash;
@@ -220,6 +226,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tx Set")]
             #endif
             private TransactionSet _txSet;
@@ -240,6 +247,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Generalized Tx Set")]
             #endif
             private GeneralizedTransactionSet _generalizedTxSet;
@@ -260,6 +268,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Transaction")]
             #endif
             private TransactionEnvelope _transaction;
@@ -280,6 +289,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Survey Request Message")]
             #endif
             private SignedSurveyRequestMessage _signedSurveyRequestMessage;
@@ -300,6 +310,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Survey Response Message")]
             #endif
             private SignedSurveyResponseMessage _signedSurveyResponseMessage;
@@ -320,6 +331,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Time Sliced Survey Request Message")]
             #endif
             private SignedTimeSlicedSurveyRequestMessage _signedTimeSlicedSurveyRequestMessage;
@@ -340,6 +352,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Time Sliced Survey Response Message")]
             #endif
             private SignedTimeSlicedSurveyResponseMessage _signedTimeSlicedSurveyResponseMessage;
@@ -360,6 +373,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Time Sliced Survey Start Collecting Message")]
             #endif
             private SignedTimeSlicedSurveyStartCollectingMessage _signedTimeSlicedSurveyStartCollectingMessage;
@@ -380,6 +394,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signed Time Sliced Survey Stop Collecting Message")]
             #endif
             private SignedTimeSlicedSurveyStopCollectingMessage _signedTimeSlicedSurveyStopCollectingMessage;
@@ -403,6 +418,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Q Set Hash")]
             #endif
             private uint256 _qSetHash;
@@ -423,6 +439,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Q Set")]
             #endif
             private SCPQuorumSet _qSet;
@@ -443,6 +460,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Envelope")]
             #endif
             private SCPEnvelope _envelope;
@@ -463,6 +481,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Get S C P Ledger Seq")]
             #endif
             private uint32 _getSCPLedgerSeq;
@@ -486,6 +505,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Send More Message")]
             #endif
             private SendMore _sendMoreMessage;
@@ -506,6 +526,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Send More Extended Message")]
             #endif
             private SendMoreExtended _sendMoreExtendedMessage;
@@ -529,6 +550,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Flood Advert")]
             #endif
             private FloodAdvert _floodAdvert;
@@ -549,6 +571,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Flood Demand")]
             #endif
             private FloodDemand _floodDemand;

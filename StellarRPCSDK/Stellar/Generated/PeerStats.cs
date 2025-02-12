@@ -46,6 +46,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Id")]
         #endif
         private NodeID _id;
@@ -63,6 +64,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Version Str")]
         #endif
         private string _versionStr;
@@ -77,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Messages Read")]
         #endif
         private uint64 _messagesRead;
@@ -91,6 +94,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Messages Written")]
         #endif
         private uint64 _messagesWritten;
@@ -105,6 +109,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bytes Read")]
         #endif
         private uint64 _bytesRead;
@@ -119,6 +124,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bytes Written")]
         #endif
         private uint64 _bytesWritten;
@@ -133,6 +139,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Seconds Connected")]
         #endif
         private uint64 _secondsConnected;
@@ -147,6 +154,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Unique Flood Bytes Recv")]
         #endif
         private uint64 _uniqueFloodBytesRecv;
@@ -161,6 +169,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Duplicate Flood Bytes Recv")]
         #endif
         private uint64 _duplicateFloodBytesRecv;
@@ -175,6 +184,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Unique Fetch Bytes Recv")]
         #endif
         private uint64 _uniqueFetchBytesRecv;
@@ -189,6 +199,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Duplicate Fetch Bytes Recv")]
         #endif
         private uint64 _duplicateFetchBytesRecv;
@@ -203,6 +214,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Unique Flood Message Recv")]
         #endif
         private uint64 _uniqueFloodMessageRecv;
@@ -217,6 +229,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Duplicate Flood Message Recv")]
         #endif
         private uint64 _duplicateFloodMessageRecv;
@@ -231,6 +244,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Unique Fetch Message Recv")]
         #endif
         private uint64 _uniqueFetchMessageRecv;
@@ -245,6 +259,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Duplicate Fetch Message Recv")]
         #endif
         private uint64 _duplicateFetchMessageRecv;

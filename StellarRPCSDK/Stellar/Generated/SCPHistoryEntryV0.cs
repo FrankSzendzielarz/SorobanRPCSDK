@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Quorum Sets")]
         #endif
         private SCPQuorumSet[] _quorumSets;
@@ -51,6 +52,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Messages")]
         #endif
         private LedgerSCPMessages _ledgerMessages;

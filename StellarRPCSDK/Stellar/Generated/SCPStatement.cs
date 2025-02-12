@@ -64,6 +64,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Node I D")]
         #endif
         private NodeID _nodeID;
@@ -81,6 +82,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Slot Index")]
         #endif
         private uint64 _slotIndex;
@@ -95,6 +97,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Pledges")]
         #endif
         private pledgesUnion _pledges;
@@ -129,6 +132,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Quorum Set Hash")]
                 #endif
                 private Hash _quorumSetHash;
@@ -146,6 +150,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ballot")]
                 #endif
                 private SCPBallot _ballot;
@@ -163,6 +168,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Prepared")]
                 #endif
                 private SCPBallot _prepared;
@@ -180,6 +186,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Prepared Prime")]
                 #endif
                 private SCPBallot _preparedPrime;
@@ -197,6 +204,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N C")]
                 #endif
                 private uint32 _nC;
@@ -214,6 +222,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N H")]
                 #endif
                 private uint32 _nH;
@@ -296,6 +305,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Ballot")]
                 #endif
                 private SCPBallot _ballot;
@@ -313,6 +323,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N Prepared")]
                 #endif
                 private uint32 _nPrepared;
@@ -330,6 +341,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N Commit")]
                 #endif
                 private uint32 _nCommit;
@@ -347,6 +359,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N H")]
                 #endif
                 private uint32 _nH;
@@ -364,6 +377,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Quorum Set Hash")]
                 #endif
                 private Hash _quorumSetHash;
@@ -424,6 +438,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Commit")]
                 #endif
                 private SCPBallot _commit;
@@ -441,6 +456,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"N H")]
                 #endif
                 private uint32 _nH;
@@ -458,6 +474,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Commit Quorum Set Hash")]
                 #endif
                 private Hash _commitQuorumSetHash;
@@ -514,6 +531,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Prepare")]
                 #endif
                 private prepareStruct _prepare;
@@ -534,6 +552,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Confirm")]
                 #endif
                 private confirmStruct _confirm;
@@ -554,6 +573,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Externalize")]
                 #endif
                 private externalizeStruct _externalize;
@@ -574,6 +594,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Nominate")]
                 #endif
                 private SCPNomination _nominate;

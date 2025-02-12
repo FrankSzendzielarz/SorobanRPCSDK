@@ -49,6 +49,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Address")]
             #endif
             private SorobanAddressCredentials _address;

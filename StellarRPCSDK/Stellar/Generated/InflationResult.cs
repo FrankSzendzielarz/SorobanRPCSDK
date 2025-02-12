@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Payouts")]
             #endif
             private InflationPayout[] _payouts;

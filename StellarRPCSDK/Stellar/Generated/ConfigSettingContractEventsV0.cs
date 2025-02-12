@@ -39,6 +39,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Max Contract Events Size Bytes")]
         #endif
         private uint32 _txMaxContractEventsSizeBytes;
@@ -56,6 +57,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Contract Events1 K B")]
         #endif
         private int64 _feeContractEvents1KB;

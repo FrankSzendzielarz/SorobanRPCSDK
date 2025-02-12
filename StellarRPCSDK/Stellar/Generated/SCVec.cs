@@ -27,6 +27,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inner Value")]
         #endif
         private SCVal[] _innerValue;

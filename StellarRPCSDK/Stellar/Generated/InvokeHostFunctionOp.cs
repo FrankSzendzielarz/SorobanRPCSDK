@@ -36,6 +36,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Host Function")]
         #endif
         private HostFunction _hostFunction;
@@ -53,6 +54,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Auth")]
         #endif
         private SorobanAuthorizationEntry[] _auth;

@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Address")]
             #endif
             private SCAddress _address;
@@ -60,6 +61,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Salt")]
             #endif
             private uint256 _salt;
@@ -114,6 +116,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"From Address")]
             #endif
             private fromAddressStruct _fromAddress;
@@ -134,6 +137,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"From Asset")]
             #endif
             private Asset _fromAsset;

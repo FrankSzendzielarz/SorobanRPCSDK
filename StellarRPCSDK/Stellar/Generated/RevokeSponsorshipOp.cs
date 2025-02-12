@@ -46,6 +46,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Account I D")]
             #endif
             private AccountID _accountID;
@@ -60,6 +61,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signer Key")]
             #endif
             private SignerKey _signerKey;
@@ -114,6 +116,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Ledger Key")]
             #endif
             private LedgerKey _ledgerKey;
@@ -134,6 +137,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Signer")]
             #endif
             private signerStruct _signer;

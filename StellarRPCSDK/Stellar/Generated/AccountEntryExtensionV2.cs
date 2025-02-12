@@ -41,6 +41,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Num Sponsored")]
         #endif
         private uint32 _numSponsored;
@@ -55,6 +56,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Num Sponsoring")]
         #endif
         private uint32 _numSponsoring;
@@ -72,6 +74,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signer Sponsoring I Ds")]
         #endif
         private SponsorshipDescriptor[] _signerSponsoringIDs;
@@ -86,6 +89,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -129,6 +133,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V3")]
                 #endif
                 private AccountEntryExtensionV3 _v3;

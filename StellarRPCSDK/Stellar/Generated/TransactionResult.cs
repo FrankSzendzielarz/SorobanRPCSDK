@@ -66,6 +66,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Charged")]
         #endif
         private int64 _feeCharged;
@@ -80,6 +81,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Result")]
         #endif
         private resultUnion _result;
@@ -97,6 +99,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -131,6 +134,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Inner Result Pair")]
                 #endif
                 private InnerTransactionResultPair _innerResultPair;
@@ -151,6 +155,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Inner Result Pair")]
                 #endif
                 private InnerTransactionResultPair _innerResultPair;
@@ -171,6 +176,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Results")]
                 #endif
                 private OperationResult[] _results;
@@ -191,6 +197,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"Results")]
                 #endif
                 private OperationResult[] _results;

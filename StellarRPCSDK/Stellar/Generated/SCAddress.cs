@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Account Id")]
             #endif
             private AccountID _accountId;
@@ -62,6 +63,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Id")]
             #endif
             private Hash _contractId;

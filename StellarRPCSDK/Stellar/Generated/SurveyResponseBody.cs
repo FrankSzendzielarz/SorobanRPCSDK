@@ -44,6 +44,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Topology Response Body V0")]
             #endif
             private TopologyResponseBodyV0 _topologyResponseBodyV0;
@@ -64,6 +65,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Topology Response Body V1")]
             #endif
             private TopologyResponseBodyV1 _topologyResponseBodyV1;
@@ -84,6 +86,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Topology Response Body V2")]
             #endif
             private TopologyResponseBodyV2 _topologyResponseBodyV2;

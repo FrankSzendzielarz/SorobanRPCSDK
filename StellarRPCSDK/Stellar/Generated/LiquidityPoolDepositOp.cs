@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Liquidity Pool I D")]
         #endif
         private PoolID _liquidityPoolID;
@@ -48,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Amount A")]
         #endif
         private int64 _maxAmountA;
@@ -65,6 +67,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Amount B")]
         #endif
         private int64 _maxAmountB;
@@ -82,6 +85,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Min Price")]
         #endif
         private Price _minPrice;
@@ -99,6 +103,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Price")]
         #endif
         private Price _maxPrice;

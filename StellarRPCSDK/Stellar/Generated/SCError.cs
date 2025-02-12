@@ -50,6 +50,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Contract Code")]
             #endif
             private uint32 _contractCode;
@@ -70,6 +71,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -90,6 +92,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -110,6 +113,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -130,6 +134,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -150,6 +155,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -170,6 +176,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -190,6 +197,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -210,6 +218,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;
@@ -230,6 +239,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Code")]
             #endif
             private SCErrorCode _code;

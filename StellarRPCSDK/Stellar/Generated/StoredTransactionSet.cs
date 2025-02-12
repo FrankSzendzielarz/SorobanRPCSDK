@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tx Set")]
             #endif
             private TransactionSet _txSet;
@@ -62,6 +63,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Generalized Tx Set")]
             #endif
             private GeneralizedTransactionSet _generalizedTxSet;

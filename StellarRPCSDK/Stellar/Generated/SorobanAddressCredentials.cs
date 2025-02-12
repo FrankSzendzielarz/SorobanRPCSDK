@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Address")]
         #endif
         private SCAddress _address;
@@ -47,6 +48,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Nonce")]
         #endif
         private int64 _nonce;
@@ -61,6 +63,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signature Expiration Ledger")]
         #endif
         private uint32 _signatureExpirationLedger;
@@ -75,6 +78,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Signature")]
         #endif
         private SCVal _signature;

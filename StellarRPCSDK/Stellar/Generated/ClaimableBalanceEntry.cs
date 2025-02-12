@@ -53,6 +53,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Balance I D")]
         #endif
         private ClaimableBalanceID _balanceID;
@@ -73,6 +74,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Claimants")]
         #endif
         private Claimant[] _claimants;
@@ -90,6 +92,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Asset")]
         #endif
         private Asset _asset;
@@ -107,6 +110,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Amount")]
         #endif
         private int64 _amount;
@@ -124,6 +128,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -167,6 +172,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V1")]
                 #endif
                 private ClaimableBalanceEntryExtensionV1 _v1;

@@ -33,6 +33,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Contract I D Preimage")]
         #endif
         private ContractIDPreimage _contractIDPreimage;
@@ -47,6 +48,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Executable")]
         #endif
         private ContractExecutable _executable;
@@ -64,6 +66,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Constructor Args")]
         #endif
         private SCVal[] _constructorArgs;

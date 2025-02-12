@@ -42,6 +42,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Void Case")]
             #endif
             private SCSpecUDTUnionCaseVoidV0 _voidCase;
@@ -62,6 +63,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Tuple Case")]
             #endif
             private SCSpecUDTUnionCaseTupleV0 _tupleCase;

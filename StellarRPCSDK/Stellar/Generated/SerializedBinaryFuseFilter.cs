@@ -44,6 +44,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Type")]
         #endif
         private BinaryFuseFilterType _type;
@@ -61,6 +62,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Input Hash Seed")]
         #endif
         private ShortHashSeed _inputHashSeed;
@@ -78,6 +80,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Filter Seed")]
         #endif
         private ShortHashSeed _filterSeed;
@@ -92,6 +95,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Segment Length")]
         #endif
         private uint32 _segmentLength;
@@ -106,6 +110,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Segement Length Mask")]
         #endif
         private uint32 _segementLengthMask;
@@ -120,6 +125,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Segment Count")]
         #endif
         private uint32 _segmentCount;
@@ -134,6 +140,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Segment Count Length")]
         #endif
         private uint32 _segmentCountLength;
@@ -148,6 +155,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fingerprint Length")]
         #endif
         private uint32 _fingerprintLength;
@@ -165,6 +173,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fingerprints")]
         #endif
         private byte[] _fingerprints;

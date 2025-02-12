@@ -38,6 +38,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Version")]
         #endif
         private uint32 _ledgerVersion;
@@ -52,6 +53,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Overlay Version")]
         #endif
         private uint32 _overlayVersion;
@@ -66,6 +68,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Overlay Min Version")]
         #endif
         private uint32 _overlayMinVersion;
@@ -80,6 +83,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Network I D")]
         #endif
         private Hash _networkID;
@@ -97,6 +101,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Version Str")]
         #endif
         private string _versionStr;
@@ -111,6 +116,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Listening Port")]
         #endif
         private int _listeningPort;
@@ -125,6 +131,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Peer I D")]
         #endif
         private NodeID _peerID;
@@ -139,6 +146,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Cert")]
         #endif
         private AuthCert _cert;
@@ -153,6 +161,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Nonce")]
         #endif
         private uint256 _nonce;

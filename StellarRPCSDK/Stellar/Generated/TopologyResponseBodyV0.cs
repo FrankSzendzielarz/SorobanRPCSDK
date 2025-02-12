@@ -34,6 +34,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inbound Peers")]
         #endif
         private PeerStatList _inboundPeers;
@@ -48,6 +49,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Outbound Peers")]
         #endif
         private PeerStatList _outboundPeers;
@@ -62,6 +64,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Inbound Peer Count")]
         #endif
         private uint32 _totalInboundPeerCount;
@@ -76,6 +79,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Outbound Peer Count")]
         #endif
         private uint32 _totalOutboundPeerCount;

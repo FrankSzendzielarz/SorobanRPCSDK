@@ -47,6 +47,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V0")]
             #endif
             private TransactionV0Envelope _v0;
@@ -67,6 +68,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V1")]
             #endif
             private TransactionV1Envelope _v1;
@@ -87,6 +89,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Fee Bump")]
             #endif
             private FeeBumpTransactionEnvelope _feeBump;

@@ -55,6 +55,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Ledger Version")]
             #endif
             private uint32 _newLedgerVersion;
@@ -78,6 +79,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Base Fee")]
             #endif
             private uint32 _newBaseFee;
@@ -101,6 +103,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Max Tx Set Size")]
             #endif
             private uint32 _newMaxTxSetSize;
@@ -124,6 +127,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Base Reserve")]
             #endif
             private uint32 _newBaseReserve;
@@ -147,6 +151,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Flags")]
             #endif
             private uint32 _newFlags;
@@ -170,6 +175,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Config")]
             #endif
             private ConfigUpgradeSetKey _newConfig;
@@ -190,6 +196,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"New Max Soroban Tx Set Size")]
             #endif
             private uint32 _newMaxSorobanTxSetSize;

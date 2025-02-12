@@ -65,6 +65,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Version")]
         #endif
         private uint32 _ledgerVersion;
@@ -82,6 +83,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Previous Ledger Hash")]
         #endif
         private Hash _previousLedgerHash;
@@ -99,6 +101,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Scp Value")]
         #endif
         private StellarValue _scpValue;
@@ -116,6 +119,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Tx Set Result Hash")]
         #endif
         private Hash _txSetResultHash;
@@ -133,6 +137,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Bucket List Hash")]
         #endif
         private Hash _bucketListHash;
@@ -147,6 +152,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ledger Seq")]
         #endif
         private uint32 _ledgerSeq;
@@ -161,6 +167,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Total Coins")]
         #endif
         private int64 _totalCoins;
@@ -175,6 +182,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Fee Pool")]
         #endif
         private int64 _feePool;
@@ -192,6 +200,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Inflation Seq")]
         #endif
         private uint32 _inflationSeq;
@@ -206,6 +215,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Id Pool")]
         #endif
         private uint64 _idPool;
@@ -220,6 +230,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Base Fee")]
         #endif
         private uint32 _baseFee;
@@ -237,6 +248,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Base Reserve")]
         #endif
         private uint32 _baseReserve;
@@ -251,6 +263,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Max Tx Set Size")]
         #endif
         private uint32 _maxTxSetSize;
@@ -269,6 +282,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Skip List")]
         #endif
         private Hash[] _skipList = new Hash[4];
@@ -286,6 +300,7 @@ namespace Stellar {
         }
         #if UNITY
         	[SerializeField]
+        	[SerializeReference]
         	[InspectorName(@"Ext")]
         #endif
         private extUnion _ext;
@@ -330,6 +345,7 @@ namespace Stellar {
                 }
                 #if UNITY
                 	[SerializeField]
+                	[SerializeReference]
                 	[InspectorName(@"V1")]
                 #endif
                 private LedgerHeaderExtensionV1 _v1;

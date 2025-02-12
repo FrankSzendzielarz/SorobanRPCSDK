@@ -44,6 +44,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"V1 Tx Set")]
             #endif
             private TransactionSetV1 _v1TxSet;

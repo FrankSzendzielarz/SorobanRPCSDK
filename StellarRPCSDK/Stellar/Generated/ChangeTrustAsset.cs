@@ -58,6 +58,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Alpha Num4")]
             #endif
             private AlphaNum4 _alphaNum4;
@@ -78,6 +79,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Alpha Num12")]
             #endif
             private AlphaNum12 _alphaNum12;
@@ -98,6 +100,7 @@ namespace Stellar {
             }
             #if UNITY
             	[SerializeField]
+            	[SerializeReference]
             	[InspectorName(@"Liquidity Pool")]
             #endif
             private LiquidityPoolParameters _liquidityPool;
