@@ -16,10 +16,12 @@ namespace Stellar.RPC
     public partial class GetTransactionParams
     {
         /// <summary>
-        /// Transaction hash to query as a hex-encoded string. This transaction hash should correspond to transaction that has been previously submitted to the network.
+        /// Transaction hash (as a hex-encoded string)
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hash", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(64, MinimumLength = 64)]
+        [System.ComponentModel.DataAnnotations.RegularExpression(@"^[a-f\d]{64}$")]
         public string Hash { get; set; }
 
 

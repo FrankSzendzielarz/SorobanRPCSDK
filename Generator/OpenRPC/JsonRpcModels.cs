@@ -56,36 +56,39 @@ namespace Generator.OpenRPC
         public bool Required { get; set; }
 
         [JsonPropertyName("schema")]
-        public RpcParameterSchema Schema { get; set; } = new();
+        public JsonElement Schema { get; set; } = new();
     }
 
-    public class RpcParameterSchema
-    {
-        [JsonPropertyName("type")]
-        public string Type { get; set; } = "";
+    //public class RpcParameterSchema
+    //{
+    //    [JsonPropertyName("type")]
+    //    public string Type { get; set; } = "";
 
-        [JsonPropertyName("description")]
-        public string Description { get; set; } = "";
+    //    [JsonPropertyName("description")]
+    //    public string Description { get; set; } = "";
 
-        [JsonPropertyName("items")]
-        public RpcParameterSchema? Items { get; set; }
+    //    [JsonPropertyName("items")]
+    //    public RpcParameterSchema? Items { get; set; }
 
-        public JsonSchema ToJsonSchema()
-        {
-            var schema = new JsonSchema
-            {
-                Type = Enum.Parse<JsonObjectType>(Type, true),
-                Description = Description
-            };
 
-            if (Items != null && Type.Equals("array", StringComparison.OrdinalIgnoreCase))
-            {
-                schema.Item = Items.ToJsonSchema();
-            }
 
-            return schema;
-        }
-    }
+
+    //    public JsonSchema ToJsonSchema()
+    //    {
+    //        var schema = new JsonSchema
+    //        {
+    //            Type = Enum.Parse<JsonObjectType>(Type, true),
+    //            Description = Description
+    //        };
+
+    //        if (Items != null && Type.Equals("array", StringComparison.OrdinalIgnoreCase))
+    //        {
+    //            schema.Item = Items.ToJsonSchema();
+    //        }
+
+    //        return schema;
+    //    }
+    //}
 
     public class RpcResult
     {

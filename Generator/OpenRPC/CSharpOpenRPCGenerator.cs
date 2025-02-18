@@ -1,6 +1,8 @@
 ﻿using NJsonSchema;
 using NJsonSchema.CodeGeneration.CSharp;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace Generator.OpenRPC
 {
@@ -47,38 +49,32 @@ namespace Generator.OpenRPC
         {
             if (method.Params?.Any() == true)
             {
-                var paramSchema = new JsonSchema
+
+
+                var requiredProps=method.Params.Where(p => p.Required).Select(p => p.Name);
+                var requiredArray = new JsonArray(
+                    requiredProps.Select(p => JsonNode.Parse($"\"{p}\"")).ToArray()
+                );
+                var schemaDoc = new JsonObject
                 {
-                    Type = JsonObjectType.Object,
-                    Description = $"Parameters for {method.Name} method"
+                    ["type"] = "object",
+                    ["description"] = $"Parameters for {method.Name} method",
+                    ["required"] = requiredArray,
+                    ["properties"] = new JsonObject(
+                        method.Params.Select
+                        (
+                            prop => new KeyValuePair<string, JsonNode?>
+                            (
+                                prop.Name.ToCamelCase(),
+                                JsonNode.Parse(prop.Schema.GetRawText())
+                            )       
+                        )
+                    )
                 };
+                string schema = schemaDoc.ToJsonString();
+                var paramSchema = await JsonSchema.FromJsonAsync(schema);
 
-                foreach (var param in method.Params)
-                {
-                    var schemaFromParam = param.Schema.ToJsonSchema();
-                    var propSchema = new JsonSchemaProperty
-                    {
-                        Type = schemaFromParam.Type,
-                        Description = param.Description,
-                        Item = schemaFromParam.Item
-                    };
 
-                    if (schemaFromParam.Type == JsonObjectType.Object && schemaFromParam.Properties != null)
-                    {
-                        propSchema.Type = JsonObjectType.Object;
-                        foreach (var property in schemaFromParam.Properties)
-                        {
-                            propSchema.Properties.Add(property.Key, property.Value);
-                        }
-                    }
-
-                    paramSchema.Properties[$"{param.Name.ToCamelCase()}"] = propSchema;
-
-                    if (param.Required)
-                    {
-                        paramSchema.RequiredProperties.Add(param.Name);
-                    }
-                }
 
                 var generator = new CSharpGenerator(paramSchema, _settings);
                 var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Params");

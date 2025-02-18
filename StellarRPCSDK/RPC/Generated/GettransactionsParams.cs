@@ -16,18 +16,15 @@ namespace Stellar.RPC
     public partial class GetTransactionsParams
     {
         /// <summary>
-        /// Ledger sequence number to start fetching responses from (inclusive). This method will return an error if `startLedger` is less than the oldest ledger stored in this node, or greater than the latest ledger seen by this node. If a cursor is included in the request, `startLedger` must be omitted.
+        /// Sequence number of the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("startLedger")]
         public long StartLedger { get; set; }
 
-        /// <summary>
-        /// Pagination in RPC is similar to pagination in Horizon. See [Pagination](https://developers.stellar.org/docs/data/rpc/api-reference/pagination).
-        /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("pagination")]
-        public object Pagination { get; set; }
+        public Pagination Pagination { get; set; }
 
 
 
@@ -54,6 +51,53 @@ namespace Stellar.RPC
             var options = new System.Text.Json.JsonSerializerOptions();
 
             return System.Text.Json.JsonSerializer.Deserialize<GetTransactionsParams>(data, options);
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class Pagination
+    {
+        /// <summary>
+        /// A unique identifier (specifically, a [TOID](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0035.md#specification)) that points to a specific location in a collection of responses and is pulled from the `paging_token` value of a record. When a cursor is provided, RPC will _not_ include the element whose ID matches the cursor in the response: only elements which appear _after_ the cursor will be included.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("cursor")]
+        public string Cursor { get; set; }
+
+        /// <summary>
+        /// The maximum number of records returned. For getTransactions, this ranges from 1 to 200 and defaults to 50.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public long Limit { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            var options = new System.Text.Json.JsonSerializerOptions();
+
+            return System.Text.Json.JsonSerializer.Serialize(this, options);
+
+        }
+        public static Pagination FromJson(string data)
+        {
+
+            var options = new System.Text.Json.JsonSerializerOptions();
+
+            return System.Text.Json.JsonSerializer.Deserialize<Pagination>(data, options);
 
         }
 

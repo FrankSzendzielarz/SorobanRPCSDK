@@ -16,7 +16,7 @@ namespace Stellar.RPC
     public partial class SimulateTransactionParams
     {
         /// <summary>
-        /// In order for the RPC server to successfully simulate a Stellar transaction, the provided transaction must contain only a single operation of the type `invokeHostFunction`.
+        /// A Stellar transaction, serialized as a base64 string
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("transaction")]
@@ -24,11 +24,11 @@ namespace Stellar.RPC
         public string Transaction { get; set; }
 
         /// <summary>
-        /// Contains configuration for how resources will be calculated when simulating transactions.
+        /// Configuration for how resources will be calculated.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resourceConfig")]
-        public object ResourceConfig { get; set; }
+        public ResourceConfig ResourceConfig { get; set; }
 
 
 
@@ -55,6 +55,46 @@ namespace Stellar.RPC
             var options = new System.Text.Json.JsonSerializerOptions();
 
             return System.Text.Json.JsonSerializer.Deserialize<SimulateTransactionParams>(data, options);
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class ResourceConfig
+    {
+        /// <summary>
+        /// Allow this many extra instructions when budgeting resources.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("instructionLeeway")]
+        public long InstructionLeeway { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            var options = new System.Text.Json.JsonSerializerOptions();
+
+            return System.Text.Json.JsonSerializer.Serialize(this, options);
+
+        }
+        public static ResourceConfig FromJson(string data)
+        {
+
+            var options = new System.Text.Json.JsonSerializerOptions();
+
+            return System.Text.Json.JsonSerializer.Deserialize<ResourceConfig>(data, options);
 
         }
 

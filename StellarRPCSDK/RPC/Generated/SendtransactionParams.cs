@@ -16,7 +16,7 @@ namespace Stellar.RPC
     public partial class SendTransactionParams
     {
         /// <summary>
-        /// The signed transaction to broadcast for inclusion in a ledger.
+        /// A Stellar transaction, serialized as a base64 string
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("transaction")]

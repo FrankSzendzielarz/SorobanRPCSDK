@@ -16,17 +16,17 @@ namespace Stellar.RPC
     public partial class SimulateTransactionParams
     {
         /// <summary>
-        /// In order for the RPC server to successfully simulate a Stellar transaction, the provided transaction must contain only a single operation of the type `invokeHostFunction`.
+        /// A Stellar transaction, serialized as a base64 string
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Transaction { get; set; }
 
         /// <summary>
-        /// Contains configuration for how resources will be calculated when simulating transactions.
+        /// Configuration for how resources will be calculated.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resourceConfig", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public object ResourceConfig { get; set; }
+        public ResourceConfig ResourceConfig { get; set; }
 
 
 
@@ -49,6 +49,41 @@ namespace Stellar.RPC
         {
 
             return Newtonsoft.Json.JsonConvert.DeserializeObject<SimulateTransactionParams>(data, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class ResourceConfig
+    {
+        /// <summary>
+        /// Allow this many extra instructions when budgeting resources.
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("instructionLeeway", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public long InstructionLeeway { get; set; }
+
+
+
+        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
+
+        [Newtonsoft.Json.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+        public string ToJson()
+        {
+
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
+
+        }
+        public static ResourceConfig FromJson(string data)
+        {
+
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ResourceConfig>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 

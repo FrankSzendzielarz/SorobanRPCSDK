@@ -16,7 +16,7 @@ namespace Stellar.RPC
     public partial class GetLedgerEntriesParams
     {
         /// <summary>
-        /// Array containing the keys of the ledger entries you wish to retrieve. (an array of serialized base64 strings)
+        /// Array containing ledger keys. The maximum number of ledger keys accepted is 200.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("keys")]

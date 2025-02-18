@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>Stellar.RPC.Native</RootNamespace>
+		<LangVersion>latest</LangVersion>
+
+		<!-- Native compilation settings -->
+		<PublishAot>true</PublishAot>
+		<StripSymbols>true</StripSymbols>
+		<PublishTrimmed>true</PublishTrimmed>
+		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+		<IsTrimmable>true</IsTrimmable>
+		<EnableAOT>true</EnableAOT>
+		<ILLinkTreatWarningsAsErrors>false</ILLinkTreatWarningsAsErrors>
+
+		<!-- Optional WASM support -->
+		<WasmEnabled Condition="'$(RuntimeIdentifier)' == 'browser-wasm'">true</WasmEnabled>
+
+		<!-- Produce a standalone native library -->
+		<OutputType>Library</OutputType>
+		<EnableDynamicLoading>true</EnableDynamicLoading>
+
+		<!-- Generate runtime configuration -->
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+	</PropertyGroup>
+
+	<!-- Conditional compilation for different platforms -->
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+		<DefineConstants>WINDOWS</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
+		<DefineConstants>LINUX</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'osx-x64'">
+		<DefineConstants>OSX</DefineConstants>
+	</PropertyGroup>
+
+	
+	<!-- Native bindings -->
+	<ItemGroup>
+		<PackageReference Include="DllExport" Version="1.7.4" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\StellarRPCSDK\StellarRPCSDK.csproj" />
+	</ItemGroup>
+</Project>
