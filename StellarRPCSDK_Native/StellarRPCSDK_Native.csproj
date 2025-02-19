@@ -23,25 +23,49 @@
 
 		<!-- Generate runtime configuration -->
 		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+
+
+		<DefineConstants>WINDOWS;$(DefineConstants)</DefineConstants>
 	</PropertyGroup>
 
 	<!-- Conditional compilation for different platforms -->
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
 		<DefineConstants>WINDOWS</DefineConstants>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-arm64'">
+		<DefineConstants>WINDOWS</DefineConstants>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-x64'">
 		<DefineConstants>LINUX</DefineConstants>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'linux-arm64'">
+		<DefineConstants>LINUX</DefineConstants>
+	</PropertyGroup>
+
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'osx-x64'">
 		<DefineConstants>OSX</DefineConstants>
 	</PropertyGroup>
-
+	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'osx-arm64'">
+		<DefineConstants>OSX</DefineConstants>
+	</PropertyGroup>
 	
-	<!-- Native bindings -->
+	<!-- References -->
 	<ItemGroup>
 		<PackageReference Include="DllExport" Version="1.7.4" />
+		<PackageReference Include="Google.Protobuf" Version="3.29.3" />
+		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.54.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.69.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Server.HttpSys" Version="2.3.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\StellarRPCSDK\StellarRPCSDK.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Protobuf Include="stellar.proto" GrpcServices="Server" />
+	</ItemGroup>
+	
 </Project>

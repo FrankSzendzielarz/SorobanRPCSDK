@@ -31,3 +31,4 @@
 /StellarRPCSDK_Native/bin/Debug
 /ProtoGenerator/bin
 /ProtoGenerator/obj
+/StellarRPCSDK_Native/native_client_tests/rust_client/target

@@ -48,5 +48,9 @@
 	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'">
 		<Compile Remove="RPC\Generated_Unity\*.cs" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="gRPC\" />
+	</ItemGroup>
 	
 </Project>
