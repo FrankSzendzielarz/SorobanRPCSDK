@@ -20,17 +20,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start_server: Symbol<unsafe extern "C" fn()> = unsafe { lib.get(b"StartServer")? };
     unsafe { start_server() };
 
+
+
   // Create a connection to the server
     #[cfg(target_os = "windows")]
-    let channel = Channel::from_static("http://[::]")
+    let channel = Channel::from_static("http://localhost")
         .connect_with_connector(service_fn(|_: Uri| async move {
             ClientOptions::new()
                 .open(r"\\.\pipe\MyServicePipe")
         }))
         .await?;
+    println!("Connection to SDK established.");
 
     #[cfg(not(target_os = "windows"))]
-    let channel = Channel::from_static("http://[::]")
+    let channel = Channel::from_static("http://localhost")
         .connect_with_connector(service_fn(|_: Uri| async move {
             tokio::net::UnixStream::connect("/tmp/MyService.sock")
         }))
@@ -38,6 +41,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Create a gRPC client
     let mut client = MyServiceClient::new(channel);
+    println!("gRPC client created.");
 
     // Call the AddNumbers method
     let request = tonic::Request::new(AddRequest { a: 2, b: 3 });

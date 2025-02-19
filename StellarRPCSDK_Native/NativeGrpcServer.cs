@@ -8,13 +8,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Grpc.Core;
 using NativeTests;
+using System;
+using Microsoft.Extensions.Logging;
 
 namespace Stellar.RPC.Native
 {
     public static class NativeGrpcServer
     {
+
         private static WebApplication? _app;
         private static Thread? _serverThread;
+        private static readonly ManualResetEventSlim _serverReady = new ManualResetEventSlim(false);
 
         // C entry point to start the server
 
@@ -24,16 +28,38 @@ namespace Stellar.RPC.Native
         {
             _serverThread = new Thread(() =>
             {
-                var builder = WebApplication.CreateBuilder();
-                builder.Services.AddGrpc();
+                var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+                {
+                    ApplicationName = "StellarRPCSDK_Native",  // Explicit name
+                    EnvironmentName = "Production"  // Explicit environment
+                });
+
+                //builder.Logging.SetMinimumLevel(LogLevel.Trace); 
+                //builder.Logging.AddConsole(options =>
+                //{
+                //    options.FormatterName = "Simple";
+                //});
+
+                builder.Services.AddGrpc(options =>
+                {
+                    options.EnableDetailedErrors = true;
+                });
 
                 // Platform-specific IPC configuration
 #if WINDOWS
                 // Windows: Named pipes via HttpSys
 
-                builder.WebHost.UseHttpSys(options =>
+
+                builder.WebHost.ConfigureKestrel(options =>
                 {
-                    options.UrlPrefixes.Add("http://pipe:/MyServicePipe");
+                    options.ListenNamedPipe("MyServicePipe", listenOptions =>
+                    {
+
+                        listenOptions.Protocols = HttpProtocols.Http2;
+                   
+
+
+                    });
                 });
 
 
@@ -48,21 +74,47 @@ namespace Stellar.RPC.Native
                     });
                 });
 #endif
-
+                builder.Services.AddScoped<TestService>();
                 _app = builder.Build();
                 _app.MapGrpcService<TestService>();
+
+                _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                 _app.Run();
             });
 
             _serverThread.IsBackground = true;
             _serverThread.Start();
+
+            Console.WriteLine("Waiting for Stellar SDK");
+            _serverReady.Wait();
+     
         }
 
         // Example gRPC service
         private class TestService : MyService.MyServiceBase
         {
+            private readonly ILogger<TestService> _logger;
+
+            public TestService(ILogger<TestService> logger)
+            {
+                _logger = logger;
+            }
             public override Task<AddResponse> AddNumbers(AddRequest request, ServerCallContext context)
-                => Task.FromResult(new AddResponse { Result = request.A + request.B });
+            {
+                _logger.LogInformation("AddNumbers called with A: {A}, B: {B}", request.A, request.B);
+
+                try
+                {
+                    var result = request.A + request.B;
+                    _logger.LogInformation("AddNumbers result: {Result}", result);
+                    return Task.FromResult(new AddResponse { Result = result });
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error in AddNumbers");
+                    throw;
+                }
+            }
         }
     }
 }
