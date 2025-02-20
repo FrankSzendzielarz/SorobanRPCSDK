@@ -13,20 +13,20 @@ namespace Stellar.RPC
     /// Parameters for simulateTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SimulateTransactionParams
+    [ProtoBuf.ProtoContract] public partial class SimulateTransactionParams
     {
         /// <summary>
         /// A Stellar transaction, serialized as a base64 string
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Transaction { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Transaction { get; set; }
 
         /// <summary>
         /// Configuration for how resources will be calculated.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resourceConfig", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public ResourceConfig ResourceConfig { get; set; }
+        [ProtoBuf.ProtoMember(2)] public ResourceConfigResourceConfig  ResourceConfig { get; set; }
 
 
 
@@ -55,13 +55,13 @@ namespace Stellar.RPC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ResourceConfig
+    [ProtoBuf.ProtoContract] public partial class ResourceConfigResourceConfig
     {
         /// <summary>
         /// Allow this many extra instructions when budgeting resources.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("instructionLeeway", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long InstructionLeeway { get; set; }
+        [ProtoBuf.ProtoMember(1)] public long  InstructionLeeway { get; set; }
 
 
 
@@ -80,10 +80,10 @@ namespace Stellar.RPC
             return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
-        public static ResourceConfig FromJson(string data)
+        public static ResourceConfigResourceConfig FromJson(string data)
         {
 
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ResourceConfig>(data, new Newtonsoft.Json.JsonSerializerSettings());
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<ResourceConfigResourceConfig>(data, new Newtonsoft.Json.JsonSerializerSettings());
 
         }
 

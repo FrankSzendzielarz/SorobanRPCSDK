@@ -1,4 +1,5 @@
 ﻿using NJsonSchema;
+using NJsonSchema.CodeGeneration;
 using NJsonSchema.CodeGeneration.CSharp;
 using System.Text;
 using System.Text.Json;
@@ -6,6 +7,7 @@ using System.Text.Json.Nodes;
 
 namespace Generator.OpenRPC
 {
+
     public class CSharpOpenRPCGenerator
     {
         private readonly OpenRpcSpec _spec;
@@ -22,17 +24,20 @@ namespace Generator.OpenRPC
             _settings = new CSharpGeneratorSettings
             {
                 ClassStyle = CSharpClassStyle.Poco,
-          //      GenerateDataAnnotations = true,
+                GenerateDataAnnotations = true,
                 GenerateJsonMethods = true,
                 Namespace = "Stellar.RPC",
                 JsonLibrary = isUnityBuild ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
                 ArrayType = "System.Collections.Generic.ICollection",
                 ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
                 NumberType = "long",
-                 
+                TypeAccessModifier = "[ProtoBuf.ProtoContract] public",
+                PropertyNameGenerator = new PropertyMarkerNameGenerator(),
                 
-                 
+
             };
+            _settings.TypeNameGenerator = new TypeFixNameGenerator(_settings.TypeNameGenerator);
+      
         }
 
         public async Task GenerateAsync()
@@ -78,6 +83,7 @@ namespace Generator.OpenRPC
 
                 var generator = new CSharpGenerator(paramSchema, _settings);
                 var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Params");
+                code=ReorderProtoMembers(code);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Params.cs"), code);
             }
 
@@ -86,8 +92,34 @@ namespace Generator.OpenRPC
                 var resultSchema = await JsonSchema.FromJsonAsync(method.Result.Schema.GetRawText());
                 var generator = new CSharpGenerator(resultSchema, _settings);
                 var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Result");
+                code = ReorderProtoMembers(code);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Result.cs"), code);
             }
+        }
+
+        public static string ReorderProtoMembers(string input)
+        {
+            var lines = input.Split('\n');
+            var result = new List<string>();
+
+            foreach (var line in lines)
+            {
+                if (line.Contains("[ProtoBuf.ProtoMember"))
+                {
+                    var indent = new string(' ', line.Length - line.TrimStart().Length);
+                    var parts = line.Split(new[] { "[ProtoBuf.ProtoMember" }, StringSplitOptions.None);
+                    var protoMember = "[ProtoBuf.ProtoMember" + parts[1].Split(']')[0] + "]";
+                    var restOfLine = parts[0] + parts[1].Split(']')[1];
+
+                    result.Add(indent + protoMember + " " + restOfLine.Trim());
+                }
+                else
+                {
+                    result.Add(line);
+                }
+            }
+
+            return string.Join("\n", result);
         }
 
         private async Task GenerateClientClassAsync()

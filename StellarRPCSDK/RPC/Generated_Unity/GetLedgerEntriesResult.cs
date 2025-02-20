@@ -10,19 +10,19 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetLedgerEntriesResult
+    [ProtoBuf.ProtoContract] public partial class GetLedgerEntriesResult
     {
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("latestLedger", Required = Newtonsoft.Json.Required.Always)]
-        public long LatestLedger { get; set; }
+        [ProtoBuf.ProtoMember(1)] public long  LatestLedger { get; set; }
 
         /// <summary>
         /// Array of objects containing all found ledger entries
         /// </summary>
         [Newtonsoft.Json.JsonProperty("entries", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<Entries> Entries { get; set; }
+        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.ICollection<Entries>  Entries { get; set; }
 
 
 
@@ -54,31 +54,31 @@ namespace Stellar.RPC
     /// Object containing information about an existing ledger entry.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Entries
+    [ProtoBuf.ProtoContract] public partial class Entries
     {
         /// <summary>
         /// The key of the ledger entry (serialized in a base64 string).
         /// </summary>
         [Newtonsoft.Json.JsonProperty("key", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Key { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Key { get; set; }
 
         /// <summary>
         /// The current value of the given ledger entry (serialized in a base64 string).
         /// </summary>
         [Newtonsoft.Json.JsonProperty("xdr", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string Xdr { get; set; }
+        [ProtoBuf.ProtoMember(2)] public string  Xdr { get; set; }
 
         /// <summary>
         /// The ledger sequence number of the last time this entry was updated.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("lastModifiedLedgerSeq", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long LastModifiedLedgerSeq { get; set; }
+        [ProtoBuf.ProtoMember(3)] public long  LastModifiedLedgerSeq { get; set; }
 
         /// <summary>
         /// Sequence number of the ledger.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("liveUntilLedgerSeq", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public long LiveUntilLedgerSeq { get; set; }
+        [ProtoBuf.ProtoMember(4)] public long  LiveUntilLedgerSeq { get; set; }
 
 
 

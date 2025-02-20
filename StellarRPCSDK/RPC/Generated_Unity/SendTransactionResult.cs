@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SendTransactionResult
+    [ProtoBuf.ProtoContract] public partial class SendTransactionResult
     {
         /// <summary>
         /// Transaction hash (as a hex-encoded string)
@@ -19,7 +19,7 @@ namespace Stellar.RPC
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(64, MinimumLength = 64)]
         [System.ComponentModel.DataAnnotations.RegularExpression(@"^[a-f\d]{64}$")]
-        public string Hash { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Hash { get; set; }
 
         /// <summary>
         /// The current status of the transaction by hash.
@@ -27,32 +27,32 @@ namespace Stellar.RPC
         [Newtonsoft.Json.JsonProperty("status", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
-        public SendTransactionResultStatus Status { get; set; }
+        [ProtoBuf.ProtoMember(2)] public SendTransactionResult_Status  Status { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("latestLedger", Required = Newtonsoft.Json.Required.Always)]
-        public long LatestLedger { get; set; }
+        [ProtoBuf.ProtoMember(3)] public long  LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("latestLedgerCloseTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string LatestLedgerCloseTime { get; set; }
+        [ProtoBuf.ProtoMember(4)] public string  LatestLedgerCloseTime { get; set; }
 
         /// <summary>
         /// (optional) If the transaction status is `ERROR`, this will be a base64 encoded string of the raw TransactionResult XDR struct containing details on why stellar-core rejected the transaction.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("errorResultXdr", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string ErrorResultXdr { get; set; }
+        [ProtoBuf.ProtoMember(5)] public string  ErrorResultXdr { get; set; }
 
         /// <summary>
         /// (optional) If the transaction status is `ERROR`, this field may be present with an array of base64 encoded strings. Each string will decode to a raw DiagnosticEvent XDR struct containing details on why stellar-core rejected the transaction.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("diagnosticEventsXdr", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public System.Collections.Generic.ICollection<string> DiagnosticEventsXdr { get; set; }
+        [ProtoBuf.ProtoMember(6)] public System.Collections.Generic.ICollection<string>  DiagnosticEventsXdr { get; set; }
 
 
 
@@ -81,7 +81,7 @@ namespace Stellar.RPC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum SendTransactionResultStatus
+    [ProtoBuf.ProtoContract] public enum SendTransactionResult_Status
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"PENDING")]

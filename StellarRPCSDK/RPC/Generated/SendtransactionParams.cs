@@ -13,7 +13,7 @@ namespace Stellar.RPC
     /// Parameters for sendTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SendTransactionParams
+    [ProtoBuf.ProtoContract] public partial class SendTransactionParams
     {
         /// <summary>
         /// A Stellar transaction, serialized as a base64 string
@@ -21,7 +21,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("transaction")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Transaction { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Transaction { get; set; }
 
 
 

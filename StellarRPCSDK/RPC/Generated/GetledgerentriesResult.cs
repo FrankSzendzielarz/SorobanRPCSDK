@@ -10,21 +10,21 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetLedgerEntriesResult
+    [ProtoBuf.ProtoContract] public partial class GetLedgerEntriesResult
     {
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public long LatestLedger { get; set; }
+        [ProtoBuf.ProtoMember(1)] public long  LatestLedger { get; set; }
 
         /// <summary>
         /// Array of objects containing all found ledger entries
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("entries")]
-        public System.Collections.Generic.ICollection<Entries> Entries { get; set; }
+        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.ICollection<Entries>  Entries { get; set; }
 
 
 
@@ -60,35 +60,35 @@ namespace Stellar.RPC
     /// Object containing information about an existing ledger entry.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Entries
+    [ProtoBuf.ProtoContract] public partial class Entries
     {
         /// <summary>
         /// The key of the ledger entry (serialized in a base64 string).
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("key")]
-        public string Key { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Key { get; set; }
 
         /// <summary>
         /// The current value of the given ledger entry (serialized in a base64 string).
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("xdr")]
-        public string Xdr { get; set; }
+        [ProtoBuf.ProtoMember(2)] public string  Xdr { get; set; }
 
         /// <summary>
         /// The ledger sequence number of the last time this entry was updated.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("lastModifiedLedgerSeq")]
-        public long LastModifiedLedgerSeq { get; set; }
+        [ProtoBuf.ProtoMember(3)] public long  LastModifiedLedgerSeq { get; set; }
 
         /// <summary>
         /// Sequence number of the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("liveUntilLedgerSeq")]
-        public long LiveUntilLedgerSeq { get; set; }
+        [ProtoBuf.ProtoMember(4)] public long  LiveUntilLedgerSeq { get; set; }
 
 
 

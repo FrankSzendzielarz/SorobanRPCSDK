@@ -1,5 +1,6 @@
 ﻿using Chaos.NaCl;
 using dotnetstandard_bip32;
+using ProtoBuf;
 using Stellar.Utilities;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
+using System.ServiceModel;
 using System.Text;
 
 namespace Stellar
@@ -14,6 +16,8 @@ namespace Stellar
     /// <summary>
     ///  
     /// </summary>
+
+    [ServiceContract]
     public partial class MuxedAccount : IEquatable<MuxedAccount>
     {
 
@@ -22,6 +26,7 @@ namespace Stellar
 
         public abstract byte[] PublicKey { get; }
 
+ 
         public sealed partial class KeyTypeEd25519 : MuxedAccount
         {
             public KeyTypeEd25519() { }
@@ -57,6 +62,7 @@ namespace Stellar
             }
         }
 
+    
         public sealed partial class KeyTypeMuxedEd25519 : MuxedAccount
         {
             public KeyTypeMuxedEd25519() { }
@@ -95,17 +101,19 @@ namespace Stellar
             }
         }
 
-        
+
 
         /// <summary>
         ///     The private key.
         /// </summary>
-        public byte[] PrivateKey => _secretKey;
+        
+        public byte[] PrivateKey { get { return _secretKey; } }
 
         /// <summary>
         ///     The bytes of the Secret Seed
         /// </summary>
-        public byte[] SeedBytes { get { return _seed; } }
+
+        public byte[] SeedBytes {  get { return _seed; } }
 
         /// <summary>
         ///     SecretSeed
@@ -176,6 +184,7 @@ namespace Stellar
         /// <returns>
         ///     <see cref="AccountID" />
         /// </returns>
+
         public static KeyTypeEd25519 FromSecretSeed(byte[] seed)
         {
             return new KeyTypeEd25519(null, seed);

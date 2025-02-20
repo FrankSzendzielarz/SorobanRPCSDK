@@ -19,6 +19,7 @@
 	<ItemGroup>
 		<PackageReference Include="dotnetstandard-bip32" Version="1.0.0" />
 		<PackageReference Include="dotnetstandard-bip39" Version="1.0.2" />
+		<PackageReference Include="protobuf-net.Grpc" Version="1.2.2" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="System.Text.Json" Version="9.0.1" Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
@@ -47,10 +48,6 @@
 
 	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'">
 		<Compile Remove="RPC\Generated_Unity\*.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="gRPC\" />
 	</ItemGroup>
 	
 </Project>

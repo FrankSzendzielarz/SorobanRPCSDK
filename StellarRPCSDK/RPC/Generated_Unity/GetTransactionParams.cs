@@ -13,7 +13,7 @@ namespace Stellar.RPC
     /// Parameters for getTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetTransactionParams
+    [ProtoBuf.ProtoContract] public partial class GetTransactionParams
     {
         /// <summary>
         /// Transaction hash (as a hex-encoded string)
@@ -22,7 +22,7 @@ namespace Stellar.RPC
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(64, MinimumLength = 64)]
         [System.ComponentModel.DataAnnotations.RegularExpression(@"^[a-f\d]{64}$")]
-        public string Hash { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Hash { get; set; }
 
 
 

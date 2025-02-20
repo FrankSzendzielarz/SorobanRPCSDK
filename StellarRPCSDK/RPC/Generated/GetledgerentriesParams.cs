@@ -13,7 +13,7 @@ namespace Stellar.RPC
     /// Parameters for getLedgerEntries method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetLedgerEntriesParams
+    [ProtoBuf.ProtoContract] public partial class GetLedgerEntriesParams
     {
         /// <summary>
         /// Array containing ledger keys. The maximum number of ledger keys accepted is 200.
@@ -21,7 +21,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("keys")]
         [System.ComponentModel.DataAnnotations.Required]
-        public System.Collections.Generic.ICollection<string> Keys { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.ICollection<string>  Keys { get; set; } = new System.Collections.ObjectModel.Collection<string>();
 
 
 

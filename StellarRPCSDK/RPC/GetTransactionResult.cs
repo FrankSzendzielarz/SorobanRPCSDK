@@ -1,13 +1,16 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
 namespace Stellar.RPC
 {
+
     public partial class GetTransactionResult
     {
         private TransactionResult _transactionResult;
+        [ProtoMember(100)]
         public TransactionResult TransactionResult
         {
             get
@@ -30,6 +33,7 @@ namespace Stellar.RPC
         }
 
         private TransactionMeta _transactionResultMeta;
+        [ProtoMember(101)]
         public TransactionMeta TransactionResultMeta
         {
             get
@@ -51,6 +55,7 @@ namespace Stellar.RPC
 
         }
         private TransactionEnvelope _transactionEnvelope;
+        [ProtoMember(102)]
         public TransactionEnvelope TransactionEnvelope
         {
             get

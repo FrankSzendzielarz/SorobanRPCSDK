@@ -10,39 +10,39 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetTransactionsResult
+    [ProtoBuf.ProtoContract] public partial class GetTransactionsResult
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("transactions")]
-        public System.Collections.Generic.ICollection<Transactions> Transactions { get; set; }
+        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.ICollection<Transactions>  Transactions { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public long LatestLedger { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long  LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedgerCloseTimestamp")]
-        public long LatestLedgerCloseTimestamp { get; set; }
+        [ProtoBuf.ProtoMember(3)] public long  LatestLedgerCloseTimestamp { get; set; }
 
         /// <summary>
         /// The sequence number of the oldest ledger ingested by Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedger")]
-        public long OldestLedger { get; set; }
+        [ProtoBuf.ProtoMember(4)] public long  OldestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedgerCloseTimestamp")]
-        public long OldestLedgerCloseTimestamp { get; set; }
+        [ProtoBuf.ProtoMember(5)] public long  OldestLedgerCloseTimestamp { get; set; }
 
 
 
@@ -75,70 +75,70 @@ namespace Stellar.RPC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Transactions
+    [ProtoBuf.ProtoContract] public partial class Transactions
     {
         /// <summary>
         /// Indicates whether the transaction was successful or not.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Status { get; set; }
 
         /// <summary>
         /// The 1-based index of the transaction among all transactions included in the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationOrder")]
-        public long ApplicationOrder { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long  ApplicationOrder { get; set; }
 
         /// <summary>
         /// Indicates whether the transaction was fee bumped.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("feeBump")]
-        public bool FeeBump { get; set; }
+        [ProtoBuf.ProtoMember(3)] public bool  FeeBump { get; set; }
 
         /// <summary>
         /// A base64 encoded string of the raw TransactionEnvelope XDR struct for this transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("envelopeXdr")]
-        public string EnvelopeXdr { get; set; }
+        [ProtoBuf.ProtoMember(4)] public string  EnvelopeXdr { get; set; }
 
         /// <summary>
         /// A base64 encoded string of the raw TransactionResult XDR struct for this transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resultXdr")]
-        public string ResultXdr { get; set; }
+        [ProtoBuf.ProtoMember(5)] public string  ResultXdr { get; set; }
 
         /// <summary>
         /// A base64 encoded string of the raw TransactionMeta XDR struct for this transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resultMetaXdr")]
-        public string ResultMetaXdr { get; set; }
+        [ProtoBuf.ProtoMember(6)] public string  ResultMetaXdr { get; set; }
 
         /// <summary>
         /// (optional) A base64 encoded slice of xdr.DiagnosticEvent. This is only present if the `ENABLE_SOROBAN_DIAGNOSTIC_EVENTS` has been enabled in the stellar-core config.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("diagnosticEventsXdr")]
-        public System.Collections.Generic.ICollection<string> DiagnosticEventsXdr { get; set; }
+        [ProtoBuf.ProtoMember(7)] public System.Collections.Generic.ICollection<string>  DiagnosticEventsXdr { get; set; }
 
         /// <summary>
         /// The sequence number of the ledger which included the transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledger")]
-        public long Ledger { get; set; }
+        [ProtoBuf.ProtoMember(8)] public long  Ledger { get; set; }
 
         /// <summary>
         /// The unix timestamp of when the transaction was included in the ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("createdAt")]
-        public long CreatedAt { get; set; }
+        [ProtoBuf.ProtoMember(9)] public long  CreatedAt { get; set; }
 
 
 

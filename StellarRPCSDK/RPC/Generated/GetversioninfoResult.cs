@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetVersionInfoResult
+    [ProtoBuf.ProtoContract] public partial class GetVersionInfoResult
     {
         /// <summary>
         /// The version of the RPC server.
@@ -18,7 +18,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("version")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Version { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Version { get; set; }
 
         /// <summary>
         /// The commit hash of the RPC server.
@@ -26,7 +26,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("commit_hash")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Commit_hash { get; set; }
+        [ProtoBuf.ProtoMember(2)] public string  Commit_hash { get; set; }
 
         /// <summary>
         /// The build timestamp of the RPC server.
@@ -34,7 +34,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("build_time_stamp")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Build_time_stamp { get; set; }
+        [ProtoBuf.ProtoMember(3)] public string  Build_time_stamp { get; set; }
 
         /// <summary>
         /// The version of the Captive Core.
@@ -42,14 +42,14 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("captive_core_version")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Captive_core_version { get; set; }
+        [ProtoBuf.ProtoMember(4)] public string  Captive_core_version { get; set; }
 
         /// <summary>
         /// The protocol version.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("protocol_version")]
-        public int Protocol_version { get; set; }
+        [ProtoBuf.ProtoMember(5)] public int  Protocol_version { get; set; }
 
 
 

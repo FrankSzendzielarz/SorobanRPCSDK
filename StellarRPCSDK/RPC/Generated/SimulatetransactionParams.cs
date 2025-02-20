@@ -13,7 +13,7 @@ namespace Stellar.RPC
     /// Parameters for simulateTransaction method
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class SimulateTransactionParams
+    [ProtoBuf.ProtoContract] public partial class SimulateTransactionParams
     {
         /// <summary>
         /// A Stellar transaction, serialized as a base64 string
@@ -21,14 +21,14 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("transaction")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Transaction { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Transaction { get; set; }
 
         /// <summary>
         /// Configuration for how resources will be calculated.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resourceConfig")]
-        public ResourceConfig ResourceConfig { get; set; }
+        [ProtoBuf.ProtoMember(2)] public ResourceConfigResourceConfig  ResourceConfig { get; set; }
 
 
 
@@ -61,14 +61,14 @@ namespace Stellar.RPC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class ResourceConfig
+    [ProtoBuf.ProtoContract] public partial class ResourceConfigResourceConfig
     {
         /// <summary>
         /// Allow this many extra instructions when budgeting resources.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("instructionLeeway")]
-        public long InstructionLeeway { get; set; }
+        [ProtoBuf.ProtoMember(1)] public long  InstructionLeeway { get; set; }
 
 
 
@@ -89,12 +89,12 @@ namespace Stellar.RPC
             return System.Text.Json.JsonSerializer.Serialize(this, options);
 
         }
-        public static ResourceConfig FromJson(string data)
+        public static ResourceConfigResourceConfig FromJson(string data)
         {
 
             var options = new System.Text.Json.JsonSerializerOptions();
 
-            return System.Text.Json.JsonSerializer.Deserialize<ResourceConfig>(data, options);
+            return System.Text.Json.JsonSerializer.Deserialize<ResourceConfigResourceConfig>(data, options);
 
         }
 

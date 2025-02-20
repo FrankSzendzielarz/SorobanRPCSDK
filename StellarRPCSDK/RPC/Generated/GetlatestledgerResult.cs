@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetLatestLedgerResult
+    [ProtoBuf.ProtoContract] public partial class GetLatestLedgerResult
     {
         /// <summary>
         /// Hash identifier of the latest ledger (as a hex-encoded string) known to Stellar RPC at the time it handled the request.
@@ -19,21 +19,21 @@ namespace Stellar.RPC
         [System.Text.Json.Serialization.JsonPropertyName("id")]
         [System.ComponentModel.DataAnnotations.StringLength(64, MinimumLength = 64)]
         [System.ComponentModel.DataAnnotations.RegularExpression(@"^[a-f\d]{64}$")]
-        public string Id { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Id { get; set; }
 
         /// <summary>
         /// Stellar Core protocol version associated with the latest ledger.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("protocolVersion")]
-        public long ProtocolVersion { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long  ProtocolVersion { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("sequence")]
-        public long Sequence { get; set; }
+        [ProtoBuf.ProtoMember(3)] public long  Sequence { get; set; }
 
 
 

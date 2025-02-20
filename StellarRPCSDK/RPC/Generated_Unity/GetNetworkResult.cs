@@ -10,26 +10,26 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetNetworkResult
+    [ProtoBuf.ProtoContract] public partial class GetNetworkResult
     {
         /// <summary>
         /// Network passphrase configured for this Stellar RPC node.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("passphrase", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Passphrase { get; set; }
+        [ProtoBuf.ProtoMember(1)] public string  Passphrase { get; set; }
 
         /// <summary>
         /// Stellar Core protocol version associated with the latest ledger.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("protocolVersion", Required = Newtonsoft.Json.Required.Always)]
-        public long ProtocolVersion { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long  ProtocolVersion { get; set; }
 
         /// <summary>
         /// (optional) The URL of this network's "friendbot" faucet
         /// </summary>
         [Newtonsoft.Json.JsonProperty("friendbotUrl", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
-        public string FriendbotUrl { get; set; }
+        [ProtoBuf.ProtoMember(3)] public string  FriendbotUrl { get; set; }
 
 
 

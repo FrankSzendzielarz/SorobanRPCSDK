@@ -10,6 +10,7 @@ using Grpc.Core;
 using NativeTests;
 using System;
 using Microsoft.Extensions.Logging;
+using ProtoBuf.Grpc.Server;
 
 namespace Stellar.RPC.Native
 {
@@ -77,6 +78,8 @@ namespace Stellar.RPC.Native
                 builder.Services.AddScoped<TestService>();
                 _app = builder.Build();
                 _app.MapGrpcService<TestService>();
+
+                builder.Services.AddCodeFirstGrpc();
 
                 _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                 _app.Run();

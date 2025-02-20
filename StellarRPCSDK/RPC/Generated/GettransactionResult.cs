@@ -10,7 +10,7 @@ namespace Stellar.RPC
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class GetTransactionResult
+    [ProtoBuf.ProtoContract] public partial class GetTransactionResult
     {
         /// <summary>
         /// The current status of the transaction by hash
@@ -19,14 +19,14 @@ namespace Stellar.RPC
         [System.Text.Json.Serialization.JsonPropertyName("status")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public GetTransactionResultStatus Status { get; set; }
+        [ProtoBuf.ProtoMember(1)] public GetTransactionResult_Status  Status { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedger")]
-        public long LatestLedger { get; set; }
+        [ProtoBuf.ProtoMember(2)] public long  LatestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the latest ledger known to Stellar RPC at the time it handled the request.
@@ -34,14 +34,14 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("latestLedgerCloseTime")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string LatestLedgerCloseTime { get; set; }
+        [ProtoBuf.ProtoMember(3)] public string  LatestLedgerCloseTime { get; set; }
 
         /// <summary>
         /// The sequence number of the oldest ledger ingested by Stellar RPC at the time it handled the request.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedger")]
-        public long OldestLedger { get; set; }
+        [ProtoBuf.ProtoMember(4)] public long  OldestLedger { get; set; }
 
         /// <summary>
         /// The unix timestamp of the close time of the oldest ledger ingested by Stellar RPC at the time it handled the request.
@@ -49,56 +49,56 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("oldestLedgerCloseTime")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string OldestLedgerCloseTime { get; set; }
+        [ProtoBuf.ProtoMember(5)] public string  OldestLedgerCloseTime { get; set; }
 
         /// <summary>
         /// (optional) The sequence number of the ledger which included the transaction. This field is only present if `status` is `SUCCESS` or `FAILED`.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("ledger")]
-        public long Ledger { get; set; }
+        [ProtoBuf.ProtoMember(6)] public long  Ledger { get; set; }
 
         /// <summary>
         /// (optional) The unix timestamp of when the transaction was included in the ledger. This field is only present if `status` is `SUCCESS` or `FAILED`.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("createdAt")]
-        public string CreatedAt { get; set; }
+        [ProtoBuf.ProtoMember(7)] public string  CreatedAt { get; set; }
 
         /// <summary>
         /// (optional) The index of the transaction among all transactions included in the ledger. This field is only present if `status` is `SUCCESS` or `FAILED`.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("applicationOrder")]
-        public long ApplicationOrder { get; set; }
+        [ProtoBuf.ProtoMember(8)] public long  ApplicationOrder { get; set; }
 
         /// <summary>
         /// (optional) Indicates whether the transaction was fee bumped. This field is only present if `status` is `SUCCESS` or `FAILED`.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("feeBump")]
-        public bool FeeBump { get; set; }
+        [ProtoBuf.ProtoMember(9)] public bool  FeeBump { get; set; }
 
         /// <summary>
         /// (optional) A base64 encoded string of the raw TransactionEnvelope XDR struct for this transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("envelopeXdr")]
-        public string EnvelopeXdr { get; set; }
+        [ProtoBuf.ProtoMember(10)] public string  EnvelopeXdr { get; set; }
 
         /// <summary>
         /// (optional) A base64 encoded string of the raw TransactionResult XDR struct for this transaction. This field is only present if `status` is `SUCCESS` or `FAILED`.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resultXdr")]
-        public string ResultXdr { get; set; }
+        [ProtoBuf.ProtoMember(11)] public string  ResultXdr { get; set; }
 
         /// <summary>
         /// (optional) A base64 encoded string of the raw TransactionMeta XDR struct for this transaction.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("resultMetaXdr")]
-        public string ResultMetaXdr { get; set; }
+        [ProtoBuf.ProtoMember(12)] public string  ResultMetaXdr { get; set; }
 
 
 
@@ -131,7 +131,7 @@ namespace Stellar.RPC
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public enum GetTransactionResultStatus
+    [ProtoBuf.ProtoContract] public enum GetTransactionResult_Status
     {
 
         [System.Runtime.Serialization.EnumMember(Value = @"SUCCESS")]

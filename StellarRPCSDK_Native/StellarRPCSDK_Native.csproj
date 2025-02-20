@@ -49,10 +49,17 @@
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'osx-arm64'">
 		<DefineConstants>OSX</DefineConstants>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <IsAotCompatible>True</IsAotCompatible>
+	</PropertyGroup>
 	
 	<!-- References -->
 	<ItemGroup>
 		<PackageReference Include="DllExport" Version="1.7.4" />
+		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
 		<PackageReference Include="Google.Protobuf" Version="3.29.3" />
 		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.54.0" />
 		<PackageReference Include="Grpc.Tools" Version="2.69.0">

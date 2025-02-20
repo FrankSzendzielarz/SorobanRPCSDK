@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="protobuf-net" Version="3.2.26" />
-	  <PackageReference Include="protobuf-net.Core" Version="3.2.26" />
+    <PackageReference Include="protobuf-net.Grpc.Reflection" Version="1.2.2" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>

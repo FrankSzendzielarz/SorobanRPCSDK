@@ -13,138 +13,146 @@ namespace Stellar.RPC.Tools
             try
             {
                 string outputPath = args.Length > 0 ? args[0] : "./stellar-rpc.proto";
-                var model = RuntimeTypeModel.Create();
-                var sdkAssembly = typeof(SimulateTransactionResult).Assembly;
 
-                var types = sdkAssembly.GetTypes()
-                    .Where(type => (type.Namespace == "Stellar.RPC" || type.Namespace == "Stellar")
-                        && !type.Name.Contains("JsonRpcResponse"))
-                    .ToList();
 
-                // Process all non-union types first
-                foreach (var type in types.Where(t => !t.IsAbstract))
-                {
-                    Console.WriteLine($"Processing type: {type.FullName}");
-                    var metaType = model.Add(type, false);
+                //var model = RuntimeTypeModel.Create();
+                //var sdkAssembly = typeof(SimulateTransactionResult).Assembly;
 
-                    if (type.IsNested)
-                    {
-                        metaType.Name = type.FullName.Replace("+", ".");
-                    }
+                //var types = sdkAssembly.GetTypes()
+                //    .Where(type => (type.Namespace == "Stellar.RPC" || type.Namespace == "Stellar")
+                //        && !type.Name.Contains("JsonRpcResponse"))
+                //    .ToList();
 
-                    // Get all properties for this type
-                    var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                        .Where(p => p.DeclaringType == type && p.Name != "Discriminator");
+                //// Process all non-union types first
+                //foreach (var type in types.Where(t => !t.IsAbstract))
+                //{
+                //    Console.WriteLine($"Processing type: {type.FullName}");
+                //    var metaType = model.Add(type, false);
 
-                    int fieldNumber = 1;
-                    foreach (var prop in properties)
-                    {
-                        if (prop.GetCustomAttribute<NonSerializedAttribute>() != null ||
-                            prop.PropertyType == typeof(object) ||
-                            prop.PropertyType.IsPointer ||
-                            prop.PropertyType.IsByRef)
-                        {
-                            Console.WriteLine($"Skipping property {type.FullName}.{prop.Name}");
-                            continue;
-                        }
+                //    if (type.IsNested)
+                //    {
+                //        metaType.Name = type.FullName.Replace("+", ".");
+                //    }
 
-                        try
-                        {
-                            Console.WriteLine($"Adding property {prop.Name} to {type.FullName}");
-                            var field = metaType.Add(fieldNumber, prop.Name);
+                //    // Get all properties for this type
+                //    var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                //        .Where(p => p.DeclaringType == type && p.Name != "Discriminator");
 
-                            if (prop.PropertyType.IsEnum)
-                            {
-                                model.Add(prop.PropertyType, false);
-                            }
-                            else if (prop.PropertyType.IsGenericType)
-                            {
-                                Type genericTypeDef = prop.PropertyType.GetGenericTypeDefinition();
-                                if (genericTypeDef == typeof(List<>) ||
-                                    genericTypeDef == typeof(IList<>) ||
-                                    genericTypeDef == typeof(ICollection<>) ||
-                                    genericTypeDef == typeof(IEnumerable<>))
-                                {
-                                    field.IsGroup = true;
-                                }
-                            }
+                //    int fieldNumber = 1;
+                //    foreach (var prop in properties)
+                //    {
+                //        if (prop.GetCustomAttribute<NonSerializedAttribute>() != null ||
+                //            prop.PropertyType == typeof(object) ||
+                //            prop.PropertyType.IsPointer ||
+                //            prop.PropertyType.IsByRef)
+                //        {
+                //            Console.WriteLine($"Skipping property {type.FullName}.{prop.Name}");
+                //            continue;
+                //        }
 
-                            fieldNumber++;
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Warning: Failed to add property {prop.Name} to {type.FullName}: {ex.Message}");
-                        }
-                    }
-                }
+                //        try
+                //        {
+                //            Console.WriteLine($"Adding property {prop.Name} to {type.FullName}");
+                //            var field = metaType.Add(fieldNumber, prop.Name);
 
-                // Handle union types (abstract base classes with Discriminator)
-                foreach (var abstractType in types.Where(t => t.IsAbstract))
-                {
-                    var discriminatorProp = abstractType.GetProperty("Discriminator");
-                    if (discriminatorProp != null)
-                    {
-                        Console.WriteLine($"Processing union type: {abstractType.FullName}");
+                //            if (prop.PropertyType.IsEnum)
+                //            {
+                //                model.Add(prop.PropertyType, false);
+                //            }
+                //            else if (prop.PropertyType.IsGenericType)
+                //            {
+                //                Type genericTypeDef = prop.PropertyType.GetGenericTypeDefinition();
+                //                if (genericTypeDef == typeof(List<>) ||
+                //                    genericTypeDef == typeof(IList<>) ||
+                //                    genericTypeDef == typeof(ICollection<>) ||
+                //                    genericTypeDef == typeof(IEnumerable<>))
+                //                {
+                //                    field.IsGroup = true;
+                //                }
+                //            }
 
-                        var metaType = model.Add(abstractType, false);
-                        if (abstractType.IsNested)
-                        {
-                            metaType.Name = abstractType.FullName.Replace("+", ".");
-                        }
+                //            fieldNumber++;
+                //        }
+                //        catch (Exception ex)
+                //        {
+                //            Console.WriteLine($"Warning: Failed to add property {prop.Name} to {type.FullName}: {ex.Message}");
+                //        }
+                //    }
+                //}
 
-                        var unionCases = abstractType.GetNestedTypes()
-                            .Where(t => t.IsClass && !t.IsAbstract)
-                            .ToList();
+                //// Handle union types (abstract base classes with Discriminator)
+                //foreach (var abstractType in types.Where(t => t.IsAbstract))
+                //{
+                //    var discriminatorProp = abstractType.GetProperty("Discriminator");
+                //    if (discriminatorProp != null)
+                //    {
+                //        Console.WriteLine($"Processing union type: {abstractType.FullName}");
 
-                        foreach (var caseType in unionCases)
-                        {
-                            Console.WriteLine($"Processing union case: {caseType.Name}");
+                //        var metaType = model.Add(abstractType, false);
+                //        if (abstractType.IsNested)
+                //        {
+                //            metaType.Name = abstractType.FullName.Replace("+", ".");
+                //        }
 
-                            var caseMetaType = model.Add(caseType, false);
+                //        var unionCases = abstractType.GetNestedTypes()
+                //            .Where(t => t.IsClass && !t.IsAbstract)
+                //            .ToList();
 
-                            var properties = caseType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                .Where(p => p.Name != "Discriminator" && p.DeclaringType == caseType);
+                //        foreach (var caseType in unionCases)
+                //        {
+                //            Console.WriteLine($"Processing union case: {caseType.Name}");
 
-                            int fieldNumber = 1;
-                            foreach (var prop in properties)
-                            {
-                                try
-                                {
-                                    Console.WriteLine($"Adding property {prop.Name} to {caseType.Name}");
-                                    var field = caseMetaType.Add(fieldNumber++, prop.Name);
+                //            var caseMetaType = model.Add(caseType, false);
 
-                                    if (prop.PropertyType.IsEnum)
-                                    {
-                                        model.Add(prop.PropertyType, false);
-                                    }
-                                    else if (prop.PropertyType.IsGenericType)
-                                    {
-                                        Type genericTypeDef = prop.PropertyType.GetGenericTypeDefinition();
-                                        if (genericTypeDef == typeof(List<>) ||
-                                            genericTypeDef == typeof(IList<>) ||
-                                            genericTypeDef == typeof(ICollection<>) ||
-                                            genericTypeDef == typeof(IEnumerable<>))
-                                        {
-                                            field.IsGroup = true;
-                                        }
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    Console.WriteLine($"Warning: Failed to add property {prop.Name} to {caseType.Name}: {ex.Message}");
-                                }
-                            }
-                        }
-                    }
-                }
+                //            var properties = caseType.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                //                .Where(p => p.Name != "Discriminator" && p.DeclaringType == caseType);
+
+                //            int fieldNumber = 1;
+                //            foreach (var prop in properties)
+                //            {
+                //                try
+                //                {
+                //                    Console.WriteLine($"Adding property {prop.Name} to {caseType.Name}");
+                //                    var field = caseMetaType.Add(fieldNumber++, prop.Name);
+
+                //                    if (prop.PropertyType.IsEnum)
+                //                    {
+                //                        model.Add(prop.PropertyType, false);
+                //                    }
+                //                    else if (prop.PropertyType.IsGenericType)
+                //                    {
+                //                        Type genericTypeDef = prop.PropertyType.GetGenericTypeDefinition();
+                //                        if (genericTypeDef == typeof(List<>) ||
+                //                            genericTypeDef == typeof(IList<>) ||
+                //                            genericTypeDef == typeof(ICollection<>) ||
+                //                            genericTypeDef == typeof(IEnumerable<>))
+                //                        {
+                //                            field.IsGroup = true;
+                //                        }
+                //                    }
+                //                }
+                //                catch (Exception ex)
+                //                {
+                //                    Console.WriteLine($"Warning: Failed to add property {prop.Name} to {caseType.Name}: {ex.Message}");
+                //                }
+                //            }
+                //        }
+                //    }
+                //}
+
+                var generator = new ProtoBuf.Grpc.Reflection.SchemaGenerator();
 
                 var options = new SchemaGenerationOptions
                 {
                     Syntax = ProtoSyntax.Proto3,
-                    Package = "stellar.rpc.v1"
+                    Package = "stellar.rpc.v1",
+                     
                 };
 
-                var schema = model.GetSchema(options);
+
+                string schema = generator.GetSchema<StellarRPCClient>();
+               // string schema2 = generator.GetSchema<MuxedAccount>();
+                //var schema = model.GetSchema(options);
                 File.WriteAllText(outputPath, schema);
                 Console.WriteLine($"Generated proto schema at: {outputPath}");
                 return 0;
