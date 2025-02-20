@@ -77,19 +77,6 @@ namespace Stellar.RPC
             set { _additionalProperties = value; }
         }
 
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static SimulateTransactionResult FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<SimulateTransactionResult>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
@@ -118,19 +105,6 @@ namespace Stellar.RPC
         {
             get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
-        }
-
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static Cost FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Cost>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
         }
 
     }
@@ -163,19 +137,6 @@ namespace Stellar.RPC
             set { _additionalProperties = value; }
         }
 
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static Results FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Results>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
@@ -204,19 +165,6 @@ namespace Stellar.RPC
         {
             get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
-        }
-
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static RestorePreamble FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<RestorePreamble>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
         }
 
     }
@@ -258,19 +206,6 @@ namespace Stellar.RPC
         {
             get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
-        }
-
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static StateChanges FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<StateChanges>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
         }
 
     }

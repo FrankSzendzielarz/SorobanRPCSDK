@@ -25,7 +25,7 @@ namespace Generator.OpenRPC
             {
                 ClassStyle = CSharpClassStyle.Poco,
                 GenerateDataAnnotations = true,
-                GenerateJsonMethods = true,
+                GenerateJsonMethods = false,
                 Namespace = "Stellar.RPC",
                 JsonLibrary = isUnityBuild ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
                 ArrayType = "System.Collections.Generic.ICollection",

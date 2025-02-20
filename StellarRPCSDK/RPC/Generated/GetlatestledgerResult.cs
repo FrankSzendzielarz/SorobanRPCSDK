@@ -46,22 +46,5 @@ namespace Stellar.RPC
             set { _additionalProperties = value; }
         }
 
-        public string ToJson()
-        {
-
-            var options = new System.Text.Json.JsonSerializerOptions();
-
-            return System.Text.Json.JsonSerializer.Serialize(this, options);
-
-        }
-        public static GetLatestLedgerResult FromJson(string data)
-        {
-
-            var options = new System.Text.Json.JsonSerializerOptions();
-
-            return System.Text.Json.JsonSerializer.Deserialize<GetLatestLedgerResult>(data, options);
-
-        }
-
     }
 }

@@ -1,9 +1,11 @@
-﻿using Stellar.Utilities;
+﻿using ProtoBuf;
+using Stellar.Utilities;
 using System.IO;
 using System.Linq;
 
 namespace Stellar
 {
+    [ProtoContract]
     public partial class Transaction
     {
 

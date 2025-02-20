@@ -17,7 +17,6 @@ namespace Stellar
     ///  
     /// </summary>
 
-    [ServiceContract]
     public partial class MuxedAccount : IEquatable<MuxedAccount>
     {
 
@@ -357,5 +356,6 @@ namespace Stellar
             return Verify(data, signature.InnerValue);
         }
     }
-   
+
+
 }

@@ -2,10 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 
 namespace Stellar.RPC
 {
-    public partial class SimulateTransactionResult
+    [ServiceContract]
+    public interface ISimulateTransactionResult
+    {
+      
+
+        Transaction ApplyTo(Transaction original);
+    }
+
+    public partial class SimulateTransactionResult : ISimulateTransactionResult
     {
 
 
@@ -42,7 +51,7 @@ namespace Stellar.RPC
 
             if (transaction.IsSorobanInvocation())
             {
-                Results results=Results.FirstOrDefault();
+                Results results = Results.FirstOrDefault();
                 if (results != null)
                 {
                     (transaction.operations[0].body as Operation.bodyUnion.InvokeHostFunction).invokeHostFunctionOp.auth = results.SorobanAuthorizations.ToArray();
@@ -53,7 +62,7 @@ namespace Stellar.RPC
             return transaction;
         }
 
-       
+
 
         private SorobanTransactionData _sorobanTransactionData;
         public SorobanTransactionData SorobanTransactionData
@@ -101,4 +110,7 @@ namespace Stellar.RPC
         }
 
     }
+
+
+
 }

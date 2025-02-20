@@ -151,7 +151,7 @@ namespace Stellar.RPC.Tools
 
 
                 string schema = generator.GetSchema<StellarRPCClient>();
-               // string schema2 = generator.GetSchema<MuxedAccount>();
+                string schema2 = generator.GetSchema<ISimulateTransactionResult>();
                 //var schema = model.GetSchema(options);
                 File.WriteAllText(outputPath, schema);
                 Console.WriteLine($"Generated proto schema at: {outputPath}");

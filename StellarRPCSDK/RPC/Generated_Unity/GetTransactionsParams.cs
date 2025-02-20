@@ -35,19 +35,6 @@ namespace Stellar.RPC
             set { _additionalProperties = value; }
         }
 
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static GetTransactionsParams FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<GetTransactionsParams>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
@@ -74,19 +61,6 @@ namespace Stellar.RPC
         {
             get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
             set { _additionalProperties = value; }
-        }
-
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static Pagination FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<Pagination>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
         }
 
     }

@@ -65,19 +65,6 @@ namespace Stellar.RPC
             set { _additionalProperties = value; }
         }
 
-        public string ToJson()
-        {
-
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-        public static SendTransactionResult FromJson(string data)
-        {
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<SendTransactionResult>(data, new Newtonsoft.Json.JsonSerializerSettings());
-
-        }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
