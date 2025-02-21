@@ -3,6 +3,7 @@
 
 using System.IO;
 using System;
+using ProtoBuf;
 
 namespace Stellar.RPC
 {
@@ -10,6 +11,7 @@ namespace Stellar.RPC
     {
 
         private LedgerKey _ledgerKey;
+        [ProtoMember(100)]
         public LedgerKey LedgerKey
         {
             get
@@ -27,6 +29,7 @@ namespace Stellar.RPC
         }
 
         private LedgerEntry.dataUnion _ledgerEntryData;
+        [ProtoMember(101)]
         public LedgerEntry.dataUnion LedgerEntryData
         {
             get

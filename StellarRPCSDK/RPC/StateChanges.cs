@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Stellar.RPC
     public partial class StateChanges
     {
         private LedgerEntry _before;
+        [ProtoMember(100)]
         public LedgerEntry LedgerBefore
         {
             get
@@ -29,6 +31,7 @@ namespace Stellar.RPC
         }
 
         private LedgerEntry _after;
+        [ProtoMember(101)]
         public LedgerEntry LedgerAfter
         {
             get

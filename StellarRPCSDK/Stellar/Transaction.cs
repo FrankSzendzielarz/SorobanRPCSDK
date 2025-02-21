@@ -2,10 +2,70 @@
 using Stellar.Utilities;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 
 namespace Stellar
 {
-    [ProtoContract]
+
+    [ServiceContract]
+    public class Transaction_ProtoWrapper
+    {
+        [ProtoContract]
+        public class BoolResult
+        {
+            [ProtoMember(1)]
+            public bool Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class SignParam
+        {
+            [ProtoMember(1)]
+            public Transaction Transaction { get; set; }
+            [ProtoMember(2)]
+            public MuxedAccount Account { get; set; }
+        }
+
+        [ProtoContract]
+        public class CloneParam
+        {
+            [ProtoMember(1)]
+            public Transaction Transaction { get; set; }
+        }
+
+        [ProtoContract]
+        public class IsSorobanParam
+        {
+            [ProtoMember(1)]
+            public Transaction Transaction { get; set; }
+        }
+
+        // Instance methods
+        [OperationContract]
+        public DecoratedSignature Sign(SignParam param)
+        {
+            return param.Transaction.Sign(param.Account);
+        }
+
+        [OperationContract]
+        public Transaction Clone(CloneParam param)
+        {
+            return param.Transaction.Clone();
+        }
+
+        [OperationContract]
+        public BoolResult IsSoroban(IsSorobanParam param)
+        {
+            return new BoolResult { Value = param.Transaction.IsSoroban() };
+        }
+
+        [OperationContract]
+        public BoolResult IsSorobanInvocation(IsSorobanParam param)
+        {
+            return new BoolResult { Value = param.Transaction.IsSorobanInvocation() };
+        }
+    }
+
     public partial class Transaction
     {
 

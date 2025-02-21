@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -28,6 +29,9 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(KeyTypeEd25519))]
+    [ProtoInclude(101, typeof(KeyTypeMuxedEd25519))]
     public abstract partial class MuxedAccount
     {
         public abstract CryptoKeyType Discriminator { get; }

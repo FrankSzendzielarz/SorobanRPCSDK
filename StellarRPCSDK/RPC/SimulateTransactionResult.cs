@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,14 +8,25 @@ using System.ServiceModel;
 namespace Stellar.RPC
 {
     [ServiceContract]
-    public interface ISimulateTransactionResult
+    public class SimulateTransactionResult_ProtoWrapper
     {
-      
+        [ProtoContract]
+        public class ApplyToParam
+        {
+            [ProtoMember(1)]
+            public SimulateTransactionResult Simulation {get;set;}
+            [ProtoMember(2)]
+            public Transaction Original { get; set; }
+           
+        }
 
-        Transaction ApplyTo(Transaction original);
+        public Transaction ApplyTo(ApplyToParam applyTo )
+        {
+            return applyTo.Simulation.ApplyTo(applyTo.Original);
+        }
     }
 
-    public partial class SimulateTransactionResult : ISimulateTransactionResult
+    public partial class SimulateTransactionResult 
     {
 
 
@@ -65,6 +77,7 @@ namespace Stellar.RPC
 
 
         private SorobanTransactionData _sorobanTransactionData;
+        [ProtoMember(100)]
         public SorobanTransactionData SorobanTransactionData
         {
             get
@@ -85,6 +98,7 @@ namespace Stellar.RPC
             }
         }
         private List<DiagnosticEvent> _events;
+        [ProtoMember(101)]
         public List<DiagnosticEvent> DiagnosticEvents
         {
             get

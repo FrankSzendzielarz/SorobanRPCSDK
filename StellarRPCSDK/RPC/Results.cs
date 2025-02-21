@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Stellar.RPC
     public partial class Results
     {
         private SCVal _result;
+        [ProtoMember(100)]
         public SCVal Result
         {
             get
@@ -29,6 +31,7 @@ namespace Stellar.RPC
         }
 
         private List<SorobanAuthorizationEntry> _sorobanAuthorisations;
+        [ProtoMember(101)]
         public List<SorobanAuthorizationEntry> SorobanAuthorizations
         {
             get

@@ -1,11 +1,113 @@
 ﻿
+using ProtoBuf;
 using Stellar.Utilities;
 using System;
+using System.ServiceModel;
 using System.Text;
 
 namespace Stellar
 {
+    [ServiceContract]
+    public class Network_ProtoWrapper
+    {
+        [ProtoContract]
+        public class ByteArrayWrapper
+        {
+            [ProtoMember(1)]
+            public byte[] Value { get; set; }
+        }
 
+        [ProtoContract]
+        public class StringResult
+        {
+            [ProtoMember(1)]
+            public string Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class BoolResult
+        {
+            [ProtoMember(1)]
+            public bool Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class UseParam
+        {
+            [ProtoMember(1)]
+            public Network Network { get; set; }
+        }
+
+        [ProtoContract]
+        public class GetCurrentResult
+        {
+            [ProtoMember(1)]
+            public Network Network { get; set; }
+        }
+
+        [ProtoContract]
+        public class IsPublicNetworkParam
+        {
+            [ProtoMember(1)]
+            public Network Network { get; set; }
+        }
+
+        // Instance methods
+        [OperationContract]
+        public StringResult GetNetworkPassphrase(Network network)
+        {
+            return new StringResult { Value = network.NetworkPassphrase };
+        }
+
+        [OperationContract]
+        public ByteArrayWrapper GetNetworkId(Network network)
+        {
+            return new ByteArrayWrapper { Value = network.NetworkId };
+        }
+
+        // Static methods
+        [OperationContract]
+        public GetCurrentResult GetCurrent()
+        {
+            return new GetCurrentResult { Network = Network.Current };
+        }
+
+        [OperationContract]
+        public void Use(UseParam param)
+        {
+            Network.Use(param.Network);
+        }
+
+        [OperationContract]
+        public Network Public()
+        {
+            return Network.Public();
+        }
+
+        [OperationContract]
+        public Network Test()
+        {
+            return Network.Test();
+        }
+
+        [OperationContract]
+        public void UsePublicNetwork()
+        {
+            Network.UsePublicNetwork();
+        }
+
+        [OperationContract]
+        public void UseTestNetwork()
+        {
+            Network.UseTestNetwork();
+        }
+
+        [OperationContract]
+        public BoolResult IsPublicNetwork(IsPublicNetworkParam param)
+        {
+            return new BoolResult { Value = Network.IsPublicNetwork(param.Network) };
+        }
+    }
 
     /// <summary>
     /// Represents a network configuration with associated passphrase and network ID.

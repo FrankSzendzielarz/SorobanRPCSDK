@@ -10,13 +10,149 @@ using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
+using static Stellar.Transaction_ProtoWrapper;
 
 namespace Stellar
 {
-    /// <summary>
-    ///  
-    /// </summary>
 
+    [ServiceContract]
+    public class MuxedAccount_ProtoWrapper
+    {
+        [ProtoContract]
+        public class ByteArrayWrapper
+        {
+            [ProtoMember(1)]
+            public byte[] Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class StringResult
+        {
+            [ProtoMember(1)]
+            public string Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class BoolResult
+        {
+            [ProtoMember(1)]
+            public bool Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class SignMessage
+        {
+            [ProtoMember(1)]
+            public MuxedAccount Account { get; set; }
+            [ProtoMember(2)]
+            public ByteArrayWrapper Data { get; set; }
+        }
+
+        [ProtoContract]
+        public class VerifyMessage
+        {
+            [ProtoMember(1)]
+            public MuxedAccount Account { get; set; }
+            [ProtoMember(2)]
+            public ByteArrayWrapper Data { get; set; }
+            [ProtoMember(3)]
+            public ByteArrayWrapper Signature { get; set; }
+        }
+
+        [ProtoContract]
+        public class CreateEd25519Param
+        {
+            [ProtoMember(1)]
+            public ByteArrayWrapper PublicKey { get; set; }
+            [ProtoMember(2)]
+            public ByteArrayWrapper Seed { get; set; }
+        }
+
+        [ProtoContract]
+        public class CreateMuxedEd25519Param
+        {
+            [ProtoMember(1)]
+            public ByteArrayWrapper PublicKey { get; set; }
+            [ProtoMember(2)]
+            public ByteArrayWrapper Seed { get; set; }
+            [ProtoMember(3)]
+            public ulong Id { get; set; }
+        }
+
+        // Instance methods
+        [OperationContract]
+        public ByteArrayWrapper GetPublicKey(MuxedAccount account)
+        {
+            return new ByteArrayWrapper { Value = account.PublicKey };
+        }
+
+        [OperationContract]
+        public ByteArrayWrapper GetPrivateKey(MuxedAccount account)
+        {
+            return new ByteArrayWrapper { Value = account.PrivateKey };
+        }
+
+        [OperationContract]
+        public ByteArrayWrapper GetSeedBytes(MuxedAccount account)
+        {
+            return new ByteArrayWrapper { Value = account.SeedBytes };
+        }
+
+        [OperationContract]
+        public StringResult GetSecretSeed(MuxedAccount account)
+        {
+            return new StringResult { Value = account.SecretSeed };
+        }
+
+        [OperationContract]
+        public StringResult GetAccountId(MuxedAccount account)
+        {
+            return new StringResult { Value = account.AccountId };
+        }
+
+        [OperationContract]
+        public StringResult GetAddress(MuxedAccount account)
+        {
+            return new StringResult { Value = account.Address };
+        }
+
+        [OperationContract]
+        public BoolResult CanSign(MuxedAccount account)
+        {
+            return new BoolResult { Value = account.CanSign() };
+        }
+
+        [OperationContract]
+        public ByteArrayWrapper Sign(SignMessage message)
+        {
+            return new ByteArrayWrapper { Value = message.Account.Sign(message.Data.Value) };
+        }
+
+        [OperationContract]
+        public BoolResult Verify(VerifyMessage message)
+        {
+            return new BoolResult { Value = message.Account.Verify(message.Data.Value, message.Signature.Value) };
+        }
+
+        // Factory methods for subtypes
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 CreateKeyTypeEd25519(CreateEd25519Param param)
+        {
+            return new MuxedAccount.KeyTypeEd25519(param.PublicKey?.Value, param.Seed?.Value);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeMuxedEd25519 CreateKeyTypeMuxedEd25519(CreateMuxedEd25519Param param)
+        {
+            return new MuxedAccount.KeyTypeMuxedEd25519(param.PublicKey?.Value, param.Seed?.Value, param.Id);
+        }
+    }
+
+
+
+    /// <summary>
+    /// Muxed Account
+    /// </summary>
     public partial class MuxedAccount : IEquatable<MuxedAccount>
     {
 

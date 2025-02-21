@@ -12,7 +12,7 @@ namespace Stellar.RPC.Tools
 
 2. Modify XDR gen to also add protobuf fields
 
-3. Extract interfaces from all manual partials and make them ServiceContract
+3. Extract interfaces from all manual partials and make them ServiceContract 
 
 4. Change all the methods on the Manual Partial so they don't return byte[] but meaningful types (eg PrivateKey) so that protobuf-net doesn't have to work with native types
 
@@ -170,7 +170,9 @@ The above should make everything automatic wrt to protobuf
 
 
                 string schema = generator.GetSchema<StellarRPCClient>();
-                string schema2 = generator.GetSchema<ISimulateTransactionResult>();
+                string schema2 = generator.GetSchema<SimulateTransactionResult_ProtoWrapper>();
+
+
                 //var schema = model.GetSchema(options);
                 File.WriteAllText(outputPath, schema);
                 Console.WriteLine($"Generated proto schema at: {outputPath}");

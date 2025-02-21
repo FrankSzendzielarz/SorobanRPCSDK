@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Stellar.RPC
     public partial class RestorePreamble
     {
         private SorobanTransactionData _sorobanTransactionData;
+        [ProtoMember(100)]
         public SorobanTransactionData SorobanTransactionData
         {
             get

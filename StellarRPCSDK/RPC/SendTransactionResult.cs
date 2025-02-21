@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProtoBuf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Stellar.RPC
     public partial class SendTransactionResult
     {
         private TransactionResult _transactionResult;
+        [ProtoMember(100)]
         public TransactionResult ErrorResult
         {
             get
@@ -30,6 +32,7 @@ namespace Stellar.RPC
         }
 
         private List<DiagnosticEvent> _diagnosticEvents = new List<DiagnosticEvent>();
+        [ProtoMember(101)]
         public List<DiagnosticEvent> DiagnosticEvents
         {
             get

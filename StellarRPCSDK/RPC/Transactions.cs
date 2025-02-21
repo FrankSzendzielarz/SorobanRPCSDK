@@ -1,4 +1,5 @@
 ﻿
+using ProtoBuf;
 using System;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace Stellar.RPC
     public partial class Transactions
     {
         private TransactionResult _transactionResult;
+        [ProtoMember(100)]
         public TransactionResult TransactionResult
         {
             get
@@ -27,6 +29,7 @@ namespace Stellar.RPC
         }
 
         private TransactionMeta _transactionResultMeta;
+        [ProtoMember(101)]
         public TransactionMeta TransactionResultMeta
         {
             get
@@ -46,6 +49,7 @@ namespace Stellar.RPC
         }
 
         private TransactionEnvelope _transactionEnvelope;
+        [ProtoMember(102)]
         public TransactionEnvelope TransactionEnvelope
         {
             get
@@ -65,6 +69,7 @@ namespace Stellar.RPC
         }
 
         private DiagnosticEvent[] _diagnosticEvents;
+        [ProtoMember(103)]
         public DiagnosticEvent[] DiagnosticEvents
         {
             get
