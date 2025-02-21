@@ -39,6 +39,19 @@ namespace Stellar
         }
 
         [ProtoContract]
+        public class CreateNetworkParam
+        {
+            [ProtoMember(1)]
+            public string NetworkPassphrase { get; set; }
+        }
+
+        [OperationContract]
+        public Network Create(CreateNetworkParam param)
+        {
+            return new Network(param.NetworkPassphrase);
+        }
+
+        [ProtoContract]
         public class GetCurrentResult
         {
             [ProtoMember(1)]
@@ -59,11 +72,7 @@ namespace Stellar
             return new StringResult { Value = network.NetworkPassphrase };
         }
 
-        [OperationContract]
-        public ByteArrayWrapper GetNetworkId(Network network)
-        {
-            return new ByteArrayWrapper { Value = network.NetworkId };
-        }
+  
 
         // Static methods
         [OperationContract]
@@ -108,10 +117,14 @@ namespace Stellar
             return new BoolResult { Value = Network.IsPublicNetwork(param.Network) };
         }
     }
+}
 
+namespace Stellar
+{
     /// <summary>
     /// Represents a network configuration with associated passphrase and network ID.
     /// </summary>
+    [ProtoContract]
     public sealed class Network : IEquatable<Network>
     {
         /// <summary>
@@ -126,7 +139,9 @@ namespace Stellar
 
         private static volatile Network _current;
         private static readonly object _lock = new object();
-        private readonly Lazy<byte[]> _networkId;
+        private byte[] _networkId;
+        [ProtoMember(1)]    
+        public byte[] NetworkId { get { return _networkId; } set { _networkId = value; } }
 
         /// <summary>
         /// Initializes a new instance of the Network class with the specified network passphrase.
@@ -147,7 +162,7 @@ namespace Stellar
             }
 
             NetworkPassphrase = networkPassphrase;
-            _networkId = new Lazy<byte[]>(() => Util.Hash(Encoding.UTF8.GetBytes(NetworkPassphrase)));
+            _networkId = Util.Hash(Encoding.UTF8.GetBytes(NetworkPassphrase));
         }
 
         /// <summary>
@@ -155,10 +170,6 @@ namespace Stellar
         /// </summary>
         public string NetworkPassphrase { get; }
 
-        /// <summary>
-        /// Gets the network ID derived from the network passphrase.
-        /// </summary>
-        public byte[] NetworkId => _networkId.Value;
 
         /// <summary>
         /// Gets the currently active network configuration.
