@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(Liveentry), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(Initentry), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(Deadentry), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(Metaentry), DataFormat = DataFormat.Default)]
     public abstract partial class BucketEntry
     {
         public abstract BucketEntryType Discriminator { get; }
@@ -33,9 +39,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "BucketEntry.Liveentry")]
         public sealed partial class Liveentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
+            [ProtoMember(1)]
             public LedgerEntry liveEntry
             {
                 get => _liveEntry;
@@ -54,9 +62,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BucketEntry.Initentry")]
         public sealed partial class Initentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
+            [ProtoMember(2)]
             public LedgerEntry liveEntry
             {
                 get => _liveEntry;
@@ -75,9 +85,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BucketEntry.Deadentry")]
         public sealed partial class Deadentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
+            [ProtoMember(3)]
             public LedgerKey deadEntry
             {
                 get => _deadEntry;
@@ -96,9 +108,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BucketEntry.Metaentry")]
         public sealed partial class Metaentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;
+            [ProtoMember(4)]
             public BucketMetadata metaEntry
             {
                 get => _metaEntry;

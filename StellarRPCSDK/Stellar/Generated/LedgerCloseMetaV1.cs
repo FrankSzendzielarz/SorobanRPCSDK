@@ -36,6 +36,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -44,8 +45,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerCloseMetaV1
     {
+        [ProtoMember(1)]
         public LedgerCloseMetaExt ext
         {
             get => _ext;
@@ -61,6 +64,7 @@ namespace Stellar {
         #endif
         private LedgerCloseMetaExt _ext;
 
+        [ProtoMember(2)]
         public LedgerHeaderHistoryEntry ledgerHeader
         {
             get => _ledgerHeader;
@@ -76,6 +80,7 @@ namespace Stellar {
         #endif
         private LedgerHeaderHistoryEntry _ledgerHeader;
 
+        [ProtoMember(3)]
         public GeneralizedTransactionSet txSet
         {
             get => _txSet;
@@ -94,6 +99,7 @@ namespace Stellar {
         /// <summary>
         /// followed by applying transactions
         /// </summary>
+        [ProtoMember(4)]
         public TransactionResultMeta[] txProcessing
         {
             get => _txProcessing;
@@ -112,6 +118,7 @@ namespace Stellar {
         /// <summary>
         /// upgrades are applied last
         /// </summary>
+        [ProtoMember(5)]
         public UpgradeEntryMeta[] upgradesProcessing
         {
             get => _upgradesProcessing;
@@ -130,6 +137,7 @@ namespace Stellar {
         /// <summary>
         /// other misc information attached to the ledger close
         /// </summary>
+        [ProtoMember(6)]
         public SCPHistoryEntry[] scpInfo
         {
             get => _scpInfo;
@@ -148,6 +156,7 @@ namespace Stellar {
         /// <summary>
         /// systems calculating storage fees correctly.
         /// </summary>
+        [ProtoMember(7)]
         public uint64 totalByteSizeOfBucketList
         {
             get => _totalByteSizeOfBucketList;
@@ -166,6 +175,7 @@ namespace Stellar {
         /// <summary>
         /// Temp keys that are being evicted at this ledger.
         /// </summary>
+        [ProtoMember(8)]
         public LedgerKey[] evictedTemporaryLedgerKeys
         {
             get => _evictedTemporaryLedgerKeys;
@@ -184,6 +194,7 @@ namespace Stellar {
         /// <summary>
         /// evicted at this ledger.
         /// </summary>
+        [ProtoMember(9)]
         public LedgerEntry[] evictedPersistentLedgerEntries
         {
             get => _evictedPersistentLedgerEntries;

@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,6 +23,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(EndSponsoringFutureReservesSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(EndSponsoringFutureReservesNotSponsored), DataFormat = DataFormat.Default)]
     public abstract partial class EndSponsoringFutureReservesResult
     {
         public abstract EndSponsoringFutureReservesResultCode Discriminator { get; }
@@ -30,6 +34,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "EndSponsoringFutureReservesResult.EndSponsoringFutureReservesSuccess")]
         public sealed partial class EndSponsoringFutureReservesSuccess : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
@@ -37,6 +42,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "EndSponsoringFutureReservesResult.EndSponsoringFutureReservesNotSponsored")]
         public sealed partial class EndSponsoringFutureReservesNotSponsored : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;

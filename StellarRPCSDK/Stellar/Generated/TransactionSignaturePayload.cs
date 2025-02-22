@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionSignaturePayload
     {
+        [ProtoMember(1)]
         public Hash networkId
         {
             get => _networkId;
@@ -44,6 +47,7 @@ namespace Stellar {
         #endif
         private Hash _networkId;
 
+        [ProtoMember(2)]
         public taggedTransactionUnion taggedTransaction
         {
             get => _taggedTransaction;
@@ -68,6 +72,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion")]
+        [ProtoInclude(100, typeof(EnvelopeTypeTx), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(EnvelopeTypeTxFeeBump), DataFormat = DataFormat.Default)]
         public abstract partial class taggedTransactionUnion
         {
             public abstract EnvelopeType Discriminator { get; }
@@ -79,9 +86,11 @@ namespace Stellar {
             /// Backwards Compatibility: Use ENVELOPE_TYPE_TX to sign ENVELOPE_TYPE_TX_V0
             /// </summary>
             [System.Serializable]
+            [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx")]
             public sealed partial class EnvelopeTypeTx : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
+                [ProtoMember(1)]
                 public Transaction tx
                 {
                     get => _tx;
@@ -100,9 +109,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTxFeeBump")]
             public sealed partial class EnvelopeTypeTxFeeBump : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
+                [ProtoMember(2)]
                 public FeeBumpTransaction feeBump
                 {
                     get => _feeBump;

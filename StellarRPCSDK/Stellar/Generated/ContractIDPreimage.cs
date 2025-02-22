@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ContractIdPreimageFromAddress), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ContractIdPreimageFromAsset), DataFormat = DataFormat.Default)]
     public abstract partial class ContractIDPreimage
     {
         public abstract ContractIDPreimageType Discriminator { get; }
@@ -34,8 +38,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "ContractIDPreimage.fromAddressStruct")]
         public partial class fromAddressStruct
         {
+            [ProtoMember(1)]
             public SCAddress address
             {
                 get => _address;
@@ -51,6 +57,7 @@ namespace Stellar {
             #endif
             private SCAddress _address;
 
+            [ProtoMember(2)]
             public uint256 salt
             {
                 get => _salt;
@@ -103,9 +110,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "ContractIDPreimage.ContractIdPreimageFromAddress")]
         public sealed partial class ContractIdPreimageFromAddress : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
+            [ProtoMember(1)]
             public fromAddressStruct fromAddress
             {
                 get => _fromAddress;
@@ -124,9 +133,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ContractIDPreimage.ContractIdPreimageFromAsset")]
         public sealed partial class ContractIdPreimageFromAsset : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET;
+            [ProtoMember(2)]
             public Asset fromAsset
             {
                 get => _fromAsset;

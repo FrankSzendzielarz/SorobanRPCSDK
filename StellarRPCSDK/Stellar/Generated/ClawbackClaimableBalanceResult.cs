@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ClawbackClaimableBalanceSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ClawbackClaimableBalanceDoesNotExist), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ClawbackClaimableBalanceNotIssuer), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ClawbackClaimableBalanceNotClawbackEnabled), DataFormat = DataFormat.Default)]
     public abstract partial class ClawbackClaimableBalanceResult
     {
         public abstract ClawbackClaimableBalanceResultCode Discriminator { get; }
@@ -32,6 +38,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceSuccess")]
         public sealed partial class ClawbackClaimableBalanceSuccess : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
@@ -39,6 +46,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceDoesNotExist")]
         public sealed partial class ClawbackClaimableBalanceDoesNotExist : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
@@ -46,6 +54,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotIssuer")]
         public sealed partial class ClawbackClaimableBalanceNotIssuer : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
@@ -53,6 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotClawbackEnabled")]
         public sealed partial class ClawbackClaimableBalanceNotClawbackEnabled : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;

@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -30,11 +31,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ConfigSettingContractComputeV0
     {
         /// <summary>
         /// Maximum instructions per ledger
         /// </summary>
+        [ProtoMember(1)]
         public int64 ledgerMaxInstructions
         {
             get => _ledgerMaxInstructions;
@@ -53,6 +56,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum instructions per transaction
         /// </summary>
+        [ProtoMember(2)]
         public int64 txMaxInstructions
         {
             get => _txMaxInstructions;
@@ -71,6 +75,7 @@ namespace Stellar {
         /// <summary>
         /// Cost of 10000 instructions
         /// </summary>
+        [ProtoMember(3)]
         public int64 feeRatePerInstructionsIncrement
         {
             get => _feeRatePerInstructionsIncrement;
@@ -89,6 +94,7 @@ namespace Stellar {
         /// <summary>
         /// for memory, just the limit.
         /// </summary>
+        [ProtoMember(4)]
         public uint32 txMemoryLimit
         {
             get => _txMemoryLimit;

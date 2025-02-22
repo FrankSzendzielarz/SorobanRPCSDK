@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,6 +27,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(CreateClaimableBalanceSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(CreateClaimableBalanceMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(CreateClaimableBalanceLowReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(CreateClaimableBalanceNoTrust), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(CreateClaimableBalanceNotAuthorized), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(CreateClaimableBalanceUnderfunded), DataFormat = DataFormat.Default)]
     public abstract partial class CreateClaimableBalanceResult
     {
         public abstract CreateClaimableBalanceResultCode Discriminator { get; }
@@ -34,9 +42,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceSuccess")]
         public sealed partial class CreateClaimableBalanceSuccess : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_SUCCESS;
+            [ProtoMember(1)]
             public ClaimableBalanceID balanceID
             {
                 get => _balanceID;
@@ -55,6 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceMalformed")]
         public sealed partial class CreateClaimableBalanceMalformed : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_MALFORMED;
@@ -62,6 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceLowReserve")]
         public sealed partial class CreateClaimableBalanceLowReserve : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_LOW_RESERVE;
@@ -69,6 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceNoTrust")]
         public sealed partial class CreateClaimableBalanceNoTrust : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NO_TRUST;
@@ -76,6 +89,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized")]
         public sealed partial class CreateClaimableBalanceNotAuthorized : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
@@ -83,6 +97,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceUnderfunded")]
         public sealed partial class CreateClaimableBalanceUnderfunded : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_UNDERFUNDED;

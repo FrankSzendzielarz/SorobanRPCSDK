@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,11 +27,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AccountEntryExtensionV3
     {
         /// <summary>
         /// change AccountEntryExtensionV3 into a union.
         /// </summary>
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -49,6 +52,7 @@ namespace Stellar {
         /// <summary>
         /// Ledger number at which `seqNum` took on its present value.
         /// </summary>
+        [ProtoMember(2)]
         public uint32 seqLedger
         {
             get => _seqLedger;
@@ -67,6 +71,7 @@ namespace Stellar {
         /// <summary>
         /// Time at which `seqNum` took on its present value.
         /// </summary>
+        [ProtoMember(3)]
         public TimePoint seqTime
         {
             get => _seqTime;

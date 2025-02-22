@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class CreateContractArgsV2
     {
+        [ProtoMember(1)]
         public ContractIDPreimage contractIDPreimage
         {
             get => _contractIDPreimage;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private ContractIDPreimage _contractIDPreimage;
 
+        [ProtoMember(2)]
         public ContractExecutable executable
         {
             get => _executable;
@@ -56,6 +60,7 @@ namespace Stellar {
         /// <summary>
         /// Arguments of the contract's constructor.
         /// </summary>
+        [ProtoMember(3)]
         public SCVal[] constructorArgs
         {
             get => _constructorArgs;

@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,8 +27,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ClaimLiquidityAtom
     {
+        [ProtoMember(1)]
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -46,6 +49,7 @@ namespace Stellar {
         /// <summary>
         /// amount and asset taken from the pool
         /// </summary>
+        [ProtoMember(2)]
         public Asset assetSold
         {
             get => _assetSold;
@@ -61,6 +65,7 @@ namespace Stellar {
         #endif
         private Asset _assetSold;
 
+        [ProtoMember(3)]
         public int64 amountSold
         {
             get => _amountSold;
@@ -79,6 +84,7 @@ namespace Stellar {
         /// <summary>
         /// amount and asset sent to the pool
         /// </summary>
+        [ProtoMember(4)]
         public Asset assetBought
         {
             get => _assetBought;
@@ -94,6 +100,7 @@ namespace Stellar {
         #endif
         private Asset _assetBought;
 
+        [ProtoMember(5)]
         public int64 amountBought
         {
             get => _amountBought;

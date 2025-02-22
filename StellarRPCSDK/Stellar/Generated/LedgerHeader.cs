@@ -45,6 +45,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -53,8 +54,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerHeader
     {
+        [ProtoMember(1)]
         public uint32 ledgerVersion
         {
             get => _ledgerVersion;
@@ -73,6 +76,7 @@ namespace Stellar {
         /// <summary>
         /// the protocol version of the ledger
         /// </summary>
+        [ProtoMember(2)]
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -91,6 +95,7 @@ namespace Stellar {
         /// <summary>
         /// hash of the previous ledger header
         /// </summary>
+        [ProtoMember(3)]
         public StellarValue scpValue
         {
             get => _scpValue;
@@ -109,6 +114,7 @@ namespace Stellar {
         /// <summary>
         /// what consensus agreed to
         /// </summary>
+        [ProtoMember(4)]
         public Hash txSetResultHash
         {
             get => _txSetResultHash;
@@ -127,6 +133,7 @@ namespace Stellar {
         /// <summary>
         /// the TransactionResultSet that led to this ledger
         /// </summary>
+        [ProtoMember(5)]
         public Hash bucketListHash
         {
             get => _bucketListHash;
@@ -142,6 +149,7 @@ namespace Stellar {
         #endif
         private Hash _bucketListHash;
 
+        [ProtoMember(6)]
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -157,6 +165,7 @@ namespace Stellar {
         #endif
         private uint32 _ledgerSeq;
 
+        [ProtoMember(7)]
         public int64 totalCoins
         {
             get => _totalCoins;
@@ -172,6 +181,7 @@ namespace Stellar {
         #endif
         private int64 _totalCoins;
 
+        [ProtoMember(8)]
         public int64 feePool
         {
             get => _feePool;
@@ -190,6 +200,7 @@ namespace Stellar {
         /// <summary>
         /// fees burned since last inflation run
         /// </summary>
+        [ProtoMember(9)]
         public uint32 inflationSeq
         {
             get => _inflationSeq;
@@ -205,6 +216,7 @@ namespace Stellar {
         #endif
         private uint32 _inflationSeq;
 
+        [ProtoMember(10)]
         public uint64 idPool
         {
             get => _idPool;
@@ -220,6 +232,7 @@ namespace Stellar {
         #endif
         private uint64 _idPool;
 
+        [ProtoMember(11)]
         public uint32 baseFee
         {
             get => _baseFee;
@@ -238,6 +251,7 @@ namespace Stellar {
         /// <summary>
         /// base fee per operation in stroops
         /// </summary>
+        [ProtoMember(12)]
         public uint32 baseReserve
         {
             get => _baseReserve;
@@ -253,6 +267,7 @@ namespace Stellar {
         #endif
         private uint32 _baseReserve;
 
+        [ProtoMember(13)]
         public uint32 maxTxSetSize
         {
             get => _maxTxSetSize;
@@ -268,6 +283,7 @@ namespace Stellar {
         #endif
         private uint32 _maxTxSetSize;
 
+        [ProtoMember(14)]
         [MinLength(4)]
         [MaxLength(4)]
         public Hash[] skipList
@@ -290,6 +306,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(15)]
         public extUnion ext
         {
             get => _ext;
@@ -317,6 +334,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "LedgerHeader.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -325,6 +345,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "LedgerHeader.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -332,9 +353,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "LedgerHeader.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public LedgerHeaderExtensionV1 v1
                 {
                     get => _v1;

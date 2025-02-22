@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ScAddressTypeAccount), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ScAddressTypeContract), DataFormat = DataFormat.Default)]
     public abstract partial class SCAddress
     {
         public abstract SCAddressType Discriminator { get; }
@@ -29,9 +33,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SCAddress.ScAddressTypeAccount")]
         public sealed partial class ScAddressTypeAccount : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
+            [ProtoMember(1)]
             public AccountID accountId
             {
                 get => _accountId;
@@ -50,9 +56,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCAddress.ScAddressTypeContract")]
         public sealed partial class ScAddressTypeContract : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;
+            [ProtoMember(2)]
             public Hash contractId
             {
                 get => _contractId;

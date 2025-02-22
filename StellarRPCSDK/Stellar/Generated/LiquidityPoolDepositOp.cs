@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LiquidityPoolDepositOp
     {
+        [ProtoMember(1)]
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private PoolID _liquidityPoolID;
 
+        [ProtoMember(2)]
         public int64 maxAmountA
         {
             get => _maxAmountA;
@@ -57,6 +61,7 @@ namespace Stellar {
         /// <summary>
         /// maximum amount of first asset to deposit
         /// </summary>
+        [ProtoMember(3)]
         public int64 maxAmountB
         {
             get => _maxAmountB;
@@ -75,6 +80,7 @@ namespace Stellar {
         /// <summary>
         /// maximum amount of second asset to deposit
         /// </summary>
+        [ProtoMember(4)]
         public Price minPrice
         {
             get => _minPrice;
@@ -93,6 +99,7 @@ namespace Stellar {
         /// <summary>
         /// minimum depositA/depositB
         /// </summary>
+        [ProtoMember(5)]
         public Price maxPrice
         {
             get => _maxPrice;

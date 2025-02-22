@@ -38,6 +38,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -46,8 +47,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TrustLineEntry
     {
+        [ProtoMember(1)]
         public AccountID accountID
         {
             get => _accountID;
@@ -66,6 +69,7 @@ namespace Stellar {
         /// <summary>
         /// account this trustline belongs to
         /// </summary>
+        [ProtoMember(2)]
         public TrustLineAsset asset
         {
             get => _asset;
@@ -84,6 +88,7 @@ namespace Stellar {
         /// <summary>
         /// type of asset (with issuer)
         /// </summary>
+        [ProtoMember(3)]
         public int64 balance
         {
             get => _balance;
@@ -99,6 +104,7 @@ namespace Stellar {
         #endif
         private int64 _balance;
 
+        [ProtoMember(4)]
         public int64 limit
         {
             get => _limit;
@@ -117,6 +123,7 @@ namespace Stellar {
         /// <summary>
         /// balance cannot be above this
         /// </summary>
+        [ProtoMember(5)]
         public uint32 flags
         {
             get => _flags;
@@ -135,6 +142,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(6)]
         public extUnion ext
         {
             get => _ext;
@@ -159,6 +167,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "TrustLineEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -168,8 +179,10 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct")]
             public partial class v1Struct
             {
+                [ProtoMember(1)]
                 public Liabilities liabilities
                 {
                     get => _liabilities;
@@ -185,6 +198,7 @@ namespace Stellar {
                 #endif
                 private Liabilities _liabilities;
 
+                [ProtoMember(2)]
                 public extUnion ext
                 {
                     get => _ext;
@@ -209,6 +223,9 @@ namespace Stellar {
                 }
                 [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
                 [System.Serializable]
+                [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion")]
+                [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+                [ProtoInclude(101, typeof(case_2), DataFormat = DataFormat.Default)]
                 public abstract partial class extUnion
                 {
                     public abstract int Discriminator { get; }
@@ -217,6 +234,7 @@ namespace Stellar {
                     public abstract void ValidateCase();
 
                     [System.Serializable]
+                    [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion.case_0")]
                     public sealed partial class case_0 : extUnion
                     {
                         public override int Discriminator => 0;
@@ -224,9 +242,11 @@ namespace Stellar {
                         public override void ValidateCase() {}
                     }
                     [System.Serializable]
+                    [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion.case_2")]
                     public sealed partial class case_2 : extUnion
                     {
                         public override int Discriminator => 2;
+                        [ProtoMember(1)]
                         public TrustLineEntryExtensionV2 v2
                         {
                             get => _v2;
@@ -317,6 +337,7 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
+            [ProtoContract(Name = "TrustLineEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -324,9 +345,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "TrustLineEntry.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public v1Struct v1
                 {
                     get => _v1;

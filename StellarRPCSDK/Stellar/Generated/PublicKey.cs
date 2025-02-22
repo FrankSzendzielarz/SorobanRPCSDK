@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,6 +20,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(PublicKeyTypeEd25519), DataFormat = DataFormat.Default)]
     public abstract partial class PublicKey
     {
         public abstract PublicKeyType Discriminator { get; }
@@ -27,9 +30,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "PublicKey.PublicKeyTypeEd25519")]
         public sealed partial class PublicKeyTypeEd25519 : PublicKey
         {
             public override PublicKeyType Discriminator => PublicKeyType.PUBLIC_KEY_TYPE_ED25519;
+            [ProtoMember(1)]
             public uint256 ed25519
             {
                 get => _ed25519;

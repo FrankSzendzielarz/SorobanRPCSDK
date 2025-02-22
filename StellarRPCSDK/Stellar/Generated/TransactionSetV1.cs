@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,8 +20,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionSetV1
     {
+        [ProtoMember(1)]
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -36,6 +39,7 @@ namespace Stellar {
         #endif
         private Hash _previousLedgerHash;
 
+        [ProtoMember(2)]
         public TransactionPhase[] phases
         {
             get => _phases;

@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerFootprint
     {
+        [ProtoMember(1)]
         public LedgerKey[] readOnly
         {
             get => _readOnly;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private LedgerKey[] _readOnly;
 
+        [ProtoMember(2)]
         public LedgerKey[] readWrite
         {
             get => _readWrite;

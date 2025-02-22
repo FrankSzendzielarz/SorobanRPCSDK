@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(RestoreFootprintSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(RestoreFootprintMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(RestoreFootprintResourceLimitExceeded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(RestoreFootprintInsufficientRefundableFee), DataFormat = DataFormat.Default)]
     public abstract partial class RestoreFootprintResult
     {
         public abstract RestoreFootprintResultCode Discriminator { get; }
@@ -31,6 +37,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintSuccess")]
         public sealed partial class RestoreFootprintSuccess : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
@@ -38,6 +45,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintMalformed")]
         public sealed partial class RestoreFootprintMalformed : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
@@ -45,6 +53,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintResourceLimitExceeded")]
         public sealed partial class RestoreFootprintResourceLimitExceeded : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
@@ -52,6 +61,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee")]
         public sealed partial class RestoreFootprintInsufficientRefundableFee : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;

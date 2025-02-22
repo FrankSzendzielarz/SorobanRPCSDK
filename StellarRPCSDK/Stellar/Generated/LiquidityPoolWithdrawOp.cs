@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LiquidityPoolWithdrawOp
     {
+        [ProtoMember(1)]
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private PoolID _liquidityPoolID;
 
+        [ProtoMember(2)]
         public int64 amount
         {
             get => _amount;
@@ -56,6 +60,7 @@ namespace Stellar {
         /// <summary>
         /// amount of pool shares to withdraw
         /// </summary>
+        [ProtoMember(3)]
         public int64 minAmountA
         {
             get => _minAmountA;
@@ -74,6 +79,7 @@ namespace Stellar {
         /// <summary>
         /// minimum amount of first asset to withdraw
         /// </summary>
+        [ProtoMember(4)]
         public int64 minAmountB
         {
             get => _minAmountB;

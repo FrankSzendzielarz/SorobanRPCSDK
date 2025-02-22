@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,6 +23,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ScEnvMetaKindInterfaceVersion), DataFormat = DataFormat.Default)]
     public abstract partial class SCEnvMetaEntry
     {
         public abstract SCEnvMetaKind Discriminator { get; }
@@ -31,8 +34,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "SCEnvMetaEntry.interfaceVersionStruct")]
         public partial class interfaceVersionStruct
         {
+            [ProtoMember(1)]
             public uint32 protocol
             {
                 get => _protocol;
@@ -48,6 +53,7 @@ namespace Stellar {
             #endif
             private uint32 _protocol;
 
+            [ProtoMember(2)]
             public uint32 preRelease
             {
                 get => _preRelease;
@@ -100,9 +106,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion")]
         public sealed partial class ScEnvMetaKindInterfaceVersion : SCEnvMetaEntry
         {
             public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;
+            [ProtoMember(1)]
             public interfaceVersionStruct interfaceVersion
             {
                 get => _interfaceVersion;

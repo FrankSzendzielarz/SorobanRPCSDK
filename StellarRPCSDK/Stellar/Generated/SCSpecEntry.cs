@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,6 +28,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ScSpecEntryFunctionV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ScSpecEntryUdtStructV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ScSpecEntryUdtUnionV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ScSpecEntryUdtEnumV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ScSpecEntryUdtErrorEnumV0), DataFormat = DataFormat.Default)]
     public abstract partial class SCSpecEntry
     {
         public abstract SCSpecEntryKind Discriminator { get; }
@@ -35,9 +42,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryFunctionV0")]
         public sealed partial class ScSpecEntryFunctionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_FUNCTION_V0;
+            [ProtoMember(1)]
             public SCSpecFunctionV0 functionV0
             {
                 get => _functionV0;
@@ -56,9 +65,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtStructV0")]
         public sealed partial class ScSpecEntryUdtStructV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_STRUCT_V0;
+            [ProtoMember(2)]
             public SCSpecUDTStructV0 udtStructV0
             {
                 get => _udtStructV0;
@@ -77,9 +88,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtUnionV0")]
         public sealed partial class ScSpecEntryUdtUnionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_UNION_V0;
+            [ProtoMember(3)]
             public SCSpecUDTUnionV0 udtUnionV0
             {
                 get => _udtUnionV0;
@@ -98,9 +111,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtEnumV0")]
         public sealed partial class ScSpecEntryUdtEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ENUM_V0;
+            [ProtoMember(4)]
             public SCSpecUDTEnumV0 udtEnumV0
             {
                 get => _udtEnumV0;
@@ -119,9 +134,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtErrorEnumV0")]
         public sealed partial class ScSpecEntryUdtErrorEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;
+            [ProtoMember(5)]
             public SCSpecUDTErrorEnumV0 udtErrorEnumV0
             {
                 get => _udtErrorEnumV0;

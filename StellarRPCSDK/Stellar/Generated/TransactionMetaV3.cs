@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,8 +27,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionMetaV3
     {
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -43,6 +46,7 @@ namespace Stellar {
         #endif
         private ExtensionPoint _ext;
 
+        [ProtoMember(2)]
         public LedgerEntryChanges txChangesBefore
         {
             get => _txChangesBefore;
@@ -61,6 +65,7 @@ namespace Stellar {
         /// <summary>
         /// are applied if any
         /// </summary>
+        [ProtoMember(3)]
         public OperationMeta[] operations
         {
             get => _operations;
@@ -79,6 +84,7 @@ namespace Stellar {
         /// <summary>
         /// meta for each operation
         /// </summary>
+        [ProtoMember(4)]
         public LedgerEntryChanges txChangesAfter
         {
             get => _txChangesAfter;
@@ -97,6 +103,7 @@ namespace Stellar {
         /// <summary>
         /// applied if any
         /// </summary>
+        [ProtoMember(5)]
         public SorobanTransactionMeta sorobanMeta
         {
             get => _sorobanMeta;

@@ -23,6 +23,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -31,8 +32,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerCloseMetaV0
     {
+        [ProtoMember(1)]
         public LedgerHeaderHistoryEntry ledgerHeader
         {
             get => _ledgerHeader;
@@ -51,6 +54,7 @@ namespace Stellar {
         /// <summary>
         /// NB: txSet is sorted in "Hash order"
         /// </summary>
+        [ProtoMember(2)]
         public TransactionSet txSet
         {
             get => _txSet;
@@ -69,6 +73,7 @@ namespace Stellar {
         /// <summary>
         /// followed by applying transactions
         /// </summary>
+        [ProtoMember(3)]
         public TransactionResultMeta[] txProcessing
         {
             get => _txProcessing;
@@ -87,6 +92,7 @@ namespace Stellar {
         /// <summary>
         /// upgrades are applied last
         /// </summary>
+        [ProtoMember(4)]
         public UpgradeEntryMeta[] upgradesProcessing
         {
             get => _upgradesProcessing;
@@ -105,6 +111,7 @@ namespace Stellar {
         /// <summary>
         /// other misc information attached to the ledger close
         /// </summary>
+        [ProtoMember(5)]
         public SCPHistoryEntry[] scpInfo
         {
             get => _scpInfo;

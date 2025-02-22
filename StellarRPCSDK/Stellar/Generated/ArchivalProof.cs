@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,8 +27,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ArchivalProof
     {
+        [ProtoMember(1)]
         public uint32 epoch
         {
             get => _epoch;
@@ -43,6 +46,7 @@ namespace Stellar {
         #endif
         private uint32 _epoch;
 
+        [ProtoMember(2)]
         public bodyUnion body
         {
             get => _body;
@@ -67,6 +71,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "ArchivalProof.bodyUnion")]
+        [ProtoInclude(100, typeof(Existence), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(Nonexistence), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
         {
             public abstract ArchivalProofType Discriminator { get; }
@@ -75,9 +82,11 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "ArchivalProof.bodyUnion.Existence")]
             public sealed partial class Existence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
+                [ProtoMember(1)]
                 public NonexistenceProofBody nonexistenceProof
                 {
                     get => _nonexistenceProof;
@@ -96,9 +105,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "ArchivalProof.bodyUnion.Nonexistence")]
             public sealed partial class Nonexistence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;
+                [ProtoMember(2)]
                 public ExistenceProofBody existenceProof
                 {
                     get => _existenceProof;

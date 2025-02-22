@@ -44,6 +44,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -52,8 +53,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCPStatement
     {
+        [ProtoMember(1)]
         public NodeID nodeID
         {
             get => _nodeID;
@@ -72,6 +75,7 @@ namespace Stellar {
         /// <summary>
         /// v
         /// </summary>
+        [ProtoMember(2)]
         public uint64 slotIndex
         {
             get => _slotIndex;
@@ -87,6 +91,7 @@ namespace Stellar {
         #endif
         private uint64 _slotIndex;
 
+        [ProtoMember(3)]
         public pledgesUnion pledges
         {
             get => _pledges;
@@ -111,6 +116,11 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "SCPStatement.pledgesUnion")]
+        [ProtoInclude(100, typeof(ScpStPrepare), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(ScpStConfirm), DataFormat = DataFormat.Default)]
+        [ProtoInclude(102, typeof(ScpStExternalize), DataFormat = DataFormat.Default)]
+        [ProtoInclude(103, typeof(ScpStNominate), DataFormat = DataFormat.Default)]
         public abstract partial class pledgesUnion
         {
             public abstract SCPStatementType Discriminator { get; }
@@ -120,8 +130,10 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.prepareStruct")]
             public partial class prepareStruct
             {
+                [ProtoMember(1)]
                 public Hash quorumSetHash
                 {
                     get => _quorumSetHash;
@@ -140,6 +152,7 @@ namespace Stellar {
                 /// <summary>
                 /// D
                 /// </summary>
+                [ProtoMember(2)]
                 public SCPBallot ballot
                 {
                     get => _ballot;
@@ -158,6 +171,7 @@ namespace Stellar {
                 /// <summary>
                 /// b
                 /// </summary>
+                [ProtoMember(3)]
                 public SCPBallot prepared
                 {
                     get => _prepared;
@@ -176,6 +190,7 @@ namespace Stellar {
                 /// <summary>
                 /// p
                 /// </summary>
+                [ProtoMember(4)]
                 public SCPBallot preparedPrime
                 {
                     get => _preparedPrime;
@@ -194,6 +209,7 @@ namespace Stellar {
                 /// <summary>
                 /// p'
                 /// </summary>
+                [ProtoMember(5)]
                 public uint32 nC
                 {
                     get => _nC;
@@ -212,6 +228,7 @@ namespace Stellar {
                 /// <summary>
                 /// c.n
                 /// </summary>
+                [ProtoMember(6)]
                 public uint32 nH
                 {
                     get => _nH;
@@ -293,8 +310,10 @@ namespace Stellar {
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.confirmStruct")]
             public partial class confirmStruct
             {
+                [ProtoMember(1)]
                 public SCPBallot ballot
                 {
                     get => _ballot;
@@ -313,6 +332,7 @@ namespace Stellar {
                 /// <summary>
                 /// b
                 /// </summary>
+                [ProtoMember(2)]
                 public uint32 nPrepared
                 {
                     get => _nPrepared;
@@ -331,6 +351,7 @@ namespace Stellar {
                 /// <summary>
                 /// p.n
                 /// </summary>
+                [ProtoMember(3)]
                 public uint32 nCommit
                 {
                     get => _nCommit;
@@ -349,6 +370,7 @@ namespace Stellar {
                 /// <summary>
                 /// c.n
                 /// </summary>
+                [ProtoMember(4)]
                 public uint32 nH
                 {
                     get => _nH;
@@ -367,6 +389,7 @@ namespace Stellar {
                 /// <summary>
                 /// h.n
                 /// </summary>
+                [ProtoMember(5)]
                 public Hash quorumSetHash
                 {
                     get => _quorumSetHash;
@@ -426,8 +449,10 @@ namespace Stellar {
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.externalizeStruct")]
             public partial class externalizeStruct
             {
+                [ProtoMember(1)]
                 public SCPBallot commit
                 {
                     get => _commit;
@@ -446,6 +471,7 @@ namespace Stellar {
                 /// <summary>
                 /// c
                 /// </summary>
+                [ProtoMember(2)]
                 public uint32 nH
                 {
                     get => _nH;
@@ -464,6 +490,7 @@ namespace Stellar {
                 /// <summary>
                 /// h.n
                 /// </summary>
+                [ProtoMember(3)]
                 public Hash commitQuorumSetHash
                 {
                     get => _commitQuorumSetHash;
@@ -518,9 +545,11 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStPrepare")]
             public sealed partial class ScpStPrepare : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_PREPARE;
+                [ProtoMember(1)]
                 public prepareStruct prepare
                 {
                     get => _prepare;
@@ -539,9 +568,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStConfirm")]
             public sealed partial class ScpStConfirm : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_CONFIRM;
+                [ProtoMember(2)]
                 public confirmStruct confirm
                 {
                     get => _confirm;
@@ -560,9 +591,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStExternalize")]
             public sealed partial class ScpStExternalize : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_EXTERNALIZE;
+                [ProtoMember(3)]
                 public externalizeStruct externalize
                 {
                     get => _externalize;
@@ -581,9 +614,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStNominate")]
             public sealed partial class ScpStNominate : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_NOMINATE;
+                [ProtoMember(4)]
                 public SCPNomination nominate
                 {
                     get => _nominate;

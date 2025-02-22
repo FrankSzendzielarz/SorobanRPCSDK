@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TopologyResponseBodyV0
     {
+        [ProtoMember(1)]
         public PeerStatList inboundPeers
         {
             get => _inboundPeers;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private PeerStatList _inboundPeers;
 
+        [ProtoMember(2)]
         public PeerStatList outboundPeers
         {
             get => _outboundPeers;
@@ -54,6 +58,7 @@ namespace Stellar {
         #endif
         private PeerStatList _outboundPeers;
 
+        [ProtoMember(3)]
         public uint32 totalInboundPeerCount
         {
             get => _totalInboundPeerCount;
@@ -69,6 +74,7 @@ namespace Stellar {
         #endif
         private uint32 _totalInboundPeerCount;
 
+        [ProtoMember(4)]
         public uint32 totalOutboundPeerCount
         {
             get => _totalOutboundPeerCount;

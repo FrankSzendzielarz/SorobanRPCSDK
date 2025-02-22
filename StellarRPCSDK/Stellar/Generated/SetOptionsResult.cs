@@ -22,6 +22,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -30,6 +31,18 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SetOptionsSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SetOptionsLowReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(SetOptionsTooManySigners), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(SetOptionsBadFlags), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(SetOptionsInvalidInflation), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(SetOptionsCantChange), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(SetOptionsUnknownFlag), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(SetOptionsThresholdOutOfRange), DataFormat = DataFormat.Default)]
+    [ProtoInclude(108, typeof(SetOptionsBadSigner), DataFormat = DataFormat.Default)]
+    [ProtoInclude(109, typeof(SetOptionsInvalidHomeDomain), DataFormat = DataFormat.Default)]
+    [ProtoInclude(110, typeof(SetOptionsAuthRevocableRequired), DataFormat = DataFormat.Default)]
     public abstract partial class SetOptionsResult
     {
         public abstract SetOptionsResultCode Discriminator { get; }
@@ -38,6 +51,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsSuccess")]
         public sealed partial class SetOptionsSuccess : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_SUCCESS;
@@ -45,6 +59,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsLowReserve")]
         public sealed partial class SetOptionsLowReserve : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_LOW_RESERVE;
@@ -52,6 +67,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsTooManySigners")]
         public sealed partial class SetOptionsTooManySigners : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_TOO_MANY_SIGNERS;
@@ -59,6 +75,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsBadFlags")]
         public sealed partial class SetOptionsBadFlags : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_BAD_FLAGS;
@@ -66,6 +83,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsInvalidInflation")]
         public sealed partial class SetOptionsInvalidInflation : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_INVALID_INFLATION;
@@ -73,6 +91,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsCantChange")]
         public sealed partial class SetOptionsCantChange : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_CANT_CHANGE;
@@ -80,6 +99,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsUnknownFlag")]
         public sealed partial class SetOptionsUnknownFlag : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_UNKNOWN_FLAG;
@@ -87,6 +107,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsThresholdOutOfRange")]
         public sealed partial class SetOptionsThresholdOutOfRange : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_THRESHOLD_OUT_OF_RANGE;
@@ -94,6 +115,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsBadSigner")]
         public sealed partial class SetOptionsBadSigner : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_BAD_SIGNER;
@@ -101,6 +123,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsInvalidHomeDomain")]
         public sealed partial class SetOptionsInvalidHomeDomain : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_INVALID_HOME_DOMAIN;
@@ -108,6 +131,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetOptionsResult.SetOptionsAuthRevocableRequired")]
         public sealed partial class SetOptionsAuthRevocableRequired : SetOptionsResult
         {
             public override SetOptionsResultCode Discriminator => SetOptionsResultCode.SET_OPTIONS_AUTH_REVOCABLE_REQUIRED;

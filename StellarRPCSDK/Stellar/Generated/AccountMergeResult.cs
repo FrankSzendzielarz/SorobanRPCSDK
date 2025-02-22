@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,6 +28,15 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(AccountMergeSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(AccountMergeMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(AccountMergeNoAccount), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(AccountMergeImmutableSet), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(AccountMergeHasSubEntries), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(AccountMergeSeqnumTooFar), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(AccountMergeDestFull), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(AccountMergeIsSponsor), DataFormat = DataFormat.Default)]
     public abstract partial class AccountMergeResult
     {
         public abstract AccountMergeResultCode Discriminator { get; }
@@ -35,9 +45,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeSuccess")]
         public sealed partial class AccountMergeSuccess : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS;
+            [ProtoMember(1)]
             public int64 sourceAccountBalance
             {
                 get => _sourceAccountBalance;
@@ -59,6 +71,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeMalformed")]
         public sealed partial class AccountMergeMalformed : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED;
@@ -69,6 +82,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeNoAccount")]
         public sealed partial class AccountMergeNoAccount : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT;
@@ -79,6 +93,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeImmutableSet")]
         public sealed partial class AccountMergeImmutableSet : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET;
@@ -89,6 +104,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeHasSubEntries")]
         public sealed partial class AccountMergeHasSubEntries : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES;
@@ -99,6 +115,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeSeqnumTooFar")]
         public sealed partial class AccountMergeSeqnumTooFar : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR;
@@ -109,6 +126,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeDestFull")]
         public sealed partial class AccountMergeDestFull : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL;
@@ -119,6 +137,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "AccountMergeResult.AccountMergeIsSponsor")]
         public sealed partial class AccountMergeIsSponsor : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR;

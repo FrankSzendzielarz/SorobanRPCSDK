@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,8 +26,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerEntryExtensionV1
     {
+        [ProtoMember(1)]
         public SponsorshipDescriptor sponsoringID
         {
             get => _sponsoringID;
@@ -42,6 +45,7 @@ namespace Stellar {
         #endif
         private SponsorshipDescriptor _sponsoringID;
 
+        [ProtoMember(2)]
         public extUnion ext
         {
             get => _ext;
@@ -66,6 +70,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "LedgerEntryExtensionV1.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -74,6 +80,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "LedgerEntryExtensionV1.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

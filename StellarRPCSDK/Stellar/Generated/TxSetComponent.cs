@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(TxsetCompTxsMaybeDiscountedFee), DataFormat = DataFormat.Default)]
     public abstract partial class TxSetComponent
     {
         public abstract TxSetComponentType Discriminator { get; }
@@ -32,8 +35,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "TxSetComponent.txsMaybeDiscountedFeeStruct")]
         public partial class txsMaybeDiscountedFeeStruct
         {
+            [ProtoMember(1)]
             public int64 baseFee
             {
                 get => _baseFee;
@@ -49,6 +54,7 @@ namespace Stellar {
             #endif
             private int64 _baseFee;
 
+            [ProtoMember(2)]
             public TransactionEnvelope[] txs
             {
                 get => _txs;
@@ -122,9 +128,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "TxSetComponent.TxsetCompTxsMaybeDiscountedFee")]
         public sealed partial class TxsetCompTxsMaybeDiscountedFee : TxSetComponent
         {
             public override TxSetComponentType Discriminator => TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;
+            [ProtoMember(1)]
             public txsMaybeDiscountedFeeStruct txsMaybeDiscountedFee
             {
                 get => _txsMaybeDiscountedFee;

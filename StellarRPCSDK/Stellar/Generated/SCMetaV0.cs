@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,8 +20,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCMetaV0
     {
+        [ProtoMember(1)]
         public string key
         {
             get => _key;
@@ -36,6 +39,7 @@ namespace Stellar {
         #endif
         private string _key;
 
+        [ProtoMember(2)]
         public string val
         {
             get => _val;

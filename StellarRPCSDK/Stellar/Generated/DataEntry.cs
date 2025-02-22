@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -28,8 +29,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class DataEntry
     {
+        [ProtoMember(1)]
         public AccountID accountID
         {
             get => _accountID;
@@ -48,6 +51,7 @@ namespace Stellar {
         /// <summary>
         /// account this data belongs to
         /// </summary>
+        [ProtoMember(2)]
         public string64 dataName
         {
             get => _dataName;
@@ -63,6 +67,7 @@ namespace Stellar {
         #endif
         private string64 _dataName;
 
+        [ProtoMember(3)]
         public DataValue dataValue
         {
             get => _dataValue;
@@ -81,6 +86,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(4)]
         public extUnion ext
         {
             get => _ext;
@@ -105,6 +111,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "DataEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -113,6 +121,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "DataEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

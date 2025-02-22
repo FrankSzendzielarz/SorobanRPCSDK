@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,6 +20,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(LiquidityPoolConstantProduct), DataFormat = DataFormat.Default)]
     public abstract partial class LiquidityPoolParameters
     {
         public abstract LiquidityPoolType Discriminator { get; }
@@ -27,9 +30,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolParameters.LiquidityPoolConstantProduct")]
         public sealed partial class LiquidityPoolConstantProduct : LiquidityPoolParameters
         {
             public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
+            [ProtoMember(1)]
             public LiquidityPoolConstantProductParameters constantProduct
             {
                 get => _constantProduct;

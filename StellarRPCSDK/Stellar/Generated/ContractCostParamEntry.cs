@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,11 +22,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ContractCostParamEntry
     {
         /// <summary>
         /// use `ext` to add more terms (e.g. higher order polynomials) in the future
         /// </summary>
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -41,6 +44,7 @@ namespace Stellar {
         #endif
         private ExtensionPoint _ext;
 
+        [ProtoMember(2)]
         public int64 constTerm
         {
             get => _constTerm;
@@ -56,6 +60,7 @@ namespace Stellar {
         #endif
         private int64 _constTerm;
 
+        [ProtoMember(3)]
         public int64 linearTerm
         {
             get => _linearTerm;

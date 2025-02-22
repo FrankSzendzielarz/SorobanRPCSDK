@@ -45,6 +45,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -56,11 +57,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class InnerTransactionResult
     {
         /// <summary>
         /// Always 0. Here for binary compatibility.
         /// </summary>
+        [ProtoMember(1)]
         public int64 feeCharged
         {
             get => _feeCharged;
@@ -76,6 +79,7 @@ namespace Stellar {
         #endif
         private int64 _feeCharged;
 
+        [ProtoMember(2)]
         public resultUnion result
         {
             get => _result;
@@ -94,6 +98,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(3)]
         public extUnion ext
         {
             get => _ext;
@@ -118,6 +123,24 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "InnerTransactionResult.resultUnion")]
+        [ProtoInclude(100, typeof(TxSUCCESS), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(TxFAILED), DataFormat = DataFormat.Default)]
+        [ProtoInclude(102, typeof(TxtooEarly), DataFormat = DataFormat.Default)]
+        [ProtoInclude(103, typeof(TxtooLate), DataFormat = DataFormat.Default)]
+        [ProtoInclude(104, typeof(TxmissingOperation), DataFormat = DataFormat.Default)]
+        [ProtoInclude(105, typeof(TxbadSeq), DataFormat = DataFormat.Default)]
+        [ProtoInclude(106, typeof(TxbadAuth), DataFormat = DataFormat.Default)]
+        [ProtoInclude(107, typeof(TxinsufficientBalance), DataFormat = DataFormat.Default)]
+        [ProtoInclude(108, typeof(TxnoAccount), DataFormat = DataFormat.Default)]
+        [ProtoInclude(109, typeof(TxinsufficientFee), DataFormat = DataFormat.Default)]
+        [ProtoInclude(110, typeof(TxbadAuthExtra), DataFormat = DataFormat.Default)]
+        [ProtoInclude(111, typeof(TxinternalError), DataFormat = DataFormat.Default)]
+        [ProtoInclude(112, typeof(TxnotSupported), DataFormat = DataFormat.Default)]
+        [ProtoInclude(113, typeof(TxbadSponsorship), DataFormat = DataFormat.Default)]
+        [ProtoInclude(114, typeof(TxbadMinSeqAgeOrGap), DataFormat = DataFormat.Default)]
+        [ProtoInclude(115, typeof(TxMALFORMED), DataFormat = DataFormat.Default)]
+        [ProtoInclude(116, typeof(TxsorobanInvalid), DataFormat = DataFormat.Default)]
         public abstract partial class resultUnion
         {
             public abstract TransactionResultCode Discriminator { get; }
@@ -129,9 +152,11 @@ namespace Stellar {
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxSUCCESS")]
             public sealed partial class TxSUCCESS : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
+                [ProtoMember(1)]
                 public OperationResult[] results
                 {
                     get => _results;
@@ -153,9 +178,11 @@ namespace Stellar {
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxFAILED")]
             public sealed partial class TxFAILED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
+                [ProtoMember(2)]
                 public OperationResult[] results
                 {
                     get => _results;
@@ -174,6 +201,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxtooEarly")]
             public sealed partial class TxtooEarly : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_EARLY;
@@ -181,6 +209,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxtooLate")]
             public sealed partial class TxtooLate : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_LATE;
@@ -188,6 +217,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxmissingOperation")]
             public sealed partial class TxmissingOperation : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMISSING_OPERATION;
@@ -195,6 +225,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadSeq")]
             public sealed partial class TxbadSeq : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SEQ;
@@ -202,6 +233,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadAuth")]
             public sealed partial class TxbadAuth : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH;
@@ -209,6 +241,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinsufficientBalance")]
             public sealed partial class TxinsufficientBalance : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_BALANCE;
@@ -216,6 +249,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxnoAccount")]
             public sealed partial class TxnoAccount : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNO_ACCOUNT;
@@ -223,6 +257,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinsufficientFee")]
             public sealed partial class TxinsufficientFee : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_FEE;
@@ -230,6 +265,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadAuthExtra")]
             public sealed partial class TxbadAuthExtra : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH_EXTRA;
@@ -237,6 +273,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinternalError")]
             public sealed partial class TxinternalError : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINTERNAL_ERROR;
@@ -244,6 +281,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxnotSupported")]
             public sealed partial class TxnotSupported : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNOT_SUPPORTED;
@@ -251,6 +289,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadSponsorship")]
             public sealed partial class TxbadSponsorship : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SPONSORSHIP;
@@ -258,6 +297,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap")]
             public sealed partial class TxbadMinSeqAgeOrGap : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP;
@@ -265,6 +305,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxMALFORMED")]
             public sealed partial class TxMALFORMED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMALFORMED;
@@ -272,6 +313,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxsorobanInvalid")]
             public sealed partial class TxsorobanInvalid : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSOROBAN_INVALID;
@@ -422,6 +464,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "InnerTransactionResult.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -430,6 +474,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "InnerTransactionResult.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

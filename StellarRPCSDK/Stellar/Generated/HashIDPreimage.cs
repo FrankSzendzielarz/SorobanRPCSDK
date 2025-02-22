@@ -39,6 +39,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -47,6 +48,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(EnvelopeTypeOpId), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(EnvelopeTypePoolRevokeOpId), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(EnvelopeTypeContractId), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(EnvelopeTypeSorobanAuthorization), DataFormat = DataFormat.Default)]
     public abstract partial class HashIDPreimage
     {
         public abstract EnvelopeType Discriminator { get; }
@@ -56,8 +62,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.operationIDStruct")]
         public partial class operationIDStruct
         {
+            [ProtoMember(1)]
             public AccountID sourceAccount
             {
                 get => _sourceAccount;
@@ -73,6 +81,7 @@ namespace Stellar {
             #endif
             private AccountID _sourceAccount;
 
+            [ProtoMember(2)]
             public SequenceNumber seqNum
             {
                 get => _seqNum;
@@ -88,6 +97,7 @@ namespace Stellar {
             #endif
             private SequenceNumber _seqNum;
 
+            [ProtoMember(3)]
             public uint32 opNum
             {
                 get => _opNum;
@@ -143,8 +153,10 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.revokeIDStruct")]
         public partial class revokeIDStruct
         {
+            [ProtoMember(1)]
             public AccountID sourceAccount
             {
                 get => _sourceAccount;
@@ -160,6 +172,7 @@ namespace Stellar {
             #endif
             private AccountID _sourceAccount;
 
+            [ProtoMember(2)]
             public SequenceNumber seqNum
             {
                 get => _seqNum;
@@ -175,6 +188,7 @@ namespace Stellar {
             #endif
             private SequenceNumber _seqNum;
 
+            [ProtoMember(3)]
             public uint32 opNum
             {
                 get => _opNum;
@@ -190,6 +204,7 @@ namespace Stellar {
             #endif
             private uint32 _opNum;
 
+            [ProtoMember(4)]
             public PoolID liquidityPoolID
             {
                 get => _liquidityPoolID;
@@ -205,6 +220,7 @@ namespace Stellar {
             #endif
             private PoolID _liquidityPoolID;
 
+            [ProtoMember(5)]
             public Asset asset
             {
                 get => _asset;
@@ -264,8 +280,10 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.contractIDStruct")]
         public partial class contractIDStruct
         {
+            [ProtoMember(1)]
             public Hash networkID
             {
                 get => _networkID;
@@ -281,6 +299,7 @@ namespace Stellar {
             #endif
             private Hash _networkID;
 
+            [ProtoMember(2)]
             public ContractIDPreimage contractIDPreimage
             {
                 get => _contractIDPreimage;
@@ -334,8 +353,10 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.sorobanAuthorizationStruct")]
         public partial class sorobanAuthorizationStruct
         {
+            [ProtoMember(1)]
             public Hash networkID
             {
                 get => _networkID;
@@ -351,6 +372,7 @@ namespace Stellar {
             #endif
             private Hash _networkID;
 
+            [ProtoMember(2)]
             public int64 nonce
             {
                 get => _nonce;
@@ -366,6 +388,7 @@ namespace Stellar {
             #endif
             private int64 _nonce;
 
+            [ProtoMember(3)]
             public uint32 signatureExpirationLedger
             {
                 get => _signatureExpirationLedger;
@@ -381,6 +404,7 @@ namespace Stellar {
             #endif
             private uint32 _signatureExpirationLedger;
 
+            [ProtoMember(4)]
             public SorobanAuthorizedInvocation invocation
             {
                 get => _invocation;
@@ -437,9 +461,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeOpId")]
         public sealed partial class EnvelopeTypeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
+            [ProtoMember(1)]
             public operationIDStruct operationID
             {
                 get => _operationID;
@@ -458,9 +484,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypePoolRevokeOpId")]
         public sealed partial class EnvelopeTypePoolRevokeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
+            [ProtoMember(2)]
             public revokeIDStruct revokeID
             {
                 get => _revokeID;
@@ -479,9 +507,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeContractId")]
         public sealed partial class EnvelopeTypeContractId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
+            [ProtoMember(3)]
             public contractIDStruct contractID
             {
                 get => _contractID;
@@ -500,9 +530,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeSorobanAuthorization")]
         public sealed partial class EnvelopeTypeSorobanAuthorization : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;
+            [ProtoMember(4)]
             public sorobanAuthorizationStruct sorobanAuthorization
             {
                 get => _sorobanAuthorization;

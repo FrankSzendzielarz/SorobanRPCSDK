@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class PeerAddress
     {
+        [ProtoMember(1)]
         public ipUnion ip
         {
             get => _ip;
@@ -44,6 +47,7 @@ namespace Stellar {
         #endif
         private ipUnion _ip;
 
+        [ProtoMember(2)]
         public uint32 port
         {
             get => _port;
@@ -59,6 +63,7 @@ namespace Stellar {
         #endif
         private uint32 _port;
 
+        [ProtoMember(3)]
         public uint32 numFailures
         {
             get => _numFailures;
@@ -83,6 +88,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "PeerAddress.ipUnion")]
+        [ProtoInclude(100, typeof(IPv4), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(IPv6), DataFormat = DataFormat.Default)]
         public abstract partial class ipUnion
         {
             public abstract IPAddrType Discriminator { get; }
@@ -91,9 +99,11 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "PeerAddress.ipUnion.IPv4")]
             public sealed partial class IPv4 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv4;
+                [ProtoMember(1)]
                 [MinLength(4)]
                 [MaxLength(4)]
                 public byte[] ipv4
@@ -116,9 +126,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "PeerAddress.ipUnion.IPv6")]
             public sealed partial class IPv6 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv6;
+                [ProtoMember(2)]
                 [MinLength(16)]
                 [MaxLength(16)]
                 public byte[] ipv6

@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SorobanTransactionMeta
     {
+        [ProtoMember(1)]
         public SorobanTransactionMetaExt ext
         {
             get => _ext;
@@ -44,6 +47,7 @@ namespace Stellar {
         #endif
         private SorobanTransactionMetaExt _ext;
 
+        [ProtoMember(2)]
         public ContractEvent[] events
         {
             get => _events;
@@ -62,6 +66,7 @@ namespace Stellar {
         /// <summary>
         /// contracts themselves.
         /// </summary>
+        [ProtoMember(3)]
         public SCVal returnValue
         {
             get => _returnValue;
@@ -80,6 +85,7 @@ namespace Stellar {
         /// <summary>
         /// that were emitted in a failed contract call.
         /// </summary>
+        [ProtoMember(4)]
         public DiagnosticEvent[] diagnosticEvents
         {
             get => _diagnosticEvents;

@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TimeSlicedSurveyStartCollectingMessage
     {
+        [ProtoMember(1)]
         public NodeID surveyorID
         {
             get => _surveyorID;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private NodeID _surveyorID;
 
+        [ProtoMember(2)]
         public uint32 nonce
         {
             get => _nonce;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private uint32 _nonce;
 
+        [ProtoMember(3)]
         public uint32 ledgerNum
         {
             get => _ledgerNum;

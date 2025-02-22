@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AllowTrustOp
     {
+        [ProtoMember(1)]
         public AccountID trustor
         {
             get => _trustor;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private AccountID _trustor;
 
+        [ProtoMember(2)]
         public AssetCode asset
         {
             get => _asset;
@@ -57,6 +61,7 @@ namespace Stellar {
         /// <summary>
         /// One of 0, AUTHORIZED_FLAG, or AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG
         /// </summary>
+        [ProtoMember(3)]
         public uint32 authorize
         {
             get => _authorize;

@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(BumpSequenceSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(BumpSequenceBadSeq), DataFormat = DataFormat.Default)]
     public abstract partial class BumpSequenceResult
     {
         public abstract BumpSequenceResultCode Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "BumpSequenceResult.BumpSequenceSuccess")]
         public sealed partial class BumpSequenceSuccess : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
@@ -36,6 +41,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BumpSequenceResult.BumpSequenceBadSeq")]
         public sealed partial class BumpSequenceBadSeq : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;

@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ScSpecUdtUnionCaseVoidV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ScSpecUdtUnionCaseTupleV0), DataFormat = DataFormat.Default)]
     public abstract partial class SCSpecUDTUnionCaseV0
     {
         public abstract SCSpecUDTUnionCaseV0Kind Discriminator { get; }
@@ -29,9 +33,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseVoidV0")]
         public sealed partial class ScSpecUdtUnionCaseVoidV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
+            [ProtoMember(1)]
             public SCSpecUDTUnionCaseVoidV0 voidCase
             {
                 get => _voidCase;
@@ -50,9 +56,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseTupleV0")]
         public sealed partial class ScSpecUdtUnionCaseTupleV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;
+            [ProtoMember(2)]
             public SCSpecUDTUnionCaseTupleV0 tupleCase
             {
                 get => _tupleCase;

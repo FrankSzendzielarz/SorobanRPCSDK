@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(PrecondNone), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(PrecondTime), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(PrecondV2), DataFormat = DataFormat.Default)]
     public abstract partial class Preconditions
     {
         public abstract PreconditionType Discriminator { get; }
@@ -31,6 +36,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "Preconditions.PrecondNone")]
         public sealed partial class PrecondNone : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_NONE;
@@ -38,9 +44,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "Preconditions.PrecondTime")]
         public sealed partial class PrecondTime : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_TIME;
+            [ProtoMember(1)]
             public TimeBounds timeBounds
             {
                 get => _timeBounds;
@@ -59,9 +67,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "Preconditions.PrecondV2")]
         public sealed partial class PrecondV2 : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_V2;
+            [ProtoMember(2)]
             public PreconditionsV2 v2
             {
                 get => _v2;

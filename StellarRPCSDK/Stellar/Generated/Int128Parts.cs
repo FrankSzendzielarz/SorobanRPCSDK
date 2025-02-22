@@ -10,6 +10,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class Int128Parts
     {
+        [ProtoMember(1)]
         public int64 hi
         {
             get => _hi;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private int64 _hi;
 
+        [ProtoMember(2)]
         public uint64 lo
         {
             get => _lo;

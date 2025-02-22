@@ -30,7 +30,39 @@ namespace Generator.XDR
         private CodeFile? _codeFile { get; }
         public CodeFile? CodeFile => _codeFile != null ? _codeFile : Parent?.CodeFile;
         public string FullName => Parent == null ? Name : $"{Parent.FullName}.{Name}";
-        public Dictionary<IToken, string> CommentMap { get; } 
+        public Dictionary<IToken, string> CommentMap { get; }
+
+        // ADDED: Counter for protobuf member tags
+        private int _currentProtoMemberTag = 1;
+
+        // ADDED: Method to get next protobuf member tag
+        private int GetNextProtoMemberTag()
+        {
+            return _currentProtoMemberTag++;
+        }
+
+        // ADDED: Method to reset protobuf member tag counter
+        private void ResetProtoMemberTag()
+        {
+            _currentProtoMemberTag = 1;
+        }
+
+        // ADDED: Helper method for consistent ProtoContract attribute generation
+        private void WriteProtoContractAttribute(bool isNestedType = false)
+        {
+            var code = CodeFile;
+            if (isNestedType)
+            {
+                // For nested types, use the full hierarchical name
+                code.AppendLine($"[ProtoContract(Name = \"{FullName}\")]");
+            }
+            else
+            {
+                // For top-level types, just use the type name
+                code.AppendLine("[ProtoContract]");
+            }
+        }
+
         public XDRTypeDefinition(TypeExtractorVisitor generationContext, XDRType xdrType, ParserRuleContext? documentationContext, ParserRuleContext parserRuleContext, string _namespace, string name, XDRTypeDefinition? parent, string outputDir, Dictionary<IToken, string> commentMap, List<string> enumAliases, long constValue=0)
         {
             GenerationContext = generationContext;
@@ -110,6 +142,8 @@ namespace Generator.XDR
             code.AppendLine("using System;");
             code.AppendLine("using System.IO;");
             code.AppendLine("using System.ComponentModel.DataAnnotations;");
+            // ADDED: Import ProtoBuf namespace
+            code.AppendLine("using ProtoBuf;");
             code.AppendLine("#if UNITY");
             code.AppendLine("\tusing UnityEngine;");
             code.AppendLine("#endif");
@@ -148,12 +182,12 @@ namespace Generator.XDR
 
         private void GenerateEnum(StellarXdrParser.EnumBodyContext context, TypeExtractorVisitor generationContext)
         {
-
             string enumName = Name;
 
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine("[System.Serializable]");
+            WriteProtoContractAttribute(Parent != null);
             code.AppendLine($"public enum {enumName}");
             code.OpenBlock();
             var enumMembers = context.enumMember();
@@ -164,12 +198,6 @@ namespace Generator.XDR
 
                 var name = member.identifier().GetText();
                 string value = GetValue(member.value(), generationContext.AllTypes);
-                //if (member.constant() != null)
-                //    value = member.constant().GetText();
-                //else if (member.identifier().Length > 1)
-                //    value = GetValue(member.identifier(1).GetText(), generationContext.AllTypes).ToString();
-                //else
-                //    value = "0";
 
                 code.AppendLine($"{name} = {value},");
             }
@@ -197,17 +225,12 @@ namespace Generator.XDR
             code.AppendLine($"return ({enumName})value;");
             code.CloseBlock();
 
-
             foreach (var child in this.NestedTypes)
             {
                 child.Generate();
             }
 
             code.CloseBlock();
-
-
-
-
         }
 
         private static void AddGeneralBase64EncodeBlock(string typeName, CodeFile? code)
@@ -262,6 +285,7 @@ namespace Generator.XDR
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine("[System.Serializable]");
+            WriteProtoContractAttribute(Parent != null);
             code.AppendLine($"public partial class {Name}");
             code.OpenBlock();
 
@@ -270,9 +294,9 @@ namespace Generator.XDR
             {
                 var decl = member.declaration();
                 WriteDocumentationComment(member, true);
-                var fieldType = new CSharpTypeInfo(decl,generationContext);
+                var fieldType = new CSharpTypeInfo(decl, generationContext);
                 var fieldName = getFieldName(decl);
-                GenerateProperty(decl, fieldType, fieldName);
+                GenerateProperty(decl, fieldType, fieldName, GetNextProtoMemberTag());
                 code.AppendLine();
             }
 
@@ -282,9 +306,7 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-
-
-                GenerateInitialization(decl,generationContext);
+                GenerateInitialization(decl, generationContext);
             }
             code.CloseBlock();
 
@@ -295,10 +317,7 @@ namespace Generator.XDR
             foreach (var member in context.structMember())
             {
                 var decl = member.declaration();
-               // if (decl.typeSpecifier() != null)
-              //  {
-                    GenerateValidation(decl,generationContext);
-               // }
+                GenerateValidation(decl, generationContext);
             }
             code.CloseBlock();
 
@@ -309,17 +328,15 @@ namespace Generator.XDR
             code.CloseBlock();
 
             // Generate XDR helper class
-            GenerateStructXdrHelperClass(Name, context.structMember(),generationContext);
-
-            
-
-
+            GenerateStructXdrHelperClass(Name, context.structMember(), generationContext);
         }
-        private void GenerateProperty(DeclarationContext decl, CSharpTypeInfo fieldType, string fieldName)
+
+        private void GenerateProperty(DeclarationContext decl, CSharpTypeInfo fieldType, string fieldName, int protoMemberTag)
         {
             if (fieldType.IsVoid) return;
 
             var code = CodeFile;
+            code.AppendLine($"[ProtoMember({protoMemberTag})]");
             switch (fieldType.ArrayType)
             {
                 case ArrayType.Fixed:
@@ -510,20 +527,44 @@ namespace Generator.XDR
         private void GenerateUnion(StellarXdrParser.UnionBodyContext context, TypeExtractorVisitor generationContext)
         {
             var switchDecl = context.declaration();
-            var discriminatorType = new CSharpTypeInfo(switchDecl,generationContext);
+            var discriminatorType = new CSharpTypeInfo(switchDecl, generationContext);
             var code = CodeFile;
 
-
+            bool enumDiscriminator = false;
+            string discriminatorString = "int";
+            if (isEnum(discriminatorType.CSharpType, generationContext.AllTypes))
+            {
+                enumDiscriminator = true;
+                discriminatorString = discriminatorType.CSharpType;
+            }
 
             // Generate abstract base class
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine("[System.Serializable]");
+            WriteProtoContractAttribute(Parent != null);
+
+            // Add ProtoIncludes for all cases
+            int protoIncludeTag = 100;
+            foreach (var caseSpec in context.caseSpec())
+            {
+                foreach (var value in caseSpec.value())
+                {
+                    var className = UnionCaseToClassName(value.GetText(), enumDiscriminator, generationContext.AllTypes);
+                    code.AppendLine($"[ProtoInclude({protoIncludeTag}, typeof({className}), DataFormat = DataFormat.Default)]");
+                    protoIncludeTag++;
+                }
+            }
+
+            if (context.defaultCase() != null)
+            {
+                code.AppendLine($"[ProtoInclude({protoIncludeTag}, typeof({Name}_Default), DataFormat = DataFormat.Default)]");
+            }
+
             code.AppendLine($"public abstract partial class {Name}");
             code.OpenBlock();
-            bool enumDiscriminator = false;
-            if (isEnum(discriminatorType.CSharpType,generationContext.AllTypes))
+
+            if (enumDiscriminator)
             {
-                enumDiscriminator = true;
                 code.AppendLine($"public abstract {discriminatorType.CSharpType} Discriminator {{ get; }}");
             }
             else
@@ -535,11 +576,11 @@ namespace Generator.XDR
             code.AppendLine("/// <summary>Validates the union case matches its discriminator</summary>");
             code.AppendLine("public abstract void ValidateCase();");
             code.AppendLine();
+
             foreach (var child in this.NestedTypes)
             {
                 child.Generate();
             }
-           // code.CloseBlock();
 
             // Generate case classes
             foreach (var caseSpec in context.caseSpec())
@@ -547,30 +588,14 @@ namespace Generator.XDR
                 foreach (var value in caseSpec.value())
                 {
                     WriteDocumentationComment(caseSpec);
+                    var className = UnionCaseToClassName(value.GetText(), enumDiscriminator, generationContext.AllTypes);
 
-                    // var className = $"{Name}_{value.GetText()}";
-                    var className = $"{UnionCaseToClassName(value.GetText(),enumDiscriminator,generationContext.AllTypes)}";
                     code.AppendLine("[System.Serializable]");
+                    code.AppendLine($"[ProtoContract(Name = \"{FullName}.{className}\")]");
                     code.AppendLine($"public sealed partial class {className} : {Name}");
                     code.OpenBlock();
-                    /*
 
-                        Discriminants must be one of these types:
-
-                           int
-                           unsigned int
-                           bool
-                           enum
-                           typedef that resolves to one of the above
-
-                        The discriminant is encoded as a 4-byte value
-                        The discriminant must match one of the case values in the union definition
-                        The discriminant encoding precedes the encoding of the selected union arm
-
-
-
-                    */
-                    if (isEnum(discriminatorType.CSharpType, generationContext.AllTypes))
+                    if (enumDiscriminator)
                     {
                         code.AppendLine($"public override {discriminatorType.CSharpType} Discriminator => {discriminatorType.CSharpType}.{value.GetText()};");
                     }
@@ -585,46 +610,41 @@ namespace Generator.XDR
                             code.AppendLine($"public override int Discriminator => {value.GetText()};");
                         }
                     }
-                    var decl = caseSpec.declaration();
-                    var fieldType = new CSharpTypeInfo(decl,generationContext);
-                   
-                    var fieldName = getFieldName(decl);
-                    GenerateProperty(decl, fieldType, fieldName);
-                    
 
-                    
+                    var decl = caseSpec.declaration();
+                    var fieldType = new CSharpTypeInfo(decl, generationContext);
+                    var fieldName = getFieldName(decl);
+
+                    if (decl is not VoidDeclarationContext)
+                    {
+                        GenerateProperty(decl, fieldType, fieldName, GetNextProtoMemberTag());
+                    }
+
                     code.AppendLine();
                     code.AppendLine("public override void ValidateCase() {}");
-            
-      
                     code.CloseBlock();
                 }
             }
 
-            string discriminatorString = "int";
-            if (isEnum(discriminatorType.CSharpType, generationContext.AllTypes))
-            {
-                discriminatorString = discriminatorType.CSharpType;
-            }
-
             // Generate default case if present
-            var defaultCase = context.defaultCase();
-            if (defaultCase != null)
+            if (context.defaultCase() != null)
             {
                 code.AppendLine("[System.Serializable]");
+                code.AppendLine($"[ProtoContract(Name = \"{FullName}.{Name}_Default\")]");
                 code.AppendLine($"public sealed partial class {Name}_Default : {Name}");
                 code.OpenBlock();
-                code.AppendLine($"private readonly {discriminatorString} _discriminator;");
 
+                code.AppendLine($"private readonly {discriminatorString} _discriminator;");
                 code.AppendLine($"public override {discriminatorString} Discriminator => _discriminator;");
 
-                var defaultDecl = defaultCase.declaration();
-           
-                var fieldType = new CSharpTypeInfo(defaultDecl,generationContext);
-         
+                var defaultDecl = context.defaultCase().declaration();
+                var fieldType = new CSharpTypeInfo(defaultDecl, generationContext);
                 var fieldName = getFieldName(defaultDecl);
-                GenerateProperty(defaultDecl, fieldType, fieldName);
-                
+
+                if (defaultDecl is not VoidDeclarationContext)
+                {
+                    GenerateProperty(defaultDecl, fieldType, fieldName, GetNextProtoMemberTag());
+                }
 
                 code.AppendLine();
                 code.AppendLine($"public {Name}_Default({discriminatorString} discriminator)");
@@ -636,35 +656,118 @@ namespace Generator.XDR
                 code.AppendLine("public override void ValidateCase() {}");
                 code.CloseBlock();
             }
+
             code.CloseBlock();
 
             // Generate XDR helper class
             code.AppendLine($"public static partial class {Name}Xdr");
             code.OpenBlock();
+
             AddGeneralBase64EncodeBlock(Name, code);
-            GenerateUnionEncodeMethods(Name, context,enumDiscriminator, generationContext);
-            GenerateUnionDecodeMethods(Name, discriminatorString, context,generationContext);
+
+            code.AppendLine($"public static void Encode(XdrWriter stream, {Name} value)");
+            code.OpenBlock();
+            code.AppendLine("value.ValidateCase();");
+            code.AppendLine($"stream.WriteInt((int)value.Discriminator);");
+            code.AppendLine("switch (value)");
+            code.OpenBlock();
+
+            foreach (var caseSpec in context.caseSpec())
+            {
+                foreach (var value in caseSpec.value())
+                {
+                    code.AppendLine($"case {Name}.{UnionCaseToClassName(value.GetText(), enumDiscriminator, generationContext.AllTypes)} case_{value.GetText()}:");
+                    var decl = caseSpec.declaration();
+                    if (decl is not VoidDeclarationContext)
+                    {
+                        var fieldName = getFieldName(decl);
+                        GenerateEncodeStatement(decl, $"case_{value.GetText()}", fieldName, generationContext);
+                    }
+                    code.AppendLine("break;");
+                }
+            }
+
+            if (context.defaultCase() != null)
+            {
+                code.AppendLine("case var defaultCase:");
+                var defaultDecl = context.defaultCase().declaration();
+                if (defaultDecl is not VoidDeclarationContext)
+                {
+                    var fieldName = getFieldName(defaultDecl);
+                    GenerateEncodeStatement(defaultDecl, "defaultCase", fieldName, generationContext);
+                }
+                code.AppendLine("break;");
+            }
+
             code.CloseBlock();
-         
+            code.CloseBlock();
 
+            code.AppendLine($"public static {Name} Decode(XdrReader stream)");
+            code.OpenBlock();
+            code.AppendLine($"var discriminator = ({discriminatorString})stream.ReadInt();");
+            code.AppendLine("switch (discriminator)");
+            code.OpenBlock();
 
+            foreach (var caseSpec in context.caseSpec())
+            {
+                foreach (var value in caseSpec.value())
+                {
+                    if (enumDiscriminator)
+                    {
+                        code.AppendLine($"case {discriminatorType.CSharpType}.{value.GetText()}:");
+                    }
+                    else
+                    {
+                        code.AppendLine($"case {value.GetText()}:");
+                    }
+                    code.AppendLine($"var result_{value.GetText()} = new {Name}.{UnionCaseToClassName(value.GetText(), enumDiscriminator, generationContext.AllTypes)}();");
+                    var decl = caseSpec.declaration();
+                    if (decl is not VoidDeclarationContext)
+                    {
+                        var fieldName = getFieldName(decl);
+                        GenerateDecodeStatement(decl, $"result_{value.GetText()}", generationContext, fieldName);
+                    }
+                    code.AppendLine($"return result_{value.GetText()};");
+                }
+            }
+
+            if (context.defaultCase() != null)
+            {
+                code.AppendLine("default:");
+                code.AppendLine($"var defaultResult = new {Name}.{Name}_Default(discriminator);");
+                var defaultDecl = context.defaultCase().declaration();
+                if (defaultDecl is not VoidDeclarationContext)
+                {
+                    var fieldName = getFieldName(defaultDecl);
+                    GenerateDecodeStatement(defaultDecl, "defaultResult", generationContext, fieldName);
+                }
+                code.AppendLine("return defaultResult;");
+            }
+            else
+            {
+                code.AppendLine("default:");
+                code.AppendLine($"throw new Exception($\"Unknown discriminator for {Name}: {{discriminator}}\");");
+            }
+
+            code.CloseBlock();
+            code.CloseBlock();
+
+            code.CloseBlock();
         }
 
         private void GenerateTypedef(StellarXdrParser.TypedefDefinitionContext context, TypeExtractorVisitor generationContext)
         {
             var declaration = context.declaration();
 
-
             var code = CodeFile;
             code.AppendLine("[System.CodeDom.Compiler.GeneratedCode(\"XdrGenerator\", \"1.0\")]");
             code.AppendLine("[System.Serializable]");
+            WriteProtoContractAttribute(Parent != null);
             code.AppendLine($"public partial class {Name}");
             code.OpenBlock();
 
-            var baseType = new CSharpTypeInfo(declaration,generationContext);
-
-            GenerateProperty(declaration, baseType, "InnerValue");
-
+            var baseType = new CSharpTypeInfo(declaration, generationContext);
+            GenerateProperty(declaration, baseType, "InnerValue", GetNextProtoMemberTag());
 
             // Generate constructors
             code.AppendLine();
@@ -678,20 +781,17 @@ namespace Generator.XDR
             // typedef implicit operators utility
             code.AppendLine($"public static implicit operator {baseType.FullCSharpType}({Name} _{Name.ToLowerInvariant()}) => _{Name.ToLowerInvariant()}.InnerValue;");
             code.AppendLine($"public static implicit operator {Name}({baseType.FullCSharpType} value) => new {Name}(value);");
-            
+
             code.CloseBlock();
 
             // Generate XDR helper class
             code.AppendLine($"public static partial class {Name}Xdr");
             code.OpenBlock();
+
             AddGeneralBase64EncodeBlock(Name, code);
             GenerateTypedefEncodeMethods(Name, declaration, generationContext);
             GenerateTypedefDecodeMethods(Name, declaration, generationContext);
             code.CloseBlock();
-
-        
-
-
         }
 
 

@@ -26,6 +26,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -34,8 +35,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class PeerStats
     {
+        [ProtoMember(1)]
         public NodeID id
         {
             get => _id;
@@ -51,6 +54,7 @@ namespace Stellar {
         #endif
         private NodeID _id;
 
+        [ProtoMember(2)]
         [MaxLength(100)]
         public string versionStr
         {
@@ -69,6 +73,7 @@ namespace Stellar {
         #endif
         private string _versionStr;
 
+        [ProtoMember(3)]
         public uint64 messagesRead
         {
             get => _messagesRead;
@@ -84,6 +89,7 @@ namespace Stellar {
         #endif
         private uint64 _messagesRead;
 
+        [ProtoMember(4)]
         public uint64 messagesWritten
         {
             get => _messagesWritten;
@@ -99,6 +105,7 @@ namespace Stellar {
         #endif
         private uint64 _messagesWritten;
 
+        [ProtoMember(5)]
         public uint64 bytesRead
         {
             get => _bytesRead;
@@ -114,6 +121,7 @@ namespace Stellar {
         #endif
         private uint64 _bytesRead;
 
+        [ProtoMember(6)]
         public uint64 bytesWritten
         {
             get => _bytesWritten;
@@ -129,6 +137,7 @@ namespace Stellar {
         #endif
         private uint64 _bytesWritten;
 
+        [ProtoMember(7)]
         public uint64 secondsConnected
         {
             get => _secondsConnected;
@@ -144,6 +153,7 @@ namespace Stellar {
         #endif
         private uint64 _secondsConnected;
 
+        [ProtoMember(8)]
         public uint64 uniqueFloodBytesRecv
         {
             get => _uniqueFloodBytesRecv;
@@ -159,6 +169,7 @@ namespace Stellar {
         #endif
         private uint64 _uniqueFloodBytesRecv;
 
+        [ProtoMember(9)]
         public uint64 duplicateFloodBytesRecv
         {
             get => _duplicateFloodBytesRecv;
@@ -174,6 +185,7 @@ namespace Stellar {
         #endif
         private uint64 _duplicateFloodBytesRecv;
 
+        [ProtoMember(10)]
         public uint64 uniqueFetchBytesRecv
         {
             get => _uniqueFetchBytesRecv;
@@ -189,6 +201,7 @@ namespace Stellar {
         #endif
         private uint64 _uniqueFetchBytesRecv;
 
+        [ProtoMember(11)]
         public uint64 duplicateFetchBytesRecv
         {
             get => _duplicateFetchBytesRecv;
@@ -204,6 +217,7 @@ namespace Stellar {
         #endif
         private uint64 _duplicateFetchBytesRecv;
 
+        [ProtoMember(12)]
         public uint64 uniqueFloodMessageRecv
         {
             get => _uniqueFloodMessageRecv;
@@ -219,6 +233,7 @@ namespace Stellar {
         #endif
         private uint64 _uniqueFloodMessageRecv;
 
+        [ProtoMember(13)]
         public uint64 duplicateFloodMessageRecv
         {
             get => _duplicateFloodMessageRecv;
@@ -234,6 +249,7 @@ namespace Stellar {
         #endif
         private uint64 _duplicateFloodMessageRecv;
 
+        [ProtoMember(14)]
         public uint64 uniqueFetchMessageRecv
         {
             get => _uniqueFetchMessageRecv;
@@ -249,6 +265,7 @@ namespace Stellar {
         #endif
         private uint64 _uniqueFetchMessageRecv;
 
+        [ProtoMember(15)]
         public uint64 duplicateFetchMessageRecv
         {
             get => _duplicateFetchMessageRecv;

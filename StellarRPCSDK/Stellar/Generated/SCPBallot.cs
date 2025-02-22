@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,8 +20,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCPBallot
     {
+        [ProtoMember(1)]
         public uint32 counter
         {
             get => _counter;
@@ -39,6 +42,7 @@ namespace Stellar {
         /// <summary>
         /// n
         /// </summary>
+        [ProtoMember(2)]
         public Value value
         {
             get => _value;

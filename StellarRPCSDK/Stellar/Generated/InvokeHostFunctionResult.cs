@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(InvokeHostFunctionSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(InvokeHostFunctionMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(InvokeHostFunctionTrapped), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(InvokeHostFunctionResourceLimitExceeded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(InvokeHostFunctionEntryArchived), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(InvokeHostFunctionInsufficientRefundableFee), DataFormat = DataFormat.Default)]
     public abstract partial class InvokeHostFunctionResult
     {
         public abstract InvokeHostFunctionResultCode Discriminator { get; }
@@ -33,9 +41,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionSuccess")]
         public sealed partial class InvokeHostFunctionSuccess : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS;
+            [ProtoMember(1)]
             public Hash success
             {
                 get => _success;
@@ -57,6 +67,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionMalformed")]
         public sealed partial class InvokeHostFunctionMalformed : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED;
@@ -67,6 +78,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionTrapped")]
         public sealed partial class InvokeHostFunctionTrapped : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED;
@@ -77,6 +89,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded")]
         public sealed partial class InvokeHostFunctionResourceLimitExceeded : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
@@ -87,6 +100,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionEntryArchived")]
         public sealed partial class InvokeHostFunctionEntryArchived : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
@@ -97,6 +111,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee")]
         public sealed partial class InvokeHostFunctionInsufficientRefundableFee : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;

@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,11 +25,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ConfigSettingContractEventsV0
     {
         /// <summary>
         /// Maximum size of events that a contract call can emit.
         /// </summary>
+        [ProtoMember(1)]
         public uint32 txMaxContractEventsSizeBytes
         {
             get => _txMaxContractEventsSizeBytes;
@@ -47,6 +50,7 @@ namespace Stellar {
         /// <summary>
         /// Fee for generating 1KB of contract events.
         /// </summary>
+        [ProtoMember(2)]
         public int64 feeContractEvents1KB
         {
             get => _feeContractEvents1KB;

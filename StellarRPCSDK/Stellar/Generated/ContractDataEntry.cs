@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ContractDataEntry
     {
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private ExtensionPoint _ext;
 
+        [ProtoMember(2)]
         public SCAddress contract
         {
             get => _contract;
@@ -54,6 +58,7 @@ namespace Stellar {
         #endif
         private SCAddress _contract;
 
+        [ProtoMember(3)]
         public SCVal key
         {
             get => _key;
@@ -69,6 +74,7 @@ namespace Stellar {
         #endif
         private SCVal _key;
 
+        [ProtoMember(4)]
         public ContractDataDurability durability
         {
             get => _durability;
@@ -84,6 +90,7 @@ namespace Stellar {
         #endif
         private ContractDataDurability _durability;
 
+        [ProtoMember(5)]
         public SCVal val
         {
             get => _val;

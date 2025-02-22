@@ -23,6 +23,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -34,6 +35,7 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public enum ConfigSettingID
     {
         CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES = 0,

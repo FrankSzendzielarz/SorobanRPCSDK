@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,11 +28,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ConfigSettingContractBandwidthV0
     {
         /// <summary>
         /// Maximum sum of all transaction sizes in the ledger in bytes
         /// </summary>
+        [ProtoMember(1)]
         public uint32 ledgerMaxTxsSizeBytes
         {
             get => _ledgerMaxTxsSizeBytes;
@@ -50,6 +53,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum size in bytes for a transaction
         /// </summary>
+        [ProtoMember(2)]
         public uint32 txMaxSizeBytes
         {
             get => _txMaxSizeBytes;
@@ -68,6 +72,7 @@ namespace Stellar {
         /// <summary>
         /// Fee for 1 KB of transaction size
         /// </summary>
+        [ProtoMember(3)]
         public int64 feeTxSize1KB
         {
             get => _feeTxSize1KB;

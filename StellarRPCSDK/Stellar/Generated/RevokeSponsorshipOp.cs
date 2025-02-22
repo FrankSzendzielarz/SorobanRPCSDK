@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(RevokeSponsorshipLedgerEntry), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(RevokeSponsorshipSigner), DataFormat = DataFormat.Default)]
     public abstract partial class RevokeSponsorshipOp
     {
         public abstract RevokeSponsorshipType Discriminator { get; }
@@ -34,8 +38,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "RevokeSponsorshipOp.signerStruct")]
         public partial class signerStruct
         {
+            [ProtoMember(1)]
             public AccountID accountID
             {
                 get => _accountID;
@@ -51,6 +57,7 @@ namespace Stellar {
             #endif
             private AccountID _accountID;
 
+            [ProtoMember(2)]
             public SignerKey signerKey
             {
                 get => _signerKey;
@@ -103,9 +110,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "RevokeSponsorshipOp.RevokeSponsorshipLedgerEntry")]
         public sealed partial class RevokeSponsorshipLedgerEntry : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
+            [ProtoMember(1)]
             public LedgerKey ledgerKey
             {
                 get => _ledgerKey;
@@ -124,9 +133,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "RevokeSponsorshipOp.RevokeSponsorshipSigner")]
         public sealed partial class RevokeSponsorshipSigner : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;
+            [ProtoMember(2)]
             public signerStruct signer
             {
                 get => _signer;

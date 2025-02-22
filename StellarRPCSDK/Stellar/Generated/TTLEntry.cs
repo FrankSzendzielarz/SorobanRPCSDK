@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,11 +20,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TTLEntry
     {
         /// <summary>
         /// Hash of the LedgerKey that is associated with this TTLEntry
         /// </summary>
+        [ProtoMember(1)]
         public Hash keyHash
         {
             get => _keyHash;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private Hash _keyHash;
 
+        [ProtoMember(2)]
         public uint32 liveUntilLedgerSeq
         {
             get => _liveUntilLedgerSeq;

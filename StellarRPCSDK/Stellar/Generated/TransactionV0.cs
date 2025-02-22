@@ -21,6 +21,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -32,8 +33,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionV0
     {
+        [ProtoMember(1)]
         public uint256 sourceAccountEd25519
         {
             get => _sourceAccountEd25519;
@@ -49,6 +52,7 @@ namespace Stellar {
         #endif
         private uint256 _sourceAccountEd25519;
 
+        [ProtoMember(2)]
         public uint32 fee
         {
             get => _fee;
@@ -64,6 +68,7 @@ namespace Stellar {
         #endif
         private uint32 _fee;
 
+        [ProtoMember(3)]
         public SequenceNumber seqNum
         {
             get => _seqNum;
@@ -79,6 +84,7 @@ namespace Stellar {
         #endif
         private SequenceNumber _seqNum;
 
+        [ProtoMember(4)]
         public TimeBounds timeBounds
         {
             get => _timeBounds;
@@ -94,6 +100,7 @@ namespace Stellar {
         #endif
         private TimeBounds _timeBounds;
 
+        [ProtoMember(5)]
         public Memo memo
         {
             get => _memo;
@@ -109,6 +116,7 @@ namespace Stellar {
         #endif
         private Memo _memo;
 
+        [ProtoMember(6)]
         [MaxLength(100)]
         public Operation[] operations
         {
@@ -127,6 +135,7 @@ namespace Stellar {
         #endif
         private Operation[] _operations;
 
+        [ProtoMember(7)]
         public extUnion ext
         {
             get => _ext;
@@ -153,6 +162,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "TransactionV0.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -161,6 +172,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "TransactionV0.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

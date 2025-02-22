@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionV0Envelope
     {
+        [ProtoMember(1)]
         public TransactionV0 tx
         {
             get => _tx;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private TransactionV0 _tx;
 
+        [ProtoMember(2)]
         [MaxLength(20)]
         public DecoratedSignature[] signatures
         {

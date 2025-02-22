@@ -21,6 +21,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -29,11 +30,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class BucketMetadata
     {
         /// <summary>
         /// Indicates the protocol version used to create / merge this bucket.
         /// </summary>
+        [ProtoMember(1)]
         public uint32 ledgerVersion
         {
             get => _ledgerVersion;
@@ -52,6 +55,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(2)]
         public extUnion ext
         {
             get => _ext;
@@ -76,6 +80,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "BucketMetadata.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -84,6 +91,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "BucketMetadata.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -91,9 +99,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "BucketMetadata.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public BucketListType bucketListType
                 {
                     get => _bucketListType;

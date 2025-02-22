@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -28,6 +29,11 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(case_2), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(case_3), DataFormat = DataFormat.Default)]
     public abstract partial class TransactionMeta
     {
         public abstract int Discriminator { get; }
@@ -36,9 +42,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "TransactionMeta.case_0")]
         public sealed partial class case_0 : TransactionMeta
         {
             public override int Discriminator => 0;
+            [ProtoMember(1)]
             public OperationMeta[] operations
             {
                 get => _operations;
@@ -57,9 +65,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "TransactionMeta.case_1")]
         public sealed partial class case_1 : TransactionMeta
         {
             public override int Discriminator => 1;
+            [ProtoMember(2)]
             public TransactionMetaV1 v1
             {
                 get => _v1;
@@ -78,9 +88,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "TransactionMeta.case_2")]
         public sealed partial class case_2 : TransactionMeta
         {
             public override int Discriminator => 2;
+            [ProtoMember(3)]
             public TransactionMetaV2 v2
             {
                 get => _v2;
@@ -99,9 +111,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "TransactionMeta.case_3")]
         public sealed partial class case_3 : TransactionMeta
         {
             public override int Discriminator => 3;
+            [ProtoMember(4)]
             public TransactionMetaV3 v3
             {
                 get => _v3;

@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,6 +20,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ClaimableBalanceIdTypeV0), DataFormat = DataFormat.Default)]
     public abstract partial class ClaimableBalanceID
     {
         public abstract ClaimableBalanceIDType Discriminator { get; }
@@ -27,9 +30,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ClaimableBalanceID.ClaimableBalanceIdTypeV0")]
         public sealed partial class ClaimableBalanceIdTypeV0 : ClaimableBalanceID
         {
             public override ClaimableBalanceIDType Discriminator => ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0;
+            [ProtoMember(1)]
             public Hash v0
             {
                 get => _v0;

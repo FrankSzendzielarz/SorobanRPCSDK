@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(LedgerEntryCreated), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(LedgerEntryUpdated), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(LedgerEntryRemoved), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(LedgerEntryState), DataFormat = DataFormat.Default)]
     public abstract partial class LedgerEntryChange
     {
         public abstract LedgerEntryChangeType Discriminator { get; }
@@ -33,9 +39,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryCreated")]
         public sealed partial class LedgerEntryCreated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
+            [ProtoMember(1)]
             public LedgerEntry created
             {
                 get => _created;
@@ -54,9 +62,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryUpdated")]
         public sealed partial class LedgerEntryUpdated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
+            [ProtoMember(2)]
             public LedgerEntry updated
             {
                 get => _updated;
@@ -75,9 +85,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryRemoved")]
         public sealed partial class LedgerEntryRemoved : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
+            [ProtoMember(3)]
             public LedgerKey removed
             {
                 get => _removed;
@@ -96,9 +108,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryState")]
         public sealed partial class LedgerEntryState : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;
+            [ProtoMember(4)]
             public LedgerEntry state
             {
                 get => _state;

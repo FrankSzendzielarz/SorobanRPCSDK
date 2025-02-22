@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SorobanCredentialsSourceAccount), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SorobanCredentialsAddress), DataFormat = DataFormat.Default)]
     public abstract partial class SorobanCredentials
     {
         public abstract SorobanCredentialsType Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SorobanCredentials.SorobanCredentialsSourceAccount")]
         public sealed partial class SorobanCredentialsSourceAccount : SorobanCredentials
         {
             public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
@@ -36,9 +41,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SorobanCredentials.SorobanCredentialsAddress")]
         public sealed partial class SorobanCredentialsAddress : SorobanCredentials
         {
             public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS;
+            [ProtoMember(1)]
             public SorobanAddressCredentials address
             {
                 get => _address;

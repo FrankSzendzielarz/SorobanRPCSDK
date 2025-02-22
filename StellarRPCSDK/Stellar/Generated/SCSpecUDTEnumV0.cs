@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCSpecUDTEnumV0
     {
+        [ProtoMember(1)]
         [MaxLength(1024)]
         public string doc
         {
@@ -41,6 +44,7 @@ namespace Stellar {
         #endif
         private string _doc;
 
+        [ProtoMember(2)]
         [MaxLength(80)]
         public string lib
         {
@@ -59,6 +63,7 @@ namespace Stellar {
         #endif
         private string _lib;
 
+        [ProtoMember(3)]
         [MaxLength(60)]
         public string name
         {
@@ -77,6 +82,7 @@ namespace Stellar {
         #endif
         private string _name;
 
+        [ProtoMember(4)]
         [MaxLength(50)]
         public SCSpecUDTEnumCaseV0[] cases
         {

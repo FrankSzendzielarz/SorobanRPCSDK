@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ColdArchiveHashEntry
     {
+        [ProtoMember(1)]
         public uint32 index
         {
             get => _index;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private uint32 _index;
 
+        [ProtoMember(2)]
         public uint32 level
         {
             get => _level;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private uint32 _level;
 
+        [ProtoMember(3)]
         public Hash hash
         {
             get => _hash;

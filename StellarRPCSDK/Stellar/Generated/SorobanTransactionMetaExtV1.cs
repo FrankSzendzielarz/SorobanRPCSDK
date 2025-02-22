@@ -39,6 +39,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -47,8 +48,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SorobanTransactionMetaExtV1
     {
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -67,6 +70,7 @@ namespace Stellar {
         /// <summary>
         /// is charged regardless of the success of the transaction.
         /// </summary>
+        [ProtoMember(2)]
         public int64 totalNonRefundableResourceFeeCharged
         {
             get => _totalNonRefundableResourceFeeCharged;
@@ -85,6 +89,7 @@ namespace Stellar {
         /// <summary>
         /// transactions, this will be `0` for failed transactions.
         /// </summary>
+        [ProtoMember(3)]
         public int64 totalRefundableResourceFeeCharged
         {
             get => _totalRefundableResourceFeeCharged;
@@ -103,6 +108,7 @@ namespace Stellar {
         /// <summary>
         /// This is a part of `totalNonRefundableResourceFeeCharged`.
         /// </summary>
+        [ProtoMember(4)]
         public int64 rentFeeCharged
         {
             get => _rentFeeCharged;

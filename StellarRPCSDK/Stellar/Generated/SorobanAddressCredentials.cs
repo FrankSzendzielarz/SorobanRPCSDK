@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SorobanAddressCredentials
     {
+        [ProtoMember(1)]
         public SCAddress address
         {
             get => _address;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private SCAddress _address;
 
+        [ProtoMember(2)]
         public int64 nonce
         {
             get => _nonce;
@@ -53,6 +57,7 @@ namespace Stellar {
         #endif
         private int64 _nonce;
 
+        [ProtoMember(3)]
         public uint32 signatureExpirationLedger
         {
             get => _signatureExpirationLedger;
@@ -68,6 +73,7 @@ namespace Stellar {
         #endif
         private uint32 _signatureExpirationLedger;
 
+        [ProtoMember(4)]
         public SCVal signature
         {
             get => _signature;

@@ -24,6 +24,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -32,6 +33,20 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ManageBuyOfferSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ManageBuyOfferMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ManageBuyOfferSellNoTrust), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ManageBuyOfferBuyNoTrust), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ManageBuyOfferSellNotAuthorized), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(ManageBuyOfferBuyNotAuthorized), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(ManageBuyOfferLineFull), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(ManageBuyOfferUnderfunded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(108, typeof(ManageBuyOfferCrossSelf), DataFormat = DataFormat.Default)]
+    [ProtoInclude(109, typeof(ManageBuyOfferSellNoIssuer), DataFormat = DataFormat.Default)]
+    [ProtoInclude(110, typeof(ManageBuyOfferBuyNoIssuer), DataFormat = DataFormat.Default)]
+    [ProtoInclude(111, typeof(ManageBuyOfferNotFound), DataFormat = DataFormat.Default)]
+    [ProtoInclude(112, typeof(ManageBuyOfferLowReserve), DataFormat = DataFormat.Default)]
     public abstract partial class ManageBuyOfferResult
     {
         public abstract ManageBuyOfferResultCode Discriminator { get; }
@@ -40,9 +55,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferSuccess")]
         public sealed partial class ManageBuyOfferSuccess : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SUCCESS;
+            [ProtoMember(1)]
             public ManageOfferSuccessResult success
             {
                 get => _success;
@@ -61,6 +78,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferMalformed")]
         public sealed partial class ManageBuyOfferMalformed : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_MALFORMED;
@@ -68,6 +86,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferSellNoTrust")]
         public sealed partial class ManageBuyOfferSellNoTrust : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NO_TRUST;
@@ -75,6 +94,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferBuyNoTrust")]
         public sealed partial class ManageBuyOfferBuyNoTrust : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NO_TRUST;
@@ -82,6 +102,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferSellNotAuthorized")]
         public sealed partial class ManageBuyOfferSellNotAuthorized : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NOT_AUTHORIZED;
@@ -89,6 +110,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferBuyNotAuthorized")]
         public sealed partial class ManageBuyOfferBuyNotAuthorized : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NOT_AUTHORIZED;
@@ -96,6 +118,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferLineFull")]
         public sealed partial class ManageBuyOfferLineFull : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_LINE_FULL;
@@ -103,6 +126,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferUnderfunded")]
         public sealed partial class ManageBuyOfferUnderfunded : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_UNDERFUNDED;
@@ -110,6 +134,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferCrossSelf")]
         public sealed partial class ManageBuyOfferCrossSelf : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_CROSS_SELF;
@@ -117,6 +142,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferSellNoIssuer")]
         public sealed partial class ManageBuyOfferSellNoIssuer : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_SELL_NO_ISSUER;
@@ -124,6 +150,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferBuyNoIssuer")]
         public sealed partial class ManageBuyOfferBuyNoIssuer : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_BUY_NO_ISSUER;
@@ -131,6 +158,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferNotFound")]
         public sealed partial class ManageBuyOfferNotFound : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_NOT_FOUND;
@@ -138,6 +166,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageBuyOfferResult.ManageBuyOfferLowReserve")]
         public sealed partial class ManageBuyOfferLowReserve : ManageBuyOfferResult
         {
             public override ManageBuyOfferResultCode Discriminator => ManageBuyOfferResultCode.MANAGE_BUY_OFFER_LOW_RESERVE;

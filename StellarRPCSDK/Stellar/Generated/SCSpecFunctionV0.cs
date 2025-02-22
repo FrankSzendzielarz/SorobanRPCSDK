@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCSpecFunctionV0
     {
+        [ProtoMember(1)]
         [MaxLength(1024)]
         public string doc
         {
@@ -41,6 +44,7 @@ namespace Stellar {
         #endif
         private string _doc;
 
+        [ProtoMember(2)]
         public SCSymbol name
         {
             get => _name;
@@ -56,6 +60,7 @@ namespace Stellar {
         #endif
         private SCSymbol _name;
 
+        [ProtoMember(3)]
         [MaxLength(10)]
         public SCSpecFunctionInputV0[] inputs
         {
@@ -74,6 +79,7 @@ namespace Stellar {
         #endif
         private SCSpecFunctionInputV0[] _inputs;
 
+        [ProtoMember(4)]
         [MaxLength(1)]
         public SCSpecTypeDef[] outputs
         {

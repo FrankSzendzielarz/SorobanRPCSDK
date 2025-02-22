@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TimeSlicedSurveyRequestMessage
     {
+        [ProtoMember(1)]
         public SurveyRequestMessage request
         {
             get => _request;
@@ -38,6 +41,7 @@ namespace Stellar {
         #endif
         private SurveyRequestMessage _request;
 
+        [ProtoMember(2)]
         public uint32 nonce
         {
             get => _nonce;
@@ -53,6 +57,7 @@ namespace Stellar {
         #endif
         private uint32 _nonce;
 
+        [ProtoMember(3)]
         public uint32 inboundPeersIndex
         {
             get => _inboundPeersIndex;
@@ -68,6 +73,7 @@ namespace Stellar {
         #endif
         private uint32 _inboundPeersIndex;
 
+        [ProtoMember(4)]
         public uint32 outboundPeersIndex
         {
             get => _outboundPeersIndex;

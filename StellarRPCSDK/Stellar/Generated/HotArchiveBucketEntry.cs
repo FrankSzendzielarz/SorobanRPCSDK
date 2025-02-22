@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(HotArchiveArchived), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(HotArchiveLive), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(HotArchiveDeleted), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(HotArchiveMetaentry), DataFormat = DataFormat.Default)]
     public abstract partial class HotArchiveBucketEntry
     {
         public abstract HotArchiveBucketEntryType Discriminator { get; }
@@ -33,9 +39,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveArchived")]
         public sealed partial class HotArchiveArchived : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_ARCHIVED;
+            [ProtoMember(1)]
             public LedgerEntry archivedEntry
             {
                 get => _archivedEntry;
@@ -54,9 +62,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveLive")]
         public sealed partial class HotArchiveLive : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_LIVE;
+            [ProtoMember(2)]
             public LedgerKey key
             {
                 get => _key;
@@ -75,9 +85,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveDeleted")]
         public sealed partial class HotArchiveDeleted : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_DELETED;
+            [ProtoMember(3)]
             public LedgerKey key
             {
                 get => _key;
@@ -96,9 +108,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveMetaentry")]
         public sealed partial class HotArchiveMetaentry : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_METAENTRY;
+            [ProtoMember(4)]
             public BucketMetadata metaEntry
             {
                 get => _metaEntry;

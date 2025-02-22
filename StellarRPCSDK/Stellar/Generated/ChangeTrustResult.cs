@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -28,6 +29,16 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ChangeTrustSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ChangeTrustMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ChangeTrustNoIssuer), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ChangeTrustInvalidLimit), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ChangeTrustLowReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(ChangeTrustSelfNotAllowed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(ChangeTrustTrustLineMissing), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(ChangeTrustCannotDelete), DataFormat = DataFormat.Default)]
+    [ProtoInclude(108, typeof(ChangeTrustNotAuthMaintainLiabilities), DataFormat = DataFormat.Default)]
     public abstract partial class ChangeTrustResult
     {
         public abstract ChangeTrustResultCode Discriminator { get; }
@@ -36,6 +47,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustSuccess")]
         public sealed partial class ChangeTrustSuccess : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SUCCESS;
@@ -43,6 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustMalformed")]
         public sealed partial class ChangeTrustMalformed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_MALFORMED;
@@ -50,6 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustNoIssuer")]
         public sealed partial class ChangeTrustNoIssuer : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER;
@@ -57,6 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustInvalidLimit")]
         public sealed partial class ChangeTrustInvalidLimit : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT;
@@ -64,6 +79,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustLowReserve")]
         public sealed partial class ChangeTrustLowReserve : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE;
@@ -71,6 +87,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustSelfNotAllowed")]
         public sealed partial class ChangeTrustSelfNotAllowed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED;
@@ -78,6 +95,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustTrustLineMissing")]
         public sealed partial class ChangeTrustTrustLineMissing : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING;
@@ -85,6 +103,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustCannotDelete")]
         public sealed partial class ChangeTrustCannotDelete : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE;
@@ -92,6 +111,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities")]
         public sealed partial class ChangeTrustNotAuthMaintainLiabilities : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;

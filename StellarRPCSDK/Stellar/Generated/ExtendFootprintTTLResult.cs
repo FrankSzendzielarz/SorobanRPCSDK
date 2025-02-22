@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ExtendFootprintTtlSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ExtendFootprintTtlMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ExtendFootprintTtlResourceLimitExceeded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ExtendFootprintTtlInsufficientRefundableFee), DataFormat = DataFormat.Default)]
     public abstract partial class ExtendFootprintTTLResult
     {
         public abstract ExtendFootprintTTLResultCode Discriminator { get; }
@@ -31,6 +37,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlSuccess")]
         public sealed partial class ExtendFootprintTtlSuccess : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
@@ -38,6 +45,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlMalformed")]
         public sealed partial class ExtendFootprintTtlMalformed : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
@@ -45,6 +53,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded")]
         public sealed partial class ExtendFootprintTtlResourceLimitExceeded : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
@@ -52,6 +61,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlInsufficientRefundableFee")]
         public sealed partial class ExtendFootprintTtlInsufficientRefundableFee : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;

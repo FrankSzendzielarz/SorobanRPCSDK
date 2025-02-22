@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,6 +21,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_1), DataFormat = DataFormat.Default)]
     public abstract partial class GeneralizedTransactionSet
     {
         public abstract int Discriminator { get; }
@@ -31,9 +34,11 @@ namespace Stellar {
         /// We consider the legacy TransactionSet to be v0.
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "GeneralizedTransactionSet.case_1")]
         public sealed partial class case_1 : GeneralizedTransactionSet
         {
             public override int Discriminator => 1;
+            [ProtoMember(1)]
             public TransactionSetV1 v1TxSet
             {
                 get => _v1TxSet;

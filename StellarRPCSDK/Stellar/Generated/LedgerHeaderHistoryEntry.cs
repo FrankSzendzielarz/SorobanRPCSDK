@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LedgerHeaderHistoryEntry
     {
+        [ProtoMember(1)]
         public Hash hash
         {
             get => _hash;
@@ -44,6 +47,7 @@ namespace Stellar {
         #endif
         private Hash _hash;
 
+        [ProtoMember(2)]
         public LedgerHeader header
         {
             get => _header;
@@ -62,6 +66,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(3)]
         public extUnion ext
         {
             get => _ext;
@@ -86,6 +91,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "LedgerHeaderHistoryEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -94,6 +101,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "LedgerHeaderHistoryEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

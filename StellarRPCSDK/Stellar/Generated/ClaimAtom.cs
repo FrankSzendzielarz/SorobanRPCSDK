@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ClaimAtomTypeV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ClaimAtomTypeOrderBook), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ClaimAtomTypeLiquidityPool), DataFormat = DataFormat.Default)]
     public abstract partial class ClaimAtom
     {
         public abstract ClaimAtomType Discriminator { get; }
@@ -31,9 +36,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeV0")]
         public sealed partial class ClaimAtomTypeV0 : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_V0;
+            [ProtoMember(1)]
             public ClaimOfferAtomV0 v0
             {
                 get => _v0;
@@ -52,9 +59,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeOrderBook")]
         public sealed partial class ClaimAtomTypeOrderBook : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK;
+            [ProtoMember(2)]
             public ClaimOfferAtom orderBook
             {
                 get => _orderBook;
@@ -73,9 +82,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeLiquidityPool")]
         public sealed partial class ClaimAtomTypeLiquidityPool : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL;
+            [ProtoMember(3)]
             public ClaimLiquidityAtom liquidityPool
             {
                 get => _liquidityPool;

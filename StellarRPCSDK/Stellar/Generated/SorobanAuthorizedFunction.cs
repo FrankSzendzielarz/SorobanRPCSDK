@@ -23,6 +23,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -31,6 +32,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SorobanAuthorizedFunctionTypeContractFn), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SorobanAuthorizedFunctionTypeCreateContractHostFn), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(SorobanAuthorizedFunctionTypeCreateContractV2HostFn), DataFormat = DataFormat.Default)]
     public abstract partial class SorobanAuthorizedFunction
     {
         public abstract SorobanAuthorizedFunctionType Discriminator { get; }
@@ -39,9 +44,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn")]
         public sealed partial class SorobanAuthorizedFunctionTypeContractFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CONTRACT_FN;
+            [ProtoMember(1)]
             public InvokeContractArgs contractFn
             {
                 get => _contractFn;
@@ -63,9 +70,11 @@ namespace Stellar {
         /// (protocol 22+).
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractHostFn")]
         public sealed partial class SorobanAuthorizedFunctionTypeCreateContractHostFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_HOST_FN;
+            [ProtoMember(2)]
             public CreateContractArgs createContractHostFn
             {
                 get => _createContractHostFn;
@@ -87,9 +96,11 @@ namespace Stellar {
         /// contract constructor arguments.
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeCreateContractV2HostFn")]
         public sealed partial class SorobanAuthorizedFunctionTypeCreateContractV2HostFn : SorobanAuthorizedFunction
         {
             public override SorobanAuthorizedFunctionType Discriminator => SorobanAuthorizedFunctionType.SOROBAN_AUTHORIZED_FUNCTION_TYPE_CREATE_CONTRACT_V2_HOST_FN;
+            [ProtoMember(3)]
             public CreateContractArgsV2 createContractV2HostFn
             {
                 get => _createContractV2HostFn;

@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,6 +27,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(EnvelopeTypeTxV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(EnvelopeTypeTx), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(EnvelopeTypeTxFeeBump), DataFormat = DataFormat.Default)]
     public abstract partial class TransactionEnvelope
     {
         public abstract EnvelopeType Discriminator { get; }
@@ -34,9 +39,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTxV0")]
         public sealed partial class EnvelopeTypeTxV0 : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
+            [ProtoMember(1)]
             public TransactionV0Envelope v0
             {
                 get => _v0;
@@ -55,9 +62,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTx")]
         public sealed partial class EnvelopeTypeTx : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
+            [ProtoMember(2)]
             public TransactionV1Envelope v1
             {
                 get => _v1;
@@ -76,9 +85,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTxFeeBump")]
         public sealed partial class EnvelopeTypeTxFeeBump : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;
+            [ProtoMember(3)]
             public FeeBumpTransactionEnvelope feeBump
             {
                 get => _feeBump;

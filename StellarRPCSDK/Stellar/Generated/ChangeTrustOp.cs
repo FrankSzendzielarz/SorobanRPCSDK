@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ChangeTrustOp
     {
+        [ProtoMember(1)]
         public ChangeTrustAsset line
         {
             get => _line;
@@ -41,6 +44,7 @@ namespace Stellar {
         /// <summary>
         /// if limit is set to 0, deletes the trust line
         /// </summary>
+        [ProtoMember(2)]
         public int64 limit
         {
             get => _limit;

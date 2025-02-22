@@ -34,6 +34,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -42,8 +43,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AccountEntry
     {
+        [ProtoMember(1)]
         public AccountID accountID
         {
             get => _accountID;
@@ -62,6 +65,7 @@ namespace Stellar {
         /// <summary>
         /// master public key for this account
         /// </summary>
+        [ProtoMember(2)]
         public int64 balance
         {
             get => _balance;
@@ -80,6 +84,7 @@ namespace Stellar {
         /// <summary>
         /// in stroops
         /// </summary>
+        [ProtoMember(3)]
         public SequenceNumber seqNum
         {
             get => _seqNum;
@@ -98,6 +103,7 @@ namespace Stellar {
         /// <summary>
         /// last sequence number used for this account
         /// </summary>
+        [ProtoMember(4)]
         public uint32 numSubEntries
         {
             get => _numSubEntries;
@@ -116,6 +122,7 @@ namespace Stellar {
         /// <summary>
         /// drives the reserve
         /// </summary>
+        [ProtoMember(5)]
         public AccountID inflationDest
         {
             get => _inflationDest;
@@ -134,6 +141,7 @@ namespace Stellar {
         /// <summary>
         /// Account to vote for during inflation
         /// </summary>
+        [ProtoMember(6)]
         public uint32 flags
         {
             get => _flags;
@@ -149,6 +157,7 @@ namespace Stellar {
         #endif
         private uint32 _flags;
 
+        [ProtoMember(7)]
         public string32 homeDomain
         {
             get => _homeDomain;
@@ -167,6 +176,7 @@ namespace Stellar {
         /// <summary>
         /// thresholds stores unsigned bytes: [weight of master|low|medium|high]
         /// </summary>
+        [ProtoMember(8)]
         public Thresholds thresholds
         {
             get => _thresholds;
@@ -182,6 +192,7 @@ namespace Stellar {
         #endif
         private Thresholds _thresholds;
 
+        [ProtoMember(9)]
         [MaxLength(20)]
         public Signer[] signers
         {
@@ -203,6 +214,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(10)]
         public extUnion ext
         {
             get => _ext;
@@ -229,6 +241,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "AccountEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -237,6 +252,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "AccountEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -244,9 +260,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "AccountEntry.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public AccountEntryExtensionV1 v1
                 {
                     get => _v1;

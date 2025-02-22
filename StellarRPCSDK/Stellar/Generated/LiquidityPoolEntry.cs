@@ -26,6 +26,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -34,8 +35,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LiquidityPoolEntry
     {
+        [ProtoMember(1)]
         public PoolID liquidityPoolID
         {
             get => _liquidityPoolID;
@@ -51,6 +54,7 @@ namespace Stellar {
         #endif
         private PoolID _liquidityPoolID;
 
+        [ProtoMember(2)]
         public bodyUnion body
         {
             get => _body;
@@ -75,6 +79,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion")]
+        [ProtoInclude(100, typeof(LiquidityPoolConstantProduct), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
         {
             public abstract LiquidityPoolType Discriminator { get; }
@@ -84,8 +90,10 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion.constantProductStruct")]
             public partial class constantProductStruct
             {
+                [ProtoMember(1)]
                 public LiquidityPoolConstantProductParameters _params
                 {
                     get => __params;
@@ -101,6 +109,7 @@ namespace Stellar {
                 #endif
                 private LiquidityPoolConstantProductParameters __params;
 
+                [ProtoMember(2)]
                 public int64 reserveA
                 {
                     get => _reserveA;
@@ -119,6 +128,7 @@ namespace Stellar {
                 /// <summary>
                 /// amount of A in the pool
                 /// </summary>
+                [ProtoMember(3)]
                 public int64 reserveB
                 {
                     get => _reserveB;
@@ -137,6 +147,7 @@ namespace Stellar {
                 /// <summary>
                 /// amount of B in the pool
                 /// </summary>
+                [ProtoMember(4)]
                 public int64 totalPoolShares
                 {
                     get => _totalPoolShares;
@@ -155,6 +166,7 @@ namespace Stellar {
                 /// <summary>
                 /// total number of pool shares issued
                 /// </summary>
+                [ProtoMember(5)]
                 public int64 poolSharesTrustLineCount
                 {
                     get => _poolSharesTrustLineCount;
@@ -213,9 +225,11 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
+            [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct")]
             public sealed partial class LiquidityPoolConstantProduct : bodyUnion
             {
                 public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;
+                [ProtoMember(1)]
                 public constantProductStruct constantProduct
                 {
                     get => _constantProduct;

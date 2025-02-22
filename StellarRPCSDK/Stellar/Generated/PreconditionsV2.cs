@@ -38,6 +38,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -46,8 +47,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class PreconditionsV2
     {
+        [ProtoMember(1)]
         public TimeBounds timeBounds
         {
             get => _timeBounds;
@@ -66,6 +69,7 @@ namespace Stellar {
         /// <summary>
         /// only minLedger is checked)
         /// </summary>
+        [ProtoMember(2)]
         public LedgerBounds ledgerBounds
         {
             get => _ledgerBounds;
@@ -84,6 +88,7 @@ namespace Stellar {
         /// <summary>
         /// valid if tx.seqNum is too high to ensure replay protection.
         /// </summary>
+        [ProtoMember(3)]
         public SequenceNumber minSeqNum
         {
             get => _minSeqNum;
@@ -102,6 +107,7 @@ namespace Stellar {
         /// <summary>
         /// be at least minSeqAge greater than sourceAccount's seqTime.
         /// </summary>
+        [ProtoMember(4)]
         public Duration minSeqAge
         {
             get => _minSeqAge;
@@ -120,6 +126,7 @@ namespace Stellar {
         /// <summary>
         /// seqLedger.
         /// </summary>
+        [ProtoMember(5)]
         public uint32 minSeqLedgerGap
         {
             get => _minSeqLedgerGap;
@@ -138,6 +145,7 @@ namespace Stellar {
         /// <summary>
         /// operations.
         /// </summary>
+        [ProtoMember(6)]
         [MaxLength(2)]
         public SignerKey[] extraSigners
         {

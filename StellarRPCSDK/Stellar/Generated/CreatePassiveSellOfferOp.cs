@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,8 +22,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class CreatePassiveSellOfferOp
     {
+        [ProtoMember(1)]
         public Asset selling
         {
             get => _selling;
@@ -41,6 +44,7 @@ namespace Stellar {
         /// <summary>
         /// A
         /// </summary>
+        [ProtoMember(2)]
         public Asset buying
         {
             get => _buying;
@@ -59,6 +63,7 @@ namespace Stellar {
         /// <summary>
         /// B
         /// </summary>
+        [ProtoMember(3)]
         public int64 amount
         {
             get => _amount;
@@ -77,6 +82,7 @@ namespace Stellar {
         /// <summary>
         /// amount taker gets
         /// </summary>
+        [ProtoMember(4)]
         public Price price
         {
             get => _price;

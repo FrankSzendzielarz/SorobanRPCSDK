@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(AssetTypeCreditAlphanum4), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(AssetTypeCreditAlphanum12), DataFormat = DataFormat.Default)]
     public abstract partial class AssetCode
     {
         public abstract AssetType Discriminator { get; }
@@ -32,9 +36,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "AssetCode.AssetTypeCreditAlphanum4")]
         public sealed partial class AssetTypeCreditAlphanum4 : AssetCode
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
+            [ProtoMember(1)]
             public AssetCode4 assetCode4
             {
                 get => _assetCode4;
@@ -53,9 +59,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AssetCode.AssetTypeCreditAlphanum12")]
         public sealed partial class AssetTypeCreditAlphanum12 : AssetCode
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
+            [ProtoMember(2)]
             public AssetCode12 assetCode12
             {
                 get => _assetCode12;

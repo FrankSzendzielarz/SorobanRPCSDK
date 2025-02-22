@@ -21,6 +21,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -29,8 +30,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AccountEntryExtensionV2
     {
+        [ProtoMember(1)]
         public uint32 numSponsored
         {
             get => _numSponsored;
@@ -46,6 +49,7 @@ namespace Stellar {
         #endif
         private uint32 _numSponsored;
 
+        [ProtoMember(2)]
         public uint32 numSponsoring
         {
             get => _numSponsoring;
@@ -61,6 +65,7 @@ namespace Stellar {
         #endif
         private uint32 _numSponsoring;
 
+        [ProtoMember(3)]
         [MaxLength(20)]
         public SponsorshipDescriptor[] signerSponsoringIDs
         {
@@ -79,6 +84,7 @@ namespace Stellar {
         #endif
         private SponsorshipDescriptor[] _signerSponsoringIDs;
 
+        [ProtoMember(4)]
         public extUnion ext
         {
             get => _ext;
@@ -105,6 +111,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "AccountEntryExtensionV2.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_3), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -113,6 +122,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "AccountEntryExtensionV2.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -120,9 +130,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "AccountEntryExtensionV2.extUnion.case_3")]
             public sealed partial class case_3 : extUnion
             {
                 public override int Discriminator => 3;
+                [ProtoMember(1)]
                 public AccountEntryExtensionV3 v3
                 {
                     get => _v3;

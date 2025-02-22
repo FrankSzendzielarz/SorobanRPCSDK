@@ -25,6 +25,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -33,6 +34,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SignerKeyTypeEd25519), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SignerKeyTypePreAuthTx), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(SignerKeyTypeHashX), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(SignerKeyTypeEd25519SignedPayload), DataFormat = DataFormat.Default)]
     public abstract partial class SignerKey
     {
         public abstract SignerKeyType Discriminator { get; }
@@ -42,11 +48,13 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "SignerKey.ed25519SignedPayloadStruct")]
         public partial class ed25519SignedPayloadStruct
         {
             /// <summary>
             /// Public key that must sign the payload.
             /// </summary>
+            [ProtoMember(1)]
             public uint256 ed25519
             {
                 get => _ed25519;
@@ -65,6 +73,7 @@ namespace Stellar {
             /// <summary>
             /// Payload to be raw signed by ed25519.
             /// </summary>
+            [ProtoMember(2)]
             [MaxLength(64)]
             public byte[] payload
             {
@@ -122,9 +131,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "SignerKey.SignerKeyTypeEd25519")]
         public sealed partial class SignerKeyTypeEd25519 : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519;
+            [ProtoMember(1)]
             public uint256 ed25519
             {
                 get => _ed25519;
@@ -143,9 +154,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SignerKey.SignerKeyTypePreAuthTx")]
         public sealed partial class SignerKeyTypePreAuthTx : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_PRE_AUTH_TX;
+            [ProtoMember(2)]
             public uint256 preAuthTx
             {
                 get => _preAuthTx;
@@ -164,9 +177,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SignerKey.SignerKeyTypeHashX")]
         public sealed partial class SignerKeyTypeHashX : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_HASH_X;
+            [ProtoMember(3)]
             public uint256 hashX
             {
                 get => _hashX;
@@ -185,9 +200,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SignerKey.SignerKeyTypeEd25519SignedPayload")]
         public sealed partial class SignerKeyTypeEd25519SignedPayload : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;
+            [ProtoMember(4)]
             public ed25519SignedPayloadStruct ed25519SignedPayload
             {
                 get => _ed25519SignedPayload;

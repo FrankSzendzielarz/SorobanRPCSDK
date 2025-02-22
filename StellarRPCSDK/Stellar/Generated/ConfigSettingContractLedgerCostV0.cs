@@ -41,6 +41,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -52,11 +53,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ConfigSettingContractLedgerCostV0
     {
         /// <summary>
         /// Maximum number of ledger entry read operations per ledger
         /// </summary>
+        [ProtoMember(1)]
         public uint32 ledgerMaxReadLedgerEntries
         {
             get => _ledgerMaxReadLedgerEntries;
@@ -75,6 +78,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of bytes that can be read per ledger
         /// </summary>
+        [ProtoMember(2)]
         public uint32 ledgerMaxReadBytes
         {
             get => _ledgerMaxReadBytes;
@@ -93,6 +97,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of ledger entry write operations per ledger
         /// </summary>
+        [ProtoMember(3)]
         public uint32 ledgerMaxWriteLedgerEntries
         {
             get => _ledgerMaxWriteLedgerEntries;
@@ -111,6 +116,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of bytes that can be written per ledger
         /// </summary>
+        [ProtoMember(4)]
         public uint32 ledgerMaxWriteBytes
         {
             get => _ledgerMaxWriteBytes;
@@ -129,6 +135,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of ledger entry read operations per transaction
         /// </summary>
+        [ProtoMember(5)]
         public uint32 txMaxReadLedgerEntries
         {
             get => _txMaxReadLedgerEntries;
@@ -147,6 +154,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of bytes that can be read per transaction
         /// </summary>
+        [ProtoMember(6)]
         public uint32 txMaxReadBytes
         {
             get => _txMaxReadBytes;
@@ -165,6 +173,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of ledger entry write operations per transaction
         /// </summary>
+        [ProtoMember(7)]
         public uint32 txMaxWriteLedgerEntries
         {
             get => _txMaxWriteLedgerEntries;
@@ -183,6 +192,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of bytes that can be written per transaction
         /// </summary>
+        [ProtoMember(8)]
         public uint32 txMaxWriteBytes
         {
             get => _txMaxWriteBytes;
@@ -198,6 +208,7 @@ namespace Stellar {
         #endif
         private uint32 _txMaxWriteBytes;
 
+        [ProtoMember(9)]
         public int64 feeReadLedgerEntry
         {
             get => _feeReadLedgerEntry;
@@ -216,6 +227,7 @@ namespace Stellar {
         /// <summary>
         /// Fee per ledger entry read
         /// </summary>
+        [ProtoMember(10)]
         public int64 feeWriteLedgerEntry
         {
             get => _feeWriteLedgerEntry;
@@ -231,6 +243,7 @@ namespace Stellar {
         #endif
         private int64 _feeWriteLedgerEntry;
 
+        [ProtoMember(11)]
         public int64 feeRead1KB
         {
             get => _feeRead1KB;
@@ -249,6 +262,7 @@ namespace Stellar {
         /// <summary>
         /// Write fee grows linearly until bucket list reaches this size
         /// </summary>
+        [ProtoMember(12)]
         public int64 bucketListTargetSizeBytes
         {
             get => _bucketListTargetSizeBytes;
@@ -267,6 +281,7 @@ namespace Stellar {
         /// <summary>
         /// Fee per 1KB write when the bucket list is empty
         /// </summary>
+        [ProtoMember(13)]
         public int64 writeFee1KBBucketListLow
         {
             get => _writeFee1KBBucketListLow;
@@ -285,6 +300,7 @@ namespace Stellar {
         /// <summary>
         /// Fee per 1KB write when the bucket list has reached `bucketListTargetSizeBytes`
         /// </summary>
+        [ProtoMember(14)]
         public int64 writeFee1KBBucketListHigh
         {
             get => _writeFee1KBBucketListHigh;
@@ -303,6 +319,7 @@ namespace Stellar {
         /// <summary>
         /// Write fee multiplier for any additional data past the first `bucketListTargetSizeBytes`
         /// </summary>
+        [ProtoMember(15)]
         public uint32 bucketListWriteFeeGrowthFactor
         {
             get => _bucketListWriteFeeGrowthFactor;

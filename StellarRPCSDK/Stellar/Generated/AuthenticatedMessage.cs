@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
     public abstract partial class AuthenticatedMessage
     {
         public abstract int Discriminator { get; }
@@ -33,8 +36,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "AuthenticatedMessage.v0Struct")]
         public partial class v0Struct
         {
+            [ProtoMember(1)]
             public uint64 sequence
             {
                 get => _sequence;
@@ -50,6 +55,7 @@ namespace Stellar {
             #endif
             private uint64 _sequence;
 
+            [ProtoMember(2)]
             public StellarMessage message
             {
                 get => _message;
@@ -65,6 +71,7 @@ namespace Stellar {
             #endif
             private StellarMessage _message;
 
+            [ProtoMember(3)]
             public HmacSha256Mac mac
             {
                 get => _mac;
@@ -119,9 +126,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "AuthenticatedMessage.case_0")]
         public sealed partial class case_0 : AuthenticatedMessage
         {
             public override int Discriminator => 0;
+            [ProtoMember(1)]
             public v0Struct v0
             {
                 get => _v0;

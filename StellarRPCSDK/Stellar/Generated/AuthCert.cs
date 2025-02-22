@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AuthCert
     {
+        [ProtoMember(1)]
         public Curve25519Public pubkey
         {
             get => _pubkey;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private Curve25519Public _pubkey;
 
+        [ProtoMember(2)]
         public uint64 expiration
         {
             get => _expiration;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private uint64 _expiration;
 
+        [ProtoMember(3)]
         public Signature sig
         {
             get => _sig;

@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,11 +23,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ConfigSettingContractExecutionLanesV0
     {
         /// <summary>
         /// maximum number of Soroban transactions per ledger
         /// </summary>
+        [ProtoMember(1)]
         public uint32 ledgerMaxTxCount
         {
             get => _ledgerMaxTxCount;

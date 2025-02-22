@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,6 +28,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(MemoNone), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(MemoText), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(MemoId), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(MemoHash), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(MemoReturn), DataFormat = DataFormat.Default)]
     public abstract partial class Memo
     {
         public abstract MemoType Discriminator { get; }
@@ -35,6 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "Memo.MemoNone")]
         public sealed partial class MemoNone : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_NONE;
@@ -42,9 +50,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "Memo.MemoText")]
         public sealed partial class MemoText : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_TEXT;
+            [ProtoMember(1)]
             [MaxLength(28)]
             public string text
             {
@@ -66,9 +76,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "Memo.MemoId")]
         public sealed partial class MemoId : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_ID;
+            [ProtoMember(2)]
             public uint64 id
             {
                 get => _id;
@@ -87,9 +99,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "Memo.MemoHash")]
         public sealed partial class MemoHash : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_HASH;
+            [ProtoMember(3)]
             public Hash hash
             {
                 get => _hash;
@@ -111,9 +125,11 @@ namespace Stellar {
         /// the hash of what to pull from the content server
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "Memo.MemoReturn")]
         public sealed partial class MemoReturn : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_RETURN;
+            [ProtoMember(4)]
             public Hash retHash
             {
                 get => _retHash;

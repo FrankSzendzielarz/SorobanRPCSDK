@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,8 +24,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SCPQuorumSet
     {
+        [ProtoMember(1)]
         public uint32 threshold
         {
             get => _threshold;
@@ -40,6 +43,7 @@ namespace Stellar {
         #endif
         private uint32 _threshold;
 
+        [ProtoMember(2)]
         public NodeID[] validators
         {
             get => _validators;
@@ -55,6 +59,7 @@ namespace Stellar {
         #endif
         private NodeID[] _validators;
 
+        [ProtoMember(3)]
         public SCPQuorumSet[] innerSets
         {
             get => _innerSets;

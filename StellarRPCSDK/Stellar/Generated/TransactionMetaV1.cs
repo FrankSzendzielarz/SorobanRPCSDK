@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,8 +20,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionMetaV1
     {
+        [ProtoMember(1)]
         public LedgerEntryChanges txChanges
         {
             get => _txChanges;
@@ -39,6 +42,7 @@ namespace Stellar {
         /// <summary>
         /// tx level changes if any
         /// </summary>
+        [ProtoMember(2)]
         public OperationMeta[] operations
         {
             get => _operations;

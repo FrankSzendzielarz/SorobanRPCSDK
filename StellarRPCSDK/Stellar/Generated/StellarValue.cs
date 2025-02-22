@@ -28,6 +28,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -36,8 +37,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class StellarValue
     {
+        [ProtoMember(1)]
         public Hash txSetHash
         {
             get => _txSetHash;
@@ -56,6 +59,7 @@ namespace Stellar {
         /// <summary>
         /// transaction set to apply to previous ledger
         /// </summary>
+        [ProtoMember(2)]
         public TimePoint closeTime
         {
             get => _closeTime;
@@ -74,6 +78,7 @@ namespace Stellar {
         /// <summary>
         /// max size is dictated by number of upgrade types (+ room for future)
         /// </summary>
+        [ProtoMember(3)]
         [MaxLength(6)]
         public UpgradeType[] upgrades
         {
@@ -95,6 +100,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(4)]
         public extUnion ext
         {
             get => _ext;
@@ -121,6 +127,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "StellarValue.extUnion")]
+        [ProtoInclude(100, typeof(StellarValueBasic), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(StellarValueSigned), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract StellarValueType Discriminator { get; }
@@ -129,6 +138,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "StellarValue.extUnion.StellarValueBasic")]
             public sealed partial class StellarValueBasic : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_BASIC;
@@ -136,9 +146,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "StellarValue.extUnion.StellarValueSigned")]
             public sealed partial class StellarValueSigned : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_SIGNED;
+                [ProtoMember(1)]
                 public LedgerCloseValueSignature lcValueSignature
                 {
                     get => _lcValueSignature;

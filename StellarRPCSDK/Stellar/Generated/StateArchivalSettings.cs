@@ -30,6 +30,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -38,8 +39,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class StateArchivalSettings
     {
+        [ProtoMember(1)]
         public uint32 maxEntryTTL
         {
             get => _maxEntryTTL;
@@ -55,6 +58,7 @@ namespace Stellar {
         #endif
         private uint32 _maxEntryTTL;
 
+        [ProtoMember(2)]
         public uint32 minTemporaryTTL
         {
             get => _minTemporaryTTL;
@@ -70,6 +74,7 @@ namespace Stellar {
         #endif
         private uint32 _minTemporaryTTL;
 
+        [ProtoMember(3)]
         public uint32 minPersistentTTL
         {
             get => _minPersistentTTL;
@@ -88,6 +93,7 @@ namespace Stellar {
         /// <summary>
         /// rent_fee = wfee_rate_average / rent_rate_denominator_for_type
         /// </summary>
+        [ProtoMember(4)]
         public int64 persistentRentRateDenominator
         {
             get => _persistentRentRateDenominator;
@@ -103,6 +109,7 @@ namespace Stellar {
         #endif
         private int64 _persistentRentRateDenominator;
 
+        [ProtoMember(5)]
         public int64 tempRentRateDenominator
         {
             get => _tempRentRateDenominator;
@@ -121,6 +128,7 @@ namespace Stellar {
         /// <summary>
         /// max number of entries that emit archival meta in a single ledger
         /// </summary>
+        [ProtoMember(6)]
         public uint32 maxEntriesToArchive
         {
             get => _maxEntriesToArchive;
@@ -139,6 +147,7 @@ namespace Stellar {
         /// <summary>
         /// Number of snapshots to use when calculating average BucketList size
         /// </summary>
+        [ProtoMember(7)]
         public uint32 bucketListSizeWindowSampleSize
         {
             get => _bucketListSizeWindowSampleSize;
@@ -157,6 +166,7 @@ namespace Stellar {
         /// <summary>
         /// How often to sample the BucketList size for the average, in ledgers
         /// </summary>
+        [ProtoMember(8)]
         public uint32 bucketListWindowSamplePeriod
         {
             get => _bucketListWindowSamplePeriod;
@@ -175,6 +185,7 @@ namespace Stellar {
         /// <summary>
         /// Maximum number of bytes that we scan for eviction per ledger
         /// </summary>
+        [ProtoMember(9)]
         public uint32 evictionScanSize
         {
             get => _evictionScanSize;
@@ -193,6 +204,7 @@ namespace Stellar {
         /// <summary>
         /// Lowest BucketList level to be scanned to evict entries
         /// </summary>
+        [ProtoMember(10)]
         public uint32 startingEvictionScanLevel
         {
             get => _startingEvictionScanLevel;

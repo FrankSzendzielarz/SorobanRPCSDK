@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,6 +20,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
     public abstract partial class TransactionPhase
     {
         public abstract int Discriminator { get; }
@@ -27,9 +30,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "TransactionPhase.case_0")]
         public sealed partial class case_0 : TransactionPhase
         {
             public override int Discriminator => 0;
+            [ProtoMember(1)]
             public TxSetComponent[] v0Components
             {
                 get => _v0Components;

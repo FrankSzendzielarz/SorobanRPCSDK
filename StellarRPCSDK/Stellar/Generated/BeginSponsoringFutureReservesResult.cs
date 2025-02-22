@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(BeginSponsoringFutureReservesSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(BeginSponsoringFutureReservesMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(BeginSponsoringFutureReservesAlreadySponsored), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(BeginSponsoringFutureReservesRecursive), DataFormat = DataFormat.Default)]
     public abstract partial class BeginSponsoringFutureReservesResult
     {
         public abstract BeginSponsoringFutureReservesResultCode Discriminator { get; }
@@ -32,6 +38,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess")]
         public sealed partial class BeginSponsoringFutureReservesSuccess : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
@@ -39,6 +46,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesMalformed")]
         public sealed partial class BeginSponsoringFutureReservesMalformed : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
@@ -46,6 +54,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesAlreadySponsored")]
         public sealed partial class BeginSponsoringFutureReservesAlreadySponsored : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
@@ -53,6 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive")]
         public sealed partial class BeginSponsoringFutureReservesRecursive : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;

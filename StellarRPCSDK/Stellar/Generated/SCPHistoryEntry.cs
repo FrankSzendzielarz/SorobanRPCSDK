@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,6 +23,8 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
     public abstract partial class SCPHistoryEntry
     {
         public abstract int Discriminator { get; }
@@ -30,9 +33,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SCPHistoryEntry.case_0")]
         public sealed partial class case_0 : SCPHistoryEntry
         {
             public override int Discriminator => 0;
+            [ProtoMember(1)]
             public SCPHistoryEntryV0 v0
             {
                 get => _v0;

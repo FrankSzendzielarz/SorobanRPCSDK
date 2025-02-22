@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionSet
     {
+        [ProtoMember(1)]
         public Hash previousLedgerHash
         {
             get => _previousLedgerHash;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private Hash _previousLedgerHash;
 
+        [ProtoMember(2)]
         public TransactionEnvelope[] txs
         {
             get => _txs;

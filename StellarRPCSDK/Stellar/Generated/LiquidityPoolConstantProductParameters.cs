@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class LiquidityPoolConstantProductParameters
     {
+        [ProtoMember(1)]
         public Asset assetA
         {
             get => _assetA;
@@ -40,6 +43,7 @@ namespace Stellar {
         /// <summary>
         /// assetA < assetB
         /// </summary>
+        [ProtoMember(2)]
         public Asset assetB
         {
             get => _assetB;
@@ -55,6 +59,7 @@ namespace Stellar {
         #endif
         private Asset _assetB;
 
+        [ProtoMember(3)]
         public int32 fee
         {
             get => _fee;

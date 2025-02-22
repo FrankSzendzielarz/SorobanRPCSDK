@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TopologyResponseBodyV2
     {
+        [ProtoMember(1)]
         public TimeSlicedPeerDataList inboundPeers
         {
             get => _inboundPeers;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private TimeSlicedPeerDataList _inboundPeers;
 
+        [ProtoMember(2)]
         public TimeSlicedPeerDataList outboundPeers
         {
             get => _outboundPeers;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private TimeSlicedPeerDataList _outboundPeers;
 
+        [ProtoMember(3)]
         public TimeSlicedNodeData nodeData
         {
             get => _nodeData;

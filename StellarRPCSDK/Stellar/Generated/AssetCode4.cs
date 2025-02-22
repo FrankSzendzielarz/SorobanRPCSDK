@@ -7,6 +7,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -18,8 +19,10 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class AssetCode4
     {
+        [ProtoMember(1)]
         [MinLength(4)]
         [MaxLength(4)]
         public byte[] InnerValue

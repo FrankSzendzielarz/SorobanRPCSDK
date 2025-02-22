@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(InflationSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(InflationNotTime), DataFormat = DataFormat.Default)]
     public abstract partial class InflationResult
     {
         public abstract InflationResultCode Discriminator { get; }
@@ -29,9 +33,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "InflationResult.InflationSuccess")]
         public sealed partial class InflationSuccess : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
+            [ProtoMember(1)]
             public InflationPayout[] payouts
             {
                 get => _payouts;
@@ -50,6 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "InflationResult.InflationNotTime")]
         public sealed partial class InflationNotTime : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_NOT_TIME;

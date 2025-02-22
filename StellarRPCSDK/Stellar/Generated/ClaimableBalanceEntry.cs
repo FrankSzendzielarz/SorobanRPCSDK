@@ -30,6 +30,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -38,11 +39,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ClaimableBalanceEntry
     {
         /// <summary>
         /// Unique identifier for this ClaimableBalanceEntry
         /// </summary>
+        [ProtoMember(1)]
         public ClaimableBalanceID balanceID
         {
             get => _balanceID;
@@ -61,6 +64,7 @@ namespace Stellar {
         /// <summary>
         /// List of claimants with associated predicate
         /// </summary>
+        [ProtoMember(2)]
         [MaxLength(10)]
         public Claimant[] claimants
         {
@@ -82,6 +86,7 @@ namespace Stellar {
         /// <summary>
         /// Any asset including native
         /// </summary>
+        [ProtoMember(3)]
         public Asset asset
         {
             get => _asset;
@@ -100,6 +105,7 @@ namespace Stellar {
         /// <summary>
         /// Amount of asset
         /// </summary>
+        [ProtoMember(4)]
         public int64 amount
         {
             get => _amount;
@@ -118,6 +124,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(5)]
         public extUnion ext
         {
             get => _ext;
@@ -144,6 +151,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "ClaimableBalanceEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -152,6 +162,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "ClaimableBalanceEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -159,9 +170,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "ClaimableBalanceEntry.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public ClaimableBalanceEntryExtensionV1 v1
                 {
                     get => _v1;

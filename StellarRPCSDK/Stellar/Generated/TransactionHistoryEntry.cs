@@ -21,6 +21,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -29,8 +30,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TransactionHistoryEntry
     {
+        [ProtoMember(1)]
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -46,6 +49,7 @@ namespace Stellar {
         #endif
         private uint32 _ledgerSeq;
 
+        [ProtoMember(2)]
         public TransactionSet txSet
         {
             get => _txSet;
@@ -64,6 +68,7 @@ namespace Stellar {
         /// <summary>
         /// when v != 0, txSet must be empty
         /// </summary>
+        [ProtoMember(3)]
         public extUnion ext
         {
             get => _ext;
@@ -88,6 +93,9 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "TransactionHistoryEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -96,6 +104,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "TransactionHistoryEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -103,9 +112,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "TransactionHistoryEntry.extUnion.case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;
+                [ProtoMember(1)]
                 public GeneralizedTransactionSet generalizedTxSet
                 {
                     get => _generalizedTxSet;

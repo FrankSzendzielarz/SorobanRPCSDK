@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,11 +22,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class InvokeHostFunctionOp
     {
         /// <summary>
         /// Host function to invoke.
         /// </summary>
+        [ProtoMember(1)]
         public HostFunction hostFunction
         {
             get => _hostFunction;
@@ -44,6 +47,7 @@ namespace Stellar {
         /// <summary>
         /// Per-address authorizations for this host function.
         /// </summary>
+        [ProtoMember(2)]
         public SorobanAuthorizationEntry[] auth
         {
             get => _auth;

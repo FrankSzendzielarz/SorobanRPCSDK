@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,8 +27,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class Hello
     {
+        [ProtoMember(1)]
         public uint32 ledgerVersion
         {
             get => _ledgerVersion;
@@ -43,6 +46,7 @@ namespace Stellar {
         #endif
         private uint32 _ledgerVersion;
 
+        [ProtoMember(2)]
         public uint32 overlayVersion
         {
             get => _overlayVersion;
@@ -58,6 +62,7 @@ namespace Stellar {
         #endif
         private uint32 _overlayVersion;
 
+        [ProtoMember(3)]
         public uint32 overlayMinVersion
         {
             get => _overlayMinVersion;
@@ -73,6 +78,7 @@ namespace Stellar {
         #endif
         private uint32 _overlayMinVersion;
 
+        [ProtoMember(4)]
         public Hash networkID
         {
             get => _networkID;
@@ -88,6 +94,7 @@ namespace Stellar {
         #endif
         private Hash _networkID;
 
+        [ProtoMember(5)]
         [MaxLength(100)]
         public string versionStr
         {
@@ -106,6 +113,7 @@ namespace Stellar {
         #endif
         private string _versionStr;
 
+        [ProtoMember(6)]
         public int listeningPort
         {
             get => _listeningPort;
@@ -121,6 +129,7 @@ namespace Stellar {
         #endif
         private int _listeningPort;
 
+        [ProtoMember(7)]
         public NodeID peerID
         {
             get => _peerID;
@@ -136,6 +145,7 @@ namespace Stellar {
         #endif
         private NodeID _peerID;
 
+        [ProtoMember(8)]
         public AuthCert cert
         {
             get => _cert;
@@ -151,6 +161,7 @@ namespace Stellar {
         #endif
         private AuthCert _cert;
 
+        [ProtoMember(9)]
         public uint256 nonce
         {
             get => _nonce;

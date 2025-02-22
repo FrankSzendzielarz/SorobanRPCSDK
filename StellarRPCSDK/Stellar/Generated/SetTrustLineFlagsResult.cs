@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SetTrustLineFlagsSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SetTrustLineFlagsMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(SetTrustLineFlagsNoTrustLine), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(SetTrustLineFlagsCantRevoke), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(SetTrustLineFlagsInvalidState), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(SetTrustLineFlagsLowReserve), DataFormat = DataFormat.Default)]
     public abstract partial class SetTrustLineFlagsResult
     {
         public abstract SetTrustLineFlagsResultCode Discriminator { get; }
@@ -33,6 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsSuccess")]
         public sealed partial class SetTrustLineFlagsSuccess : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_SUCCESS;
@@ -40,6 +49,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsMalformed")]
         public sealed partial class SetTrustLineFlagsMalformed : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_MALFORMED;
@@ -47,6 +57,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsNoTrustLine")]
         public sealed partial class SetTrustLineFlagsNoTrustLine : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_NO_TRUST_LINE;
@@ -54,6 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke")]
         public sealed partial class SetTrustLineFlagsCantRevoke : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_CANT_REVOKE;
@@ -61,6 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsInvalidState")]
         public sealed partial class SetTrustLineFlagsInvalidState : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_INVALID_STATE;
@@ -68,6 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SetTrustLineFlagsResult.SetTrustLineFlagsLowReserve")]
         public sealed partial class SetTrustLineFlagsLowReserve : SetTrustLineFlagsResult
         {
             public override SetTrustLineFlagsResultCode Discriminator => SetTrustLineFlagsResultCode.SET_TRUST_LINE_FLAGS_LOW_RESERVE;

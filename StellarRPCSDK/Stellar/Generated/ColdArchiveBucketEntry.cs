@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,6 +28,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ColdArchiveMetaentry), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ColdArchiveArchivedLeafCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ColdArchiveDeletedLeafCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ColdArchiveBoundaryLeafCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ColdArchiveHash), DataFormat = DataFormat.Default)]
     public abstract partial class ColdArchiveBucketEntry
     {
         public abstract ColdArchiveBucketEntryType Discriminator { get; }
@@ -35,9 +42,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveMetaentry")]
         public sealed partial class ColdArchiveMetaentry : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY;
+            [ProtoMember(1)]
             public BucketMetadata metaEntry
             {
                 get => _metaEntry;
@@ -56,9 +65,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveArchivedLeafCase")]
         public sealed partial class ColdArchiveArchivedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF;
+            [ProtoMember(2)]
             public ColdArchiveArchivedLeaf archivedLeaf
             {
                 get => _archivedLeaf;
@@ -77,9 +88,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase")]
         public sealed partial class ColdArchiveDeletedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF;
+            [ProtoMember(3)]
             public ColdArchiveDeletedLeaf deletedLeaf
             {
                 get => _deletedLeaf;
@@ -98,9 +111,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveBoundaryLeafCase")]
         public sealed partial class ColdArchiveBoundaryLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF;
+            [ProtoMember(4)]
             public ColdArchiveBoundaryLeaf boundaryLeaf
             {
                 get => _boundaryLeaf;
@@ -119,9 +134,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveHash")]
         public sealed partial class ColdArchiveHash : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH;
+            [ProtoMember(5)]
             public ColdArchiveHashEntry hashEntry
             {
                 get => _hashEntry;

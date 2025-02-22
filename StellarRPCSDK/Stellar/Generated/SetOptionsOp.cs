@@ -25,6 +25,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -33,8 +34,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SetOptionsOp
     {
+        [ProtoMember(1)]
         public AccountID inflationDest
         {
             get => _inflationDest;
@@ -50,6 +53,7 @@ namespace Stellar {
         #endif
         private AccountID _inflationDest;
 
+        [ProtoMember(2)]
         public uint32 clearFlags
         {
             get => _clearFlags;
@@ -68,6 +72,7 @@ namespace Stellar {
         /// <summary>
         /// which flags to clear
         /// </summary>
+        [ProtoMember(3)]
         public uint32 setFlags
         {
             get => _setFlags;
@@ -86,6 +91,7 @@ namespace Stellar {
         /// <summary>
         /// account threshold manipulation
         /// </summary>
+        [ProtoMember(4)]
         public uint32 masterWeight
         {
             get => _masterWeight;
@@ -104,6 +110,7 @@ namespace Stellar {
         /// <summary>
         /// weight of the master account
         /// </summary>
+        [ProtoMember(5)]
         public uint32 lowThreshold
         {
             get => _lowThreshold;
@@ -119,6 +126,7 @@ namespace Stellar {
         #endif
         private uint32 _lowThreshold;
 
+        [ProtoMember(6)]
         public uint32 medThreshold
         {
             get => _medThreshold;
@@ -134,6 +142,7 @@ namespace Stellar {
         #endif
         private uint32 _medThreshold;
 
+        [ProtoMember(7)]
         public uint32 highThreshold
         {
             get => _highThreshold;
@@ -149,6 +158,7 @@ namespace Stellar {
         #endif
         private uint32 _highThreshold;
 
+        [ProtoMember(8)]
         public string32 homeDomain
         {
             get => _homeDomain;
@@ -167,6 +177,7 @@ namespace Stellar {
         /// <summary>
         /// signer is deleted if the weight is 0
         /// </summary>
+        [ProtoMember(9)]
         public Signer signer
         {
             get => _signer;

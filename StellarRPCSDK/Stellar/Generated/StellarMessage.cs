@@ -68,6 +68,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -76,6 +77,30 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ErrorMsg), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(HelloCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(AuthCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(DontHaveCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(Peers), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(GetTxSet), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(TxSet), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(GeneralizedTxSet), DataFormat = DataFormat.Default)]
+    [ProtoInclude(108, typeof(TransactionCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(109, typeof(SurveyRequest), DataFormat = DataFormat.Default)]
+    [ProtoInclude(110, typeof(SurveyResponse), DataFormat = DataFormat.Default)]
+    [ProtoInclude(111, typeof(TimeSlicedSurveyRequest), DataFormat = DataFormat.Default)]
+    [ProtoInclude(112, typeof(TimeSlicedSurveyResponse), DataFormat = DataFormat.Default)]
+    [ProtoInclude(113, typeof(TimeSlicedSurveyStartCollecting), DataFormat = DataFormat.Default)]
+    [ProtoInclude(114, typeof(TimeSlicedSurveyStopCollecting), DataFormat = DataFormat.Default)]
+    [ProtoInclude(115, typeof(GetScpQuorumset), DataFormat = DataFormat.Default)]
+    [ProtoInclude(116, typeof(ScpQuorumset), DataFormat = DataFormat.Default)]
+    [ProtoInclude(117, typeof(ScpMessage), DataFormat = DataFormat.Default)]
+    [ProtoInclude(118, typeof(GetScpState), DataFormat = DataFormat.Default)]
+    [ProtoInclude(119, typeof(SendMoreCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(120, typeof(SendMoreExtendedCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(121, typeof(FloodAdvertCase), DataFormat = DataFormat.Default)]
+    [ProtoInclude(122, typeof(FloodDemandCase), DataFormat = DataFormat.Default)]
     public abstract partial class StellarMessage
     {
         public abstract MessageType Discriminator { get; }
@@ -84,9 +109,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.ErrorMsg")]
         public sealed partial class ErrorMsg : StellarMessage
         {
             public override MessageType Discriminator => MessageType.ERROR_MSG;
+            [ProtoMember(1)]
             public Error error
             {
                 get => _error;
@@ -105,9 +132,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.HelloCase")]
         public sealed partial class HelloCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.HELLO;
+            [ProtoMember(2)]
             public Hello hello
             {
                 get => _hello;
@@ -126,9 +155,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.AuthCase")]
         public sealed partial class AuthCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.AUTH;
+            [ProtoMember(3)]
             public Auth auth
             {
                 get => _auth;
@@ -147,9 +178,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.DontHaveCase")]
         public sealed partial class DontHaveCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.DONT_HAVE;
+            [ProtoMember(4)]
             public DontHave dontHave
             {
                 get => _dontHave;
@@ -168,9 +201,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.Peers")]
         public sealed partial class Peers : StellarMessage
         {
             public override MessageType Discriminator => MessageType.PEERS;
+            [ProtoMember(5)]
             [MaxLength(100)]
             public PeerAddress[] peers
             {
@@ -192,9 +227,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.GetTxSet")]
         public sealed partial class GetTxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_TX_SET;
+            [ProtoMember(6)]
             public uint256 txSetHash
             {
                 get => _txSetHash;
@@ -213,9 +250,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TxSet")]
         public sealed partial class TxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TX_SET;
+            [ProtoMember(7)]
             public TransactionSet txSet
             {
                 get => _txSet;
@@ -234,9 +273,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.GeneralizedTxSet")]
         public sealed partial class GeneralizedTxSet : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GENERALIZED_TX_SET;
+            [ProtoMember(8)]
             public GeneralizedTransactionSet generalizedTxSet
             {
                 get => _generalizedTxSet;
@@ -255,9 +296,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TransactionCase")]
         public sealed partial class TransactionCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TRANSACTION;
+            [ProtoMember(9)]
             public TransactionEnvelope transaction
             {
                 get => _transaction;
@@ -276,9 +319,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.SurveyRequest")]
         public sealed partial class SurveyRequest : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SURVEY_REQUEST;
+            [ProtoMember(10)]
             public SignedSurveyRequestMessage signedSurveyRequestMessage
             {
                 get => _signedSurveyRequestMessage;
@@ -297,9 +342,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.SurveyResponse")]
         public sealed partial class SurveyResponse : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SURVEY_RESPONSE;
+            [ProtoMember(11)]
             public SignedSurveyResponseMessage signedSurveyResponseMessage
             {
                 get => _signedSurveyResponseMessage;
@@ -318,9 +365,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TimeSlicedSurveyRequest")]
         public sealed partial class TimeSlicedSurveyRequest : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_REQUEST;
+            [ProtoMember(12)]
             public SignedTimeSlicedSurveyRequestMessage signedTimeSlicedSurveyRequestMessage
             {
                 get => _signedTimeSlicedSurveyRequestMessage;
@@ -339,9 +388,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TimeSlicedSurveyResponse")]
         public sealed partial class TimeSlicedSurveyResponse : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_RESPONSE;
+            [ProtoMember(13)]
             public SignedTimeSlicedSurveyResponseMessage signedTimeSlicedSurveyResponseMessage
             {
                 get => _signedTimeSlicedSurveyResponseMessage;
@@ -360,9 +411,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TimeSlicedSurveyStartCollecting")]
         public sealed partial class TimeSlicedSurveyStartCollecting : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_START_COLLECTING;
+            [ProtoMember(14)]
             public SignedTimeSlicedSurveyStartCollectingMessage signedTimeSlicedSurveyStartCollectingMessage
             {
                 get => _signedTimeSlicedSurveyStartCollectingMessage;
@@ -381,9 +434,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.TimeSlicedSurveyStopCollecting")]
         public sealed partial class TimeSlicedSurveyStopCollecting : StellarMessage
         {
             public override MessageType Discriminator => MessageType.TIME_SLICED_SURVEY_STOP_COLLECTING;
+            [ProtoMember(15)]
             public SignedTimeSlicedSurveyStopCollectingMessage signedTimeSlicedSurveyStopCollectingMessage
             {
                 get => _signedTimeSlicedSurveyStopCollectingMessage;
@@ -405,9 +460,11 @@ namespace Stellar {
         /// SCP
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.GetScpQuorumset")]
         public sealed partial class GetScpQuorumset : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_SCP_QUORUMSET;
+            [ProtoMember(16)]
             public uint256 qSetHash
             {
                 get => _qSetHash;
@@ -426,9 +483,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.ScpQuorumset")]
         public sealed partial class ScpQuorumset : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SCP_QUORUMSET;
+            [ProtoMember(17)]
             public SCPQuorumSet qSet
             {
                 get => _qSet;
@@ -447,9 +506,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.ScpMessage")]
         public sealed partial class ScpMessage : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SCP_MESSAGE;
+            [ProtoMember(18)]
             public SCPEnvelope envelope
             {
                 get => _envelope;
@@ -468,9 +529,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.GetScpState")]
         public sealed partial class GetScpState : StellarMessage
         {
             public override MessageType Discriminator => MessageType.GET_SCP_STATE;
+            [ProtoMember(19)]
             public uint32 getSCPLedgerSeq
             {
                 get => _getSCPLedgerSeq;
@@ -492,9 +555,11 @@ namespace Stellar {
         /// ledger seq requested ; if 0, requests the latest
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.SendMoreCase")]
         public sealed partial class SendMoreCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SEND_MORE;
+            [ProtoMember(20)]
             public SendMore sendMoreMessage
             {
                 get => _sendMoreMessage;
@@ -513,9 +578,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.SendMoreExtendedCase")]
         public sealed partial class SendMoreExtendedCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.SEND_MORE_EXTENDED;
+            [ProtoMember(21)]
             public SendMoreExtended sendMoreExtendedMessage
             {
                 get => _sendMoreExtendedMessage;
@@ -537,9 +604,11 @@ namespace Stellar {
         /// Pull mode
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.FloodAdvertCase")]
         public sealed partial class FloodAdvertCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.FLOOD_ADVERT;
+            [ProtoMember(22)]
             public FloodAdvert floodAdvert
             {
                 get => _floodAdvert;
@@ -558,9 +627,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "StellarMessage.FloodDemandCase")]
         public sealed partial class FloodDemandCase : StellarMessage
         {
             public override MessageType Discriminator => MessageType.FLOOD_DEMAND;
+            [ProtoMember(23)]
             public FloodDemand floodDemand
             {
                 get => _floodDemand;

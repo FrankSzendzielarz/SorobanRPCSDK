@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,8 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ClaimantTypeV0), DataFormat = DataFormat.Default)]
     public abstract partial class Claimant
     {
         public abstract ClaimantType Discriminator { get; }
@@ -32,8 +35,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "Claimant.v0Struct")]
         public partial class v0Struct
         {
+            [ProtoMember(1)]
             public AccountID destination
             {
                 get => _destination;
@@ -52,6 +57,7 @@ namespace Stellar {
             /// <summary>
             /// The account that can use this condition
             /// </summary>
+            [ProtoMember(2)]
             public ClaimPredicate predicate
             {
                 get => _predicate;
@@ -104,9 +110,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "Claimant.ClaimantTypeV0")]
         public sealed partial class ClaimantTypeV0 : Claimant
         {
             public override ClaimantType Discriminator => ClaimantType.CLAIMANT_TYPE_V0;
+            [ProtoMember(1)]
             public v0Struct v0
             {
                 get => _v0;

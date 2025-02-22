@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ExistenceProofBody
     {
+        [ProtoMember(1)]
         public LedgerKey[] keysToProve
         {
             get => _keysToProve;
@@ -47,6 +50,7 @@ namespace Stellar {
         /// <summary>
         /// corresponds to keysToProve[n]
         /// </summary>
+        [ProtoMember(2)]
         public ColdArchiveBucketEntry[] lowBoundEntries
         {
             get => _lowBoundEntries;
@@ -62,6 +66,7 @@ namespace Stellar {
         #endif
         private ColdArchiveBucketEntry[] _lowBoundEntries;
 
+        [ProtoMember(3)]
         public ColdArchiveBucketEntry[] highBoundEntries
         {
             get => _highBoundEntries;
@@ -80,6 +85,7 @@ namespace Stellar {
         /// <summary>
         /// contains all HashNodes that correspond with that level
         /// </summary>
+        [ProtoMember(4)]
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;

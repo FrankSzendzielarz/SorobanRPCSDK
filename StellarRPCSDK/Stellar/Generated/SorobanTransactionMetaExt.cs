@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
     public abstract partial class SorobanTransactionMetaExt
     {
         public abstract int Discriminator { get; }
@@ -29,6 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SorobanTransactionMetaExt.case_0")]
         public sealed partial class case_0 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 0;
@@ -36,9 +41,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SorobanTransactionMetaExt.case_1")]
         public sealed partial class case_1 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 1;
+            [ProtoMember(1)]
             public SorobanTransactionMetaExtV1 v1
             {
                 get => _v1;

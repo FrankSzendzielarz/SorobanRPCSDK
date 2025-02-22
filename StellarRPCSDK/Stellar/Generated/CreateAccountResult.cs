@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(CreateAccountSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(CreateAccountMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(CreateAccountUnderfunded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(CreateAccountLowReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(CreateAccountAlreadyExist), DataFormat = DataFormat.Default)]
     public abstract partial class CreateAccountResult
     {
         public abstract CreateAccountResultCode Discriminator { get; }
@@ -32,6 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "CreateAccountResult.CreateAccountSuccess")]
         public sealed partial class CreateAccountSuccess : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
@@ -39,6 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateAccountResult.CreateAccountMalformed")]
         public sealed partial class CreateAccountMalformed : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
@@ -46,6 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateAccountResult.CreateAccountUnderfunded")]
         public sealed partial class CreateAccountUnderfunded : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
@@ -53,6 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateAccountResult.CreateAccountLowReserve")]
         public sealed partial class CreateAccountLowReserve : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
@@ -60,6 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "CreateAccountResult.CreateAccountAlreadyExist")]
         public sealed partial class CreateAccountAlreadyExist : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;

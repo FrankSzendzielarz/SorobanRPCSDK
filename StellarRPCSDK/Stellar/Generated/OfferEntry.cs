@@ -30,6 +30,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -38,8 +39,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class OfferEntry
     {
+        [ProtoMember(1)]
         public AccountID sellerID
         {
             get => _sellerID;
@@ -55,6 +58,7 @@ namespace Stellar {
         #endif
         private AccountID _sellerID;
 
+        [ProtoMember(2)]
         public int64 offerID
         {
             get => _offerID;
@@ -70,6 +74,7 @@ namespace Stellar {
         #endif
         private int64 _offerID;
 
+        [ProtoMember(3)]
         public Asset selling
         {
             get => _selling;
@@ -88,6 +93,7 @@ namespace Stellar {
         /// <summary>
         /// A
         /// </summary>
+        [ProtoMember(4)]
         public Asset buying
         {
             get => _buying;
@@ -106,6 +112,7 @@ namespace Stellar {
         /// <summary>
         /// B
         /// </summary>
+        [ProtoMember(5)]
         public int64 amount
         {
             get => _amount;
@@ -121,6 +128,7 @@ namespace Stellar {
         #endif
         private int64 _amount;
 
+        [ProtoMember(6)]
         public Price price
         {
             get => _price;
@@ -136,6 +144,7 @@ namespace Stellar {
         #endif
         private Price _price;
 
+        [ProtoMember(7)]
         public uint32 flags
         {
             get => _flags;
@@ -154,6 +163,7 @@ namespace Stellar {
         /// <summary>
         /// reserved for future use
         /// </summary>
+        [ProtoMember(8)]
         public extUnion ext
         {
             get => _ext;
@@ -178,6 +188,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "OfferEntry.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -186,6 +198,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "OfferEntry.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

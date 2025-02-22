@@ -26,6 +26,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -34,11 +35,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ContractEvent
     {
         /// <summary>
         /// is first, to change ContractEvent into a union.
         /// </summary>
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -54,6 +57,7 @@ namespace Stellar {
         #endif
         private ExtensionPoint _ext;
 
+        [ProtoMember(2)]
         public Hash contractID
         {
             get => _contractID;
@@ -69,6 +73,7 @@ namespace Stellar {
         #endif
         private Hash _contractID;
 
+        [ProtoMember(3)]
         public ContractEventType type
         {
             get => _type;
@@ -84,6 +89,7 @@ namespace Stellar {
         #endif
         private ContractEventType _type;
 
+        [ProtoMember(4)]
         public bodyUnion body
         {
             get => _body;
@@ -108,6 +114,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "ContractEvent.bodyUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
         {
             public abstract int Discriminator { get; }
@@ -117,8 +125,10 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
+            [ProtoContract(Name = "ContractEvent.bodyUnion.v0Struct")]
             public partial class v0Struct
             {
+                [ProtoMember(1)]
                 public SCVal[] topics
                 {
                     get => _topics;
@@ -134,6 +144,7 @@ namespace Stellar {
                 #endif
                 private SCVal[] _topics;
 
+                [ProtoMember(2)]
                 public SCVal data
                 {
                     get => _data;
@@ -197,9 +208,11 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
+            [ProtoContract(Name = "ContractEvent.bodyUnion.case_0")]
             public sealed partial class case_0 : bodyUnion
             {
                 public override int Discriminator => 0;
+                [ProtoMember(1)]
                 public v0Struct v0
                 {
                     get => _v0;

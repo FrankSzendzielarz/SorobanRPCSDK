@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ClawbackSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ClawbackMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ClawbackNotClawbackEnabled), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ClawbackNoTrust), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ClawbackUnderfunded), DataFormat = DataFormat.Default)]
     public abstract partial class ClawbackResult
     {
         public abstract ClawbackResultCode Discriminator { get; }
@@ -32,6 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackResult.ClawbackSuccess")]
         public sealed partial class ClawbackSuccess : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
@@ -39,6 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackResult.ClawbackMalformed")]
         public sealed partial class ClawbackMalformed : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
@@ -46,6 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackResult.ClawbackNotClawbackEnabled")]
         public sealed partial class ClawbackNotClawbackEnabled : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
@@ -53,6 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackResult.ClawbackNoTrust")]
         public sealed partial class ClawbackNoTrust : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
@@ -60,6 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ClawbackResult.ClawbackUnderfunded")]
         public sealed partial class ClawbackUnderfunded : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;

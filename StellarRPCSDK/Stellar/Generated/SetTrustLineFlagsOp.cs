@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SetTrustLineFlagsOp
     {
+        [ProtoMember(1)]
         public AccountID trustor
         {
             get => _trustor;
@@ -39,6 +42,7 @@ namespace Stellar {
         #endif
         private AccountID _trustor;
 
+        [ProtoMember(2)]
         public Asset asset
         {
             get => _asset;
@@ -54,6 +58,7 @@ namespace Stellar {
         #endif
         private Asset _asset;
 
+        [ProtoMember(3)]
         public uint32 clearFlags
         {
             get => _clearFlags;
@@ -72,6 +77,7 @@ namespace Stellar {
         /// <summary>
         /// which flags to clear
         /// </summary>
+        [ProtoMember(4)]
         public uint32 setFlags
         {
             get => _setFlags;

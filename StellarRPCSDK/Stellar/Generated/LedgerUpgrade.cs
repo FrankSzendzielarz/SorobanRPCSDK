@@ -26,6 +26,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -34,6 +35,14 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(LedgerUpgradeVersion), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(LedgerUpgradeBaseFee), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(LedgerUpgradeMaxTxSetSize), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(LedgerUpgradeBaseReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(LedgerUpgradeFlags), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(LedgerUpgradeConfig), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(LedgerUpgradeMaxSorobanTxSetSize), DataFormat = DataFormat.Default)]
     public abstract partial class LedgerUpgrade
     {
         public abstract LedgerUpgradeType Discriminator { get; }
@@ -42,9 +51,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeVersion")]
         public sealed partial class LedgerUpgradeVersion : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_VERSION;
+            [ProtoMember(1)]
             public uint32 newLedgerVersion
             {
                 get => _newLedgerVersion;
@@ -66,9 +77,11 @@ namespace Stellar {
         /// update ledgerVersion
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeBaseFee")]
         public sealed partial class LedgerUpgradeBaseFee : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_FEE;
+            [ProtoMember(2)]
             public uint32 newBaseFee
             {
                 get => _newBaseFee;
@@ -90,9 +103,11 @@ namespace Stellar {
         /// update baseFee
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeMaxTxSetSize")]
         public sealed partial class LedgerUpgradeMaxTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_TX_SET_SIZE;
+            [ProtoMember(3)]
             public uint32 newMaxTxSetSize
             {
                 get => _newMaxTxSetSize;
@@ -114,9 +129,11 @@ namespace Stellar {
         /// update maxTxSetSize
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeBaseReserve")]
         public sealed partial class LedgerUpgradeBaseReserve : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_RESERVE;
+            [ProtoMember(4)]
             public uint32 newBaseReserve
             {
                 get => _newBaseReserve;
@@ -138,9 +155,11 @@ namespace Stellar {
         /// update baseReserve
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeFlags")]
         public sealed partial class LedgerUpgradeFlags : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_FLAGS;
+            [ProtoMember(5)]
             public uint32 newFlags
             {
                 get => _newFlags;
@@ -162,9 +181,11 @@ namespace Stellar {
         /// update flags
         /// </summary>
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeConfig")]
         public sealed partial class LedgerUpgradeConfig : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_CONFIG;
+            [ProtoMember(6)]
             public ConfigUpgradeSetKey newConfig
             {
                 get => _newConfig;
@@ -183,9 +204,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeMaxSorobanTxSetSize")]
         public sealed partial class LedgerUpgradeMaxSorobanTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;
+            [ProtoMember(7)]
             public uint32 newMaxSorobanTxSetSize
             {
                 get => _newMaxSorobanTxSetSize;

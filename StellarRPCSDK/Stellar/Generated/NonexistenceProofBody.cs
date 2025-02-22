@@ -14,6 +14,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -22,8 +23,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class NonexistenceProofBody
     {
+        [ProtoMember(1)]
         public ColdArchiveBucketEntry[] entriesToProve
         {
             get => _entriesToProve;
@@ -42,6 +45,7 @@ namespace Stellar {
         /// <summary>
         /// contains all HashNodes that correspond with that level
         /// </summary>
+        [ProtoMember(2)]
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;

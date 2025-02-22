@@ -23,6 +23,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -31,8 +32,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class FeeBumpTransaction
     {
+        [ProtoMember(1)]
         public MuxedAccount feeSource
         {
             get => _feeSource;
@@ -48,6 +51,7 @@ namespace Stellar {
         #endif
         private MuxedAccount _feeSource;
 
+        [ProtoMember(2)]
         public int64 fee
         {
             get => _fee;
@@ -63,6 +67,7 @@ namespace Stellar {
         #endif
         private int64 _fee;
 
+        [ProtoMember(3)]
         public innerTxUnion innerTx
         {
             get => _innerTx;
@@ -78,6 +83,7 @@ namespace Stellar {
         #endif
         private innerTxUnion _innerTx;
 
+        [ProtoMember(4)]
         public extUnion ext
         {
             get => _ext;
@@ -102,6 +108,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "FeeBumpTransaction.innerTxUnion")]
+        [ProtoInclude(100, typeof(EnvelopeTypeTx), DataFormat = DataFormat.Default)]
         public abstract partial class innerTxUnion
         {
             public abstract EnvelopeType Discriminator { get; }
@@ -110,9 +118,11 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "FeeBumpTransaction.innerTxUnion.EnvelopeTypeTx")]
             public sealed partial class EnvelopeTypeTx : innerTxUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
+                [ProtoMember(1)]
                 public TransactionV1Envelope v1
                 {
                     get => _v1;
@@ -170,6 +180,8 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "FeeBumpTransaction.extUnion")]
+        [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
             public abstract int Discriminator { get; }
@@ -178,6 +190,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "FeeBumpTransaction.extUnion.case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

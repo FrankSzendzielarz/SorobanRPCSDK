@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ContractCodeCostInputs
     {
+        [ProtoMember(1)]
         public ExtensionPoint ext
         {
             get => _ext;
@@ -44,6 +47,7 @@ namespace Stellar {
         #endif
         private ExtensionPoint _ext;
 
+        [ProtoMember(2)]
         public uint32 nInstructions
         {
             get => _nInstructions;
@@ -59,6 +63,7 @@ namespace Stellar {
         #endif
         private uint32 _nInstructions;
 
+        [ProtoMember(3)]
         public uint32 nFunctions
         {
             get => _nFunctions;
@@ -74,6 +79,7 @@ namespace Stellar {
         #endif
         private uint32 _nFunctions;
 
+        [ProtoMember(4)]
         public uint32 nGlobals
         {
             get => _nGlobals;
@@ -89,6 +95,7 @@ namespace Stellar {
         #endif
         private uint32 _nGlobals;
 
+        [ProtoMember(5)]
         public uint32 nTableEntries
         {
             get => _nTableEntries;
@@ -104,6 +111,7 @@ namespace Stellar {
         #endif
         private uint32 _nTableEntries;
 
+        [ProtoMember(6)]
         public uint32 nTypes
         {
             get => _nTypes;
@@ -119,6 +127,7 @@ namespace Stellar {
         #endif
         private uint32 _nTypes;
 
+        [ProtoMember(7)]
         public uint32 nDataSegments
         {
             get => _nDataSegments;
@@ -134,6 +143,7 @@ namespace Stellar {
         #endif
         private uint32 _nDataSegments;
 
+        [ProtoMember(8)]
         public uint32 nElemSegments
         {
             get => _nElemSegments;
@@ -149,6 +159,7 @@ namespace Stellar {
         #endif
         private uint32 _nElemSegments;
 
+        [ProtoMember(9)]
         public uint32 nImports
         {
             get => _nImports;
@@ -164,6 +175,7 @@ namespace Stellar {
         #endif
         private uint32 _nImports;
 
+        [ProtoMember(10)]
         public uint32 nExports
         {
             get => _nExports;
@@ -179,6 +191,7 @@ namespace Stellar {
         #endif
         private uint32 _nExports;
 
+        [ProtoMember(11)]
         public uint32 nDataSegmentBytes
         {
             get => _nDataSegmentBytes;

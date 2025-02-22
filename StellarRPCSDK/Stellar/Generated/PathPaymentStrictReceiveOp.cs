@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,8 +28,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class PathPaymentStrictReceiveOp
     {
+        [ProtoMember(1)]
         public Asset sendAsset
         {
             get => _sendAsset;
@@ -47,6 +50,7 @@ namespace Stellar {
         /// <summary>
         /// asset we pay with
         /// </summary>
+        [ProtoMember(2)]
         public int64 sendMax
         {
             get => _sendMax;
@@ -62,6 +66,7 @@ namespace Stellar {
         #endif
         private int64 _sendMax;
 
+        [ProtoMember(3)]
         public MuxedAccount destination
         {
             get => _destination;
@@ -80,6 +85,7 @@ namespace Stellar {
         /// <summary>
         /// recipient of the payment
         /// </summary>
+        [ProtoMember(4)]
         public Asset destAsset
         {
             get => _destAsset;
@@ -98,6 +104,7 @@ namespace Stellar {
         /// <summary>
         /// what they end up with
         /// </summary>
+        [ProtoMember(5)]
         public int64 destAmount
         {
             get => _destAmount;
@@ -113,6 +120,7 @@ namespace Stellar {
         #endif
         private int64 _destAmount;
 
+        [ProtoMember(6)]
         [MaxLength(5)]
         public Asset[] path
         {

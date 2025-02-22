@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -29,11 +30,13 @@ namespace Stellar {
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SorobanResources
     {
         /// <summary>
         /// The ledger footprint of the transaction.
         /// </summary>
+        [ProtoMember(1)]
         public LedgerFootprint footprint
         {
             get => _footprint;
@@ -52,6 +55,7 @@ namespace Stellar {
         /// <summary>
         /// The maximum number of instructions this transaction can use
         /// </summary>
+        [ProtoMember(2)]
         public uint32 instructions
         {
             get => _instructions;
@@ -70,6 +74,7 @@ namespace Stellar {
         /// <summary>
         /// The maximum number of bytes this transaction can read from ledger
         /// </summary>
+        [ProtoMember(3)]
         public uint32 readBytes
         {
             get => _readBytes;
@@ -88,6 +93,7 @@ namespace Stellar {
         /// <summary>
         /// The maximum number of bytes this transaction can write to ledger
         /// </summary>
+        [ProtoMember(4)]
         public uint32 writeBytes
         {
             get => _writeBytes;

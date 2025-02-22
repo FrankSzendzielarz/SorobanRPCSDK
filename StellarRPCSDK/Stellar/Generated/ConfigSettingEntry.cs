@@ -37,6 +37,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -45,6 +46,21 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ConfigSettingContractMaxSizeBytes), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ConfigSettingContractComputeV0Case), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ConfigSettingContractLedgerCostV0Case), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ConfigSettingContractHistoricalDataV0Case), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ConfigSettingContractEventsV0Case), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(ConfigSettingContractBandwidthV0Case), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(ConfigSettingContractCostParamsCpuInstructions), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(ConfigSettingContractCostParamsMemoryBytes), DataFormat = DataFormat.Default)]
+    [ProtoInclude(108, typeof(ConfigSettingContractDataKeySizeBytes), DataFormat = DataFormat.Default)]
+    [ProtoInclude(109, typeof(ConfigSettingContractDataEntrySizeBytes), DataFormat = DataFormat.Default)]
+    [ProtoInclude(110, typeof(ConfigSettingStateArchival), DataFormat = DataFormat.Default)]
+    [ProtoInclude(111, typeof(ConfigSettingContractExecutionLanes), DataFormat = DataFormat.Default)]
+    [ProtoInclude(112, typeof(ConfigSettingBucketlistSizeWindow), DataFormat = DataFormat.Default)]
+    [ProtoInclude(113, typeof(ConfigSettingEvictionIterator), DataFormat = DataFormat.Default)]
     public abstract partial class ConfigSettingEntry
     {
         public abstract ConfigSettingID Discriminator { get; }
@@ -53,9 +69,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractMaxSizeBytes")]
         public sealed partial class ConfigSettingContractMaxSizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
+            [ProtoMember(1)]
             public uint32 contractMaxSizeBytes
             {
                 get => _contractMaxSizeBytes;
@@ -74,9 +92,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractComputeV0Case")]
         public sealed partial class ConfigSettingContractComputeV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
+            [ProtoMember(2)]
             public ConfigSettingContractComputeV0 contractCompute
             {
                 get => _contractCompute;
@@ -95,9 +115,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractLedgerCostV0Case")]
         public sealed partial class ConfigSettingContractLedgerCostV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
+            [ProtoMember(3)]
             public ConfigSettingContractLedgerCostV0 contractLedgerCost
             {
                 get => _contractLedgerCost;
@@ -116,9 +138,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractHistoricalDataV0Case")]
         public sealed partial class ConfigSettingContractHistoricalDataV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
+            [ProtoMember(4)]
             public ConfigSettingContractHistoricalDataV0 contractHistoricalData
             {
                 get => _contractHistoricalData;
@@ -137,9 +161,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractEventsV0Case")]
         public sealed partial class ConfigSettingContractEventsV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
+            [ProtoMember(5)]
             public ConfigSettingContractEventsV0 contractEvents
             {
                 get => _contractEvents;
@@ -158,9 +184,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractBandwidthV0Case")]
         public sealed partial class ConfigSettingContractBandwidthV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
+            [ProtoMember(6)]
             public ConfigSettingContractBandwidthV0 contractBandwidth
             {
                 get => _contractBandwidth;
@@ -179,9 +207,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions")]
         public sealed partial class ConfigSettingContractCostParamsCpuInstructions : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
+            [ProtoMember(7)]
             public ContractCostParams contractCostParamsCpuInsns
             {
                 get => _contractCostParamsCpuInsns;
@@ -200,9 +230,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes")]
         public sealed partial class ConfigSettingContractCostParamsMemoryBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
+            [ProtoMember(8)]
             public ContractCostParams contractCostParamsMemBytes
             {
                 get => _contractCostParamsMemBytes;
@@ -221,9 +253,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes")]
         public sealed partial class ConfigSettingContractDataKeySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
+            [ProtoMember(9)]
             public uint32 contractDataKeySizeBytes
             {
                 get => _contractDataKeySizeBytes;
@@ -242,9 +276,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractDataEntrySizeBytes")]
         public sealed partial class ConfigSettingContractDataEntrySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
+            [ProtoMember(10)]
             public uint32 contractDataEntrySizeBytes
             {
                 get => _contractDataEntrySizeBytes;
@@ -263,9 +299,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingStateArchival")]
         public sealed partial class ConfigSettingStateArchival : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
+            [ProtoMember(11)]
             public StateArchivalSettings stateArchivalSettings
             {
                 get => _stateArchivalSettings;
@@ -284,9 +322,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractExecutionLanes")]
         public sealed partial class ConfigSettingContractExecutionLanes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
+            [ProtoMember(12)]
             public ConfigSettingContractExecutionLanesV0 contractExecutionLanes
             {
                 get => _contractExecutionLanes;
@@ -305,9 +345,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingBucketlistSizeWindow")]
         public sealed partial class ConfigSettingBucketlistSizeWindow : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
+            [ProtoMember(13)]
             public uint64[] bucketListSizeWindow
             {
                 get => _bucketListSizeWindow;
@@ -326,9 +368,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingEvictionIterator")]
         public sealed partial class ConfigSettingEvictionIterator : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;
+            [ProtoMember(14)]
             public EvictionIterator evictionIterator
             {
                 get => _evictionIterator;

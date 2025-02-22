@@ -21,6 +21,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -29,11 +30,13 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class ManageOfferSuccessResult
     {
         /// <summary>
         /// offers that got claimed while creating this offer
         /// </summary>
+        [ProtoMember(1)]
         public ClaimAtom[] offersClaimed
         {
             get => _offersClaimed;
@@ -49,6 +52,7 @@ namespace Stellar {
         #endif
         private ClaimAtom[] _offersClaimed;
 
+        [ProtoMember(2)]
         public offerUnion offer
         {
             get => _offer;
@@ -73,6 +77,10 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion")]
+        [ProtoInclude(100, typeof(ManageOfferCreated), DataFormat = DataFormat.Default)]
+        [ProtoInclude(101, typeof(ManageOfferUpdated), DataFormat = DataFormat.Default)]
+        [ProtoInclude(102, typeof(ManageOfferDeleted), DataFormat = DataFormat.Default)]
         public abstract partial class offerUnion
         {
             public abstract ManageOfferEffect Discriminator { get; }
@@ -81,9 +89,11 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
+            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferCreated")]
             public sealed partial class ManageOfferCreated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_CREATED;
+                [ProtoMember(1)]
                 public OfferEntry offer
                 {
                     get => _offer;
@@ -102,9 +112,11 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferUpdated")]
             public sealed partial class ManageOfferUpdated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_UPDATED;
+                [ProtoMember(2)]
                 public OfferEntry offer
                 {
                     get => _offer;
@@ -123,6 +135,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
+            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferDeleted")]
             public sealed partial class ManageOfferDeleted : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_DELETED;

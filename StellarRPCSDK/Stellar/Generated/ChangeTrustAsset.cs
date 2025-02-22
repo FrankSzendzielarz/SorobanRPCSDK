@@ -22,6 +22,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -30,6 +31,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(AssetTypeNative), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(AssetTypeCreditAlphanum4), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(AssetTypeCreditAlphanum12), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(AssetTypePoolShare), DataFormat = DataFormat.Default)]
     public abstract partial class ChangeTrustAsset
     {
         public abstract AssetType Discriminator { get; }
@@ -38,6 +44,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustAsset.AssetTypeNative")]
         public sealed partial class AssetTypeNative : ChangeTrustAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
@@ -45,9 +52,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustAsset.AssetTypeCreditAlphanum4")]
         public sealed partial class AssetTypeCreditAlphanum4 : ChangeTrustAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
+            [ProtoMember(1)]
             public AlphaNum4 alphaNum4
             {
                 get => _alphaNum4;
@@ -66,9 +75,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustAsset.AssetTypeCreditAlphanum12")]
         public sealed partial class AssetTypeCreditAlphanum12 : ChangeTrustAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
+            [ProtoMember(2)]
             public AlphaNum12 alphaNum12
             {
                 get => _alphaNum12;
@@ -87,9 +98,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ChangeTrustAsset.AssetTypePoolShare")]
         public sealed partial class AssetTypePoolShare : ChangeTrustAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_POOL_SHARE;
+            [ProtoMember(3)]
             public LiquidityPoolParameters liquidityPool
             {
                 get => _liquidityPool;

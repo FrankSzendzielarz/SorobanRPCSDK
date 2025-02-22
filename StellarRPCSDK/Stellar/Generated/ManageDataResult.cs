@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -24,6 +25,12 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ManageDataSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ManageDataNotSupportedYet), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(ManageDataNameNotFound), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(ManageDataLowReserve), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(ManageDataInvalidName), DataFormat = DataFormat.Default)]
     public abstract partial class ManageDataResult
     {
         public abstract ManageDataResultCode Discriminator { get; }
@@ -32,6 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ManageDataResult.ManageDataSuccess")]
         public sealed partial class ManageDataSuccess : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_SUCCESS;
@@ -39,6 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageDataResult.ManageDataNotSupportedYet")]
         public sealed partial class ManageDataNotSupportedYet : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET;
@@ -46,6 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageDataResult.ManageDataNameNotFound")]
         public sealed partial class ManageDataNameNotFound : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND;
@@ -53,6 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageDataResult.ManageDataLowReserve")]
         public sealed partial class ManageDataLowReserve : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_LOW_RESERVE;
@@ -60,6 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ManageDataResult.ManageDataInvalidName")]
         public sealed partial class ManageDataInvalidName : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_INVALID_NAME;

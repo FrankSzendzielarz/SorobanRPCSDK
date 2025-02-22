@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class StoredDebugTransactionSet
     {
+        [ProtoMember(1)]
         public StoredTransactionSet txSet
         {
             get => _txSet;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private StoredTransactionSet _txSet;
 
+        [ProtoMember(2)]
         public uint32 ledgerSeq
         {
             get => _ledgerSeq;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private uint32 _ledgerSeq;
 
+        [ProtoMember(3)]
         public StellarValue scpValue
         {
             get => _scpValue;

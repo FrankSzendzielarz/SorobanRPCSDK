@@ -25,6 +25,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -33,8 +34,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class TimeSlicedNodeData
     {
+        [ProtoMember(1)]
         public uint32 addedAuthenticatedPeers
         {
             get => _addedAuthenticatedPeers;
@@ -50,6 +53,7 @@ namespace Stellar {
         #endif
         private uint32 _addedAuthenticatedPeers;
 
+        [ProtoMember(2)]
         public uint32 droppedAuthenticatedPeers
         {
             get => _droppedAuthenticatedPeers;
@@ -65,6 +69,7 @@ namespace Stellar {
         #endif
         private uint32 _droppedAuthenticatedPeers;
 
+        [ProtoMember(3)]
         public uint32 totalInboundPeerCount
         {
             get => _totalInboundPeerCount;
@@ -80,6 +85,7 @@ namespace Stellar {
         #endif
         private uint32 _totalInboundPeerCount;
 
+        [ProtoMember(4)]
         public uint32 totalOutboundPeerCount
         {
             get => _totalOutboundPeerCount;
@@ -98,6 +104,7 @@ namespace Stellar {
         /// <summary>
         /// SCP stats
         /// </summary>
+        [ProtoMember(5)]
         public uint32 p75SCPFirstToSelfLatencyMs
         {
             get => _p75SCPFirstToSelfLatencyMs;
@@ -113,6 +120,7 @@ namespace Stellar {
         #endif
         private uint32 _p75SCPFirstToSelfLatencyMs;
 
+        [ProtoMember(6)]
         public uint32 p75SCPSelfToOtherLatencyMs
         {
             get => _p75SCPSelfToOtherLatencyMs;
@@ -131,6 +139,7 @@ namespace Stellar {
         /// <summary>
         /// How many times the node lost sync in the time slice
         /// </summary>
+        [ProtoMember(7)]
         public uint32 lostSyncCount
         {
             get => _lostSyncCount;
@@ -149,6 +158,7 @@ namespace Stellar {
         /// <summary>
         /// Config data
         /// </summary>
+        [ProtoMember(8)]
         public bool isValidator
         {
             get => _isValidator;
@@ -164,6 +174,7 @@ namespace Stellar {
         #endif
         private bool _isValidator;
 
+        [ProtoMember(9)]
         public uint32 maxInboundPeerCount
         {
             get => _maxInboundPeerCount;
@@ -179,6 +190,7 @@ namespace Stellar {
         #endif
         private uint32 _maxInboundPeerCount;
 
+        [ProtoMember(10)]
         public uint32 maxOutboundPeerCount
         {
             get => _maxOutboundPeerCount;

@@ -13,6 +13,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -21,6 +22,9 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(ContractExecutableWasm), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(ContractExecutableStellarAsset), DataFormat = DataFormat.Default)]
     public abstract partial class ContractExecutable
     {
         public abstract ContractExecutableType Discriminator { get; }
@@ -29,9 +33,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "ContractExecutable.ContractExecutableWasm")]
         public sealed partial class ContractExecutableWasm : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_WASM;
+            [ProtoMember(1)]
             public Hash wasm_hash
             {
                 get => _wasm_hash;
@@ -50,6 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "ContractExecutable.ContractExecutableStellarAsset")]
         public sealed partial class ContractExecutableStellarAsset : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET;

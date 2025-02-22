@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class PersistedSCPStateV0
     {
+        [ProtoMember(1)]
         public SCPEnvelope[] scpEnvelopes
         {
             get => _scpEnvelopes;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private SCPEnvelope[] _scpEnvelopes;
 
+        [ProtoMember(2)]
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private SCPQuorumSet[] _quorumSets;
 
+        [ProtoMember(3)]
         public StoredTransactionSet[] txSets
         {
             get => _txSets;

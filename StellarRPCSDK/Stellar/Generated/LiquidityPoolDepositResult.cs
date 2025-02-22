@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -27,6 +28,15 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(LiquidityPoolDepositSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(LiquidityPoolDepositMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(LiquidityPoolDepositNoTrust), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(LiquidityPoolDepositNotAuthorized), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(LiquidityPoolDepositUnderfunded), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(LiquidityPoolDepositLineFull), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(LiquidityPoolDepositBadPrice), DataFormat = DataFormat.Default)]
+    [ProtoInclude(107, typeof(LiquidityPoolDepositPoolFull), DataFormat = DataFormat.Default)]
     public abstract partial class LiquidityPoolDepositResult
     {
         public abstract LiquidityPoolDepositResultCode Discriminator { get; }
@@ -35,6 +45,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositSuccess")]
         public sealed partial class LiquidityPoolDepositSuccess : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_SUCCESS;
@@ -42,6 +53,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositMalformed")]
         public sealed partial class LiquidityPoolDepositMalformed : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_MALFORMED;
@@ -49,6 +61,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositNoTrust")]
         public sealed partial class LiquidityPoolDepositNoTrust : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NO_TRUST;
@@ -56,6 +69,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositNotAuthorized")]
         public sealed partial class LiquidityPoolDepositNotAuthorized : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_NOT_AUTHORIZED;
@@ -63,6 +77,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositUnderfunded")]
         public sealed partial class LiquidityPoolDepositUnderfunded : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_UNDERFUNDED;
@@ -70,6 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositLineFull")]
         public sealed partial class LiquidityPoolDepositLineFull : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_LINE_FULL;
@@ -77,6 +93,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositBadPrice")]
         public sealed partial class LiquidityPoolDepositBadPrice : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_BAD_PRICE;
@@ -84,6 +101,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "LiquidityPoolDepositResult.LiquidityPoolDepositPoolFull")]
         public sealed partial class LiquidityPoolDepositPoolFull : LiquidityPoolDepositResult
         {
             public override LiquidityPoolDepositResultCode Discriminator => LiquidityPoolDepositResultCode.LIQUIDITY_POOL_DEPOSIT_POOL_FULL;

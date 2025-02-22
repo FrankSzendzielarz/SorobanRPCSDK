@@ -18,6 +18,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -26,6 +27,14 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(AllowTrustSuccess), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(AllowTrustMalformed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(AllowTrustNoTrustLine), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(AllowTrustTrustNotRequired), DataFormat = DataFormat.Default)]
+    [ProtoInclude(104, typeof(AllowTrustCantRevoke), DataFormat = DataFormat.Default)]
+    [ProtoInclude(105, typeof(AllowTrustSelfNotAllowed), DataFormat = DataFormat.Default)]
+    [ProtoInclude(106, typeof(AllowTrustLowReserve), DataFormat = DataFormat.Default)]
     public abstract partial class AllowTrustResult
     {
         public abstract AllowTrustResultCode Discriminator { get; }
@@ -34,6 +43,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustSuccess")]
         public sealed partial class AllowTrustSuccess : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SUCCESS;
@@ -41,6 +51,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustMalformed")]
         public sealed partial class AllowTrustMalformed : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_MALFORMED;
@@ -48,6 +59,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustNoTrustLine")]
         public sealed partial class AllowTrustNoTrustLine : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_NO_TRUST_LINE;
@@ -55,6 +67,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustTrustNotRequired")]
         public sealed partial class AllowTrustTrustNotRequired : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_TRUST_NOT_REQUIRED;
@@ -62,6 +75,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustCantRevoke")]
         public sealed partial class AllowTrustCantRevoke : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_CANT_REVOKE;
@@ -69,6 +83,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustSelfNotAllowed")]
         public sealed partial class AllowTrustSelfNotAllowed : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_SELF_NOT_ALLOWED;
@@ -76,6 +91,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "AllowTrustResult.AllowTrustLowReserve")]
         public sealed partial class AllowTrustLowReserve : AllowTrustResult
         {
             public override AllowTrustResultCode Discriminator => AllowTrustResultCode.ALLOW_TRUST_LOW_RESERVE;

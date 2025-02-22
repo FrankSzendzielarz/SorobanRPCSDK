@@ -15,6 +15,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -23,6 +24,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(SurveyTopologyResponseV0), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(SurveyTopologyResponseV1), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(SurveyTopologyResponseV2), DataFormat = DataFormat.Default)]
     public abstract partial class SurveyResponseBody
     {
         public abstract SurveyMessageResponseType Discriminator { get; }
@@ -31,9 +36,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV0")]
         public sealed partial class SurveyTopologyResponseV0 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0;
+            [ProtoMember(1)]
             public TopologyResponseBodyV0 topologyResponseBodyV0
             {
                 get => _topologyResponseBodyV0;
@@ -52,9 +59,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV1")]
         public sealed partial class SurveyTopologyResponseV1 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1;
+            [ProtoMember(2)]
             public TopologyResponseBodyV1 topologyResponseBodyV1
             {
                 get => _topologyResponseBodyV1;
@@ -73,9 +82,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV2")]
         public sealed partial class SurveyTopologyResponseV2 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2;
+            [ProtoMember(3)]
             public TopologyResponseBodyV2 topologyResponseBodyV2
             {
                 get => _topologyResponseBodyV2;

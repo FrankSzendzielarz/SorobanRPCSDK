@@ -30,8 +30,8 @@ namespace Stellar {
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
     [ProtoContract]
-    [ProtoInclude(100, typeof(KeyTypeEd25519))]
-    [ProtoInclude(101, typeof(KeyTypeMuxedEd25519))]
+    [ProtoInclude(100, typeof(KeyTypeEd25519), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(KeyTypeMuxedEd25519), DataFormat = DataFormat.Default)]
     public abstract partial class MuxedAccount
     {
         public abstract CryptoKeyType Discriminator { get; }
@@ -41,8 +41,10 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
+        [ProtoContract(Name = "MuxedAccount.med25519Struct")]
         public partial class med25519Struct
         {
+            [ProtoMember(1)]
             public uint64 id
             {
                 get => _id;
@@ -58,6 +60,7 @@ namespace Stellar {
             #endif
             private uint64 _id;
 
+            [ProtoMember(2)]
             public uint256 ed25519
             {
                 get => _ed25519;
@@ -110,9 +113,11 @@ namespace Stellar {
             }
         }
         [System.Serializable]
+        [ProtoContract(Name = "MuxedAccount.KeyTypeEd25519")]
         public sealed partial class KeyTypeEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
+            [ProtoMember(1)]
             public uint256 ed25519
             {
                 get => _ed25519;
@@ -131,9 +136,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "MuxedAccount.KeyTypeMuxedEd25519")]
         public sealed partial class KeyTypeMuxedEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;
+            [ProtoMember(2)]
             public med25519Struct med25519
             {
                 get => _med25519;

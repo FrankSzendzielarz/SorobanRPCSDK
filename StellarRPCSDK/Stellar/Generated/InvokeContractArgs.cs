@@ -11,6 +11,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -19,8 +20,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class InvokeContractArgs
     {
+        [ProtoMember(1)]
         public SCAddress contractAddress
         {
             get => _contractAddress;
@@ -36,6 +39,7 @@ namespace Stellar {
         #endif
         private SCAddress _contractAddress;
 
+        [ProtoMember(2)]
         public SCSymbol functionName
         {
             get => _functionName;
@@ -51,6 +55,7 @@ namespace Stellar {
         #endif
         private SCSymbol _functionName;
 
+        [ProtoMember(3)]
         public SCVal[] args
         {
             get => _args;

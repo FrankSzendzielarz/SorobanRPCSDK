@@ -17,6 +17,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -25,6 +26,11 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
+    [ProtoInclude(100, typeof(HostFunctionTypeInvokeContract), DataFormat = DataFormat.Default)]
+    [ProtoInclude(101, typeof(HostFunctionTypeCreateContract), DataFormat = DataFormat.Default)]
+    [ProtoInclude(102, typeof(HostFunctionTypeUploadContractWasm), DataFormat = DataFormat.Default)]
+    [ProtoInclude(103, typeof(HostFunctionTypeCreateContractV2), DataFormat = DataFormat.Default)]
     public abstract partial class HostFunction
     {
         public abstract HostFunctionType Discriminator { get; }
@@ -33,9 +39,11 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
+        [ProtoContract(Name = "HostFunction.HostFunctionTypeInvokeContract")]
         public sealed partial class HostFunctionTypeInvokeContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
+            [ProtoMember(1)]
             public InvokeContractArgs invokeContract
             {
                 get => _invokeContract;
@@ -54,9 +62,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HostFunction.HostFunctionTypeCreateContract")]
         public sealed partial class HostFunctionTypeCreateContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
+            [ProtoMember(2)]
             public CreateContractArgs createContract
             {
                 get => _createContract;
@@ -75,9 +85,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HostFunction.HostFunctionTypeUploadContractWasm")]
         public sealed partial class HostFunctionTypeUploadContractWasm : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
+            [ProtoMember(3)]
             public byte[] wasm
             {
                 get => _wasm;
@@ -96,9 +108,11 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
+        [ProtoContract(Name = "HostFunction.HostFunctionTypeCreateContractV2")]
         public sealed partial class HostFunctionTypeCreateContractV2 : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;
+            [ProtoMember(4)]
             public CreateContractArgsV2 createContractV2
             {
                 get => _createContractV2;

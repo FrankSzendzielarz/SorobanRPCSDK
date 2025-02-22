@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.ComponentModel.DataAnnotations;
+using ProtoBuf;
 #if UNITY
 	using UnityEngine;
 #endif
@@ -20,8 +21,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
+    [ProtoContract]
     public partial class SimplePaymentResult
     {
+        [ProtoMember(1)]
         public AccountID destination
         {
             get => _destination;
@@ -37,6 +40,7 @@ namespace Stellar {
         #endif
         private AccountID _destination;
 
+        [ProtoMember(2)]
         public Asset asset
         {
             get => _asset;
@@ -52,6 +56,7 @@ namespace Stellar {
         #endif
         private Asset _asset;
 
+        [ProtoMember(3)]
         public int64 amount
         {
             get => _amount;
