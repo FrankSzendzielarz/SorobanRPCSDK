@@ -3,9 +3,12 @@ using ProtoBuf;
 using System;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 
 namespace Stellar.RPC
 {
+
+
     public partial class Transactions
     {
         private TransactionResult _transactionResult;

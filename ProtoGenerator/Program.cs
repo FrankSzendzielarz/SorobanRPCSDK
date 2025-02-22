@@ -14,11 +14,11 @@ namespace Stellar.RPC.Tools
 
 2. Modify XDR gen to also add protobuf fields
 
-3. Extract interfaces from all manual partials and make them ServiceContract 
+3. DONE Extract interfaces from all manual partials and make them ServiceContract 
 
-4. Change all the methods on the Manual Partial so they don't return byte[] but meaningful types (eg PrivateKey) so that protobuf-net doesn't have to work with native types
+4. DONE Change all the methods on the Manual Partial so they don't return byte[] but meaningful types (eg PrivateKey) so that protobuf-net doesn't have to work with native types
 
-5. Modify protogen to scan the assembly for service contracts and do it automatically.
+5. DONE Modify protogen to scan the assembly for service contracts and do it automatically.
 
 6. Test the  builder.Services.AddCodeFirstGrpc(); is working in the Native AOT project. We don't need to manually register any services. 
 

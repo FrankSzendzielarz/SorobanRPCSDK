@@ -76,10 +76,11 @@ namespace Stellar.RPC.Native
                 });
 #endif
                 builder.Services.AddScoped<TestService>();
+                builder.Services.AddCodeFirstGrpc();
                 _app = builder.Build();
                 _app.MapGrpcService<TestService>();
 
-                builder.Services.AddCodeFirstGrpc();
+         
 
                 _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                 _app.Run();

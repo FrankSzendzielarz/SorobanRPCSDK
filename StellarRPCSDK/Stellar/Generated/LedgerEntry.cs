@@ -114,7 +114,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract]
+        [ProtoContract(Name ="LedgerEntry.dataUnion")]
         public abstract partial class dataUnion
         {
             public abstract LedgerEntryType Discriminator { get; }

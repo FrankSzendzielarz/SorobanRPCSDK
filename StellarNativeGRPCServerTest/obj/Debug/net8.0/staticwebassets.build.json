@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ZBZPWz5IG5e391z3jJbyjQivipLrKLCkrmwamlwbKxY=",
+  "Source": "StellarNativeGRPCServerTest",
+  "BasePath": "_content/StellarNativeGRPCServerTest",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
