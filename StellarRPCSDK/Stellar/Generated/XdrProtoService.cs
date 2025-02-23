@@ -10927,7 +10927,2352 @@ namespace stellar
     }
 
     [ServiceContract]
-    public class XdrProtoService
+    public interface IXdrProtoService
+    {
+        [OperationContract]
+        ConfigSettingContractExecutionLanesV0EncodeResponse EncodeConfigSettingContractExecutionLanesV0(ConfigSettingContractExecutionLanesV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractExecutionLanesV0DecodeResponse DecodeConfigSettingContractExecutionLanesV0(ConfigSettingContractExecutionLanesV0DecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractComputeV0EncodeResponse EncodeConfigSettingContractComputeV0(ConfigSettingContractComputeV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractComputeV0DecodeResponse DecodeConfigSettingContractComputeV0(ConfigSettingContractComputeV0DecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractLedgerCostV0EncodeResponse EncodeConfigSettingContractLedgerCostV0(ConfigSettingContractLedgerCostV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractLedgerCostV0DecodeResponse DecodeConfigSettingContractLedgerCostV0(ConfigSettingContractLedgerCostV0DecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractHistoricalDataV0EncodeResponse EncodeConfigSettingContractHistoricalDataV0(ConfigSettingContractHistoricalDataV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractHistoricalDataV0DecodeResponse DecodeConfigSettingContractHistoricalDataV0(ConfigSettingContractHistoricalDataV0DecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractEventsV0EncodeResponse EncodeConfigSettingContractEventsV0(ConfigSettingContractEventsV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractEventsV0DecodeResponse DecodeConfigSettingContractEventsV0(ConfigSettingContractEventsV0DecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractBandwidthV0EncodeResponse EncodeConfigSettingContractBandwidthV0(ConfigSettingContractBandwidthV0EncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingContractBandwidthV0DecodeResponse DecodeConfigSettingContractBandwidthV0(ConfigSettingContractBandwidthV0DecodeRequest request);
+
+        [OperationContract]
+        ContractCostTypeEncodeResponse EncodeContractCostType(ContractCostTypeEncodeRequest request);
+
+        [OperationContract]
+        ContractCostTypeDecodeResponse DecodeContractCostType(ContractCostTypeDecodeRequest request);
+
+        [OperationContract]
+        ContractCostParamEntryEncodeResponse EncodeContractCostParamEntry(ContractCostParamEntryEncodeRequest request);
+
+        [OperationContract]
+        ContractCostParamEntryDecodeResponse DecodeContractCostParamEntry(ContractCostParamEntryDecodeRequest request);
+
+        [OperationContract]
+        StateArchivalSettingsEncodeResponse EncodeStateArchivalSettings(StateArchivalSettingsEncodeRequest request);
+
+        [OperationContract]
+        StateArchivalSettingsDecodeResponse DecodeStateArchivalSettings(StateArchivalSettingsDecodeRequest request);
+
+        [OperationContract]
+        EvictionIteratorEncodeResponse EncodeEvictionIterator(EvictionIteratorEncodeRequest request);
+
+        [OperationContract]
+        EvictionIteratorDecodeResponse DecodeEvictionIterator(EvictionIteratorDecodeRequest request);
+
+        [OperationContract]
+        ContractCostParamsEncodeResponse EncodeContractCostParams(ContractCostParamsEncodeRequest request);
+
+        [OperationContract]
+        ContractCostParamsDecodeResponse DecodeContractCostParams(ContractCostParamsDecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingIDEncodeResponse EncodeConfigSettingID(ConfigSettingIDEncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingIDDecodeResponse DecodeConfigSettingID(ConfigSettingIDDecodeRequest request);
+
+        [OperationContract]
+        ConfigSettingEntryEncodeResponse EncodeConfigSettingEntry(ConfigSettingEntryEncodeRequest request);
+
+        [OperationContract]
+        ConfigSettingEntryDecodeResponse DecodeConfigSettingEntry(ConfigSettingEntryDecodeRequest request);
+
+        [OperationContract]
+        SCEnvMetaKindEncodeResponse EncodeSCEnvMetaKind(SCEnvMetaKindEncodeRequest request);
+
+        [OperationContract]
+        SCEnvMetaKindDecodeResponse DecodeSCEnvMetaKind(SCEnvMetaKindDecodeRequest request);
+
+        [OperationContract]
+        SCEnvMetaEntryEncodeResponse EncodeSCEnvMetaEntry(SCEnvMetaEntryEncodeRequest request);
+
+        [OperationContract]
+        SCEnvMetaEntryDecodeResponse DecodeSCEnvMetaEntry(SCEnvMetaEntryDecodeRequest request);
+
+        [OperationContract]
+        SCMetaV0EncodeResponse EncodeSCMetaV0(SCMetaV0EncodeRequest request);
+
+        [OperationContract]
+        SCMetaV0DecodeResponse DecodeSCMetaV0(SCMetaV0DecodeRequest request);
+
+        [OperationContract]
+        SCMetaKindEncodeResponse EncodeSCMetaKind(SCMetaKindEncodeRequest request);
+
+        [OperationContract]
+        SCMetaKindDecodeResponse DecodeSCMetaKind(SCMetaKindDecodeRequest request);
+
+        [OperationContract]
+        SCMetaEntryEncodeResponse EncodeSCMetaEntry(SCMetaEntryEncodeRequest request);
+
+        [OperationContract]
+        SCMetaEntryDecodeResponse DecodeSCMetaEntry(SCMetaEntryDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeEncodeResponse EncodeSCSpecType(SCSpecTypeEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeDecodeResponse DecodeSCSpecType(SCSpecTypeDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeOptionEncodeResponse EncodeSCSpecTypeOption(SCSpecTypeOptionEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeOptionDecodeResponse DecodeSCSpecTypeOption(SCSpecTypeOptionDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeResultEncodeResponse EncodeSCSpecTypeResult(SCSpecTypeResultEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeResultDecodeResponse DecodeSCSpecTypeResult(SCSpecTypeResultDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeVecEncodeResponse EncodeSCSpecTypeVec(SCSpecTypeVecEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeVecDecodeResponse DecodeSCSpecTypeVec(SCSpecTypeVecDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeMapEncodeResponse EncodeSCSpecTypeMap(SCSpecTypeMapEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeMapDecodeResponse DecodeSCSpecTypeMap(SCSpecTypeMapDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeTupleEncodeResponse EncodeSCSpecTypeTuple(SCSpecTypeTupleEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeTupleDecodeResponse DecodeSCSpecTypeTuple(SCSpecTypeTupleDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeBytesNEncodeResponse EncodeSCSpecTypeBytesN(SCSpecTypeBytesNEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeBytesNDecodeResponse DecodeSCSpecTypeBytesN(SCSpecTypeBytesNDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeUDTEncodeResponse EncodeSCSpecTypeUDT(SCSpecTypeUDTEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeUDTDecodeResponse DecodeSCSpecTypeUDT(SCSpecTypeUDTDecodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeDefEncodeResponse EncodeSCSpecTypeDef(SCSpecTypeDefEncodeRequest request);
+
+        [OperationContract]
+        SCSpecTypeDefDecodeResponse DecodeSCSpecTypeDef(SCSpecTypeDefDecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTStructFieldV0EncodeResponse EncodeSCSpecUDTStructFieldV0(SCSpecUDTStructFieldV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTStructFieldV0DecodeResponse DecodeSCSpecUDTStructFieldV0(SCSpecUDTStructFieldV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTStructV0EncodeResponse EncodeSCSpecUDTStructV0(SCSpecUDTStructV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTStructV0DecodeResponse DecodeSCSpecUDTStructV0(SCSpecUDTStructV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseVoidV0EncodeResponse EncodeSCSpecUDTUnionCaseVoidV0(SCSpecUDTUnionCaseVoidV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseVoidV0DecodeResponse DecodeSCSpecUDTUnionCaseVoidV0(SCSpecUDTUnionCaseVoidV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseTupleV0EncodeResponse EncodeSCSpecUDTUnionCaseTupleV0(SCSpecUDTUnionCaseTupleV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseTupleV0DecodeResponse DecodeSCSpecUDTUnionCaseTupleV0(SCSpecUDTUnionCaseTupleV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseV0KindEncodeResponse EncodeSCSpecUDTUnionCaseV0Kind(SCSpecUDTUnionCaseV0KindEncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseV0KindDecodeResponse DecodeSCSpecUDTUnionCaseV0Kind(SCSpecUDTUnionCaseV0KindDecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseV0EncodeResponse EncodeSCSpecUDTUnionCaseV0(SCSpecUDTUnionCaseV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionCaseV0DecodeResponse DecodeSCSpecUDTUnionCaseV0(SCSpecUDTUnionCaseV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionV0EncodeResponse EncodeSCSpecUDTUnionV0(SCSpecUDTUnionV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTUnionV0DecodeResponse DecodeSCSpecUDTUnionV0(SCSpecUDTUnionV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTEnumCaseV0EncodeResponse EncodeSCSpecUDTEnumCaseV0(SCSpecUDTEnumCaseV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTEnumCaseV0DecodeResponse DecodeSCSpecUDTEnumCaseV0(SCSpecUDTEnumCaseV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTEnumV0EncodeResponse EncodeSCSpecUDTEnumV0(SCSpecUDTEnumV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTEnumV0DecodeResponse DecodeSCSpecUDTEnumV0(SCSpecUDTEnumV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTErrorEnumCaseV0EncodeResponse EncodeSCSpecUDTErrorEnumCaseV0(SCSpecUDTErrorEnumCaseV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTErrorEnumCaseV0DecodeResponse DecodeSCSpecUDTErrorEnumCaseV0(SCSpecUDTErrorEnumCaseV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTErrorEnumV0EncodeResponse EncodeSCSpecUDTErrorEnumV0(SCSpecUDTErrorEnumV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecUDTErrorEnumV0DecodeResponse DecodeSCSpecUDTErrorEnumV0(SCSpecUDTErrorEnumV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecFunctionInputV0EncodeResponse EncodeSCSpecFunctionInputV0(SCSpecFunctionInputV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecFunctionInputV0DecodeResponse DecodeSCSpecFunctionInputV0(SCSpecFunctionInputV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecFunctionV0EncodeResponse EncodeSCSpecFunctionV0(SCSpecFunctionV0EncodeRequest request);
+
+        [OperationContract]
+        SCSpecFunctionV0DecodeResponse DecodeSCSpecFunctionV0(SCSpecFunctionV0DecodeRequest request);
+
+        [OperationContract]
+        SCSpecEntryKindEncodeResponse EncodeSCSpecEntryKind(SCSpecEntryKindEncodeRequest request);
+
+        [OperationContract]
+        SCSpecEntryKindDecodeResponse DecodeSCSpecEntryKind(SCSpecEntryKindDecodeRequest request);
+
+        [OperationContract]
+        SCSpecEntryEncodeResponse EncodeSCSpecEntry(SCSpecEntryEncodeRequest request);
+
+        [OperationContract]
+        SCSpecEntryDecodeResponse DecodeSCSpecEntry(SCSpecEntryDecodeRequest request);
+
+        [OperationContract]
+        SCValTypeEncodeResponse EncodeSCValType(SCValTypeEncodeRequest request);
+
+        [OperationContract]
+        SCValTypeDecodeResponse DecodeSCValType(SCValTypeDecodeRequest request);
+
+        [OperationContract]
+        SCErrorTypeEncodeResponse EncodeSCErrorType(SCErrorTypeEncodeRequest request);
+
+        [OperationContract]
+        SCErrorTypeDecodeResponse DecodeSCErrorType(SCErrorTypeDecodeRequest request);
+
+        [OperationContract]
+        SCErrorCodeEncodeResponse EncodeSCErrorCode(SCErrorCodeEncodeRequest request);
+
+        [OperationContract]
+        SCErrorCodeDecodeResponse DecodeSCErrorCode(SCErrorCodeDecodeRequest request);
+
+        [OperationContract]
+        SCErrorEncodeResponse EncodeSCError(SCErrorEncodeRequest request);
+
+        [OperationContract]
+        SCErrorDecodeResponse DecodeSCError(SCErrorDecodeRequest request);
+
+        [OperationContract]
+        UInt128PartsEncodeResponse EncodeUInt128Parts(UInt128PartsEncodeRequest request);
+
+        [OperationContract]
+        UInt128PartsDecodeResponse DecodeUInt128Parts(UInt128PartsDecodeRequest request);
+
+        [OperationContract]
+        Int128PartsEncodeResponse EncodeInt128Parts(Int128PartsEncodeRequest request);
+
+        [OperationContract]
+        Int128PartsDecodeResponse DecodeInt128Parts(Int128PartsDecodeRequest request);
+
+        [OperationContract]
+        UInt256PartsEncodeResponse EncodeUInt256Parts(UInt256PartsEncodeRequest request);
+
+        [OperationContract]
+        UInt256PartsDecodeResponse DecodeUInt256Parts(UInt256PartsDecodeRequest request);
+
+        [OperationContract]
+        Int256PartsEncodeResponse EncodeInt256Parts(Int256PartsEncodeRequest request);
+
+        [OperationContract]
+        Int256PartsDecodeResponse DecodeInt256Parts(Int256PartsDecodeRequest request);
+
+        [OperationContract]
+        ContractExecutableTypeEncodeResponse EncodeContractExecutableType(ContractExecutableTypeEncodeRequest request);
+
+        [OperationContract]
+        ContractExecutableTypeDecodeResponse DecodeContractExecutableType(ContractExecutableTypeDecodeRequest request);
+
+        [OperationContract]
+        ContractExecutableEncodeResponse EncodeContractExecutable(ContractExecutableEncodeRequest request);
+
+        [OperationContract]
+        ContractExecutableDecodeResponse DecodeContractExecutable(ContractExecutableDecodeRequest request);
+
+        [OperationContract]
+        SCAddressTypeEncodeResponse EncodeSCAddressType(SCAddressTypeEncodeRequest request);
+
+        [OperationContract]
+        SCAddressTypeDecodeResponse DecodeSCAddressType(SCAddressTypeDecodeRequest request);
+
+        [OperationContract]
+        SCAddressEncodeResponse EncodeSCAddress(SCAddressEncodeRequest request);
+
+        [OperationContract]
+        SCAddressDecodeResponse DecodeSCAddress(SCAddressDecodeRequest request);
+
+        [OperationContract]
+        SCVecEncodeResponse EncodeSCVec(SCVecEncodeRequest request);
+
+        [OperationContract]
+        SCVecDecodeResponse DecodeSCVec(SCVecDecodeRequest request);
+
+        [OperationContract]
+        SCMapEncodeResponse EncodeSCMap(SCMapEncodeRequest request);
+
+        [OperationContract]
+        SCMapDecodeResponse DecodeSCMap(SCMapDecodeRequest request);
+
+        [OperationContract]
+        SCBytesEncodeResponse EncodeSCBytes(SCBytesEncodeRequest request);
+
+        [OperationContract]
+        SCBytesDecodeResponse DecodeSCBytes(SCBytesDecodeRequest request);
+
+        [OperationContract]
+        SCStringEncodeResponse EncodeSCString(SCStringEncodeRequest request);
+
+        [OperationContract]
+        SCStringDecodeResponse DecodeSCString(SCStringDecodeRequest request);
+
+        [OperationContract]
+        SCSymbolEncodeResponse EncodeSCSymbol(SCSymbolEncodeRequest request);
+
+        [OperationContract]
+        SCSymbolDecodeResponse DecodeSCSymbol(SCSymbolDecodeRequest request);
+
+        [OperationContract]
+        SCNonceKeyEncodeResponse EncodeSCNonceKey(SCNonceKeyEncodeRequest request);
+
+        [OperationContract]
+        SCNonceKeyDecodeResponse DecodeSCNonceKey(SCNonceKeyDecodeRequest request);
+
+        [OperationContract]
+        SCContractInstanceEncodeResponse EncodeSCContractInstance(SCContractInstanceEncodeRequest request);
+
+        [OperationContract]
+        SCContractInstanceDecodeResponse DecodeSCContractInstance(SCContractInstanceDecodeRequest request);
+
+        [OperationContract]
+        SCValEncodeResponse EncodeSCVal(SCValEncodeRequest request);
+
+        [OperationContract]
+        SCValDecodeResponse DecodeSCVal(SCValDecodeRequest request);
+
+        [OperationContract]
+        SCMapEntryEncodeResponse EncodeSCMapEntry(SCMapEntryEncodeRequest request);
+
+        [OperationContract]
+        SCMapEntryDecodeResponse DecodeSCMapEntry(SCMapEntryDecodeRequest request);
+
+        [OperationContract]
+        StoredTransactionSetEncodeResponse EncodeStoredTransactionSet(StoredTransactionSetEncodeRequest request);
+
+        [OperationContract]
+        StoredTransactionSetDecodeResponse DecodeStoredTransactionSet(StoredTransactionSetDecodeRequest request);
+
+        [OperationContract]
+        StoredDebugTransactionSetEncodeResponse EncodeStoredDebugTransactionSet(StoredDebugTransactionSetEncodeRequest request);
+
+        [OperationContract]
+        StoredDebugTransactionSetDecodeResponse DecodeStoredDebugTransactionSet(StoredDebugTransactionSetDecodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateV0EncodeResponse EncodePersistedSCPStateV0(PersistedSCPStateV0EncodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateV0DecodeResponse DecodePersistedSCPStateV0(PersistedSCPStateV0DecodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateV1EncodeResponse EncodePersistedSCPStateV1(PersistedSCPStateV1EncodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateV1DecodeResponse DecodePersistedSCPStateV1(PersistedSCPStateV1DecodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateEncodeResponse EncodePersistedSCPState(PersistedSCPStateEncodeRequest request);
+
+        [OperationContract]
+        PersistedSCPStateDecodeResponse DecodePersistedSCPState(PersistedSCPStateDecodeRequest request);
+
+        [OperationContract]
+        ThresholdsEncodeResponse EncodeThresholds(ThresholdsEncodeRequest request);
+
+        [OperationContract]
+        ThresholdsDecodeResponse DecodeThresholds(ThresholdsDecodeRequest request);
+
+        [OperationContract]
+        string32EncodeResponse Encodestring32(string32EncodeRequest request);
+
+        [OperationContract]
+        string32DecodeResponse Decodestring32(string32DecodeRequest request);
+
+        [OperationContract]
+        string64EncodeResponse Encodestring64(string64EncodeRequest request);
+
+        [OperationContract]
+        string64DecodeResponse Decodestring64(string64DecodeRequest request);
+
+        [OperationContract]
+        SequenceNumberEncodeResponse EncodeSequenceNumber(SequenceNumberEncodeRequest request);
+
+        [OperationContract]
+        SequenceNumberDecodeResponse DecodeSequenceNumber(SequenceNumberDecodeRequest request);
+
+        [OperationContract]
+        DataValueEncodeResponse EncodeDataValue(DataValueEncodeRequest request);
+
+        [OperationContract]
+        DataValueDecodeResponse DecodeDataValue(DataValueDecodeRequest request);
+
+        [OperationContract]
+        PoolIDEncodeResponse EncodePoolID(PoolIDEncodeRequest request);
+
+        [OperationContract]
+        PoolIDDecodeResponse DecodePoolID(PoolIDDecodeRequest request);
+
+        [OperationContract]
+        AssetCode4EncodeResponse EncodeAssetCode4(AssetCode4EncodeRequest request);
+
+        [OperationContract]
+        AssetCode4DecodeResponse DecodeAssetCode4(AssetCode4DecodeRequest request);
+
+        [OperationContract]
+        AssetCode12EncodeResponse EncodeAssetCode12(AssetCode12EncodeRequest request);
+
+        [OperationContract]
+        AssetCode12DecodeResponse DecodeAssetCode12(AssetCode12DecodeRequest request);
+
+        [OperationContract]
+        AssetTypeEncodeResponse EncodeAssetType(AssetTypeEncodeRequest request);
+
+        [OperationContract]
+        AssetTypeDecodeResponse DecodeAssetType(AssetTypeDecodeRequest request);
+
+        [OperationContract]
+        AssetCodeEncodeResponse EncodeAssetCode(AssetCodeEncodeRequest request);
+
+        [OperationContract]
+        AssetCodeDecodeResponse DecodeAssetCode(AssetCodeDecodeRequest request);
+
+        [OperationContract]
+        AlphaNum4EncodeResponse EncodeAlphaNum4(AlphaNum4EncodeRequest request);
+
+        [OperationContract]
+        AlphaNum4DecodeResponse DecodeAlphaNum4(AlphaNum4DecodeRequest request);
+
+        [OperationContract]
+        AlphaNum12EncodeResponse EncodeAlphaNum12(AlphaNum12EncodeRequest request);
+
+        [OperationContract]
+        AlphaNum12DecodeResponse DecodeAlphaNum12(AlphaNum12DecodeRequest request);
+
+        [OperationContract]
+        AssetEncodeResponse EncodeAsset(AssetEncodeRequest request);
+
+        [OperationContract]
+        AssetDecodeResponse DecodeAsset(AssetDecodeRequest request);
+
+        [OperationContract]
+        PriceEncodeResponse EncodePrice(PriceEncodeRequest request);
+
+        [OperationContract]
+        PriceDecodeResponse DecodePrice(PriceDecodeRequest request);
+
+        [OperationContract]
+        LiabilitiesEncodeResponse EncodeLiabilities(LiabilitiesEncodeRequest request);
+
+        [OperationContract]
+        LiabilitiesDecodeResponse DecodeLiabilities(LiabilitiesDecodeRequest request);
+
+        [OperationContract]
+        ThresholdIndexesEncodeResponse EncodeThresholdIndexes(ThresholdIndexesEncodeRequest request);
+
+        [OperationContract]
+        ThresholdIndexesDecodeResponse DecodeThresholdIndexes(ThresholdIndexesDecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryTypeEncodeResponse EncodeLedgerEntryType(LedgerEntryTypeEncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryTypeDecodeResponse DecodeLedgerEntryType(LedgerEntryTypeDecodeRequest request);
+
+        [OperationContract]
+        SignerEncodeResponse EncodeSigner(SignerEncodeRequest request);
+
+        [OperationContract]
+        SignerDecodeResponse DecodeSigner(SignerDecodeRequest request);
+
+        [OperationContract]
+        AccountFlagsEncodeResponse EncodeAccountFlags(AccountFlagsEncodeRequest request);
+
+        [OperationContract]
+        AccountFlagsDecodeResponse DecodeAccountFlags(AccountFlagsDecodeRequest request);
+
+        [OperationContract]
+        SponsorshipDescriptorEncodeResponse EncodeSponsorshipDescriptor(SponsorshipDescriptorEncodeRequest request);
+
+        [OperationContract]
+        SponsorshipDescriptorDecodeResponse DecodeSponsorshipDescriptor(SponsorshipDescriptorDecodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV3EncodeResponse EncodeAccountEntryExtensionV3(AccountEntryExtensionV3EncodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV3DecodeResponse DecodeAccountEntryExtensionV3(AccountEntryExtensionV3DecodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV2EncodeResponse EncodeAccountEntryExtensionV2(AccountEntryExtensionV2EncodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV2DecodeResponse DecodeAccountEntryExtensionV2(AccountEntryExtensionV2DecodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV1EncodeResponse EncodeAccountEntryExtensionV1(AccountEntryExtensionV1EncodeRequest request);
+
+        [OperationContract]
+        AccountEntryExtensionV1DecodeResponse DecodeAccountEntryExtensionV1(AccountEntryExtensionV1DecodeRequest request);
+
+        [OperationContract]
+        AccountEntryEncodeResponse EncodeAccountEntry(AccountEntryEncodeRequest request);
+
+        [OperationContract]
+        AccountEntryDecodeResponse DecodeAccountEntry(AccountEntryDecodeRequest request);
+
+        [OperationContract]
+        TrustLineFlagsEncodeResponse EncodeTrustLineFlags(TrustLineFlagsEncodeRequest request);
+
+        [OperationContract]
+        TrustLineFlagsDecodeResponse DecodeTrustLineFlags(TrustLineFlagsDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolTypeEncodeResponse EncodeLiquidityPoolType(LiquidityPoolTypeEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolTypeDecodeResponse DecodeLiquidityPoolType(LiquidityPoolTypeDecodeRequest request);
+
+        [OperationContract]
+        TrustLineAssetEncodeResponse EncodeTrustLineAsset(TrustLineAssetEncodeRequest request);
+
+        [OperationContract]
+        TrustLineAssetDecodeResponse DecodeTrustLineAsset(TrustLineAssetDecodeRequest request);
+
+        [OperationContract]
+        TrustLineEntryExtensionV2EncodeResponse EncodeTrustLineEntryExtensionV2(TrustLineEntryExtensionV2EncodeRequest request);
+
+        [OperationContract]
+        TrustLineEntryExtensionV2DecodeResponse DecodeTrustLineEntryExtensionV2(TrustLineEntryExtensionV2DecodeRequest request);
+
+        [OperationContract]
+        TrustLineEntryEncodeResponse EncodeTrustLineEntry(TrustLineEntryEncodeRequest request);
+
+        [OperationContract]
+        TrustLineEntryDecodeResponse DecodeTrustLineEntry(TrustLineEntryDecodeRequest request);
+
+        [OperationContract]
+        OfferEntryFlagsEncodeResponse EncodeOfferEntryFlags(OfferEntryFlagsEncodeRequest request);
+
+        [OperationContract]
+        OfferEntryFlagsDecodeResponse DecodeOfferEntryFlags(OfferEntryFlagsDecodeRequest request);
+
+        [OperationContract]
+        OfferEntryEncodeResponse EncodeOfferEntry(OfferEntryEncodeRequest request);
+
+        [OperationContract]
+        OfferEntryDecodeResponse DecodeOfferEntry(OfferEntryDecodeRequest request);
+
+        [OperationContract]
+        DataEntryEncodeResponse EncodeDataEntry(DataEntryEncodeRequest request);
+
+        [OperationContract]
+        DataEntryDecodeResponse DecodeDataEntry(DataEntryDecodeRequest request);
+
+        [OperationContract]
+        ClaimPredicateTypeEncodeResponse EncodeClaimPredicateType(ClaimPredicateTypeEncodeRequest request);
+
+        [OperationContract]
+        ClaimPredicateTypeDecodeResponse DecodeClaimPredicateType(ClaimPredicateTypeDecodeRequest request);
+
+        [OperationContract]
+        ClaimPredicateEncodeResponse EncodeClaimPredicate(ClaimPredicateEncodeRequest request);
+
+        [OperationContract]
+        ClaimPredicateDecodeResponse DecodeClaimPredicate(ClaimPredicateDecodeRequest request);
+
+        [OperationContract]
+        ClaimantTypeEncodeResponse EncodeClaimantType(ClaimantTypeEncodeRequest request);
+
+        [OperationContract]
+        ClaimantTypeDecodeResponse DecodeClaimantType(ClaimantTypeDecodeRequest request);
+
+        [OperationContract]
+        ClaimantEncodeResponse EncodeClaimant(ClaimantEncodeRequest request);
+
+        [OperationContract]
+        ClaimantDecodeResponse DecodeClaimant(ClaimantDecodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceIDTypeEncodeResponse EncodeClaimableBalanceIDType(ClaimableBalanceIDTypeEncodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceIDTypeDecodeResponse DecodeClaimableBalanceIDType(ClaimableBalanceIDTypeDecodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceIDEncodeResponse EncodeClaimableBalanceID(ClaimableBalanceIDEncodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceIDDecodeResponse DecodeClaimableBalanceID(ClaimableBalanceIDDecodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceFlagsEncodeResponse EncodeClaimableBalanceFlags(ClaimableBalanceFlagsEncodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceFlagsDecodeResponse DecodeClaimableBalanceFlags(ClaimableBalanceFlagsDecodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceEntryExtensionV1EncodeResponse EncodeClaimableBalanceEntryExtensionV1(ClaimableBalanceEntryExtensionV1EncodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceEntryExtensionV1DecodeResponse DecodeClaimableBalanceEntryExtensionV1(ClaimableBalanceEntryExtensionV1DecodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceEntryEncodeResponse EncodeClaimableBalanceEntry(ClaimableBalanceEntryEncodeRequest request);
+
+        [OperationContract]
+        ClaimableBalanceEntryDecodeResponse DecodeClaimableBalanceEntry(ClaimableBalanceEntryDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolConstantProductParametersEncodeResponse EncodeLiquidityPoolConstantProductParameters(LiquidityPoolConstantProductParametersEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolConstantProductParametersDecodeResponse DecodeLiquidityPoolConstantProductParameters(LiquidityPoolConstantProductParametersDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolEntryEncodeResponse EncodeLiquidityPoolEntry(LiquidityPoolEntryEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolEntryDecodeResponse DecodeLiquidityPoolEntry(LiquidityPoolEntryDecodeRequest request);
+
+        [OperationContract]
+        ContractDataDurabilityEncodeResponse EncodeContractDataDurability(ContractDataDurabilityEncodeRequest request);
+
+        [OperationContract]
+        ContractDataDurabilityDecodeResponse DecodeContractDataDurability(ContractDataDurabilityDecodeRequest request);
+
+        [OperationContract]
+        ContractDataEntryEncodeResponse EncodeContractDataEntry(ContractDataEntryEncodeRequest request);
+
+        [OperationContract]
+        ContractDataEntryDecodeResponse DecodeContractDataEntry(ContractDataEntryDecodeRequest request);
+
+        [OperationContract]
+        ContractCodeCostInputsEncodeResponse EncodeContractCodeCostInputs(ContractCodeCostInputsEncodeRequest request);
+
+        [OperationContract]
+        ContractCodeCostInputsDecodeResponse DecodeContractCodeCostInputs(ContractCodeCostInputsDecodeRequest request);
+
+        [OperationContract]
+        ContractCodeEntryEncodeResponse EncodeContractCodeEntry(ContractCodeEntryEncodeRequest request);
+
+        [OperationContract]
+        ContractCodeEntryDecodeResponse DecodeContractCodeEntry(ContractCodeEntryDecodeRequest request);
+
+        [OperationContract]
+        TTLEntryEncodeResponse EncodeTTLEntry(TTLEntryEncodeRequest request);
+
+        [OperationContract]
+        TTLEntryDecodeResponse DecodeTTLEntry(TTLEntryDecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryExtensionV1EncodeResponse EncodeLedgerEntryExtensionV1(LedgerEntryExtensionV1EncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryExtensionV1DecodeResponse DecodeLedgerEntryExtensionV1(LedgerEntryExtensionV1DecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryEncodeResponse EncodeLedgerEntry(LedgerEntryEncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryDecodeResponse DecodeLedgerEntry(LedgerEntryDecodeRequest request);
+
+        [OperationContract]
+        LedgerKeyEncodeResponse EncodeLedgerKey(LedgerKeyEncodeRequest request);
+
+        [OperationContract]
+        LedgerKeyDecodeResponse DecodeLedgerKey(LedgerKeyDecodeRequest request);
+
+        [OperationContract]
+        EnvelopeTypeEncodeResponse EncodeEnvelopeType(EnvelopeTypeEncodeRequest request);
+
+        [OperationContract]
+        EnvelopeTypeDecodeResponse DecodeEnvelopeType(EnvelopeTypeDecodeRequest request);
+
+        [OperationContract]
+        BucketListTypeEncodeResponse EncodeBucketListType(BucketListTypeEncodeRequest request);
+
+        [OperationContract]
+        BucketListTypeDecodeResponse DecodeBucketListType(BucketListTypeDecodeRequest request);
+
+        [OperationContract]
+        BucketEntryTypeEncodeResponse EncodeBucketEntryType(BucketEntryTypeEncodeRequest request);
+
+        [OperationContract]
+        BucketEntryTypeDecodeResponse DecodeBucketEntryType(BucketEntryTypeDecodeRequest request);
+
+        [OperationContract]
+        HotArchiveBucketEntryTypeEncodeResponse EncodeHotArchiveBucketEntryType(HotArchiveBucketEntryTypeEncodeRequest request);
+
+        [OperationContract]
+        HotArchiveBucketEntryTypeDecodeResponse DecodeHotArchiveBucketEntryType(HotArchiveBucketEntryTypeDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBucketEntryTypeEncodeResponse EncodeColdArchiveBucketEntryType(ColdArchiveBucketEntryTypeEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBucketEntryTypeDecodeResponse DecodeColdArchiveBucketEntryType(ColdArchiveBucketEntryTypeDecodeRequest request);
+
+        [OperationContract]
+        BucketMetadataEncodeResponse EncodeBucketMetadata(BucketMetadataEncodeRequest request);
+
+        [OperationContract]
+        BucketMetadataDecodeResponse DecodeBucketMetadata(BucketMetadataDecodeRequest request);
+
+        [OperationContract]
+        BucketEntryEncodeResponse EncodeBucketEntry(BucketEntryEncodeRequest request);
+
+        [OperationContract]
+        BucketEntryDecodeResponse DecodeBucketEntry(BucketEntryDecodeRequest request);
+
+        [OperationContract]
+        HotArchiveBucketEntryEncodeResponse EncodeHotArchiveBucketEntry(HotArchiveBucketEntryEncodeRequest request);
+
+        [OperationContract]
+        HotArchiveBucketEntryDecodeResponse DecodeHotArchiveBucketEntry(HotArchiveBucketEntryDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveArchivedLeafEncodeResponse EncodeColdArchiveArchivedLeaf(ColdArchiveArchivedLeafEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveArchivedLeafDecodeResponse DecodeColdArchiveArchivedLeaf(ColdArchiveArchivedLeafDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveDeletedLeafEncodeResponse EncodeColdArchiveDeletedLeaf(ColdArchiveDeletedLeafEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveDeletedLeafDecodeResponse DecodeColdArchiveDeletedLeaf(ColdArchiveDeletedLeafDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBoundaryLeafEncodeResponse EncodeColdArchiveBoundaryLeaf(ColdArchiveBoundaryLeafEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBoundaryLeafDecodeResponse DecodeColdArchiveBoundaryLeaf(ColdArchiveBoundaryLeafDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveHashEntryEncodeResponse EncodeColdArchiveHashEntry(ColdArchiveHashEntryEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveHashEntryDecodeResponse DecodeColdArchiveHashEntry(ColdArchiveHashEntryDecodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBucketEntryEncodeResponse EncodeColdArchiveBucketEntry(ColdArchiveBucketEntryEncodeRequest request);
+
+        [OperationContract]
+        ColdArchiveBucketEntryDecodeResponse DecodeColdArchiveBucketEntry(ColdArchiveBucketEntryDecodeRequest request);
+
+        [OperationContract]
+        UpgradeTypeEncodeResponse EncodeUpgradeType(UpgradeTypeEncodeRequest request);
+
+        [OperationContract]
+        UpgradeTypeDecodeResponse DecodeUpgradeType(UpgradeTypeDecodeRequest request);
+
+        [OperationContract]
+        StellarValueTypeEncodeResponse EncodeStellarValueType(StellarValueTypeEncodeRequest request);
+
+        [OperationContract]
+        StellarValueTypeDecodeResponse DecodeStellarValueType(StellarValueTypeDecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseValueSignatureEncodeResponse EncodeLedgerCloseValueSignature(LedgerCloseValueSignatureEncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseValueSignatureDecodeResponse DecodeLedgerCloseValueSignature(LedgerCloseValueSignatureDecodeRequest request);
+
+        [OperationContract]
+        StellarValueEncodeResponse EncodeStellarValue(StellarValueEncodeRequest request);
+
+        [OperationContract]
+        StellarValueDecodeResponse DecodeStellarValue(StellarValueDecodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderFlagsEncodeResponse EncodeLedgerHeaderFlags(LedgerHeaderFlagsEncodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderFlagsDecodeResponse DecodeLedgerHeaderFlags(LedgerHeaderFlagsDecodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderExtensionV1EncodeResponse EncodeLedgerHeaderExtensionV1(LedgerHeaderExtensionV1EncodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderExtensionV1DecodeResponse DecodeLedgerHeaderExtensionV1(LedgerHeaderExtensionV1DecodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderEncodeResponse EncodeLedgerHeader(LedgerHeaderEncodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderDecodeResponse DecodeLedgerHeader(LedgerHeaderDecodeRequest request);
+
+        [OperationContract]
+        LedgerUpgradeTypeEncodeResponse EncodeLedgerUpgradeType(LedgerUpgradeTypeEncodeRequest request);
+
+        [OperationContract]
+        LedgerUpgradeTypeDecodeResponse DecodeLedgerUpgradeType(LedgerUpgradeTypeDecodeRequest request);
+
+        [OperationContract]
+        ConfigUpgradeSetKeyEncodeResponse EncodeConfigUpgradeSetKey(ConfigUpgradeSetKeyEncodeRequest request);
+
+        [OperationContract]
+        ConfigUpgradeSetKeyDecodeResponse DecodeConfigUpgradeSetKey(ConfigUpgradeSetKeyDecodeRequest request);
+
+        [OperationContract]
+        LedgerUpgradeEncodeResponse EncodeLedgerUpgrade(LedgerUpgradeEncodeRequest request);
+
+        [OperationContract]
+        LedgerUpgradeDecodeResponse DecodeLedgerUpgrade(LedgerUpgradeDecodeRequest request);
+
+        [OperationContract]
+        ConfigUpgradeSetEncodeResponse EncodeConfigUpgradeSet(ConfigUpgradeSetEncodeRequest request);
+
+        [OperationContract]
+        ConfigUpgradeSetDecodeResponse DecodeConfigUpgradeSet(ConfigUpgradeSetDecodeRequest request);
+
+        [OperationContract]
+        TxSetComponentTypeEncodeResponse EncodeTxSetComponentType(TxSetComponentTypeEncodeRequest request);
+
+        [OperationContract]
+        TxSetComponentTypeDecodeResponse DecodeTxSetComponentType(TxSetComponentTypeDecodeRequest request);
+
+        [OperationContract]
+        TxSetComponentEncodeResponse EncodeTxSetComponent(TxSetComponentEncodeRequest request);
+
+        [OperationContract]
+        TxSetComponentDecodeResponse DecodeTxSetComponent(TxSetComponentDecodeRequest request);
+
+        [OperationContract]
+        TransactionPhaseEncodeResponse EncodeTransactionPhase(TransactionPhaseEncodeRequest request);
+
+        [OperationContract]
+        TransactionPhaseDecodeResponse DecodeTransactionPhase(TransactionPhaseDecodeRequest request);
+
+        [OperationContract]
+        TransactionSetEncodeResponse EncodeTransactionSet(TransactionSetEncodeRequest request);
+
+        [OperationContract]
+        TransactionSetDecodeResponse DecodeTransactionSet(TransactionSetDecodeRequest request);
+
+        [OperationContract]
+        TransactionSetV1EncodeResponse EncodeTransactionSetV1(TransactionSetV1EncodeRequest request);
+
+        [OperationContract]
+        TransactionSetV1DecodeResponse DecodeTransactionSetV1(TransactionSetV1DecodeRequest request);
+
+        [OperationContract]
+        GeneralizedTransactionSetEncodeResponse EncodeGeneralizedTransactionSet(GeneralizedTransactionSetEncodeRequest request);
+
+        [OperationContract]
+        GeneralizedTransactionSetDecodeResponse DecodeGeneralizedTransactionSet(GeneralizedTransactionSetDecodeRequest request);
+
+        [OperationContract]
+        TransactionResultPairEncodeResponse EncodeTransactionResultPair(TransactionResultPairEncodeRequest request);
+
+        [OperationContract]
+        TransactionResultPairDecodeResponse DecodeTransactionResultPair(TransactionResultPairDecodeRequest request);
+
+        [OperationContract]
+        TransactionResultSetEncodeResponse EncodeTransactionResultSet(TransactionResultSetEncodeRequest request);
+
+        [OperationContract]
+        TransactionResultSetDecodeResponse DecodeTransactionResultSet(TransactionResultSetDecodeRequest request);
+
+        [OperationContract]
+        TransactionHistoryEntryEncodeResponse EncodeTransactionHistoryEntry(TransactionHistoryEntryEncodeRequest request);
+
+        [OperationContract]
+        TransactionHistoryEntryDecodeResponse DecodeTransactionHistoryEntry(TransactionHistoryEntryDecodeRequest request);
+
+        [OperationContract]
+        TransactionHistoryResultEntryEncodeResponse EncodeTransactionHistoryResultEntry(TransactionHistoryResultEntryEncodeRequest request);
+
+        [OperationContract]
+        TransactionHistoryResultEntryDecodeResponse DecodeTransactionHistoryResultEntry(TransactionHistoryResultEntryDecodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderHistoryEntryEncodeResponse EncodeLedgerHeaderHistoryEntry(LedgerHeaderHistoryEntryEncodeRequest request);
+
+        [OperationContract]
+        LedgerHeaderHistoryEntryDecodeResponse DecodeLedgerHeaderHistoryEntry(LedgerHeaderHistoryEntryDecodeRequest request);
+
+        [OperationContract]
+        LedgerSCPMessagesEncodeResponse EncodeLedgerSCPMessages(LedgerSCPMessagesEncodeRequest request);
+
+        [OperationContract]
+        LedgerSCPMessagesDecodeResponse DecodeLedgerSCPMessages(LedgerSCPMessagesDecodeRequest request);
+
+        [OperationContract]
+        SCPHistoryEntryV0EncodeResponse EncodeSCPHistoryEntryV0(SCPHistoryEntryV0EncodeRequest request);
+
+        [OperationContract]
+        SCPHistoryEntryV0DecodeResponse DecodeSCPHistoryEntryV0(SCPHistoryEntryV0DecodeRequest request);
+
+        [OperationContract]
+        SCPHistoryEntryEncodeResponse EncodeSCPHistoryEntry(SCPHistoryEntryEncodeRequest request);
+
+        [OperationContract]
+        SCPHistoryEntryDecodeResponse DecodeSCPHistoryEntry(SCPHistoryEntryDecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangeTypeEncodeResponse EncodeLedgerEntryChangeType(LedgerEntryChangeTypeEncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangeTypeDecodeResponse DecodeLedgerEntryChangeType(LedgerEntryChangeTypeDecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangeEncodeResponse EncodeLedgerEntryChange(LedgerEntryChangeEncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangeDecodeResponse DecodeLedgerEntryChange(LedgerEntryChangeDecodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangesEncodeResponse EncodeLedgerEntryChanges(LedgerEntryChangesEncodeRequest request);
+
+        [OperationContract]
+        LedgerEntryChangesDecodeResponse DecodeLedgerEntryChanges(LedgerEntryChangesDecodeRequest request);
+
+        [OperationContract]
+        OperationMetaEncodeResponse EncodeOperationMeta(OperationMetaEncodeRequest request);
+
+        [OperationContract]
+        OperationMetaDecodeResponse DecodeOperationMeta(OperationMetaDecodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV1EncodeResponse EncodeTransactionMetaV1(TransactionMetaV1EncodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV1DecodeResponse DecodeTransactionMetaV1(TransactionMetaV1DecodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV2EncodeResponse EncodeTransactionMetaV2(TransactionMetaV2EncodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV2DecodeResponse DecodeTransactionMetaV2(TransactionMetaV2DecodeRequest request);
+
+        [OperationContract]
+        ContractEventTypeEncodeResponse EncodeContractEventType(ContractEventTypeEncodeRequest request);
+
+        [OperationContract]
+        ContractEventTypeDecodeResponse DecodeContractEventType(ContractEventTypeDecodeRequest request);
+
+        [OperationContract]
+        ContractEventEncodeResponse EncodeContractEvent(ContractEventEncodeRequest request);
+
+        [OperationContract]
+        ContractEventDecodeResponse DecodeContractEvent(ContractEventDecodeRequest request);
+
+        [OperationContract]
+        DiagnosticEventEncodeResponse EncodeDiagnosticEvent(DiagnosticEventEncodeRequest request);
+
+        [OperationContract]
+        DiagnosticEventDecodeResponse DecodeDiagnosticEvent(DiagnosticEventDecodeRequest request);
+
+        [OperationContract]
+        DiagnosticEventsEncodeResponse EncodeDiagnosticEvents(DiagnosticEventsEncodeRequest request);
+
+        [OperationContract]
+        DiagnosticEventsDecodeResponse DecodeDiagnosticEvents(DiagnosticEventsDecodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaExtV1EncodeResponse EncodeSorobanTransactionMetaExtV1(SorobanTransactionMetaExtV1EncodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaExtV1DecodeResponse DecodeSorobanTransactionMetaExtV1(SorobanTransactionMetaExtV1DecodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaExtEncodeResponse EncodeSorobanTransactionMetaExt(SorobanTransactionMetaExtEncodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaExtDecodeResponse DecodeSorobanTransactionMetaExt(SorobanTransactionMetaExtDecodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaEncodeResponse EncodeSorobanTransactionMeta(SorobanTransactionMetaEncodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionMetaDecodeResponse DecodeSorobanTransactionMeta(SorobanTransactionMetaDecodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV3EncodeResponse EncodeTransactionMetaV3(TransactionMetaV3EncodeRequest request);
+
+        [OperationContract]
+        TransactionMetaV3DecodeResponse DecodeTransactionMetaV3(TransactionMetaV3DecodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionSuccessPreImageEncodeResponse EncodeInvokeHostFunctionSuccessPreImage(InvokeHostFunctionSuccessPreImageEncodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionSuccessPreImageDecodeResponse DecodeInvokeHostFunctionSuccessPreImage(InvokeHostFunctionSuccessPreImageDecodeRequest request);
+
+        [OperationContract]
+        TransactionMetaEncodeResponse EncodeTransactionMeta(TransactionMetaEncodeRequest request);
+
+        [OperationContract]
+        TransactionMetaDecodeResponse DecodeTransactionMeta(TransactionMetaDecodeRequest request);
+
+        [OperationContract]
+        TransactionResultMetaEncodeResponse EncodeTransactionResultMeta(TransactionResultMetaEncodeRequest request);
+
+        [OperationContract]
+        TransactionResultMetaDecodeResponse DecodeTransactionResultMeta(TransactionResultMetaDecodeRequest request);
+
+        [OperationContract]
+        UpgradeEntryMetaEncodeResponse EncodeUpgradeEntryMeta(UpgradeEntryMetaEncodeRequest request);
+
+        [OperationContract]
+        UpgradeEntryMetaDecodeResponse DecodeUpgradeEntryMeta(UpgradeEntryMetaDecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaV0EncodeResponse EncodeLedgerCloseMetaV0(LedgerCloseMetaV0EncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaV0DecodeResponse DecodeLedgerCloseMetaV0(LedgerCloseMetaV0DecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaExtV1EncodeResponse EncodeLedgerCloseMetaExtV1(LedgerCloseMetaExtV1EncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaExtV1DecodeResponse DecodeLedgerCloseMetaExtV1(LedgerCloseMetaExtV1DecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaExtEncodeResponse EncodeLedgerCloseMetaExt(LedgerCloseMetaExtEncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaExtDecodeResponse DecodeLedgerCloseMetaExt(LedgerCloseMetaExtDecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaV1EncodeResponse EncodeLedgerCloseMetaV1(LedgerCloseMetaV1EncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaV1DecodeResponse DecodeLedgerCloseMetaV1(LedgerCloseMetaV1DecodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaEncodeResponse EncodeLedgerCloseMeta(LedgerCloseMetaEncodeRequest request);
+
+        [OperationContract]
+        LedgerCloseMetaDecodeResponse DecodeLedgerCloseMeta(LedgerCloseMetaDecodeRequest request);
+
+        [OperationContract]
+        ErrorCodeEncodeResponse EncodeErrorCode(ErrorCodeEncodeRequest request);
+
+        [OperationContract]
+        ErrorCodeDecodeResponse DecodeErrorCode(ErrorCodeDecodeRequest request);
+
+        [OperationContract]
+        ErrorEncodeResponse EncodeError(ErrorEncodeRequest request);
+
+        [OperationContract]
+        ErrorDecodeResponse DecodeError(ErrorDecodeRequest request);
+
+        [OperationContract]
+        SendMoreEncodeResponse EncodeSendMore(SendMoreEncodeRequest request);
+
+        [OperationContract]
+        SendMoreDecodeResponse DecodeSendMore(SendMoreDecodeRequest request);
+
+        [OperationContract]
+        SendMoreExtendedEncodeResponse EncodeSendMoreExtended(SendMoreExtendedEncodeRequest request);
+
+        [OperationContract]
+        SendMoreExtendedDecodeResponse DecodeSendMoreExtended(SendMoreExtendedDecodeRequest request);
+
+        [OperationContract]
+        AuthCertEncodeResponse EncodeAuthCert(AuthCertEncodeRequest request);
+
+        [OperationContract]
+        AuthCertDecodeResponse DecodeAuthCert(AuthCertDecodeRequest request);
+
+        [OperationContract]
+        HelloEncodeResponse EncodeHello(HelloEncodeRequest request);
+
+        [OperationContract]
+        HelloDecodeResponse DecodeHello(HelloDecodeRequest request);
+
+        [OperationContract]
+        AuthEncodeResponse EncodeAuth(AuthEncodeRequest request);
+
+        [OperationContract]
+        AuthDecodeResponse DecodeAuth(AuthDecodeRequest request);
+
+        [OperationContract]
+        IPAddrTypeEncodeResponse EncodeIPAddrType(IPAddrTypeEncodeRequest request);
+
+        [OperationContract]
+        IPAddrTypeDecodeResponse DecodeIPAddrType(IPAddrTypeDecodeRequest request);
+
+        [OperationContract]
+        PeerAddressEncodeResponse EncodePeerAddress(PeerAddressEncodeRequest request);
+
+        [OperationContract]
+        PeerAddressDecodeResponse DecodePeerAddress(PeerAddressDecodeRequest request);
+
+        [OperationContract]
+        MessageTypeEncodeResponse EncodeMessageType(MessageTypeEncodeRequest request);
+
+        [OperationContract]
+        MessageTypeDecodeResponse DecodeMessageType(MessageTypeDecodeRequest request);
+
+        [OperationContract]
+        DontHaveEncodeResponse EncodeDontHave(DontHaveEncodeRequest request);
+
+        [OperationContract]
+        DontHaveDecodeResponse DecodeDontHave(DontHaveDecodeRequest request);
+
+        [OperationContract]
+        SurveyMessageCommandTypeEncodeResponse EncodeSurveyMessageCommandType(SurveyMessageCommandTypeEncodeRequest request);
+
+        [OperationContract]
+        SurveyMessageCommandTypeDecodeResponse DecodeSurveyMessageCommandType(SurveyMessageCommandTypeDecodeRequest request);
+
+        [OperationContract]
+        SurveyMessageResponseTypeEncodeResponse EncodeSurveyMessageResponseType(SurveyMessageResponseTypeEncodeRequest request);
+
+        [OperationContract]
+        SurveyMessageResponseTypeDecodeResponse DecodeSurveyMessageResponseType(SurveyMessageResponseTypeDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyStartCollectingMessageEncodeResponse EncodeTimeSlicedSurveyStartCollectingMessage(TimeSlicedSurveyStartCollectingMessageEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyStartCollectingMessageDecodeResponse DecodeTimeSlicedSurveyStartCollectingMessage(TimeSlicedSurveyStartCollectingMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse EncodeSignedTimeSlicedSurveyStartCollectingMessage(SignedTimeSlicedSurveyStartCollectingMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyStartCollectingMessageDecodeResponse DecodeSignedTimeSlicedSurveyStartCollectingMessage(SignedTimeSlicedSurveyStartCollectingMessageDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyStopCollectingMessageEncodeResponse EncodeTimeSlicedSurveyStopCollectingMessage(TimeSlicedSurveyStopCollectingMessageEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyStopCollectingMessageDecodeResponse DecodeTimeSlicedSurveyStopCollectingMessage(TimeSlicedSurveyStopCollectingMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse EncodeSignedTimeSlicedSurveyStopCollectingMessage(SignedTimeSlicedSurveyStopCollectingMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyStopCollectingMessageDecodeResponse DecodeSignedTimeSlicedSurveyStopCollectingMessage(SignedTimeSlicedSurveyStopCollectingMessageDecodeRequest request);
+
+        [OperationContract]
+        SurveyRequestMessageEncodeResponse EncodeSurveyRequestMessage(SurveyRequestMessageEncodeRequest request);
+
+        [OperationContract]
+        SurveyRequestMessageDecodeResponse DecodeSurveyRequestMessage(SurveyRequestMessageDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyRequestMessageEncodeResponse EncodeTimeSlicedSurveyRequestMessage(TimeSlicedSurveyRequestMessageEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyRequestMessageDecodeResponse DecodeTimeSlicedSurveyRequestMessage(TimeSlicedSurveyRequestMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedSurveyRequestMessageEncodeResponse EncodeSignedSurveyRequestMessage(SignedSurveyRequestMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedSurveyRequestMessageDecodeResponse DecodeSignedSurveyRequestMessage(SignedSurveyRequestMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyRequestMessageEncodeResponse EncodeSignedTimeSlicedSurveyRequestMessage(SignedTimeSlicedSurveyRequestMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyRequestMessageDecodeResponse DecodeSignedTimeSlicedSurveyRequestMessage(SignedTimeSlicedSurveyRequestMessageDecodeRequest request);
+
+        [OperationContract]
+        EncryptedBodyEncodeResponse EncodeEncryptedBody(EncryptedBodyEncodeRequest request);
+
+        [OperationContract]
+        EncryptedBodyDecodeResponse DecodeEncryptedBody(EncryptedBodyDecodeRequest request);
+
+        [OperationContract]
+        SurveyResponseMessageEncodeResponse EncodeSurveyResponseMessage(SurveyResponseMessageEncodeRequest request);
+
+        [OperationContract]
+        SurveyResponseMessageDecodeResponse DecodeSurveyResponseMessage(SurveyResponseMessageDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyResponseMessageEncodeResponse EncodeTimeSlicedSurveyResponseMessage(TimeSlicedSurveyResponseMessageEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedSurveyResponseMessageDecodeResponse DecodeTimeSlicedSurveyResponseMessage(TimeSlicedSurveyResponseMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedSurveyResponseMessageEncodeResponse EncodeSignedSurveyResponseMessage(SignedSurveyResponseMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedSurveyResponseMessageDecodeResponse DecodeSignedSurveyResponseMessage(SignedSurveyResponseMessageDecodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyResponseMessageEncodeResponse EncodeSignedTimeSlicedSurveyResponseMessage(SignedTimeSlicedSurveyResponseMessageEncodeRequest request);
+
+        [OperationContract]
+        SignedTimeSlicedSurveyResponseMessageDecodeResponse DecodeSignedTimeSlicedSurveyResponseMessage(SignedTimeSlicedSurveyResponseMessageDecodeRequest request);
+
+        [OperationContract]
+        PeerStatsEncodeResponse EncodePeerStats(PeerStatsEncodeRequest request);
+
+        [OperationContract]
+        PeerStatsDecodeResponse DecodePeerStats(PeerStatsDecodeRequest request);
+
+        [OperationContract]
+        PeerStatListEncodeResponse EncodePeerStatList(PeerStatListEncodeRequest request);
+
+        [OperationContract]
+        PeerStatListDecodeResponse DecodePeerStatList(PeerStatListDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedNodeDataEncodeResponse EncodeTimeSlicedNodeData(TimeSlicedNodeDataEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedNodeDataDecodeResponse DecodeTimeSlicedNodeData(TimeSlicedNodeDataDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedPeerDataEncodeResponse EncodeTimeSlicedPeerData(TimeSlicedPeerDataEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedPeerDataDecodeResponse DecodeTimeSlicedPeerData(TimeSlicedPeerDataDecodeRequest request);
+
+        [OperationContract]
+        TimeSlicedPeerDataListEncodeResponse EncodeTimeSlicedPeerDataList(TimeSlicedPeerDataListEncodeRequest request);
+
+        [OperationContract]
+        TimeSlicedPeerDataListDecodeResponse DecodeTimeSlicedPeerDataList(TimeSlicedPeerDataListDecodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV0EncodeResponse EncodeTopologyResponseBodyV0(TopologyResponseBodyV0EncodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV0DecodeResponse DecodeTopologyResponseBodyV0(TopologyResponseBodyV0DecodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV1EncodeResponse EncodeTopologyResponseBodyV1(TopologyResponseBodyV1EncodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV1DecodeResponse DecodeTopologyResponseBodyV1(TopologyResponseBodyV1DecodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV2EncodeResponse EncodeTopologyResponseBodyV2(TopologyResponseBodyV2EncodeRequest request);
+
+        [OperationContract]
+        TopologyResponseBodyV2DecodeResponse DecodeTopologyResponseBodyV2(TopologyResponseBodyV2DecodeRequest request);
+
+        [OperationContract]
+        SurveyResponseBodyEncodeResponse EncodeSurveyResponseBody(SurveyResponseBodyEncodeRequest request);
+
+        [OperationContract]
+        SurveyResponseBodyDecodeResponse DecodeSurveyResponseBody(SurveyResponseBodyDecodeRequest request);
+
+        [OperationContract]
+        TxAdvertVectorEncodeResponse EncodeTxAdvertVector(TxAdvertVectorEncodeRequest request);
+
+        [OperationContract]
+        TxAdvertVectorDecodeResponse DecodeTxAdvertVector(TxAdvertVectorDecodeRequest request);
+
+        [OperationContract]
+        FloodAdvertEncodeResponse EncodeFloodAdvert(FloodAdvertEncodeRequest request);
+
+        [OperationContract]
+        FloodAdvertDecodeResponse DecodeFloodAdvert(FloodAdvertDecodeRequest request);
+
+        [OperationContract]
+        TxDemandVectorEncodeResponse EncodeTxDemandVector(TxDemandVectorEncodeRequest request);
+
+        [OperationContract]
+        TxDemandVectorDecodeResponse DecodeTxDemandVector(TxDemandVectorDecodeRequest request);
+
+        [OperationContract]
+        FloodDemandEncodeResponse EncodeFloodDemand(FloodDemandEncodeRequest request);
+
+        [OperationContract]
+        FloodDemandDecodeResponse DecodeFloodDemand(FloodDemandDecodeRequest request);
+
+        [OperationContract]
+        StellarMessageEncodeResponse EncodeStellarMessage(StellarMessageEncodeRequest request);
+
+        [OperationContract]
+        StellarMessageDecodeResponse DecodeStellarMessage(StellarMessageDecodeRequest request);
+
+        [OperationContract]
+        AuthenticatedMessageEncodeResponse EncodeAuthenticatedMessage(AuthenticatedMessageEncodeRequest request);
+
+        [OperationContract]
+        AuthenticatedMessageDecodeResponse DecodeAuthenticatedMessage(AuthenticatedMessageDecodeRequest request);
+
+        [OperationContract]
+        ValueEncodeResponse EncodeValue(ValueEncodeRequest request);
+
+        [OperationContract]
+        ValueDecodeResponse DecodeValue(ValueDecodeRequest request);
+
+        [OperationContract]
+        SCPBallotEncodeResponse EncodeSCPBallot(SCPBallotEncodeRequest request);
+
+        [OperationContract]
+        SCPBallotDecodeResponse DecodeSCPBallot(SCPBallotDecodeRequest request);
+
+        [OperationContract]
+        SCPStatementTypeEncodeResponse EncodeSCPStatementType(SCPStatementTypeEncodeRequest request);
+
+        [OperationContract]
+        SCPStatementTypeDecodeResponse DecodeSCPStatementType(SCPStatementTypeDecodeRequest request);
+
+        [OperationContract]
+        SCPNominationEncodeResponse EncodeSCPNomination(SCPNominationEncodeRequest request);
+
+        [OperationContract]
+        SCPNominationDecodeResponse DecodeSCPNomination(SCPNominationDecodeRequest request);
+
+        [OperationContract]
+        SCPStatementEncodeResponse EncodeSCPStatement(SCPStatementEncodeRequest request);
+
+        [OperationContract]
+        SCPStatementDecodeResponse DecodeSCPStatement(SCPStatementDecodeRequest request);
+
+        [OperationContract]
+        SCPEnvelopeEncodeResponse EncodeSCPEnvelope(SCPEnvelopeEncodeRequest request);
+
+        [OperationContract]
+        SCPEnvelopeDecodeResponse DecodeSCPEnvelope(SCPEnvelopeDecodeRequest request);
+
+        [OperationContract]
+        SCPQuorumSetEncodeResponse EncodeSCPQuorumSet(SCPQuorumSetEncodeRequest request);
+
+        [OperationContract]
+        SCPQuorumSetDecodeResponse DecodeSCPQuorumSet(SCPQuorumSetDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolParametersEncodeResponse EncodeLiquidityPoolParameters(LiquidityPoolParametersEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolParametersDecodeResponse DecodeLiquidityPoolParameters(LiquidityPoolParametersDecodeRequest request);
+
+        [OperationContract]
+        MuxedAccountEncodeResponse EncodeMuxedAccount(MuxedAccountEncodeRequest request);
+
+        [OperationContract]
+        MuxedAccountDecodeResponse DecodeMuxedAccount(MuxedAccountDecodeRequest request);
+
+        [OperationContract]
+        DecoratedSignatureEncodeResponse EncodeDecoratedSignature(DecoratedSignatureEncodeRequest request);
+
+        [OperationContract]
+        DecoratedSignatureDecodeResponse DecodeDecoratedSignature(DecoratedSignatureDecodeRequest request);
+
+        [OperationContract]
+        OperationTypeEncodeResponse EncodeOperationType(OperationTypeEncodeRequest request);
+
+        [OperationContract]
+        OperationTypeDecodeResponse DecodeOperationType(OperationTypeDecodeRequest request);
+
+        [OperationContract]
+        CreateAccountOpEncodeResponse EncodeCreateAccountOp(CreateAccountOpEncodeRequest request);
+
+        [OperationContract]
+        CreateAccountOpDecodeResponse DecodeCreateAccountOp(CreateAccountOpDecodeRequest request);
+
+        [OperationContract]
+        PaymentOpEncodeResponse EncodePaymentOp(PaymentOpEncodeRequest request);
+
+        [OperationContract]
+        PaymentOpDecodeResponse DecodePaymentOp(PaymentOpDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveOpEncodeResponse EncodePathPaymentStrictReceiveOp(PathPaymentStrictReceiveOpEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveOpDecodeResponse DecodePathPaymentStrictReceiveOp(PathPaymentStrictReceiveOpDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendOpEncodeResponse EncodePathPaymentStrictSendOp(PathPaymentStrictSendOpEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendOpDecodeResponse DecodePathPaymentStrictSendOp(PathPaymentStrictSendOpDecodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferOpEncodeResponse EncodeManageSellOfferOp(ManageSellOfferOpEncodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferOpDecodeResponse DecodeManageSellOfferOp(ManageSellOfferOpDecodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferOpEncodeResponse EncodeManageBuyOfferOp(ManageBuyOfferOpEncodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferOpDecodeResponse DecodeManageBuyOfferOp(ManageBuyOfferOpDecodeRequest request);
+
+        [OperationContract]
+        CreatePassiveSellOfferOpEncodeResponse EncodeCreatePassiveSellOfferOp(CreatePassiveSellOfferOpEncodeRequest request);
+
+        [OperationContract]
+        CreatePassiveSellOfferOpDecodeResponse DecodeCreatePassiveSellOfferOp(CreatePassiveSellOfferOpDecodeRequest request);
+
+        [OperationContract]
+        SetOptionsOpEncodeResponse EncodeSetOptionsOp(SetOptionsOpEncodeRequest request);
+
+        [OperationContract]
+        SetOptionsOpDecodeResponse DecodeSetOptionsOp(SetOptionsOpDecodeRequest request);
+
+        [OperationContract]
+        ChangeTrustAssetEncodeResponse EncodeChangeTrustAsset(ChangeTrustAssetEncodeRequest request);
+
+        [OperationContract]
+        ChangeTrustAssetDecodeResponse DecodeChangeTrustAsset(ChangeTrustAssetDecodeRequest request);
+
+        [OperationContract]
+        ChangeTrustOpEncodeResponse EncodeChangeTrustOp(ChangeTrustOpEncodeRequest request);
+
+        [OperationContract]
+        ChangeTrustOpDecodeResponse DecodeChangeTrustOp(ChangeTrustOpDecodeRequest request);
+
+        [OperationContract]
+        AllowTrustOpEncodeResponse EncodeAllowTrustOp(AllowTrustOpEncodeRequest request);
+
+        [OperationContract]
+        AllowTrustOpDecodeResponse DecodeAllowTrustOp(AllowTrustOpDecodeRequest request);
+
+        [OperationContract]
+        ManageDataOpEncodeResponse EncodeManageDataOp(ManageDataOpEncodeRequest request);
+
+        [OperationContract]
+        ManageDataOpDecodeResponse DecodeManageDataOp(ManageDataOpDecodeRequest request);
+
+        [OperationContract]
+        BumpSequenceOpEncodeResponse EncodeBumpSequenceOp(BumpSequenceOpEncodeRequest request);
+
+        [OperationContract]
+        BumpSequenceOpDecodeResponse DecodeBumpSequenceOp(BumpSequenceOpDecodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceOpEncodeResponse EncodeCreateClaimableBalanceOp(CreateClaimableBalanceOpEncodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceOpDecodeResponse DecodeCreateClaimableBalanceOp(CreateClaimableBalanceOpDecodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceOpEncodeResponse EncodeClaimClaimableBalanceOp(ClaimClaimableBalanceOpEncodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceOpDecodeResponse DecodeClaimClaimableBalanceOp(ClaimClaimableBalanceOpDecodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesOpEncodeResponse EncodeBeginSponsoringFutureReservesOp(BeginSponsoringFutureReservesOpEncodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesOpDecodeResponse DecodeBeginSponsoringFutureReservesOp(BeginSponsoringFutureReservesOpDecodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipTypeEncodeResponse EncodeRevokeSponsorshipType(RevokeSponsorshipTypeEncodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipTypeDecodeResponse DecodeRevokeSponsorshipType(RevokeSponsorshipTypeDecodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipOpEncodeResponse EncodeRevokeSponsorshipOp(RevokeSponsorshipOpEncodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipOpDecodeResponse DecodeRevokeSponsorshipOp(RevokeSponsorshipOpDecodeRequest request);
+
+        [OperationContract]
+        ClawbackOpEncodeResponse EncodeClawbackOp(ClawbackOpEncodeRequest request);
+
+        [OperationContract]
+        ClawbackOpDecodeResponse DecodeClawbackOp(ClawbackOpDecodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceOpEncodeResponse EncodeClawbackClaimableBalanceOp(ClawbackClaimableBalanceOpEncodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceOpDecodeResponse DecodeClawbackClaimableBalanceOp(ClawbackClaimableBalanceOpDecodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsOpEncodeResponse EncodeSetTrustLineFlagsOp(SetTrustLineFlagsOpEncodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsOpDecodeResponse DecodeSetTrustLineFlagsOp(SetTrustLineFlagsOpDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositOpEncodeResponse EncodeLiquidityPoolDepositOp(LiquidityPoolDepositOpEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositOpDecodeResponse DecodeLiquidityPoolDepositOp(LiquidityPoolDepositOpDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawOpEncodeResponse EncodeLiquidityPoolWithdrawOp(LiquidityPoolWithdrawOpEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawOpDecodeResponse DecodeLiquidityPoolWithdrawOp(LiquidityPoolWithdrawOpDecodeRequest request);
+
+        [OperationContract]
+        HostFunctionTypeEncodeResponse EncodeHostFunctionType(HostFunctionTypeEncodeRequest request);
+
+        [OperationContract]
+        HostFunctionTypeDecodeResponse DecodeHostFunctionType(HostFunctionTypeDecodeRequest request);
+
+        [OperationContract]
+        ContractIDPreimageTypeEncodeResponse EncodeContractIDPreimageType(ContractIDPreimageTypeEncodeRequest request);
+
+        [OperationContract]
+        ContractIDPreimageTypeDecodeResponse DecodeContractIDPreimageType(ContractIDPreimageTypeDecodeRequest request);
+
+        [OperationContract]
+        ContractIDPreimageEncodeResponse EncodeContractIDPreimage(ContractIDPreimageEncodeRequest request);
+
+        [OperationContract]
+        ContractIDPreimageDecodeResponse DecodeContractIDPreimage(ContractIDPreimageDecodeRequest request);
+
+        [OperationContract]
+        CreateContractArgsEncodeResponse EncodeCreateContractArgs(CreateContractArgsEncodeRequest request);
+
+        [OperationContract]
+        CreateContractArgsDecodeResponse DecodeCreateContractArgs(CreateContractArgsDecodeRequest request);
+
+        [OperationContract]
+        CreateContractArgsV2EncodeResponse EncodeCreateContractArgsV2(CreateContractArgsV2EncodeRequest request);
+
+        [OperationContract]
+        CreateContractArgsV2DecodeResponse DecodeCreateContractArgsV2(CreateContractArgsV2DecodeRequest request);
+
+        [OperationContract]
+        InvokeContractArgsEncodeResponse EncodeInvokeContractArgs(InvokeContractArgsEncodeRequest request);
+
+        [OperationContract]
+        InvokeContractArgsDecodeResponse DecodeInvokeContractArgs(InvokeContractArgsDecodeRequest request);
+
+        [OperationContract]
+        HostFunctionEncodeResponse EncodeHostFunction(HostFunctionEncodeRequest request);
+
+        [OperationContract]
+        HostFunctionDecodeResponse DecodeHostFunction(HostFunctionDecodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedFunctionTypeEncodeResponse EncodeSorobanAuthorizedFunctionType(SorobanAuthorizedFunctionTypeEncodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedFunctionTypeDecodeResponse DecodeSorobanAuthorizedFunctionType(SorobanAuthorizedFunctionTypeDecodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedFunctionEncodeResponse EncodeSorobanAuthorizedFunction(SorobanAuthorizedFunctionEncodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedFunctionDecodeResponse DecodeSorobanAuthorizedFunction(SorobanAuthorizedFunctionDecodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedInvocationEncodeResponse EncodeSorobanAuthorizedInvocation(SorobanAuthorizedInvocationEncodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizedInvocationDecodeResponse DecodeSorobanAuthorizedInvocation(SorobanAuthorizedInvocationDecodeRequest request);
+
+        [OperationContract]
+        SorobanAddressCredentialsEncodeResponse EncodeSorobanAddressCredentials(SorobanAddressCredentialsEncodeRequest request);
+
+        [OperationContract]
+        SorobanAddressCredentialsDecodeResponse DecodeSorobanAddressCredentials(SorobanAddressCredentialsDecodeRequest request);
+
+        [OperationContract]
+        SorobanCredentialsTypeEncodeResponse EncodeSorobanCredentialsType(SorobanCredentialsTypeEncodeRequest request);
+
+        [OperationContract]
+        SorobanCredentialsTypeDecodeResponse DecodeSorobanCredentialsType(SorobanCredentialsTypeDecodeRequest request);
+
+        [OperationContract]
+        SorobanCredentialsEncodeResponse EncodeSorobanCredentials(SorobanCredentialsEncodeRequest request);
+
+        [OperationContract]
+        SorobanCredentialsDecodeResponse DecodeSorobanCredentials(SorobanCredentialsDecodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizationEntryEncodeResponse EncodeSorobanAuthorizationEntry(SorobanAuthorizationEntryEncodeRequest request);
+
+        [OperationContract]
+        SorobanAuthorizationEntryDecodeResponse DecodeSorobanAuthorizationEntry(SorobanAuthorizationEntryDecodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionOpEncodeResponse EncodeInvokeHostFunctionOp(InvokeHostFunctionOpEncodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionOpDecodeResponse DecodeInvokeHostFunctionOp(InvokeHostFunctionOpDecodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLOpEncodeResponse EncodeExtendFootprintTTLOp(ExtendFootprintTTLOpEncodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLOpDecodeResponse DecodeExtendFootprintTTLOp(ExtendFootprintTTLOpDecodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintOpEncodeResponse EncodeRestoreFootprintOp(RestoreFootprintOpEncodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintOpDecodeResponse DecodeRestoreFootprintOp(RestoreFootprintOpDecodeRequest request);
+
+        [OperationContract]
+        OperationEncodeResponse EncodeOperation(OperationEncodeRequest request);
+
+        [OperationContract]
+        OperationDecodeResponse DecodeOperation(OperationDecodeRequest request);
+
+        [OperationContract]
+        HashIDPreimageEncodeResponse EncodeHashIDPreimage(HashIDPreimageEncodeRequest request);
+
+        [OperationContract]
+        HashIDPreimageDecodeResponse DecodeHashIDPreimage(HashIDPreimageDecodeRequest request);
+
+        [OperationContract]
+        MemoTypeEncodeResponse EncodeMemoType(MemoTypeEncodeRequest request);
+
+        [OperationContract]
+        MemoTypeDecodeResponse DecodeMemoType(MemoTypeDecodeRequest request);
+
+        [OperationContract]
+        MemoEncodeResponse EncodeMemo(MemoEncodeRequest request);
+
+        [OperationContract]
+        MemoDecodeResponse DecodeMemo(MemoDecodeRequest request);
+
+        [OperationContract]
+        TimeBoundsEncodeResponse EncodeTimeBounds(TimeBoundsEncodeRequest request);
+
+        [OperationContract]
+        TimeBoundsDecodeResponse DecodeTimeBounds(TimeBoundsDecodeRequest request);
+
+        [OperationContract]
+        LedgerBoundsEncodeResponse EncodeLedgerBounds(LedgerBoundsEncodeRequest request);
+
+        [OperationContract]
+        LedgerBoundsDecodeResponse DecodeLedgerBounds(LedgerBoundsDecodeRequest request);
+
+        [OperationContract]
+        PreconditionsV2EncodeResponse EncodePreconditionsV2(PreconditionsV2EncodeRequest request);
+
+        [OperationContract]
+        PreconditionsV2DecodeResponse DecodePreconditionsV2(PreconditionsV2DecodeRequest request);
+
+        [OperationContract]
+        PreconditionTypeEncodeResponse EncodePreconditionType(PreconditionTypeEncodeRequest request);
+
+        [OperationContract]
+        PreconditionTypeDecodeResponse DecodePreconditionType(PreconditionTypeDecodeRequest request);
+
+        [OperationContract]
+        PreconditionsEncodeResponse EncodePreconditions(PreconditionsEncodeRequest request);
+
+        [OperationContract]
+        PreconditionsDecodeResponse DecodePreconditions(PreconditionsDecodeRequest request);
+
+        [OperationContract]
+        LedgerFootprintEncodeResponse EncodeLedgerFootprint(LedgerFootprintEncodeRequest request);
+
+        [OperationContract]
+        LedgerFootprintDecodeResponse DecodeLedgerFootprint(LedgerFootprintDecodeRequest request);
+
+        [OperationContract]
+        ArchivalProofTypeEncodeResponse EncodeArchivalProofType(ArchivalProofTypeEncodeRequest request);
+
+        [OperationContract]
+        ArchivalProofTypeDecodeResponse DecodeArchivalProofType(ArchivalProofTypeDecodeRequest request);
+
+        [OperationContract]
+        ArchivalProofNodeEncodeResponse EncodeArchivalProofNode(ArchivalProofNodeEncodeRequest request);
+
+        [OperationContract]
+        ArchivalProofNodeDecodeResponse DecodeArchivalProofNode(ArchivalProofNodeDecodeRequest request);
+
+        [OperationContract]
+        ProofLevelEncodeResponse EncodeProofLevel(ProofLevelEncodeRequest request);
+
+        [OperationContract]
+        ProofLevelDecodeResponse DecodeProofLevel(ProofLevelDecodeRequest request);
+
+        [OperationContract]
+        NonexistenceProofBodyEncodeResponse EncodeNonexistenceProofBody(NonexistenceProofBodyEncodeRequest request);
+
+        [OperationContract]
+        NonexistenceProofBodyDecodeResponse DecodeNonexistenceProofBody(NonexistenceProofBodyDecodeRequest request);
+
+        [OperationContract]
+        ExistenceProofBodyEncodeResponse EncodeExistenceProofBody(ExistenceProofBodyEncodeRequest request);
+
+        [OperationContract]
+        ExistenceProofBodyDecodeResponse DecodeExistenceProofBody(ExistenceProofBodyDecodeRequest request);
+
+        [OperationContract]
+        ArchivalProofEncodeResponse EncodeArchivalProof(ArchivalProofEncodeRequest request);
+
+        [OperationContract]
+        ArchivalProofDecodeResponse DecodeArchivalProof(ArchivalProofDecodeRequest request);
+
+        [OperationContract]
+        SorobanResourcesEncodeResponse EncodeSorobanResources(SorobanResourcesEncodeRequest request);
+
+        [OperationContract]
+        SorobanResourcesDecodeResponse DecodeSorobanResources(SorobanResourcesDecodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionDataEncodeResponse EncodeSorobanTransactionData(SorobanTransactionDataEncodeRequest request);
+
+        [OperationContract]
+        SorobanTransactionDataDecodeResponse DecodeSorobanTransactionData(SorobanTransactionDataDecodeRequest request);
+
+        [OperationContract]
+        TransactionV0EncodeResponse EncodeTransactionV0(TransactionV0EncodeRequest request);
+
+        [OperationContract]
+        TransactionV0DecodeResponse DecodeTransactionV0(TransactionV0DecodeRequest request);
+
+        [OperationContract]
+        TransactionV0EnvelopeEncodeResponse EncodeTransactionV0Envelope(TransactionV0EnvelopeEncodeRequest request);
+
+        [OperationContract]
+        TransactionV0EnvelopeDecodeResponse DecodeTransactionV0Envelope(TransactionV0EnvelopeDecodeRequest request);
+
+        [OperationContract]
+        TransactionEncodeResponse EncodeTransaction(TransactionEncodeRequest request);
+
+        [OperationContract]
+        TransactionDecodeResponse DecodeTransaction(TransactionDecodeRequest request);
+
+        [OperationContract]
+        TransactionV1EnvelopeEncodeResponse EncodeTransactionV1Envelope(TransactionV1EnvelopeEncodeRequest request);
+
+        [OperationContract]
+        TransactionV1EnvelopeDecodeResponse DecodeTransactionV1Envelope(TransactionV1EnvelopeDecodeRequest request);
+
+        [OperationContract]
+        FeeBumpTransactionEncodeResponse EncodeFeeBumpTransaction(FeeBumpTransactionEncodeRequest request);
+
+        [OperationContract]
+        FeeBumpTransactionDecodeResponse DecodeFeeBumpTransaction(FeeBumpTransactionDecodeRequest request);
+
+        [OperationContract]
+        FeeBumpTransactionEnvelopeEncodeResponse EncodeFeeBumpTransactionEnvelope(FeeBumpTransactionEnvelopeEncodeRequest request);
+
+        [OperationContract]
+        FeeBumpTransactionEnvelopeDecodeResponse DecodeFeeBumpTransactionEnvelope(FeeBumpTransactionEnvelopeDecodeRequest request);
+
+        [OperationContract]
+        TransactionEnvelopeEncodeResponse EncodeTransactionEnvelope(TransactionEnvelopeEncodeRequest request);
+
+        [OperationContract]
+        TransactionEnvelopeDecodeResponse DecodeTransactionEnvelope(TransactionEnvelopeDecodeRequest request);
+
+        [OperationContract]
+        TransactionSignaturePayloadEncodeResponse EncodeTransactionSignaturePayload(TransactionSignaturePayloadEncodeRequest request);
+
+        [OperationContract]
+        TransactionSignaturePayloadDecodeResponse DecodeTransactionSignaturePayload(TransactionSignaturePayloadDecodeRequest request);
+
+        [OperationContract]
+        ClaimAtomTypeEncodeResponse EncodeClaimAtomType(ClaimAtomTypeEncodeRequest request);
+
+        [OperationContract]
+        ClaimAtomTypeDecodeResponse DecodeClaimAtomType(ClaimAtomTypeDecodeRequest request);
+
+        [OperationContract]
+        ClaimOfferAtomV0EncodeResponse EncodeClaimOfferAtomV0(ClaimOfferAtomV0EncodeRequest request);
+
+        [OperationContract]
+        ClaimOfferAtomV0DecodeResponse DecodeClaimOfferAtomV0(ClaimOfferAtomV0DecodeRequest request);
+
+        [OperationContract]
+        ClaimOfferAtomEncodeResponse EncodeClaimOfferAtom(ClaimOfferAtomEncodeRequest request);
+
+        [OperationContract]
+        ClaimOfferAtomDecodeResponse DecodeClaimOfferAtom(ClaimOfferAtomDecodeRequest request);
+
+        [OperationContract]
+        ClaimLiquidityAtomEncodeResponse EncodeClaimLiquidityAtom(ClaimLiquidityAtomEncodeRequest request);
+
+        [OperationContract]
+        ClaimLiquidityAtomDecodeResponse DecodeClaimLiquidityAtom(ClaimLiquidityAtomDecodeRequest request);
+
+        [OperationContract]
+        ClaimAtomEncodeResponse EncodeClaimAtom(ClaimAtomEncodeRequest request);
+
+        [OperationContract]
+        ClaimAtomDecodeResponse DecodeClaimAtom(ClaimAtomDecodeRequest request);
+
+        [OperationContract]
+        CreateAccountResultCodeEncodeResponse EncodeCreateAccountResultCode(CreateAccountResultCodeEncodeRequest request);
+
+        [OperationContract]
+        CreateAccountResultCodeDecodeResponse DecodeCreateAccountResultCode(CreateAccountResultCodeDecodeRequest request);
+
+        [OperationContract]
+        CreateAccountResultEncodeResponse EncodeCreateAccountResult(CreateAccountResultEncodeRequest request);
+
+        [OperationContract]
+        CreateAccountResultDecodeResponse DecodeCreateAccountResult(CreateAccountResultDecodeRequest request);
+
+        [OperationContract]
+        PaymentResultCodeEncodeResponse EncodePaymentResultCode(PaymentResultCodeEncodeRequest request);
+
+        [OperationContract]
+        PaymentResultCodeDecodeResponse DecodePaymentResultCode(PaymentResultCodeDecodeRequest request);
+
+        [OperationContract]
+        PaymentResultEncodeResponse EncodePaymentResult(PaymentResultEncodeRequest request);
+
+        [OperationContract]
+        PaymentResultDecodeResponse DecodePaymentResult(PaymentResultDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveResultCodeEncodeResponse EncodePathPaymentStrictReceiveResultCode(PathPaymentStrictReceiveResultCodeEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveResultCodeDecodeResponse DecodePathPaymentStrictReceiveResultCode(PathPaymentStrictReceiveResultCodeDecodeRequest request);
+
+        [OperationContract]
+        SimplePaymentResultEncodeResponse EncodeSimplePaymentResult(SimplePaymentResultEncodeRequest request);
+
+        [OperationContract]
+        SimplePaymentResultDecodeResponse DecodeSimplePaymentResult(SimplePaymentResultDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveResultEncodeResponse EncodePathPaymentStrictReceiveResult(PathPaymentStrictReceiveResultEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictReceiveResultDecodeResponse DecodePathPaymentStrictReceiveResult(PathPaymentStrictReceiveResultDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendResultCodeEncodeResponse EncodePathPaymentStrictSendResultCode(PathPaymentStrictSendResultCodeEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendResultCodeDecodeResponse DecodePathPaymentStrictSendResultCode(PathPaymentStrictSendResultCodeDecodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendResultEncodeResponse EncodePathPaymentStrictSendResult(PathPaymentStrictSendResultEncodeRequest request);
+
+        [OperationContract]
+        PathPaymentStrictSendResultDecodeResponse DecodePathPaymentStrictSendResult(PathPaymentStrictSendResultDecodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferResultCodeEncodeResponse EncodeManageSellOfferResultCode(ManageSellOfferResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferResultCodeDecodeResponse DecodeManageSellOfferResultCode(ManageSellOfferResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ManageOfferEffectEncodeResponse EncodeManageOfferEffect(ManageOfferEffectEncodeRequest request);
+
+        [OperationContract]
+        ManageOfferEffectDecodeResponse DecodeManageOfferEffect(ManageOfferEffectDecodeRequest request);
+
+        [OperationContract]
+        ManageOfferSuccessResultEncodeResponse EncodeManageOfferSuccessResult(ManageOfferSuccessResultEncodeRequest request);
+
+        [OperationContract]
+        ManageOfferSuccessResultDecodeResponse DecodeManageOfferSuccessResult(ManageOfferSuccessResultDecodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferResultEncodeResponse EncodeManageSellOfferResult(ManageSellOfferResultEncodeRequest request);
+
+        [OperationContract]
+        ManageSellOfferResultDecodeResponse DecodeManageSellOfferResult(ManageSellOfferResultDecodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferResultCodeEncodeResponse EncodeManageBuyOfferResultCode(ManageBuyOfferResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferResultCodeDecodeResponse DecodeManageBuyOfferResultCode(ManageBuyOfferResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferResultEncodeResponse EncodeManageBuyOfferResult(ManageBuyOfferResultEncodeRequest request);
+
+        [OperationContract]
+        ManageBuyOfferResultDecodeResponse DecodeManageBuyOfferResult(ManageBuyOfferResultDecodeRequest request);
+
+        [OperationContract]
+        SetOptionsResultCodeEncodeResponse EncodeSetOptionsResultCode(SetOptionsResultCodeEncodeRequest request);
+
+        [OperationContract]
+        SetOptionsResultCodeDecodeResponse DecodeSetOptionsResultCode(SetOptionsResultCodeDecodeRequest request);
+
+        [OperationContract]
+        SetOptionsResultEncodeResponse EncodeSetOptionsResult(SetOptionsResultEncodeRequest request);
+
+        [OperationContract]
+        SetOptionsResultDecodeResponse DecodeSetOptionsResult(SetOptionsResultDecodeRequest request);
+
+        [OperationContract]
+        ChangeTrustResultCodeEncodeResponse EncodeChangeTrustResultCode(ChangeTrustResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ChangeTrustResultCodeDecodeResponse DecodeChangeTrustResultCode(ChangeTrustResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ChangeTrustResultEncodeResponse EncodeChangeTrustResult(ChangeTrustResultEncodeRequest request);
+
+        [OperationContract]
+        ChangeTrustResultDecodeResponse DecodeChangeTrustResult(ChangeTrustResultDecodeRequest request);
+
+        [OperationContract]
+        AllowTrustResultCodeEncodeResponse EncodeAllowTrustResultCode(AllowTrustResultCodeEncodeRequest request);
+
+        [OperationContract]
+        AllowTrustResultCodeDecodeResponse DecodeAllowTrustResultCode(AllowTrustResultCodeDecodeRequest request);
+
+        [OperationContract]
+        AllowTrustResultEncodeResponse EncodeAllowTrustResult(AllowTrustResultEncodeRequest request);
+
+        [OperationContract]
+        AllowTrustResultDecodeResponse DecodeAllowTrustResult(AllowTrustResultDecodeRequest request);
+
+        [OperationContract]
+        AccountMergeResultCodeEncodeResponse EncodeAccountMergeResultCode(AccountMergeResultCodeEncodeRequest request);
+
+        [OperationContract]
+        AccountMergeResultCodeDecodeResponse DecodeAccountMergeResultCode(AccountMergeResultCodeDecodeRequest request);
+
+        [OperationContract]
+        AccountMergeResultEncodeResponse EncodeAccountMergeResult(AccountMergeResultEncodeRequest request);
+
+        [OperationContract]
+        AccountMergeResultDecodeResponse DecodeAccountMergeResult(AccountMergeResultDecodeRequest request);
+
+        [OperationContract]
+        InflationResultCodeEncodeResponse EncodeInflationResultCode(InflationResultCodeEncodeRequest request);
+
+        [OperationContract]
+        InflationResultCodeDecodeResponse DecodeInflationResultCode(InflationResultCodeDecodeRequest request);
+
+        [OperationContract]
+        InflationPayoutEncodeResponse EncodeInflationPayout(InflationPayoutEncodeRequest request);
+
+        [OperationContract]
+        InflationPayoutDecodeResponse DecodeInflationPayout(InflationPayoutDecodeRequest request);
+
+        [OperationContract]
+        InflationResultEncodeResponse EncodeInflationResult(InflationResultEncodeRequest request);
+
+        [OperationContract]
+        InflationResultDecodeResponse DecodeInflationResult(InflationResultDecodeRequest request);
+
+        [OperationContract]
+        ManageDataResultCodeEncodeResponse EncodeManageDataResultCode(ManageDataResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ManageDataResultCodeDecodeResponse DecodeManageDataResultCode(ManageDataResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ManageDataResultEncodeResponse EncodeManageDataResult(ManageDataResultEncodeRequest request);
+
+        [OperationContract]
+        ManageDataResultDecodeResponse DecodeManageDataResult(ManageDataResultDecodeRequest request);
+
+        [OperationContract]
+        BumpSequenceResultCodeEncodeResponse EncodeBumpSequenceResultCode(BumpSequenceResultCodeEncodeRequest request);
+
+        [OperationContract]
+        BumpSequenceResultCodeDecodeResponse DecodeBumpSequenceResultCode(BumpSequenceResultCodeDecodeRequest request);
+
+        [OperationContract]
+        BumpSequenceResultEncodeResponse EncodeBumpSequenceResult(BumpSequenceResultEncodeRequest request);
+
+        [OperationContract]
+        BumpSequenceResultDecodeResponse DecodeBumpSequenceResult(BumpSequenceResultDecodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceResultCodeEncodeResponse EncodeCreateClaimableBalanceResultCode(CreateClaimableBalanceResultCodeEncodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceResultCodeDecodeResponse DecodeCreateClaimableBalanceResultCode(CreateClaimableBalanceResultCodeDecodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceResultEncodeResponse EncodeCreateClaimableBalanceResult(CreateClaimableBalanceResultEncodeRequest request);
+
+        [OperationContract]
+        CreateClaimableBalanceResultDecodeResponse DecodeCreateClaimableBalanceResult(CreateClaimableBalanceResultDecodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceResultCodeEncodeResponse EncodeClaimClaimableBalanceResultCode(ClaimClaimableBalanceResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceResultCodeDecodeResponse DecodeClaimClaimableBalanceResultCode(ClaimClaimableBalanceResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceResultEncodeResponse EncodeClaimClaimableBalanceResult(ClaimClaimableBalanceResultEncodeRequest request);
+
+        [OperationContract]
+        ClaimClaimableBalanceResultDecodeResponse DecodeClaimClaimableBalanceResult(ClaimClaimableBalanceResultDecodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesResultCodeEncodeResponse EncodeBeginSponsoringFutureReservesResultCode(BeginSponsoringFutureReservesResultCodeEncodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesResultCodeDecodeResponse DecodeBeginSponsoringFutureReservesResultCode(BeginSponsoringFutureReservesResultCodeDecodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesResultEncodeResponse EncodeBeginSponsoringFutureReservesResult(BeginSponsoringFutureReservesResultEncodeRequest request);
+
+        [OperationContract]
+        BeginSponsoringFutureReservesResultDecodeResponse DecodeBeginSponsoringFutureReservesResult(BeginSponsoringFutureReservesResultDecodeRequest request);
+
+        [OperationContract]
+        EndSponsoringFutureReservesResultCodeEncodeResponse EncodeEndSponsoringFutureReservesResultCode(EndSponsoringFutureReservesResultCodeEncodeRequest request);
+
+        [OperationContract]
+        EndSponsoringFutureReservesResultCodeDecodeResponse DecodeEndSponsoringFutureReservesResultCode(EndSponsoringFutureReservesResultCodeDecodeRequest request);
+
+        [OperationContract]
+        EndSponsoringFutureReservesResultEncodeResponse EncodeEndSponsoringFutureReservesResult(EndSponsoringFutureReservesResultEncodeRequest request);
+
+        [OperationContract]
+        EndSponsoringFutureReservesResultDecodeResponse DecodeEndSponsoringFutureReservesResult(EndSponsoringFutureReservesResultDecodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipResultCodeEncodeResponse EncodeRevokeSponsorshipResultCode(RevokeSponsorshipResultCodeEncodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipResultCodeDecodeResponse DecodeRevokeSponsorshipResultCode(RevokeSponsorshipResultCodeDecodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipResultEncodeResponse EncodeRevokeSponsorshipResult(RevokeSponsorshipResultEncodeRequest request);
+
+        [OperationContract]
+        RevokeSponsorshipResultDecodeResponse DecodeRevokeSponsorshipResult(RevokeSponsorshipResultDecodeRequest request);
+
+        [OperationContract]
+        ClawbackResultCodeEncodeResponse EncodeClawbackResultCode(ClawbackResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ClawbackResultCodeDecodeResponse DecodeClawbackResultCode(ClawbackResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ClawbackResultEncodeResponse EncodeClawbackResult(ClawbackResultEncodeRequest request);
+
+        [OperationContract]
+        ClawbackResultDecodeResponse DecodeClawbackResult(ClawbackResultDecodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceResultCodeEncodeResponse EncodeClawbackClaimableBalanceResultCode(ClawbackClaimableBalanceResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceResultCodeDecodeResponse DecodeClawbackClaimableBalanceResultCode(ClawbackClaimableBalanceResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceResultEncodeResponse EncodeClawbackClaimableBalanceResult(ClawbackClaimableBalanceResultEncodeRequest request);
+
+        [OperationContract]
+        ClawbackClaimableBalanceResultDecodeResponse DecodeClawbackClaimableBalanceResult(ClawbackClaimableBalanceResultDecodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsResultCodeEncodeResponse EncodeSetTrustLineFlagsResultCode(SetTrustLineFlagsResultCodeEncodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsResultCodeDecodeResponse DecodeSetTrustLineFlagsResultCode(SetTrustLineFlagsResultCodeDecodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsResultEncodeResponse EncodeSetTrustLineFlagsResult(SetTrustLineFlagsResultEncodeRequest request);
+
+        [OperationContract]
+        SetTrustLineFlagsResultDecodeResponse DecodeSetTrustLineFlagsResult(SetTrustLineFlagsResultDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositResultCodeEncodeResponse EncodeLiquidityPoolDepositResultCode(LiquidityPoolDepositResultCodeEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositResultCodeDecodeResponse DecodeLiquidityPoolDepositResultCode(LiquidityPoolDepositResultCodeDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositResultEncodeResponse EncodeLiquidityPoolDepositResult(LiquidityPoolDepositResultEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolDepositResultDecodeResponse DecodeLiquidityPoolDepositResult(LiquidityPoolDepositResultDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawResultCodeEncodeResponse EncodeLiquidityPoolWithdrawResultCode(LiquidityPoolWithdrawResultCodeEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawResultCodeDecodeResponse DecodeLiquidityPoolWithdrawResultCode(LiquidityPoolWithdrawResultCodeDecodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawResultEncodeResponse EncodeLiquidityPoolWithdrawResult(LiquidityPoolWithdrawResultEncodeRequest request);
+
+        [OperationContract]
+        LiquidityPoolWithdrawResultDecodeResponse DecodeLiquidityPoolWithdrawResult(LiquidityPoolWithdrawResultDecodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionResultCodeEncodeResponse EncodeInvokeHostFunctionResultCode(InvokeHostFunctionResultCodeEncodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionResultCodeDecodeResponse DecodeInvokeHostFunctionResultCode(InvokeHostFunctionResultCodeDecodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionResultEncodeResponse EncodeInvokeHostFunctionResult(InvokeHostFunctionResultEncodeRequest request);
+
+        [OperationContract]
+        InvokeHostFunctionResultDecodeResponse DecodeInvokeHostFunctionResult(InvokeHostFunctionResultDecodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLResultCodeEncodeResponse EncodeExtendFootprintTTLResultCode(ExtendFootprintTTLResultCodeEncodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLResultCodeDecodeResponse DecodeExtendFootprintTTLResultCode(ExtendFootprintTTLResultCodeDecodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLResultEncodeResponse EncodeExtendFootprintTTLResult(ExtendFootprintTTLResultEncodeRequest request);
+
+        [OperationContract]
+        ExtendFootprintTTLResultDecodeResponse DecodeExtendFootprintTTLResult(ExtendFootprintTTLResultDecodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintResultCodeEncodeResponse EncodeRestoreFootprintResultCode(RestoreFootprintResultCodeEncodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintResultCodeDecodeResponse DecodeRestoreFootprintResultCode(RestoreFootprintResultCodeDecodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintResultEncodeResponse EncodeRestoreFootprintResult(RestoreFootprintResultEncodeRequest request);
+
+        [OperationContract]
+        RestoreFootprintResultDecodeResponse DecodeRestoreFootprintResult(RestoreFootprintResultDecodeRequest request);
+
+        [OperationContract]
+        OperationResultCodeEncodeResponse EncodeOperationResultCode(OperationResultCodeEncodeRequest request);
+
+        [OperationContract]
+        OperationResultCodeDecodeResponse DecodeOperationResultCode(OperationResultCodeDecodeRequest request);
+
+        [OperationContract]
+        OperationResultEncodeResponse EncodeOperationResult(OperationResultEncodeRequest request);
+
+        [OperationContract]
+        OperationResultDecodeResponse DecodeOperationResult(OperationResultDecodeRequest request);
+
+        [OperationContract]
+        TransactionResultCodeEncodeResponse EncodeTransactionResultCode(TransactionResultCodeEncodeRequest request);
+
+        [OperationContract]
+        TransactionResultCodeDecodeResponse DecodeTransactionResultCode(TransactionResultCodeDecodeRequest request);
+
+        [OperationContract]
+        InnerTransactionResultEncodeResponse EncodeInnerTransactionResult(InnerTransactionResultEncodeRequest request);
+
+        [OperationContract]
+        InnerTransactionResultDecodeResponse DecodeInnerTransactionResult(InnerTransactionResultDecodeRequest request);
+
+        [OperationContract]
+        InnerTransactionResultPairEncodeResponse EncodeInnerTransactionResultPair(InnerTransactionResultPairEncodeRequest request);
+
+        [OperationContract]
+        InnerTransactionResultPairDecodeResponse DecodeInnerTransactionResultPair(InnerTransactionResultPairDecodeRequest request);
+
+        [OperationContract]
+        TransactionResultEncodeResponse EncodeTransactionResult(TransactionResultEncodeRequest request);
+
+        [OperationContract]
+        TransactionResultDecodeResponse DecodeTransactionResult(TransactionResultDecodeRequest request);
+
+        [OperationContract]
+        HashEncodeResponse EncodeHash(HashEncodeRequest request);
+
+        [OperationContract]
+        HashDecodeResponse DecodeHash(HashDecodeRequest request);
+
+        [OperationContract]
+        uint256EncodeResponse Encodeuint256(uint256EncodeRequest request);
+
+        [OperationContract]
+        uint256DecodeResponse Decodeuint256(uint256DecodeRequest request);
+
+        [OperationContract]
+        uint32EncodeResponse Encodeuint32(uint32EncodeRequest request);
+
+        [OperationContract]
+        uint32DecodeResponse Decodeuint32(uint32DecodeRequest request);
+
+        [OperationContract]
+        int32EncodeResponse Encodeint32(int32EncodeRequest request);
+
+        [OperationContract]
+        int32DecodeResponse Decodeint32(int32DecodeRequest request);
+
+        [OperationContract]
+        uint64EncodeResponse Encodeuint64(uint64EncodeRequest request);
+
+        [OperationContract]
+        uint64DecodeResponse Decodeuint64(uint64DecodeRequest request);
+
+        [OperationContract]
+        int64EncodeResponse Encodeint64(int64EncodeRequest request);
+
+        [OperationContract]
+        int64DecodeResponse Decodeint64(int64DecodeRequest request);
+
+        [OperationContract]
+        TimePointEncodeResponse EncodeTimePoint(TimePointEncodeRequest request);
+
+        [OperationContract]
+        TimePointDecodeResponse DecodeTimePoint(TimePointDecodeRequest request);
+
+        [OperationContract]
+        DurationEncodeResponse EncodeDuration(DurationEncodeRequest request);
+
+        [OperationContract]
+        DurationDecodeResponse DecodeDuration(DurationDecodeRequest request);
+
+        [OperationContract]
+        ExtensionPointEncodeResponse EncodeExtensionPoint(ExtensionPointEncodeRequest request);
+
+        [OperationContract]
+        ExtensionPointDecodeResponse DecodeExtensionPoint(ExtensionPointDecodeRequest request);
+
+        [OperationContract]
+        CryptoKeyTypeEncodeResponse EncodeCryptoKeyType(CryptoKeyTypeEncodeRequest request);
+
+        [OperationContract]
+        CryptoKeyTypeDecodeResponse DecodeCryptoKeyType(CryptoKeyTypeDecodeRequest request);
+
+        [OperationContract]
+        PublicKeyTypeEncodeResponse EncodePublicKeyType(PublicKeyTypeEncodeRequest request);
+
+        [OperationContract]
+        PublicKeyTypeDecodeResponse DecodePublicKeyType(PublicKeyTypeDecodeRequest request);
+
+        [OperationContract]
+        SignerKeyTypeEncodeResponse EncodeSignerKeyType(SignerKeyTypeEncodeRequest request);
+
+        [OperationContract]
+        SignerKeyTypeDecodeResponse DecodeSignerKeyType(SignerKeyTypeDecodeRequest request);
+
+        [OperationContract]
+        PublicKeyEncodeResponse EncodePublicKey(PublicKeyEncodeRequest request);
+
+        [OperationContract]
+        PublicKeyDecodeResponse DecodePublicKey(PublicKeyDecodeRequest request);
+
+        [OperationContract]
+        SignerKeyEncodeResponse EncodeSignerKey(SignerKeyEncodeRequest request);
+
+        [OperationContract]
+        SignerKeyDecodeResponse DecodeSignerKey(SignerKeyDecodeRequest request);
+
+        [OperationContract]
+        SignatureEncodeResponse EncodeSignature(SignatureEncodeRequest request);
+
+        [OperationContract]
+        SignatureDecodeResponse DecodeSignature(SignatureDecodeRequest request);
+
+        [OperationContract]
+        SignatureHintEncodeResponse EncodeSignatureHint(SignatureHintEncodeRequest request);
+
+        [OperationContract]
+        SignatureHintDecodeResponse DecodeSignatureHint(SignatureHintDecodeRequest request);
+
+        [OperationContract]
+        NodeIDEncodeResponse EncodeNodeID(NodeIDEncodeRequest request);
+
+        [OperationContract]
+        NodeIDDecodeResponse DecodeNodeID(NodeIDDecodeRequest request);
+
+        [OperationContract]
+        AccountIDEncodeResponse EncodeAccountID(AccountIDEncodeRequest request);
+
+        [OperationContract]
+        AccountIDDecodeResponse DecodeAccountID(AccountIDDecodeRequest request);
+
+        [OperationContract]
+        Curve25519SecretEncodeResponse EncodeCurve25519Secret(Curve25519SecretEncodeRequest request);
+
+        [OperationContract]
+        Curve25519SecretDecodeResponse DecodeCurve25519Secret(Curve25519SecretDecodeRequest request);
+
+        [OperationContract]
+        Curve25519PublicEncodeResponse EncodeCurve25519Public(Curve25519PublicEncodeRequest request);
+
+        [OperationContract]
+        Curve25519PublicDecodeResponse DecodeCurve25519Public(Curve25519PublicDecodeRequest request);
+
+        [OperationContract]
+        HmacSha256KeyEncodeResponse EncodeHmacSha256Key(HmacSha256KeyEncodeRequest request);
+
+        [OperationContract]
+        HmacSha256KeyDecodeResponse DecodeHmacSha256Key(HmacSha256KeyDecodeRequest request);
+
+        [OperationContract]
+        HmacSha256MacEncodeResponse EncodeHmacSha256Mac(HmacSha256MacEncodeRequest request);
+
+        [OperationContract]
+        HmacSha256MacDecodeResponse DecodeHmacSha256Mac(HmacSha256MacDecodeRequest request);
+
+        [OperationContract]
+        ShortHashSeedEncodeResponse EncodeShortHashSeed(ShortHashSeedEncodeRequest request);
+
+        [OperationContract]
+        ShortHashSeedDecodeResponse DecodeShortHashSeed(ShortHashSeedDecodeRequest request);
+
+        [OperationContract]
+        BinaryFuseFilterTypeEncodeResponse EncodeBinaryFuseFilterType(BinaryFuseFilterTypeEncodeRequest request);
+
+        [OperationContract]
+        BinaryFuseFilterTypeDecodeResponse DecodeBinaryFuseFilterType(BinaryFuseFilterTypeDecodeRequest request);
+
+        [OperationContract]
+        SerializedBinaryFuseFilterEncodeResponse EncodeSerializedBinaryFuseFilter(SerializedBinaryFuseFilterEncodeRequest request);
+
+        [OperationContract]
+        SerializedBinaryFuseFilterDecodeResponse DecodeSerializedBinaryFuseFilter(SerializedBinaryFuseFilterDecodeRequest request);
+
+    }
+
+    [ServiceContract]
+    public class XdrProtoService : IXdrProtoService
     {
         [OperationContract]
         public ConfigSettingContractExecutionLanesV0EncodeResponse EncodeConfigSettingContractExecutionLanesV0(ConfigSettingContractExecutionLanesV0EncodeRequest request)

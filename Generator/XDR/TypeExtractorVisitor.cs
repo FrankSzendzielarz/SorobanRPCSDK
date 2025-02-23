@@ -407,9 +407,31 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             code.AppendLine();
         }
 
+
+        // Generate service interface
+        code.AppendLine("[ServiceContract]");
+        code.AppendLine("public interface IXdrProtoService");
+        code.OpenBlock();
+
+        foreach (var type in AllTypes.Where(t => t.XDRType != XDRType.Const))
+        {
+            var typeName = type.Name;
+
+            code.AppendLine("[OperationContract]");
+            code.AppendLine($"{typeName}EncodeResponse Encode{typeName}({typeName}EncodeRequest request);");
+            code.AppendLine();
+
+            code.AppendLine("[OperationContract]");
+            code.AppendLine($"{typeName}DecodeResponse Decode{typeName}({typeName}DecodeRequest request);");
+            code.AppendLine();
+        }
+
+        code.CloseBlock();
+        code.AppendLine();
+
         // Generate service class
         code.AppendLine("[ServiceContract]");
-        code.AppendLine("public class XdrProtoService");
+        code.AppendLine("public class XdrProtoService : IXdrProtoService");
         code.OpenBlock();
 
         foreach (var type in AllTypes.Where(t => t.XDRType != XDRType.Const))
