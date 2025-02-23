@@ -41,7 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipSuccess")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipSuccess")]
         public sealed partial class RevokeSponsorshipSuccess : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_SUCCESS;
@@ -49,7 +49,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipDoesNotExist")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipDoesNotExist")]
         public sealed partial class RevokeSponsorshipDoesNotExist : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_DOES_NOT_EXIST;
@@ -57,7 +57,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipNotSponsor")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipNotSponsor")]
         public sealed partial class RevokeSponsorshipNotSponsor : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_NOT_SPONSOR;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipLowReserve")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipLowReserve")]
         public sealed partial class RevokeSponsorshipLowReserve : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_LOW_RESERVE;
@@ -73,7 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipOnlyTransferable")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipOnlyTransferable")]
         public sealed partial class RevokeSponsorshipOnlyTransferable : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_ONLY_TRANSFERABLE;
@@ -81,7 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipResult.RevokeSponsorshipMalformed")]
+        [ProtoContract(Name = "RevokeSponsorshipResult_RevokeSponsorshipMalformed")]
         public sealed partial class RevokeSponsorshipMalformed : RevokeSponsorshipResult
         {
             public override RevokeSponsorshipResultCode Discriminator => RevokeSponsorshipResultCode.REVOKE_SPONSORSHIP_MALFORMED;

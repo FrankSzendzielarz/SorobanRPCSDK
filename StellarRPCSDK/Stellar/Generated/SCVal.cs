@@ -107,7 +107,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvBool")]
+        [ProtoContract(Name = "SCVal_ScvBool")]
         public sealed partial class ScvBool : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_BOOL;
@@ -130,7 +130,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvVoid")]
+        [ProtoContract(Name = "SCVal_ScvVoid")]
         public sealed partial class ScvVoid : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_VOID;
@@ -138,7 +138,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvError")]
+        [ProtoContract(Name = "SCVal_ScvError")]
         public sealed partial class ScvError : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_ERROR;
@@ -161,7 +161,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvU32")]
+        [ProtoContract(Name = "SCVal_ScvU32")]
         public sealed partial class ScvU32 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U32;
@@ -184,7 +184,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvI32")]
+        [ProtoContract(Name = "SCVal_ScvI32")]
         public sealed partial class ScvI32 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I32;
@@ -207,7 +207,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvU64")]
+        [ProtoContract(Name = "SCVal_ScvU64")]
         public sealed partial class ScvU64 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U64;
@@ -230,7 +230,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvI64")]
+        [ProtoContract(Name = "SCVal_ScvI64")]
         public sealed partial class ScvI64 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I64;
@@ -253,7 +253,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvTimepoint")]
+        [ProtoContract(Name = "SCVal_ScvTimepoint")]
         public sealed partial class ScvTimepoint : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_TIMEPOINT;
@@ -276,7 +276,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvDuration")]
+        [ProtoContract(Name = "SCVal_ScvDuration")]
         public sealed partial class ScvDuration : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_DURATION;
@@ -299,7 +299,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvU128")]
+        [ProtoContract(Name = "SCVal_ScvU128")]
         public sealed partial class ScvU128 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U128;
@@ -322,7 +322,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvI128")]
+        [ProtoContract(Name = "SCVal_ScvI128")]
         public sealed partial class ScvI128 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I128;
@@ -345,7 +345,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvU256")]
+        [ProtoContract(Name = "SCVal_ScvU256")]
         public sealed partial class ScvU256 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_U256;
@@ -368,7 +368,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvI256")]
+        [ProtoContract(Name = "SCVal_ScvI256")]
         public sealed partial class ScvI256 : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_I256;
@@ -391,7 +391,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvBytes")]
+        [ProtoContract(Name = "SCVal_ScvBytes")]
         public sealed partial class ScvBytes : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_BYTES;
@@ -414,7 +414,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvString")]
+        [ProtoContract(Name = "SCVal_ScvString")]
         public sealed partial class ScvString : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_STRING;
@@ -437,7 +437,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvSymbol")]
+        [ProtoContract(Name = "SCVal_ScvSymbol")]
         public sealed partial class ScvSymbol : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_SYMBOL;
@@ -463,7 +463,7 @@ namespace Stellar {
         /// behind an option, due to xdrpp limitations.
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvVec")]
+        [ProtoContract(Name = "SCVal_ScvVec")]
         public sealed partial class ScvVec : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_VEC;
@@ -486,7 +486,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvMap")]
+        [ProtoContract(Name = "SCVal_ScvMap")]
         public sealed partial class ScvMap : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_MAP;
@@ -509,7 +509,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvAddress")]
+        [ProtoContract(Name = "SCVal_ScvAddress")]
         public sealed partial class ScvAddress : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_ADDRESS;
@@ -535,7 +535,7 @@ namespace Stellar {
         /// ledger keys, not generally usable elsewhere.
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvLedgerKeyContractInstance")]
+        [ProtoContract(Name = "SCVal_ScvLedgerKeyContractInstance")]
         public sealed partial class ScvLedgerKeyContractInstance : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_LEDGER_KEY_CONTRACT_INSTANCE;
@@ -543,7 +543,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvLedgerKeyNonce")]
+        [ProtoContract(Name = "SCVal_ScvLedgerKeyNonce")]
         public sealed partial class ScvLedgerKeyNonce : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_LEDGER_KEY_NONCE;
@@ -566,7 +566,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCVal.ScvContractInstance")]
+        [ProtoContract(Name = "SCVal_ScvContractInstance")]
         public sealed partial class ScvContractInstance : SCVal
         {
             public override SCValType Discriminator => SCValType.SCV_CONTRACT_INSTANCE;

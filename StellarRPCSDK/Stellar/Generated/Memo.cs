@@ -42,7 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "Memo.MemoNone")]
+        [ProtoContract(Name = "Memo_MemoNone")]
         public sealed partial class MemoNone : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_NONE;
@@ -50,7 +50,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Memo.MemoText")]
+        [ProtoContract(Name = "Memo_MemoText")]
         public sealed partial class MemoText : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_TEXT;
@@ -76,7 +76,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Memo.MemoId")]
+        [ProtoContract(Name = "Memo_MemoId")]
         public sealed partial class MemoId : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_ID;
@@ -99,7 +99,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Memo.MemoHash")]
+        [ProtoContract(Name = "Memo_MemoHash")]
         public sealed partial class MemoHash : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_HASH;
@@ -125,7 +125,7 @@ namespace Stellar {
         /// the hash of what to pull from the content server
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "Memo.MemoReturn")]
+        [ProtoContract(Name = "Memo_MemoReturn")]
         public sealed partial class MemoReturn : Memo
         {
             public override MemoType Discriminator => MemoType.MEMO_RETURN;

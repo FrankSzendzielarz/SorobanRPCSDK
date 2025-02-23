@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ManageDataResult.ManageDataSuccess")]
+        [ProtoContract(Name = "ManageDataResult_ManageDataSuccess")]
         public sealed partial class ManageDataSuccess : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_SUCCESS;
@@ -47,7 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ManageDataResult.ManageDataNotSupportedYet")]
+        [ProtoContract(Name = "ManageDataResult_ManageDataNotSupportedYet")]
         public sealed partial class ManageDataNotSupportedYet : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NOT_SUPPORTED_YET;
@@ -55,7 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ManageDataResult.ManageDataNameNotFound")]
+        [ProtoContract(Name = "ManageDataResult_ManageDataNameNotFound")]
         public sealed partial class ManageDataNameNotFound : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_NAME_NOT_FOUND;
@@ -63,7 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ManageDataResult.ManageDataLowReserve")]
+        [ProtoContract(Name = "ManageDataResult_ManageDataLowReserve")]
         public sealed partial class ManageDataLowReserve : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_LOW_RESERVE;
@@ -71,7 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ManageDataResult.ManageDataInvalidName")]
+        [ProtoContract(Name = "ManageDataResult_ManageDataInvalidName")]
         public sealed partial class ManageDataInvalidName : ManageDataResult
         {
             public override ManageDataResultCode Discriminator => ManageDataResultCode.MANAGE_DATA_INVALID_NAME;

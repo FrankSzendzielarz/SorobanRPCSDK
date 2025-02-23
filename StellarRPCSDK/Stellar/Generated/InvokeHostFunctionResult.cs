@@ -41,7 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionSuccess")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionSuccess")]
         public sealed partial class InvokeHostFunctionSuccess : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_SUCCESS;
@@ -67,7 +67,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionMalformed")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionMalformed")]
         public sealed partial class InvokeHostFunctionMalformed : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_MALFORMED;
@@ -78,7 +78,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionTrapped")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionTrapped")]
         public sealed partial class InvokeHostFunctionTrapped : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_TRAPPED;
@@ -89,7 +89,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionResourceLimitExceeded")]
         public sealed partial class InvokeHostFunctionResourceLimitExceeded : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_RESOURCE_LIMIT_EXCEEDED;
@@ -100,7 +100,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionEntryArchived")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionEntryArchived")]
         public sealed partial class InvokeHostFunctionEntryArchived : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_ENTRY_ARCHIVED;
@@ -111,7 +111,7 @@ namespace Stellar {
         /// sha256(InvokeHostFunctionSuccessPreImage)
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee")]
+        [ProtoContract(Name = "InvokeHostFunctionResult_InvokeHostFunctionInsufficientRefundableFee")]
         public sealed partial class InvokeHostFunctionInsufficientRefundableFee : InvokeHostFunctionResult
         {
             public override InvokeHostFunctionResultCode Discriminator => InvokeHostFunctionResultCode.INVOKE_HOST_FUNCTION_INSUFFICIENT_REFUNDABLE_FEE;

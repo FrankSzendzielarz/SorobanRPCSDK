@@ -36,7 +36,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "AuthenticatedMessage.v0Struct")]
+        [ProtoContract(Name = "AuthenticatedMessage_v0Struct")]
         public partial class v0Struct
         {
             [ProtoMember(1)]
@@ -136,7 +136,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "AuthenticatedMessage.case_0")]
+        [ProtoContract(Name = "AuthenticatedMessage_case_0")]
         public sealed partial class case_0 : AuthenticatedMessage
         {
             public override int Discriminator => 0;

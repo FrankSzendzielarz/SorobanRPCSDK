@@ -85,7 +85,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeVal")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeVal")]
         public sealed partial class ScSpecTypeVal : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VAL;
@@ -93,7 +93,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeBool")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeBool")]
         public sealed partial class ScSpecTypeBool : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BOOL;
@@ -101,7 +101,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeVoid")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeVoid")]
         public sealed partial class ScSpecTypeVoid : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VOID;
@@ -109,7 +109,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeError")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeError")]
         public sealed partial class ScSpecTypeError : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ERROR;
@@ -117,7 +117,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeU32")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeU32")]
         public sealed partial class ScSpecTypeU32 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U32;
@@ -125,7 +125,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeI32")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeI32")]
         public sealed partial class ScSpecTypeI32 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I32;
@@ -133,7 +133,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeU64")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeU64")]
         public sealed partial class ScSpecTypeU64 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U64;
@@ -141,7 +141,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeI64")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeI64")]
         public sealed partial class ScSpecTypeI64 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I64;
@@ -149,7 +149,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeTimepoint")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeTimepoint")]
         public sealed partial class ScSpecTypeTimepoint : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TIMEPOINT;
@@ -157,7 +157,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeDuration")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeDuration")]
         public sealed partial class ScSpecTypeDuration : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_DURATION;
@@ -165,7 +165,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeU128")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeU128")]
         public sealed partial class ScSpecTypeU128 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U128;
@@ -173,7 +173,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeI128")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeI128")]
         public sealed partial class ScSpecTypeI128 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I128;
@@ -181,7 +181,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeU256")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeU256")]
         public sealed partial class ScSpecTypeU256 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_U256;
@@ -189,7 +189,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeI256")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeI256")]
         public sealed partial class ScSpecTypeI256 : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_I256;
@@ -197,7 +197,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeBytes")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeBytes")]
         public sealed partial class ScSpecTypeBytes : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES;
@@ -205,7 +205,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeString")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeString")]
         public sealed partial class ScSpecTypeString : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_STRING;
@@ -213,7 +213,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeSymbol")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeSymbol")]
         public sealed partial class ScSpecTypeSymbol : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_SYMBOL;
@@ -221,7 +221,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeAddress")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeAddress")]
         public sealed partial class ScSpecTypeAddress : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_ADDRESS;
@@ -229,7 +229,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeOption")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeOption")]
         public sealed partial class ScSpecTypeOption : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_OPTION;
@@ -252,7 +252,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeResult")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeResult")]
         public sealed partial class ScSpecTypeResult : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_RESULT;
@@ -275,7 +275,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeVec")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeVec")]
         public sealed partial class ScSpecTypeVec : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_VEC;
@@ -298,7 +298,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeMap")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeMap")]
         public sealed partial class ScSpecTypeMap : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_MAP;
@@ -321,7 +321,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeTuple")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeTuple")]
         public sealed partial class ScSpecTypeTuple : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_TUPLE;
@@ -344,7 +344,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeBytesN")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeBytesN")]
         public sealed partial class ScSpecTypeBytesN : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_BYTES_N;
@@ -367,7 +367,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecTypeDef.ScSpecTypeUdt")]
+        [ProtoContract(Name = "SCSpecTypeDef_ScSpecTypeUdt")]
         public sealed partial class ScSpecTypeUdt : SCSpecTypeDef
         {
             public override SCSpecType Discriminator => SCSpecType.SC_SPEC_TYPE_UDT;

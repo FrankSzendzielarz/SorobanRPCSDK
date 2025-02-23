@@ -30,7 +30,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClaimableBalanceID.ClaimableBalanceIdTypeV0")]
+        [ProtoContract(Name = "ClaimableBalanceID_ClaimableBalanceIdTypeV0")]
         public sealed partial class ClaimableBalanceIdTypeV0 : ClaimableBalanceID
         {
             public override ClaimableBalanceIDType Discriminator => ClaimableBalanceIDType.CLAIMABLE_BALANCE_ID_TYPE_V0;

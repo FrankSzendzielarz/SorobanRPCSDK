@@ -127,7 +127,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "StellarValue.extUnion")]
+        [ProtoContract(Name = "StellarValue_extUnion")]
         [ProtoInclude(100, typeof(StellarValueBasic), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(StellarValueSigned), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
@@ -138,7 +138,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "StellarValue.extUnion.StellarValueBasic")]
+            [ProtoContract(Name = "StellarValue_extUnion_StellarValueBasic")]
             public sealed partial class StellarValueBasic : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_BASIC;
@@ -146,7 +146,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "StellarValue.extUnion.StellarValueSigned")]
+            [ProtoContract(Name = "StellarValue_extUnion_StellarValueSigned")]
             public sealed partial class StellarValueSigned : extUnion
             {
                 public override StellarValueType Discriminator => StellarValueType.STELLAR_VALUE_SIGNED;

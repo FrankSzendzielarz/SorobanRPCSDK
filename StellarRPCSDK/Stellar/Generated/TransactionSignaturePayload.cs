@@ -72,7 +72,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion")]
+        [ProtoContract(Name = "TransactionSignaturePayload_taggedTransactionUnion")]
         [ProtoInclude(100, typeof(EnvelopeTypeTx), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(EnvelopeTypeTxFeeBump), DataFormat = DataFormat.Default)]
         public abstract partial class taggedTransactionUnion
@@ -86,7 +86,7 @@ namespace Stellar {
             /// Backwards Compatibility: Use ENVELOPE_TYPE_TX to sign ENVELOPE_TYPE_TX_V0
             /// </summary>
             [System.Serializable]
-            [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx")]
+            [ProtoContract(Name = "TransactionSignaturePayload_taggedTransactionUnion_EnvelopeTypeTx")]
             public sealed partial class EnvelopeTypeTx : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -109,7 +109,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTxFeeBump")]
+            [ProtoContract(Name = "TransactionSignaturePayload_taggedTransactionUnion_EnvelopeTypeTxFeeBump")]
             public sealed partial class EnvelopeTypeTxFeeBump : taggedTransactionUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;

@@ -42,7 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "TransactionMeta.case_0")]
+        [ProtoContract(Name = "TransactionMeta_case_0")]
         public sealed partial class case_0 : TransactionMeta
         {
             public override int Discriminator => 0;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TransactionMeta.case_1")]
+        [ProtoContract(Name = "TransactionMeta_case_1")]
         public sealed partial class case_1 : TransactionMeta
         {
             public override int Discriminator => 1;
@@ -88,7 +88,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TransactionMeta.case_2")]
+        [ProtoContract(Name = "TransactionMeta_case_2")]
         public sealed partial class case_2 : TransactionMeta
         {
             public override int Discriminator => 2;
@@ -111,7 +111,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TransactionMeta.case_3")]
+        [ProtoContract(Name = "TransactionMeta_case_3")]
         public sealed partial class case_3 : TransactionMeta
         {
             public override int Discriminator => 3;

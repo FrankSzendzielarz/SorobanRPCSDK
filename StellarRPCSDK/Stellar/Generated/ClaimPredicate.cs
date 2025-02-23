@@ -46,7 +46,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateUnconditional")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateUnconditional")]
         public sealed partial class ClaimPredicateUnconditional : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_UNCONDITIONAL;
@@ -54,7 +54,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateAnd")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateAnd")]
         public sealed partial class ClaimPredicateAnd : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
@@ -80,7 +80,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateOr")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateOr")]
         public sealed partial class ClaimPredicateOr : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
@@ -106,7 +106,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateNot")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateNot")]
         public sealed partial class ClaimPredicateNot : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_NOT;
@@ -129,7 +129,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateBeforeAbsoluteTime")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateBeforeAbsoluteTime")]
         public sealed partial class ClaimPredicateBeforeAbsoluteTime : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_ABSOLUTE_TIME;
@@ -155,7 +155,7 @@ namespace Stellar {
         /// Predicate will be true if closeTime < absBefore
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "ClaimPredicate.ClaimPredicateBeforeRelativeTime")]
+        [ProtoContract(Name = "ClaimPredicate_ClaimPredicateBeforeRelativeTime")]
         public sealed partial class ClaimPredicateBeforeRelativeTime : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_BEFORE_RELATIVE_TIME;

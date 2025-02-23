@@ -77,7 +77,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion")]
+        [ProtoContract(Name = "ManageOfferSuccessResult_offerUnion")]
         [ProtoInclude(100, typeof(ManageOfferCreated), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(ManageOfferUpdated), DataFormat = DataFormat.Default)]
         [ProtoInclude(102, typeof(ManageOfferDeleted), DataFormat = DataFormat.Default)]
@@ -89,7 +89,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferCreated")]
+            [ProtoContract(Name = "ManageOfferSuccessResult_offerUnion_ManageOfferCreated")]
             public sealed partial class ManageOfferCreated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_CREATED;
@@ -112,7 +112,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferUpdated")]
+            [ProtoContract(Name = "ManageOfferSuccessResult_offerUnion_ManageOfferUpdated")]
             public sealed partial class ManageOfferUpdated : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_UPDATED;
@@ -135,7 +135,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "ManageOfferSuccessResult.offerUnion.ManageOfferDeleted")]
+            [ProtoContract(Name = "ManageOfferSuccessResult_offerUnion_ManageOfferDeleted")]
             public sealed partial class ManageOfferDeleted : offerUnion
             {
                 public override ManageOfferEffect Discriminator => ManageOfferEffect.MANAGE_OFFER_DELETED;

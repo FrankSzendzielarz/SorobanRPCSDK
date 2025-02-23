@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryCreated")]
+        [ProtoContract(Name = "LedgerEntryChange_LedgerEntryCreated")]
         public sealed partial class LedgerEntryCreated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_CREATED;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryUpdated")]
+        [ProtoContract(Name = "LedgerEntryChange_LedgerEntryUpdated")]
         public sealed partial class LedgerEntryUpdated : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_UPDATED;
@@ -85,7 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryRemoved")]
+        [ProtoContract(Name = "LedgerEntryChange_LedgerEntryRemoved")]
         public sealed partial class LedgerEntryRemoved : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_REMOVED;
@@ -108,7 +108,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntryChange.LedgerEntryState")]
+        [ProtoContract(Name = "LedgerEntryChange_LedgerEntryState")]
         public sealed partial class LedgerEntryState : LedgerEntryChange
         {
             public override LedgerEntryChangeType Discriminator => LedgerEntryChangeType.LEDGER_ENTRY_STATE;

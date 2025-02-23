@@ -33,7 +33,7 @@ The above should make everything automatic wrt to protobuf
         {
             try
             {
-                string outputPath = args.Length > 0 ? args[0] : "./stellar-rpc.proto";
+                string outputPath = args.Length > 0 ? args[0] : "./";
 
                 var generator = new ProtoBuf.Grpc.Reflection.SchemaGenerator();
 
@@ -44,19 +44,18 @@ The above should make everything automatic wrt to protobuf
                    
                      
                 };
-                var schemaBuilder = new StringBuilder();
+      
                 foreach (var schema in GetServiceContractTypes())
                 {
                     options.Package = schema.Key;
                     var proto = generator.GetSchema(schema.Value.ToArray());
-                    schemaBuilder.Append(proto);
-                }
-                var completeSchema=schemaBuilder.ToString();
+                    File.WriteAllText(Path.Combine(outputPath,schema.Key+".proto"), proto);
 
+                }  
                
 
 
-                File.WriteAllText(outputPath, completeSchema);
+                
                 Console.WriteLine($"Generated proto schema at: {outputPath}");
                 return 0;
             }

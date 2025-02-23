@@ -62,7 +62,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.operationIDStruct")]
+        [ProtoContract(Name = "HashIDPreimage_operationIDStruct")]
         public partial class operationIDStruct
         {
             [ProtoMember(1)]
@@ -163,7 +163,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.revokeIDStruct")]
+        [ProtoContract(Name = "HashIDPreimage_revokeIDStruct")]
         public partial class revokeIDStruct
         {
             [ProtoMember(1)]
@@ -300,7 +300,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.contractIDStruct")]
+        [ProtoContract(Name = "HashIDPreimage_contractIDStruct")]
         public partial class contractIDStruct
         {
             [ProtoMember(1)]
@@ -383,7 +383,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.sorobanAuthorizationStruct")]
+        [ProtoContract(Name = "HashIDPreimage_sorobanAuthorizationStruct")]
         public partial class sorobanAuthorizationStruct
         {
             [ProtoMember(1)]
@@ -501,7 +501,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeOpId")]
+        [ProtoContract(Name = "HashIDPreimage_EnvelopeTypeOpId")]
         public sealed partial class EnvelopeTypeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_OP_ID;
@@ -524,7 +524,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypePoolRevokeOpId")]
+        [ProtoContract(Name = "HashIDPreimage_EnvelopeTypePoolRevokeOpId")]
         public sealed partial class EnvelopeTypePoolRevokeOpId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_POOL_REVOKE_OP_ID;
@@ -547,7 +547,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeContractId")]
+        [ProtoContract(Name = "HashIDPreimage_EnvelopeTypeContractId")]
         public sealed partial class EnvelopeTypeContractId : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_CONTRACT_ID;
@@ -570,7 +570,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HashIDPreimage.EnvelopeTypeSorobanAuthorization")]
+        [ProtoContract(Name = "HashIDPreimage_EnvelopeTypeSorobanAuthorization")]
         public sealed partial class EnvelopeTypeSorobanAuthorization : HashIDPreimage
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_SOROBAN_AUTHORIZATION;

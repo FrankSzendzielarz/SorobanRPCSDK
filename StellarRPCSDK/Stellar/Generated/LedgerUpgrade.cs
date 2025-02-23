@@ -51,7 +51,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeVersion")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeVersion")]
         public sealed partial class LedgerUpgradeVersion : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_VERSION;
@@ -77,7 +77,7 @@ namespace Stellar {
         /// update ledgerVersion
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeBaseFee")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeBaseFee")]
         public sealed partial class LedgerUpgradeBaseFee : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_FEE;
@@ -103,7 +103,7 @@ namespace Stellar {
         /// update baseFee
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeMaxTxSetSize")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeMaxTxSetSize")]
         public sealed partial class LedgerUpgradeMaxTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_TX_SET_SIZE;
@@ -129,7 +129,7 @@ namespace Stellar {
         /// update maxTxSetSize
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeBaseReserve")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeBaseReserve")]
         public sealed partial class LedgerUpgradeBaseReserve : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_BASE_RESERVE;
@@ -155,7 +155,7 @@ namespace Stellar {
         /// update baseReserve
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeFlags")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeFlags")]
         public sealed partial class LedgerUpgradeFlags : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_FLAGS;
@@ -181,7 +181,7 @@ namespace Stellar {
         /// update flags
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeConfig")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeConfig")]
         public sealed partial class LedgerUpgradeConfig : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_CONFIG;
@@ -204,7 +204,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerUpgrade.LedgerUpgradeMaxSorobanTxSetSize")]
+        [ProtoContract(Name = "LedgerUpgrade_LedgerUpgradeMaxSorobanTxSetSize")]
         public sealed partial class LedgerUpgradeMaxSorobanTxSetSize : LedgerUpgrade
         {
             public override LedgerUpgradeType Discriminator => LedgerUpgradeType.LEDGER_UPGRADE_MAX_SOROBAN_TX_SET_SIZE;

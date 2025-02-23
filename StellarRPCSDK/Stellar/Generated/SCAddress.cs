@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCAddress.ScAddressTypeAccount")]
+        [ProtoContract(Name = "SCAddress_ScAddressTypeAccount")]
         public sealed partial class ScAddressTypeAccount : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_ACCOUNT;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCAddress.ScAddressTypeContract")]
+        [ProtoContract(Name = "SCAddress_ScAddressTypeContract")]
         public sealed partial class ScAddressTypeContract : SCAddress
         {
             public override SCAddressType Discriminator => SCAddressType.SC_ADDRESS_TYPE_CONTRACT;

@@ -39,33 +39,4 @@ namespace Stellar.RPC
 
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.1.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    [ProtoBuf.ProtoContract] public partial class Pagination
-    {
-        /// <summary>
-        /// A unique identifier (specifically, a [TOID](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0035.md#specification)) that points to a specific location in a collection of responses and is pulled from the `paging_token` value of a record. When a cursor is provided, RPC will _not_ include the element whose ID matches the cursor in the response: only elements which appear _after_ the cursor will be included.
-        /// </summary>
-
-        [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        [ProtoBuf.ProtoMember(1)] public string  Cursor { get; set; }
-
-        /// <summary>
-        /// The maximum number of records returned. For getTransactions, this ranges from 1 to 200 and defaults to 50.
-        /// </summary>
-
-        [System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [ProtoBuf.ProtoMember(2)] public long  Limit { get; set; }
-
-
-
-        private System.Collections.Generic.IDictionary<string, object> _additionalProperties;
-
-        [System.Text.Json.Serialization.JsonExtensionData]
-        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
-        {
-            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
-            set { _additionalProperties = value; }
-        }
-
-    }
 }

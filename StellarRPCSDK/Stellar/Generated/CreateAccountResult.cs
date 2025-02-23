@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "CreateAccountResult.CreateAccountSuccess")]
+        [ProtoContract(Name = "CreateAccountResult_CreateAccountSuccess")]
         public sealed partial class CreateAccountSuccess : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_SUCCESS;
@@ -47,7 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateAccountResult.CreateAccountMalformed")]
+        [ProtoContract(Name = "CreateAccountResult_CreateAccountMalformed")]
         public sealed partial class CreateAccountMalformed : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_MALFORMED;
@@ -55,7 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateAccountResult.CreateAccountUnderfunded")]
+        [ProtoContract(Name = "CreateAccountResult_CreateAccountUnderfunded")]
         public sealed partial class CreateAccountUnderfunded : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_UNDERFUNDED;
@@ -63,7 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateAccountResult.CreateAccountLowReserve")]
+        [ProtoContract(Name = "CreateAccountResult_CreateAccountLowReserve")]
         public sealed partial class CreateAccountLowReserve : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_LOW_RESERVE;
@@ -71,7 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateAccountResult.CreateAccountAlreadyExist")]
+        [ProtoContract(Name = "CreateAccountResult_CreateAccountAlreadyExist")]
         public sealed partial class CreateAccountAlreadyExist : CreateAccountResult
         {
             public override CreateAccountResultCode Discriminator => CreateAccountResultCode.CREATE_ACCOUNT_ALREADY_EXIST;

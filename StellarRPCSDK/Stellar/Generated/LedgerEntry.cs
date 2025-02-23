@@ -117,7 +117,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntry.dataUnion")]
+        [ProtoContract(Name = "LedgerEntry_dataUnion")]
         [ProtoInclude(100, typeof(Account), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(Trustline), DataFormat = DataFormat.Default)]
         [ProtoInclude(102, typeof(Offer), DataFormat = DataFormat.Default)]
@@ -136,7 +136,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.Account")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_Account")]
             public sealed partial class Account : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
@@ -159,7 +159,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.Trustline")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_Trustline")]
             public sealed partial class Trustline : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
@@ -182,7 +182,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.Offer")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_Offer")]
             public sealed partial class Offer : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
@@ -205,7 +205,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.Data")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_Data")]
             public sealed partial class Data : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
@@ -228,7 +228,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.ClaimableBalance")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_ClaimableBalance")]
             public sealed partial class ClaimableBalance : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
@@ -251,7 +251,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.LiquidityPool")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_LiquidityPool")]
             public sealed partial class LiquidityPool : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
@@ -274,7 +274,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.ContractData")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_ContractData")]
             public sealed partial class ContractData : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
@@ -297,7 +297,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.ContractCode")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_ContractCode")]
             public sealed partial class ContractCode : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
@@ -320,7 +320,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.ConfigSetting")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_ConfigSetting")]
             public sealed partial class ConfigSetting : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
@@ -343,7 +343,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.dataUnion.Ttl")]
+            [ProtoContract(Name = "LedgerEntry_dataUnion_Ttl")]
             public sealed partial class Ttl : dataUnion
             {
                 public override LedgerEntryType Discriminator => LedgerEntryType.TTL;
@@ -478,7 +478,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerEntry.extUnion")]
+        [ProtoContract(Name = "LedgerEntry_extUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
@@ -489,7 +489,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.extUnion.case_0")]
+            [ProtoContract(Name = "LedgerEntry_extUnion_case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -497,7 +497,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "LedgerEntry.extUnion.case_1")]
+            [ProtoContract(Name = "LedgerEntry_extUnion_case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;

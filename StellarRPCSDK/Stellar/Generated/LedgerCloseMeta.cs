@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "LedgerCloseMeta.case_0")]
+        [ProtoContract(Name = "LedgerCloseMeta_case_0")]
         public sealed partial class case_0 : LedgerCloseMeta
         {
             public override int Discriminator => 0;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerCloseMeta.case_1")]
+        [ProtoContract(Name = "LedgerCloseMeta_case_1")]
         public sealed partial class case_1 : LedgerCloseMeta
         {
             public override int Discriminator => 1;

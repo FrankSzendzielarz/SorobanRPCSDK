@@ -34,7 +34,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "EndSponsoringFutureReservesResult.EndSponsoringFutureReservesSuccess")]
+        [ProtoContract(Name = "EndSponsoringFutureReservesResult_EndSponsoringFutureReservesSuccess")]
         public sealed partial class EndSponsoringFutureReservesSuccess : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_SUCCESS;
@@ -42,7 +42,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "EndSponsoringFutureReservesResult.EndSponsoringFutureReservesNotSponsored")]
+        [ProtoContract(Name = "EndSponsoringFutureReservesResult_EndSponsoringFutureReservesNotSponsored")]
         public sealed partial class EndSponsoringFutureReservesNotSponsored : EndSponsoringFutureReservesResult
         {
             public override EndSponsoringFutureReservesResultCode Discriminator => EndSponsoringFutureReservesResultCode.END_SPONSORING_FUTURE_RESERVES_NOT_SPONSORED;

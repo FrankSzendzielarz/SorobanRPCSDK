@@ -71,7 +71,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "ArchivalProof.bodyUnion")]
+        [ProtoContract(Name = "ArchivalProof_bodyUnion")]
         [ProtoInclude(100, typeof(Existence), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(Nonexistence), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
@@ -82,7 +82,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "ArchivalProof.bodyUnion.Existence")]
+            [ProtoContract(Name = "ArchivalProof_bodyUnion_Existence")]
             public sealed partial class Existence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.EXISTENCE;
@@ -105,7 +105,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "ArchivalProof.bodyUnion.Nonexistence")]
+            [ProtoContract(Name = "ArchivalProof_bodyUnion_Nonexistence")]
             public sealed partial class Nonexistence : bodyUnion
             {
                 public override ArchivalProofType Discriminator => ArchivalProofType.NONEXISTENCE;

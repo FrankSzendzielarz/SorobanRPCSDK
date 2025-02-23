@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "BumpSequenceResult.BumpSequenceSuccess")]
+        [ProtoContract(Name = "BumpSequenceResult_BumpSequenceSuccess")]
         public sealed partial class BumpSequenceSuccess : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_SUCCESS;
@@ -41,7 +41,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BumpSequenceResult.BumpSequenceBadSeq")]
+        [ProtoContract(Name = "BumpSequenceResult_BumpSequenceBadSeq")]
         public sealed partial class BumpSequenceBadSeq : BumpSequenceResult
         {
             public override BumpSequenceResultCode Discriminator => BumpSequenceResultCode.BUMP_SEQUENCE_BAD_SEQ;

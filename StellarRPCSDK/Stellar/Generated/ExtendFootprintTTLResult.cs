@@ -37,7 +37,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlSuccess")]
+        [ProtoContract(Name = "ExtendFootprintTTLResult_ExtendFootprintTtlSuccess")]
         public sealed partial class ExtendFootprintTtlSuccess : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_SUCCESS;
@@ -45,7 +45,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlMalformed")]
+        [ProtoContract(Name = "ExtendFootprintTTLResult_ExtendFootprintTtlMalformed")]
         public sealed partial class ExtendFootprintTtlMalformed : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_MALFORMED;
@@ -53,7 +53,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded")]
+        [ProtoContract(Name = "ExtendFootprintTTLResult_ExtendFootprintTtlResourceLimitExceeded")]
         public sealed partial class ExtendFootprintTtlResourceLimitExceeded : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_RESOURCE_LIMIT_EXCEEDED;
@@ -61,7 +61,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ExtendFootprintTTLResult.ExtendFootprintTtlInsufficientRefundableFee")]
+        [ProtoContract(Name = "ExtendFootprintTTLResult_ExtendFootprintTtlInsufficientRefundableFee")]
         public sealed partial class ExtendFootprintTtlInsufficientRefundableFee : ExtendFootprintTTLResult
         {
             public override ExtendFootprintTTLResultCode Discriminator => ExtendFootprintTTLResultCode.EXTEND_FOOTPRINT_TTL_INSUFFICIENT_REFUNDABLE_FEE;

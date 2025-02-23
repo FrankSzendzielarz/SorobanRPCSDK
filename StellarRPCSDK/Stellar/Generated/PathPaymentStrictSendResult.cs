@@ -62,7 +62,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.successStruct")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_successStruct")]
         public partial class successStruct
         {
             [ProtoMember(1, OverwriteList = true)]
@@ -155,7 +155,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendSuccess")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendSuccess")]
         public sealed partial class PathPaymentStrictSendSuccess : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SUCCESS;
@@ -178,7 +178,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendMalformed")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendMalformed")]
         public sealed partial class PathPaymentStrictSendMalformed : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_MALFORMED;
@@ -186,7 +186,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendUnderfunded")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendUnderfunded")]
         public sealed partial class PathPaymentStrictSendUnderfunded : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_UNDERFUNDED;
@@ -194,7 +194,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendSrcNoTrust")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendSrcNoTrust")]
         public sealed partial class PathPaymentStrictSendSrcNoTrust : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SRC_NO_TRUST;
@@ -202,7 +202,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendSrcNotAuthorized")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendSrcNotAuthorized")]
         public sealed partial class PathPaymentStrictSendSrcNotAuthorized : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_SRC_NOT_AUTHORIZED;
@@ -210,7 +210,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendNoDestination")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendNoDestination")]
         public sealed partial class PathPaymentStrictSendNoDestination : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_DESTINATION;
@@ -218,7 +218,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendNoTrust")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendNoTrust")]
         public sealed partial class PathPaymentStrictSendNoTrust : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_TRUST;
@@ -226,7 +226,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendNotAuthorized")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendNotAuthorized")]
         public sealed partial class PathPaymentStrictSendNotAuthorized : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NOT_AUTHORIZED;
@@ -234,7 +234,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendLineFull")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendLineFull")]
         public sealed partial class PathPaymentStrictSendLineFull : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_LINE_FULL;
@@ -242,7 +242,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendNoIssuer")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendNoIssuer")]
         public sealed partial class PathPaymentStrictSendNoIssuer : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_NO_ISSUER;
@@ -268,7 +268,7 @@ namespace Stellar {
         /// the asset that caused the error
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendTooFewOffers")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendTooFewOffers")]
         public sealed partial class PathPaymentStrictSendTooFewOffers : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_TOO_FEW_OFFERS;
@@ -279,7 +279,7 @@ namespace Stellar {
         /// the asset that caused the error
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendOfferCrossSelf")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendOfferCrossSelf")]
         public sealed partial class PathPaymentStrictSendOfferCrossSelf : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_OFFER_CROSS_SELF;
@@ -290,7 +290,7 @@ namespace Stellar {
         /// the asset that caused the error
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "PathPaymentStrictSendResult.PathPaymentStrictSendUnderDestmin")]
+        [ProtoContract(Name = "PathPaymentStrictSendResult_PathPaymentStrictSendUnderDestmin")]
         public sealed partial class PathPaymentStrictSendUnderDestmin : PathPaymentStrictSendResult
         {
             public override PathPaymentStrictSendResultCode Discriminator => PathPaymentStrictSendResultCode.PATH_PAYMENT_STRICT_SEND_UNDER_DESTMIN;

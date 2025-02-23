@@ -116,7 +116,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "SCPStatement.pledgesUnion")]
+        [ProtoContract(Name = "SCPStatement_pledgesUnion")]
         [ProtoInclude(100, typeof(ScpStPrepare), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(ScpStConfirm), DataFormat = DataFormat.Default)]
         [ProtoInclude(102, typeof(ScpStExternalize), DataFormat = DataFormat.Default)]
@@ -130,7 +130,7 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.prepareStruct")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_prepareStruct")]
             public partial class prepareStruct
             {
                 [ProtoMember(1)]
@@ -320,7 +320,7 @@ namespace Stellar {
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.confirmStruct")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_confirmStruct")]
             public partial class confirmStruct
             {
                 [ProtoMember(1)]
@@ -469,7 +469,7 @@ namespace Stellar {
             }
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.externalizeStruct")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_externalizeStruct")]
             public partial class externalizeStruct
             {
                 [ProtoMember(1)]
@@ -575,7 +575,7 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStPrepare")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_ScpStPrepare")]
             public sealed partial class ScpStPrepare : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_PREPARE;
@@ -598,7 +598,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStConfirm")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_ScpStConfirm")]
             public sealed partial class ScpStConfirm : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_CONFIRM;
@@ -621,7 +621,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStExternalize")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_ScpStExternalize")]
             public sealed partial class ScpStExternalize : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_EXTERNALIZE;
@@ -644,7 +644,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "SCPStatement.pledgesUnion.ScpStNominate")]
+            [ProtoContract(Name = "SCPStatement_pledgesUnion_ScpStNominate")]
             public sealed partial class ScpStNominate : pledgesUnion
             {
                 public override SCPStatementType Discriminator => SCPStatementType.SCP_ST_NOMINATE;

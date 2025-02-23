@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTxV0")]
+        [ProtoContract(Name = "TransactionEnvelope_EnvelopeTypeTxV0")]
         public sealed partial class EnvelopeTypeTxV0 : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_V0;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTx")]
+        [ProtoContract(Name = "TransactionEnvelope_EnvelopeTypeTx")]
         public sealed partial class EnvelopeTypeTx : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -85,7 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TransactionEnvelope.EnvelopeTypeTxFeeBump")]
+        [ProtoContract(Name = "TransactionEnvelope_EnvelopeTypeTxFeeBump")]
         public sealed partial class EnvelopeTypeTxFeeBump : TransactionEnvelope
         {
             public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX_FEE_BUMP;

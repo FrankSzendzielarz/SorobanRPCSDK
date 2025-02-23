@@ -30,7 +30,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "PublicKey.PublicKeyTypeEd25519")]
+        [ProtoContract(Name = "PublicKey_PublicKeyTypeEd25519")]
         public sealed partial class PublicKeyTypeEd25519 : PublicKey
         {
             public override PublicKeyType Discriminator => PublicKeyType.PUBLIC_KEY_TYPE_ED25519;

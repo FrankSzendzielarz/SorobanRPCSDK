@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "PersistedSCPState.case_0")]
+        [ProtoContract(Name = "PersistedSCPState_case_0")]
         public sealed partial class case_0 : PersistedSCPState
         {
             public override int Discriminator => 0;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PersistedSCPState.case_1")]
+        [ProtoContract(Name = "PersistedSCPState_case_1")]
         public sealed partial class case_1 : PersistedSCPState
         {
             public override int Discriminator => 1;

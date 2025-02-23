@@ -37,7 +37,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintSuccess")]
+        [ProtoContract(Name = "RestoreFootprintResult_RestoreFootprintSuccess")]
         public sealed partial class RestoreFootprintSuccess : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_SUCCESS;
@@ -45,7 +45,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintMalformed")]
+        [ProtoContract(Name = "RestoreFootprintResult_RestoreFootprintMalformed")]
         public sealed partial class RestoreFootprintMalformed : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_MALFORMED;
@@ -53,7 +53,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintResourceLimitExceeded")]
+        [ProtoContract(Name = "RestoreFootprintResult_RestoreFootprintResourceLimitExceeded")]
         public sealed partial class RestoreFootprintResourceLimitExceeded : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_RESOURCE_LIMIT_EXCEEDED;
@@ -61,7 +61,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee")]
+        [ProtoContract(Name = "RestoreFootprintResult_RestoreFootprintInsufficientRefundableFee")]
         public sealed partial class RestoreFootprintInsufficientRefundableFee : RestoreFootprintResult
         {
             public override RestoreFootprintResultCode Discriminator => RestoreFootprintResultCode.RESTORE_FOOTPRINT_INSUFFICIENT_REFUNDABLE_FEE;

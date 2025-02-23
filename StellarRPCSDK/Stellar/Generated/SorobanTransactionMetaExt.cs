@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SorobanTransactionMetaExt.case_0")]
+        [ProtoContract(Name = "SorobanTransactionMetaExt_case_0")]
         public sealed partial class case_0 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 0;
@@ -41,7 +41,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SorobanTransactionMetaExt.case_1")]
+        [ProtoContract(Name = "SorobanTransactionMetaExt_case_1")]
         public sealed partial class case_1 : SorobanTransactionMetaExt
         {
             public override int Discriminator => 1;

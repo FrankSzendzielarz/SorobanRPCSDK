@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "HostFunction.HostFunctionTypeInvokeContract")]
+        [ProtoContract(Name = "HostFunction_HostFunctionTypeInvokeContract")]
         public sealed partial class HostFunctionTypeInvokeContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_INVOKE_CONTRACT;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HostFunction.HostFunctionTypeCreateContract")]
+        [ProtoContract(Name = "HostFunction_HostFunctionTypeCreateContract")]
         public sealed partial class HostFunctionTypeCreateContract : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT;
@@ -85,7 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HostFunction.HostFunctionTypeUploadContractWasm")]
+        [ProtoContract(Name = "HostFunction_HostFunctionTypeUploadContractWasm")]
         public sealed partial class HostFunctionTypeUploadContractWasm : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
@@ -108,7 +108,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HostFunction.HostFunctionTypeCreateContractV2")]
+        [ProtoContract(Name = "HostFunction_HostFunctionTypeCreateContractV2")]
         public sealed partial class HostFunctionTypeCreateContractV2 : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_CREATE_CONTRACT_V2;

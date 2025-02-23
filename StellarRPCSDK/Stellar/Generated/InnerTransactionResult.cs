@@ -123,7 +123,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "InnerTransactionResult.resultUnion")]
+        [ProtoContract(Name = "InnerTransactionResult_resultUnion")]
         [ProtoInclude(100, typeof(TxSUCCESS), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(TxFAILED), DataFormat = DataFormat.Default)]
         [ProtoInclude(102, typeof(TxtooEarly), DataFormat = DataFormat.Default)]
@@ -152,7 +152,7 @@ namespace Stellar {
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxSUCCESS")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxSUCCESS")]
             public sealed partial class TxSUCCESS : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
@@ -178,7 +178,7 @@ namespace Stellar {
             /// txFEE_BUMP_INNER_SUCCESS is not included
             /// </summary>
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxFAILED")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxFAILED")]
             public sealed partial class TxFAILED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
@@ -201,7 +201,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxtooEarly")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxtooEarly")]
             public sealed partial class TxtooEarly : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_EARLY;
@@ -209,7 +209,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxtooLate")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxtooLate")]
             public sealed partial class TxtooLate : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txTOO_LATE;
@@ -217,7 +217,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxmissingOperation")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxmissingOperation")]
             public sealed partial class TxmissingOperation : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMISSING_OPERATION;
@@ -225,7 +225,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadSeq")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxbadSeq")]
             public sealed partial class TxbadSeq : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SEQ;
@@ -233,7 +233,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadAuth")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxbadAuth")]
             public sealed partial class TxbadAuth : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH;
@@ -241,7 +241,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinsufficientBalance")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxinsufficientBalance")]
             public sealed partial class TxinsufficientBalance : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_BALANCE;
@@ -249,7 +249,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxnoAccount")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxnoAccount")]
             public sealed partial class TxnoAccount : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNO_ACCOUNT;
@@ -257,7 +257,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinsufficientFee")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxinsufficientFee")]
             public sealed partial class TxinsufficientFee : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINSUFFICIENT_FEE;
@@ -265,7 +265,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadAuthExtra")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxbadAuthExtra")]
             public sealed partial class TxbadAuthExtra : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_AUTH_EXTRA;
@@ -273,7 +273,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxinternalError")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxinternalError")]
             public sealed partial class TxinternalError : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txINTERNAL_ERROR;
@@ -281,7 +281,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxnotSupported")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxnotSupported")]
             public sealed partial class TxnotSupported : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txNOT_SUPPORTED;
@@ -289,7 +289,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadSponsorship")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxbadSponsorship")]
             public sealed partial class TxbadSponsorship : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_SPONSORSHIP;
@@ -297,7 +297,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxbadMinSeqAgeOrGap")]
             public sealed partial class TxbadMinSeqAgeOrGap : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txBAD_MIN_SEQ_AGE_OR_GAP;
@@ -305,7 +305,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxMALFORMED")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxMALFORMED")]
             public sealed partial class TxMALFORMED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txMALFORMED;
@@ -313,7 +313,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.resultUnion.TxsorobanInvalid")]
+            [ProtoContract(Name = "InnerTransactionResult_resultUnion_TxsorobanInvalid")]
             public sealed partial class TxsorobanInvalid : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSOROBAN_INVALID;
@@ -474,7 +474,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "InnerTransactionResult.extUnion")]
+        [ProtoContract(Name = "InnerTransactionResult_extUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
@@ -484,7 +484,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "InnerTransactionResult.extUnion.case_0")]
+            [ProtoContract(Name = "InnerTransactionResult_extUnion_case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

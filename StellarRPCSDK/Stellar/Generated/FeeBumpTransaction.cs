@@ -108,7 +108,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "FeeBumpTransaction.innerTxUnion")]
+        [ProtoContract(Name = "FeeBumpTransaction_innerTxUnion")]
         [ProtoInclude(100, typeof(EnvelopeTypeTx), DataFormat = DataFormat.Default)]
         public abstract partial class innerTxUnion
         {
@@ -118,7 +118,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "FeeBumpTransaction.innerTxUnion.EnvelopeTypeTx")]
+            [ProtoContract(Name = "FeeBumpTransaction_innerTxUnion_EnvelopeTypeTx")]
             public sealed partial class EnvelopeTypeTx : innerTxUnion
             {
                 public override EnvelopeType Discriminator => EnvelopeType.ENVELOPE_TYPE_TX;
@@ -190,7 +190,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "FeeBumpTransaction.extUnion")]
+        [ProtoContract(Name = "FeeBumpTransaction_extUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
         {
@@ -200,7 +200,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "FeeBumpTransaction.extUnion.case_0")]
+            [ProtoContract(Name = "FeeBumpTransaction_extUnion_case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;

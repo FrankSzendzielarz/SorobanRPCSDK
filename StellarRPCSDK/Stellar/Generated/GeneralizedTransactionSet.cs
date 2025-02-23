@@ -34,7 +34,7 @@ namespace Stellar {
         /// We consider the legacy TransactionSet to be v0.
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "GeneralizedTransactionSet.case_1")]
+        [ProtoContract(Name = "GeneralizedTransactionSet_case_1")]
         public sealed partial class case_1 : GeneralizedTransactionSet
         {
             public override int Discriminator => 1;

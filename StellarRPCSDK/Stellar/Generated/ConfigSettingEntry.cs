@@ -69,7 +69,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractMaxSizeBytes")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractMaxSizeBytes")]
         public sealed partial class ConfigSettingContractMaxSizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES;
@@ -92,7 +92,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractComputeV0Case")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractComputeV0Case")]
         public sealed partial class ConfigSettingContractComputeV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COMPUTE_V0;
@@ -115,7 +115,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractLedgerCostV0Case")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractLedgerCostV0Case")]
         public sealed partial class ConfigSettingContractLedgerCostV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_LEDGER_COST_V0;
@@ -138,7 +138,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractHistoricalDataV0Case")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractHistoricalDataV0Case")]
         public sealed partial class ConfigSettingContractHistoricalDataV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0;
@@ -161,7 +161,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractEventsV0Case")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractEventsV0Case")]
         public sealed partial class ConfigSettingContractEventsV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EVENTS_V0;
@@ -184,7 +184,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractBandwidthV0Case")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractBandwidthV0Case")]
         public sealed partial class ConfigSettingContractBandwidthV0Case : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_BANDWIDTH_V0;
@@ -207,7 +207,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractCostParamsCpuInstructions")]
         public sealed partial class ConfigSettingContractCostParamsCpuInstructions : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS;
@@ -230,7 +230,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytes")]
         public sealed partial class ConfigSettingContractCostParamsMemoryBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES;
@@ -253,7 +253,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractDataKeySizeBytes")]
         public sealed partial class ConfigSettingContractDataKeySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES;
@@ -276,7 +276,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractDataEntrySizeBytes")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractDataEntrySizeBytes")]
         public sealed partial class ConfigSettingContractDataEntrySizeBytes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES;
@@ -299,7 +299,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingStateArchival")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingStateArchival")]
         public sealed partial class ConfigSettingStateArchival : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_STATE_ARCHIVAL;
@@ -322,7 +322,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingContractExecutionLanes")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingContractExecutionLanes")]
         public sealed partial class ConfigSettingContractExecutionLanes : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_CONTRACT_EXECUTION_LANES;
@@ -345,7 +345,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingBucketlistSizeWindow")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingBucketlistSizeWindow")]
         public sealed partial class ConfigSettingBucketlistSizeWindow : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
@@ -368,7 +368,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ConfigSettingEntry.ConfigSettingEvictionIterator")]
+        [ProtoContract(Name = "ConfigSettingEntry_ConfigSettingEvictionIterator")]
         public sealed partial class ConfigSettingEvictionIterator : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_EVICTION_ITERATOR;

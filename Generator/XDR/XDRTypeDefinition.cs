@@ -47,14 +47,14 @@ namespace Generator.XDR
             _currentProtoMemberTag = 1;
         }
 
-        // ADDED: Helper method for consistent ProtoContract attribute generation
+       
         private void WriteProtoContractAttribute(bool isNestedType = false)
         {
             var code = CodeFile;
             if (isNestedType)
             {
                 // For nested types, use the full hierarchical name
-                code.AppendLine($"[ProtoContract(Name = \"{FullName}\")]");
+                code.AppendLine($"[ProtoContract(Name = \"{FullName.Replace(".","_")}\")]");
             }
             else
             {
@@ -606,7 +606,7 @@ namespace Generator.XDR
                     var className = UnionCaseToClassName(value.GetText(), enumDiscriminator, generationContext.AllTypes);
 
                     code.AppendLine("[System.Serializable]");
-                    code.AppendLine($"[ProtoContract(Name = \"{FullName}.{className}\")]");
+                    code.AppendLine($"[ProtoContract(Name = \"{FullName.Replace(".","_")}_{className}\")]");
                     code.AppendLine($"public sealed partial class {className} : {Name}");
                     code.OpenBlock();
 

@@ -30,7 +30,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolParameters.LiquidityPoolConstantProduct")]
+        [ProtoContract(Name = "LiquidityPoolParameters_LiquidityPoolConstantProduct")]
         public sealed partial class LiquidityPoolConstantProduct : LiquidityPoolParameters
         {
             public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;

@@ -47,7 +47,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustSuccess")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustSuccess")]
         public sealed partial class ChangeTrustSuccess : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SUCCESS;
@@ -55,7 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustMalformed")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustMalformed")]
         public sealed partial class ChangeTrustMalformed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_MALFORMED;
@@ -63,7 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustNoIssuer")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustNoIssuer")]
         public sealed partial class ChangeTrustNoIssuer : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NO_ISSUER;
@@ -71,7 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustInvalidLimit")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustInvalidLimit")]
         public sealed partial class ChangeTrustInvalidLimit : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_INVALID_LIMIT;
@@ -79,7 +79,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustLowReserve")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustLowReserve")]
         public sealed partial class ChangeTrustLowReserve : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_LOW_RESERVE;
@@ -87,7 +87,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustSelfNotAllowed")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustSelfNotAllowed")]
         public sealed partial class ChangeTrustSelfNotAllowed : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_SELF_NOT_ALLOWED;
@@ -95,7 +95,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustTrustLineMissing")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustTrustLineMissing")]
         public sealed partial class ChangeTrustTrustLineMissing : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_TRUST_LINE_MISSING;
@@ -103,7 +103,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustCannotDelete")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustCannotDelete")]
         public sealed partial class ChangeTrustCannotDelete : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_CANNOT_DELETE;
@@ -111,7 +111,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities")]
+        [ProtoContract(Name = "ChangeTrustResult_ChangeTrustNotAuthMaintainLiabilities")]
         public sealed partial class ChangeTrustNotAuthMaintainLiabilities : ChangeTrustResult
         {
             public override ChangeTrustResultCode Discriminator => ChangeTrustResultCode.CHANGE_TRUST_NOT_AUTH_MAINTAIN_LIABILITIES;

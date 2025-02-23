@@ -45,7 +45,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeSuccess")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeSuccess")]
         public sealed partial class AccountMergeSuccess : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SUCCESS;
@@ -71,7 +71,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeMalformed")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeMalformed")]
         public sealed partial class AccountMergeMalformed : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_MALFORMED;
@@ -82,7 +82,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeNoAccount")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeNoAccount")]
         public sealed partial class AccountMergeNoAccount : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_NO_ACCOUNT;
@@ -93,7 +93,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeImmutableSet")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeImmutableSet")]
         public sealed partial class AccountMergeImmutableSet : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IMMUTABLE_SET;
@@ -104,7 +104,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeHasSubEntries")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeHasSubEntries")]
         public sealed partial class AccountMergeHasSubEntries : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_HAS_SUB_ENTRIES;
@@ -115,7 +115,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeSeqnumTooFar")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeSeqnumTooFar")]
         public sealed partial class AccountMergeSeqnumTooFar : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_SEQNUM_TOO_FAR;
@@ -126,7 +126,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeDestFull")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeDestFull")]
         public sealed partial class AccountMergeDestFull : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_DEST_FULL;
@@ -137,7 +137,7 @@ namespace Stellar {
         /// how much got transferred from source account
         /// </summary>
         [System.Serializable]
-        [ProtoContract(Name = "AccountMergeResult.AccountMergeIsSponsor")]
+        [ProtoContract(Name = "AccountMergeResult_AccountMergeIsSponsor")]
         public sealed partial class AccountMergeIsSponsor : AccountMergeResult
         {
             public override AccountMergeResultCode Discriminator => AccountMergeResultCode.ACCOUNT_MERGE_IS_SPONSOR;

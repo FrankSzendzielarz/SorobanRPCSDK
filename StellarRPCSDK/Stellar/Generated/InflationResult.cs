@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "InflationResult.InflationSuccess")]
+        [ProtoContract(Name = "InflationResult_InflationSuccess")]
         public sealed partial class InflationSuccess : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "InflationResult.InflationNotTime")]
+        [ProtoContract(Name = "InflationResult_InflationNotTime")]
         public sealed partial class InflationNotTime : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_NOT_TIME;

@@ -167,7 +167,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "TrustLineEntry.extUnion")]
+        [ProtoContract(Name = "TrustLineEntry_extUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
@@ -179,7 +179,7 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct")]
+            [ProtoContract(Name = "TrustLineEntry_extUnion_v1Struct")]
             public partial class v1Struct
             {
                 [ProtoMember(1)]
@@ -223,7 +223,7 @@ namespace Stellar {
                 }
                 [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
                 [System.Serializable]
-                [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion")]
+                [ProtoContract(Name = "TrustLineEntry_extUnion_v1Struct_extUnion")]
                 [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
                 [ProtoInclude(101, typeof(case_2), DataFormat = DataFormat.Default)]
                 public abstract partial class extUnion
@@ -234,7 +234,7 @@ namespace Stellar {
                     public abstract void ValidateCase();
 
                     [System.Serializable]
-                    [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion.case_0")]
+                    [ProtoContract(Name = "TrustLineEntry_extUnion_v1Struct_extUnion_case_0")]
                     public sealed partial class case_0 : extUnion
                     {
                         public override int Discriminator => 0;
@@ -242,7 +242,7 @@ namespace Stellar {
                         public override void ValidateCase() {}
                     }
                     [System.Serializable]
-                    [ProtoContract(Name = "TrustLineEntry.extUnion.v1Struct.extUnion.case_2")]
+                    [ProtoContract(Name = "TrustLineEntry_extUnion_v1Struct_extUnion_case_2")]
                     public sealed partial class case_2 : extUnion
                     {
                         public override int Discriminator => 2;
@@ -357,7 +357,7 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
-            [ProtoContract(Name = "TrustLineEntry.extUnion.case_0")]
+            [ProtoContract(Name = "TrustLineEntry_extUnion_case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -365,7 +365,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "TrustLineEntry.extUnion.case_1")]
+            [ProtoContract(Name = "TrustLineEntry_extUnion_case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;

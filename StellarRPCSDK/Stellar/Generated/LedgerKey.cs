@@ -99,7 +99,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.accountStruct")]
+        [ProtoContract(Name = "LedgerKey_accountStruct")]
         public partial class accountStruct
         {
             [ProtoMember(1)]
@@ -164,7 +164,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.trustLineStruct")]
+        [ProtoContract(Name = "LedgerKey_trustLineStruct")]
         public partial class trustLineStruct
         {
             [ProtoMember(1)]
@@ -247,7 +247,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.offerStruct")]
+        [ProtoContract(Name = "LedgerKey_offerStruct")]
         public partial class offerStruct
         {
             [ProtoMember(1)]
@@ -330,7 +330,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.dataStruct")]
+        [ProtoContract(Name = "LedgerKey_dataStruct")]
         public partial class dataStruct
         {
             [ProtoMember(1)]
@@ -413,7 +413,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.claimableBalanceStruct")]
+        [ProtoContract(Name = "LedgerKey_claimableBalanceStruct")]
         public partial class claimableBalanceStruct
         {
             [ProtoMember(1)]
@@ -478,7 +478,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.liquidityPoolStruct")]
+        [ProtoContract(Name = "LedgerKey_liquidityPoolStruct")]
         public partial class liquidityPoolStruct
         {
             [ProtoMember(1)]
@@ -543,7 +543,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.contractDataStruct")]
+        [ProtoContract(Name = "LedgerKey_contractDataStruct")]
         public partial class contractDataStruct
         {
             [ProtoMember(1)]
@@ -644,7 +644,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.contractCodeStruct")]
+        [ProtoContract(Name = "LedgerKey_contractCodeStruct")]
         public partial class contractCodeStruct
         {
             [ProtoMember(1)]
@@ -709,7 +709,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.configSettingStruct")]
+        [ProtoContract(Name = "LedgerKey_configSettingStruct")]
         public partial class configSettingStruct
         {
             [ProtoMember(1)]
@@ -774,7 +774,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.ttlStruct")]
+        [ProtoContract(Name = "LedgerKey_ttlStruct")]
         public partial class ttlStruct
         {
             /// <summary>
@@ -841,7 +841,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.Account")]
+        [ProtoContract(Name = "LedgerKey_Account")]
         public sealed partial class Account : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.ACCOUNT;
@@ -864,7 +864,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.Trustline")]
+        [ProtoContract(Name = "LedgerKey_Trustline")]
         public sealed partial class Trustline : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.TRUSTLINE;
@@ -887,7 +887,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.Offer")]
+        [ProtoContract(Name = "LedgerKey_Offer")]
         public sealed partial class Offer : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.OFFER;
@@ -910,7 +910,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.Data")]
+        [ProtoContract(Name = "LedgerKey_Data")]
         public sealed partial class Data : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.DATA;
@@ -933,7 +933,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.ClaimableBalance")]
+        [ProtoContract(Name = "LedgerKey_ClaimableBalance")]
         public sealed partial class ClaimableBalance : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CLAIMABLE_BALANCE;
@@ -956,7 +956,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.LiquidityPool")]
+        [ProtoContract(Name = "LedgerKey_LiquidityPool")]
         public sealed partial class LiquidityPool : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.LIQUIDITY_POOL;
@@ -979,7 +979,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.ContractData")]
+        [ProtoContract(Name = "LedgerKey_ContractData")]
         public sealed partial class ContractData : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_DATA;
@@ -1002,7 +1002,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.ContractCode")]
+        [ProtoContract(Name = "LedgerKey_ContractCode")]
         public sealed partial class ContractCode : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONTRACT_CODE;
@@ -1025,7 +1025,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.ConfigSetting")]
+        [ProtoContract(Name = "LedgerKey_ConfigSetting")]
         public sealed partial class ConfigSetting : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.CONFIG_SETTING;
@@ -1048,7 +1048,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LedgerKey.Ttl")]
+        [ProtoContract(Name = "LedgerKey_Ttl")]
         public sealed partial class Ttl : LedgerKey
         {
             public override LedgerEntryType Discriminator => LedgerEntryType.TTL;

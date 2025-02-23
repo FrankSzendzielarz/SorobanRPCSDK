@@ -38,7 +38,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceSuccess")]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult_ClawbackClaimableBalanceSuccess")]
         public sealed partial class ClawbackClaimableBalanceSuccess : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_SUCCESS;
@@ -46,7 +46,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceDoesNotExist")]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult_ClawbackClaimableBalanceDoesNotExist")]
         public sealed partial class ClawbackClaimableBalanceDoesNotExist : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
@@ -54,7 +54,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotIssuer")]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotIssuer")]
         public sealed partial class ClawbackClaimableBalanceNotIssuer : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_ISSUER;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackClaimableBalanceResult.ClawbackClaimableBalanceNotClawbackEnabled")]
+        [ProtoContract(Name = "ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotClawbackEnabled")]
         public sealed partial class ClawbackClaimableBalanceNotClawbackEnabled : ClawbackClaimableBalanceResult
         {
             public override ClawbackClaimableBalanceResultCode Discriminator => ClawbackClaimableBalanceResultCode.CLAWBACK_CLAIMABLE_BALANCE_NOT_CLAWBACK_ENABLED;

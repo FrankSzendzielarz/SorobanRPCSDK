@@ -38,7 +38,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess")]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesSuccess")]
         public sealed partial class BeginSponsoringFutureReservesSuccess : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_SUCCESS;
@@ -46,7 +46,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesMalformed")]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesMalformed")]
         public sealed partial class BeginSponsoringFutureReservesMalformed : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_MALFORMED;
@@ -54,7 +54,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesAlreadySponsored")]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesAlreadySponsored")]
         public sealed partial class BeginSponsoringFutureReservesAlreadySponsored : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_ALREADY_SPONSORED;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive")]
+        [ProtoContract(Name = "BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesRecursive")]
         public sealed partial class BeginSponsoringFutureReservesRecursive : BeginSponsoringFutureReservesResult
         {
             public override BeginSponsoringFutureReservesResultCode Discriminator => BeginSponsoringFutureReservesResultCode.BEGIN_SPONSORING_FUTURE_RESERVES_RECURSIVE;

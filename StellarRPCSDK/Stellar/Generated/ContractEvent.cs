@@ -114,7 +114,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "ContractEvent.bodyUnion")]
+        [ProtoContract(Name = "ContractEvent_bodyUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
         {
@@ -125,7 +125,7 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "ContractEvent.bodyUnion.v0Struct")]
+            [ProtoContract(Name = "ContractEvent_bodyUnion_v0Struct")]
             public partial class v0Struct
             {
                 [ProtoMember(1, OverwriteList = true)]
@@ -218,7 +218,7 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
-            [ProtoContract(Name = "ContractEvent.bodyUnion.case_0")]
+            [ProtoContract(Name = "ContractEvent_bodyUnion_case_0")]
             public sealed partial class case_0 : bodyUnion
             {
                 public override int Discriminator => 0;

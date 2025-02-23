@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ExtensionPoint.case_0")]
+        [ProtoContract(Name = "ExtensionPoint_case_0")]
         public sealed partial class case_0 : ExtensionPoint
         {
             public override int Discriminator => 0;

@@ -38,7 +38,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "ContractIDPreimage.fromAddressStruct")]
+        [ProtoContract(Name = "ContractIDPreimage_fromAddressStruct")]
         public partial class fromAddressStruct
         {
             [ProtoMember(1)]
@@ -120,7 +120,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "ContractIDPreimage.ContractIdPreimageFromAddress")]
+        [ProtoContract(Name = "ContractIDPreimage_ContractIdPreimageFromAddress")]
         public sealed partial class ContractIdPreimageFromAddress : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ADDRESS;
@@ -143,7 +143,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ContractIDPreimage.ContractIdPreimageFromAsset")]
+        [ProtoContract(Name = "ContractIDPreimage_ContractIdPreimageFromAsset")]
         public sealed partial class ContractIdPreimageFromAsset : ContractIDPreimage
         {
             public override ContractIDPreimageType Discriminator => ContractIDPreimageType.CONTRACT_ID_PREIMAGE_FROM_ASSET;

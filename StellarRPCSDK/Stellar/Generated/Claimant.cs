@@ -35,7 +35,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "Claimant.v0Struct")]
+        [ProtoContract(Name = "Claimant_v0Struct")]
         public partial class v0Struct
         {
             [ProtoMember(1)]
@@ -120,7 +120,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "Claimant.ClaimantTypeV0")]
+        [ProtoContract(Name = "Claimant_ClaimantTypeV0")]
         public sealed partial class ClaimantTypeV0 : Claimant
         {
             public override ClaimantType Discriminator => ClaimantType.CLAIMANT_TYPE_V0;

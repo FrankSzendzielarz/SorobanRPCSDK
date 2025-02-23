@@ -42,7 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryFunctionV0")]
+        [ProtoContract(Name = "SCSpecEntry_ScSpecEntryFunctionV0")]
         public sealed partial class ScSpecEntryFunctionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_FUNCTION_V0;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtStructV0")]
+        [ProtoContract(Name = "SCSpecEntry_ScSpecEntryUdtStructV0")]
         public sealed partial class ScSpecEntryUdtStructV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_STRUCT_V0;
@@ -88,7 +88,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtUnionV0")]
+        [ProtoContract(Name = "SCSpecEntry_ScSpecEntryUdtUnionV0")]
         public sealed partial class ScSpecEntryUdtUnionV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_UNION_V0;
@@ -111,7 +111,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtEnumV0")]
+        [ProtoContract(Name = "SCSpecEntry_ScSpecEntryUdtEnumV0")]
         public sealed partial class ScSpecEntryUdtEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ENUM_V0;
@@ -134,7 +134,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecEntry.ScSpecEntryUdtErrorEnumV0")]
+        [ProtoContract(Name = "SCSpecEntry_ScSpecEntryUdtErrorEnumV0")]
         public sealed partial class ScSpecEntryUdtErrorEnumV0 : SCSpecEntry
         {
             public override SCSpecEntryKind Discriminator => SCSpecEntryKind.SC_SPEC_ENTRY_UDT_ERROR_ENUM_V0;

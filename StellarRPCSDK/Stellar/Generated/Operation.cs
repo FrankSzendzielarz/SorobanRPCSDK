@@ -131,7 +131,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "Operation.bodyUnion")]
+        [ProtoContract(Name = "Operation_bodyUnion")]
         [ProtoInclude(100, typeof(CreateAccount), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(Payment), DataFormat = DataFormat.Default)]
         [ProtoInclude(102, typeof(PathPaymentStrictReceive), DataFormat = DataFormat.Default)]
@@ -167,7 +167,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.CreateAccount")]
+            [ProtoContract(Name = "Operation_bodyUnion_CreateAccount")]
             public sealed partial class CreateAccount : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_ACCOUNT;
@@ -190,7 +190,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.Payment")]
+            [ProtoContract(Name = "Operation_bodyUnion_Payment")]
             public sealed partial class Payment : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.PAYMENT;
@@ -213,7 +213,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.PathPaymentStrictReceive")]
+            [ProtoContract(Name = "Operation_bodyUnion_PathPaymentStrictReceive")]
             public sealed partial class PathPaymentStrictReceive : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_RECEIVE;
@@ -236,7 +236,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ManageSellOffer")]
+            [ProtoContract(Name = "Operation_bodyUnion_ManageSellOffer")]
             public sealed partial class ManageSellOffer : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_SELL_OFFER;
@@ -259,7 +259,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.CreatePassiveSellOffer")]
+            [ProtoContract(Name = "Operation_bodyUnion_CreatePassiveSellOffer")]
             public sealed partial class CreatePassiveSellOffer : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_PASSIVE_SELL_OFFER;
@@ -282,7 +282,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.SetOptions")]
+            [ProtoContract(Name = "Operation_bodyUnion_SetOptions")]
             public sealed partial class SetOptions : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.SET_OPTIONS;
@@ -305,7 +305,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ChangeTrust")]
+            [ProtoContract(Name = "Operation_bodyUnion_ChangeTrust")]
             public sealed partial class ChangeTrust : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CHANGE_TRUST;
@@ -328,7 +328,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.AllowTrust")]
+            [ProtoContract(Name = "Operation_bodyUnion_AllowTrust")]
             public sealed partial class AllowTrust : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.ALLOW_TRUST;
@@ -351,7 +351,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.AccountMerge")]
+            [ProtoContract(Name = "Operation_bodyUnion_AccountMerge")]
             public sealed partial class AccountMerge : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.ACCOUNT_MERGE;
@@ -374,7 +374,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.Inflation")]
+            [ProtoContract(Name = "Operation_bodyUnion_Inflation")]
             public sealed partial class Inflation : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.INFLATION;
@@ -382,7 +382,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ManageData")]
+            [ProtoContract(Name = "Operation_bodyUnion_ManageData")]
             public sealed partial class ManageData : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_DATA;
@@ -405,7 +405,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.BumpSequence")]
+            [ProtoContract(Name = "Operation_bodyUnion_BumpSequence")]
             public sealed partial class BumpSequence : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.BUMP_SEQUENCE;
@@ -428,7 +428,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ManageBuyOffer")]
+            [ProtoContract(Name = "Operation_bodyUnion_ManageBuyOffer")]
             public sealed partial class ManageBuyOffer : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.MANAGE_BUY_OFFER;
@@ -451,7 +451,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.PathPaymentStrictSend")]
+            [ProtoContract(Name = "Operation_bodyUnion_PathPaymentStrictSend")]
             public sealed partial class PathPaymentStrictSend : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.PATH_PAYMENT_STRICT_SEND;
@@ -474,7 +474,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.CreateClaimableBalance")]
+            [ProtoContract(Name = "Operation_bodyUnion_CreateClaimableBalance")]
             public sealed partial class CreateClaimableBalance : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CREATE_CLAIMABLE_BALANCE;
@@ -497,7 +497,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ClaimClaimableBalance")]
+            [ProtoContract(Name = "Operation_bodyUnion_ClaimClaimableBalance")]
             public sealed partial class ClaimClaimableBalance : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CLAIM_CLAIMABLE_BALANCE;
@@ -520,7 +520,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.BeginSponsoringFutureReserves")]
+            [ProtoContract(Name = "Operation_bodyUnion_BeginSponsoringFutureReserves")]
             public sealed partial class BeginSponsoringFutureReserves : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.BEGIN_SPONSORING_FUTURE_RESERVES;
@@ -543,7 +543,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.EndSponsoringFutureReserves")]
+            [ProtoContract(Name = "Operation_bodyUnion_EndSponsoringFutureReserves")]
             public sealed partial class EndSponsoringFutureReserves : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.END_SPONSORING_FUTURE_RESERVES;
@@ -551,7 +551,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.RevokeSponsorship")]
+            [ProtoContract(Name = "Operation_bodyUnion_RevokeSponsorship")]
             public sealed partial class RevokeSponsorship : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.REVOKE_SPONSORSHIP;
@@ -574,7 +574,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.Clawback")]
+            [ProtoContract(Name = "Operation_bodyUnion_Clawback")]
             public sealed partial class Clawback : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CLAWBACK;
@@ -597,7 +597,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ClawbackClaimableBalance")]
+            [ProtoContract(Name = "Operation_bodyUnion_ClawbackClaimableBalance")]
             public sealed partial class ClawbackClaimableBalance : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.CLAWBACK_CLAIMABLE_BALANCE;
@@ -620,7 +620,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.SetTrustLineFlags")]
+            [ProtoContract(Name = "Operation_bodyUnion_SetTrustLineFlags")]
             public sealed partial class SetTrustLineFlags : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.SET_TRUST_LINE_FLAGS;
@@ -643,7 +643,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.LiquidityPoolDeposit")]
+            [ProtoContract(Name = "Operation_bodyUnion_LiquidityPoolDeposit")]
             public sealed partial class LiquidityPoolDeposit : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_DEPOSIT;
@@ -666,7 +666,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.LiquidityPoolWithdraw")]
+            [ProtoContract(Name = "Operation_bodyUnion_LiquidityPoolWithdraw")]
             public sealed partial class LiquidityPoolWithdraw : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.LIQUIDITY_POOL_WITHDRAW;
@@ -689,7 +689,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.InvokeHostFunction")]
+            [ProtoContract(Name = "Operation_bodyUnion_InvokeHostFunction")]
             public sealed partial class InvokeHostFunction : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.INVOKE_HOST_FUNCTION;
@@ -712,7 +712,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.ExtendFootprintTtl")]
+            [ProtoContract(Name = "Operation_bodyUnion_ExtendFootprintTtl")]
             public sealed partial class ExtendFootprintTtl : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.EXTEND_FOOTPRINT_TTL;
@@ -735,7 +735,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "Operation.bodyUnion.RestoreFootprint")]
+            [ProtoContract(Name = "Operation_bodyUnion_RestoreFootprint")]
             public sealed partial class RestoreFootprint : bodyUnion
             {
                 public override OperationType Discriminator => OperationType.RESTORE_FOOTPRINT;

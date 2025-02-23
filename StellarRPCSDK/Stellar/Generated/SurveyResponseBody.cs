@@ -36,7 +36,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV0")]
+        [ProtoContract(Name = "SurveyResponseBody_SurveyTopologyResponseV0")]
         public sealed partial class SurveyTopologyResponseV0 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V0;
@@ -59,7 +59,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV1")]
+        [ProtoContract(Name = "SurveyResponseBody_SurveyTopologyResponseV1")]
         public sealed partial class SurveyTopologyResponseV1 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V1;
@@ -82,7 +82,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SurveyResponseBody.SurveyTopologyResponseV2")]
+        [ProtoContract(Name = "SurveyResponseBody_SurveyTopologyResponseV2")]
         public sealed partial class SurveyTopologyResponseV2 : SurveyResponseBody
         {
             public override SurveyMessageResponseType Discriminator => SurveyMessageResponseType.SURVEY_TOPOLOGY_RESPONSE_V2;

@@ -48,7 +48,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "SignerKey.ed25519SignedPayloadStruct")]
+        [ProtoContract(Name = "SignerKey_ed25519SignedPayloadStruct")]
         public partial class ed25519SignedPayloadStruct
         {
             /// <summary>
@@ -141,7 +141,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "SignerKey.SignerKeyTypeEd25519")]
+        [ProtoContract(Name = "SignerKey_SignerKeyTypeEd25519")]
         public sealed partial class SignerKeyTypeEd25519 : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519;
@@ -164,7 +164,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SignerKey.SignerKeyTypePreAuthTx")]
+        [ProtoContract(Name = "SignerKey_SignerKeyTypePreAuthTx")]
         public sealed partial class SignerKeyTypePreAuthTx : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_PRE_AUTH_TX;
@@ -187,7 +187,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SignerKey.SignerKeyTypeHashX")]
+        [ProtoContract(Name = "SignerKey_SignerKeyTypeHashX")]
         public sealed partial class SignerKeyTypeHashX : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_HASH_X;
@@ -210,7 +210,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SignerKey.SignerKeyTypeEd25519SignedPayload")]
+        [ProtoContract(Name = "SignerKey_SignerKeyTypeEd25519SignedPayload")]
         public sealed partial class SignerKeyTypeEd25519SignedPayload : SignerKey
         {
             public override SignerKeyType Discriminator => SignerKeyType.SIGNER_KEY_TYPE_ED25519_SIGNED_PAYLOAD;

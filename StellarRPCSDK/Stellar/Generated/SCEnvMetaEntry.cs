@@ -34,7 +34,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "SCEnvMetaEntry.interfaceVersionStruct")]
+        [ProtoContract(Name = "SCEnvMetaEntry_interfaceVersionStruct")]
         public partial class interfaceVersionStruct
         {
             [ProtoMember(1)]
@@ -116,7 +116,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion")]
+        [ProtoContract(Name = "SCEnvMetaEntry_ScEnvMetaKindInterfaceVersion")]
         public sealed partial class ScEnvMetaKindInterfaceVersion : SCEnvMetaEntry
         {
             public override SCEnvMetaKind Discriminator => SCEnvMetaKind.SC_ENV_META_KIND_INTERFACE_VERSION;

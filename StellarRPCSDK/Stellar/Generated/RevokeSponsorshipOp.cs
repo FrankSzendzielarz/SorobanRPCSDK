@@ -38,7 +38,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipOp.signerStruct")]
+        [ProtoContract(Name = "RevokeSponsorshipOp_signerStruct")]
         public partial class signerStruct
         {
             [ProtoMember(1)]
@@ -120,7 +120,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipOp.RevokeSponsorshipLedgerEntry")]
+        [ProtoContract(Name = "RevokeSponsorshipOp_RevokeSponsorshipLedgerEntry")]
         public sealed partial class RevokeSponsorshipLedgerEntry : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_LEDGER_ENTRY;
@@ -143,7 +143,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "RevokeSponsorshipOp.RevokeSponsorshipSigner")]
+        [ProtoContract(Name = "RevokeSponsorshipOp_RevokeSponsorshipSigner")]
         public sealed partial class RevokeSponsorshipSigner : RevokeSponsorshipOp
         {
             public override RevokeSponsorshipType Discriminator => RevokeSponsorshipType.REVOKE_SPONSORSHIP_SIGNER;

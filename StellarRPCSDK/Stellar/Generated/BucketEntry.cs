@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "BucketEntry.Liveentry")]
+        [ProtoContract(Name = "BucketEntry_Liveentry")]
         public sealed partial class Liveentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.LIVEENTRY;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BucketEntry.Initentry")]
+        [ProtoContract(Name = "BucketEntry_Initentry")]
         public sealed partial class Initentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.INITENTRY;
@@ -85,7 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BucketEntry.Deadentry")]
+        [ProtoContract(Name = "BucketEntry_Deadentry")]
         public sealed partial class Deadentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.DEADENTRY;
@@ -108,7 +108,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "BucketEntry.Metaentry")]
+        [ProtoContract(Name = "BucketEntry_Metaentry")]
         public sealed partial class Metaentry : BucketEntry
         {
             public override BucketEntryType Discriminator => BucketEntryType.METAENTRY;

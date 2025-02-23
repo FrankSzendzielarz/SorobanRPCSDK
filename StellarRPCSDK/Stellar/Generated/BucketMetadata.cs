@@ -80,7 +80,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "BucketMetadata.extUnion")]
+        [ProtoContract(Name = "BucketMetadata_extUnion")]
         [ProtoInclude(100, typeof(case_0), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(case_1), DataFormat = DataFormat.Default)]
         public abstract partial class extUnion
@@ -91,7 +91,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "BucketMetadata.extUnion.case_0")]
+            [ProtoContract(Name = "BucketMetadata_extUnion_case_0")]
             public sealed partial class case_0 : extUnion
             {
                 public override int Discriminator => 0;
@@ -99,7 +99,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "BucketMetadata.extUnion.case_1")]
+            [ProtoContract(Name = "BucketMetadata_extUnion_case_1")]
             public sealed partial class case_1 : extUnion
             {
                 public override int Discriminator => 1;

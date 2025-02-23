@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseVoidV0")]
+        [ProtoContract(Name = "SCSpecUDTUnionCaseV0_ScSpecUdtUnionCaseVoidV0")]
         public sealed partial class ScSpecUdtUnionCaseVoidV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_VOID_V0;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCSpecUDTUnionCaseV0.ScSpecUdtUnionCaseTupleV0")]
+        [ProtoContract(Name = "SCSpecUDTUnionCaseV0_ScSpecUdtUnionCaseTupleV0")]
         public sealed partial class ScSpecUdtUnionCaseTupleV0 : SCSpecUDTUnionCaseV0
         {
             public override SCSpecUDTUnionCaseV0Kind Discriminator => SCSpecUDTUnionCaseV0Kind.SC_SPEC_UDT_UNION_CASE_TUPLE_V0;

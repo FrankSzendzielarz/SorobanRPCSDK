@@ -49,7 +49,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentSuccess")]
+        [ProtoContract(Name = "PaymentResult_PaymentSuccess")]
         public sealed partial class PaymentSuccess : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SUCCESS;
@@ -57,7 +57,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentMalformed")]
+        [ProtoContract(Name = "PaymentResult_PaymentMalformed")]
         public sealed partial class PaymentMalformed : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_MALFORMED;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentUnderfunded")]
+        [ProtoContract(Name = "PaymentResult_PaymentUnderfunded")]
         public sealed partial class PaymentUnderfunded : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_UNDERFUNDED;
@@ -73,7 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentSrcNoTrust")]
+        [ProtoContract(Name = "PaymentResult_PaymentSrcNoTrust")]
         public sealed partial class PaymentSrcNoTrust : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NO_TRUST;
@@ -81,7 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentSrcNotAuthorized")]
+        [ProtoContract(Name = "PaymentResult_PaymentSrcNotAuthorized")]
         public sealed partial class PaymentSrcNotAuthorized : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_SRC_NOT_AUTHORIZED;
@@ -89,7 +89,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentNoDestination")]
+        [ProtoContract(Name = "PaymentResult_PaymentNoDestination")]
         public sealed partial class PaymentNoDestination : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_DESTINATION;
@@ -97,7 +97,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentNoTrust")]
+        [ProtoContract(Name = "PaymentResult_PaymentNoTrust")]
         public sealed partial class PaymentNoTrust : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_TRUST;
@@ -105,7 +105,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentNotAuthorized")]
+        [ProtoContract(Name = "PaymentResult_PaymentNotAuthorized")]
         public sealed partial class PaymentNotAuthorized : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NOT_AUTHORIZED;
@@ -113,7 +113,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentLineFull")]
+        [ProtoContract(Name = "PaymentResult_PaymentLineFull")]
         public sealed partial class PaymentLineFull : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_LINE_FULL;
@@ -121,7 +121,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "PaymentResult.PaymentNoIssuer")]
+        [ProtoContract(Name = "PaymentResult_PaymentNoIssuer")]
         public sealed partial class PaymentNoIssuer : PaymentResult
         {
             public override PaymentResultCode Discriminator => PaymentResultCode.PAYMENT_NO_ISSUER;

@@ -41,7 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawSuccess")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawSuccess")]
         public sealed partial class LiquidityPoolWithdrawSuccess : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_SUCCESS;
@@ -49,7 +49,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawMalformed")]
         public sealed partial class LiquidityPoolWithdrawMalformed : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_MALFORMED;
@@ -57,7 +57,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawNoTrust")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawNoTrust")]
         public sealed partial class LiquidityPoolWithdrawNoTrust : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_NO_TRUST;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderfunded")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderfunded")]
         public sealed partial class LiquidityPoolWithdrawUnderfunded : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDERFUNDED;
@@ -73,7 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawLineFull")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawLineFull")]
         public sealed partial class LiquidityPoolWithdrawLineFull : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_LINE_FULL;
@@ -81,7 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum")]
+        [ProtoContract(Name = "LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderMinimum")]
         public sealed partial class LiquidityPoolWithdrawUnderMinimum : LiquidityPoolWithdrawResult
         {
             public override LiquidityPoolWithdrawResultCode Discriminator => LiquidityPoolWithdrawResultCode.LIQUIDITY_POOL_WITHDRAW_UNDER_MINIMUM;

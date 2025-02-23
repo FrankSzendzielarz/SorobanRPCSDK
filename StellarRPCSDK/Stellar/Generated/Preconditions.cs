@@ -36,7 +36,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "Preconditions.PrecondNone")]
+        [ProtoContract(Name = "Preconditions_PrecondNone")]
         public sealed partial class PrecondNone : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_NONE;
@@ -44,7 +44,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Preconditions.PrecondTime")]
+        [ProtoContract(Name = "Preconditions_PrecondTime")]
         public sealed partial class PrecondTime : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_TIME;
@@ -67,7 +67,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Preconditions.PrecondV2")]
+        [ProtoContract(Name = "Preconditions_PrecondV2")]
         public sealed partial class PrecondV2 : Preconditions
         {
             public override PreconditionType Discriminator => PreconditionType.PRECOND_V2;

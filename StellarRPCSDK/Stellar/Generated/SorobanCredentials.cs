@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SorobanCredentials.SorobanCredentialsSourceAccount")]
+        [ProtoContract(Name = "SorobanCredentials_SorobanCredentialsSourceAccount")]
         public sealed partial class SorobanCredentialsSourceAccount : SorobanCredentials
         {
             public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_SOURCE_ACCOUNT;
@@ -41,7 +41,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SorobanCredentials.SorobanCredentialsAddress")]
+        [ProtoContract(Name = "SorobanCredentials_SorobanCredentialsAddress")]
         public sealed partial class SorobanCredentialsAddress : SorobanCredentials
         {
             public override SorobanCredentialsType Discriminator => SorobanCredentialsType.SOROBAN_CREDENTIALS_ADDRESS;

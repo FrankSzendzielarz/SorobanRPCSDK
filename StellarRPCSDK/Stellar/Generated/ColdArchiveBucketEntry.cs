@@ -42,7 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveMetaentry")]
+        [ProtoContract(Name = "ColdArchiveBucketEntry_ColdArchiveMetaentry")]
         public sealed partial class ColdArchiveMetaentry : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_METAENTRY;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveArchivedLeafCase")]
+        [ProtoContract(Name = "ColdArchiveBucketEntry_ColdArchiveArchivedLeafCase")]
         public sealed partial class ColdArchiveArchivedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_ARCHIVED_LEAF;
@@ -88,7 +88,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase")]
+        [ProtoContract(Name = "ColdArchiveBucketEntry_ColdArchiveDeletedLeafCase")]
         public sealed partial class ColdArchiveDeletedLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_DELETED_LEAF;
@@ -111,7 +111,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveBoundaryLeafCase")]
+        [ProtoContract(Name = "ColdArchiveBucketEntry_ColdArchiveBoundaryLeafCase")]
         public sealed partial class ColdArchiveBoundaryLeafCase : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_BOUNDARY_LEAF;
@@ -134,7 +134,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ColdArchiveBucketEntry.ColdArchiveHash")]
+        [ProtoContract(Name = "ColdArchiveBucketEntry_ColdArchiveHash")]
         public sealed partial class ColdArchiveHash : ColdArchiveBucketEntry
         {
             public override ColdArchiveBucketEntryType Discriminator => ColdArchiveBucketEntryType.COLD_ARCHIVE_HASH;

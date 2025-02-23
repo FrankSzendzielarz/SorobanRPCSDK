@@ -44,7 +44,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "TrustLineAsset.AssetTypeNative")]
+        [ProtoContract(Name = "TrustLineAsset_AssetTypeNative")]
         public sealed partial class AssetTypeNative : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
@@ -52,7 +52,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TrustLineAsset.AssetTypeCreditAlphanum4")]
+        [ProtoContract(Name = "TrustLineAsset_AssetTypeCreditAlphanum4")]
         public sealed partial class AssetTypeCreditAlphanum4 : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
@@ -75,7 +75,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TrustLineAsset.AssetTypeCreditAlphanum12")]
+        [ProtoContract(Name = "TrustLineAsset_AssetTypeCreditAlphanum12")]
         public sealed partial class AssetTypeCreditAlphanum12 : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
@@ -98,7 +98,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "TrustLineAsset.AssetTypePoolShare")]
+        [ProtoContract(Name = "TrustLineAsset_AssetTypePoolShare")]
         public sealed partial class AssetTypePoolShare : TrustLineAsset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_POOL_SHARE;

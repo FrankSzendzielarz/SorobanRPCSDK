@@ -33,7 +33,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ContractExecutable.ContractExecutableWasm")]
+        [ProtoContract(Name = "ContractExecutable_ContractExecutableWasm")]
         public sealed partial class ContractExecutableWasm : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_WASM;
@@ -56,7 +56,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ContractExecutable.ContractExecutableStellarAsset")]
+        [ProtoContract(Name = "ContractExecutable_ContractExecutableStellarAsset")]
         public sealed partial class ContractExecutableStellarAsset : ContractExecutable
         {
             public override ContractExecutableType Discriminator => ContractExecutableType.CONTRACT_EXECUTABLE_STELLAR_ASSET;

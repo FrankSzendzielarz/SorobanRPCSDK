@@ -42,7 +42,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceSuccess")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceSuccess")]
         public sealed partial class CreateClaimableBalanceSuccess : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_SUCCESS;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceMalformed")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceMalformed")]
         public sealed partial class CreateClaimableBalanceMalformed : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_MALFORMED;
@@ -73,7 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceLowReserve")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceLowReserve")]
         public sealed partial class CreateClaimableBalanceLowReserve : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_LOW_RESERVE;
@@ -81,7 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceNoTrust")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceNoTrust")]
         public sealed partial class CreateClaimableBalanceNoTrust : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NO_TRUST;
@@ -89,7 +89,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceNotAuthorized")]
         public sealed partial class CreateClaimableBalanceNotAuthorized : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_NOT_AUTHORIZED;
@@ -97,7 +97,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "CreateClaimableBalanceResult.CreateClaimableBalanceUnderfunded")]
+        [ProtoContract(Name = "CreateClaimableBalanceResult_CreateClaimableBalanceUnderfunded")]
         public sealed partial class CreateClaimableBalanceUnderfunded : CreateClaimableBalanceResult
         {
             public override CreateClaimableBalanceResultCode Discriminator => CreateClaimableBalanceResultCode.CREATE_CLAIMABLE_BALANCE_UNDERFUNDED;

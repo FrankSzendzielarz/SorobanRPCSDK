@@ -30,7 +30,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCMetaEntry.ScMetaV0")]
+        [ProtoContract(Name = "SCMetaEntry_ScMetaV0")]
         public sealed partial class ScMetaV0 : SCMetaEntry
         {
             public override SCMetaKind Discriminator => SCMetaKind.SC_META_V0;

@@ -41,7 +41,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "MuxedAccount.med25519Struct")]
+        [ProtoContract(Name = "MuxedAccount_med25519Struct")]
         public partial class med25519Struct
         {
             [ProtoMember(1)]
@@ -123,7 +123,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "MuxedAccount.KeyTypeEd25519")]
+        [ProtoContract(Name = "MuxedAccount_KeyTypeEd25519")]
         public sealed partial class KeyTypeEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_ED25519;
@@ -146,7 +146,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "MuxedAccount.KeyTypeMuxedEd25519")]
+        [ProtoContract(Name = "MuxedAccount_KeyTypeMuxedEd25519")]
         public sealed partial class KeyTypeMuxedEd25519 : MuxedAccount
         {
             public override CryptoKeyType Discriminator => CryptoKeyType.KEY_TYPE_MUXED_ED25519;

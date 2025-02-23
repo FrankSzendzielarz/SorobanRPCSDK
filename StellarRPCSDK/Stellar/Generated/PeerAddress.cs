@@ -88,7 +88,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "PeerAddress.ipUnion")]
+        [ProtoContract(Name = "PeerAddress_ipUnion")]
         [ProtoInclude(100, typeof(IPv4), DataFormat = DataFormat.Default)]
         [ProtoInclude(101, typeof(IPv6), DataFormat = DataFormat.Default)]
         public abstract partial class ipUnion
@@ -99,7 +99,7 @@ namespace Stellar {
             public abstract void ValidateCase();
 
             [System.Serializable]
-            [ProtoContract(Name = "PeerAddress.ipUnion.IPv4")]
+            [ProtoContract(Name = "PeerAddress_ipUnion_IPv4")]
             public sealed partial class IPv4 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv4;
@@ -126,7 +126,7 @@ namespace Stellar {
                 public override void ValidateCase() {}
             }
             [System.Serializable]
-            [ProtoContract(Name = "PeerAddress.ipUnion.IPv6")]
+            [ProtoContract(Name = "PeerAddress_ipUnion_IPv6")]
             public sealed partial class IPv6 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv6;

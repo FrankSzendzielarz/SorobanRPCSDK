@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveArchived")]
+        [ProtoContract(Name = "HotArchiveBucketEntry_HotArchiveArchived")]
         public sealed partial class HotArchiveArchived : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_ARCHIVED;
@@ -62,7 +62,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveLive")]
+        [ProtoContract(Name = "HotArchiveBucketEntry_HotArchiveLive")]
         public sealed partial class HotArchiveLive : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_LIVE;
@@ -85,7 +85,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveDeleted")]
+        [ProtoContract(Name = "HotArchiveBucketEntry_HotArchiveDeleted")]
         public sealed partial class HotArchiveDeleted : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_DELETED;
@@ -108,7 +108,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "HotArchiveBucketEntry.HotArchiveMetaentry")]
+        [ProtoContract(Name = "HotArchiveBucketEntry_HotArchiveMetaentry")]
         public sealed partial class HotArchiveMetaentry : HotArchiveBucketEntry
         {
             public override HotArchiveBucketEntryType Discriminator => HotArchiveBucketEntryType.HOT_ARCHIVE_METAENTRY;

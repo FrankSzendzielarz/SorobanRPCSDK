@@ -39,7 +39,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackResult.ClawbackSuccess")]
+        [ProtoContract(Name = "ClawbackResult_ClawbackSuccess")]
         public sealed partial class ClawbackSuccess : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_SUCCESS;
@@ -47,7 +47,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackResult.ClawbackMalformed")]
+        [ProtoContract(Name = "ClawbackResult_ClawbackMalformed")]
         public sealed partial class ClawbackMalformed : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_MALFORMED;
@@ -55,7 +55,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackResult.ClawbackNotClawbackEnabled")]
+        [ProtoContract(Name = "ClawbackResult_ClawbackNotClawbackEnabled")]
         public sealed partial class ClawbackNotClawbackEnabled : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NOT_CLAWBACK_ENABLED;
@@ -63,7 +63,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackResult.ClawbackNoTrust")]
+        [ProtoContract(Name = "ClawbackResult_ClawbackNoTrust")]
         public sealed partial class ClawbackNoTrust : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_NO_TRUST;
@@ -71,7 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClawbackResult.ClawbackUnderfunded")]
+        [ProtoContract(Name = "ClawbackResult_ClawbackUnderfunded")]
         public sealed partial class ClawbackUnderfunded : ClawbackResult
         {
             public override ClawbackResultCode Discriminator => ClawbackResultCode.CLAWBACK_UNDERFUNDED;

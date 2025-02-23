@@ -79,7 +79,7 @@ namespace Stellar {
         }
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion")]
+        [ProtoContract(Name = "LiquidityPoolEntry_bodyUnion")]
         [ProtoInclude(100, typeof(LiquidityPoolConstantProduct), DataFormat = DataFormat.Default)]
         public abstract partial class bodyUnion
         {
@@ -90,7 +90,7 @@ namespace Stellar {
 
             [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
             [System.Serializable]
-            [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion.constantProductStruct")]
+            [ProtoContract(Name = "LiquidityPoolEntry_bodyUnion_constantProductStruct")]
             public partial class constantProductStruct
             {
                 [ProtoMember(1)]
@@ -235,7 +235,7 @@ namespace Stellar {
                 }
             }
             [System.Serializable]
-            [ProtoContract(Name = "LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct")]
+            [ProtoContract(Name = "LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProduct")]
             public sealed partial class LiquidityPoolConstantProduct : bodyUnion
             {
                 public override LiquidityPoolType Discriminator => LiquidityPoolType.LIQUIDITY_POOL_CONSTANT_PRODUCT;

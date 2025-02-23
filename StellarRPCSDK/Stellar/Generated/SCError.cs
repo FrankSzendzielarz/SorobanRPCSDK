@@ -49,7 +49,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceContract")]
+        [ProtoContract(Name = "SCError_SceContract")]
         public sealed partial class SceContract : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CONTRACT;
@@ -72,7 +72,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceWasmVm")]
+        [ProtoContract(Name = "SCError_SceWasmVm")]
         public sealed partial class SceWasmVm : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_WASM_VM;
@@ -95,7 +95,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceContext")]
+        [ProtoContract(Name = "SCError_SceContext")]
         public sealed partial class SceContext : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CONTEXT;
@@ -118,7 +118,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceStorage")]
+        [ProtoContract(Name = "SCError_SceStorage")]
         public sealed partial class SceStorage : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_STORAGE;
@@ -141,7 +141,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceObject")]
+        [ProtoContract(Name = "SCError_SceObject")]
         public sealed partial class SceObject : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_OBJECT;
@@ -164,7 +164,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceCrypto")]
+        [ProtoContract(Name = "SCError_SceCrypto")]
         public sealed partial class SceCrypto : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_CRYPTO;
@@ -187,7 +187,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceEvents")]
+        [ProtoContract(Name = "SCError_SceEvents")]
         public sealed partial class SceEvents : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_EVENTS;
@@ -210,7 +210,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceBudget")]
+        [ProtoContract(Name = "SCError_SceBudget")]
         public sealed partial class SceBudget : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_BUDGET;
@@ -233,7 +233,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceValue")]
+        [ProtoContract(Name = "SCError_SceValue")]
         public sealed partial class SceValue : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_VALUE;
@@ -256,7 +256,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "SCError.SceAuth")]
+        [ProtoContract(Name = "SCError_SceAuth")]
         public sealed partial class SceAuth : SCError
         {
             public override SCErrorType Discriminator => SCErrorType.SCE_AUTH;

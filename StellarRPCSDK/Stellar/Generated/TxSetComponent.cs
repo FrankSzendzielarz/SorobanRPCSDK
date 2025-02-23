@@ -35,7 +35,7 @@ namespace Stellar {
 
         [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
         [System.Serializable]
-        [ProtoContract(Name = "TxSetComponent.txsMaybeDiscountedFeeStruct")]
+        [ProtoContract(Name = "TxSetComponent_txsMaybeDiscountedFeeStruct")]
         public partial class txsMaybeDiscountedFeeStruct
         {
             [ProtoMember(1)]
@@ -138,7 +138,7 @@ namespace Stellar {
             }
         }
         [System.Serializable]
-        [ProtoContract(Name = "TxSetComponent.TxsetCompTxsMaybeDiscountedFee")]
+        [ProtoContract(Name = "TxSetComponent_TxsetCompTxsMaybeDiscountedFee")]
         public sealed partial class TxsetCompTxsMaybeDiscountedFee : TxSetComponent
         {
             public override TxSetComponentType Discriminator => TxSetComponentType.TXSET_COMP_TXS_MAYBE_DISCOUNTED_FEE;

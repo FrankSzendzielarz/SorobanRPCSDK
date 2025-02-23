@@ -41,7 +41,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccess")]
         public sealed partial class ClaimClaimableBalanceSuccess : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_SUCCESS;
@@ -49,7 +49,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceDoesNotExist")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceDoesNotExist")]
         public sealed partial class ClaimClaimableBalanceDoesNotExist : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_DOES_NOT_EXIST;
@@ -57,7 +57,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceCannotClaim")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceCannotClaim")]
         public sealed partial class ClaimClaimableBalanceCannotClaim : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_CANNOT_CLAIM;
@@ -65,7 +65,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceLineFull")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceLineFull")]
         public sealed partial class ClaimClaimableBalanceLineFull : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_LINE_FULL;
@@ -73,7 +73,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceNoTrust")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceNoTrust")]
         public sealed partial class ClaimClaimableBalanceNoTrust : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NO_TRUST;
@@ -81,7 +81,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimClaimableBalanceResult.ClaimClaimableBalanceNotAuthorized")]
+        [ProtoContract(Name = "ClaimClaimableBalanceResult_ClaimClaimableBalanceNotAuthorized")]
         public sealed partial class ClaimClaimableBalanceNotAuthorized : ClaimClaimableBalanceResult
         {
             public override ClaimClaimableBalanceResultCode Discriminator => ClaimClaimableBalanceResultCode.CLAIM_CLAIMABLE_BALANCE_NOT_AUTHORIZED;

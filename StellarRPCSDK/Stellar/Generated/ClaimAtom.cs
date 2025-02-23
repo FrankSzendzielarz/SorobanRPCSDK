@@ -36,7 +36,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeV0")]
+        [ProtoContract(Name = "ClaimAtom_ClaimAtomTypeV0")]
         public sealed partial class ClaimAtomTypeV0 : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_V0;
@@ -59,7 +59,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeOrderBook")]
+        [ProtoContract(Name = "ClaimAtom_ClaimAtomTypeOrderBook")]
         public sealed partial class ClaimAtomTypeOrderBook : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_ORDER_BOOK;
@@ -82,7 +82,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "ClaimAtom.ClaimAtomTypeLiquidityPool")]
+        [ProtoContract(Name = "ClaimAtom_ClaimAtomTypeLiquidityPool")]
         public sealed partial class ClaimAtomTypeLiquidityPool : ClaimAtom
         {
             public override ClaimAtomType Discriminator => ClaimAtomType.CLAIM_ATOM_TYPE_LIQUIDITY_POOL;

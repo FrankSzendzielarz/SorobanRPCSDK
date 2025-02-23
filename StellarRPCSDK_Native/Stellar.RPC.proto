@@ -1,0 +1,2874 @@
+syntax = "proto3";
+package Stellar.RPC;
+import "google/protobuf/empty.proto";
+
+message AccountEntry {
+   AccountID accountID = 1;
+   int64 balance = 2;
+   SequenceNumber seqNum = 3;
+   uint32 numSubEntries = 4;
+   AccountID inflationDest = 5;
+   uint32 flags = 6;
+   string32 homeDomain = 7;
+   Thresholds thresholds = 8;
+   repeated Signer signers = 9;
+   AccountEntry_extUnion ext = 10;
+}
+message AccountEntryExtensionV1 {
+   Liabilities liabilities = 1;
+   AccountEntryExtensionV1_extUnion ext = 2;
+}
+message AccountEntryExtensionV1_extUnion {
+   oneof subtype {
+      AccountEntryExtensionV1_extUnion_case_0 AccountEntryExtensionV1_extUnion_case_0 = 100;
+      AccountEntryExtensionV1_extUnion_case_2 AccountEntryExtensionV1_extUnion_case_2 = 101;
+   }
+}
+message AccountEntryExtensionV1_extUnion_case_0 {
+}
+message AccountEntryExtensionV1_extUnion_case_2 {
+   AccountEntryExtensionV2 v2 = 1;
+}
+message AccountEntryExtensionV2 {
+   uint32 numSponsored = 1;
+   uint32 numSponsoring = 2;
+   repeated SponsorshipDescriptor signerSponsoringIDs = 3;
+   AccountEntryExtensionV2_extUnion ext = 4;
+}
+message AccountEntryExtensionV2_extUnion {
+   oneof subtype {
+      AccountEntryExtensionV2_extUnion_case_0 AccountEntryExtensionV2_extUnion_case_0 = 100;
+      AccountEntryExtensionV2_extUnion_case_3 AccountEntryExtensionV2_extUnion_case_3 = 101;
+   }
+}
+message AccountEntryExtensionV2_extUnion_case_0 {
+}
+message AccountEntryExtensionV2_extUnion_case_3 {
+   AccountEntryExtensionV3 v3 = 1;
+}
+message AccountEntryExtensionV3 {
+   ExtensionPoint ext = 1;
+   uint32 seqLedger = 2;
+   TimePoint seqTime = 3;
+}
+message AccountEntry_extUnion {
+   oneof subtype {
+      AccountEntry_extUnion_case_0 AccountEntry_extUnion_case_0 = 100;
+      AccountEntry_extUnion_case_1 AccountEntry_extUnion_case_1 = 101;
+   }
+}
+message AccountEntry_extUnion_case_0 {
+}
+message AccountEntry_extUnion_case_1 {
+   AccountEntryExtensionV1 v1 = 1;
+}
+message AccountID {
+   PublicKey InnerValue = 1;
+}
+message AccountMergeResult {
+   oneof subtype {
+      AccountMergeResult_AccountMergeSuccess AccountMergeResult_AccountMergeSuccess = 100;
+      AccountMergeResult_AccountMergeMalformed AccountMergeResult_AccountMergeMalformed = 101;
+      AccountMergeResult_AccountMergeNoAccount AccountMergeResult_AccountMergeNoAccount = 102;
+      AccountMergeResult_AccountMergeImmutableSet AccountMergeResult_AccountMergeImmutableSet = 103;
+      AccountMergeResult_AccountMergeHasSubEntries AccountMergeResult_AccountMergeHasSubEntries = 104;
+      AccountMergeResult_AccountMergeSeqnumTooFar AccountMergeResult_AccountMergeSeqnumTooFar = 105;
+      AccountMergeResult_AccountMergeDestFull AccountMergeResult_AccountMergeDestFull = 106;
+      AccountMergeResult_AccountMergeIsSponsor AccountMergeResult_AccountMergeIsSponsor = 107;
+   }
+}
+message AccountMergeResult_AccountMergeDestFull {
+}
+message AccountMergeResult_AccountMergeHasSubEntries {
+}
+message AccountMergeResult_AccountMergeImmutableSet {
+}
+message AccountMergeResult_AccountMergeIsSponsor {
+}
+message AccountMergeResult_AccountMergeMalformed {
+}
+message AccountMergeResult_AccountMergeNoAccount {
+}
+message AccountMergeResult_AccountMergeSeqnumTooFar {
+}
+message AccountMergeResult_AccountMergeSuccess {
+   int64 sourceAccountBalance = 1;
+}
+message AllowTrustOp {
+   AccountID trustor = 1;
+   AssetCode asset = 2;
+   uint32 authorize = 3;
+}
+message AllowTrustResult {
+   oneof subtype {
+      AllowTrustResult_AllowTrustSuccess AllowTrustResult_AllowTrustSuccess = 100;
+      AllowTrustResult_AllowTrustMalformed AllowTrustResult_AllowTrustMalformed = 101;
+      AllowTrustResult_AllowTrustNoTrustLine AllowTrustResult_AllowTrustNoTrustLine = 102;
+      AllowTrustResult_AllowTrustTrustNotRequired AllowTrustResult_AllowTrustTrustNotRequired = 103;
+      AllowTrustResult_AllowTrustCantRevoke AllowTrustResult_AllowTrustCantRevoke = 104;
+      AllowTrustResult_AllowTrustSelfNotAllowed AllowTrustResult_AllowTrustSelfNotAllowed = 105;
+      AllowTrustResult_AllowTrustLowReserve AllowTrustResult_AllowTrustLowReserve = 106;
+   }
+}
+message AllowTrustResult_AllowTrustCantRevoke {
+}
+message AllowTrustResult_AllowTrustLowReserve {
+}
+message AllowTrustResult_AllowTrustMalformed {
+}
+message AllowTrustResult_AllowTrustNoTrustLine {
+}
+message AllowTrustResult_AllowTrustSelfNotAllowed {
+}
+message AllowTrustResult_AllowTrustSuccess {
+}
+message AllowTrustResult_AllowTrustTrustNotRequired {
+}
+message AlphaNum12 {
+   AssetCode12 assetCode = 1;
+   AccountID issuer = 2;
+}
+message AlphaNum4 {
+   AssetCode4 assetCode = 1;
+   AccountID issuer = 2;
+}
+message ApplyToParam {
+   SimulateTransactionResult Simulation = 1;
+   Transaction Original = 2;
+}
+message Asset {
+   oneof subtype {
+      Asset_AssetTypeNative Asset_AssetTypeNative = 100;
+      Asset_AssetTypeCreditAlphanum4 Asset_AssetTypeCreditAlphanum4 = 101;
+      Asset_AssetTypeCreditAlphanum12 Asset_AssetTypeCreditAlphanum12 = 102;
+   }
+}
+message AssetCode {
+   oneof subtype {
+      AssetCode_AssetTypeCreditAlphanum4 AssetCode_AssetTypeCreditAlphanum4 = 100;
+      AssetCode_AssetTypeCreditAlphanum12 AssetCode_AssetTypeCreditAlphanum12 = 101;
+   }
+}
+message AssetCode12 {
+   bytes InnerValue = 1;
+}
+message AssetCode4 {
+   bytes InnerValue = 1;
+}
+message AssetCode_AssetTypeCreditAlphanum12 {
+   AssetCode12 assetCode12 = 2;
+}
+message AssetCode_AssetTypeCreditAlphanum4 {
+   AssetCode4 assetCode4 = 1;
+}
+message Asset_AssetTypeCreditAlphanum12 {
+   AlphaNum12 alphaNum12 = 2;
+}
+message Asset_AssetTypeCreditAlphanum4 {
+   AlphaNum4 alphaNum4 = 1;
+}
+message Asset_AssetTypeNative {
+}
+message BeginSponsoringFutureReservesOp {
+   AccountID sponsoredID = 1;
+}
+message BeginSponsoringFutureReservesResult {
+   oneof subtype {
+      BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesSuccess BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesSuccess = 100;
+      BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesMalformed BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesMalformed = 101;
+      BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesAlreadySponsored BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesAlreadySponsored = 102;
+      BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesRecursive BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesRecursive = 103;
+   }
+}
+message BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesAlreadySponsored {
+}
+message BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesMalformed {
+}
+message BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesRecursive {
+}
+message BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesSuccess {
+}
+message BumpSequenceOp {
+   SequenceNumber bumpTo = 1;
+}
+message BumpSequenceResult {
+   oneof subtype {
+      BumpSequenceResult_BumpSequenceSuccess BumpSequenceResult_BumpSequenceSuccess = 100;
+      BumpSequenceResult_BumpSequenceBadSeq BumpSequenceResult_BumpSequenceBadSeq = 101;
+   }
+}
+message BumpSequenceResult_BumpSequenceBadSeq {
+}
+message BumpSequenceResult_BumpSequenceSuccess {
+}
+message ChangeTrustAsset {
+   oneof subtype {
+      ChangeTrustAsset_AssetTypeNative ChangeTrustAsset_AssetTypeNative = 100;
+      ChangeTrustAsset_AssetTypeCreditAlphanum4 ChangeTrustAsset_AssetTypeCreditAlphanum4 = 101;
+      ChangeTrustAsset_AssetTypeCreditAlphanum12 ChangeTrustAsset_AssetTypeCreditAlphanum12 = 102;
+      ChangeTrustAsset_AssetTypePoolShare ChangeTrustAsset_AssetTypePoolShare = 103;
+   }
+}
+message ChangeTrustAsset_AssetTypeCreditAlphanum12 {
+   AlphaNum12 alphaNum12 = 2;
+}
+message ChangeTrustAsset_AssetTypeCreditAlphanum4 {
+   AlphaNum4 alphaNum4 = 1;
+}
+message ChangeTrustAsset_AssetTypeNative {
+}
+message ChangeTrustAsset_AssetTypePoolShare {
+   LiquidityPoolParameters liquidityPool = 3;
+}
+message ChangeTrustOp {
+   ChangeTrustAsset line = 1;
+   int64 limit = 2;
+}
+message ChangeTrustResult {
+   oneof subtype {
+      ChangeTrustResult_ChangeTrustSuccess ChangeTrustResult_ChangeTrustSuccess = 100;
+      ChangeTrustResult_ChangeTrustMalformed ChangeTrustResult_ChangeTrustMalformed = 101;
+      ChangeTrustResult_ChangeTrustNoIssuer ChangeTrustResult_ChangeTrustNoIssuer = 102;
+      ChangeTrustResult_ChangeTrustInvalidLimit ChangeTrustResult_ChangeTrustInvalidLimit = 103;
+      ChangeTrustResult_ChangeTrustLowReserve ChangeTrustResult_ChangeTrustLowReserve = 104;
+      ChangeTrustResult_ChangeTrustSelfNotAllowed ChangeTrustResult_ChangeTrustSelfNotAllowed = 105;
+      ChangeTrustResult_ChangeTrustTrustLineMissing ChangeTrustResult_ChangeTrustTrustLineMissing = 106;
+      ChangeTrustResult_ChangeTrustCannotDelete ChangeTrustResult_ChangeTrustCannotDelete = 107;
+      ChangeTrustResult_ChangeTrustNotAuthMaintainLiabilities ChangeTrustResult_ChangeTrustNotAuthMaintainLiabilities = 108;
+   }
+}
+message ChangeTrustResult_ChangeTrustCannotDelete {
+}
+message ChangeTrustResult_ChangeTrustInvalidLimit {
+}
+message ChangeTrustResult_ChangeTrustLowReserve {
+}
+message ChangeTrustResult_ChangeTrustMalformed {
+}
+message ChangeTrustResult_ChangeTrustNoIssuer {
+}
+message ChangeTrustResult_ChangeTrustNotAuthMaintainLiabilities {
+}
+message ChangeTrustResult_ChangeTrustSelfNotAllowed {
+}
+message ChangeTrustResult_ChangeTrustSuccess {
+}
+message ChangeTrustResult_ChangeTrustTrustLineMissing {
+}
+message ClaimAtom {
+   oneof subtype {
+      ClaimAtom_ClaimAtomTypeV0 ClaimAtom_ClaimAtomTypeV0 = 100;
+      ClaimAtom_ClaimAtomTypeOrderBook ClaimAtom_ClaimAtomTypeOrderBook = 101;
+      ClaimAtom_ClaimAtomTypeLiquidityPool ClaimAtom_ClaimAtomTypeLiquidityPool = 102;
+   }
+}
+message ClaimAtom_ClaimAtomTypeLiquidityPool {
+   ClaimLiquidityAtom liquidityPool = 3;
+}
+message ClaimAtom_ClaimAtomTypeOrderBook {
+   ClaimOfferAtom orderBook = 2;
+}
+message ClaimAtom_ClaimAtomTypeV0 {
+   ClaimOfferAtomV0 v0 = 1;
+}
+message ClaimClaimableBalanceOp {
+   ClaimableBalanceID balanceID = 1;
+}
+message ClaimClaimableBalanceResult {
+   oneof subtype {
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccess ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccess = 100;
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceDoesNotExist ClaimClaimableBalanceResult_ClaimClaimableBalanceDoesNotExist = 101;
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceCannotClaim ClaimClaimableBalanceResult_ClaimClaimableBalanceCannotClaim = 102;
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceLineFull ClaimClaimableBalanceResult_ClaimClaimableBalanceLineFull = 103;
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceNoTrust ClaimClaimableBalanceResult_ClaimClaimableBalanceNoTrust = 104;
+      ClaimClaimableBalanceResult_ClaimClaimableBalanceNotAuthorized ClaimClaimableBalanceResult_ClaimClaimableBalanceNotAuthorized = 105;
+   }
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceCannotClaim {
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceDoesNotExist {
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceLineFull {
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceNoTrust {
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceNotAuthorized {
+}
+message ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccess {
+}
+message ClaimLiquidityAtom {
+   PoolID liquidityPoolID = 1;
+   Asset assetSold = 2;
+   int64 amountSold = 3;
+   Asset assetBought = 4;
+   int64 amountBought = 5;
+}
+message ClaimOfferAtom {
+   AccountID sellerID = 1;
+   int64 offerID = 2;
+   Asset assetSold = 3;
+   int64 amountSold = 4;
+   Asset assetBought = 5;
+   int64 amountBought = 6;
+}
+message ClaimOfferAtomV0 {
+   uint256 sellerEd25519 = 1;
+   int64 offerID = 2;
+   Asset assetSold = 3;
+   int64 amountSold = 4;
+   Asset assetBought = 5;
+   int64 amountBought = 6;
+}
+message ClaimPredicate {
+   oneof subtype {
+      ClaimPredicate_ClaimPredicateUnconditional ClaimPredicate_ClaimPredicateUnconditional = 100;
+      ClaimPredicate_ClaimPredicateAnd ClaimPredicate_ClaimPredicateAnd = 101;
+      ClaimPredicate_ClaimPredicateOr ClaimPredicate_ClaimPredicateOr = 102;
+      ClaimPredicate_ClaimPredicateNot ClaimPredicate_ClaimPredicateNot = 103;
+      ClaimPredicate_ClaimPredicateBeforeAbsoluteTime ClaimPredicate_ClaimPredicateBeforeAbsoluteTime = 104;
+      ClaimPredicate_ClaimPredicateBeforeRelativeTime ClaimPredicate_ClaimPredicateBeforeRelativeTime = 105;
+   }
+}
+message ClaimPredicate_ClaimPredicateAnd {
+   repeated ClaimPredicate andPredicates = 1;
+}
+message ClaimPredicate_ClaimPredicateBeforeAbsoluteTime {
+   int64 absBefore = 4;
+}
+message ClaimPredicate_ClaimPredicateBeforeRelativeTime {
+   int64 relBefore = 5;
+}
+message ClaimPredicate_ClaimPredicateNot {
+   ClaimPredicate notPredicate = 3;
+}
+message ClaimPredicate_ClaimPredicateOr {
+   repeated ClaimPredicate orPredicates = 2;
+}
+message ClaimPredicate_ClaimPredicateUnconditional {
+}
+message ClaimableBalanceEntry {
+   ClaimableBalanceID balanceID = 1;
+   repeated Claimant claimants = 2;
+   Asset asset = 3;
+   int64 amount = 4;
+   ClaimableBalanceEntry_extUnion ext = 5;
+}
+message ClaimableBalanceEntryExtensionV1 {
+   ClaimableBalanceEntryExtensionV1_extUnion ext = 1;
+   uint32 flags = 2;
+}
+message ClaimableBalanceEntryExtensionV1_extUnion {
+   oneof subtype {
+      ClaimableBalanceEntryExtensionV1_extUnion_case_0 ClaimableBalanceEntryExtensionV1_extUnion_case_0 = 100;
+   }
+}
+message ClaimableBalanceEntryExtensionV1_extUnion_case_0 {
+}
+message ClaimableBalanceEntry_extUnion {
+   oneof subtype {
+      ClaimableBalanceEntry_extUnion_case_0 ClaimableBalanceEntry_extUnion_case_0 = 100;
+      ClaimableBalanceEntry_extUnion_case_1 ClaimableBalanceEntry_extUnion_case_1 = 101;
+   }
+}
+message ClaimableBalanceEntry_extUnion_case_0 {
+}
+message ClaimableBalanceEntry_extUnion_case_1 {
+   ClaimableBalanceEntryExtensionV1 v1 = 1;
+}
+message ClaimableBalanceID {
+   oneof subtype {
+      ClaimableBalanceID_ClaimableBalanceIdTypeV0 ClaimableBalanceID_ClaimableBalanceIdTypeV0 = 100;
+   }
+}
+message ClaimableBalanceID_ClaimableBalanceIdTypeV0 {
+   Hash v0 = 1;
+}
+message Claimant {
+   oneof subtype {
+      Claimant_ClaimantTypeV0 Claimant_ClaimantTypeV0 = 100;
+   }
+}
+message Claimant_ClaimantTypeV0 {
+   Claimant_v0Struct v0 = 1;
+}
+message Claimant_v0Struct {
+   AccountID destination = 1;
+   ClaimPredicate predicate = 2;
+}
+message ClawbackClaimableBalanceOp {
+   ClaimableBalanceID balanceID = 1;
+}
+message ClawbackClaimableBalanceResult {
+   oneof subtype {
+      ClawbackClaimableBalanceResult_ClawbackClaimableBalanceSuccess ClawbackClaimableBalanceResult_ClawbackClaimableBalanceSuccess = 100;
+      ClawbackClaimableBalanceResult_ClawbackClaimableBalanceDoesNotExist ClawbackClaimableBalanceResult_ClawbackClaimableBalanceDoesNotExist = 101;
+      ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotIssuer ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotIssuer = 102;
+      ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotClawbackEnabled ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotClawbackEnabled = 103;
+   }
+}
+message ClawbackClaimableBalanceResult_ClawbackClaimableBalanceDoesNotExist {
+}
+message ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotClawbackEnabled {
+}
+message ClawbackClaimableBalanceResult_ClawbackClaimableBalanceNotIssuer {
+}
+message ClawbackClaimableBalanceResult_ClawbackClaimableBalanceSuccess {
+}
+message ClawbackOp {
+   Asset asset = 1;
+   MuxedAccount from = 2;
+   int64 amount = 3;
+}
+message ClawbackResult {
+   oneof subtype {
+      ClawbackResult_ClawbackSuccess ClawbackResult_ClawbackSuccess = 100;
+      ClawbackResult_ClawbackMalformed ClawbackResult_ClawbackMalformed = 101;
+      ClawbackResult_ClawbackNotClawbackEnabled ClawbackResult_ClawbackNotClawbackEnabled = 102;
+      ClawbackResult_ClawbackNoTrust ClawbackResult_ClawbackNoTrust = 103;
+      ClawbackResult_ClawbackUnderfunded ClawbackResult_ClawbackUnderfunded = 104;
+   }
+}
+message ClawbackResult_ClawbackMalformed {
+}
+message ClawbackResult_ClawbackNoTrust {
+}
+message ClawbackResult_ClawbackNotClawbackEnabled {
+}
+message ClawbackResult_ClawbackSuccess {
+}
+message ClawbackResult_ClawbackUnderfunded {
+}
+message ConfigSettingContractBandwidthV0 {
+   uint32 ledgerMaxTxsSizeBytes = 1;
+   uint32 txMaxSizeBytes = 2;
+   int64 feeTxSize1KB = 3;
+}
+message ConfigSettingContractComputeV0 {
+   int64 ledgerMaxInstructions = 1;
+   int64 txMaxInstructions = 2;
+   int64 feeRatePerInstructionsIncrement = 3;
+   uint32 txMemoryLimit = 4;
+}
+message ConfigSettingContractEventsV0 {
+   uint32 txMaxContractEventsSizeBytes = 1;
+   int64 feeContractEvents1KB = 2;
+}
+message ConfigSettingContractExecutionLanesV0 {
+   uint32 ledgerMaxTxCount = 1;
+}
+message ConfigSettingContractHistoricalDataV0 {
+   int64 feeHistorical1KB = 1;
+}
+message ConfigSettingContractLedgerCostV0 {
+   uint32 ledgerMaxReadLedgerEntries = 1;
+   uint32 ledgerMaxReadBytes = 2;
+   uint32 ledgerMaxWriteLedgerEntries = 3;
+   uint32 ledgerMaxWriteBytes = 4;
+   uint32 txMaxReadLedgerEntries = 5;
+   uint32 txMaxReadBytes = 6;
+   uint32 txMaxWriteLedgerEntries = 7;
+   uint32 txMaxWriteBytes = 8;
+   int64 feeReadLedgerEntry = 9;
+   int64 feeWriteLedgerEntry = 10;
+   int64 feeRead1KB = 11;
+   int64 bucketListTargetSizeBytes = 12;
+   int64 writeFee1KBBucketListLow = 13;
+   int64 writeFee1KBBucketListHigh = 14;
+   uint32 bucketListWriteFeeGrowthFactor = 15;
+}
+message ConfigSettingEntry {
+   oneof subtype {
+      ConfigSettingEntry_ConfigSettingContractMaxSizeBytes ConfigSettingEntry_ConfigSettingContractMaxSizeBytes = 100;
+      ConfigSettingEntry_ConfigSettingContractComputeV0Case ConfigSettingEntry_ConfigSettingContractComputeV0Case = 101;
+      ConfigSettingEntry_ConfigSettingContractLedgerCostV0Case ConfigSettingEntry_ConfigSettingContractLedgerCostV0Case = 102;
+      ConfigSettingEntry_ConfigSettingContractHistoricalDataV0Case ConfigSettingEntry_ConfigSettingContractHistoricalDataV0Case = 103;
+      ConfigSettingEntry_ConfigSettingContractEventsV0Case ConfigSettingEntry_ConfigSettingContractEventsV0Case = 104;
+      ConfigSettingEntry_ConfigSettingContractBandwidthV0Case ConfigSettingEntry_ConfigSettingContractBandwidthV0Case = 105;
+      ConfigSettingEntry_ConfigSettingContractCostParamsCpuInstructions ConfigSettingEntry_ConfigSettingContractCostParamsCpuInstructions = 106;
+      ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytes ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytes = 107;
+      ConfigSettingEntry_ConfigSettingContractDataKeySizeBytes ConfigSettingEntry_ConfigSettingContractDataKeySizeBytes = 108;
+      ConfigSettingEntry_ConfigSettingContractDataEntrySizeBytes ConfigSettingEntry_ConfigSettingContractDataEntrySizeBytes = 109;
+      ConfigSettingEntry_ConfigSettingStateArchival ConfigSettingEntry_ConfigSettingStateArchival = 110;
+      ConfigSettingEntry_ConfigSettingContractExecutionLanes ConfigSettingEntry_ConfigSettingContractExecutionLanes = 111;
+      ConfigSettingEntry_ConfigSettingBucketlistSizeWindow ConfigSettingEntry_ConfigSettingBucketlistSizeWindow = 112;
+      ConfigSettingEntry_ConfigSettingEvictionIterator ConfigSettingEntry_ConfigSettingEvictionIterator = 113;
+   }
+}
+message ConfigSettingEntry_ConfigSettingBucketlistSizeWindow {
+   repeated uint64 bucketListSizeWindow = 13;
+}
+message ConfigSettingEntry_ConfigSettingContractBandwidthV0Case {
+   ConfigSettingContractBandwidthV0 contractBandwidth = 6;
+}
+message ConfigSettingEntry_ConfigSettingContractComputeV0Case {
+   ConfigSettingContractComputeV0 contractCompute = 2;
+}
+message ConfigSettingEntry_ConfigSettingContractCostParamsCpuInstructions {
+   ContractCostParams contractCostParamsCpuInsns = 7;
+}
+message ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytes {
+   ContractCostParams contractCostParamsMemBytes = 8;
+}
+message ConfigSettingEntry_ConfigSettingContractDataEntrySizeBytes {
+   uint32 contractDataEntrySizeBytes = 10;
+}
+message ConfigSettingEntry_ConfigSettingContractDataKeySizeBytes {
+   uint32 contractDataKeySizeBytes = 9;
+}
+message ConfigSettingEntry_ConfigSettingContractEventsV0Case {
+   ConfigSettingContractEventsV0 contractEvents = 5;
+}
+message ConfigSettingEntry_ConfigSettingContractExecutionLanes {
+   ConfigSettingContractExecutionLanesV0 contractExecutionLanes = 12;
+}
+message ConfigSettingEntry_ConfigSettingContractHistoricalDataV0Case {
+   ConfigSettingContractHistoricalDataV0 contractHistoricalData = 4;
+}
+message ConfigSettingEntry_ConfigSettingContractLedgerCostV0Case {
+   ConfigSettingContractLedgerCostV0 contractLedgerCost = 3;
+}
+message ConfigSettingEntry_ConfigSettingContractMaxSizeBytes {
+   uint32 contractMaxSizeBytes = 1;
+}
+message ConfigSettingEntry_ConfigSettingEvictionIterator {
+   EvictionIterator evictionIterator = 14;
+}
+message ConfigSettingEntry_ConfigSettingStateArchival {
+   StateArchivalSettings stateArchivalSettings = 11;
+}
+enum ConfigSettingID {
+   CONFIG_SETTING_CONTRACT_MAX_SIZE_BYTES = 0;
+   CONFIG_SETTING_CONTRACT_COMPUTE_V0 = 1;
+   CONFIG_SETTING_CONTRACT_LEDGER_COST_V0 = 2;
+   CONFIG_SETTING_CONTRACT_HISTORICAL_DATA_V0 = 3;
+   CONFIG_SETTING_CONTRACT_EVENTS_V0 = 4;
+   CONFIG_SETTING_CONTRACT_BANDWIDTH_V0 = 5;
+   CONFIG_SETTING_CONTRACT_COST_PARAMS_CPU_INSTRUCTIONS = 6;
+   CONFIG_SETTING_CONTRACT_COST_PARAMS_MEMORY_BYTES = 7;
+   CONFIG_SETTING_CONTRACT_DATA_KEY_SIZE_BYTES = 8;
+   CONFIG_SETTING_CONTRACT_DATA_ENTRY_SIZE_BYTES = 9;
+   CONFIG_SETTING_STATE_ARCHIVAL = 10;
+   CONFIG_SETTING_CONTRACT_EXECUTION_LANES = 11;
+   CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW = 12;
+   CONFIG_SETTING_EVICTION_ITERATOR = 13;
+}
+message ContractCodeCostInputs {
+   ExtensionPoint ext = 1;
+   uint32 nInstructions = 2;
+   uint32 nFunctions = 3;
+   uint32 nGlobals = 4;
+   uint32 nTableEntries = 5;
+   uint32 nTypes = 6;
+   uint32 nDataSegments = 7;
+   uint32 nElemSegments = 8;
+   uint32 nImports = 9;
+   uint32 nExports = 10;
+   uint32 nDataSegmentBytes = 11;
+}
+message ContractCodeEntry {
+   ContractCodeEntry_extUnion ext = 1;
+   Hash hash = 2;
+   bytes code = 3;
+}
+message ContractCodeEntry_extUnion {
+   oneof subtype {
+      ContractCodeEntry_extUnion_case_0 ContractCodeEntry_extUnion_case_0 = 100;
+      ContractCodeEntry_extUnion_case_1 ContractCodeEntry_extUnion_case_1 = 101;
+   }
+}
+message ContractCodeEntry_extUnion_case_0 {
+}
+message ContractCodeEntry_extUnion_case_1 {
+   ContractCodeEntry_extUnion_v1Struct v1 = 1;
+}
+message ContractCodeEntry_extUnion_v1Struct {
+   ExtensionPoint ext = 1;
+   ContractCodeCostInputs costInputs = 2;
+}
+message ContractCostParamEntry {
+   ExtensionPoint ext = 1;
+   int64 constTerm = 2;
+   int64 linearTerm = 3;
+}
+message ContractCostParams {
+   repeated ContractCostParamEntry InnerValue = 1;
+}
+enum ContractDataDurability {
+   TEMPORARY = 0;
+   PERSISTENT = 1;
+}
+message ContractDataEntry {
+   ExtensionPoint ext = 1;
+   SCAddress contract = 2;
+   SCVal key = 3;
+   ContractDataDurability durability = 4;
+   SCVal val = 5;
+}
+message ContractEvent {
+   ExtensionPoint ext = 1;
+   Hash contractID = 2;
+   ContractEventType type = 3;
+   ContractEvent_bodyUnion body = 4;
+}
+enum ContractEventType {
+   SYSTEM = 0;
+   CONTRACT = 1;
+   DIAGNOSTIC = 2;
+}
+message ContractEvent_bodyUnion {
+   oneof subtype {
+      ContractEvent_bodyUnion_case_0 ContractEvent_bodyUnion_case_0 = 100;
+   }
+}
+message ContractEvent_bodyUnion_case_0 {
+   ContractEvent_bodyUnion_v0Struct v0 = 1;
+}
+message ContractEvent_bodyUnion_v0Struct {
+   repeated SCVal topics = 1;
+   SCVal data = 2;
+}
+message ContractExecutable {
+   oneof subtype {
+      ContractExecutable_ContractExecutableWasm ContractExecutable_ContractExecutableWasm = 100;
+      ContractExecutable_ContractExecutableStellarAsset ContractExecutable_ContractExecutableStellarAsset = 101;
+   }
+}
+message ContractExecutable_ContractExecutableStellarAsset {
+}
+message ContractExecutable_ContractExecutableWasm {
+   Hash wasm_hash = 1;
+}
+message ContractIDPreimage {
+   oneof subtype {
+      ContractIDPreimage_ContractIdPreimageFromAddress ContractIDPreimage_ContractIdPreimageFromAddress = 100;
+      ContractIDPreimage_ContractIdPreimageFromAsset ContractIDPreimage_ContractIdPreimageFromAsset = 101;
+   }
+}
+message ContractIDPreimage_ContractIdPreimageFromAddress {
+   ContractIDPreimage_fromAddressStruct fromAddress = 1;
+}
+message ContractIDPreimage_ContractIdPreimageFromAsset {
+   Asset fromAsset = 2;
+}
+message ContractIDPreimage_fromAddressStruct {
+   SCAddress address = 1;
+   uint256 salt = 2;
+}
+message Cost {
+   string CpuInsns = 1;
+   string MemBytes = 2;
+}
+message CreateAccountOp {
+   AccountID destination = 1;
+   int64 startingBalance = 2;
+}
+message CreateAccountResult {
+   oneof subtype {
+      CreateAccountResult_CreateAccountSuccess CreateAccountResult_CreateAccountSuccess = 100;
+      CreateAccountResult_CreateAccountMalformed CreateAccountResult_CreateAccountMalformed = 101;
+      CreateAccountResult_CreateAccountUnderfunded CreateAccountResult_CreateAccountUnderfunded = 102;
+      CreateAccountResult_CreateAccountLowReserve CreateAccountResult_CreateAccountLowReserve = 103;
+      CreateAccountResult_CreateAccountAlreadyExist CreateAccountResult_CreateAccountAlreadyExist = 104;
+   }
+}
+message CreateAccountResult_CreateAccountAlreadyExist {
+}
+message CreateAccountResult_CreateAccountLowReserve {
+}
+message CreateAccountResult_CreateAccountMalformed {
+}
+message CreateAccountResult_CreateAccountSuccess {
+}
+message CreateAccountResult_CreateAccountUnderfunded {
+}
+message CreateClaimableBalanceOp {
+   Asset asset = 1;
+   int64 amount = 2;
+   repeated Claimant claimants = 3;
+}
+message CreateClaimableBalanceResult {
+   oneof subtype {
+      CreateClaimableBalanceResult_CreateClaimableBalanceSuccess CreateClaimableBalanceResult_CreateClaimableBalanceSuccess = 100;
+      CreateClaimableBalanceResult_CreateClaimableBalanceMalformed CreateClaimableBalanceResult_CreateClaimableBalanceMalformed = 101;
+      CreateClaimableBalanceResult_CreateClaimableBalanceLowReserve CreateClaimableBalanceResult_CreateClaimableBalanceLowReserve = 102;
+      CreateClaimableBalanceResult_CreateClaimableBalanceNoTrust CreateClaimableBalanceResult_CreateClaimableBalanceNoTrust = 103;
+      CreateClaimableBalanceResult_CreateClaimableBalanceNotAuthorized CreateClaimableBalanceResult_CreateClaimableBalanceNotAuthorized = 104;
+      CreateClaimableBalanceResult_CreateClaimableBalanceUnderfunded CreateClaimableBalanceResult_CreateClaimableBalanceUnderfunded = 105;
+   }
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceLowReserve {
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceMalformed {
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceNoTrust {
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceNotAuthorized {
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceSuccess {
+   ClaimableBalanceID balanceID = 1;
+}
+message CreateClaimableBalanceResult_CreateClaimableBalanceUnderfunded {
+}
+message CreateContractArgs {
+   ContractIDPreimage contractIDPreimage = 1;
+   ContractExecutable executable = 2;
+}
+message CreateContractArgsV2 {
+   ContractIDPreimage contractIDPreimage = 1;
+   ContractExecutable executable = 2;
+   repeated SCVal constructorArgs = 3;
+}
+message CreatePassiveSellOfferOp {
+   Asset selling = 1;
+   Asset buying = 2;
+   int64 amount = 3;
+   Price price = 4;
+}
+message DataEntry {
+   AccountID accountID = 1;
+   string64 dataName = 2;
+   DataValue dataValue = 3;
+   DataEntry_extUnion ext = 4;
+}
+message DataEntry_extUnion {
+   oneof subtype {
+      DataEntry_extUnion_case_0 DataEntry_extUnion_case_0 = 100;
+   }
+}
+message DataEntry_extUnion_case_0 {
+}
+message DataValue {
+   bytes InnerValue = 1;
+}
+message DecoratedSignature {
+   SignatureHint hint = 1;
+   Signature signature = 2;
+}
+message DiagnosticEvent {
+   bool inSuccessfulContractCall = 1;
+   ContractEvent _event = 2;
+}
+message Duration {
+   uint64 InnerValue = 1;
+}
+message EndSponsoringFutureReservesResult {
+   oneof subtype {
+      EndSponsoringFutureReservesResult_EndSponsoringFutureReservesSuccess EndSponsoringFutureReservesResult_EndSponsoringFutureReservesSuccess = 100;
+      EndSponsoringFutureReservesResult_EndSponsoringFutureReservesNotSponsored EndSponsoringFutureReservesResult_EndSponsoringFutureReservesNotSponsored = 101;
+   }
+}
+message EndSponsoringFutureReservesResult_EndSponsoringFutureReservesNotSponsored {
+}
+message EndSponsoringFutureReservesResult_EndSponsoringFutureReservesSuccess {
+}
+message Entries {
+   string Key = 1;
+   string Xdr = 2;
+   int64 LastModifiedLedgerSeq = 3;
+   int64 LiveUntilLedgerSeq = 4;
+   LedgerKey LedgerKey = 100;
+   LedgerEntry_dataUnion LedgerEntryData = 101;
+}
+message Events {
+   Events_Type Type = 1;
+   int64 Ledger = 2;
+   string LedgerClosedAt = 3;
+   string ContractId = 4;
+   string Id = 5;
+   string PagingToken = 6;
+   bool InSuccessfulContractCall = 7;
+   repeated string Topic = 8;
+   string Value = 9;
+   string TxHash = 10;
+}
+enum Events_Type {
+   Contract = 0;
+   Diagnostic = 1;
+   System = 2;
+}
+message EvictionIterator {
+   uint32 bucketListLevel = 1;
+   bool isCurrBucket = 2;
+   uint64 bucketFileOffset = 3;
+}
+message ExtendFootprintTTLOp {
+   ExtensionPoint ext = 1;
+   uint32 extendTo = 2;
+}
+message ExtendFootprintTTLResult {
+   oneof subtype {
+      ExtendFootprintTTLResult_ExtendFootprintTtlSuccess ExtendFootprintTTLResult_ExtendFootprintTtlSuccess = 100;
+      ExtendFootprintTTLResult_ExtendFootprintTtlMalformed ExtendFootprintTTLResult_ExtendFootprintTtlMalformed = 101;
+      ExtendFootprintTTLResult_ExtendFootprintTtlResourceLimitExceeded ExtendFootprintTTLResult_ExtendFootprintTtlResourceLimitExceeded = 102;
+      ExtendFootprintTTLResult_ExtendFootprintTtlInsufficientRefundableFee ExtendFootprintTTLResult_ExtendFootprintTtlInsufficientRefundableFee = 103;
+   }
+}
+message ExtendFootprintTTLResult_ExtendFootprintTtlInsufficientRefundableFee {
+}
+message ExtendFootprintTTLResult_ExtendFootprintTtlMalformed {
+}
+message ExtendFootprintTTLResult_ExtendFootprintTtlResourceLimitExceeded {
+}
+message ExtendFootprintTTLResult_ExtendFootprintTtlSuccess {
+}
+message ExtensionPoint {
+   oneof subtype {
+      ExtensionPoint_case_0 ExtensionPoint_case_0 = 100;
+   }
+}
+message ExtensionPoint_case_0 {
+}
+message FeeBumpTransaction {
+   MuxedAccount feeSource = 1;
+   int64 fee = 2;
+   FeeBumpTransaction_innerTxUnion innerTx = 3;
+   FeeBumpTransaction_extUnion ext = 4;
+}
+message FeeBumpTransactionEnvelope {
+   FeeBumpTransaction tx = 1;
+   repeated DecoratedSignature signatures = 2;
+}
+message FeeBumpTransaction_extUnion {
+   oneof subtype {
+      FeeBumpTransaction_extUnion_case_0 FeeBumpTransaction_extUnion_case_0 = 100;
+   }
+}
+message FeeBumpTransaction_extUnion_case_0 {
+}
+message FeeBumpTransaction_innerTxUnion {
+   oneof subtype {
+      FeeBumpTransaction_innerTxUnion_EnvelopeTypeTx FeeBumpTransaction_innerTxUnion_EnvelopeTypeTx = 100;
+   }
+}
+message FeeBumpTransaction_innerTxUnion_EnvelopeTypeTx {
+   TransactionV1Envelope v1 = 1;
+}
+message Filters {
+   string Type = 1;
+   repeated string ContractIds = 2;
+}
+message GetEventsParams {
+   int64 StartLedger = 1;
+   repeated Filters Filters = 2;
+   Pagination Pagination = 3;
+}
+message GetEventsResult {
+   int64 LatestLedger = 1;
+   repeated Events Events = 2;
+}
+message GetFeeStatsResult {
+   SorobanInclusionFee SorobanInclusionFee = 1;
+   InclusionFee InclusionFee = 2;
+   int64 LatestLedger = 3;
+}
+message GetHealthResult {
+   string Status = 1;
+   int64 LatestLedger = 2;
+   int64 OldestLedger = 3;
+   int64 LedgerRetentionWindow = 4;
+}
+message GetLatestLedgerResult {
+   string Id = 1;
+   int64 ProtocolVersion = 2;
+   int64 Sequence = 3;
+}
+message GetLedgerEntriesParams {
+   repeated string Keys = 1;
+}
+message GetLedgerEntriesResult {
+   int64 LatestLedger = 1;
+   repeated Entries Entries = 2;
+}
+message GetNetworkResult {
+   string Passphrase = 1;
+   int64 ProtocolVersion = 2;
+   string FriendbotUrl = 3;
+}
+message GetTransactionParams {
+   string Hash = 1;
+}
+message GetTransactionResult {
+   GetTransactionResult_Status Status = 1;
+   int64 LatestLedger = 2;
+   string LatestLedgerCloseTime = 3;
+   int64 OldestLedger = 4;
+   string OldestLedgerCloseTime = 5;
+   int64 Ledger = 6;
+   string CreatedAt = 7;
+   int64 ApplicationOrder = 8;
+   bool FeeBump = 9;
+   string EnvelopeXdr = 10;
+   string ResultXdr = 11;
+   string ResultMetaXdr = 12;
+   TransactionResult TransactionResult = 100;
+   TransactionMeta TransactionResultMeta = 101;
+   TransactionEnvelope TransactionEnvelope = 102;
+}
+enum GetTransactionResult_Status {
+   SUCCESS = 0;
+   NOT_FOUND = 1;
+   FAILED = 2;
+}
+message GetTransactionsParams {
+   int64 StartLedger = 1;
+   Pagination Pagination = 2;
+}
+message GetTransactionsResult {
+   repeated Transactions Transactions = 1;
+   int64 LatestLedger = 2;
+   int64 LatestLedgerCloseTimestamp = 3;
+   int64 OldestLedger = 4;
+   int64 OldestLedgerCloseTimestamp = 5;
+}
+message GetVersionInfoResult {
+   string Version = 1;
+   string Commit_hash = 2;
+   string Build_time_stamp = 3;
+   string Captive_core_version = 4;
+   int32 Protocol_version = 5;
+}
+message Hash {
+   bytes InnerValue = 1;
+}
+message HostFunction {
+   oneof subtype {
+      HostFunction_HostFunctionTypeInvokeContract HostFunction_HostFunctionTypeInvokeContract = 100;
+      HostFunction_HostFunctionTypeCreateContract HostFunction_HostFunctionTypeCreateContract = 101;
+      HostFunction_HostFunctionTypeUploadContractWasm HostFunction_HostFunctionTypeUploadContractWasm = 102;
+      HostFunction_HostFunctionTypeCreateContractV2 HostFunction_HostFunctionTypeCreateContractV2 = 103;
+   }
+}
+message HostFunction_HostFunctionTypeCreateContract {
+   CreateContractArgs createContract = 2;
+}
+message HostFunction_HostFunctionTypeCreateContractV2 {
+   CreateContractArgsV2 createContractV2 = 4;
+}
+message HostFunction_HostFunctionTypeInvokeContract {
+   InvokeContractArgs invokeContract = 1;
+}
+message HostFunction_HostFunctionTypeUploadContractWasm {
+   bytes wasm = 3;
+}
+message InclusionFee {
+   string Max = 1;
+   string Min = 2;
+   string Mode = 3;
+   string P10 = 4;
+   string P20 = 5;
+   string P30 = 6;
+   string P40 = 7;
+   string P50 = 8;
+   string P60 = 9;
+   string P70 = 10;
+   string P80 = 11;
+   string P90 = 12;
+   string P95 = 13;
+   string P99 = 14;
+   string TransactionCount = 15;
+   int64 LedgerCount = 16;
+}
+message InflationPayout {
+   AccountID destination = 1;
+   int64 amount = 2;
+}
+message InflationResult {
+   oneof subtype {
+      InflationResult_InflationSuccess InflationResult_InflationSuccess = 100;
+      InflationResult_InflationNotTime InflationResult_InflationNotTime = 101;
+   }
+}
+message InflationResult_InflationNotTime {
+}
+message InflationResult_InflationSuccess {
+   repeated InflationPayout payouts = 1;
+}
+message InnerTransactionResult {
+   int64 feeCharged = 1;
+   InnerTransactionResult_resultUnion result = 2;
+   InnerTransactionResult_extUnion ext = 3;
+}
+message InnerTransactionResultPair {
+   Hash transactionHash = 1;
+   InnerTransactionResult result = 2;
+}
+message InnerTransactionResult_extUnion {
+   oneof subtype {
+      InnerTransactionResult_extUnion_case_0 InnerTransactionResult_extUnion_case_0 = 100;
+   }
+}
+message InnerTransactionResult_extUnion_case_0 {
+}
+message InnerTransactionResult_resultUnion {
+   oneof subtype {
+      InnerTransactionResult_resultUnion_TxSUCCESS InnerTransactionResult_resultUnion_TxSUCCESS = 100;
+      InnerTransactionResult_resultUnion_TxFAILED InnerTransactionResult_resultUnion_TxFAILED = 101;
+      InnerTransactionResult_resultUnion_TxtooEarly InnerTransactionResult_resultUnion_TxtooEarly = 102;
+      InnerTransactionResult_resultUnion_TxtooLate InnerTransactionResult_resultUnion_TxtooLate = 103;
+      InnerTransactionResult_resultUnion_TxmissingOperation InnerTransactionResult_resultUnion_TxmissingOperation = 104;
+      InnerTransactionResult_resultUnion_TxbadSeq InnerTransactionResult_resultUnion_TxbadSeq = 105;
+      InnerTransactionResult_resultUnion_TxbadAuth InnerTransactionResult_resultUnion_TxbadAuth = 106;
+      InnerTransactionResult_resultUnion_TxinsufficientBalance InnerTransactionResult_resultUnion_TxinsufficientBalance = 107;
+      InnerTransactionResult_resultUnion_TxnoAccount InnerTransactionResult_resultUnion_TxnoAccount = 108;
+      InnerTransactionResult_resultUnion_TxinsufficientFee InnerTransactionResult_resultUnion_TxinsufficientFee = 109;
+      InnerTransactionResult_resultUnion_TxbadAuthExtra InnerTransactionResult_resultUnion_TxbadAuthExtra = 110;
+      InnerTransactionResult_resultUnion_TxinternalError InnerTransactionResult_resultUnion_TxinternalError = 111;
+      InnerTransactionResult_resultUnion_TxnotSupported InnerTransactionResult_resultUnion_TxnotSupported = 112;
+      InnerTransactionResult_resultUnion_TxbadSponsorship InnerTransactionResult_resultUnion_TxbadSponsorship = 113;
+      InnerTransactionResult_resultUnion_TxbadMinSeqAgeOrGap InnerTransactionResult_resultUnion_TxbadMinSeqAgeOrGap = 114;
+      InnerTransactionResult_resultUnion_TxMALFORMED InnerTransactionResult_resultUnion_TxMALFORMED = 115;
+      InnerTransactionResult_resultUnion_TxsorobanInvalid InnerTransactionResult_resultUnion_TxsorobanInvalid = 116;
+   }
+}
+message InnerTransactionResult_resultUnion_TxFAILED {
+   repeated OperationResult results = 2;
+}
+message InnerTransactionResult_resultUnion_TxMALFORMED {
+}
+message InnerTransactionResult_resultUnion_TxSUCCESS {
+   repeated OperationResult results = 1;
+}
+message InnerTransactionResult_resultUnion_TxbadAuth {
+}
+message InnerTransactionResult_resultUnion_TxbadAuthExtra {
+}
+message InnerTransactionResult_resultUnion_TxbadMinSeqAgeOrGap {
+}
+message InnerTransactionResult_resultUnion_TxbadSeq {
+}
+message InnerTransactionResult_resultUnion_TxbadSponsorship {
+}
+message InnerTransactionResult_resultUnion_TxinsufficientBalance {
+}
+message InnerTransactionResult_resultUnion_TxinsufficientFee {
+}
+message InnerTransactionResult_resultUnion_TxinternalError {
+}
+message InnerTransactionResult_resultUnion_TxmissingOperation {
+}
+message InnerTransactionResult_resultUnion_TxnoAccount {
+}
+message InnerTransactionResult_resultUnion_TxnotSupported {
+}
+message InnerTransactionResult_resultUnion_TxsorobanInvalid {
+}
+message InnerTransactionResult_resultUnion_TxtooEarly {
+}
+message InnerTransactionResult_resultUnion_TxtooLate {
+}
+message Int128Parts {
+   int64 hi = 1;
+   uint64 lo = 2;
+}
+message Int256Parts {
+   int64 hi_hi = 1;
+   uint64 hi_lo = 2;
+   uint64 lo_hi = 3;
+   uint64 lo_lo = 4;
+}
+message InvokeContractArgs {
+   SCAddress contractAddress = 1;
+   SCSymbol functionName = 2;
+   repeated SCVal args = 3;
+}
+message InvokeHostFunctionOp {
+   HostFunction hostFunction = 1;
+   repeated SorobanAuthorizationEntry auth = 2;
+}
+message InvokeHostFunctionResult {
+   oneof subtype {
+      InvokeHostFunctionResult_InvokeHostFunctionSuccess InvokeHostFunctionResult_InvokeHostFunctionSuccess = 100;
+      InvokeHostFunctionResult_InvokeHostFunctionMalformed InvokeHostFunctionResult_InvokeHostFunctionMalformed = 101;
+      InvokeHostFunctionResult_InvokeHostFunctionTrapped InvokeHostFunctionResult_InvokeHostFunctionTrapped = 102;
+      InvokeHostFunctionResult_InvokeHostFunctionResourceLimitExceeded InvokeHostFunctionResult_InvokeHostFunctionResourceLimitExceeded = 103;
+      InvokeHostFunctionResult_InvokeHostFunctionEntryArchived InvokeHostFunctionResult_InvokeHostFunctionEntryArchived = 104;
+      InvokeHostFunctionResult_InvokeHostFunctionInsufficientRefundableFee InvokeHostFunctionResult_InvokeHostFunctionInsufficientRefundableFee = 105;
+   }
+}
+message InvokeHostFunctionResult_InvokeHostFunctionEntryArchived {
+}
+message InvokeHostFunctionResult_InvokeHostFunctionInsufficientRefundableFee {
+}
+message InvokeHostFunctionResult_InvokeHostFunctionMalformed {
+}
+message InvokeHostFunctionResult_InvokeHostFunctionResourceLimitExceeded {
+}
+message InvokeHostFunctionResult_InvokeHostFunctionSuccess {
+   Hash success = 1;
+}
+message InvokeHostFunctionResult_InvokeHostFunctionTrapped {
+}
+message LedgerBounds {
+   uint32 minLedger = 1;
+   uint32 maxLedger = 2;
+}
+message LedgerEntry {
+   uint32 lastModifiedLedgerSeq = 1;
+   LedgerEntry_dataUnion data = 2;
+   LedgerEntry_extUnion ext = 3;
+}
+message LedgerEntryChange {
+   oneof subtype {
+      LedgerEntryChange_LedgerEntryCreated LedgerEntryChange_LedgerEntryCreated = 100;
+      LedgerEntryChange_LedgerEntryUpdated LedgerEntryChange_LedgerEntryUpdated = 101;
+      LedgerEntryChange_LedgerEntryRemoved LedgerEntryChange_LedgerEntryRemoved = 102;
+      LedgerEntryChange_LedgerEntryState LedgerEntryChange_LedgerEntryState = 103;
+   }
+}
+message LedgerEntryChange_LedgerEntryCreated {
+   LedgerEntry created = 1;
+}
+message LedgerEntryChange_LedgerEntryRemoved {
+   LedgerKey removed = 3;
+}
+message LedgerEntryChange_LedgerEntryState {
+   LedgerEntry state = 4;
+}
+message LedgerEntryChange_LedgerEntryUpdated {
+   LedgerEntry updated = 2;
+}
+message LedgerEntryChanges {
+   repeated LedgerEntryChange InnerValue = 1;
+}
+message LedgerEntryExtensionV1 {
+   SponsorshipDescriptor sponsoringID = 1;
+   LedgerEntryExtensionV1_extUnion ext = 2;
+}
+message LedgerEntryExtensionV1_extUnion {
+   oneof subtype {
+      LedgerEntryExtensionV1_extUnion_case_0 LedgerEntryExtensionV1_extUnion_case_0 = 100;
+   }
+}
+message LedgerEntryExtensionV1_extUnion_case_0 {
+}
+message LedgerEntry_dataUnion {
+   oneof subtype {
+      LedgerEntry_dataUnion_Account LedgerEntry_dataUnion_Account = 100;
+      LedgerEntry_dataUnion_Trustline LedgerEntry_dataUnion_Trustline = 101;
+      LedgerEntry_dataUnion_Offer LedgerEntry_dataUnion_Offer = 102;
+      LedgerEntry_dataUnion_Data LedgerEntry_dataUnion_Data = 103;
+      LedgerEntry_dataUnion_ClaimableBalance LedgerEntry_dataUnion_ClaimableBalance = 104;
+      LedgerEntry_dataUnion_LiquidityPool LedgerEntry_dataUnion_LiquidityPool = 105;
+      LedgerEntry_dataUnion_ContractData LedgerEntry_dataUnion_ContractData = 106;
+      LedgerEntry_dataUnion_ContractCode LedgerEntry_dataUnion_ContractCode = 107;
+      LedgerEntry_dataUnion_ConfigSetting LedgerEntry_dataUnion_ConfigSetting = 108;
+      LedgerEntry_dataUnion_Ttl LedgerEntry_dataUnion_Ttl = 109;
+   }
+}
+message LedgerEntry_dataUnion_Account {
+   AccountEntry account = 1;
+}
+message LedgerEntry_dataUnion_ClaimableBalance {
+   ClaimableBalanceEntry claimableBalance = 5;
+}
+message LedgerEntry_dataUnion_ConfigSetting {
+   ConfigSettingEntry configSetting = 9;
+}
+message LedgerEntry_dataUnion_ContractCode {
+   ContractCodeEntry contractCode = 8;
+}
+message LedgerEntry_dataUnion_ContractData {
+   ContractDataEntry contractData = 7;
+}
+message LedgerEntry_dataUnion_Data {
+   DataEntry data = 4;
+}
+message LedgerEntry_dataUnion_LiquidityPool {
+   LiquidityPoolEntry liquidityPool = 6;
+}
+message LedgerEntry_dataUnion_Offer {
+   OfferEntry offer = 3;
+}
+message LedgerEntry_dataUnion_Trustline {
+   TrustLineEntry trustLine = 2;
+}
+message LedgerEntry_dataUnion_Ttl {
+   TTLEntry ttl = 10;
+}
+message LedgerEntry_extUnion {
+   oneof subtype {
+      LedgerEntry_extUnion_case_0 LedgerEntry_extUnion_case_0 = 100;
+      LedgerEntry_extUnion_case_1 LedgerEntry_extUnion_case_1 = 101;
+   }
+}
+message LedgerEntry_extUnion_case_0 {
+}
+message LedgerEntry_extUnion_case_1 {
+   LedgerEntryExtensionV1 v1 = 1;
+}
+message LedgerFootprint {
+   repeated LedgerKey readOnly = 1;
+   repeated LedgerKey readWrite = 2;
+}
+message LedgerKey {
+   oneof subtype {
+      LedgerKey_Account LedgerKey_Account = 100;
+      LedgerKey_Trustline LedgerKey_Trustline = 101;
+      LedgerKey_Offer LedgerKey_Offer = 102;
+      LedgerKey_Data LedgerKey_Data = 103;
+      LedgerKey_ClaimableBalance LedgerKey_ClaimableBalance = 104;
+      LedgerKey_LiquidityPool LedgerKey_LiquidityPool = 105;
+      LedgerKey_ContractData LedgerKey_ContractData = 106;
+      LedgerKey_ContractCode LedgerKey_ContractCode = 107;
+      LedgerKey_ConfigSetting LedgerKey_ConfigSetting = 108;
+      LedgerKey_Ttl LedgerKey_Ttl = 109;
+   }
+}
+message LedgerKey_Account {
+   LedgerKey_accountStruct account = 1;
+}
+message LedgerKey_ClaimableBalance {
+   LedgerKey_claimableBalanceStruct claimableBalance = 5;
+}
+message LedgerKey_ConfigSetting {
+   LedgerKey_configSettingStruct configSetting = 9;
+}
+message LedgerKey_ContractCode {
+   LedgerKey_contractCodeStruct contractCode = 8;
+}
+message LedgerKey_ContractData {
+   LedgerKey_contractDataStruct contractData = 7;
+}
+message LedgerKey_Data {
+   LedgerKey_dataStruct data = 4;
+}
+message LedgerKey_LiquidityPool {
+   LedgerKey_liquidityPoolStruct liquidityPool = 6;
+}
+message LedgerKey_Offer {
+   LedgerKey_offerStruct offer = 3;
+}
+message LedgerKey_Trustline {
+   LedgerKey_trustLineStruct trustLine = 2;
+}
+message LedgerKey_Ttl {
+   LedgerKey_ttlStruct ttl = 10;
+}
+message LedgerKey_accountStruct {
+   AccountID accountID = 1;
+}
+message LedgerKey_claimableBalanceStruct {
+   ClaimableBalanceID balanceID = 1;
+}
+message LedgerKey_configSettingStruct {
+   ConfigSettingID configSettingID = 1;
+}
+message LedgerKey_contractCodeStruct {
+   Hash hash = 1;
+}
+message LedgerKey_contractDataStruct {
+   SCAddress contract = 1;
+   SCVal key = 2;
+   ContractDataDurability durability = 3;
+}
+message LedgerKey_dataStruct {
+   AccountID accountID = 1;
+   string64 dataName = 2;
+}
+message LedgerKey_liquidityPoolStruct {
+   PoolID liquidityPoolID = 1;
+}
+message LedgerKey_offerStruct {
+   AccountID sellerID = 1;
+   int64 offerID = 2;
+}
+message LedgerKey_trustLineStruct {
+   AccountID accountID = 1;
+   TrustLineAsset asset = 2;
+}
+message LedgerKey_ttlStruct {
+   Hash keyHash = 1;
+}
+message Liabilities {
+   int64 buying = 1;
+   int64 selling = 2;
+}
+message LiquidityPoolConstantProductParameters {
+   Asset assetA = 1;
+   Asset assetB = 2;
+   int32 fee = 3;
+}
+message LiquidityPoolDepositOp {
+   PoolID liquidityPoolID = 1;
+   int64 maxAmountA = 2;
+   int64 maxAmountB = 3;
+   Price minPrice = 4;
+   Price maxPrice = 5;
+}
+message LiquidityPoolDepositResult {
+   oneof subtype {
+      LiquidityPoolDepositResult_LiquidityPoolDepositSuccess LiquidityPoolDepositResult_LiquidityPoolDepositSuccess = 100;
+      LiquidityPoolDepositResult_LiquidityPoolDepositMalformed LiquidityPoolDepositResult_LiquidityPoolDepositMalformed = 101;
+      LiquidityPoolDepositResult_LiquidityPoolDepositNoTrust LiquidityPoolDepositResult_LiquidityPoolDepositNoTrust = 102;
+      LiquidityPoolDepositResult_LiquidityPoolDepositNotAuthorized LiquidityPoolDepositResult_LiquidityPoolDepositNotAuthorized = 103;
+      LiquidityPoolDepositResult_LiquidityPoolDepositUnderfunded LiquidityPoolDepositResult_LiquidityPoolDepositUnderfunded = 104;
+      LiquidityPoolDepositResult_LiquidityPoolDepositLineFull LiquidityPoolDepositResult_LiquidityPoolDepositLineFull = 105;
+      LiquidityPoolDepositResult_LiquidityPoolDepositBadPrice LiquidityPoolDepositResult_LiquidityPoolDepositBadPrice = 106;
+      LiquidityPoolDepositResult_LiquidityPoolDepositPoolFull LiquidityPoolDepositResult_LiquidityPoolDepositPoolFull = 107;
+   }
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositBadPrice {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositLineFull {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositMalformed {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositNoTrust {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositNotAuthorized {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositPoolFull {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositSuccess {
+}
+message LiquidityPoolDepositResult_LiquidityPoolDepositUnderfunded {
+}
+message LiquidityPoolEntry {
+   PoolID liquidityPoolID = 1;
+   LiquidityPoolEntry_bodyUnion body = 2;
+}
+message LiquidityPoolEntry_bodyUnion {
+   oneof subtype {
+      LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProduct LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProduct = 100;
+   }
+}
+message LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProduct {
+   LiquidityPoolEntry_bodyUnion_constantProductStruct constantProduct = 1;
+}
+message LiquidityPoolEntry_bodyUnion_constantProductStruct {
+   LiquidityPoolConstantProductParameters _params = 1;
+   int64 reserveA = 2;
+   int64 reserveB = 3;
+   int64 totalPoolShares = 4;
+   int64 poolSharesTrustLineCount = 5;
+}
+message LiquidityPoolParameters {
+   oneof subtype {
+      LiquidityPoolParameters_LiquidityPoolConstantProduct LiquidityPoolParameters_LiquidityPoolConstantProduct = 100;
+   }
+}
+message LiquidityPoolParameters_LiquidityPoolConstantProduct {
+   LiquidityPoolConstantProductParameters constantProduct = 1;
+}
+message LiquidityPoolWithdrawOp {
+   PoolID liquidityPoolID = 1;
+   int64 amount = 2;
+   int64 minAmountA = 3;
+   int64 minAmountB = 4;
+}
+message LiquidityPoolWithdrawResult {
+   oneof subtype {
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawSuccess LiquidityPoolWithdrawResult_LiquidityPoolWithdrawSuccess = 100;
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawMalformed LiquidityPoolWithdrawResult_LiquidityPoolWithdrawMalformed = 101;
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawNoTrust LiquidityPoolWithdrawResult_LiquidityPoolWithdrawNoTrust = 102;
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderfunded LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderfunded = 103;
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawLineFull LiquidityPoolWithdrawResult_LiquidityPoolWithdrawLineFull = 104;
+      LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderMinimum LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderMinimum = 105;
+   }
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawLineFull {
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawMalformed {
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawNoTrust {
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawSuccess {
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderMinimum {
+}
+message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderfunded {
+}
+message ManageBuyOfferOp {
+   Asset selling = 1;
+   Asset buying = 2;
+   int64 buyAmount = 3;
+   Price price = 4;
+   int64 offerID = 5;
+}
+message ManageBuyOfferResult {
+   oneof subtype {
+      ManageBuyOfferResult_ManageBuyOfferSuccess ManageBuyOfferResult_ManageBuyOfferSuccess = 100;
+      ManageBuyOfferResult_ManageBuyOfferMalformed ManageBuyOfferResult_ManageBuyOfferMalformed = 101;
+      ManageBuyOfferResult_ManageBuyOfferSellNoTrust ManageBuyOfferResult_ManageBuyOfferSellNoTrust = 102;
+      ManageBuyOfferResult_ManageBuyOfferBuyNoTrust ManageBuyOfferResult_ManageBuyOfferBuyNoTrust = 103;
+      ManageBuyOfferResult_ManageBuyOfferSellNotAuthorized ManageBuyOfferResult_ManageBuyOfferSellNotAuthorized = 104;
+      ManageBuyOfferResult_ManageBuyOfferBuyNotAuthorized ManageBuyOfferResult_ManageBuyOfferBuyNotAuthorized = 105;
+      ManageBuyOfferResult_ManageBuyOfferLineFull ManageBuyOfferResult_ManageBuyOfferLineFull = 106;
+      ManageBuyOfferResult_ManageBuyOfferUnderfunded ManageBuyOfferResult_ManageBuyOfferUnderfunded = 107;
+      ManageBuyOfferResult_ManageBuyOfferCrossSelf ManageBuyOfferResult_ManageBuyOfferCrossSelf = 108;
+      ManageBuyOfferResult_ManageBuyOfferSellNoIssuer ManageBuyOfferResult_ManageBuyOfferSellNoIssuer = 109;
+      ManageBuyOfferResult_ManageBuyOfferBuyNoIssuer ManageBuyOfferResult_ManageBuyOfferBuyNoIssuer = 110;
+      ManageBuyOfferResult_ManageBuyOfferNotFound ManageBuyOfferResult_ManageBuyOfferNotFound = 111;
+      ManageBuyOfferResult_ManageBuyOfferLowReserve ManageBuyOfferResult_ManageBuyOfferLowReserve = 112;
+   }
+}
+message ManageBuyOfferResult_ManageBuyOfferBuyNoIssuer {
+}
+message ManageBuyOfferResult_ManageBuyOfferBuyNoTrust {
+}
+message ManageBuyOfferResult_ManageBuyOfferBuyNotAuthorized {
+}
+message ManageBuyOfferResult_ManageBuyOfferCrossSelf {
+}
+message ManageBuyOfferResult_ManageBuyOfferLineFull {
+}
+message ManageBuyOfferResult_ManageBuyOfferLowReserve {
+}
+message ManageBuyOfferResult_ManageBuyOfferMalformed {
+}
+message ManageBuyOfferResult_ManageBuyOfferNotFound {
+}
+message ManageBuyOfferResult_ManageBuyOfferSellNoIssuer {
+}
+message ManageBuyOfferResult_ManageBuyOfferSellNoTrust {
+}
+message ManageBuyOfferResult_ManageBuyOfferSellNotAuthorized {
+}
+message ManageBuyOfferResult_ManageBuyOfferSuccess {
+   ManageOfferSuccessResult success = 1;
+}
+message ManageBuyOfferResult_ManageBuyOfferUnderfunded {
+}
+message ManageDataOp {
+   string64 dataName = 1;
+   DataValue dataValue = 2;
+}
+message ManageDataResult {
+   oneof subtype {
+      ManageDataResult_ManageDataSuccess ManageDataResult_ManageDataSuccess = 100;
+      ManageDataResult_ManageDataNotSupportedYet ManageDataResult_ManageDataNotSupportedYet = 101;
+      ManageDataResult_ManageDataNameNotFound ManageDataResult_ManageDataNameNotFound = 102;
+      ManageDataResult_ManageDataLowReserve ManageDataResult_ManageDataLowReserve = 103;
+      ManageDataResult_ManageDataInvalidName ManageDataResult_ManageDataInvalidName = 104;
+   }
+}
+message ManageDataResult_ManageDataInvalidName {
+}
+message ManageDataResult_ManageDataLowReserve {
+}
+message ManageDataResult_ManageDataNameNotFound {
+}
+message ManageDataResult_ManageDataNotSupportedYet {
+}
+message ManageDataResult_ManageDataSuccess {
+}
+message ManageOfferSuccessResult {
+   repeated ClaimAtom offersClaimed = 1;
+   ManageOfferSuccessResult_offerUnion offer = 2;
+}
+message ManageOfferSuccessResult_offerUnion {
+   oneof subtype {
+      ManageOfferSuccessResult_offerUnion_ManageOfferCreated ManageOfferSuccessResult_offerUnion_ManageOfferCreated = 100;
+      ManageOfferSuccessResult_offerUnion_ManageOfferUpdated ManageOfferSuccessResult_offerUnion_ManageOfferUpdated = 101;
+      ManageOfferSuccessResult_offerUnion_ManageOfferDeleted ManageOfferSuccessResult_offerUnion_ManageOfferDeleted = 102;
+   }
+}
+message ManageOfferSuccessResult_offerUnion_ManageOfferCreated {
+   OfferEntry offer = 1;
+}
+message ManageOfferSuccessResult_offerUnion_ManageOfferDeleted {
+}
+message ManageOfferSuccessResult_offerUnion_ManageOfferUpdated {
+   OfferEntry offer = 2;
+}
+message ManageSellOfferOp {
+   Asset selling = 1;
+   Asset buying = 2;
+   int64 amount = 3;
+   Price price = 4;
+   int64 offerID = 5;
+}
+message ManageSellOfferResult {
+   oneof subtype {
+      ManageSellOfferResult_ManageSellOfferSuccess ManageSellOfferResult_ManageSellOfferSuccess = 100;
+      ManageSellOfferResult_ManageSellOfferMalformed ManageSellOfferResult_ManageSellOfferMalformed = 101;
+      ManageSellOfferResult_ManageSellOfferSellNoTrust ManageSellOfferResult_ManageSellOfferSellNoTrust = 102;
+      ManageSellOfferResult_ManageSellOfferBuyNoTrust ManageSellOfferResult_ManageSellOfferBuyNoTrust = 103;
+      ManageSellOfferResult_ManageSellOfferSellNotAuthorized ManageSellOfferResult_ManageSellOfferSellNotAuthorized = 104;
+      ManageSellOfferResult_ManageSellOfferBuyNotAuthorized ManageSellOfferResult_ManageSellOfferBuyNotAuthorized = 105;
+      ManageSellOfferResult_ManageSellOfferLineFull ManageSellOfferResult_ManageSellOfferLineFull = 106;
+      ManageSellOfferResult_ManageSellOfferUnderfunded ManageSellOfferResult_ManageSellOfferUnderfunded = 107;
+      ManageSellOfferResult_ManageSellOfferCrossSelf ManageSellOfferResult_ManageSellOfferCrossSelf = 108;
+      ManageSellOfferResult_ManageSellOfferSellNoIssuer ManageSellOfferResult_ManageSellOfferSellNoIssuer = 109;
+      ManageSellOfferResult_ManageSellOfferBuyNoIssuer ManageSellOfferResult_ManageSellOfferBuyNoIssuer = 110;
+      ManageSellOfferResult_ManageSellOfferNotFound ManageSellOfferResult_ManageSellOfferNotFound = 111;
+      ManageSellOfferResult_ManageSellOfferLowReserve ManageSellOfferResult_ManageSellOfferLowReserve = 112;
+   }
+}
+message ManageSellOfferResult_ManageSellOfferBuyNoIssuer {
+}
+message ManageSellOfferResult_ManageSellOfferBuyNoTrust {
+}
+message ManageSellOfferResult_ManageSellOfferBuyNotAuthorized {
+}
+message ManageSellOfferResult_ManageSellOfferCrossSelf {
+}
+message ManageSellOfferResult_ManageSellOfferLineFull {
+}
+message ManageSellOfferResult_ManageSellOfferLowReserve {
+}
+message ManageSellOfferResult_ManageSellOfferMalformed {
+}
+message ManageSellOfferResult_ManageSellOfferNotFound {
+}
+message ManageSellOfferResult_ManageSellOfferSellNoIssuer {
+}
+message ManageSellOfferResult_ManageSellOfferSellNoTrust {
+}
+message ManageSellOfferResult_ManageSellOfferSellNotAuthorized {
+}
+message ManageSellOfferResult_ManageSellOfferSuccess {
+   ManageOfferSuccessResult success = 1;
+}
+message ManageSellOfferResult_ManageSellOfferUnderfunded {
+}
+message Memo {
+   oneof subtype {
+      Memo_MemoNone Memo_MemoNone = 100;
+      Memo_MemoText Memo_MemoText = 101;
+      Memo_MemoId Memo_MemoId = 102;
+      Memo_MemoHash Memo_MemoHash = 103;
+      Memo_MemoReturn Memo_MemoReturn = 104;
+   }
+}
+message Memo_MemoHash {
+   Hash hash = 3;
+}
+message Memo_MemoId {
+   uint64 id = 2;
+}
+message Memo_MemoNone {
+}
+message Memo_MemoReturn {
+   Hash retHash = 4;
+}
+message Memo_MemoText {
+   string text = 1;
+}
+message MuxedAccount {
+   oneof subtype {
+      MuxedAccount_KeyTypeEd25519 MuxedAccount_KeyTypeEd25519 = 100;
+      MuxedAccount_KeyTypeMuxedEd25519 MuxedAccount_KeyTypeMuxedEd25519 = 101;
+   }
+}
+message MuxedAccount_KeyTypeEd25519 {
+   uint256 ed25519 = 1;
+}
+message MuxedAccount_KeyTypeMuxedEd25519 {
+   MuxedAccount_med25519Struct med25519 = 2;
+}
+message MuxedAccount_med25519Struct {
+   uint64 id = 1;
+   uint256 ed25519 = 2;
+}
+message OfferEntry {
+   AccountID sellerID = 1;
+   int64 offerID = 2;
+   Asset selling = 3;
+   Asset buying = 4;
+   int64 amount = 5;
+   Price price = 6;
+   uint32 flags = 7;
+   OfferEntry_extUnion ext = 8;
+}
+message OfferEntry_extUnion {
+   oneof subtype {
+      OfferEntry_extUnion_case_0 OfferEntry_extUnion_case_0 = 100;
+   }
+}
+message OfferEntry_extUnion_case_0 {
+}
+message Operation {
+   MuxedAccount sourceAccount = 1;
+   Operation_bodyUnion body = 2;
+}
+message OperationMeta {
+   LedgerEntryChanges changes = 1;
+}
+message OperationResult {
+   oneof subtype {
+      OperationResult_OpINNER OperationResult_OpINNER = 100;
+      OperationResult_OpbadAuth OperationResult_OpbadAuth = 101;
+      OperationResult_OpnoAccount OperationResult_OpnoAccount = 102;
+      OperationResult_OpnotSupported OperationResult_OpnotSupported = 103;
+      OperationResult_OptooManySubentries OperationResult_OptooManySubentries = 104;
+      OperationResult_OpexceededWorkLimit OperationResult_OpexceededWorkLimit = 105;
+      OperationResult_OptooManySponsoring OperationResult_OptooManySponsoring = 106;
+   }
+}
+message OperationResult_OpINNER {
+   OperationResult_trUnion tr = 1;
+}
+message OperationResult_OpbadAuth {
+}
+message OperationResult_OpexceededWorkLimit {
+}
+message OperationResult_OpnoAccount {
+}
+message OperationResult_OpnotSupported {
+}
+message OperationResult_OptooManySponsoring {
+}
+message OperationResult_OptooManySubentries {
+}
+message OperationResult_trUnion {
+   oneof subtype {
+      OperationResult_trUnion_CreateAccount OperationResult_trUnion_CreateAccount = 100;
+      OperationResult_trUnion_Payment OperationResult_trUnion_Payment = 101;
+      OperationResult_trUnion_PathPaymentStrictReceive OperationResult_trUnion_PathPaymentStrictReceive = 102;
+      OperationResult_trUnion_ManageSellOffer OperationResult_trUnion_ManageSellOffer = 103;
+      OperationResult_trUnion_CreatePassiveSellOffer OperationResult_trUnion_CreatePassiveSellOffer = 104;
+      OperationResult_trUnion_SetOptions OperationResult_trUnion_SetOptions = 105;
+      OperationResult_trUnion_ChangeTrust OperationResult_trUnion_ChangeTrust = 106;
+      OperationResult_trUnion_AllowTrust OperationResult_trUnion_AllowTrust = 107;
+      OperationResult_trUnion_AccountMerge OperationResult_trUnion_AccountMerge = 108;
+      OperationResult_trUnion_Inflation OperationResult_trUnion_Inflation = 109;
+      OperationResult_trUnion_ManageData OperationResult_trUnion_ManageData = 110;
+      OperationResult_trUnion_BumpSequence OperationResult_trUnion_BumpSequence = 111;
+      OperationResult_trUnion_ManageBuyOffer OperationResult_trUnion_ManageBuyOffer = 112;
+      OperationResult_trUnion_PathPaymentStrictSend OperationResult_trUnion_PathPaymentStrictSend = 113;
+      OperationResult_trUnion_CreateClaimableBalance OperationResult_trUnion_CreateClaimableBalance = 114;
+      OperationResult_trUnion_ClaimClaimableBalance OperationResult_trUnion_ClaimClaimableBalance = 115;
+      OperationResult_trUnion_BeginSponsoringFutureReserves OperationResult_trUnion_BeginSponsoringFutureReserves = 116;
+      OperationResult_trUnion_EndSponsoringFutureReserves OperationResult_trUnion_EndSponsoringFutureReserves = 117;
+      OperationResult_trUnion_RevokeSponsorship OperationResult_trUnion_RevokeSponsorship = 118;
+      OperationResult_trUnion_Clawback OperationResult_trUnion_Clawback = 119;
+      OperationResult_trUnion_ClawbackClaimableBalance OperationResult_trUnion_ClawbackClaimableBalance = 120;
+      OperationResult_trUnion_SetTrustLineFlags OperationResult_trUnion_SetTrustLineFlags = 121;
+      OperationResult_trUnion_LiquidityPoolDeposit OperationResult_trUnion_LiquidityPoolDeposit = 122;
+      OperationResult_trUnion_LiquidityPoolWithdraw OperationResult_trUnion_LiquidityPoolWithdraw = 123;
+      OperationResult_trUnion_InvokeHostFunction OperationResult_trUnion_InvokeHostFunction = 124;
+      OperationResult_trUnion_ExtendFootprintTtl OperationResult_trUnion_ExtendFootprintTtl = 125;
+      OperationResult_trUnion_RestoreFootprint OperationResult_trUnion_RestoreFootprint = 126;
+   }
+}
+message OperationResult_trUnion_AccountMerge {
+   AccountMergeResult accountMergeResult = 9;
+}
+message OperationResult_trUnion_AllowTrust {
+   AllowTrustResult allowTrustResult = 8;
+}
+message OperationResult_trUnion_BeginSponsoringFutureReserves {
+   BeginSponsoringFutureReservesResult beginSponsoringFutureReservesResult = 17;
+}
+message OperationResult_trUnion_BumpSequence {
+   BumpSequenceResult bumpSeqResult = 12;
+}
+message OperationResult_trUnion_ChangeTrust {
+   ChangeTrustResult changeTrustResult = 7;
+}
+message OperationResult_trUnion_ClaimClaimableBalance {
+   ClaimClaimableBalanceResult claimClaimableBalanceResult = 16;
+}
+message OperationResult_trUnion_Clawback {
+   ClawbackResult clawbackResult = 20;
+}
+message OperationResult_trUnion_ClawbackClaimableBalance {
+   ClawbackClaimableBalanceResult clawbackClaimableBalanceResult = 21;
+}
+message OperationResult_trUnion_CreateAccount {
+   CreateAccountResult createAccountResult = 1;
+}
+message OperationResult_trUnion_CreateClaimableBalance {
+   CreateClaimableBalanceResult createClaimableBalanceResult = 15;
+}
+message OperationResult_trUnion_CreatePassiveSellOffer {
+   ManageSellOfferResult createPassiveSellOfferResult = 5;
+}
+message OperationResult_trUnion_EndSponsoringFutureReserves {
+   EndSponsoringFutureReservesResult endSponsoringFutureReservesResult = 18;
+}
+message OperationResult_trUnion_ExtendFootprintTtl {
+   ExtendFootprintTTLResult extendFootprintTTLResult = 26;
+}
+message OperationResult_trUnion_Inflation {
+   InflationResult inflationResult = 10;
+}
+message OperationResult_trUnion_InvokeHostFunction {
+   InvokeHostFunctionResult invokeHostFunctionResult = 25;
+}
+message OperationResult_trUnion_LiquidityPoolDeposit {
+   LiquidityPoolDepositResult liquidityPoolDepositResult = 23;
+}
+message OperationResult_trUnion_LiquidityPoolWithdraw {
+   LiquidityPoolWithdrawResult liquidityPoolWithdrawResult = 24;
+}
+message OperationResult_trUnion_ManageBuyOffer {
+   ManageBuyOfferResult manageBuyOfferResult = 13;
+}
+message OperationResult_trUnion_ManageData {
+   ManageDataResult manageDataResult = 11;
+}
+message OperationResult_trUnion_ManageSellOffer {
+   ManageSellOfferResult manageSellOfferResult = 4;
+}
+message OperationResult_trUnion_PathPaymentStrictReceive {
+   PathPaymentStrictReceiveResult pathPaymentStrictReceiveResult = 3;
+}
+message OperationResult_trUnion_PathPaymentStrictSend {
+   PathPaymentStrictSendResult pathPaymentStrictSendResult = 14;
+}
+message OperationResult_trUnion_Payment {
+   PaymentResult paymentResult = 2;
+}
+message OperationResult_trUnion_RestoreFootprint {
+   RestoreFootprintResult restoreFootprintResult = 27;
+}
+message OperationResult_trUnion_RevokeSponsorship {
+   RevokeSponsorshipResult revokeSponsorshipResult = 19;
+}
+message OperationResult_trUnion_SetOptions {
+   SetOptionsResult setOptionsResult = 6;
+}
+message OperationResult_trUnion_SetTrustLineFlags {
+   SetTrustLineFlagsResult setTrustLineFlagsResult = 22;
+}
+message Operation_bodyUnion {
+   oneof subtype {
+      Operation_bodyUnion_CreateAccount Operation_bodyUnion_CreateAccount = 100;
+      Operation_bodyUnion_Payment Operation_bodyUnion_Payment = 101;
+      Operation_bodyUnion_PathPaymentStrictReceive Operation_bodyUnion_PathPaymentStrictReceive = 102;
+      Operation_bodyUnion_ManageSellOffer Operation_bodyUnion_ManageSellOffer = 103;
+      Operation_bodyUnion_CreatePassiveSellOffer Operation_bodyUnion_CreatePassiveSellOffer = 104;
+      Operation_bodyUnion_SetOptions Operation_bodyUnion_SetOptions = 105;
+      Operation_bodyUnion_ChangeTrust Operation_bodyUnion_ChangeTrust = 106;
+      Operation_bodyUnion_AllowTrust Operation_bodyUnion_AllowTrust = 107;
+      Operation_bodyUnion_AccountMerge Operation_bodyUnion_AccountMerge = 108;
+      Operation_bodyUnion_Inflation Operation_bodyUnion_Inflation = 109;
+      Operation_bodyUnion_ManageData Operation_bodyUnion_ManageData = 110;
+      Operation_bodyUnion_BumpSequence Operation_bodyUnion_BumpSequence = 111;
+      Operation_bodyUnion_ManageBuyOffer Operation_bodyUnion_ManageBuyOffer = 112;
+      Operation_bodyUnion_PathPaymentStrictSend Operation_bodyUnion_PathPaymentStrictSend = 113;
+      Operation_bodyUnion_CreateClaimableBalance Operation_bodyUnion_CreateClaimableBalance = 114;
+      Operation_bodyUnion_ClaimClaimableBalance Operation_bodyUnion_ClaimClaimableBalance = 115;
+      Operation_bodyUnion_BeginSponsoringFutureReserves Operation_bodyUnion_BeginSponsoringFutureReserves = 116;
+      Operation_bodyUnion_EndSponsoringFutureReserves Operation_bodyUnion_EndSponsoringFutureReserves = 117;
+      Operation_bodyUnion_RevokeSponsorship Operation_bodyUnion_RevokeSponsorship = 118;
+      Operation_bodyUnion_Clawback Operation_bodyUnion_Clawback = 119;
+      Operation_bodyUnion_ClawbackClaimableBalance Operation_bodyUnion_ClawbackClaimableBalance = 120;
+      Operation_bodyUnion_SetTrustLineFlags Operation_bodyUnion_SetTrustLineFlags = 121;
+      Operation_bodyUnion_LiquidityPoolDeposit Operation_bodyUnion_LiquidityPoolDeposit = 122;
+      Operation_bodyUnion_LiquidityPoolWithdraw Operation_bodyUnion_LiquidityPoolWithdraw = 123;
+      Operation_bodyUnion_InvokeHostFunction Operation_bodyUnion_InvokeHostFunction = 124;
+      Operation_bodyUnion_ExtendFootprintTtl Operation_bodyUnion_ExtendFootprintTtl = 125;
+      Operation_bodyUnion_RestoreFootprint Operation_bodyUnion_RestoreFootprint = 126;
+   }
+}
+message Operation_bodyUnion_AccountMerge {
+   MuxedAccount destination = 9;
+}
+message Operation_bodyUnion_AllowTrust {
+   AllowTrustOp allowTrustOp = 8;
+}
+message Operation_bodyUnion_BeginSponsoringFutureReserves {
+   BeginSponsoringFutureReservesOp beginSponsoringFutureReservesOp = 16;
+}
+message Operation_bodyUnion_BumpSequence {
+   BumpSequenceOp bumpSequenceOp = 11;
+}
+message Operation_bodyUnion_ChangeTrust {
+   ChangeTrustOp changeTrustOp = 7;
+}
+message Operation_bodyUnion_ClaimClaimableBalance {
+   ClaimClaimableBalanceOp claimClaimableBalanceOp = 15;
+}
+message Operation_bodyUnion_Clawback {
+   ClawbackOp clawbackOp = 18;
+}
+message Operation_bodyUnion_ClawbackClaimableBalance {
+   ClawbackClaimableBalanceOp clawbackClaimableBalanceOp = 19;
+}
+message Operation_bodyUnion_CreateAccount {
+   CreateAccountOp createAccountOp = 1;
+}
+message Operation_bodyUnion_CreateClaimableBalance {
+   CreateClaimableBalanceOp createClaimableBalanceOp = 14;
+}
+message Operation_bodyUnion_CreatePassiveSellOffer {
+   CreatePassiveSellOfferOp createPassiveSellOfferOp = 5;
+}
+message Operation_bodyUnion_EndSponsoringFutureReserves {
+}
+message Operation_bodyUnion_ExtendFootprintTtl {
+   ExtendFootprintTTLOp extendFootprintTTLOp = 24;
+}
+message Operation_bodyUnion_Inflation {
+}
+message Operation_bodyUnion_InvokeHostFunction {
+   InvokeHostFunctionOp invokeHostFunctionOp = 23;
+}
+message Operation_bodyUnion_LiquidityPoolDeposit {
+   LiquidityPoolDepositOp liquidityPoolDepositOp = 21;
+}
+message Operation_bodyUnion_LiquidityPoolWithdraw {
+   LiquidityPoolWithdrawOp liquidityPoolWithdrawOp = 22;
+}
+message Operation_bodyUnion_ManageBuyOffer {
+   ManageBuyOfferOp manageBuyOfferOp = 12;
+}
+message Operation_bodyUnion_ManageData {
+   ManageDataOp manageDataOp = 10;
+}
+message Operation_bodyUnion_ManageSellOffer {
+   ManageSellOfferOp manageSellOfferOp = 4;
+}
+message Operation_bodyUnion_PathPaymentStrictReceive {
+   PathPaymentStrictReceiveOp pathPaymentStrictReceiveOp = 3;
+}
+message Operation_bodyUnion_PathPaymentStrictSend {
+   PathPaymentStrictSendOp pathPaymentStrictSendOp = 13;
+}
+message Operation_bodyUnion_Payment {
+   PaymentOp paymentOp = 2;
+}
+message Operation_bodyUnion_RestoreFootprint {
+   RestoreFootprintOp restoreFootprintOp = 25;
+}
+message Operation_bodyUnion_RevokeSponsorship {
+   RevokeSponsorshipOp revokeSponsorshipOp = 17;
+}
+message Operation_bodyUnion_SetOptions {
+   SetOptionsOp setOptionsOp = 6;
+}
+message Operation_bodyUnion_SetTrustLineFlags {
+   SetTrustLineFlagsOp setTrustLineFlagsOp = 20;
+}
+message Pagination {
+   string Cursor = 1;
+   int64 Limit = 2;
+}
+message PathPaymentStrictReceiveOp {
+   Asset sendAsset = 1;
+   int64 sendMax = 2;
+   MuxedAccount destination = 3;
+   Asset destAsset = 4;
+   int64 destAmount = 5;
+   repeated Asset path = 6;
+}
+message PathPaymentStrictReceiveResult {
+   oneof subtype {
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSuccess PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSuccess = 100;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveMalformed PathPaymentStrictReceiveResult_PathPaymentStrictReceiveMalformed = 101;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveUnderfunded PathPaymentStrictReceiveResult_PathPaymentStrictReceiveUnderfunded = 102;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNoTrust PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNoTrust = 103;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNotAuthorized PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNotAuthorized = 104;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoDestination PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoDestination = 105;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoTrust PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoTrust = 106;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNotAuthorized PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNotAuthorized = 107;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveLineFull PathPaymentStrictReceiveResult_PathPaymentStrictReceiveLineFull = 108;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoIssuer PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoIssuer = 109;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveTooFewOffers PathPaymentStrictReceiveResult_PathPaymentStrictReceiveTooFewOffers = 110;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOfferCrossSelf PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOfferCrossSelf = 111;
+      PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOverSendmax PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOverSendmax = 112;
+   }
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveLineFull {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveMalformed {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoDestination {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoIssuer {
+   Asset noIssuer = 2;
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNoTrust {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveNotAuthorized {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOfferCrossSelf {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOverSendmax {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNoTrust {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSrcNotAuthorized {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveSuccess {
+   PathPaymentStrictReceiveResult_successStruct success = 1;
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveTooFewOffers {
+}
+message PathPaymentStrictReceiveResult_PathPaymentStrictReceiveUnderfunded {
+}
+message PathPaymentStrictReceiveResult_successStruct {
+   repeated ClaimAtom offers = 1;
+   SimplePaymentResult last = 2;
+}
+message PathPaymentStrictSendOp {
+   Asset sendAsset = 1;
+   int64 sendAmount = 2;
+   MuxedAccount destination = 3;
+   Asset destAsset = 4;
+   int64 destMin = 5;
+   repeated Asset path = 6;
+}
+message PathPaymentStrictSendResult {
+   oneof subtype {
+      PathPaymentStrictSendResult_PathPaymentStrictSendSuccess PathPaymentStrictSendResult_PathPaymentStrictSendSuccess = 100;
+      PathPaymentStrictSendResult_PathPaymentStrictSendMalformed PathPaymentStrictSendResult_PathPaymentStrictSendMalformed = 101;
+      PathPaymentStrictSendResult_PathPaymentStrictSendUnderfunded PathPaymentStrictSendResult_PathPaymentStrictSendUnderfunded = 102;
+      PathPaymentStrictSendResult_PathPaymentStrictSendSrcNoTrust PathPaymentStrictSendResult_PathPaymentStrictSendSrcNoTrust = 103;
+      PathPaymentStrictSendResult_PathPaymentStrictSendSrcNotAuthorized PathPaymentStrictSendResult_PathPaymentStrictSendSrcNotAuthorized = 104;
+      PathPaymentStrictSendResult_PathPaymentStrictSendNoDestination PathPaymentStrictSendResult_PathPaymentStrictSendNoDestination = 105;
+      PathPaymentStrictSendResult_PathPaymentStrictSendNoTrust PathPaymentStrictSendResult_PathPaymentStrictSendNoTrust = 106;
+      PathPaymentStrictSendResult_PathPaymentStrictSendNotAuthorized PathPaymentStrictSendResult_PathPaymentStrictSendNotAuthorized = 107;
+      PathPaymentStrictSendResult_PathPaymentStrictSendLineFull PathPaymentStrictSendResult_PathPaymentStrictSendLineFull = 108;
+      PathPaymentStrictSendResult_PathPaymentStrictSendNoIssuer PathPaymentStrictSendResult_PathPaymentStrictSendNoIssuer = 109;
+      PathPaymentStrictSendResult_PathPaymentStrictSendTooFewOffers PathPaymentStrictSendResult_PathPaymentStrictSendTooFewOffers = 110;
+      PathPaymentStrictSendResult_PathPaymentStrictSendOfferCrossSelf PathPaymentStrictSendResult_PathPaymentStrictSendOfferCrossSelf = 111;
+      PathPaymentStrictSendResult_PathPaymentStrictSendUnderDestmin PathPaymentStrictSendResult_PathPaymentStrictSendUnderDestmin = 112;
+   }
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendLineFull {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendMalformed {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendNoDestination {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendNoIssuer {
+   Asset noIssuer = 2;
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendNoTrust {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendNotAuthorized {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendOfferCrossSelf {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendSrcNoTrust {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendSrcNotAuthorized {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendSuccess {
+   PathPaymentStrictSendResult_successStruct success = 1;
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendTooFewOffers {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendUnderDestmin {
+}
+message PathPaymentStrictSendResult_PathPaymentStrictSendUnderfunded {
+}
+message PathPaymentStrictSendResult_successStruct {
+   repeated ClaimAtom offers = 1;
+   SimplePaymentResult last = 2;
+}
+message PaymentOp {
+   MuxedAccount destination = 1;
+   Asset asset = 2;
+   int64 amount = 3;
+}
+message PaymentResult {
+   oneof subtype {
+      PaymentResult_PaymentSuccess PaymentResult_PaymentSuccess = 100;
+      PaymentResult_PaymentMalformed PaymentResult_PaymentMalformed = 101;
+      PaymentResult_PaymentUnderfunded PaymentResult_PaymentUnderfunded = 102;
+      PaymentResult_PaymentSrcNoTrust PaymentResult_PaymentSrcNoTrust = 103;
+      PaymentResult_PaymentSrcNotAuthorized PaymentResult_PaymentSrcNotAuthorized = 104;
+      PaymentResult_PaymentNoDestination PaymentResult_PaymentNoDestination = 105;
+      PaymentResult_PaymentNoTrust PaymentResult_PaymentNoTrust = 106;
+      PaymentResult_PaymentNotAuthorized PaymentResult_PaymentNotAuthorized = 107;
+      PaymentResult_PaymentLineFull PaymentResult_PaymentLineFull = 108;
+      PaymentResult_PaymentNoIssuer PaymentResult_PaymentNoIssuer = 109;
+   }
+}
+message PaymentResult_PaymentLineFull {
+}
+message PaymentResult_PaymentMalformed {
+}
+message PaymentResult_PaymentNoDestination {
+}
+message PaymentResult_PaymentNoIssuer {
+}
+message PaymentResult_PaymentNoTrust {
+}
+message PaymentResult_PaymentNotAuthorized {
+}
+message PaymentResult_PaymentSrcNoTrust {
+}
+message PaymentResult_PaymentSrcNotAuthorized {
+}
+message PaymentResult_PaymentSuccess {
+}
+message PaymentResult_PaymentUnderfunded {
+}
+message PoolID {
+   Hash InnerValue = 1;
+}
+message Preconditions {
+   oneof subtype {
+      Preconditions_PrecondNone Preconditions_PrecondNone = 100;
+      Preconditions_PrecondTime Preconditions_PrecondTime = 101;
+      Preconditions_PrecondV2 Preconditions_PrecondV2 = 102;
+   }
+}
+message PreconditionsV2 {
+   TimeBounds timeBounds = 1;
+   LedgerBounds ledgerBounds = 2;
+   SequenceNumber minSeqNum = 3;
+   Duration minSeqAge = 4;
+   uint32 minSeqLedgerGap = 5;
+   repeated SignerKey extraSigners = 6;
+}
+message Preconditions_PrecondNone {
+}
+message Preconditions_PrecondTime {
+   TimeBounds timeBounds = 1;
+}
+message Preconditions_PrecondV2 {
+   PreconditionsV2 v2 = 2;
+}
+message Price {
+   int32 n = 1;
+   int32 d = 2;
+}
+message PublicKey {
+   oneof subtype {
+      PublicKey_PublicKeyTypeEd25519 PublicKey_PublicKeyTypeEd25519 = 100;
+   }
+}
+message PublicKey_PublicKeyTypeEd25519 {
+   uint256 ed25519 = 1;
+}
+message ResourceConfigResourceConfig {
+   int64 InstructionLeeway = 1;
+}
+message RestoreFootprintOp {
+   ExtensionPoint ext = 1;
+}
+message RestoreFootprintResult {
+   oneof subtype {
+      RestoreFootprintResult_RestoreFootprintSuccess RestoreFootprintResult_RestoreFootprintSuccess = 100;
+      RestoreFootprintResult_RestoreFootprintMalformed RestoreFootprintResult_RestoreFootprintMalformed = 101;
+      RestoreFootprintResult_RestoreFootprintResourceLimitExceeded RestoreFootprintResult_RestoreFootprintResourceLimitExceeded = 102;
+      RestoreFootprintResult_RestoreFootprintInsufficientRefundableFee RestoreFootprintResult_RestoreFootprintInsufficientRefundableFee = 103;
+   }
+}
+message RestoreFootprintResult_RestoreFootprintInsufficientRefundableFee {
+}
+message RestoreFootprintResult_RestoreFootprintMalformed {
+}
+message RestoreFootprintResult_RestoreFootprintResourceLimitExceeded {
+}
+message RestoreFootprintResult_RestoreFootprintSuccess {
+}
+message RestorePreamble {
+   string MinResourceFee = 1;
+   string TransactionData = 2;
+   SorobanTransactionData SorobanTransactionData = 100;
+}
+message Results {
+   string Xdr = 1;
+   repeated string Auth = 2;
+   SCVal Result = 100;
+   repeated SorobanAuthorizationEntry SorobanAuthorizations = 101;
+}
+message RevokeSponsorshipOp {
+   oneof subtype {
+      RevokeSponsorshipOp_RevokeSponsorshipLedgerEntry RevokeSponsorshipOp_RevokeSponsorshipLedgerEntry = 100;
+      RevokeSponsorshipOp_RevokeSponsorshipSigner RevokeSponsorshipOp_RevokeSponsorshipSigner = 101;
+   }
+}
+message RevokeSponsorshipOp_RevokeSponsorshipLedgerEntry {
+   LedgerKey ledgerKey = 1;
+}
+message RevokeSponsorshipOp_RevokeSponsorshipSigner {
+   RevokeSponsorshipOp_signerStruct signer = 2;
+}
+message RevokeSponsorshipOp_signerStruct {
+   AccountID accountID = 1;
+   SignerKey signerKey = 2;
+}
+message RevokeSponsorshipResult {
+   oneof subtype {
+      RevokeSponsorshipResult_RevokeSponsorshipSuccess RevokeSponsorshipResult_RevokeSponsorshipSuccess = 100;
+      RevokeSponsorshipResult_RevokeSponsorshipDoesNotExist RevokeSponsorshipResult_RevokeSponsorshipDoesNotExist = 101;
+      RevokeSponsorshipResult_RevokeSponsorshipNotSponsor RevokeSponsorshipResult_RevokeSponsorshipNotSponsor = 102;
+      RevokeSponsorshipResult_RevokeSponsorshipLowReserve RevokeSponsorshipResult_RevokeSponsorshipLowReserve = 103;
+      RevokeSponsorshipResult_RevokeSponsorshipOnlyTransferable RevokeSponsorshipResult_RevokeSponsorshipOnlyTransferable = 104;
+      RevokeSponsorshipResult_RevokeSponsorshipMalformed RevokeSponsorshipResult_RevokeSponsorshipMalformed = 105;
+   }
+}
+message RevokeSponsorshipResult_RevokeSponsorshipDoesNotExist {
+}
+message RevokeSponsorshipResult_RevokeSponsorshipLowReserve {
+}
+message RevokeSponsorshipResult_RevokeSponsorshipMalformed {
+}
+message RevokeSponsorshipResult_RevokeSponsorshipNotSponsor {
+}
+message RevokeSponsorshipResult_RevokeSponsorshipOnlyTransferable {
+}
+message RevokeSponsorshipResult_RevokeSponsorshipSuccess {
+}
+message SCAddress {
+   oneof subtype {
+      SCAddress_ScAddressTypeAccount SCAddress_ScAddressTypeAccount = 100;
+      SCAddress_ScAddressTypeContract SCAddress_ScAddressTypeContract = 101;
+   }
+}
+message SCAddress_ScAddressTypeAccount {
+   AccountID accountId = 1;
+}
+message SCAddress_ScAddressTypeContract {
+   Hash contractId = 2;
+}
+message SCBytes {
+   bytes InnerValue = 1;
+}
+message SCContractInstance {
+   ContractExecutable executable = 1;
+   SCMap storage = 2;
+}
+message SCError {
+   oneof subtype {
+      SCError_SceContract SCError_SceContract = 100;
+      SCError_SceWasmVm SCError_SceWasmVm = 101;
+      SCError_SceContext SCError_SceContext = 102;
+      SCError_SceStorage SCError_SceStorage = 103;
+      SCError_SceObject SCError_SceObject = 104;
+      SCError_SceCrypto SCError_SceCrypto = 105;
+      SCError_SceEvents SCError_SceEvents = 106;
+      SCError_SceBudget SCError_SceBudget = 107;
+      SCError_SceValue SCError_SceValue = 108;
+      SCError_SceAuth SCError_SceAuth = 109;
+   }
+}
+enum SCErrorCode {
+   SCEC_ARITH_DOMAIN = 0;
+   SCEC_INDEX_BOUNDS = 1;
+   SCEC_INVALID_INPUT = 2;
+   SCEC_MISSING_VALUE = 3;
+   SCEC_EXISTING_VALUE = 4;
+   SCEC_EXCEEDED_LIMIT = 5;
+   SCEC_INVALID_ACTION = 6;
+   SCEC_INTERNAL_ERROR = 7;
+   SCEC_UNEXPECTED_TYPE = 8;
+   SCEC_UNEXPECTED_SIZE = 9;
+}
+message SCError_SceAuth {
+   SCErrorCode code = 10;
+}
+message SCError_SceBudget {
+   SCErrorCode code = 8;
+}
+message SCError_SceContext {
+   SCErrorCode code = 3;
+}
+message SCError_SceContract {
+   uint32 contractCode = 1;
+}
+message SCError_SceCrypto {
+   SCErrorCode code = 6;
+}
+message SCError_SceEvents {
+   SCErrorCode code = 7;
+}
+message SCError_SceObject {
+   SCErrorCode code = 5;
+}
+message SCError_SceStorage {
+   SCErrorCode code = 4;
+}
+message SCError_SceValue {
+   SCErrorCode code = 9;
+}
+message SCError_SceWasmVm {
+   SCErrorCode code = 2;
+}
+message SCMap {
+   repeated SCMapEntry InnerValue = 1;
+}
+message SCMapEntry {
+   SCVal key = 1;
+   SCVal val = 2;
+}
+message SCNonceKey {
+   int64 nonce = 1;
+}
+message SCString {
+   string InnerValue = 1;
+}
+message SCSymbol {
+   string InnerValue = 1;
+}
+message SCVal {
+   oneof subtype {
+      SCVal_ScvBool SCVal_ScvBool = 100;
+      SCVal_ScvVoid SCVal_ScvVoid = 101;
+      SCVal_ScvError SCVal_ScvError = 102;
+      SCVal_ScvU32 SCVal_ScvU32 = 103;
+      SCVal_ScvI32 SCVal_ScvI32 = 104;
+      SCVal_ScvU64 SCVal_ScvU64 = 105;
+      SCVal_ScvI64 SCVal_ScvI64 = 106;
+      SCVal_ScvTimepoint SCVal_ScvTimepoint = 107;
+      SCVal_ScvDuration SCVal_ScvDuration = 108;
+      SCVal_ScvU128 SCVal_ScvU128 = 109;
+      SCVal_ScvI128 SCVal_ScvI128 = 110;
+      SCVal_ScvU256 SCVal_ScvU256 = 111;
+      SCVal_ScvI256 SCVal_ScvI256 = 112;
+      SCVal_ScvBytes SCVal_ScvBytes = 113;
+      SCVal_ScvString SCVal_ScvString = 114;
+      SCVal_ScvSymbol SCVal_ScvSymbol = 115;
+      SCVal_ScvVec SCVal_ScvVec = 116;
+      SCVal_ScvMap SCVal_ScvMap = 117;
+      SCVal_ScvAddress SCVal_ScvAddress = 118;
+      SCVal_ScvLedgerKeyContractInstance SCVal_ScvLedgerKeyContractInstance = 119;
+      SCVal_ScvLedgerKeyNonce SCVal_ScvLedgerKeyNonce = 120;
+      SCVal_ScvContractInstance SCVal_ScvContractInstance = 121;
+   }
+}
+message SCVal_ScvAddress {
+   SCAddress address = 18;
+}
+message SCVal_ScvBool {
+   bool b = 1;
+}
+message SCVal_ScvBytes {
+   SCBytes bytes = 13;
+}
+message SCVal_ScvContractInstance {
+   SCContractInstance instance = 20;
+}
+message SCVal_ScvDuration {
+   Duration duration = 8;
+}
+message SCVal_ScvError {
+   SCError error = 2;
+}
+message SCVal_ScvI128 {
+   Int128Parts i128 = 10;
+}
+message SCVal_ScvI256 {
+   Int256Parts i256 = 12;
+}
+message SCVal_ScvI32 {
+   int32 i32 = 4;
+}
+message SCVal_ScvI64 {
+   int64 i64 = 6;
+}
+message SCVal_ScvLedgerKeyContractInstance {
+}
+message SCVal_ScvLedgerKeyNonce {
+   SCNonceKey nonce_key = 19;
+}
+message SCVal_ScvMap {
+   SCMap map = 17;
+}
+message SCVal_ScvString {
+   SCString str = 14;
+}
+message SCVal_ScvSymbol {
+   SCSymbol sym = 15;
+}
+message SCVal_ScvTimepoint {
+   TimePoint timepoint = 7;
+}
+message SCVal_ScvU128 {
+   UInt128Parts u128 = 9;
+}
+message SCVal_ScvU256 {
+   UInt256Parts u256 = 11;
+}
+message SCVal_ScvU32 {
+   uint32 u32 = 3;
+}
+message SCVal_ScvU64 {
+   uint64 u64 = 5;
+}
+message SCVal_ScvVec {
+   SCVec vec = 16;
+}
+message SCVal_ScvVoid {
+}
+message SCVec {
+   repeated SCVal InnerValue = 1;
+}
+message SendTransactionParams {
+   string Transaction = 1;
+}
+message SendTransactionResult {
+   string Hash = 1;
+   SendTransactionResult_Status Status = 2;
+   int64 LatestLedger = 3;
+   string LatestLedgerCloseTime = 4;
+   string ErrorResultXdr = 5;
+   repeated string DiagnosticEventsXdr = 6;
+   TransactionResult ErrorResult = 100;
+   repeated DiagnosticEvent DiagnosticEvents = 101;
+}
+enum SendTransactionResult_Status {
+   PENDING = 0;
+   DUPLICATE = 1;
+   TRY_AGAIN_LATER = 2;
+   ERROR = 3;
+}
+message SequenceNumber {
+   int64 InnerValue = 1;
+}
+message SetOptionsOp {
+   AccountID inflationDest = 1;
+   uint32 clearFlags = 2;
+   uint32 setFlags = 3;
+   uint32 masterWeight = 4;
+   uint32 lowThreshold = 5;
+   uint32 medThreshold = 6;
+   uint32 highThreshold = 7;
+   string32 homeDomain = 8;
+   Signer signer = 9;
+}
+message SetOptionsResult {
+   oneof subtype {
+      SetOptionsResult_SetOptionsSuccess SetOptionsResult_SetOptionsSuccess = 100;
+      SetOptionsResult_SetOptionsLowReserve SetOptionsResult_SetOptionsLowReserve = 101;
+      SetOptionsResult_SetOptionsTooManySigners SetOptionsResult_SetOptionsTooManySigners = 102;
+      SetOptionsResult_SetOptionsBadFlags SetOptionsResult_SetOptionsBadFlags = 103;
+      SetOptionsResult_SetOptionsInvalidInflation SetOptionsResult_SetOptionsInvalidInflation = 104;
+      SetOptionsResult_SetOptionsCantChange SetOptionsResult_SetOptionsCantChange = 105;
+      SetOptionsResult_SetOptionsUnknownFlag SetOptionsResult_SetOptionsUnknownFlag = 106;
+      SetOptionsResult_SetOptionsThresholdOutOfRange SetOptionsResult_SetOptionsThresholdOutOfRange = 107;
+      SetOptionsResult_SetOptionsBadSigner SetOptionsResult_SetOptionsBadSigner = 108;
+      SetOptionsResult_SetOptionsInvalidHomeDomain SetOptionsResult_SetOptionsInvalidHomeDomain = 109;
+      SetOptionsResult_SetOptionsAuthRevocableRequired SetOptionsResult_SetOptionsAuthRevocableRequired = 110;
+   }
+}
+message SetOptionsResult_SetOptionsAuthRevocableRequired {
+}
+message SetOptionsResult_SetOptionsBadFlags {
+}
+message SetOptionsResult_SetOptionsBadSigner {
+}
+message SetOptionsResult_SetOptionsCantChange {
+}
+message SetOptionsResult_SetOptionsInvalidHomeDomain {
+}
+message SetOptionsResult_SetOptionsInvalidInflation {
+}
+message SetOptionsResult_SetOptionsLowReserve {
+}
+message SetOptionsResult_SetOptionsSuccess {
+}
+message SetOptionsResult_SetOptionsThresholdOutOfRange {
+}
+message SetOptionsResult_SetOptionsTooManySigners {
+}
+message SetOptionsResult_SetOptionsUnknownFlag {
+}
+message SetTrustLineFlagsOp {
+   AccountID trustor = 1;
+   Asset asset = 2;
+   uint32 clearFlags = 3;
+   uint32 setFlags = 4;
+}
+message SetTrustLineFlagsResult {
+   oneof subtype {
+      SetTrustLineFlagsResult_SetTrustLineFlagsSuccess SetTrustLineFlagsResult_SetTrustLineFlagsSuccess = 100;
+      SetTrustLineFlagsResult_SetTrustLineFlagsMalformed SetTrustLineFlagsResult_SetTrustLineFlagsMalformed = 101;
+      SetTrustLineFlagsResult_SetTrustLineFlagsNoTrustLine SetTrustLineFlagsResult_SetTrustLineFlagsNoTrustLine = 102;
+      SetTrustLineFlagsResult_SetTrustLineFlagsCantRevoke SetTrustLineFlagsResult_SetTrustLineFlagsCantRevoke = 103;
+      SetTrustLineFlagsResult_SetTrustLineFlagsInvalidState SetTrustLineFlagsResult_SetTrustLineFlagsInvalidState = 104;
+      SetTrustLineFlagsResult_SetTrustLineFlagsLowReserve SetTrustLineFlagsResult_SetTrustLineFlagsLowReserve = 105;
+   }
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsCantRevoke {
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsInvalidState {
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsLowReserve {
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsMalformed {
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsNoTrustLine {
+}
+message SetTrustLineFlagsResult_SetTrustLineFlagsSuccess {
+}
+message Signature {
+   bytes InnerValue = 1;
+}
+message SignatureHint {
+   bytes InnerValue = 1;
+}
+message Signer {
+   SignerKey key = 1;
+   uint32 weight = 2;
+}
+message SignerKey {
+   oneof subtype {
+      SignerKey_SignerKeyTypeEd25519 SignerKey_SignerKeyTypeEd25519 = 100;
+      SignerKey_SignerKeyTypePreAuthTx SignerKey_SignerKeyTypePreAuthTx = 101;
+      SignerKey_SignerKeyTypeHashX SignerKey_SignerKeyTypeHashX = 102;
+      SignerKey_SignerKeyTypeEd25519SignedPayload SignerKey_SignerKeyTypeEd25519SignedPayload = 103;
+   }
+}
+message SignerKey_SignerKeyTypeEd25519 {
+   uint256 ed25519 = 1;
+}
+message SignerKey_SignerKeyTypeEd25519SignedPayload {
+   SignerKey_ed25519SignedPayloadStruct ed25519SignedPayload = 4;
+}
+message SignerKey_SignerKeyTypeHashX {
+   uint256 hashX = 3;
+}
+message SignerKey_SignerKeyTypePreAuthTx {
+   uint256 preAuthTx = 2;
+}
+message SignerKey_ed25519SignedPayloadStruct {
+   uint256 ed25519 = 1;
+   bytes payload = 2;
+}
+message SimplePaymentResult {
+   AccountID destination = 1;
+   Asset asset = 2;
+   int64 amount = 3;
+}
+message SimulateTransactionParams {
+   string Transaction = 1;
+   ResourceConfigResourceConfig ResourceConfig = 2;
+}
+message SimulateTransactionResult {
+   int64 LatestLedger = 1;
+   string MinResourceFee = 2;
+   Cost Cost = 3;
+   repeated Results Results = 4;
+   string TransactionData = 5;
+   repeated string Events = 6;
+   RestorePreamble RestorePreamble = 7;
+   repeated StateChanges StateChanges = 8;
+   string Error = 9;
+   SorobanTransactionData SorobanTransactionData = 100;
+   repeated DiagnosticEvent DiagnosticEvents = 101;
+}
+message SorobanAddressCredentials {
+   SCAddress address = 1;
+   int64 nonce = 2;
+   uint32 signatureExpirationLedger = 3;
+   SCVal signature = 4;
+}
+message SorobanAuthorizationEntry {
+   SorobanCredentials credentials = 1;
+   SorobanAuthorizedInvocation rootInvocation = 2;
+}
+message SorobanAuthorizedFunction {
+   oneof subtype {
+      SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeContractFn SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeContractFn = 100;
+      SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractHostFn SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractHostFn = 101;
+      SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractV2HostFn SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractV2HostFn = 102;
+   }
+}
+message SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeContractFn {
+   InvokeContractArgs contractFn = 1;
+}
+message SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractHostFn {
+   CreateContractArgs createContractHostFn = 2;
+}
+message SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeCreateContractV2HostFn {
+   CreateContractArgsV2 createContractV2HostFn = 3;
+}
+message SorobanAuthorizedInvocation {
+   SorobanAuthorizedFunction function = 1;
+   repeated SorobanAuthorizedInvocation subInvocations = 2;
+}
+message SorobanCredentials {
+   oneof subtype {
+      SorobanCredentials_SorobanCredentialsSourceAccount SorobanCredentials_SorobanCredentialsSourceAccount = 100;
+      SorobanCredentials_SorobanCredentialsAddress SorobanCredentials_SorobanCredentialsAddress = 101;
+   }
+}
+message SorobanCredentials_SorobanCredentialsAddress {
+   SorobanAddressCredentials address = 1;
+}
+message SorobanCredentials_SorobanCredentialsSourceAccount {
+}
+message SorobanInclusionFee {
+   string Max = 1;
+   string Min = 2;
+   string Mode = 3;
+   string P10 = 4;
+   string P20 = 5;
+   string P30 = 6;
+   string P40 = 7;
+   string P50 = 8;
+   string P60 = 9;
+   string P70 = 10;
+   string P80 = 11;
+   string P90 = 12;
+   string P95 = 13;
+   string P99 = 14;
+   string TransactionCount = 15;
+   int64 LedgerCount = 16;
+}
+message SorobanResources {
+   LedgerFootprint footprint = 1;
+   uint32 instructions = 2;
+   uint32 readBytes = 3;
+   uint32 writeBytes = 4;
+}
+message SorobanTransactionData {
+   ExtensionPoint ext = 1;
+   SorobanResources resources = 2;
+   int64 resourceFee = 3;
+}
+message SorobanTransactionMeta {
+   SorobanTransactionMetaExt ext = 1;
+   repeated ContractEvent events = 2;
+   SCVal returnValue = 3;
+   repeated DiagnosticEvent diagnosticEvents = 4;
+}
+message SorobanTransactionMetaExt {
+   oneof subtype {
+      SorobanTransactionMetaExt_case_0 SorobanTransactionMetaExt_case_0 = 100;
+      SorobanTransactionMetaExt_case_1 SorobanTransactionMetaExt_case_1 = 101;
+   }
+}
+message SorobanTransactionMetaExtV1 {
+   ExtensionPoint ext = 1;
+   int64 totalNonRefundableResourceFeeCharged = 2;
+   int64 totalRefundableResourceFeeCharged = 3;
+   int64 rentFeeCharged = 4;
+}
+message SorobanTransactionMetaExt_case_0 {
+}
+message SorobanTransactionMetaExt_case_1 {
+   SorobanTransactionMetaExtV1 v1 = 1;
+}
+message SponsorshipDescriptor {
+   AccountID InnerValue = 1;
+}
+message StateArchivalSettings {
+   uint32 maxEntryTTL = 1;
+   uint32 minTemporaryTTL = 2;
+   uint32 minPersistentTTL = 3;
+   int64 persistentRentRateDenominator = 4;
+   int64 tempRentRateDenominator = 5;
+   uint32 maxEntriesToArchive = 6;
+   uint32 bucketListSizeWindowSampleSize = 7;
+   uint32 bucketListWindowSamplePeriod = 8;
+   uint32 evictionScanSize = 9;
+   uint32 startingEvictionScanLevel = 10;
+}
+message StateChanges {
+   StateChanges_Type Type = 1;
+   string Key = 2;
+   string Before = 3;
+   string After = 4;
+   LedgerEntry LedgerBefore = 100;
+   LedgerEntry LedgerAfter = 101;
+}
+enum StateChanges_Type {
+   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   _1 = 1;
+   _2 = 2;
+   _3 = 3;
+}
+message TTLEntry {
+   Hash keyHash = 1;
+   uint32 liveUntilLedgerSeq = 2;
+}
+message Thresholds {
+   bytes InnerValue = 1;
+}
+message TimeBounds {
+   TimePoint minTime = 1;
+   TimePoint maxTime = 2;
+}
+message TimePoint {
+   uint64 InnerValue = 1;
+}
+message Transaction {
+   MuxedAccount sourceAccount = 1;
+   uint32 fee = 2;
+   SequenceNumber seqNum = 3;
+   Preconditions cond = 4;
+   Memo memo = 5;
+   repeated Operation operations = 6;
+   Transaction_extUnion ext = 7;
+}
+message TransactionEnvelope {
+   oneof subtype {
+      TransactionEnvelope_EnvelopeTypeTxV0 TransactionEnvelope_EnvelopeTypeTxV0 = 100;
+      TransactionEnvelope_EnvelopeTypeTx TransactionEnvelope_EnvelopeTypeTx = 101;
+      TransactionEnvelope_EnvelopeTypeTxFeeBump TransactionEnvelope_EnvelopeTypeTxFeeBump = 102;
+   }
+}
+message TransactionEnvelope_EnvelopeTypeTx {
+   TransactionV1Envelope v1 = 2;
+}
+message TransactionEnvelope_EnvelopeTypeTxFeeBump {
+   FeeBumpTransactionEnvelope feeBump = 3;
+}
+message TransactionEnvelope_EnvelopeTypeTxV0 {
+   TransactionV0Envelope v0 = 1;
+}
+message TransactionMeta {
+   oneof subtype {
+      TransactionMeta_case_0 TransactionMeta_case_0 = 100;
+      TransactionMeta_case_1 TransactionMeta_case_1 = 101;
+      TransactionMeta_case_2 TransactionMeta_case_2 = 102;
+      TransactionMeta_case_3 TransactionMeta_case_3 = 103;
+   }
+}
+message TransactionMetaV1 {
+   LedgerEntryChanges txChanges = 1;
+   repeated OperationMeta operations = 2;
+}
+message TransactionMetaV2 {
+   LedgerEntryChanges txChangesBefore = 1;
+   repeated OperationMeta operations = 2;
+   LedgerEntryChanges txChangesAfter = 3;
+}
+message TransactionMetaV3 {
+   ExtensionPoint ext = 1;
+   LedgerEntryChanges txChangesBefore = 2;
+   repeated OperationMeta operations = 3;
+   LedgerEntryChanges txChangesAfter = 4;
+   SorobanTransactionMeta sorobanMeta = 5;
+}
+message TransactionMeta_case_0 {
+   repeated OperationMeta operations = 1;
+}
+message TransactionMeta_case_1 {
+   TransactionMetaV1 v1 = 2;
+}
+message TransactionMeta_case_2 {
+   TransactionMetaV2 v2 = 3;
+}
+message TransactionMeta_case_3 {
+   TransactionMetaV3 v3 = 4;
+}
+message TransactionResult {
+   int64 feeCharged = 1;
+   TransactionResult_resultUnion result = 2;
+   TransactionResult_extUnion ext = 3;
+}
+message TransactionResult_extUnion {
+   oneof subtype {
+      TransactionResult_extUnion_case_0 TransactionResult_extUnion_case_0 = 100;
+   }
+}
+message TransactionResult_extUnion_case_0 {
+}
+message TransactionResult_resultUnion {
+   oneof subtype {
+      TransactionResult_resultUnion_TxfeeBumpInnerSuccess TransactionResult_resultUnion_TxfeeBumpInnerSuccess = 100;
+      TransactionResult_resultUnion_TxfeeBumpInnerFailed TransactionResult_resultUnion_TxfeeBumpInnerFailed = 101;
+      TransactionResult_resultUnion_TxSUCCESS TransactionResult_resultUnion_TxSUCCESS = 102;
+      TransactionResult_resultUnion_TxFAILED TransactionResult_resultUnion_TxFAILED = 103;
+      TransactionResult_resultUnion_TxtooEarly TransactionResult_resultUnion_TxtooEarly = 104;
+      TransactionResult_resultUnion_TxtooLate TransactionResult_resultUnion_TxtooLate = 105;
+      TransactionResult_resultUnion_TxmissingOperation TransactionResult_resultUnion_TxmissingOperation = 106;
+      TransactionResult_resultUnion_TxbadSeq TransactionResult_resultUnion_TxbadSeq = 107;
+      TransactionResult_resultUnion_TxbadAuth TransactionResult_resultUnion_TxbadAuth = 108;
+      TransactionResult_resultUnion_TxinsufficientBalance TransactionResult_resultUnion_TxinsufficientBalance = 109;
+      TransactionResult_resultUnion_TxnoAccount TransactionResult_resultUnion_TxnoAccount = 110;
+      TransactionResult_resultUnion_TxinsufficientFee TransactionResult_resultUnion_TxinsufficientFee = 111;
+      TransactionResult_resultUnion_TxbadAuthExtra TransactionResult_resultUnion_TxbadAuthExtra = 112;
+      TransactionResult_resultUnion_TxinternalError TransactionResult_resultUnion_TxinternalError = 113;
+      TransactionResult_resultUnion_TxnotSupported TransactionResult_resultUnion_TxnotSupported = 114;
+      TransactionResult_resultUnion_TxbadSponsorship TransactionResult_resultUnion_TxbadSponsorship = 115;
+      TransactionResult_resultUnion_TxbadMinSeqAgeOrGap TransactionResult_resultUnion_TxbadMinSeqAgeOrGap = 116;
+      TransactionResult_resultUnion_TxMALFORMED TransactionResult_resultUnion_TxMALFORMED = 117;
+      TransactionResult_resultUnion_TxsorobanInvalid TransactionResult_resultUnion_TxsorobanInvalid = 118;
+   }
+}
+message TransactionResult_resultUnion_TxFAILED {
+   repeated OperationResult results = 4;
+}
+message TransactionResult_resultUnion_TxMALFORMED {
+}
+message TransactionResult_resultUnion_TxSUCCESS {
+   repeated OperationResult results = 3;
+}
+message TransactionResult_resultUnion_TxbadAuth {
+}
+message TransactionResult_resultUnion_TxbadAuthExtra {
+}
+message TransactionResult_resultUnion_TxbadMinSeqAgeOrGap {
+}
+message TransactionResult_resultUnion_TxbadSeq {
+}
+message TransactionResult_resultUnion_TxbadSponsorship {
+}
+message TransactionResult_resultUnion_TxfeeBumpInnerFailed {
+   InnerTransactionResultPair innerResultPair = 2;
+}
+message TransactionResult_resultUnion_TxfeeBumpInnerSuccess {
+   InnerTransactionResultPair innerResultPair = 1;
+}
+message TransactionResult_resultUnion_TxinsufficientBalance {
+}
+message TransactionResult_resultUnion_TxinsufficientFee {
+}
+message TransactionResult_resultUnion_TxinternalError {
+}
+message TransactionResult_resultUnion_TxmissingOperation {
+}
+message TransactionResult_resultUnion_TxnoAccount {
+}
+message TransactionResult_resultUnion_TxnotSupported {
+}
+message TransactionResult_resultUnion_TxsorobanInvalid {
+}
+message TransactionResult_resultUnion_TxtooEarly {
+}
+message TransactionResult_resultUnion_TxtooLate {
+}
+message TransactionV0 {
+   uint256 sourceAccountEd25519 = 1;
+   uint32 fee = 2;
+   SequenceNumber seqNum = 3;
+   TimeBounds timeBounds = 4;
+   Memo memo = 5;
+   repeated Operation operations = 6;
+   TransactionV0_extUnion ext = 7;
+}
+message TransactionV0Envelope {
+   TransactionV0 tx = 1;
+   repeated DecoratedSignature signatures = 2;
+}
+message TransactionV0_extUnion {
+   oneof subtype {
+      TransactionV0_extUnion_case_0 TransactionV0_extUnion_case_0 = 100;
+   }
+}
+message TransactionV0_extUnion_case_0 {
+}
+message TransactionV1Envelope {
+   Transaction tx = 1;
+   repeated DecoratedSignature signatures = 2;
+}
+message Transaction_extUnion {
+   oneof subtype {
+      Transaction_extUnion_case_0 Transaction_extUnion_case_0 = 100;
+      Transaction_extUnion_case_1 Transaction_extUnion_case_1 = 101;
+   }
+}
+message Transaction_extUnion_case_0 {
+}
+message Transaction_extUnion_case_1 {
+   SorobanTransactionData sorobanData = 1;
+}
+message Transactions {
+   string Status = 1;
+   int64 ApplicationOrder = 2;
+   bool FeeBump = 3;
+   string EnvelopeXdr = 4;
+   string ResultXdr = 5;
+   string ResultMetaXdr = 6;
+   repeated string DiagnosticEventsXdr = 7;
+   int64 Ledger = 8;
+   int64 CreatedAt = 9;
+   TransactionResult TransactionResult = 100;
+   TransactionMeta TransactionResultMeta = 101;
+   TransactionEnvelope TransactionEnvelope = 102;
+   repeated DiagnosticEvent DiagnosticEvents = 103;
+}
+message TrustLineAsset {
+   oneof subtype {
+      TrustLineAsset_AssetTypeNative TrustLineAsset_AssetTypeNative = 100;
+      TrustLineAsset_AssetTypeCreditAlphanum4 TrustLineAsset_AssetTypeCreditAlphanum4 = 101;
+      TrustLineAsset_AssetTypeCreditAlphanum12 TrustLineAsset_AssetTypeCreditAlphanum12 = 102;
+      TrustLineAsset_AssetTypePoolShare TrustLineAsset_AssetTypePoolShare = 103;
+   }
+}
+message TrustLineAsset_AssetTypeCreditAlphanum12 {
+   AlphaNum12 alphaNum12 = 2;
+}
+message TrustLineAsset_AssetTypeCreditAlphanum4 {
+   AlphaNum4 alphaNum4 = 1;
+}
+message TrustLineAsset_AssetTypeNative {
+}
+message TrustLineAsset_AssetTypePoolShare {
+   PoolID liquidityPoolID = 3;
+}
+message TrustLineEntry {
+   AccountID accountID = 1;
+   TrustLineAsset asset = 2;
+   int64 balance = 3;
+   int64 limit = 4;
+   uint32 flags = 5;
+   TrustLineEntry_extUnion ext = 6;
+}
+message TrustLineEntryExtensionV2 {
+   int32 liquidityPoolUseCount = 1;
+   TrustLineEntryExtensionV2_extUnion ext = 2;
+}
+message TrustLineEntryExtensionV2_extUnion {
+   oneof subtype {
+      TrustLineEntryExtensionV2_extUnion_case_0 TrustLineEntryExtensionV2_extUnion_case_0 = 100;
+   }
+}
+message TrustLineEntryExtensionV2_extUnion_case_0 {
+}
+message TrustLineEntry_extUnion {
+   oneof subtype {
+      TrustLineEntry_extUnion_case_0 TrustLineEntry_extUnion_case_0 = 100;
+      TrustLineEntry_extUnion_case_1 TrustLineEntry_extUnion_case_1 = 101;
+   }
+}
+message TrustLineEntry_extUnion_case_0 {
+}
+message TrustLineEntry_extUnion_case_1 {
+   TrustLineEntry_extUnion_v1Struct v1 = 1;
+}
+message TrustLineEntry_extUnion_v1Struct {
+   Liabilities liabilities = 1;
+   TrustLineEntry_extUnion_v1Struct_extUnion ext = 2;
+}
+message TrustLineEntry_extUnion_v1Struct_extUnion {
+   oneof subtype {
+      TrustLineEntry_extUnion_v1Struct_extUnion_case_0 TrustLineEntry_extUnion_v1Struct_extUnion_case_0 = 100;
+      TrustLineEntry_extUnion_v1Struct_extUnion_case_2 TrustLineEntry_extUnion_v1Struct_extUnion_case_2 = 101;
+   }
+}
+message TrustLineEntry_extUnion_v1Struct_extUnion_case_0 {
+}
+message TrustLineEntry_extUnion_v1Struct_extUnion_case_2 {
+   TrustLineEntryExtensionV2 v2 = 1;
+}
+message UInt128Parts {
+   uint64 hi = 1;
+   uint64 lo = 2;
+}
+message UInt256Parts {
+   uint64 hi_hi = 1;
+   uint64 hi_lo = 2;
+   uint64 lo_hi = 3;
+   uint64 lo_lo = 4;
+}
+message int32 {
+   int32 InnerValue = 1;
+}
+message int64 {
+   int64 InnerValue = 1;
+}
+message string32 {
+   string InnerValue = 1;
+}
+message string64 {
+   string InnerValue = 1;
+}
+message uint256 {
+   bytes InnerValue = 1;
+}
+message uint32 {
+   uint32 InnerValue = 1;
+}
+message uint64 {
+   uint64 InnerValue = 1;
+}
+service SimulateTransactionResult_ProtoWrapper {
+   rpc ApplyTo (ApplyToParam) returns (Transaction);
+}
+service Stellar {
+   rpc GetEvents (GetEventsParams) returns (GetEventsResult);
+   rpc GetFeeStats (.google.protobuf.Empty) returns (GetFeeStatsResult);
+   rpc GetHealth (.google.protobuf.Empty) returns (GetHealthResult);
+   rpc GetLatestLedger (.google.protobuf.Empty) returns (GetLatestLedgerResult);
+   rpc GetLedgerEntries (GetLedgerEntriesParams) returns (GetLedgerEntriesResult);
+   rpc GetNetwork (.google.protobuf.Empty) returns (GetNetworkResult);
+   rpc GetTransaction (GetTransactionParams) returns (GetTransactionResult);
+   rpc GetTransactions (GetTransactionsParams) returns (GetTransactionsResult);
+   rpc GetVersionInfo (.google.protobuf.Empty) returns (GetVersionInfoResult);
+   rpc SendTransaction (SendTransactionParams) returns (SendTransactionResult);
+   rpc SimulateTransaction (SimulateTransactionParams) returns (SimulateTransactionResult);
+}

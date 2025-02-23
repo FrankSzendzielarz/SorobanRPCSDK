@@ -40,7 +40,7 @@ namespace Stellar {
         public abstract void ValidateCase();
 
         [System.Serializable]
-        [ProtoContract(Name = "Asset.AssetTypeNative")]
+        [ProtoContract(Name = "Asset_AssetTypeNative")]
         public sealed partial class AssetTypeNative : Asset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_NATIVE;
@@ -48,7 +48,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Asset.AssetTypeCreditAlphanum4")]
+        [ProtoContract(Name = "Asset_AssetTypeCreditAlphanum4")]
         public sealed partial class AssetTypeCreditAlphanum4 : Asset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM4;
@@ -71,7 +71,7 @@ namespace Stellar {
             public override void ValidateCase() {}
         }
         [System.Serializable]
-        [ProtoContract(Name = "Asset.AssetTypeCreditAlphanum12")]
+        [ProtoContract(Name = "Asset_AssetTypeCreditAlphanum12")]
         public sealed partial class AssetTypeCreditAlphanum12 : Asset
         {
             public override AssetType Discriminator => AssetType.ASSET_TYPE_CREDIT_ALPHANUM12;
