@@ -27,8 +27,21 @@ namespace Generator.OpenRPC
 
             var memberNumber = _typeCounters[property.ParentSchema]++;
             var propertyName = _baseGenerator.Generate(property);
-            return $"[ProtoBuf.ProtoMember({memberNumber})] {propertyName}";
-            // return $"{propertyName}";
+            if (!IsNestedCollection(property))
+            {
+                return $"[ProtoBuf.ProtoMember({memberNumber})] {propertyName}";
+            }
+            else
+            {
+                return $"{propertyName}";
+            }
+
         }
+        private bool IsNestedCollection(JsonSchemaProperty property)
+        {
+            return property.Type == JsonObjectType.Array &&
+                   property.Item?.Type == JsonObjectType.Array;
+        }
+
     }
 }

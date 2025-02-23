@@ -201,6 +201,7 @@ namespace Generator.OpenRPC
 
         private async Task GenerateMethodAsync(StringBuilder sb, RpcMethod method)
         {
+            var hasParameters = method.Params?.Any() == true;
             var methodName = method.Name.ToPascalCase();
             var paramType = method.Params?.Any() == true ? $"{methodName}Params" : "object";
             var resultType = $"{methodName}Result";
@@ -210,13 +211,19 @@ namespace Generator.OpenRPC
                 sb.AppendLine(FormatXmlComment(method.Description));
             }
 
-            sb.AppendLine($"    public async Task<{resultType}> {methodName}Async({paramType} parameters = null)");
+            // Generate method signature - omit parameters if none defined
+            sb.AppendLine(hasParameters
+                ? $"    public async Task<{resultType}> {methodName}Async({paramType} parameters)"
+                : $"    public async Task<{resultType}> {methodName}Async()");
             sb.AppendLine("    {");
             sb.AppendLine("        var request = new JsonRpcRequest");
             sb.AppendLine("        {");
             sb.AppendLine("            JsonRpc = \"2.0\",");
-            sb.AppendLine($"            Method = \"{method.Name.ToCamelCase()}\",");
-            sb.AppendLine("            Params = parameters,");
+            // Only include Params property if the method has parameters
+            if (hasParameters)
+            {
+                sb.AppendLine("            Params = parameters,");
+            }
             sb.AppendLine("            Id = 1");
             sb.AppendLine("        };");
             sb.AppendLine();

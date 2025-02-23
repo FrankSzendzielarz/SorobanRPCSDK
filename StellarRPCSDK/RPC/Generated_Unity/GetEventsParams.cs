@@ -62,7 +62,7 @@ namespace Stellar.RPC
         /// </summary>
         [Newtonsoft.Json.JsonProperty("topics", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [System.ComponentModel.DataAnnotations.MaxLength(5)]
-        [ProtoBuf.ProtoMember(3)] public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>>  Topics { get; set; }
+        public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>> Topics { get; set; }
 
 
 

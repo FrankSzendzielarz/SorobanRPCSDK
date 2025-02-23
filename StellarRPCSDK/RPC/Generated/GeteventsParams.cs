@@ -68,7 +68,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("topics")]
         [System.ComponentModel.DataAnnotations.MaxLength(5)]
-        [ProtoBuf.ProtoMember(3)] public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>>  Topics { get; set; }
+        public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>> Topics { get; set; }
 
 
 
