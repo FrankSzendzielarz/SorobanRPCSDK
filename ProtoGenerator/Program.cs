@@ -10,9 +10,9 @@ namespace Stellar.RPC.Tools
 {
 
     /*
-     * 1. Fix the problems with the Stellar RPC Client codegen producing an object for empty parameters, this should fix the missing methods in the Protobuf service. Also fix the nested collections thing.
+     * 1. DONE Fix the problems with the Stellar RPC Client codegen producing an object for empty parameters, this should fix the missing methods in the Protobuf service. Also fix the nested collections thing.
 
-2. Modify XDR gen to also add protobuf fields
+2. DONE Modify XDR gen to also add protobuf fields
 
 3. DONE Extract interfaces from all manual partials and make them ServiceContract 
 
@@ -41,6 +41,7 @@ The above should make everything automatic wrt to protobuf
                 {
                     Syntax = ProtoSyntax.Proto3,
                     Package = "stellar.rpc.v1",
+                   
                      
                 };
                 var schemaBuilder = new StringBuilder();
