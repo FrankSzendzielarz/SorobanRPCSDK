@@ -39,7 +39,7 @@ namespace Stellar {
         #endif
         private SorobanAuthorizedFunction _function;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public SorobanAuthorizedInvocation[] subInvocations
         {
             get => _subInvocations;

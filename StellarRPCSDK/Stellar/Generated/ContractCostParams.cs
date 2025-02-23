@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class ContractCostParams
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(1024)]
         public ContractCostParamEntry[] InnerValue
         {

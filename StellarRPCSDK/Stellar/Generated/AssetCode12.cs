@@ -22,7 +22,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class AssetCode12
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MinLength(12)]
         [MaxLength(12)]
         public byte[] InnerValue

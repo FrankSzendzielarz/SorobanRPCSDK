@@ -39,7 +39,7 @@ namespace Stellar {
         #endif
         private Hash _previousLedgerHash;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public TransactionPhase[] phases
         {
             get => _phases;

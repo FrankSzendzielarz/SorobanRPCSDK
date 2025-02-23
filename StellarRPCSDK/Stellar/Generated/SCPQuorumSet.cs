@@ -43,7 +43,7 @@ namespace Stellar {
         #endif
         private uint32 _threshold;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public NodeID[] validators
         {
             get => _validators;
@@ -59,7 +59,7 @@ namespace Stellar {
         #endif
         private NodeID[] _validators;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public SCPQuorumSet[] innerSets
         {
             get => _innerSets;

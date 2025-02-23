@@ -42,7 +42,7 @@ namespace Stellar {
         #endif
         private SCVal _returnValue;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public ContractEvent[] events
         {
             get => _events;

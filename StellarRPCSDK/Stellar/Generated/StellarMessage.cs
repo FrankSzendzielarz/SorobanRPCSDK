@@ -205,7 +205,7 @@ namespace Stellar {
         public sealed partial class Peers : StellarMessage
         {
             public override MessageType Discriminator => MessageType.PEERS;
-            [ProtoMember(5)]
+            [ProtoMember(5, OverwriteList = true)]
             [MaxLength(100)]
             public PeerAddress[] peers
             {

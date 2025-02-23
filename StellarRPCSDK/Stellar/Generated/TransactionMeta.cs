@@ -46,7 +46,7 @@ namespace Stellar {
         public sealed partial class case_0 : TransactionMeta
         {
             public override int Discriminator => 0;
-            [ProtoMember(1)]
+            [ProtoMember(1, OverwriteList = true)]
             public OperationMeta[] operations
             {
                 get => _operations;

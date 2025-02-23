@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class SCMap
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public SCMapEntry[] InnerValue
         {
             get => _innerValue;

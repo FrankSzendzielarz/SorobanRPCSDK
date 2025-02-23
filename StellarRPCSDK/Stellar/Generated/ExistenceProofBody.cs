@@ -31,7 +31,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class ExistenceProofBody
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public LedgerKey[] keysToProve
         {
             get => _keysToProve;
@@ -50,7 +50,7 @@ namespace Stellar {
         /// <summary>
         /// corresponds to keysToProve[n]
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public ColdArchiveBucketEntry[] lowBoundEntries
         {
             get => _lowBoundEntries;
@@ -66,7 +66,7 @@ namespace Stellar {
         #endif
         private ColdArchiveBucketEntry[] _lowBoundEntries;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public ColdArchiveBucketEntry[] highBoundEntries
         {
             get => _highBoundEntries;
@@ -85,7 +85,7 @@ namespace Stellar {
         /// <summary>
         /// contains all HashNodes that correspond with that level
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;

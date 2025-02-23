@@ -99,7 +99,7 @@ namespace Stellar {
         /// <summary>
         /// followed by applying transactions
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         public TransactionResultMeta[] txProcessing
         {
             get => _txProcessing;
@@ -118,7 +118,7 @@ namespace Stellar {
         /// <summary>
         /// upgrades are applied last
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(5, OverwriteList = true)]
         public UpgradeEntryMeta[] upgradesProcessing
         {
             get => _upgradesProcessing;
@@ -137,7 +137,7 @@ namespace Stellar {
         /// <summary>
         /// other misc information attached to the ledger close
         /// </summary>
-        [ProtoMember(6)]
+        [ProtoMember(6, OverwriteList = true)]
         public SCPHistoryEntry[] scpInfo
         {
             get => _scpInfo;
@@ -175,7 +175,7 @@ namespace Stellar {
         /// <summary>
         /// Temp keys that are being evicted at this ledger.
         /// </summary>
-        [ProtoMember(8)]
+        [ProtoMember(8, OverwriteList = true)]
         public LedgerKey[] evictedTemporaryLedgerKeys
         {
             get => _evictedTemporaryLedgerKeys;
@@ -194,7 +194,7 @@ namespace Stellar {
         /// <summary>
         /// evicted at this ledger.
         /// </summary>
-        [ProtoMember(9)]
+        [ProtoMember(9, OverwriteList = true)]
         public LedgerEntry[] evictedPersistentLedgerEntries
         {
             get => _evictedPersistentLedgerEntries;

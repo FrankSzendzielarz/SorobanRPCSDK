@@ -39,7 +39,7 @@ namespace Stellar {
         #endif
         private uint32 _ledgerSeq;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public SCPEnvelope[] messages
         {
             get => _messages;

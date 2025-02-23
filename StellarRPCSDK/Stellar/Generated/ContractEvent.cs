@@ -128,7 +128,7 @@ namespace Stellar {
             [ProtoContract(Name = "ContractEvent.bodyUnion.v0Struct")]
             public partial class v0Struct
             {
-                [ProtoMember(1)]
+                [ProtoMember(1, OverwriteList = true)]
                 public SCVal[] topics
                 {
                     get => _topics;

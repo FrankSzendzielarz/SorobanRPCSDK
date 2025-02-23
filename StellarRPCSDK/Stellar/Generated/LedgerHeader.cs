@@ -283,7 +283,7 @@ namespace Stellar {
         #endif
         private uint32 _maxTxSetSize;
 
-        [ProtoMember(14)]
+        [ProtoMember(14, OverwriteList = true)]
         [MinLength(4)]
         [MaxLength(4)]
         public Hash[] skipList

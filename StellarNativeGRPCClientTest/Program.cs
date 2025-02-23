@@ -68,18 +68,15 @@ namespace StellarNativeGRPCClientTest
 
             // protobuf gRPC [in-process] SDK exposes interface allowing XDR [de]serialisation of all Stellar objects
             // These are code generated as part of the build process and require no manual maintenance:
-            var serialisedBase64 = xdr_client.EncodeLedgerKey(new LedgerKeyEncodeRequest() {  Value = myAccount });
-
-            // Convert to string....should this be a string by default or is byte[] more platform friendly?
-            var encodedLedgerKey = System.Text.Encoding.ASCII.GetString(serialisedBase64.EncodedValue);
-
+            var ledgerKeyEncodedResponse = xdr_client.EncodeLedgerKey(new LedgerKeyEncodeRequest() {  Value = myAccount });
+            
             // gRPC [in-process] SDK call to ask RPC server for ledger entries for an account
             var ledgerEntries = await stellar_client.GetLedgerEntriesAsync(new GetLedgerEntriesParams()
             {
-                 Keys = new List<string>() { encodedLedgerKey}
+                 Keys = new List<string>() { ledgerKeyEncodedResponse.EncodedValue}
             });
             var test = ledgerEntries.Entries.First().LedgerEntryData as LedgerEntry.dataUnion.Account;
-            Console.WriteLine($"Account balance: {test.account.balance}");
+            Console.WriteLine($"Account balance: {test.account.balance.InnerValue}");
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();

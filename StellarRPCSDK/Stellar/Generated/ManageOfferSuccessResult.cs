@@ -36,7 +36,7 @@ namespace Stellar {
         /// <summary>
         /// offers that got claimed while creating this offer
         /// </summary>
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public ClaimAtom[] offersClaimed
         {
             get => _offersClaimed;

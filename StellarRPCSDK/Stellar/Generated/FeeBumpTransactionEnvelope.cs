@@ -41,7 +41,7 @@ namespace Stellar {
         #endif
         private FeeBumpTransaction _tx;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         [MaxLength(20)]
         public DecoratedSignature[] signatures
         {

@@ -192,7 +192,7 @@ namespace Stellar {
         #endif
         private Thresholds _thresholds;
 
-        [ProtoMember(9)]
+        [ProtoMember(9, OverwriteList = true)]
         [MaxLength(20)]
         public Signer[] signers
         {

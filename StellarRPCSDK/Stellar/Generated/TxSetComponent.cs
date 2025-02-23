@@ -54,7 +54,7 @@ namespace Stellar {
             #endif
             private int64 _baseFee;
 
-            [ProtoMember(2)]
+            [ProtoMember(2, OverwriteList = true)]
             public TransactionEnvelope[] txs
             {
                 get => _txs;

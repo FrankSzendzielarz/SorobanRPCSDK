@@ -73,7 +73,7 @@ namespace Stellar {
         /// <summary>
         /// followed by applying transactions
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public TransactionResultMeta[] txProcessing
         {
             get => _txProcessing;
@@ -92,7 +92,7 @@ namespace Stellar {
         /// <summary>
         /// upgrades are applied last
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         public UpgradeEntryMeta[] upgradesProcessing
         {
             get => _upgradesProcessing;
@@ -111,7 +111,7 @@ namespace Stellar {
         /// <summary>
         /// other misc information attached to the ledger close
         /// </summary>
-        [ProtoMember(5)]
+        [ProtoMember(5, OverwriteList = true)]
         public SCPHistoryEntry[] scpInfo
         {
             get => _scpInfo;

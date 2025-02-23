@@ -145,7 +145,7 @@ namespace Stellar {
         /// <summary>
         /// operations.
         /// </summary>
-        [ProtoMember(6)]
+        [ProtoMember(6, OverwriteList = true)]
         [MaxLength(2)]
         public SignerKey[] extraSigners
         {

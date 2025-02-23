@@ -66,7 +66,7 @@ namespace Stellar {
         [ProtoContract(Name = "PathPaymentStrictReceiveResult.successStruct")]
         public partial class successStruct
         {
-            [ProtoMember(1)]
+            [ProtoMember(1, OverwriteList = true)]
             public ClaimAtom[] offers
             {
                 get => _offers;

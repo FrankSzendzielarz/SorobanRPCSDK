@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class PeerStatList
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(25)]
         public PeerStats[] InnerValue
         {

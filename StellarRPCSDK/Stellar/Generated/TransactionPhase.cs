@@ -34,7 +34,7 @@ namespace Stellar {
         public sealed partial class case_0 : TransactionPhase
         {
             public override int Discriminator => 0;
-            [ProtoMember(1)]
+            [ProtoMember(1, OverwriteList = true)]
             public TxSetComponent[] v0Components
             {
                 get => _v0Components;

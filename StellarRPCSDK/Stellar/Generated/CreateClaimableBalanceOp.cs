@@ -56,7 +56,7 @@ namespace Stellar {
         #endif
         private int64 _amount;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         [MaxLength(10)]
         public Claimant[] claimants
         {

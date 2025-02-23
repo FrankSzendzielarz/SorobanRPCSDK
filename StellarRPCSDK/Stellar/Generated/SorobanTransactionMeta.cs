@@ -47,7 +47,7 @@ namespace Stellar {
         #endif
         private SorobanTransactionMetaExt _ext;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public ContractEvent[] events
         {
             get => _events;
@@ -85,7 +85,7 @@ namespace Stellar {
         /// <summary>
         /// that were emitted in a failed contract call.
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         public DiagnosticEvent[] diagnosticEvents
         {
             get => _diagnosticEvents;

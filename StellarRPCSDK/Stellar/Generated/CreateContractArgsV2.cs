@@ -60,7 +60,7 @@ namespace Stellar {
         /// <summary>
         /// Arguments of the contract's constructor.
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public SCVal[] constructorArgs
         {
             get => _constructorArgs;

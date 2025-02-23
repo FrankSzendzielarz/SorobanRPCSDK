@@ -26,7 +26,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class LedgerFootprint
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public LedgerKey[] readOnly
         {
             get => _readOnly;
@@ -42,7 +42,7 @@ namespace Stellar {
         #endif
         private LedgerKey[] _readOnly;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public LedgerKey[] readWrite
         {
             get => _readWrite;

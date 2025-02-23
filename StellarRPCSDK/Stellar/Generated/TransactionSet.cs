@@ -42,7 +42,7 @@ namespace Stellar {
         #endif
         private Hash _previousLedgerHash;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public TransactionEnvelope[] txs
         {
             get => _txs;

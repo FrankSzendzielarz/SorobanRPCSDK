@@ -73,7 +73,7 @@ namespace Stellar {
             /// <summary>
             /// Payload to be raw signed by ed25519.
             /// </summary>
-            [ProtoMember(2)]
+            [ProtoMember(2, OverwriteList = true)]
             [MaxLength(64)]
             public byte[] payload
             {

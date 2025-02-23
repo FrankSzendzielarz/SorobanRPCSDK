@@ -22,7 +22,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class SCSpecTypeTuple
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(12)]
         public SCSpecTypeDef[] valueTypes
         {

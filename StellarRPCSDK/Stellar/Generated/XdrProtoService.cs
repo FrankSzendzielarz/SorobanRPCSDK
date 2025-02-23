@@ -17,7 +17,7 @@ namespace Stellar
     public class ConfigSettingContractExecutionLanesV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -45,7 +45,7 @@ namespace Stellar
     public class ConfigSettingContractComputeV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -73,7 +73,7 @@ namespace Stellar
     public class ConfigSettingContractLedgerCostV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -101,7 +101,7 @@ namespace Stellar
     public class ConfigSettingContractHistoricalDataV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -129,7 +129,7 @@ namespace Stellar
     public class ConfigSettingContractEventsV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -157,7 +157,7 @@ namespace Stellar
     public class ConfigSettingContractBandwidthV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -185,7 +185,7 @@ namespace Stellar
     public class ContractCostTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -213,7 +213,7 @@ namespace Stellar
     public class ContractCostParamEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -241,7 +241,7 @@ namespace Stellar
     public class StateArchivalSettingsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -269,7 +269,7 @@ namespace Stellar
     public class EvictionIteratorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -297,7 +297,7 @@ namespace Stellar
     public class ContractCostParamsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -325,7 +325,7 @@ namespace Stellar
     public class ConfigSettingIDEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -353,7 +353,7 @@ namespace Stellar
     public class ConfigSettingEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -381,7 +381,7 @@ namespace Stellar
     public class SCEnvMetaKindEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -409,7 +409,7 @@ namespace Stellar
     public class SCEnvMetaEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -437,7 +437,7 @@ namespace Stellar
     public class SCMetaV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -465,7 +465,7 @@ namespace Stellar
     public class SCMetaKindEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -493,7 +493,7 @@ namespace Stellar
     public class SCMetaEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -521,7 +521,7 @@ namespace Stellar
     public class SCSpecTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -549,7 +549,7 @@ namespace Stellar
     public class SCSpecTypeOptionEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -577,7 +577,7 @@ namespace Stellar
     public class SCSpecTypeResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -605,7 +605,7 @@ namespace Stellar
     public class SCSpecTypeVecEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -633,7 +633,7 @@ namespace Stellar
     public class SCSpecTypeMapEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -661,7 +661,7 @@ namespace Stellar
     public class SCSpecTypeTupleEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -689,7 +689,7 @@ namespace Stellar
     public class SCSpecTypeBytesNEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -717,7 +717,7 @@ namespace Stellar
     public class SCSpecTypeUDTEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -745,7 +745,7 @@ namespace Stellar
     public class SCSpecTypeDefEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -773,7 +773,7 @@ namespace Stellar
     public class SCSpecUDTStructFieldV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -801,7 +801,7 @@ namespace Stellar
     public class SCSpecUDTStructV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -829,7 +829,7 @@ namespace Stellar
     public class SCSpecUDTUnionCaseVoidV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -857,7 +857,7 @@ namespace Stellar
     public class SCSpecUDTUnionCaseTupleV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -885,7 +885,7 @@ namespace Stellar
     public class SCSpecUDTUnionCaseV0KindEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -913,7 +913,7 @@ namespace Stellar
     public class SCSpecUDTUnionCaseV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -941,7 +941,7 @@ namespace Stellar
     public class SCSpecUDTUnionV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -969,7 +969,7 @@ namespace Stellar
     public class SCSpecUDTEnumCaseV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -997,7 +997,7 @@ namespace Stellar
     public class SCSpecUDTEnumV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1025,7 +1025,7 @@ namespace Stellar
     public class SCSpecUDTErrorEnumCaseV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1053,7 +1053,7 @@ namespace Stellar
     public class SCSpecUDTErrorEnumV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1081,7 +1081,7 @@ namespace Stellar
     public class SCSpecFunctionInputV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1109,7 +1109,7 @@ namespace Stellar
     public class SCSpecFunctionV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1137,7 +1137,7 @@ namespace Stellar
     public class SCSpecEntryKindEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1165,7 +1165,7 @@ namespace Stellar
     public class SCSpecEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1193,7 +1193,7 @@ namespace Stellar
     public class SCValTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1221,7 +1221,7 @@ namespace Stellar
     public class SCErrorTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1249,7 +1249,7 @@ namespace Stellar
     public class SCErrorCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1277,7 +1277,7 @@ namespace Stellar
     public class SCErrorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1305,7 +1305,7 @@ namespace Stellar
     public class UInt128PartsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1333,7 +1333,7 @@ namespace Stellar
     public class Int128PartsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1361,7 +1361,7 @@ namespace Stellar
     public class UInt256PartsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1389,7 +1389,7 @@ namespace Stellar
     public class Int256PartsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1417,7 +1417,7 @@ namespace Stellar
     public class ContractExecutableTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1445,7 +1445,7 @@ namespace Stellar
     public class ContractExecutableEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1473,7 +1473,7 @@ namespace Stellar
     public class SCAddressTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1501,7 +1501,7 @@ namespace Stellar
     public class SCAddressEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1529,7 +1529,7 @@ namespace Stellar
     public class SCVecEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1557,7 +1557,7 @@ namespace Stellar
     public class SCMapEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1585,7 +1585,7 @@ namespace Stellar
     public class SCBytesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1613,7 +1613,7 @@ namespace Stellar
     public class SCStringEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1641,7 +1641,7 @@ namespace Stellar
     public class SCSymbolEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1669,7 +1669,7 @@ namespace Stellar
     public class SCNonceKeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1697,7 +1697,7 @@ namespace Stellar
     public class SCContractInstanceEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1725,7 +1725,7 @@ namespace Stellar
     public class SCValEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1753,7 +1753,7 @@ namespace Stellar
     public class SCMapEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1781,7 +1781,7 @@ namespace Stellar
     public class StoredTransactionSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1809,7 +1809,7 @@ namespace Stellar
     public class StoredDebugTransactionSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1837,7 +1837,7 @@ namespace Stellar
     public class PersistedSCPStateV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1865,7 +1865,7 @@ namespace Stellar
     public class PersistedSCPStateV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1893,7 +1893,7 @@ namespace Stellar
     public class PersistedSCPStateEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1921,7 +1921,7 @@ namespace Stellar
     public class ThresholdsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1949,7 +1949,7 @@ namespace Stellar
     public class string32EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -1977,7 +1977,7 @@ namespace Stellar
     public class string64EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2005,7 +2005,7 @@ namespace Stellar
     public class SequenceNumberEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2033,7 +2033,7 @@ namespace Stellar
     public class DataValueEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2061,7 +2061,7 @@ namespace Stellar
     public class PoolIDEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2089,7 +2089,7 @@ namespace Stellar
     public class AssetCode4EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2117,7 +2117,7 @@ namespace Stellar
     public class AssetCode12EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2145,7 +2145,7 @@ namespace Stellar
     public class AssetTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2173,7 +2173,7 @@ namespace Stellar
     public class AssetCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2201,7 +2201,7 @@ namespace Stellar
     public class AlphaNum4EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2229,7 +2229,7 @@ namespace Stellar
     public class AlphaNum12EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2257,7 +2257,7 @@ namespace Stellar
     public class AssetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2285,7 +2285,7 @@ namespace Stellar
     public class PriceEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2313,7 +2313,7 @@ namespace Stellar
     public class LiabilitiesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2341,7 +2341,7 @@ namespace Stellar
     public class ThresholdIndexesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2369,7 +2369,7 @@ namespace Stellar
     public class LedgerEntryTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2397,7 +2397,7 @@ namespace Stellar
     public class SignerEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2425,7 +2425,7 @@ namespace Stellar
     public class AccountFlagsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2453,7 +2453,7 @@ namespace Stellar
     public class SponsorshipDescriptorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2481,7 +2481,7 @@ namespace Stellar
     public class AccountEntryExtensionV3EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2509,7 +2509,7 @@ namespace Stellar
     public class AccountEntryExtensionV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2537,7 +2537,7 @@ namespace Stellar
     public class AccountEntryExtensionV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2565,7 +2565,7 @@ namespace Stellar
     public class AccountEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2593,7 +2593,7 @@ namespace Stellar
     public class TrustLineFlagsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2621,7 +2621,7 @@ namespace Stellar
     public class LiquidityPoolTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2649,7 +2649,7 @@ namespace Stellar
     public class TrustLineAssetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2677,7 +2677,7 @@ namespace Stellar
     public class TrustLineEntryExtensionV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2705,7 +2705,7 @@ namespace Stellar
     public class TrustLineEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2733,7 +2733,7 @@ namespace Stellar
     public class OfferEntryFlagsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2761,7 +2761,7 @@ namespace Stellar
     public class OfferEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2789,7 +2789,7 @@ namespace Stellar
     public class DataEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2817,7 +2817,7 @@ namespace Stellar
     public class ClaimPredicateTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2845,7 +2845,7 @@ namespace Stellar
     public class ClaimPredicateEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2873,7 +2873,7 @@ namespace Stellar
     public class ClaimantTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2901,7 +2901,7 @@ namespace Stellar
     public class ClaimantEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2929,7 +2929,7 @@ namespace Stellar
     public class ClaimableBalanceIDTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2957,7 +2957,7 @@ namespace Stellar
     public class ClaimableBalanceIDEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -2985,7 +2985,7 @@ namespace Stellar
     public class ClaimableBalanceFlagsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3013,7 +3013,7 @@ namespace Stellar
     public class ClaimableBalanceEntryExtensionV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3041,7 +3041,7 @@ namespace Stellar
     public class ClaimableBalanceEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3069,7 +3069,7 @@ namespace Stellar
     public class LiquidityPoolConstantProductParametersEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3097,7 +3097,7 @@ namespace Stellar
     public class LiquidityPoolEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3125,7 +3125,7 @@ namespace Stellar
     public class ContractDataDurabilityEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3153,7 +3153,7 @@ namespace Stellar
     public class ContractDataEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3181,7 +3181,7 @@ namespace Stellar
     public class ContractCodeCostInputsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3209,7 +3209,7 @@ namespace Stellar
     public class ContractCodeEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3237,7 +3237,7 @@ namespace Stellar
     public class TTLEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3265,7 +3265,7 @@ namespace Stellar
     public class LedgerEntryExtensionV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3293,7 +3293,7 @@ namespace Stellar
     public class LedgerEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3321,7 +3321,7 @@ namespace Stellar
     public class LedgerKeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3349,7 +3349,7 @@ namespace Stellar
     public class EnvelopeTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3377,7 +3377,7 @@ namespace Stellar
     public class BucketListTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3405,7 +3405,7 @@ namespace Stellar
     public class BucketEntryTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3433,7 +3433,7 @@ namespace Stellar
     public class HotArchiveBucketEntryTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3461,7 +3461,7 @@ namespace Stellar
     public class ColdArchiveBucketEntryTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3489,7 +3489,7 @@ namespace Stellar
     public class BucketMetadataEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3517,7 +3517,7 @@ namespace Stellar
     public class BucketEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3545,7 +3545,7 @@ namespace Stellar
     public class HotArchiveBucketEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3573,7 +3573,7 @@ namespace Stellar
     public class ColdArchiveArchivedLeafEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3601,7 +3601,7 @@ namespace Stellar
     public class ColdArchiveDeletedLeafEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3629,7 +3629,7 @@ namespace Stellar
     public class ColdArchiveBoundaryLeafEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3657,7 +3657,7 @@ namespace Stellar
     public class ColdArchiveHashEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3685,7 +3685,7 @@ namespace Stellar
     public class ColdArchiveBucketEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3713,7 +3713,7 @@ namespace Stellar
     public class UpgradeTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3741,7 +3741,7 @@ namespace Stellar
     public class StellarValueTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3769,7 +3769,7 @@ namespace Stellar
     public class LedgerCloseValueSignatureEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3797,7 +3797,7 @@ namespace Stellar
     public class StellarValueEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3825,7 +3825,7 @@ namespace Stellar
     public class LedgerHeaderFlagsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3853,7 +3853,7 @@ namespace Stellar
     public class LedgerHeaderExtensionV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3881,7 +3881,7 @@ namespace Stellar
     public class LedgerHeaderEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3909,7 +3909,7 @@ namespace Stellar
     public class LedgerUpgradeTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3937,7 +3937,7 @@ namespace Stellar
     public class ConfigUpgradeSetKeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3965,7 +3965,7 @@ namespace Stellar
     public class LedgerUpgradeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -3993,7 +3993,7 @@ namespace Stellar
     public class ConfigUpgradeSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4021,7 +4021,7 @@ namespace Stellar
     public class TxSetComponentTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4049,7 +4049,7 @@ namespace Stellar
     public class TxSetComponentEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4077,7 +4077,7 @@ namespace Stellar
     public class TransactionPhaseEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4105,7 +4105,7 @@ namespace Stellar
     public class TransactionSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4133,7 +4133,7 @@ namespace Stellar
     public class TransactionSetV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4161,7 +4161,7 @@ namespace Stellar
     public class GeneralizedTransactionSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4189,7 +4189,7 @@ namespace Stellar
     public class TransactionResultPairEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4217,7 +4217,7 @@ namespace Stellar
     public class TransactionResultSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4245,7 +4245,7 @@ namespace Stellar
     public class TransactionHistoryEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4273,7 +4273,7 @@ namespace Stellar
     public class TransactionHistoryResultEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4301,7 +4301,7 @@ namespace Stellar
     public class LedgerHeaderHistoryEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4329,7 +4329,7 @@ namespace Stellar
     public class LedgerSCPMessagesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4357,7 +4357,7 @@ namespace Stellar
     public class SCPHistoryEntryV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4385,7 +4385,7 @@ namespace Stellar
     public class SCPHistoryEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4413,7 +4413,7 @@ namespace Stellar
     public class LedgerEntryChangeTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4441,7 +4441,7 @@ namespace Stellar
     public class LedgerEntryChangeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4469,7 +4469,7 @@ namespace Stellar
     public class LedgerEntryChangesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4497,7 +4497,7 @@ namespace Stellar
     public class OperationMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4525,7 +4525,7 @@ namespace Stellar
     public class TransactionMetaV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4553,7 +4553,7 @@ namespace Stellar
     public class TransactionMetaV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4581,7 +4581,7 @@ namespace Stellar
     public class ContractEventTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4609,7 +4609,7 @@ namespace Stellar
     public class ContractEventEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4637,7 +4637,7 @@ namespace Stellar
     public class DiagnosticEventEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4665,7 +4665,7 @@ namespace Stellar
     public class DiagnosticEventsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4693,7 +4693,7 @@ namespace Stellar
     public class SorobanTransactionMetaExtV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4721,7 +4721,7 @@ namespace Stellar
     public class SorobanTransactionMetaExtEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4749,7 +4749,7 @@ namespace Stellar
     public class SorobanTransactionMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4777,7 +4777,7 @@ namespace Stellar
     public class TransactionMetaV3EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4805,7 +4805,7 @@ namespace Stellar
     public class InvokeHostFunctionSuccessPreImageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4833,7 +4833,7 @@ namespace Stellar
     public class TransactionMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4861,7 +4861,7 @@ namespace Stellar
     public class TransactionResultMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4889,7 +4889,7 @@ namespace Stellar
     public class UpgradeEntryMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4917,7 +4917,7 @@ namespace Stellar
     public class LedgerCloseMetaV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4945,7 +4945,7 @@ namespace Stellar
     public class LedgerCloseMetaExtV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -4973,7 +4973,7 @@ namespace Stellar
     public class LedgerCloseMetaExtEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5001,7 +5001,7 @@ namespace Stellar
     public class LedgerCloseMetaV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5029,7 +5029,7 @@ namespace Stellar
     public class LedgerCloseMetaEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5057,7 +5057,7 @@ namespace Stellar
     public class ErrorCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5085,7 +5085,7 @@ namespace Stellar
     public class ErrorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5113,7 +5113,7 @@ namespace Stellar
     public class SendMoreEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5141,7 +5141,7 @@ namespace Stellar
     public class SendMoreExtendedEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5169,7 +5169,7 @@ namespace Stellar
     public class AuthCertEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5197,7 +5197,7 @@ namespace Stellar
     public class HelloEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5225,7 +5225,7 @@ namespace Stellar
     public class AuthEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5253,7 +5253,7 @@ namespace Stellar
     public class IPAddrTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5281,7 +5281,7 @@ namespace Stellar
     public class PeerAddressEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5309,7 +5309,7 @@ namespace Stellar
     public class MessageTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5337,7 +5337,7 @@ namespace Stellar
     public class DontHaveEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5365,7 +5365,7 @@ namespace Stellar
     public class SurveyMessageCommandTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5393,7 +5393,7 @@ namespace Stellar
     public class SurveyMessageResponseTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5421,7 +5421,7 @@ namespace Stellar
     public class TimeSlicedSurveyStartCollectingMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5449,7 +5449,7 @@ namespace Stellar
     public class SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5477,7 +5477,7 @@ namespace Stellar
     public class TimeSlicedSurveyStopCollectingMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5505,7 +5505,7 @@ namespace Stellar
     public class SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5533,7 +5533,7 @@ namespace Stellar
     public class SurveyRequestMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5561,7 +5561,7 @@ namespace Stellar
     public class TimeSlicedSurveyRequestMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5589,7 +5589,7 @@ namespace Stellar
     public class SignedSurveyRequestMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5617,7 +5617,7 @@ namespace Stellar
     public class SignedTimeSlicedSurveyRequestMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5645,7 +5645,7 @@ namespace Stellar
     public class EncryptedBodyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5673,7 +5673,7 @@ namespace Stellar
     public class SurveyResponseMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5701,7 +5701,7 @@ namespace Stellar
     public class TimeSlicedSurveyResponseMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5729,7 +5729,7 @@ namespace Stellar
     public class SignedSurveyResponseMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5757,7 +5757,7 @@ namespace Stellar
     public class SignedTimeSlicedSurveyResponseMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5785,7 +5785,7 @@ namespace Stellar
     public class PeerStatsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5813,7 +5813,7 @@ namespace Stellar
     public class PeerStatListEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5841,7 +5841,7 @@ namespace Stellar
     public class TimeSlicedNodeDataEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5869,7 +5869,7 @@ namespace Stellar
     public class TimeSlicedPeerDataEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5897,7 +5897,7 @@ namespace Stellar
     public class TimeSlicedPeerDataListEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5925,7 +5925,7 @@ namespace Stellar
     public class TopologyResponseBodyV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5953,7 +5953,7 @@ namespace Stellar
     public class TopologyResponseBodyV1EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -5981,7 +5981,7 @@ namespace Stellar
     public class TopologyResponseBodyV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6009,7 +6009,7 @@ namespace Stellar
     public class SurveyResponseBodyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6037,7 +6037,7 @@ namespace Stellar
     public class TxAdvertVectorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6065,7 +6065,7 @@ namespace Stellar
     public class FloodAdvertEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6093,7 +6093,7 @@ namespace Stellar
     public class TxDemandVectorEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6121,7 +6121,7 @@ namespace Stellar
     public class FloodDemandEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6149,7 +6149,7 @@ namespace Stellar
     public class StellarMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6177,7 +6177,7 @@ namespace Stellar
     public class AuthenticatedMessageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6205,7 +6205,7 @@ namespace Stellar
     public class ValueEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6233,7 +6233,7 @@ namespace Stellar
     public class SCPBallotEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6261,7 +6261,7 @@ namespace Stellar
     public class SCPStatementTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6289,7 +6289,7 @@ namespace Stellar
     public class SCPNominationEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6317,7 +6317,7 @@ namespace Stellar
     public class SCPStatementEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6345,7 +6345,7 @@ namespace Stellar
     public class SCPEnvelopeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6373,7 +6373,7 @@ namespace Stellar
     public class SCPQuorumSetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6401,7 +6401,7 @@ namespace Stellar
     public class LiquidityPoolParametersEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6429,7 +6429,7 @@ namespace Stellar
     public class MuxedAccountEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6457,7 +6457,7 @@ namespace Stellar
     public class DecoratedSignatureEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6485,7 +6485,7 @@ namespace Stellar
     public class OperationTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6513,7 +6513,7 @@ namespace Stellar
     public class CreateAccountOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6541,7 +6541,7 @@ namespace Stellar
     public class PaymentOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6569,7 +6569,7 @@ namespace Stellar
     public class PathPaymentStrictReceiveOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6597,7 +6597,7 @@ namespace Stellar
     public class PathPaymentStrictSendOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6625,7 +6625,7 @@ namespace Stellar
     public class ManageSellOfferOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6653,7 +6653,7 @@ namespace Stellar
     public class ManageBuyOfferOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6681,7 +6681,7 @@ namespace Stellar
     public class CreatePassiveSellOfferOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6709,7 +6709,7 @@ namespace Stellar
     public class SetOptionsOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6737,7 +6737,7 @@ namespace Stellar
     public class ChangeTrustAssetEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6765,7 +6765,7 @@ namespace Stellar
     public class ChangeTrustOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6793,7 +6793,7 @@ namespace Stellar
     public class AllowTrustOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6821,7 +6821,7 @@ namespace Stellar
     public class ManageDataOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6849,7 +6849,7 @@ namespace Stellar
     public class BumpSequenceOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6877,7 +6877,7 @@ namespace Stellar
     public class CreateClaimableBalanceOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6905,7 +6905,7 @@ namespace Stellar
     public class ClaimClaimableBalanceOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6933,7 +6933,7 @@ namespace Stellar
     public class BeginSponsoringFutureReservesOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6961,7 +6961,7 @@ namespace Stellar
     public class RevokeSponsorshipTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -6989,7 +6989,7 @@ namespace Stellar
     public class RevokeSponsorshipOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7017,7 +7017,7 @@ namespace Stellar
     public class ClawbackOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7045,7 +7045,7 @@ namespace Stellar
     public class ClawbackClaimableBalanceOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7073,7 +7073,7 @@ namespace Stellar
     public class SetTrustLineFlagsOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7101,7 +7101,7 @@ namespace Stellar
     public class LiquidityPoolDepositOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7129,7 +7129,7 @@ namespace Stellar
     public class LiquidityPoolWithdrawOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7157,7 +7157,7 @@ namespace Stellar
     public class HostFunctionTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7185,7 +7185,7 @@ namespace Stellar
     public class ContractIDPreimageTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7213,7 +7213,7 @@ namespace Stellar
     public class ContractIDPreimageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7241,7 +7241,7 @@ namespace Stellar
     public class CreateContractArgsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7269,7 +7269,7 @@ namespace Stellar
     public class CreateContractArgsV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7297,7 +7297,7 @@ namespace Stellar
     public class InvokeContractArgsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7325,7 +7325,7 @@ namespace Stellar
     public class HostFunctionEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7353,7 +7353,7 @@ namespace Stellar
     public class SorobanAuthorizedFunctionTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7381,7 +7381,7 @@ namespace Stellar
     public class SorobanAuthorizedFunctionEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7409,7 +7409,7 @@ namespace Stellar
     public class SorobanAuthorizedInvocationEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7437,7 +7437,7 @@ namespace Stellar
     public class SorobanAddressCredentialsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7465,7 +7465,7 @@ namespace Stellar
     public class SorobanCredentialsTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7493,7 +7493,7 @@ namespace Stellar
     public class SorobanCredentialsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7521,7 +7521,7 @@ namespace Stellar
     public class SorobanAuthorizationEntryEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7549,7 +7549,7 @@ namespace Stellar
     public class InvokeHostFunctionOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7577,7 +7577,7 @@ namespace Stellar
     public class ExtendFootprintTTLOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7605,7 +7605,7 @@ namespace Stellar
     public class RestoreFootprintOpEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7633,7 +7633,7 @@ namespace Stellar
     public class OperationEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7661,7 +7661,7 @@ namespace Stellar
     public class HashIDPreimageEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7689,7 +7689,7 @@ namespace Stellar
     public class MemoTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7717,7 +7717,7 @@ namespace Stellar
     public class MemoEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7745,7 +7745,7 @@ namespace Stellar
     public class TimeBoundsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7773,7 +7773,7 @@ namespace Stellar
     public class LedgerBoundsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7801,7 +7801,7 @@ namespace Stellar
     public class PreconditionsV2EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7829,7 +7829,7 @@ namespace Stellar
     public class PreconditionTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7857,7 +7857,7 @@ namespace Stellar
     public class PreconditionsEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7885,7 +7885,7 @@ namespace Stellar
     public class LedgerFootprintEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7913,7 +7913,7 @@ namespace Stellar
     public class ArchivalProofTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7941,7 +7941,7 @@ namespace Stellar
     public class ArchivalProofNodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7969,7 +7969,7 @@ namespace Stellar
     public class ProofLevelEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -7997,7 +7997,7 @@ namespace Stellar
     public class NonexistenceProofBodyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8025,7 +8025,7 @@ namespace Stellar
     public class ExistenceProofBodyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8053,7 +8053,7 @@ namespace Stellar
     public class ArchivalProofEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8081,7 +8081,7 @@ namespace Stellar
     public class SorobanResourcesEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8109,7 +8109,7 @@ namespace Stellar
     public class SorobanTransactionDataEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8137,7 +8137,7 @@ namespace Stellar
     public class TransactionV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8165,7 +8165,7 @@ namespace Stellar
     public class TransactionV0EnvelopeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8193,7 +8193,7 @@ namespace Stellar
     public class TransactionEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8221,7 +8221,7 @@ namespace Stellar
     public class TransactionV1EnvelopeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8249,7 +8249,7 @@ namespace Stellar
     public class FeeBumpTransactionEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8277,7 +8277,7 @@ namespace Stellar
     public class FeeBumpTransactionEnvelopeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8305,7 +8305,7 @@ namespace Stellar
     public class TransactionEnvelopeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8333,7 +8333,7 @@ namespace Stellar
     public class TransactionSignaturePayloadEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8361,7 +8361,7 @@ namespace Stellar
     public class ClaimAtomTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8389,7 +8389,7 @@ namespace Stellar
     public class ClaimOfferAtomV0EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8417,7 +8417,7 @@ namespace Stellar
     public class ClaimOfferAtomEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8445,7 +8445,7 @@ namespace Stellar
     public class ClaimLiquidityAtomEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8473,7 +8473,7 @@ namespace Stellar
     public class ClaimAtomEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8501,7 +8501,7 @@ namespace Stellar
     public class CreateAccountResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8529,7 +8529,7 @@ namespace Stellar
     public class CreateAccountResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8557,7 +8557,7 @@ namespace Stellar
     public class PaymentResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8585,7 +8585,7 @@ namespace Stellar
     public class PaymentResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8613,7 +8613,7 @@ namespace Stellar
     public class PathPaymentStrictReceiveResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8641,7 +8641,7 @@ namespace Stellar
     public class SimplePaymentResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8669,7 +8669,7 @@ namespace Stellar
     public class PathPaymentStrictReceiveResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8697,7 +8697,7 @@ namespace Stellar
     public class PathPaymentStrictSendResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8725,7 +8725,7 @@ namespace Stellar
     public class PathPaymentStrictSendResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8753,7 +8753,7 @@ namespace Stellar
     public class ManageSellOfferResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8781,7 +8781,7 @@ namespace Stellar
     public class ManageOfferEffectEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8809,7 +8809,7 @@ namespace Stellar
     public class ManageOfferSuccessResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8837,7 +8837,7 @@ namespace Stellar
     public class ManageSellOfferResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8865,7 +8865,7 @@ namespace Stellar
     public class ManageBuyOfferResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8893,7 +8893,7 @@ namespace Stellar
     public class ManageBuyOfferResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8921,7 +8921,7 @@ namespace Stellar
     public class SetOptionsResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8949,7 +8949,7 @@ namespace Stellar
     public class SetOptionsResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -8977,7 +8977,7 @@ namespace Stellar
     public class ChangeTrustResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9005,7 +9005,7 @@ namespace Stellar
     public class ChangeTrustResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9033,7 +9033,7 @@ namespace Stellar
     public class AllowTrustResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9061,7 +9061,7 @@ namespace Stellar
     public class AllowTrustResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9089,7 +9089,7 @@ namespace Stellar
     public class AccountMergeResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9117,7 +9117,7 @@ namespace Stellar
     public class AccountMergeResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9145,7 +9145,7 @@ namespace Stellar
     public class InflationResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9173,7 +9173,7 @@ namespace Stellar
     public class InflationPayoutEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9201,7 +9201,7 @@ namespace Stellar
     public class InflationResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9229,7 +9229,7 @@ namespace Stellar
     public class ManageDataResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9257,7 +9257,7 @@ namespace Stellar
     public class ManageDataResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9285,7 +9285,7 @@ namespace Stellar
     public class BumpSequenceResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9313,7 +9313,7 @@ namespace Stellar
     public class BumpSequenceResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9341,7 +9341,7 @@ namespace Stellar
     public class CreateClaimableBalanceResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9369,7 +9369,7 @@ namespace Stellar
     public class CreateClaimableBalanceResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9397,7 +9397,7 @@ namespace Stellar
     public class ClaimClaimableBalanceResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9425,7 +9425,7 @@ namespace Stellar
     public class ClaimClaimableBalanceResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9453,7 +9453,7 @@ namespace Stellar
     public class BeginSponsoringFutureReservesResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9481,7 +9481,7 @@ namespace Stellar
     public class BeginSponsoringFutureReservesResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9509,7 +9509,7 @@ namespace Stellar
     public class EndSponsoringFutureReservesResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9537,7 +9537,7 @@ namespace Stellar
     public class EndSponsoringFutureReservesResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9565,7 +9565,7 @@ namespace Stellar
     public class RevokeSponsorshipResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9593,7 +9593,7 @@ namespace Stellar
     public class RevokeSponsorshipResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9621,7 +9621,7 @@ namespace Stellar
     public class ClawbackResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9649,7 +9649,7 @@ namespace Stellar
     public class ClawbackResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9677,7 +9677,7 @@ namespace Stellar
     public class ClawbackClaimableBalanceResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9705,7 +9705,7 @@ namespace Stellar
     public class ClawbackClaimableBalanceResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9733,7 +9733,7 @@ namespace Stellar
     public class SetTrustLineFlagsResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9761,7 +9761,7 @@ namespace Stellar
     public class SetTrustLineFlagsResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9789,7 +9789,7 @@ namespace Stellar
     public class LiquidityPoolDepositResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9817,7 +9817,7 @@ namespace Stellar
     public class LiquidityPoolDepositResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9845,7 +9845,7 @@ namespace Stellar
     public class LiquidityPoolWithdrawResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9873,7 +9873,7 @@ namespace Stellar
     public class LiquidityPoolWithdrawResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9901,7 +9901,7 @@ namespace Stellar
     public class InvokeHostFunctionResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9929,7 +9929,7 @@ namespace Stellar
     public class InvokeHostFunctionResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9957,7 +9957,7 @@ namespace Stellar
     public class ExtendFootprintTTLResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -9985,7 +9985,7 @@ namespace Stellar
     public class ExtendFootprintTTLResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10013,7 +10013,7 @@ namespace Stellar
     public class RestoreFootprintResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10041,7 +10041,7 @@ namespace Stellar
     public class RestoreFootprintResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10069,7 +10069,7 @@ namespace Stellar
     public class OperationResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10097,7 +10097,7 @@ namespace Stellar
     public class OperationResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10125,7 +10125,7 @@ namespace Stellar
     public class TransactionResultCodeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10153,7 +10153,7 @@ namespace Stellar
     public class InnerTransactionResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10181,7 +10181,7 @@ namespace Stellar
     public class InnerTransactionResultPairEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10209,7 +10209,7 @@ namespace Stellar
     public class TransactionResultEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10237,7 +10237,7 @@ namespace Stellar
     public class HashEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10265,7 +10265,7 @@ namespace Stellar
     public class uint256EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10293,7 +10293,7 @@ namespace Stellar
     public class uint32EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10321,7 +10321,7 @@ namespace Stellar
     public class int32EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10349,7 +10349,7 @@ namespace Stellar
     public class uint64EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10377,7 +10377,7 @@ namespace Stellar
     public class int64EncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10405,7 +10405,7 @@ namespace Stellar
     public class TimePointEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10433,7 +10433,7 @@ namespace Stellar
     public class DurationEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10461,7 +10461,7 @@ namespace Stellar
     public class ExtensionPointEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10489,7 +10489,7 @@ namespace Stellar
     public class CryptoKeyTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10517,7 +10517,7 @@ namespace Stellar
     public class PublicKeyTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10545,7 +10545,7 @@ namespace Stellar
     public class SignerKeyTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10573,7 +10573,7 @@ namespace Stellar
     public class PublicKeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10601,7 +10601,7 @@ namespace Stellar
     public class SignerKeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10629,7 +10629,7 @@ namespace Stellar
     public class SignatureEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10657,7 +10657,7 @@ namespace Stellar
     public class SignatureHintEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10685,7 +10685,7 @@ namespace Stellar
     public class NodeIDEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10713,7 +10713,7 @@ namespace Stellar
     public class AccountIDEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10741,7 +10741,7 @@ namespace Stellar
     public class Curve25519SecretEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10769,7 +10769,7 @@ namespace Stellar
     public class Curve25519PublicEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10797,7 +10797,7 @@ namespace Stellar
     public class HmacSha256KeyEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10825,7 +10825,7 @@ namespace Stellar
     public class HmacSha256MacEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10853,7 +10853,7 @@ namespace Stellar
     public class ShortHashSeedEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10881,7 +10881,7 @@ namespace Stellar
     public class BinaryFuseFilterTypeEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -10909,7 +10909,7 @@ namespace Stellar
     public class SerializedBinaryFuseFilterEncodeResponse
     {
         [ProtoMember(1)]
-        public byte[] EncodedValue { get; set; }
+        public string EncodedValue { get; set; }
     }
 
     [ProtoContract]
@@ -13278,7 +13278,7 @@ namespace Stellar
             var base64 = ConfigSettingContractExecutionLanesV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractExecutionLanesV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13298,7 +13298,7 @@ namespace Stellar
             var base64 = ConfigSettingContractComputeV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractComputeV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13318,7 +13318,7 @@ namespace Stellar
             var base64 = ConfigSettingContractLedgerCostV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractLedgerCostV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13338,7 +13338,7 @@ namespace Stellar
             var base64 = ConfigSettingContractHistoricalDataV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractHistoricalDataV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13358,7 +13358,7 @@ namespace Stellar
             var base64 = ConfigSettingContractEventsV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractEventsV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13378,7 +13378,7 @@ namespace Stellar
             var base64 = ConfigSettingContractBandwidthV0Xdr.EncodeToBase64(request.Value);
             return new ConfigSettingContractBandwidthV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13398,7 +13398,7 @@ namespace Stellar
             var base64 = ContractCostTypeXdr.EncodeToBase64(request.Value);
             return new ContractCostTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13418,7 +13418,7 @@ namespace Stellar
             var base64 = ContractCostParamEntryXdr.EncodeToBase64(request.Value);
             return new ContractCostParamEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13438,7 +13438,7 @@ namespace Stellar
             var base64 = StateArchivalSettingsXdr.EncodeToBase64(request.Value);
             return new StateArchivalSettingsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13458,7 +13458,7 @@ namespace Stellar
             var base64 = EvictionIteratorXdr.EncodeToBase64(request.Value);
             return new EvictionIteratorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13478,7 +13478,7 @@ namespace Stellar
             var base64 = ContractCostParamsXdr.EncodeToBase64(request.Value);
             return new ContractCostParamsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13498,7 +13498,7 @@ namespace Stellar
             var base64 = ConfigSettingIDXdr.EncodeToBase64(request.Value);
             return new ConfigSettingIDEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13518,7 +13518,7 @@ namespace Stellar
             var base64 = ConfigSettingEntryXdr.EncodeToBase64(request.Value);
             return new ConfigSettingEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13538,7 +13538,7 @@ namespace Stellar
             var base64 = SCEnvMetaKindXdr.EncodeToBase64(request.Value);
             return new SCEnvMetaKindEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13558,7 +13558,7 @@ namespace Stellar
             var base64 = SCEnvMetaEntryXdr.EncodeToBase64(request.Value);
             return new SCEnvMetaEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13578,7 +13578,7 @@ namespace Stellar
             var base64 = SCMetaV0Xdr.EncodeToBase64(request.Value);
             return new SCMetaV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13598,7 +13598,7 @@ namespace Stellar
             var base64 = SCMetaKindXdr.EncodeToBase64(request.Value);
             return new SCMetaKindEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13618,7 +13618,7 @@ namespace Stellar
             var base64 = SCMetaEntryXdr.EncodeToBase64(request.Value);
             return new SCMetaEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13638,7 +13638,7 @@ namespace Stellar
             var base64 = SCSpecTypeXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13658,7 +13658,7 @@ namespace Stellar
             var base64 = SCSpecTypeOptionXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeOptionEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13678,7 +13678,7 @@ namespace Stellar
             var base64 = SCSpecTypeResultXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13698,7 +13698,7 @@ namespace Stellar
             var base64 = SCSpecTypeVecXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeVecEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13718,7 +13718,7 @@ namespace Stellar
             var base64 = SCSpecTypeMapXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeMapEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13738,7 +13738,7 @@ namespace Stellar
             var base64 = SCSpecTypeTupleXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeTupleEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13758,7 +13758,7 @@ namespace Stellar
             var base64 = SCSpecTypeBytesNXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeBytesNEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13778,7 +13778,7 @@ namespace Stellar
             var base64 = SCSpecTypeUDTXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeUDTEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13798,7 +13798,7 @@ namespace Stellar
             var base64 = SCSpecTypeDefXdr.EncodeToBase64(request.Value);
             return new SCSpecTypeDefEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13818,7 +13818,7 @@ namespace Stellar
             var base64 = SCSpecUDTStructFieldV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTStructFieldV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13838,7 +13838,7 @@ namespace Stellar
             var base64 = SCSpecUDTStructV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTStructV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13858,7 +13858,7 @@ namespace Stellar
             var base64 = SCSpecUDTUnionCaseVoidV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTUnionCaseVoidV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13878,7 +13878,7 @@ namespace Stellar
             var base64 = SCSpecUDTUnionCaseTupleV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTUnionCaseTupleV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13898,7 +13898,7 @@ namespace Stellar
             var base64 = SCSpecUDTUnionCaseV0KindXdr.EncodeToBase64(request.Value);
             return new SCSpecUDTUnionCaseV0KindEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13918,7 +13918,7 @@ namespace Stellar
             var base64 = SCSpecUDTUnionCaseV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTUnionCaseV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13938,7 +13938,7 @@ namespace Stellar
             var base64 = SCSpecUDTUnionV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTUnionV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13958,7 +13958,7 @@ namespace Stellar
             var base64 = SCSpecUDTEnumCaseV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTEnumCaseV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13978,7 +13978,7 @@ namespace Stellar
             var base64 = SCSpecUDTEnumV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTEnumV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -13998,7 +13998,7 @@ namespace Stellar
             var base64 = SCSpecUDTErrorEnumCaseV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTErrorEnumCaseV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14018,7 +14018,7 @@ namespace Stellar
             var base64 = SCSpecUDTErrorEnumV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecUDTErrorEnumV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14038,7 +14038,7 @@ namespace Stellar
             var base64 = SCSpecFunctionInputV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecFunctionInputV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14058,7 +14058,7 @@ namespace Stellar
             var base64 = SCSpecFunctionV0Xdr.EncodeToBase64(request.Value);
             return new SCSpecFunctionV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14078,7 +14078,7 @@ namespace Stellar
             var base64 = SCSpecEntryKindXdr.EncodeToBase64(request.Value);
             return new SCSpecEntryKindEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14098,7 +14098,7 @@ namespace Stellar
             var base64 = SCSpecEntryXdr.EncodeToBase64(request.Value);
             return new SCSpecEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14118,7 +14118,7 @@ namespace Stellar
             var base64 = SCValTypeXdr.EncodeToBase64(request.Value);
             return new SCValTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14138,7 +14138,7 @@ namespace Stellar
             var base64 = SCErrorTypeXdr.EncodeToBase64(request.Value);
             return new SCErrorTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14158,7 +14158,7 @@ namespace Stellar
             var base64 = SCErrorCodeXdr.EncodeToBase64(request.Value);
             return new SCErrorCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14178,7 +14178,7 @@ namespace Stellar
             var base64 = SCErrorXdr.EncodeToBase64(request.Value);
             return new SCErrorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14198,7 +14198,7 @@ namespace Stellar
             var base64 = UInt128PartsXdr.EncodeToBase64(request.Value);
             return new UInt128PartsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14218,7 +14218,7 @@ namespace Stellar
             var base64 = Int128PartsXdr.EncodeToBase64(request.Value);
             return new Int128PartsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14238,7 +14238,7 @@ namespace Stellar
             var base64 = UInt256PartsXdr.EncodeToBase64(request.Value);
             return new UInt256PartsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14258,7 +14258,7 @@ namespace Stellar
             var base64 = Int256PartsXdr.EncodeToBase64(request.Value);
             return new Int256PartsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14278,7 +14278,7 @@ namespace Stellar
             var base64 = ContractExecutableTypeXdr.EncodeToBase64(request.Value);
             return new ContractExecutableTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14298,7 +14298,7 @@ namespace Stellar
             var base64 = ContractExecutableXdr.EncodeToBase64(request.Value);
             return new ContractExecutableEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14318,7 +14318,7 @@ namespace Stellar
             var base64 = SCAddressTypeXdr.EncodeToBase64(request.Value);
             return new SCAddressTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14338,7 +14338,7 @@ namespace Stellar
             var base64 = SCAddressXdr.EncodeToBase64(request.Value);
             return new SCAddressEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14358,7 +14358,7 @@ namespace Stellar
             var base64 = SCVecXdr.EncodeToBase64(request.Value);
             return new SCVecEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14378,7 +14378,7 @@ namespace Stellar
             var base64 = SCMapXdr.EncodeToBase64(request.Value);
             return new SCMapEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14398,7 +14398,7 @@ namespace Stellar
             var base64 = SCBytesXdr.EncodeToBase64(request.Value);
             return new SCBytesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14418,7 +14418,7 @@ namespace Stellar
             var base64 = SCStringXdr.EncodeToBase64(request.Value);
             return new SCStringEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14438,7 +14438,7 @@ namespace Stellar
             var base64 = SCSymbolXdr.EncodeToBase64(request.Value);
             return new SCSymbolEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14458,7 +14458,7 @@ namespace Stellar
             var base64 = SCNonceKeyXdr.EncodeToBase64(request.Value);
             return new SCNonceKeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14478,7 +14478,7 @@ namespace Stellar
             var base64 = SCContractInstanceXdr.EncodeToBase64(request.Value);
             return new SCContractInstanceEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14498,7 +14498,7 @@ namespace Stellar
             var base64 = SCValXdr.EncodeToBase64(request.Value);
             return new SCValEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14518,7 +14518,7 @@ namespace Stellar
             var base64 = SCMapEntryXdr.EncodeToBase64(request.Value);
             return new SCMapEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14538,7 +14538,7 @@ namespace Stellar
             var base64 = StoredTransactionSetXdr.EncodeToBase64(request.Value);
             return new StoredTransactionSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14558,7 +14558,7 @@ namespace Stellar
             var base64 = StoredDebugTransactionSetXdr.EncodeToBase64(request.Value);
             return new StoredDebugTransactionSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14578,7 +14578,7 @@ namespace Stellar
             var base64 = PersistedSCPStateV0Xdr.EncodeToBase64(request.Value);
             return new PersistedSCPStateV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14598,7 +14598,7 @@ namespace Stellar
             var base64 = PersistedSCPStateV1Xdr.EncodeToBase64(request.Value);
             return new PersistedSCPStateV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14618,7 +14618,7 @@ namespace Stellar
             var base64 = PersistedSCPStateXdr.EncodeToBase64(request.Value);
             return new PersistedSCPStateEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14638,7 +14638,7 @@ namespace Stellar
             var base64 = ThresholdsXdr.EncodeToBase64(request.Value);
             return new ThresholdsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14658,7 +14658,7 @@ namespace Stellar
             var base64 = string32Xdr.EncodeToBase64(request.Value);
             return new string32EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14678,7 +14678,7 @@ namespace Stellar
             var base64 = string64Xdr.EncodeToBase64(request.Value);
             return new string64EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14698,7 +14698,7 @@ namespace Stellar
             var base64 = SequenceNumberXdr.EncodeToBase64(request.Value);
             return new SequenceNumberEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14718,7 +14718,7 @@ namespace Stellar
             var base64 = DataValueXdr.EncodeToBase64(request.Value);
             return new DataValueEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14738,7 +14738,7 @@ namespace Stellar
             var base64 = PoolIDXdr.EncodeToBase64(request.Value);
             return new PoolIDEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14758,7 +14758,7 @@ namespace Stellar
             var base64 = AssetCode4Xdr.EncodeToBase64(request.Value);
             return new AssetCode4EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14778,7 +14778,7 @@ namespace Stellar
             var base64 = AssetCode12Xdr.EncodeToBase64(request.Value);
             return new AssetCode12EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14798,7 +14798,7 @@ namespace Stellar
             var base64 = AssetTypeXdr.EncodeToBase64(request.Value);
             return new AssetTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14818,7 +14818,7 @@ namespace Stellar
             var base64 = AssetCodeXdr.EncodeToBase64(request.Value);
             return new AssetCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14838,7 +14838,7 @@ namespace Stellar
             var base64 = AlphaNum4Xdr.EncodeToBase64(request.Value);
             return new AlphaNum4EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14858,7 +14858,7 @@ namespace Stellar
             var base64 = AlphaNum12Xdr.EncodeToBase64(request.Value);
             return new AlphaNum12EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14878,7 +14878,7 @@ namespace Stellar
             var base64 = AssetXdr.EncodeToBase64(request.Value);
             return new AssetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14898,7 +14898,7 @@ namespace Stellar
             var base64 = PriceXdr.EncodeToBase64(request.Value);
             return new PriceEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14918,7 +14918,7 @@ namespace Stellar
             var base64 = LiabilitiesXdr.EncodeToBase64(request.Value);
             return new LiabilitiesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14938,7 +14938,7 @@ namespace Stellar
             var base64 = ThresholdIndexesXdr.EncodeToBase64(request.Value);
             return new ThresholdIndexesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14958,7 +14958,7 @@ namespace Stellar
             var base64 = LedgerEntryTypeXdr.EncodeToBase64(request.Value);
             return new LedgerEntryTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14978,7 +14978,7 @@ namespace Stellar
             var base64 = SignerXdr.EncodeToBase64(request.Value);
             return new SignerEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -14998,7 +14998,7 @@ namespace Stellar
             var base64 = AccountFlagsXdr.EncodeToBase64(request.Value);
             return new AccountFlagsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15018,7 +15018,7 @@ namespace Stellar
             var base64 = SponsorshipDescriptorXdr.EncodeToBase64(request.Value);
             return new SponsorshipDescriptorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15038,7 +15038,7 @@ namespace Stellar
             var base64 = AccountEntryExtensionV3Xdr.EncodeToBase64(request.Value);
             return new AccountEntryExtensionV3EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15058,7 +15058,7 @@ namespace Stellar
             var base64 = AccountEntryExtensionV2Xdr.EncodeToBase64(request.Value);
             return new AccountEntryExtensionV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15078,7 +15078,7 @@ namespace Stellar
             var base64 = AccountEntryExtensionV1Xdr.EncodeToBase64(request.Value);
             return new AccountEntryExtensionV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15098,7 +15098,7 @@ namespace Stellar
             var base64 = AccountEntryXdr.EncodeToBase64(request.Value);
             return new AccountEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15118,7 +15118,7 @@ namespace Stellar
             var base64 = TrustLineFlagsXdr.EncodeToBase64(request.Value);
             return new TrustLineFlagsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15138,7 +15138,7 @@ namespace Stellar
             var base64 = LiquidityPoolTypeXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15158,7 +15158,7 @@ namespace Stellar
             var base64 = TrustLineAssetXdr.EncodeToBase64(request.Value);
             return new TrustLineAssetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15178,7 +15178,7 @@ namespace Stellar
             var base64 = TrustLineEntryExtensionV2Xdr.EncodeToBase64(request.Value);
             return new TrustLineEntryExtensionV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15198,7 +15198,7 @@ namespace Stellar
             var base64 = TrustLineEntryXdr.EncodeToBase64(request.Value);
             return new TrustLineEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15218,7 +15218,7 @@ namespace Stellar
             var base64 = OfferEntryFlagsXdr.EncodeToBase64(request.Value);
             return new OfferEntryFlagsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15238,7 +15238,7 @@ namespace Stellar
             var base64 = OfferEntryXdr.EncodeToBase64(request.Value);
             return new OfferEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15258,7 +15258,7 @@ namespace Stellar
             var base64 = DataEntryXdr.EncodeToBase64(request.Value);
             return new DataEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15278,7 +15278,7 @@ namespace Stellar
             var base64 = ClaimPredicateTypeXdr.EncodeToBase64(request.Value);
             return new ClaimPredicateTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15298,7 +15298,7 @@ namespace Stellar
             var base64 = ClaimPredicateXdr.EncodeToBase64(request.Value);
             return new ClaimPredicateEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15318,7 +15318,7 @@ namespace Stellar
             var base64 = ClaimantTypeXdr.EncodeToBase64(request.Value);
             return new ClaimantTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15338,7 +15338,7 @@ namespace Stellar
             var base64 = ClaimantXdr.EncodeToBase64(request.Value);
             return new ClaimantEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15358,7 +15358,7 @@ namespace Stellar
             var base64 = ClaimableBalanceIDTypeXdr.EncodeToBase64(request.Value);
             return new ClaimableBalanceIDTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15378,7 +15378,7 @@ namespace Stellar
             var base64 = ClaimableBalanceIDXdr.EncodeToBase64(request.Value);
             return new ClaimableBalanceIDEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15398,7 +15398,7 @@ namespace Stellar
             var base64 = ClaimableBalanceFlagsXdr.EncodeToBase64(request.Value);
             return new ClaimableBalanceFlagsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15418,7 +15418,7 @@ namespace Stellar
             var base64 = ClaimableBalanceEntryExtensionV1Xdr.EncodeToBase64(request.Value);
             return new ClaimableBalanceEntryExtensionV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15438,7 +15438,7 @@ namespace Stellar
             var base64 = ClaimableBalanceEntryXdr.EncodeToBase64(request.Value);
             return new ClaimableBalanceEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15458,7 +15458,7 @@ namespace Stellar
             var base64 = LiquidityPoolConstantProductParametersXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolConstantProductParametersEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15478,7 +15478,7 @@ namespace Stellar
             var base64 = LiquidityPoolEntryXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15498,7 +15498,7 @@ namespace Stellar
             var base64 = ContractDataDurabilityXdr.EncodeToBase64(request.Value);
             return new ContractDataDurabilityEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15518,7 +15518,7 @@ namespace Stellar
             var base64 = ContractDataEntryXdr.EncodeToBase64(request.Value);
             return new ContractDataEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15538,7 +15538,7 @@ namespace Stellar
             var base64 = ContractCodeCostInputsXdr.EncodeToBase64(request.Value);
             return new ContractCodeCostInputsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15558,7 +15558,7 @@ namespace Stellar
             var base64 = ContractCodeEntryXdr.EncodeToBase64(request.Value);
             return new ContractCodeEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15578,7 +15578,7 @@ namespace Stellar
             var base64 = TTLEntryXdr.EncodeToBase64(request.Value);
             return new TTLEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15598,7 +15598,7 @@ namespace Stellar
             var base64 = LedgerEntryExtensionV1Xdr.EncodeToBase64(request.Value);
             return new LedgerEntryExtensionV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15618,7 +15618,7 @@ namespace Stellar
             var base64 = LedgerEntryXdr.EncodeToBase64(request.Value);
             return new LedgerEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15638,7 +15638,7 @@ namespace Stellar
             var base64 = LedgerKeyXdr.EncodeToBase64(request.Value);
             return new LedgerKeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15658,7 +15658,7 @@ namespace Stellar
             var base64 = EnvelopeTypeXdr.EncodeToBase64(request.Value);
             return new EnvelopeTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15678,7 +15678,7 @@ namespace Stellar
             var base64 = BucketListTypeXdr.EncodeToBase64(request.Value);
             return new BucketListTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15698,7 +15698,7 @@ namespace Stellar
             var base64 = BucketEntryTypeXdr.EncodeToBase64(request.Value);
             return new BucketEntryTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15718,7 +15718,7 @@ namespace Stellar
             var base64 = HotArchiveBucketEntryTypeXdr.EncodeToBase64(request.Value);
             return new HotArchiveBucketEntryTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15738,7 +15738,7 @@ namespace Stellar
             var base64 = ColdArchiveBucketEntryTypeXdr.EncodeToBase64(request.Value);
             return new ColdArchiveBucketEntryTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15758,7 +15758,7 @@ namespace Stellar
             var base64 = BucketMetadataXdr.EncodeToBase64(request.Value);
             return new BucketMetadataEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15778,7 +15778,7 @@ namespace Stellar
             var base64 = BucketEntryXdr.EncodeToBase64(request.Value);
             return new BucketEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15798,7 +15798,7 @@ namespace Stellar
             var base64 = HotArchiveBucketEntryXdr.EncodeToBase64(request.Value);
             return new HotArchiveBucketEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15818,7 +15818,7 @@ namespace Stellar
             var base64 = ColdArchiveArchivedLeafXdr.EncodeToBase64(request.Value);
             return new ColdArchiveArchivedLeafEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15838,7 +15838,7 @@ namespace Stellar
             var base64 = ColdArchiveDeletedLeafXdr.EncodeToBase64(request.Value);
             return new ColdArchiveDeletedLeafEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15858,7 +15858,7 @@ namespace Stellar
             var base64 = ColdArchiveBoundaryLeafXdr.EncodeToBase64(request.Value);
             return new ColdArchiveBoundaryLeafEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15878,7 +15878,7 @@ namespace Stellar
             var base64 = ColdArchiveHashEntryXdr.EncodeToBase64(request.Value);
             return new ColdArchiveHashEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15898,7 +15898,7 @@ namespace Stellar
             var base64 = ColdArchiveBucketEntryXdr.EncodeToBase64(request.Value);
             return new ColdArchiveBucketEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15918,7 +15918,7 @@ namespace Stellar
             var base64 = UpgradeTypeXdr.EncodeToBase64(request.Value);
             return new UpgradeTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15938,7 +15938,7 @@ namespace Stellar
             var base64 = StellarValueTypeXdr.EncodeToBase64(request.Value);
             return new StellarValueTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15958,7 +15958,7 @@ namespace Stellar
             var base64 = LedgerCloseValueSignatureXdr.EncodeToBase64(request.Value);
             return new LedgerCloseValueSignatureEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15978,7 +15978,7 @@ namespace Stellar
             var base64 = StellarValueXdr.EncodeToBase64(request.Value);
             return new StellarValueEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -15998,7 +15998,7 @@ namespace Stellar
             var base64 = LedgerHeaderFlagsXdr.EncodeToBase64(request.Value);
             return new LedgerHeaderFlagsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16018,7 +16018,7 @@ namespace Stellar
             var base64 = LedgerHeaderExtensionV1Xdr.EncodeToBase64(request.Value);
             return new LedgerHeaderExtensionV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16038,7 +16038,7 @@ namespace Stellar
             var base64 = LedgerHeaderXdr.EncodeToBase64(request.Value);
             return new LedgerHeaderEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16058,7 +16058,7 @@ namespace Stellar
             var base64 = LedgerUpgradeTypeXdr.EncodeToBase64(request.Value);
             return new LedgerUpgradeTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16078,7 +16078,7 @@ namespace Stellar
             var base64 = ConfigUpgradeSetKeyXdr.EncodeToBase64(request.Value);
             return new ConfigUpgradeSetKeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16098,7 +16098,7 @@ namespace Stellar
             var base64 = LedgerUpgradeXdr.EncodeToBase64(request.Value);
             return new LedgerUpgradeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16118,7 +16118,7 @@ namespace Stellar
             var base64 = ConfigUpgradeSetXdr.EncodeToBase64(request.Value);
             return new ConfigUpgradeSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16138,7 +16138,7 @@ namespace Stellar
             var base64 = TxSetComponentTypeXdr.EncodeToBase64(request.Value);
             return new TxSetComponentTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16158,7 +16158,7 @@ namespace Stellar
             var base64 = TxSetComponentXdr.EncodeToBase64(request.Value);
             return new TxSetComponentEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16178,7 +16178,7 @@ namespace Stellar
             var base64 = TransactionPhaseXdr.EncodeToBase64(request.Value);
             return new TransactionPhaseEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16198,7 +16198,7 @@ namespace Stellar
             var base64 = TransactionSetXdr.EncodeToBase64(request.Value);
             return new TransactionSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16218,7 +16218,7 @@ namespace Stellar
             var base64 = TransactionSetV1Xdr.EncodeToBase64(request.Value);
             return new TransactionSetV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16238,7 +16238,7 @@ namespace Stellar
             var base64 = GeneralizedTransactionSetXdr.EncodeToBase64(request.Value);
             return new GeneralizedTransactionSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16258,7 +16258,7 @@ namespace Stellar
             var base64 = TransactionResultPairXdr.EncodeToBase64(request.Value);
             return new TransactionResultPairEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16278,7 +16278,7 @@ namespace Stellar
             var base64 = TransactionResultSetXdr.EncodeToBase64(request.Value);
             return new TransactionResultSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16298,7 +16298,7 @@ namespace Stellar
             var base64 = TransactionHistoryEntryXdr.EncodeToBase64(request.Value);
             return new TransactionHistoryEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16318,7 +16318,7 @@ namespace Stellar
             var base64 = TransactionHistoryResultEntryXdr.EncodeToBase64(request.Value);
             return new TransactionHistoryResultEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16338,7 +16338,7 @@ namespace Stellar
             var base64 = LedgerHeaderHistoryEntryXdr.EncodeToBase64(request.Value);
             return new LedgerHeaderHistoryEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16358,7 +16358,7 @@ namespace Stellar
             var base64 = LedgerSCPMessagesXdr.EncodeToBase64(request.Value);
             return new LedgerSCPMessagesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16378,7 +16378,7 @@ namespace Stellar
             var base64 = SCPHistoryEntryV0Xdr.EncodeToBase64(request.Value);
             return new SCPHistoryEntryV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16398,7 +16398,7 @@ namespace Stellar
             var base64 = SCPHistoryEntryXdr.EncodeToBase64(request.Value);
             return new SCPHistoryEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16418,7 +16418,7 @@ namespace Stellar
             var base64 = LedgerEntryChangeTypeXdr.EncodeToBase64(request.Value);
             return new LedgerEntryChangeTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16438,7 +16438,7 @@ namespace Stellar
             var base64 = LedgerEntryChangeXdr.EncodeToBase64(request.Value);
             return new LedgerEntryChangeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16458,7 +16458,7 @@ namespace Stellar
             var base64 = LedgerEntryChangesXdr.EncodeToBase64(request.Value);
             return new LedgerEntryChangesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16478,7 +16478,7 @@ namespace Stellar
             var base64 = OperationMetaXdr.EncodeToBase64(request.Value);
             return new OperationMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16498,7 +16498,7 @@ namespace Stellar
             var base64 = TransactionMetaV1Xdr.EncodeToBase64(request.Value);
             return new TransactionMetaV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16518,7 +16518,7 @@ namespace Stellar
             var base64 = TransactionMetaV2Xdr.EncodeToBase64(request.Value);
             return new TransactionMetaV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16538,7 +16538,7 @@ namespace Stellar
             var base64 = ContractEventTypeXdr.EncodeToBase64(request.Value);
             return new ContractEventTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16558,7 +16558,7 @@ namespace Stellar
             var base64 = ContractEventXdr.EncodeToBase64(request.Value);
             return new ContractEventEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16578,7 +16578,7 @@ namespace Stellar
             var base64 = DiagnosticEventXdr.EncodeToBase64(request.Value);
             return new DiagnosticEventEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16598,7 +16598,7 @@ namespace Stellar
             var base64 = DiagnosticEventsXdr.EncodeToBase64(request.Value);
             return new DiagnosticEventsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16618,7 +16618,7 @@ namespace Stellar
             var base64 = SorobanTransactionMetaExtV1Xdr.EncodeToBase64(request.Value);
             return new SorobanTransactionMetaExtV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16638,7 +16638,7 @@ namespace Stellar
             var base64 = SorobanTransactionMetaExtXdr.EncodeToBase64(request.Value);
             return new SorobanTransactionMetaExtEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16658,7 +16658,7 @@ namespace Stellar
             var base64 = SorobanTransactionMetaXdr.EncodeToBase64(request.Value);
             return new SorobanTransactionMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16678,7 +16678,7 @@ namespace Stellar
             var base64 = TransactionMetaV3Xdr.EncodeToBase64(request.Value);
             return new TransactionMetaV3EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16698,7 +16698,7 @@ namespace Stellar
             var base64 = InvokeHostFunctionSuccessPreImageXdr.EncodeToBase64(request.Value);
             return new InvokeHostFunctionSuccessPreImageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16718,7 +16718,7 @@ namespace Stellar
             var base64 = TransactionMetaXdr.EncodeToBase64(request.Value);
             return new TransactionMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16738,7 +16738,7 @@ namespace Stellar
             var base64 = TransactionResultMetaXdr.EncodeToBase64(request.Value);
             return new TransactionResultMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16758,7 +16758,7 @@ namespace Stellar
             var base64 = UpgradeEntryMetaXdr.EncodeToBase64(request.Value);
             return new UpgradeEntryMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16778,7 +16778,7 @@ namespace Stellar
             var base64 = LedgerCloseMetaV0Xdr.EncodeToBase64(request.Value);
             return new LedgerCloseMetaV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16798,7 +16798,7 @@ namespace Stellar
             var base64 = LedgerCloseMetaExtV1Xdr.EncodeToBase64(request.Value);
             return new LedgerCloseMetaExtV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16818,7 +16818,7 @@ namespace Stellar
             var base64 = LedgerCloseMetaExtXdr.EncodeToBase64(request.Value);
             return new LedgerCloseMetaExtEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16838,7 +16838,7 @@ namespace Stellar
             var base64 = LedgerCloseMetaV1Xdr.EncodeToBase64(request.Value);
             return new LedgerCloseMetaV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16858,7 +16858,7 @@ namespace Stellar
             var base64 = LedgerCloseMetaXdr.EncodeToBase64(request.Value);
             return new LedgerCloseMetaEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16878,7 +16878,7 @@ namespace Stellar
             var base64 = ErrorCodeXdr.EncodeToBase64(request.Value);
             return new ErrorCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16898,7 +16898,7 @@ namespace Stellar
             var base64 = ErrorXdr.EncodeToBase64(request.Value);
             return new ErrorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16918,7 +16918,7 @@ namespace Stellar
             var base64 = SendMoreXdr.EncodeToBase64(request.Value);
             return new SendMoreEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16938,7 +16938,7 @@ namespace Stellar
             var base64 = SendMoreExtendedXdr.EncodeToBase64(request.Value);
             return new SendMoreExtendedEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16958,7 +16958,7 @@ namespace Stellar
             var base64 = AuthCertXdr.EncodeToBase64(request.Value);
             return new AuthCertEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16978,7 +16978,7 @@ namespace Stellar
             var base64 = HelloXdr.EncodeToBase64(request.Value);
             return new HelloEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -16998,7 +16998,7 @@ namespace Stellar
             var base64 = AuthXdr.EncodeToBase64(request.Value);
             return new AuthEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17018,7 +17018,7 @@ namespace Stellar
             var base64 = IPAddrTypeXdr.EncodeToBase64(request.Value);
             return new IPAddrTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17038,7 +17038,7 @@ namespace Stellar
             var base64 = PeerAddressXdr.EncodeToBase64(request.Value);
             return new PeerAddressEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17058,7 +17058,7 @@ namespace Stellar
             var base64 = MessageTypeXdr.EncodeToBase64(request.Value);
             return new MessageTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17078,7 +17078,7 @@ namespace Stellar
             var base64 = DontHaveXdr.EncodeToBase64(request.Value);
             return new DontHaveEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17098,7 +17098,7 @@ namespace Stellar
             var base64 = SurveyMessageCommandTypeXdr.EncodeToBase64(request.Value);
             return new SurveyMessageCommandTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17118,7 +17118,7 @@ namespace Stellar
             var base64 = SurveyMessageResponseTypeXdr.EncodeToBase64(request.Value);
             return new SurveyMessageResponseTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17138,7 +17138,7 @@ namespace Stellar
             var base64 = TimeSlicedSurveyStartCollectingMessageXdr.EncodeToBase64(request.Value);
             return new TimeSlicedSurveyStartCollectingMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17158,7 +17158,7 @@ namespace Stellar
             var base64 = SignedTimeSlicedSurveyStartCollectingMessageXdr.EncodeToBase64(request.Value);
             return new SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17178,7 +17178,7 @@ namespace Stellar
             var base64 = TimeSlicedSurveyStopCollectingMessageXdr.EncodeToBase64(request.Value);
             return new TimeSlicedSurveyStopCollectingMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17198,7 +17198,7 @@ namespace Stellar
             var base64 = SignedTimeSlicedSurveyStopCollectingMessageXdr.EncodeToBase64(request.Value);
             return new SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17218,7 +17218,7 @@ namespace Stellar
             var base64 = SurveyRequestMessageXdr.EncodeToBase64(request.Value);
             return new SurveyRequestMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17238,7 +17238,7 @@ namespace Stellar
             var base64 = TimeSlicedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
             return new TimeSlicedSurveyRequestMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17258,7 +17258,7 @@ namespace Stellar
             var base64 = SignedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
             return new SignedSurveyRequestMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17278,7 +17278,7 @@ namespace Stellar
             var base64 = SignedTimeSlicedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
             return new SignedTimeSlicedSurveyRequestMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17298,7 +17298,7 @@ namespace Stellar
             var base64 = EncryptedBodyXdr.EncodeToBase64(request.Value);
             return new EncryptedBodyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17318,7 +17318,7 @@ namespace Stellar
             var base64 = SurveyResponseMessageXdr.EncodeToBase64(request.Value);
             return new SurveyResponseMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17338,7 +17338,7 @@ namespace Stellar
             var base64 = TimeSlicedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
             return new TimeSlicedSurveyResponseMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17358,7 +17358,7 @@ namespace Stellar
             var base64 = SignedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
             return new SignedSurveyResponseMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17378,7 +17378,7 @@ namespace Stellar
             var base64 = SignedTimeSlicedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
             return new SignedTimeSlicedSurveyResponseMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17398,7 +17398,7 @@ namespace Stellar
             var base64 = PeerStatsXdr.EncodeToBase64(request.Value);
             return new PeerStatsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17418,7 +17418,7 @@ namespace Stellar
             var base64 = PeerStatListXdr.EncodeToBase64(request.Value);
             return new PeerStatListEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17438,7 +17438,7 @@ namespace Stellar
             var base64 = TimeSlicedNodeDataXdr.EncodeToBase64(request.Value);
             return new TimeSlicedNodeDataEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17458,7 +17458,7 @@ namespace Stellar
             var base64 = TimeSlicedPeerDataXdr.EncodeToBase64(request.Value);
             return new TimeSlicedPeerDataEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17478,7 +17478,7 @@ namespace Stellar
             var base64 = TimeSlicedPeerDataListXdr.EncodeToBase64(request.Value);
             return new TimeSlicedPeerDataListEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17498,7 +17498,7 @@ namespace Stellar
             var base64 = TopologyResponseBodyV0Xdr.EncodeToBase64(request.Value);
             return new TopologyResponseBodyV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17518,7 +17518,7 @@ namespace Stellar
             var base64 = TopologyResponseBodyV1Xdr.EncodeToBase64(request.Value);
             return new TopologyResponseBodyV1EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17538,7 +17538,7 @@ namespace Stellar
             var base64 = TopologyResponseBodyV2Xdr.EncodeToBase64(request.Value);
             return new TopologyResponseBodyV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17558,7 +17558,7 @@ namespace Stellar
             var base64 = SurveyResponseBodyXdr.EncodeToBase64(request.Value);
             return new SurveyResponseBodyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17578,7 +17578,7 @@ namespace Stellar
             var base64 = TxAdvertVectorXdr.EncodeToBase64(request.Value);
             return new TxAdvertVectorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17598,7 +17598,7 @@ namespace Stellar
             var base64 = FloodAdvertXdr.EncodeToBase64(request.Value);
             return new FloodAdvertEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17618,7 +17618,7 @@ namespace Stellar
             var base64 = TxDemandVectorXdr.EncodeToBase64(request.Value);
             return new TxDemandVectorEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17638,7 +17638,7 @@ namespace Stellar
             var base64 = FloodDemandXdr.EncodeToBase64(request.Value);
             return new FloodDemandEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17658,7 +17658,7 @@ namespace Stellar
             var base64 = StellarMessageXdr.EncodeToBase64(request.Value);
             return new StellarMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17678,7 +17678,7 @@ namespace Stellar
             var base64 = AuthenticatedMessageXdr.EncodeToBase64(request.Value);
             return new AuthenticatedMessageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17698,7 +17698,7 @@ namespace Stellar
             var base64 = ValueXdr.EncodeToBase64(request.Value);
             return new ValueEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17718,7 +17718,7 @@ namespace Stellar
             var base64 = SCPBallotXdr.EncodeToBase64(request.Value);
             return new SCPBallotEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17738,7 +17738,7 @@ namespace Stellar
             var base64 = SCPStatementTypeXdr.EncodeToBase64(request.Value);
             return new SCPStatementTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17758,7 +17758,7 @@ namespace Stellar
             var base64 = SCPNominationXdr.EncodeToBase64(request.Value);
             return new SCPNominationEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17778,7 +17778,7 @@ namespace Stellar
             var base64 = SCPStatementXdr.EncodeToBase64(request.Value);
             return new SCPStatementEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17798,7 +17798,7 @@ namespace Stellar
             var base64 = SCPEnvelopeXdr.EncodeToBase64(request.Value);
             return new SCPEnvelopeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17818,7 +17818,7 @@ namespace Stellar
             var base64 = SCPQuorumSetXdr.EncodeToBase64(request.Value);
             return new SCPQuorumSetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17838,7 +17838,7 @@ namespace Stellar
             var base64 = LiquidityPoolParametersXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolParametersEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17858,7 +17858,7 @@ namespace Stellar
             var base64 = MuxedAccountXdr.EncodeToBase64(request.Value);
             return new MuxedAccountEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17878,7 +17878,7 @@ namespace Stellar
             var base64 = DecoratedSignatureXdr.EncodeToBase64(request.Value);
             return new DecoratedSignatureEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17898,7 +17898,7 @@ namespace Stellar
             var base64 = OperationTypeXdr.EncodeToBase64(request.Value);
             return new OperationTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17918,7 +17918,7 @@ namespace Stellar
             var base64 = CreateAccountOpXdr.EncodeToBase64(request.Value);
             return new CreateAccountOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17938,7 +17938,7 @@ namespace Stellar
             var base64 = PaymentOpXdr.EncodeToBase64(request.Value);
             return new PaymentOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17958,7 +17958,7 @@ namespace Stellar
             var base64 = PathPaymentStrictReceiveOpXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictReceiveOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17978,7 +17978,7 @@ namespace Stellar
             var base64 = PathPaymentStrictSendOpXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictSendOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -17998,7 +17998,7 @@ namespace Stellar
             var base64 = ManageSellOfferOpXdr.EncodeToBase64(request.Value);
             return new ManageSellOfferOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18018,7 +18018,7 @@ namespace Stellar
             var base64 = ManageBuyOfferOpXdr.EncodeToBase64(request.Value);
             return new ManageBuyOfferOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18038,7 +18038,7 @@ namespace Stellar
             var base64 = CreatePassiveSellOfferOpXdr.EncodeToBase64(request.Value);
             return new CreatePassiveSellOfferOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18058,7 +18058,7 @@ namespace Stellar
             var base64 = SetOptionsOpXdr.EncodeToBase64(request.Value);
             return new SetOptionsOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18078,7 +18078,7 @@ namespace Stellar
             var base64 = ChangeTrustAssetXdr.EncodeToBase64(request.Value);
             return new ChangeTrustAssetEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18098,7 +18098,7 @@ namespace Stellar
             var base64 = ChangeTrustOpXdr.EncodeToBase64(request.Value);
             return new ChangeTrustOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18118,7 +18118,7 @@ namespace Stellar
             var base64 = AllowTrustOpXdr.EncodeToBase64(request.Value);
             return new AllowTrustOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18138,7 +18138,7 @@ namespace Stellar
             var base64 = ManageDataOpXdr.EncodeToBase64(request.Value);
             return new ManageDataOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18158,7 +18158,7 @@ namespace Stellar
             var base64 = BumpSequenceOpXdr.EncodeToBase64(request.Value);
             return new BumpSequenceOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18178,7 +18178,7 @@ namespace Stellar
             var base64 = CreateClaimableBalanceOpXdr.EncodeToBase64(request.Value);
             return new CreateClaimableBalanceOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18198,7 +18198,7 @@ namespace Stellar
             var base64 = ClaimClaimableBalanceOpXdr.EncodeToBase64(request.Value);
             return new ClaimClaimableBalanceOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18218,7 +18218,7 @@ namespace Stellar
             var base64 = BeginSponsoringFutureReservesOpXdr.EncodeToBase64(request.Value);
             return new BeginSponsoringFutureReservesOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18238,7 +18238,7 @@ namespace Stellar
             var base64 = RevokeSponsorshipTypeXdr.EncodeToBase64(request.Value);
             return new RevokeSponsorshipTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18258,7 +18258,7 @@ namespace Stellar
             var base64 = RevokeSponsorshipOpXdr.EncodeToBase64(request.Value);
             return new RevokeSponsorshipOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18278,7 +18278,7 @@ namespace Stellar
             var base64 = ClawbackOpXdr.EncodeToBase64(request.Value);
             return new ClawbackOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18298,7 +18298,7 @@ namespace Stellar
             var base64 = ClawbackClaimableBalanceOpXdr.EncodeToBase64(request.Value);
             return new ClawbackClaimableBalanceOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18318,7 +18318,7 @@ namespace Stellar
             var base64 = SetTrustLineFlagsOpXdr.EncodeToBase64(request.Value);
             return new SetTrustLineFlagsOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18338,7 +18338,7 @@ namespace Stellar
             var base64 = LiquidityPoolDepositOpXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolDepositOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18358,7 +18358,7 @@ namespace Stellar
             var base64 = LiquidityPoolWithdrawOpXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolWithdrawOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18378,7 +18378,7 @@ namespace Stellar
             var base64 = HostFunctionTypeXdr.EncodeToBase64(request.Value);
             return new HostFunctionTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18398,7 +18398,7 @@ namespace Stellar
             var base64 = ContractIDPreimageTypeXdr.EncodeToBase64(request.Value);
             return new ContractIDPreimageTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18418,7 +18418,7 @@ namespace Stellar
             var base64 = ContractIDPreimageXdr.EncodeToBase64(request.Value);
             return new ContractIDPreimageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18438,7 +18438,7 @@ namespace Stellar
             var base64 = CreateContractArgsXdr.EncodeToBase64(request.Value);
             return new CreateContractArgsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18458,7 +18458,7 @@ namespace Stellar
             var base64 = CreateContractArgsV2Xdr.EncodeToBase64(request.Value);
             return new CreateContractArgsV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18478,7 +18478,7 @@ namespace Stellar
             var base64 = InvokeContractArgsXdr.EncodeToBase64(request.Value);
             return new InvokeContractArgsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18498,7 +18498,7 @@ namespace Stellar
             var base64 = HostFunctionXdr.EncodeToBase64(request.Value);
             return new HostFunctionEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18518,7 +18518,7 @@ namespace Stellar
             var base64 = SorobanAuthorizedFunctionTypeXdr.EncodeToBase64(request.Value);
             return new SorobanAuthorizedFunctionTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18538,7 +18538,7 @@ namespace Stellar
             var base64 = SorobanAuthorizedFunctionXdr.EncodeToBase64(request.Value);
             return new SorobanAuthorizedFunctionEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18558,7 +18558,7 @@ namespace Stellar
             var base64 = SorobanAuthorizedInvocationXdr.EncodeToBase64(request.Value);
             return new SorobanAuthorizedInvocationEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18578,7 +18578,7 @@ namespace Stellar
             var base64 = SorobanAddressCredentialsXdr.EncodeToBase64(request.Value);
             return new SorobanAddressCredentialsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18598,7 +18598,7 @@ namespace Stellar
             var base64 = SorobanCredentialsTypeXdr.EncodeToBase64(request.Value);
             return new SorobanCredentialsTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18618,7 +18618,7 @@ namespace Stellar
             var base64 = SorobanCredentialsXdr.EncodeToBase64(request.Value);
             return new SorobanCredentialsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18638,7 +18638,7 @@ namespace Stellar
             var base64 = SorobanAuthorizationEntryXdr.EncodeToBase64(request.Value);
             return new SorobanAuthorizationEntryEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18658,7 +18658,7 @@ namespace Stellar
             var base64 = InvokeHostFunctionOpXdr.EncodeToBase64(request.Value);
             return new InvokeHostFunctionOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18678,7 +18678,7 @@ namespace Stellar
             var base64 = ExtendFootprintTTLOpXdr.EncodeToBase64(request.Value);
             return new ExtendFootprintTTLOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18698,7 +18698,7 @@ namespace Stellar
             var base64 = RestoreFootprintOpXdr.EncodeToBase64(request.Value);
             return new RestoreFootprintOpEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18718,7 +18718,7 @@ namespace Stellar
             var base64 = OperationXdr.EncodeToBase64(request.Value);
             return new OperationEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18738,7 +18738,7 @@ namespace Stellar
             var base64 = HashIDPreimageXdr.EncodeToBase64(request.Value);
             return new HashIDPreimageEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18758,7 +18758,7 @@ namespace Stellar
             var base64 = MemoTypeXdr.EncodeToBase64(request.Value);
             return new MemoTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18778,7 +18778,7 @@ namespace Stellar
             var base64 = MemoXdr.EncodeToBase64(request.Value);
             return new MemoEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18798,7 +18798,7 @@ namespace Stellar
             var base64 = TimeBoundsXdr.EncodeToBase64(request.Value);
             return new TimeBoundsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18818,7 +18818,7 @@ namespace Stellar
             var base64 = LedgerBoundsXdr.EncodeToBase64(request.Value);
             return new LedgerBoundsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18838,7 +18838,7 @@ namespace Stellar
             var base64 = PreconditionsV2Xdr.EncodeToBase64(request.Value);
             return new PreconditionsV2EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18858,7 +18858,7 @@ namespace Stellar
             var base64 = PreconditionTypeXdr.EncodeToBase64(request.Value);
             return new PreconditionTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18878,7 +18878,7 @@ namespace Stellar
             var base64 = PreconditionsXdr.EncodeToBase64(request.Value);
             return new PreconditionsEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18898,7 +18898,7 @@ namespace Stellar
             var base64 = LedgerFootprintXdr.EncodeToBase64(request.Value);
             return new LedgerFootprintEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18918,7 +18918,7 @@ namespace Stellar
             var base64 = ArchivalProofTypeXdr.EncodeToBase64(request.Value);
             return new ArchivalProofTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18938,7 +18938,7 @@ namespace Stellar
             var base64 = ArchivalProofNodeXdr.EncodeToBase64(request.Value);
             return new ArchivalProofNodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18958,7 +18958,7 @@ namespace Stellar
             var base64 = ProofLevelXdr.EncodeToBase64(request.Value);
             return new ProofLevelEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18978,7 +18978,7 @@ namespace Stellar
             var base64 = NonexistenceProofBodyXdr.EncodeToBase64(request.Value);
             return new NonexistenceProofBodyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -18998,7 +18998,7 @@ namespace Stellar
             var base64 = ExistenceProofBodyXdr.EncodeToBase64(request.Value);
             return new ExistenceProofBodyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19018,7 +19018,7 @@ namespace Stellar
             var base64 = ArchivalProofXdr.EncodeToBase64(request.Value);
             return new ArchivalProofEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19038,7 +19038,7 @@ namespace Stellar
             var base64 = SorobanResourcesXdr.EncodeToBase64(request.Value);
             return new SorobanResourcesEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19058,7 +19058,7 @@ namespace Stellar
             var base64 = SorobanTransactionDataXdr.EncodeToBase64(request.Value);
             return new SorobanTransactionDataEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19078,7 +19078,7 @@ namespace Stellar
             var base64 = TransactionV0Xdr.EncodeToBase64(request.Value);
             return new TransactionV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19098,7 +19098,7 @@ namespace Stellar
             var base64 = TransactionV0EnvelopeXdr.EncodeToBase64(request.Value);
             return new TransactionV0EnvelopeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19118,7 +19118,7 @@ namespace Stellar
             var base64 = TransactionXdr.EncodeToBase64(request.Value);
             return new TransactionEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19138,7 +19138,7 @@ namespace Stellar
             var base64 = TransactionV1EnvelopeXdr.EncodeToBase64(request.Value);
             return new TransactionV1EnvelopeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19158,7 +19158,7 @@ namespace Stellar
             var base64 = FeeBumpTransactionXdr.EncodeToBase64(request.Value);
             return new FeeBumpTransactionEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19178,7 +19178,7 @@ namespace Stellar
             var base64 = FeeBumpTransactionEnvelopeXdr.EncodeToBase64(request.Value);
             return new FeeBumpTransactionEnvelopeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19198,7 +19198,7 @@ namespace Stellar
             var base64 = TransactionEnvelopeXdr.EncodeToBase64(request.Value);
             return new TransactionEnvelopeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19218,7 +19218,7 @@ namespace Stellar
             var base64 = TransactionSignaturePayloadXdr.EncodeToBase64(request.Value);
             return new TransactionSignaturePayloadEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19238,7 +19238,7 @@ namespace Stellar
             var base64 = ClaimAtomTypeXdr.EncodeToBase64(request.Value);
             return new ClaimAtomTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19258,7 +19258,7 @@ namespace Stellar
             var base64 = ClaimOfferAtomV0Xdr.EncodeToBase64(request.Value);
             return new ClaimOfferAtomV0EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19278,7 +19278,7 @@ namespace Stellar
             var base64 = ClaimOfferAtomXdr.EncodeToBase64(request.Value);
             return new ClaimOfferAtomEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19298,7 +19298,7 @@ namespace Stellar
             var base64 = ClaimLiquidityAtomXdr.EncodeToBase64(request.Value);
             return new ClaimLiquidityAtomEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19318,7 +19318,7 @@ namespace Stellar
             var base64 = ClaimAtomXdr.EncodeToBase64(request.Value);
             return new ClaimAtomEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19338,7 +19338,7 @@ namespace Stellar
             var base64 = CreateAccountResultCodeXdr.EncodeToBase64(request.Value);
             return new CreateAccountResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19358,7 +19358,7 @@ namespace Stellar
             var base64 = CreateAccountResultXdr.EncodeToBase64(request.Value);
             return new CreateAccountResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19378,7 +19378,7 @@ namespace Stellar
             var base64 = PaymentResultCodeXdr.EncodeToBase64(request.Value);
             return new PaymentResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19398,7 +19398,7 @@ namespace Stellar
             var base64 = PaymentResultXdr.EncodeToBase64(request.Value);
             return new PaymentResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19418,7 +19418,7 @@ namespace Stellar
             var base64 = PathPaymentStrictReceiveResultCodeXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictReceiveResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19438,7 +19438,7 @@ namespace Stellar
             var base64 = SimplePaymentResultXdr.EncodeToBase64(request.Value);
             return new SimplePaymentResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19458,7 +19458,7 @@ namespace Stellar
             var base64 = PathPaymentStrictReceiveResultXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictReceiveResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19478,7 +19478,7 @@ namespace Stellar
             var base64 = PathPaymentStrictSendResultCodeXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictSendResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19498,7 +19498,7 @@ namespace Stellar
             var base64 = PathPaymentStrictSendResultXdr.EncodeToBase64(request.Value);
             return new PathPaymentStrictSendResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19518,7 +19518,7 @@ namespace Stellar
             var base64 = ManageSellOfferResultCodeXdr.EncodeToBase64(request.Value);
             return new ManageSellOfferResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19538,7 +19538,7 @@ namespace Stellar
             var base64 = ManageOfferEffectXdr.EncodeToBase64(request.Value);
             return new ManageOfferEffectEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19558,7 +19558,7 @@ namespace Stellar
             var base64 = ManageOfferSuccessResultXdr.EncodeToBase64(request.Value);
             return new ManageOfferSuccessResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19578,7 +19578,7 @@ namespace Stellar
             var base64 = ManageSellOfferResultXdr.EncodeToBase64(request.Value);
             return new ManageSellOfferResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19598,7 +19598,7 @@ namespace Stellar
             var base64 = ManageBuyOfferResultCodeXdr.EncodeToBase64(request.Value);
             return new ManageBuyOfferResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19618,7 +19618,7 @@ namespace Stellar
             var base64 = ManageBuyOfferResultXdr.EncodeToBase64(request.Value);
             return new ManageBuyOfferResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19638,7 +19638,7 @@ namespace Stellar
             var base64 = SetOptionsResultCodeXdr.EncodeToBase64(request.Value);
             return new SetOptionsResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19658,7 +19658,7 @@ namespace Stellar
             var base64 = SetOptionsResultXdr.EncodeToBase64(request.Value);
             return new SetOptionsResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19678,7 +19678,7 @@ namespace Stellar
             var base64 = ChangeTrustResultCodeXdr.EncodeToBase64(request.Value);
             return new ChangeTrustResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19698,7 +19698,7 @@ namespace Stellar
             var base64 = ChangeTrustResultXdr.EncodeToBase64(request.Value);
             return new ChangeTrustResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19718,7 +19718,7 @@ namespace Stellar
             var base64 = AllowTrustResultCodeXdr.EncodeToBase64(request.Value);
             return new AllowTrustResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19738,7 +19738,7 @@ namespace Stellar
             var base64 = AllowTrustResultXdr.EncodeToBase64(request.Value);
             return new AllowTrustResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19758,7 +19758,7 @@ namespace Stellar
             var base64 = AccountMergeResultCodeXdr.EncodeToBase64(request.Value);
             return new AccountMergeResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19778,7 +19778,7 @@ namespace Stellar
             var base64 = AccountMergeResultXdr.EncodeToBase64(request.Value);
             return new AccountMergeResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19798,7 +19798,7 @@ namespace Stellar
             var base64 = InflationResultCodeXdr.EncodeToBase64(request.Value);
             return new InflationResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19818,7 +19818,7 @@ namespace Stellar
             var base64 = InflationPayoutXdr.EncodeToBase64(request.Value);
             return new InflationPayoutEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19838,7 +19838,7 @@ namespace Stellar
             var base64 = InflationResultXdr.EncodeToBase64(request.Value);
             return new InflationResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19858,7 +19858,7 @@ namespace Stellar
             var base64 = ManageDataResultCodeXdr.EncodeToBase64(request.Value);
             return new ManageDataResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19878,7 +19878,7 @@ namespace Stellar
             var base64 = ManageDataResultXdr.EncodeToBase64(request.Value);
             return new ManageDataResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19898,7 +19898,7 @@ namespace Stellar
             var base64 = BumpSequenceResultCodeXdr.EncodeToBase64(request.Value);
             return new BumpSequenceResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19918,7 +19918,7 @@ namespace Stellar
             var base64 = BumpSequenceResultXdr.EncodeToBase64(request.Value);
             return new BumpSequenceResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19938,7 +19938,7 @@ namespace Stellar
             var base64 = CreateClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
             return new CreateClaimableBalanceResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19958,7 +19958,7 @@ namespace Stellar
             var base64 = CreateClaimableBalanceResultXdr.EncodeToBase64(request.Value);
             return new CreateClaimableBalanceResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19978,7 +19978,7 @@ namespace Stellar
             var base64 = ClaimClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
             return new ClaimClaimableBalanceResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -19998,7 +19998,7 @@ namespace Stellar
             var base64 = ClaimClaimableBalanceResultXdr.EncodeToBase64(request.Value);
             return new ClaimClaimableBalanceResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20018,7 +20018,7 @@ namespace Stellar
             var base64 = BeginSponsoringFutureReservesResultCodeXdr.EncodeToBase64(request.Value);
             return new BeginSponsoringFutureReservesResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20038,7 +20038,7 @@ namespace Stellar
             var base64 = BeginSponsoringFutureReservesResultXdr.EncodeToBase64(request.Value);
             return new BeginSponsoringFutureReservesResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20058,7 +20058,7 @@ namespace Stellar
             var base64 = EndSponsoringFutureReservesResultCodeXdr.EncodeToBase64(request.Value);
             return new EndSponsoringFutureReservesResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20078,7 +20078,7 @@ namespace Stellar
             var base64 = EndSponsoringFutureReservesResultXdr.EncodeToBase64(request.Value);
             return new EndSponsoringFutureReservesResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20098,7 +20098,7 @@ namespace Stellar
             var base64 = RevokeSponsorshipResultCodeXdr.EncodeToBase64(request.Value);
             return new RevokeSponsorshipResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20118,7 +20118,7 @@ namespace Stellar
             var base64 = RevokeSponsorshipResultXdr.EncodeToBase64(request.Value);
             return new RevokeSponsorshipResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20138,7 +20138,7 @@ namespace Stellar
             var base64 = ClawbackResultCodeXdr.EncodeToBase64(request.Value);
             return new ClawbackResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20158,7 +20158,7 @@ namespace Stellar
             var base64 = ClawbackResultXdr.EncodeToBase64(request.Value);
             return new ClawbackResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20178,7 +20178,7 @@ namespace Stellar
             var base64 = ClawbackClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
             return new ClawbackClaimableBalanceResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20198,7 +20198,7 @@ namespace Stellar
             var base64 = ClawbackClaimableBalanceResultXdr.EncodeToBase64(request.Value);
             return new ClawbackClaimableBalanceResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20218,7 +20218,7 @@ namespace Stellar
             var base64 = SetTrustLineFlagsResultCodeXdr.EncodeToBase64(request.Value);
             return new SetTrustLineFlagsResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20238,7 +20238,7 @@ namespace Stellar
             var base64 = SetTrustLineFlagsResultXdr.EncodeToBase64(request.Value);
             return new SetTrustLineFlagsResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20258,7 +20258,7 @@ namespace Stellar
             var base64 = LiquidityPoolDepositResultCodeXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolDepositResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20278,7 +20278,7 @@ namespace Stellar
             var base64 = LiquidityPoolDepositResultXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolDepositResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20298,7 +20298,7 @@ namespace Stellar
             var base64 = LiquidityPoolWithdrawResultCodeXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolWithdrawResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20318,7 +20318,7 @@ namespace Stellar
             var base64 = LiquidityPoolWithdrawResultXdr.EncodeToBase64(request.Value);
             return new LiquidityPoolWithdrawResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20338,7 +20338,7 @@ namespace Stellar
             var base64 = InvokeHostFunctionResultCodeXdr.EncodeToBase64(request.Value);
             return new InvokeHostFunctionResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20358,7 +20358,7 @@ namespace Stellar
             var base64 = InvokeHostFunctionResultXdr.EncodeToBase64(request.Value);
             return new InvokeHostFunctionResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20378,7 +20378,7 @@ namespace Stellar
             var base64 = ExtendFootprintTTLResultCodeXdr.EncodeToBase64(request.Value);
             return new ExtendFootprintTTLResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20398,7 +20398,7 @@ namespace Stellar
             var base64 = ExtendFootprintTTLResultXdr.EncodeToBase64(request.Value);
             return new ExtendFootprintTTLResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20418,7 +20418,7 @@ namespace Stellar
             var base64 = RestoreFootprintResultCodeXdr.EncodeToBase64(request.Value);
             return new RestoreFootprintResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20438,7 +20438,7 @@ namespace Stellar
             var base64 = RestoreFootprintResultXdr.EncodeToBase64(request.Value);
             return new RestoreFootprintResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20458,7 +20458,7 @@ namespace Stellar
             var base64 = OperationResultCodeXdr.EncodeToBase64(request.Value);
             return new OperationResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20478,7 +20478,7 @@ namespace Stellar
             var base64 = OperationResultXdr.EncodeToBase64(request.Value);
             return new OperationResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20498,7 +20498,7 @@ namespace Stellar
             var base64 = TransactionResultCodeXdr.EncodeToBase64(request.Value);
             return new TransactionResultCodeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20518,7 +20518,7 @@ namespace Stellar
             var base64 = InnerTransactionResultXdr.EncodeToBase64(request.Value);
             return new InnerTransactionResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20538,7 +20538,7 @@ namespace Stellar
             var base64 = InnerTransactionResultPairXdr.EncodeToBase64(request.Value);
             return new InnerTransactionResultPairEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20558,7 +20558,7 @@ namespace Stellar
             var base64 = TransactionResultXdr.EncodeToBase64(request.Value);
             return new TransactionResultEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20578,7 +20578,7 @@ namespace Stellar
             var base64 = HashXdr.EncodeToBase64(request.Value);
             return new HashEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20598,7 +20598,7 @@ namespace Stellar
             var base64 = uint256Xdr.EncodeToBase64(request.Value);
             return new uint256EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20618,7 +20618,7 @@ namespace Stellar
             var base64 = uint32Xdr.EncodeToBase64(request.Value);
             return new uint32EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20638,7 +20638,7 @@ namespace Stellar
             var base64 = int32Xdr.EncodeToBase64(request.Value);
             return new int32EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20658,7 +20658,7 @@ namespace Stellar
             var base64 = uint64Xdr.EncodeToBase64(request.Value);
             return new uint64EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20678,7 +20678,7 @@ namespace Stellar
             var base64 = int64Xdr.EncodeToBase64(request.Value);
             return new int64EncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20698,7 +20698,7 @@ namespace Stellar
             var base64 = TimePointXdr.EncodeToBase64(request.Value);
             return new TimePointEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20718,7 +20718,7 @@ namespace Stellar
             var base64 = DurationXdr.EncodeToBase64(request.Value);
             return new DurationEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20738,7 +20738,7 @@ namespace Stellar
             var base64 = ExtensionPointXdr.EncodeToBase64(request.Value);
             return new ExtensionPointEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20758,7 +20758,7 @@ namespace Stellar
             var base64 = CryptoKeyTypeXdr.EncodeToBase64(request.Value);
             return new CryptoKeyTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20778,7 +20778,7 @@ namespace Stellar
             var base64 = PublicKeyTypeXdr.EncodeToBase64(request.Value);
             return new PublicKeyTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20798,7 +20798,7 @@ namespace Stellar
             var base64 = SignerKeyTypeXdr.EncodeToBase64(request.Value);
             return new SignerKeyTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20818,7 +20818,7 @@ namespace Stellar
             var base64 = PublicKeyXdr.EncodeToBase64(request.Value);
             return new PublicKeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20838,7 +20838,7 @@ namespace Stellar
             var base64 = SignerKeyXdr.EncodeToBase64(request.Value);
             return new SignerKeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20858,7 +20858,7 @@ namespace Stellar
             var base64 = SignatureXdr.EncodeToBase64(request.Value);
             return new SignatureEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20878,7 +20878,7 @@ namespace Stellar
             var base64 = SignatureHintXdr.EncodeToBase64(request.Value);
             return new SignatureHintEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20898,7 +20898,7 @@ namespace Stellar
             var base64 = NodeIDXdr.EncodeToBase64(request.Value);
             return new NodeIDEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20918,7 +20918,7 @@ namespace Stellar
             var base64 = AccountIDXdr.EncodeToBase64(request.Value);
             return new AccountIDEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20938,7 +20938,7 @@ namespace Stellar
             var base64 = Curve25519SecretXdr.EncodeToBase64(request.Value);
             return new Curve25519SecretEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20958,7 +20958,7 @@ namespace Stellar
             var base64 = Curve25519PublicXdr.EncodeToBase64(request.Value);
             return new Curve25519PublicEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20978,7 +20978,7 @@ namespace Stellar
             var base64 = HmacSha256KeyXdr.EncodeToBase64(request.Value);
             return new HmacSha256KeyEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -20998,7 +20998,7 @@ namespace Stellar
             var base64 = HmacSha256MacXdr.EncodeToBase64(request.Value);
             return new HmacSha256MacEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -21018,7 +21018,7 @@ namespace Stellar
             var base64 = ShortHashSeedXdr.EncodeToBase64(request.Value);
             return new ShortHashSeedEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -21038,7 +21038,7 @@ namespace Stellar
             var base64 = BinaryFuseFilterTypeXdr.EncodeToBase64(request.Value);
             return new BinaryFuseFilterTypeEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }
@@ -21058,7 +21058,7 @@ namespace Stellar
             var base64 = SerializedBinaryFuseFilterXdr.EncodeToBase64(request.Value);
             return new SerializedBinaryFuseFilterEncodeResponse
             {
-                EncodedValue = Convert.FromBase64String(base64)
+                EncodedValue = base64
             }
             ;
         }

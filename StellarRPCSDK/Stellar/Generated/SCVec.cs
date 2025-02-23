@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class SCVec
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public SCVal[] InnerValue
         {
             get => _innerValue;

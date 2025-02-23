@@ -65,7 +65,7 @@ namespace Stellar {
         #endif
         private uint32 _numSponsoring;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         [MaxLength(20)]
         public SponsorshipDescriptor[] signerSponsoringIDs
         {

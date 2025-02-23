@@ -26,7 +26,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class NonexistenceProofBody
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public ColdArchiveBucketEntry[] entriesToProve
         {
             get => _entriesToProve;
@@ -45,7 +45,7 @@ namespace Stellar {
         /// <summary>
         /// contains all HashNodes that correspond with that level
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public ProofLevel[] proofLevels
         {
             get => _proofLevels;

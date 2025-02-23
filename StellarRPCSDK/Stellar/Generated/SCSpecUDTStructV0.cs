@@ -82,7 +82,7 @@ namespace Stellar {
         #endif
         private string _name;
 
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         [MaxLength(40)]
         public SCSpecUDTStructFieldV0[] fields
         {

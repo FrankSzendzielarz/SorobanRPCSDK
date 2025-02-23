@@ -24,7 +24,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class PersistedSCPStateV0
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public SCPEnvelope[] scpEnvelopes
         {
             get => _scpEnvelopes;
@@ -40,7 +40,7 @@ namespace Stellar {
         #endif
         private SCPEnvelope[] _scpEnvelopes;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;
@@ -56,7 +56,7 @@ namespace Stellar {
         #endif
         private SCPQuorumSet[] _quorumSets;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public StoredTransactionSet[] txSets
         {
             get => _txSets;

@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class TxDemandVector
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(1000)]
         public Hash[] InnerValue
         {

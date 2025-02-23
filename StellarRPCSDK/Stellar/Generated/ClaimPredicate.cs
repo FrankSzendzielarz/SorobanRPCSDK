@@ -58,7 +58,7 @@ namespace Stellar {
         public sealed partial class ClaimPredicateAnd : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_AND;
-            [ProtoMember(1)]
+            [ProtoMember(1, OverwriteList = true)]
             [MaxLength(2)]
             public ClaimPredicate[] andPredicates
             {
@@ -84,7 +84,7 @@ namespace Stellar {
         public sealed partial class ClaimPredicateOr : ClaimPredicate
         {
             public override ClaimPredicateType Discriminator => ClaimPredicateType.CLAIM_PREDICATE_OR;
-            [ProtoMember(2)]
+            [ProtoMember(2, OverwriteList = true)]
             [MaxLength(2)]
             public ClaimPredicate[] orPredicates
             {

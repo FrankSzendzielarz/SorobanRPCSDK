@@ -22,7 +22,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class Curve25519Secret
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MinLength(32)]
         [MaxLength(32)]
         public byte[] key

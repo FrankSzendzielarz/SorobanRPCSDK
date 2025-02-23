@@ -47,7 +47,7 @@ namespace Stellar {
         /// <summary>
         /// Per-address authorizations for this host function.
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public SorobanAuthorizationEntry[] auth
         {
             get => _auth;

@@ -27,7 +27,7 @@ namespace Stellar {
         /// <summary>
         /// Tx sets are saved separately
         /// </summary>
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public SCPEnvelope[] scpEnvelopes
         {
             get => _scpEnvelopes;
@@ -43,7 +43,7 @@ namespace Stellar {
         #endif
         private SCPEnvelope[] _scpEnvelopes;
 
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;

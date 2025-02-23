@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class LedgerEntryChanges
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public LedgerEntryChange[] InnerValue
         {
             get => _innerValue;

@@ -156,7 +156,7 @@ namespace Stellar {
             public sealed partial class TxSUCCESS : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txSUCCESS;
-                [ProtoMember(1)]
+                [ProtoMember(1, OverwriteList = true)]
                 public OperationResult[] results
                 {
                     get => _results;
@@ -182,7 +182,7 @@ namespace Stellar {
             public sealed partial class TxFAILED : resultUnion
             {
                 public override TransactionResultCode Discriminator => TransactionResultCode.txFAILED;
-                [ProtoMember(2)]
+                [ProtoMember(2, OverwriteList = true)]
                 public OperationResult[] results
                 {
                     get => _results;

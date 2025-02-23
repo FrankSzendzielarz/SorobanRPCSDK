@@ -349,7 +349,7 @@ namespace Stellar {
         public sealed partial class ConfigSettingBucketlistSizeWindow : ConfigSettingEntry
         {
             public override ConfigSettingID Discriminator => ConfigSettingID.CONFIG_SETTING_BUCKETLIST_SIZE_WINDOW;
-            [ProtoMember(13)]
+            [ProtoMember(13, OverwriteList = true)]
             public uint64[] bucketListSizeWindow
             {
                 get => _bucketListSizeWindow;

@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class uint256
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MinLength(32)]
         [MaxLength(32)]
         public byte[] InnerValue

@@ -64,7 +64,7 @@ namespace Stellar {
         /// <summary>
         /// List of claimants with associated predicate
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         [MaxLength(10)]
         public Claimant[] claimants
         {

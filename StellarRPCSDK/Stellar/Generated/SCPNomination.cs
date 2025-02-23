@@ -43,7 +43,7 @@ namespace Stellar {
         /// <summary>
         /// D
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public Value[] votes
         {
             get => _votes;
@@ -62,7 +62,7 @@ namespace Stellar {
         /// <summary>
         /// X
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public Value[] accepted
         {
             get => _accepted;

@@ -386,7 +386,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             code.AppendLine($"public class {typeName}EncodeResponse");
             code.OpenBlock();
             code.AppendLine("[ProtoMember(1)]");
-            code.AppendLine("public byte[] EncodedValue { get; set; }");
+            code.AppendLine("public string EncodedValue { get; set; }");
             code.CloseBlock();
             code.AppendLine();
 
@@ -445,7 +445,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             code.AppendLine("var base64 = " + $"{fullTypeName}Xdr.EncodeToBase64(request.Value);");
             code.AppendLine($"return new {typeName}EncodeResponse");
             code.OpenBlock();
-            code.AppendLine("EncodedValue = Convert.FromBase64String(base64)");
+            code.AppendLine("EncodedValue = base64");
             code.CloseBlock();
             code.AppendLine(";");
             code.CloseBlock();

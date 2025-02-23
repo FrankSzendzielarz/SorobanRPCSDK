@@ -66,7 +66,7 @@ namespace Stellar {
         #endif
         private Hash _hash;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public byte[] code
         {
             get => _code;

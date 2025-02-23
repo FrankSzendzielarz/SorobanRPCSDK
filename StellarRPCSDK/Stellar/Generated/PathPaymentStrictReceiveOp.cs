@@ -120,7 +120,7 @@ namespace Stellar {
         #endif
         private int64 _destAmount;
 
-        [ProtoMember(6)]
+        [ProtoMember(6, OverwriteList = true)]
         [MaxLength(5)]
         public Asset[] path
         {

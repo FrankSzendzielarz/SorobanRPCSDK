@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class ProofLevel
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public ArchivalProofNode[] InnerValue
         {
             get => _innerValue;

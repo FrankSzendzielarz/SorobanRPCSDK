@@ -60,7 +60,7 @@ namespace Stellar {
         #endif
         private SCSymbol _name;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         [MaxLength(10)]
         public SCSpecFunctionInputV0[] inputs
         {
@@ -79,7 +79,7 @@ namespace Stellar {
         #endif
         private SCSpecFunctionInputV0[] _inputs;
 
-        [ProtoMember(4)]
+        [ProtoMember(4, OverwriteList = true)]
         [MaxLength(1)]
         public SCSpecTypeDef[] outputs
         {

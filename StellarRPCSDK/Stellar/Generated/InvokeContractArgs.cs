@@ -55,7 +55,7 @@ namespace Stellar {
         #endif
         private SCSymbol _functionName;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         public SCVal[] args
         {
             get => _args;

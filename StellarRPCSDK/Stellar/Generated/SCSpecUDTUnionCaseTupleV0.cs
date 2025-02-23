@@ -62,7 +62,7 @@ namespace Stellar {
         #endif
         private string _name;
 
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         [MaxLength(12)]
         public SCSpecTypeDef[] type
         {

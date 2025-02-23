@@ -37,7 +37,7 @@ namespace Stellar {
         public sealed partial class InflationSuccess : InflationResult
         {
             public override InflationResultCode Discriminator => InflationResultCode.INFLATION_SUCCESS;
-            [ProtoMember(1)]
+            [ProtoMember(1, OverwriteList = true)]
             public InflationPayout[] payouts
             {
                 get => _payouts;

@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class EncryptedBody
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(64000)]
         public byte[] InnerValue
         {

@@ -26,7 +26,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class SCPHistoryEntryV0
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public SCPQuorumSet[] quorumSets
         {
             get => _quorumSets;

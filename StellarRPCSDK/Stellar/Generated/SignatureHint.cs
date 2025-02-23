@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class SignatureHint
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MinLength(4)]
         [MaxLength(4)]
         public byte[] InnerValue

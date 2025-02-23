@@ -89,7 +89,7 @@ namespace Stellar {
         public sealed partial class HostFunctionTypeUploadContractWasm : HostFunction
         {
             public override HostFunctionType Discriminator => HostFunctionType.HOST_FUNCTION_TYPE_UPLOAD_CONTRACT_WASM;
-            [ProtoMember(3)]
+            [ProtoMember(3, OverwriteList = true)]
             public byte[] wasm
             {
                 get => _wasm;

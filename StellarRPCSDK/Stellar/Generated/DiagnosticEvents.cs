@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class DiagnosticEvents
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public DiagnosticEvent[] InnerValue
         {
             get => _innerValue;

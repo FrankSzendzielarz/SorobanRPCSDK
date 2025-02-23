@@ -103,7 +103,7 @@ namespace Stellar {
             public sealed partial class IPv4 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv4;
-                [ProtoMember(1)]
+                [ProtoMember(1, OverwriteList = true)]
                 [MinLength(4)]
                 [MaxLength(4)]
                 public byte[] ipv4
@@ -130,7 +130,7 @@ namespace Stellar {
             public sealed partial class IPv6 : ipUnion
             {
                 public override IPAddrType Discriminator => IPAddrType.IPv6;
-                [ProtoMember(2)]
+                [ProtoMember(2, OverwriteList = true)]
                 [MinLength(16)]
                 [MaxLength(16)]
                 public byte[] ipv6

@@ -45,7 +45,7 @@ namespace Stellar {
         /// <summary>
         /// are applied if any
         /// </summary>
-        [ProtoMember(2)]
+        [ProtoMember(2, OverwriteList = true)]
         public OperationMeta[] operations
         {
             get => _operations;

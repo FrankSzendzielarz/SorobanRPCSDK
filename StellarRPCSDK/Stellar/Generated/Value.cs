@@ -19,7 +19,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class Value
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public byte[] InnerValue
         {
             get => _innerValue;

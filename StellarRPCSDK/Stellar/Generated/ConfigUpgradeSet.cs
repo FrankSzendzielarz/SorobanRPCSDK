@@ -21,7 +21,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class ConfigUpgradeSet
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         public ConfigSettingEntry[] updatedEntry
         {
             get => _updatedEntry;

@@ -22,7 +22,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class ShortHashSeed
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MinLength(16)]
         [MaxLength(16)]
         public byte[] seed

@@ -78,7 +78,7 @@ namespace Stellar {
         /// <summary>
         /// max size is dictated by number of upgrade types (+ room for future)
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(3, OverwriteList = true)]
         [MaxLength(6)]
         public UpgradeType[] upgrades
         {

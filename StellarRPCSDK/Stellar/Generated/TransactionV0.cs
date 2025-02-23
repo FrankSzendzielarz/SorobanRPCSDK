@@ -116,7 +116,7 @@ namespace Stellar {
         #endif
         private Memo _memo;
 
-        [ProtoMember(6)]
+        [ProtoMember(6, OverwriteList = true)]
         [MaxLength(100)]
         public Operation[] operations
         {

@@ -22,7 +22,7 @@ namespace Stellar {
     [ProtoContract]
     public partial class Signature
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, OverwriteList = true)]
         [MaxLength(64)]
         public byte[] InnerValue
         {

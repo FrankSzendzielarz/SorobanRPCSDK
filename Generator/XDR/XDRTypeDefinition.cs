@@ -348,14 +348,16 @@ namespace Generator.XDR
             if (fieldType.IsVoid) return;
 
             var code = CodeFile;
-            code.AppendLine($"[ProtoMember({protoMemberTag})]");
+          
             switch (fieldType.ArrayType)
             {
                 case ArrayType.Fixed:
+                    code.AppendLine($"[ProtoMember({protoMemberTag}, OverwriteList = true)]");
                     code.AppendLine($"[MinLength({fieldType.ResolveMaxLengthToInteger()})]");
                     code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
                     break;
                 case ArrayType.Variable:
+                    code.AppendLine($"[ProtoMember({protoMemberTag}, OverwriteList = true)]");
                     if (fieldType.HasMaxLength)
                     {
                         code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
@@ -363,6 +365,7 @@ namespace Generator.XDR
              
                     break;
                 case ArrayType.None:
+                    code.AppendLine($"[ProtoMember({protoMemberTag})]");
                     if (fieldType.HasMaxLength)
                     {
                         code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");
