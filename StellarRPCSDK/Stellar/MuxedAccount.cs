@@ -210,7 +210,8 @@ namespace Stellar
         [OperationContract]
         public MuxedAccount.KeyTypeEd25519 FromAccountId(StringParam accountId)
         {
-            return MuxedAccount.FromAccountId(accountId.Value);
+            var result = MuxedAccount.FromAccountId(accountId.Value);
+            return result;
         }
 
         [OperationContract]

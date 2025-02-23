@@ -364,7 +364,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         code.AppendLine("using ProtoBuf;");
         code.AppendLine("using Stellar;");
         code.AppendLine();
-        code.AppendLine($"namespace {_context.CurrentNamespace}");
+        code.AppendLine($"namespace Stellar");
         code.OpenBlock();
 
         // Generate request/response contracts and service methods for each type
@@ -430,7 +430,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         code.AppendLine();
 
         // Generate service class
-        code.AppendLine("[ServiceContract]");
+
         code.AppendLine("public class XdrProtoService : IXdrProtoService");
         code.OpenBlock();
 
@@ -439,7 +439,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             var typeName = type.Name;
             var fullTypeName = type.FullName;
 
-            code.AppendLine("[OperationContract]");
+
             code.AppendLine($"public {typeName}EncodeResponse Encode{typeName}({typeName}EncodeRequest request)");
             code.OpenBlock();
             code.AppendLine("var base64 = " + $"{fullTypeName}Xdr.EncodeToBase64(request.Value);");
@@ -451,7 +451,7 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             code.CloseBlock();
             code.AppendLine();
 
-            code.AppendLine("[OperationContract]");
+
             code.AppendLine($"public {typeName}DecodeResponse Decode{typeName}({typeName}DecodeRequest request)");
             code.OpenBlock();
             code.AppendLine("var base64 = Convert.ToBase64String(request.EncodedValue);");

@@ -37,6 +37,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getEvents",
             Params = parameters,
             Id = 1
         };
@@ -68,6 +69,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getFeeStats",
             Id = 1
         };
 
@@ -98,6 +100,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getHealth",
             Id = 1
         };
 
@@ -128,6 +131,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getLatestLedger",
             Id = 1
         };
 
@@ -160,6 +164,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getLedgerEntries",
             Params = parameters,
             Id = 1
         };
@@ -191,6 +196,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getNetwork",
             Id = 1
         };
 
@@ -221,6 +227,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getTransaction",
             Params = parameters,
             Id = 1
         };
@@ -252,6 +259,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getTransactions",
             Params = parameters,
             Id = 1
         };
@@ -283,6 +291,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "getVersionInfo",
             Id = 1
         };
 
@@ -315,6 +324,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "sendTransaction",
             Params = parameters,
             Id = 1
         };
@@ -346,6 +356,7 @@ public partial class StellarRPCClient
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
+            Method = "simulateTransaction",
             Params = parameters,
             Id = 1
         };

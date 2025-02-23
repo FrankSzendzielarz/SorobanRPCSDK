@@ -4,7 +4,7 @@ using System.ServiceModel;
 using ProtoBuf;
 using Stellar;
 
-namespace stellar
+namespace Stellar
 {
     [ProtoContract]
     public class ConfigSettingContractExecutionLanesV0EncodeRequest
@@ -13271,10 +13271,8 @@ namespace stellar
 
     }
 
-    [ServiceContract]
     public class XdrProtoService : IXdrProtoService
     {
-        [OperationContract]
         public ConfigSettingContractExecutionLanesV0EncodeResponse EncodeConfigSettingContractExecutionLanesV0(ConfigSettingContractExecutionLanesV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractExecutionLanesV0Xdr.EncodeToBase64(request.Value);
@@ -13285,7 +13283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractExecutionLanesV0DecodeResponse DecodeConfigSettingContractExecutionLanesV0(ConfigSettingContractExecutionLanesV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13296,7 +13293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractComputeV0EncodeResponse EncodeConfigSettingContractComputeV0(ConfigSettingContractComputeV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractComputeV0Xdr.EncodeToBase64(request.Value);
@@ -13307,7 +13303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractComputeV0DecodeResponse DecodeConfigSettingContractComputeV0(ConfigSettingContractComputeV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13318,7 +13313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractLedgerCostV0EncodeResponse EncodeConfigSettingContractLedgerCostV0(ConfigSettingContractLedgerCostV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractLedgerCostV0Xdr.EncodeToBase64(request.Value);
@@ -13329,7 +13323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractLedgerCostV0DecodeResponse DecodeConfigSettingContractLedgerCostV0(ConfigSettingContractLedgerCostV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13340,7 +13333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractHistoricalDataV0EncodeResponse EncodeConfigSettingContractHistoricalDataV0(ConfigSettingContractHistoricalDataV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractHistoricalDataV0Xdr.EncodeToBase64(request.Value);
@@ -13351,7 +13343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractHistoricalDataV0DecodeResponse DecodeConfigSettingContractHistoricalDataV0(ConfigSettingContractHistoricalDataV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13362,7 +13353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractEventsV0EncodeResponse EncodeConfigSettingContractEventsV0(ConfigSettingContractEventsV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractEventsV0Xdr.EncodeToBase64(request.Value);
@@ -13373,7 +13363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractEventsV0DecodeResponse DecodeConfigSettingContractEventsV0(ConfigSettingContractEventsV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13384,7 +13373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractBandwidthV0EncodeResponse EncodeConfigSettingContractBandwidthV0(ConfigSettingContractBandwidthV0EncodeRequest request)
         {
             var base64 = ConfigSettingContractBandwidthV0Xdr.EncodeToBase64(request.Value);
@@ -13395,7 +13383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingContractBandwidthV0DecodeResponse DecodeConfigSettingContractBandwidthV0(ConfigSettingContractBandwidthV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13406,7 +13393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostTypeEncodeResponse EncodeContractCostType(ContractCostTypeEncodeRequest request)
         {
             var base64 = ContractCostTypeXdr.EncodeToBase64(request.Value);
@@ -13417,7 +13403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostTypeDecodeResponse DecodeContractCostType(ContractCostTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13428,7 +13413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostParamEntryEncodeResponse EncodeContractCostParamEntry(ContractCostParamEntryEncodeRequest request)
         {
             var base64 = ContractCostParamEntryXdr.EncodeToBase64(request.Value);
@@ -13439,7 +13423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostParamEntryDecodeResponse DecodeContractCostParamEntry(ContractCostParamEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13450,7 +13433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StateArchivalSettingsEncodeResponse EncodeStateArchivalSettings(StateArchivalSettingsEncodeRequest request)
         {
             var base64 = StateArchivalSettingsXdr.EncodeToBase64(request.Value);
@@ -13461,7 +13443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StateArchivalSettingsDecodeResponse DecodeStateArchivalSettings(StateArchivalSettingsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13472,7 +13453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EvictionIteratorEncodeResponse EncodeEvictionIterator(EvictionIteratorEncodeRequest request)
         {
             var base64 = EvictionIteratorXdr.EncodeToBase64(request.Value);
@@ -13483,7 +13463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EvictionIteratorDecodeResponse DecodeEvictionIterator(EvictionIteratorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13494,7 +13473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostParamsEncodeResponse EncodeContractCostParams(ContractCostParamsEncodeRequest request)
         {
             var base64 = ContractCostParamsXdr.EncodeToBase64(request.Value);
@@ -13505,7 +13483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCostParamsDecodeResponse DecodeContractCostParams(ContractCostParamsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13516,7 +13493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingIDEncodeResponse EncodeConfigSettingID(ConfigSettingIDEncodeRequest request)
         {
             var base64 = ConfigSettingIDXdr.EncodeToBase64(request.Value);
@@ -13527,7 +13503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingIDDecodeResponse DecodeConfigSettingID(ConfigSettingIDDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13538,7 +13513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingEntryEncodeResponse EncodeConfigSettingEntry(ConfigSettingEntryEncodeRequest request)
         {
             var base64 = ConfigSettingEntryXdr.EncodeToBase64(request.Value);
@@ -13549,7 +13523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigSettingEntryDecodeResponse DecodeConfigSettingEntry(ConfigSettingEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13560,7 +13533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCEnvMetaKindEncodeResponse EncodeSCEnvMetaKind(SCEnvMetaKindEncodeRequest request)
         {
             var base64 = SCEnvMetaKindXdr.EncodeToBase64(request.Value);
@@ -13571,7 +13543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCEnvMetaKindDecodeResponse DecodeSCEnvMetaKind(SCEnvMetaKindDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13582,7 +13553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCEnvMetaEntryEncodeResponse EncodeSCEnvMetaEntry(SCEnvMetaEntryEncodeRequest request)
         {
             var base64 = SCEnvMetaEntryXdr.EncodeToBase64(request.Value);
@@ -13593,7 +13563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCEnvMetaEntryDecodeResponse DecodeSCEnvMetaEntry(SCEnvMetaEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13604,7 +13573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaV0EncodeResponse EncodeSCMetaV0(SCMetaV0EncodeRequest request)
         {
             var base64 = SCMetaV0Xdr.EncodeToBase64(request.Value);
@@ -13615,7 +13583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaV0DecodeResponse DecodeSCMetaV0(SCMetaV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13626,7 +13593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaKindEncodeResponse EncodeSCMetaKind(SCMetaKindEncodeRequest request)
         {
             var base64 = SCMetaKindXdr.EncodeToBase64(request.Value);
@@ -13637,7 +13603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaKindDecodeResponse DecodeSCMetaKind(SCMetaKindDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13648,7 +13613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaEntryEncodeResponse EncodeSCMetaEntry(SCMetaEntryEncodeRequest request)
         {
             var base64 = SCMetaEntryXdr.EncodeToBase64(request.Value);
@@ -13659,7 +13623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMetaEntryDecodeResponse DecodeSCMetaEntry(SCMetaEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13670,7 +13633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeEncodeResponse EncodeSCSpecType(SCSpecTypeEncodeRequest request)
         {
             var base64 = SCSpecTypeXdr.EncodeToBase64(request.Value);
@@ -13681,7 +13643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeDecodeResponse DecodeSCSpecType(SCSpecTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13692,7 +13653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeOptionEncodeResponse EncodeSCSpecTypeOption(SCSpecTypeOptionEncodeRequest request)
         {
             var base64 = SCSpecTypeOptionXdr.EncodeToBase64(request.Value);
@@ -13703,7 +13663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeOptionDecodeResponse DecodeSCSpecTypeOption(SCSpecTypeOptionDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13714,7 +13673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeResultEncodeResponse EncodeSCSpecTypeResult(SCSpecTypeResultEncodeRequest request)
         {
             var base64 = SCSpecTypeResultXdr.EncodeToBase64(request.Value);
@@ -13725,7 +13683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeResultDecodeResponse DecodeSCSpecTypeResult(SCSpecTypeResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13736,7 +13693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeVecEncodeResponse EncodeSCSpecTypeVec(SCSpecTypeVecEncodeRequest request)
         {
             var base64 = SCSpecTypeVecXdr.EncodeToBase64(request.Value);
@@ -13747,7 +13703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeVecDecodeResponse DecodeSCSpecTypeVec(SCSpecTypeVecDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13758,7 +13713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeMapEncodeResponse EncodeSCSpecTypeMap(SCSpecTypeMapEncodeRequest request)
         {
             var base64 = SCSpecTypeMapXdr.EncodeToBase64(request.Value);
@@ -13769,7 +13723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeMapDecodeResponse DecodeSCSpecTypeMap(SCSpecTypeMapDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13780,7 +13733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeTupleEncodeResponse EncodeSCSpecTypeTuple(SCSpecTypeTupleEncodeRequest request)
         {
             var base64 = SCSpecTypeTupleXdr.EncodeToBase64(request.Value);
@@ -13791,7 +13743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeTupleDecodeResponse DecodeSCSpecTypeTuple(SCSpecTypeTupleDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13802,7 +13753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeBytesNEncodeResponse EncodeSCSpecTypeBytesN(SCSpecTypeBytesNEncodeRequest request)
         {
             var base64 = SCSpecTypeBytesNXdr.EncodeToBase64(request.Value);
@@ -13813,7 +13763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeBytesNDecodeResponse DecodeSCSpecTypeBytesN(SCSpecTypeBytesNDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13824,7 +13773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeUDTEncodeResponse EncodeSCSpecTypeUDT(SCSpecTypeUDTEncodeRequest request)
         {
             var base64 = SCSpecTypeUDTXdr.EncodeToBase64(request.Value);
@@ -13835,7 +13783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeUDTDecodeResponse DecodeSCSpecTypeUDT(SCSpecTypeUDTDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13846,7 +13793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeDefEncodeResponse EncodeSCSpecTypeDef(SCSpecTypeDefEncodeRequest request)
         {
             var base64 = SCSpecTypeDefXdr.EncodeToBase64(request.Value);
@@ -13857,7 +13803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecTypeDefDecodeResponse DecodeSCSpecTypeDef(SCSpecTypeDefDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13868,7 +13813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTStructFieldV0EncodeResponse EncodeSCSpecUDTStructFieldV0(SCSpecUDTStructFieldV0EncodeRequest request)
         {
             var base64 = SCSpecUDTStructFieldV0Xdr.EncodeToBase64(request.Value);
@@ -13879,7 +13823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTStructFieldV0DecodeResponse DecodeSCSpecUDTStructFieldV0(SCSpecUDTStructFieldV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13890,7 +13833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTStructV0EncodeResponse EncodeSCSpecUDTStructV0(SCSpecUDTStructV0EncodeRequest request)
         {
             var base64 = SCSpecUDTStructV0Xdr.EncodeToBase64(request.Value);
@@ -13901,7 +13843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTStructV0DecodeResponse DecodeSCSpecUDTStructV0(SCSpecUDTStructV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13912,7 +13853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseVoidV0EncodeResponse EncodeSCSpecUDTUnionCaseVoidV0(SCSpecUDTUnionCaseVoidV0EncodeRequest request)
         {
             var base64 = SCSpecUDTUnionCaseVoidV0Xdr.EncodeToBase64(request.Value);
@@ -13923,7 +13863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseVoidV0DecodeResponse DecodeSCSpecUDTUnionCaseVoidV0(SCSpecUDTUnionCaseVoidV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13934,7 +13873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseTupleV0EncodeResponse EncodeSCSpecUDTUnionCaseTupleV0(SCSpecUDTUnionCaseTupleV0EncodeRequest request)
         {
             var base64 = SCSpecUDTUnionCaseTupleV0Xdr.EncodeToBase64(request.Value);
@@ -13945,7 +13883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseTupleV0DecodeResponse DecodeSCSpecUDTUnionCaseTupleV0(SCSpecUDTUnionCaseTupleV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13956,7 +13893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseV0KindEncodeResponse EncodeSCSpecUDTUnionCaseV0Kind(SCSpecUDTUnionCaseV0KindEncodeRequest request)
         {
             var base64 = SCSpecUDTUnionCaseV0KindXdr.EncodeToBase64(request.Value);
@@ -13967,7 +13903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseV0KindDecodeResponse DecodeSCSpecUDTUnionCaseV0Kind(SCSpecUDTUnionCaseV0KindDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -13978,7 +13913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseV0EncodeResponse EncodeSCSpecUDTUnionCaseV0(SCSpecUDTUnionCaseV0EncodeRequest request)
         {
             var base64 = SCSpecUDTUnionCaseV0Xdr.EncodeToBase64(request.Value);
@@ -13989,7 +13923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionCaseV0DecodeResponse DecodeSCSpecUDTUnionCaseV0(SCSpecUDTUnionCaseV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14000,7 +13933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionV0EncodeResponse EncodeSCSpecUDTUnionV0(SCSpecUDTUnionV0EncodeRequest request)
         {
             var base64 = SCSpecUDTUnionV0Xdr.EncodeToBase64(request.Value);
@@ -14011,7 +13943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTUnionV0DecodeResponse DecodeSCSpecUDTUnionV0(SCSpecUDTUnionV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14022,7 +13953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTEnumCaseV0EncodeResponse EncodeSCSpecUDTEnumCaseV0(SCSpecUDTEnumCaseV0EncodeRequest request)
         {
             var base64 = SCSpecUDTEnumCaseV0Xdr.EncodeToBase64(request.Value);
@@ -14033,7 +13963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTEnumCaseV0DecodeResponse DecodeSCSpecUDTEnumCaseV0(SCSpecUDTEnumCaseV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14044,7 +13973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTEnumV0EncodeResponse EncodeSCSpecUDTEnumV0(SCSpecUDTEnumV0EncodeRequest request)
         {
             var base64 = SCSpecUDTEnumV0Xdr.EncodeToBase64(request.Value);
@@ -14055,7 +13983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTEnumV0DecodeResponse DecodeSCSpecUDTEnumV0(SCSpecUDTEnumV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14066,7 +13993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTErrorEnumCaseV0EncodeResponse EncodeSCSpecUDTErrorEnumCaseV0(SCSpecUDTErrorEnumCaseV0EncodeRequest request)
         {
             var base64 = SCSpecUDTErrorEnumCaseV0Xdr.EncodeToBase64(request.Value);
@@ -14077,7 +14003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTErrorEnumCaseV0DecodeResponse DecodeSCSpecUDTErrorEnumCaseV0(SCSpecUDTErrorEnumCaseV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14088,7 +14013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTErrorEnumV0EncodeResponse EncodeSCSpecUDTErrorEnumV0(SCSpecUDTErrorEnumV0EncodeRequest request)
         {
             var base64 = SCSpecUDTErrorEnumV0Xdr.EncodeToBase64(request.Value);
@@ -14099,7 +14023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecUDTErrorEnumV0DecodeResponse DecodeSCSpecUDTErrorEnumV0(SCSpecUDTErrorEnumV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14110,7 +14033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecFunctionInputV0EncodeResponse EncodeSCSpecFunctionInputV0(SCSpecFunctionInputV0EncodeRequest request)
         {
             var base64 = SCSpecFunctionInputV0Xdr.EncodeToBase64(request.Value);
@@ -14121,7 +14043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecFunctionInputV0DecodeResponse DecodeSCSpecFunctionInputV0(SCSpecFunctionInputV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14132,7 +14053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecFunctionV0EncodeResponse EncodeSCSpecFunctionV0(SCSpecFunctionV0EncodeRequest request)
         {
             var base64 = SCSpecFunctionV0Xdr.EncodeToBase64(request.Value);
@@ -14143,7 +14063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecFunctionV0DecodeResponse DecodeSCSpecFunctionV0(SCSpecFunctionV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14154,7 +14073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecEntryKindEncodeResponse EncodeSCSpecEntryKind(SCSpecEntryKindEncodeRequest request)
         {
             var base64 = SCSpecEntryKindXdr.EncodeToBase64(request.Value);
@@ -14165,7 +14083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecEntryKindDecodeResponse DecodeSCSpecEntryKind(SCSpecEntryKindDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14176,7 +14093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecEntryEncodeResponse EncodeSCSpecEntry(SCSpecEntryEncodeRequest request)
         {
             var base64 = SCSpecEntryXdr.EncodeToBase64(request.Value);
@@ -14187,7 +14103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSpecEntryDecodeResponse DecodeSCSpecEntry(SCSpecEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14198,7 +14113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCValTypeEncodeResponse EncodeSCValType(SCValTypeEncodeRequest request)
         {
             var base64 = SCValTypeXdr.EncodeToBase64(request.Value);
@@ -14209,7 +14123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCValTypeDecodeResponse DecodeSCValType(SCValTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14220,7 +14133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorTypeEncodeResponse EncodeSCErrorType(SCErrorTypeEncodeRequest request)
         {
             var base64 = SCErrorTypeXdr.EncodeToBase64(request.Value);
@@ -14231,7 +14143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorTypeDecodeResponse DecodeSCErrorType(SCErrorTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14242,7 +14153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorCodeEncodeResponse EncodeSCErrorCode(SCErrorCodeEncodeRequest request)
         {
             var base64 = SCErrorCodeXdr.EncodeToBase64(request.Value);
@@ -14253,7 +14163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorCodeDecodeResponse DecodeSCErrorCode(SCErrorCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14264,7 +14173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorEncodeResponse EncodeSCError(SCErrorEncodeRequest request)
         {
             var base64 = SCErrorXdr.EncodeToBase64(request.Value);
@@ -14275,7 +14183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCErrorDecodeResponse DecodeSCError(SCErrorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14286,7 +14193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UInt128PartsEncodeResponse EncodeUInt128Parts(UInt128PartsEncodeRequest request)
         {
             var base64 = UInt128PartsXdr.EncodeToBase64(request.Value);
@@ -14297,7 +14203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UInt128PartsDecodeResponse DecodeUInt128Parts(UInt128PartsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14308,7 +14213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Int128PartsEncodeResponse EncodeInt128Parts(Int128PartsEncodeRequest request)
         {
             var base64 = Int128PartsXdr.EncodeToBase64(request.Value);
@@ -14319,7 +14223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Int128PartsDecodeResponse DecodeInt128Parts(Int128PartsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14330,7 +14233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UInt256PartsEncodeResponse EncodeUInt256Parts(UInt256PartsEncodeRequest request)
         {
             var base64 = UInt256PartsXdr.EncodeToBase64(request.Value);
@@ -14341,7 +14243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UInt256PartsDecodeResponse DecodeUInt256Parts(UInt256PartsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14352,7 +14253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Int256PartsEncodeResponse EncodeInt256Parts(Int256PartsEncodeRequest request)
         {
             var base64 = Int256PartsXdr.EncodeToBase64(request.Value);
@@ -14363,7 +14263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Int256PartsDecodeResponse DecodeInt256Parts(Int256PartsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14374,7 +14273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractExecutableTypeEncodeResponse EncodeContractExecutableType(ContractExecutableTypeEncodeRequest request)
         {
             var base64 = ContractExecutableTypeXdr.EncodeToBase64(request.Value);
@@ -14385,7 +14283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractExecutableTypeDecodeResponse DecodeContractExecutableType(ContractExecutableTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14396,7 +14293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractExecutableEncodeResponse EncodeContractExecutable(ContractExecutableEncodeRequest request)
         {
             var base64 = ContractExecutableXdr.EncodeToBase64(request.Value);
@@ -14407,7 +14303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractExecutableDecodeResponse DecodeContractExecutable(ContractExecutableDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14418,7 +14313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCAddressTypeEncodeResponse EncodeSCAddressType(SCAddressTypeEncodeRequest request)
         {
             var base64 = SCAddressTypeXdr.EncodeToBase64(request.Value);
@@ -14429,7 +14323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCAddressTypeDecodeResponse DecodeSCAddressType(SCAddressTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14440,7 +14333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCAddressEncodeResponse EncodeSCAddress(SCAddressEncodeRequest request)
         {
             var base64 = SCAddressXdr.EncodeToBase64(request.Value);
@@ -14451,7 +14343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCAddressDecodeResponse DecodeSCAddress(SCAddressDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14462,7 +14353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCVecEncodeResponse EncodeSCVec(SCVecEncodeRequest request)
         {
             var base64 = SCVecXdr.EncodeToBase64(request.Value);
@@ -14473,7 +14363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCVecDecodeResponse DecodeSCVec(SCVecDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14484,7 +14373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMapEncodeResponse EncodeSCMap(SCMapEncodeRequest request)
         {
             var base64 = SCMapXdr.EncodeToBase64(request.Value);
@@ -14495,7 +14383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMapDecodeResponse DecodeSCMap(SCMapDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14506,7 +14393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCBytesEncodeResponse EncodeSCBytes(SCBytesEncodeRequest request)
         {
             var base64 = SCBytesXdr.EncodeToBase64(request.Value);
@@ -14517,7 +14403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCBytesDecodeResponse DecodeSCBytes(SCBytesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14528,7 +14413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCStringEncodeResponse EncodeSCString(SCStringEncodeRequest request)
         {
             var base64 = SCStringXdr.EncodeToBase64(request.Value);
@@ -14539,7 +14423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCStringDecodeResponse DecodeSCString(SCStringDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14550,7 +14433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSymbolEncodeResponse EncodeSCSymbol(SCSymbolEncodeRequest request)
         {
             var base64 = SCSymbolXdr.EncodeToBase64(request.Value);
@@ -14561,7 +14443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCSymbolDecodeResponse DecodeSCSymbol(SCSymbolDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14572,7 +14453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCNonceKeyEncodeResponse EncodeSCNonceKey(SCNonceKeyEncodeRequest request)
         {
             var base64 = SCNonceKeyXdr.EncodeToBase64(request.Value);
@@ -14583,7 +14463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCNonceKeyDecodeResponse DecodeSCNonceKey(SCNonceKeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14594,7 +14473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCContractInstanceEncodeResponse EncodeSCContractInstance(SCContractInstanceEncodeRequest request)
         {
             var base64 = SCContractInstanceXdr.EncodeToBase64(request.Value);
@@ -14605,7 +14483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCContractInstanceDecodeResponse DecodeSCContractInstance(SCContractInstanceDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14616,7 +14493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCValEncodeResponse EncodeSCVal(SCValEncodeRequest request)
         {
             var base64 = SCValXdr.EncodeToBase64(request.Value);
@@ -14627,7 +14503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCValDecodeResponse DecodeSCVal(SCValDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14638,7 +14513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMapEntryEncodeResponse EncodeSCMapEntry(SCMapEntryEncodeRequest request)
         {
             var base64 = SCMapEntryXdr.EncodeToBase64(request.Value);
@@ -14649,7 +14523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCMapEntryDecodeResponse DecodeSCMapEntry(SCMapEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14660,7 +14533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StoredTransactionSetEncodeResponse EncodeStoredTransactionSet(StoredTransactionSetEncodeRequest request)
         {
             var base64 = StoredTransactionSetXdr.EncodeToBase64(request.Value);
@@ -14671,7 +14543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StoredTransactionSetDecodeResponse DecodeStoredTransactionSet(StoredTransactionSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14682,7 +14553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StoredDebugTransactionSetEncodeResponse EncodeStoredDebugTransactionSet(StoredDebugTransactionSetEncodeRequest request)
         {
             var base64 = StoredDebugTransactionSetXdr.EncodeToBase64(request.Value);
@@ -14693,7 +14563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StoredDebugTransactionSetDecodeResponse DecodeStoredDebugTransactionSet(StoredDebugTransactionSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14704,7 +14573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateV0EncodeResponse EncodePersistedSCPStateV0(PersistedSCPStateV0EncodeRequest request)
         {
             var base64 = PersistedSCPStateV0Xdr.EncodeToBase64(request.Value);
@@ -14715,7 +14583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateV0DecodeResponse DecodePersistedSCPStateV0(PersistedSCPStateV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14726,7 +14593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateV1EncodeResponse EncodePersistedSCPStateV1(PersistedSCPStateV1EncodeRequest request)
         {
             var base64 = PersistedSCPStateV1Xdr.EncodeToBase64(request.Value);
@@ -14737,7 +14603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateV1DecodeResponse DecodePersistedSCPStateV1(PersistedSCPStateV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14748,7 +14613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateEncodeResponse EncodePersistedSCPState(PersistedSCPStateEncodeRequest request)
         {
             var base64 = PersistedSCPStateXdr.EncodeToBase64(request.Value);
@@ -14759,7 +14623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PersistedSCPStateDecodeResponse DecodePersistedSCPState(PersistedSCPStateDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14770,7 +14633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ThresholdsEncodeResponse EncodeThresholds(ThresholdsEncodeRequest request)
         {
             var base64 = ThresholdsXdr.EncodeToBase64(request.Value);
@@ -14781,7 +14643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ThresholdsDecodeResponse DecodeThresholds(ThresholdsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14792,7 +14653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public string32EncodeResponse Encodestring32(string32EncodeRequest request)
         {
             var base64 = string32Xdr.EncodeToBase64(request.Value);
@@ -14803,7 +14663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public string32DecodeResponse Decodestring32(string32DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14814,7 +14673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public string64EncodeResponse Encodestring64(string64EncodeRequest request)
         {
             var base64 = string64Xdr.EncodeToBase64(request.Value);
@@ -14825,7 +14683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public string64DecodeResponse Decodestring64(string64DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14836,7 +14693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SequenceNumberEncodeResponse EncodeSequenceNumber(SequenceNumberEncodeRequest request)
         {
             var base64 = SequenceNumberXdr.EncodeToBase64(request.Value);
@@ -14847,7 +14703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SequenceNumberDecodeResponse DecodeSequenceNumber(SequenceNumberDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14858,7 +14713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DataValueEncodeResponse EncodeDataValue(DataValueEncodeRequest request)
         {
             var base64 = DataValueXdr.EncodeToBase64(request.Value);
@@ -14869,7 +14723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DataValueDecodeResponse DecodeDataValue(DataValueDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14880,7 +14733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PoolIDEncodeResponse EncodePoolID(PoolIDEncodeRequest request)
         {
             var base64 = PoolIDXdr.EncodeToBase64(request.Value);
@@ -14891,7 +14743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PoolIDDecodeResponse DecodePoolID(PoolIDDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14902,7 +14753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCode4EncodeResponse EncodeAssetCode4(AssetCode4EncodeRequest request)
         {
             var base64 = AssetCode4Xdr.EncodeToBase64(request.Value);
@@ -14913,7 +14763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCode4DecodeResponse DecodeAssetCode4(AssetCode4DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14924,7 +14773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCode12EncodeResponse EncodeAssetCode12(AssetCode12EncodeRequest request)
         {
             var base64 = AssetCode12Xdr.EncodeToBase64(request.Value);
@@ -14935,7 +14783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCode12DecodeResponse DecodeAssetCode12(AssetCode12DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14946,7 +14793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetTypeEncodeResponse EncodeAssetType(AssetTypeEncodeRequest request)
         {
             var base64 = AssetTypeXdr.EncodeToBase64(request.Value);
@@ -14957,7 +14803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetTypeDecodeResponse DecodeAssetType(AssetTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14968,7 +14813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCodeEncodeResponse EncodeAssetCode(AssetCodeEncodeRequest request)
         {
             var base64 = AssetCodeXdr.EncodeToBase64(request.Value);
@@ -14979,7 +14823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetCodeDecodeResponse DecodeAssetCode(AssetCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -14990,7 +14833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AlphaNum4EncodeResponse EncodeAlphaNum4(AlphaNum4EncodeRequest request)
         {
             var base64 = AlphaNum4Xdr.EncodeToBase64(request.Value);
@@ -15001,7 +14843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AlphaNum4DecodeResponse DecodeAlphaNum4(AlphaNum4DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15012,7 +14853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AlphaNum12EncodeResponse EncodeAlphaNum12(AlphaNum12EncodeRequest request)
         {
             var base64 = AlphaNum12Xdr.EncodeToBase64(request.Value);
@@ -15023,7 +14863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AlphaNum12DecodeResponse DecodeAlphaNum12(AlphaNum12DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15034,7 +14873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetEncodeResponse EncodeAsset(AssetEncodeRequest request)
         {
             var base64 = AssetXdr.EncodeToBase64(request.Value);
@@ -15045,7 +14883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AssetDecodeResponse DecodeAsset(AssetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15056,7 +14893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PriceEncodeResponse EncodePrice(PriceEncodeRequest request)
         {
             var base64 = PriceXdr.EncodeToBase64(request.Value);
@@ -15067,7 +14903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PriceDecodeResponse DecodePrice(PriceDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15078,7 +14913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiabilitiesEncodeResponse EncodeLiabilities(LiabilitiesEncodeRequest request)
         {
             var base64 = LiabilitiesXdr.EncodeToBase64(request.Value);
@@ -15089,7 +14923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiabilitiesDecodeResponse DecodeLiabilities(LiabilitiesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15100,7 +14933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ThresholdIndexesEncodeResponse EncodeThresholdIndexes(ThresholdIndexesEncodeRequest request)
         {
             var base64 = ThresholdIndexesXdr.EncodeToBase64(request.Value);
@@ -15111,7 +14943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ThresholdIndexesDecodeResponse DecodeThresholdIndexes(ThresholdIndexesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15122,7 +14953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryTypeEncodeResponse EncodeLedgerEntryType(LedgerEntryTypeEncodeRequest request)
         {
             var base64 = LedgerEntryTypeXdr.EncodeToBase64(request.Value);
@@ -15133,7 +14963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryTypeDecodeResponse DecodeLedgerEntryType(LedgerEntryTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15144,7 +14973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerEncodeResponse EncodeSigner(SignerEncodeRequest request)
         {
             var base64 = SignerXdr.EncodeToBase64(request.Value);
@@ -15155,7 +14983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerDecodeResponse DecodeSigner(SignerDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15166,7 +14993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountFlagsEncodeResponse EncodeAccountFlags(AccountFlagsEncodeRequest request)
         {
             var base64 = AccountFlagsXdr.EncodeToBase64(request.Value);
@@ -15177,7 +15003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountFlagsDecodeResponse DecodeAccountFlags(AccountFlagsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15188,7 +15013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SponsorshipDescriptorEncodeResponse EncodeSponsorshipDescriptor(SponsorshipDescriptorEncodeRequest request)
         {
             var base64 = SponsorshipDescriptorXdr.EncodeToBase64(request.Value);
@@ -15199,7 +15023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SponsorshipDescriptorDecodeResponse DecodeSponsorshipDescriptor(SponsorshipDescriptorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15210,7 +15033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV3EncodeResponse EncodeAccountEntryExtensionV3(AccountEntryExtensionV3EncodeRequest request)
         {
             var base64 = AccountEntryExtensionV3Xdr.EncodeToBase64(request.Value);
@@ -15221,7 +15043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV3DecodeResponse DecodeAccountEntryExtensionV3(AccountEntryExtensionV3DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15232,7 +15053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV2EncodeResponse EncodeAccountEntryExtensionV2(AccountEntryExtensionV2EncodeRequest request)
         {
             var base64 = AccountEntryExtensionV2Xdr.EncodeToBase64(request.Value);
@@ -15243,7 +15063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV2DecodeResponse DecodeAccountEntryExtensionV2(AccountEntryExtensionV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15254,7 +15073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV1EncodeResponse EncodeAccountEntryExtensionV1(AccountEntryExtensionV1EncodeRequest request)
         {
             var base64 = AccountEntryExtensionV1Xdr.EncodeToBase64(request.Value);
@@ -15265,7 +15083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryExtensionV1DecodeResponse DecodeAccountEntryExtensionV1(AccountEntryExtensionV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15276,7 +15093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryEncodeResponse EncodeAccountEntry(AccountEntryEncodeRequest request)
         {
             var base64 = AccountEntryXdr.EncodeToBase64(request.Value);
@@ -15287,7 +15103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountEntryDecodeResponse DecodeAccountEntry(AccountEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15298,7 +15113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineFlagsEncodeResponse EncodeTrustLineFlags(TrustLineFlagsEncodeRequest request)
         {
             var base64 = TrustLineFlagsXdr.EncodeToBase64(request.Value);
@@ -15309,7 +15123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineFlagsDecodeResponse DecodeTrustLineFlags(TrustLineFlagsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15320,7 +15133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolTypeEncodeResponse EncodeLiquidityPoolType(LiquidityPoolTypeEncodeRequest request)
         {
             var base64 = LiquidityPoolTypeXdr.EncodeToBase64(request.Value);
@@ -15331,7 +15143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolTypeDecodeResponse DecodeLiquidityPoolType(LiquidityPoolTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15342,7 +15153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineAssetEncodeResponse EncodeTrustLineAsset(TrustLineAssetEncodeRequest request)
         {
             var base64 = TrustLineAssetXdr.EncodeToBase64(request.Value);
@@ -15353,7 +15163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineAssetDecodeResponse DecodeTrustLineAsset(TrustLineAssetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15364,7 +15173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineEntryExtensionV2EncodeResponse EncodeTrustLineEntryExtensionV2(TrustLineEntryExtensionV2EncodeRequest request)
         {
             var base64 = TrustLineEntryExtensionV2Xdr.EncodeToBase64(request.Value);
@@ -15375,7 +15183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineEntryExtensionV2DecodeResponse DecodeTrustLineEntryExtensionV2(TrustLineEntryExtensionV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15386,7 +15193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineEntryEncodeResponse EncodeTrustLineEntry(TrustLineEntryEncodeRequest request)
         {
             var base64 = TrustLineEntryXdr.EncodeToBase64(request.Value);
@@ -15397,7 +15203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TrustLineEntryDecodeResponse DecodeTrustLineEntry(TrustLineEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15408,7 +15213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OfferEntryFlagsEncodeResponse EncodeOfferEntryFlags(OfferEntryFlagsEncodeRequest request)
         {
             var base64 = OfferEntryFlagsXdr.EncodeToBase64(request.Value);
@@ -15419,7 +15223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OfferEntryFlagsDecodeResponse DecodeOfferEntryFlags(OfferEntryFlagsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15430,7 +15233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OfferEntryEncodeResponse EncodeOfferEntry(OfferEntryEncodeRequest request)
         {
             var base64 = OfferEntryXdr.EncodeToBase64(request.Value);
@@ -15441,7 +15243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OfferEntryDecodeResponse DecodeOfferEntry(OfferEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15452,7 +15253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DataEntryEncodeResponse EncodeDataEntry(DataEntryEncodeRequest request)
         {
             var base64 = DataEntryXdr.EncodeToBase64(request.Value);
@@ -15463,7 +15263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DataEntryDecodeResponse DecodeDataEntry(DataEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15474,7 +15273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimPredicateTypeEncodeResponse EncodeClaimPredicateType(ClaimPredicateTypeEncodeRequest request)
         {
             var base64 = ClaimPredicateTypeXdr.EncodeToBase64(request.Value);
@@ -15485,7 +15283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimPredicateTypeDecodeResponse DecodeClaimPredicateType(ClaimPredicateTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15496,7 +15293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimPredicateEncodeResponse EncodeClaimPredicate(ClaimPredicateEncodeRequest request)
         {
             var base64 = ClaimPredicateXdr.EncodeToBase64(request.Value);
@@ -15507,7 +15303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimPredicateDecodeResponse DecodeClaimPredicate(ClaimPredicateDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15518,7 +15313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimantTypeEncodeResponse EncodeClaimantType(ClaimantTypeEncodeRequest request)
         {
             var base64 = ClaimantTypeXdr.EncodeToBase64(request.Value);
@@ -15529,7 +15323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimantTypeDecodeResponse DecodeClaimantType(ClaimantTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15540,7 +15333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimantEncodeResponse EncodeClaimant(ClaimantEncodeRequest request)
         {
             var base64 = ClaimantXdr.EncodeToBase64(request.Value);
@@ -15551,7 +15343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimantDecodeResponse DecodeClaimant(ClaimantDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15562,7 +15353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceIDTypeEncodeResponse EncodeClaimableBalanceIDType(ClaimableBalanceIDTypeEncodeRequest request)
         {
             var base64 = ClaimableBalanceIDTypeXdr.EncodeToBase64(request.Value);
@@ -15573,7 +15363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceIDTypeDecodeResponse DecodeClaimableBalanceIDType(ClaimableBalanceIDTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15584,7 +15373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceIDEncodeResponse EncodeClaimableBalanceID(ClaimableBalanceIDEncodeRequest request)
         {
             var base64 = ClaimableBalanceIDXdr.EncodeToBase64(request.Value);
@@ -15595,7 +15383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceIDDecodeResponse DecodeClaimableBalanceID(ClaimableBalanceIDDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15606,7 +15393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceFlagsEncodeResponse EncodeClaimableBalanceFlags(ClaimableBalanceFlagsEncodeRequest request)
         {
             var base64 = ClaimableBalanceFlagsXdr.EncodeToBase64(request.Value);
@@ -15617,7 +15403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceFlagsDecodeResponse DecodeClaimableBalanceFlags(ClaimableBalanceFlagsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15628,7 +15413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceEntryExtensionV1EncodeResponse EncodeClaimableBalanceEntryExtensionV1(ClaimableBalanceEntryExtensionV1EncodeRequest request)
         {
             var base64 = ClaimableBalanceEntryExtensionV1Xdr.EncodeToBase64(request.Value);
@@ -15639,7 +15423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceEntryExtensionV1DecodeResponse DecodeClaimableBalanceEntryExtensionV1(ClaimableBalanceEntryExtensionV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15650,7 +15433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceEntryEncodeResponse EncodeClaimableBalanceEntry(ClaimableBalanceEntryEncodeRequest request)
         {
             var base64 = ClaimableBalanceEntryXdr.EncodeToBase64(request.Value);
@@ -15661,7 +15443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimableBalanceEntryDecodeResponse DecodeClaimableBalanceEntry(ClaimableBalanceEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15672,7 +15453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolConstantProductParametersEncodeResponse EncodeLiquidityPoolConstantProductParameters(LiquidityPoolConstantProductParametersEncodeRequest request)
         {
             var base64 = LiquidityPoolConstantProductParametersXdr.EncodeToBase64(request.Value);
@@ -15683,7 +15463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolConstantProductParametersDecodeResponse DecodeLiquidityPoolConstantProductParameters(LiquidityPoolConstantProductParametersDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15694,7 +15473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolEntryEncodeResponse EncodeLiquidityPoolEntry(LiquidityPoolEntryEncodeRequest request)
         {
             var base64 = LiquidityPoolEntryXdr.EncodeToBase64(request.Value);
@@ -15705,7 +15483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolEntryDecodeResponse DecodeLiquidityPoolEntry(LiquidityPoolEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15716,7 +15493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractDataDurabilityEncodeResponse EncodeContractDataDurability(ContractDataDurabilityEncodeRequest request)
         {
             var base64 = ContractDataDurabilityXdr.EncodeToBase64(request.Value);
@@ -15727,7 +15503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractDataDurabilityDecodeResponse DecodeContractDataDurability(ContractDataDurabilityDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15738,7 +15513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractDataEntryEncodeResponse EncodeContractDataEntry(ContractDataEntryEncodeRequest request)
         {
             var base64 = ContractDataEntryXdr.EncodeToBase64(request.Value);
@@ -15749,7 +15523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractDataEntryDecodeResponse DecodeContractDataEntry(ContractDataEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15760,7 +15533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCodeCostInputsEncodeResponse EncodeContractCodeCostInputs(ContractCodeCostInputsEncodeRequest request)
         {
             var base64 = ContractCodeCostInputsXdr.EncodeToBase64(request.Value);
@@ -15771,7 +15543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCodeCostInputsDecodeResponse DecodeContractCodeCostInputs(ContractCodeCostInputsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15782,7 +15553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCodeEntryEncodeResponse EncodeContractCodeEntry(ContractCodeEntryEncodeRequest request)
         {
             var base64 = ContractCodeEntryXdr.EncodeToBase64(request.Value);
@@ -15793,7 +15563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractCodeEntryDecodeResponse DecodeContractCodeEntry(ContractCodeEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15804,7 +15573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TTLEntryEncodeResponse EncodeTTLEntry(TTLEntryEncodeRequest request)
         {
             var base64 = TTLEntryXdr.EncodeToBase64(request.Value);
@@ -15815,7 +15583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TTLEntryDecodeResponse DecodeTTLEntry(TTLEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15826,7 +15593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryExtensionV1EncodeResponse EncodeLedgerEntryExtensionV1(LedgerEntryExtensionV1EncodeRequest request)
         {
             var base64 = LedgerEntryExtensionV1Xdr.EncodeToBase64(request.Value);
@@ -15837,7 +15603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryExtensionV1DecodeResponse DecodeLedgerEntryExtensionV1(LedgerEntryExtensionV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15848,7 +15613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryEncodeResponse EncodeLedgerEntry(LedgerEntryEncodeRequest request)
         {
             var base64 = LedgerEntryXdr.EncodeToBase64(request.Value);
@@ -15859,7 +15623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryDecodeResponse DecodeLedgerEntry(LedgerEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15870,7 +15633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerKeyEncodeResponse EncodeLedgerKey(LedgerKeyEncodeRequest request)
         {
             var base64 = LedgerKeyXdr.EncodeToBase64(request.Value);
@@ -15881,7 +15643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerKeyDecodeResponse DecodeLedgerKey(LedgerKeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15892,7 +15653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EnvelopeTypeEncodeResponse EncodeEnvelopeType(EnvelopeTypeEncodeRequest request)
         {
             var base64 = EnvelopeTypeXdr.EncodeToBase64(request.Value);
@@ -15903,7 +15663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EnvelopeTypeDecodeResponse DecodeEnvelopeType(EnvelopeTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15914,7 +15673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketListTypeEncodeResponse EncodeBucketListType(BucketListTypeEncodeRequest request)
         {
             var base64 = BucketListTypeXdr.EncodeToBase64(request.Value);
@@ -15925,7 +15683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketListTypeDecodeResponse DecodeBucketListType(BucketListTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15936,7 +15693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketEntryTypeEncodeResponse EncodeBucketEntryType(BucketEntryTypeEncodeRequest request)
         {
             var base64 = BucketEntryTypeXdr.EncodeToBase64(request.Value);
@@ -15947,7 +15703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketEntryTypeDecodeResponse DecodeBucketEntryType(BucketEntryTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15958,7 +15713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HotArchiveBucketEntryTypeEncodeResponse EncodeHotArchiveBucketEntryType(HotArchiveBucketEntryTypeEncodeRequest request)
         {
             var base64 = HotArchiveBucketEntryTypeXdr.EncodeToBase64(request.Value);
@@ -15969,7 +15723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HotArchiveBucketEntryTypeDecodeResponse DecodeHotArchiveBucketEntryType(HotArchiveBucketEntryTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -15980,7 +15733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBucketEntryTypeEncodeResponse EncodeColdArchiveBucketEntryType(ColdArchiveBucketEntryTypeEncodeRequest request)
         {
             var base64 = ColdArchiveBucketEntryTypeXdr.EncodeToBase64(request.Value);
@@ -15991,7 +15743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBucketEntryTypeDecodeResponse DecodeColdArchiveBucketEntryType(ColdArchiveBucketEntryTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16002,7 +15753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketMetadataEncodeResponse EncodeBucketMetadata(BucketMetadataEncodeRequest request)
         {
             var base64 = BucketMetadataXdr.EncodeToBase64(request.Value);
@@ -16013,7 +15763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketMetadataDecodeResponse DecodeBucketMetadata(BucketMetadataDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16024,7 +15773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketEntryEncodeResponse EncodeBucketEntry(BucketEntryEncodeRequest request)
         {
             var base64 = BucketEntryXdr.EncodeToBase64(request.Value);
@@ -16035,7 +15783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BucketEntryDecodeResponse DecodeBucketEntry(BucketEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16046,7 +15793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HotArchiveBucketEntryEncodeResponse EncodeHotArchiveBucketEntry(HotArchiveBucketEntryEncodeRequest request)
         {
             var base64 = HotArchiveBucketEntryXdr.EncodeToBase64(request.Value);
@@ -16057,7 +15803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HotArchiveBucketEntryDecodeResponse DecodeHotArchiveBucketEntry(HotArchiveBucketEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16068,7 +15813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveArchivedLeafEncodeResponse EncodeColdArchiveArchivedLeaf(ColdArchiveArchivedLeafEncodeRequest request)
         {
             var base64 = ColdArchiveArchivedLeafXdr.EncodeToBase64(request.Value);
@@ -16079,7 +15823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveArchivedLeafDecodeResponse DecodeColdArchiveArchivedLeaf(ColdArchiveArchivedLeafDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16090,7 +15833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveDeletedLeafEncodeResponse EncodeColdArchiveDeletedLeaf(ColdArchiveDeletedLeafEncodeRequest request)
         {
             var base64 = ColdArchiveDeletedLeafXdr.EncodeToBase64(request.Value);
@@ -16101,7 +15843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveDeletedLeafDecodeResponse DecodeColdArchiveDeletedLeaf(ColdArchiveDeletedLeafDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16112,7 +15853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBoundaryLeafEncodeResponse EncodeColdArchiveBoundaryLeaf(ColdArchiveBoundaryLeafEncodeRequest request)
         {
             var base64 = ColdArchiveBoundaryLeafXdr.EncodeToBase64(request.Value);
@@ -16123,7 +15863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBoundaryLeafDecodeResponse DecodeColdArchiveBoundaryLeaf(ColdArchiveBoundaryLeafDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16134,7 +15873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveHashEntryEncodeResponse EncodeColdArchiveHashEntry(ColdArchiveHashEntryEncodeRequest request)
         {
             var base64 = ColdArchiveHashEntryXdr.EncodeToBase64(request.Value);
@@ -16145,7 +15883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveHashEntryDecodeResponse DecodeColdArchiveHashEntry(ColdArchiveHashEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16156,7 +15893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBucketEntryEncodeResponse EncodeColdArchiveBucketEntry(ColdArchiveBucketEntryEncodeRequest request)
         {
             var base64 = ColdArchiveBucketEntryXdr.EncodeToBase64(request.Value);
@@ -16167,7 +15903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ColdArchiveBucketEntryDecodeResponse DecodeColdArchiveBucketEntry(ColdArchiveBucketEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16178,7 +15913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UpgradeTypeEncodeResponse EncodeUpgradeType(UpgradeTypeEncodeRequest request)
         {
             var base64 = UpgradeTypeXdr.EncodeToBase64(request.Value);
@@ -16189,7 +15923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UpgradeTypeDecodeResponse DecodeUpgradeType(UpgradeTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16200,7 +15933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarValueTypeEncodeResponse EncodeStellarValueType(StellarValueTypeEncodeRequest request)
         {
             var base64 = StellarValueTypeXdr.EncodeToBase64(request.Value);
@@ -16211,7 +15943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarValueTypeDecodeResponse DecodeStellarValueType(StellarValueTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16222,7 +15953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseValueSignatureEncodeResponse EncodeLedgerCloseValueSignature(LedgerCloseValueSignatureEncodeRequest request)
         {
             var base64 = LedgerCloseValueSignatureXdr.EncodeToBase64(request.Value);
@@ -16233,7 +15963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseValueSignatureDecodeResponse DecodeLedgerCloseValueSignature(LedgerCloseValueSignatureDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16244,7 +15973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarValueEncodeResponse EncodeStellarValue(StellarValueEncodeRequest request)
         {
             var base64 = StellarValueXdr.EncodeToBase64(request.Value);
@@ -16255,7 +15983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarValueDecodeResponse DecodeStellarValue(StellarValueDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16266,7 +15993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderFlagsEncodeResponse EncodeLedgerHeaderFlags(LedgerHeaderFlagsEncodeRequest request)
         {
             var base64 = LedgerHeaderFlagsXdr.EncodeToBase64(request.Value);
@@ -16277,7 +16003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderFlagsDecodeResponse DecodeLedgerHeaderFlags(LedgerHeaderFlagsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16288,7 +16013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderExtensionV1EncodeResponse EncodeLedgerHeaderExtensionV1(LedgerHeaderExtensionV1EncodeRequest request)
         {
             var base64 = LedgerHeaderExtensionV1Xdr.EncodeToBase64(request.Value);
@@ -16299,7 +16023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderExtensionV1DecodeResponse DecodeLedgerHeaderExtensionV1(LedgerHeaderExtensionV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16310,7 +16033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderEncodeResponse EncodeLedgerHeader(LedgerHeaderEncodeRequest request)
         {
             var base64 = LedgerHeaderXdr.EncodeToBase64(request.Value);
@@ -16321,7 +16043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderDecodeResponse DecodeLedgerHeader(LedgerHeaderDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16332,7 +16053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerUpgradeTypeEncodeResponse EncodeLedgerUpgradeType(LedgerUpgradeTypeEncodeRequest request)
         {
             var base64 = LedgerUpgradeTypeXdr.EncodeToBase64(request.Value);
@@ -16343,7 +16063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerUpgradeTypeDecodeResponse DecodeLedgerUpgradeType(LedgerUpgradeTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16354,7 +16073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigUpgradeSetKeyEncodeResponse EncodeConfigUpgradeSetKey(ConfigUpgradeSetKeyEncodeRequest request)
         {
             var base64 = ConfigUpgradeSetKeyXdr.EncodeToBase64(request.Value);
@@ -16365,7 +16083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigUpgradeSetKeyDecodeResponse DecodeConfigUpgradeSetKey(ConfigUpgradeSetKeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16376,7 +16093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerUpgradeEncodeResponse EncodeLedgerUpgrade(LedgerUpgradeEncodeRequest request)
         {
             var base64 = LedgerUpgradeXdr.EncodeToBase64(request.Value);
@@ -16387,7 +16103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerUpgradeDecodeResponse DecodeLedgerUpgrade(LedgerUpgradeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16398,7 +16113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigUpgradeSetEncodeResponse EncodeConfigUpgradeSet(ConfigUpgradeSetEncodeRequest request)
         {
             var base64 = ConfigUpgradeSetXdr.EncodeToBase64(request.Value);
@@ -16409,7 +16123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ConfigUpgradeSetDecodeResponse DecodeConfigUpgradeSet(ConfigUpgradeSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16420,7 +16133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxSetComponentTypeEncodeResponse EncodeTxSetComponentType(TxSetComponentTypeEncodeRequest request)
         {
             var base64 = TxSetComponentTypeXdr.EncodeToBase64(request.Value);
@@ -16431,7 +16143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxSetComponentTypeDecodeResponse DecodeTxSetComponentType(TxSetComponentTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16442,7 +16153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxSetComponentEncodeResponse EncodeTxSetComponent(TxSetComponentEncodeRequest request)
         {
             var base64 = TxSetComponentXdr.EncodeToBase64(request.Value);
@@ -16453,7 +16163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxSetComponentDecodeResponse DecodeTxSetComponent(TxSetComponentDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16464,7 +16173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionPhaseEncodeResponse EncodeTransactionPhase(TransactionPhaseEncodeRequest request)
         {
             var base64 = TransactionPhaseXdr.EncodeToBase64(request.Value);
@@ -16475,7 +16183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionPhaseDecodeResponse DecodeTransactionPhase(TransactionPhaseDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16486,7 +16193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSetEncodeResponse EncodeTransactionSet(TransactionSetEncodeRequest request)
         {
             var base64 = TransactionSetXdr.EncodeToBase64(request.Value);
@@ -16497,7 +16203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSetDecodeResponse DecodeTransactionSet(TransactionSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16508,7 +16213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSetV1EncodeResponse EncodeTransactionSetV1(TransactionSetV1EncodeRequest request)
         {
             var base64 = TransactionSetV1Xdr.EncodeToBase64(request.Value);
@@ -16519,7 +16223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSetV1DecodeResponse DecodeTransactionSetV1(TransactionSetV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16530,7 +16233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public GeneralizedTransactionSetEncodeResponse EncodeGeneralizedTransactionSet(GeneralizedTransactionSetEncodeRequest request)
         {
             var base64 = GeneralizedTransactionSetXdr.EncodeToBase64(request.Value);
@@ -16541,7 +16243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public GeneralizedTransactionSetDecodeResponse DecodeGeneralizedTransactionSet(GeneralizedTransactionSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16552,7 +16253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultPairEncodeResponse EncodeTransactionResultPair(TransactionResultPairEncodeRequest request)
         {
             var base64 = TransactionResultPairXdr.EncodeToBase64(request.Value);
@@ -16563,7 +16263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultPairDecodeResponse DecodeTransactionResultPair(TransactionResultPairDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16574,7 +16273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultSetEncodeResponse EncodeTransactionResultSet(TransactionResultSetEncodeRequest request)
         {
             var base64 = TransactionResultSetXdr.EncodeToBase64(request.Value);
@@ -16585,7 +16283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultSetDecodeResponse DecodeTransactionResultSet(TransactionResultSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16596,7 +16293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionHistoryEntryEncodeResponse EncodeTransactionHistoryEntry(TransactionHistoryEntryEncodeRequest request)
         {
             var base64 = TransactionHistoryEntryXdr.EncodeToBase64(request.Value);
@@ -16607,7 +16303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionHistoryEntryDecodeResponse DecodeTransactionHistoryEntry(TransactionHistoryEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16618,7 +16313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionHistoryResultEntryEncodeResponse EncodeTransactionHistoryResultEntry(TransactionHistoryResultEntryEncodeRequest request)
         {
             var base64 = TransactionHistoryResultEntryXdr.EncodeToBase64(request.Value);
@@ -16629,7 +16323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionHistoryResultEntryDecodeResponse DecodeTransactionHistoryResultEntry(TransactionHistoryResultEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16640,7 +16333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderHistoryEntryEncodeResponse EncodeLedgerHeaderHistoryEntry(LedgerHeaderHistoryEntryEncodeRequest request)
         {
             var base64 = LedgerHeaderHistoryEntryXdr.EncodeToBase64(request.Value);
@@ -16651,7 +16343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerHeaderHistoryEntryDecodeResponse DecodeLedgerHeaderHistoryEntry(LedgerHeaderHistoryEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16662,7 +16353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerSCPMessagesEncodeResponse EncodeLedgerSCPMessages(LedgerSCPMessagesEncodeRequest request)
         {
             var base64 = LedgerSCPMessagesXdr.EncodeToBase64(request.Value);
@@ -16673,7 +16363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerSCPMessagesDecodeResponse DecodeLedgerSCPMessages(LedgerSCPMessagesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16684,7 +16373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPHistoryEntryV0EncodeResponse EncodeSCPHistoryEntryV0(SCPHistoryEntryV0EncodeRequest request)
         {
             var base64 = SCPHistoryEntryV0Xdr.EncodeToBase64(request.Value);
@@ -16695,7 +16383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPHistoryEntryV0DecodeResponse DecodeSCPHistoryEntryV0(SCPHistoryEntryV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16706,7 +16393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPHistoryEntryEncodeResponse EncodeSCPHistoryEntry(SCPHistoryEntryEncodeRequest request)
         {
             var base64 = SCPHistoryEntryXdr.EncodeToBase64(request.Value);
@@ -16717,7 +16403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPHistoryEntryDecodeResponse DecodeSCPHistoryEntry(SCPHistoryEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16728,7 +16413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangeTypeEncodeResponse EncodeLedgerEntryChangeType(LedgerEntryChangeTypeEncodeRequest request)
         {
             var base64 = LedgerEntryChangeTypeXdr.EncodeToBase64(request.Value);
@@ -16739,7 +16423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangeTypeDecodeResponse DecodeLedgerEntryChangeType(LedgerEntryChangeTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16750,7 +16433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangeEncodeResponse EncodeLedgerEntryChange(LedgerEntryChangeEncodeRequest request)
         {
             var base64 = LedgerEntryChangeXdr.EncodeToBase64(request.Value);
@@ -16761,7 +16443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangeDecodeResponse DecodeLedgerEntryChange(LedgerEntryChangeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16772,7 +16453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangesEncodeResponse EncodeLedgerEntryChanges(LedgerEntryChangesEncodeRequest request)
         {
             var base64 = LedgerEntryChangesXdr.EncodeToBase64(request.Value);
@@ -16783,7 +16463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerEntryChangesDecodeResponse DecodeLedgerEntryChanges(LedgerEntryChangesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16794,7 +16473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationMetaEncodeResponse EncodeOperationMeta(OperationMetaEncodeRequest request)
         {
             var base64 = OperationMetaXdr.EncodeToBase64(request.Value);
@@ -16805,7 +16483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationMetaDecodeResponse DecodeOperationMeta(OperationMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16816,7 +16493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV1EncodeResponse EncodeTransactionMetaV1(TransactionMetaV1EncodeRequest request)
         {
             var base64 = TransactionMetaV1Xdr.EncodeToBase64(request.Value);
@@ -16827,7 +16503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV1DecodeResponse DecodeTransactionMetaV1(TransactionMetaV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16838,7 +16513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV2EncodeResponse EncodeTransactionMetaV2(TransactionMetaV2EncodeRequest request)
         {
             var base64 = TransactionMetaV2Xdr.EncodeToBase64(request.Value);
@@ -16849,7 +16523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV2DecodeResponse DecodeTransactionMetaV2(TransactionMetaV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16860,7 +16533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractEventTypeEncodeResponse EncodeContractEventType(ContractEventTypeEncodeRequest request)
         {
             var base64 = ContractEventTypeXdr.EncodeToBase64(request.Value);
@@ -16871,7 +16543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractEventTypeDecodeResponse DecodeContractEventType(ContractEventTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16882,7 +16553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractEventEncodeResponse EncodeContractEvent(ContractEventEncodeRequest request)
         {
             var base64 = ContractEventXdr.EncodeToBase64(request.Value);
@@ -16893,7 +16563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractEventDecodeResponse DecodeContractEvent(ContractEventDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16904,7 +16573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DiagnosticEventEncodeResponse EncodeDiagnosticEvent(DiagnosticEventEncodeRequest request)
         {
             var base64 = DiagnosticEventXdr.EncodeToBase64(request.Value);
@@ -16915,7 +16583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DiagnosticEventDecodeResponse DecodeDiagnosticEvent(DiagnosticEventDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16926,7 +16593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DiagnosticEventsEncodeResponse EncodeDiagnosticEvents(DiagnosticEventsEncodeRequest request)
         {
             var base64 = DiagnosticEventsXdr.EncodeToBase64(request.Value);
@@ -16937,7 +16603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DiagnosticEventsDecodeResponse DecodeDiagnosticEvents(DiagnosticEventsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16948,7 +16613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaExtV1EncodeResponse EncodeSorobanTransactionMetaExtV1(SorobanTransactionMetaExtV1EncodeRequest request)
         {
             var base64 = SorobanTransactionMetaExtV1Xdr.EncodeToBase64(request.Value);
@@ -16959,7 +16623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaExtV1DecodeResponse DecodeSorobanTransactionMetaExtV1(SorobanTransactionMetaExtV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16970,7 +16633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaExtEncodeResponse EncodeSorobanTransactionMetaExt(SorobanTransactionMetaExtEncodeRequest request)
         {
             var base64 = SorobanTransactionMetaExtXdr.EncodeToBase64(request.Value);
@@ -16981,7 +16643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaExtDecodeResponse DecodeSorobanTransactionMetaExt(SorobanTransactionMetaExtDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -16992,7 +16653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaEncodeResponse EncodeSorobanTransactionMeta(SorobanTransactionMetaEncodeRequest request)
         {
             var base64 = SorobanTransactionMetaXdr.EncodeToBase64(request.Value);
@@ -17003,7 +16663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionMetaDecodeResponse DecodeSorobanTransactionMeta(SorobanTransactionMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17014,7 +16673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV3EncodeResponse EncodeTransactionMetaV3(TransactionMetaV3EncodeRequest request)
         {
             var base64 = TransactionMetaV3Xdr.EncodeToBase64(request.Value);
@@ -17025,7 +16683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaV3DecodeResponse DecodeTransactionMetaV3(TransactionMetaV3DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17036,7 +16693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionSuccessPreImageEncodeResponse EncodeInvokeHostFunctionSuccessPreImage(InvokeHostFunctionSuccessPreImageEncodeRequest request)
         {
             var base64 = InvokeHostFunctionSuccessPreImageXdr.EncodeToBase64(request.Value);
@@ -17047,7 +16703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionSuccessPreImageDecodeResponse DecodeInvokeHostFunctionSuccessPreImage(InvokeHostFunctionSuccessPreImageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17058,7 +16713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaEncodeResponse EncodeTransactionMeta(TransactionMetaEncodeRequest request)
         {
             var base64 = TransactionMetaXdr.EncodeToBase64(request.Value);
@@ -17069,7 +16723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionMetaDecodeResponse DecodeTransactionMeta(TransactionMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17080,7 +16733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultMetaEncodeResponse EncodeTransactionResultMeta(TransactionResultMetaEncodeRequest request)
         {
             var base64 = TransactionResultMetaXdr.EncodeToBase64(request.Value);
@@ -17091,7 +16743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultMetaDecodeResponse DecodeTransactionResultMeta(TransactionResultMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17102,7 +16753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UpgradeEntryMetaEncodeResponse EncodeUpgradeEntryMeta(UpgradeEntryMetaEncodeRequest request)
         {
             var base64 = UpgradeEntryMetaXdr.EncodeToBase64(request.Value);
@@ -17113,7 +16763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public UpgradeEntryMetaDecodeResponse DecodeUpgradeEntryMeta(UpgradeEntryMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17124,7 +16773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaV0EncodeResponse EncodeLedgerCloseMetaV0(LedgerCloseMetaV0EncodeRequest request)
         {
             var base64 = LedgerCloseMetaV0Xdr.EncodeToBase64(request.Value);
@@ -17135,7 +16783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaV0DecodeResponse DecodeLedgerCloseMetaV0(LedgerCloseMetaV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17146,7 +16793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaExtV1EncodeResponse EncodeLedgerCloseMetaExtV1(LedgerCloseMetaExtV1EncodeRequest request)
         {
             var base64 = LedgerCloseMetaExtV1Xdr.EncodeToBase64(request.Value);
@@ -17157,7 +16803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaExtV1DecodeResponse DecodeLedgerCloseMetaExtV1(LedgerCloseMetaExtV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17168,7 +16813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaExtEncodeResponse EncodeLedgerCloseMetaExt(LedgerCloseMetaExtEncodeRequest request)
         {
             var base64 = LedgerCloseMetaExtXdr.EncodeToBase64(request.Value);
@@ -17179,7 +16823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaExtDecodeResponse DecodeLedgerCloseMetaExt(LedgerCloseMetaExtDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17190,7 +16833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaV1EncodeResponse EncodeLedgerCloseMetaV1(LedgerCloseMetaV1EncodeRequest request)
         {
             var base64 = LedgerCloseMetaV1Xdr.EncodeToBase64(request.Value);
@@ -17201,7 +16843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaV1DecodeResponse DecodeLedgerCloseMetaV1(LedgerCloseMetaV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17212,7 +16853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaEncodeResponse EncodeLedgerCloseMeta(LedgerCloseMetaEncodeRequest request)
         {
             var base64 = LedgerCloseMetaXdr.EncodeToBase64(request.Value);
@@ -17223,7 +16863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerCloseMetaDecodeResponse DecodeLedgerCloseMeta(LedgerCloseMetaDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17234,7 +16873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ErrorCodeEncodeResponse EncodeErrorCode(ErrorCodeEncodeRequest request)
         {
             var base64 = ErrorCodeXdr.EncodeToBase64(request.Value);
@@ -17245,7 +16883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ErrorCodeDecodeResponse DecodeErrorCode(ErrorCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17256,7 +16893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ErrorEncodeResponse EncodeError(ErrorEncodeRequest request)
         {
             var base64 = ErrorXdr.EncodeToBase64(request.Value);
@@ -17267,7 +16903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ErrorDecodeResponse DecodeError(ErrorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17278,7 +16913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SendMoreEncodeResponse EncodeSendMore(SendMoreEncodeRequest request)
         {
             var base64 = SendMoreXdr.EncodeToBase64(request.Value);
@@ -17289,7 +16923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SendMoreDecodeResponse DecodeSendMore(SendMoreDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17300,7 +16933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SendMoreExtendedEncodeResponse EncodeSendMoreExtended(SendMoreExtendedEncodeRequest request)
         {
             var base64 = SendMoreExtendedXdr.EncodeToBase64(request.Value);
@@ -17311,7 +16943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SendMoreExtendedDecodeResponse DecodeSendMoreExtended(SendMoreExtendedDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17322,7 +16953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthCertEncodeResponse EncodeAuthCert(AuthCertEncodeRequest request)
         {
             var base64 = AuthCertXdr.EncodeToBase64(request.Value);
@@ -17333,7 +16963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthCertDecodeResponse DecodeAuthCert(AuthCertDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17344,7 +16973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HelloEncodeResponse EncodeHello(HelloEncodeRequest request)
         {
             var base64 = HelloXdr.EncodeToBase64(request.Value);
@@ -17355,7 +16983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HelloDecodeResponse DecodeHello(HelloDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17366,7 +16993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthEncodeResponse EncodeAuth(AuthEncodeRequest request)
         {
             var base64 = AuthXdr.EncodeToBase64(request.Value);
@@ -17377,7 +17003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthDecodeResponse DecodeAuth(AuthDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17388,7 +17013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public IPAddrTypeEncodeResponse EncodeIPAddrType(IPAddrTypeEncodeRequest request)
         {
             var base64 = IPAddrTypeXdr.EncodeToBase64(request.Value);
@@ -17399,7 +17023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public IPAddrTypeDecodeResponse DecodeIPAddrType(IPAddrTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17410,7 +17033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerAddressEncodeResponse EncodePeerAddress(PeerAddressEncodeRequest request)
         {
             var base64 = PeerAddressXdr.EncodeToBase64(request.Value);
@@ -17421,7 +17043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerAddressDecodeResponse DecodePeerAddress(PeerAddressDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17432,7 +17053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MessageTypeEncodeResponse EncodeMessageType(MessageTypeEncodeRequest request)
         {
             var base64 = MessageTypeXdr.EncodeToBase64(request.Value);
@@ -17443,7 +17063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MessageTypeDecodeResponse DecodeMessageType(MessageTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17454,7 +17073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DontHaveEncodeResponse EncodeDontHave(DontHaveEncodeRequest request)
         {
             var base64 = DontHaveXdr.EncodeToBase64(request.Value);
@@ -17465,7 +17083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DontHaveDecodeResponse DecodeDontHave(DontHaveDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17476,7 +17093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyMessageCommandTypeEncodeResponse EncodeSurveyMessageCommandType(SurveyMessageCommandTypeEncodeRequest request)
         {
             var base64 = SurveyMessageCommandTypeXdr.EncodeToBase64(request.Value);
@@ -17487,7 +17103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyMessageCommandTypeDecodeResponse DecodeSurveyMessageCommandType(SurveyMessageCommandTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17498,7 +17113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyMessageResponseTypeEncodeResponse EncodeSurveyMessageResponseType(SurveyMessageResponseTypeEncodeRequest request)
         {
             var base64 = SurveyMessageResponseTypeXdr.EncodeToBase64(request.Value);
@@ -17509,7 +17123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyMessageResponseTypeDecodeResponse DecodeSurveyMessageResponseType(SurveyMessageResponseTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17520,7 +17133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyStartCollectingMessageEncodeResponse EncodeTimeSlicedSurveyStartCollectingMessage(TimeSlicedSurveyStartCollectingMessageEncodeRequest request)
         {
             var base64 = TimeSlicedSurveyStartCollectingMessageXdr.EncodeToBase64(request.Value);
@@ -17531,7 +17143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyStartCollectingMessageDecodeResponse DecodeTimeSlicedSurveyStartCollectingMessage(TimeSlicedSurveyStartCollectingMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17542,7 +17153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse EncodeSignedTimeSlicedSurveyStartCollectingMessage(SignedTimeSlicedSurveyStartCollectingMessageEncodeRequest request)
         {
             var base64 = SignedTimeSlicedSurveyStartCollectingMessageXdr.EncodeToBase64(request.Value);
@@ -17553,7 +17163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyStartCollectingMessageDecodeResponse DecodeSignedTimeSlicedSurveyStartCollectingMessage(SignedTimeSlicedSurveyStartCollectingMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17564,7 +17173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyStopCollectingMessageEncodeResponse EncodeTimeSlicedSurveyStopCollectingMessage(TimeSlicedSurveyStopCollectingMessageEncodeRequest request)
         {
             var base64 = TimeSlicedSurveyStopCollectingMessageXdr.EncodeToBase64(request.Value);
@@ -17575,7 +17183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyStopCollectingMessageDecodeResponse DecodeTimeSlicedSurveyStopCollectingMessage(TimeSlicedSurveyStopCollectingMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17586,7 +17193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse EncodeSignedTimeSlicedSurveyStopCollectingMessage(SignedTimeSlicedSurveyStopCollectingMessageEncodeRequest request)
         {
             var base64 = SignedTimeSlicedSurveyStopCollectingMessageXdr.EncodeToBase64(request.Value);
@@ -17597,7 +17203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyStopCollectingMessageDecodeResponse DecodeSignedTimeSlicedSurveyStopCollectingMessage(SignedTimeSlicedSurveyStopCollectingMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17608,7 +17213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyRequestMessageEncodeResponse EncodeSurveyRequestMessage(SurveyRequestMessageEncodeRequest request)
         {
             var base64 = SurveyRequestMessageXdr.EncodeToBase64(request.Value);
@@ -17619,7 +17223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyRequestMessageDecodeResponse DecodeSurveyRequestMessage(SurveyRequestMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17630,7 +17233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyRequestMessageEncodeResponse EncodeTimeSlicedSurveyRequestMessage(TimeSlicedSurveyRequestMessageEncodeRequest request)
         {
             var base64 = TimeSlicedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
@@ -17641,7 +17243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyRequestMessageDecodeResponse DecodeTimeSlicedSurveyRequestMessage(TimeSlicedSurveyRequestMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17652,7 +17253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedSurveyRequestMessageEncodeResponse EncodeSignedSurveyRequestMessage(SignedSurveyRequestMessageEncodeRequest request)
         {
             var base64 = SignedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
@@ -17663,7 +17263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedSurveyRequestMessageDecodeResponse DecodeSignedSurveyRequestMessage(SignedSurveyRequestMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17674,7 +17273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyRequestMessageEncodeResponse EncodeSignedTimeSlicedSurveyRequestMessage(SignedTimeSlicedSurveyRequestMessageEncodeRequest request)
         {
             var base64 = SignedTimeSlicedSurveyRequestMessageXdr.EncodeToBase64(request.Value);
@@ -17685,7 +17283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyRequestMessageDecodeResponse DecodeSignedTimeSlicedSurveyRequestMessage(SignedTimeSlicedSurveyRequestMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17696,7 +17293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EncryptedBodyEncodeResponse EncodeEncryptedBody(EncryptedBodyEncodeRequest request)
         {
             var base64 = EncryptedBodyXdr.EncodeToBase64(request.Value);
@@ -17707,7 +17303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EncryptedBodyDecodeResponse DecodeEncryptedBody(EncryptedBodyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17718,7 +17313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyResponseMessageEncodeResponse EncodeSurveyResponseMessage(SurveyResponseMessageEncodeRequest request)
         {
             var base64 = SurveyResponseMessageXdr.EncodeToBase64(request.Value);
@@ -17729,7 +17323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyResponseMessageDecodeResponse DecodeSurveyResponseMessage(SurveyResponseMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17740,7 +17333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyResponseMessageEncodeResponse EncodeTimeSlicedSurveyResponseMessage(TimeSlicedSurveyResponseMessageEncodeRequest request)
         {
             var base64 = TimeSlicedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
@@ -17751,7 +17343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedSurveyResponseMessageDecodeResponse DecodeTimeSlicedSurveyResponseMessage(TimeSlicedSurveyResponseMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17762,7 +17353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedSurveyResponseMessageEncodeResponse EncodeSignedSurveyResponseMessage(SignedSurveyResponseMessageEncodeRequest request)
         {
             var base64 = SignedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
@@ -17773,7 +17363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedSurveyResponseMessageDecodeResponse DecodeSignedSurveyResponseMessage(SignedSurveyResponseMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17784,7 +17373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyResponseMessageEncodeResponse EncodeSignedTimeSlicedSurveyResponseMessage(SignedTimeSlicedSurveyResponseMessageEncodeRequest request)
         {
             var base64 = SignedTimeSlicedSurveyResponseMessageXdr.EncodeToBase64(request.Value);
@@ -17795,7 +17383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignedTimeSlicedSurveyResponseMessageDecodeResponse DecodeSignedTimeSlicedSurveyResponseMessage(SignedTimeSlicedSurveyResponseMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17806,7 +17393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerStatsEncodeResponse EncodePeerStats(PeerStatsEncodeRequest request)
         {
             var base64 = PeerStatsXdr.EncodeToBase64(request.Value);
@@ -17817,7 +17403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerStatsDecodeResponse DecodePeerStats(PeerStatsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17828,7 +17413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerStatListEncodeResponse EncodePeerStatList(PeerStatListEncodeRequest request)
         {
             var base64 = PeerStatListXdr.EncodeToBase64(request.Value);
@@ -17839,7 +17423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PeerStatListDecodeResponse DecodePeerStatList(PeerStatListDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17850,7 +17433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedNodeDataEncodeResponse EncodeTimeSlicedNodeData(TimeSlicedNodeDataEncodeRequest request)
         {
             var base64 = TimeSlicedNodeDataXdr.EncodeToBase64(request.Value);
@@ -17861,7 +17443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedNodeDataDecodeResponse DecodeTimeSlicedNodeData(TimeSlicedNodeDataDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17872,7 +17453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedPeerDataEncodeResponse EncodeTimeSlicedPeerData(TimeSlicedPeerDataEncodeRequest request)
         {
             var base64 = TimeSlicedPeerDataXdr.EncodeToBase64(request.Value);
@@ -17883,7 +17463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedPeerDataDecodeResponse DecodeTimeSlicedPeerData(TimeSlicedPeerDataDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17894,7 +17473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedPeerDataListEncodeResponse EncodeTimeSlicedPeerDataList(TimeSlicedPeerDataListEncodeRequest request)
         {
             var base64 = TimeSlicedPeerDataListXdr.EncodeToBase64(request.Value);
@@ -17905,7 +17483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeSlicedPeerDataListDecodeResponse DecodeTimeSlicedPeerDataList(TimeSlicedPeerDataListDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17916,7 +17493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV0EncodeResponse EncodeTopologyResponseBodyV0(TopologyResponseBodyV0EncodeRequest request)
         {
             var base64 = TopologyResponseBodyV0Xdr.EncodeToBase64(request.Value);
@@ -17927,7 +17503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV0DecodeResponse DecodeTopologyResponseBodyV0(TopologyResponseBodyV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17938,7 +17513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV1EncodeResponse EncodeTopologyResponseBodyV1(TopologyResponseBodyV1EncodeRequest request)
         {
             var base64 = TopologyResponseBodyV1Xdr.EncodeToBase64(request.Value);
@@ -17949,7 +17523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV1DecodeResponse DecodeTopologyResponseBodyV1(TopologyResponseBodyV1DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17960,7 +17533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV2EncodeResponse EncodeTopologyResponseBodyV2(TopologyResponseBodyV2EncodeRequest request)
         {
             var base64 = TopologyResponseBodyV2Xdr.EncodeToBase64(request.Value);
@@ -17971,7 +17543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TopologyResponseBodyV2DecodeResponse DecodeTopologyResponseBodyV2(TopologyResponseBodyV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -17982,7 +17553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyResponseBodyEncodeResponse EncodeSurveyResponseBody(SurveyResponseBodyEncodeRequest request)
         {
             var base64 = SurveyResponseBodyXdr.EncodeToBase64(request.Value);
@@ -17993,7 +17563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SurveyResponseBodyDecodeResponse DecodeSurveyResponseBody(SurveyResponseBodyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18004,7 +17573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxAdvertVectorEncodeResponse EncodeTxAdvertVector(TxAdvertVectorEncodeRequest request)
         {
             var base64 = TxAdvertVectorXdr.EncodeToBase64(request.Value);
@@ -18015,7 +17583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxAdvertVectorDecodeResponse DecodeTxAdvertVector(TxAdvertVectorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18026,7 +17593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FloodAdvertEncodeResponse EncodeFloodAdvert(FloodAdvertEncodeRequest request)
         {
             var base64 = FloodAdvertXdr.EncodeToBase64(request.Value);
@@ -18037,7 +17603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FloodAdvertDecodeResponse DecodeFloodAdvert(FloodAdvertDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18048,7 +17613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxDemandVectorEncodeResponse EncodeTxDemandVector(TxDemandVectorEncodeRequest request)
         {
             var base64 = TxDemandVectorXdr.EncodeToBase64(request.Value);
@@ -18059,7 +17623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TxDemandVectorDecodeResponse DecodeTxDemandVector(TxDemandVectorDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18070,7 +17633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FloodDemandEncodeResponse EncodeFloodDemand(FloodDemandEncodeRequest request)
         {
             var base64 = FloodDemandXdr.EncodeToBase64(request.Value);
@@ -18081,7 +17643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FloodDemandDecodeResponse DecodeFloodDemand(FloodDemandDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18092,7 +17653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarMessageEncodeResponse EncodeStellarMessage(StellarMessageEncodeRequest request)
         {
             var base64 = StellarMessageXdr.EncodeToBase64(request.Value);
@@ -18103,7 +17663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public StellarMessageDecodeResponse DecodeStellarMessage(StellarMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18114,7 +17673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthenticatedMessageEncodeResponse EncodeAuthenticatedMessage(AuthenticatedMessageEncodeRequest request)
         {
             var base64 = AuthenticatedMessageXdr.EncodeToBase64(request.Value);
@@ -18125,7 +17683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AuthenticatedMessageDecodeResponse DecodeAuthenticatedMessage(AuthenticatedMessageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18136,7 +17693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ValueEncodeResponse EncodeValue(ValueEncodeRequest request)
         {
             var base64 = ValueXdr.EncodeToBase64(request.Value);
@@ -18147,7 +17703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ValueDecodeResponse DecodeValue(ValueDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18158,7 +17713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPBallotEncodeResponse EncodeSCPBallot(SCPBallotEncodeRequest request)
         {
             var base64 = SCPBallotXdr.EncodeToBase64(request.Value);
@@ -18169,7 +17723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPBallotDecodeResponse DecodeSCPBallot(SCPBallotDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18180,7 +17733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPStatementTypeEncodeResponse EncodeSCPStatementType(SCPStatementTypeEncodeRequest request)
         {
             var base64 = SCPStatementTypeXdr.EncodeToBase64(request.Value);
@@ -18191,7 +17743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPStatementTypeDecodeResponse DecodeSCPStatementType(SCPStatementTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18202,7 +17753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPNominationEncodeResponse EncodeSCPNomination(SCPNominationEncodeRequest request)
         {
             var base64 = SCPNominationXdr.EncodeToBase64(request.Value);
@@ -18213,7 +17763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPNominationDecodeResponse DecodeSCPNomination(SCPNominationDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18224,7 +17773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPStatementEncodeResponse EncodeSCPStatement(SCPStatementEncodeRequest request)
         {
             var base64 = SCPStatementXdr.EncodeToBase64(request.Value);
@@ -18235,7 +17783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPStatementDecodeResponse DecodeSCPStatement(SCPStatementDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18246,7 +17793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPEnvelopeEncodeResponse EncodeSCPEnvelope(SCPEnvelopeEncodeRequest request)
         {
             var base64 = SCPEnvelopeXdr.EncodeToBase64(request.Value);
@@ -18257,7 +17803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPEnvelopeDecodeResponse DecodeSCPEnvelope(SCPEnvelopeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18268,7 +17813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPQuorumSetEncodeResponse EncodeSCPQuorumSet(SCPQuorumSetEncodeRequest request)
         {
             var base64 = SCPQuorumSetXdr.EncodeToBase64(request.Value);
@@ -18279,7 +17823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SCPQuorumSetDecodeResponse DecodeSCPQuorumSet(SCPQuorumSetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18290,7 +17833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolParametersEncodeResponse EncodeLiquidityPoolParameters(LiquidityPoolParametersEncodeRequest request)
         {
             var base64 = LiquidityPoolParametersXdr.EncodeToBase64(request.Value);
@@ -18301,7 +17843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolParametersDecodeResponse DecodeLiquidityPoolParameters(LiquidityPoolParametersDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18312,7 +17853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MuxedAccountEncodeResponse EncodeMuxedAccount(MuxedAccountEncodeRequest request)
         {
             var base64 = MuxedAccountXdr.EncodeToBase64(request.Value);
@@ -18323,7 +17863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MuxedAccountDecodeResponse DecodeMuxedAccount(MuxedAccountDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18334,7 +17873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DecoratedSignatureEncodeResponse EncodeDecoratedSignature(DecoratedSignatureEncodeRequest request)
         {
             var base64 = DecoratedSignatureXdr.EncodeToBase64(request.Value);
@@ -18345,7 +17883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DecoratedSignatureDecodeResponse DecodeDecoratedSignature(DecoratedSignatureDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18356,7 +17893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationTypeEncodeResponse EncodeOperationType(OperationTypeEncodeRequest request)
         {
             var base64 = OperationTypeXdr.EncodeToBase64(request.Value);
@@ -18367,7 +17903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationTypeDecodeResponse DecodeOperationType(OperationTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18378,7 +17913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountOpEncodeResponse EncodeCreateAccountOp(CreateAccountOpEncodeRequest request)
         {
             var base64 = CreateAccountOpXdr.EncodeToBase64(request.Value);
@@ -18389,7 +17923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountOpDecodeResponse DecodeCreateAccountOp(CreateAccountOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18400,7 +17933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentOpEncodeResponse EncodePaymentOp(PaymentOpEncodeRequest request)
         {
             var base64 = PaymentOpXdr.EncodeToBase64(request.Value);
@@ -18411,7 +17943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentOpDecodeResponse DecodePaymentOp(PaymentOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18422,7 +17953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveOpEncodeResponse EncodePathPaymentStrictReceiveOp(PathPaymentStrictReceiveOpEncodeRequest request)
         {
             var base64 = PathPaymentStrictReceiveOpXdr.EncodeToBase64(request.Value);
@@ -18433,7 +17963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveOpDecodeResponse DecodePathPaymentStrictReceiveOp(PathPaymentStrictReceiveOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18444,7 +17973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendOpEncodeResponse EncodePathPaymentStrictSendOp(PathPaymentStrictSendOpEncodeRequest request)
         {
             var base64 = PathPaymentStrictSendOpXdr.EncodeToBase64(request.Value);
@@ -18455,7 +17983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendOpDecodeResponse DecodePathPaymentStrictSendOp(PathPaymentStrictSendOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18466,7 +17993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferOpEncodeResponse EncodeManageSellOfferOp(ManageSellOfferOpEncodeRequest request)
         {
             var base64 = ManageSellOfferOpXdr.EncodeToBase64(request.Value);
@@ -18477,7 +18003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferOpDecodeResponse DecodeManageSellOfferOp(ManageSellOfferOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18488,7 +18013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferOpEncodeResponse EncodeManageBuyOfferOp(ManageBuyOfferOpEncodeRequest request)
         {
             var base64 = ManageBuyOfferOpXdr.EncodeToBase64(request.Value);
@@ -18499,7 +18023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferOpDecodeResponse DecodeManageBuyOfferOp(ManageBuyOfferOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18510,7 +18033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreatePassiveSellOfferOpEncodeResponse EncodeCreatePassiveSellOfferOp(CreatePassiveSellOfferOpEncodeRequest request)
         {
             var base64 = CreatePassiveSellOfferOpXdr.EncodeToBase64(request.Value);
@@ -18521,7 +18043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreatePassiveSellOfferOpDecodeResponse DecodeCreatePassiveSellOfferOp(CreatePassiveSellOfferOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18532,7 +18053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsOpEncodeResponse EncodeSetOptionsOp(SetOptionsOpEncodeRequest request)
         {
             var base64 = SetOptionsOpXdr.EncodeToBase64(request.Value);
@@ -18543,7 +18063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsOpDecodeResponse DecodeSetOptionsOp(SetOptionsOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18554,7 +18073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustAssetEncodeResponse EncodeChangeTrustAsset(ChangeTrustAssetEncodeRequest request)
         {
             var base64 = ChangeTrustAssetXdr.EncodeToBase64(request.Value);
@@ -18565,7 +18083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustAssetDecodeResponse DecodeChangeTrustAsset(ChangeTrustAssetDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18576,7 +18093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustOpEncodeResponse EncodeChangeTrustOp(ChangeTrustOpEncodeRequest request)
         {
             var base64 = ChangeTrustOpXdr.EncodeToBase64(request.Value);
@@ -18587,7 +18103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustOpDecodeResponse DecodeChangeTrustOp(ChangeTrustOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18598,7 +18113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustOpEncodeResponse EncodeAllowTrustOp(AllowTrustOpEncodeRequest request)
         {
             var base64 = AllowTrustOpXdr.EncodeToBase64(request.Value);
@@ -18609,7 +18123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustOpDecodeResponse DecodeAllowTrustOp(AllowTrustOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18620,7 +18133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataOpEncodeResponse EncodeManageDataOp(ManageDataOpEncodeRequest request)
         {
             var base64 = ManageDataOpXdr.EncodeToBase64(request.Value);
@@ -18631,7 +18143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataOpDecodeResponse DecodeManageDataOp(ManageDataOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18642,7 +18153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceOpEncodeResponse EncodeBumpSequenceOp(BumpSequenceOpEncodeRequest request)
         {
             var base64 = BumpSequenceOpXdr.EncodeToBase64(request.Value);
@@ -18653,7 +18163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceOpDecodeResponse DecodeBumpSequenceOp(BumpSequenceOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18664,7 +18173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceOpEncodeResponse EncodeCreateClaimableBalanceOp(CreateClaimableBalanceOpEncodeRequest request)
         {
             var base64 = CreateClaimableBalanceOpXdr.EncodeToBase64(request.Value);
@@ -18675,7 +18183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceOpDecodeResponse DecodeCreateClaimableBalanceOp(CreateClaimableBalanceOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18686,7 +18193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceOpEncodeResponse EncodeClaimClaimableBalanceOp(ClaimClaimableBalanceOpEncodeRequest request)
         {
             var base64 = ClaimClaimableBalanceOpXdr.EncodeToBase64(request.Value);
@@ -18697,7 +18203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceOpDecodeResponse DecodeClaimClaimableBalanceOp(ClaimClaimableBalanceOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18708,7 +18213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesOpEncodeResponse EncodeBeginSponsoringFutureReservesOp(BeginSponsoringFutureReservesOpEncodeRequest request)
         {
             var base64 = BeginSponsoringFutureReservesOpXdr.EncodeToBase64(request.Value);
@@ -18719,7 +18223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesOpDecodeResponse DecodeBeginSponsoringFutureReservesOp(BeginSponsoringFutureReservesOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18730,7 +18233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipTypeEncodeResponse EncodeRevokeSponsorshipType(RevokeSponsorshipTypeEncodeRequest request)
         {
             var base64 = RevokeSponsorshipTypeXdr.EncodeToBase64(request.Value);
@@ -18741,7 +18243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipTypeDecodeResponse DecodeRevokeSponsorshipType(RevokeSponsorshipTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18752,7 +18253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipOpEncodeResponse EncodeRevokeSponsorshipOp(RevokeSponsorshipOpEncodeRequest request)
         {
             var base64 = RevokeSponsorshipOpXdr.EncodeToBase64(request.Value);
@@ -18763,7 +18263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipOpDecodeResponse DecodeRevokeSponsorshipOp(RevokeSponsorshipOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18774,7 +18273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackOpEncodeResponse EncodeClawbackOp(ClawbackOpEncodeRequest request)
         {
             var base64 = ClawbackOpXdr.EncodeToBase64(request.Value);
@@ -18785,7 +18283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackOpDecodeResponse DecodeClawbackOp(ClawbackOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18796,7 +18293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceOpEncodeResponse EncodeClawbackClaimableBalanceOp(ClawbackClaimableBalanceOpEncodeRequest request)
         {
             var base64 = ClawbackClaimableBalanceOpXdr.EncodeToBase64(request.Value);
@@ -18807,7 +18303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceOpDecodeResponse DecodeClawbackClaimableBalanceOp(ClawbackClaimableBalanceOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18818,7 +18313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsOpEncodeResponse EncodeSetTrustLineFlagsOp(SetTrustLineFlagsOpEncodeRequest request)
         {
             var base64 = SetTrustLineFlagsOpXdr.EncodeToBase64(request.Value);
@@ -18829,7 +18323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsOpDecodeResponse DecodeSetTrustLineFlagsOp(SetTrustLineFlagsOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18840,7 +18333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositOpEncodeResponse EncodeLiquidityPoolDepositOp(LiquidityPoolDepositOpEncodeRequest request)
         {
             var base64 = LiquidityPoolDepositOpXdr.EncodeToBase64(request.Value);
@@ -18851,7 +18343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositOpDecodeResponse DecodeLiquidityPoolDepositOp(LiquidityPoolDepositOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18862,7 +18353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawOpEncodeResponse EncodeLiquidityPoolWithdrawOp(LiquidityPoolWithdrawOpEncodeRequest request)
         {
             var base64 = LiquidityPoolWithdrawOpXdr.EncodeToBase64(request.Value);
@@ -18873,7 +18363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawOpDecodeResponse DecodeLiquidityPoolWithdrawOp(LiquidityPoolWithdrawOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18884,7 +18373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HostFunctionTypeEncodeResponse EncodeHostFunctionType(HostFunctionTypeEncodeRequest request)
         {
             var base64 = HostFunctionTypeXdr.EncodeToBase64(request.Value);
@@ -18895,7 +18383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HostFunctionTypeDecodeResponse DecodeHostFunctionType(HostFunctionTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18906,7 +18393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractIDPreimageTypeEncodeResponse EncodeContractIDPreimageType(ContractIDPreimageTypeEncodeRequest request)
         {
             var base64 = ContractIDPreimageTypeXdr.EncodeToBase64(request.Value);
@@ -18917,7 +18403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractIDPreimageTypeDecodeResponse DecodeContractIDPreimageType(ContractIDPreimageTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18928,7 +18413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractIDPreimageEncodeResponse EncodeContractIDPreimage(ContractIDPreimageEncodeRequest request)
         {
             var base64 = ContractIDPreimageXdr.EncodeToBase64(request.Value);
@@ -18939,7 +18423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ContractIDPreimageDecodeResponse DecodeContractIDPreimage(ContractIDPreimageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18950,7 +18433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateContractArgsEncodeResponse EncodeCreateContractArgs(CreateContractArgsEncodeRequest request)
         {
             var base64 = CreateContractArgsXdr.EncodeToBase64(request.Value);
@@ -18961,7 +18443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateContractArgsDecodeResponse DecodeCreateContractArgs(CreateContractArgsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18972,7 +18453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateContractArgsV2EncodeResponse EncodeCreateContractArgsV2(CreateContractArgsV2EncodeRequest request)
         {
             var base64 = CreateContractArgsV2Xdr.EncodeToBase64(request.Value);
@@ -18983,7 +18463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateContractArgsV2DecodeResponse DecodeCreateContractArgsV2(CreateContractArgsV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -18994,7 +18473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeContractArgsEncodeResponse EncodeInvokeContractArgs(InvokeContractArgsEncodeRequest request)
         {
             var base64 = InvokeContractArgsXdr.EncodeToBase64(request.Value);
@@ -19005,7 +18483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeContractArgsDecodeResponse DecodeInvokeContractArgs(InvokeContractArgsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19016,7 +18493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HostFunctionEncodeResponse EncodeHostFunction(HostFunctionEncodeRequest request)
         {
             var base64 = HostFunctionXdr.EncodeToBase64(request.Value);
@@ -19027,7 +18503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HostFunctionDecodeResponse DecodeHostFunction(HostFunctionDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19038,7 +18513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedFunctionTypeEncodeResponse EncodeSorobanAuthorizedFunctionType(SorobanAuthorizedFunctionTypeEncodeRequest request)
         {
             var base64 = SorobanAuthorizedFunctionTypeXdr.EncodeToBase64(request.Value);
@@ -19049,7 +18523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedFunctionTypeDecodeResponse DecodeSorobanAuthorizedFunctionType(SorobanAuthorizedFunctionTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19060,7 +18533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedFunctionEncodeResponse EncodeSorobanAuthorizedFunction(SorobanAuthorizedFunctionEncodeRequest request)
         {
             var base64 = SorobanAuthorizedFunctionXdr.EncodeToBase64(request.Value);
@@ -19071,7 +18543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedFunctionDecodeResponse DecodeSorobanAuthorizedFunction(SorobanAuthorizedFunctionDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19082,7 +18553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedInvocationEncodeResponse EncodeSorobanAuthorizedInvocation(SorobanAuthorizedInvocationEncodeRequest request)
         {
             var base64 = SorobanAuthorizedInvocationXdr.EncodeToBase64(request.Value);
@@ -19093,7 +18563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizedInvocationDecodeResponse DecodeSorobanAuthorizedInvocation(SorobanAuthorizedInvocationDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19104,7 +18573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAddressCredentialsEncodeResponse EncodeSorobanAddressCredentials(SorobanAddressCredentialsEncodeRequest request)
         {
             var base64 = SorobanAddressCredentialsXdr.EncodeToBase64(request.Value);
@@ -19115,7 +18583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAddressCredentialsDecodeResponse DecodeSorobanAddressCredentials(SorobanAddressCredentialsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19126,7 +18593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanCredentialsTypeEncodeResponse EncodeSorobanCredentialsType(SorobanCredentialsTypeEncodeRequest request)
         {
             var base64 = SorobanCredentialsTypeXdr.EncodeToBase64(request.Value);
@@ -19137,7 +18603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanCredentialsTypeDecodeResponse DecodeSorobanCredentialsType(SorobanCredentialsTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19148,7 +18613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanCredentialsEncodeResponse EncodeSorobanCredentials(SorobanCredentialsEncodeRequest request)
         {
             var base64 = SorobanCredentialsXdr.EncodeToBase64(request.Value);
@@ -19159,7 +18623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanCredentialsDecodeResponse DecodeSorobanCredentials(SorobanCredentialsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19170,7 +18633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizationEntryEncodeResponse EncodeSorobanAuthorizationEntry(SorobanAuthorizationEntryEncodeRequest request)
         {
             var base64 = SorobanAuthorizationEntryXdr.EncodeToBase64(request.Value);
@@ -19181,7 +18643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanAuthorizationEntryDecodeResponse DecodeSorobanAuthorizationEntry(SorobanAuthorizationEntryDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19192,7 +18653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionOpEncodeResponse EncodeInvokeHostFunctionOp(InvokeHostFunctionOpEncodeRequest request)
         {
             var base64 = InvokeHostFunctionOpXdr.EncodeToBase64(request.Value);
@@ -19203,7 +18663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionOpDecodeResponse DecodeInvokeHostFunctionOp(InvokeHostFunctionOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19214,7 +18673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLOpEncodeResponse EncodeExtendFootprintTTLOp(ExtendFootprintTTLOpEncodeRequest request)
         {
             var base64 = ExtendFootprintTTLOpXdr.EncodeToBase64(request.Value);
@@ -19225,7 +18683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLOpDecodeResponse DecodeExtendFootprintTTLOp(ExtendFootprintTTLOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19236,7 +18693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintOpEncodeResponse EncodeRestoreFootprintOp(RestoreFootprintOpEncodeRequest request)
         {
             var base64 = RestoreFootprintOpXdr.EncodeToBase64(request.Value);
@@ -19247,7 +18703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintOpDecodeResponse DecodeRestoreFootprintOp(RestoreFootprintOpDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19258,7 +18713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationEncodeResponse EncodeOperation(OperationEncodeRequest request)
         {
             var base64 = OperationXdr.EncodeToBase64(request.Value);
@@ -19269,7 +18723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationDecodeResponse DecodeOperation(OperationDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19280,7 +18733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HashIDPreimageEncodeResponse EncodeHashIDPreimage(HashIDPreimageEncodeRequest request)
         {
             var base64 = HashIDPreimageXdr.EncodeToBase64(request.Value);
@@ -19291,7 +18743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HashIDPreimageDecodeResponse DecodeHashIDPreimage(HashIDPreimageDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19302,7 +18753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MemoTypeEncodeResponse EncodeMemoType(MemoTypeEncodeRequest request)
         {
             var base64 = MemoTypeXdr.EncodeToBase64(request.Value);
@@ -19313,7 +18763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MemoTypeDecodeResponse DecodeMemoType(MemoTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19324,7 +18773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MemoEncodeResponse EncodeMemo(MemoEncodeRequest request)
         {
             var base64 = MemoXdr.EncodeToBase64(request.Value);
@@ -19335,7 +18783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public MemoDecodeResponse DecodeMemo(MemoDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19346,7 +18793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeBoundsEncodeResponse EncodeTimeBounds(TimeBoundsEncodeRequest request)
         {
             var base64 = TimeBoundsXdr.EncodeToBase64(request.Value);
@@ -19357,7 +18803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimeBoundsDecodeResponse DecodeTimeBounds(TimeBoundsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19368,7 +18813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerBoundsEncodeResponse EncodeLedgerBounds(LedgerBoundsEncodeRequest request)
         {
             var base64 = LedgerBoundsXdr.EncodeToBase64(request.Value);
@@ -19379,7 +18823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerBoundsDecodeResponse DecodeLedgerBounds(LedgerBoundsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19390,7 +18833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionsV2EncodeResponse EncodePreconditionsV2(PreconditionsV2EncodeRequest request)
         {
             var base64 = PreconditionsV2Xdr.EncodeToBase64(request.Value);
@@ -19401,7 +18843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionsV2DecodeResponse DecodePreconditionsV2(PreconditionsV2DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19412,7 +18853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionTypeEncodeResponse EncodePreconditionType(PreconditionTypeEncodeRequest request)
         {
             var base64 = PreconditionTypeXdr.EncodeToBase64(request.Value);
@@ -19423,7 +18863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionTypeDecodeResponse DecodePreconditionType(PreconditionTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19434,7 +18873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionsEncodeResponse EncodePreconditions(PreconditionsEncodeRequest request)
         {
             var base64 = PreconditionsXdr.EncodeToBase64(request.Value);
@@ -19445,7 +18883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PreconditionsDecodeResponse DecodePreconditions(PreconditionsDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19456,7 +18893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerFootprintEncodeResponse EncodeLedgerFootprint(LedgerFootprintEncodeRequest request)
         {
             var base64 = LedgerFootprintXdr.EncodeToBase64(request.Value);
@@ -19467,7 +18903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LedgerFootprintDecodeResponse DecodeLedgerFootprint(LedgerFootprintDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19478,7 +18913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofTypeEncodeResponse EncodeArchivalProofType(ArchivalProofTypeEncodeRequest request)
         {
             var base64 = ArchivalProofTypeXdr.EncodeToBase64(request.Value);
@@ -19489,7 +18923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofTypeDecodeResponse DecodeArchivalProofType(ArchivalProofTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19500,7 +18933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofNodeEncodeResponse EncodeArchivalProofNode(ArchivalProofNodeEncodeRequest request)
         {
             var base64 = ArchivalProofNodeXdr.EncodeToBase64(request.Value);
@@ -19511,7 +18943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofNodeDecodeResponse DecodeArchivalProofNode(ArchivalProofNodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19522,7 +18953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ProofLevelEncodeResponse EncodeProofLevel(ProofLevelEncodeRequest request)
         {
             var base64 = ProofLevelXdr.EncodeToBase64(request.Value);
@@ -19533,7 +18963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ProofLevelDecodeResponse DecodeProofLevel(ProofLevelDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19544,7 +18973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public NonexistenceProofBodyEncodeResponse EncodeNonexistenceProofBody(NonexistenceProofBodyEncodeRequest request)
         {
             var base64 = NonexistenceProofBodyXdr.EncodeToBase64(request.Value);
@@ -19555,7 +18983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public NonexistenceProofBodyDecodeResponse DecodeNonexistenceProofBody(NonexistenceProofBodyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19566,7 +18993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExistenceProofBodyEncodeResponse EncodeExistenceProofBody(ExistenceProofBodyEncodeRequest request)
         {
             var base64 = ExistenceProofBodyXdr.EncodeToBase64(request.Value);
@@ -19577,7 +19003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExistenceProofBodyDecodeResponse DecodeExistenceProofBody(ExistenceProofBodyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19588,7 +19013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofEncodeResponse EncodeArchivalProof(ArchivalProofEncodeRequest request)
         {
             var base64 = ArchivalProofXdr.EncodeToBase64(request.Value);
@@ -19599,7 +19023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ArchivalProofDecodeResponse DecodeArchivalProof(ArchivalProofDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19610,7 +19033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanResourcesEncodeResponse EncodeSorobanResources(SorobanResourcesEncodeRequest request)
         {
             var base64 = SorobanResourcesXdr.EncodeToBase64(request.Value);
@@ -19621,7 +19043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanResourcesDecodeResponse DecodeSorobanResources(SorobanResourcesDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19632,7 +19053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionDataEncodeResponse EncodeSorobanTransactionData(SorobanTransactionDataEncodeRequest request)
         {
             var base64 = SorobanTransactionDataXdr.EncodeToBase64(request.Value);
@@ -19643,7 +19063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SorobanTransactionDataDecodeResponse DecodeSorobanTransactionData(SorobanTransactionDataDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19654,7 +19073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV0EncodeResponse EncodeTransactionV0(TransactionV0EncodeRequest request)
         {
             var base64 = TransactionV0Xdr.EncodeToBase64(request.Value);
@@ -19665,7 +19083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV0DecodeResponse DecodeTransactionV0(TransactionV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19676,7 +19093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV0EnvelopeEncodeResponse EncodeTransactionV0Envelope(TransactionV0EnvelopeEncodeRequest request)
         {
             var base64 = TransactionV0EnvelopeXdr.EncodeToBase64(request.Value);
@@ -19687,7 +19103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV0EnvelopeDecodeResponse DecodeTransactionV0Envelope(TransactionV0EnvelopeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19698,7 +19113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionEncodeResponse EncodeTransaction(TransactionEncodeRequest request)
         {
             var base64 = TransactionXdr.EncodeToBase64(request.Value);
@@ -19709,7 +19123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionDecodeResponse DecodeTransaction(TransactionDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19720,7 +19133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV1EnvelopeEncodeResponse EncodeTransactionV1Envelope(TransactionV1EnvelopeEncodeRequest request)
         {
             var base64 = TransactionV1EnvelopeXdr.EncodeToBase64(request.Value);
@@ -19731,7 +19143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionV1EnvelopeDecodeResponse DecodeTransactionV1Envelope(TransactionV1EnvelopeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19742,7 +19153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FeeBumpTransactionEncodeResponse EncodeFeeBumpTransaction(FeeBumpTransactionEncodeRequest request)
         {
             var base64 = FeeBumpTransactionXdr.EncodeToBase64(request.Value);
@@ -19753,7 +19163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FeeBumpTransactionDecodeResponse DecodeFeeBumpTransaction(FeeBumpTransactionDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19764,7 +19173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FeeBumpTransactionEnvelopeEncodeResponse EncodeFeeBumpTransactionEnvelope(FeeBumpTransactionEnvelopeEncodeRequest request)
         {
             var base64 = FeeBumpTransactionEnvelopeXdr.EncodeToBase64(request.Value);
@@ -19775,7 +19183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public FeeBumpTransactionEnvelopeDecodeResponse DecodeFeeBumpTransactionEnvelope(FeeBumpTransactionEnvelopeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19786,7 +19193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionEnvelopeEncodeResponse EncodeTransactionEnvelope(TransactionEnvelopeEncodeRequest request)
         {
             var base64 = TransactionEnvelopeXdr.EncodeToBase64(request.Value);
@@ -19797,7 +19203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionEnvelopeDecodeResponse DecodeTransactionEnvelope(TransactionEnvelopeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19808,7 +19213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSignaturePayloadEncodeResponse EncodeTransactionSignaturePayload(TransactionSignaturePayloadEncodeRequest request)
         {
             var base64 = TransactionSignaturePayloadXdr.EncodeToBase64(request.Value);
@@ -19819,7 +19223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionSignaturePayloadDecodeResponse DecodeTransactionSignaturePayload(TransactionSignaturePayloadDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19830,7 +19233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimAtomTypeEncodeResponse EncodeClaimAtomType(ClaimAtomTypeEncodeRequest request)
         {
             var base64 = ClaimAtomTypeXdr.EncodeToBase64(request.Value);
@@ -19841,7 +19243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimAtomTypeDecodeResponse DecodeClaimAtomType(ClaimAtomTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19852,7 +19253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimOfferAtomV0EncodeResponse EncodeClaimOfferAtomV0(ClaimOfferAtomV0EncodeRequest request)
         {
             var base64 = ClaimOfferAtomV0Xdr.EncodeToBase64(request.Value);
@@ -19863,7 +19263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimOfferAtomV0DecodeResponse DecodeClaimOfferAtomV0(ClaimOfferAtomV0DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19874,7 +19273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimOfferAtomEncodeResponse EncodeClaimOfferAtom(ClaimOfferAtomEncodeRequest request)
         {
             var base64 = ClaimOfferAtomXdr.EncodeToBase64(request.Value);
@@ -19885,7 +19283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimOfferAtomDecodeResponse DecodeClaimOfferAtom(ClaimOfferAtomDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19896,7 +19293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimLiquidityAtomEncodeResponse EncodeClaimLiquidityAtom(ClaimLiquidityAtomEncodeRequest request)
         {
             var base64 = ClaimLiquidityAtomXdr.EncodeToBase64(request.Value);
@@ -19907,7 +19303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimLiquidityAtomDecodeResponse DecodeClaimLiquidityAtom(ClaimLiquidityAtomDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19918,7 +19313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimAtomEncodeResponse EncodeClaimAtom(ClaimAtomEncodeRequest request)
         {
             var base64 = ClaimAtomXdr.EncodeToBase64(request.Value);
@@ -19929,7 +19323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimAtomDecodeResponse DecodeClaimAtom(ClaimAtomDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19940,7 +19333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountResultCodeEncodeResponse EncodeCreateAccountResultCode(CreateAccountResultCodeEncodeRequest request)
         {
             var base64 = CreateAccountResultCodeXdr.EncodeToBase64(request.Value);
@@ -19951,7 +19343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountResultCodeDecodeResponse DecodeCreateAccountResultCode(CreateAccountResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19962,7 +19353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountResultEncodeResponse EncodeCreateAccountResult(CreateAccountResultEncodeRequest request)
         {
             var base64 = CreateAccountResultXdr.EncodeToBase64(request.Value);
@@ -19973,7 +19363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateAccountResultDecodeResponse DecodeCreateAccountResult(CreateAccountResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -19984,7 +19373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentResultCodeEncodeResponse EncodePaymentResultCode(PaymentResultCodeEncodeRequest request)
         {
             var base64 = PaymentResultCodeXdr.EncodeToBase64(request.Value);
@@ -19995,7 +19383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentResultCodeDecodeResponse DecodePaymentResultCode(PaymentResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20006,7 +19393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentResultEncodeResponse EncodePaymentResult(PaymentResultEncodeRequest request)
         {
             var base64 = PaymentResultXdr.EncodeToBase64(request.Value);
@@ -20017,7 +19403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PaymentResultDecodeResponse DecodePaymentResult(PaymentResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20028,7 +19413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveResultCodeEncodeResponse EncodePathPaymentStrictReceiveResultCode(PathPaymentStrictReceiveResultCodeEncodeRequest request)
         {
             var base64 = PathPaymentStrictReceiveResultCodeXdr.EncodeToBase64(request.Value);
@@ -20039,7 +19423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveResultCodeDecodeResponse DecodePathPaymentStrictReceiveResultCode(PathPaymentStrictReceiveResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20050,7 +19433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SimplePaymentResultEncodeResponse EncodeSimplePaymentResult(SimplePaymentResultEncodeRequest request)
         {
             var base64 = SimplePaymentResultXdr.EncodeToBase64(request.Value);
@@ -20061,7 +19443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SimplePaymentResultDecodeResponse DecodeSimplePaymentResult(SimplePaymentResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20072,7 +19453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveResultEncodeResponse EncodePathPaymentStrictReceiveResult(PathPaymentStrictReceiveResultEncodeRequest request)
         {
             var base64 = PathPaymentStrictReceiveResultXdr.EncodeToBase64(request.Value);
@@ -20083,7 +19463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictReceiveResultDecodeResponse DecodePathPaymentStrictReceiveResult(PathPaymentStrictReceiveResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20094,7 +19473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendResultCodeEncodeResponse EncodePathPaymentStrictSendResultCode(PathPaymentStrictSendResultCodeEncodeRequest request)
         {
             var base64 = PathPaymentStrictSendResultCodeXdr.EncodeToBase64(request.Value);
@@ -20105,7 +19483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendResultCodeDecodeResponse DecodePathPaymentStrictSendResultCode(PathPaymentStrictSendResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20116,7 +19493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendResultEncodeResponse EncodePathPaymentStrictSendResult(PathPaymentStrictSendResultEncodeRequest request)
         {
             var base64 = PathPaymentStrictSendResultXdr.EncodeToBase64(request.Value);
@@ -20127,7 +19503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PathPaymentStrictSendResultDecodeResponse DecodePathPaymentStrictSendResult(PathPaymentStrictSendResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20138,7 +19513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferResultCodeEncodeResponse EncodeManageSellOfferResultCode(ManageSellOfferResultCodeEncodeRequest request)
         {
             var base64 = ManageSellOfferResultCodeXdr.EncodeToBase64(request.Value);
@@ -20149,7 +19523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferResultCodeDecodeResponse DecodeManageSellOfferResultCode(ManageSellOfferResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20160,7 +19533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageOfferEffectEncodeResponse EncodeManageOfferEffect(ManageOfferEffectEncodeRequest request)
         {
             var base64 = ManageOfferEffectXdr.EncodeToBase64(request.Value);
@@ -20171,7 +19543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageOfferEffectDecodeResponse DecodeManageOfferEffect(ManageOfferEffectDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20182,7 +19553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageOfferSuccessResultEncodeResponse EncodeManageOfferSuccessResult(ManageOfferSuccessResultEncodeRequest request)
         {
             var base64 = ManageOfferSuccessResultXdr.EncodeToBase64(request.Value);
@@ -20193,7 +19563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageOfferSuccessResultDecodeResponse DecodeManageOfferSuccessResult(ManageOfferSuccessResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20204,7 +19573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferResultEncodeResponse EncodeManageSellOfferResult(ManageSellOfferResultEncodeRequest request)
         {
             var base64 = ManageSellOfferResultXdr.EncodeToBase64(request.Value);
@@ -20215,7 +19583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageSellOfferResultDecodeResponse DecodeManageSellOfferResult(ManageSellOfferResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20226,7 +19593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferResultCodeEncodeResponse EncodeManageBuyOfferResultCode(ManageBuyOfferResultCodeEncodeRequest request)
         {
             var base64 = ManageBuyOfferResultCodeXdr.EncodeToBase64(request.Value);
@@ -20237,7 +19603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferResultCodeDecodeResponse DecodeManageBuyOfferResultCode(ManageBuyOfferResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20248,7 +19613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferResultEncodeResponse EncodeManageBuyOfferResult(ManageBuyOfferResultEncodeRequest request)
         {
             var base64 = ManageBuyOfferResultXdr.EncodeToBase64(request.Value);
@@ -20259,7 +19623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageBuyOfferResultDecodeResponse DecodeManageBuyOfferResult(ManageBuyOfferResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20270,7 +19633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsResultCodeEncodeResponse EncodeSetOptionsResultCode(SetOptionsResultCodeEncodeRequest request)
         {
             var base64 = SetOptionsResultCodeXdr.EncodeToBase64(request.Value);
@@ -20281,7 +19643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsResultCodeDecodeResponse DecodeSetOptionsResultCode(SetOptionsResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20292,7 +19653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsResultEncodeResponse EncodeSetOptionsResult(SetOptionsResultEncodeRequest request)
         {
             var base64 = SetOptionsResultXdr.EncodeToBase64(request.Value);
@@ -20303,7 +19663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetOptionsResultDecodeResponse DecodeSetOptionsResult(SetOptionsResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20314,7 +19673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustResultCodeEncodeResponse EncodeChangeTrustResultCode(ChangeTrustResultCodeEncodeRequest request)
         {
             var base64 = ChangeTrustResultCodeXdr.EncodeToBase64(request.Value);
@@ -20325,7 +19683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustResultCodeDecodeResponse DecodeChangeTrustResultCode(ChangeTrustResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20336,7 +19693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustResultEncodeResponse EncodeChangeTrustResult(ChangeTrustResultEncodeRequest request)
         {
             var base64 = ChangeTrustResultXdr.EncodeToBase64(request.Value);
@@ -20347,7 +19703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ChangeTrustResultDecodeResponse DecodeChangeTrustResult(ChangeTrustResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20358,7 +19713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustResultCodeEncodeResponse EncodeAllowTrustResultCode(AllowTrustResultCodeEncodeRequest request)
         {
             var base64 = AllowTrustResultCodeXdr.EncodeToBase64(request.Value);
@@ -20369,7 +19723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustResultCodeDecodeResponse DecodeAllowTrustResultCode(AllowTrustResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20380,7 +19733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustResultEncodeResponse EncodeAllowTrustResult(AllowTrustResultEncodeRequest request)
         {
             var base64 = AllowTrustResultXdr.EncodeToBase64(request.Value);
@@ -20391,7 +19743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AllowTrustResultDecodeResponse DecodeAllowTrustResult(AllowTrustResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20402,7 +19753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountMergeResultCodeEncodeResponse EncodeAccountMergeResultCode(AccountMergeResultCodeEncodeRequest request)
         {
             var base64 = AccountMergeResultCodeXdr.EncodeToBase64(request.Value);
@@ -20413,7 +19763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountMergeResultCodeDecodeResponse DecodeAccountMergeResultCode(AccountMergeResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20424,7 +19773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountMergeResultEncodeResponse EncodeAccountMergeResult(AccountMergeResultEncodeRequest request)
         {
             var base64 = AccountMergeResultXdr.EncodeToBase64(request.Value);
@@ -20435,7 +19783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountMergeResultDecodeResponse DecodeAccountMergeResult(AccountMergeResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20446,7 +19793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationResultCodeEncodeResponse EncodeInflationResultCode(InflationResultCodeEncodeRequest request)
         {
             var base64 = InflationResultCodeXdr.EncodeToBase64(request.Value);
@@ -20457,7 +19803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationResultCodeDecodeResponse DecodeInflationResultCode(InflationResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20468,7 +19813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationPayoutEncodeResponse EncodeInflationPayout(InflationPayoutEncodeRequest request)
         {
             var base64 = InflationPayoutXdr.EncodeToBase64(request.Value);
@@ -20479,7 +19823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationPayoutDecodeResponse DecodeInflationPayout(InflationPayoutDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20490,7 +19833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationResultEncodeResponse EncodeInflationResult(InflationResultEncodeRequest request)
         {
             var base64 = InflationResultXdr.EncodeToBase64(request.Value);
@@ -20501,7 +19843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InflationResultDecodeResponse DecodeInflationResult(InflationResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20512,7 +19853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataResultCodeEncodeResponse EncodeManageDataResultCode(ManageDataResultCodeEncodeRequest request)
         {
             var base64 = ManageDataResultCodeXdr.EncodeToBase64(request.Value);
@@ -20523,7 +19863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataResultCodeDecodeResponse DecodeManageDataResultCode(ManageDataResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20534,7 +19873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataResultEncodeResponse EncodeManageDataResult(ManageDataResultEncodeRequest request)
         {
             var base64 = ManageDataResultXdr.EncodeToBase64(request.Value);
@@ -20545,7 +19883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ManageDataResultDecodeResponse DecodeManageDataResult(ManageDataResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20556,7 +19893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceResultCodeEncodeResponse EncodeBumpSequenceResultCode(BumpSequenceResultCodeEncodeRequest request)
         {
             var base64 = BumpSequenceResultCodeXdr.EncodeToBase64(request.Value);
@@ -20567,7 +19903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceResultCodeDecodeResponse DecodeBumpSequenceResultCode(BumpSequenceResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20578,7 +19913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceResultEncodeResponse EncodeBumpSequenceResult(BumpSequenceResultEncodeRequest request)
         {
             var base64 = BumpSequenceResultXdr.EncodeToBase64(request.Value);
@@ -20589,7 +19923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BumpSequenceResultDecodeResponse DecodeBumpSequenceResult(BumpSequenceResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20600,7 +19933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceResultCodeEncodeResponse EncodeCreateClaimableBalanceResultCode(CreateClaimableBalanceResultCodeEncodeRequest request)
         {
             var base64 = CreateClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
@@ -20611,7 +19943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceResultCodeDecodeResponse DecodeCreateClaimableBalanceResultCode(CreateClaimableBalanceResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20622,7 +19953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceResultEncodeResponse EncodeCreateClaimableBalanceResult(CreateClaimableBalanceResultEncodeRequest request)
         {
             var base64 = CreateClaimableBalanceResultXdr.EncodeToBase64(request.Value);
@@ -20633,7 +19963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CreateClaimableBalanceResultDecodeResponse DecodeCreateClaimableBalanceResult(CreateClaimableBalanceResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20644,7 +19973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceResultCodeEncodeResponse EncodeClaimClaimableBalanceResultCode(ClaimClaimableBalanceResultCodeEncodeRequest request)
         {
             var base64 = ClaimClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
@@ -20655,7 +19983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceResultCodeDecodeResponse DecodeClaimClaimableBalanceResultCode(ClaimClaimableBalanceResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20666,7 +19993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceResultEncodeResponse EncodeClaimClaimableBalanceResult(ClaimClaimableBalanceResultEncodeRequest request)
         {
             var base64 = ClaimClaimableBalanceResultXdr.EncodeToBase64(request.Value);
@@ -20677,7 +20003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClaimClaimableBalanceResultDecodeResponse DecodeClaimClaimableBalanceResult(ClaimClaimableBalanceResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20688,7 +20013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesResultCodeEncodeResponse EncodeBeginSponsoringFutureReservesResultCode(BeginSponsoringFutureReservesResultCodeEncodeRequest request)
         {
             var base64 = BeginSponsoringFutureReservesResultCodeXdr.EncodeToBase64(request.Value);
@@ -20699,7 +20023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesResultCodeDecodeResponse DecodeBeginSponsoringFutureReservesResultCode(BeginSponsoringFutureReservesResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20710,7 +20033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesResultEncodeResponse EncodeBeginSponsoringFutureReservesResult(BeginSponsoringFutureReservesResultEncodeRequest request)
         {
             var base64 = BeginSponsoringFutureReservesResultXdr.EncodeToBase64(request.Value);
@@ -20721,7 +20043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BeginSponsoringFutureReservesResultDecodeResponse DecodeBeginSponsoringFutureReservesResult(BeginSponsoringFutureReservesResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20732,7 +20053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EndSponsoringFutureReservesResultCodeEncodeResponse EncodeEndSponsoringFutureReservesResultCode(EndSponsoringFutureReservesResultCodeEncodeRequest request)
         {
             var base64 = EndSponsoringFutureReservesResultCodeXdr.EncodeToBase64(request.Value);
@@ -20743,7 +20063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EndSponsoringFutureReservesResultCodeDecodeResponse DecodeEndSponsoringFutureReservesResultCode(EndSponsoringFutureReservesResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20754,7 +20073,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EndSponsoringFutureReservesResultEncodeResponse EncodeEndSponsoringFutureReservesResult(EndSponsoringFutureReservesResultEncodeRequest request)
         {
             var base64 = EndSponsoringFutureReservesResultXdr.EncodeToBase64(request.Value);
@@ -20765,7 +20083,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public EndSponsoringFutureReservesResultDecodeResponse DecodeEndSponsoringFutureReservesResult(EndSponsoringFutureReservesResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20776,7 +20093,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipResultCodeEncodeResponse EncodeRevokeSponsorshipResultCode(RevokeSponsorshipResultCodeEncodeRequest request)
         {
             var base64 = RevokeSponsorshipResultCodeXdr.EncodeToBase64(request.Value);
@@ -20787,7 +20103,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipResultCodeDecodeResponse DecodeRevokeSponsorshipResultCode(RevokeSponsorshipResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20798,7 +20113,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipResultEncodeResponse EncodeRevokeSponsorshipResult(RevokeSponsorshipResultEncodeRequest request)
         {
             var base64 = RevokeSponsorshipResultXdr.EncodeToBase64(request.Value);
@@ -20809,7 +20123,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RevokeSponsorshipResultDecodeResponse DecodeRevokeSponsorshipResult(RevokeSponsorshipResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20820,7 +20133,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackResultCodeEncodeResponse EncodeClawbackResultCode(ClawbackResultCodeEncodeRequest request)
         {
             var base64 = ClawbackResultCodeXdr.EncodeToBase64(request.Value);
@@ -20831,7 +20143,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackResultCodeDecodeResponse DecodeClawbackResultCode(ClawbackResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20842,7 +20153,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackResultEncodeResponse EncodeClawbackResult(ClawbackResultEncodeRequest request)
         {
             var base64 = ClawbackResultXdr.EncodeToBase64(request.Value);
@@ -20853,7 +20163,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackResultDecodeResponse DecodeClawbackResult(ClawbackResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20864,7 +20173,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceResultCodeEncodeResponse EncodeClawbackClaimableBalanceResultCode(ClawbackClaimableBalanceResultCodeEncodeRequest request)
         {
             var base64 = ClawbackClaimableBalanceResultCodeXdr.EncodeToBase64(request.Value);
@@ -20875,7 +20183,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceResultCodeDecodeResponse DecodeClawbackClaimableBalanceResultCode(ClawbackClaimableBalanceResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20886,7 +20193,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceResultEncodeResponse EncodeClawbackClaimableBalanceResult(ClawbackClaimableBalanceResultEncodeRequest request)
         {
             var base64 = ClawbackClaimableBalanceResultXdr.EncodeToBase64(request.Value);
@@ -20897,7 +20203,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ClawbackClaimableBalanceResultDecodeResponse DecodeClawbackClaimableBalanceResult(ClawbackClaimableBalanceResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20908,7 +20213,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsResultCodeEncodeResponse EncodeSetTrustLineFlagsResultCode(SetTrustLineFlagsResultCodeEncodeRequest request)
         {
             var base64 = SetTrustLineFlagsResultCodeXdr.EncodeToBase64(request.Value);
@@ -20919,7 +20223,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsResultCodeDecodeResponse DecodeSetTrustLineFlagsResultCode(SetTrustLineFlagsResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20930,7 +20233,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsResultEncodeResponse EncodeSetTrustLineFlagsResult(SetTrustLineFlagsResultEncodeRequest request)
         {
             var base64 = SetTrustLineFlagsResultXdr.EncodeToBase64(request.Value);
@@ -20941,7 +20243,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SetTrustLineFlagsResultDecodeResponse DecodeSetTrustLineFlagsResult(SetTrustLineFlagsResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20952,7 +20253,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositResultCodeEncodeResponse EncodeLiquidityPoolDepositResultCode(LiquidityPoolDepositResultCodeEncodeRequest request)
         {
             var base64 = LiquidityPoolDepositResultCodeXdr.EncodeToBase64(request.Value);
@@ -20963,7 +20263,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositResultCodeDecodeResponse DecodeLiquidityPoolDepositResultCode(LiquidityPoolDepositResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20974,7 +20273,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositResultEncodeResponse EncodeLiquidityPoolDepositResult(LiquidityPoolDepositResultEncodeRequest request)
         {
             var base64 = LiquidityPoolDepositResultXdr.EncodeToBase64(request.Value);
@@ -20985,7 +20283,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolDepositResultDecodeResponse DecodeLiquidityPoolDepositResult(LiquidityPoolDepositResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -20996,7 +20293,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawResultCodeEncodeResponse EncodeLiquidityPoolWithdrawResultCode(LiquidityPoolWithdrawResultCodeEncodeRequest request)
         {
             var base64 = LiquidityPoolWithdrawResultCodeXdr.EncodeToBase64(request.Value);
@@ -21007,7 +20303,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawResultCodeDecodeResponse DecodeLiquidityPoolWithdrawResultCode(LiquidityPoolWithdrawResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21018,7 +20313,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawResultEncodeResponse EncodeLiquidityPoolWithdrawResult(LiquidityPoolWithdrawResultEncodeRequest request)
         {
             var base64 = LiquidityPoolWithdrawResultXdr.EncodeToBase64(request.Value);
@@ -21029,7 +20323,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public LiquidityPoolWithdrawResultDecodeResponse DecodeLiquidityPoolWithdrawResult(LiquidityPoolWithdrawResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21040,7 +20333,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionResultCodeEncodeResponse EncodeInvokeHostFunctionResultCode(InvokeHostFunctionResultCodeEncodeRequest request)
         {
             var base64 = InvokeHostFunctionResultCodeXdr.EncodeToBase64(request.Value);
@@ -21051,7 +20343,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionResultCodeDecodeResponse DecodeInvokeHostFunctionResultCode(InvokeHostFunctionResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21062,7 +20353,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionResultEncodeResponse EncodeInvokeHostFunctionResult(InvokeHostFunctionResultEncodeRequest request)
         {
             var base64 = InvokeHostFunctionResultXdr.EncodeToBase64(request.Value);
@@ -21073,7 +20363,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InvokeHostFunctionResultDecodeResponse DecodeInvokeHostFunctionResult(InvokeHostFunctionResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21084,7 +20373,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLResultCodeEncodeResponse EncodeExtendFootprintTTLResultCode(ExtendFootprintTTLResultCodeEncodeRequest request)
         {
             var base64 = ExtendFootprintTTLResultCodeXdr.EncodeToBase64(request.Value);
@@ -21095,7 +20383,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLResultCodeDecodeResponse DecodeExtendFootprintTTLResultCode(ExtendFootprintTTLResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21106,7 +20393,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLResultEncodeResponse EncodeExtendFootprintTTLResult(ExtendFootprintTTLResultEncodeRequest request)
         {
             var base64 = ExtendFootprintTTLResultXdr.EncodeToBase64(request.Value);
@@ -21117,7 +20403,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtendFootprintTTLResultDecodeResponse DecodeExtendFootprintTTLResult(ExtendFootprintTTLResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21128,7 +20413,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintResultCodeEncodeResponse EncodeRestoreFootprintResultCode(RestoreFootprintResultCodeEncodeRequest request)
         {
             var base64 = RestoreFootprintResultCodeXdr.EncodeToBase64(request.Value);
@@ -21139,7 +20423,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintResultCodeDecodeResponse DecodeRestoreFootprintResultCode(RestoreFootprintResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21150,7 +20433,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintResultEncodeResponse EncodeRestoreFootprintResult(RestoreFootprintResultEncodeRequest request)
         {
             var base64 = RestoreFootprintResultXdr.EncodeToBase64(request.Value);
@@ -21161,7 +20443,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public RestoreFootprintResultDecodeResponse DecodeRestoreFootprintResult(RestoreFootprintResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21172,7 +20453,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationResultCodeEncodeResponse EncodeOperationResultCode(OperationResultCodeEncodeRequest request)
         {
             var base64 = OperationResultCodeXdr.EncodeToBase64(request.Value);
@@ -21183,7 +20463,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationResultCodeDecodeResponse DecodeOperationResultCode(OperationResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21194,7 +20473,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationResultEncodeResponse EncodeOperationResult(OperationResultEncodeRequest request)
         {
             var base64 = OperationResultXdr.EncodeToBase64(request.Value);
@@ -21205,7 +20483,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public OperationResultDecodeResponse DecodeOperationResult(OperationResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21216,7 +20493,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultCodeEncodeResponse EncodeTransactionResultCode(TransactionResultCodeEncodeRequest request)
         {
             var base64 = TransactionResultCodeXdr.EncodeToBase64(request.Value);
@@ -21227,7 +20503,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultCodeDecodeResponse DecodeTransactionResultCode(TransactionResultCodeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21238,7 +20513,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InnerTransactionResultEncodeResponse EncodeInnerTransactionResult(InnerTransactionResultEncodeRequest request)
         {
             var base64 = InnerTransactionResultXdr.EncodeToBase64(request.Value);
@@ -21249,7 +20523,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InnerTransactionResultDecodeResponse DecodeInnerTransactionResult(InnerTransactionResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21260,7 +20533,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InnerTransactionResultPairEncodeResponse EncodeInnerTransactionResultPair(InnerTransactionResultPairEncodeRequest request)
         {
             var base64 = InnerTransactionResultPairXdr.EncodeToBase64(request.Value);
@@ -21271,7 +20543,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public InnerTransactionResultPairDecodeResponse DecodeInnerTransactionResultPair(InnerTransactionResultPairDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21282,7 +20553,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultEncodeResponse EncodeTransactionResult(TransactionResultEncodeRequest request)
         {
             var base64 = TransactionResultXdr.EncodeToBase64(request.Value);
@@ -21293,7 +20563,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TransactionResultDecodeResponse DecodeTransactionResult(TransactionResultDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21304,7 +20573,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HashEncodeResponse EncodeHash(HashEncodeRequest request)
         {
             var base64 = HashXdr.EncodeToBase64(request.Value);
@@ -21315,7 +20583,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HashDecodeResponse DecodeHash(HashDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21326,7 +20593,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint256EncodeResponse Encodeuint256(uint256EncodeRequest request)
         {
             var base64 = uint256Xdr.EncodeToBase64(request.Value);
@@ -21337,7 +20603,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint256DecodeResponse Decodeuint256(uint256DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21348,7 +20613,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint32EncodeResponse Encodeuint32(uint32EncodeRequest request)
         {
             var base64 = uint32Xdr.EncodeToBase64(request.Value);
@@ -21359,7 +20623,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint32DecodeResponse Decodeuint32(uint32DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21370,7 +20633,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public int32EncodeResponse Encodeint32(int32EncodeRequest request)
         {
             var base64 = int32Xdr.EncodeToBase64(request.Value);
@@ -21381,7 +20643,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public int32DecodeResponse Decodeint32(int32DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21392,7 +20653,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint64EncodeResponse Encodeuint64(uint64EncodeRequest request)
         {
             var base64 = uint64Xdr.EncodeToBase64(request.Value);
@@ -21403,7 +20663,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public uint64DecodeResponse Decodeuint64(uint64DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21414,7 +20673,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public int64EncodeResponse Encodeint64(int64EncodeRequest request)
         {
             var base64 = int64Xdr.EncodeToBase64(request.Value);
@@ -21425,7 +20683,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public int64DecodeResponse Decodeint64(int64DecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21436,7 +20693,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimePointEncodeResponse EncodeTimePoint(TimePointEncodeRequest request)
         {
             var base64 = TimePointXdr.EncodeToBase64(request.Value);
@@ -21447,7 +20703,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public TimePointDecodeResponse DecodeTimePoint(TimePointDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21458,7 +20713,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DurationEncodeResponse EncodeDuration(DurationEncodeRequest request)
         {
             var base64 = DurationXdr.EncodeToBase64(request.Value);
@@ -21469,7 +20723,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public DurationDecodeResponse DecodeDuration(DurationDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21480,7 +20733,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtensionPointEncodeResponse EncodeExtensionPoint(ExtensionPointEncodeRequest request)
         {
             var base64 = ExtensionPointXdr.EncodeToBase64(request.Value);
@@ -21491,7 +20743,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ExtensionPointDecodeResponse DecodeExtensionPoint(ExtensionPointDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21502,7 +20753,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CryptoKeyTypeEncodeResponse EncodeCryptoKeyType(CryptoKeyTypeEncodeRequest request)
         {
             var base64 = CryptoKeyTypeXdr.EncodeToBase64(request.Value);
@@ -21513,7 +20763,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public CryptoKeyTypeDecodeResponse DecodeCryptoKeyType(CryptoKeyTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21524,7 +20773,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PublicKeyTypeEncodeResponse EncodePublicKeyType(PublicKeyTypeEncodeRequest request)
         {
             var base64 = PublicKeyTypeXdr.EncodeToBase64(request.Value);
@@ -21535,7 +20783,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PublicKeyTypeDecodeResponse DecodePublicKeyType(PublicKeyTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21546,7 +20793,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerKeyTypeEncodeResponse EncodeSignerKeyType(SignerKeyTypeEncodeRequest request)
         {
             var base64 = SignerKeyTypeXdr.EncodeToBase64(request.Value);
@@ -21557,7 +20803,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerKeyTypeDecodeResponse DecodeSignerKeyType(SignerKeyTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21568,7 +20813,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PublicKeyEncodeResponse EncodePublicKey(PublicKeyEncodeRequest request)
         {
             var base64 = PublicKeyXdr.EncodeToBase64(request.Value);
@@ -21579,7 +20823,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public PublicKeyDecodeResponse DecodePublicKey(PublicKeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21590,7 +20833,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerKeyEncodeResponse EncodeSignerKey(SignerKeyEncodeRequest request)
         {
             var base64 = SignerKeyXdr.EncodeToBase64(request.Value);
@@ -21601,7 +20843,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignerKeyDecodeResponse DecodeSignerKey(SignerKeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21612,7 +20853,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignatureEncodeResponse EncodeSignature(SignatureEncodeRequest request)
         {
             var base64 = SignatureXdr.EncodeToBase64(request.Value);
@@ -21623,7 +20863,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignatureDecodeResponse DecodeSignature(SignatureDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21634,7 +20873,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignatureHintEncodeResponse EncodeSignatureHint(SignatureHintEncodeRequest request)
         {
             var base64 = SignatureHintXdr.EncodeToBase64(request.Value);
@@ -21645,7 +20883,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SignatureHintDecodeResponse DecodeSignatureHint(SignatureHintDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21656,7 +20893,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public NodeIDEncodeResponse EncodeNodeID(NodeIDEncodeRequest request)
         {
             var base64 = NodeIDXdr.EncodeToBase64(request.Value);
@@ -21667,7 +20903,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public NodeIDDecodeResponse DecodeNodeID(NodeIDDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21678,7 +20913,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountIDEncodeResponse EncodeAccountID(AccountIDEncodeRequest request)
         {
             var base64 = AccountIDXdr.EncodeToBase64(request.Value);
@@ -21689,7 +20923,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public AccountIDDecodeResponse DecodeAccountID(AccountIDDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21700,7 +20933,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Curve25519SecretEncodeResponse EncodeCurve25519Secret(Curve25519SecretEncodeRequest request)
         {
             var base64 = Curve25519SecretXdr.EncodeToBase64(request.Value);
@@ -21711,7 +20943,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Curve25519SecretDecodeResponse DecodeCurve25519Secret(Curve25519SecretDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21722,7 +20953,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Curve25519PublicEncodeResponse EncodeCurve25519Public(Curve25519PublicEncodeRequest request)
         {
             var base64 = Curve25519PublicXdr.EncodeToBase64(request.Value);
@@ -21733,7 +20963,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public Curve25519PublicDecodeResponse DecodeCurve25519Public(Curve25519PublicDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21744,7 +20973,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HmacSha256KeyEncodeResponse EncodeHmacSha256Key(HmacSha256KeyEncodeRequest request)
         {
             var base64 = HmacSha256KeyXdr.EncodeToBase64(request.Value);
@@ -21755,7 +20983,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HmacSha256KeyDecodeResponse DecodeHmacSha256Key(HmacSha256KeyDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21766,7 +20993,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HmacSha256MacEncodeResponse EncodeHmacSha256Mac(HmacSha256MacEncodeRequest request)
         {
             var base64 = HmacSha256MacXdr.EncodeToBase64(request.Value);
@@ -21777,7 +21003,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public HmacSha256MacDecodeResponse DecodeHmacSha256Mac(HmacSha256MacDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21788,7 +21013,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ShortHashSeedEncodeResponse EncodeShortHashSeed(ShortHashSeedEncodeRequest request)
         {
             var base64 = ShortHashSeedXdr.EncodeToBase64(request.Value);
@@ -21799,7 +21023,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public ShortHashSeedDecodeResponse DecodeShortHashSeed(ShortHashSeedDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21810,7 +21033,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BinaryFuseFilterTypeEncodeResponse EncodeBinaryFuseFilterType(BinaryFuseFilterTypeEncodeRequest request)
         {
             var base64 = BinaryFuseFilterTypeXdr.EncodeToBase64(request.Value);
@@ -21821,7 +21043,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public BinaryFuseFilterTypeDecodeResponse DecodeBinaryFuseFilterType(BinaryFuseFilterTypeDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);
@@ -21832,7 +21053,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SerializedBinaryFuseFilterEncodeResponse EncodeSerializedBinaryFuseFilter(SerializedBinaryFuseFilterEncodeRequest request)
         {
             var base64 = SerializedBinaryFuseFilterXdr.EncodeToBase64(request.Value);
@@ -21843,7 +21063,6 @@ namespace stellar
             ;
         }
 
-        [OperationContract]
         public SerializedBinaryFuseFilterDecodeResponse DecodeSerializedBinaryFuseFilter(SerializedBinaryFuseFilterDecodeRequest request)
         {
             var base64 = Convert.ToBase64String(request.EncodedValue);

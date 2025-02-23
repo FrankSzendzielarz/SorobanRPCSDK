@@ -1,3 +1,5 @@
+using Grpc.Core.Interceptors;
+using Grpc.Core;
 using ProtoBuf.Grpc.Configuration;
 using ProtoBuf.Grpc.Server;
 using Stellar;
@@ -11,7 +13,10 @@ namespace StellarNativeGRPCServerTest
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddLogging(logging =>
+            {
+                logging.AddConsole();
+            });
             builder.Services.AddHttpClient<StellarRPCClient>(client =>
             {
                 client.BaseAddress = new Uri(Network.Url);
@@ -19,7 +24,10 @@ namespace StellarNativeGRPCServerTest
             });
 
             var dummy = typeof(StellarRPCClient);
-            builder.Services.AddCodeFirstGrpc();
+            builder.Services.AddCodeFirstGrpc(options =>
+            {
+                options.Interceptors.Add<MessageLoggingInterceptor>();
+            });
 
             var binder = ServiceBinder.Default;
             var serviceTypes = AppDomain.CurrentDomain.GetAssemblies()
@@ -48,6 +56,7 @@ namespace StellarNativeGRPCServerTest
             app.MapGrpcService<Transaction_ProtoWrapper>();
             app.MapGrpcService<Network_ProtoWrapper>();
             app.MapGrpcService<SimulateTransactionResult_ProtoWrapper>();
+            app.MapGrpcService<XdrProtoService>();
 
             app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
@@ -56,6 +65,56 @@ namespace StellarNativeGRPCServerTest
 
 
             app.Run();
+        }
+    }
+
+    public class MessageLoggingInterceptor : Interceptor
+    {
+        private readonly ILogger<MessageLoggingInterceptor> _logger;
+
+        public MessageLoggingInterceptor(ILogger<MessageLoggingInterceptor> logger)
+        {
+            _logger = logger;
+        }
+
+        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(
+            TRequest request,
+            ServerCallContext context,
+            UnaryServerMethod<TRequest, TResponse> continuation)
+        {
+            // Log request
+            LogMessage("Request", request);
+
+            var response = await continuation(request, context);
+
+            // Log response
+            LogMessage("Response", response);
+
+            return response;
+        }
+
+        private void LogMessage<T>(string type, T message)
+        {
+            if (message == null) return;
+
+            var properties = message.GetType().GetProperties();
+            foreach (var prop in properties)
+            {
+                if (prop.PropertyType == typeof(byte[]))
+                {
+                    var bytes = prop.GetValue(message) as byte[];
+                    if (bytes != null)
+                    {
+                        _logger.LogInformation(
+                            "{Type} {PropertyName} Length: {Length}, Bytes: {Bytes}",
+                            type,
+                            prop.Name,
+                            bytes.Length,
+                            BitConverter.ToString(bytes)
+                        );
+                    }
+                }
+            }
         }
     }
 }

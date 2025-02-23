@@ -219,6 +219,8 @@ namespace Generator.OpenRPC
             sb.AppendLine("        var request = new JsonRpcRequest");
             sb.AppendLine("        {");
             sb.AppendLine("            JsonRpc = \"2.0\",");
+            sb.AppendLine($"            Method = \"{method.Name.ToCamelCase()}\",");
+
             // Only include Params property if the method has parameters
             if (hasParameters)
             {

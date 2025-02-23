@@ -192,15 +192,15 @@ namespace SDKTest
                 });
                 switch (completion.Status)
                 {
-                    case GetTransactionResultStatus.NOT_FOUND:
+                    case GetTransactionResult_Status.NOT_FOUND:
                         attempts--;
                         Assert.MustBe(attempts >= 0, "Could not find transaction.");
                         await Task.Delay(500);
                         break;
-                    case GetTransactionResultStatus.FAILED:
+                    case GetTransactionResult_Status.FAILED:
                         Assert.MustBe(false, "Transaction failed");
                         break;
-                    case GetTransactionResultStatus.SUCCESS:
+                    case GetTransactionResult_Status.SUCCESS:
                         return completion;
                         
                 }
@@ -262,7 +262,7 @@ namespace SDKTest
             {
                 Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
             });
-            Assert.MustBe(result.Status == SendTransactionResultStatus.PENDING,$"Transaction failed {result?.ErrorResult?.result}");
+            Assert.MustBe(result.Status == SendTransactionResult_Status.PENDING,$"Transaction failed {result?.ErrorResult?.result}");
             return result;
         }
 
