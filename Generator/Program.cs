@@ -78,8 +78,6 @@ public class Program
                 }
 
                 // Visit the parse tree
-
-                //var visitor = new CSharpCodeGenVisitor(outputDir,tokens);
                 visitor.BuildCommentMap(tokens);
                 visitor.Visit(tree);
             }

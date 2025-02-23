@@ -66,9 +66,9 @@ namespace Stellar.RPC
         /// List of topic filters. If omitted, query for all events. If multiple filters are specified, events will be included if they match any of the filters. Maximum 5 filters are allowed per request.
         /// </summary>
 
-        //[System.Text.Json.Serialization.JsonPropertyName("topics")]
-        //[System.ComponentModel.DataAnnotations.MaxLength(5)]
-        //[ProtoBuf.ProtoMember(3)] public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>>  Topics { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("topics")]
+        [System.ComponentModel.DataAnnotations.MaxLength(5)]
+        [ProtoBuf.ProtoMember(3)] public System.Collections.Generic.ICollection<System.Collections.Generic.ICollection<string>>  Topics { get; set; }
 
 
 

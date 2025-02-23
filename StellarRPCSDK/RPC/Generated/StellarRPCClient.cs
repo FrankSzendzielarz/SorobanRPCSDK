@@ -64,13 +64,13 @@ public partial class StellarRPCClient
     /// <summary>
     /// Statistics for charged inclusion fees. The inclusion fee statistics are calculated from the inclusion fees that were paid for the transactions to be included onto the ledger. For Soroban transactions and Stellar transactions, they each have their own inclusion fees and own surge pricing. Inclusion fees are used to prevent spam and prioritize transactions during network traffic surge.
     /// </summary>
-    public async Task<GetFeeStatsResult> GetFeeStatsAsync()
+    public async Task<GetFeeStatsResult> GetFeeStatsAsync(object parameters = null)
     {
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
             Method = "getFeeStats",
- 
+            Params = parameters,
             Id = 1
         };
 
@@ -96,13 +96,13 @@ public partial class StellarRPCClient
     /// <summary>
     /// General node health check.
     /// </summary>
-    public async Task<GetHealthResult> GetHealthAsync()
+    public async Task<GetHealthResult> GetHealthAsync(object parameters = null)
     {
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
             Method = "getHealth",
-        
+            Params = parameters,
             Id = 1
         };
 
@@ -128,13 +128,13 @@ public partial class StellarRPCClient
     /// <summary>
     /// For finding out the current latest known ledger of this node. This is a subset of the ledger info from Horizon.
     /// </summary>
-    public async Task<GetLatestLedgerResult> GetLatestLedgerAsync()
+    public async Task<GetLatestLedgerResult> GetLatestLedgerAsync(object parameters = null)
     {
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
             Method = "getLatestLedger",
-         
+            Params = parameters,
             Id = 1
         };
 
@@ -194,13 +194,13 @@ public partial class StellarRPCClient
     /// <summary>
     /// General information about the currently configured network. This response will contain all the information needed to successfully submit transactions to the network this node serves.
     /// </summary>
-    public async Task<GetNetworkResult> GetNetworkAsync()
+    public async Task<GetNetworkResult> GetNetworkAsync(object parameters = null)
     {
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
             Method = "getNetwork",
-
+            Params = parameters,
             Id = 1
         };
 
@@ -290,13 +290,13 @@ public partial class StellarRPCClient
     /// <summary>
     /// Version information about the RPC and Captive core. RPC manages its own, pared-down version of Stellar Core optimized for its own subset of needs. we&apos;ll refer to this as a &quot;Captive Core&quot; instance.
     /// </summary>
-    public async Task<GetVersionInfoResult> GetVersionInfoAsync()
+    public async Task<GetVersionInfoResult> GetVersionInfoAsync(object parameters = null)
     {
         var request = new JsonRpcRequest
         {
             JsonRpc = "2.0",
             Method = "getVersionInfo",
-
+            Params = parameters,
             Id = 1
         };
 

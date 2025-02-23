@@ -165,6 +165,16 @@ namespace Stellar {
                     return Convert.ToBase64String(memoryStream.ToArray());
                 }
             }
+            /// <summary>Decodes value from XDR base64 string</summary>
+            public static ipUnion DecodeFromBase64(string base64)
+            {
+                var bytes = Convert.FromBase64String(base64);
+                using (var memoryStream = new MemoryStream(bytes))
+                {
+                    XdrReader reader = new XdrReader(memoryStream);
+                    return ipUnionXdr.Decode(reader);
+                }
+            }
             public static void Encode(XdrWriter stream, ipUnion value)
             {
                 value.ValidateCase();
@@ -208,6 +218,16 @@ namespace Stellar {
                 XdrWriter writer = new XdrWriter(memoryStream);
                 PeerAddressXdr.Encode(writer, value);
                 return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+        /// <summary>Decodes value from XDR base64 string</summary>
+        public static PeerAddress DecodeFromBase64(string base64)
+        {
+            var bytes = Convert.FromBase64String(base64);
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                XdrReader reader = new XdrReader(memoryStream);
+                return PeerAddressXdr.Decode(reader);
             }
         }
         /// <summary>Encodes struct to XDR stream</summary>

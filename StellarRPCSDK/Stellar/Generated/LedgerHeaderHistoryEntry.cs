@@ -121,6 +121,16 @@ namespace Stellar {
                     return Convert.ToBase64String(memoryStream.ToArray());
                 }
             }
+            /// <summary>Decodes value from XDR base64 string</summary>
+            public static extUnion DecodeFromBase64(string base64)
+            {
+                var bytes = Convert.FromBase64String(base64);
+                using (var memoryStream = new MemoryStream(bytes))
+                {
+                    XdrReader reader = new XdrReader(memoryStream);
+                    return extUnionXdr.Decode(reader);
+                }
+            }
             public static void Encode(XdrWriter stream, extUnion value)
             {
                 value.ValidateCase();
@@ -155,6 +165,16 @@ namespace Stellar {
                 XdrWriter writer = new XdrWriter(memoryStream);
                 LedgerHeaderHistoryEntryXdr.Encode(writer, value);
                 return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+        /// <summary>Decodes value from XDR base64 string</summary>
+        public static LedgerHeaderHistoryEntry DecodeFromBase64(string base64)
+        {
+            var bytes = Convert.FromBase64String(base64);
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                XdrReader reader = new XdrReader(memoryStream);
+                return LedgerHeaderHistoryEntryXdr.Decode(reader);
             }
         }
         /// <summary>Encodes struct to XDR stream</summary>

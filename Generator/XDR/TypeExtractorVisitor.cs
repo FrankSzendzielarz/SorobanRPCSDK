@@ -48,12 +48,14 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
     private readonly string _outputDir;
     private Dictionary<IToken, string> _commentMap = new();
     internal CodeFile ConstantsCodeFile { get; }
+    internal CodeFile ServiceCodeFile { get; }
     public List<XDRTypeDefinition> AllTypes { get; set; } = new();
 
     public TypeExtractorVisitor(string outputDir)
     {
         _outputDir = outputDir;
         ConstantsCodeFile = new ConstantsCodeFile(Path.Combine(outputDir, $"Constants.cs"));
+        ServiceCodeFile = new CodeFile(Path.Combine(outputDir, "XdrProtoService.cs"));
 
     }
     public void AddType(string typeName, XDRType type, ParserRuleContext docsContext, ParserRuleContext ruleContext, string outputDir, Dictionary<IToken, string> commentMap, List<string> enumAliases = null, long constant = 0)
@@ -308,7 +310,11 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
             xdrDefinedType.Generate();
         }
 
+        // Generate the service after all types are processed
+        GenerateProtoService();
+
         var allCodeFiles=  AllTypes.Select(a => a.CodeFile).Distinct();
+        allCodeFiles = allCodeFiles.Concat(new[] { ServiceCodeFile });
 
         foreach (var codeFile in allCodeFiles)
         {
@@ -347,6 +353,97 @@ public partial class TypeExtractorVisitor : StellarXdrBaseVisitor<object>
         return $"Nested{typeSuffix}";
     }
 
-   
+    private void GenerateProtoService()
+    {
+        var code = ServiceCodeFile;
+
+        // Write file header
+        code.AppendLine("// Generated code - do not modify");
+        code.AppendLine("using System;");
+        code.AppendLine("using System.ServiceModel;");
+        code.AppendLine("using ProtoBuf;");
+        code.AppendLine("using Stellar;");
+        code.AppendLine();
+        code.AppendLine($"namespace {_context.CurrentNamespace}");
+        code.OpenBlock();
+
+        // Generate request/response contracts and service methods for each type
+        foreach (var type in AllTypes.Where(t => t.XDRType != XDRType.Const))
+        {
+            var typeName = type.Name;
+            var fullTypeName = type.FullName;
+
+            // Request/Response contracts
+            code.AppendLine("[ProtoContract]");
+            code.AppendLine($"public class {typeName}EncodeRequest");
+            code.OpenBlock();
+            code.AppendLine("[ProtoMember(1)]");
+            code.AppendLine($"public {fullTypeName} Value {{ get; set; }}");
+            code.CloseBlock();
+            code.AppendLine();
+
+            code.AppendLine("[ProtoContract]");
+            code.AppendLine($"public class {typeName}EncodeResponse");
+            code.OpenBlock();
+            code.AppendLine("[ProtoMember(1)]");
+            code.AppendLine("public byte[] EncodedValue { get; set; }");
+            code.CloseBlock();
+            code.AppendLine();
+
+            code.AppendLine("[ProtoContract]");
+            code.AppendLine($"public class {typeName}DecodeRequest");
+            code.OpenBlock();
+            code.AppendLine("[ProtoMember(1)]");
+            code.AppendLine("public byte[] EncodedValue { get; set; }");
+            code.CloseBlock();
+            code.AppendLine();
+
+            code.AppendLine("[ProtoContract]");
+            code.AppendLine($"public class {typeName}DecodeResponse");
+            code.OpenBlock();
+            code.AppendLine("[ProtoMember(1)]");
+            code.AppendLine($"public {fullTypeName} Value {{ get; set; }}");
+            code.CloseBlock();
+            code.AppendLine();
+        }
+
+        // Generate service class
+        code.AppendLine("[ServiceContract]");
+        code.AppendLine("public class XdrProtoService");
+        code.OpenBlock();
+
+        foreach (var type in AllTypes.Where(t => t.XDRType != XDRType.Const))
+        {
+            var typeName = type.Name;
+            var fullTypeName = type.FullName;
+
+            code.AppendLine("[OperationContract]");
+            code.AppendLine($"public {typeName}EncodeResponse Encode{typeName}({typeName}EncodeRequest request)");
+            code.OpenBlock();
+            code.AppendLine("var base64 = " + $"{fullTypeName}Xdr.EncodeToBase64(request.Value);");
+            code.AppendLine($"return new {typeName}EncodeResponse");
+            code.OpenBlock();
+            code.AppendLine("EncodedValue = Convert.FromBase64String(base64)");
+            code.CloseBlock();
+            code.AppendLine(";");
+            code.CloseBlock();
+            code.AppendLine();
+
+            code.AppendLine("[OperationContract]");
+            code.AppendLine($"public {typeName}DecodeResponse Decode{typeName}({typeName}DecodeRequest request)");
+            code.OpenBlock();
+            code.AppendLine("var base64 = Convert.ToBase64String(request.EncodedValue);");
+            code.AppendLine($"return new {typeName}DecodeResponse");
+            code.OpenBlock();
+            code.AppendLine($"Value = {fullTypeName}Xdr.DecodeFromBase64(base64)");
+            code.CloseBlock();
+            code.AppendLine(";");
+            code.CloseBlock();
+            code.AppendLine();
+        }
+
+        code.CloseBlock();
+
+    }
 
 }

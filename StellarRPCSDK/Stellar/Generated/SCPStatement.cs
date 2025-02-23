@@ -264,6 +264,16 @@ namespace Stellar {
                         return Convert.ToBase64String(memoryStream.ToArray());
                     }
                 }
+                /// <summary>Decodes value from XDR base64 string</summary>
+                public static prepareStruct DecodeFromBase64(string base64)
+                {
+                    var bytes = Convert.FromBase64String(base64);
+                    using (var memoryStream = new MemoryStream(bytes))
+                    {
+                        XdrReader reader = new XdrReader(memoryStream);
+                        return prepareStructXdr.Decode(reader);
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, prepareStruct value)
                 {
@@ -425,6 +435,16 @@ namespace Stellar {
                         return Convert.ToBase64String(memoryStream.ToArray());
                     }
                 }
+                /// <summary>Decodes value from XDR base64 string</summary>
+                public static confirmStruct DecodeFromBase64(string base64)
+                {
+                    var bytes = Convert.FromBase64String(base64);
+                    using (var memoryStream = new MemoryStream(bytes))
+                    {
+                        XdrReader reader = new XdrReader(memoryStream);
+                        return confirmStructXdr.Decode(reader);
+                    }
+                }
                 /// <summary>Encodes struct to XDR stream</summary>
                 public static void Encode(XdrWriter stream, confirmStruct value)
                 {
@@ -524,6 +544,16 @@ namespace Stellar {
                         XdrWriter writer = new XdrWriter(memoryStream);
                         externalizeStructXdr.Encode(writer, value);
                         return Convert.ToBase64String(memoryStream.ToArray());
+                    }
+                }
+                /// <summary>Decodes value from XDR base64 string</summary>
+                public static externalizeStruct DecodeFromBase64(string base64)
+                {
+                    var bytes = Convert.FromBase64String(base64);
+                    using (var memoryStream = new MemoryStream(bytes))
+                    {
+                        XdrReader reader = new XdrReader(memoryStream);
+                        return externalizeStructXdr.Decode(reader);
                     }
                 }
                 /// <summary>Encodes struct to XDR stream</summary>
@@ -649,6 +679,16 @@ namespace Stellar {
                     return Convert.ToBase64String(memoryStream.ToArray());
                 }
             }
+            /// <summary>Decodes value from XDR base64 string</summary>
+            public static pledgesUnion DecodeFromBase64(string base64)
+            {
+                var bytes = Convert.FromBase64String(base64);
+                using (var memoryStream = new MemoryStream(bytes))
+                {
+                    XdrReader reader = new XdrReader(memoryStream);
+                    return pledgesUnionXdr.Decode(reader);
+                }
+            }
             public static void Encode(XdrWriter stream, pledgesUnion value)
             {
                 value.ValidateCase();
@@ -706,6 +746,16 @@ namespace Stellar {
                 XdrWriter writer = new XdrWriter(memoryStream);
                 SCPStatementXdr.Encode(writer, value);
                 return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+        /// <summary>Decodes value from XDR base64 string</summary>
+        public static SCPStatement DecodeFromBase64(string base64)
+        {
+            var bytes = Convert.FromBase64String(base64);
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                XdrReader reader = new XdrReader(memoryStream);
+                return SCPStatementXdr.Decode(reader);
             }
         }
         /// <summary>Encodes struct to XDR stream</summary>

@@ -245,6 +245,18 @@ namespace Generator.XDR
             code.AppendLine("return Convert.ToBase64String(memoryStream.ToArray());");
             code.CloseBlock();
             code.CloseBlock();
+
+            // Add the decode method
+            code.AppendLine("/// <summary>Decodes value from XDR base64 string</summary>");
+            code.AppendLine($"public static {typeName} DecodeFromBase64(string base64)");
+            code.OpenBlock();
+            code.AppendLine("var bytes = Convert.FromBase64String(base64);");
+            code.AppendLine("using (var memoryStream = new MemoryStream(bytes))");
+            code.OpenBlock();
+            code.AppendLine("XdrReader reader = new XdrReader(memoryStream);");
+            code.AppendLine($"return {typeName}Xdr.Decode(reader);");
+            code.CloseBlock();
+            code.CloseBlock();
         }
 
     

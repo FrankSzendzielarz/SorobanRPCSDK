@@ -60,6 +60,16 @@ namespace Stellar {
                 return Convert.ToBase64String(memoryStream.ToArray());
             }
         }
+        /// <summary>Decodes value from XDR base64 string</summary>
+        public static uint256 DecodeFromBase64(string base64)
+        {
+            var bytes = Convert.FromBase64String(base64);
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                XdrReader reader = new XdrReader(memoryStream);
+                return uint256Xdr.Decode(reader);
+            }
+        }
         public static void Encode(XdrWriter stream, uint256 value)
         {
             stream.WriteFixedOpaque(value.InnerValue);

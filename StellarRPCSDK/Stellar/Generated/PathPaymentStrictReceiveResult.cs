@@ -118,6 +118,16 @@ namespace Stellar {
                     return Convert.ToBase64String(memoryStream.ToArray());
                 }
             }
+            /// <summary>Decodes value from XDR base64 string</summary>
+            public static successStruct DecodeFromBase64(string base64)
+            {
+                var bytes = Convert.FromBase64String(base64);
+                using (var memoryStream = new MemoryStream(bytes))
+                {
+                    XdrReader reader = new XdrReader(memoryStream);
+                    return successStructXdr.Decode(reader);
+                }
+            }
             /// <summary>Encodes struct to XDR stream</summary>
             public static void Encode(XdrWriter stream, successStruct value)
             {
@@ -299,6 +309,16 @@ namespace Stellar {
                 XdrWriter writer = new XdrWriter(memoryStream);
                 PathPaymentStrictReceiveResultXdr.Encode(writer, value);
                 return Convert.ToBase64String(memoryStream.ToArray());
+            }
+        }
+        /// <summary>Decodes value from XDR base64 string</summary>
+        public static PathPaymentStrictReceiveResult DecodeFromBase64(string base64)
+        {
+            var bytes = Convert.FromBase64String(base64);
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+                XdrReader reader = new XdrReader(memoryStream);
+                return PathPaymentStrictReceiveResultXdr.Decode(reader);
             }
         }
         public static void Encode(XdrWriter stream, PathPaymentStrictReceiveResult value)
