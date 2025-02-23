@@ -8,19 +8,25 @@ using System.ServiceModel;
 namespace Stellar.RPC
 {
     [ServiceContract]
-    public class SimulateTransactionResult_ProtoWrapper
+    public interface ISimulateTransactionResult_ProtoWrapper
+    {
+        Transaction ApplyTo(SimulateTransactionResult_ProtoWrapper.ApplyToParam applyTo);
+    }
+
+
+    public class SimulateTransactionResult_ProtoWrapper : ISimulateTransactionResult_ProtoWrapper
     {
         [ProtoContract]
         public class ApplyToParam
         {
             [ProtoMember(1)]
-            public SimulateTransactionResult Simulation {get;set;}
+            public SimulateTransactionResult Simulation { get; set; }
             [ProtoMember(2)]
             public Transaction Original { get; set; }
-           
+
         }
 
-        public Transaction ApplyTo(ApplyToParam applyTo )
+        public Transaction ApplyTo(ApplyToParam applyTo)
         {
             return applyTo.Simulation.ApplyTo(applyTo.Original);
         }

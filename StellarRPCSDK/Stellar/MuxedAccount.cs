@@ -14,9 +14,24 @@ using static Stellar.Transaction_ProtoWrapper;
 
 namespace Stellar
 {
-
     [ServiceContract]
-    public class MuxedAccount_ProtoWrapper
+    public interface IMuxedAccount_ProtoWrapper
+    {
+        MuxedAccount_ProtoWrapper.BoolResult CanSign(MuxedAccount account);
+        MuxedAccount.KeyTypeEd25519 CreateKeyTypeEd25519(MuxedAccount_ProtoWrapper.CreateEd25519Param param);
+        MuxedAccount.KeyTypeMuxedEd25519 CreateKeyTypeMuxedEd25519(MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param param);
+        MuxedAccount_ProtoWrapper.StringResult GetAccountId(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.StringResult GetAddress(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetPrivateKey(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetPublicKey(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.StringResult GetSecretSeed(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetSeedBytes(MuxedAccount account);
+        MuxedAccount_ProtoWrapper.ByteArrayWrapper Sign(MuxedAccount_ProtoWrapper.SignMessage message);
+        MuxedAccount_ProtoWrapper.BoolResult Verify(MuxedAccount_ProtoWrapper.VerifyMessage message);
+    }
+
+
+    public class MuxedAccount_ProtoWrapper : IMuxedAccount_ProtoWrapper
     {
         [ProtoContract]
         public class ByteArrayWrapper

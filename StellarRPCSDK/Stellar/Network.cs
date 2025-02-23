@@ -4,11 +4,27 @@ using Stellar.Utilities;
 using System;
 using System.ServiceModel;
 using System.Text;
+using static Stellar.Network_ProtoWrapper;
 
 namespace Stellar
 {
     [ServiceContract]
-    public class Network_ProtoWrapper
+    public interface INetwork_ProtoWrapper
+    {
+        Network Create(Network_ProtoWrapper.CreateNetworkParam param);
+        Network_ProtoWrapper.GetCurrentResult GetCurrent();
+        Network_ProtoWrapper.StringResult GetNetworkPassphrase(Network network);
+        Network_ProtoWrapper.BoolResult IsPublicNetwork(Network_ProtoWrapper.IsPublicNetworkParam param);
+        Network Public();
+        Network Test();
+        void Use(Network_ProtoWrapper.UseParam param);
+        void UsePublicNetwork();
+        void UseTestNetwork();
+        void SetUrl(SetUrlParam param);
+    }
+
+
+    public class Network_ProtoWrapper : INetwork_ProtoWrapper
     {
         [ProtoContract]
         public class ByteArrayWrapper
@@ -44,6 +60,14 @@ namespace Stellar
             [ProtoMember(1)]
             public string NetworkPassphrase { get; set; }
         }
+        
+        [ProtoContract]
+        public class SetUrlParam
+        {
+            [ProtoMember(1)]
+            public string Url { get; set; }
+        }
+
 
         [OperationContract]
         public Network Create(CreateNetworkParam param)
@@ -72,7 +96,7 @@ namespace Stellar
             return new StringResult { Value = network.NetworkPassphrase };
         }
 
-  
+
 
         // Static methods
         [OperationContract]
@@ -116,6 +140,13 @@ namespace Stellar
         {
             return new BoolResult { Value = Network.IsPublicNetwork(param.Network) };
         }
+
+
+        [OperationContract]
+        public void SetUrl(SetUrlParam param)
+        {
+            Network.SetUrl(param.Url);
+        }
     }
 }
 
@@ -136,7 +167,7 @@ namespace Stellar
         /// The passphrase for the test SDF network.
         /// </summary>
         public const string TestnetPassphrase = "Test SDF Network ; September 2015";
-
+        public static string Url = "https://soroban-testnet.stellar.org";
         private static volatile Network _current;
         private static readonly object _lock = new object();
         private byte[] _networkId;
@@ -240,6 +271,11 @@ namespace Stellar
         public static void UseTestNetwork()
         {
             Use(Test());
+        }
+
+        public static void SetUrl(string url)
+        {
+            Network.Url = url;
         }
 
         /// <summary>

@@ -6,9 +6,17 @@ using System.ServiceModel;
 
 namespace Stellar
 {
-
     [ServiceContract]
-    public class Transaction_ProtoWrapper
+    public interface ITransaction_ProtoWrapper
+    {
+        Transaction Clone(Transaction_ProtoWrapper.CloneParam param);
+        Transaction_ProtoWrapper.BoolResult IsSoroban(Transaction_ProtoWrapper.IsSorobanParam param);
+        Transaction_ProtoWrapper.BoolResult IsSorobanInvocation(Transaction_ProtoWrapper.IsSorobanParam param);
+        DecoratedSignature Sign(Transaction_ProtoWrapper.SignParam param);
+    }
+
+ 
+    public class Transaction_ProtoWrapper : ITransaction_ProtoWrapper
     {
         [ProtoContract]
         public class BoolResult
