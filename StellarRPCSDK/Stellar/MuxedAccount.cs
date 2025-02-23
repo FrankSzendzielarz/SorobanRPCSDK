@@ -28,6 +28,14 @@ namespace Stellar
         MuxedAccount_ProtoWrapper.ByteArrayWrapper GetSeedBytes(MuxedAccount account);
         MuxedAccount_ProtoWrapper.ByteArrayWrapper Sign(MuxedAccount_ProtoWrapper.SignMessage message);
         MuxedAccount_ProtoWrapper.BoolResult Verify(MuxedAccount_ProtoWrapper.VerifyMessage message);
+
+        MuxedAccount.KeyTypeEd25519 FromSecretSeed(MuxedAccount_ProtoWrapper.StringParam seedString);
+        MuxedAccount.KeyTypeEd25519 FromSecretSeedBytes(MuxedAccount_ProtoWrapper.ByteArrayWrapper seedBytes);
+        MuxedAccount.KeyTypeEd25519 FromAccountId(MuxedAccount_ProtoWrapper.StringParam accountId);
+        MuxedAccount.KeyTypeEd25519 FromPublicKey(MuxedAccount_ProtoWrapper.ByteArrayWrapper publicKey);
+        MuxedAccount.KeyTypeEd25519 FromBIP39Seed(MuxedAccount_ProtoWrapper.BIP39SeedParam param);
+        MuxedAccount.KeyTypeEd25519 FromBIP39SeedBytes(MuxedAccount_ProtoWrapper.BIP39SeedBytesParam param);
+        MuxedAccount.KeyTypeEd25519 Random();
     }
 
 
@@ -46,6 +54,31 @@ namespace Stellar
             [ProtoMember(1)]
             public string Value { get; set; }
         }
+        [ProtoContract]
+        public class StringParam
+        {
+            [ProtoMember(1)]
+            public string Value { get; set; }
+        }
+
+        [ProtoContract]
+        public class BIP39SeedParam
+        {
+            [ProtoMember(1)]
+            public string Seed { get; set; }
+            [ProtoMember(2)]
+            public uint AccountIndex { get; set; }
+        }
+
+        [ProtoContract]
+        public class BIP39SeedBytesParam
+        {
+            [ProtoMember(1)]
+            public byte[] SeedBytes { get; set; }
+            [ProtoMember(2)]
+            public uint AccountIndex { get; set; }
+        }
+
 
         [ProtoContract]
         public class BoolResult
@@ -160,6 +193,48 @@ namespace Stellar
         public MuxedAccount.KeyTypeMuxedEd25519 CreateKeyTypeMuxedEd25519(CreateMuxedEd25519Param param)
         {
             return new MuxedAccount.KeyTypeMuxedEd25519(param.PublicKey?.Value, param.Seed?.Value, param.Id);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromSecretSeed(StringParam seedString)
+        {
+            return MuxedAccount.FromSecretSeed(seedString.Value);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromSecretSeedBytes(ByteArrayWrapper seedBytes)
+        {
+            return MuxedAccount.FromSecretSeed(seedBytes.Value);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromAccountId(StringParam accountId)
+        {
+            return MuxedAccount.FromAccountId(accountId.Value);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromPublicKey(ByteArrayWrapper publicKey)
+        {
+            return MuxedAccount.FromPublicKey(publicKey.Value);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromBIP39Seed(BIP39SeedParam param)
+        {
+            return MuxedAccount.FromBIP39Seed(param.Seed, param.AccountIndex);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 FromBIP39SeedBytes(BIP39SeedBytesParam param)
+        {
+            return MuxedAccount.FromBIP39Seed(param.SeedBytes, param.AccountIndex);
+        }
+
+        [OperationContract]
+        public MuxedAccount.KeyTypeEd25519 Random()
+        {
+            return MuxedAccount.Random();
         }
     }
 
