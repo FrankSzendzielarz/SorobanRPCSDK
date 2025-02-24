@@ -5,6 +5,7 @@ using System.Reflection;
 using ProtoBuf.Meta;
 using System.ServiceModel;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Stellar.RPC.Tools
 {
@@ -41,21 +42,16 @@ The above should make everything automatic wrt to protobuf
                 {
                     Syntax = ProtoSyntax.Proto3,
                     Package = "stellar.rpc.v1",
-                   
-                     
                 };
       
                 foreach (var schema in GetServiceContractTypes())
                 {
                     options.Package = schema.Key;
                     var proto = generator.GetSchema(schema.Value.ToArray());
+                    proto= FixEnumZeroValues(proto);
                     File.WriteAllText(Path.Combine(outputPath,schema.Key+".proto"), proto);
-
                 }  
-               
 
-
-                
                 Console.WriteLine($"Generated proto schema at: {outputPath}");
                 return 0;
             }
@@ -65,7 +61,25 @@ The above should make everything automatic wrt to protobuf
                 return 1;
             }
         }
+        public static string FixEnumZeroValues(string protoContent)
+        {
+            // This pattern matches:
+            // 1. enum name capture group
+            // 2. opening brace and whitespace
+            // 3. ZERO = 0 line capture group
+            var pattern = @"enum\s+(\w+)\s*\{[\r\n\s]*?(ZERO\s*=\s*0\s*;[^\r\n]*(?:\r?\n|\r))";
 
+            return Regex.Replace(protoContent, pattern, (Match m) =>
+            {
+                var enumName = m.Groups[1].Value;
+                var zeroLine = m.Groups[2].Value;
+
+                // Replace "ZERO" with "{EnumName} _ZERO"
+                var fixedZeroLine = zeroLine.Replace("ZERO", $"{enumName}_ZERO");
+
+                return $"enum {enumName} {{{Environment.NewLine}   {fixedZeroLine}";
+            });
+        }
         public static  Dictionary<string, List<Type>> GetServiceContractTypes()
         {
             // Load the assembly

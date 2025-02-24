@@ -111,7 +111,7 @@ message AccountEntry_extUnion_case_1 {
    AccountEntryExtensionV1 v1 = 1;
 }
 enum AccountFlags {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   AccountFlags_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    AUTH_REQUIRED_FLAG = 1;
    AUTH_REVOCABLE_FLAG = 2;
    AUTH_IMMUTABLE_FLAG = 4;
@@ -616,13 +616,7 @@ message BinaryFuseFilterTypeEncodeRequest {
 message BinaryFuseFilterTypeEncodeResponse {
    string EncodedValue = 1;
 }
-message BoolResult {
-   bool Value = 1;
-}
-message BoolResult {
-   bool Value = 1;
-}
-message BoolResult {
+message BoolWrapper {
    bool Value = 1;
 }
 message BucketEntry {
@@ -1174,7 +1168,7 @@ message ClaimableBalanceEntry_extUnion_case_1 {
    ClaimableBalanceEntryExtensionV1 v1 = 1;
 }
 enum ClaimableBalanceFlags {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   ClaimableBalanceFlags_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    CLAIMABLE_BALANCE_CLAWBACK_ENABLED_FLAG = 1;
 }
 message ClaimableBalanceFlagsDecodeRequest {
@@ -3715,7 +3709,7 @@ message LedgerHeaderExtensionV1_extUnion {
 message LedgerHeaderExtensionV1_extUnion_case_0 {
 }
 enum LedgerHeaderFlags {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   LedgerHeaderFlags_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    DISABLE_LIQUIDITY_POOL_TRADING_FLAG = 1;
    DISABLE_LIQUIDITY_POOL_DEPOSIT_FLAG = 2;
    DISABLE_LIQUIDITY_POOL_WITHDRAWAL_FLAG = 4;
@@ -3898,7 +3892,7 @@ message LedgerUpgradeEncodeResponse {
    string EncodedValue = 1;
 }
 enum LedgerUpgradeType {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   LedgerUpgradeType_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    LEDGER_UPGRADE_VERSION = 1;
    LEDGER_UPGRADE_BASE_FEE = 2;
    LEDGER_UPGRADE_MAX_TX_SET_SIZE = 3;
@@ -4686,7 +4680,7 @@ message OfferEntryEncodeResponse {
    string EncodedValue = 1;
 }
 enum OfferEntryFlags {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   OfferEntryFlags_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    PASSIVE_FLAG = 1;
 }
 message OfferEntryFlagsDecodeRequest {
@@ -7937,13 +7931,7 @@ message StoredTransactionSet_case_0 {
 message StoredTransactionSet_case_1 {
    GeneralizedTransactionSet generalizedTxSet = 2;
 }
-message StringParam {
-   string Value = 1;
-}
-message StringResult {
-   string Value = 1;
-}
-message StringResult {
+message StringWrapper {
    string Value = 1;
 }
 enum SurveyMessageCommandType {
@@ -8910,7 +8898,7 @@ message TrustLineEntry_extUnion_v1Struct_extUnion_case_2 {
    TrustLineEntryExtensionV2 v2 = 1;
 }
 enum TrustLineFlags {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   TrustLineFlags_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    AUTHORIZED_FLAG = 1;
    AUTHORIZED_TO_MAINTAIN_LIABILITIES_FLAG = 2;
    TRUSTLINE_CLAWBACK_ENABLED_FLAG = 4;
@@ -9972,30 +9960,30 @@ service XdrProtoService {
    rpc EncodeValue (ValueEncodeRequest) returns (ValueEncodeResponse);
 }
 service MuxedAccount_ProtoWrapper {
-   rpc CanSign (MuxedAccount) returns (BoolResult);
+   rpc CanSign (MuxedAccount) returns (BoolWrapper);
    rpc CreateKeyTypeEd25519 (CreateEd25519Param) returns (MuxedAccount);
    rpc CreateKeyTypeMuxedEd25519 (CreateMuxedEd25519Param) returns (MuxedAccount);
-   rpc FromAccountId (StringParam) returns (MuxedAccount);
+   rpc FromAccountId (StringWrapper) returns (MuxedAccount);
    rpc FromBIP39Seed (BIP39SeedParam) returns (MuxedAccount);
    rpc FromBIP39SeedBytes (BIP39SeedBytesParam) returns (MuxedAccount);
    rpc FromPublicKey (ByteArrayWrapper) returns (MuxedAccount);
-   rpc FromSecretSeed (StringParam) returns (MuxedAccount);
+   rpc FromSecretSeed (StringWrapper) returns (MuxedAccount);
    rpc FromSecretSeedBytes (ByteArrayWrapper) returns (MuxedAccount);
-   rpc GetAccountId (MuxedAccount) returns (StringResult);
-   rpc GetAddress (MuxedAccount) returns (StringResult);
+   rpc GetAccountId (MuxedAccount) returns (StringWrapper);
+   rpc GetAddress (MuxedAccount) returns (StringWrapper);
    rpc GetPrivateKey (MuxedAccount) returns (ByteArrayWrapper);
    rpc GetPublicKey (MuxedAccount) returns (ByteArrayWrapper);
-   rpc GetSecretSeed (MuxedAccount) returns (StringResult);
+   rpc GetSecretSeed (MuxedAccount) returns (StringWrapper);
    rpc GetSeedBytes (MuxedAccount) returns (ByteArrayWrapper);
    rpc Random (.google.protobuf.Empty) returns (MuxedAccount);
    rpc Sign (SignMessage) returns (ByteArrayWrapper);
-   rpc Verify (VerifyMessage) returns (BoolResult);
+   rpc Verify (VerifyMessage) returns (BoolWrapper);
 }
 service Network_ProtoWrapper {
    rpc Create (CreateNetworkParam) returns (Network);
    rpc GetCurrent (.google.protobuf.Empty) returns (GetCurrentResult);
-   rpc GetNetworkPassphrase (Network) returns (StringResult);
-   rpc IsPublicNetwork (IsPublicNetworkParam) returns (BoolResult);
+   rpc GetNetworkPassphrase (Network) returns (StringWrapper);
+   rpc IsPublicNetwork (IsPublicNetworkParam) returns (BoolWrapper);
    rpc Public (.google.protobuf.Empty) returns (Network);
    rpc SetUrl (SetUrlParam) returns (.google.protobuf.Empty);
    rpc Test (.google.protobuf.Empty) returns (Network);
@@ -10005,7 +9993,7 @@ service Network_ProtoWrapper {
 }
 service Transaction_ProtoWrapper {
    rpc Clone (CloneParam) returns (Transaction);
-   rpc IsSoroban (IsSorobanParam) returns (BoolResult);
-   rpc IsSorobanInvocation (IsSorobanParam) returns (BoolResult);
+   rpc IsSoroban (IsSorobanParam) returns (BoolWrapper);
+   rpc IsSorobanInvocation (IsSorobanParam) returns (BoolWrapper);
    rpc Sign (SignParam) returns (DecoratedSignature);
 }

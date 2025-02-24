@@ -10,20 +10,15 @@ namespace Stellar
     public interface ITransaction_ProtoWrapper
     {
         Transaction Clone(Transaction_ProtoWrapper.CloneParam param);
-        Transaction_ProtoWrapper.BoolResult IsSoroban(Transaction_ProtoWrapper.IsSorobanParam param);
-        Transaction_ProtoWrapper.BoolResult IsSorobanInvocation(Transaction_ProtoWrapper.IsSorobanParam param);
+        BoolWrapper IsSoroban(Transaction_ProtoWrapper.IsSorobanParam param);
+        BoolWrapper IsSorobanInvocation(Transaction_ProtoWrapper.IsSorobanParam param);
         DecoratedSignature Sign(Transaction_ProtoWrapper.SignParam param);
     }
 
  
     public class Transaction_ProtoWrapper : ITransaction_ProtoWrapper
     {
-        [ProtoContract]
-        public class BoolResult
-        {
-            [ProtoMember(1)]
-            public bool Value { get; set; }
-        }
+       
 
         [ProtoContract]
         public class SignParam
@@ -62,15 +57,15 @@ namespace Stellar
         }
 
         [OperationContract]
-        public BoolResult IsSoroban(IsSorobanParam param)
+        public BoolWrapper IsSoroban(IsSorobanParam param)
         {
-            return new BoolResult { Value = param.Transaction.IsSoroban() };
+            return new BoolWrapper { Value = param.Transaction.IsSoroban() };
         }
 
         [OperationContract]
-        public BoolResult IsSorobanInvocation(IsSorobanParam param)
+        public BoolWrapper IsSorobanInvocation(IsSorobanParam param)
         {
-            return new BoolResult { Value = param.Transaction.IsSorobanInvocation() };
+            return new BoolWrapper { Value = param.Transaction.IsSorobanInvocation() };
         }
     }
 

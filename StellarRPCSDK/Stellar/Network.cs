@@ -13,8 +13,8 @@ namespace Stellar
     {
         Network Create(Network_ProtoWrapper.CreateNetworkParam param);
         Network_ProtoWrapper.GetCurrentResult GetCurrent();
-        Network_ProtoWrapper.StringResult GetNetworkPassphrase(Network network);
-        Network_ProtoWrapper.BoolResult IsPublicNetwork(Network_ProtoWrapper.IsPublicNetworkParam param);
+        StringWrapper GetNetworkPassphrase(Network network);
+        BoolWrapper IsPublicNetwork(Network_ProtoWrapper.IsPublicNetworkParam param);
         Network Public();
         Network Test();
         void Use(Network_ProtoWrapper.UseParam param);
@@ -26,26 +26,10 @@ namespace Stellar
 
     public class Network_ProtoWrapper : INetwork_ProtoWrapper
     {
-        [ProtoContract]
-        public class ByteArrayWrapper
-        {
-            [ProtoMember(1)]
-            public byte[] Value { get; set; }
-        }
+       
 
-        [ProtoContract]
-        public class StringResult
-        {
-            [ProtoMember(1)]
-            public string Value { get; set; }
-        }
-
-        [ProtoContract]
-        public class BoolResult
-        {
-            [ProtoMember(1)]
-            public bool Value { get; set; }
-        }
+       
+ 
 
         [ProtoContract]
         public class UseParam
@@ -91,9 +75,9 @@ namespace Stellar
 
         // Instance methods
         [OperationContract]
-        public StringResult GetNetworkPassphrase(Network network)
+        public StringWrapper GetNetworkPassphrase(Network network)
         {
-            return new StringResult { Value = network.NetworkPassphrase };
+            return new StringWrapper { Value = network.NetworkPassphrase };
         }
 
 
@@ -136,9 +120,9 @@ namespace Stellar
         }
 
         [OperationContract]
-        public BoolResult IsPublicNetwork(IsPublicNetworkParam param)
+        public BoolWrapper IsPublicNetwork(IsPublicNetworkParam param)
         {
-            return new BoolResult { Value = Network.IsPublicNetwork(param.Network) };
+            return new BoolWrapper { Value = Network.IsPublicNetwork(param.Network) };
         }
 
 

@@ -39,7 +39,7 @@ namespace StellarNativeGRPCClientTest
             // Generate Muxed Account using Protobuf [in-process] SDK
             MuxedAccount.KeyTypeEd25519 account = 
                 muxed_client.FromAccountId(
-                    new MuxedAccount_ProtoWrapper.StringParam() 
+                    new MuxedAccount_ProtoWrapper.StringWrapper() 
                     { 
                         Value = "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T" 
                     } 

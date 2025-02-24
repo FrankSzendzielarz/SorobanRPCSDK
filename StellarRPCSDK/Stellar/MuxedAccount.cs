@@ -17,22 +17,22 @@ namespace Stellar
     [ServiceContract]
     public interface IMuxedAccount_ProtoWrapper
     {
-        MuxedAccount_ProtoWrapper.BoolResult CanSign(MuxedAccount account);
+        BoolWrapper CanSign(MuxedAccount account);
         MuxedAccount.KeyTypeEd25519 CreateKeyTypeEd25519(MuxedAccount_ProtoWrapper.CreateEd25519Param param);
         MuxedAccount.KeyTypeMuxedEd25519 CreateKeyTypeMuxedEd25519(MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param param);
-        MuxedAccount_ProtoWrapper.StringResult GetAccountId(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.StringResult GetAddress(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetPrivateKey(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetPublicKey(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.StringResult GetSecretSeed(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.ByteArrayWrapper GetSeedBytes(MuxedAccount account);
-        MuxedAccount_ProtoWrapper.ByteArrayWrapper Sign(MuxedAccount_ProtoWrapper.SignMessage message);
-        MuxedAccount_ProtoWrapper.BoolResult Verify(MuxedAccount_ProtoWrapper.VerifyMessage message);
+        StringWrapper GetAccountId(MuxedAccount account);
+        StringWrapper GetAddress(MuxedAccount account);
+        ByteArrayWrapper GetPrivateKey(MuxedAccount account);
+        ByteArrayWrapper GetPublicKey(MuxedAccount account);
+        StringWrapper GetSecretSeed(MuxedAccount account);
+        ByteArrayWrapper GetSeedBytes(MuxedAccount account);
+        ByteArrayWrapper Sign(MuxedAccount_ProtoWrapper.SignMessage message);
+        BoolWrapper Verify(MuxedAccount_ProtoWrapper.VerifyMessage message);
 
-        MuxedAccount.KeyTypeEd25519 FromSecretSeed(MuxedAccount_ProtoWrapper.StringParam seedString);
-        MuxedAccount.KeyTypeEd25519 FromSecretSeedBytes(MuxedAccount_ProtoWrapper.ByteArrayWrapper seedBytes);
-        MuxedAccount.KeyTypeEd25519 FromAccountId(MuxedAccount_ProtoWrapper.StringParam accountId);
-        MuxedAccount.KeyTypeEd25519 FromPublicKey(MuxedAccount_ProtoWrapper.ByteArrayWrapper publicKey);
+        MuxedAccount.KeyTypeEd25519 FromSecretSeed(StringWrapper seedString);
+        MuxedAccount.KeyTypeEd25519 FromSecretSeedBytes(ByteArrayWrapper seedBytes);
+        MuxedAccount.KeyTypeEd25519 FromAccountId(StringWrapper accountId);
+        MuxedAccount.KeyTypeEd25519 FromPublicKey(ByteArrayWrapper publicKey);
         MuxedAccount.KeyTypeEd25519 FromBIP39Seed(MuxedAccount_ProtoWrapper.BIP39SeedParam param);
         MuxedAccount.KeyTypeEd25519 FromBIP39SeedBytes(MuxedAccount_ProtoWrapper.BIP39SeedBytesParam param);
         MuxedAccount.KeyTypeEd25519 Random();
@@ -41,25 +41,10 @@ namespace Stellar
 
     public class MuxedAccount_ProtoWrapper : IMuxedAccount_ProtoWrapper
     {
-        [ProtoContract]
-        public class ByteArrayWrapper
-        {
-            [ProtoMember(1)]
-            public byte[] Value { get; set; }
-        }
+ 
 
-        [ProtoContract]
-        public class StringResult
-        {
-            [ProtoMember(1)]
-            public string Value { get; set; }
-        }
-        [ProtoContract]
-        public class StringParam
-        {
-            [ProtoMember(1)]
-            public string Value { get; set; }
-        }
+       
+      
 
         [ProtoContract]
         public class BIP39SeedParam
@@ -80,12 +65,7 @@ namespace Stellar
         }
 
 
-        [ProtoContract]
-        public class BoolResult
-        {
-            [ProtoMember(1)]
-            public bool Value { get; set; }
-        }
+       
 
         [ProtoContract]
         public class SignMessage
@@ -147,27 +127,27 @@ namespace Stellar
         }
 
         [OperationContract]
-        public StringResult GetSecretSeed(MuxedAccount account)
+        public StringWrapper GetSecretSeed(MuxedAccount account)
         {
-            return new StringResult { Value = account.SecretSeed };
+            return new StringWrapper { Value = account.SecretSeed };
         }
 
         [OperationContract]
-        public StringResult GetAccountId(MuxedAccount account)
+        public StringWrapper GetAccountId(MuxedAccount account)
         {
-            return new StringResult { Value = account.AccountId };
+            return new StringWrapper { Value = account.AccountId };
         }
 
         [OperationContract]
-        public StringResult GetAddress(MuxedAccount account)
+        public StringWrapper GetAddress(MuxedAccount account)
         {
-            return new StringResult { Value = account.Address };
+            return new StringWrapper { Value = account.Address };
         }
 
         [OperationContract]
-        public BoolResult CanSign(MuxedAccount account)
+        public BoolWrapper CanSign(MuxedAccount account)
         {
-            return new BoolResult { Value = account.CanSign() };
+            return new BoolWrapper { Value = account.CanSign() };
         }
 
         [OperationContract]
@@ -177,9 +157,9 @@ namespace Stellar
         }
 
         [OperationContract]
-        public BoolResult Verify(VerifyMessage message)
+        public BoolWrapper Verify(VerifyMessage message)
         {
-            return new BoolResult { Value = message.Account.Verify(message.Data.Value, message.Signature.Value) };
+            return new BoolWrapper { Value = message.Account.Verify(message.Data.Value, message.Signature.Value) };
         }
 
         // Factory methods for subtypes
@@ -196,7 +176,7 @@ namespace Stellar
         }
 
         [OperationContract]
-        public MuxedAccount.KeyTypeEd25519 FromSecretSeed(StringParam seedString)
+        public MuxedAccount.KeyTypeEd25519 FromSecretSeed(StringWrapper seedString)
         {
             return MuxedAccount.FromSecretSeed(seedString.Value);
         }
@@ -208,7 +188,7 @@ namespace Stellar
         }
 
         [OperationContract]
-        public MuxedAccount.KeyTypeEd25519 FromAccountId(StringParam accountId)
+        public MuxedAccount.KeyTypeEd25519 FromAccountId(StringWrapper accountId)
         {
             var result = MuxedAccount.FromAccountId(accountId.Value);
             return result;

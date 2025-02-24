@@ -2554,7 +2554,7 @@ message StateChanges {
    LedgerEntry LedgerAfter = 101;
 }
 enum StateChanges_Type {
-   ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
+   StateChanges_Type_ZERO = 0; // proto3 requires a zero value as the first item (it can be named anything)
    _1 = 1;
    _2 = 2;
    _3 = 3;
