@@ -9,6 +9,7 @@
 		<PublishAot>true</PublishAot>
 		<StripSymbols>true</StripSymbols>
 		<PublishTrimmed>true</PublishTrimmed>
+	
 		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
 		<IsTrimmable>true</IsTrimmable>
 		<EnableAOT>true</EnableAOT>
@@ -27,6 +28,14 @@
 
 		<DefineConstants>WINDOWS;$(DefineConstants)</DefineConstants>
 	</PropertyGroup>
+	<ItemGroup>
+		<TrimmerRootAssembly Include="System.ComponentModel.Annotations" />
+		<TrimmerRootAssembly Include="Grpc.AspNetCore.Server" />
+		<TrimmerRootAssembly Include="protobuf-net" />
+		<TrimmerRootAssembly Include="StellarRPCSDK" />
+		<TrimmerRootAssembly Include="$(AssemblyName)" />
+	</ItemGroup>
+
 
 	<!-- Conditional compilation for different platforms -->
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">

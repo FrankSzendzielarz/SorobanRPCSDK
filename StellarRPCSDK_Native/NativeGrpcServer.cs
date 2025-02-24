@@ -1,16 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.AspNetCore.Server.HttpSys; // Windows only
+using Microsoft.Extensions.DependencyInjection;
+using ProtoBuf.Grpc.Server;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
-using Grpc.Core;
-using NativeTests;
-using System;
-using Microsoft.Extensions.Logging;
-using ProtoBuf.Grpc.Server;
 
 namespace Stellar.RPC.Native
 {
@@ -55,11 +50,7 @@ namespace Stellar.RPC.Native
                 {
                     options.ListenNamedPipe("MyServicePipe", listenOptions =>
                     {
-
                         listenOptions.Protocols = HttpProtocols.Http2;
-                   
-
-
                     });
                 });
 
@@ -75,12 +66,15 @@ namespace Stellar.RPC.Native
                     });
                 });
 #endif
-                builder.Services.AddScoped<TestService>();
+
                 builder.Services.AddCodeFirstGrpc();
                 _app = builder.Build();
-                _app.MapGrpcService<TestService>();
-
-         
+                _app.MapGrpcService<StellarRPCClient>();
+                _app.MapGrpcService<MuxedAccount_ProtoWrapper>();
+                _app.MapGrpcService<Transaction_ProtoWrapper>();
+                _app.MapGrpcService<Network_ProtoWrapper>();
+                _app.MapGrpcService<SimulateTransactionResult_ProtoWrapper>();
+                _app.MapGrpcService<XdrProtoService>();
 
                 _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                 _app.Run();
@@ -91,34 +85,9 @@ namespace Stellar.RPC.Native
 
             Console.WriteLine("Waiting for Stellar SDK");
             _serverReady.Wait();
-     
+
         }
 
-        // Example gRPC service
-        private class TestService : MyService.MyServiceBase
-        {
-            private readonly ILogger<TestService> _logger;
 
-            public TestService(ILogger<TestService> logger)
-            {
-                _logger = logger;
-            }
-            public override Task<AddResponse> AddNumbers(AddRequest request, ServerCallContext context)
-            {
-                _logger.LogInformation("AddNumbers called with A: {A}, B: {B}", request.A, request.B);
-
-                try
-                {
-                    var result = request.A + request.B;
-                    _logger.LogInformation("AddNumbers result: {Result}", result);
-                    return Task.FromResult(new AddResponse { Result = result });
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "Error in AddNumbers");
-                    throw;
-                }
-            }
-        }
     }
 }

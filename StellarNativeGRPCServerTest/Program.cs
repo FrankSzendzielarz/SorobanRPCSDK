@@ -33,7 +33,6 @@ namespace StellarNativeGRPCServerTest
             var serviceTypes = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(a => a.GetTypes())
                 .Where(t => binder.IsServiceContract(t, out var name));
-
             foreach (var contractType in serviceTypes)
             {
                 Console.WriteLine($"Found service contract: {contractType.Name}");

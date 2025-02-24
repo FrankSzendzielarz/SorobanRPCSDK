@@ -20,8 +20,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start_server: Symbol<unsafe extern "C" fn()> = unsafe { lib.get(b"StartServer")? };
     unsafe { start_server() };
 
-
-
   // Create a connection to the server
     #[cfg(target_os = "windows")]
     let channel = Channel::from_static("http://localhost")
@@ -44,6 +42,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("gRPC client created.");
 
     // Call the AddNumbers method
+
+    //THE FOLLOWING IS A LEGACY TEST THAT NEEDS TO BE REMOVED AND 
+    //REPLACED WITH WHAT THE C# CODE-FIRST EQUIVALENT IS DOING!
     let request = tonic::Request::new(AddRequest { a: 2, b: 3 });
     let response = client.add_numbers(request).await?;
     println!("Result: {}", response.into_inner().result);
