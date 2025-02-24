@@ -1,12 +1,23 @@
 use libloading::{Library, Symbol};
 use tonic::transport::{Channel, Uri};
 use tower::service_fn;
-use my_service::my_service_client::MyServiceClient;
-use my_service::AddRequest;
 use tokio::net::windows::named_pipe::ClientOptions;
+use crate::stellar_rpc::stellar_client::StellarClient;
+use crate::stellar::{
+    xdr_proto_service_client::XdrProtoServiceClient,
+    muxed_account_proto_wrapper_client::MuxedAccountProtoWrapperClient,
+    network_proto_wrapper_client::NetworkProtoWrapperClient,
+    transaction_proto_wrapper_client::TransactionProtoWrapperClient,
+};
 
-pub mod my_service {
-    tonic::include_proto!("native_tests");
+
+// Import the generated code
+pub mod stellar_rpc {
+    tonic::include_proto!("stellar.rpc");
+}
+
+pub mod stellar {
+    tonic::include_proto!("stellar");
 }
 
 #[tokio::main]
@@ -28,26 +39,91 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .open(r"\\.\pipe\MyServicePipe")
         }))
         .await?;
-    println!("Connection to SDK established.");
-
     #[cfg(not(target_os = "windows"))]
     let channel = Channel::from_static("http://localhost")
         .connect_with_connector(service_fn(|_: Uri| async move {
             tokio::net::UnixStream::connect("/tmp/MyService.sock")
         }))
         .await?;
+    println!("Connection to SDK established.");
 
-    // Create a gRPC client
-    let mut client = MyServiceClient::new(channel);
-    println!("gRPC client created.");
+ // Create both the RPC client and specialized clients
+    let mut network_client = NetworkProtoWrapperClient::new(channel.clone());
+    let mut stellar_client = StellarClient::new(channel.clone());
+    let mut muxed_client = MuxedAccountProtoWrapperClient::new(channel.clone());
+    let mut xdr_client = XdrProtoServiceClient::new(channel.clone());
+    let mut transaction_client = TransactionProtoWrapperClient::new(channel.clone());
 
-    // Call the AddNumbers method
+    // Configure network first
+    network_client.use_test_network(tonic::Request::new(())).await?;
+    network_client.set_url(tonic::Request::new(stellar::SetUrlParam {
+        url: "https://soroban-testnet.stellar.org".to_string()
+    })).await?;
+    
+    // Get health status
+    let health = stellar_client
+        .get_health(tonic::Request::new(()))
+        .await?;
+    println!("Health status: {:?}", health);
 
-    //THE FOLLOWING IS A LEGACY TEST THAT NEEDS TO BE REMOVED AND 
-    //REPLACED WITH WHAT THE C# CODE-FIRST EQUIVALENT IS DOING!
-    let request = tonic::Request::new(AddRequest { a: 2, b: 3 });
-    let response = client.add_numbers(request).await?;
-    println!("Result: {}", response.into_inner().result);
+    // Generate Muxed Account
+    let account = muxed_client
+        .from_account_id(tonic::Request::new(stellar::StringWrapper {
+            value: "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T".to_string()
+        }))
+        .await?;
+    
+    // Get Public Key
+    let pk = muxed_client
+        .get_public_key(tonic::Request::new(account.into_inner()))
+        .await?;
+
+    // Create and encode ledger key 
+    let ledger_key = stellar::LedgerKey {
+        subtype: Some(stellar::ledger_key::Subtype::LedgerKeyAccount(
+            stellar::LedgerKeyAccount {
+                account: Some(stellar::LedgerKeyAccountStruct {
+                    account_id: Some(stellar::AccountId {
+                        inner_value: Some(stellar::PublicKey {
+                            subtype: Some(stellar::public_key::Subtype::PublicKeyPublicKeyTypeEd25519(
+                                stellar::PublicKeyPublicKeyTypeEd25519 {
+                                    ed25519: Some(stellar::Uint256 {
+                                        inner_value: pk.into_inner().value,
+                                    }),
+                                },
+                            )),
+                        }),
+                    }),
+                }),
+            },
+        )),
+    };
+    let ledger_key_encode_request = stellar::LedgerKeyEncodeRequest {
+        value: Some(ledger_key),
+    };
+
+    let encoded_key = xdr_client
+        .encode_ledger_key(tonic::Request::new(ledger_key_encode_request))
+        .await?;
+
+    // Get ledger entries using RPC client
+    let entries_request = stellar_rpc::GetLedgerEntriesParams {
+        keys: vec![encoded_key.into_inner().encoded_value]
+    };
+    
+    let ledger_entries = stellar_client
+        .get_ledger_entries(tonic::Request::new(entries_request))
+        .await?;
+
+     if let Some(entry) = ledger_entries.into_inner().entries.first() {
+        if let Some(ledger_entry_data) = &entry.ledger_entry_data {
+            if let Some(stellar_rpc::ledger_entry_data_union::Subtype::LedgerEntryDataUnionAccount(account_data)) = &ledger_entry_data.subtype {
+                if let Some(account) = &account_data.account {
+                    println!("Account balance: {}", account.balance);
+                }
+            }
+        }
+    }
 
     Ok(())
 }

@@ -1,5 +1,7 @@
 ﻿fn main() -> Result<(), Box<dyn std::error::Error>> {
-    tonic_build::compile_protos("../../Stellar.proto")?;
-    tonic_build::compile_protos("../../Stellar.RPC.proto")?;
+    tonic_build::configure()
+        .build_client(true)
+        .build_server(true)
+        .compile(&["../../Stellar.proto", "../../Stellar.RPC.proto"], &["../../"])?;
     Ok(())
 }
