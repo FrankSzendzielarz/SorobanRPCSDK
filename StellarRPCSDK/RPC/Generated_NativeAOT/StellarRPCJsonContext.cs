@@ -8,8 +8,7 @@ namespace Stellar.RPC
     /// </summary>
     [JsonSourceGenerationOptions(
         PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        GenerationMode = JsonSourceGenerationMode.Serialization)]
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
     [JsonSerializable(typeof(JsonRpcRequest))]
     [JsonSerializable(typeof(JsonRpcError))]
     [JsonSerializable(typeof(GetEventsParams))]
@@ -80,6 +79,5 @@ namespace Stellar.RPC
     [JsonSerializable(typeof(JsonRpcResponse<StateChanges_Type>))]
     public partial class StellarRPCJsonContext : JsonSerializerContext
     {
-        
     }
 }
