@@ -1,0 +1,8 @@
+﻿<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+	<Library>
+		<Type Name="System.Collections.Concurrent.IProducerConsumerCollection`1" Dynamic="Required All" />
+		<Type Name="System.Collections.Concurrent.ConcurrentQueue`1" Dynamic="Required All" />
+		<Type Name="System.Collections.Concurrent.ConcurrentBag`1" Dynamic="Required All" />
+		<Type Name="System.Collections.Concurrent.ConcurrentStack`1" Dynamic="Required All" />
+	</Library>
+</Directives>

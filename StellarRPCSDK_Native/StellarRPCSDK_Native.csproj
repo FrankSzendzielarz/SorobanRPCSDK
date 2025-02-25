@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<RootNamespace>Stellar.RPC.Native</RootNamespace>
 		<LangVersion>latest</LangVersion>
 
@@ -9,12 +9,15 @@
 		<PublishAot>true</PublishAot>
 		<StripSymbols>true</StripSymbols>
 		<PublishTrimmed>true</PublishTrimmed>
-	
+		<!--<TrimMode>partial</TrimMode>-->
+		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
 		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
 		<IsTrimmable>true</IsTrimmable>
 		<EnableAOT>true</EnableAOT>
 		<ILLinkTreatWarningsAsErrors>false</ILLinkTreatWarningsAsErrors>
-
+		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
+		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+		<TrimmerSingleWarn>false</TrimmerSingleWarn>
 		<!-- Optional WASM support -->
 		<WasmEnabled Condition="'$(RuntimeIdentifier)' == 'browser-wasm'">true</WasmEnabled>
 
@@ -29,11 +32,30 @@
 		<DefineConstants>WINDOWS;$(DefineConstants)</DefineConstants>
 	</PropertyGroup>
 	<ItemGroup>
+		<TrimmerRootDescriptor Include="root.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<TrimmerRootAssembly Include="netstandard" />
+		<TrimmerRootAssembly Include="System.Collections.Concurrent" />
+		<TrimmerRootAssembly Include="System.Private.CoreLib" />
+		<TrimmerRootAssembly Include="System.Collections" />
 		<TrimmerRootAssembly Include="System.ComponentModel.Annotations" />
 		<TrimmerRootAssembly Include="Grpc.AspNetCore.Server" />
+		<TrimmerRootAssembly Include="Grpc.Net.Common" />
+		<TrimmerRootAssembly Include="Grpc.Core.Api" />
+		<TrimmerRootAssembly Include="protobuf-net.Grpc.AspNetCore" />
+		<TrimmerRootAssembly Include="protobuf-net.Grpc" />
 		<TrimmerRootAssembly Include="protobuf-net" />
 		<TrimmerRootAssembly Include="StellarRPCSDK" />
+		<TrimmerRootAssembly Include="System.ServiceModel.Primitives" />
+		<TrimmerRootAssembly Include="System.Runtime.Serialization.Primitives" />
+		<TrimmerRootAssembly Include="System.Text.Json" />
 		<TrimmerRootAssembly Include="$(AssemblyName)" />
+		<TrimmerRootAssembly Include="System.Private.DataContractSerialization" />
+		<TrimmerRootAssembly Include="System.Private.ServiceModel" />
+		<TrimmerRootAssembly Include="Google.Protobuf" />
+		<TrimmerRootAssembly Include="System.Reflection.DispatchProxy" />
+		<TrimmerRootAssembly Include="System.IO.Pipelines" />
 	</ItemGroup>
 
 
@@ -67,10 +89,10 @@
 	
 	<!-- References -->
 	<ItemGroup>
-		<PackageReference Include="DllExport" Version="1.7.4" />
-		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.2" />
+		<PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.2.2" />
 		<PackageReference Include="Google.Protobuf" Version="3.29.3" />
-		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.54.0" />
+		<PackageReference Include="Grpc.AspNetCore.Server" Version="2.67.0" />
 		<PackageReference Include="Grpc.Tools" Version="2.69.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

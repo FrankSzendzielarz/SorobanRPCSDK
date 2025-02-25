@@ -1,0 +1,39 @@
+﻿<linker>
+	<!--<assembly fullname="System.Text.Json">
+		<type fullname="System.Collections.Generic.OrderedDictionary`2">
+			<method name="get_Values" />
+		</type>
+	</assembly>-->
+
+
+	<assembly fullname="StellarNativeGRPCServerTest">
+		<type fullname="StellarNativeGRPCServerTest.*" preserve="all" />
+	</assembly>
+	<assembly fullname="StellarRPCSDK">
+		<type fullname="StellarRPCSDK.*" preserve="all" />
+	</assembly>
+
+	<assembly fullname="System.Runtime">
+		<type fullname="System.Collections.Generic.IDictionary`2" preserve="all" />
+	</assembly>
+	<assembly fullname="Microsoft.AspNetCore.Routing">
+		<type fullname="Microsoft.AspNetCore.Routing.Matching.DictionaryJumpTable" preserve="all" />
+		<type fullname="Microsoft.AspNetCore.Routing.Matching.JumpTableBuilder" preserve="all" />
+	</assembly>
+
+	<assembly fullname="System.Collections.Concurrent">
+		<type fullname="System.Collections.Concurrent.IProducerConsumerCollection`1" preserve="all" />
+	</assembly>
+
+	<!-- Target implementations of the interface -->
+	<assembly fullname="System.Collections.Concurrent">
+		<namespace fullname="System.Collections" />
+	</assembly>
+
+	<!-- Target the specific method that's causing issues -->
+	<assembly fullname="System.Collections.Concurrent">
+		<type fullname="System.Collections.Concurrent.IProducerConsumerCollection`1">
+			<method name="TryAdd" />
+		</type>
+	</assembly>
+</linker>

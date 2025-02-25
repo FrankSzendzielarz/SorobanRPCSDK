@@ -15,7 +15,7 @@ namespace StellarNativeGRPCClientTest
     {
         static async Task Main(string[] args)
         {
-            using var channel = GrpcChannel.ForAddress("https://localhost:7133");
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
                 
 
             channel.Intercept(new ClientLoggingInterceptor());
