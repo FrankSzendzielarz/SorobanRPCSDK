@@ -78,12 +78,12 @@ namespace Stellar.RPC.Native
 
 
                     _app = builder.Build();
-                    _app.MapGrpcService<StellarRPCClient>();
-                    _app.MapGrpcService<MuxedAccount_ProtoWrapper>();
-                    _app.MapGrpcService<Transaction_ProtoWrapper>();
-                    _app.MapGrpcService<Network_ProtoWrapper>();
-                    _app.MapGrpcService<SimulateTransactionResult_ProtoWrapper>();
-                    _app.MapGrpcService<XdrProtoService>();
+                    //_app.MapGrpcService<StellarRPCClient>();
+                    //_app.MapGrpcService<MuxedAccount_ProtoWrapper>();
+                    //_app.MapGrpcService<Transaction_ProtoWrapper>();
+                    //_app.MapGrpcService<Network_ProtoWrapper>();
+                    //_app.MapGrpcService<SimulateTransactionResult_ProtoWrapper>();
+                    //_app.MapGrpcService<XdrProtoService>();
 
                     _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                     _app.Run();

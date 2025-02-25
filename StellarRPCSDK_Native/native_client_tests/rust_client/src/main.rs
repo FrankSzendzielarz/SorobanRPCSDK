@@ -24,7 +24,7 @@ pub mod stellar {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Load the C# DLL
     let lib = unsafe { 
-        Library::new("../../bin/Release/net8.0/win-x64/publish/StellarRPCSDK_Native.dll")?
+        Library::new("../../bin/NativeAOT/net8.0/win-x64/publish/StellarRPCSDK_Native.dll")?
     };
 
     // Start the server

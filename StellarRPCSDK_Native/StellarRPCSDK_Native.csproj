@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>Stellar.RPC.Native</RootNamespace>
 		<LangVersion>latest</LangVersion>
 
@@ -13,7 +13,7 @@
 		<EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
 		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
 		<IsTrimmable>true</IsTrimmable>
-		<EnableAOT>true</EnableAOT>
+		<IsAotCompatible>true</IsAotCompatible>
 		<ILLinkTreatWarningsAsErrors>false</ILLinkTreatWarningsAsErrors>
 		<IlcGenerateStackTraceData>true</IlcGenerateStackTraceData>
 		<IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
@@ -35,10 +35,10 @@
 		<Configurations>Debug;Release;NativeAOTDebug;NativeAOT</Configurations>
 	</PropertyGroup>
 	<ItemGroup>
-		<TrimmerRootDescriptor Include="root.xml" />
+		<!--<TrimmerRootDescriptor Include="root.xml" />-->
 	</ItemGroup>
 	<ItemGroup>
-		<TrimmerRootAssembly Include="netstandard" />
+		<!--<TrimmerRootAssembly Include="netstandard" />
 		<TrimmerRootAssembly Include="System.Collections.Concurrent" />
 		<TrimmerRootAssembly Include="System.Private.CoreLib" />
 		<TrimmerRootAssembly Include="System.Collections" />
@@ -58,7 +58,7 @@
 		<TrimmerRootAssembly Include="System.Private.ServiceModel" />
 		<TrimmerRootAssembly Include="Google.Protobuf" />
 		<TrimmerRootAssembly Include="System.Reflection.DispatchProxy" />
-		<TrimmerRootAssembly Include="System.IO.Pipelines" />
+		<TrimmerRootAssembly Include="System.IO.Pipelines" />-->
 	</ItemGroup>
 
 
