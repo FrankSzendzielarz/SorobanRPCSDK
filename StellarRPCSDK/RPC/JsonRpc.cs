@@ -96,13 +96,13 @@ namespace Stellar.RPC
     public class JsonRpcException : Exception
     {
         public int Code { get; }
-        public object Data { get; }
+        public  object ErrorData { get; }
 
         public JsonRpcException(JsonRpcError error)
             : base(error.Message)
         {
             Code = error.Code;
-            Data = error.Data;
+            ErrorData = error.Data;
         }
     }
 }

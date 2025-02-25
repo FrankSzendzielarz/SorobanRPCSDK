@@ -83,13 +83,15 @@ public class Program
             }
             visitor.WriteAllTypes();
             Console.WriteLine($"XDR generation complete.");
+            
             Console.WriteLine($"Generating code for OpenRPC file {openRPCFile}");
-
             var jsonContent = await File.ReadAllTextAsync(openRPCFile);
             var spec = JsonSerializer.Deserialize<OpenRpcSpec>(jsonContent);
-            var generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc,false);
+            var generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc,BuildTarget.NetStandard2);
             await generator.GenerateAsync();
-            generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc+"_Unity", true);
+            generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc+"_Unity", BuildTarget.Unity);
+            await generator.GenerateAsync();
+            generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc + "_NativeAOT", BuildTarget.NativeAOT);
             await generator.GenerateAsync();
             Console.WriteLine($"Successfully generated code in {outputDirXdr} and {outputDirRpc}");
         }

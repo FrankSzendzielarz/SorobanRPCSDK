@@ -10,24 +10,6 @@ using System.Text.RegularExpressions;
 namespace Stellar.RPC.Tools
 {
 
-    /*
-     * 1. DONE Fix the problems with the Stellar RPC Client codegen producing an object for empty parameters, this should fix the missing methods in the Protobuf service. Also fix the nested collections thing.
-
-2. DONE Modify XDR gen to also add protobuf fields
-
-3. DONE Extract interfaces from all manual partials and make them ServiceContract 
-
-4. DONE Change all the methods on the Manual Partial so they don't return byte[] but meaningful types (eg PrivateKey) so that protobuf-net doesn't have to work with native types
-
-5. DONE Modify protogen to scan the assembly for service contracts and do it automatically.
-
-6. Test the  builder.Services.AddCodeFirstGrpc(); is working in the Native AOT project. We don't need to manually register any services. 
-
-The above should make everything automatic wrt to protobuf
-    */
-
-
-
     class Program
     {
         static int Main(string[] args)

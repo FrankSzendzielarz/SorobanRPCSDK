@@ -1,25 +1,33 @@
 ﻿using NJsonSchema;
 using NJsonSchema.CodeGeneration;
 using NJsonSchema.CodeGeneration.CSharp;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
 namespace Generator.OpenRPC
 {
+    public enum BuildTarget
+    {
+        NetStandard2,
+        Unity,
+        NativeAOT
 
+    }
     public class CSharpOpenRPCGenerator
     {
         private readonly OpenRpcSpec _spec;
         private readonly string _outputDir;
         private readonly CSharpGeneratorSettings _settings;
-        private readonly bool _isUnityBuild;
+        private readonly BuildTarget _buildType;
+      
 
-        public CSharpOpenRPCGenerator(OpenRpcSpec spec, string outputDir, bool isUnityBuild = false)
+        public CSharpOpenRPCGenerator(OpenRpcSpec spec, string outputDir, BuildTarget buildType)
         {
             _spec = spec;
             _outputDir = outputDir;
-            _isUnityBuild = isUnityBuild;
+            _buildType=buildType ;
 
             _settings = new CSharpGeneratorSettings
             {
@@ -27,7 +35,7 @@ namespace Generator.OpenRPC
                 GenerateDataAnnotations = true,
                 GenerateJsonMethods = false,
                 Namespace = "Stellar.RPC",
-                JsonLibrary = isUnityBuild ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
                 ArrayType = "System.Collections.Generic.ICollection",
                 ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
                 NumberType = "long",
@@ -42,12 +50,20 @@ namespace Generator.OpenRPC
 
         public async Task GenerateAsync()
         {
+            // Reset the type tracking for a clean generation
+            TypeFixNameGenerator.ResetTypeTracking();
+
             foreach (var method in _spec.Methods)
             {
                 await GenerateMethodModelsAsync(method);
             }
 
             await GenerateClientClassAsync();
+
+            if (_buildType==BuildTarget.NativeAOT)
+            {
+                await GenerateJsonContextClassAsync();
+            }
         }
 
         private async Task GenerateMethodModelsAsync(RpcMethod method)
@@ -85,6 +101,7 @@ namespace Generator.OpenRPC
                 var code = generator.GenerateFile($"{method.Name.ToPascalCase()}Params");
                 code=ReorderProtoMembers(code);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Params.cs"), code);
+             
             }
 
             if (method.Result?.Schema != null)
@@ -95,6 +112,7 @@ namespace Generator.OpenRPC
                 code = ReorderProtoMembers(code);
                 await File.WriteAllTextAsync(Path.Combine(_outputDir, $"{method.Name.ToPascalCase()}Result.cs"), code);
             }
+         
         }
 
         public static string ReorderProtoMembers(string input)
@@ -127,7 +145,7 @@ namespace Generator.OpenRPC
             var sb = new StringBuilder();
 
             // Add appropriate using statements based on JSON library
-            if (_isUnityBuild)
+            if (_buildType == BuildTarget.Unity)
             {
                 sb.AppendLine("using Newtonsoft.Json;");
                 sb.AppendLine("using Newtonsoft.Json.Serialization;");
@@ -155,33 +173,45 @@ namespace Generator.OpenRPC
             sb.AppendLine("{");
             sb.AppendLine("    private readonly HttpClient _httpClient;");
 
-            if (_isUnityBuild)
+            switch (_buildType)
             {
-                sb.AppendLine("    private readonly JsonSerializerSettings _jsonSettings;");
-                sb.AppendLine();
-                sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
-                sb.AppendLine("    {");
-                sb.AppendLine("        _httpClient = httpClient;");
-                sb.AppendLine("        _jsonSettings = new JsonSerializerSettings");
-                sb.AppendLine("        {");
-                sb.AppendLine("            ContractResolver = new CamelCasePropertyNamesContractResolver(),");
-                sb.AppendLine("            NullValueHandling = NullValueHandling.Ignore");
-                sb.AppendLine("        };");
-                sb.AppendLine("    }");
-            }
-            else
-            {
-                sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
-                sb.AppendLine();
-                sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
-                sb.AppendLine("    {");
-                sb.AppendLine("        _httpClient = httpClient;");
-                sb.AppendLine("        _jsonOptions = new JsonSerializerOptions");
-                sb.AppendLine("        {");
-                sb.AppendLine("            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,");
-                sb.AppendLine("            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull");
-                sb.AppendLine("        };");
-                sb.AppendLine("    }");
+                case BuildTarget.Unity:
+                    sb.AppendLine("    private readonly JsonSerializerSettings _jsonSettings;");
+                    sb.AppendLine();
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine("    {");
+                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("        _jsonSettings = new JsonSerializerSettings");
+                    sb.AppendLine("        {");
+                    sb.AppendLine("            ContractResolver = new CamelCasePropertyNamesContractResolver(),");
+                    sb.AppendLine("            NullValueHandling = NullValueHandling.Ignore");
+                    sb.AppendLine("        };");
+                    sb.AppendLine("    }");
+                    break;
+
+                case BuildTarget.NetStandard2:
+                    sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
+                    sb.AppendLine();
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine("    {");
+                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("        _jsonOptions = new JsonSerializerOptions");
+                    sb.AppendLine("        {");
+                    sb.AppendLine("            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,");
+                    sb.AppendLine("            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull");
+                    sb.AppendLine("        };");
+                    sb.AppendLine("    }");
+                    break;
+
+                case BuildTarget.NativeAOT:
+                    sb.AppendLine($"    private static readonly {_spec.Info.Title.Replace(" ", "")}JsonContext _jsonContext = {_spec.Info.Title.Replace(" ", "")}JsonContext.Default;");
+                    sb.AppendLine();
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine("    {");
+                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("    }");
+                    break;
+
             }
 
             sb.AppendLine();
@@ -211,7 +241,7 @@ namespace Generator.OpenRPC
                 sb.AppendLine(FormatXmlComment(method.Description));
             }
 
-            // Generate method signature - omit parameters if none defined
+            // Generate method signature
             sb.AppendLine(hasParameters
                 ? $"    public async Task<{resultType}> {methodName}Async({paramType} parameters)"
                 : $"    public async Task<{resultType}> {methodName}Async()");
@@ -230,31 +260,54 @@ namespace Generator.OpenRPC
             sb.AppendLine("        };");
             sb.AppendLine();
 
-            if (_isUnityBuild)
+            switch (_buildType)
             {
-                sb.AppendLine("        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);");
-            }
-            else
-            {
-                sb.AppendLine("        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);");
+                case BuildTarget.Unity:
+                    // Newtonsoft.Json serialization for Unity
+                    sb.AppendLine("        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);");
+                    break;
+                case BuildTarget.NativeAOT:
+                    // System.Text.Json with source generator for Native
+                    sb.AppendLine($"        var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);");
+                    break;
+                case BuildTarget.NetStandard2:
+                    // Standard System.Text.Json with reflection
+                    sb.AppendLine("        var requestJson = JsonSerializer.Serialize(request, _jsonOptions);");
+                    break;
             }
 
             sb.AppendLine($"        var response = await _httpClient.PostAsync(\"\", ");
             sb.AppendLine("            new StringContent(");
             sb.AppendLine("                requestJson,");
             sb.AppendLine("                Encoding.UTF8,");
-            sb.AppendLine("                \"application/json\"));");
+            if (_buildType == BuildTarget.NativeAOT)
+            {
+                sb.AppendLine("                System.Net.Http.Headers.MediaTypeHeaderValue.Parse(\"application/json\")));");
+                
+            }
+            else 
+            { 
+                sb.AppendLine("                \"application/json\"));");
+            }
             sb.AppendLine();
             sb.AppendLine("        response.EnsureSuccessStatusCode();");
             sb.AppendLine("        var content = await response.Content.ReadAsStringAsync();");
 
-            if (_isUnityBuild)
+            switch (_buildType)
             {
-                sb.AppendLine($"        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<{resultType}>>(content, _jsonSettings);");
-            }
-            else
-            {
-                sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<{resultType}>>(content, _jsonOptions);");
+                case BuildTarget.Unity:
+                    // Newtonsoft.Json deserialization for Unity
+                    sb.AppendLine($"        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<{resultType}>>(content, _jsonSettings);");
+                    break;
+                case BuildTarget.NativeAOT:
+                    // System.Text.Json with source generator for Native
+                    sb.AppendLine($"        var jsonTypeInfo = _jsonContext.GetTypeInfo(typeof(JsonRpcResponse<{resultType}>));");
+                    sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize(content, jsonTypeInfo) as JsonRpcResponse<{resultType}>;");
+                    break;
+                case BuildTarget.NetStandard2:
+                    // Standard System.Text.Json with reflection
+                    sb.AppendLine($"        var rpcResponse = JsonSerializer.Deserialize<JsonRpcResponse<{resultType}>>(content, _jsonOptions);");
+                    break;
             }
 
             sb.AppendLine();
@@ -267,6 +320,47 @@ namespace Generator.OpenRPC
             sb.AppendLine("    }");
             sb.AppendLine();
         }
+
+        private async Task GenerateJsonContextClassAsync()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("using System.Text.Json.Serialization;");
+            sb.AppendLine();
+            sb.AppendLine("namespace Stellar.RPC");
+            sb.AppendLine("{");
+            sb.AppendLine("    /// <summary>");
+            sb.AppendLine($"    /// JSON source generator context for the {_spec.Info.Title} API.");
+            sb.AppendLine("    /// This class provides AOT-compatible serialization for System.Text.Json.");
+            sb.AppendLine("    /// </summary>");
+
+            // Add the source generation options - no #if NATIVE needed anymore
+            sb.AppendLine("    [JsonSourceGenerationOptions(");
+            sb.AppendLine("        PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,");
+            sb.AppendLine("        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]");
+
+            // Add the core communication classes
+            sb.AppendLine("    [JsonSerializable(typeof(JsonRpcRequest))]");
+            sb.AppendLine("    [JsonSerializable(typeof(JsonRpcError))]");
+
+            // Add all types we've tracked via the TypeFixNameGenerator
+            foreach (var typeName in TypeFixNameGenerator.GeneratedTypeNames)
+            {
+                sb.AppendLine($"    [JsonSerializable(typeof({typeName}))]");
+                sb.AppendLine($"    [JsonSerializable(typeof(JsonRpcResponse<{typeName}>))]");
+            }
+
+            // Define the context class - no #if NATIVE needed
+            sb.AppendLine($"    public partial class {_spec.Info.Title.Replace(" ", "")}JsonContext : JsonSerializerContext");
+            sb.AppendLine("    {");
+            sb.AppendLine("    }");
+            sb.AppendLine("}");
+
+            await File.WriteAllTextAsync(
+                Path.Combine(_outputDir, $"{_spec.Info.Title.Replace(" ", "")}JsonContext.cs"),
+                sb.ToString());
+        }
+
 
         private string FormatXmlComment(string description, int indentationLevel = 1)
         {

@@ -11,19 +11,38 @@ namespace Generator.OpenRPC
 {
     public class TypeFixNameGenerator : ITypeNameGenerator
     {
-        ITypeNameGenerator _baseGenerator;
+        private readonly ITypeNameGenerator _baseGenerator;
+
+        // Static collection to track all generated types
+        public static HashSet<string> GeneratedTypeNames { get; } = new HashSet<string>();
+
         public TypeFixNameGenerator(ITypeNameGenerator baseGenerator)
         {
-            _baseGenerator=baseGenerator;
+            _baseGenerator = baseGenerator;
         }
+
         public string Generate(JsonSchema schema, string? typeNameHint, IEnumerable<string> reservedTypeNames)
         {
             if (typeNameHint != null)
             {
                 typeNameHint = Regex.Replace(typeNameHint, @"\[.*?\]", "");
             }
-            string baseName= _baseGenerator.Generate(schema, typeNameHint, reservedTypeNames);
-            return baseName;
+
+            string typeName = _baseGenerator.Generate(schema, typeNameHint, reservedTypeNames);
+
+            // Add the type name to our collection
+            if (!string.IsNullOrEmpty(typeName))
+            {
+                GeneratedTypeNames.Add(typeName);
+            }
+
+            return typeName;
+        }
+
+        // Add a method to reset the type tracking (for multiple generator runs)
+        public static void ResetTypeTracking()
+        {
+            GeneratedTypeNames.Clear();
         }
     }
 }

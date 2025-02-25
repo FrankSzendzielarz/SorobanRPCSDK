@@ -1,19 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release' Or '$(Configuration)'=='Debug'">
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>Stellar</RootNamespace>
-		<Configurations>Debug;Release;Unity;UnityDebug</Configurations>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
+		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<RootNamespace>Stellar</RootNamespace>
-		<Configurations>Debug;Release;Unity;UnityDebug</Configurations>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
+		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<DefineConstants>UNITY;$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='NativeAOT' Or '$(Configuration)'=='NativeAOTDebug'">
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>Stellar</RootNamespace>
+		<DefineConstants>NATIVE;$(DefineConstants)</DefineConstants>
+		<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+		
+		<LangVersion>latest</LangVersion>
+		<Nullable>disable</Nullable>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
+
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -22,6 +35,7 @@
 		<PackageReference Include="protobuf-net.Grpc" Version="1.2.2" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="System.Text.Json" Version="9.0.1" Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'" />
+		
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
 		<PackageReference Include="ILRepack.Lib.MSBuild" Version="2.1.18" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
 	</ItemGroup>
@@ -43,11 +57,25 @@
 
 	<ItemGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<Compile Remove="RPC\Generated\*.cs" />
-
+		<Compile Remove="RPC\Generated_NativeAOT\*.cs" />
 	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'">
+	<ItemGroup Condition="'$(Configuration)'=='NativeAOT' Or '$(Configuration)'=='NativeAOTDebug'">
+		<Compile Remove="RPC\Generated\*.cs" />
 		<Compile Remove="RPC\Generated_Unity\*.cs" />
+
 	</ItemGroup>
+
+
+	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug' And '$(Configuration)'!='NativeAOT' And '$(Configuration)'!='NativeAOTDebug'">
+		<Compile Remove="RPC\Generated_Unity\*.cs" />
+		<Compile Remove="RPC\Generated_NativeAOT\*.cs" />
+	</ItemGroup>
+
+
+
+
+	
+
+
 	
 </Project>
