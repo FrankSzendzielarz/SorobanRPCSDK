@@ -84,6 +84,9 @@ namespace Stellar.RPC
 
         private SorobanTransactionData _sorobanTransactionData;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public SorobanTransactionData SorobanTransactionData
         {
             get
@@ -105,6 +108,9 @@ namespace Stellar.RPC
         }
         private List<DiagnosticEvent> _events;
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public List<DiagnosticEvent> DiagnosticEvents
         {
             get

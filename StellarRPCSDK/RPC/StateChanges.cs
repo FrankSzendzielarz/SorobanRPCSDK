@@ -10,6 +10,9 @@ namespace Stellar.RPC
     {
         private LedgerEntry _before;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public LedgerEntry LedgerBefore
         {
             get
@@ -32,6 +35,9 @@ namespace Stellar.RPC
 
         private LedgerEntry _after;
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public LedgerEntry LedgerAfter
         {
             get

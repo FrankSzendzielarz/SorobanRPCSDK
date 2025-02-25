@@ -10,6 +10,9 @@ namespace Stellar.RPC
     {
         private TransactionResult _transactionResult;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public TransactionResult ErrorResult
         {
             get
@@ -33,6 +36,9 @@ namespace Stellar.RPC
 
         private List<DiagnosticEvent> _diagnosticEvents = new List<DiagnosticEvent>();
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public List<DiagnosticEvent> DiagnosticEvents
         {
             get

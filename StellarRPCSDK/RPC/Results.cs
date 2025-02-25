@@ -10,6 +10,9 @@ namespace Stellar.RPC
     {
         private SCVal _result;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public SCVal Result
         {
             get
@@ -32,6 +35,9 @@ namespace Stellar.RPC
 
         private List<SorobanAuthorizationEntry> _sorobanAuthorisations;
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public List<SorobanAuthorizationEntry> SorobanAuthorizations
         {
             get

@@ -12,6 +12,9 @@ namespace Stellar.RPC
 
         private LedgerKey _ledgerKey;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public LedgerKey LedgerKey
         {
             get
@@ -30,6 +33,9 @@ namespace Stellar.RPC
 
         private LedgerEntry.dataUnion _ledgerEntryData;
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public LedgerEntry.dataUnion LedgerEntryData
         {
             get

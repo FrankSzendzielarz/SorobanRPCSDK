@@ -22,7 +22,7 @@
 		<RootNamespace>Stellar</RootNamespace>
 		<DefineConstants>NATIVE;$(DefineConstants)</DefineConstants>
 		<JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
-		
+		<IsAotCompatible>true</IsAotCompatible>
 		<LangVersion>latest</LangVersion>
 		<Nullable>disable</Nullable>
 		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>

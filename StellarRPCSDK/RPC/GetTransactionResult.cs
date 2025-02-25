@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
+
 namespace Stellar.RPC
 {
 
@@ -11,6 +12,9 @@ namespace Stellar.RPC
     {
         private TransactionResult _transactionResult;
         [ProtoMember(100)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public TransactionResult TransactionResult
         {
             get
@@ -34,6 +38,9 @@ namespace Stellar.RPC
 
         private TransactionMeta _transactionResultMeta;
         [ProtoMember(101)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public TransactionMeta TransactionResultMeta
         {
             get
@@ -56,6 +63,9 @@ namespace Stellar.RPC
         }
         private TransactionEnvelope _transactionEnvelope;
         [ProtoMember(102)]
+#if NATIVE
+        [System.Text.Json.Serialization.JsonIgnore]
+#endif
         public TransactionEnvelope TransactionEnvelope
         {
             get
