@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ProtoGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "--proto \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK_Native\" --grpc-aot \"C:\\Users\\frank\\source\\repos\\SorobanRPCSDK\\StellarRPCSDK_Native\\gRPC\""
+    }
+  }
+}

@@ -9,32 +9,68 @@ using System.Text.RegularExpressions;
 
 namespace Stellar.RPC.Tools
 {
-
     class Program
     {
         static int Main(string[] args)
         {
             try
             {
-                string outputPath = args.Length > 0 ? args[0] : "./";
-
-                var generator = new ProtoBuf.Grpc.Reflection.SchemaGenerator();
-
-                var options = new SchemaGenerationOptions
+                if (args.Length == 0 || args[0] == "--help" || args[0] == "-h")
                 {
-                    Syntax = ProtoSyntax.Proto3,
-                    Package = "stellar.rpc.v1",
-                };
-      
-                foreach (var schema in GetServiceContractTypes())
-                {
-                    options.Package = schema.Key;
-                    var proto = generator.GetSchema(schema.Value.ToArray());
-                    proto= FixEnumZeroValues(proto);
-                    File.WriteAllText(Path.Combine(outputPath,schema.Key+".proto"), proto);
-                }  
+                    Console.WriteLine("Usage: ProtoGenerator [options]");
+                    Console.WriteLine();
+                    Console.WriteLine("Options:");
+                    Console.WriteLine("  --proto <path>       Generate .proto files to specified directory (default: ./proto)");
+                    Console.WriteLine("  --grpc-aot <path>    Generate AOT-compatible gRPC code to specified directory (default: ./GrpcAot)");
+                    Console.WriteLine("  --namespace <ns>     Namespace for generated gRPC code (default: Stellar.RPC.AOT)");
+                    Console.WriteLine("  --help, -h           Show this help message");
+                    return 0;
+                }
 
-                Console.WriteLine($"Generated proto schema at: {outputPath}");
+                string protoOutputPath = "./proto";
+                string grpcAotOutputPath = null;
+                string serviceNamespace = "Stellar.RPC.AOT";
+
+                // Parse command line arguments
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] == "--proto" && i + 1 < args.Length)
+                    {
+                        protoOutputPath = args[++i];
+                    }
+                    else if (args[i] == "--grpc-aot" && i + 1 < args.Length)
+                    {
+                        grpcAotOutputPath = args[++i];
+                    }
+                    else if (args[i] == "--namespace" && i + 1 < args.Length)
+                    {
+                        serviceNamespace = args[++i];
+                    }
+                }
+
+                // Get the assembly containing the service contracts
+                Assembly assembly = Assembly.GetAssembly(typeof(StellarRPCClient));
+
+                // Create output directories if they don't exist
+                Directory.CreateDirectory(protoOutputPath);
+                if (grpcAotOutputPath != null)
+                {
+                    Directory.CreateDirectory(grpcAotOutputPath);
+                }
+
+                // Generate .proto files
+                Console.WriteLine("Generating .proto files...");
+                GenerateProtoFiles(assembly, protoOutputPath);
+
+                // Generate gRPC AOT code if requested
+                if (grpcAotOutputPath != null)
+                {
+                    Console.WriteLine("Generating AOT-compatible gRPC code...");
+                    var generator = new GrpcAotGenerator(assembly, grpcAotOutputPath, serviceNamespace);
+                    generator.GenerateAotGrpcServices();
+                }
+
+                Console.WriteLine("Done!");
                 return 0;
             }
             catch (Exception ex)
@@ -43,6 +79,28 @@ namespace Stellar.RPC.Tools
                 return 1;
             }
         }
+
+        private static void GenerateProtoFiles(Assembly assembly, string outputPath)
+        {
+            var generator = new ProtoBuf.Grpc.Reflection.SchemaGenerator();
+
+            var options = new SchemaGenerationOptions
+            {
+                Syntax = ProtoSyntax.Proto3,
+                Package = "stellar.rpc.v1",
+            };
+
+            foreach (var schema in GetServiceContractTypes(assembly))
+            {
+                options.Package = schema.Key;
+                var proto = generator.GetSchema(schema.Value.ToArray());
+                proto = FixEnumZeroValues(proto);
+                string filePath = Path.Combine(outputPath, schema.Key + ".proto");
+                File.WriteAllText(filePath, proto);
+                Console.WriteLine($"  Generated: {filePath}");
+            }
+        }
+
         public static string FixEnumZeroValues(string protoContent)
         {
             // This pattern matches:
@@ -62,17 +120,15 @@ namespace Stellar.RPC.Tools
                 return $"enum {enumName} {{{Environment.NewLine}   {fixedZeroLine}";
             });
         }
-        public static  Dictionary<string, List<Type>> GetServiceContractTypes()
-        {
-            // Load the assembly
-            Assembly assembly = Assembly.GetAssembly(typeof(StellarRPCClient));
 
+        public static Dictionary<string, List<Type>> GetServiceContractTypes(Assembly assembly)
+        {
             // Find all types decorated with ServiceContract attribute
             var contractsDictionary = assembly.GetTypes()
                 .Where(type => type.GetCustomAttributes(typeof(ServiceContractAttribute), true).Any())
                 .GroupBy(type => type.Namespace)
                 .ToDictionary(
-                    group => group.Key??"",
+                    group => group.Key ?? "",
                     group => group.ToList()
                 );
 
