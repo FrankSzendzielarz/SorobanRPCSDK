@@ -275,8 +275,8 @@ namespace Stellar.RPC.Tools
             }
 
             sb.AppendLine();
-            sb.AppendLine("            // Pre-compile serializers for AOT compatibility");
-            sb.AppendLine("            model.CompileInPlace();");
+            //sb.AppendLine("            // Pre-compile serializers for AOT compatibility");
+            //sb.AppendLine("            model.CompileInPlace();");
             sb.AppendLine("        }");
             sb.AppendLine();
 
@@ -408,7 +408,7 @@ namespace Stellar.RPC.Tools
             sb.AppendLine($"            if (!model.IsDefined(typeof({typeNameWithDots})))");
             sb.AppendLine("            {");
 
-            // Add the type to the model
+            // Add the type to the model - with applyDefaultBehaviour = false
             sb.AppendLine($"                var metaType = model.Add(typeof({typeNameWithDots}), false);");
 
             // Get all properties with ProtoMember attributes
@@ -456,8 +456,12 @@ namespace Stellar.RPC.Tools
                 }
             }
 
+            // IMPORTANT: Set compatibility to Level260 to disable runtime code generation
+            sb.AppendLine($"                metaType.UseConstructor = false;"); // Avoid using constructors
+
             sb.AppendLine("            }");
         }
+
 
 
         private string GetTypeNameWithDotSeparators(Type type)
@@ -592,8 +596,8 @@ namespace Stellar.RPC.Tools
             
             PreserveProtobufAttributes(type, sb);
 
-            sb.AppendLine("            // Pre-compile serializer for AOT compatibility");
-            sb.AppendLine("            model.CompileInPlace();");
+     //       sb.AppendLine("            // Pre-compile serializer for AOT compatibility");
+     //       sb.AppendLine("            model.CompileInPlace();");
             sb.AppendLine("        }");
             sb.AppendLine();
 
@@ -802,7 +806,6 @@ namespace Stellar.RPC.Tools
 
             sb.AppendLine();
 
-
             foreach (var serviceContract in serviceContracts)
             {
                 var serviceName = serviceContract.Name;
@@ -832,7 +835,7 @@ namespace Stellar.RPC.Tools
                     string requestTypeFullName = GetFullTypeNameWithDots(requestType);
                     string responseTypeFullName = GetFullTypeNameWithDots(responseType);
 
-        
+
                     sb.AppendLine($"            endpoints.MapPost(\"/{serviceImplName}/{methodName}\", async context =>");
                     sb.AppendLine("            {");
                     sb.AppendLine($"                var service = context.RequestServices.GetRequiredService<{serviceImplName}GrpcService>();");
@@ -873,7 +876,6 @@ namespace Stellar.RPC.Tools
             sb.AppendLine("        }");
             sb.AppendLine();
 
-        
             // Helper method to create ServerCallContext
             sb.AppendLine("        private static ServerCallContext CreateServerCallContext(HttpContext httpContext)");
             sb.AppendLine("        {");
