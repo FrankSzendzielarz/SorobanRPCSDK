@@ -409,7 +409,7 @@ namespace Stellar.RPC.Tools
             sb.AppendLine("            {");
 
             // Add the type to the model
-            sb.AppendLine($"                var metaType = model.Add(typeof({typeNameWithDots}), true);");
+            sb.AppendLine($"                var metaType = model.Add(typeof({typeNameWithDots}), false);");
 
             // Get all properties with ProtoMember attributes
             var protoMemberProps = type.GetProperties()
@@ -526,38 +526,7 @@ namespace Stellar.RPC.Tools
             return $"{type.Namespace}.{string.Join(".", parts)}";
         }
 
-        // Get typeof expression with dot notation
-        private string GetTypeofExpressionWithDots(Type type)
-        {
-            if (!type.IsNested)
-            {
-                // For non-nested types, use the standard typeof expression
-                return $"typeof({type.FullName})";
-            }
-
-            // For nested types, we need to use the + notation for typeof
-            // because C# doesn't allow nested type access through typeof with dot notation
-            var currentType = type;
-            var declaringTypes = new Stack<string>();
-
-            // Build the hierarchy in reverse
-            while (currentType.IsNested)
-            {
-                declaringTypes.Push(currentType.Name);
-                currentType = currentType.DeclaringType;
-            }
-
-            // Start with the outermost type's full name
-            var typeExpression = currentType.FullName;
-
-            // Add each nested level with + notation
-            while (declaringTypes.Count > 0)
-            {
-                typeExpression += "+" + declaringTypes.Pop();
-            }
-
-            return $"typeof({typeExpression})";
-        }
+      
 
       
 
@@ -904,39 +873,7 @@ namespace Stellar.RPC.Tools
             sb.AppendLine("        }");
             sb.AppendLine();
 
-            // Helper methods for request/response handling
-            sb.AppendLine("        private static async Task<byte[]> ReadRequestBodyAsync(HttpRequest request)");
-            sb.AppendLine("        {");
-            sb.AppendLine("            using (var ms = new MemoryStream())");
-            sb.AppendLine("            {");
-            sb.AppendLine("                await request.Body.CopyToAsync(ms);");
-            sb.AppendLine("                return ms.ToArray();");
-            sb.AppendLine("            }");
-            sb.AppendLine("        }");
-            sb.AppendLine();
-
-            sb.AppendLine("        private static object DeserializeRequest(byte[] requestBytes, Type requestType)");
-            sb.AppendLine("        {");
-            sb.AppendLine("            using (var ms = new MemoryStream(requestBytes))");
-            sb.AppendLine("            {");
-            sb.AppendLine("                return typeof(Serializer).GetMethod(\"Deserialize\", new[] { typeof(Stream) })");
-            sb.AppendLine("                    .MakeGenericMethod(requestType)");
-            sb.AppendLine("                    .Invoke(null, new object[] { ms });");
-            sb.AppendLine("            }");
-            sb.AppendLine("        }");
-            sb.AppendLine();
-
-            sb.AppendLine("        private static byte[] SerializeResponse(object response)");
-            sb.AppendLine("        {");
-            sb.AppendLine("            using (var ms = new MemoryStream())");
-            sb.AppendLine("            {");
-            sb.AppendLine("                typeof(Serializer).GetMethod(\"Serialize\", new[] { typeof(Stream), response.GetType() })");
-            sb.AppendLine("                    .Invoke(null, new object[] { ms, response });");
-            sb.AppendLine("                return ms.ToArray();");
-            sb.AppendLine("            }");
-            sb.AppendLine("        }");
-            sb.AppendLine();
-
+        
             // Helper method to create ServerCallContext
             sb.AppendLine("        private static ServerCallContext CreateServerCallContext(HttpContext httpContext)");
             sb.AppendLine("        {");
