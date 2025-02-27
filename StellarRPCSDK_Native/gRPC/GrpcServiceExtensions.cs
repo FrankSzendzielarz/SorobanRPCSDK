@@ -64,6 +64,7 @@ namespace Stellar.RPC.AOT
             Transaction_ProtoWrapperGrpcMarshaller.ConfigureTypes();
             SimulateTransactionResult_ProtoWrapperGrpcMarshaller.ConfigureTypes();
             StellarRPCClientGrpcMarshaller.ConfigureTypes();
+            EmptyGrpcMarshaller.ConfigureTypes();
             AccountEntryGrpcMarshaller.ConfigureTypes();
             AccountEntryExtensionV1GrpcMarshaller.ConfigureTypes();
             AccountEntryExtensionV2GrpcMarshaller.ConfigureTypes();
@@ -28212,11 +28213,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.Random(request, serverCallContext);
@@ -28278,11 +28276,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetCurrent(request, serverCallContext);
@@ -28374,11 +28369,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.Public(request, serverCallContext);
@@ -28406,11 +28398,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.Test(request, serverCallContext);
@@ -28470,11 +28459,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.UsePublicNetwork(request, serverCallContext);
@@ -28502,11 +28488,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.UseTestNetwork(request, serverCallContext);
@@ -28764,11 +28747,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetFeeStatsAsync(request, serverCallContext);
@@ -28796,11 +28776,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetHealthAsync(request, serverCallContext);
@@ -28828,11 +28805,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetLatestLedgerAsync(request, serverCallContext);
@@ -28892,11 +28866,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetNetworkAsync(request, serverCallContext);
@@ -28988,11 +28959,8 @@ namespace Stellar.RPC.AOT
                 var serverCallContext = CreateServerCallContext(context);
                 try
                 {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+                    // Empty request type - creating new instance without deserializing
+                    var request = new Google.Protobuf.WellKnownTypes.Empty();
 
                     // Call service method
                     var response = await service.GetVersionInfoAsync(request, serverCallContext);

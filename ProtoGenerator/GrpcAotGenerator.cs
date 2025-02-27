@@ -835,7 +835,7 @@ namespace Stellar.RPC.Tools
 
                 sb.AppendLine($"            {serviceImplName}GrpcMarshaller.ConfigureTypes();");
             }
-
+            sb.AppendLine($"            EmptyGrpcMarshaller.ConfigureTypes();");
             // Then the type-specific marshallers
             foreach (var type in protoContractTypes)
             {
@@ -931,22 +931,42 @@ namespace Stellar.RPC.Tools
                     sb.AppendLine("                var serverCallContext = CreateServerCallContext(context);");
                     sb.AppendLine("                try");
                     sb.AppendLine("                {");
-                    sb.AppendLine("                    // Read and deserialize request");
-                    sb.AppendLine("                    using var ms = new MemoryStream();");
-                    sb.AppendLine("                    await context.Request.Body.CopyToAsync(ms);");
-                    sb.AppendLine("                    ms.Position = 0;");
-                    sb.AppendLine($"                    var request = Serializer.Deserialize<{requestTypeFullName}>(ms);");
+                    if (requestType == null || 
+                        requestTypeFullName == "Google.Protobuf.WellKnownTypes.Empty")
+                    {
+                        sb.AppendLine("                    // Empty request type - creating new instance without deserializing");
+                        sb.AppendLine("                    var request = new Google.Protobuf.WellKnownTypes.Empty();");
+                    }
+                    else
+                    {
+                        sb.AppendLine("                    // Read and deserialize request");
+                        sb.AppendLine("                    using var ms = new MemoryStream();");
+                        sb.AppendLine("                    await context.Request.Body.CopyToAsync(ms);");
+                        sb.AppendLine("                    ms.Position = 0;");
+                        sb.AppendLine($"                    var request = Serializer.Deserialize<{requestTypeFullName}>(ms);");
+                    }
                     sb.AppendLine();
                     sb.AppendLine("                    // Call service method");
                     sb.AppendLine($"                    var response = await service.{methodName}(request, serverCallContext);");
                     sb.AppendLine();
-                    sb.AppendLine("                    // Serialize and send response");
-                    sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
-                    sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
-                    sb.AppendLine("                    using var responseMs = new MemoryStream();");
-                    sb.AppendLine("                    Serializer.Serialize(responseMs, response);");
-                    sb.AppendLine("                    responseMs.Position = 0;");
-                    sb.AppendLine("                    await responseMs.CopyToAsync(context.Response.Body);");
+                    //if (responseType == null || responseType == typeof(void) || requestTypeFullName == "Google.Protobuf.WellKnownTypes.Empty")
+                    //{
+                    //    sb.AppendLine("                    // Empty response type - just set headers");
+                    //    sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
+                    //    sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
+                    //    // For Empty, we still need a valid response body even if it's empty
+                    //    sb.AppendLine("                    await context.Response.Body.WriteAsync(new byte[0], 0, 0);");
+                    //}
+                    //else
+                    {
+                        sb.AppendLine("                    // Serialize and send response");
+                        sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
+                        sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
+                        sb.AppendLine("                    using var responseMs = new MemoryStream();");
+                        sb.AppendLine("                    Serializer.Serialize(responseMs, response);");
+                        sb.AppendLine("                    responseMs.Position = 0;");
+                        sb.AppendLine("                    await responseMs.CopyToAsync(context.Response.Body);");
+                    }
                     sb.AppendLine("                }");
                     sb.AppendLine("                catch (Exception ex)");
                     sb.AppendLine("                {");
