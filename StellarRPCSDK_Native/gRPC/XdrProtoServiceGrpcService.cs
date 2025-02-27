@@ -18,7 +18,7 @@ namespace Stellar.RPC.AOT
         public const string ServiceName = "Stellar.XdrProtoService";
 
         /// <summary>Method descriptor for EncodeConfigSettingContractExecutionLanesV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractExecutionLanesV0EncodeRequest, Stellar.ConfigSettingContractExecutionLanesV0EncodeResponse> EncodeConfigSettingContractExecutionLanesV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractExecutionLanesV0EncodeRequest, Stellar.ConfigSettingContractExecutionLanesV0EncodeResponse> EncodeConfigSettingContractExecutionLanesV0 =
             new Method<Stellar.ConfigSettingContractExecutionLanesV0EncodeRequest, Stellar.ConfigSettingContractExecutionLanesV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -27,7 +27,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractExecutionLanesV0EncodeResponseGrpcMarshaller.ConfigSettingContractExecutionLanesV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractExecutionLanesV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest, Stellar.ConfigSettingContractExecutionLanesV0DecodeResponse> DecodeConfigSettingContractExecutionLanesV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest, Stellar.ConfigSettingContractExecutionLanesV0DecodeResponse> DecodeConfigSettingContractExecutionLanesV0 =
             new Method<Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest, Stellar.ConfigSettingContractExecutionLanesV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractExecutionLanesV0DecodeResponseGrpcMarshaller.ConfigSettingContractExecutionLanesV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingContractComputeV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractComputeV0EncodeRequest, Stellar.ConfigSettingContractComputeV0EncodeResponse> EncodeConfigSettingContractComputeV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractComputeV0EncodeRequest, Stellar.ConfigSettingContractComputeV0EncodeResponse> EncodeConfigSettingContractComputeV0 =
             new Method<Stellar.ConfigSettingContractComputeV0EncodeRequest, Stellar.ConfigSettingContractComputeV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -45,7 +45,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractComputeV0EncodeResponseGrpcMarshaller.ConfigSettingContractComputeV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractComputeV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractComputeV0DecodeRequest, Stellar.ConfigSettingContractComputeV0DecodeResponse> DecodeConfigSettingContractComputeV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractComputeV0DecodeRequest, Stellar.ConfigSettingContractComputeV0DecodeResponse> DecodeConfigSettingContractComputeV0 =
             new Method<Stellar.ConfigSettingContractComputeV0DecodeRequest, Stellar.ConfigSettingContractComputeV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -54,7 +54,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractComputeV0DecodeResponseGrpcMarshaller.ConfigSettingContractComputeV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingContractLedgerCostV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractLedgerCostV0EncodeRequest, Stellar.ConfigSettingContractLedgerCostV0EncodeResponse> EncodeConfigSettingContractLedgerCostV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractLedgerCostV0EncodeRequest, Stellar.ConfigSettingContractLedgerCostV0EncodeResponse> EncodeConfigSettingContractLedgerCostV0 =
             new Method<Stellar.ConfigSettingContractLedgerCostV0EncodeRequest, Stellar.ConfigSettingContractLedgerCostV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -63,7 +63,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractLedgerCostV0EncodeResponseGrpcMarshaller.ConfigSettingContractLedgerCostV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractLedgerCostV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractLedgerCostV0DecodeRequest, Stellar.ConfigSettingContractLedgerCostV0DecodeResponse> DecodeConfigSettingContractLedgerCostV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractLedgerCostV0DecodeRequest, Stellar.ConfigSettingContractLedgerCostV0DecodeResponse> DecodeConfigSettingContractLedgerCostV0 =
             new Method<Stellar.ConfigSettingContractLedgerCostV0DecodeRequest, Stellar.ConfigSettingContractLedgerCostV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -72,7 +72,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractLedgerCostV0DecodeResponseGrpcMarshaller.ConfigSettingContractLedgerCostV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingContractHistoricalDataV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractHistoricalDataV0EncodeRequest, Stellar.ConfigSettingContractHistoricalDataV0EncodeResponse> EncodeConfigSettingContractHistoricalDataV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractHistoricalDataV0EncodeRequest, Stellar.ConfigSettingContractHistoricalDataV0EncodeResponse> EncodeConfigSettingContractHistoricalDataV0 =
             new Method<Stellar.ConfigSettingContractHistoricalDataV0EncodeRequest, Stellar.ConfigSettingContractHistoricalDataV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -81,7 +81,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractHistoricalDataV0EncodeResponseGrpcMarshaller.ConfigSettingContractHistoricalDataV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractHistoricalDataV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractHistoricalDataV0DecodeRequest, Stellar.ConfigSettingContractHistoricalDataV0DecodeResponse> DecodeConfigSettingContractHistoricalDataV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractHistoricalDataV0DecodeRequest, Stellar.ConfigSettingContractHistoricalDataV0DecodeResponse> DecodeConfigSettingContractHistoricalDataV0 =
             new Method<Stellar.ConfigSettingContractHistoricalDataV0DecodeRequest, Stellar.ConfigSettingContractHistoricalDataV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -90,7 +90,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractHistoricalDataV0DecodeResponseGrpcMarshaller.ConfigSettingContractHistoricalDataV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingContractEventsV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractEventsV0EncodeRequest, Stellar.ConfigSettingContractEventsV0EncodeResponse> EncodeConfigSettingContractEventsV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractEventsV0EncodeRequest, Stellar.ConfigSettingContractEventsV0EncodeResponse> EncodeConfigSettingContractEventsV0 =
             new Method<Stellar.ConfigSettingContractEventsV0EncodeRequest, Stellar.ConfigSettingContractEventsV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -99,7 +99,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractEventsV0EncodeResponseGrpcMarshaller.ConfigSettingContractEventsV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractEventsV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractEventsV0DecodeRequest, Stellar.ConfigSettingContractEventsV0DecodeResponse> DecodeConfigSettingContractEventsV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractEventsV0DecodeRequest, Stellar.ConfigSettingContractEventsV0DecodeResponse> DecodeConfigSettingContractEventsV0 =
             new Method<Stellar.ConfigSettingContractEventsV0DecodeRequest, Stellar.ConfigSettingContractEventsV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -108,7 +108,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractEventsV0DecodeResponseGrpcMarshaller.ConfigSettingContractEventsV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingContractBandwidthV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractBandwidthV0EncodeRequest, Stellar.ConfigSettingContractBandwidthV0EncodeResponse> EncodeConfigSettingContractBandwidthV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractBandwidthV0EncodeRequest, Stellar.ConfigSettingContractBandwidthV0EncodeResponse> EncodeConfigSettingContractBandwidthV0 =
             new Method<Stellar.ConfigSettingContractBandwidthV0EncodeRequest, Stellar.ConfigSettingContractBandwidthV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -117,7 +117,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractBandwidthV0EncodeResponseGrpcMarshaller.ConfigSettingContractBandwidthV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingContractBandwidthV0</summary>
-        public static readonly Method<Stellar.ConfigSettingContractBandwidthV0DecodeRequest, Stellar.ConfigSettingContractBandwidthV0DecodeResponse> DecodeConfigSettingContractBandwidthV0Method =
+        public static readonly Method<Stellar.ConfigSettingContractBandwidthV0DecodeRequest, Stellar.ConfigSettingContractBandwidthV0DecodeResponse> DecodeConfigSettingContractBandwidthV0 =
             new Method<Stellar.ConfigSettingContractBandwidthV0DecodeRequest, Stellar.ConfigSettingContractBandwidthV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -126,7 +126,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingContractBandwidthV0DecodeResponseGrpcMarshaller.ConfigSettingContractBandwidthV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractCostType</summary>
-        public static readonly Method<Stellar.ContractCostTypeEncodeRequest, Stellar.ContractCostTypeEncodeResponse> EncodeContractCostTypeMethod =
+        public static readonly Method<Stellar.ContractCostTypeEncodeRequest, Stellar.ContractCostTypeEncodeResponse> EncodeContractCostType =
             new Method<Stellar.ContractCostTypeEncodeRequest, Stellar.ContractCostTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -135,7 +135,7 @@ namespace Stellar.RPC.AOT
                 ContractCostTypeEncodeResponseGrpcMarshaller.ContractCostTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractCostType</summary>
-        public static readonly Method<Stellar.ContractCostTypeDecodeRequest, Stellar.ContractCostTypeDecodeResponse> DecodeContractCostTypeMethod =
+        public static readonly Method<Stellar.ContractCostTypeDecodeRequest, Stellar.ContractCostTypeDecodeResponse> DecodeContractCostType =
             new Method<Stellar.ContractCostTypeDecodeRequest, Stellar.ContractCostTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -144,7 +144,7 @@ namespace Stellar.RPC.AOT
                 ContractCostTypeDecodeResponseGrpcMarshaller.ContractCostTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractCostParamEntry</summary>
-        public static readonly Method<Stellar.ContractCostParamEntryEncodeRequest, Stellar.ContractCostParamEntryEncodeResponse> EncodeContractCostParamEntryMethod =
+        public static readonly Method<Stellar.ContractCostParamEntryEncodeRequest, Stellar.ContractCostParamEntryEncodeResponse> EncodeContractCostParamEntry =
             new Method<Stellar.ContractCostParamEntryEncodeRequest, Stellar.ContractCostParamEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -153,7 +153,7 @@ namespace Stellar.RPC.AOT
                 ContractCostParamEntryEncodeResponseGrpcMarshaller.ContractCostParamEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractCostParamEntry</summary>
-        public static readonly Method<Stellar.ContractCostParamEntryDecodeRequest, Stellar.ContractCostParamEntryDecodeResponse> DecodeContractCostParamEntryMethod =
+        public static readonly Method<Stellar.ContractCostParamEntryDecodeRequest, Stellar.ContractCostParamEntryDecodeResponse> DecodeContractCostParamEntry =
             new Method<Stellar.ContractCostParamEntryDecodeRequest, Stellar.ContractCostParamEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -162,7 +162,7 @@ namespace Stellar.RPC.AOT
                 ContractCostParamEntryDecodeResponseGrpcMarshaller.ContractCostParamEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStateArchivalSettings</summary>
-        public static readonly Method<Stellar.StateArchivalSettingsEncodeRequest, Stellar.StateArchivalSettingsEncodeResponse> EncodeStateArchivalSettingsMethod =
+        public static readonly Method<Stellar.StateArchivalSettingsEncodeRequest, Stellar.StateArchivalSettingsEncodeResponse> EncodeStateArchivalSettings =
             new Method<Stellar.StateArchivalSettingsEncodeRequest, Stellar.StateArchivalSettingsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -171,7 +171,7 @@ namespace Stellar.RPC.AOT
                 StateArchivalSettingsEncodeResponseGrpcMarshaller.StateArchivalSettingsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStateArchivalSettings</summary>
-        public static readonly Method<Stellar.StateArchivalSettingsDecodeRequest, Stellar.StateArchivalSettingsDecodeResponse> DecodeStateArchivalSettingsMethod =
+        public static readonly Method<Stellar.StateArchivalSettingsDecodeRequest, Stellar.StateArchivalSettingsDecodeResponse> DecodeStateArchivalSettings =
             new Method<Stellar.StateArchivalSettingsDecodeRequest, Stellar.StateArchivalSettingsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -180,7 +180,7 @@ namespace Stellar.RPC.AOT
                 StateArchivalSettingsDecodeResponseGrpcMarshaller.StateArchivalSettingsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeEvictionIterator</summary>
-        public static readonly Method<Stellar.EvictionIteratorEncodeRequest, Stellar.EvictionIteratorEncodeResponse> EncodeEvictionIteratorMethod =
+        public static readonly Method<Stellar.EvictionIteratorEncodeRequest, Stellar.EvictionIteratorEncodeResponse> EncodeEvictionIterator =
             new Method<Stellar.EvictionIteratorEncodeRequest, Stellar.EvictionIteratorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -189,7 +189,7 @@ namespace Stellar.RPC.AOT
                 EvictionIteratorEncodeResponseGrpcMarshaller.EvictionIteratorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeEvictionIterator</summary>
-        public static readonly Method<Stellar.EvictionIteratorDecodeRequest, Stellar.EvictionIteratorDecodeResponse> DecodeEvictionIteratorMethod =
+        public static readonly Method<Stellar.EvictionIteratorDecodeRequest, Stellar.EvictionIteratorDecodeResponse> DecodeEvictionIterator =
             new Method<Stellar.EvictionIteratorDecodeRequest, Stellar.EvictionIteratorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -198,7 +198,7 @@ namespace Stellar.RPC.AOT
                 EvictionIteratorDecodeResponseGrpcMarshaller.EvictionIteratorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractCostParams</summary>
-        public static readonly Method<Stellar.ContractCostParamsEncodeRequest, Stellar.ContractCostParamsEncodeResponse> EncodeContractCostParamsMethod =
+        public static readonly Method<Stellar.ContractCostParamsEncodeRequest, Stellar.ContractCostParamsEncodeResponse> EncodeContractCostParams =
             new Method<Stellar.ContractCostParamsEncodeRequest, Stellar.ContractCostParamsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -207,7 +207,7 @@ namespace Stellar.RPC.AOT
                 ContractCostParamsEncodeResponseGrpcMarshaller.ContractCostParamsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractCostParams</summary>
-        public static readonly Method<Stellar.ContractCostParamsDecodeRequest, Stellar.ContractCostParamsDecodeResponse> DecodeContractCostParamsMethod =
+        public static readonly Method<Stellar.ContractCostParamsDecodeRequest, Stellar.ContractCostParamsDecodeResponse> DecodeContractCostParams =
             new Method<Stellar.ContractCostParamsDecodeRequest, Stellar.ContractCostParamsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -216,7 +216,7 @@ namespace Stellar.RPC.AOT
                 ContractCostParamsDecodeResponseGrpcMarshaller.ContractCostParamsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingID</summary>
-        public static readonly Method<Stellar.ConfigSettingIDEncodeRequest, Stellar.ConfigSettingIDEncodeResponse> EncodeConfigSettingIDMethod =
+        public static readonly Method<Stellar.ConfigSettingIDEncodeRequest, Stellar.ConfigSettingIDEncodeResponse> EncodeConfigSettingID =
             new Method<Stellar.ConfigSettingIDEncodeRequest, Stellar.ConfigSettingIDEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -225,7 +225,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingIDEncodeResponseGrpcMarshaller.ConfigSettingIDEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingID</summary>
-        public static readonly Method<Stellar.ConfigSettingIDDecodeRequest, Stellar.ConfigSettingIDDecodeResponse> DecodeConfigSettingIDMethod =
+        public static readonly Method<Stellar.ConfigSettingIDDecodeRequest, Stellar.ConfigSettingIDDecodeResponse> DecodeConfigSettingID =
             new Method<Stellar.ConfigSettingIDDecodeRequest, Stellar.ConfigSettingIDDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -234,7 +234,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingIDDecodeResponseGrpcMarshaller.ConfigSettingIDDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigSettingEntry</summary>
-        public static readonly Method<Stellar.ConfigSettingEntryEncodeRequest, Stellar.ConfigSettingEntryEncodeResponse> EncodeConfigSettingEntryMethod =
+        public static readonly Method<Stellar.ConfigSettingEntryEncodeRequest, Stellar.ConfigSettingEntryEncodeResponse> EncodeConfigSettingEntry =
             new Method<Stellar.ConfigSettingEntryEncodeRequest, Stellar.ConfigSettingEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -243,7 +243,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingEntryEncodeResponseGrpcMarshaller.ConfigSettingEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigSettingEntry</summary>
-        public static readonly Method<Stellar.ConfigSettingEntryDecodeRequest, Stellar.ConfigSettingEntryDecodeResponse> DecodeConfigSettingEntryMethod =
+        public static readonly Method<Stellar.ConfigSettingEntryDecodeRequest, Stellar.ConfigSettingEntryDecodeResponse> DecodeConfigSettingEntry =
             new Method<Stellar.ConfigSettingEntryDecodeRequest, Stellar.ConfigSettingEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -252,7 +252,7 @@ namespace Stellar.RPC.AOT
                 ConfigSettingEntryDecodeResponseGrpcMarshaller.ConfigSettingEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCEnvMetaKind</summary>
-        public static readonly Method<Stellar.SCEnvMetaKindEncodeRequest, Stellar.SCEnvMetaKindEncodeResponse> EncodeSCEnvMetaKindMethod =
+        public static readonly Method<Stellar.SCEnvMetaKindEncodeRequest, Stellar.SCEnvMetaKindEncodeResponse> EncodeSCEnvMetaKind =
             new Method<Stellar.SCEnvMetaKindEncodeRequest, Stellar.SCEnvMetaKindEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -261,7 +261,7 @@ namespace Stellar.RPC.AOT
                 SCEnvMetaKindEncodeResponseGrpcMarshaller.SCEnvMetaKindEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCEnvMetaKind</summary>
-        public static readonly Method<Stellar.SCEnvMetaKindDecodeRequest, Stellar.SCEnvMetaKindDecodeResponse> DecodeSCEnvMetaKindMethod =
+        public static readonly Method<Stellar.SCEnvMetaKindDecodeRequest, Stellar.SCEnvMetaKindDecodeResponse> DecodeSCEnvMetaKind =
             new Method<Stellar.SCEnvMetaKindDecodeRequest, Stellar.SCEnvMetaKindDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -270,7 +270,7 @@ namespace Stellar.RPC.AOT
                 SCEnvMetaKindDecodeResponseGrpcMarshaller.SCEnvMetaKindDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCEnvMetaEntry</summary>
-        public static readonly Method<Stellar.SCEnvMetaEntryEncodeRequest, Stellar.SCEnvMetaEntryEncodeResponse> EncodeSCEnvMetaEntryMethod =
+        public static readonly Method<Stellar.SCEnvMetaEntryEncodeRequest, Stellar.SCEnvMetaEntryEncodeResponse> EncodeSCEnvMetaEntry =
             new Method<Stellar.SCEnvMetaEntryEncodeRequest, Stellar.SCEnvMetaEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -279,7 +279,7 @@ namespace Stellar.RPC.AOT
                 SCEnvMetaEntryEncodeResponseGrpcMarshaller.SCEnvMetaEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCEnvMetaEntry</summary>
-        public static readonly Method<Stellar.SCEnvMetaEntryDecodeRequest, Stellar.SCEnvMetaEntryDecodeResponse> DecodeSCEnvMetaEntryMethod =
+        public static readonly Method<Stellar.SCEnvMetaEntryDecodeRequest, Stellar.SCEnvMetaEntryDecodeResponse> DecodeSCEnvMetaEntry =
             new Method<Stellar.SCEnvMetaEntryDecodeRequest, Stellar.SCEnvMetaEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -288,7 +288,7 @@ namespace Stellar.RPC.AOT
                 SCEnvMetaEntryDecodeResponseGrpcMarshaller.SCEnvMetaEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCMetaV0</summary>
-        public static readonly Method<Stellar.SCMetaV0EncodeRequest, Stellar.SCMetaV0EncodeResponse> EncodeSCMetaV0Method =
+        public static readonly Method<Stellar.SCMetaV0EncodeRequest, Stellar.SCMetaV0EncodeResponse> EncodeSCMetaV0 =
             new Method<Stellar.SCMetaV0EncodeRequest, Stellar.SCMetaV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -297,7 +297,7 @@ namespace Stellar.RPC.AOT
                 SCMetaV0EncodeResponseGrpcMarshaller.SCMetaV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCMetaV0</summary>
-        public static readonly Method<Stellar.SCMetaV0DecodeRequest, Stellar.SCMetaV0DecodeResponse> DecodeSCMetaV0Method =
+        public static readonly Method<Stellar.SCMetaV0DecodeRequest, Stellar.SCMetaV0DecodeResponse> DecodeSCMetaV0 =
             new Method<Stellar.SCMetaV0DecodeRequest, Stellar.SCMetaV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -306,7 +306,7 @@ namespace Stellar.RPC.AOT
                 SCMetaV0DecodeResponseGrpcMarshaller.SCMetaV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCMetaKind</summary>
-        public static readonly Method<Stellar.SCMetaKindEncodeRequest, Stellar.SCMetaKindEncodeResponse> EncodeSCMetaKindMethod =
+        public static readonly Method<Stellar.SCMetaKindEncodeRequest, Stellar.SCMetaKindEncodeResponse> EncodeSCMetaKind =
             new Method<Stellar.SCMetaKindEncodeRequest, Stellar.SCMetaKindEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -315,7 +315,7 @@ namespace Stellar.RPC.AOT
                 SCMetaKindEncodeResponseGrpcMarshaller.SCMetaKindEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCMetaKind</summary>
-        public static readonly Method<Stellar.SCMetaKindDecodeRequest, Stellar.SCMetaKindDecodeResponse> DecodeSCMetaKindMethod =
+        public static readonly Method<Stellar.SCMetaKindDecodeRequest, Stellar.SCMetaKindDecodeResponse> DecodeSCMetaKind =
             new Method<Stellar.SCMetaKindDecodeRequest, Stellar.SCMetaKindDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -324,7 +324,7 @@ namespace Stellar.RPC.AOT
                 SCMetaKindDecodeResponseGrpcMarshaller.SCMetaKindDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCMetaEntry</summary>
-        public static readonly Method<Stellar.SCMetaEntryEncodeRequest, Stellar.SCMetaEntryEncodeResponse> EncodeSCMetaEntryMethod =
+        public static readonly Method<Stellar.SCMetaEntryEncodeRequest, Stellar.SCMetaEntryEncodeResponse> EncodeSCMetaEntry =
             new Method<Stellar.SCMetaEntryEncodeRequest, Stellar.SCMetaEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -333,7 +333,7 @@ namespace Stellar.RPC.AOT
                 SCMetaEntryEncodeResponseGrpcMarshaller.SCMetaEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCMetaEntry</summary>
-        public static readonly Method<Stellar.SCMetaEntryDecodeRequest, Stellar.SCMetaEntryDecodeResponse> DecodeSCMetaEntryMethod =
+        public static readonly Method<Stellar.SCMetaEntryDecodeRequest, Stellar.SCMetaEntryDecodeResponse> DecodeSCMetaEntry =
             new Method<Stellar.SCMetaEntryDecodeRequest, Stellar.SCMetaEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -342,7 +342,7 @@ namespace Stellar.RPC.AOT
                 SCMetaEntryDecodeResponseGrpcMarshaller.SCMetaEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecType</summary>
-        public static readonly Method<Stellar.SCSpecTypeEncodeRequest, Stellar.SCSpecTypeEncodeResponse> EncodeSCSpecTypeMethod =
+        public static readonly Method<Stellar.SCSpecTypeEncodeRequest, Stellar.SCSpecTypeEncodeResponse> EncodeSCSpecType =
             new Method<Stellar.SCSpecTypeEncodeRequest, Stellar.SCSpecTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -351,7 +351,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeEncodeResponseGrpcMarshaller.SCSpecTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecType</summary>
-        public static readonly Method<Stellar.SCSpecTypeDecodeRequest, Stellar.SCSpecTypeDecodeResponse> DecodeSCSpecTypeMethod =
+        public static readonly Method<Stellar.SCSpecTypeDecodeRequest, Stellar.SCSpecTypeDecodeResponse> DecodeSCSpecType =
             new Method<Stellar.SCSpecTypeDecodeRequest, Stellar.SCSpecTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -360,7 +360,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeDecodeResponseGrpcMarshaller.SCSpecTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeOption</summary>
-        public static readonly Method<Stellar.SCSpecTypeOptionEncodeRequest, Stellar.SCSpecTypeOptionEncodeResponse> EncodeSCSpecTypeOptionMethod =
+        public static readonly Method<Stellar.SCSpecTypeOptionEncodeRequest, Stellar.SCSpecTypeOptionEncodeResponse> EncodeSCSpecTypeOption =
             new Method<Stellar.SCSpecTypeOptionEncodeRequest, Stellar.SCSpecTypeOptionEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -369,7 +369,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeOptionEncodeResponseGrpcMarshaller.SCSpecTypeOptionEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeOption</summary>
-        public static readonly Method<Stellar.SCSpecTypeOptionDecodeRequest, Stellar.SCSpecTypeOptionDecodeResponse> DecodeSCSpecTypeOptionMethod =
+        public static readonly Method<Stellar.SCSpecTypeOptionDecodeRequest, Stellar.SCSpecTypeOptionDecodeResponse> DecodeSCSpecTypeOption =
             new Method<Stellar.SCSpecTypeOptionDecodeRequest, Stellar.SCSpecTypeOptionDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -378,7 +378,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeOptionDecodeResponseGrpcMarshaller.SCSpecTypeOptionDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeResult</summary>
-        public static readonly Method<Stellar.SCSpecTypeResultEncodeRequest, Stellar.SCSpecTypeResultEncodeResponse> EncodeSCSpecTypeResultMethod =
+        public static readonly Method<Stellar.SCSpecTypeResultEncodeRequest, Stellar.SCSpecTypeResultEncodeResponse> EncodeSCSpecTypeResult =
             new Method<Stellar.SCSpecTypeResultEncodeRequest, Stellar.SCSpecTypeResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -387,7 +387,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeResultEncodeResponseGrpcMarshaller.SCSpecTypeResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeResult</summary>
-        public static readonly Method<Stellar.SCSpecTypeResultDecodeRequest, Stellar.SCSpecTypeResultDecodeResponse> DecodeSCSpecTypeResultMethod =
+        public static readonly Method<Stellar.SCSpecTypeResultDecodeRequest, Stellar.SCSpecTypeResultDecodeResponse> DecodeSCSpecTypeResult =
             new Method<Stellar.SCSpecTypeResultDecodeRequest, Stellar.SCSpecTypeResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -396,7 +396,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeResultDecodeResponseGrpcMarshaller.SCSpecTypeResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeVec</summary>
-        public static readonly Method<Stellar.SCSpecTypeVecEncodeRequest, Stellar.SCSpecTypeVecEncodeResponse> EncodeSCSpecTypeVecMethod =
+        public static readonly Method<Stellar.SCSpecTypeVecEncodeRequest, Stellar.SCSpecTypeVecEncodeResponse> EncodeSCSpecTypeVec =
             new Method<Stellar.SCSpecTypeVecEncodeRequest, Stellar.SCSpecTypeVecEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -405,7 +405,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeVecEncodeResponseGrpcMarshaller.SCSpecTypeVecEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeVec</summary>
-        public static readonly Method<Stellar.SCSpecTypeVecDecodeRequest, Stellar.SCSpecTypeVecDecodeResponse> DecodeSCSpecTypeVecMethod =
+        public static readonly Method<Stellar.SCSpecTypeVecDecodeRequest, Stellar.SCSpecTypeVecDecodeResponse> DecodeSCSpecTypeVec =
             new Method<Stellar.SCSpecTypeVecDecodeRequest, Stellar.SCSpecTypeVecDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -414,7 +414,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeVecDecodeResponseGrpcMarshaller.SCSpecTypeVecDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeMap</summary>
-        public static readonly Method<Stellar.SCSpecTypeMapEncodeRequest, Stellar.SCSpecTypeMapEncodeResponse> EncodeSCSpecTypeMapMethod =
+        public static readonly Method<Stellar.SCSpecTypeMapEncodeRequest, Stellar.SCSpecTypeMapEncodeResponse> EncodeSCSpecTypeMap =
             new Method<Stellar.SCSpecTypeMapEncodeRequest, Stellar.SCSpecTypeMapEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -423,7 +423,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeMapEncodeResponseGrpcMarshaller.SCSpecTypeMapEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeMap</summary>
-        public static readonly Method<Stellar.SCSpecTypeMapDecodeRequest, Stellar.SCSpecTypeMapDecodeResponse> DecodeSCSpecTypeMapMethod =
+        public static readonly Method<Stellar.SCSpecTypeMapDecodeRequest, Stellar.SCSpecTypeMapDecodeResponse> DecodeSCSpecTypeMap =
             new Method<Stellar.SCSpecTypeMapDecodeRequest, Stellar.SCSpecTypeMapDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -432,7 +432,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeMapDecodeResponseGrpcMarshaller.SCSpecTypeMapDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeTuple</summary>
-        public static readonly Method<Stellar.SCSpecTypeTupleEncodeRequest, Stellar.SCSpecTypeTupleEncodeResponse> EncodeSCSpecTypeTupleMethod =
+        public static readonly Method<Stellar.SCSpecTypeTupleEncodeRequest, Stellar.SCSpecTypeTupleEncodeResponse> EncodeSCSpecTypeTuple =
             new Method<Stellar.SCSpecTypeTupleEncodeRequest, Stellar.SCSpecTypeTupleEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -441,7 +441,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeTupleEncodeResponseGrpcMarshaller.SCSpecTypeTupleEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeTuple</summary>
-        public static readonly Method<Stellar.SCSpecTypeTupleDecodeRequest, Stellar.SCSpecTypeTupleDecodeResponse> DecodeSCSpecTypeTupleMethod =
+        public static readonly Method<Stellar.SCSpecTypeTupleDecodeRequest, Stellar.SCSpecTypeTupleDecodeResponse> DecodeSCSpecTypeTuple =
             new Method<Stellar.SCSpecTypeTupleDecodeRequest, Stellar.SCSpecTypeTupleDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -450,7 +450,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeTupleDecodeResponseGrpcMarshaller.SCSpecTypeTupleDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeBytesN</summary>
-        public static readonly Method<Stellar.SCSpecTypeBytesNEncodeRequest, Stellar.SCSpecTypeBytesNEncodeResponse> EncodeSCSpecTypeBytesNMethod =
+        public static readonly Method<Stellar.SCSpecTypeBytesNEncodeRequest, Stellar.SCSpecTypeBytesNEncodeResponse> EncodeSCSpecTypeBytesN =
             new Method<Stellar.SCSpecTypeBytesNEncodeRequest, Stellar.SCSpecTypeBytesNEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -459,7 +459,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeBytesNEncodeResponseGrpcMarshaller.SCSpecTypeBytesNEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeBytesN</summary>
-        public static readonly Method<Stellar.SCSpecTypeBytesNDecodeRequest, Stellar.SCSpecTypeBytesNDecodeResponse> DecodeSCSpecTypeBytesNMethod =
+        public static readonly Method<Stellar.SCSpecTypeBytesNDecodeRequest, Stellar.SCSpecTypeBytesNDecodeResponse> DecodeSCSpecTypeBytesN =
             new Method<Stellar.SCSpecTypeBytesNDecodeRequest, Stellar.SCSpecTypeBytesNDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -468,7 +468,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeBytesNDecodeResponseGrpcMarshaller.SCSpecTypeBytesNDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeUDT</summary>
-        public static readonly Method<Stellar.SCSpecTypeUDTEncodeRequest, Stellar.SCSpecTypeUDTEncodeResponse> EncodeSCSpecTypeUDTMethod =
+        public static readonly Method<Stellar.SCSpecTypeUDTEncodeRequest, Stellar.SCSpecTypeUDTEncodeResponse> EncodeSCSpecTypeUDT =
             new Method<Stellar.SCSpecTypeUDTEncodeRequest, Stellar.SCSpecTypeUDTEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -477,7 +477,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeUDTEncodeResponseGrpcMarshaller.SCSpecTypeUDTEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeUDT</summary>
-        public static readonly Method<Stellar.SCSpecTypeUDTDecodeRequest, Stellar.SCSpecTypeUDTDecodeResponse> DecodeSCSpecTypeUDTMethod =
+        public static readonly Method<Stellar.SCSpecTypeUDTDecodeRequest, Stellar.SCSpecTypeUDTDecodeResponse> DecodeSCSpecTypeUDT =
             new Method<Stellar.SCSpecTypeUDTDecodeRequest, Stellar.SCSpecTypeUDTDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -486,7 +486,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeUDTDecodeResponseGrpcMarshaller.SCSpecTypeUDTDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecTypeDef</summary>
-        public static readonly Method<Stellar.SCSpecTypeDefEncodeRequest, Stellar.SCSpecTypeDefEncodeResponse> EncodeSCSpecTypeDefMethod =
+        public static readonly Method<Stellar.SCSpecTypeDefEncodeRequest, Stellar.SCSpecTypeDefEncodeResponse> EncodeSCSpecTypeDef =
             new Method<Stellar.SCSpecTypeDefEncodeRequest, Stellar.SCSpecTypeDefEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -495,7 +495,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeDefEncodeResponseGrpcMarshaller.SCSpecTypeDefEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecTypeDef</summary>
-        public static readonly Method<Stellar.SCSpecTypeDefDecodeRequest, Stellar.SCSpecTypeDefDecodeResponse> DecodeSCSpecTypeDefMethod =
+        public static readonly Method<Stellar.SCSpecTypeDefDecodeRequest, Stellar.SCSpecTypeDefDecodeResponse> DecodeSCSpecTypeDef =
             new Method<Stellar.SCSpecTypeDefDecodeRequest, Stellar.SCSpecTypeDefDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -504,7 +504,7 @@ namespace Stellar.RPC.AOT
                 SCSpecTypeDefDecodeResponseGrpcMarshaller.SCSpecTypeDefDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTStructFieldV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTStructFieldV0EncodeRequest, Stellar.SCSpecUDTStructFieldV0EncodeResponse> EncodeSCSpecUDTStructFieldV0Method =
+        public static readonly Method<Stellar.SCSpecUDTStructFieldV0EncodeRequest, Stellar.SCSpecUDTStructFieldV0EncodeResponse> EncodeSCSpecUDTStructFieldV0 =
             new Method<Stellar.SCSpecUDTStructFieldV0EncodeRequest, Stellar.SCSpecUDTStructFieldV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -513,7 +513,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTStructFieldV0EncodeResponseGrpcMarshaller.SCSpecUDTStructFieldV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTStructFieldV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTStructFieldV0DecodeRequest, Stellar.SCSpecUDTStructFieldV0DecodeResponse> DecodeSCSpecUDTStructFieldV0Method =
+        public static readonly Method<Stellar.SCSpecUDTStructFieldV0DecodeRequest, Stellar.SCSpecUDTStructFieldV0DecodeResponse> DecodeSCSpecUDTStructFieldV0 =
             new Method<Stellar.SCSpecUDTStructFieldV0DecodeRequest, Stellar.SCSpecUDTStructFieldV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -522,7 +522,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTStructFieldV0DecodeResponseGrpcMarshaller.SCSpecUDTStructFieldV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTStructV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTStructV0EncodeRequest, Stellar.SCSpecUDTStructV0EncodeResponse> EncodeSCSpecUDTStructV0Method =
+        public static readonly Method<Stellar.SCSpecUDTStructV0EncodeRequest, Stellar.SCSpecUDTStructV0EncodeResponse> EncodeSCSpecUDTStructV0 =
             new Method<Stellar.SCSpecUDTStructV0EncodeRequest, Stellar.SCSpecUDTStructV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -531,7 +531,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTStructV0EncodeResponseGrpcMarshaller.SCSpecUDTStructV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTStructV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTStructV0DecodeRequest, Stellar.SCSpecUDTStructV0DecodeResponse> DecodeSCSpecUDTStructV0Method =
+        public static readonly Method<Stellar.SCSpecUDTStructV0DecodeRequest, Stellar.SCSpecUDTStructV0DecodeResponse> DecodeSCSpecUDTStructV0 =
             new Method<Stellar.SCSpecUDTStructV0DecodeRequest, Stellar.SCSpecUDTStructV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -540,7 +540,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTStructV0DecodeResponseGrpcMarshaller.SCSpecUDTStructV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTUnionCaseVoidV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseVoidV0EncodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0EncodeResponse> EncodeSCSpecUDTUnionCaseVoidV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseVoidV0EncodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0EncodeResponse> EncodeSCSpecUDTUnionCaseVoidV0 =
             new Method<Stellar.SCSpecUDTUnionCaseVoidV0EncodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -549,7 +549,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseVoidV0EncodeResponseGrpcMarshaller.SCSpecUDTUnionCaseVoidV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTUnionCaseVoidV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseVoidV0DecodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0DecodeResponse> DecodeSCSpecUDTUnionCaseVoidV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseVoidV0DecodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0DecodeResponse> DecodeSCSpecUDTUnionCaseVoidV0 =
             new Method<Stellar.SCSpecUDTUnionCaseVoidV0DecodeRequest, Stellar.SCSpecUDTUnionCaseVoidV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -558,7 +558,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseVoidV0DecodeResponseGrpcMarshaller.SCSpecUDTUnionCaseVoidV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTUnionCaseTupleV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseTupleV0EncodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0EncodeResponse> EncodeSCSpecUDTUnionCaseTupleV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseTupleV0EncodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0EncodeResponse> EncodeSCSpecUDTUnionCaseTupleV0 =
             new Method<Stellar.SCSpecUDTUnionCaseTupleV0EncodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -567,7 +567,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseTupleV0EncodeResponseGrpcMarshaller.SCSpecUDTUnionCaseTupleV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTUnionCaseTupleV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseTupleV0DecodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0DecodeResponse> DecodeSCSpecUDTUnionCaseTupleV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseTupleV0DecodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0DecodeResponse> DecodeSCSpecUDTUnionCaseTupleV0 =
             new Method<Stellar.SCSpecUDTUnionCaseTupleV0DecodeRequest, Stellar.SCSpecUDTUnionCaseTupleV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -576,7 +576,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseTupleV0DecodeResponseGrpcMarshaller.SCSpecUDTUnionCaseTupleV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTUnionCaseV0Kind</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0KindEncodeRequest, Stellar.SCSpecUDTUnionCaseV0KindEncodeResponse> EncodeSCSpecUDTUnionCaseV0KindMethod =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0KindEncodeRequest, Stellar.SCSpecUDTUnionCaseV0KindEncodeResponse> EncodeSCSpecUDTUnionCaseV0Kind =
             new Method<Stellar.SCSpecUDTUnionCaseV0KindEncodeRequest, Stellar.SCSpecUDTUnionCaseV0KindEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -585,7 +585,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseV0KindEncodeResponseGrpcMarshaller.SCSpecUDTUnionCaseV0KindEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTUnionCaseV0Kind</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0KindDecodeRequest, Stellar.SCSpecUDTUnionCaseV0KindDecodeResponse> DecodeSCSpecUDTUnionCaseV0KindMethod =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0KindDecodeRequest, Stellar.SCSpecUDTUnionCaseV0KindDecodeResponse> DecodeSCSpecUDTUnionCaseV0Kind =
             new Method<Stellar.SCSpecUDTUnionCaseV0KindDecodeRequest, Stellar.SCSpecUDTUnionCaseV0KindDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -594,7 +594,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseV0KindDecodeResponseGrpcMarshaller.SCSpecUDTUnionCaseV0KindDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTUnionCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0EncodeRequest, Stellar.SCSpecUDTUnionCaseV0EncodeResponse> EncodeSCSpecUDTUnionCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0EncodeRequest, Stellar.SCSpecUDTUnionCaseV0EncodeResponse> EncodeSCSpecUDTUnionCaseV0 =
             new Method<Stellar.SCSpecUDTUnionCaseV0EncodeRequest, Stellar.SCSpecUDTUnionCaseV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -603,7 +603,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseV0EncodeResponseGrpcMarshaller.SCSpecUDTUnionCaseV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTUnionCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0DecodeRequest, Stellar.SCSpecUDTUnionCaseV0DecodeResponse> DecodeSCSpecUDTUnionCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionCaseV0DecodeRequest, Stellar.SCSpecUDTUnionCaseV0DecodeResponse> DecodeSCSpecUDTUnionCaseV0 =
             new Method<Stellar.SCSpecUDTUnionCaseV0DecodeRequest, Stellar.SCSpecUDTUnionCaseV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -612,7 +612,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionCaseV0DecodeResponseGrpcMarshaller.SCSpecUDTUnionCaseV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTUnionV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionV0EncodeRequest, Stellar.SCSpecUDTUnionV0EncodeResponse> EncodeSCSpecUDTUnionV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionV0EncodeRequest, Stellar.SCSpecUDTUnionV0EncodeResponse> EncodeSCSpecUDTUnionV0 =
             new Method<Stellar.SCSpecUDTUnionV0EncodeRequest, Stellar.SCSpecUDTUnionV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -621,7 +621,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionV0EncodeResponseGrpcMarshaller.SCSpecUDTUnionV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTUnionV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTUnionV0DecodeRequest, Stellar.SCSpecUDTUnionV0DecodeResponse> DecodeSCSpecUDTUnionV0Method =
+        public static readonly Method<Stellar.SCSpecUDTUnionV0DecodeRequest, Stellar.SCSpecUDTUnionV0DecodeResponse> DecodeSCSpecUDTUnionV0 =
             new Method<Stellar.SCSpecUDTUnionV0DecodeRequest, Stellar.SCSpecUDTUnionV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -630,7 +630,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTUnionV0DecodeResponseGrpcMarshaller.SCSpecUDTUnionV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTEnumCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTEnumCaseV0EncodeRequest, Stellar.SCSpecUDTEnumCaseV0EncodeResponse> EncodeSCSpecUDTEnumCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTEnumCaseV0EncodeRequest, Stellar.SCSpecUDTEnumCaseV0EncodeResponse> EncodeSCSpecUDTEnumCaseV0 =
             new Method<Stellar.SCSpecUDTEnumCaseV0EncodeRequest, Stellar.SCSpecUDTEnumCaseV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -639,7 +639,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTEnumCaseV0EncodeResponseGrpcMarshaller.SCSpecUDTEnumCaseV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTEnumCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTEnumCaseV0DecodeRequest, Stellar.SCSpecUDTEnumCaseV0DecodeResponse> DecodeSCSpecUDTEnumCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTEnumCaseV0DecodeRequest, Stellar.SCSpecUDTEnumCaseV0DecodeResponse> DecodeSCSpecUDTEnumCaseV0 =
             new Method<Stellar.SCSpecUDTEnumCaseV0DecodeRequest, Stellar.SCSpecUDTEnumCaseV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -648,7 +648,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTEnumCaseV0DecodeResponseGrpcMarshaller.SCSpecUDTEnumCaseV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTEnumV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTEnumV0EncodeRequest, Stellar.SCSpecUDTEnumV0EncodeResponse> EncodeSCSpecUDTEnumV0Method =
+        public static readonly Method<Stellar.SCSpecUDTEnumV0EncodeRequest, Stellar.SCSpecUDTEnumV0EncodeResponse> EncodeSCSpecUDTEnumV0 =
             new Method<Stellar.SCSpecUDTEnumV0EncodeRequest, Stellar.SCSpecUDTEnumV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -657,7 +657,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTEnumV0EncodeResponseGrpcMarshaller.SCSpecUDTEnumV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTEnumV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTEnumV0DecodeRequest, Stellar.SCSpecUDTEnumV0DecodeResponse> DecodeSCSpecUDTEnumV0Method =
+        public static readonly Method<Stellar.SCSpecUDTEnumV0DecodeRequest, Stellar.SCSpecUDTEnumV0DecodeResponse> DecodeSCSpecUDTEnumV0 =
             new Method<Stellar.SCSpecUDTEnumV0DecodeRequest, Stellar.SCSpecUDTEnumV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -666,7 +666,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTEnumV0DecodeResponseGrpcMarshaller.SCSpecUDTEnumV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTErrorEnumCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTErrorEnumCaseV0EncodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0EncodeResponse> EncodeSCSpecUDTErrorEnumCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTErrorEnumCaseV0EncodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0EncodeResponse> EncodeSCSpecUDTErrorEnumCaseV0 =
             new Method<Stellar.SCSpecUDTErrorEnumCaseV0EncodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -675,7 +675,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTErrorEnumCaseV0EncodeResponseGrpcMarshaller.SCSpecUDTErrorEnumCaseV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTErrorEnumCaseV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTErrorEnumCaseV0DecodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0DecodeResponse> DecodeSCSpecUDTErrorEnumCaseV0Method =
+        public static readonly Method<Stellar.SCSpecUDTErrorEnumCaseV0DecodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0DecodeResponse> DecodeSCSpecUDTErrorEnumCaseV0 =
             new Method<Stellar.SCSpecUDTErrorEnumCaseV0DecodeRequest, Stellar.SCSpecUDTErrorEnumCaseV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -684,7 +684,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTErrorEnumCaseV0DecodeResponseGrpcMarshaller.SCSpecUDTErrorEnumCaseV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecUDTErrorEnumV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTErrorEnumV0EncodeRequest, Stellar.SCSpecUDTErrorEnumV0EncodeResponse> EncodeSCSpecUDTErrorEnumV0Method =
+        public static readonly Method<Stellar.SCSpecUDTErrorEnumV0EncodeRequest, Stellar.SCSpecUDTErrorEnumV0EncodeResponse> EncodeSCSpecUDTErrorEnumV0 =
             new Method<Stellar.SCSpecUDTErrorEnumV0EncodeRequest, Stellar.SCSpecUDTErrorEnumV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -693,7 +693,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTErrorEnumV0EncodeResponseGrpcMarshaller.SCSpecUDTErrorEnumV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecUDTErrorEnumV0</summary>
-        public static readonly Method<Stellar.SCSpecUDTErrorEnumV0DecodeRequest, Stellar.SCSpecUDTErrorEnumV0DecodeResponse> DecodeSCSpecUDTErrorEnumV0Method =
+        public static readonly Method<Stellar.SCSpecUDTErrorEnumV0DecodeRequest, Stellar.SCSpecUDTErrorEnumV0DecodeResponse> DecodeSCSpecUDTErrorEnumV0 =
             new Method<Stellar.SCSpecUDTErrorEnumV0DecodeRequest, Stellar.SCSpecUDTErrorEnumV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -702,7 +702,7 @@ namespace Stellar.RPC.AOT
                 SCSpecUDTErrorEnumV0DecodeResponseGrpcMarshaller.SCSpecUDTErrorEnumV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecFunctionInputV0</summary>
-        public static readonly Method<Stellar.SCSpecFunctionInputV0EncodeRequest, Stellar.SCSpecFunctionInputV0EncodeResponse> EncodeSCSpecFunctionInputV0Method =
+        public static readonly Method<Stellar.SCSpecFunctionInputV0EncodeRequest, Stellar.SCSpecFunctionInputV0EncodeResponse> EncodeSCSpecFunctionInputV0 =
             new Method<Stellar.SCSpecFunctionInputV0EncodeRequest, Stellar.SCSpecFunctionInputV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -711,7 +711,7 @@ namespace Stellar.RPC.AOT
                 SCSpecFunctionInputV0EncodeResponseGrpcMarshaller.SCSpecFunctionInputV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecFunctionInputV0</summary>
-        public static readonly Method<Stellar.SCSpecFunctionInputV0DecodeRequest, Stellar.SCSpecFunctionInputV0DecodeResponse> DecodeSCSpecFunctionInputV0Method =
+        public static readonly Method<Stellar.SCSpecFunctionInputV0DecodeRequest, Stellar.SCSpecFunctionInputV0DecodeResponse> DecodeSCSpecFunctionInputV0 =
             new Method<Stellar.SCSpecFunctionInputV0DecodeRequest, Stellar.SCSpecFunctionInputV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -720,7 +720,7 @@ namespace Stellar.RPC.AOT
                 SCSpecFunctionInputV0DecodeResponseGrpcMarshaller.SCSpecFunctionInputV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecFunctionV0</summary>
-        public static readonly Method<Stellar.SCSpecFunctionV0EncodeRequest, Stellar.SCSpecFunctionV0EncodeResponse> EncodeSCSpecFunctionV0Method =
+        public static readonly Method<Stellar.SCSpecFunctionV0EncodeRequest, Stellar.SCSpecFunctionV0EncodeResponse> EncodeSCSpecFunctionV0 =
             new Method<Stellar.SCSpecFunctionV0EncodeRequest, Stellar.SCSpecFunctionV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -729,7 +729,7 @@ namespace Stellar.RPC.AOT
                 SCSpecFunctionV0EncodeResponseGrpcMarshaller.SCSpecFunctionV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecFunctionV0</summary>
-        public static readonly Method<Stellar.SCSpecFunctionV0DecodeRequest, Stellar.SCSpecFunctionV0DecodeResponse> DecodeSCSpecFunctionV0Method =
+        public static readonly Method<Stellar.SCSpecFunctionV0DecodeRequest, Stellar.SCSpecFunctionV0DecodeResponse> DecodeSCSpecFunctionV0 =
             new Method<Stellar.SCSpecFunctionV0DecodeRequest, Stellar.SCSpecFunctionV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -738,7 +738,7 @@ namespace Stellar.RPC.AOT
                 SCSpecFunctionV0DecodeResponseGrpcMarshaller.SCSpecFunctionV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecEntryKind</summary>
-        public static readonly Method<Stellar.SCSpecEntryKindEncodeRequest, Stellar.SCSpecEntryKindEncodeResponse> EncodeSCSpecEntryKindMethod =
+        public static readonly Method<Stellar.SCSpecEntryKindEncodeRequest, Stellar.SCSpecEntryKindEncodeResponse> EncodeSCSpecEntryKind =
             new Method<Stellar.SCSpecEntryKindEncodeRequest, Stellar.SCSpecEntryKindEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -747,7 +747,7 @@ namespace Stellar.RPC.AOT
                 SCSpecEntryKindEncodeResponseGrpcMarshaller.SCSpecEntryKindEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecEntryKind</summary>
-        public static readonly Method<Stellar.SCSpecEntryKindDecodeRequest, Stellar.SCSpecEntryKindDecodeResponse> DecodeSCSpecEntryKindMethod =
+        public static readonly Method<Stellar.SCSpecEntryKindDecodeRequest, Stellar.SCSpecEntryKindDecodeResponse> DecodeSCSpecEntryKind =
             new Method<Stellar.SCSpecEntryKindDecodeRequest, Stellar.SCSpecEntryKindDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -756,7 +756,7 @@ namespace Stellar.RPC.AOT
                 SCSpecEntryKindDecodeResponseGrpcMarshaller.SCSpecEntryKindDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSpecEntry</summary>
-        public static readonly Method<Stellar.SCSpecEntryEncodeRequest, Stellar.SCSpecEntryEncodeResponse> EncodeSCSpecEntryMethod =
+        public static readonly Method<Stellar.SCSpecEntryEncodeRequest, Stellar.SCSpecEntryEncodeResponse> EncodeSCSpecEntry =
             new Method<Stellar.SCSpecEntryEncodeRequest, Stellar.SCSpecEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -765,7 +765,7 @@ namespace Stellar.RPC.AOT
                 SCSpecEntryEncodeResponseGrpcMarshaller.SCSpecEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSpecEntry</summary>
-        public static readonly Method<Stellar.SCSpecEntryDecodeRequest, Stellar.SCSpecEntryDecodeResponse> DecodeSCSpecEntryMethod =
+        public static readonly Method<Stellar.SCSpecEntryDecodeRequest, Stellar.SCSpecEntryDecodeResponse> DecodeSCSpecEntry =
             new Method<Stellar.SCSpecEntryDecodeRequest, Stellar.SCSpecEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -774,7 +774,7 @@ namespace Stellar.RPC.AOT
                 SCSpecEntryDecodeResponseGrpcMarshaller.SCSpecEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCValType</summary>
-        public static readonly Method<Stellar.SCValTypeEncodeRequest, Stellar.SCValTypeEncodeResponse> EncodeSCValTypeMethod =
+        public static readonly Method<Stellar.SCValTypeEncodeRequest, Stellar.SCValTypeEncodeResponse> EncodeSCValType =
             new Method<Stellar.SCValTypeEncodeRequest, Stellar.SCValTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -783,7 +783,7 @@ namespace Stellar.RPC.AOT
                 SCValTypeEncodeResponseGrpcMarshaller.SCValTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCValType</summary>
-        public static readonly Method<Stellar.SCValTypeDecodeRequest, Stellar.SCValTypeDecodeResponse> DecodeSCValTypeMethod =
+        public static readonly Method<Stellar.SCValTypeDecodeRequest, Stellar.SCValTypeDecodeResponse> DecodeSCValType =
             new Method<Stellar.SCValTypeDecodeRequest, Stellar.SCValTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -792,7 +792,7 @@ namespace Stellar.RPC.AOT
                 SCValTypeDecodeResponseGrpcMarshaller.SCValTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCErrorType</summary>
-        public static readonly Method<Stellar.SCErrorTypeEncodeRequest, Stellar.SCErrorTypeEncodeResponse> EncodeSCErrorTypeMethod =
+        public static readonly Method<Stellar.SCErrorTypeEncodeRequest, Stellar.SCErrorTypeEncodeResponse> EncodeSCErrorType =
             new Method<Stellar.SCErrorTypeEncodeRequest, Stellar.SCErrorTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -801,7 +801,7 @@ namespace Stellar.RPC.AOT
                 SCErrorTypeEncodeResponseGrpcMarshaller.SCErrorTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCErrorType</summary>
-        public static readonly Method<Stellar.SCErrorTypeDecodeRequest, Stellar.SCErrorTypeDecodeResponse> DecodeSCErrorTypeMethod =
+        public static readonly Method<Stellar.SCErrorTypeDecodeRequest, Stellar.SCErrorTypeDecodeResponse> DecodeSCErrorType =
             new Method<Stellar.SCErrorTypeDecodeRequest, Stellar.SCErrorTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -810,7 +810,7 @@ namespace Stellar.RPC.AOT
                 SCErrorTypeDecodeResponseGrpcMarshaller.SCErrorTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCErrorCode</summary>
-        public static readonly Method<Stellar.SCErrorCodeEncodeRequest, Stellar.SCErrorCodeEncodeResponse> EncodeSCErrorCodeMethod =
+        public static readonly Method<Stellar.SCErrorCodeEncodeRequest, Stellar.SCErrorCodeEncodeResponse> EncodeSCErrorCode =
             new Method<Stellar.SCErrorCodeEncodeRequest, Stellar.SCErrorCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -819,7 +819,7 @@ namespace Stellar.RPC.AOT
                 SCErrorCodeEncodeResponseGrpcMarshaller.SCErrorCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCErrorCode</summary>
-        public static readonly Method<Stellar.SCErrorCodeDecodeRequest, Stellar.SCErrorCodeDecodeResponse> DecodeSCErrorCodeMethod =
+        public static readonly Method<Stellar.SCErrorCodeDecodeRequest, Stellar.SCErrorCodeDecodeResponse> DecodeSCErrorCode =
             new Method<Stellar.SCErrorCodeDecodeRequest, Stellar.SCErrorCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -828,7 +828,7 @@ namespace Stellar.RPC.AOT
                 SCErrorCodeDecodeResponseGrpcMarshaller.SCErrorCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCError</summary>
-        public static readonly Method<Stellar.SCErrorEncodeRequest, Stellar.SCErrorEncodeResponse> EncodeSCErrorMethod =
+        public static readonly Method<Stellar.SCErrorEncodeRequest, Stellar.SCErrorEncodeResponse> EncodeSCError =
             new Method<Stellar.SCErrorEncodeRequest, Stellar.SCErrorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -837,7 +837,7 @@ namespace Stellar.RPC.AOT
                 SCErrorEncodeResponseGrpcMarshaller.SCErrorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCError</summary>
-        public static readonly Method<Stellar.SCErrorDecodeRequest, Stellar.SCErrorDecodeResponse> DecodeSCErrorMethod =
+        public static readonly Method<Stellar.SCErrorDecodeRequest, Stellar.SCErrorDecodeResponse> DecodeSCError =
             new Method<Stellar.SCErrorDecodeRequest, Stellar.SCErrorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -846,7 +846,7 @@ namespace Stellar.RPC.AOT
                 SCErrorDecodeResponseGrpcMarshaller.SCErrorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeUInt128Parts</summary>
-        public static readonly Method<Stellar.UInt128PartsEncodeRequest, Stellar.UInt128PartsEncodeResponse> EncodeUInt128PartsMethod =
+        public static readonly Method<Stellar.UInt128PartsEncodeRequest, Stellar.UInt128PartsEncodeResponse> EncodeUInt128Parts =
             new Method<Stellar.UInt128PartsEncodeRequest, Stellar.UInt128PartsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -855,7 +855,7 @@ namespace Stellar.RPC.AOT
                 UInt128PartsEncodeResponseGrpcMarshaller.UInt128PartsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeUInt128Parts</summary>
-        public static readonly Method<Stellar.UInt128PartsDecodeRequest, Stellar.UInt128PartsDecodeResponse> DecodeUInt128PartsMethod =
+        public static readonly Method<Stellar.UInt128PartsDecodeRequest, Stellar.UInt128PartsDecodeResponse> DecodeUInt128Parts =
             new Method<Stellar.UInt128PartsDecodeRequest, Stellar.UInt128PartsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -864,7 +864,7 @@ namespace Stellar.RPC.AOT
                 UInt128PartsDecodeResponseGrpcMarshaller.UInt128PartsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInt128Parts</summary>
-        public static readonly Method<Stellar.Int128PartsEncodeRequest, Stellar.Int128PartsEncodeResponse> EncodeInt128PartsMethod =
+        public static readonly Method<Stellar.Int128PartsEncodeRequest, Stellar.Int128PartsEncodeResponse> EncodeInt128Parts =
             new Method<Stellar.Int128PartsEncodeRequest, Stellar.Int128PartsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -873,7 +873,7 @@ namespace Stellar.RPC.AOT
                 Int128PartsEncodeResponseGrpcMarshaller.Int128PartsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInt128Parts</summary>
-        public static readonly Method<Stellar.Int128PartsDecodeRequest, Stellar.Int128PartsDecodeResponse> DecodeInt128PartsMethod =
+        public static readonly Method<Stellar.Int128PartsDecodeRequest, Stellar.Int128PartsDecodeResponse> DecodeInt128Parts =
             new Method<Stellar.Int128PartsDecodeRequest, Stellar.Int128PartsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -882,7 +882,7 @@ namespace Stellar.RPC.AOT
                 Int128PartsDecodeResponseGrpcMarshaller.Int128PartsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeUInt256Parts</summary>
-        public static readonly Method<Stellar.UInt256PartsEncodeRequest, Stellar.UInt256PartsEncodeResponse> EncodeUInt256PartsMethod =
+        public static readonly Method<Stellar.UInt256PartsEncodeRequest, Stellar.UInt256PartsEncodeResponse> EncodeUInt256Parts =
             new Method<Stellar.UInt256PartsEncodeRequest, Stellar.UInt256PartsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -891,7 +891,7 @@ namespace Stellar.RPC.AOT
                 UInt256PartsEncodeResponseGrpcMarshaller.UInt256PartsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeUInt256Parts</summary>
-        public static readonly Method<Stellar.UInt256PartsDecodeRequest, Stellar.UInt256PartsDecodeResponse> DecodeUInt256PartsMethod =
+        public static readonly Method<Stellar.UInt256PartsDecodeRequest, Stellar.UInt256PartsDecodeResponse> DecodeUInt256Parts =
             new Method<Stellar.UInt256PartsDecodeRequest, Stellar.UInt256PartsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -900,7 +900,7 @@ namespace Stellar.RPC.AOT
                 UInt256PartsDecodeResponseGrpcMarshaller.UInt256PartsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInt256Parts</summary>
-        public static readonly Method<Stellar.Int256PartsEncodeRequest, Stellar.Int256PartsEncodeResponse> EncodeInt256PartsMethod =
+        public static readonly Method<Stellar.Int256PartsEncodeRequest, Stellar.Int256PartsEncodeResponse> EncodeInt256Parts =
             new Method<Stellar.Int256PartsEncodeRequest, Stellar.Int256PartsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -909,7 +909,7 @@ namespace Stellar.RPC.AOT
                 Int256PartsEncodeResponseGrpcMarshaller.Int256PartsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInt256Parts</summary>
-        public static readonly Method<Stellar.Int256PartsDecodeRequest, Stellar.Int256PartsDecodeResponse> DecodeInt256PartsMethod =
+        public static readonly Method<Stellar.Int256PartsDecodeRequest, Stellar.Int256PartsDecodeResponse> DecodeInt256Parts =
             new Method<Stellar.Int256PartsDecodeRequest, Stellar.Int256PartsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -918,7 +918,7 @@ namespace Stellar.RPC.AOT
                 Int256PartsDecodeResponseGrpcMarshaller.Int256PartsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractExecutableType</summary>
-        public static readonly Method<Stellar.ContractExecutableTypeEncodeRequest, Stellar.ContractExecutableTypeEncodeResponse> EncodeContractExecutableTypeMethod =
+        public static readonly Method<Stellar.ContractExecutableTypeEncodeRequest, Stellar.ContractExecutableTypeEncodeResponse> EncodeContractExecutableType =
             new Method<Stellar.ContractExecutableTypeEncodeRequest, Stellar.ContractExecutableTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -927,7 +927,7 @@ namespace Stellar.RPC.AOT
                 ContractExecutableTypeEncodeResponseGrpcMarshaller.ContractExecutableTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractExecutableType</summary>
-        public static readonly Method<Stellar.ContractExecutableTypeDecodeRequest, Stellar.ContractExecutableTypeDecodeResponse> DecodeContractExecutableTypeMethod =
+        public static readonly Method<Stellar.ContractExecutableTypeDecodeRequest, Stellar.ContractExecutableTypeDecodeResponse> DecodeContractExecutableType =
             new Method<Stellar.ContractExecutableTypeDecodeRequest, Stellar.ContractExecutableTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -936,7 +936,7 @@ namespace Stellar.RPC.AOT
                 ContractExecutableTypeDecodeResponseGrpcMarshaller.ContractExecutableTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractExecutable</summary>
-        public static readonly Method<Stellar.ContractExecutableEncodeRequest, Stellar.ContractExecutableEncodeResponse> EncodeContractExecutableMethod =
+        public static readonly Method<Stellar.ContractExecutableEncodeRequest, Stellar.ContractExecutableEncodeResponse> EncodeContractExecutable =
             new Method<Stellar.ContractExecutableEncodeRequest, Stellar.ContractExecutableEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -945,7 +945,7 @@ namespace Stellar.RPC.AOT
                 ContractExecutableEncodeResponseGrpcMarshaller.ContractExecutableEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractExecutable</summary>
-        public static readonly Method<Stellar.ContractExecutableDecodeRequest, Stellar.ContractExecutableDecodeResponse> DecodeContractExecutableMethod =
+        public static readonly Method<Stellar.ContractExecutableDecodeRequest, Stellar.ContractExecutableDecodeResponse> DecodeContractExecutable =
             new Method<Stellar.ContractExecutableDecodeRequest, Stellar.ContractExecutableDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -954,7 +954,7 @@ namespace Stellar.RPC.AOT
                 ContractExecutableDecodeResponseGrpcMarshaller.ContractExecutableDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCAddressType</summary>
-        public static readonly Method<Stellar.SCAddressTypeEncodeRequest, Stellar.SCAddressTypeEncodeResponse> EncodeSCAddressTypeMethod =
+        public static readonly Method<Stellar.SCAddressTypeEncodeRequest, Stellar.SCAddressTypeEncodeResponse> EncodeSCAddressType =
             new Method<Stellar.SCAddressTypeEncodeRequest, Stellar.SCAddressTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -963,7 +963,7 @@ namespace Stellar.RPC.AOT
                 SCAddressTypeEncodeResponseGrpcMarshaller.SCAddressTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCAddressType</summary>
-        public static readonly Method<Stellar.SCAddressTypeDecodeRequest, Stellar.SCAddressTypeDecodeResponse> DecodeSCAddressTypeMethod =
+        public static readonly Method<Stellar.SCAddressTypeDecodeRequest, Stellar.SCAddressTypeDecodeResponse> DecodeSCAddressType =
             new Method<Stellar.SCAddressTypeDecodeRequest, Stellar.SCAddressTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -972,7 +972,7 @@ namespace Stellar.RPC.AOT
                 SCAddressTypeDecodeResponseGrpcMarshaller.SCAddressTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCAddress</summary>
-        public static readonly Method<Stellar.SCAddressEncodeRequest, Stellar.SCAddressEncodeResponse> EncodeSCAddressMethod =
+        public static readonly Method<Stellar.SCAddressEncodeRequest, Stellar.SCAddressEncodeResponse> EncodeSCAddress =
             new Method<Stellar.SCAddressEncodeRequest, Stellar.SCAddressEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -981,7 +981,7 @@ namespace Stellar.RPC.AOT
                 SCAddressEncodeResponseGrpcMarshaller.SCAddressEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCAddress</summary>
-        public static readonly Method<Stellar.SCAddressDecodeRequest, Stellar.SCAddressDecodeResponse> DecodeSCAddressMethod =
+        public static readonly Method<Stellar.SCAddressDecodeRequest, Stellar.SCAddressDecodeResponse> DecodeSCAddress =
             new Method<Stellar.SCAddressDecodeRequest, Stellar.SCAddressDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -990,7 +990,7 @@ namespace Stellar.RPC.AOT
                 SCAddressDecodeResponseGrpcMarshaller.SCAddressDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCVec</summary>
-        public static readonly Method<Stellar.SCVecEncodeRequest, Stellar.SCVecEncodeResponse> EncodeSCVecMethod =
+        public static readonly Method<Stellar.SCVecEncodeRequest, Stellar.SCVecEncodeResponse> EncodeSCVec =
             new Method<Stellar.SCVecEncodeRequest, Stellar.SCVecEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -999,7 +999,7 @@ namespace Stellar.RPC.AOT
                 SCVecEncodeResponseGrpcMarshaller.SCVecEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCVec</summary>
-        public static readonly Method<Stellar.SCVecDecodeRequest, Stellar.SCVecDecodeResponse> DecodeSCVecMethod =
+        public static readonly Method<Stellar.SCVecDecodeRequest, Stellar.SCVecDecodeResponse> DecodeSCVec =
             new Method<Stellar.SCVecDecodeRequest, Stellar.SCVecDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1008,7 +1008,7 @@ namespace Stellar.RPC.AOT
                 SCVecDecodeResponseGrpcMarshaller.SCVecDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCMap</summary>
-        public static readonly Method<Stellar.SCMapEncodeRequest, Stellar.SCMapEncodeResponse> EncodeSCMapMethod =
+        public static readonly Method<Stellar.SCMapEncodeRequest, Stellar.SCMapEncodeResponse> EncodeSCMap =
             new Method<Stellar.SCMapEncodeRequest, Stellar.SCMapEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1017,7 +1017,7 @@ namespace Stellar.RPC.AOT
                 SCMapEncodeResponseGrpcMarshaller.SCMapEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCMap</summary>
-        public static readonly Method<Stellar.SCMapDecodeRequest, Stellar.SCMapDecodeResponse> DecodeSCMapMethod =
+        public static readonly Method<Stellar.SCMapDecodeRequest, Stellar.SCMapDecodeResponse> DecodeSCMap =
             new Method<Stellar.SCMapDecodeRequest, Stellar.SCMapDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1026,7 +1026,7 @@ namespace Stellar.RPC.AOT
                 SCMapDecodeResponseGrpcMarshaller.SCMapDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCBytes</summary>
-        public static readonly Method<Stellar.SCBytesEncodeRequest, Stellar.SCBytesEncodeResponse> EncodeSCBytesMethod =
+        public static readonly Method<Stellar.SCBytesEncodeRequest, Stellar.SCBytesEncodeResponse> EncodeSCBytes =
             new Method<Stellar.SCBytesEncodeRequest, Stellar.SCBytesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1035,7 +1035,7 @@ namespace Stellar.RPC.AOT
                 SCBytesEncodeResponseGrpcMarshaller.SCBytesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCBytes</summary>
-        public static readonly Method<Stellar.SCBytesDecodeRequest, Stellar.SCBytesDecodeResponse> DecodeSCBytesMethod =
+        public static readonly Method<Stellar.SCBytesDecodeRequest, Stellar.SCBytesDecodeResponse> DecodeSCBytes =
             new Method<Stellar.SCBytesDecodeRequest, Stellar.SCBytesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1044,7 +1044,7 @@ namespace Stellar.RPC.AOT
                 SCBytesDecodeResponseGrpcMarshaller.SCBytesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCString</summary>
-        public static readonly Method<Stellar.SCStringEncodeRequest, Stellar.SCStringEncodeResponse> EncodeSCStringMethod =
+        public static readonly Method<Stellar.SCStringEncodeRequest, Stellar.SCStringEncodeResponse> EncodeSCString =
             new Method<Stellar.SCStringEncodeRequest, Stellar.SCStringEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1053,7 +1053,7 @@ namespace Stellar.RPC.AOT
                 SCStringEncodeResponseGrpcMarshaller.SCStringEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCString</summary>
-        public static readonly Method<Stellar.SCStringDecodeRequest, Stellar.SCStringDecodeResponse> DecodeSCStringMethod =
+        public static readonly Method<Stellar.SCStringDecodeRequest, Stellar.SCStringDecodeResponse> DecodeSCString =
             new Method<Stellar.SCStringDecodeRequest, Stellar.SCStringDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1062,7 +1062,7 @@ namespace Stellar.RPC.AOT
                 SCStringDecodeResponseGrpcMarshaller.SCStringDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCSymbol</summary>
-        public static readonly Method<Stellar.SCSymbolEncodeRequest, Stellar.SCSymbolEncodeResponse> EncodeSCSymbolMethod =
+        public static readonly Method<Stellar.SCSymbolEncodeRequest, Stellar.SCSymbolEncodeResponse> EncodeSCSymbol =
             new Method<Stellar.SCSymbolEncodeRequest, Stellar.SCSymbolEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1071,7 +1071,7 @@ namespace Stellar.RPC.AOT
                 SCSymbolEncodeResponseGrpcMarshaller.SCSymbolEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCSymbol</summary>
-        public static readonly Method<Stellar.SCSymbolDecodeRequest, Stellar.SCSymbolDecodeResponse> DecodeSCSymbolMethod =
+        public static readonly Method<Stellar.SCSymbolDecodeRequest, Stellar.SCSymbolDecodeResponse> DecodeSCSymbol =
             new Method<Stellar.SCSymbolDecodeRequest, Stellar.SCSymbolDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1080,7 +1080,7 @@ namespace Stellar.RPC.AOT
                 SCSymbolDecodeResponseGrpcMarshaller.SCSymbolDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCNonceKey</summary>
-        public static readonly Method<Stellar.SCNonceKeyEncodeRequest, Stellar.SCNonceKeyEncodeResponse> EncodeSCNonceKeyMethod =
+        public static readonly Method<Stellar.SCNonceKeyEncodeRequest, Stellar.SCNonceKeyEncodeResponse> EncodeSCNonceKey =
             new Method<Stellar.SCNonceKeyEncodeRequest, Stellar.SCNonceKeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1089,7 +1089,7 @@ namespace Stellar.RPC.AOT
                 SCNonceKeyEncodeResponseGrpcMarshaller.SCNonceKeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCNonceKey</summary>
-        public static readonly Method<Stellar.SCNonceKeyDecodeRequest, Stellar.SCNonceKeyDecodeResponse> DecodeSCNonceKeyMethod =
+        public static readonly Method<Stellar.SCNonceKeyDecodeRequest, Stellar.SCNonceKeyDecodeResponse> DecodeSCNonceKey =
             new Method<Stellar.SCNonceKeyDecodeRequest, Stellar.SCNonceKeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1098,7 +1098,7 @@ namespace Stellar.RPC.AOT
                 SCNonceKeyDecodeResponseGrpcMarshaller.SCNonceKeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCContractInstance</summary>
-        public static readonly Method<Stellar.SCContractInstanceEncodeRequest, Stellar.SCContractInstanceEncodeResponse> EncodeSCContractInstanceMethod =
+        public static readonly Method<Stellar.SCContractInstanceEncodeRequest, Stellar.SCContractInstanceEncodeResponse> EncodeSCContractInstance =
             new Method<Stellar.SCContractInstanceEncodeRequest, Stellar.SCContractInstanceEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1107,7 +1107,7 @@ namespace Stellar.RPC.AOT
                 SCContractInstanceEncodeResponseGrpcMarshaller.SCContractInstanceEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCContractInstance</summary>
-        public static readonly Method<Stellar.SCContractInstanceDecodeRequest, Stellar.SCContractInstanceDecodeResponse> DecodeSCContractInstanceMethod =
+        public static readonly Method<Stellar.SCContractInstanceDecodeRequest, Stellar.SCContractInstanceDecodeResponse> DecodeSCContractInstance =
             new Method<Stellar.SCContractInstanceDecodeRequest, Stellar.SCContractInstanceDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1116,7 +1116,7 @@ namespace Stellar.RPC.AOT
                 SCContractInstanceDecodeResponseGrpcMarshaller.SCContractInstanceDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCVal</summary>
-        public static readonly Method<Stellar.SCValEncodeRequest, Stellar.SCValEncodeResponse> EncodeSCValMethod =
+        public static readonly Method<Stellar.SCValEncodeRequest, Stellar.SCValEncodeResponse> EncodeSCVal =
             new Method<Stellar.SCValEncodeRequest, Stellar.SCValEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1125,7 +1125,7 @@ namespace Stellar.RPC.AOT
                 SCValEncodeResponseGrpcMarshaller.SCValEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCVal</summary>
-        public static readonly Method<Stellar.SCValDecodeRequest, Stellar.SCValDecodeResponse> DecodeSCValMethod =
+        public static readonly Method<Stellar.SCValDecodeRequest, Stellar.SCValDecodeResponse> DecodeSCVal =
             new Method<Stellar.SCValDecodeRequest, Stellar.SCValDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1134,7 +1134,7 @@ namespace Stellar.RPC.AOT
                 SCValDecodeResponseGrpcMarshaller.SCValDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCMapEntry</summary>
-        public static readonly Method<Stellar.SCMapEntryEncodeRequest, Stellar.SCMapEntryEncodeResponse> EncodeSCMapEntryMethod =
+        public static readonly Method<Stellar.SCMapEntryEncodeRequest, Stellar.SCMapEntryEncodeResponse> EncodeSCMapEntry =
             new Method<Stellar.SCMapEntryEncodeRequest, Stellar.SCMapEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1143,7 +1143,7 @@ namespace Stellar.RPC.AOT
                 SCMapEntryEncodeResponseGrpcMarshaller.SCMapEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCMapEntry</summary>
-        public static readonly Method<Stellar.SCMapEntryDecodeRequest, Stellar.SCMapEntryDecodeResponse> DecodeSCMapEntryMethod =
+        public static readonly Method<Stellar.SCMapEntryDecodeRequest, Stellar.SCMapEntryDecodeResponse> DecodeSCMapEntry =
             new Method<Stellar.SCMapEntryDecodeRequest, Stellar.SCMapEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1152,7 +1152,7 @@ namespace Stellar.RPC.AOT
                 SCMapEntryDecodeResponseGrpcMarshaller.SCMapEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStoredTransactionSet</summary>
-        public static readonly Method<Stellar.StoredTransactionSetEncodeRequest, Stellar.StoredTransactionSetEncodeResponse> EncodeStoredTransactionSetMethod =
+        public static readonly Method<Stellar.StoredTransactionSetEncodeRequest, Stellar.StoredTransactionSetEncodeResponse> EncodeStoredTransactionSet =
             new Method<Stellar.StoredTransactionSetEncodeRequest, Stellar.StoredTransactionSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1161,7 +1161,7 @@ namespace Stellar.RPC.AOT
                 StoredTransactionSetEncodeResponseGrpcMarshaller.StoredTransactionSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStoredTransactionSet</summary>
-        public static readonly Method<Stellar.StoredTransactionSetDecodeRequest, Stellar.StoredTransactionSetDecodeResponse> DecodeStoredTransactionSetMethod =
+        public static readonly Method<Stellar.StoredTransactionSetDecodeRequest, Stellar.StoredTransactionSetDecodeResponse> DecodeStoredTransactionSet =
             new Method<Stellar.StoredTransactionSetDecodeRequest, Stellar.StoredTransactionSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1170,7 +1170,7 @@ namespace Stellar.RPC.AOT
                 StoredTransactionSetDecodeResponseGrpcMarshaller.StoredTransactionSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStoredDebugTransactionSet</summary>
-        public static readonly Method<Stellar.StoredDebugTransactionSetEncodeRequest, Stellar.StoredDebugTransactionSetEncodeResponse> EncodeStoredDebugTransactionSetMethod =
+        public static readonly Method<Stellar.StoredDebugTransactionSetEncodeRequest, Stellar.StoredDebugTransactionSetEncodeResponse> EncodeStoredDebugTransactionSet =
             new Method<Stellar.StoredDebugTransactionSetEncodeRequest, Stellar.StoredDebugTransactionSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1179,7 +1179,7 @@ namespace Stellar.RPC.AOT
                 StoredDebugTransactionSetEncodeResponseGrpcMarshaller.StoredDebugTransactionSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStoredDebugTransactionSet</summary>
-        public static readonly Method<Stellar.StoredDebugTransactionSetDecodeRequest, Stellar.StoredDebugTransactionSetDecodeResponse> DecodeStoredDebugTransactionSetMethod =
+        public static readonly Method<Stellar.StoredDebugTransactionSetDecodeRequest, Stellar.StoredDebugTransactionSetDecodeResponse> DecodeStoredDebugTransactionSet =
             new Method<Stellar.StoredDebugTransactionSetDecodeRequest, Stellar.StoredDebugTransactionSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1188,7 +1188,7 @@ namespace Stellar.RPC.AOT
                 StoredDebugTransactionSetDecodeResponseGrpcMarshaller.StoredDebugTransactionSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePersistedSCPStateV0</summary>
-        public static readonly Method<Stellar.PersistedSCPStateV0EncodeRequest, Stellar.PersistedSCPStateV0EncodeResponse> EncodePersistedSCPStateV0Method =
+        public static readonly Method<Stellar.PersistedSCPStateV0EncodeRequest, Stellar.PersistedSCPStateV0EncodeResponse> EncodePersistedSCPStateV0 =
             new Method<Stellar.PersistedSCPStateV0EncodeRequest, Stellar.PersistedSCPStateV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1197,7 +1197,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateV0EncodeResponseGrpcMarshaller.PersistedSCPStateV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePersistedSCPStateV0</summary>
-        public static readonly Method<Stellar.PersistedSCPStateV0DecodeRequest, Stellar.PersistedSCPStateV0DecodeResponse> DecodePersistedSCPStateV0Method =
+        public static readonly Method<Stellar.PersistedSCPStateV0DecodeRequest, Stellar.PersistedSCPStateV0DecodeResponse> DecodePersistedSCPStateV0 =
             new Method<Stellar.PersistedSCPStateV0DecodeRequest, Stellar.PersistedSCPStateV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1206,7 +1206,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateV0DecodeResponseGrpcMarshaller.PersistedSCPStateV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePersistedSCPStateV1</summary>
-        public static readonly Method<Stellar.PersistedSCPStateV1EncodeRequest, Stellar.PersistedSCPStateV1EncodeResponse> EncodePersistedSCPStateV1Method =
+        public static readonly Method<Stellar.PersistedSCPStateV1EncodeRequest, Stellar.PersistedSCPStateV1EncodeResponse> EncodePersistedSCPStateV1 =
             new Method<Stellar.PersistedSCPStateV1EncodeRequest, Stellar.PersistedSCPStateV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1215,7 +1215,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateV1EncodeResponseGrpcMarshaller.PersistedSCPStateV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePersistedSCPStateV1</summary>
-        public static readonly Method<Stellar.PersistedSCPStateV1DecodeRequest, Stellar.PersistedSCPStateV1DecodeResponse> DecodePersistedSCPStateV1Method =
+        public static readonly Method<Stellar.PersistedSCPStateV1DecodeRequest, Stellar.PersistedSCPStateV1DecodeResponse> DecodePersistedSCPStateV1 =
             new Method<Stellar.PersistedSCPStateV1DecodeRequest, Stellar.PersistedSCPStateV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1224,7 +1224,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateV1DecodeResponseGrpcMarshaller.PersistedSCPStateV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePersistedSCPState</summary>
-        public static readonly Method<Stellar.PersistedSCPStateEncodeRequest, Stellar.PersistedSCPStateEncodeResponse> EncodePersistedSCPStateMethod =
+        public static readonly Method<Stellar.PersistedSCPStateEncodeRequest, Stellar.PersistedSCPStateEncodeResponse> EncodePersistedSCPState =
             new Method<Stellar.PersistedSCPStateEncodeRequest, Stellar.PersistedSCPStateEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1233,7 +1233,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateEncodeResponseGrpcMarshaller.PersistedSCPStateEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePersistedSCPState</summary>
-        public static readonly Method<Stellar.PersistedSCPStateDecodeRequest, Stellar.PersistedSCPStateDecodeResponse> DecodePersistedSCPStateMethod =
+        public static readonly Method<Stellar.PersistedSCPStateDecodeRequest, Stellar.PersistedSCPStateDecodeResponse> DecodePersistedSCPState =
             new Method<Stellar.PersistedSCPStateDecodeRequest, Stellar.PersistedSCPStateDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1242,7 +1242,7 @@ namespace Stellar.RPC.AOT
                 PersistedSCPStateDecodeResponseGrpcMarshaller.PersistedSCPStateDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeThresholds</summary>
-        public static readonly Method<Stellar.ThresholdsEncodeRequest, Stellar.ThresholdsEncodeResponse> EncodeThresholdsMethod =
+        public static readonly Method<Stellar.ThresholdsEncodeRequest, Stellar.ThresholdsEncodeResponse> EncodeThresholds =
             new Method<Stellar.ThresholdsEncodeRequest, Stellar.ThresholdsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1251,7 +1251,7 @@ namespace Stellar.RPC.AOT
                 ThresholdsEncodeResponseGrpcMarshaller.ThresholdsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeThresholds</summary>
-        public static readonly Method<Stellar.ThresholdsDecodeRequest, Stellar.ThresholdsDecodeResponse> DecodeThresholdsMethod =
+        public static readonly Method<Stellar.ThresholdsDecodeRequest, Stellar.ThresholdsDecodeResponse> DecodeThresholds =
             new Method<Stellar.ThresholdsDecodeRequest, Stellar.ThresholdsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1260,7 +1260,7 @@ namespace Stellar.RPC.AOT
                 ThresholdsDecodeResponseGrpcMarshaller.ThresholdsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodestring32</summary>
-        public static readonly Method<Stellar.string32EncodeRequest, Stellar.string32EncodeResponse> Encodestring32Method =
+        public static readonly Method<Stellar.string32EncodeRequest, Stellar.string32EncodeResponse> Encodestring32 =
             new Method<Stellar.string32EncodeRequest, Stellar.string32EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1269,7 +1269,7 @@ namespace Stellar.RPC.AOT
                 string32EncodeResponseGrpcMarshaller.string32EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodestring32</summary>
-        public static readonly Method<Stellar.string32DecodeRequest, Stellar.string32DecodeResponse> Decodestring32Method =
+        public static readonly Method<Stellar.string32DecodeRequest, Stellar.string32DecodeResponse> Decodestring32 =
             new Method<Stellar.string32DecodeRequest, Stellar.string32DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1278,7 +1278,7 @@ namespace Stellar.RPC.AOT
                 string32DecodeResponseGrpcMarshaller.string32DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodestring64</summary>
-        public static readonly Method<Stellar.string64EncodeRequest, Stellar.string64EncodeResponse> Encodestring64Method =
+        public static readonly Method<Stellar.string64EncodeRequest, Stellar.string64EncodeResponse> Encodestring64 =
             new Method<Stellar.string64EncodeRequest, Stellar.string64EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1287,7 +1287,7 @@ namespace Stellar.RPC.AOT
                 string64EncodeResponseGrpcMarshaller.string64EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodestring64</summary>
-        public static readonly Method<Stellar.string64DecodeRequest, Stellar.string64DecodeResponse> Decodestring64Method =
+        public static readonly Method<Stellar.string64DecodeRequest, Stellar.string64DecodeResponse> Decodestring64 =
             new Method<Stellar.string64DecodeRequest, Stellar.string64DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1296,7 +1296,7 @@ namespace Stellar.RPC.AOT
                 string64DecodeResponseGrpcMarshaller.string64DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSequenceNumber</summary>
-        public static readonly Method<Stellar.SequenceNumberEncodeRequest, Stellar.SequenceNumberEncodeResponse> EncodeSequenceNumberMethod =
+        public static readonly Method<Stellar.SequenceNumberEncodeRequest, Stellar.SequenceNumberEncodeResponse> EncodeSequenceNumber =
             new Method<Stellar.SequenceNumberEncodeRequest, Stellar.SequenceNumberEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1305,7 +1305,7 @@ namespace Stellar.RPC.AOT
                 SequenceNumberEncodeResponseGrpcMarshaller.SequenceNumberEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSequenceNumber</summary>
-        public static readonly Method<Stellar.SequenceNumberDecodeRequest, Stellar.SequenceNumberDecodeResponse> DecodeSequenceNumberMethod =
+        public static readonly Method<Stellar.SequenceNumberDecodeRequest, Stellar.SequenceNumberDecodeResponse> DecodeSequenceNumber =
             new Method<Stellar.SequenceNumberDecodeRequest, Stellar.SequenceNumberDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1314,7 +1314,7 @@ namespace Stellar.RPC.AOT
                 SequenceNumberDecodeResponseGrpcMarshaller.SequenceNumberDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDataValue</summary>
-        public static readonly Method<Stellar.DataValueEncodeRequest, Stellar.DataValueEncodeResponse> EncodeDataValueMethod =
+        public static readonly Method<Stellar.DataValueEncodeRequest, Stellar.DataValueEncodeResponse> EncodeDataValue =
             new Method<Stellar.DataValueEncodeRequest, Stellar.DataValueEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1323,7 +1323,7 @@ namespace Stellar.RPC.AOT
                 DataValueEncodeResponseGrpcMarshaller.DataValueEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDataValue</summary>
-        public static readonly Method<Stellar.DataValueDecodeRequest, Stellar.DataValueDecodeResponse> DecodeDataValueMethod =
+        public static readonly Method<Stellar.DataValueDecodeRequest, Stellar.DataValueDecodeResponse> DecodeDataValue =
             new Method<Stellar.DataValueDecodeRequest, Stellar.DataValueDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1332,7 +1332,7 @@ namespace Stellar.RPC.AOT
                 DataValueDecodeResponseGrpcMarshaller.DataValueDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePoolID</summary>
-        public static readonly Method<Stellar.PoolIDEncodeRequest, Stellar.PoolIDEncodeResponse> EncodePoolIDMethod =
+        public static readonly Method<Stellar.PoolIDEncodeRequest, Stellar.PoolIDEncodeResponse> EncodePoolID =
             new Method<Stellar.PoolIDEncodeRequest, Stellar.PoolIDEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1341,7 +1341,7 @@ namespace Stellar.RPC.AOT
                 PoolIDEncodeResponseGrpcMarshaller.PoolIDEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePoolID</summary>
-        public static readonly Method<Stellar.PoolIDDecodeRequest, Stellar.PoolIDDecodeResponse> DecodePoolIDMethod =
+        public static readonly Method<Stellar.PoolIDDecodeRequest, Stellar.PoolIDDecodeResponse> DecodePoolID =
             new Method<Stellar.PoolIDDecodeRequest, Stellar.PoolIDDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1350,7 +1350,7 @@ namespace Stellar.RPC.AOT
                 PoolIDDecodeResponseGrpcMarshaller.PoolIDDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAssetCode4</summary>
-        public static readonly Method<Stellar.AssetCode4EncodeRequest, Stellar.AssetCode4EncodeResponse> EncodeAssetCode4Method =
+        public static readonly Method<Stellar.AssetCode4EncodeRequest, Stellar.AssetCode4EncodeResponse> EncodeAssetCode4 =
             new Method<Stellar.AssetCode4EncodeRequest, Stellar.AssetCode4EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1359,7 +1359,7 @@ namespace Stellar.RPC.AOT
                 AssetCode4EncodeResponseGrpcMarshaller.AssetCode4EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAssetCode4</summary>
-        public static readonly Method<Stellar.AssetCode4DecodeRequest, Stellar.AssetCode4DecodeResponse> DecodeAssetCode4Method =
+        public static readonly Method<Stellar.AssetCode4DecodeRequest, Stellar.AssetCode4DecodeResponse> DecodeAssetCode4 =
             new Method<Stellar.AssetCode4DecodeRequest, Stellar.AssetCode4DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1368,7 +1368,7 @@ namespace Stellar.RPC.AOT
                 AssetCode4DecodeResponseGrpcMarshaller.AssetCode4DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAssetCode12</summary>
-        public static readonly Method<Stellar.AssetCode12EncodeRequest, Stellar.AssetCode12EncodeResponse> EncodeAssetCode12Method =
+        public static readonly Method<Stellar.AssetCode12EncodeRequest, Stellar.AssetCode12EncodeResponse> EncodeAssetCode12 =
             new Method<Stellar.AssetCode12EncodeRequest, Stellar.AssetCode12EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1377,7 +1377,7 @@ namespace Stellar.RPC.AOT
                 AssetCode12EncodeResponseGrpcMarshaller.AssetCode12EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAssetCode12</summary>
-        public static readonly Method<Stellar.AssetCode12DecodeRequest, Stellar.AssetCode12DecodeResponse> DecodeAssetCode12Method =
+        public static readonly Method<Stellar.AssetCode12DecodeRequest, Stellar.AssetCode12DecodeResponse> DecodeAssetCode12 =
             new Method<Stellar.AssetCode12DecodeRequest, Stellar.AssetCode12DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1386,7 +1386,7 @@ namespace Stellar.RPC.AOT
                 AssetCode12DecodeResponseGrpcMarshaller.AssetCode12DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAssetType</summary>
-        public static readonly Method<Stellar.AssetTypeEncodeRequest, Stellar.AssetTypeEncodeResponse> EncodeAssetTypeMethod =
+        public static readonly Method<Stellar.AssetTypeEncodeRequest, Stellar.AssetTypeEncodeResponse> EncodeAssetType =
             new Method<Stellar.AssetTypeEncodeRequest, Stellar.AssetTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1395,7 +1395,7 @@ namespace Stellar.RPC.AOT
                 AssetTypeEncodeResponseGrpcMarshaller.AssetTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAssetType</summary>
-        public static readonly Method<Stellar.AssetTypeDecodeRequest, Stellar.AssetTypeDecodeResponse> DecodeAssetTypeMethod =
+        public static readonly Method<Stellar.AssetTypeDecodeRequest, Stellar.AssetTypeDecodeResponse> DecodeAssetType =
             new Method<Stellar.AssetTypeDecodeRequest, Stellar.AssetTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1404,7 +1404,7 @@ namespace Stellar.RPC.AOT
                 AssetTypeDecodeResponseGrpcMarshaller.AssetTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAssetCode</summary>
-        public static readonly Method<Stellar.AssetCodeEncodeRequest, Stellar.AssetCodeEncodeResponse> EncodeAssetCodeMethod =
+        public static readonly Method<Stellar.AssetCodeEncodeRequest, Stellar.AssetCodeEncodeResponse> EncodeAssetCode =
             new Method<Stellar.AssetCodeEncodeRequest, Stellar.AssetCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1413,7 +1413,7 @@ namespace Stellar.RPC.AOT
                 AssetCodeEncodeResponseGrpcMarshaller.AssetCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAssetCode</summary>
-        public static readonly Method<Stellar.AssetCodeDecodeRequest, Stellar.AssetCodeDecodeResponse> DecodeAssetCodeMethod =
+        public static readonly Method<Stellar.AssetCodeDecodeRequest, Stellar.AssetCodeDecodeResponse> DecodeAssetCode =
             new Method<Stellar.AssetCodeDecodeRequest, Stellar.AssetCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1422,7 +1422,7 @@ namespace Stellar.RPC.AOT
                 AssetCodeDecodeResponseGrpcMarshaller.AssetCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAlphaNum4</summary>
-        public static readonly Method<Stellar.AlphaNum4EncodeRequest, Stellar.AlphaNum4EncodeResponse> EncodeAlphaNum4Method =
+        public static readonly Method<Stellar.AlphaNum4EncodeRequest, Stellar.AlphaNum4EncodeResponse> EncodeAlphaNum4 =
             new Method<Stellar.AlphaNum4EncodeRequest, Stellar.AlphaNum4EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1431,7 +1431,7 @@ namespace Stellar.RPC.AOT
                 AlphaNum4EncodeResponseGrpcMarshaller.AlphaNum4EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAlphaNum4</summary>
-        public static readonly Method<Stellar.AlphaNum4DecodeRequest, Stellar.AlphaNum4DecodeResponse> DecodeAlphaNum4Method =
+        public static readonly Method<Stellar.AlphaNum4DecodeRequest, Stellar.AlphaNum4DecodeResponse> DecodeAlphaNum4 =
             new Method<Stellar.AlphaNum4DecodeRequest, Stellar.AlphaNum4DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1440,7 +1440,7 @@ namespace Stellar.RPC.AOT
                 AlphaNum4DecodeResponseGrpcMarshaller.AlphaNum4DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAlphaNum12</summary>
-        public static readonly Method<Stellar.AlphaNum12EncodeRequest, Stellar.AlphaNum12EncodeResponse> EncodeAlphaNum12Method =
+        public static readonly Method<Stellar.AlphaNum12EncodeRequest, Stellar.AlphaNum12EncodeResponse> EncodeAlphaNum12 =
             new Method<Stellar.AlphaNum12EncodeRequest, Stellar.AlphaNum12EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1449,7 +1449,7 @@ namespace Stellar.RPC.AOT
                 AlphaNum12EncodeResponseGrpcMarshaller.AlphaNum12EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAlphaNum12</summary>
-        public static readonly Method<Stellar.AlphaNum12DecodeRequest, Stellar.AlphaNum12DecodeResponse> DecodeAlphaNum12Method =
+        public static readonly Method<Stellar.AlphaNum12DecodeRequest, Stellar.AlphaNum12DecodeResponse> DecodeAlphaNum12 =
             new Method<Stellar.AlphaNum12DecodeRequest, Stellar.AlphaNum12DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1458,7 +1458,7 @@ namespace Stellar.RPC.AOT
                 AlphaNum12DecodeResponseGrpcMarshaller.AlphaNum12DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAsset</summary>
-        public static readonly Method<Stellar.AssetEncodeRequest, Stellar.AssetEncodeResponse> EncodeAssetMethod =
+        public static readonly Method<Stellar.AssetEncodeRequest, Stellar.AssetEncodeResponse> EncodeAsset =
             new Method<Stellar.AssetEncodeRequest, Stellar.AssetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1467,7 +1467,7 @@ namespace Stellar.RPC.AOT
                 AssetEncodeResponseGrpcMarshaller.AssetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAsset</summary>
-        public static readonly Method<Stellar.AssetDecodeRequest, Stellar.AssetDecodeResponse> DecodeAssetMethod =
+        public static readonly Method<Stellar.AssetDecodeRequest, Stellar.AssetDecodeResponse> DecodeAsset =
             new Method<Stellar.AssetDecodeRequest, Stellar.AssetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1476,7 +1476,7 @@ namespace Stellar.RPC.AOT
                 AssetDecodeResponseGrpcMarshaller.AssetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePrice</summary>
-        public static readonly Method<Stellar.PriceEncodeRequest, Stellar.PriceEncodeResponse> EncodePriceMethod =
+        public static readonly Method<Stellar.PriceEncodeRequest, Stellar.PriceEncodeResponse> EncodePrice =
             new Method<Stellar.PriceEncodeRequest, Stellar.PriceEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1485,7 +1485,7 @@ namespace Stellar.RPC.AOT
                 PriceEncodeResponseGrpcMarshaller.PriceEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePrice</summary>
-        public static readonly Method<Stellar.PriceDecodeRequest, Stellar.PriceDecodeResponse> DecodePriceMethod =
+        public static readonly Method<Stellar.PriceDecodeRequest, Stellar.PriceDecodeResponse> DecodePrice =
             new Method<Stellar.PriceDecodeRequest, Stellar.PriceDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1494,7 +1494,7 @@ namespace Stellar.RPC.AOT
                 PriceDecodeResponseGrpcMarshaller.PriceDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiabilities</summary>
-        public static readonly Method<Stellar.LiabilitiesEncodeRequest, Stellar.LiabilitiesEncodeResponse> EncodeLiabilitiesMethod =
+        public static readonly Method<Stellar.LiabilitiesEncodeRequest, Stellar.LiabilitiesEncodeResponse> EncodeLiabilities =
             new Method<Stellar.LiabilitiesEncodeRequest, Stellar.LiabilitiesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1503,7 +1503,7 @@ namespace Stellar.RPC.AOT
                 LiabilitiesEncodeResponseGrpcMarshaller.LiabilitiesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiabilities</summary>
-        public static readonly Method<Stellar.LiabilitiesDecodeRequest, Stellar.LiabilitiesDecodeResponse> DecodeLiabilitiesMethod =
+        public static readonly Method<Stellar.LiabilitiesDecodeRequest, Stellar.LiabilitiesDecodeResponse> DecodeLiabilities =
             new Method<Stellar.LiabilitiesDecodeRequest, Stellar.LiabilitiesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1512,7 +1512,7 @@ namespace Stellar.RPC.AOT
                 LiabilitiesDecodeResponseGrpcMarshaller.LiabilitiesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeThresholdIndexes</summary>
-        public static readonly Method<Stellar.ThresholdIndexesEncodeRequest, Stellar.ThresholdIndexesEncodeResponse> EncodeThresholdIndexesMethod =
+        public static readonly Method<Stellar.ThresholdIndexesEncodeRequest, Stellar.ThresholdIndexesEncodeResponse> EncodeThresholdIndexes =
             new Method<Stellar.ThresholdIndexesEncodeRequest, Stellar.ThresholdIndexesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1521,7 +1521,7 @@ namespace Stellar.RPC.AOT
                 ThresholdIndexesEncodeResponseGrpcMarshaller.ThresholdIndexesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeThresholdIndexes</summary>
-        public static readonly Method<Stellar.ThresholdIndexesDecodeRequest, Stellar.ThresholdIndexesDecodeResponse> DecodeThresholdIndexesMethod =
+        public static readonly Method<Stellar.ThresholdIndexesDecodeRequest, Stellar.ThresholdIndexesDecodeResponse> DecodeThresholdIndexes =
             new Method<Stellar.ThresholdIndexesDecodeRequest, Stellar.ThresholdIndexesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1530,7 +1530,7 @@ namespace Stellar.RPC.AOT
                 ThresholdIndexesDecodeResponseGrpcMarshaller.ThresholdIndexesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntryType</summary>
-        public static readonly Method<Stellar.LedgerEntryTypeEncodeRequest, Stellar.LedgerEntryTypeEncodeResponse> EncodeLedgerEntryTypeMethod =
+        public static readonly Method<Stellar.LedgerEntryTypeEncodeRequest, Stellar.LedgerEntryTypeEncodeResponse> EncodeLedgerEntryType =
             new Method<Stellar.LedgerEntryTypeEncodeRequest, Stellar.LedgerEntryTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1539,7 +1539,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryTypeEncodeResponseGrpcMarshaller.LedgerEntryTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntryType</summary>
-        public static readonly Method<Stellar.LedgerEntryTypeDecodeRequest, Stellar.LedgerEntryTypeDecodeResponse> DecodeLedgerEntryTypeMethod =
+        public static readonly Method<Stellar.LedgerEntryTypeDecodeRequest, Stellar.LedgerEntryTypeDecodeResponse> DecodeLedgerEntryType =
             new Method<Stellar.LedgerEntryTypeDecodeRequest, Stellar.LedgerEntryTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1548,7 +1548,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryTypeDecodeResponseGrpcMarshaller.LedgerEntryTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSigner</summary>
-        public static readonly Method<Stellar.SignerEncodeRequest, Stellar.SignerEncodeResponse> EncodeSignerMethod =
+        public static readonly Method<Stellar.SignerEncodeRequest, Stellar.SignerEncodeResponse> EncodeSigner =
             new Method<Stellar.SignerEncodeRequest, Stellar.SignerEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1557,7 +1557,7 @@ namespace Stellar.RPC.AOT
                 SignerEncodeResponseGrpcMarshaller.SignerEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSigner</summary>
-        public static readonly Method<Stellar.SignerDecodeRequest, Stellar.SignerDecodeResponse> DecodeSignerMethod =
+        public static readonly Method<Stellar.SignerDecodeRequest, Stellar.SignerDecodeResponse> DecodeSigner =
             new Method<Stellar.SignerDecodeRequest, Stellar.SignerDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1566,7 +1566,7 @@ namespace Stellar.RPC.AOT
                 SignerDecodeResponseGrpcMarshaller.SignerDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountFlags</summary>
-        public static readonly Method<Stellar.AccountFlagsEncodeRequest, Stellar.AccountFlagsEncodeResponse> EncodeAccountFlagsMethod =
+        public static readonly Method<Stellar.AccountFlagsEncodeRequest, Stellar.AccountFlagsEncodeResponse> EncodeAccountFlags =
             new Method<Stellar.AccountFlagsEncodeRequest, Stellar.AccountFlagsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1575,7 +1575,7 @@ namespace Stellar.RPC.AOT
                 AccountFlagsEncodeResponseGrpcMarshaller.AccountFlagsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountFlags</summary>
-        public static readonly Method<Stellar.AccountFlagsDecodeRequest, Stellar.AccountFlagsDecodeResponse> DecodeAccountFlagsMethod =
+        public static readonly Method<Stellar.AccountFlagsDecodeRequest, Stellar.AccountFlagsDecodeResponse> DecodeAccountFlags =
             new Method<Stellar.AccountFlagsDecodeRequest, Stellar.AccountFlagsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1584,7 +1584,7 @@ namespace Stellar.RPC.AOT
                 AccountFlagsDecodeResponseGrpcMarshaller.AccountFlagsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSponsorshipDescriptor</summary>
-        public static readonly Method<Stellar.SponsorshipDescriptorEncodeRequest, Stellar.SponsorshipDescriptorEncodeResponse> EncodeSponsorshipDescriptorMethod =
+        public static readonly Method<Stellar.SponsorshipDescriptorEncodeRequest, Stellar.SponsorshipDescriptorEncodeResponse> EncodeSponsorshipDescriptor =
             new Method<Stellar.SponsorshipDescriptorEncodeRequest, Stellar.SponsorshipDescriptorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1593,7 +1593,7 @@ namespace Stellar.RPC.AOT
                 SponsorshipDescriptorEncodeResponseGrpcMarshaller.SponsorshipDescriptorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSponsorshipDescriptor</summary>
-        public static readonly Method<Stellar.SponsorshipDescriptorDecodeRequest, Stellar.SponsorshipDescriptorDecodeResponse> DecodeSponsorshipDescriptorMethod =
+        public static readonly Method<Stellar.SponsorshipDescriptorDecodeRequest, Stellar.SponsorshipDescriptorDecodeResponse> DecodeSponsorshipDescriptor =
             new Method<Stellar.SponsorshipDescriptorDecodeRequest, Stellar.SponsorshipDescriptorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1602,7 +1602,7 @@ namespace Stellar.RPC.AOT
                 SponsorshipDescriptorDecodeResponseGrpcMarshaller.SponsorshipDescriptorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountEntryExtensionV3</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV3EncodeRequest, Stellar.AccountEntryExtensionV3EncodeResponse> EncodeAccountEntryExtensionV3Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV3EncodeRequest, Stellar.AccountEntryExtensionV3EncodeResponse> EncodeAccountEntryExtensionV3 =
             new Method<Stellar.AccountEntryExtensionV3EncodeRequest, Stellar.AccountEntryExtensionV3EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1611,7 +1611,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV3EncodeResponseGrpcMarshaller.AccountEntryExtensionV3EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountEntryExtensionV3</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV3DecodeRequest, Stellar.AccountEntryExtensionV3DecodeResponse> DecodeAccountEntryExtensionV3Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV3DecodeRequest, Stellar.AccountEntryExtensionV3DecodeResponse> DecodeAccountEntryExtensionV3 =
             new Method<Stellar.AccountEntryExtensionV3DecodeRequest, Stellar.AccountEntryExtensionV3DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1620,7 +1620,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV3DecodeResponseGrpcMarshaller.AccountEntryExtensionV3DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountEntryExtensionV2</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV2EncodeRequest, Stellar.AccountEntryExtensionV2EncodeResponse> EncodeAccountEntryExtensionV2Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV2EncodeRequest, Stellar.AccountEntryExtensionV2EncodeResponse> EncodeAccountEntryExtensionV2 =
             new Method<Stellar.AccountEntryExtensionV2EncodeRequest, Stellar.AccountEntryExtensionV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1629,7 +1629,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV2EncodeResponseGrpcMarshaller.AccountEntryExtensionV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountEntryExtensionV2</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV2DecodeRequest, Stellar.AccountEntryExtensionV2DecodeResponse> DecodeAccountEntryExtensionV2Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV2DecodeRequest, Stellar.AccountEntryExtensionV2DecodeResponse> DecodeAccountEntryExtensionV2 =
             new Method<Stellar.AccountEntryExtensionV2DecodeRequest, Stellar.AccountEntryExtensionV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1638,7 +1638,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV2DecodeResponseGrpcMarshaller.AccountEntryExtensionV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountEntryExtensionV1</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV1EncodeRequest, Stellar.AccountEntryExtensionV1EncodeResponse> EncodeAccountEntryExtensionV1Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV1EncodeRequest, Stellar.AccountEntryExtensionV1EncodeResponse> EncodeAccountEntryExtensionV1 =
             new Method<Stellar.AccountEntryExtensionV1EncodeRequest, Stellar.AccountEntryExtensionV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1647,7 +1647,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV1EncodeResponseGrpcMarshaller.AccountEntryExtensionV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountEntryExtensionV1</summary>
-        public static readonly Method<Stellar.AccountEntryExtensionV1DecodeRequest, Stellar.AccountEntryExtensionV1DecodeResponse> DecodeAccountEntryExtensionV1Method =
+        public static readonly Method<Stellar.AccountEntryExtensionV1DecodeRequest, Stellar.AccountEntryExtensionV1DecodeResponse> DecodeAccountEntryExtensionV1 =
             new Method<Stellar.AccountEntryExtensionV1DecodeRequest, Stellar.AccountEntryExtensionV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1656,7 +1656,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryExtensionV1DecodeResponseGrpcMarshaller.AccountEntryExtensionV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountEntry</summary>
-        public static readonly Method<Stellar.AccountEntryEncodeRequest, Stellar.AccountEntryEncodeResponse> EncodeAccountEntryMethod =
+        public static readonly Method<Stellar.AccountEntryEncodeRequest, Stellar.AccountEntryEncodeResponse> EncodeAccountEntry =
             new Method<Stellar.AccountEntryEncodeRequest, Stellar.AccountEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1665,7 +1665,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryEncodeResponseGrpcMarshaller.AccountEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountEntry</summary>
-        public static readonly Method<Stellar.AccountEntryDecodeRequest, Stellar.AccountEntryDecodeResponse> DecodeAccountEntryMethod =
+        public static readonly Method<Stellar.AccountEntryDecodeRequest, Stellar.AccountEntryDecodeResponse> DecodeAccountEntry =
             new Method<Stellar.AccountEntryDecodeRequest, Stellar.AccountEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1674,7 +1674,7 @@ namespace Stellar.RPC.AOT
                 AccountEntryDecodeResponseGrpcMarshaller.AccountEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTrustLineFlags</summary>
-        public static readonly Method<Stellar.TrustLineFlagsEncodeRequest, Stellar.TrustLineFlagsEncodeResponse> EncodeTrustLineFlagsMethod =
+        public static readonly Method<Stellar.TrustLineFlagsEncodeRequest, Stellar.TrustLineFlagsEncodeResponse> EncodeTrustLineFlags =
             new Method<Stellar.TrustLineFlagsEncodeRequest, Stellar.TrustLineFlagsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1683,7 +1683,7 @@ namespace Stellar.RPC.AOT
                 TrustLineFlagsEncodeResponseGrpcMarshaller.TrustLineFlagsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTrustLineFlags</summary>
-        public static readonly Method<Stellar.TrustLineFlagsDecodeRequest, Stellar.TrustLineFlagsDecodeResponse> DecodeTrustLineFlagsMethod =
+        public static readonly Method<Stellar.TrustLineFlagsDecodeRequest, Stellar.TrustLineFlagsDecodeResponse> DecodeTrustLineFlags =
             new Method<Stellar.TrustLineFlagsDecodeRequest, Stellar.TrustLineFlagsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1692,7 +1692,7 @@ namespace Stellar.RPC.AOT
                 TrustLineFlagsDecodeResponseGrpcMarshaller.TrustLineFlagsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolType</summary>
-        public static readonly Method<Stellar.LiquidityPoolTypeEncodeRequest, Stellar.LiquidityPoolTypeEncodeResponse> EncodeLiquidityPoolTypeMethod =
+        public static readonly Method<Stellar.LiquidityPoolTypeEncodeRequest, Stellar.LiquidityPoolTypeEncodeResponse> EncodeLiquidityPoolType =
             new Method<Stellar.LiquidityPoolTypeEncodeRequest, Stellar.LiquidityPoolTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1701,7 +1701,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolTypeEncodeResponseGrpcMarshaller.LiquidityPoolTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolType</summary>
-        public static readonly Method<Stellar.LiquidityPoolTypeDecodeRequest, Stellar.LiquidityPoolTypeDecodeResponse> DecodeLiquidityPoolTypeMethod =
+        public static readonly Method<Stellar.LiquidityPoolTypeDecodeRequest, Stellar.LiquidityPoolTypeDecodeResponse> DecodeLiquidityPoolType =
             new Method<Stellar.LiquidityPoolTypeDecodeRequest, Stellar.LiquidityPoolTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1710,7 +1710,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolTypeDecodeResponseGrpcMarshaller.LiquidityPoolTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTrustLineAsset</summary>
-        public static readonly Method<Stellar.TrustLineAssetEncodeRequest, Stellar.TrustLineAssetEncodeResponse> EncodeTrustLineAssetMethod =
+        public static readonly Method<Stellar.TrustLineAssetEncodeRequest, Stellar.TrustLineAssetEncodeResponse> EncodeTrustLineAsset =
             new Method<Stellar.TrustLineAssetEncodeRequest, Stellar.TrustLineAssetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1719,7 +1719,7 @@ namespace Stellar.RPC.AOT
                 TrustLineAssetEncodeResponseGrpcMarshaller.TrustLineAssetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTrustLineAsset</summary>
-        public static readonly Method<Stellar.TrustLineAssetDecodeRequest, Stellar.TrustLineAssetDecodeResponse> DecodeTrustLineAssetMethod =
+        public static readonly Method<Stellar.TrustLineAssetDecodeRequest, Stellar.TrustLineAssetDecodeResponse> DecodeTrustLineAsset =
             new Method<Stellar.TrustLineAssetDecodeRequest, Stellar.TrustLineAssetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1728,7 +1728,7 @@ namespace Stellar.RPC.AOT
                 TrustLineAssetDecodeResponseGrpcMarshaller.TrustLineAssetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTrustLineEntryExtensionV2</summary>
-        public static readonly Method<Stellar.TrustLineEntryExtensionV2EncodeRequest, Stellar.TrustLineEntryExtensionV2EncodeResponse> EncodeTrustLineEntryExtensionV2Method =
+        public static readonly Method<Stellar.TrustLineEntryExtensionV2EncodeRequest, Stellar.TrustLineEntryExtensionV2EncodeResponse> EncodeTrustLineEntryExtensionV2 =
             new Method<Stellar.TrustLineEntryExtensionV2EncodeRequest, Stellar.TrustLineEntryExtensionV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1737,7 +1737,7 @@ namespace Stellar.RPC.AOT
                 TrustLineEntryExtensionV2EncodeResponseGrpcMarshaller.TrustLineEntryExtensionV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTrustLineEntryExtensionV2</summary>
-        public static readonly Method<Stellar.TrustLineEntryExtensionV2DecodeRequest, Stellar.TrustLineEntryExtensionV2DecodeResponse> DecodeTrustLineEntryExtensionV2Method =
+        public static readonly Method<Stellar.TrustLineEntryExtensionV2DecodeRequest, Stellar.TrustLineEntryExtensionV2DecodeResponse> DecodeTrustLineEntryExtensionV2 =
             new Method<Stellar.TrustLineEntryExtensionV2DecodeRequest, Stellar.TrustLineEntryExtensionV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1746,7 +1746,7 @@ namespace Stellar.RPC.AOT
                 TrustLineEntryExtensionV2DecodeResponseGrpcMarshaller.TrustLineEntryExtensionV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTrustLineEntry</summary>
-        public static readonly Method<Stellar.TrustLineEntryEncodeRequest, Stellar.TrustLineEntryEncodeResponse> EncodeTrustLineEntryMethod =
+        public static readonly Method<Stellar.TrustLineEntryEncodeRequest, Stellar.TrustLineEntryEncodeResponse> EncodeTrustLineEntry =
             new Method<Stellar.TrustLineEntryEncodeRequest, Stellar.TrustLineEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1755,7 +1755,7 @@ namespace Stellar.RPC.AOT
                 TrustLineEntryEncodeResponseGrpcMarshaller.TrustLineEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTrustLineEntry</summary>
-        public static readonly Method<Stellar.TrustLineEntryDecodeRequest, Stellar.TrustLineEntryDecodeResponse> DecodeTrustLineEntryMethod =
+        public static readonly Method<Stellar.TrustLineEntryDecodeRequest, Stellar.TrustLineEntryDecodeResponse> DecodeTrustLineEntry =
             new Method<Stellar.TrustLineEntryDecodeRequest, Stellar.TrustLineEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1764,7 +1764,7 @@ namespace Stellar.RPC.AOT
                 TrustLineEntryDecodeResponseGrpcMarshaller.TrustLineEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOfferEntryFlags</summary>
-        public static readonly Method<Stellar.OfferEntryFlagsEncodeRequest, Stellar.OfferEntryFlagsEncodeResponse> EncodeOfferEntryFlagsMethod =
+        public static readonly Method<Stellar.OfferEntryFlagsEncodeRequest, Stellar.OfferEntryFlagsEncodeResponse> EncodeOfferEntryFlags =
             new Method<Stellar.OfferEntryFlagsEncodeRequest, Stellar.OfferEntryFlagsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1773,7 +1773,7 @@ namespace Stellar.RPC.AOT
                 OfferEntryFlagsEncodeResponseGrpcMarshaller.OfferEntryFlagsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOfferEntryFlags</summary>
-        public static readonly Method<Stellar.OfferEntryFlagsDecodeRequest, Stellar.OfferEntryFlagsDecodeResponse> DecodeOfferEntryFlagsMethod =
+        public static readonly Method<Stellar.OfferEntryFlagsDecodeRequest, Stellar.OfferEntryFlagsDecodeResponse> DecodeOfferEntryFlags =
             new Method<Stellar.OfferEntryFlagsDecodeRequest, Stellar.OfferEntryFlagsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1782,7 +1782,7 @@ namespace Stellar.RPC.AOT
                 OfferEntryFlagsDecodeResponseGrpcMarshaller.OfferEntryFlagsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOfferEntry</summary>
-        public static readonly Method<Stellar.OfferEntryEncodeRequest, Stellar.OfferEntryEncodeResponse> EncodeOfferEntryMethod =
+        public static readonly Method<Stellar.OfferEntryEncodeRequest, Stellar.OfferEntryEncodeResponse> EncodeOfferEntry =
             new Method<Stellar.OfferEntryEncodeRequest, Stellar.OfferEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1791,7 +1791,7 @@ namespace Stellar.RPC.AOT
                 OfferEntryEncodeResponseGrpcMarshaller.OfferEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOfferEntry</summary>
-        public static readonly Method<Stellar.OfferEntryDecodeRequest, Stellar.OfferEntryDecodeResponse> DecodeOfferEntryMethod =
+        public static readonly Method<Stellar.OfferEntryDecodeRequest, Stellar.OfferEntryDecodeResponse> DecodeOfferEntry =
             new Method<Stellar.OfferEntryDecodeRequest, Stellar.OfferEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1800,7 +1800,7 @@ namespace Stellar.RPC.AOT
                 OfferEntryDecodeResponseGrpcMarshaller.OfferEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDataEntry</summary>
-        public static readonly Method<Stellar.DataEntryEncodeRequest, Stellar.DataEntryEncodeResponse> EncodeDataEntryMethod =
+        public static readonly Method<Stellar.DataEntryEncodeRequest, Stellar.DataEntryEncodeResponse> EncodeDataEntry =
             new Method<Stellar.DataEntryEncodeRequest, Stellar.DataEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1809,7 +1809,7 @@ namespace Stellar.RPC.AOT
                 DataEntryEncodeResponseGrpcMarshaller.DataEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDataEntry</summary>
-        public static readonly Method<Stellar.DataEntryDecodeRequest, Stellar.DataEntryDecodeResponse> DecodeDataEntryMethod =
+        public static readonly Method<Stellar.DataEntryDecodeRequest, Stellar.DataEntryDecodeResponse> DecodeDataEntry =
             new Method<Stellar.DataEntryDecodeRequest, Stellar.DataEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1818,7 +1818,7 @@ namespace Stellar.RPC.AOT
                 DataEntryDecodeResponseGrpcMarshaller.DataEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimPredicateType</summary>
-        public static readonly Method<Stellar.ClaimPredicateTypeEncodeRequest, Stellar.ClaimPredicateTypeEncodeResponse> EncodeClaimPredicateTypeMethod =
+        public static readonly Method<Stellar.ClaimPredicateTypeEncodeRequest, Stellar.ClaimPredicateTypeEncodeResponse> EncodeClaimPredicateType =
             new Method<Stellar.ClaimPredicateTypeEncodeRequest, Stellar.ClaimPredicateTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1827,7 +1827,7 @@ namespace Stellar.RPC.AOT
                 ClaimPredicateTypeEncodeResponseGrpcMarshaller.ClaimPredicateTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimPredicateType</summary>
-        public static readonly Method<Stellar.ClaimPredicateTypeDecodeRequest, Stellar.ClaimPredicateTypeDecodeResponse> DecodeClaimPredicateTypeMethod =
+        public static readonly Method<Stellar.ClaimPredicateTypeDecodeRequest, Stellar.ClaimPredicateTypeDecodeResponse> DecodeClaimPredicateType =
             new Method<Stellar.ClaimPredicateTypeDecodeRequest, Stellar.ClaimPredicateTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1836,7 +1836,7 @@ namespace Stellar.RPC.AOT
                 ClaimPredicateTypeDecodeResponseGrpcMarshaller.ClaimPredicateTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimPredicate</summary>
-        public static readonly Method<Stellar.ClaimPredicateEncodeRequest, Stellar.ClaimPredicateEncodeResponse> EncodeClaimPredicateMethod =
+        public static readonly Method<Stellar.ClaimPredicateEncodeRequest, Stellar.ClaimPredicateEncodeResponse> EncodeClaimPredicate =
             new Method<Stellar.ClaimPredicateEncodeRequest, Stellar.ClaimPredicateEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1845,7 +1845,7 @@ namespace Stellar.RPC.AOT
                 ClaimPredicateEncodeResponseGrpcMarshaller.ClaimPredicateEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimPredicate</summary>
-        public static readonly Method<Stellar.ClaimPredicateDecodeRequest, Stellar.ClaimPredicateDecodeResponse> DecodeClaimPredicateMethod =
+        public static readonly Method<Stellar.ClaimPredicateDecodeRequest, Stellar.ClaimPredicateDecodeResponse> DecodeClaimPredicate =
             new Method<Stellar.ClaimPredicateDecodeRequest, Stellar.ClaimPredicateDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1854,7 +1854,7 @@ namespace Stellar.RPC.AOT
                 ClaimPredicateDecodeResponseGrpcMarshaller.ClaimPredicateDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimantType</summary>
-        public static readonly Method<Stellar.ClaimantTypeEncodeRequest, Stellar.ClaimantTypeEncodeResponse> EncodeClaimantTypeMethod =
+        public static readonly Method<Stellar.ClaimantTypeEncodeRequest, Stellar.ClaimantTypeEncodeResponse> EncodeClaimantType =
             new Method<Stellar.ClaimantTypeEncodeRequest, Stellar.ClaimantTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1863,7 +1863,7 @@ namespace Stellar.RPC.AOT
                 ClaimantTypeEncodeResponseGrpcMarshaller.ClaimantTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimantType</summary>
-        public static readonly Method<Stellar.ClaimantTypeDecodeRequest, Stellar.ClaimantTypeDecodeResponse> DecodeClaimantTypeMethod =
+        public static readonly Method<Stellar.ClaimantTypeDecodeRequest, Stellar.ClaimantTypeDecodeResponse> DecodeClaimantType =
             new Method<Stellar.ClaimantTypeDecodeRequest, Stellar.ClaimantTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1872,7 +1872,7 @@ namespace Stellar.RPC.AOT
                 ClaimantTypeDecodeResponseGrpcMarshaller.ClaimantTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimant</summary>
-        public static readonly Method<Stellar.ClaimantEncodeRequest, Stellar.ClaimantEncodeResponse> EncodeClaimantMethod =
+        public static readonly Method<Stellar.ClaimantEncodeRequest, Stellar.ClaimantEncodeResponse> EncodeClaimant =
             new Method<Stellar.ClaimantEncodeRequest, Stellar.ClaimantEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1881,7 +1881,7 @@ namespace Stellar.RPC.AOT
                 ClaimantEncodeResponseGrpcMarshaller.ClaimantEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimant</summary>
-        public static readonly Method<Stellar.ClaimantDecodeRequest, Stellar.ClaimantDecodeResponse> DecodeClaimantMethod =
+        public static readonly Method<Stellar.ClaimantDecodeRequest, Stellar.ClaimantDecodeResponse> DecodeClaimant =
             new Method<Stellar.ClaimantDecodeRequest, Stellar.ClaimantDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1890,7 +1890,7 @@ namespace Stellar.RPC.AOT
                 ClaimantDecodeResponseGrpcMarshaller.ClaimantDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimableBalanceIDType</summary>
-        public static readonly Method<Stellar.ClaimableBalanceIDTypeEncodeRequest, Stellar.ClaimableBalanceIDTypeEncodeResponse> EncodeClaimableBalanceIDTypeMethod =
+        public static readonly Method<Stellar.ClaimableBalanceIDTypeEncodeRequest, Stellar.ClaimableBalanceIDTypeEncodeResponse> EncodeClaimableBalanceIDType =
             new Method<Stellar.ClaimableBalanceIDTypeEncodeRequest, Stellar.ClaimableBalanceIDTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1899,7 +1899,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceIDTypeEncodeResponseGrpcMarshaller.ClaimableBalanceIDTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimableBalanceIDType</summary>
-        public static readonly Method<Stellar.ClaimableBalanceIDTypeDecodeRequest, Stellar.ClaimableBalanceIDTypeDecodeResponse> DecodeClaimableBalanceIDTypeMethod =
+        public static readonly Method<Stellar.ClaimableBalanceIDTypeDecodeRequest, Stellar.ClaimableBalanceIDTypeDecodeResponse> DecodeClaimableBalanceIDType =
             new Method<Stellar.ClaimableBalanceIDTypeDecodeRequest, Stellar.ClaimableBalanceIDTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1908,7 +1908,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceIDTypeDecodeResponseGrpcMarshaller.ClaimableBalanceIDTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimableBalanceID</summary>
-        public static readonly Method<Stellar.ClaimableBalanceIDEncodeRequest, Stellar.ClaimableBalanceIDEncodeResponse> EncodeClaimableBalanceIDMethod =
+        public static readonly Method<Stellar.ClaimableBalanceIDEncodeRequest, Stellar.ClaimableBalanceIDEncodeResponse> EncodeClaimableBalanceID =
             new Method<Stellar.ClaimableBalanceIDEncodeRequest, Stellar.ClaimableBalanceIDEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1917,7 +1917,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceIDEncodeResponseGrpcMarshaller.ClaimableBalanceIDEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimableBalanceID</summary>
-        public static readonly Method<Stellar.ClaimableBalanceIDDecodeRequest, Stellar.ClaimableBalanceIDDecodeResponse> DecodeClaimableBalanceIDMethod =
+        public static readonly Method<Stellar.ClaimableBalanceIDDecodeRequest, Stellar.ClaimableBalanceIDDecodeResponse> DecodeClaimableBalanceID =
             new Method<Stellar.ClaimableBalanceIDDecodeRequest, Stellar.ClaimableBalanceIDDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1926,7 +1926,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceIDDecodeResponseGrpcMarshaller.ClaimableBalanceIDDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimableBalanceFlags</summary>
-        public static readonly Method<Stellar.ClaimableBalanceFlagsEncodeRequest, Stellar.ClaimableBalanceFlagsEncodeResponse> EncodeClaimableBalanceFlagsMethod =
+        public static readonly Method<Stellar.ClaimableBalanceFlagsEncodeRequest, Stellar.ClaimableBalanceFlagsEncodeResponse> EncodeClaimableBalanceFlags =
             new Method<Stellar.ClaimableBalanceFlagsEncodeRequest, Stellar.ClaimableBalanceFlagsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1935,7 +1935,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceFlagsEncodeResponseGrpcMarshaller.ClaimableBalanceFlagsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimableBalanceFlags</summary>
-        public static readonly Method<Stellar.ClaimableBalanceFlagsDecodeRequest, Stellar.ClaimableBalanceFlagsDecodeResponse> DecodeClaimableBalanceFlagsMethod =
+        public static readonly Method<Stellar.ClaimableBalanceFlagsDecodeRequest, Stellar.ClaimableBalanceFlagsDecodeResponse> DecodeClaimableBalanceFlags =
             new Method<Stellar.ClaimableBalanceFlagsDecodeRequest, Stellar.ClaimableBalanceFlagsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1944,7 +1944,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceFlagsDecodeResponseGrpcMarshaller.ClaimableBalanceFlagsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimableBalanceEntryExtensionV1</summary>
-        public static readonly Method<Stellar.ClaimableBalanceEntryExtensionV1EncodeRequest, Stellar.ClaimableBalanceEntryExtensionV1EncodeResponse> EncodeClaimableBalanceEntryExtensionV1Method =
+        public static readonly Method<Stellar.ClaimableBalanceEntryExtensionV1EncodeRequest, Stellar.ClaimableBalanceEntryExtensionV1EncodeResponse> EncodeClaimableBalanceEntryExtensionV1 =
             new Method<Stellar.ClaimableBalanceEntryExtensionV1EncodeRequest, Stellar.ClaimableBalanceEntryExtensionV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1953,7 +1953,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceEntryExtensionV1EncodeResponseGrpcMarshaller.ClaimableBalanceEntryExtensionV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimableBalanceEntryExtensionV1</summary>
-        public static readonly Method<Stellar.ClaimableBalanceEntryExtensionV1DecodeRequest, Stellar.ClaimableBalanceEntryExtensionV1DecodeResponse> DecodeClaimableBalanceEntryExtensionV1Method =
+        public static readonly Method<Stellar.ClaimableBalanceEntryExtensionV1DecodeRequest, Stellar.ClaimableBalanceEntryExtensionV1DecodeResponse> DecodeClaimableBalanceEntryExtensionV1 =
             new Method<Stellar.ClaimableBalanceEntryExtensionV1DecodeRequest, Stellar.ClaimableBalanceEntryExtensionV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1962,7 +1962,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceEntryExtensionV1DecodeResponseGrpcMarshaller.ClaimableBalanceEntryExtensionV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimableBalanceEntry</summary>
-        public static readonly Method<Stellar.ClaimableBalanceEntryEncodeRequest, Stellar.ClaimableBalanceEntryEncodeResponse> EncodeClaimableBalanceEntryMethod =
+        public static readonly Method<Stellar.ClaimableBalanceEntryEncodeRequest, Stellar.ClaimableBalanceEntryEncodeResponse> EncodeClaimableBalanceEntry =
             new Method<Stellar.ClaimableBalanceEntryEncodeRequest, Stellar.ClaimableBalanceEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1971,7 +1971,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceEntryEncodeResponseGrpcMarshaller.ClaimableBalanceEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimableBalanceEntry</summary>
-        public static readonly Method<Stellar.ClaimableBalanceEntryDecodeRequest, Stellar.ClaimableBalanceEntryDecodeResponse> DecodeClaimableBalanceEntryMethod =
+        public static readonly Method<Stellar.ClaimableBalanceEntryDecodeRequest, Stellar.ClaimableBalanceEntryDecodeResponse> DecodeClaimableBalanceEntry =
             new Method<Stellar.ClaimableBalanceEntryDecodeRequest, Stellar.ClaimableBalanceEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1980,7 +1980,7 @@ namespace Stellar.RPC.AOT
                 ClaimableBalanceEntryDecodeResponseGrpcMarshaller.ClaimableBalanceEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolConstantProductParameters</summary>
-        public static readonly Method<Stellar.LiquidityPoolConstantProductParametersEncodeRequest, Stellar.LiquidityPoolConstantProductParametersEncodeResponse> EncodeLiquidityPoolConstantProductParametersMethod =
+        public static readonly Method<Stellar.LiquidityPoolConstantProductParametersEncodeRequest, Stellar.LiquidityPoolConstantProductParametersEncodeResponse> EncodeLiquidityPoolConstantProductParameters =
             new Method<Stellar.LiquidityPoolConstantProductParametersEncodeRequest, Stellar.LiquidityPoolConstantProductParametersEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1989,7 +1989,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolConstantProductParametersEncodeResponseGrpcMarshaller.LiquidityPoolConstantProductParametersEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolConstantProductParameters</summary>
-        public static readonly Method<Stellar.LiquidityPoolConstantProductParametersDecodeRequest, Stellar.LiquidityPoolConstantProductParametersDecodeResponse> DecodeLiquidityPoolConstantProductParametersMethod =
+        public static readonly Method<Stellar.LiquidityPoolConstantProductParametersDecodeRequest, Stellar.LiquidityPoolConstantProductParametersDecodeResponse> DecodeLiquidityPoolConstantProductParameters =
             new Method<Stellar.LiquidityPoolConstantProductParametersDecodeRequest, Stellar.LiquidityPoolConstantProductParametersDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -1998,7 +1998,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolConstantProductParametersDecodeResponseGrpcMarshaller.LiquidityPoolConstantProductParametersDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolEntry</summary>
-        public static readonly Method<Stellar.LiquidityPoolEntryEncodeRequest, Stellar.LiquidityPoolEntryEncodeResponse> EncodeLiquidityPoolEntryMethod =
+        public static readonly Method<Stellar.LiquidityPoolEntryEncodeRequest, Stellar.LiquidityPoolEntryEncodeResponse> EncodeLiquidityPoolEntry =
             new Method<Stellar.LiquidityPoolEntryEncodeRequest, Stellar.LiquidityPoolEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2007,7 +2007,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolEntryEncodeResponseGrpcMarshaller.LiquidityPoolEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolEntry</summary>
-        public static readonly Method<Stellar.LiquidityPoolEntryDecodeRequest, Stellar.LiquidityPoolEntryDecodeResponse> DecodeLiquidityPoolEntryMethod =
+        public static readonly Method<Stellar.LiquidityPoolEntryDecodeRequest, Stellar.LiquidityPoolEntryDecodeResponse> DecodeLiquidityPoolEntry =
             new Method<Stellar.LiquidityPoolEntryDecodeRequest, Stellar.LiquidityPoolEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2016,7 +2016,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolEntryDecodeResponseGrpcMarshaller.LiquidityPoolEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractDataDurability</summary>
-        public static readonly Method<Stellar.ContractDataDurabilityEncodeRequest, Stellar.ContractDataDurabilityEncodeResponse> EncodeContractDataDurabilityMethod =
+        public static readonly Method<Stellar.ContractDataDurabilityEncodeRequest, Stellar.ContractDataDurabilityEncodeResponse> EncodeContractDataDurability =
             new Method<Stellar.ContractDataDurabilityEncodeRequest, Stellar.ContractDataDurabilityEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2025,7 +2025,7 @@ namespace Stellar.RPC.AOT
                 ContractDataDurabilityEncodeResponseGrpcMarshaller.ContractDataDurabilityEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractDataDurability</summary>
-        public static readonly Method<Stellar.ContractDataDurabilityDecodeRequest, Stellar.ContractDataDurabilityDecodeResponse> DecodeContractDataDurabilityMethod =
+        public static readonly Method<Stellar.ContractDataDurabilityDecodeRequest, Stellar.ContractDataDurabilityDecodeResponse> DecodeContractDataDurability =
             new Method<Stellar.ContractDataDurabilityDecodeRequest, Stellar.ContractDataDurabilityDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2034,7 +2034,7 @@ namespace Stellar.RPC.AOT
                 ContractDataDurabilityDecodeResponseGrpcMarshaller.ContractDataDurabilityDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractDataEntry</summary>
-        public static readonly Method<Stellar.ContractDataEntryEncodeRequest, Stellar.ContractDataEntryEncodeResponse> EncodeContractDataEntryMethod =
+        public static readonly Method<Stellar.ContractDataEntryEncodeRequest, Stellar.ContractDataEntryEncodeResponse> EncodeContractDataEntry =
             new Method<Stellar.ContractDataEntryEncodeRequest, Stellar.ContractDataEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2043,7 +2043,7 @@ namespace Stellar.RPC.AOT
                 ContractDataEntryEncodeResponseGrpcMarshaller.ContractDataEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractDataEntry</summary>
-        public static readonly Method<Stellar.ContractDataEntryDecodeRequest, Stellar.ContractDataEntryDecodeResponse> DecodeContractDataEntryMethod =
+        public static readonly Method<Stellar.ContractDataEntryDecodeRequest, Stellar.ContractDataEntryDecodeResponse> DecodeContractDataEntry =
             new Method<Stellar.ContractDataEntryDecodeRequest, Stellar.ContractDataEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2052,7 +2052,7 @@ namespace Stellar.RPC.AOT
                 ContractDataEntryDecodeResponseGrpcMarshaller.ContractDataEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractCodeCostInputs</summary>
-        public static readonly Method<Stellar.ContractCodeCostInputsEncodeRequest, Stellar.ContractCodeCostInputsEncodeResponse> EncodeContractCodeCostInputsMethod =
+        public static readonly Method<Stellar.ContractCodeCostInputsEncodeRequest, Stellar.ContractCodeCostInputsEncodeResponse> EncodeContractCodeCostInputs =
             new Method<Stellar.ContractCodeCostInputsEncodeRequest, Stellar.ContractCodeCostInputsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2061,7 +2061,7 @@ namespace Stellar.RPC.AOT
                 ContractCodeCostInputsEncodeResponseGrpcMarshaller.ContractCodeCostInputsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractCodeCostInputs</summary>
-        public static readonly Method<Stellar.ContractCodeCostInputsDecodeRequest, Stellar.ContractCodeCostInputsDecodeResponse> DecodeContractCodeCostInputsMethod =
+        public static readonly Method<Stellar.ContractCodeCostInputsDecodeRequest, Stellar.ContractCodeCostInputsDecodeResponse> DecodeContractCodeCostInputs =
             new Method<Stellar.ContractCodeCostInputsDecodeRequest, Stellar.ContractCodeCostInputsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2070,7 +2070,7 @@ namespace Stellar.RPC.AOT
                 ContractCodeCostInputsDecodeResponseGrpcMarshaller.ContractCodeCostInputsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractCodeEntry</summary>
-        public static readonly Method<Stellar.ContractCodeEntryEncodeRequest, Stellar.ContractCodeEntryEncodeResponse> EncodeContractCodeEntryMethod =
+        public static readonly Method<Stellar.ContractCodeEntryEncodeRequest, Stellar.ContractCodeEntryEncodeResponse> EncodeContractCodeEntry =
             new Method<Stellar.ContractCodeEntryEncodeRequest, Stellar.ContractCodeEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2079,7 +2079,7 @@ namespace Stellar.RPC.AOT
                 ContractCodeEntryEncodeResponseGrpcMarshaller.ContractCodeEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractCodeEntry</summary>
-        public static readonly Method<Stellar.ContractCodeEntryDecodeRequest, Stellar.ContractCodeEntryDecodeResponse> DecodeContractCodeEntryMethod =
+        public static readonly Method<Stellar.ContractCodeEntryDecodeRequest, Stellar.ContractCodeEntryDecodeResponse> DecodeContractCodeEntry =
             new Method<Stellar.ContractCodeEntryDecodeRequest, Stellar.ContractCodeEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2088,7 +2088,7 @@ namespace Stellar.RPC.AOT
                 ContractCodeEntryDecodeResponseGrpcMarshaller.ContractCodeEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTTLEntry</summary>
-        public static readonly Method<Stellar.TTLEntryEncodeRequest, Stellar.TTLEntryEncodeResponse> EncodeTTLEntryMethod =
+        public static readonly Method<Stellar.TTLEntryEncodeRequest, Stellar.TTLEntryEncodeResponse> EncodeTTLEntry =
             new Method<Stellar.TTLEntryEncodeRequest, Stellar.TTLEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2097,7 +2097,7 @@ namespace Stellar.RPC.AOT
                 TTLEntryEncodeResponseGrpcMarshaller.TTLEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTTLEntry</summary>
-        public static readonly Method<Stellar.TTLEntryDecodeRequest, Stellar.TTLEntryDecodeResponse> DecodeTTLEntryMethod =
+        public static readonly Method<Stellar.TTLEntryDecodeRequest, Stellar.TTLEntryDecodeResponse> DecodeTTLEntry =
             new Method<Stellar.TTLEntryDecodeRequest, Stellar.TTLEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2106,7 +2106,7 @@ namespace Stellar.RPC.AOT
                 TTLEntryDecodeResponseGrpcMarshaller.TTLEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntryExtensionV1</summary>
-        public static readonly Method<Stellar.LedgerEntryExtensionV1EncodeRequest, Stellar.LedgerEntryExtensionV1EncodeResponse> EncodeLedgerEntryExtensionV1Method =
+        public static readonly Method<Stellar.LedgerEntryExtensionV1EncodeRequest, Stellar.LedgerEntryExtensionV1EncodeResponse> EncodeLedgerEntryExtensionV1 =
             new Method<Stellar.LedgerEntryExtensionV1EncodeRequest, Stellar.LedgerEntryExtensionV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2115,7 +2115,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryExtensionV1EncodeResponseGrpcMarshaller.LedgerEntryExtensionV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntryExtensionV1</summary>
-        public static readonly Method<Stellar.LedgerEntryExtensionV1DecodeRequest, Stellar.LedgerEntryExtensionV1DecodeResponse> DecodeLedgerEntryExtensionV1Method =
+        public static readonly Method<Stellar.LedgerEntryExtensionV1DecodeRequest, Stellar.LedgerEntryExtensionV1DecodeResponse> DecodeLedgerEntryExtensionV1 =
             new Method<Stellar.LedgerEntryExtensionV1DecodeRequest, Stellar.LedgerEntryExtensionV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2124,7 +2124,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryExtensionV1DecodeResponseGrpcMarshaller.LedgerEntryExtensionV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntry</summary>
-        public static readonly Method<Stellar.LedgerEntryEncodeRequest, Stellar.LedgerEntryEncodeResponse> EncodeLedgerEntryMethod =
+        public static readonly Method<Stellar.LedgerEntryEncodeRequest, Stellar.LedgerEntryEncodeResponse> EncodeLedgerEntry =
             new Method<Stellar.LedgerEntryEncodeRequest, Stellar.LedgerEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2133,7 +2133,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryEncodeResponseGrpcMarshaller.LedgerEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntry</summary>
-        public static readonly Method<Stellar.LedgerEntryDecodeRequest, Stellar.LedgerEntryDecodeResponse> DecodeLedgerEntryMethod =
+        public static readonly Method<Stellar.LedgerEntryDecodeRequest, Stellar.LedgerEntryDecodeResponse> DecodeLedgerEntry =
             new Method<Stellar.LedgerEntryDecodeRequest, Stellar.LedgerEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2142,7 +2142,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryDecodeResponseGrpcMarshaller.LedgerEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerKey</summary>
-        public static readonly Method<Stellar.LedgerKeyEncodeRequest, Stellar.LedgerKeyEncodeResponse> EncodeLedgerKeyMethod =
+        public static readonly Method<Stellar.LedgerKeyEncodeRequest, Stellar.LedgerKeyEncodeResponse> EncodeLedgerKey =
             new Method<Stellar.LedgerKeyEncodeRequest, Stellar.LedgerKeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2151,7 +2151,7 @@ namespace Stellar.RPC.AOT
                 LedgerKeyEncodeResponseGrpcMarshaller.LedgerKeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerKey</summary>
-        public static readonly Method<Stellar.LedgerKeyDecodeRequest, Stellar.LedgerKeyDecodeResponse> DecodeLedgerKeyMethod =
+        public static readonly Method<Stellar.LedgerKeyDecodeRequest, Stellar.LedgerKeyDecodeResponse> DecodeLedgerKey =
             new Method<Stellar.LedgerKeyDecodeRequest, Stellar.LedgerKeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2160,7 +2160,7 @@ namespace Stellar.RPC.AOT
                 LedgerKeyDecodeResponseGrpcMarshaller.LedgerKeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeEnvelopeType</summary>
-        public static readonly Method<Stellar.EnvelopeTypeEncodeRequest, Stellar.EnvelopeTypeEncodeResponse> EncodeEnvelopeTypeMethod =
+        public static readonly Method<Stellar.EnvelopeTypeEncodeRequest, Stellar.EnvelopeTypeEncodeResponse> EncodeEnvelopeType =
             new Method<Stellar.EnvelopeTypeEncodeRequest, Stellar.EnvelopeTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2169,7 +2169,7 @@ namespace Stellar.RPC.AOT
                 EnvelopeTypeEncodeResponseGrpcMarshaller.EnvelopeTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeEnvelopeType</summary>
-        public static readonly Method<Stellar.EnvelopeTypeDecodeRequest, Stellar.EnvelopeTypeDecodeResponse> DecodeEnvelopeTypeMethod =
+        public static readonly Method<Stellar.EnvelopeTypeDecodeRequest, Stellar.EnvelopeTypeDecodeResponse> DecodeEnvelopeType =
             new Method<Stellar.EnvelopeTypeDecodeRequest, Stellar.EnvelopeTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2178,7 +2178,7 @@ namespace Stellar.RPC.AOT
                 EnvelopeTypeDecodeResponseGrpcMarshaller.EnvelopeTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBucketListType</summary>
-        public static readonly Method<Stellar.BucketListTypeEncodeRequest, Stellar.BucketListTypeEncodeResponse> EncodeBucketListTypeMethod =
+        public static readonly Method<Stellar.BucketListTypeEncodeRequest, Stellar.BucketListTypeEncodeResponse> EncodeBucketListType =
             new Method<Stellar.BucketListTypeEncodeRequest, Stellar.BucketListTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2187,7 +2187,7 @@ namespace Stellar.RPC.AOT
                 BucketListTypeEncodeResponseGrpcMarshaller.BucketListTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBucketListType</summary>
-        public static readonly Method<Stellar.BucketListTypeDecodeRequest, Stellar.BucketListTypeDecodeResponse> DecodeBucketListTypeMethod =
+        public static readonly Method<Stellar.BucketListTypeDecodeRequest, Stellar.BucketListTypeDecodeResponse> DecodeBucketListType =
             new Method<Stellar.BucketListTypeDecodeRequest, Stellar.BucketListTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2196,7 +2196,7 @@ namespace Stellar.RPC.AOT
                 BucketListTypeDecodeResponseGrpcMarshaller.BucketListTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBucketEntryType</summary>
-        public static readonly Method<Stellar.BucketEntryTypeEncodeRequest, Stellar.BucketEntryTypeEncodeResponse> EncodeBucketEntryTypeMethod =
+        public static readonly Method<Stellar.BucketEntryTypeEncodeRequest, Stellar.BucketEntryTypeEncodeResponse> EncodeBucketEntryType =
             new Method<Stellar.BucketEntryTypeEncodeRequest, Stellar.BucketEntryTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2205,7 +2205,7 @@ namespace Stellar.RPC.AOT
                 BucketEntryTypeEncodeResponseGrpcMarshaller.BucketEntryTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBucketEntryType</summary>
-        public static readonly Method<Stellar.BucketEntryTypeDecodeRequest, Stellar.BucketEntryTypeDecodeResponse> DecodeBucketEntryTypeMethod =
+        public static readonly Method<Stellar.BucketEntryTypeDecodeRequest, Stellar.BucketEntryTypeDecodeResponse> DecodeBucketEntryType =
             new Method<Stellar.BucketEntryTypeDecodeRequest, Stellar.BucketEntryTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2214,7 +2214,7 @@ namespace Stellar.RPC.AOT
                 BucketEntryTypeDecodeResponseGrpcMarshaller.BucketEntryTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHotArchiveBucketEntryType</summary>
-        public static readonly Method<Stellar.HotArchiveBucketEntryTypeEncodeRequest, Stellar.HotArchiveBucketEntryTypeEncodeResponse> EncodeHotArchiveBucketEntryTypeMethod =
+        public static readonly Method<Stellar.HotArchiveBucketEntryTypeEncodeRequest, Stellar.HotArchiveBucketEntryTypeEncodeResponse> EncodeHotArchiveBucketEntryType =
             new Method<Stellar.HotArchiveBucketEntryTypeEncodeRequest, Stellar.HotArchiveBucketEntryTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2223,7 +2223,7 @@ namespace Stellar.RPC.AOT
                 HotArchiveBucketEntryTypeEncodeResponseGrpcMarshaller.HotArchiveBucketEntryTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHotArchiveBucketEntryType</summary>
-        public static readonly Method<Stellar.HotArchiveBucketEntryTypeDecodeRequest, Stellar.HotArchiveBucketEntryTypeDecodeResponse> DecodeHotArchiveBucketEntryTypeMethod =
+        public static readonly Method<Stellar.HotArchiveBucketEntryTypeDecodeRequest, Stellar.HotArchiveBucketEntryTypeDecodeResponse> DecodeHotArchiveBucketEntryType =
             new Method<Stellar.HotArchiveBucketEntryTypeDecodeRequest, Stellar.HotArchiveBucketEntryTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2232,7 +2232,7 @@ namespace Stellar.RPC.AOT
                 HotArchiveBucketEntryTypeDecodeResponseGrpcMarshaller.HotArchiveBucketEntryTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveBucketEntryType</summary>
-        public static readonly Method<Stellar.ColdArchiveBucketEntryTypeEncodeRequest, Stellar.ColdArchiveBucketEntryTypeEncodeResponse> EncodeColdArchiveBucketEntryTypeMethod =
+        public static readonly Method<Stellar.ColdArchiveBucketEntryTypeEncodeRequest, Stellar.ColdArchiveBucketEntryTypeEncodeResponse> EncodeColdArchiveBucketEntryType =
             new Method<Stellar.ColdArchiveBucketEntryTypeEncodeRequest, Stellar.ColdArchiveBucketEntryTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2241,7 +2241,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBucketEntryTypeEncodeResponseGrpcMarshaller.ColdArchiveBucketEntryTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveBucketEntryType</summary>
-        public static readonly Method<Stellar.ColdArchiveBucketEntryTypeDecodeRequest, Stellar.ColdArchiveBucketEntryTypeDecodeResponse> DecodeColdArchiveBucketEntryTypeMethod =
+        public static readonly Method<Stellar.ColdArchiveBucketEntryTypeDecodeRequest, Stellar.ColdArchiveBucketEntryTypeDecodeResponse> DecodeColdArchiveBucketEntryType =
             new Method<Stellar.ColdArchiveBucketEntryTypeDecodeRequest, Stellar.ColdArchiveBucketEntryTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2250,7 +2250,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBucketEntryTypeDecodeResponseGrpcMarshaller.ColdArchiveBucketEntryTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBucketMetadata</summary>
-        public static readonly Method<Stellar.BucketMetadataEncodeRequest, Stellar.BucketMetadataEncodeResponse> EncodeBucketMetadataMethod =
+        public static readonly Method<Stellar.BucketMetadataEncodeRequest, Stellar.BucketMetadataEncodeResponse> EncodeBucketMetadata =
             new Method<Stellar.BucketMetadataEncodeRequest, Stellar.BucketMetadataEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2259,7 +2259,7 @@ namespace Stellar.RPC.AOT
                 BucketMetadataEncodeResponseGrpcMarshaller.BucketMetadataEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBucketMetadata</summary>
-        public static readonly Method<Stellar.BucketMetadataDecodeRequest, Stellar.BucketMetadataDecodeResponse> DecodeBucketMetadataMethod =
+        public static readonly Method<Stellar.BucketMetadataDecodeRequest, Stellar.BucketMetadataDecodeResponse> DecodeBucketMetadata =
             new Method<Stellar.BucketMetadataDecodeRequest, Stellar.BucketMetadataDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2268,7 +2268,7 @@ namespace Stellar.RPC.AOT
                 BucketMetadataDecodeResponseGrpcMarshaller.BucketMetadataDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBucketEntry</summary>
-        public static readonly Method<Stellar.BucketEntryEncodeRequest, Stellar.BucketEntryEncodeResponse> EncodeBucketEntryMethod =
+        public static readonly Method<Stellar.BucketEntryEncodeRequest, Stellar.BucketEntryEncodeResponse> EncodeBucketEntry =
             new Method<Stellar.BucketEntryEncodeRequest, Stellar.BucketEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2277,7 +2277,7 @@ namespace Stellar.RPC.AOT
                 BucketEntryEncodeResponseGrpcMarshaller.BucketEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBucketEntry</summary>
-        public static readonly Method<Stellar.BucketEntryDecodeRequest, Stellar.BucketEntryDecodeResponse> DecodeBucketEntryMethod =
+        public static readonly Method<Stellar.BucketEntryDecodeRequest, Stellar.BucketEntryDecodeResponse> DecodeBucketEntry =
             new Method<Stellar.BucketEntryDecodeRequest, Stellar.BucketEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2286,7 +2286,7 @@ namespace Stellar.RPC.AOT
                 BucketEntryDecodeResponseGrpcMarshaller.BucketEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHotArchiveBucketEntry</summary>
-        public static readonly Method<Stellar.HotArchiveBucketEntryEncodeRequest, Stellar.HotArchiveBucketEntryEncodeResponse> EncodeHotArchiveBucketEntryMethod =
+        public static readonly Method<Stellar.HotArchiveBucketEntryEncodeRequest, Stellar.HotArchiveBucketEntryEncodeResponse> EncodeHotArchiveBucketEntry =
             new Method<Stellar.HotArchiveBucketEntryEncodeRequest, Stellar.HotArchiveBucketEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2295,7 +2295,7 @@ namespace Stellar.RPC.AOT
                 HotArchiveBucketEntryEncodeResponseGrpcMarshaller.HotArchiveBucketEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHotArchiveBucketEntry</summary>
-        public static readonly Method<Stellar.HotArchiveBucketEntryDecodeRequest, Stellar.HotArchiveBucketEntryDecodeResponse> DecodeHotArchiveBucketEntryMethod =
+        public static readonly Method<Stellar.HotArchiveBucketEntryDecodeRequest, Stellar.HotArchiveBucketEntryDecodeResponse> DecodeHotArchiveBucketEntry =
             new Method<Stellar.HotArchiveBucketEntryDecodeRequest, Stellar.HotArchiveBucketEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2304,7 +2304,7 @@ namespace Stellar.RPC.AOT
                 HotArchiveBucketEntryDecodeResponseGrpcMarshaller.HotArchiveBucketEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveArchivedLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveArchivedLeafEncodeRequest, Stellar.ColdArchiveArchivedLeafEncodeResponse> EncodeColdArchiveArchivedLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveArchivedLeafEncodeRequest, Stellar.ColdArchiveArchivedLeafEncodeResponse> EncodeColdArchiveArchivedLeaf =
             new Method<Stellar.ColdArchiveArchivedLeafEncodeRequest, Stellar.ColdArchiveArchivedLeafEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2313,7 +2313,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveArchivedLeafEncodeResponseGrpcMarshaller.ColdArchiveArchivedLeafEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveArchivedLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveArchivedLeafDecodeRequest, Stellar.ColdArchiveArchivedLeafDecodeResponse> DecodeColdArchiveArchivedLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveArchivedLeafDecodeRequest, Stellar.ColdArchiveArchivedLeafDecodeResponse> DecodeColdArchiveArchivedLeaf =
             new Method<Stellar.ColdArchiveArchivedLeafDecodeRequest, Stellar.ColdArchiveArchivedLeafDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2322,7 +2322,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveArchivedLeafDecodeResponseGrpcMarshaller.ColdArchiveArchivedLeafDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveDeletedLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveDeletedLeafEncodeRequest, Stellar.ColdArchiveDeletedLeafEncodeResponse> EncodeColdArchiveDeletedLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveDeletedLeafEncodeRequest, Stellar.ColdArchiveDeletedLeafEncodeResponse> EncodeColdArchiveDeletedLeaf =
             new Method<Stellar.ColdArchiveDeletedLeafEncodeRequest, Stellar.ColdArchiveDeletedLeafEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2331,7 +2331,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveDeletedLeafEncodeResponseGrpcMarshaller.ColdArchiveDeletedLeafEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveDeletedLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveDeletedLeafDecodeRequest, Stellar.ColdArchiveDeletedLeafDecodeResponse> DecodeColdArchiveDeletedLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveDeletedLeafDecodeRequest, Stellar.ColdArchiveDeletedLeafDecodeResponse> DecodeColdArchiveDeletedLeaf =
             new Method<Stellar.ColdArchiveDeletedLeafDecodeRequest, Stellar.ColdArchiveDeletedLeafDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2340,7 +2340,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveDeletedLeafDecodeResponseGrpcMarshaller.ColdArchiveDeletedLeafDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveBoundaryLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveBoundaryLeafEncodeRequest, Stellar.ColdArchiveBoundaryLeafEncodeResponse> EncodeColdArchiveBoundaryLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveBoundaryLeafEncodeRequest, Stellar.ColdArchiveBoundaryLeafEncodeResponse> EncodeColdArchiveBoundaryLeaf =
             new Method<Stellar.ColdArchiveBoundaryLeafEncodeRequest, Stellar.ColdArchiveBoundaryLeafEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2349,7 +2349,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBoundaryLeafEncodeResponseGrpcMarshaller.ColdArchiveBoundaryLeafEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveBoundaryLeaf</summary>
-        public static readonly Method<Stellar.ColdArchiveBoundaryLeafDecodeRequest, Stellar.ColdArchiveBoundaryLeafDecodeResponse> DecodeColdArchiveBoundaryLeafMethod =
+        public static readonly Method<Stellar.ColdArchiveBoundaryLeafDecodeRequest, Stellar.ColdArchiveBoundaryLeafDecodeResponse> DecodeColdArchiveBoundaryLeaf =
             new Method<Stellar.ColdArchiveBoundaryLeafDecodeRequest, Stellar.ColdArchiveBoundaryLeafDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2358,7 +2358,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBoundaryLeafDecodeResponseGrpcMarshaller.ColdArchiveBoundaryLeafDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveHashEntry</summary>
-        public static readonly Method<Stellar.ColdArchiveHashEntryEncodeRequest, Stellar.ColdArchiveHashEntryEncodeResponse> EncodeColdArchiveHashEntryMethod =
+        public static readonly Method<Stellar.ColdArchiveHashEntryEncodeRequest, Stellar.ColdArchiveHashEntryEncodeResponse> EncodeColdArchiveHashEntry =
             new Method<Stellar.ColdArchiveHashEntryEncodeRequest, Stellar.ColdArchiveHashEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2367,7 +2367,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveHashEntryEncodeResponseGrpcMarshaller.ColdArchiveHashEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveHashEntry</summary>
-        public static readonly Method<Stellar.ColdArchiveHashEntryDecodeRequest, Stellar.ColdArchiveHashEntryDecodeResponse> DecodeColdArchiveHashEntryMethod =
+        public static readonly Method<Stellar.ColdArchiveHashEntryDecodeRequest, Stellar.ColdArchiveHashEntryDecodeResponse> DecodeColdArchiveHashEntry =
             new Method<Stellar.ColdArchiveHashEntryDecodeRequest, Stellar.ColdArchiveHashEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2376,7 +2376,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveHashEntryDecodeResponseGrpcMarshaller.ColdArchiveHashEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeColdArchiveBucketEntry</summary>
-        public static readonly Method<Stellar.ColdArchiveBucketEntryEncodeRequest, Stellar.ColdArchiveBucketEntryEncodeResponse> EncodeColdArchiveBucketEntryMethod =
+        public static readonly Method<Stellar.ColdArchiveBucketEntryEncodeRequest, Stellar.ColdArchiveBucketEntryEncodeResponse> EncodeColdArchiveBucketEntry =
             new Method<Stellar.ColdArchiveBucketEntryEncodeRequest, Stellar.ColdArchiveBucketEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2385,7 +2385,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBucketEntryEncodeResponseGrpcMarshaller.ColdArchiveBucketEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeColdArchiveBucketEntry</summary>
-        public static readonly Method<Stellar.ColdArchiveBucketEntryDecodeRequest, Stellar.ColdArchiveBucketEntryDecodeResponse> DecodeColdArchiveBucketEntryMethod =
+        public static readonly Method<Stellar.ColdArchiveBucketEntryDecodeRequest, Stellar.ColdArchiveBucketEntryDecodeResponse> DecodeColdArchiveBucketEntry =
             new Method<Stellar.ColdArchiveBucketEntryDecodeRequest, Stellar.ColdArchiveBucketEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2394,7 +2394,7 @@ namespace Stellar.RPC.AOT
                 ColdArchiveBucketEntryDecodeResponseGrpcMarshaller.ColdArchiveBucketEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeUpgradeType</summary>
-        public static readonly Method<Stellar.UpgradeTypeEncodeRequest, Stellar.UpgradeTypeEncodeResponse> EncodeUpgradeTypeMethod =
+        public static readonly Method<Stellar.UpgradeTypeEncodeRequest, Stellar.UpgradeTypeEncodeResponse> EncodeUpgradeType =
             new Method<Stellar.UpgradeTypeEncodeRequest, Stellar.UpgradeTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2403,7 +2403,7 @@ namespace Stellar.RPC.AOT
                 UpgradeTypeEncodeResponseGrpcMarshaller.UpgradeTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeUpgradeType</summary>
-        public static readonly Method<Stellar.UpgradeTypeDecodeRequest, Stellar.UpgradeTypeDecodeResponse> DecodeUpgradeTypeMethod =
+        public static readonly Method<Stellar.UpgradeTypeDecodeRequest, Stellar.UpgradeTypeDecodeResponse> DecodeUpgradeType =
             new Method<Stellar.UpgradeTypeDecodeRequest, Stellar.UpgradeTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2412,7 +2412,7 @@ namespace Stellar.RPC.AOT
                 UpgradeTypeDecodeResponseGrpcMarshaller.UpgradeTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStellarValueType</summary>
-        public static readonly Method<Stellar.StellarValueTypeEncodeRequest, Stellar.StellarValueTypeEncodeResponse> EncodeStellarValueTypeMethod =
+        public static readonly Method<Stellar.StellarValueTypeEncodeRequest, Stellar.StellarValueTypeEncodeResponse> EncodeStellarValueType =
             new Method<Stellar.StellarValueTypeEncodeRequest, Stellar.StellarValueTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2421,7 +2421,7 @@ namespace Stellar.RPC.AOT
                 StellarValueTypeEncodeResponseGrpcMarshaller.StellarValueTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStellarValueType</summary>
-        public static readonly Method<Stellar.StellarValueTypeDecodeRequest, Stellar.StellarValueTypeDecodeResponse> DecodeStellarValueTypeMethod =
+        public static readonly Method<Stellar.StellarValueTypeDecodeRequest, Stellar.StellarValueTypeDecodeResponse> DecodeStellarValueType =
             new Method<Stellar.StellarValueTypeDecodeRequest, Stellar.StellarValueTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2430,7 +2430,7 @@ namespace Stellar.RPC.AOT
                 StellarValueTypeDecodeResponseGrpcMarshaller.StellarValueTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseValueSignature</summary>
-        public static readonly Method<Stellar.LedgerCloseValueSignatureEncodeRequest, Stellar.LedgerCloseValueSignatureEncodeResponse> EncodeLedgerCloseValueSignatureMethod =
+        public static readonly Method<Stellar.LedgerCloseValueSignatureEncodeRequest, Stellar.LedgerCloseValueSignatureEncodeResponse> EncodeLedgerCloseValueSignature =
             new Method<Stellar.LedgerCloseValueSignatureEncodeRequest, Stellar.LedgerCloseValueSignatureEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2439,7 +2439,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseValueSignatureEncodeResponseGrpcMarshaller.LedgerCloseValueSignatureEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseValueSignature</summary>
-        public static readonly Method<Stellar.LedgerCloseValueSignatureDecodeRequest, Stellar.LedgerCloseValueSignatureDecodeResponse> DecodeLedgerCloseValueSignatureMethod =
+        public static readonly Method<Stellar.LedgerCloseValueSignatureDecodeRequest, Stellar.LedgerCloseValueSignatureDecodeResponse> DecodeLedgerCloseValueSignature =
             new Method<Stellar.LedgerCloseValueSignatureDecodeRequest, Stellar.LedgerCloseValueSignatureDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2448,7 +2448,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseValueSignatureDecodeResponseGrpcMarshaller.LedgerCloseValueSignatureDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStellarValue</summary>
-        public static readonly Method<Stellar.StellarValueEncodeRequest, Stellar.StellarValueEncodeResponse> EncodeStellarValueMethod =
+        public static readonly Method<Stellar.StellarValueEncodeRequest, Stellar.StellarValueEncodeResponse> EncodeStellarValue =
             new Method<Stellar.StellarValueEncodeRequest, Stellar.StellarValueEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2457,7 +2457,7 @@ namespace Stellar.RPC.AOT
                 StellarValueEncodeResponseGrpcMarshaller.StellarValueEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStellarValue</summary>
-        public static readonly Method<Stellar.StellarValueDecodeRequest, Stellar.StellarValueDecodeResponse> DecodeStellarValueMethod =
+        public static readonly Method<Stellar.StellarValueDecodeRequest, Stellar.StellarValueDecodeResponse> DecodeStellarValue =
             new Method<Stellar.StellarValueDecodeRequest, Stellar.StellarValueDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2466,7 +2466,7 @@ namespace Stellar.RPC.AOT
                 StellarValueDecodeResponseGrpcMarshaller.StellarValueDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerHeaderFlags</summary>
-        public static readonly Method<Stellar.LedgerHeaderFlagsEncodeRequest, Stellar.LedgerHeaderFlagsEncodeResponse> EncodeLedgerHeaderFlagsMethod =
+        public static readonly Method<Stellar.LedgerHeaderFlagsEncodeRequest, Stellar.LedgerHeaderFlagsEncodeResponse> EncodeLedgerHeaderFlags =
             new Method<Stellar.LedgerHeaderFlagsEncodeRequest, Stellar.LedgerHeaderFlagsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2475,7 +2475,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderFlagsEncodeResponseGrpcMarshaller.LedgerHeaderFlagsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerHeaderFlags</summary>
-        public static readonly Method<Stellar.LedgerHeaderFlagsDecodeRequest, Stellar.LedgerHeaderFlagsDecodeResponse> DecodeLedgerHeaderFlagsMethod =
+        public static readonly Method<Stellar.LedgerHeaderFlagsDecodeRequest, Stellar.LedgerHeaderFlagsDecodeResponse> DecodeLedgerHeaderFlags =
             new Method<Stellar.LedgerHeaderFlagsDecodeRequest, Stellar.LedgerHeaderFlagsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2484,7 +2484,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderFlagsDecodeResponseGrpcMarshaller.LedgerHeaderFlagsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerHeaderExtensionV1</summary>
-        public static readonly Method<Stellar.LedgerHeaderExtensionV1EncodeRequest, Stellar.LedgerHeaderExtensionV1EncodeResponse> EncodeLedgerHeaderExtensionV1Method =
+        public static readonly Method<Stellar.LedgerHeaderExtensionV1EncodeRequest, Stellar.LedgerHeaderExtensionV1EncodeResponse> EncodeLedgerHeaderExtensionV1 =
             new Method<Stellar.LedgerHeaderExtensionV1EncodeRequest, Stellar.LedgerHeaderExtensionV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2493,7 +2493,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderExtensionV1EncodeResponseGrpcMarshaller.LedgerHeaderExtensionV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerHeaderExtensionV1</summary>
-        public static readonly Method<Stellar.LedgerHeaderExtensionV1DecodeRequest, Stellar.LedgerHeaderExtensionV1DecodeResponse> DecodeLedgerHeaderExtensionV1Method =
+        public static readonly Method<Stellar.LedgerHeaderExtensionV1DecodeRequest, Stellar.LedgerHeaderExtensionV1DecodeResponse> DecodeLedgerHeaderExtensionV1 =
             new Method<Stellar.LedgerHeaderExtensionV1DecodeRequest, Stellar.LedgerHeaderExtensionV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2502,7 +2502,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderExtensionV1DecodeResponseGrpcMarshaller.LedgerHeaderExtensionV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerHeader</summary>
-        public static readonly Method<Stellar.LedgerHeaderEncodeRequest, Stellar.LedgerHeaderEncodeResponse> EncodeLedgerHeaderMethod =
+        public static readonly Method<Stellar.LedgerHeaderEncodeRequest, Stellar.LedgerHeaderEncodeResponse> EncodeLedgerHeader =
             new Method<Stellar.LedgerHeaderEncodeRequest, Stellar.LedgerHeaderEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2511,7 +2511,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderEncodeResponseGrpcMarshaller.LedgerHeaderEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerHeader</summary>
-        public static readonly Method<Stellar.LedgerHeaderDecodeRequest, Stellar.LedgerHeaderDecodeResponse> DecodeLedgerHeaderMethod =
+        public static readonly Method<Stellar.LedgerHeaderDecodeRequest, Stellar.LedgerHeaderDecodeResponse> DecodeLedgerHeader =
             new Method<Stellar.LedgerHeaderDecodeRequest, Stellar.LedgerHeaderDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2520,7 +2520,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderDecodeResponseGrpcMarshaller.LedgerHeaderDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerUpgradeType</summary>
-        public static readonly Method<Stellar.LedgerUpgradeTypeEncodeRequest, Stellar.LedgerUpgradeTypeEncodeResponse> EncodeLedgerUpgradeTypeMethod =
+        public static readonly Method<Stellar.LedgerUpgradeTypeEncodeRequest, Stellar.LedgerUpgradeTypeEncodeResponse> EncodeLedgerUpgradeType =
             new Method<Stellar.LedgerUpgradeTypeEncodeRequest, Stellar.LedgerUpgradeTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2529,7 +2529,7 @@ namespace Stellar.RPC.AOT
                 LedgerUpgradeTypeEncodeResponseGrpcMarshaller.LedgerUpgradeTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerUpgradeType</summary>
-        public static readonly Method<Stellar.LedgerUpgradeTypeDecodeRequest, Stellar.LedgerUpgradeTypeDecodeResponse> DecodeLedgerUpgradeTypeMethod =
+        public static readonly Method<Stellar.LedgerUpgradeTypeDecodeRequest, Stellar.LedgerUpgradeTypeDecodeResponse> DecodeLedgerUpgradeType =
             new Method<Stellar.LedgerUpgradeTypeDecodeRequest, Stellar.LedgerUpgradeTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2538,7 +2538,7 @@ namespace Stellar.RPC.AOT
                 LedgerUpgradeTypeDecodeResponseGrpcMarshaller.LedgerUpgradeTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigUpgradeSetKey</summary>
-        public static readonly Method<Stellar.ConfigUpgradeSetKeyEncodeRequest, Stellar.ConfigUpgradeSetKeyEncodeResponse> EncodeConfigUpgradeSetKeyMethod =
+        public static readonly Method<Stellar.ConfigUpgradeSetKeyEncodeRequest, Stellar.ConfigUpgradeSetKeyEncodeResponse> EncodeConfigUpgradeSetKey =
             new Method<Stellar.ConfigUpgradeSetKeyEncodeRequest, Stellar.ConfigUpgradeSetKeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2547,7 +2547,7 @@ namespace Stellar.RPC.AOT
                 ConfigUpgradeSetKeyEncodeResponseGrpcMarshaller.ConfigUpgradeSetKeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigUpgradeSetKey</summary>
-        public static readonly Method<Stellar.ConfigUpgradeSetKeyDecodeRequest, Stellar.ConfigUpgradeSetKeyDecodeResponse> DecodeConfigUpgradeSetKeyMethod =
+        public static readonly Method<Stellar.ConfigUpgradeSetKeyDecodeRequest, Stellar.ConfigUpgradeSetKeyDecodeResponse> DecodeConfigUpgradeSetKey =
             new Method<Stellar.ConfigUpgradeSetKeyDecodeRequest, Stellar.ConfigUpgradeSetKeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2556,7 +2556,7 @@ namespace Stellar.RPC.AOT
                 ConfigUpgradeSetKeyDecodeResponseGrpcMarshaller.ConfigUpgradeSetKeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerUpgrade</summary>
-        public static readonly Method<Stellar.LedgerUpgradeEncodeRequest, Stellar.LedgerUpgradeEncodeResponse> EncodeLedgerUpgradeMethod =
+        public static readonly Method<Stellar.LedgerUpgradeEncodeRequest, Stellar.LedgerUpgradeEncodeResponse> EncodeLedgerUpgrade =
             new Method<Stellar.LedgerUpgradeEncodeRequest, Stellar.LedgerUpgradeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2565,7 +2565,7 @@ namespace Stellar.RPC.AOT
                 LedgerUpgradeEncodeResponseGrpcMarshaller.LedgerUpgradeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerUpgrade</summary>
-        public static readonly Method<Stellar.LedgerUpgradeDecodeRequest, Stellar.LedgerUpgradeDecodeResponse> DecodeLedgerUpgradeMethod =
+        public static readonly Method<Stellar.LedgerUpgradeDecodeRequest, Stellar.LedgerUpgradeDecodeResponse> DecodeLedgerUpgrade =
             new Method<Stellar.LedgerUpgradeDecodeRequest, Stellar.LedgerUpgradeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2574,7 +2574,7 @@ namespace Stellar.RPC.AOT
                 LedgerUpgradeDecodeResponseGrpcMarshaller.LedgerUpgradeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeConfigUpgradeSet</summary>
-        public static readonly Method<Stellar.ConfigUpgradeSetEncodeRequest, Stellar.ConfigUpgradeSetEncodeResponse> EncodeConfigUpgradeSetMethod =
+        public static readonly Method<Stellar.ConfigUpgradeSetEncodeRequest, Stellar.ConfigUpgradeSetEncodeResponse> EncodeConfigUpgradeSet =
             new Method<Stellar.ConfigUpgradeSetEncodeRequest, Stellar.ConfigUpgradeSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2583,7 +2583,7 @@ namespace Stellar.RPC.AOT
                 ConfigUpgradeSetEncodeResponseGrpcMarshaller.ConfigUpgradeSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeConfigUpgradeSet</summary>
-        public static readonly Method<Stellar.ConfigUpgradeSetDecodeRequest, Stellar.ConfigUpgradeSetDecodeResponse> DecodeConfigUpgradeSetMethod =
+        public static readonly Method<Stellar.ConfigUpgradeSetDecodeRequest, Stellar.ConfigUpgradeSetDecodeResponse> DecodeConfigUpgradeSet =
             new Method<Stellar.ConfigUpgradeSetDecodeRequest, Stellar.ConfigUpgradeSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2592,7 +2592,7 @@ namespace Stellar.RPC.AOT
                 ConfigUpgradeSetDecodeResponseGrpcMarshaller.ConfigUpgradeSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTxSetComponentType</summary>
-        public static readonly Method<Stellar.TxSetComponentTypeEncodeRequest, Stellar.TxSetComponentTypeEncodeResponse> EncodeTxSetComponentTypeMethod =
+        public static readonly Method<Stellar.TxSetComponentTypeEncodeRequest, Stellar.TxSetComponentTypeEncodeResponse> EncodeTxSetComponentType =
             new Method<Stellar.TxSetComponentTypeEncodeRequest, Stellar.TxSetComponentTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2601,7 +2601,7 @@ namespace Stellar.RPC.AOT
                 TxSetComponentTypeEncodeResponseGrpcMarshaller.TxSetComponentTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTxSetComponentType</summary>
-        public static readonly Method<Stellar.TxSetComponentTypeDecodeRequest, Stellar.TxSetComponentTypeDecodeResponse> DecodeTxSetComponentTypeMethod =
+        public static readonly Method<Stellar.TxSetComponentTypeDecodeRequest, Stellar.TxSetComponentTypeDecodeResponse> DecodeTxSetComponentType =
             new Method<Stellar.TxSetComponentTypeDecodeRequest, Stellar.TxSetComponentTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2610,7 +2610,7 @@ namespace Stellar.RPC.AOT
                 TxSetComponentTypeDecodeResponseGrpcMarshaller.TxSetComponentTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTxSetComponent</summary>
-        public static readonly Method<Stellar.TxSetComponentEncodeRequest, Stellar.TxSetComponentEncodeResponse> EncodeTxSetComponentMethod =
+        public static readonly Method<Stellar.TxSetComponentEncodeRequest, Stellar.TxSetComponentEncodeResponse> EncodeTxSetComponent =
             new Method<Stellar.TxSetComponentEncodeRequest, Stellar.TxSetComponentEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2619,7 +2619,7 @@ namespace Stellar.RPC.AOT
                 TxSetComponentEncodeResponseGrpcMarshaller.TxSetComponentEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTxSetComponent</summary>
-        public static readonly Method<Stellar.TxSetComponentDecodeRequest, Stellar.TxSetComponentDecodeResponse> DecodeTxSetComponentMethod =
+        public static readonly Method<Stellar.TxSetComponentDecodeRequest, Stellar.TxSetComponentDecodeResponse> DecodeTxSetComponent =
             new Method<Stellar.TxSetComponentDecodeRequest, Stellar.TxSetComponentDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2628,7 +2628,7 @@ namespace Stellar.RPC.AOT
                 TxSetComponentDecodeResponseGrpcMarshaller.TxSetComponentDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionPhase</summary>
-        public static readonly Method<Stellar.TransactionPhaseEncodeRequest, Stellar.TransactionPhaseEncodeResponse> EncodeTransactionPhaseMethod =
+        public static readonly Method<Stellar.TransactionPhaseEncodeRequest, Stellar.TransactionPhaseEncodeResponse> EncodeTransactionPhase =
             new Method<Stellar.TransactionPhaseEncodeRequest, Stellar.TransactionPhaseEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2637,7 +2637,7 @@ namespace Stellar.RPC.AOT
                 TransactionPhaseEncodeResponseGrpcMarshaller.TransactionPhaseEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionPhase</summary>
-        public static readonly Method<Stellar.TransactionPhaseDecodeRequest, Stellar.TransactionPhaseDecodeResponse> DecodeTransactionPhaseMethod =
+        public static readonly Method<Stellar.TransactionPhaseDecodeRequest, Stellar.TransactionPhaseDecodeResponse> DecodeTransactionPhase =
             new Method<Stellar.TransactionPhaseDecodeRequest, Stellar.TransactionPhaseDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2646,7 +2646,7 @@ namespace Stellar.RPC.AOT
                 TransactionPhaseDecodeResponseGrpcMarshaller.TransactionPhaseDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionSet</summary>
-        public static readonly Method<Stellar.TransactionSetEncodeRequest, Stellar.TransactionSetEncodeResponse> EncodeTransactionSetMethod =
+        public static readonly Method<Stellar.TransactionSetEncodeRequest, Stellar.TransactionSetEncodeResponse> EncodeTransactionSet =
             new Method<Stellar.TransactionSetEncodeRequest, Stellar.TransactionSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2655,7 +2655,7 @@ namespace Stellar.RPC.AOT
                 TransactionSetEncodeResponseGrpcMarshaller.TransactionSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionSet</summary>
-        public static readonly Method<Stellar.TransactionSetDecodeRequest, Stellar.TransactionSetDecodeResponse> DecodeTransactionSetMethod =
+        public static readonly Method<Stellar.TransactionSetDecodeRequest, Stellar.TransactionSetDecodeResponse> DecodeTransactionSet =
             new Method<Stellar.TransactionSetDecodeRequest, Stellar.TransactionSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2664,7 +2664,7 @@ namespace Stellar.RPC.AOT
                 TransactionSetDecodeResponseGrpcMarshaller.TransactionSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionSetV1</summary>
-        public static readonly Method<Stellar.TransactionSetV1EncodeRequest, Stellar.TransactionSetV1EncodeResponse> EncodeTransactionSetV1Method =
+        public static readonly Method<Stellar.TransactionSetV1EncodeRequest, Stellar.TransactionSetV1EncodeResponse> EncodeTransactionSetV1 =
             new Method<Stellar.TransactionSetV1EncodeRequest, Stellar.TransactionSetV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2673,7 +2673,7 @@ namespace Stellar.RPC.AOT
                 TransactionSetV1EncodeResponseGrpcMarshaller.TransactionSetV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionSetV1</summary>
-        public static readonly Method<Stellar.TransactionSetV1DecodeRequest, Stellar.TransactionSetV1DecodeResponse> DecodeTransactionSetV1Method =
+        public static readonly Method<Stellar.TransactionSetV1DecodeRequest, Stellar.TransactionSetV1DecodeResponse> DecodeTransactionSetV1 =
             new Method<Stellar.TransactionSetV1DecodeRequest, Stellar.TransactionSetV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2682,7 +2682,7 @@ namespace Stellar.RPC.AOT
                 TransactionSetV1DecodeResponseGrpcMarshaller.TransactionSetV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeGeneralizedTransactionSet</summary>
-        public static readonly Method<Stellar.GeneralizedTransactionSetEncodeRequest, Stellar.GeneralizedTransactionSetEncodeResponse> EncodeGeneralizedTransactionSetMethod =
+        public static readonly Method<Stellar.GeneralizedTransactionSetEncodeRequest, Stellar.GeneralizedTransactionSetEncodeResponse> EncodeGeneralizedTransactionSet =
             new Method<Stellar.GeneralizedTransactionSetEncodeRequest, Stellar.GeneralizedTransactionSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2691,7 +2691,7 @@ namespace Stellar.RPC.AOT
                 GeneralizedTransactionSetEncodeResponseGrpcMarshaller.GeneralizedTransactionSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeGeneralizedTransactionSet</summary>
-        public static readonly Method<Stellar.GeneralizedTransactionSetDecodeRequest, Stellar.GeneralizedTransactionSetDecodeResponse> DecodeGeneralizedTransactionSetMethod =
+        public static readonly Method<Stellar.GeneralizedTransactionSetDecodeRequest, Stellar.GeneralizedTransactionSetDecodeResponse> DecodeGeneralizedTransactionSet =
             new Method<Stellar.GeneralizedTransactionSetDecodeRequest, Stellar.GeneralizedTransactionSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2700,7 +2700,7 @@ namespace Stellar.RPC.AOT
                 GeneralizedTransactionSetDecodeResponseGrpcMarshaller.GeneralizedTransactionSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionResultPair</summary>
-        public static readonly Method<Stellar.TransactionResultPairEncodeRequest, Stellar.TransactionResultPairEncodeResponse> EncodeTransactionResultPairMethod =
+        public static readonly Method<Stellar.TransactionResultPairEncodeRequest, Stellar.TransactionResultPairEncodeResponse> EncodeTransactionResultPair =
             new Method<Stellar.TransactionResultPairEncodeRequest, Stellar.TransactionResultPairEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2709,7 +2709,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultPairEncodeResponseGrpcMarshaller.TransactionResultPairEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionResultPair</summary>
-        public static readonly Method<Stellar.TransactionResultPairDecodeRequest, Stellar.TransactionResultPairDecodeResponse> DecodeTransactionResultPairMethod =
+        public static readonly Method<Stellar.TransactionResultPairDecodeRequest, Stellar.TransactionResultPairDecodeResponse> DecodeTransactionResultPair =
             new Method<Stellar.TransactionResultPairDecodeRequest, Stellar.TransactionResultPairDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2718,7 +2718,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultPairDecodeResponseGrpcMarshaller.TransactionResultPairDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionResultSet</summary>
-        public static readonly Method<Stellar.TransactionResultSetEncodeRequest, Stellar.TransactionResultSetEncodeResponse> EncodeTransactionResultSetMethod =
+        public static readonly Method<Stellar.TransactionResultSetEncodeRequest, Stellar.TransactionResultSetEncodeResponse> EncodeTransactionResultSet =
             new Method<Stellar.TransactionResultSetEncodeRequest, Stellar.TransactionResultSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2727,7 +2727,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultSetEncodeResponseGrpcMarshaller.TransactionResultSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionResultSet</summary>
-        public static readonly Method<Stellar.TransactionResultSetDecodeRequest, Stellar.TransactionResultSetDecodeResponse> DecodeTransactionResultSetMethod =
+        public static readonly Method<Stellar.TransactionResultSetDecodeRequest, Stellar.TransactionResultSetDecodeResponse> DecodeTransactionResultSet =
             new Method<Stellar.TransactionResultSetDecodeRequest, Stellar.TransactionResultSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2736,7 +2736,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultSetDecodeResponseGrpcMarshaller.TransactionResultSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionHistoryEntry</summary>
-        public static readonly Method<Stellar.TransactionHistoryEntryEncodeRequest, Stellar.TransactionHistoryEntryEncodeResponse> EncodeTransactionHistoryEntryMethod =
+        public static readonly Method<Stellar.TransactionHistoryEntryEncodeRequest, Stellar.TransactionHistoryEntryEncodeResponse> EncodeTransactionHistoryEntry =
             new Method<Stellar.TransactionHistoryEntryEncodeRequest, Stellar.TransactionHistoryEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2745,7 +2745,7 @@ namespace Stellar.RPC.AOT
                 TransactionHistoryEntryEncodeResponseGrpcMarshaller.TransactionHistoryEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionHistoryEntry</summary>
-        public static readonly Method<Stellar.TransactionHistoryEntryDecodeRequest, Stellar.TransactionHistoryEntryDecodeResponse> DecodeTransactionHistoryEntryMethod =
+        public static readonly Method<Stellar.TransactionHistoryEntryDecodeRequest, Stellar.TransactionHistoryEntryDecodeResponse> DecodeTransactionHistoryEntry =
             new Method<Stellar.TransactionHistoryEntryDecodeRequest, Stellar.TransactionHistoryEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2754,7 +2754,7 @@ namespace Stellar.RPC.AOT
                 TransactionHistoryEntryDecodeResponseGrpcMarshaller.TransactionHistoryEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionHistoryResultEntry</summary>
-        public static readonly Method<Stellar.TransactionHistoryResultEntryEncodeRequest, Stellar.TransactionHistoryResultEntryEncodeResponse> EncodeTransactionHistoryResultEntryMethod =
+        public static readonly Method<Stellar.TransactionHistoryResultEntryEncodeRequest, Stellar.TransactionHistoryResultEntryEncodeResponse> EncodeTransactionHistoryResultEntry =
             new Method<Stellar.TransactionHistoryResultEntryEncodeRequest, Stellar.TransactionHistoryResultEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2763,7 +2763,7 @@ namespace Stellar.RPC.AOT
                 TransactionHistoryResultEntryEncodeResponseGrpcMarshaller.TransactionHistoryResultEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionHistoryResultEntry</summary>
-        public static readonly Method<Stellar.TransactionHistoryResultEntryDecodeRequest, Stellar.TransactionHistoryResultEntryDecodeResponse> DecodeTransactionHistoryResultEntryMethod =
+        public static readonly Method<Stellar.TransactionHistoryResultEntryDecodeRequest, Stellar.TransactionHistoryResultEntryDecodeResponse> DecodeTransactionHistoryResultEntry =
             new Method<Stellar.TransactionHistoryResultEntryDecodeRequest, Stellar.TransactionHistoryResultEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2772,7 +2772,7 @@ namespace Stellar.RPC.AOT
                 TransactionHistoryResultEntryDecodeResponseGrpcMarshaller.TransactionHistoryResultEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerHeaderHistoryEntry</summary>
-        public static readonly Method<Stellar.LedgerHeaderHistoryEntryEncodeRequest, Stellar.LedgerHeaderHistoryEntryEncodeResponse> EncodeLedgerHeaderHistoryEntryMethod =
+        public static readonly Method<Stellar.LedgerHeaderHistoryEntryEncodeRequest, Stellar.LedgerHeaderHistoryEntryEncodeResponse> EncodeLedgerHeaderHistoryEntry =
             new Method<Stellar.LedgerHeaderHistoryEntryEncodeRequest, Stellar.LedgerHeaderHistoryEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2781,7 +2781,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderHistoryEntryEncodeResponseGrpcMarshaller.LedgerHeaderHistoryEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerHeaderHistoryEntry</summary>
-        public static readonly Method<Stellar.LedgerHeaderHistoryEntryDecodeRequest, Stellar.LedgerHeaderHistoryEntryDecodeResponse> DecodeLedgerHeaderHistoryEntryMethod =
+        public static readonly Method<Stellar.LedgerHeaderHistoryEntryDecodeRequest, Stellar.LedgerHeaderHistoryEntryDecodeResponse> DecodeLedgerHeaderHistoryEntry =
             new Method<Stellar.LedgerHeaderHistoryEntryDecodeRequest, Stellar.LedgerHeaderHistoryEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2790,7 +2790,7 @@ namespace Stellar.RPC.AOT
                 LedgerHeaderHistoryEntryDecodeResponseGrpcMarshaller.LedgerHeaderHistoryEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerSCPMessages</summary>
-        public static readonly Method<Stellar.LedgerSCPMessagesEncodeRequest, Stellar.LedgerSCPMessagesEncodeResponse> EncodeLedgerSCPMessagesMethod =
+        public static readonly Method<Stellar.LedgerSCPMessagesEncodeRequest, Stellar.LedgerSCPMessagesEncodeResponse> EncodeLedgerSCPMessages =
             new Method<Stellar.LedgerSCPMessagesEncodeRequest, Stellar.LedgerSCPMessagesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2799,7 +2799,7 @@ namespace Stellar.RPC.AOT
                 LedgerSCPMessagesEncodeResponseGrpcMarshaller.LedgerSCPMessagesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerSCPMessages</summary>
-        public static readonly Method<Stellar.LedgerSCPMessagesDecodeRequest, Stellar.LedgerSCPMessagesDecodeResponse> DecodeLedgerSCPMessagesMethod =
+        public static readonly Method<Stellar.LedgerSCPMessagesDecodeRequest, Stellar.LedgerSCPMessagesDecodeResponse> DecodeLedgerSCPMessages =
             new Method<Stellar.LedgerSCPMessagesDecodeRequest, Stellar.LedgerSCPMessagesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2808,7 +2808,7 @@ namespace Stellar.RPC.AOT
                 LedgerSCPMessagesDecodeResponseGrpcMarshaller.LedgerSCPMessagesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPHistoryEntryV0</summary>
-        public static readonly Method<Stellar.SCPHistoryEntryV0EncodeRequest, Stellar.SCPHistoryEntryV0EncodeResponse> EncodeSCPHistoryEntryV0Method =
+        public static readonly Method<Stellar.SCPHistoryEntryV0EncodeRequest, Stellar.SCPHistoryEntryV0EncodeResponse> EncodeSCPHistoryEntryV0 =
             new Method<Stellar.SCPHistoryEntryV0EncodeRequest, Stellar.SCPHistoryEntryV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2817,7 +2817,7 @@ namespace Stellar.RPC.AOT
                 SCPHistoryEntryV0EncodeResponseGrpcMarshaller.SCPHistoryEntryV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPHistoryEntryV0</summary>
-        public static readonly Method<Stellar.SCPHistoryEntryV0DecodeRequest, Stellar.SCPHistoryEntryV0DecodeResponse> DecodeSCPHistoryEntryV0Method =
+        public static readonly Method<Stellar.SCPHistoryEntryV0DecodeRequest, Stellar.SCPHistoryEntryV0DecodeResponse> DecodeSCPHistoryEntryV0 =
             new Method<Stellar.SCPHistoryEntryV0DecodeRequest, Stellar.SCPHistoryEntryV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2826,7 +2826,7 @@ namespace Stellar.RPC.AOT
                 SCPHistoryEntryV0DecodeResponseGrpcMarshaller.SCPHistoryEntryV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPHistoryEntry</summary>
-        public static readonly Method<Stellar.SCPHistoryEntryEncodeRequest, Stellar.SCPHistoryEntryEncodeResponse> EncodeSCPHistoryEntryMethod =
+        public static readonly Method<Stellar.SCPHistoryEntryEncodeRequest, Stellar.SCPHistoryEntryEncodeResponse> EncodeSCPHistoryEntry =
             new Method<Stellar.SCPHistoryEntryEncodeRequest, Stellar.SCPHistoryEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2835,7 +2835,7 @@ namespace Stellar.RPC.AOT
                 SCPHistoryEntryEncodeResponseGrpcMarshaller.SCPHistoryEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPHistoryEntry</summary>
-        public static readonly Method<Stellar.SCPHistoryEntryDecodeRequest, Stellar.SCPHistoryEntryDecodeResponse> DecodeSCPHistoryEntryMethod =
+        public static readonly Method<Stellar.SCPHistoryEntryDecodeRequest, Stellar.SCPHistoryEntryDecodeResponse> DecodeSCPHistoryEntry =
             new Method<Stellar.SCPHistoryEntryDecodeRequest, Stellar.SCPHistoryEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2844,7 +2844,7 @@ namespace Stellar.RPC.AOT
                 SCPHistoryEntryDecodeResponseGrpcMarshaller.SCPHistoryEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntryChangeType</summary>
-        public static readonly Method<Stellar.LedgerEntryChangeTypeEncodeRequest, Stellar.LedgerEntryChangeTypeEncodeResponse> EncodeLedgerEntryChangeTypeMethod =
+        public static readonly Method<Stellar.LedgerEntryChangeTypeEncodeRequest, Stellar.LedgerEntryChangeTypeEncodeResponse> EncodeLedgerEntryChangeType =
             new Method<Stellar.LedgerEntryChangeTypeEncodeRequest, Stellar.LedgerEntryChangeTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2853,7 +2853,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangeTypeEncodeResponseGrpcMarshaller.LedgerEntryChangeTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntryChangeType</summary>
-        public static readonly Method<Stellar.LedgerEntryChangeTypeDecodeRequest, Stellar.LedgerEntryChangeTypeDecodeResponse> DecodeLedgerEntryChangeTypeMethod =
+        public static readonly Method<Stellar.LedgerEntryChangeTypeDecodeRequest, Stellar.LedgerEntryChangeTypeDecodeResponse> DecodeLedgerEntryChangeType =
             new Method<Stellar.LedgerEntryChangeTypeDecodeRequest, Stellar.LedgerEntryChangeTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2862,7 +2862,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangeTypeDecodeResponseGrpcMarshaller.LedgerEntryChangeTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntryChange</summary>
-        public static readonly Method<Stellar.LedgerEntryChangeEncodeRequest, Stellar.LedgerEntryChangeEncodeResponse> EncodeLedgerEntryChangeMethod =
+        public static readonly Method<Stellar.LedgerEntryChangeEncodeRequest, Stellar.LedgerEntryChangeEncodeResponse> EncodeLedgerEntryChange =
             new Method<Stellar.LedgerEntryChangeEncodeRequest, Stellar.LedgerEntryChangeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2871,7 +2871,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangeEncodeResponseGrpcMarshaller.LedgerEntryChangeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntryChange</summary>
-        public static readonly Method<Stellar.LedgerEntryChangeDecodeRequest, Stellar.LedgerEntryChangeDecodeResponse> DecodeLedgerEntryChangeMethod =
+        public static readonly Method<Stellar.LedgerEntryChangeDecodeRequest, Stellar.LedgerEntryChangeDecodeResponse> DecodeLedgerEntryChange =
             new Method<Stellar.LedgerEntryChangeDecodeRequest, Stellar.LedgerEntryChangeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2880,7 +2880,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangeDecodeResponseGrpcMarshaller.LedgerEntryChangeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerEntryChanges</summary>
-        public static readonly Method<Stellar.LedgerEntryChangesEncodeRequest, Stellar.LedgerEntryChangesEncodeResponse> EncodeLedgerEntryChangesMethod =
+        public static readonly Method<Stellar.LedgerEntryChangesEncodeRequest, Stellar.LedgerEntryChangesEncodeResponse> EncodeLedgerEntryChanges =
             new Method<Stellar.LedgerEntryChangesEncodeRequest, Stellar.LedgerEntryChangesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2889,7 +2889,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangesEncodeResponseGrpcMarshaller.LedgerEntryChangesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerEntryChanges</summary>
-        public static readonly Method<Stellar.LedgerEntryChangesDecodeRequest, Stellar.LedgerEntryChangesDecodeResponse> DecodeLedgerEntryChangesMethod =
+        public static readonly Method<Stellar.LedgerEntryChangesDecodeRequest, Stellar.LedgerEntryChangesDecodeResponse> DecodeLedgerEntryChanges =
             new Method<Stellar.LedgerEntryChangesDecodeRequest, Stellar.LedgerEntryChangesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2898,7 +2898,7 @@ namespace Stellar.RPC.AOT
                 LedgerEntryChangesDecodeResponseGrpcMarshaller.LedgerEntryChangesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOperationMeta</summary>
-        public static readonly Method<Stellar.OperationMetaEncodeRequest, Stellar.OperationMetaEncodeResponse> EncodeOperationMetaMethod =
+        public static readonly Method<Stellar.OperationMetaEncodeRequest, Stellar.OperationMetaEncodeResponse> EncodeOperationMeta =
             new Method<Stellar.OperationMetaEncodeRequest, Stellar.OperationMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2907,7 +2907,7 @@ namespace Stellar.RPC.AOT
                 OperationMetaEncodeResponseGrpcMarshaller.OperationMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOperationMeta</summary>
-        public static readonly Method<Stellar.OperationMetaDecodeRequest, Stellar.OperationMetaDecodeResponse> DecodeOperationMetaMethod =
+        public static readonly Method<Stellar.OperationMetaDecodeRequest, Stellar.OperationMetaDecodeResponse> DecodeOperationMeta =
             new Method<Stellar.OperationMetaDecodeRequest, Stellar.OperationMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2916,7 +2916,7 @@ namespace Stellar.RPC.AOT
                 OperationMetaDecodeResponseGrpcMarshaller.OperationMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionMetaV1</summary>
-        public static readonly Method<Stellar.TransactionMetaV1EncodeRequest, Stellar.TransactionMetaV1EncodeResponse> EncodeTransactionMetaV1Method =
+        public static readonly Method<Stellar.TransactionMetaV1EncodeRequest, Stellar.TransactionMetaV1EncodeResponse> EncodeTransactionMetaV1 =
             new Method<Stellar.TransactionMetaV1EncodeRequest, Stellar.TransactionMetaV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2925,7 +2925,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV1EncodeResponseGrpcMarshaller.TransactionMetaV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionMetaV1</summary>
-        public static readonly Method<Stellar.TransactionMetaV1DecodeRequest, Stellar.TransactionMetaV1DecodeResponse> DecodeTransactionMetaV1Method =
+        public static readonly Method<Stellar.TransactionMetaV1DecodeRequest, Stellar.TransactionMetaV1DecodeResponse> DecodeTransactionMetaV1 =
             new Method<Stellar.TransactionMetaV1DecodeRequest, Stellar.TransactionMetaV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2934,7 +2934,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV1DecodeResponseGrpcMarshaller.TransactionMetaV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionMetaV2</summary>
-        public static readonly Method<Stellar.TransactionMetaV2EncodeRequest, Stellar.TransactionMetaV2EncodeResponse> EncodeTransactionMetaV2Method =
+        public static readonly Method<Stellar.TransactionMetaV2EncodeRequest, Stellar.TransactionMetaV2EncodeResponse> EncodeTransactionMetaV2 =
             new Method<Stellar.TransactionMetaV2EncodeRequest, Stellar.TransactionMetaV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2943,7 +2943,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV2EncodeResponseGrpcMarshaller.TransactionMetaV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionMetaV2</summary>
-        public static readonly Method<Stellar.TransactionMetaV2DecodeRequest, Stellar.TransactionMetaV2DecodeResponse> DecodeTransactionMetaV2Method =
+        public static readonly Method<Stellar.TransactionMetaV2DecodeRequest, Stellar.TransactionMetaV2DecodeResponse> DecodeTransactionMetaV2 =
             new Method<Stellar.TransactionMetaV2DecodeRequest, Stellar.TransactionMetaV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2952,7 +2952,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV2DecodeResponseGrpcMarshaller.TransactionMetaV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractEventType</summary>
-        public static readonly Method<Stellar.ContractEventTypeEncodeRequest, Stellar.ContractEventTypeEncodeResponse> EncodeContractEventTypeMethod =
+        public static readonly Method<Stellar.ContractEventTypeEncodeRequest, Stellar.ContractEventTypeEncodeResponse> EncodeContractEventType =
             new Method<Stellar.ContractEventTypeEncodeRequest, Stellar.ContractEventTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2961,7 +2961,7 @@ namespace Stellar.RPC.AOT
                 ContractEventTypeEncodeResponseGrpcMarshaller.ContractEventTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractEventType</summary>
-        public static readonly Method<Stellar.ContractEventTypeDecodeRequest, Stellar.ContractEventTypeDecodeResponse> DecodeContractEventTypeMethod =
+        public static readonly Method<Stellar.ContractEventTypeDecodeRequest, Stellar.ContractEventTypeDecodeResponse> DecodeContractEventType =
             new Method<Stellar.ContractEventTypeDecodeRequest, Stellar.ContractEventTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2970,7 +2970,7 @@ namespace Stellar.RPC.AOT
                 ContractEventTypeDecodeResponseGrpcMarshaller.ContractEventTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractEvent</summary>
-        public static readonly Method<Stellar.ContractEventEncodeRequest, Stellar.ContractEventEncodeResponse> EncodeContractEventMethod =
+        public static readonly Method<Stellar.ContractEventEncodeRequest, Stellar.ContractEventEncodeResponse> EncodeContractEvent =
             new Method<Stellar.ContractEventEncodeRequest, Stellar.ContractEventEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2979,7 +2979,7 @@ namespace Stellar.RPC.AOT
                 ContractEventEncodeResponseGrpcMarshaller.ContractEventEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractEvent</summary>
-        public static readonly Method<Stellar.ContractEventDecodeRequest, Stellar.ContractEventDecodeResponse> DecodeContractEventMethod =
+        public static readonly Method<Stellar.ContractEventDecodeRequest, Stellar.ContractEventDecodeResponse> DecodeContractEvent =
             new Method<Stellar.ContractEventDecodeRequest, Stellar.ContractEventDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2988,7 +2988,7 @@ namespace Stellar.RPC.AOT
                 ContractEventDecodeResponseGrpcMarshaller.ContractEventDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDiagnosticEvent</summary>
-        public static readonly Method<Stellar.DiagnosticEventEncodeRequest, Stellar.DiagnosticEventEncodeResponse> EncodeDiagnosticEventMethod =
+        public static readonly Method<Stellar.DiagnosticEventEncodeRequest, Stellar.DiagnosticEventEncodeResponse> EncodeDiagnosticEvent =
             new Method<Stellar.DiagnosticEventEncodeRequest, Stellar.DiagnosticEventEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -2997,7 +2997,7 @@ namespace Stellar.RPC.AOT
                 DiagnosticEventEncodeResponseGrpcMarshaller.DiagnosticEventEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDiagnosticEvent</summary>
-        public static readonly Method<Stellar.DiagnosticEventDecodeRequest, Stellar.DiagnosticEventDecodeResponse> DecodeDiagnosticEventMethod =
+        public static readonly Method<Stellar.DiagnosticEventDecodeRequest, Stellar.DiagnosticEventDecodeResponse> DecodeDiagnosticEvent =
             new Method<Stellar.DiagnosticEventDecodeRequest, Stellar.DiagnosticEventDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3006,7 +3006,7 @@ namespace Stellar.RPC.AOT
                 DiagnosticEventDecodeResponseGrpcMarshaller.DiagnosticEventDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDiagnosticEvents</summary>
-        public static readonly Method<Stellar.DiagnosticEventsEncodeRequest, Stellar.DiagnosticEventsEncodeResponse> EncodeDiagnosticEventsMethod =
+        public static readonly Method<Stellar.DiagnosticEventsEncodeRequest, Stellar.DiagnosticEventsEncodeResponse> EncodeDiagnosticEvents =
             new Method<Stellar.DiagnosticEventsEncodeRequest, Stellar.DiagnosticEventsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3015,7 +3015,7 @@ namespace Stellar.RPC.AOT
                 DiagnosticEventsEncodeResponseGrpcMarshaller.DiagnosticEventsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDiagnosticEvents</summary>
-        public static readonly Method<Stellar.DiagnosticEventsDecodeRequest, Stellar.DiagnosticEventsDecodeResponse> DecodeDiagnosticEventsMethod =
+        public static readonly Method<Stellar.DiagnosticEventsDecodeRequest, Stellar.DiagnosticEventsDecodeResponse> DecodeDiagnosticEvents =
             new Method<Stellar.DiagnosticEventsDecodeRequest, Stellar.DiagnosticEventsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3024,7 +3024,7 @@ namespace Stellar.RPC.AOT
                 DiagnosticEventsDecodeResponseGrpcMarshaller.DiagnosticEventsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanTransactionMetaExtV1</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaExtV1EncodeRequest, Stellar.SorobanTransactionMetaExtV1EncodeResponse> EncodeSorobanTransactionMetaExtV1Method =
+        public static readonly Method<Stellar.SorobanTransactionMetaExtV1EncodeRequest, Stellar.SorobanTransactionMetaExtV1EncodeResponse> EncodeSorobanTransactionMetaExtV1 =
             new Method<Stellar.SorobanTransactionMetaExtV1EncodeRequest, Stellar.SorobanTransactionMetaExtV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3033,7 +3033,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaExtV1EncodeResponseGrpcMarshaller.SorobanTransactionMetaExtV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanTransactionMetaExtV1</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaExtV1DecodeRequest, Stellar.SorobanTransactionMetaExtV1DecodeResponse> DecodeSorobanTransactionMetaExtV1Method =
+        public static readonly Method<Stellar.SorobanTransactionMetaExtV1DecodeRequest, Stellar.SorobanTransactionMetaExtV1DecodeResponse> DecodeSorobanTransactionMetaExtV1 =
             new Method<Stellar.SorobanTransactionMetaExtV1DecodeRequest, Stellar.SorobanTransactionMetaExtV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3042,7 +3042,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaExtV1DecodeResponseGrpcMarshaller.SorobanTransactionMetaExtV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanTransactionMetaExt</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaExtEncodeRequest, Stellar.SorobanTransactionMetaExtEncodeResponse> EncodeSorobanTransactionMetaExtMethod =
+        public static readonly Method<Stellar.SorobanTransactionMetaExtEncodeRequest, Stellar.SorobanTransactionMetaExtEncodeResponse> EncodeSorobanTransactionMetaExt =
             new Method<Stellar.SorobanTransactionMetaExtEncodeRequest, Stellar.SorobanTransactionMetaExtEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3051,7 +3051,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaExtEncodeResponseGrpcMarshaller.SorobanTransactionMetaExtEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanTransactionMetaExt</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaExtDecodeRequest, Stellar.SorobanTransactionMetaExtDecodeResponse> DecodeSorobanTransactionMetaExtMethod =
+        public static readonly Method<Stellar.SorobanTransactionMetaExtDecodeRequest, Stellar.SorobanTransactionMetaExtDecodeResponse> DecodeSorobanTransactionMetaExt =
             new Method<Stellar.SorobanTransactionMetaExtDecodeRequest, Stellar.SorobanTransactionMetaExtDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3060,7 +3060,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaExtDecodeResponseGrpcMarshaller.SorobanTransactionMetaExtDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanTransactionMeta</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaEncodeRequest, Stellar.SorobanTransactionMetaEncodeResponse> EncodeSorobanTransactionMetaMethod =
+        public static readonly Method<Stellar.SorobanTransactionMetaEncodeRequest, Stellar.SorobanTransactionMetaEncodeResponse> EncodeSorobanTransactionMeta =
             new Method<Stellar.SorobanTransactionMetaEncodeRequest, Stellar.SorobanTransactionMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3069,7 +3069,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaEncodeResponseGrpcMarshaller.SorobanTransactionMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanTransactionMeta</summary>
-        public static readonly Method<Stellar.SorobanTransactionMetaDecodeRequest, Stellar.SorobanTransactionMetaDecodeResponse> DecodeSorobanTransactionMetaMethod =
+        public static readonly Method<Stellar.SorobanTransactionMetaDecodeRequest, Stellar.SorobanTransactionMetaDecodeResponse> DecodeSorobanTransactionMeta =
             new Method<Stellar.SorobanTransactionMetaDecodeRequest, Stellar.SorobanTransactionMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3078,7 +3078,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionMetaDecodeResponseGrpcMarshaller.SorobanTransactionMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionMetaV3</summary>
-        public static readonly Method<Stellar.TransactionMetaV3EncodeRequest, Stellar.TransactionMetaV3EncodeResponse> EncodeTransactionMetaV3Method =
+        public static readonly Method<Stellar.TransactionMetaV3EncodeRequest, Stellar.TransactionMetaV3EncodeResponse> EncodeTransactionMetaV3 =
             new Method<Stellar.TransactionMetaV3EncodeRequest, Stellar.TransactionMetaV3EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3087,7 +3087,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV3EncodeResponseGrpcMarshaller.TransactionMetaV3EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionMetaV3</summary>
-        public static readonly Method<Stellar.TransactionMetaV3DecodeRequest, Stellar.TransactionMetaV3DecodeResponse> DecodeTransactionMetaV3Method =
+        public static readonly Method<Stellar.TransactionMetaV3DecodeRequest, Stellar.TransactionMetaV3DecodeResponse> DecodeTransactionMetaV3 =
             new Method<Stellar.TransactionMetaV3DecodeRequest, Stellar.TransactionMetaV3DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3096,7 +3096,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaV3DecodeResponseGrpcMarshaller.TransactionMetaV3DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInvokeHostFunctionSuccessPreImage</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest, Stellar.InvokeHostFunctionSuccessPreImageEncodeResponse> EncodeInvokeHostFunctionSuccessPreImageMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest, Stellar.InvokeHostFunctionSuccessPreImageEncodeResponse> EncodeInvokeHostFunctionSuccessPreImage =
             new Method<Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest, Stellar.InvokeHostFunctionSuccessPreImageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3105,7 +3105,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionSuccessPreImageEncodeResponseGrpcMarshaller.InvokeHostFunctionSuccessPreImageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInvokeHostFunctionSuccessPreImage</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionSuccessPreImageDecodeRequest, Stellar.InvokeHostFunctionSuccessPreImageDecodeResponse> DecodeInvokeHostFunctionSuccessPreImageMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionSuccessPreImageDecodeRequest, Stellar.InvokeHostFunctionSuccessPreImageDecodeResponse> DecodeInvokeHostFunctionSuccessPreImage =
             new Method<Stellar.InvokeHostFunctionSuccessPreImageDecodeRequest, Stellar.InvokeHostFunctionSuccessPreImageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3114,7 +3114,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionSuccessPreImageDecodeResponseGrpcMarshaller.InvokeHostFunctionSuccessPreImageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionMeta</summary>
-        public static readonly Method<Stellar.TransactionMetaEncodeRequest, Stellar.TransactionMetaEncodeResponse> EncodeTransactionMetaMethod =
+        public static readonly Method<Stellar.TransactionMetaEncodeRequest, Stellar.TransactionMetaEncodeResponse> EncodeTransactionMeta =
             new Method<Stellar.TransactionMetaEncodeRequest, Stellar.TransactionMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3123,7 +3123,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaEncodeResponseGrpcMarshaller.TransactionMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionMeta</summary>
-        public static readonly Method<Stellar.TransactionMetaDecodeRequest, Stellar.TransactionMetaDecodeResponse> DecodeTransactionMetaMethod =
+        public static readonly Method<Stellar.TransactionMetaDecodeRequest, Stellar.TransactionMetaDecodeResponse> DecodeTransactionMeta =
             new Method<Stellar.TransactionMetaDecodeRequest, Stellar.TransactionMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3132,7 +3132,7 @@ namespace Stellar.RPC.AOT
                 TransactionMetaDecodeResponseGrpcMarshaller.TransactionMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionResultMeta</summary>
-        public static readonly Method<Stellar.TransactionResultMetaEncodeRequest, Stellar.TransactionResultMetaEncodeResponse> EncodeTransactionResultMetaMethod =
+        public static readonly Method<Stellar.TransactionResultMetaEncodeRequest, Stellar.TransactionResultMetaEncodeResponse> EncodeTransactionResultMeta =
             new Method<Stellar.TransactionResultMetaEncodeRequest, Stellar.TransactionResultMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3141,7 +3141,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultMetaEncodeResponseGrpcMarshaller.TransactionResultMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionResultMeta</summary>
-        public static readonly Method<Stellar.TransactionResultMetaDecodeRequest, Stellar.TransactionResultMetaDecodeResponse> DecodeTransactionResultMetaMethod =
+        public static readonly Method<Stellar.TransactionResultMetaDecodeRequest, Stellar.TransactionResultMetaDecodeResponse> DecodeTransactionResultMeta =
             new Method<Stellar.TransactionResultMetaDecodeRequest, Stellar.TransactionResultMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3150,7 +3150,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultMetaDecodeResponseGrpcMarshaller.TransactionResultMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeUpgradeEntryMeta</summary>
-        public static readonly Method<Stellar.UpgradeEntryMetaEncodeRequest, Stellar.UpgradeEntryMetaEncodeResponse> EncodeUpgradeEntryMetaMethod =
+        public static readonly Method<Stellar.UpgradeEntryMetaEncodeRequest, Stellar.UpgradeEntryMetaEncodeResponse> EncodeUpgradeEntryMeta =
             new Method<Stellar.UpgradeEntryMetaEncodeRequest, Stellar.UpgradeEntryMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3159,7 +3159,7 @@ namespace Stellar.RPC.AOT
                 UpgradeEntryMetaEncodeResponseGrpcMarshaller.UpgradeEntryMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeUpgradeEntryMeta</summary>
-        public static readonly Method<Stellar.UpgradeEntryMetaDecodeRequest, Stellar.UpgradeEntryMetaDecodeResponse> DecodeUpgradeEntryMetaMethod =
+        public static readonly Method<Stellar.UpgradeEntryMetaDecodeRequest, Stellar.UpgradeEntryMetaDecodeResponse> DecodeUpgradeEntryMeta =
             new Method<Stellar.UpgradeEntryMetaDecodeRequest, Stellar.UpgradeEntryMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3168,7 +3168,7 @@ namespace Stellar.RPC.AOT
                 UpgradeEntryMetaDecodeResponseGrpcMarshaller.UpgradeEntryMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseMetaV0</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaV0EncodeRequest, Stellar.LedgerCloseMetaV0EncodeResponse> EncodeLedgerCloseMetaV0Method =
+        public static readonly Method<Stellar.LedgerCloseMetaV0EncodeRequest, Stellar.LedgerCloseMetaV0EncodeResponse> EncodeLedgerCloseMetaV0 =
             new Method<Stellar.LedgerCloseMetaV0EncodeRequest, Stellar.LedgerCloseMetaV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3177,7 +3177,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaV0EncodeResponseGrpcMarshaller.LedgerCloseMetaV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseMetaV0</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaV0DecodeRequest, Stellar.LedgerCloseMetaV0DecodeResponse> DecodeLedgerCloseMetaV0Method =
+        public static readonly Method<Stellar.LedgerCloseMetaV0DecodeRequest, Stellar.LedgerCloseMetaV0DecodeResponse> DecodeLedgerCloseMetaV0 =
             new Method<Stellar.LedgerCloseMetaV0DecodeRequest, Stellar.LedgerCloseMetaV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3186,7 +3186,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaV0DecodeResponseGrpcMarshaller.LedgerCloseMetaV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseMetaExtV1</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaExtV1EncodeRequest, Stellar.LedgerCloseMetaExtV1EncodeResponse> EncodeLedgerCloseMetaExtV1Method =
+        public static readonly Method<Stellar.LedgerCloseMetaExtV1EncodeRequest, Stellar.LedgerCloseMetaExtV1EncodeResponse> EncodeLedgerCloseMetaExtV1 =
             new Method<Stellar.LedgerCloseMetaExtV1EncodeRequest, Stellar.LedgerCloseMetaExtV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3195,7 +3195,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaExtV1EncodeResponseGrpcMarshaller.LedgerCloseMetaExtV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseMetaExtV1</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaExtV1DecodeRequest, Stellar.LedgerCloseMetaExtV1DecodeResponse> DecodeLedgerCloseMetaExtV1Method =
+        public static readonly Method<Stellar.LedgerCloseMetaExtV1DecodeRequest, Stellar.LedgerCloseMetaExtV1DecodeResponse> DecodeLedgerCloseMetaExtV1 =
             new Method<Stellar.LedgerCloseMetaExtV1DecodeRequest, Stellar.LedgerCloseMetaExtV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3204,7 +3204,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaExtV1DecodeResponseGrpcMarshaller.LedgerCloseMetaExtV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseMetaExt</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaExtEncodeRequest, Stellar.LedgerCloseMetaExtEncodeResponse> EncodeLedgerCloseMetaExtMethod =
+        public static readonly Method<Stellar.LedgerCloseMetaExtEncodeRequest, Stellar.LedgerCloseMetaExtEncodeResponse> EncodeLedgerCloseMetaExt =
             new Method<Stellar.LedgerCloseMetaExtEncodeRequest, Stellar.LedgerCloseMetaExtEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3213,7 +3213,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaExtEncodeResponseGrpcMarshaller.LedgerCloseMetaExtEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseMetaExt</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaExtDecodeRequest, Stellar.LedgerCloseMetaExtDecodeResponse> DecodeLedgerCloseMetaExtMethod =
+        public static readonly Method<Stellar.LedgerCloseMetaExtDecodeRequest, Stellar.LedgerCloseMetaExtDecodeResponse> DecodeLedgerCloseMetaExt =
             new Method<Stellar.LedgerCloseMetaExtDecodeRequest, Stellar.LedgerCloseMetaExtDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3222,7 +3222,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaExtDecodeResponseGrpcMarshaller.LedgerCloseMetaExtDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseMetaV1</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaV1EncodeRequest, Stellar.LedgerCloseMetaV1EncodeResponse> EncodeLedgerCloseMetaV1Method =
+        public static readonly Method<Stellar.LedgerCloseMetaV1EncodeRequest, Stellar.LedgerCloseMetaV1EncodeResponse> EncodeLedgerCloseMetaV1 =
             new Method<Stellar.LedgerCloseMetaV1EncodeRequest, Stellar.LedgerCloseMetaV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3231,7 +3231,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaV1EncodeResponseGrpcMarshaller.LedgerCloseMetaV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseMetaV1</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaV1DecodeRequest, Stellar.LedgerCloseMetaV1DecodeResponse> DecodeLedgerCloseMetaV1Method =
+        public static readonly Method<Stellar.LedgerCloseMetaV1DecodeRequest, Stellar.LedgerCloseMetaV1DecodeResponse> DecodeLedgerCloseMetaV1 =
             new Method<Stellar.LedgerCloseMetaV1DecodeRequest, Stellar.LedgerCloseMetaV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3240,7 +3240,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaV1DecodeResponseGrpcMarshaller.LedgerCloseMetaV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerCloseMeta</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaEncodeRequest, Stellar.LedgerCloseMetaEncodeResponse> EncodeLedgerCloseMetaMethod =
+        public static readonly Method<Stellar.LedgerCloseMetaEncodeRequest, Stellar.LedgerCloseMetaEncodeResponse> EncodeLedgerCloseMeta =
             new Method<Stellar.LedgerCloseMetaEncodeRequest, Stellar.LedgerCloseMetaEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3249,7 +3249,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaEncodeResponseGrpcMarshaller.LedgerCloseMetaEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerCloseMeta</summary>
-        public static readonly Method<Stellar.LedgerCloseMetaDecodeRequest, Stellar.LedgerCloseMetaDecodeResponse> DecodeLedgerCloseMetaMethod =
+        public static readonly Method<Stellar.LedgerCloseMetaDecodeRequest, Stellar.LedgerCloseMetaDecodeResponse> DecodeLedgerCloseMeta =
             new Method<Stellar.LedgerCloseMetaDecodeRequest, Stellar.LedgerCloseMetaDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3258,7 +3258,7 @@ namespace Stellar.RPC.AOT
                 LedgerCloseMetaDecodeResponseGrpcMarshaller.LedgerCloseMetaDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeErrorCode</summary>
-        public static readonly Method<Stellar.ErrorCodeEncodeRequest, Stellar.ErrorCodeEncodeResponse> EncodeErrorCodeMethod =
+        public static readonly Method<Stellar.ErrorCodeEncodeRequest, Stellar.ErrorCodeEncodeResponse> EncodeErrorCode =
             new Method<Stellar.ErrorCodeEncodeRequest, Stellar.ErrorCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3267,7 +3267,7 @@ namespace Stellar.RPC.AOT
                 ErrorCodeEncodeResponseGrpcMarshaller.ErrorCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeErrorCode</summary>
-        public static readonly Method<Stellar.ErrorCodeDecodeRequest, Stellar.ErrorCodeDecodeResponse> DecodeErrorCodeMethod =
+        public static readonly Method<Stellar.ErrorCodeDecodeRequest, Stellar.ErrorCodeDecodeResponse> DecodeErrorCode =
             new Method<Stellar.ErrorCodeDecodeRequest, Stellar.ErrorCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3276,7 +3276,7 @@ namespace Stellar.RPC.AOT
                 ErrorCodeDecodeResponseGrpcMarshaller.ErrorCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeError</summary>
-        public static readonly Method<Stellar.ErrorEncodeRequest, Stellar.ErrorEncodeResponse> EncodeErrorMethod =
+        public static readonly Method<Stellar.ErrorEncodeRequest, Stellar.ErrorEncodeResponse> EncodeError =
             new Method<Stellar.ErrorEncodeRequest, Stellar.ErrorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3285,7 +3285,7 @@ namespace Stellar.RPC.AOT
                 ErrorEncodeResponseGrpcMarshaller.ErrorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeError</summary>
-        public static readonly Method<Stellar.ErrorDecodeRequest, Stellar.ErrorDecodeResponse> DecodeErrorMethod =
+        public static readonly Method<Stellar.ErrorDecodeRequest, Stellar.ErrorDecodeResponse> DecodeError =
             new Method<Stellar.ErrorDecodeRequest, Stellar.ErrorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3294,7 +3294,7 @@ namespace Stellar.RPC.AOT
                 ErrorDecodeResponseGrpcMarshaller.ErrorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSendMore</summary>
-        public static readonly Method<Stellar.SendMoreEncodeRequest, Stellar.SendMoreEncodeResponse> EncodeSendMoreMethod =
+        public static readonly Method<Stellar.SendMoreEncodeRequest, Stellar.SendMoreEncodeResponse> EncodeSendMore =
             new Method<Stellar.SendMoreEncodeRequest, Stellar.SendMoreEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3303,7 +3303,7 @@ namespace Stellar.RPC.AOT
                 SendMoreEncodeResponseGrpcMarshaller.SendMoreEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSendMore</summary>
-        public static readonly Method<Stellar.SendMoreDecodeRequest, Stellar.SendMoreDecodeResponse> DecodeSendMoreMethod =
+        public static readonly Method<Stellar.SendMoreDecodeRequest, Stellar.SendMoreDecodeResponse> DecodeSendMore =
             new Method<Stellar.SendMoreDecodeRequest, Stellar.SendMoreDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3312,7 +3312,7 @@ namespace Stellar.RPC.AOT
                 SendMoreDecodeResponseGrpcMarshaller.SendMoreDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSendMoreExtended</summary>
-        public static readonly Method<Stellar.SendMoreExtendedEncodeRequest, Stellar.SendMoreExtendedEncodeResponse> EncodeSendMoreExtendedMethod =
+        public static readonly Method<Stellar.SendMoreExtendedEncodeRequest, Stellar.SendMoreExtendedEncodeResponse> EncodeSendMoreExtended =
             new Method<Stellar.SendMoreExtendedEncodeRequest, Stellar.SendMoreExtendedEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3321,7 +3321,7 @@ namespace Stellar.RPC.AOT
                 SendMoreExtendedEncodeResponseGrpcMarshaller.SendMoreExtendedEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSendMoreExtended</summary>
-        public static readonly Method<Stellar.SendMoreExtendedDecodeRequest, Stellar.SendMoreExtendedDecodeResponse> DecodeSendMoreExtendedMethod =
+        public static readonly Method<Stellar.SendMoreExtendedDecodeRequest, Stellar.SendMoreExtendedDecodeResponse> DecodeSendMoreExtended =
             new Method<Stellar.SendMoreExtendedDecodeRequest, Stellar.SendMoreExtendedDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3330,7 +3330,7 @@ namespace Stellar.RPC.AOT
                 SendMoreExtendedDecodeResponseGrpcMarshaller.SendMoreExtendedDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAuthCert</summary>
-        public static readonly Method<Stellar.AuthCertEncodeRequest, Stellar.AuthCertEncodeResponse> EncodeAuthCertMethod =
+        public static readonly Method<Stellar.AuthCertEncodeRequest, Stellar.AuthCertEncodeResponse> EncodeAuthCert =
             new Method<Stellar.AuthCertEncodeRequest, Stellar.AuthCertEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3339,7 +3339,7 @@ namespace Stellar.RPC.AOT
                 AuthCertEncodeResponseGrpcMarshaller.AuthCertEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAuthCert</summary>
-        public static readonly Method<Stellar.AuthCertDecodeRequest, Stellar.AuthCertDecodeResponse> DecodeAuthCertMethod =
+        public static readonly Method<Stellar.AuthCertDecodeRequest, Stellar.AuthCertDecodeResponse> DecodeAuthCert =
             new Method<Stellar.AuthCertDecodeRequest, Stellar.AuthCertDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3348,7 +3348,7 @@ namespace Stellar.RPC.AOT
                 AuthCertDecodeResponseGrpcMarshaller.AuthCertDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHello</summary>
-        public static readonly Method<Stellar.HelloEncodeRequest, Stellar.HelloEncodeResponse> EncodeHelloMethod =
+        public static readonly Method<Stellar.HelloEncodeRequest, Stellar.HelloEncodeResponse> EncodeHello =
             new Method<Stellar.HelloEncodeRequest, Stellar.HelloEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3357,7 +3357,7 @@ namespace Stellar.RPC.AOT
                 HelloEncodeResponseGrpcMarshaller.HelloEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHello</summary>
-        public static readonly Method<Stellar.HelloDecodeRequest, Stellar.HelloDecodeResponse> DecodeHelloMethod =
+        public static readonly Method<Stellar.HelloDecodeRequest, Stellar.HelloDecodeResponse> DecodeHello =
             new Method<Stellar.HelloDecodeRequest, Stellar.HelloDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3366,7 +3366,7 @@ namespace Stellar.RPC.AOT
                 HelloDecodeResponseGrpcMarshaller.HelloDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAuth</summary>
-        public static readonly Method<Stellar.AuthEncodeRequest, Stellar.AuthEncodeResponse> EncodeAuthMethod =
+        public static readonly Method<Stellar.AuthEncodeRequest, Stellar.AuthEncodeResponse> EncodeAuth =
             new Method<Stellar.AuthEncodeRequest, Stellar.AuthEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3375,7 +3375,7 @@ namespace Stellar.RPC.AOT
                 AuthEncodeResponseGrpcMarshaller.AuthEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAuth</summary>
-        public static readonly Method<Stellar.AuthDecodeRequest, Stellar.AuthDecodeResponse> DecodeAuthMethod =
+        public static readonly Method<Stellar.AuthDecodeRequest, Stellar.AuthDecodeResponse> DecodeAuth =
             new Method<Stellar.AuthDecodeRequest, Stellar.AuthDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3384,7 +3384,7 @@ namespace Stellar.RPC.AOT
                 AuthDecodeResponseGrpcMarshaller.AuthDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeIPAddrType</summary>
-        public static readonly Method<Stellar.IPAddrTypeEncodeRequest, Stellar.IPAddrTypeEncodeResponse> EncodeIPAddrTypeMethod =
+        public static readonly Method<Stellar.IPAddrTypeEncodeRequest, Stellar.IPAddrTypeEncodeResponse> EncodeIPAddrType =
             new Method<Stellar.IPAddrTypeEncodeRequest, Stellar.IPAddrTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3393,7 +3393,7 @@ namespace Stellar.RPC.AOT
                 IPAddrTypeEncodeResponseGrpcMarshaller.IPAddrTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeIPAddrType</summary>
-        public static readonly Method<Stellar.IPAddrTypeDecodeRequest, Stellar.IPAddrTypeDecodeResponse> DecodeIPAddrTypeMethod =
+        public static readonly Method<Stellar.IPAddrTypeDecodeRequest, Stellar.IPAddrTypeDecodeResponse> DecodeIPAddrType =
             new Method<Stellar.IPAddrTypeDecodeRequest, Stellar.IPAddrTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3402,7 +3402,7 @@ namespace Stellar.RPC.AOT
                 IPAddrTypeDecodeResponseGrpcMarshaller.IPAddrTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePeerAddress</summary>
-        public static readonly Method<Stellar.PeerAddressEncodeRequest, Stellar.PeerAddressEncodeResponse> EncodePeerAddressMethod =
+        public static readonly Method<Stellar.PeerAddressEncodeRequest, Stellar.PeerAddressEncodeResponse> EncodePeerAddress =
             new Method<Stellar.PeerAddressEncodeRequest, Stellar.PeerAddressEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3411,7 +3411,7 @@ namespace Stellar.RPC.AOT
                 PeerAddressEncodeResponseGrpcMarshaller.PeerAddressEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePeerAddress</summary>
-        public static readonly Method<Stellar.PeerAddressDecodeRequest, Stellar.PeerAddressDecodeResponse> DecodePeerAddressMethod =
+        public static readonly Method<Stellar.PeerAddressDecodeRequest, Stellar.PeerAddressDecodeResponse> DecodePeerAddress =
             new Method<Stellar.PeerAddressDecodeRequest, Stellar.PeerAddressDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3420,7 +3420,7 @@ namespace Stellar.RPC.AOT
                 PeerAddressDecodeResponseGrpcMarshaller.PeerAddressDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeMessageType</summary>
-        public static readonly Method<Stellar.MessageTypeEncodeRequest, Stellar.MessageTypeEncodeResponse> EncodeMessageTypeMethod =
+        public static readonly Method<Stellar.MessageTypeEncodeRequest, Stellar.MessageTypeEncodeResponse> EncodeMessageType =
             new Method<Stellar.MessageTypeEncodeRequest, Stellar.MessageTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3429,7 +3429,7 @@ namespace Stellar.RPC.AOT
                 MessageTypeEncodeResponseGrpcMarshaller.MessageTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeMessageType</summary>
-        public static readonly Method<Stellar.MessageTypeDecodeRequest, Stellar.MessageTypeDecodeResponse> DecodeMessageTypeMethod =
+        public static readonly Method<Stellar.MessageTypeDecodeRequest, Stellar.MessageTypeDecodeResponse> DecodeMessageType =
             new Method<Stellar.MessageTypeDecodeRequest, Stellar.MessageTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3438,7 +3438,7 @@ namespace Stellar.RPC.AOT
                 MessageTypeDecodeResponseGrpcMarshaller.MessageTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDontHave</summary>
-        public static readonly Method<Stellar.DontHaveEncodeRequest, Stellar.DontHaveEncodeResponse> EncodeDontHaveMethod =
+        public static readonly Method<Stellar.DontHaveEncodeRequest, Stellar.DontHaveEncodeResponse> EncodeDontHave =
             new Method<Stellar.DontHaveEncodeRequest, Stellar.DontHaveEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3447,7 +3447,7 @@ namespace Stellar.RPC.AOT
                 DontHaveEncodeResponseGrpcMarshaller.DontHaveEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDontHave</summary>
-        public static readonly Method<Stellar.DontHaveDecodeRequest, Stellar.DontHaveDecodeResponse> DecodeDontHaveMethod =
+        public static readonly Method<Stellar.DontHaveDecodeRequest, Stellar.DontHaveDecodeResponse> DecodeDontHave =
             new Method<Stellar.DontHaveDecodeRequest, Stellar.DontHaveDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3456,7 +3456,7 @@ namespace Stellar.RPC.AOT
                 DontHaveDecodeResponseGrpcMarshaller.DontHaveDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSurveyMessageCommandType</summary>
-        public static readonly Method<Stellar.SurveyMessageCommandTypeEncodeRequest, Stellar.SurveyMessageCommandTypeEncodeResponse> EncodeSurveyMessageCommandTypeMethod =
+        public static readonly Method<Stellar.SurveyMessageCommandTypeEncodeRequest, Stellar.SurveyMessageCommandTypeEncodeResponse> EncodeSurveyMessageCommandType =
             new Method<Stellar.SurveyMessageCommandTypeEncodeRequest, Stellar.SurveyMessageCommandTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3465,7 +3465,7 @@ namespace Stellar.RPC.AOT
                 SurveyMessageCommandTypeEncodeResponseGrpcMarshaller.SurveyMessageCommandTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSurveyMessageCommandType</summary>
-        public static readonly Method<Stellar.SurveyMessageCommandTypeDecodeRequest, Stellar.SurveyMessageCommandTypeDecodeResponse> DecodeSurveyMessageCommandTypeMethod =
+        public static readonly Method<Stellar.SurveyMessageCommandTypeDecodeRequest, Stellar.SurveyMessageCommandTypeDecodeResponse> DecodeSurveyMessageCommandType =
             new Method<Stellar.SurveyMessageCommandTypeDecodeRequest, Stellar.SurveyMessageCommandTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3474,7 +3474,7 @@ namespace Stellar.RPC.AOT
                 SurveyMessageCommandTypeDecodeResponseGrpcMarshaller.SurveyMessageCommandTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSurveyMessageResponseType</summary>
-        public static readonly Method<Stellar.SurveyMessageResponseTypeEncodeRequest, Stellar.SurveyMessageResponseTypeEncodeResponse> EncodeSurveyMessageResponseTypeMethod =
+        public static readonly Method<Stellar.SurveyMessageResponseTypeEncodeRequest, Stellar.SurveyMessageResponseTypeEncodeResponse> EncodeSurveyMessageResponseType =
             new Method<Stellar.SurveyMessageResponseTypeEncodeRequest, Stellar.SurveyMessageResponseTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3483,7 +3483,7 @@ namespace Stellar.RPC.AOT
                 SurveyMessageResponseTypeEncodeResponseGrpcMarshaller.SurveyMessageResponseTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSurveyMessageResponseType</summary>
-        public static readonly Method<Stellar.SurveyMessageResponseTypeDecodeRequest, Stellar.SurveyMessageResponseTypeDecodeResponse> DecodeSurveyMessageResponseTypeMethod =
+        public static readonly Method<Stellar.SurveyMessageResponseTypeDecodeRequest, Stellar.SurveyMessageResponseTypeDecodeResponse> DecodeSurveyMessageResponseType =
             new Method<Stellar.SurveyMessageResponseTypeDecodeRequest, Stellar.SurveyMessageResponseTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3492,7 +3492,7 @@ namespace Stellar.RPC.AOT
                 SurveyMessageResponseTypeDecodeResponseGrpcMarshaller.SurveyMessageResponseTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedSurveyStartCollectingMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageEncodeResponse> EncodeTimeSlicedSurveyStartCollectingMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageEncodeResponse> EncodeTimeSlicedSurveyStartCollectingMessage =
             new Method<Stellar.TimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3501,7 +3501,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyStartCollectingMessageEncodeResponseGrpcMarshaller.TimeSlicedSurveyStartCollectingMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedSurveyStartCollectingMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageDecodeResponse> DecodeTimeSlicedSurveyStartCollectingMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageDecodeResponse> DecodeTimeSlicedSurveyStartCollectingMessage =
             new Method<Stellar.TimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStartCollectingMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3510,7 +3510,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyStartCollectingMessageDecodeResponseGrpcMarshaller.TimeSlicedSurveyStartCollectingMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedTimeSlicedSurveyStartCollectingMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse> EncodeSignedTimeSlicedSurveyStartCollectingMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse> EncodeSignedTimeSlicedSurveyStartCollectingMessage =
             new Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3519,7 +3519,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyStartCollectingMessageEncodeResponseGrpcMarshaller.SignedTimeSlicedSurveyStartCollectingMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedTimeSlicedSurveyStartCollectingMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeResponse> DecodeSignedTimeSlicedSurveyStartCollectingMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeResponse> DecodeSignedTimeSlicedSurveyStartCollectingMessage =
             new Method<Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStartCollectingMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3528,7 +3528,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyStartCollectingMessageDecodeResponseGrpcMarshaller.SignedTimeSlicedSurveyStartCollectingMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedSurveyStopCollectingMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageEncodeResponse> EncodeTimeSlicedSurveyStopCollectingMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageEncodeResponse> EncodeTimeSlicedSurveyStopCollectingMessage =
             new Method<Stellar.TimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3537,7 +3537,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyStopCollectingMessageEncodeResponseGrpcMarshaller.TimeSlicedSurveyStopCollectingMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedSurveyStopCollectingMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageDecodeResponse> DecodeTimeSlicedSurveyStopCollectingMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageDecodeResponse> DecodeTimeSlicedSurveyStopCollectingMessage =
             new Method<Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.TimeSlicedSurveyStopCollectingMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3546,7 +3546,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyStopCollectingMessageDecodeResponseGrpcMarshaller.TimeSlicedSurveyStopCollectingMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedTimeSlicedSurveyStopCollectingMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse> EncodeSignedTimeSlicedSurveyStopCollectingMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse> EncodeSignedTimeSlicedSurveyStopCollectingMessage =
             new Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3555,7 +3555,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyStopCollectingMessageEncodeResponseGrpcMarshaller.SignedTimeSlicedSurveyStopCollectingMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedTimeSlicedSurveyStopCollectingMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeResponse> DecodeSignedTimeSlicedSurveyStopCollectingMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeResponse> DecodeSignedTimeSlicedSurveyStopCollectingMessage =
             new Method<Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyStopCollectingMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3564,7 +3564,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyStopCollectingMessageDecodeResponseGrpcMarshaller.SignedTimeSlicedSurveyStopCollectingMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SurveyRequestMessageEncodeRequest, Stellar.SurveyRequestMessageEncodeResponse> EncodeSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SurveyRequestMessageEncodeRequest, Stellar.SurveyRequestMessageEncodeResponse> EncodeSurveyRequestMessage =
             new Method<Stellar.SurveyRequestMessageEncodeRequest, Stellar.SurveyRequestMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3573,7 +3573,7 @@ namespace Stellar.RPC.AOT
                 SurveyRequestMessageEncodeResponseGrpcMarshaller.SurveyRequestMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SurveyRequestMessageDecodeRequest, Stellar.SurveyRequestMessageDecodeResponse> DecodeSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SurveyRequestMessageDecodeRequest, Stellar.SurveyRequestMessageDecodeResponse> DecodeSurveyRequestMessage =
             new Method<Stellar.SurveyRequestMessageDecodeRequest, Stellar.SurveyRequestMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3582,7 +3582,7 @@ namespace Stellar.RPC.AOT
                 SurveyRequestMessageDecodeResponseGrpcMarshaller.SurveyRequestMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyRequestMessageEncodeRequest, Stellar.TimeSlicedSurveyRequestMessageEncodeResponse> EncodeTimeSlicedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyRequestMessageEncodeRequest, Stellar.TimeSlicedSurveyRequestMessageEncodeResponse> EncodeTimeSlicedSurveyRequestMessage =
             new Method<Stellar.TimeSlicedSurveyRequestMessageEncodeRequest, Stellar.TimeSlicedSurveyRequestMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3591,7 +3591,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyRequestMessageEncodeResponseGrpcMarshaller.TimeSlicedSurveyRequestMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyRequestMessageDecodeRequest, Stellar.TimeSlicedSurveyRequestMessageDecodeResponse> DecodeTimeSlicedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyRequestMessageDecodeRequest, Stellar.TimeSlicedSurveyRequestMessageDecodeResponse> DecodeTimeSlicedSurveyRequestMessage =
             new Method<Stellar.TimeSlicedSurveyRequestMessageDecodeRequest, Stellar.TimeSlicedSurveyRequestMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3600,7 +3600,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyRequestMessageDecodeResponseGrpcMarshaller.TimeSlicedSurveyRequestMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SignedSurveyRequestMessageEncodeRequest, Stellar.SignedSurveyRequestMessageEncodeResponse> EncodeSignedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SignedSurveyRequestMessageEncodeRequest, Stellar.SignedSurveyRequestMessageEncodeResponse> EncodeSignedSurveyRequestMessage =
             new Method<Stellar.SignedSurveyRequestMessageEncodeRequest, Stellar.SignedSurveyRequestMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3609,7 +3609,7 @@ namespace Stellar.RPC.AOT
                 SignedSurveyRequestMessageEncodeResponseGrpcMarshaller.SignedSurveyRequestMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SignedSurveyRequestMessageDecodeRequest, Stellar.SignedSurveyRequestMessageDecodeResponse> DecodeSignedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SignedSurveyRequestMessageDecodeRequest, Stellar.SignedSurveyRequestMessageDecodeResponse> DecodeSignedSurveyRequestMessage =
             new Method<Stellar.SignedSurveyRequestMessageDecodeRequest, Stellar.SignedSurveyRequestMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3618,7 +3618,7 @@ namespace Stellar.RPC.AOT
                 SignedSurveyRequestMessageDecodeResponseGrpcMarshaller.SignedSurveyRequestMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedTimeSlicedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyRequestMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageEncodeResponse> EncodeSignedTimeSlicedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyRequestMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageEncodeResponse> EncodeSignedTimeSlicedSurveyRequestMessage =
             new Method<Stellar.SignedTimeSlicedSurveyRequestMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3627,7 +3627,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyRequestMessageEncodeResponseGrpcMarshaller.SignedTimeSlicedSurveyRequestMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedTimeSlicedSurveyRequestMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyRequestMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageDecodeResponse> DecodeSignedTimeSlicedSurveyRequestMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyRequestMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageDecodeResponse> DecodeSignedTimeSlicedSurveyRequestMessage =
             new Method<Stellar.SignedTimeSlicedSurveyRequestMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyRequestMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3636,7 +3636,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyRequestMessageDecodeResponseGrpcMarshaller.SignedTimeSlicedSurveyRequestMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeEncryptedBody</summary>
-        public static readonly Method<Stellar.EncryptedBodyEncodeRequest, Stellar.EncryptedBodyEncodeResponse> EncodeEncryptedBodyMethod =
+        public static readonly Method<Stellar.EncryptedBodyEncodeRequest, Stellar.EncryptedBodyEncodeResponse> EncodeEncryptedBody =
             new Method<Stellar.EncryptedBodyEncodeRequest, Stellar.EncryptedBodyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3645,7 +3645,7 @@ namespace Stellar.RPC.AOT
                 EncryptedBodyEncodeResponseGrpcMarshaller.EncryptedBodyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeEncryptedBody</summary>
-        public static readonly Method<Stellar.EncryptedBodyDecodeRequest, Stellar.EncryptedBodyDecodeResponse> DecodeEncryptedBodyMethod =
+        public static readonly Method<Stellar.EncryptedBodyDecodeRequest, Stellar.EncryptedBodyDecodeResponse> DecodeEncryptedBody =
             new Method<Stellar.EncryptedBodyDecodeRequest, Stellar.EncryptedBodyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3654,7 +3654,7 @@ namespace Stellar.RPC.AOT
                 EncryptedBodyDecodeResponseGrpcMarshaller.EncryptedBodyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SurveyResponseMessageEncodeRequest, Stellar.SurveyResponseMessageEncodeResponse> EncodeSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SurveyResponseMessageEncodeRequest, Stellar.SurveyResponseMessageEncodeResponse> EncodeSurveyResponseMessage =
             new Method<Stellar.SurveyResponseMessageEncodeRequest, Stellar.SurveyResponseMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3663,7 +3663,7 @@ namespace Stellar.RPC.AOT
                 SurveyResponseMessageEncodeResponseGrpcMarshaller.SurveyResponseMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SurveyResponseMessageDecodeRequest, Stellar.SurveyResponseMessageDecodeResponse> DecodeSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SurveyResponseMessageDecodeRequest, Stellar.SurveyResponseMessageDecodeResponse> DecodeSurveyResponseMessage =
             new Method<Stellar.SurveyResponseMessageDecodeRequest, Stellar.SurveyResponseMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3672,7 +3672,7 @@ namespace Stellar.RPC.AOT
                 SurveyResponseMessageDecodeResponseGrpcMarshaller.SurveyResponseMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyResponseMessageEncodeRequest, Stellar.TimeSlicedSurveyResponseMessageEncodeResponse> EncodeTimeSlicedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyResponseMessageEncodeRequest, Stellar.TimeSlicedSurveyResponseMessageEncodeResponse> EncodeTimeSlicedSurveyResponseMessage =
             new Method<Stellar.TimeSlicedSurveyResponseMessageEncodeRequest, Stellar.TimeSlicedSurveyResponseMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3681,7 +3681,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyResponseMessageEncodeResponseGrpcMarshaller.TimeSlicedSurveyResponseMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.TimeSlicedSurveyResponseMessageDecodeRequest, Stellar.TimeSlicedSurveyResponseMessageDecodeResponse> DecodeTimeSlicedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.TimeSlicedSurveyResponseMessageDecodeRequest, Stellar.TimeSlicedSurveyResponseMessageDecodeResponse> DecodeTimeSlicedSurveyResponseMessage =
             new Method<Stellar.TimeSlicedSurveyResponseMessageDecodeRequest, Stellar.TimeSlicedSurveyResponseMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3690,7 +3690,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedSurveyResponseMessageDecodeResponseGrpcMarshaller.TimeSlicedSurveyResponseMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SignedSurveyResponseMessageEncodeRequest, Stellar.SignedSurveyResponseMessageEncodeResponse> EncodeSignedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SignedSurveyResponseMessageEncodeRequest, Stellar.SignedSurveyResponseMessageEncodeResponse> EncodeSignedSurveyResponseMessage =
             new Method<Stellar.SignedSurveyResponseMessageEncodeRequest, Stellar.SignedSurveyResponseMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3699,7 +3699,7 @@ namespace Stellar.RPC.AOT
                 SignedSurveyResponseMessageEncodeResponseGrpcMarshaller.SignedSurveyResponseMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SignedSurveyResponseMessageDecodeRequest, Stellar.SignedSurveyResponseMessageDecodeResponse> DecodeSignedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SignedSurveyResponseMessageDecodeRequest, Stellar.SignedSurveyResponseMessageDecodeResponse> DecodeSignedSurveyResponseMessage =
             new Method<Stellar.SignedSurveyResponseMessageDecodeRequest, Stellar.SignedSurveyResponseMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3708,7 +3708,7 @@ namespace Stellar.RPC.AOT
                 SignedSurveyResponseMessageDecodeResponseGrpcMarshaller.SignedSurveyResponseMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignedTimeSlicedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyResponseMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageEncodeResponse> EncodeSignedTimeSlicedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyResponseMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageEncodeResponse> EncodeSignedTimeSlicedSurveyResponseMessage =
             new Method<Stellar.SignedTimeSlicedSurveyResponseMessageEncodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3717,7 +3717,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyResponseMessageEncodeResponseGrpcMarshaller.SignedTimeSlicedSurveyResponseMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignedTimeSlicedSurveyResponseMessage</summary>
-        public static readonly Method<Stellar.SignedTimeSlicedSurveyResponseMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageDecodeResponse> DecodeSignedTimeSlicedSurveyResponseMessageMethod =
+        public static readonly Method<Stellar.SignedTimeSlicedSurveyResponseMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageDecodeResponse> DecodeSignedTimeSlicedSurveyResponseMessage =
             new Method<Stellar.SignedTimeSlicedSurveyResponseMessageDecodeRequest, Stellar.SignedTimeSlicedSurveyResponseMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3726,7 +3726,7 @@ namespace Stellar.RPC.AOT
                 SignedTimeSlicedSurveyResponseMessageDecodeResponseGrpcMarshaller.SignedTimeSlicedSurveyResponseMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePeerStats</summary>
-        public static readonly Method<Stellar.PeerStatsEncodeRequest, Stellar.PeerStatsEncodeResponse> EncodePeerStatsMethod =
+        public static readonly Method<Stellar.PeerStatsEncodeRequest, Stellar.PeerStatsEncodeResponse> EncodePeerStats =
             new Method<Stellar.PeerStatsEncodeRequest, Stellar.PeerStatsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3735,7 +3735,7 @@ namespace Stellar.RPC.AOT
                 PeerStatsEncodeResponseGrpcMarshaller.PeerStatsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePeerStats</summary>
-        public static readonly Method<Stellar.PeerStatsDecodeRequest, Stellar.PeerStatsDecodeResponse> DecodePeerStatsMethod =
+        public static readonly Method<Stellar.PeerStatsDecodeRequest, Stellar.PeerStatsDecodeResponse> DecodePeerStats =
             new Method<Stellar.PeerStatsDecodeRequest, Stellar.PeerStatsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3744,7 +3744,7 @@ namespace Stellar.RPC.AOT
                 PeerStatsDecodeResponseGrpcMarshaller.PeerStatsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePeerStatList</summary>
-        public static readonly Method<Stellar.PeerStatListEncodeRequest, Stellar.PeerStatListEncodeResponse> EncodePeerStatListMethod =
+        public static readonly Method<Stellar.PeerStatListEncodeRequest, Stellar.PeerStatListEncodeResponse> EncodePeerStatList =
             new Method<Stellar.PeerStatListEncodeRequest, Stellar.PeerStatListEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3753,7 +3753,7 @@ namespace Stellar.RPC.AOT
                 PeerStatListEncodeResponseGrpcMarshaller.PeerStatListEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePeerStatList</summary>
-        public static readonly Method<Stellar.PeerStatListDecodeRequest, Stellar.PeerStatListDecodeResponse> DecodePeerStatListMethod =
+        public static readonly Method<Stellar.PeerStatListDecodeRequest, Stellar.PeerStatListDecodeResponse> DecodePeerStatList =
             new Method<Stellar.PeerStatListDecodeRequest, Stellar.PeerStatListDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3762,7 +3762,7 @@ namespace Stellar.RPC.AOT
                 PeerStatListDecodeResponseGrpcMarshaller.PeerStatListDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedNodeData</summary>
-        public static readonly Method<Stellar.TimeSlicedNodeDataEncodeRequest, Stellar.TimeSlicedNodeDataEncodeResponse> EncodeTimeSlicedNodeDataMethod =
+        public static readonly Method<Stellar.TimeSlicedNodeDataEncodeRequest, Stellar.TimeSlicedNodeDataEncodeResponse> EncodeTimeSlicedNodeData =
             new Method<Stellar.TimeSlicedNodeDataEncodeRequest, Stellar.TimeSlicedNodeDataEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3771,7 +3771,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedNodeDataEncodeResponseGrpcMarshaller.TimeSlicedNodeDataEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedNodeData</summary>
-        public static readonly Method<Stellar.TimeSlicedNodeDataDecodeRequest, Stellar.TimeSlicedNodeDataDecodeResponse> DecodeTimeSlicedNodeDataMethod =
+        public static readonly Method<Stellar.TimeSlicedNodeDataDecodeRequest, Stellar.TimeSlicedNodeDataDecodeResponse> DecodeTimeSlicedNodeData =
             new Method<Stellar.TimeSlicedNodeDataDecodeRequest, Stellar.TimeSlicedNodeDataDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3780,7 +3780,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedNodeDataDecodeResponseGrpcMarshaller.TimeSlicedNodeDataDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedPeerData</summary>
-        public static readonly Method<Stellar.TimeSlicedPeerDataEncodeRequest, Stellar.TimeSlicedPeerDataEncodeResponse> EncodeTimeSlicedPeerDataMethod =
+        public static readonly Method<Stellar.TimeSlicedPeerDataEncodeRequest, Stellar.TimeSlicedPeerDataEncodeResponse> EncodeTimeSlicedPeerData =
             new Method<Stellar.TimeSlicedPeerDataEncodeRequest, Stellar.TimeSlicedPeerDataEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3789,7 +3789,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedPeerDataEncodeResponseGrpcMarshaller.TimeSlicedPeerDataEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedPeerData</summary>
-        public static readonly Method<Stellar.TimeSlicedPeerDataDecodeRequest, Stellar.TimeSlicedPeerDataDecodeResponse> DecodeTimeSlicedPeerDataMethod =
+        public static readonly Method<Stellar.TimeSlicedPeerDataDecodeRequest, Stellar.TimeSlicedPeerDataDecodeResponse> DecodeTimeSlicedPeerData =
             new Method<Stellar.TimeSlicedPeerDataDecodeRequest, Stellar.TimeSlicedPeerDataDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3798,7 +3798,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedPeerDataDecodeResponseGrpcMarshaller.TimeSlicedPeerDataDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeSlicedPeerDataList</summary>
-        public static readonly Method<Stellar.TimeSlicedPeerDataListEncodeRequest, Stellar.TimeSlicedPeerDataListEncodeResponse> EncodeTimeSlicedPeerDataListMethod =
+        public static readonly Method<Stellar.TimeSlicedPeerDataListEncodeRequest, Stellar.TimeSlicedPeerDataListEncodeResponse> EncodeTimeSlicedPeerDataList =
             new Method<Stellar.TimeSlicedPeerDataListEncodeRequest, Stellar.TimeSlicedPeerDataListEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3807,7 +3807,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedPeerDataListEncodeResponseGrpcMarshaller.TimeSlicedPeerDataListEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeSlicedPeerDataList</summary>
-        public static readonly Method<Stellar.TimeSlicedPeerDataListDecodeRequest, Stellar.TimeSlicedPeerDataListDecodeResponse> DecodeTimeSlicedPeerDataListMethod =
+        public static readonly Method<Stellar.TimeSlicedPeerDataListDecodeRequest, Stellar.TimeSlicedPeerDataListDecodeResponse> DecodeTimeSlicedPeerDataList =
             new Method<Stellar.TimeSlicedPeerDataListDecodeRequest, Stellar.TimeSlicedPeerDataListDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3816,7 +3816,7 @@ namespace Stellar.RPC.AOT
                 TimeSlicedPeerDataListDecodeResponseGrpcMarshaller.TimeSlicedPeerDataListDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTopologyResponseBodyV0</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV0EncodeRequest, Stellar.TopologyResponseBodyV0EncodeResponse> EncodeTopologyResponseBodyV0Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV0EncodeRequest, Stellar.TopologyResponseBodyV0EncodeResponse> EncodeTopologyResponseBodyV0 =
             new Method<Stellar.TopologyResponseBodyV0EncodeRequest, Stellar.TopologyResponseBodyV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3825,7 +3825,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV0EncodeResponseGrpcMarshaller.TopologyResponseBodyV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTopologyResponseBodyV0</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV0DecodeRequest, Stellar.TopologyResponseBodyV0DecodeResponse> DecodeTopologyResponseBodyV0Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV0DecodeRequest, Stellar.TopologyResponseBodyV0DecodeResponse> DecodeTopologyResponseBodyV0 =
             new Method<Stellar.TopologyResponseBodyV0DecodeRequest, Stellar.TopologyResponseBodyV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3834,7 +3834,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV0DecodeResponseGrpcMarshaller.TopologyResponseBodyV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTopologyResponseBodyV1</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV1EncodeRequest, Stellar.TopologyResponseBodyV1EncodeResponse> EncodeTopologyResponseBodyV1Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV1EncodeRequest, Stellar.TopologyResponseBodyV1EncodeResponse> EncodeTopologyResponseBodyV1 =
             new Method<Stellar.TopologyResponseBodyV1EncodeRequest, Stellar.TopologyResponseBodyV1EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3843,7 +3843,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV1EncodeResponseGrpcMarshaller.TopologyResponseBodyV1EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTopologyResponseBodyV1</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV1DecodeRequest, Stellar.TopologyResponseBodyV1DecodeResponse> DecodeTopologyResponseBodyV1Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV1DecodeRequest, Stellar.TopologyResponseBodyV1DecodeResponse> DecodeTopologyResponseBodyV1 =
             new Method<Stellar.TopologyResponseBodyV1DecodeRequest, Stellar.TopologyResponseBodyV1DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3852,7 +3852,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV1DecodeResponseGrpcMarshaller.TopologyResponseBodyV1DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTopologyResponseBodyV2</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV2EncodeRequest, Stellar.TopologyResponseBodyV2EncodeResponse> EncodeTopologyResponseBodyV2Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV2EncodeRequest, Stellar.TopologyResponseBodyV2EncodeResponse> EncodeTopologyResponseBodyV2 =
             new Method<Stellar.TopologyResponseBodyV2EncodeRequest, Stellar.TopologyResponseBodyV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3861,7 +3861,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV2EncodeResponseGrpcMarshaller.TopologyResponseBodyV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTopologyResponseBodyV2</summary>
-        public static readonly Method<Stellar.TopologyResponseBodyV2DecodeRequest, Stellar.TopologyResponseBodyV2DecodeResponse> DecodeTopologyResponseBodyV2Method =
+        public static readonly Method<Stellar.TopologyResponseBodyV2DecodeRequest, Stellar.TopologyResponseBodyV2DecodeResponse> DecodeTopologyResponseBodyV2 =
             new Method<Stellar.TopologyResponseBodyV2DecodeRequest, Stellar.TopologyResponseBodyV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3870,7 +3870,7 @@ namespace Stellar.RPC.AOT
                 TopologyResponseBodyV2DecodeResponseGrpcMarshaller.TopologyResponseBodyV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSurveyResponseBody</summary>
-        public static readonly Method<Stellar.SurveyResponseBodyEncodeRequest, Stellar.SurveyResponseBodyEncodeResponse> EncodeSurveyResponseBodyMethod =
+        public static readonly Method<Stellar.SurveyResponseBodyEncodeRequest, Stellar.SurveyResponseBodyEncodeResponse> EncodeSurveyResponseBody =
             new Method<Stellar.SurveyResponseBodyEncodeRequest, Stellar.SurveyResponseBodyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3879,7 +3879,7 @@ namespace Stellar.RPC.AOT
                 SurveyResponseBodyEncodeResponseGrpcMarshaller.SurveyResponseBodyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSurveyResponseBody</summary>
-        public static readonly Method<Stellar.SurveyResponseBodyDecodeRequest, Stellar.SurveyResponseBodyDecodeResponse> DecodeSurveyResponseBodyMethod =
+        public static readonly Method<Stellar.SurveyResponseBodyDecodeRequest, Stellar.SurveyResponseBodyDecodeResponse> DecodeSurveyResponseBody =
             new Method<Stellar.SurveyResponseBodyDecodeRequest, Stellar.SurveyResponseBodyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3888,7 +3888,7 @@ namespace Stellar.RPC.AOT
                 SurveyResponseBodyDecodeResponseGrpcMarshaller.SurveyResponseBodyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTxAdvertVector</summary>
-        public static readonly Method<Stellar.TxAdvertVectorEncodeRequest, Stellar.TxAdvertVectorEncodeResponse> EncodeTxAdvertVectorMethod =
+        public static readonly Method<Stellar.TxAdvertVectorEncodeRequest, Stellar.TxAdvertVectorEncodeResponse> EncodeTxAdvertVector =
             new Method<Stellar.TxAdvertVectorEncodeRequest, Stellar.TxAdvertVectorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3897,7 +3897,7 @@ namespace Stellar.RPC.AOT
                 TxAdvertVectorEncodeResponseGrpcMarshaller.TxAdvertVectorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTxAdvertVector</summary>
-        public static readonly Method<Stellar.TxAdvertVectorDecodeRequest, Stellar.TxAdvertVectorDecodeResponse> DecodeTxAdvertVectorMethod =
+        public static readonly Method<Stellar.TxAdvertVectorDecodeRequest, Stellar.TxAdvertVectorDecodeResponse> DecodeTxAdvertVector =
             new Method<Stellar.TxAdvertVectorDecodeRequest, Stellar.TxAdvertVectorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3906,7 +3906,7 @@ namespace Stellar.RPC.AOT
                 TxAdvertVectorDecodeResponseGrpcMarshaller.TxAdvertVectorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeFloodAdvert</summary>
-        public static readonly Method<Stellar.FloodAdvertEncodeRequest, Stellar.FloodAdvertEncodeResponse> EncodeFloodAdvertMethod =
+        public static readonly Method<Stellar.FloodAdvertEncodeRequest, Stellar.FloodAdvertEncodeResponse> EncodeFloodAdvert =
             new Method<Stellar.FloodAdvertEncodeRequest, Stellar.FloodAdvertEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3915,7 +3915,7 @@ namespace Stellar.RPC.AOT
                 FloodAdvertEncodeResponseGrpcMarshaller.FloodAdvertEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeFloodAdvert</summary>
-        public static readonly Method<Stellar.FloodAdvertDecodeRequest, Stellar.FloodAdvertDecodeResponse> DecodeFloodAdvertMethod =
+        public static readonly Method<Stellar.FloodAdvertDecodeRequest, Stellar.FloodAdvertDecodeResponse> DecodeFloodAdvert =
             new Method<Stellar.FloodAdvertDecodeRequest, Stellar.FloodAdvertDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3924,7 +3924,7 @@ namespace Stellar.RPC.AOT
                 FloodAdvertDecodeResponseGrpcMarshaller.FloodAdvertDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTxDemandVector</summary>
-        public static readonly Method<Stellar.TxDemandVectorEncodeRequest, Stellar.TxDemandVectorEncodeResponse> EncodeTxDemandVectorMethod =
+        public static readonly Method<Stellar.TxDemandVectorEncodeRequest, Stellar.TxDemandVectorEncodeResponse> EncodeTxDemandVector =
             new Method<Stellar.TxDemandVectorEncodeRequest, Stellar.TxDemandVectorEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3933,7 +3933,7 @@ namespace Stellar.RPC.AOT
                 TxDemandVectorEncodeResponseGrpcMarshaller.TxDemandVectorEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTxDemandVector</summary>
-        public static readonly Method<Stellar.TxDemandVectorDecodeRequest, Stellar.TxDemandVectorDecodeResponse> DecodeTxDemandVectorMethod =
+        public static readonly Method<Stellar.TxDemandVectorDecodeRequest, Stellar.TxDemandVectorDecodeResponse> DecodeTxDemandVector =
             new Method<Stellar.TxDemandVectorDecodeRequest, Stellar.TxDemandVectorDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3942,7 +3942,7 @@ namespace Stellar.RPC.AOT
                 TxDemandVectorDecodeResponseGrpcMarshaller.TxDemandVectorDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeFloodDemand</summary>
-        public static readonly Method<Stellar.FloodDemandEncodeRequest, Stellar.FloodDemandEncodeResponse> EncodeFloodDemandMethod =
+        public static readonly Method<Stellar.FloodDemandEncodeRequest, Stellar.FloodDemandEncodeResponse> EncodeFloodDemand =
             new Method<Stellar.FloodDemandEncodeRequest, Stellar.FloodDemandEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3951,7 +3951,7 @@ namespace Stellar.RPC.AOT
                 FloodDemandEncodeResponseGrpcMarshaller.FloodDemandEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeFloodDemand</summary>
-        public static readonly Method<Stellar.FloodDemandDecodeRequest, Stellar.FloodDemandDecodeResponse> DecodeFloodDemandMethod =
+        public static readonly Method<Stellar.FloodDemandDecodeRequest, Stellar.FloodDemandDecodeResponse> DecodeFloodDemand =
             new Method<Stellar.FloodDemandDecodeRequest, Stellar.FloodDemandDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3960,7 +3960,7 @@ namespace Stellar.RPC.AOT
                 FloodDemandDecodeResponseGrpcMarshaller.FloodDemandDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeStellarMessage</summary>
-        public static readonly Method<Stellar.StellarMessageEncodeRequest, Stellar.StellarMessageEncodeResponse> EncodeStellarMessageMethod =
+        public static readonly Method<Stellar.StellarMessageEncodeRequest, Stellar.StellarMessageEncodeResponse> EncodeStellarMessage =
             new Method<Stellar.StellarMessageEncodeRequest, Stellar.StellarMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3969,7 +3969,7 @@ namespace Stellar.RPC.AOT
                 StellarMessageEncodeResponseGrpcMarshaller.StellarMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeStellarMessage</summary>
-        public static readonly Method<Stellar.StellarMessageDecodeRequest, Stellar.StellarMessageDecodeResponse> DecodeStellarMessageMethod =
+        public static readonly Method<Stellar.StellarMessageDecodeRequest, Stellar.StellarMessageDecodeResponse> DecodeStellarMessage =
             new Method<Stellar.StellarMessageDecodeRequest, Stellar.StellarMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3978,7 +3978,7 @@ namespace Stellar.RPC.AOT
                 StellarMessageDecodeResponseGrpcMarshaller.StellarMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAuthenticatedMessage</summary>
-        public static readonly Method<Stellar.AuthenticatedMessageEncodeRequest, Stellar.AuthenticatedMessageEncodeResponse> EncodeAuthenticatedMessageMethod =
+        public static readonly Method<Stellar.AuthenticatedMessageEncodeRequest, Stellar.AuthenticatedMessageEncodeResponse> EncodeAuthenticatedMessage =
             new Method<Stellar.AuthenticatedMessageEncodeRequest, Stellar.AuthenticatedMessageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3987,7 +3987,7 @@ namespace Stellar.RPC.AOT
                 AuthenticatedMessageEncodeResponseGrpcMarshaller.AuthenticatedMessageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAuthenticatedMessage</summary>
-        public static readonly Method<Stellar.AuthenticatedMessageDecodeRequest, Stellar.AuthenticatedMessageDecodeResponse> DecodeAuthenticatedMessageMethod =
+        public static readonly Method<Stellar.AuthenticatedMessageDecodeRequest, Stellar.AuthenticatedMessageDecodeResponse> DecodeAuthenticatedMessage =
             new Method<Stellar.AuthenticatedMessageDecodeRequest, Stellar.AuthenticatedMessageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -3996,7 +3996,7 @@ namespace Stellar.RPC.AOT
                 AuthenticatedMessageDecodeResponseGrpcMarshaller.AuthenticatedMessageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeValue</summary>
-        public static readonly Method<Stellar.ValueEncodeRequest, Stellar.ValueEncodeResponse> EncodeValueMethod =
+        public static readonly Method<Stellar.ValueEncodeRequest, Stellar.ValueEncodeResponse> EncodeValue =
             new Method<Stellar.ValueEncodeRequest, Stellar.ValueEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4005,7 +4005,7 @@ namespace Stellar.RPC.AOT
                 ValueEncodeResponseGrpcMarshaller.ValueEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeValue</summary>
-        public static readonly Method<Stellar.ValueDecodeRequest, Stellar.ValueDecodeResponse> DecodeValueMethod =
+        public static readonly Method<Stellar.ValueDecodeRequest, Stellar.ValueDecodeResponse> DecodeValue =
             new Method<Stellar.ValueDecodeRequest, Stellar.ValueDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4014,7 +4014,7 @@ namespace Stellar.RPC.AOT
                 ValueDecodeResponseGrpcMarshaller.ValueDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPBallot</summary>
-        public static readonly Method<Stellar.SCPBallotEncodeRequest, Stellar.SCPBallotEncodeResponse> EncodeSCPBallotMethod =
+        public static readonly Method<Stellar.SCPBallotEncodeRequest, Stellar.SCPBallotEncodeResponse> EncodeSCPBallot =
             new Method<Stellar.SCPBallotEncodeRequest, Stellar.SCPBallotEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4023,7 +4023,7 @@ namespace Stellar.RPC.AOT
                 SCPBallotEncodeResponseGrpcMarshaller.SCPBallotEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPBallot</summary>
-        public static readonly Method<Stellar.SCPBallotDecodeRequest, Stellar.SCPBallotDecodeResponse> DecodeSCPBallotMethod =
+        public static readonly Method<Stellar.SCPBallotDecodeRequest, Stellar.SCPBallotDecodeResponse> DecodeSCPBallot =
             new Method<Stellar.SCPBallotDecodeRequest, Stellar.SCPBallotDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4032,7 +4032,7 @@ namespace Stellar.RPC.AOT
                 SCPBallotDecodeResponseGrpcMarshaller.SCPBallotDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPStatementType</summary>
-        public static readonly Method<Stellar.SCPStatementTypeEncodeRequest, Stellar.SCPStatementTypeEncodeResponse> EncodeSCPStatementTypeMethod =
+        public static readonly Method<Stellar.SCPStatementTypeEncodeRequest, Stellar.SCPStatementTypeEncodeResponse> EncodeSCPStatementType =
             new Method<Stellar.SCPStatementTypeEncodeRequest, Stellar.SCPStatementTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4041,7 +4041,7 @@ namespace Stellar.RPC.AOT
                 SCPStatementTypeEncodeResponseGrpcMarshaller.SCPStatementTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPStatementType</summary>
-        public static readonly Method<Stellar.SCPStatementTypeDecodeRequest, Stellar.SCPStatementTypeDecodeResponse> DecodeSCPStatementTypeMethod =
+        public static readonly Method<Stellar.SCPStatementTypeDecodeRequest, Stellar.SCPStatementTypeDecodeResponse> DecodeSCPStatementType =
             new Method<Stellar.SCPStatementTypeDecodeRequest, Stellar.SCPStatementTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4050,7 +4050,7 @@ namespace Stellar.RPC.AOT
                 SCPStatementTypeDecodeResponseGrpcMarshaller.SCPStatementTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPNomination</summary>
-        public static readonly Method<Stellar.SCPNominationEncodeRequest, Stellar.SCPNominationEncodeResponse> EncodeSCPNominationMethod =
+        public static readonly Method<Stellar.SCPNominationEncodeRequest, Stellar.SCPNominationEncodeResponse> EncodeSCPNomination =
             new Method<Stellar.SCPNominationEncodeRequest, Stellar.SCPNominationEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4059,7 +4059,7 @@ namespace Stellar.RPC.AOT
                 SCPNominationEncodeResponseGrpcMarshaller.SCPNominationEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPNomination</summary>
-        public static readonly Method<Stellar.SCPNominationDecodeRequest, Stellar.SCPNominationDecodeResponse> DecodeSCPNominationMethod =
+        public static readonly Method<Stellar.SCPNominationDecodeRequest, Stellar.SCPNominationDecodeResponse> DecodeSCPNomination =
             new Method<Stellar.SCPNominationDecodeRequest, Stellar.SCPNominationDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4068,7 +4068,7 @@ namespace Stellar.RPC.AOT
                 SCPNominationDecodeResponseGrpcMarshaller.SCPNominationDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPStatement</summary>
-        public static readonly Method<Stellar.SCPStatementEncodeRequest, Stellar.SCPStatementEncodeResponse> EncodeSCPStatementMethod =
+        public static readonly Method<Stellar.SCPStatementEncodeRequest, Stellar.SCPStatementEncodeResponse> EncodeSCPStatement =
             new Method<Stellar.SCPStatementEncodeRequest, Stellar.SCPStatementEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4077,7 +4077,7 @@ namespace Stellar.RPC.AOT
                 SCPStatementEncodeResponseGrpcMarshaller.SCPStatementEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPStatement</summary>
-        public static readonly Method<Stellar.SCPStatementDecodeRequest, Stellar.SCPStatementDecodeResponse> DecodeSCPStatementMethod =
+        public static readonly Method<Stellar.SCPStatementDecodeRequest, Stellar.SCPStatementDecodeResponse> DecodeSCPStatement =
             new Method<Stellar.SCPStatementDecodeRequest, Stellar.SCPStatementDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4086,7 +4086,7 @@ namespace Stellar.RPC.AOT
                 SCPStatementDecodeResponseGrpcMarshaller.SCPStatementDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPEnvelope</summary>
-        public static readonly Method<Stellar.SCPEnvelopeEncodeRequest, Stellar.SCPEnvelopeEncodeResponse> EncodeSCPEnvelopeMethod =
+        public static readonly Method<Stellar.SCPEnvelopeEncodeRequest, Stellar.SCPEnvelopeEncodeResponse> EncodeSCPEnvelope =
             new Method<Stellar.SCPEnvelopeEncodeRequest, Stellar.SCPEnvelopeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4095,7 +4095,7 @@ namespace Stellar.RPC.AOT
                 SCPEnvelopeEncodeResponseGrpcMarshaller.SCPEnvelopeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPEnvelope</summary>
-        public static readonly Method<Stellar.SCPEnvelopeDecodeRequest, Stellar.SCPEnvelopeDecodeResponse> DecodeSCPEnvelopeMethod =
+        public static readonly Method<Stellar.SCPEnvelopeDecodeRequest, Stellar.SCPEnvelopeDecodeResponse> DecodeSCPEnvelope =
             new Method<Stellar.SCPEnvelopeDecodeRequest, Stellar.SCPEnvelopeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4104,7 +4104,7 @@ namespace Stellar.RPC.AOT
                 SCPEnvelopeDecodeResponseGrpcMarshaller.SCPEnvelopeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSCPQuorumSet</summary>
-        public static readonly Method<Stellar.SCPQuorumSetEncodeRequest, Stellar.SCPQuorumSetEncodeResponse> EncodeSCPQuorumSetMethod =
+        public static readonly Method<Stellar.SCPQuorumSetEncodeRequest, Stellar.SCPQuorumSetEncodeResponse> EncodeSCPQuorumSet =
             new Method<Stellar.SCPQuorumSetEncodeRequest, Stellar.SCPQuorumSetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4113,7 +4113,7 @@ namespace Stellar.RPC.AOT
                 SCPQuorumSetEncodeResponseGrpcMarshaller.SCPQuorumSetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSCPQuorumSet</summary>
-        public static readonly Method<Stellar.SCPQuorumSetDecodeRequest, Stellar.SCPQuorumSetDecodeResponse> DecodeSCPQuorumSetMethod =
+        public static readonly Method<Stellar.SCPQuorumSetDecodeRequest, Stellar.SCPQuorumSetDecodeResponse> DecodeSCPQuorumSet =
             new Method<Stellar.SCPQuorumSetDecodeRequest, Stellar.SCPQuorumSetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4122,7 +4122,7 @@ namespace Stellar.RPC.AOT
                 SCPQuorumSetDecodeResponseGrpcMarshaller.SCPQuorumSetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolParameters</summary>
-        public static readonly Method<Stellar.LiquidityPoolParametersEncodeRequest, Stellar.LiquidityPoolParametersEncodeResponse> EncodeLiquidityPoolParametersMethod =
+        public static readonly Method<Stellar.LiquidityPoolParametersEncodeRequest, Stellar.LiquidityPoolParametersEncodeResponse> EncodeLiquidityPoolParameters =
             new Method<Stellar.LiquidityPoolParametersEncodeRequest, Stellar.LiquidityPoolParametersEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4131,7 +4131,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolParametersEncodeResponseGrpcMarshaller.LiquidityPoolParametersEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolParameters</summary>
-        public static readonly Method<Stellar.LiquidityPoolParametersDecodeRequest, Stellar.LiquidityPoolParametersDecodeResponse> DecodeLiquidityPoolParametersMethod =
+        public static readonly Method<Stellar.LiquidityPoolParametersDecodeRequest, Stellar.LiquidityPoolParametersDecodeResponse> DecodeLiquidityPoolParameters =
             new Method<Stellar.LiquidityPoolParametersDecodeRequest, Stellar.LiquidityPoolParametersDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4140,7 +4140,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolParametersDecodeResponseGrpcMarshaller.LiquidityPoolParametersDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeMuxedAccount</summary>
-        public static readonly Method<Stellar.MuxedAccountEncodeRequest, Stellar.MuxedAccountEncodeResponse> EncodeMuxedAccountMethod =
+        public static readonly Method<Stellar.MuxedAccountEncodeRequest, Stellar.MuxedAccountEncodeResponse> EncodeMuxedAccount =
             new Method<Stellar.MuxedAccountEncodeRequest, Stellar.MuxedAccountEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4149,7 +4149,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountEncodeResponseGrpcMarshaller.MuxedAccountEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeMuxedAccount</summary>
-        public static readonly Method<Stellar.MuxedAccountDecodeRequest, Stellar.MuxedAccountDecodeResponse> DecodeMuxedAccountMethod =
+        public static readonly Method<Stellar.MuxedAccountDecodeRequest, Stellar.MuxedAccountDecodeResponse> DecodeMuxedAccount =
             new Method<Stellar.MuxedAccountDecodeRequest, Stellar.MuxedAccountDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4158,7 +4158,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountDecodeResponseGrpcMarshaller.MuxedAccountDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDecoratedSignature</summary>
-        public static readonly Method<Stellar.DecoratedSignatureEncodeRequest, Stellar.DecoratedSignatureEncodeResponse> EncodeDecoratedSignatureMethod =
+        public static readonly Method<Stellar.DecoratedSignatureEncodeRequest, Stellar.DecoratedSignatureEncodeResponse> EncodeDecoratedSignature =
             new Method<Stellar.DecoratedSignatureEncodeRequest, Stellar.DecoratedSignatureEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4167,7 +4167,7 @@ namespace Stellar.RPC.AOT
                 DecoratedSignatureEncodeResponseGrpcMarshaller.DecoratedSignatureEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDecoratedSignature</summary>
-        public static readonly Method<Stellar.DecoratedSignatureDecodeRequest, Stellar.DecoratedSignatureDecodeResponse> DecodeDecoratedSignatureMethod =
+        public static readonly Method<Stellar.DecoratedSignatureDecodeRequest, Stellar.DecoratedSignatureDecodeResponse> DecodeDecoratedSignature =
             new Method<Stellar.DecoratedSignatureDecodeRequest, Stellar.DecoratedSignatureDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4176,7 +4176,7 @@ namespace Stellar.RPC.AOT
                 DecoratedSignatureDecodeResponseGrpcMarshaller.DecoratedSignatureDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOperationType</summary>
-        public static readonly Method<Stellar.OperationTypeEncodeRequest, Stellar.OperationTypeEncodeResponse> EncodeOperationTypeMethod =
+        public static readonly Method<Stellar.OperationTypeEncodeRequest, Stellar.OperationTypeEncodeResponse> EncodeOperationType =
             new Method<Stellar.OperationTypeEncodeRequest, Stellar.OperationTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4185,7 +4185,7 @@ namespace Stellar.RPC.AOT
                 OperationTypeEncodeResponseGrpcMarshaller.OperationTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOperationType</summary>
-        public static readonly Method<Stellar.OperationTypeDecodeRequest, Stellar.OperationTypeDecodeResponse> DecodeOperationTypeMethod =
+        public static readonly Method<Stellar.OperationTypeDecodeRequest, Stellar.OperationTypeDecodeResponse> DecodeOperationType =
             new Method<Stellar.OperationTypeDecodeRequest, Stellar.OperationTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4194,7 +4194,7 @@ namespace Stellar.RPC.AOT
                 OperationTypeDecodeResponseGrpcMarshaller.OperationTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateAccountOp</summary>
-        public static readonly Method<Stellar.CreateAccountOpEncodeRequest, Stellar.CreateAccountOpEncodeResponse> EncodeCreateAccountOpMethod =
+        public static readonly Method<Stellar.CreateAccountOpEncodeRequest, Stellar.CreateAccountOpEncodeResponse> EncodeCreateAccountOp =
             new Method<Stellar.CreateAccountOpEncodeRequest, Stellar.CreateAccountOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4203,7 +4203,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountOpEncodeResponseGrpcMarshaller.CreateAccountOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateAccountOp</summary>
-        public static readonly Method<Stellar.CreateAccountOpDecodeRequest, Stellar.CreateAccountOpDecodeResponse> DecodeCreateAccountOpMethod =
+        public static readonly Method<Stellar.CreateAccountOpDecodeRequest, Stellar.CreateAccountOpDecodeResponse> DecodeCreateAccountOp =
             new Method<Stellar.CreateAccountOpDecodeRequest, Stellar.CreateAccountOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4212,7 +4212,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountOpDecodeResponseGrpcMarshaller.CreateAccountOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePaymentOp</summary>
-        public static readonly Method<Stellar.PaymentOpEncodeRequest, Stellar.PaymentOpEncodeResponse> EncodePaymentOpMethod =
+        public static readonly Method<Stellar.PaymentOpEncodeRequest, Stellar.PaymentOpEncodeResponse> EncodePaymentOp =
             new Method<Stellar.PaymentOpEncodeRequest, Stellar.PaymentOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4221,7 +4221,7 @@ namespace Stellar.RPC.AOT
                 PaymentOpEncodeResponseGrpcMarshaller.PaymentOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePaymentOp</summary>
-        public static readonly Method<Stellar.PaymentOpDecodeRequest, Stellar.PaymentOpDecodeResponse> DecodePaymentOpMethod =
+        public static readonly Method<Stellar.PaymentOpDecodeRequest, Stellar.PaymentOpDecodeResponse> DecodePaymentOp =
             new Method<Stellar.PaymentOpDecodeRequest, Stellar.PaymentOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4230,7 +4230,7 @@ namespace Stellar.RPC.AOT
                 PaymentOpDecodeResponseGrpcMarshaller.PaymentOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictReceiveOp</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveOpEncodeRequest, Stellar.PathPaymentStrictReceiveOpEncodeResponse> EncodePathPaymentStrictReceiveOpMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveOpEncodeRequest, Stellar.PathPaymentStrictReceiveOpEncodeResponse> EncodePathPaymentStrictReceiveOp =
             new Method<Stellar.PathPaymentStrictReceiveOpEncodeRequest, Stellar.PathPaymentStrictReceiveOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4239,7 +4239,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveOpEncodeResponseGrpcMarshaller.PathPaymentStrictReceiveOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictReceiveOp</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveOpDecodeRequest, Stellar.PathPaymentStrictReceiveOpDecodeResponse> DecodePathPaymentStrictReceiveOpMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveOpDecodeRequest, Stellar.PathPaymentStrictReceiveOpDecodeResponse> DecodePathPaymentStrictReceiveOp =
             new Method<Stellar.PathPaymentStrictReceiveOpDecodeRequest, Stellar.PathPaymentStrictReceiveOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4248,7 +4248,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveOpDecodeResponseGrpcMarshaller.PathPaymentStrictReceiveOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictSendOp</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendOpEncodeRequest, Stellar.PathPaymentStrictSendOpEncodeResponse> EncodePathPaymentStrictSendOpMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendOpEncodeRequest, Stellar.PathPaymentStrictSendOpEncodeResponse> EncodePathPaymentStrictSendOp =
             new Method<Stellar.PathPaymentStrictSendOpEncodeRequest, Stellar.PathPaymentStrictSendOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4257,7 +4257,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendOpEncodeResponseGrpcMarshaller.PathPaymentStrictSendOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictSendOp</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendOpDecodeRequest, Stellar.PathPaymentStrictSendOpDecodeResponse> DecodePathPaymentStrictSendOpMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendOpDecodeRequest, Stellar.PathPaymentStrictSendOpDecodeResponse> DecodePathPaymentStrictSendOp =
             new Method<Stellar.PathPaymentStrictSendOpDecodeRequest, Stellar.PathPaymentStrictSendOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4266,7 +4266,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendOpDecodeResponseGrpcMarshaller.PathPaymentStrictSendOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageSellOfferOp</summary>
-        public static readonly Method<Stellar.ManageSellOfferOpEncodeRequest, Stellar.ManageSellOfferOpEncodeResponse> EncodeManageSellOfferOpMethod =
+        public static readonly Method<Stellar.ManageSellOfferOpEncodeRequest, Stellar.ManageSellOfferOpEncodeResponse> EncodeManageSellOfferOp =
             new Method<Stellar.ManageSellOfferOpEncodeRequest, Stellar.ManageSellOfferOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4275,7 +4275,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferOpEncodeResponseGrpcMarshaller.ManageSellOfferOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageSellOfferOp</summary>
-        public static readonly Method<Stellar.ManageSellOfferOpDecodeRequest, Stellar.ManageSellOfferOpDecodeResponse> DecodeManageSellOfferOpMethod =
+        public static readonly Method<Stellar.ManageSellOfferOpDecodeRequest, Stellar.ManageSellOfferOpDecodeResponse> DecodeManageSellOfferOp =
             new Method<Stellar.ManageSellOfferOpDecodeRequest, Stellar.ManageSellOfferOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4284,7 +4284,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferOpDecodeResponseGrpcMarshaller.ManageSellOfferOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageBuyOfferOp</summary>
-        public static readonly Method<Stellar.ManageBuyOfferOpEncodeRequest, Stellar.ManageBuyOfferOpEncodeResponse> EncodeManageBuyOfferOpMethod =
+        public static readonly Method<Stellar.ManageBuyOfferOpEncodeRequest, Stellar.ManageBuyOfferOpEncodeResponse> EncodeManageBuyOfferOp =
             new Method<Stellar.ManageBuyOfferOpEncodeRequest, Stellar.ManageBuyOfferOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4293,7 +4293,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferOpEncodeResponseGrpcMarshaller.ManageBuyOfferOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageBuyOfferOp</summary>
-        public static readonly Method<Stellar.ManageBuyOfferOpDecodeRequest, Stellar.ManageBuyOfferOpDecodeResponse> DecodeManageBuyOfferOpMethod =
+        public static readonly Method<Stellar.ManageBuyOfferOpDecodeRequest, Stellar.ManageBuyOfferOpDecodeResponse> DecodeManageBuyOfferOp =
             new Method<Stellar.ManageBuyOfferOpDecodeRequest, Stellar.ManageBuyOfferOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4302,7 +4302,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferOpDecodeResponseGrpcMarshaller.ManageBuyOfferOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreatePassiveSellOfferOp</summary>
-        public static readonly Method<Stellar.CreatePassiveSellOfferOpEncodeRequest, Stellar.CreatePassiveSellOfferOpEncodeResponse> EncodeCreatePassiveSellOfferOpMethod =
+        public static readonly Method<Stellar.CreatePassiveSellOfferOpEncodeRequest, Stellar.CreatePassiveSellOfferOpEncodeResponse> EncodeCreatePassiveSellOfferOp =
             new Method<Stellar.CreatePassiveSellOfferOpEncodeRequest, Stellar.CreatePassiveSellOfferOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4311,7 +4311,7 @@ namespace Stellar.RPC.AOT
                 CreatePassiveSellOfferOpEncodeResponseGrpcMarshaller.CreatePassiveSellOfferOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreatePassiveSellOfferOp</summary>
-        public static readonly Method<Stellar.CreatePassiveSellOfferOpDecodeRequest, Stellar.CreatePassiveSellOfferOpDecodeResponse> DecodeCreatePassiveSellOfferOpMethod =
+        public static readonly Method<Stellar.CreatePassiveSellOfferOpDecodeRequest, Stellar.CreatePassiveSellOfferOpDecodeResponse> DecodeCreatePassiveSellOfferOp =
             new Method<Stellar.CreatePassiveSellOfferOpDecodeRequest, Stellar.CreatePassiveSellOfferOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4320,7 +4320,7 @@ namespace Stellar.RPC.AOT
                 CreatePassiveSellOfferOpDecodeResponseGrpcMarshaller.CreatePassiveSellOfferOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetOptionsOp</summary>
-        public static readonly Method<Stellar.SetOptionsOpEncodeRequest, Stellar.SetOptionsOpEncodeResponse> EncodeSetOptionsOpMethod =
+        public static readonly Method<Stellar.SetOptionsOpEncodeRequest, Stellar.SetOptionsOpEncodeResponse> EncodeSetOptionsOp =
             new Method<Stellar.SetOptionsOpEncodeRequest, Stellar.SetOptionsOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4329,7 +4329,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsOpEncodeResponseGrpcMarshaller.SetOptionsOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetOptionsOp</summary>
-        public static readonly Method<Stellar.SetOptionsOpDecodeRequest, Stellar.SetOptionsOpDecodeResponse> DecodeSetOptionsOpMethod =
+        public static readonly Method<Stellar.SetOptionsOpDecodeRequest, Stellar.SetOptionsOpDecodeResponse> DecodeSetOptionsOp =
             new Method<Stellar.SetOptionsOpDecodeRequest, Stellar.SetOptionsOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4338,7 +4338,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsOpDecodeResponseGrpcMarshaller.SetOptionsOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeChangeTrustAsset</summary>
-        public static readonly Method<Stellar.ChangeTrustAssetEncodeRequest, Stellar.ChangeTrustAssetEncodeResponse> EncodeChangeTrustAssetMethod =
+        public static readonly Method<Stellar.ChangeTrustAssetEncodeRequest, Stellar.ChangeTrustAssetEncodeResponse> EncodeChangeTrustAsset =
             new Method<Stellar.ChangeTrustAssetEncodeRequest, Stellar.ChangeTrustAssetEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4347,7 +4347,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustAssetEncodeResponseGrpcMarshaller.ChangeTrustAssetEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeChangeTrustAsset</summary>
-        public static readonly Method<Stellar.ChangeTrustAssetDecodeRequest, Stellar.ChangeTrustAssetDecodeResponse> DecodeChangeTrustAssetMethod =
+        public static readonly Method<Stellar.ChangeTrustAssetDecodeRequest, Stellar.ChangeTrustAssetDecodeResponse> DecodeChangeTrustAsset =
             new Method<Stellar.ChangeTrustAssetDecodeRequest, Stellar.ChangeTrustAssetDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4356,7 +4356,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustAssetDecodeResponseGrpcMarshaller.ChangeTrustAssetDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeChangeTrustOp</summary>
-        public static readonly Method<Stellar.ChangeTrustOpEncodeRequest, Stellar.ChangeTrustOpEncodeResponse> EncodeChangeTrustOpMethod =
+        public static readonly Method<Stellar.ChangeTrustOpEncodeRequest, Stellar.ChangeTrustOpEncodeResponse> EncodeChangeTrustOp =
             new Method<Stellar.ChangeTrustOpEncodeRequest, Stellar.ChangeTrustOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4365,7 +4365,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustOpEncodeResponseGrpcMarshaller.ChangeTrustOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeChangeTrustOp</summary>
-        public static readonly Method<Stellar.ChangeTrustOpDecodeRequest, Stellar.ChangeTrustOpDecodeResponse> DecodeChangeTrustOpMethod =
+        public static readonly Method<Stellar.ChangeTrustOpDecodeRequest, Stellar.ChangeTrustOpDecodeResponse> DecodeChangeTrustOp =
             new Method<Stellar.ChangeTrustOpDecodeRequest, Stellar.ChangeTrustOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4374,7 +4374,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustOpDecodeResponseGrpcMarshaller.ChangeTrustOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAllowTrustOp</summary>
-        public static readonly Method<Stellar.AllowTrustOpEncodeRequest, Stellar.AllowTrustOpEncodeResponse> EncodeAllowTrustOpMethod =
+        public static readonly Method<Stellar.AllowTrustOpEncodeRequest, Stellar.AllowTrustOpEncodeResponse> EncodeAllowTrustOp =
             new Method<Stellar.AllowTrustOpEncodeRequest, Stellar.AllowTrustOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4383,7 +4383,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustOpEncodeResponseGrpcMarshaller.AllowTrustOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAllowTrustOp</summary>
-        public static readonly Method<Stellar.AllowTrustOpDecodeRequest, Stellar.AllowTrustOpDecodeResponse> DecodeAllowTrustOpMethod =
+        public static readonly Method<Stellar.AllowTrustOpDecodeRequest, Stellar.AllowTrustOpDecodeResponse> DecodeAllowTrustOp =
             new Method<Stellar.AllowTrustOpDecodeRequest, Stellar.AllowTrustOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4392,7 +4392,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustOpDecodeResponseGrpcMarshaller.AllowTrustOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageDataOp</summary>
-        public static readonly Method<Stellar.ManageDataOpEncodeRequest, Stellar.ManageDataOpEncodeResponse> EncodeManageDataOpMethod =
+        public static readonly Method<Stellar.ManageDataOpEncodeRequest, Stellar.ManageDataOpEncodeResponse> EncodeManageDataOp =
             new Method<Stellar.ManageDataOpEncodeRequest, Stellar.ManageDataOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4401,7 +4401,7 @@ namespace Stellar.RPC.AOT
                 ManageDataOpEncodeResponseGrpcMarshaller.ManageDataOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageDataOp</summary>
-        public static readonly Method<Stellar.ManageDataOpDecodeRequest, Stellar.ManageDataOpDecodeResponse> DecodeManageDataOpMethod =
+        public static readonly Method<Stellar.ManageDataOpDecodeRequest, Stellar.ManageDataOpDecodeResponse> DecodeManageDataOp =
             new Method<Stellar.ManageDataOpDecodeRequest, Stellar.ManageDataOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4410,7 +4410,7 @@ namespace Stellar.RPC.AOT
                 ManageDataOpDecodeResponseGrpcMarshaller.ManageDataOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBumpSequenceOp</summary>
-        public static readonly Method<Stellar.BumpSequenceOpEncodeRequest, Stellar.BumpSequenceOpEncodeResponse> EncodeBumpSequenceOpMethod =
+        public static readonly Method<Stellar.BumpSequenceOpEncodeRequest, Stellar.BumpSequenceOpEncodeResponse> EncodeBumpSequenceOp =
             new Method<Stellar.BumpSequenceOpEncodeRequest, Stellar.BumpSequenceOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4419,7 +4419,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceOpEncodeResponseGrpcMarshaller.BumpSequenceOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBumpSequenceOp</summary>
-        public static readonly Method<Stellar.BumpSequenceOpDecodeRequest, Stellar.BumpSequenceOpDecodeResponse> DecodeBumpSequenceOpMethod =
+        public static readonly Method<Stellar.BumpSequenceOpDecodeRequest, Stellar.BumpSequenceOpDecodeResponse> DecodeBumpSequenceOp =
             new Method<Stellar.BumpSequenceOpDecodeRequest, Stellar.BumpSequenceOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4428,7 +4428,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceOpDecodeResponseGrpcMarshaller.BumpSequenceOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceOpEncodeRequest, Stellar.CreateClaimableBalanceOpEncodeResponse> EncodeCreateClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceOpEncodeRequest, Stellar.CreateClaimableBalanceOpEncodeResponse> EncodeCreateClaimableBalanceOp =
             new Method<Stellar.CreateClaimableBalanceOpEncodeRequest, Stellar.CreateClaimableBalanceOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4437,7 +4437,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceOpEncodeResponseGrpcMarshaller.CreateClaimableBalanceOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceOpDecodeRequest, Stellar.CreateClaimableBalanceOpDecodeResponse> DecodeCreateClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceOpDecodeRequest, Stellar.CreateClaimableBalanceOpDecodeResponse> DecodeCreateClaimableBalanceOp =
             new Method<Stellar.CreateClaimableBalanceOpDecodeRequest, Stellar.CreateClaimableBalanceOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4446,7 +4446,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceOpDecodeResponseGrpcMarshaller.CreateClaimableBalanceOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceOpEncodeRequest, Stellar.ClaimClaimableBalanceOpEncodeResponse> EncodeClaimClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceOpEncodeRequest, Stellar.ClaimClaimableBalanceOpEncodeResponse> EncodeClaimClaimableBalanceOp =
             new Method<Stellar.ClaimClaimableBalanceOpEncodeRequest, Stellar.ClaimClaimableBalanceOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4455,7 +4455,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceOpEncodeResponseGrpcMarshaller.ClaimClaimableBalanceOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceOpDecodeRequest, Stellar.ClaimClaimableBalanceOpDecodeResponse> DecodeClaimClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceOpDecodeRequest, Stellar.ClaimClaimableBalanceOpDecodeResponse> DecodeClaimClaimableBalanceOp =
             new Method<Stellar.ClaimClaimableBalanceOpDecodeRequest, Stellar.ClaimClaimableBalanceOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4464,7 +4464,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceOpDecodeResponseGrpcMarshaller.ClaimClaimableBalanceOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBeginSponsoringFutureReservesOp</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesOpEncodeRequest, Stellar.BeginSponsoringFutureReservesOpEncodeResponse> EncodeBeginSponsoringFutureReservesOpMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesOpEncodeRequest, Stellar.BeginSponsoringFutureReservesOpEncodeResponse> EncodeBeginSponsoringFutureReservesOp =
             new Method<Stellar.BeginSponsoringFutureReservesOpEncodeRequest, Stellar.BeginSponsoringFutureReservesOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4473,7 +4473,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesOpEncodeResponseGrpcMarshaller.BeginSponsoringFutureReservesOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBeginSponsoringFutureReservesOp</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesOpDecodeRequest, Stellar.BeginSponsoringFutureReservesOpDecodeResponse> DecodeBeginSponsoringFutureReservesOpMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesOpDecodeRequest, Stellar.BeginSponsoringFutureReservesOpDecodeResponse> DecodeBeginSponsoringFutureReservesOp =
             new Method<Stellar.BeginSponsoringFutureReservesOpDecodeRequest, Stellar.BeginSponsoringFutureReservesOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4482,7 +4482,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesOpDecodeResponseGrpcMarshaller.BeginSponsoringFutureReservesOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRevokeSponsorshipType</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipTypeEncodeRequest, Stellar.RevokeSponsorshipTypeEncodeResponse> EncodeRevokeSponsorshipTypeMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipTypeEncodeRequest, Stellar.RevokeSponsorshipTypeEncodeResponse> EncodeRevokeSponsorshipType =
             new Method<Stellar.RevokeSponsorshipTypeEncodeRequest, Stellar.RevokeSponsorshipTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4491,7 +4491,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipTypeEncodeResponseGrpcMarshaller.RevokeSponsorshipTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRevokeSponsorshipType</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipTypeDecodeRequest, Stellar.RevokeSponsorshipTypeDecodeResponse> DecodeRevokeSponsorshipTypeMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipTypeDecodeRequest, Stellar.RevokeSponsorshipTypeDecodeResponse> DecodeRevokeSponsorshipType =
             new Method<Stellar.RevokeSponsorshipTypeDecodeRequest, Stellar.RevokeSponsorshipTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4500,7 +4500,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipTypeDecodeResponseGrpcMarshaller.RevokeSponsorshipTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRevokeSponsorshipOp</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipOpEncodeRequest, Stellar.RevokeSponsorshipOpEncodeResponse> EncodeRevokeSponsorshipOpMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipOpEncodeRequest, Stellar.RevokeSponsorshipOpEncodeResponse> EncodeRevokeSponsorshipOp =
             new Method<Stellar.RevokeSponsorshipOpEncodeRequest, Stellar.RevokeSponsorshipOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4509,7 +4509,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipOpEncodeResponseGrpcMarshaller.RevokeSponsorshipOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRevokeSponsorshipOp</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipOpDecodeRequest, Stellar.RevokeSponsorshipOpDecodeResponse> DecodeRevokeSponsorshipOpMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipOpDecodeRequest, Stellar.RevokeSponsorshipOpDecodeResponse> DecodeRevokeSponsorshipOp =
             new Method<Stellar.RevokeSponsorshipOpDecodeRequest, Stellar.RevokeSponsorshipOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4518,7 +4518,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipOpDecodeResponseGrpcMarshaller.RevokeSponsorshipOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackOp</summary>
-        public static readonly Method<Stellar.ClawbackOpEncodeRequest, Stellar.ClawbackOpEncodeResponse> EncodeClawbackOpMethod =
+        public static readonly Method<Stellar.ClawbackOpEncodeRequest, Stellar.ClawbackOpEncodeResponse> EncodeClawbackOp =
             new Method<Stellar.ClawbackOpEncodeRequest, Stellar.ClawbackOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4527,7 +4527,7 @@ namespace Stellar.RPC.AOT
                 ClawbackOpEncodeResponseGrpcMarshaller.ClawbackOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackOp</summary>
-        public static readonly Method<Stellar.ClawbackOpDecodeRequest, Stellar.ClawbackOpDecodeResponse> DecodeClawbackOpMethod =
+        public static readonly Method<Stellar.ClawbackOpDecodeRequest, Stellar.ClawbackOpDecodeResponse> DecodeClawbackOp =
             new Method<Stellar.ClawbackOpDecodeRequest, Stellar.ClawbackOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4536,7 +4536,7 @@ namespace Stellar.RPC.AOT
                 ClawbackOpDecodeResponseGrpcMarshaller.ClawbackOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceOpEncodeRequest, Stellar.ClawbackClaimableBalanceOpEncodeResponse> EncodeClawbackClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceOpEncodeRequest, Stellar.ClawbackClaimableBalanceOpEncodeResponse> EncodeClawbackClaimableBalanceOp =
             new Method<Stellar.ClawbackClaimableBalanceOpEncodeRequest, Stellar.ClawbackClaimableBalanceOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4545,7 +4545,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceOpEncodeResponseGrpcMarshaller.ClawbackClaimableBalanceOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackClaimableBalanceOp</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceOpDecodeRequest, Stellar.ClawbackClaimableBalanceOpDecodeResponse> DecodeClawbackClaimableBalanceOpMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceOpDecodeRequest, Stellar.ClawbackClaimableBalanceOpDecodeResponse> DecodeClawbackClaimableBalanceOp =
             new Method<Stellar.ClawbackClaimableBalanceOpDecodeRequest, Stellar.ClawbackClaimableBalanceOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4554,7 +4554,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceOpDecodeResponseGrpcMarshaller.ClawbackClaimableBalanceOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetTrustLineFlagsOp</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsOpEncodeRequest, Stellar.SetTrustLineFlagsOpEncodeResponse> EncodeSetTrustLineFlagsOpMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsOpEncodeRequest, Stellar.SetTrustLineFlagsOpEncodeResponse> EncodeSetTrustLineFlagsOp =
             new Method<Stellar.SetTrustLineFlagsOpEncodeRequest, Stellar.SetTrustLineFlagsOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4563,7 +4563,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsOpEncodeResponseGrpcMarshaller.SetTrustLineFlagsOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetTrustLineFlagsOp</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsOpDecodeRequest, Stellar.SetTrustLineFlagsOpDecodeResponse> DecodeSetTrustLineFlagsOpMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsOpDecodeRequest, Stellar.SetTrustLineFlagsOpDecodeResponse> DecodeSetTrustLineFlagsOp =
             new Method<Stellar.SetTrustLineFlagsOpDecodeRequest, Stellar.SetTrustLineFlagsOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4572,7 +4572,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsOpDecodeResponseGrpcMarshaller.SetTrustLineFlagsOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolDepositOp</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositOpEncodeRequest, Stellar.LiquidityPoolDepositOpEncodeResponse> EncodeLiquidityPoolDepositOpMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositOpEncodeRequest, Stellar.LiquidityPoolDepositOpEncodeResponse> EncodeLiquidityPoolDepositOp =
             new Method<Stellar.LiquidityPoolDepositOpEncodeRequest, Stellar.LiquidityPoolDepositOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4581,7 +4581,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositOpEncodeResponseGrpcMarshaller.LiquidityPoolDepositOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolDepositOp</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositOpDecodeRequest, Stellar.LiquidityPoolDepositOpDecodeResponse> DecodeLiquidityPoolDepositOpMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositOpDecodeRequest, Stellar.LiquidityPoolDepositOpDecodeResponse> DecodeLiquidityPoolDepositOp =
             new Method<Stellar.LiquidityPoolDepositOpDecodeRequest, Stellar.LiquidityPoolDepositOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4590,7 +4590,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositOpDecodeResponseGrpcMarshaller.LiquidityPoolDepositOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolWithdrawOp</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawOpEncodeRequest, Stellar.LiquidityPoolWithdrawOpEncodeResponse> EncodeLiquidityPoolWithdrawOpMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawOpEncodeRequest, Stellar.LiquidityPoolWithdrawOpEncodeResponse> EncodeLiquidityPoolWithdrawOp =
             new Method<Stellar.LiquidityPoolWithdrawOpEncodeRequest, Stellar.LiquidityPoolWithdrawOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4599,7 +4599,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawOpEncodeResponseGrpcMarshaller.LiquidityPoolWithdrawOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolWithdrawOp</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawOpDecodeRequest, Stellar.LiquidityPoolWithdrawOpDecodeResponse> DecodeLiquidityPoolWithdrawOpMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawOpDecodeRequest, Stellar.LiquidityPoolWithdrawOpDecodeResponse> DecodeLiquidityPoolWithdrawOp =
             new Method<Stellar.LiquidityPoolWithdrawOpDecodeRequest, Stellar.LiquidityPoolWithdrawOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4608,7 +4608,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawOpDecodeResponseGrpcMarshaller.LiquidityPoolWithdrawOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHostFunctionType</summary>
-        public static readonly Method<Stellar.HostFunctionTypeEncodeRequest, Stellar.HostFunctionTypeEncodeResponse> EncodeHostFunctionTypeMethod =
+        public static readonly Method<Stellar.HostFunctionTypeEncodeRequest, Stellar.HostFunctionTypeEncodeResponse> EncodeHostFunctionType =
             new Method<Stellar.HostFunctionTypeEncodeRequest, Stellar.HostFunctionTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4617,7 +4617,7 @@ namespace Stellar.RPC.AOT
                 HostFunctionTypeEncodeResponseGrpcMarshaller.HostFunctionTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHostFunctionType</summary>
-        public static readonly Method<Stellar.HostFunctionTypeDecodeRequest, Stellar.HostFunctionTypeDecodeResponse> DecodeHostFunctionTypeMethod =
+        public static readonly Method<Stellar.HostFunctionTypeDecodeRequest, Stellar.HostFunctionTypeDecodeResponse> DecodeHostFunctionType =
             new Method<Stellar.HostFunctionTypeDecodeRequest, Stellar.HostFunctionTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4626,7 +4626,7 @@ namespace Stellar.RPC.AOT
                 HostFunctionTypeDecodeResponseGrpcMarshaller.HostFunctionTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractIDPreimageType</summary>
-        public static readonly Method<Stellar.ContractIDPreimageTypeEncodeRequest, Stellar.ContractIDPreimageTypeEncodeResponse> EncodeContractIDPreimageTypeMethod =
+        public static readonly Method<Stellar.ContractIDPreimageTypeEncodeRequest, Stellar.ContractIDPreimageTypeEncodeResponse> EncodeContractIDPreimageType =
             new Method<Stellar.ContractIDPreimageTypeEncodeRequest, Stellar.ContractIDPreimageTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4635,7 +4635,7 @@ namespace Stellar.RPC.AOT
                 ContractIDPreimageTypeEncodeResponseGrpcMarshaller.ContractIDPreimageTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractIDPreimageType</summary>
-        public static readonly Method<Stellar.ContractIDPreimageTypeDecodeRequest, Stellar.ContractIDPreimageTypeDecodeResponse> DecodeContractIDPreimageTypeMethod =
+        public static readonly Method<Stellar.ContractIDPreimageTypeDecodeRequest, Stellar.ContractIDPreimageTypeDecodeResponse> DecodeContractIDPreimageType =
             new Method<Stellar.ContractIDPreimageTypeDecodeRequest, Stellar.ContractIDPreimageTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4644,7 +4644,7 @@ namespace Stellar.RPC.AOT
                 ContractIDPreimageTypeDecodeResponseGrpcMarshaller.ContractIDPreimageTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeContractIDPreimage</summary>
-        public static readonly Method<Stellar.ContractIDPreimageEncodeRequest, Stellar.ContractIDPreimageEncodeResponse> EncodeContractIDPreimageMethod =
+        public static readonly Method<Stellar.ContractIDPreimageEncodeRequest, Stellar.ContractIDPreimageEncodeResponse> EncodeContractIDPreimage =
             new Method<Stellar.ContractIDPreimageEncodeRequest, Stellar.ContractIDPreimageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4653,7 +4653,7 @@ namespace Stellar.RPC.AOT
                 ContractIDPreimageEncodeResponseGrpcMarshaller.ContractIDPreimageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeContractIDPreimage</summary>
-        public static readonly Method<Stellar.ContractIDPreimageDecodeRequest, Stellar.ContractIDPreimageDecodeResponse> DecodeContractIDPreimageMethod =
+        public static readonly Method<Stellar.ContractIDPreimageDecodeRequest, Stellar.ContractIDPreimageDecodeResponse> DecodeContractIDPreimage =
             new Method<Stellar.ContractIDPreimageDecodeRequest, Stellar.ContractIDPreimageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4662,7 +4662,7 @@ namespace Stellar.RPC.AOT
                 ContractIDPreimageDecodeResponseGrpcMarshaller.ContractIDPreimageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateContractArgs</summary>
-        public static readonly Method<Stellar.CreateContractArgsEncodeRequest, Stellar.CreateContractArgsEncodeResponse> EncodeCreateContractArgsMethod =
+        public static readonly Method<Stellar.CreateContractArgsEncodeRequest, Stellar.CreateContractArgsEncodeResponse> EncodeCreateContractArgs =
             new Method<Stellar.CreateContractArgsEncodeRequest, Stellar.CreateContractArgsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4671,7 +4671,7 @@ namespace Stellar.RPC.AOT
                 CreateContractArgsEncodeResponseGrpcMarshaller.CreateContractArgsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateContractArgs</summary>
-        public static readonly Method<Stellar.CreateContractArgsDecodeRequest, Stellar.CreateContractArgsDecodeResponse> DecodeCreateContractArgsMethod =
+        public static readonly Method<Stellar.CreateContractArgsDecodeRequest, Stellar.CreateContractArgsDecodeResponse> DecodeCreateContractArgs =
             new Method<Stellar.CreateContractArgsDecodeRequest, Stellar.CreateContractArgsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4680,7 +4680,7 @@ namespace Stellar.RPC.AOT
                 CreateContractArgsDecodeResponseGrpcMarshaller.CreateContractArgsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateContractArgsV2</summary>
-        public static readonly Method<Stellar.CreateContractArgsV2EncodeRequest, Stellar.CreateContractArgsV2EncodeResponse> EncodeCreateContractArgsV2Method =
+        public static readonly Method<Stellar.CreateContractArgsV2EncodeRequest, Stellar.CreateContractArgsV2EncodeResponse> EncodeCreateContractArgsV2 =
             new Method<Stellar.CreateContractArgsV2EncodeRequest, Stellar.CreateContractArgsV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4689,7 +4689,7 @@ namespace Stellar.RPC.AOT
                 CreateContractArgsV2EncodeResponseGrpcMarshaller.CreateContractArgsV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateContractArgsV2</summary>
-        public static readonly Method<Stellar.CreateContractArgsV2DecodeRequest, Stellar.CreateContractArgsV2DecodeResponse> DecodeCreateContractArgsV2Method =
+        public static readonly Method<Stellar.CreateContractArgsV2DecodeRequest, Stellar.CreateContractArgsV2DecodeResponse> DecodeCreateContractArgsV2 =
             new Method<Stellar.CreateContractArgsV2DecodeRequest, Stellar.CreateContractArgsV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4698,7 +4698,7 @@ namespace Stellar.RPC.AOT
                 CreateContractArgsV2DecodeResponseGrpcMarshaller.CreateContractArgsV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInvokeContractArgs</summary>
-        public static readonly Method<Stellar.InvokeContractArgsEncodeRequest, Stellar.InvokeContractArgsEncodeResponse> EncodeInvokeContractArgsMethod =
+        public static readonly Method<Stellar.InvokeContractArgsEncodeRequest, Stellar.InvokeContractArgsEncodeResponse> EncodeInvokeContractArgs =
             new Method<Stellar.InvokeContractArgsEncodeRequest, Stellar.InvokeContractArgsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4707,7 +4707,7 @@ namespace Stellar.RPC.AOT
                 InvokeContractArgsEncodeResponseGrpcMarshaller.InvokeContractArgsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInvokeContractArgs</summary>
-        public static readonly Method<Stellar.InvokeContractArgsDecodeRequest, Stellar.InvokeContractArgsDecodeResponse> DecodeInvokeContractArgsMethod =
+        public static readonly Method<Stellar.InvokeContractArgsDecodeRequest, Stellar.InvokeContractArgsDecodeResponse> DecodeInvokeContractArgs =
             new Method<Stellar.InvokeContractArgsDecodeRequest, Stellar.InvokeContractArgsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4716,7 +4716,7 @@ namespace Stellar.RPC.AOT
                 InvokeContractArgsDecodeResponseGrpcMarshaller.InvokeContractArgsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHostFunction</summary>
-        public static readonly Method<Stellar.HostFunctionEncodeRequest, Stellar.HostFunctionEncodeResponse> EncodeHostFunctionMethod =
+        public static readonly Method<Stellar.HostFunctionEncodeRequest, Stellar.HostFunctionEncodeResponse> EncodeHostFunction =
             new Method<Stellar.HostFunctionEncodeRequest, Stellar.HostFunctionEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4725,7 +4725,7 @@ namespace Stellar.RPC.AOT
                 HostFunctionEncodeResponseGrpcMarshaller.HostFunctionEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHostFunction</summary>
-        public static readonly Method<Stellar.HostFunctionDecodeRequest, Stellar.HostFunctionDecodeResponse> DecodeHostFunctionMethod =
+        public static readonly Method<Stellar.HostFunctionDecodeRequest, Stellar.HostFunctionDecodeResponse> DecodeHostFunction =
             new Method<Stellar.HostFunctionDecodeRequest, Stellar.HostFunctionDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4734,7 +4734,7 @@ namespace Stellar.RPC.AOT
                 HostFunctionDecodeResponseGrpcMarshaller.HostFunctionDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanAuthorizedFunctionType</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedFunctionTypeEncodeRequest, Stellar.SorobanAuthorizedFunctionTypeEncodeResponse> EncodeSorobanAuthorizedFunctionTypeMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedFunctionTypeEncodeRequest, Stellar.SorobanAuthorizedFunctionTypeEncodeResponse> EncodeSorobanAuthorizedFunctionType =
             new Method<Stellar.SorobanAuthorizedFunctionTypeEncodeRequest, Stellar.SorobanAuthorizedFunctionTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4743,7 +4743,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedFunctionTypeEncodeResponseGrpcMarshaller.SorobanAuthorizedFunctionTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanAuthorizedFunctionType</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedFunctionTypeDecodeRequest, Stellar.SorobanAuthorizedFunctionTypeDecodeResponse> DecodeSorobanAuthorizedFunctionTypeMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedFunctionTypeDecodeRequest, Stellar.SorobanAuthorizedFunctionTypeDecodeResponse> DecodeSorobanAuthorizedFunctionType =
             new Method<Stellar.SorobanAuthorizedFunctionTypeDecodeRequest, Stellar.SorobanAuthorizedFunctionTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4752,7 +4752,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedFunctionTypeDecodeResponseGrpcMarshaller.SorobanAuthorizedFunctionTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanAuthorizedFunction</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedFunctionEncodeRequest, Stellar.SorobanAuthorizedFunctionEncodeResponse> EncodeSorobanAuthorizedFunctionMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedFunctionEncodeRequest, Stellar.SorobanAuthorizedFunctionEncodeResponse> EncodeSorobanAuthorizedFunction =
             new Method<Stellar.SorobanAuthorizedFunctionEncodeRequest, Stellar.SorobanAuthorizedFunctionEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4761,7 +4761,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedFunctionEncodeResponseGrpcMarshaller.SorobanAuthorizedFunctionEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanAuthorizedFunction</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedFunctionDecodeRequest, Stellar.SorobanAuthorizedFunctionDecodeResponse> DecodeSorobanAuthorizedFunctionMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedFunctionDecodeRequest, Stellar.SorobanAuthorizedFunctionDecodeResponse> DecodeSorobanAuthorizedFunction =
             new Method<Stellar.SorobanAuthorizedFunctionDecodeRequest, Stellar.SorobanAuthorizedFunctionDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4770,7 +4770,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedFunctionDecodeResponseGrpcMarshaller.SorobanAuthorizedFunctionDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanAuthorizedInvocation</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedInvocationEncodeRequest, Stellar.SorobanAuthorizedInvocationEncodeResponse> EncodeSorobanAuthorizedInvocationMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedInvocationEncodeRequest, Stellar.SorobanAuthorizedInvocationEncodeResponse> EncodeSorobanAuthorizedInvocation =
             new Method<Stellar.SorobanAuthorizedInvocationEncodeRequest, Stellar.SorobanAuthorizedInvocationEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4779,7 +4779,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedInvocationEncodeResponseGrpcMarshaller.SorobanAuthorizedInvocationEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanAuthorizedInvocation</summary>
-        public static readonly Method<Stellar.SorobanAuthorizedInvocationDecodeRequest, Stellar.SorobanAuthorizedInvocationDecodeResponse> DecodeSorobanAuthorizedInvocationMethod =
+        public static readonly Method<Stellar.SorobanAuthorizedInvocationDecodeRequest, Stellar.SorobanAuthorizedInvocationDecodeResponse> DecodeSorobanAuthorizedInvocation =
             new Method<Stellar.SorobanAuthorizedInvocationDecodeRequest, Stellar.SorobanAuthorizedInvocationDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4788,7 +4788,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizedInvocationDecodeResponseGrpcMarshaller.SorobanAuthorizedInvocationDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanAddressCredentials</summary>
-        public static readonly Method<Stellar.SorobanAddressCredentialsEncodeRequest, Stellar.SorobanAddressCredentialsEncodeResponse> EncodeSorobanAddressCredentialsMethod =
+        public static readonly Method<Stellar.SorobanAddressCredentialsEncodeRequest, Stellar.SorobanAddressCredentialsEncodeResponse> EncodeSorobanAddressCredentials =
             new Method<Stellar.SorobanAddressCredentialsEncodeRequest, Stellar.SorobanAddressCredentialsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4797,7 +4797,7 @@ namespace Stellar.RPC.AOT
                 SorobanAddressCredentialsEncodeResponseGrpcMarshaller.SorobanAddressCredentialsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanAddressCredentials</summary>
-        public static readonly Method<Stellar.SorobanAddressCredentialsDecodeRequest, Stellar.SorobanAddressCredentialsDecodeResponse> DecodeSorobanAddressCredentialsMethod =
+        public static readonly Method<Stellar.SorobanAddressCredentialsDecodeRequest, Stellar.SorobanAddressCredentialsDecodeResponse> DecodeSorobanAddressCredentials =
             new Method<Stellar.SorobanAddressCredentialsDecodeRequest, Stellar.SorobanAddressCredentialsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4806,7 +4806,7 @@ namespace Stellar.RPC.AOT
                 SorobanAddressCredentialsDecodeResponseGrpcMarshaller.SorobanAddressCredentialsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanCredentialsType</summary>
-        public static readonly Method<Stellar.SorobanCredentialsTypeEncodeRequest, Stellar.SorobanCredentialsTypeEncodeResponse> EncodeSorobanCredentialsTypeMethod =
+        public static readonly Method<Stellar.SorobanCredentialsTypeEncodeRequest, Stellar.SorobanCredentialsTypeEncodeResponse> EncodeSorobanCredentialsType =
             new Method<Stellar.SorobanCredentialsTypeEncodeRequest, Stellar.SorobanCredentialsTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4815,7 +4815,7 @@ namespace Stellar.RPC.AOT
                 SorobanCredentialsTypeEncodeResponseGrpcMarshaller.SorobanCredentialsTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanCredentialsType</summary>
-        public static readonly Method<Stellar.SorobanCredentialsTypeDecodeRequest, Stellar.SorobanCredentialsTypeDecodeResponse> DecodeSorobanCredentialsTypeMethod =
+        public static readonly Method<Stellar.SorobanCredentialsTypeDecodeRequest, Stellar.SorobanCredentialsTypeDecodeResponse> DecodeSorobanCredentialsType =
             new Method<Stellar.SorobanCredentialsTypeDecodeRequest, Stellar.SorobanCredentialsTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4824,7 +4824,7 @@ namespace Stellar.RPC.AOT
                 SorobanCredentialsTypeDecodeResponseGrpcMarshaller.SorobanCredentialsTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanCredentials</summary>
-        public static readonly Method<Stellar.SorobanCredentialsEncodeRequest, Stellar.SorobanCredentialsEncodeResponse> EncodeSorobanCredentialsMethod =
+        public static readonly Method<Stellar.SorobanCredentialsEncodeRequest, Stellar.SorobanCredentialsEncodeResponse> EncodeSorobanCredentials =
             new Method<Stellar.SorobanCredentialsEncodeRequest, Stellar.SorobanCredentialsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4833,7 +4833,7 @@ namespace Stellar.RPC.AOT
                 SorobanCredentialsEncodeResponseGrpcMarshaller.SorobanCredentialsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanCredentials</summary>
-        public static readonly Method<Stellar.SorobanCredentialsDecodeRequest, Stellar.SorobanCredentialsDecodeResponse> DecodeSorobanCredentialsMethod =
+        public static readonly Method<Stellar.SorobanCredentialsDecodeRequest, Stellar.SorobanCredentialsDecodeResponse> DecodeSorobanCredentials =
             new Method<Stellar.SorobanCredentialsDecodeRequest, Stellar.SorobanCredentialsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4842,7 +4842,7 @@ namespace Stellar.RPC.AOT
                 SorobanCredentialsDecodeResponseGrpcMarshaller.SorobanCredentialsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanAuthorizationEntry</summary>
-        public static readonly Method<Stellar.SorobanAuthorizationEntryEncodeRequest, Stellar.SorobanAuthorizationEntryEncodeResponse> EncodeSorobanAuthorizationEntryMethod =
+        public static readonly Method<Stellar.SorobanAuthorizationEntryEncodeRequest, Stellar.SorobanAuthorizationEntryEncodeResponse> EncodeSorobanAuthorizationEntry =
             new Method<Stellar.SorobanAuthorizationEntryEncodeRequest, Stellar.SorobanAuthorizationEntryEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4851,7 +4851,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizationEntryEncodeResponseGrpcMarshaller.SorobanAuthorizationEntryEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanAuthorizationEntry</summary>
-        public static readonly Method<Stellar.SorobanAuthorizationEntryDecodeRequest, Stellar.SorobanAuthorizationEntryDecodeResponse> DecodeSorobanAuthorizationEntryMethod =
+        public static readonly Method<Stellar.SorobanAuthorizationEntryDecodeRequest, Stellar.SorobanAuthorizationEntryDecodeResponse> DecodeSorobanAuthorizationEntry =
             new Method<Stellar.SorobanAuthorizationEntryDecodeRequest, Stellar.SorobanAuthorizationEntryDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4860,7 +4860,7 @@ namespace Stellar.RPC.AOT
                 SorobanAuthorizationEntryDecodeResponseGrpcMarshaller.SorobanAuthorizationEntryDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInvokeHostFunctionOp</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionOpEncodeRequest, Stellar.InvokeHostFunctionOpEncodeResponse> EncodeInvokeHostFunctionOpMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionOpEncodeRequest, Stellar.InvokeHostFunctionOpEncodeResponse> EncodeInvokeHostFunctionOp =
             new Method<Stellar.InvokeHostFunctionOpEncodeRequest, Stellar.InvokeHostFunctionOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4869,7 +4869,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionOpEncodeResponseGrpcMarshaller.InvokeHostFunctionOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInvokeHostFunctionOp</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionOpDecodeRequest, Stellar.InvokeHostFunctionOpDecodeResponse> DecodeInvokeHostFunctionOpMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionOpDecodeRequest, Stellar.InvokeHostFunctionOpDecodeResponse> DecodeInvokeHostFunctionOp =
             new Method<Stellar.InvokeHostFunctionOpDecodeRequest, Stellar.InvokeHostFunctionOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4878,7 +4878,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionOpDecodeResponseGrpcMarshaller.InvokeHostFunctionOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeExtendFootprintTTLOp</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLOpEncodeRequest, Stellar.ExtendFootprintTTLOpEncodeResponse> EncodeExtendFootprintTTLOpMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLOpEncodeRequest, Stellar.ExtendFootprintTTLOpEncodeResponse> EncodeExtendFootprintTTLOp =
             new Method<Stellar.ExtendFootprintTTLOpEncodeRequest, Stellar.ExtendFootprintTTLOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4887,7 +4887,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLOpEncodeResponseGrpcMarshaller.ExtendFootprintTTLOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeExtendFootprintTTLOp</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLOpDecodeRequest, Stellar.ExtendFootprintTTLOpDecodeResponse> DecodeExtendFootprintTTLOpMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLOpDecodeRequest, Stellar.ExtendFootprintTTLOpDecodeResponse> DecodeExtendFootprintTTLOp =
             new Method<Stellar.ExtendFootprintTTLOpDecodeRequest, Stellar.ExtendFootprintTTLOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4896,7 +4896,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLOpDecodeResponseGrpcMarshaller.ExtendFootprintTTLOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRestoreFootprintOp</summary>
-        public static readonly Method<Stellar.RestoreFootprintOpEncodeRequest, Stellar.RestoreFootprintOpEncodeResponse> EncodeRestoreFootprintOpMethod =
+        public static readonly Method<Stellar.RestoreFootprintOpEncodeRequest, Stellar.RestoreFootprintOpEncodeResponse> EncodeRestoreFootprintOp =
             new Method<Stellar.RestoreFootprintOpEncodeRequest, Stellar.RestoreFootprintOpEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4905,7 +4905,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintOpEncodeResponseGrpcMarshaller.RestoreFootprintOpEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRestoreFootprintOp</summary>
-        public static readonly Method<Stellar.RestoreFootprintOpDecodeRequest, Stellar.RestoreFootprintOpDecodeResponse> DecodeRestoreFootprintOpMethod =
+        public static readonly Method<Stellar.RestoreFootprintOpDecodeRequest, Stellar.RestoreFootprintOpDecodeResponse> DecodeRestoreFootprintOp =
             new Method<Stellar.RestoreFootprintOpDecodeRequest, Stellar.RestoreFootprintOpDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4914,7 +4914,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintOpDecodeResponseGrpcMarshaller.RestoreFootprintOpDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOperation</summary>
-        public static readonly Method<Stellar.OperationEncodeRequest, Stellar.OperationEncodeResponse> EncodeOperationMethod =
+        public static readonly Method<Stellar.OperationEncodeRequest, Stellar.OperationEncodeResponse> EncodeOperation =
             new Method<Stellar.OperationEncodeRequest, Stellar.OperationEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4923,7 +4923,7 @@ namespace Stellar.RPC.AOT
                 OperationEncodeResponseGrpcMarshaller.OperationEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOperation</summary>
-        public static readonly Method<Stellar.OperationDecodeRequest, Stellar.OperationDecodeResponse> DecodeOperationMethod =
+        public static readonly Method<Stellar.OperationDecodeRequest, Stellar.OperationDecodeResponse> DecodeOperation =
             new Method<Stellar.OperationDecodeRequest, Stellar.OperationDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4932,7 +4932,7 @@ namespace Stellar.RPC.AOT
                 OperationDecodeResponseGrpcMarshaller.OperationDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHashIDPreimage</summary>
-        public static readonly Method<Stellar.HashIDPreimageEncodeRequest, Stellar.HashIDPreimageEncodeResponse> EncodeHashIDPreimageMethod =
+        public static readonly Method<Stellar.HashIDPreimageEncodeRequest, Stellar.HashIDPreimageEncodeResponse> EncodeHashIDPreimage =
             new Method<Stellar.HashIDPreimageEncodeRequest, Stellar.HashIDPreimageEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4941,7 +4941,7 @@ namespace Stellar.RPC.AOT
                 HashIDPreimageEncodeResponseGrpcMarshaller.HashIDPreimageEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHashIDPreimage</summary>
-        public static readonly Method<Stellar.HashIDPreimageDecodeRequest, Stellar.HashIDPreimageDecodeResponse> DecodeHashIDPreimageMethod =
+        public static readonly Method<Stellar.HashIDPreimageDecodeRequest, Stellar.HashIDPreimageDecodeResponse> DecodeHashIDPreimage =
             new Method<Stellar.HashIDPreimageDecodeRequest, Stellar.HashIDPreimageDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4950,7 +4950,7 @@ namespace Stellar.RPC.AOT
                 HashIDPreimageDecodeResponseGrpcMarshaller.HashIDPreimageDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeMemoType</summary>
-        public static readonly Method<Stellar.MemoTypeEncodeRequest, Stellar.MemoTypeEncodeResponse> EncodeMemoTypeMethod =
+        public static readonly Method<Stellar.MemoTypeEncodeRequest, Stellar.MemoTypeEncodeResponse> EncodeMemoType =
             new Method<Stellar.MemoTypeEncodeRequest, Stellar.MemoTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4959,7 +4959,7 @@ namespace Stellar.RPC.AOT
                 MemoTypeEncodeResponseGrpcMarshaller.MemoTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeMemoType</summary>
-        public static readonly Method<Stellar.MemoTypeDecodeRequest, Stellar.MemoTypeDecodeResponse> DecodeMemoTypeMethod =
+        public static readonly Method<Stellar.MemoTypeDecodeRequest, Stellar.MemoTypeDecodeResponse> DecodeMemoType =
             new Method<Stellar.MemoTypeDecodeRequest, Stellar.MemoTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4968,7 +4968,7 @@ namespace Stellar.RPC.AOT
                 MemoTypeDecodeResponseGrpcMarshaller.MemoTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeMemo</summary>
-        public static readonly Method<Stellar.MemoEncodeRequest, Stellar.MemoEncodeResponse> EncodeMemoMethod =
+        public static readonly Method<Stellar.MemoEncodeRequest, Stellar.MemoEncodeResponse> EncodeMemo =
             new Method<Stellar.MemoEncodeRequest, Stellar.MemoEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4977,7 +4977,7 @@ namespace Stellar.RPC.AOT
                 MemoEncodeResponseGrpcMarshaller.MemoEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeMemo</summary>
-        public static readonly Method<Stellar.MemoDecodeRequest, Stellar.MemoDecodeResponse> DecodeMemoMethod =
+        public static readonly Method<Stellar.MemoDecodeRequest, Stellar.MemoDecodeResponse> DecodeMemo =
             new Method<Stellar.MemoDecodeRequest, Stellar.MemoDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4986,7 +4986,7 @@ namespace Stellar.RPC.AOT
                 MemoDecodeResponseGrpcMarshaller.MemoDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimeBounds</summary>
-        public static readonly Method<Stellar.TimeBoundsEncodeRequest, Stellar.TimeBoundsEncodeResponse> EncodeTimeBoundsMethod =
+        public static readonly Method<Stellar.TimeBoundsEncodeRequest, Stellar.TimeBoundsEncodeResponse> EncodeTimeBounds =
             new Method<Stellar.TimeBoundsEncodeRequest, Stellar.TimeBoundsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -4995,7 +4995,7 @@ namespace Stellar.RPC.AOT
                 TimeBoundsEncodeResponseGrpcMarshaller.TimeBoundsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimeBounds</summary>
-        public static readonly Method<Stellar.TimeBoundsDecodeRequest, Stellar.TimeBoundsDecodeResponse> DecodeTimeBoundsMethod =
+        public static readonly Method<Stellar.TimeBoundsDecodeRequest, Stellar.TimeBoundsDecodeResponse> DecodeTimeBounds =
             new Method<Stellar.TimeBoundsDecodeRequest, Stellar.TimeBoundsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5004,7 +5004,7 @@ namespace Stellar.RPC.AOT
                 TimeBoundsDecodeResponseGrpcMarshaller.TimeBoundsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerBounds</summary>
-        public static readonly Method<Stellar.LedgerBoundsEncodeRequest, Stellar.LedgerBoundsEncodeResponse> EncodeLedgerBoundsMethod =
+        public static readonly Method<Stellar.LedgerBoundsEncodeRequest, Stellar.LedgerBoundsEncodeResponse> EncodeLedgerBounds =
             new Method<Stellar.LedgerBoundsEncodeRequest, Stellar.LedgerBoundsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5013,7 +5013,7 @@ namespace Stellar.RPC.AOT
                 LedgerBoundsEncodeResponseGrpcMarshaller.LedgerBoundsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerBounds</summary>
-        public static readonly Method<Stellar.LedgerBoundsDecodeRequest, Stellar.LedgerBoundsDecodeResponse> DecodeLedgerBoundsMethod =
+        public static readonly Method<Stellar.LedgerBoundsDecodeRequest, Stellar.LedgerBoundsDecodeResponse> DecodeLedgerBounds =
             new Method<Stellar.LedgerBoundsDecodeRequest, Stellar.LedgerBoundsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5022,7 +5022,7 @@ namespace Stellar.RPC.AOT
                 LedgerBoundsDecodeResponseGrpcMarshaller.LedgerBoundsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePreconditionsV2</summary>
-        public static readonly Method<Stellar.PreconditionsV2EncodeRequest, Stellar.PreconditionsV2EncodeResponse> EncodePreconditionsV2Method =
+        public static readonly Method<Stellar.PreconditionsV2EncodeRequest, Stellar.PreconditionsV2EncodeResponse> EncodePreconditionsV2 =
             new Method<Stellar.PreconditionsV2EncodeRequest, Stellar.PreconditionsV2EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5031,7 +5031,7 @@ namespace Stellar.RPC.AOT
                 PreconditionsV2EncodeResponseGrpcMarshaller.PreconditionsV2EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePreconditionsV2</summary>
-        public static readonly Method<Stellar.PreconditionsV2DecodeRequest, Stellar.PreconditionsV2DecodeResponse> DecodePreconditionsV2Method =
+        public static readonly Method<Stellar.PreconditionsV2DecodeRequest, Stellar.PreconditionsV2DecodeResponse> DecodePreconditionsV2 =
             new Method<Stellar.PreconditionsV2DecodeRequest, Stellar.PreconditionsV2DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5040,7 +5040,7 @@ namespace Stellar.RPC.AOT
                 PreconditionsV2DecodeResponseGrpcMarshaller.PreconditionsV2DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePreconditionType</summary>
-        public static readonly Method<Stellar.PreconditionTypeEncodeRequest, Stellar.PreconditionTypeEncodeResponse> EncodePreconditionTypeMethod =
+        public static readonly Method<Stellar.PreconditionTypeEncodeRequest, Stellar.PreconditionTypeEncodeResponse> EncodePreconditionType =
             new Method<Stellar.PreconditionTypeEncodeRequest, Stellar.PreconditionTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5049,7 +5049,7 @@ namespace Stellar.RPC.AOT
                 PreconditionTypeEncodeResponseGrpcMarshaller.PreconditionTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePreconditionType</summary>
-        public static readonly Method<Stellar.PreconditionTypeDecodeRequest, Stellar.PreconditionTypeDecodeResponse> DecodePreconditionTypeMethod =
+        public static readonly Method<Stellar.PreconditionTypeDecodeRequest, Stellar.PreconditionTypeDecodeResponse> DecodePreconditionType =
             new Method<Stellar.PreconditionTypeDecodeRequest, Stellar.PreconditionTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5058,7 +5058,7 @@ namespace Stellar.RPC.AOT
                 PreconditionTypeDecodeResponseGrpcMarshaller.PreconditionTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePreconditions</summary>
-        public static readonly Method<Stellar.PreconditionsEncodeRequest, Stellar.PreconditionsEncodeResponse> EncodePreconditionsMethod =
+        public static readonly Method<Stellar.PreconditionsEncodeRequest, Stellar.PreconditionsEncodeResponse> EncodePreconditions =
             new Method<Stellar.PreconditionsEncodeRequest, Stellar.PreconditionsEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5067,7 +5067,7 @@ namespace Stellar.RPC.AOT
                 PreconditionsEncodeResponseGrpcMarshaller.PreconditionsEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePreconditions</summary>
-        public static readonly Method<Stellar.PreconditionsDecodeRequest, Stellar.PreconditionsDecodeResponse> DecodePreconditionsMethod =
+        public static readonly Method<Stellar.PreconditionsDecodeRequest, Stellar.PreconditionsDecodeResponse> DecodePreconditions =
             new Method<Stellar.PreconditionsDecodeRequest, Stellar.PreconditionsDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5076,7 +5076,7 @@ namespace Stellar.RPC.AOT
                 PreconditionsDecodeResponseGrpcMarshaller.PreconditionsDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLedgerFootprint</summary>
-        public static readonly Method<Stellar.LedgerFootprintEncodeRequest, Stellar.LedgerFootprintEncodeResponse> EncodeLedgerFootprintMethod =
+        public static readonly Method<Stellar.LedgerFootprintEncodeRequest, Stellar.LedgerFootprintEncodeResponse> EncodeLedgerFootprint =
             new Method<Stellar.LedgerFootprintEncodeRequest, Stellar.LedgerFootprintEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5085,7 +5085,7 @@ namespace Stellar.RPC.AOT
                 LedgerFootprintEncodeResponseGrpcMarshaller.LedgerFootprintEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLedgerFootprint</summary>
-        public static readonly Method<Stellar.LedgerFootprintDecodeRequest, Stellar.LedgerFootprintDecodeResponse> DecodeLedgerFootprintMethod =
+        public static readonly Method<Stellar.LedgerFootprintDecodeRequest, Stellar.LedgerFootprintDecodeResponse> DecodeLedgerFootprint =
             new Method<Stellar.LedgerFootprintDecodeRequest, Stellar.LedgerFootprintDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5094,7 +5094,7 @@ namespace Stellar.RPC.AOT
                 LedgerFootprintDecodeResponseGrpcMarshaller.LedgerFootprintDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeArchivalProofType</summary>
-        public static readonly Method<Stellar.ArchivalProofTypeEncodeRequest, Stellar.ArchivalProofTypeEncodeResponse> EncodeArchivalProofTypeMethod =
+        public static readonly Method<Stellar.ArchivalProofTypeEncodeRequest, Stellar.ArchivalProofTypeEncodeResponse> EncodeArchivalProofType =
             new Method<Stellar.ArchivalProofTypeEncodeRequest, Stellar.ArchivalProofTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5103,7 +5103,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofTypeEncodeResponseGrpcMarshaller.ArchivalProofTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeArchivalProofType</summary>
-        public static readonly Method<Stellar.ArchivalProofTypeDecodeRequest, Stellar.ArchivalProofTypeDecodeResponse> DecodeArchivalProofTypeMethod =
+        public static readonly Method<Stellar.ArchivalProofTypeDecodeRequest, Stellar.ArchivalProofTypeDecodeResponse> DecodeArchivalProofType =
             new Method<Stellar.ArchivalProofTypeDecodeRequest, Stellar.ArchivalProofTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5112,7 +5112,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofTypeDecodeResponseGrpcMarshaller.ArchivalProofTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeArchivalProofNode</summary>
-        public static readonly Method<Stellar.ArchivalProofNodeEncodeRequest, Stellar.ArchivalProofNodeEncodeResponse> EncodeArchivalProofNodeMethod =
+        public static readonly Method<Stellar.ArchivalProofNodeEncodeRequest, Stellar.ArchivalProofNodeEncodeResponse> EncodeArchivalProofNode =
             new Method<Stellar.ArchivalProofNodeEncodeRequest, Stellar.ArchivalProofNodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5121,7 +5121,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofNodeEncodeResponseGrpcMarshaller.ArchivalProofNodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeArchivalProofNode</summary>
-        public static readonly Method<Stellar.ArchivalProofNodeDecodeRequest, Stellar.ArchivalProofNodeDecodeResponse> DecodeArchivalProofNodeMethod =
+        public static readonly Method<Stellar.ArchivalProofNodeDecodeRequest, Stellar.ArchivalProofNodeDecodeResponse> DecodeArchivalProofNode =
             new Method<Stellar.ArchivalProofNodeDecodeRequest, Stellar.ArchivalProofNodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5130,7 +5130,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofNodeDecodeResponseGrpcMarshaller.ArchivalProofNodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeProofLevel</summary>
-        public static readonly Method<Stellar.ProofLevelEncodeRequest, Stellar.ProofLevelEncodeResponse> EncodeProofLevelMethod =
+        public static readonly Method<Stellar.ProofLevelEncodeRequest, Stellar.ProofLevelEncodeResponse> EncodeProofLevel =
             new Method<Stellar.ProofLevelEncodeRequest, Stellar.ProofLevelEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5139,7 +5139,7 @@ namespace Stellar.RPC.AOT
                 ProofLevelEncodeResponseGrpcMarshaller.ProofLevelEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeProofLevel</summary>
-        public static readonly Method<Stellar.ProofLevelDecodeRequest, Stellar.ProofLevelDecodeResponse> DecodeProofLevelMethod =
+        public static readonly Method<Stellar.ProofLevelDecodeRequest, Stellar.ProofLevelDecodeResponse> DecodeProofLevel =
             new Method<Stellar.ProofLevelDecodeRequest, Stellar.ProofLevelDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5148,7 +5148,7 @@ namespace Stellar.RPC.AOT
                 ProofLevelDecodeResponseGrpcMarshaller.ProofLevelDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeNonexistenceProofBody</summary>
-        public static readonly Method<Stellar.NonexistenceProofBodyEncodeRequest, Stellar.NonexistenceProofBodyEncodeResponse> EncodeNonexistenceProofBodyMethod =
+        public static readonly Method<Stellar.NonexistenceProofBodyEncodeRequest, Stellar.NonexistenceProofBodyEncodeResponse> EncodeNonexistenceProofBody =
             new Method<Stellar.NonexistenceProofBodyEncodeRequest, Stellar.NonexistenceProofBodyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5157,7 +5157,7 @@ namespace Stellar.RPC.AOT
                 NonexistenceProofBodyEncodeResponseGrpcMarshaller.NonexistenceProofBodyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeNonexistenceProofBody</summary>
-        public static readonly Method<Stellar.NonexistenceProofBodyDecodeRequest, Stellar.NonexistenceProofBodyDecodeResponse> DecodeNonexistenceProofBodyMethod =
+        public static readonly Method<Stellar.NonexistenceProofBodyDecodeRequest, Stellar.NonexistenceProofBodyDecodeResponse> DecodeNonexistenceProofBody =
             new Method<Stellar.NonexistenceProofBodyDecodeRequest, Stellar.NonexistenceProofBodyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5166,7 +5166,7 @@ namespace Stellar.RPC.AOT
                 NonexistenceProofBodyDecodeResponseGrpcMarshaller.NonexistenceProofBodyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeExistenceProofBody</summary>
-        public static readonly Method<Stellar.ExistenceProofBodyEncodeRequest, Stellar.ExistenceProofBodyEncodeResponse> EncodeExistenceProofBodyMethod =
+        public static readonly Method<Stellar.ExistenceProofBodyEncodeRequest, Stellar.ExistenceProofBodyEncodeResponse> EncodeExistenceProofBody =
             new Method<Stellar.ExistenceProofBodyEncodeRequest, Stellar.ExistenceProofBodyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5175,7 +5175,7 @@ namespace Stellar.RPC.AOT
                 ExistenceProofBodyEncodeResponseGrpcMarshaller.ExistenceProofBodyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeExistenceProofBody</summary>
-        public static readonly Method<Stellar.ExistenceProofBodyDecodeRequest, Stellar.ExistenceProofBodyDecodeResponse> DecodeExistenceProofBodyMethod =
+        public static readonly Method<Stellar.ExistenceProofBodyDecodeRequest, Stellar.ExistenceProofBodyDecodeResponse> DecodeExistenceProofBody =
             new Method<Stellar.ExistenceProofBodyDecodeRequest, Stellar.ExistenceProofBodyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5184,7 +5184,7 @@ namespace Stellar.RPC.AOT
                 ExistenceProofBodyDecodeResponseGrpcMarshaller.ExistenceProofBodyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeArchivalProof</summary>
-        public static readonly Method<Stellar.ArchivalProofEncodeRequest, Stellar.ArchivalProofEncodeResponse> EncodeArchivalProofMethod =
+        public static readonly Method<Stellar.ArchivalProofEncodeRequest, Stellar.ArchivalProofEncodeResponse> EncodeArchivalProof =
             new Method<Stellar.ArchivalProofEncodeRequest, Stellar.ArchivalProofEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5193,7 +5193,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofEncodeResponseGrpcMarshaller.ArchivalProofEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeArchivalProof</summary>
-        public static readonly Method<Stellar.ArchivalProofDecodeRequest, Stellar.ArchivalProofDecodeResponse> DecodeArchivalProofMethod =
+        public static readonly Method<Stellar.ArchivalProofDecodeRequest, Stellar.ArchivalProofDecodeResponse> DecodeArchivalProof =
             new Method<Stellar.ArchivalProofDecodeRequest, Stellar.ArchivalProofDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5202,7 +5202,7 @@ namespace Stellar.RPC.AOT
                 ArchivalProofDecodeResponseGrpcMarshaller.ArchivalProofDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanResources</summary>
-        public static readonly Method<Stellar.SorobanResourcesEncodeRequest, Stellar.SorobanResourcesEncodeResponse> EncodeSorobanResourcesMethod =
+        public static readonly Method<Stellar.SorobanResourcesEncodeRequest, Stellar.SorobanResourcesEncodeResponse> EncodeSorobanResources =
             new Method<Stellar.SorobanResourcesEncodeRequest, Stellar.SorobanResourcesEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5211,7 +5211,7 @@ namespace Stellar.RPC.AOT
                 SorobanResourcesEncodeResponseGrpcMarshaller.SorobanResourcesEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanResources</summary>
-        public static readonly Method<Stellar.SorobanResourcesDecodeRequest, Stellar.SorobanResourcesDecodeResponse> DecodeSorobanResourcesMethod =
+        public static readonly Method<Stellar.SorobanResourcesDecodeRequest, Stellar.SorobanResourcesDecodeResponse> DecodeSorobanResources =
             new Method<Stellar.SorobanResourcesDecodeRequest, Stellar.SorobanResourcesDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5220,7 +5220,7 @@ namespace Stellar.RPC.AOT
                 SorobanResourcesDecodeResponseGrpcMarshaller.SorobanResourcesDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSorobanTransactionData</summary>
-        public static readonly Method<Stellar.SorobanTransactionDataEncodeRequest, Stellar.SorobanTransactionDataEncodeResponse> EncodeSorobanTransactionDataMethod =
+        public static readonly Method<Stellar.SorobanTransactionDataEncodeRequest, Stellar.SorobanTransactionDataEncodeResponse> EncodeSorobanTransactionData =
             new Method<Stellar.SorobanTransactionDataEncodeRequest, Stellar.SorobanTransactionDataEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5229,7 +5229,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionDataEncodeResponseGrpcMarshaller.SorobanTransactionDataEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSorobanTransactionData</summary>
-        public static readonly Method<Stellar.SorobanTransactionDataDecodeRequest, Stellar.SorobanTransactionDataDecodeResponse> DecodeSorobanTransactionDataMethod =
+        public static readonly Method<Stellar.SorobanTransactionDataDecodeRequest, Stellar.SorobanTransactionDataDecodeResponse> DecodeSorobanTransactionData =
             new Method<Stellar.SorobanTransactionDataDecodeRequest, Stellar.SorobanTransactionDataDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5238,7 +5238,7 @@ namespace Stellar.RPC.AOT
                 SorobanTransactionDataDecodeResponseGrpcMarshaller.SorobanTransactionDataDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionV0</summary>
-        public static readonly Method<Stellar.TransactionV0EncodeRequest, Stellar.TransactionV0EncodeResponse> EncodeTransactionV0Method =
+        public static readonly Method<Stellar.TransactionV0EncodeRequest, Stellar.TransactionV0EncodeResponse> EncodeTransactionV0 =
             new Method<Stellar.TransactionV0EncodeRequest, Stellar.TransactionV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5247,7 +5247,7 @@ namespace Stellar.RPC.AOT
                 TransactionV0EncodeResponseGrpcMarshaller.TransactionV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionV0</summary>
-        public static readonly Method<Stellar.TransactionV0DecodeRequest, Stellar.TransactionV0DecodeResponse> DecodeTransactionV0Method =
+        public static readonly Method<Stellar.TransactionV0DecodeRequest, Stellar.TransactionV0DecodeResponse> DecodeTransactionV0 =
             new Method<Stellar.TransactionV0DecodeRequest, Stellar.TransactionV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5256,7 +5256,7 @@ namespace Stellar.RPC.AOT
                 TransactionV0DecodeResponseGrpcMarshaller.TransactionV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionV0Envelope</summary>
-        public static readonly Method<Stellar.TransactionV0EnvelopeEncodeRequest, Stellar.TransactionV0EnvelopeEncodeResponse> EncodeTransactionV0EnvelopeMethod =
+        public static readonly Method<Stellar.TransactionV0EnvelopeEncodeRequest, Stellar.TransactionV0EnvelopeEncodeResponse> EncodeTransactionV0Envelope =
             new Method<Stellar.TransactionV0EnvelopeEncodeRequest, Stellar.TransactionV0EnvelopeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5265,7 +5265,7 @@ namespace Stellar.RPC.AOT
                 TransactionV0EnvelopeEncodeResponseGrpcMarshaller.TransactionV0EnvelopeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionV0Envelope</summary>
-        public static readonly Method<Stellar.TransactionV0EnvelopeDecodeRequest, Stellar.TransactionV0EnvelopeDecodeResponse> DecodeTransactionV0EnvelopeMethod =
+        public static readonly Method<Stellar.TransactionV0EnvelopeDecodeRequest, Stellar.TransactionV0EnvelopeDecodeResponse> DecodeTransactionV0Envelope =
             new Method<Stellar.TransactionV0EnvelopeDecodeRequest, Stellar.TransactionV0EnvelopeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5274,7 +5274,7 @@ namespace Stellar.RPC.AOT
                 TransactionV0EnvelopeDecodeResponseGrpcMarshaller.TransactionV0EnvelopeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransaction</summary>
-        public static readonly Method<Stellar.TransactionEncodeRequest, Stellar.TransactionEncodeResponse> EncodeTransactionMethod =
+        public static readonly Method<Stellar.TransactionEncodeRequest, Stellar.TransactionEncodeResponse> EncodeTransaction =
             new Method<Stellar.TransactionEncodeRequest, Stellar.TransactionEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5283,7 +5283,7 @@ namespace Stellar.RPC.AOT
                 TransactionEncodeResponseGrpcMarshaller.TransactionEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransaction</summary>
-        public static readonly Method<Stellar.TransactionDecodeRequest, Stellar.TransactionDecodeResponse> DecodeTransactionMethod =
+        public static readonly Method<Stellar.TransactionDecodeRequest, Stellar.TransactionDecodeResponse> DecodeTransaction =
             new Method<Stellar.TransactionDecodeRequest, Stellar.TransactionDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5292,7 +5292,7 @@ namespace Stellar.RPC.AOT
                 TransactionDecodeResponseGrpcMarshaller.TransactionDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionV1Envelope</summary>
-        public static readonly Method<Stellar.TransactionV1EnvelopeEncodeRequest, Stellar.TransactionV1EnvelopeEncodeResponse> EncodeTransactionV1EnvelopeMethod =
+        public static readonly Method<Stellar.TransactionV1EnvelopeEncodeRequest, Stellar.TransactionV1EnvelopeEncodeResponse> EncodeTransactionV1Envelope =
             new Method<Stellar.TransactionV1EnvelopeEncodeRequest, Stellar.TransactionV1EnvelopeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5301,7 +5301,7 @@ namespace Stellar.RPC.AOT
                 TransactionV1EnvelopeEncodeResponseGrpcMarshaller.TransactionV1EnvelopeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionV1Envelope</summary>
-        public static readonly Method<Stellar.TransactionV1EnvelopeDecodeRequest, Stellar.TransactionV1EnvelopeDecodeResponse> DecodeTransactionV1EnvelopeMethod =
+        public static readonly Method<Stellar.TransactionV1EnvelopeDecodeRequest, Stellar.TransactionV1EnvelopeDecodeResponse> DecodeTransactionV1Envelope =
             new Method<Stellar.TransactionV1EnvelopeDecodeRequest, Stellar.TransactionV1EnvelopeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5310,7 +5310,7 @@ namespace Stellar.RPC.AOT
                 TransactionV1EnvelopeDecodeResponseGrpcMarshaller.TransactionV1EnvelopeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeFeeBumpTransaction</summary>
-        public static readonly Method<Stellar.FeeBumpTransactionEncodeRequest, Stellar.FeeBumpTransactionEncodeResponse> EncodeFeeBumpTransactionMethod =
+        public static readonly Method<Stellar.FeeBumpTransactionEncodeRequest, Stellar.FeeBumpTransactionEncodeResponse> EncodeFeeBumpTransaction =
             new Method<Stellar.FeeBumpTransactionEncodeRequest, Stellar.FeeBumpTransactionEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5319,7 +5319,7 @@ namespace Stellar.RPC.AOT
                 FeeBumpTransactionEncodeResponseGrpcMarshaller.FeeBumpTransactionEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeFeeBumpTransaction</summary>
-        public static readonly Method<Stellar.FeeBumpTransactionDecodeRequest, Stellar.FeeBumpTransactionDecodeResponse> DecodeFeeBumpTransactionMethod =
+        public static readonly Method<Stellar.FeeBumpTransactionDecodeRequest, Stellar.FeeBumpTransactionDecodeResponse> DecodeFeeBumpTransaction =
             new Method<Stellar.FeeBumpTransactionDecodeRequest, Stellar.FeeBumpTransactionDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5328,7 +5328,7 @@ namespace Stellar.RPC.AOT
                 FeeBumpTransactionDecodeResponseGrpcMarshaller.FeeBumpTransactionDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeFeeBumpTransactionEnvelope</summary>
-        public static readonly Method<Stellar.FeeBumpTransactionEnvelopeEncodeRequest, Stellar.FeeBumpTransactionEnvelopeEncodeResponse> EncodeFeeBumpTransactionEnvelopeMethod =
+        public static readonly Method<Stellar.FeeBumpTransactionEnvelopeEncodeRequest, Stellar.FeeBumpTransactionEnvelopeEncodeResponse> EncodeFeeBumpTransactionEnvelope =
             new Method<Stellar.FeeBumpTransactionEnvelopeEncodeRequest, Stellar.FeeBumpTransactionEnvelopeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5337,7 +5337,7 @@ namespace Stellar.RPC.AOT
                 FeeBumpTransactionEnvelopeEncodeResponseGrpcMarshaller.FeeBumpTransactionEnvelopeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeFeeBumpTransactionEnvelope</summary>
-        public static readonly Method<Stellar.FeeBumpTransactionEnvelopeDecodeRequest, Stellar.FeeBumpTransactionEnvelopeDecodeResponse> DecodeFeeBumpTransactionEnvelopeMethod =
+        public static readonly Method<Stellar.FeeBumpTransactionEnvelopeDecodeRequest, Stellar.FeeBumpTransactionEnvelopeDecodeResponse> DecodeFeeBumpTransactionEnvelope =
             new Method<Stellar.FeeBumpTransactionEnvelopeDecodeRequest, Stellar.FeeBumpTransactionEnvelopeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5346,7 +5346,7 @@ namespace Stellar.RPC.AOT
                 FeeBumpTransactionEnvelopeDecodeResponseGrpcMarshaller.FeeBumpTransactionEnvelopeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionEnvelope</summary>
-        public static readonly Method<Stellar.TransactionEnvelopeEncodeRequest, Stellar.TransactionEnvelopeEncodeResponse> EncodeTransactionEnvelopeMethod =
+        public static readonly Method<Stellar.TransactionEnvelopeEncodeRequest, Stellar.TransactionEnvelopeEncodeResponse> EncodeTransactionEnvelope =
             new Method<Stellar.TransactionEnvelopeEncodeRequest, Stellar.TransactionEnvelopeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5355,7 +5355,7 @@ namespace Stellar.RPC.AOT
                 TransactionEnvelopeEncodeResponseGrpcMarshaller.TransactionEnvelopeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionEnvelope</summary>
-        public static readonly Method<Stellar.TransactionEnvelopeDecodeRequest, Stellar.TransactionEnvelopeDecodeResponse> DecodeTransactionEnvelopeMethod =
+        public static readonly Method<Stellar.TransactionEnvelopeDecodeRequest, Stellar.TransactionEnvelopeDecodeResponse> DecodeTransactionEnvelope =
             new Method<Stellar.TransactionEnvelopeDecodeRequest, Stellar.TransactionEnvelopeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5364,7 +5364,7 @@ namespace Stellar.RPC.AOT
                 TransactionEnvelopeDecodeResponseGrpcMarshaller.TransactionEnvelopeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionSignaturePayload</summary>
-        public static readonly Method<Stellar.TransactionSignaturePayloadEncodeRequest, Stellar.TransactionSignaturePayloadEncodeResponse> EncodeTransactionSignaturePayloadMethod =
+        public static readonly Method<Stellar.TransactionSignaturePayloadEncodeRequest, Stellar.TransactionSignaturePayloadEncodeResponse> EncodeTransactionSignaturePayload =
             new Method<Stellar.TransactionSignaturePayloadEncodeRequest, Stellar.TransactionSignaturePayloadEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5373,7 +5373,7 @@ namespace Stellar.RPC.AOT
                 TransactionSignaturePayloadEncodeResponseGrpcMarshaller.TransactionSignaturePayloadEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionSignaturePayload</summary>
-        public static readonly Method<Stellar.TransactionSignaturePayloadDecodeRequest, Stellar.TransactionSignaturePayloadDecodeResponse> DecodeTransactionSignaturePayloadMethod =
+        public static readonly Method<Stellar.TransactionSignaturePayloadDecodeRequest, Stellar.TransactionSignaturePayloadDecodeResponse> DecodeTransactionSignaturePayload =
             new Method<Stellar.TransactionSignaturePayloadDecodeRequest, Stellar.TransactionSignaturePayloadDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5382,7 +5382,7 @@ namespace Stellar.RPC.AOT
                 TransactionSignaturePayloadDecodeResponseGrpcMarshaller.TransactionSignaturePayloadDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimAtomType</summary>
-        public static readonly Method<Stellar.ClaimAtomTypeEncodeRequest, Stellar.ClaimAtomTypeEncodeResponse> EncodeClaimAtomTypeMethod =
+        public static readonly Method<Stellar.ClaimAtomTypeEncodeRequest, Stellar.ClaimAtomTypeEncodeResponse> EncodeClaimAtomType =
             new Method<Stellar.ClaimAtomTypeEncodeRequest, Stellar.ClaimAtomTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5391,7 +5391,7 @@ namespace Stellar.RPC.AOT
                 ClaimAtomTypeEncodeResponseGrpcMarshaller.ClaimAtomTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimAtomType</summary>
-        public static readonly Method<Stellar.ClaimAtomTypeDecodeRequest, Stellar.ClaimAtomTypeDecodeResponse> DecodeClaimAtomTypeMethod =
+        public static readonly Method<Stellar.ClaimAtomTypeDecodeRequest, Stellar.ClaimAtomTypeDecodeResponse> DecodeClaimAtomType =
             new Method<Stellar.ClaimAtomTypeDecodeRequest, Stellar.ClaimAtomTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5400,7 +5400,7 @@ namespace Stellar.RPC.AOT
                 ClaimAtomTypeDecodeResponseGrpcMarshaller.ClaimAtomTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimOfferAtomV0</summary>
-        public static readonly Method<Stellar.ClaimOfferAtomV0EncodeRequest, Stellar.ClaimOfferAtomV0EncodeResponse> EncodeClaimOfferAtomV0Method =
+        public static readonly Method<Stellar.ClaimOfferAtomV0EncodeRequest, Stellar.ClaimOfferAtomV0EncodeResponse> EncodeClaimOfferAtomV0 =
             new Method<Stellar.ClaimOfferAtomV0EncodeRequest, Stellar.ClaimOfferAtomV0EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5409,7 +5409,7 @@ namespace Stellar.RPC.AOT
                 ClaimOfferAtomV0EncodeResponseGrpcMarshaller.ClaimOfferAtomV0EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimOfferAtomV0</summary>
-        public static readonly Method<Stellar.ClaimOfferAtomV0DecodeRequest, Stellar.ClaimOfferAtomV0DecodeResponse> DecodeClaimOfferAtomV0Method =
+        public static readonly Method<Stellar.ClaimOfferAtomV0DecodeRequest, Stellar.ClaimOfferAtomV0DecodeResponse> DecodeClaimOfferAtomV0 =
             new Method<Stellar.ClaimOfferAtomV0DecodeRequest, Stellar.ClaimOfferAtomV0DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5418,7 +5418,7 @@ namespace Stellar.RPC.AOT
                 ClaimOfferAtomV0DecodeResponseGrpcMarshaller.ClaimOfferAtomV0DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimOfferAtom</summary>
-        public static readonly Method<Stellar.ClaimOfferAtomEncodeRequest, Stellar.ClaimOfferAtomEncodeResponse> EncodeClaimOfferAtomMethod =
+        public static readonly Method<Stellar.ClaimOfferAtomEncodeRequest, Stellar.ClaimOfferAtomEncodeResponse> EncodeClaimOfferAtom =
             new Method<Stellar.ClaimOfferAtomEncodeRequest, Stellar.ClaimOfferAtomEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5427,7 +5427,7 @@ namespace Stellar.RPC.AOT
                 ClaimOfferAtomEncodeResponseGrpcMarshaller.ClaimOfferAtomEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimOfferAtom</summary>
-        public static readonly Method<Stellar.ClaimOfferAtomDecodeRequest, Stellar.ClaimOfferAtomDecodeResponse> DecodeClaimOfferAtomMethod =
+        public static readonly Method<Stellar.ClaimOfferAtomDecodeRequest, Stellar.ClaimOfferAtomDecodeResponse> DecodeClaimOfferAtom =
             new Method<Stellar.ClaimOfferAtomDecodeRequest, Stellar.ClaimOfferAtomDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5436,7 +5436,7 @@ namespace Stellar.RPC.AOT
                 ClaimOfferAtomDecodeResponseGrpcMarshaller.ClaimOfferAtomDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimLiquidityAtom</summary>
-        public static readonly Method<Stellar.ClaimLiquidityAtomEncodeRequest, Stellar.ClaimLiquidityAtomEncodeResponse> EncodeClaimLiquidityAtomMethod =
+        public static readonly Method<Stellar.ClaimLiquidityAtomEncodeRequest, Stellar.ClaimLiquidityAtomEncodeResponse> EncodeClaimLiquidityAtom =
             new Method<Stellar.ClaimLiquidityAtomEncodeRequest, Stellar.ClaimLiquidityAtomEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5445,7 +5445,7 @@ namespace Stellar.RPC.AOT
                 ClaimLiquidityAtomEncodeResponseGrpcMarshaller.ClaimLiquidityAtomEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimLiquidityAtom</summary>
-        public static readonly Method<Stellar.ClaimLiquidityAtomDecodeRequest, Stellar.ClaimLiquidityAtomDecodeResponse> DecodeClaimLiquidityAtomMethod =
+        public static readonly Method<Stellar.ClaimLiquidityAtomDecodeRequest, Stellar.ClaimLiquidityAtomDecodeResponse> DecodeClaimLiquidityAtom =
             new Method<Stellar.ClaimLiquidityAtomDecodeRequest, Stellar.ClaimLiquidityAtomDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5454,7 +5454,7 @@ namespace Stellar.RPC.AOT
                 ClaimLiquidityAtomDecodeResponseGrpcMarshaller.ClaimLiquidityAtomDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimAtom</summary>
-        public static readonly Method<Stellar.ClaimAtomEncodeRequest, Stellar.ClaimAtomEncodeResponse> EncodeClaimAtomMethod =
+        public static readonly Method<Stellar.ClaimAtomEncodeRequest, Stellar.ClaimAtomEncodeResponse> EncodeClaimAtom =
             new Method<Stellar.ClaimAtomEncodeRequest, Stellar.ClaimAtomEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5463,7 +5463,7 @@ namespace Stellar.RPC.AOT
                 ClaimAtomEncodeResponseGrpcMarshaller.ClaimAtomEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimAtom</summary>
-        public static readonly Method<Stellar.ClaimAtomDecodeRequest, Stellar.ClaimAtomDecodeResponse> DecodeClaimAtomMethod =
+        public static readonly Method<Stellar.ClaimAtomDecodeRequest, Stellar.ClaimAtomDecodeResponse> DecodeClaimAtom =
             new Method<Stellar.ClaimAtomDecodeRequest, Stellar.ClaimAtomDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5472,7 +5472,7 @@ namespace Stellar.RPC.AOT
                 ClaimAtomDecodeResponseGrpcMarshaller.ClaimAtomDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateAccountResultCode</summary>
-        public static readonly Method<Stellar.CreateAccountResultCodeEncodeRequest, Stellar.CreateAccountResultCodeEncodeResponse> EncodeCreateAccountResultCodeMethod =
+        public static readonly Method<Stellar.CreateAccountResultCodeEncodeRequest, Stellar.CreateAccountResultCodeEncodeResponse> EncodeCreateAccountResultCode =
             new Method<Stellar.CreateAccountResultCodeEncodeRequest, Stellar.CreateAccountResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5481,7 +5481,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountResultCodeEncodeResponseGrpcMarshaller.CreateAccountResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateAccountResultCode</summary>
-        public static readonly Method<Stellar.CreateAccountResultCodeDecodeRequest, Stellar.CreateAccountResultCodeDecodeResponse> DecodeCreateAccountResultCodeMethod =
+        public static readonly Method<Stellar.CreateAccountResultCodeDecodeRequest, Stellar.CreateAccountResultCodeDecodeResponse> DecodeCreateAccountResultCode =
             new Method<Stellar.CreateAccountResultCodeDecodeRequest, Stellar.CreateAccountResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5490,7 +5490,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountResultCodeDecodeResponseGrpcMarshaller.CreateAccountResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateAccountResult</summary>
-        public static readonly Method<Stellar.CreateAccountResultEncodeRequest, Stellar.CreateAccountResultEncodeResponse> EncodeCreateAccountResultMethod =
+        public static readonly Method<Stellar.CreateAccountResultEncodeRequest, Stellar.CreateAccountResultEncodeResponse> EncodeCreateAccountResult =
             new Method<Stellar.CreateAccountResultEncodeRequest, Stellar.CreateAccountResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5499,7 +5499,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountResultEncodeResponseGrpcMarshaller.CreateAccountResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateAccountResult</summary>
-        public static readonly Method<Stellar.CreateAccountResultDecodeRequest, Stellar.CreateAccountResultDecodeResponse> DecodeCreateAccountResultMethod =
+        public static readonly Method<Stellar.CreateAccountResultDecodeRequest, Stellar.CreateAccountResultDecodeResponse> DecodeCreateAccountResult =
             new Method<Stellar.CreateAccountResultDecodeRequest, Stellar.CreateAccountResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5508,7 +5508,7 @@ namespace Stellar.RPC.AOT
                 CreateAccountResultDecodeResponseGrpcMarshaller.CreateAccountResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePaymentResultCode</summary>
-        public static readonly Method<Stellar.PaymentResultCodeEncodeRequest, Stellar.PaymentResultCodeEncodeResponse> EncodePaymentResultCodeMethod =
+        public static readonly Method<Stellar.PaymentResultCodeEncodeRequest, Stellar.PaymentResultCodeEncodeResponse> EncodePaymentResultCode =
             new Method<Stellar.PaymentResultCodeEncodeRequest, Stellar.PaymentResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5517,7 +5517,7 @@ namespace Stellar.RPC.AOT
                 PaymentResultCodeEncodeResponseGrpcMarshaller.PaymentResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePaymentResultCode</summary>
-        public static readonly Method<Stellar.PaymentResultCodeDecodeRequest, Stellar.PaymentResultCodeDecodeResponse> DecodePaymentResultCodeMethod =
+        public static readonly Method<Stellar.PaymentResultCodeDecodeRequest, Stellar.PaymentResultCodeDecodeResponse> DecodePaymentResultCode =
             new Method<Stellar.PaymentResultCodeDecodeRequest, Stellar.PaymentResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5526,7 +5526,7 @@ namespace Stellar.RPC.AOT
                 PaymentResultCodeDecodeResponseGrpcMarshaller.PaymentResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePaymentResult</summary>
-        public static readonly Method<Stellar.PaymentResultEncodeRequest, Stellar.PaymentResultEncodeResponse> EncodePaymentResultMethod =
+        public static readonly Method<Stellar.PaymentResultEncodeRequest, Stellar.PaymentResultEncodeResponse> EncodePaymentResult =
             new Method<Stellar.PaymentResultEncodeRequest, Stellar.PaymentResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5535,7 +5535,7 @@ namespace Stellar.RPC.AOT
                 PaymentResultEncodeResponseGrpcMarshaller.PaymentResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePaymentResult</summary>
-        public static readonly Method<Stellar.PaymentResultDecodeRequest, Stellar.PaymentResultDecodeResponse> DecodePaymentResultMethod =
+        public static readonly Method<Stellar.PaymentResultDecodeRequest, Stellar.PaymentResultDecodeResponse> DecodePaymentResult =
             new Method<Stellar.PaymentResultDecodeRequest, Stellar.PaymentResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5544,7 +5544,7 @@ namespace Stellar.RPC.AOT
                 PaymentResultDecodeResponseGrpcMarshaller.PaymentResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictReceiveResultCode</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveResultCodeEncodeRequest, Stellar.PathPaymentStrictReceiveResultCodeEncodeResponse> EncodePathPaymentStrictReceiveResultCodeMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveResultCodeEncodeRequest, Stellar.PathPaymentStrictReceiveResultCodeEncodeResponse> EncodePathPaymentStrictReceiveResultCode =
             new Method<Stellar.PathPaymentStrictReceiveResultCodeEncodeRequest, Stellar.PathPaymentStrictReceiveResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5553,7 +5553,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveResultCodeEncodeResponseGrpcMarshaller.PathPaymentStrictReceiveResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictReceiveResultCode</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveResultCodeDecodeRequest, Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse> DecodePathPaymentStrictReceiveResultCodeMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveResultCodeDecodeRequest, Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse> DecodePathPaymentStrictReceiveResultCode =
             new Method<Stellar.PathPaymentStrictReceiveResultCodeDecodeRequest, Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5562,7 +5562,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveResultCodeDecodeResponseGrpcMarshaller.PathPaymentStrictReceiveResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSimplePaymentResult</summary>
-        public static readonly Method<Stellar.SimplePaymentResultEncodeRequest, Stellar.SimplePaymentResultEncodeResponse> EncodeSimplePaymentResultMethod =
+        public static readonly Method<Stellar.SimplePaymentResultEncodeRequest, Stellar.SimplePaymentResultEncodeResponse> EncodeSimplePaymentResult =
             new Method<Stellar.SimplePaymentResultEncodeRequest, Stellar.SimplePaymentResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5571,7 +5571,7 @@ namespace Stellar.RPC.AOT
                 SimplePaymentResultEncodeResponseGrpcMarshaller.SimplePaymentResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSimplePaymentResult</summary>
-        public static readonly Method<Stellar.SimplePaymentResultDecodeRequest, Stellar.SimplePaymentResultDecodeResponse> DecodeSimplePaymentResultMethod =
+        public static readonly Method<Stellar.SimplePaymentResultDecodeRequest, Stellar.SimplePaymentResultDecodeResponse> DecodeSimplePaymentResult =
             new Method<Stellar.SimplePaymentResultDecodeRequest, Stellar.SimplePaymentResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5580,7 +5580,7 @@ namespace Stellar.RPC.AOT
                 SimplePaymentResultDecodeResponseGrpcMarshaller.SimplePaymentResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictReceiveResult</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveResultEncodeRequest, Stellar.PathPaymentStrictReceiveResultEncodeResponse> EncodePathPaymentStrictReceiveResultMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveResultEncodeRequest, Stellar.PathPaymentStrictReceiveResultEncodeResponse> EncodePathPaymentStrictReceiveResult =
             new Method<Stellar.PathPaymentStrictReceiveResultEncodeRequest, Stellar.PathPaymentStrictReceiveResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5589,7 +5589,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveResultEncodeResponseGrpcMarshaller.PathPaymentStrictReceiveResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictReceiveResult</summary>
-        public static readonly Method<Stellar.PathPaymentStrictReceiveResultDecodeRequest, Stellar.PathPaymentStrictReceiveResultDecodeResponse> DecodePathPaymentStrictReceiveResultMethod =
+        public static readonly Method<Stellar.PathPaymentStrictReceiveResultDecodeRequest, Stellar.PathPaymentStrictReceiveResultDecodeResponse> DecodePathPaymentStrictReceiveResult =
             new Method<Stellar.PathPaymentStrictReceiveResultDecodeRequest, Stellar.PathPaymentStrictReceiveResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5598,7 +5598,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictReceiveResultDecodeResponseGrpcMarshaller.PathPaymentStrictReceiveResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictSendResultCode</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendResultCodeEncodeRequest, Stellar.PathPaymentStrictSendResultCodeEncodeResponse> EncodePathPaymentStrictSendResultCodeMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendResultCodeEncodeRequest, Stellar.PathPaymentStrictSendResultCodeEncodeResponse> EncodePathPaymentStrictSendResultCode =
             new Method<Stellar.PathPaymentStrictSendResultCodeEncodeRequest, Stellar.PathPaymentStrictSendResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5607,7 +5607,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendResultCodeEncodeResponseGrpcMarshaller.PathPaymentStrictSendResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictSendResultCode</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendResultCodeDecodeRequest, Stellar.PathPaymentStrictSendResultCodeDecodeResponse> DecodePathPaymentStrictSendResultCodeMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendResultCodeDecodeRequest, Stellar.PathPaymentStrictSendResultCodeDecodeResponse> DecodePathPaymentStrictSendResultCode =
             new Method<Stellar.PathPaymentStrictSendResultCodeDecodeRequest, Stellar.PathPaymentStrictSendResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5616,7 +5616,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendResultCodeDecodeResponseGrpcMarshaller.PathPaymentStrictSendResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePathPaymentStrictSendResult</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendResultEncodeRequest, Stellar.PathPaymentStrictSendResultEncodeResponse> EncodePathPaymentStrictSendResultMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendResultEncodeRequest, Stellar.PathPaymentStrictSendResultEncodeResponse> EncodePathPaymentStrictSendResult =
             new Method<Stellar.PathPaymentStrictSendResultEncodeRequest, Stellar.PathPaymentStrictSendResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5625,7 +5625,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendResultEncodeResponseGrpcMarshaller.PathPaymentStrictSendResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePathPaymentStrictSendResult</summary>
-        public static readonly Method<Stellar.PathPaymentStrictSendResultDecodeRequest, Stellar.PathPaymentStrictSendResultDecodeResponse> DecodePathPaymentStrictSendResultMethod =
+        public static readonly Method<Stellar.PathPaymentStrictSendResultDecodeRequest, Stellar.PathPaymentStrictSendResultDecodeResponse> DecodePathPaymentStrictSendResult =
             new Method<Stellar.PathPaymentStrictSendResultDecodeRequest, Stellar.PathPaymentStrictSendResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5634,7 +5634,7 @@ namespace Stellar.RPC.AOT
                 PathPaymentStrictSendResultDecodeResponseGrpcMarshaller.PathPaymentStrictSendResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageSellOfferResultCode</summary>
-        public static readonly Method<Stellar.ManageSellOfferResultCodeEncodeRequest, Stellar.ManageSellOfferResultCodeEncodeResponse> EncodeManageSellOfferResultCodeMethod =
+        public static readonly Method<Stellar.ManageSellOfferResultCodeEncodeRequest, Stellar.ManageSellOfferResultCodeEncodeResponse> EncodeManageSellOfferResultCode =
             new Method<Stellar.ManageSellOfferResultCodeEncodeRequest, Stellar.ManageSellOfferResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5643,7 +5643,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferResultCodeEncodeResponseGrpcMarshaller.ManageSellOfferResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageSellOfferResultCode</summary>
-        public static readonly Method<Stellar.ManageSellOfferResultCodeDecodeRequest, Stellar.ManageSellOfferResultCodeDecodeResponse> DecodeManageSellOfferResultCodeMethod =
+        public static readonly Method<Stellar.ManageSellOfferResultCodeDecodeRequest, Stellar.ManageSellOfferResultCodeDecodeResponse> DecodeManageSellOfferResultCode =
             new Method<Stellar.ManageSellOfferResultCodeDecodeRequest, Stellar.ManageSellOfferResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5652,7 +5652,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferResultCodeDecodeResponseGrpcMarshaller.ManageSellOfferResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageOfferEffect</summary>
-        public static readonly Method<Stellar.ManageOfferEffectEncodeRequest, Stellar.ManageOfferEffectEncodeResponse> EncodeManageOfferEffectMethod =
+        public static readonly Method<Stellar.ManageOfferEffectEncodeRequest, Stellar.ManageOfferEffectEncodeResponse> EncodeManageOfferEffect =
             new Method<Stellar.ManageOfferEffectEncodeRequest, Stellar.ManageOfferEffectEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5661,7 +5661,7 @@ namespace Stellar.RPC.AOT
                 ManageOfferEffectEncodeResponseGrpcMarshaller.ManageOfferEffectEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageOfferEffect</summary>
-        public static readonly Method<Stellar.ManageOfferEffectDecodeRequest, Stellar.ManageOfferEffectDecodeResponse> DecodeManageOfferEffectMethod =
+        public static readonly Method<Stellar.ManageOfferEffectDecodeRequest, Stellar.ManageOfferEffectDecodeResponse> DecodeManageOfferEffect =
             new Method<Stellar.ManageOfferEffectDecodeRequest, Stellar.ManageOfferEffectDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5670,7 +5670,7 @@ namespace Stellar.RPC.AOT
                 ManageOfferEffectDecodeResponseGrpcMarshaller.ManageOfferEffectDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageOfferSuccessResult</summary>
-        public static readonly Method<Stellar.ManageOfferSuccessResultEncodeRequest, Stellar.ManageOfferSuccessResultEncodeResponse> EncodeManageOfferSuccessResultMethod =
+        public static readonly Method<Stellar.ManageOfferSuccessResultEncodeRequest, Stellar.ManageOfferSuccessResultEncodeResponse> EncodeManageOfferSuccessResult =
             new Method<Stellar.ManageOfferSuccessResultEncodeRequest, Stellar.ManageOfferSuccessResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5679,7 +5679,7 @@ namespace Stellar.RPC.AOT
                 ManageOfferSuccessResultEncodeResponseGrpcMarshaller.ManageOfferSuccessResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageOfferSuccessResult</summary>
-        public static readonly Method<Stellar.ManageOfferSuccessResultDecodeRequest, Stellar.ManageOfferSuccessResultDecodeResponse> DecodeManageOfferSuccessResultMethod =
+        public static readonly Method<Stellar.ManageOfferSuccessResultDecodeRequest, Stellar.ManageOfferSuccessResultDecodeResponse> DecodeManageOfferSuccessResult =
             new Method<Stellar.ManageOfferSuccessResultDecodeRequest, Stellar.ManageOfferSuccessResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5688,7 +5688,7 @@ namespace Stellar.RPC.AOT
                 ManageOfferSuccessResultDecodeResponseGrpcMarshaller.ManageOfferSuccessResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageSellOfferResult</summary>
-        public static readonly Method<Stellar.ManageSellOfferResultEncodeRequest, Stellar.ManageSellOfferResultEncodeResponse> EncodeManageSellOfferResultMethod =
+        public static readonly Method<Stellar.ManageSellOfferResultEncodeRequest, Stellar.ManageSellOfferResultEncodeResponse> EncodeManageSellOfferResult =
             new Method<Stellar.ManageSellOfferResultEncodeRequest, Stellar.ManageSellOfferResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5697,7 +5697,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferResultEncodeResponseGrpcMarshaller.ManageSellOfferResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageSellOfferResult</summary>
-        public static readonly Method<Stellar.ManageSellOfferResultDecodeRequest, Stellar.ManageSellOfferResultDecodeResponse> DecodeManageSellOfferResultMethod =
+        public static readonly Method<Stellar.ManageSellOfferResultDecodeRequest, Stellar.ManageSellOfferResultDecodeResponse> DecodeManageSellOfferResult =
             new Method<Stellar.ManageSellOfferResultDecodeRequest, Stellar.ManageSellOfferResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5706,7 +5706,7 @@ namespace Stellar.RPC.AOT
                 ManageSellOfferResultDecodeResponseGrpcMarshaller.ManageSellOfferResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageBuyOfferResultCode</summary>
-        public static readonly Method<Stellar.ManageBuyOfferResultCodeEncodeRequest, Stellar.ManageBuyOfferResultCodeEncodeResponse> EncodeManageBuyOfferResultCodeMethod =
+        public static readonly Method<Stellar.ManageBuyOfferResultCodeEncodeRequest, Stellar.ManageBuyOfferResultCodeEncodeResponse> EncodeManageBuyOfferResultCode =
             new Method<Stellar.ManageBuyOfferResultCodeEncodeRequest, Stellar.ManageBuyOfferResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5715,7 +5715,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferResultCodeEncodeResponseGrpcMarshaller.ManageBuyOfferResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageBuyOfferResultCode</summary>
-        public static readonly Method<Stellar.ManageBuyOfferResultCodeDecodeRequest, Stellar.ManageBuyOfferResultCodeDecodeResponse> DecodeManageBuyOfferResultCodeMethod =
+        public static readonly Method<Stellar.ManageBuyOfferResultCodeDecodeRequest, Stellar.ManageBuyOfferResultCodeDecodeResponse> DecodeManageBuyOfferResultCode =
             new Method<Stellar.ManageBuyOfferResultCodeDecodeRequest, Stellar.ManageBuyOfferResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5724,7 +5724,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferResultCodeDecodeResponseGrpcMarshaller.ManageBuyOfferResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageBuyOfferResult</summary>
-        public static readonly Method<Stellar.ManageBuyOfferResultEncodeRequest, Stellar.ManageBuyOfferResultEncodeResponse> EncodeManageBuyOfferResultMethod =
+        public static readonly Method<Stellar.ManageBuyOfferResultEncodeRequest, Stellar.ManageBuyOfferResultEncodeResponse> EncodeManageBuyOfferResult =
             new Method<Stellar.ManageBuyOfferResultEncodeRequest, Stellar.ManageBuyOfferResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5733,7 +5733,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferResultEncodeResponseGrpcMarshaller.ManageBuyOfferResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageBuyOfferResult</summary>
-        public static readonly Method<Stellar.ManageBuyOfferResultDecodeRequest, Stellar.ManageBuyOfferResultDecodeResponse> DecodeManageBuyOfferResultMethod =
+        public static readonly Method<Stellar.ManageBuyOfferResultDecodeRequest, Stellar.ManageBuyOfferResultDecodeResponse> DecodeManageBuyOfferResult =
             new Method<Stellar.ManageBuyOfferResultDecodeRequest, Stellar.ManageBuyOfferResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5742,7 +5742,7 @@ namespace Stellar.RPC.AOT
                 ManageBuyOfferResultDecodeResponseGrpcMarshaller.ManageBuyOfferResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetOptionsResultCode</summary>
-        public static readonly Method<Stellar.SetOptionsResultCodeEncodeRequest, Stellar.SetOptionsResultCodeEncodeResponse> EncodeSetOptionsResultCodeMethod =
+        public static readonly Method<Stellar.SetOptionsResultCodeEncodeRequest, Stellar.SetOptionsResultCodeEncodeResponse> EncodeSetOptionsResultCode =
             new Method<Stellar.SetOptionsResultCodeEncodeRequest, Stellar.SetOptionsResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5751,7 +5751,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsResultCodeEncodeResponseGrpcMarshaller.SetOptionsResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetOptionsResultCode</summary>
-        public static readonly Method<Stellar.SetOptionsResultCodeDecodeRequest, Stellar.SetOptionsResultCodeDecodeResponse> DecodeSetOptionsResultCodeMethod =
+        public static readonly Method<Stellar.SetOptionsResultCodeDecodeRequest, Stellar.SetOptionsResultCodeDecodeResponse> DecodeSetOptionsResultCode =
             new Method<Stellar.SetOptionsResultCodeDecodeRequest, Stellar.SetOptionsResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5760,7 +5760,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsResultCodeDecodeResponseGrpcMarshaller.SetOptionsResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetOptionsResult</summary>
-        public static readonly Method<Stellar.SetOptionsResultEncodeRequest, Stellar.SetOptionsResultEncodeResponse> EncodeSetOptionsResultMethod =
+        public static readonly Method<Stellar.SetOptionsResultEncodeRequest, Stellar.SetOptionsResultEncodeResponse> EncodeSetOptionsResult =
             new Method<Stellar.SetOptionsResultEncodeRequest, Stellar.SetOptionsResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5769,7 +5769,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsResultEncodeResponseGrpcMarshaller.SetOptionsResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetOptionsResult</summary>
-        public static readonly Method<Stellar.SetOptionsResultDecodeRequest, Stellar.SetOptionsResultDecodeResponse> DecodeSetOptionsResultMethod =
+        public static readonly Method<Stellar.SetOptionsResultDecodeRequest, Stellar.SetOptionsResultDecodeResponse> DecodeSetOptionsResult =
             new Method<Stellar.SetOptionsResultDecodeRequest, Stellar.SetOptionsResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5778,7 +5778,7 @@ namespace Stellar.RPC.AOT
                 SetOptionsResultDecodeResponseGrpcMarshaller.SetOptionsResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeChangeTrustResultCode</summary>
-        public static readonly Method<Stellar.ChangeTrustResultCodeEncodeRequest, Stellar.ChangeTrustResultCodeEncodeResponse> EncodeChangeTrustResultCodeMethod =
+        public static readonly Method<Stellar.ChangeTrustResultCodeEncodeRequest, Stellar.ChangeTrustResultCodeEncodeResponse> EncodeChangeTrustResultCode =
             new Method<Stellar.ChangeTrustResultCodeEncodeRequest, Stellar.ChangeTrustResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5787,7 +5787,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustResultCodeEncodeResponseGrpcMarshaller.ChangeTrustResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeChangeTrustResultCode</summary>
-        public static readonly Method<Stellar.ChangeTrustResultCodeDecodeRequest, Stellar.ChangeTrustResultCodeDecodeResponse> DecodeChangeTrustResultCodeMethod =
+        public static readonly Method<Stellar.ChangeTrustResultCodeDecodeRequest, Stellar.ChangeTrustResultCodeDecodeResponse> DecodeChangeTrustResultCode =
             new Method<Stellar.ChangeTrustResultCodeDecodeRequest, Stellar.ChangeTrustResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5796,7 +5796,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustResultCodeDecodeResponseGrpcMarshaller.ChangeTrustResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeChangeTrustResult</summary>
-        public static readonly Method<Stellar.ChangeTrustResultEncodeRequest, Stellar.ChangeTrustResultEncodeResponse> EncodeChangeTrustResultMethod =
+        public static readonly Method<Stellar.ChangeTrustResultEncodeRequest, Stellar.ChangeTrustResultEncodeResponse> EncodeChangeTrustResult =
             new Method<Stellar.ChangeTrustResultEncodeRequest, Stellar.ChangeTrustResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5805,7 +5805,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustResultEncodeResponseGrpcMarshaller.ChangeTrustResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeChangeTrustResult</summary>
-        public static readonly Method<Stellar.ChangeTrustResultDecodeRequest, Stellar.ChangeTrustResultDecodeResponse> DecodeChangeTrustResultMethod =
+        public static readonly Method<Stellar.ChangeTrustResultDecodeRequest, Stellar.ChangeTrustResultDecodeResponse> DecodeChangeTrustResult =
             new Method<Stellar.ChangeTrustResultDecodeRequest, Stellar.ChangeTrustResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5814,7 +5814,7 @@ namespace Stellar.RPC.AOT
                 ChangeTrustResultDecodeResponseGrpcMarshaller.ChangeTrustResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAllowTrustResultCode</summary>
-        public static readonly Method<Stellar.AllowTrustResultCodeEncodeRequest, Stellar.AllowTrustResultCodeEncodeResponse> EncodeAllowTrustResultCodeMethod =
+        public static readonly Method<Stellar.AllowTrustResultCodeEncodeRequest, Stellar.AllowTrustResultCodeEncodeResponse> EncodeAllowTrustResultCode =
             new Method<Stellar.AllowTrustResultCodeEncodeRequest, Stellar.AllowTrustResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5823,7 +5823,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustResultCodeEncodeResponseGrpcMarshaller.AllowTrustResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAllowTrustResultCode</summary>
-        public static readonly Method<Stellar.AllowTrustResultCodeDecodeRequest, Stellar.AllowTrustResultCodeDecodeResponse> DecodeAllowTrustResultCodeMethod =
+        public static readonly Method<Stellar.AllowTrustResultCodeDecodeRequest, Stellar.AllowTrustResultCodeDecodeResponse> DecodeAllowTrustResultCode =
             new Method<Stellar.AllowTrustResultCodeDecodeRequest, Stellar.AllowTrustResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5832,7 +5832,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustResultCodeDecodeResponseGrpcMarshaller.AllowTrustResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAllowTrustResult</summary>
-        public static readonly Method<Stellar.AllowTrustResultEncodeRequest, Stellar.AllowTrustResultEncodeResponse> EncodeAllowTrustResultMethod =
+        public static readonly Method<Stellar.AllowTrustResultEncodeRequest, Stellar.AllowTrustResultEncodeResponse> EncodeAllowTrustResult =
             new Method<Stellar.AllowTrustResultEncodeRequest, Stellar.AllowTrustResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5841,7 +5841,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustResultEncodeResponseGrpcMarshaller.AllowTrustResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAllowTrustResult</summary>
-        public static readonly Method<Stellar.AllowTrustResultDecodeRequest, Stellar.AllowTrustResultDecodeResponse> DecodeAllowTrustResultMethod =
+        public static readonly Method<Stellar.AllowTrustResultDecodeRequest, Stellar.AllowTrustResultDecodeResponse> DecodeAllowTrustResult =
             new Method<Stellar.AllowTrustResultDecodeRequest, Stellar.AllowTrustResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5850,7 +5850,7 @@ namespace Stellar.RPC.AOT
                 AllowTrustResultDecodeResponseGrpcMarshaller.AllowTrustResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountMergeResultCode</summary>
-        public static readonly Method<Stellar.AccountMergeResultCodeEncodeRequest, Stellar.AccountMergeResultCodeEncodeResponse> EncodeAccountMergeResultCodeMethod =
+        public static readonly Method<Stellar.AccountMergeResultCodeEncodeRequest, Stellar.AccountMergeResultCodeEncodeResponse> EncodeAccountMergeResultCode =
             new Method<Stellar.AccountMergeResultCodeEncodeRequest, Stellar.AccountMergeResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5859,7 +5859,7 @@ namespace Stellar.RPC.AOT
                 AccountMergeResultCodeEncodeResponseGrpcMarshaller.AccountMergeResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountMergeResultCode</summary>
-        public static readonly Method<Stellar.AccountMergeResultCodeDecodeRequest, Stellar.AccountMergeResultCodeDecodeResponse> DecodeAccountMergeResultCodeMethod =
+        public static readonly Method<Stellar.AccountMergeResultCodeDecodeRequest, Stellar.AccountMergeResultCodeDecodeResponse> DecodeAccountMergeResultCode =
             new Method<Stellar.AccountMergeResultCodeDecodeRequest, Stellar.AccountMergeResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5868,7 +5868,7 @@ namespace Stellar.RPC.AOT
                 AccountMergeResultCodeDecodeResponseGrpcMarshaller.AccountMergeResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountMergeResult</summary>
-        public static readonly Method<Stellar.AccountMergeResultEncodeRequest, Stellar.AccountMergeResultEncodeResponse> EncodeAccountMergeResultMethod =
+        public static readonly Method<Stellar.AccountMergeResultEncodeRequest, Stellar.AccountMergeResultEncodeResponse> EncodeAccountMergeResult =
             new Method<Stellar.AccountMergeResultEncodeRequest, Stellar.AccountMergeResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5877,7 +5877,7 @@ namespace Stellar.RPC.AOT
                 AccountMergeResultEncodeResponseGrpcMarshaller.AccountMergeResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountMergeResult</summary>
-        public static readonly Method<Stellar.AccountMergeResultDecodeRequest, Stellar.AccountMergeResultDecodeResponse> DecodeAccountMergeResultMethod =
+        public static readonly Method<Stellar.AccountMergeResultDecodeRequest, Stellar.AccountMergeResultDecodeResponse> DecodeAccountMergeResult =
             new Method<Stellar.AccountMergeResultDecodeRequest, Stellar.AccountMergeResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5886,7 +5886,7 @@ namespace Stellar.RPC.AOT
                 AccountMergeResultDecodeResponseGrpcMarshaller.AccountMergeResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInflationResultCode</summary>
-        public static readonly Method<Stellar.InflationResultCodeEncodeRequest, Stellar.InflationResultCodeEncodeResponse> EncodeInflationResultCodeMethod =
+        public static readonly Method<Stellar.InflationResultCodeEncodeRequest, Stellar.InflationResultCodeEncodeResponse> EncodeInflationResultCode =
             new Method<Stellar.InflationResultCodeEncodeRequest, Stellar.InflationResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5895,7 +5895,7 @@ namespace Stellar.RPC.AOT
                 InflationResultCodeEncodeResponseGrpcMarshaller.InflationResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInflationResultCode</summary>
-        public static readonly Method<Stellar.InflationResultCodeDecodeRequest, Stellar.InflationResultCodeDecodeResponse> DecodeInflationResultCodeMethod =
+        public static readonly Method<Stellar.InflationResultCodeDecodeRequest, Stellar.InflationResultCodeDecodeResponse> DecodeInflationResultCode =
             new Method<Stellar.InflationResultCodeDecodeRequest, Stellar.InflationResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5904,7 +5904,7 @@ namespace Stellar.RPC.AOT
                 InflationResultCodeDecodeResponseGrpcMarshaller.InflationResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInflationPayout</summary>
-        public static readonly Method<Stellar.InflationPayoutEncodeRequest, Stellar.InflationPayoutEncodeResponse> EncodeInflationPayoutMethod =
+        public static readonly Method<Stellar.InflationPayoutEncodeRequest, Stellar.InflationPayoutEncodeResponse> EncodeInflationPayout =
             new Method<Stellar.InflationPayoutEncodeRequest, Stellar.InflationPayoutEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5913,7 +5913,7 @@ namespace Stellar.RPC.AOT
                 InflationPayoutEncodeResponseGrpcMarshaller.InflationPayoutEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInflationPayout</summary>
-        public static readonly Method<Stellar.InflationPayoutDecodeRequest, Stellar.InflationPayoutDecodeResponse> DecodeInflationPayoutMethod =
+        public static readonly Method<Stellar.InflationPayoutDecodeRequest, Stellar.InflationPayoutDecodeResponse> DecodeInflationPayout =
             new Method<Stellar.InflationPayoutDecodeRequest, Stellar.InflationPayoutDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5922,7 +5922,7 @@ namespace Stellar.RPC.AOT
                 InflationPayoutDecodeResponseGrpcMarshaller.InflationPayoutDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInflationResult</summary>
-        public static readonly Method<Stellar.InflationResultEncodeRequest, Stellar.InflationResultEncodeResponse> EncodeInflationResultMethod =
+        public static readonly Method<Stellar.InflationResultEncodeRequest, Stellar.InflationResultEncodeResponse> EncodeInflationResult =
             new Method<Stellar.InflationResultEncodeRequest, Stellar.InflationResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5931,7 +5931,7 @@ namespace Stellar.RPC.AOT
                 InflationResultEncodeResponseGrpcMarshaller.InflationResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInflationResult</summary>
-        public static readonly Method<Stellar.InflationResultDecodeRequest, Stellar.InflationResultDecodeResponse> DecodeInflationResultMethod =
+        public static readonly Method<Stellar.InflationResultDecodeRequest, Stellar.InflationResultDecodeResponse> DecodeInflationResult =
             new Method<Stellar.InflationResultDecodeRequest, Stellar.InflationResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5940,7 +5940,7 @@ namespace Stellar.RPC.AOT
                 InflationResultDecodeResponseGrpcMarshaller.InflationResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageDataResultCode</summary>
-        public static readonly Method<Stellar.ManageDataResultCodeEncodeRequest, Stellar.ManageDataResultCodeEncodeResponse> EncodeManageDataResultCodeMethod =
+        public static readonly Method<Stellar.ManageDataResultCodeEncodeRequest, Stellar.ManageDataResultCodeEncodeResponse> EncodeManageDataResultCode =
             new Method<Stellar.ManageDataResultCodeEncodeRequest, Stellar.ManageDataResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5949,7 +5949,7 @@ namespace Stellar.RPC.AOT
                 ManageDataResultCodeEncodeResponseGrpcMarshaller.ManageDataResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageDataResultCode</summary>
-        public static readonly Method<Stellar.ManageDataResultCodeDecodeRequest, Stellar.ManageDataResultCodeDecodeResponse> DecodeManageDataResultCodeMethod =
+        public static readonly Method<Stellar.ManageDataResultCodeDecodeRequest, Stellar.ManageDataResultCodeDecodeResponse> DecodeManageDataResultCode =
             new Method<Stellar.ManageDataResultCodeDecodeRequest, Stellar.ManageDataResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5958,7 +5958,7 @@ namespace Stellar.RPC.AOT
                 ManageDataResultCodeDecodeResponseGrpcMarshaller.ManageDataResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeManageDataResult</summary>
-        public static readonly Method<Stellar.ManageDataResultEncodeRequest, Stellar.ManageDataResultEncodeResponse> EncodeManageDataResultMethod =
+        public static readonly Method<Stellar.ManageDataResultEncodeRequest, Stellar.ManageDataResultEncodeResponse> EncodeManageDataResult =
             new Method<Stellar.ManageDataResultEncodeRequest, Stellar.ManageDataResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5967,7 +5967,7 @@ namespace Stellar.RPC.AOT
                 ManageDataResultEncodeResponseGrpcMarshaller.ManageDataResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeManageDataResult</summary>
-        public static readonly Method<Stellar.ManageDataResultDecodeRequest, Stellar.ManageDataResultDecodeResponse> DecodeManageDataResultMethod =
+        public static readonly Method<Stellar.ManageDataResultDecodeRequest, Stellar.ManageDataResultDecodeResponse> DecodeManageDataResult =
             new Method<Stellar.ManageDataResultDecodeRequest, Stellar.ManageDataResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5976,7 +5976,7 @@ namespace Stellar.RPC.AOT
                 ManageDataResultDecodeResponseGrpcMarshaller.ManageDataResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBumpSequenceResultCode</summary>
-        public static readonly Method<Stellar.BumpSequenceResultCodeEncodeRequest, Stellar.BumpSequenceResultCodeEncodeResponse> EncodeBumpSequenceResultCodeMethod =
+        public static readonly Method<Stellar.BumpSequenceResultCodeEncodeRequest, Stellar.BumpSequenceResultCodeEncodeResponse> EncodeBumpSequenceResultCode =
             new Method<Stellar.BumpSequenceResultCodeEncodeRequest, Stellar.BumpSequenceResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5985,7 +5985,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceResultCodeEncodeResponseGrpcMarshaller.BumpSequenceResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBumpSequenceResultCode</summary>
-        public static readonly Method<Stellar.BumpSequenceResultCodeDecodeRequest, Stellar.BumpSequenceResultCodeDecodeResponse> DecodeBumpSequenceResultCodeMethod =
+        public static readonly Method<Stellar.BumpSequenceResultCodeDecodeRequest, Stellar.BumpSequenceResultCodeDecodeResponse> DecodeBumpSequenceResultCode =
             new Method<Stellar.BumpSequenceResultCodeDecodeRequest, Stellar.BumpSequenceResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -5994,7 +5994,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceResultCodeDecodeResponseGrpcMarshaller.BumpSequenceResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBumpSequenceResult</summary>
-        public static readonly Method<Stellar.BumpSequenceResultEncodeRequest, Stellar.BumpSequenceResultEncodeResponse> EncodeBumpSequenceResultMethod =
+        public static readonly Method<Stellar.BumpSequenceResultEncodeRequest, Stellar.BumpSequenceResultEncodeResponse> EncodeBumpSequenceResult =
             new Method<Stellar.BumpSequenceResultEncodeRequest, Stellar.BumpSequenceResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6003,7 +6003,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceResultEncodeResponseGrpcMarshaller.BumpSequenceResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBumpSequenceResult</summary>
-        public static readonly Method<Stellar.BumpSequenceResultDecodeRequest, Stellar.BumpSequenceResultDecodeResponse> DecodeBumpSequenceResultMethod =
+        public static readonly Method<Stellar.BumpSequenceResultDecodeRequest, Stellar.BumpSequenceResultDecodeResponse> DecodeBumpSequenceResult =
             new Method<Stellar.BumpSequenceResultDecodeRequest, Stellar.BumpSequenceResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6012,7 +6012,7 @@ namespace Stellar.RPC.AOT
                 BumpSequenceResultDecodeResponseGrpcMarshaller.BumpSequenceResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceResultCodeEncodeRequest, Stellar.CreateClaimableBalanceResultCodeEncodeResponse> EncodeCreateClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceResultCodeEncodeRequest, Stellar.CreateClaimableBalanceResultCodeEncodeResponse> EncodeCreateClaimableBalanceResultCode =
             new Method<Stellar.CreateClaimableBalanceResultCodeEncodeRequest, Stellar.CreateClaimableBalanceResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6021,7 +6021,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceResultCodeEncodeResponseGrpcMarshaller.CreateClaimableBalanceResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceResultCodeDecodeRequest, Stellar.CreateClaimableBalanceResultCodeDecodeResponse> DecodeCreateClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceResultCodeDecodeRequest, Stellar.CreateClaimableBalanceResultCodeDecodeResponse> DecodeCreateClaimableBalanceResultCode =
             new Method<Stellar.CreateClaimableBalanceResultCodeDecodeRequest, Stellar.CreateClaimableBalanceResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6030,7 +6030,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceResultCodeDecodeResponseGrpcMarshaller.CreateClaimableBalanceResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCreateClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceResultEncodeRequest, Stellar.CreateClaimableBalanceResultEncodeResponse> EncodeCreateClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceResultEncodeRequest, Stellar.CreateClaimableBalanceResultEncodeResponse> EncodeCreateClaimableBalanceResult =
             new Method<Stellar.CreateClaimableBalanceResultEncodeRequest, Stellar.CreateClaimableBalanceResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6039,7 +6039,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceResultEncodeResponseGrpcMarshaller.CreateClaimableBalanceResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCreateClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.CreateClaimableBalanceResultDecodeRequest, Stellar.CreateClaimableBalanceResultDecodeResponse> DecodeCreateClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.CreateClaimableBalanceResultDecodeRequest, Stellar.CreateClaimableBalanceResultDecodeResponse> DecodeCreateClaimableBalanceResult =
             new Method<Stellar.CreateClaimableBalanceResultDecodeRequest, Stellar.CreateClaimableBalanceResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6048,7 +6048,7 @@ namespace Stellar.RPC.AOT
                 CreateClaimableBalanceResultDecodeResponseGrpcMarshaller.CreateClaimableBalanceResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceResultCodeEncodeRequest, Stellar.ClaimClaimableBalanceResultCodeEncodeResponse> EncodeClaimClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceResultCodeEncodeRequest, Stellar.ClaimClaimableBalanceResultCodeEncodeResponse> EncodeClaimClaimableBalanceResultCode =
             new Method<Stellar.ClaimClaimableBalanceResultCodeEncodeRequest, Stellar.ClaimClaimableBalanceResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6057,7 +6057,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceResultCodeEncodeResponseGrpcMarshaller.ClaimClaimableBalanceResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceResultCodeDecodeRequest, Stellar.ClaimClaimableBalanceResultCodeDecodeResponse> DecodeClaimClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceResultCodeDecodeRequest, Stellar.ClaimClaimableBalanceResultCodeDecodeResponse> DecodeClaimClaimableBalanceResultCode =
             new Method<Stellar.ClaimClaimableBalanceResultCodeDecodeRequest, Stellar.ClaimClaimableBalanceResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6066,7 +6066,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceResultCodeDecodeResponseGrpcMarshaller.ClaimClaimableBalanceResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClaimClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceResultEncodeRequest, Stellar.ClaimClaimableBalanceResultEncodeResponse> EncodeClaimClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceResultEncodeRequest, Stellar.ClaimClaimableBalanceResultEncodeResponse> EncodeClaimClaimableBalanceResult =
             new Method<Stellar.ClaimClaimableBalanceResultEncodeRequest, Stellar.ClaimClaimableBalanceResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6075,7 +6075,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceResultEncodeResponseGrpcMarshaller.ClaimClaimableBalanceResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClaimClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.ClaimClaimableBalanceResultDecodeRequest, Stellar.ClaimClaimableBalanceResultDecodeResponse> DecodeClaimClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.ClaimClaimableBalanceResultDecodeRequest, Stellar.ClaimClaimableBalanceResultDecodeResponse> DecodeClaimClaimableBalanceResult =
             new Method<Stellar.ClaimClaimableBalanceResultDecodeRequest, Stellar.ClaimClaimableBalanceResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6084,7 +6084,7 @@ namespace Stellar.RPC.AOT
                 ClaimClaimableBalanceResultDecodeResponseGrpcMarshaller.ClaimClaimableBalanceResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBeginSponsoringFutureReservesResultCode</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultCodeEncodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeEncodeResponse> EncodeBeginSponsoringFutureReservesResultCodeMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultCodeEncodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeEncodeResponse> EncodeBeginSponsoringFutureReservesResultCode =
             new Method<Stellar.BeginSponsoringFutureReservesResultCodeEncodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6093,7 +6093,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesResultCodeEncodeResponseGrpcMarshaller.BeginSponsoringFutureReservesResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBeginSponsoringFutureReservesResultCode</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultCodeDecodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeDecodeResponse> DecodeBeginSponsoringFutureReservesResultCodeMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultCodeDecodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeDecodeResponse> DecodeBeginSponsoringFutureReservesResultCode =
             new Method<Stellar.BeginSponsoringFutureReservesResultCodeDecodeRequest, Stellar.BeginSponsoringFutureReservesResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6102,7 +6102,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesResultCodeDecodeResponseGrpcMarshaller.BeginSponsoringFutureReservesResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBeginSponsoringFutureReservesResult</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultEncodeRequest, Stellar.BeginSponsoringFutureReservesResultEncodeResponse> EncodeBeginSponsoringFutureReservesResultMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultEncodeRequest, Stellar.BeginSponsoringFutureReservesResultEncodeResponse> EncodeBeginSponsoringFutureReservesResult =
             new Method<Stellar.BeginSponsoringFutureReservesResultEncodeRequest, Stellar.BeginSponsoringFutureReservesResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6111,7 +6111,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesResultEncodeResponseGrpcMarshaller.BeginSponsoringFutureReservesResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBeginSponsoringFutureReservesResult</summary>
-        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultDecodeRequest, Stellar.BeginSponsoringFutureReservesResultDecodeResponse> DecodeBeginSponsoringFutureReservesResultMethod =
+        public static readonly Method<Stellar.BeginSponsoringFutureReservesResultDecodeRequest, Stellar.BeginSponsoringFutureReservesResultDecodeResponse> DecodeBeginSponsoringFutureReservesResult =
             new Method<Stellar.BeginSponsoringFutureReservesResultDecodeRequest, Stellar.BeginSponsoringFutureReservesResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6120,7 +6120,7 @@ namespace Stellar.RPC.AOT
                 BeginSponsoringFutureReservesResultDecodeResponseGrpcMarshaller.BeginSponsoringFutureReservesResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeEndSponsoringFutureReservesResultCode</summary>
-        public static readonly Method<Stellar.EndSponsoringFutureReservesResultCodeEncodeRequest, Stellar.EndSponsoringFutureReservesResultCodeEncodeResponse> EncodeEndSponsoringFutureReservesResultCodeMethod =
+        public static readonly Method<Stellar.EndSponsoringFutureReservesResultCodeEncodeRequest, Stellar.EndSponsoringFutureReservesResultCodeEncodeResponse> EncodeEndSponsoringFutureReservesResultCode =
             new Method<Stellar.EndSponsoringFutureReservesResultCodeEncodeRequest, Stellar.EndSponsoringFutureReservesResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6129,7 +6129,7 @@ namespace Stellar.RPC.AOT
                 EndSponsoringFutureReservesResultCodeEncodeResponseGrpcMarshaller.EndSponsoringFutureReservesResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeEndSponsoringFutureReservesResultCode</summary>
-        public static readonly Method<Stellar.EndSponsoringFutureReservesResultCodeDecodeRequest, Stellar.EndSponsoringFutureReservesResultCodeDecodeResponse> DecodeEndSponsoringFutureReservesResultCodeMethod =
+        public static readonly Method<Stellar.EndSponsoringFutureReservesResultCodeDecodeRequest, Stellar.EndSponsoringFutureReservesResultCodeDecodeResponse> DecodeEndSponsoringFutureReservesResultCode =
             new Method<Stellar.EndSponsoringFutureReservesResultCodeDecodeRequest, Stellar.EndSponsoringFutureReservesResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6138,7 +6138,7 @@ namespace Stellar.RPC.AOT
                 EndSponsoringFutureReservesResultCodeDecodeResponseGrpcMarshaller.EndSponsoringFutureReservesResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeEndSponsoringFutureReservesResult</summary>
-        public static readonly Method<Stellar.EndSponsoringFutureReservesResultEncodeRequest, Stellar.EndSponsoringFutureReservesResultEncodeResponse> EncodeEndSponsoringFutureReservesResultMethod =
+        public static readonly Method<Stellar.EndSponsoringFutureReservesResultEncodeRequest, Stellar.EndSponsoringFutureReservesResultEncodeResponse> EncodeEndSponsoringFutureReservesResult =
             new Method<Stellar.EndSponsoringFutureReservesResultEncodeRequest, Stellar.EndSponsoringFutureReservesResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6147,7 +6147,7 @@ namespace Stellar.RPC.AOT
                 EndSponsoringFutureReservesResultEncodeResponseGrpcMarshaller.EndSponsoringFutureReservesResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeEndSponsoringFutureReservesResult</summary>
-        public static readonly Method<Stellar.EndSponsoringFutureReservesResultDecodeRequest, Stellar.EndSponsoringFutureReservesResultDecodeResponse> DecodeEndSponsoringFutureReservesResultMethod =
+        public static readonly Method<Stellar.EndSponsoringFutureReservesResultDecodeRequest, Stellar.EndSponsoringFutureReservesResultDecodeResponse> DecodeEndSponsoringFutureReservesResult =
             new Method<Stellar.EndSponsoringFutureReservesResultDecodeRequest, Stellar.EndSponsoringFutureReservesResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6156,7 +6156,7 @@ namespace Stellar.RPC.AOT
                 EndSponsoringFutureReservesResultDecodeResponseGrpcMarshaller.EndSponsoringFutureReservesResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRevokeSponsorshipResultCode</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipResultCodeEncodeRequest, Stellar.RevokeSponsorshipResultCodeEncodeResponse> EncodeRevokeSponsorshipResultCodeMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipResultCodeEncodeRequest, Stellar.RevokeSponsorshipResultCodeEncodeResponse> EncodeRevokeSponsorshipResultCode =
             new Method<Stellar.RevokeSponsorshipResultCodeEncodeRequest, Stellar.RevokeSponsorshipResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6165,7 +6165,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipResultCodeEncodeResponseGrpcMarshaller.RevokeSponsorshipResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRevokeSponsorshipResultCode</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipResultCodeDecodeRequest, Stellar.RevokeSponsorshipResultCodeDecodeResponse> DecodeRevokeSponsorshipResultCodeMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipResultCodeDecodeRequest, Stellar.RevokeSponsorshipResultCodeDecodeResponse> DecodeRevokeSponsorshipResultCode =
             new Method<Stellar.RevokeSponsorshipResultCodeDecodeRequest, Stellar.RevokeSponsorshipResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6174,7 +6174,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipResultCodeDecodeResponseGrpcMarshaller.RevokeSponsorshipResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRevokeSponsorshipResult</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipResultEncodeRequest, Stellar.RevokeSponsorshipResultEncodeResponse> EncodeRevokeSponsorshipResultMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipResultEncodeRequest, Stellar.RevokeSponsorshipResultEncodeResponse> EncodeRevokeSponsorshipResult =
             new Method<Stellar.RevokeSponsorshipResultEncodeRequest, Stellar.RevokeSponsorshipResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6183,7 +6183,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipResultEncodeResponseGrpcMarshaller.RevokeSponsorshipResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRevokeSponsorshipResult</summary>
-        public static readonly Method<Stellar.RevokeSponsorshipResultDecodeRequest, Stellar.RevokeSponsorshipResultDecodeResponse> DecodeRevokeSponsorshipResultMethod =
+        public static readonly Method<Stellar.RevokeSponsorshipResultDecodeRequest, Stellar.RevokeSponsorshipResultDecodeResponse> DecodeRevokeSponsorshipResult =
             new Method<Stellar.RevokeSponsorshipResultDecodeRequest, Stellar.RevokeSponsorshipResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6192,7 +6192,7 @@ namespace Stellar.RPC.AOT
                 RevokeSponsorshipResultDecodeResponseGrpcMarshaller.RevokeSponsorshipResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackResultCode</summary>
-        public static readonly Method<Stellar.ClawbackResultCodeEncodeRequest, Stellar.ClawbackResultCodeEncodeResponse> EncodeClawbackResultCodeMethod =
+        public static readonly Method<Stellar.ClawbackResultCodeEncodeRequest, Stellar.ClawbackResultCodeEncodeResponse> EncodeClawbackResultCode =
             new Method<Stellar.ClawbackResultCodeEncodeRequest, Stellar.ClawbackResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6201,7 +6201,7 @@ namespace Stellar.RPC.AOT
                 ClawbackResultCodeEncodeResponseGrpcMarshaller.ClawbackResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackResultCode</summary>
-        public static readonly Method<Stellar.ClawbackResultCodeDecodeRequest, Stellar.ClawbackResultCodeDecodeResponse> DecodeClawbackResultCodeMethod =
+        public static readonly Method<Stellar.ClawbackResultCodeDecodeRequest, Stellar.ClawbackResultCodeDecodeResponse> DecodeClawbackResultCode =
             new Method<Stellar.ClawbackResultCodeDecodeRequest, Stellar.ClawbackResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6210,7 +6210,7 @@ namespace Stellar.RPC.AOT
                 ClawbackResultCodeDecodeResponseGrpcMarshaller.ClawbackResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackResult</summary>
-        public static readonly Method<Stellar.ClawbackResultEncodeRequest, Stellar.ClawbackResultEncodeResponse> EncodeClawbackResultMethod =
+        public static readonly Method<Stellar.ClawbackResultEncodeRequest, Stellar.ClawbackResultEncodeResponse> EncodeClawbackResult =
             new Method<Stellar.ClawbackResultEncodeRequest, Stellar.ClawbackResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6219,7 +6219,7 @@ namespace Stellar.RPC.AOT
                 ClawbackResultEncodeResponseGrpcMarshaller.ClawbackResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackResult</summary>
-        public static readonly Method<Stellar.ClawbackResultDecodeRequest, Stellar.ClawbackResultDecodeResponse> DecodeClawbackResultMethod =
+        public static readonly Method<Stellar.ClawbackResultDecodeRequest, Stellar.ClawbackResultDecodeResponse> DecodeClawbackResult =
             new Method<Stellar.ClawbackResultDecodeRequest, Stellar.ClawbackResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6228,7 +6228,7 @@ namespace Stellar.RPC.AOT
                 ClawbackResultDecodeResponseGrpcMarshaller.ClawbackResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceResultCodeEncodeRequest, Stellar.ClawbackClaimableBalanceResultCodeEncodeResponse> EncodeClawbackClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceResultCodeEncodeRequest, Stellar.ClawbackClaimableBalanceResultCodeEncodeResponse> EncodeClawbackClaimableBalanceResultCode =
             new Method<Stellar.ClawbackClaimableBalanceResultCodeEncodeRequest, Stellar.ClawbackClaimableBalanceResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6237,7 +6237,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceResultCodeEncodeResponseGrpcMarshaller.ClawbackClaimableBalanceResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackClaimableBalanceResultCode</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceResultCodeDecodeRequest, Stellar.ClawbackClaimableBalanceResultCodeDecodeResponse> DecodeClawbackClaimableBalanceResultCodeMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceResultCodeDecodeRequest, Stellar.ClawbackClaimableBalanceResultCodeDecodeResponse> DecodeClawbackClaimableBalanceResultCode =
             new Method<Stellar.ClawbackClaimableBalanceResultCodeDecodeRequest, Stellar.ClawbackClaimableBalanceResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6246,7 +6246,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceResultCodeDecodeResponseGrpcMarshaller.ClawbackClaimableBalanceResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeClawbackClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceResultEncodeRequest, Stellar.ClawbackClaimableBalanceResultEncodeResponse> EncodeClawbackClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceResultEncodeRequest, Stellar.ClawbackClaimableBalanceResultEncodeResponse> EncodeClawbackClaimableBalanceResult =
             new Method<Stellar.ClawbackClaimableBalanceResultEncodeRequest, Stellar.ClawbackClaimableBalanceResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6255,7 +6255,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceResultEncodeResponseGrpcMarshaller.ClawbackClaimableBalanceResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeClawbackClaimableBalanceResult</summary>
-        public static readonly Method<Stellar.ClawbackClaimableBalanceResultDecodeRequest, Stellar.ClawbackClaimableBalanceResultDecodeResponse> DecodeClawbackClaimableBalanceResultMethod =
+        public static readonly Method<Stellar.ClawbackClaimableBalanceResultDecodeRequest, Stellar.ClawbackClaimableBalanceResultDecodeResponse> DecodeClawbackClaimableBalanceResult =
             new Method<Stellar.ClawbackClaimableBalanceResultDecodeRequest, Stellar.ClawbackClaimableBalanceResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6264,7 +6264,7 @@ namespace Stellar.RPC.AOT
                 ClawbackClaimableBalanceResultDecodeResponseGrpcMarshaller.ClawbackClaimableBalanceResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetTrustLineFlagsResultCode</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsResultCodeEncodeRequest, Stellar.SetTrustLineFlagsResultCodeEncodeResponse> EncodeSetTrustLineFlagsResultCodeMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsResultCodeEncodeRequest, Stellar.SetTrustLineFlagsResultCodeEncodeResponse> EncodeSetTrustLineFlagsResultCode =
             new Method<Stellar.SetTrustLineFlagsResultCodeEncodeRequest, Stellar.SetTrustLineFlagsResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6273,7 +6273,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsResultCodeEncodeResponseGrpcMarshaller.SetTrustLineFlagsResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetTrustLineFlagsResultCode</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsResultCodeDecodeRequest, Stellar.SetTrustLineFlagsResultCodeDecodeResponse> DecodeSetTrustLineFlagsResultCodeMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsResultCodeDecodeRequest, Stellar.SetTrustLineFlagsResultCodeDecodeResponse> DecodeSetTrustLineFlagsResultCode =
             new Method<Stellar.SetTrustLineFlagsResultCodeDecodeRequest, Stellar.SetTrustLineFlagsResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6282,7 +6282,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsResultCodeDecodeResponseGrpcMarshaller.SetTrustLineFlagsResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSetTrustLineFlagsResult</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsResultEncodeRequest, Stellar.SetTrustLineFlagsResultEncodeResponse> EncodeSetTrustLineFlagsResultMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsResultEncodeRequest, Stellar.SetTrustLineFlagsResultEncodeResponse> EncodeSetTrustLineFlagsResult =
             new Method<Stellar.SetTrustLineFlagsResultEncodeRequest, Stellar.SetTrustLineFlagsResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6291,7 +6291,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsResultEncodeResponseGrpcMarshaller.SetTrustLineFlagsResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSetTrustLineFlagsResult</summary>
-        public static readonly Method<Stellar.SetTrustLineFlagsResultDecodeRequest, Stellar.SetTrustLineFlagsResultDecodeResponse> DecodeSetTrustLineFlagsResultMethod =
+        public static readonly Method<Stellar.SetTrustLineFlagsResultDecodeRequest, Stellar.SetTrustLineFlagsResultDecodeResponse> DecodeSetTrustLineFlagsResult =
             new Method<Stellar.SetTrustLineFlagsResultDecodeRequest, Stellar.SetTrustLineFlagsResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6300,7 +6300,7 @@ namespace Stellar.RPC.AOT
                 SetTrustLineFlagsResultDecodeResponseGrpcMarshaller.SetTrustLineFlagsResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolDepositResultCode</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositResultCodeEncodeRequest, Stellar.LiquidityPoolDepositResultCodeEncodeResponse> EncodeLiquidityPoolDepositResultCodeMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositResultCodeEncodeRequest, Stellar.LiquidityPoolDepositResultCodeEncodeResponse> EncodeLiquidityPoolDepositResultCode =
             new Method<Stellar.LiquidityPoolDepositResultCodeEncodeRequest, Stellar.LiquidityPoolDepositResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6309,7 +6309,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositResultCodeEncodeResponseGrpcMarshaller.LiquidityPoolDepositResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolDepositResultCode</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositResultCodeDecodeRequest, Stellar.LiquidityPoolDepositResultCodeDecodeResponse> DecodeLiquidityPoolDepositResultCodeMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositResultCodeDecodeRequest, Stellar.LiquidityPoolDepositResultCodeDecodeResponse> DecodeLiquidityPoolDepositResultCode =
             new Method<Stellar.LiquidityPoolDepositResultCodeDecodeRequest, Stellar.LiquidityPoolDepositResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6318,7 +6318,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositResultCodeDecodeResponseGrpcMarshaller.LiquidityPoolDepositResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolDepositResult</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositResultEncodeRequest, Stellar.LiquidityPoolDepositResultEncodeResponse> EncodeLiquidityPoolDepositResultMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositResultEncodeRequest, Stellar.LiquidityPoolDepositResultEncodeResponse> EncodeLiquidityPoolDepositResult =
             new Method<Stellar.LiquidityPoolDepositResultEncodeRequest, Stellar.LiquidityPoolDepositResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6327,7 +6327,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositResultEncodeResponseGrpcMarshaller.LiquidityPoolDepositResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolDepositResult</summary>
-        public static readonly Method<Stellar.LiquidityPoolDepositResultDecodeRequest, Stellar.LiquidityPoolDepositResultDecodeResponse> DecodeLiquidityPoolDepositResultMethod =
+        public static readonly Method<Stellar.LiquidityPoolDepositResultDecodeRequest, Stellar.LiquidityPoolDepositResultDecodeResponse> DecodeLiquidityPoolDepositResult =
             new Method<Stellar.LiquidityPoolDepositResultDecodeRequest, Stellar.LiquidityPoolDepositResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6336,7 +6336,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolDepositResultDecodeResponseGrpcMarshaller.LiquidityPoolDepositResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolWithdrawResultCode</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawResultCodeEncodeRequest, Stellar.LiquidityPoolWithdrawResultCodeEncodeResponse> EncodeLiquidityPoolWithdrawResultCodeMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawResultCodeEncodeRequest, Stellar.LiquidityPoolWithdrawResultCodeEncodeResponse> EncodeLiquidityPoolWithdrawResultCode =
             new Method<Stellar.LiquidityPoolWithdrawResultCodeEncodeRequest, Stellar.LiquidityPoolWithdrawResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6345,7 +6345,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawResultCodeEncodeResponseGrpcMarshaller.LiquidityPoolWithdrawResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolWithdrawResultCode</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawResultCodeDecodeRequest, Stellar.LiquidityPoolWithdrawResultCodeDecodeResponse> DecodeLiquidityPoolWithdrawResultCodeMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawResultCodeDecodeRequest, Stellar.LiquidityPoolWithdrawResultCodeDecodeResponse> DecodeLiquidityPoolWithdrawResultCode =
             new Method<Stellar.LiquidityPoolWithdrawResultCodeDecodeRequest, Stellar.LiquidityPoolWithdrawResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6354,7 +6354,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawResultCodeDecodeResponseGrpcMarshaller.LiquidityPoolWithdrawResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeLiquidityPoolWithdrawResult</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawResultEncodeRequest, Stellar.LiquidityPoolWithdrawResultEncodeResponse> EncodeLiquidityPoolWithdrawResultMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawResultEncodeRequest, Stellar.LiquidityPoolWithdrawResultEncodeResponse> EncodeLiquidityPoolWithdrawResult =
             new Method<Stellar.LiquidityPoolWithdrawResultEncodeRequest, Stellar.LiquidityPoolWithdrawResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6363,7 +6363,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawResultEncodeResponseGrpcMarshaller.LiquidityPoolWithdrawResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeLiquidityPoolWithdrawResult</summary>
-        public static readonly Method<Stellar.LiquidityPoolWithdrawResultDecodeRequest, Stellar.LiquidityPoolWithdrawResultDecodeResponse> DecodeLiquidityPoolWithdrawResultMethod =
+        public static readonly Method<Stellar.LiquidityPoolWithdrawResultDecodeRequest, Stellar.LiquidityPoolWithdrawResultDecodeResponse> DecodeLiquidityPoolWithdrawResult =
             new Method<Stellar.LiquidityPoolWithdrawResultDecodeRequest, Stellar.LiquidityPoolWithdrawResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6372,7 +6372,7 @@ namespace Stellar.RPC.AOT
                 LiquidityPoolWithdrawResultDecodeResponseGrpcMarshaller.LiquidityPoolWithdrawResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInvokeHostFunctionResultCode</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionResultCodeEncodeRequest, Stellar.InvokeHostFunctionResultCodeEncodeResponse> EncodeInvokeHostFunctionResultCodeMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionResultCodeEncodeRequest, Stellar.InvokeHostFunctionResultCodeEncodeResponse> EncodeInvokeHostFunctionResultCode =
             new Method<Stellar.InvokeHostFunctionResultCodeEncodeRequest, Stellar.InvokeHostFunctionResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6381,7 +6381,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionResultCodeEncodeResponseGrpcMarshaller.InvokeHostFunctionResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInvokeHostFunctionResultCode</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionResultCodeDecodeRequest, Stellar.InvokeHostFunctionResultCodeDecodeResponse> DecodeInvokeHostFunctionResultCodeMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionResultCodeDecodeRequest, Stellar.InvokeHostFunctionResultCodeDecodeResponse> DecodeInvokeHostFunctionResultCode =
             new Method<Stellar.InvokeHostFunctionResultCodeDecodeRequest, Stellar.InvokeHostFunctionResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6390,7 +6390,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionResultCodeDecodeResponseGrpcMarshaller.InvokeHostFunctionResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInvokeHostFunctionResult</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionResultEncodeRequest, Stellar.InvokeHostFunctionResultEncodeResponse> EncodeInvokeHostFunctionResultMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionResultEncodeRequest, Stellar.InvokeHostFunctionResultEncodeResponse> EncodeInvokeHostFunctionResult =
             new Method<Stellar.InvokeHostFunctionResultEncodeRequest, Stellar.InvokeHostFunctionResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6399,7 +6399,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionResultEncodeResponseGrpcMarshaller.InvokeHostFunctionResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInvokeHostFunctionResult</summary>
-        public static readonly Method<Stellar.InvokeHostFunctionResultDecodeRequest, Stellar.InvokeHostFunctionResultDecodeResponse> DecodeInvokeHostFunctionResultMethod =
+        public static readonly Method<Stellar.InvokeHostFunctionResultDecodeRequest, Stellar.InvokeHostFunctionResultDecodeResponse> DecodeInvokeHostFunctionResult =
             new Method<Stellar.InvokeHostFunctionResultDecodeRequest, Stellar.InvokeHostFunctionResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6408,7 +6408,7 @@ namespace Stellar.RPC.AOT
                 InvokeHostFunctionResultDecodeResponseGrpcMarshaller.InvokeHostFunctionResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeExtendFootprintTTLResultCode</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLResultCodeEncodeRequest, Stellar.ExtendFootprintTTLResultCodeEncodeResponse> EncodeExtendFootprintTTLResultCodeMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLResultCodeEncodeRequest, Stellar.ExtendFootprintTTLResultCodeEncodeResponse> EncodeExtendFootprintTTLResultCode =
             new Method<Stellar.ExtendFootprintTTLResultCodeEncodeRequest, Stellar.ExtendFootprintTTLResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6417,7 +6417,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLResultCodeEncodeResponseGrpcMarshaller.ExtendFootprintTTLResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeExtendFootprintTTLResultCode</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLResultCodeDecodeRequest, Stellar.ExtendFootprintTTLResultCodeDecodeResponse> DecodeExtendFootprintTTLResultCodeMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLResultCodeDecodeRequest, Stellar.ExtendFootprintTTLResultCodeDecodeResponse> DecodeExtendFootprintTTLResultCode =
             new Method<Stellar.ExtendFootprintTTLResultCodeDecodeRequest, Stellar.ExtendFootprintTTLResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6426,7 +6426,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLResultCodeDecodeResponseGrpcMarshaller.ExtendFootprintTTLResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeExtendFootprintTTLResult</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLResultEncodeRequest, Stellar.ExtendFootprintTTLResultEncodeResponse> EncodeExtendFootprintTTLResultMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLResultEncodeRequest, Stellar.ExtendFootprintTTLResultEncodeResponse> EncodeExtendFootprintTTLResult =
             new Method<Stellar.ExtendFootprintTTLResultEncodeRequest, Stellar.ExtendFootprintTTLResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6435,7 +6435,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLResultEncodeResponseGrpcMarshaller.ExtendFootprintTTLResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeExtendFootprintTTLResult</summary>
-        public static readonly Method<Stellar.ExtendFootprintTTLResultDecodeRequest, Stellar.ExtendFootprintTTLResultDecodeResponse> DecodeExtendFootprintTTLResultMethod =
+        public static readonly Method<Stellar.ExtendFootprintTTLResultDecodeRequest, Stellar.ExtendFootprintTTLResultDecodeResponse> DecodeExtendFootprintTTLResult =
             new Method<Stellar.ExtendFootprintTTLResultDecodeRequest, Stellar.ExtendFootprintTTLResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6444,7 +6444,7 @@ namespace Stellar.RPC.AOT
                 ExtendFootprintTTLResultDecodeResponseGrpcMarshaller.ExtendFootprintTTLResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRestoreFootprintResultCode</summary>
-        public static readonly Method<Stellar.RestoreFootprintResultCodeEncodeRequest, Stellar.RestoreFootprintResultCodeEncodeResponse> EncodeRestoreFootprintResultCodeMethod =
+        public static readonly Method<Stellar.RestoreFootprintResultCodeEncodeRequest, Stellar.RestoreFootprintResultCodeEncodeResponse> EncodeRestoreFootprintResultCode =
             new Method<Stellar.RestoreFootprintResultCodeEncodeRequest, Stellar.RestoreFootprintResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6453,7 +6453,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintResultCodeEncodeResponseGrpcMarshaller.RestoreFootprintResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRestoreFootprintResultCode</summary>
-        public static readonly Method<Stellar.RestoreFootprintResultCodeDecodeRequest, Stellar.RestoreFootprintResultCodeDecodeResponse> DecodeRestoreFootprintResultCodeMethod =
+        public static readonly Method<Stellar.RestoreFootprintResultCodeDecodeRequest, Stellar.RestoreFootprintResultCodeDecodeResponse> DecodeRestoreFootprintResultCode =
             new Method<Stellar.RestoreFootprintResultCodeDecodeRequest, Stellar.RestoreFootprintResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6462,7 +6462,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintResultCodeDecodeResponseGrpcMarshaller.RestoreFootprintResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeRestoreFootprintResult</summary>
-        public static readonly Method<Stellar.RestoreFootprintResultEncodeRequest, Stellar.RestoreFootprintResultEncodeResponse> EncodeRestoreFootprintResultMethod =
+        public static readonly Method<Stellar.RestoreFootprintResultEncodeRequest, Stellar.RestoreFootprintResultEncodeResponse> EncodeRestoreFootprintResult =
             new Method<Stellar.RestoreFootprintResultEncodeRequest, Stellar.RestoreFootprintResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6471,7 +6471,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintResultEncodeResponseGrpcMarshaller.RestoreFootprintResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeRestoreFootprintResult</summary>
-        public static readonly Method<Stellar.RestoreFootprintResultDecodeRequest, Stellar.RestoreFootprintResultDecodeResponse> DecodeRestoreFootprintResultMethod =
+        public static readonly Method<Stellar.RestoreFootprintResultDecodeRequest, Stellar.RestoreFootprintResultDecodeResponse> DecodeRestoreFootprintResult =
             new Method<Stellar.RestoreFootprintResultDecodeRequest, Stellar.RestoreFootprintResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6480,7 +6480,7 @@ namespace Stellar.RPC.AOT
                 RestoreFootprintResultDecodeResponseGrpcMarshaller.RestoreFootprintResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOperationResultCode</summary>
-        public static readonly Method<Stellar.OperationResultCodeEncodeRequest, Stellar.OperationResultCodeEncodeResponse> EncodeOperationResultCodeMethod =
+        public static readonly Method<Stellar.OperationResultCodeEncodeRequest, Stellar.OperationResultCodeEncodeResponse> EncodeOperationResultCode =
             new Method<Stellar.OperationResultCodeEncodeRequest, Stellar.OperationResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6489,7 +6489,7 @@ namespace Stellar.RPC.AOT
                 OperationResultCodeEncodeResponseGrpcMarshaller.OperationResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOperationResultCode</summary>
-        public static readonly Method<Stellar.OperationResultCodeDecodeRequest, Stellar.OperationResultCodeDecodeResponse> DecodeOperationResultCodeMethod =
+        public static readonly Method<Stellar.OperationResultCodeDecodeRequest, Stellar.OperationResultCodeDecodeResponse> DecodeOperationResultCode =
             new Method<Stellar.OperationResultCodeDecodeRequest, Stellar.OperationResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6498,7 +6498,7 @@ namespace Stellar.RPC.AOT
                 OperationResultCodeDecodeResponseGrpcMarshaller.OperationResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeOperationResult</summary>
-        public static readonly Method<Stellar.OperationResultEncodeRequest, Stellar.OperationResultEncodeResponse> EncodeOperationResultMethod =
+        public static readonly Method<Stellar.OperationResultEncodeRequest, Stellar.OperationResultEncodeResponse> EncodeOperationResult =
             new Method<Stellar.OperationResultEncodeRequest, Stellar.OperationResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6507,7 +6507,7 @@ namespace Stellar.RPC.AOT
                 OperationResultEncodeResponseGrpcMarshaller.OperationResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeOperationResult</summary>
-        public static readonly Method<Stellar.OperationResultDecodeRequest, Stellar.OperationResultDecodeResponse> DecodeOperationResultMethod =
+        public static readonly Method<Stellar.OperationResultDecodeRequest, Stellar.OperationResultDecodeResponse> DecodeOperationResult =
             new Method<Stellar.OperationResultDecodeRequest, Stellar.OperationResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6516,7 +6516,7 @@ namespace Stellar.RPC.AOT
                 OperationResultDecodeResponseGrpcMarshaller.OperationResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionResultCode</summary>
-        public static readonly Method<Stellar.TransactionResultCodeEncodeRequest, Stellar.TransactionResultCodeEncodeResponse> EncodeTransactionResultCodeMethod =
+        public static readonly Method<Stellar.TransactionResultCodeEncodeRequest, Stellar.TransactionResultCodeEncodeResponse> EncodeTransactionResultCode =
             new Method<Stellar.TransactionResultCodeEncodeRequest, Stellar.TransactionResultCodeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6525,7 +6525,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultCodeEncodeResponseGrpcMarshaller.TransactionResultCodeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionResultCode</summary>
-        public static readonly Method<Stellar.TransactionResultCodeDecodeRequest, Stellar.TransactionResultCodeDecodeResponse> DecodeTransactionResultCodeMethod =
+        public static readonly Method<Stellar.TransactionResultCodeDecodeRequest, Stellar.TransactionResultCodeDecodeResponse> DecodeTransactionResultCode =
             new Method<Stellar.TransactionResultCodeDecodeRequest, Stellar.TransactionResultCodeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6534,7 +6534,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultCodeDecodeResponseGrpcMarshaller.TransactionResultCodeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInnerTransactionResult</summary>
-        public static readonly Method<Stellar.InnerTransactionResultEncodeRequest, Stellar.InnerTransactionResultEncodeResponse> EncodeInnerTransactionResultMethod =
+        public static readonly Method<Stellar.InnerTransactionResultEncodeRequest, Stellar.InnerTransactionResultEncodeResponse> EncodeInnerTransactionResult =
             new Method<Stellar.InnerTransactionResultEncodeRequest, Stellar.InnerTransactionResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6543,7 +6543,7 @@ namespace Stellar.RPC.AOT
                 InnerTransactionResultEncodeResponseGrpcMarshaller.InnerTransactionResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInnerTransactionResult</summary>
-        public static readonly Method<Stellar.InnerTransactionResultDecodeRequest, Stellar.InnerTransactionResultDecodeResponse> DecodeInnerTransactionResultMethod =
+        public static readonly Method<Stellar.InnerTransactionResultDecodeRequest, Stellar.InnerTransactionResultDecodeResponse> DecodeInnerTransactionResult =
             new Method<Stellar.InnerTransactionResultDecodeRequest, Stellar.InnerTransactionResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6552,7 +6552,7 @@ namespace Stellar.RPC.AOT
                 InnerTransactionResultDecodeResponseGrpcMarshaller.InnerTransactionResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeInnerTransactionResultPair</summary>
-        public static readonly Method<Stellar.InnerTransactionResultPairEncodeRequest, Stellar.InnerTransactionResultPairEncodeResponse> EncodeInnerTransactionResultPairMethod =
+        public static readonly Method<Stellar.InnerTransactionResultPairEncodeRequest, Stellar.InnerTransactionResultPairEncodeResponse> EncodeInnerTransactionResultPair =
             new Method<Stellar.InnerTransactionResultPairEncodeRequest, Stellar.InnerTransactionResultPairEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6561,7 +6561,7 @@ namespace Stellar.RPC.AOT
                 InnerTransactionResultPairEncodeResponseGrpcMarshaller.InnerTransactionResultPairEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeInnerTransactionResultPair</summary>
-        public static readonly Method<Stellar.InnerTransactionResultPairDecodeRequest, Stellar.InnerTransactionResultPairDecodeResponse> DecodeInnerTransactionResultPairMethod =
+        public static readonly Method<Stellar.InnerTransactionResultPairDecodeRequest, Stellar.InnerTransactionResultPairDecodeResponse> DecodeInnerTransactionResultPair =
             new Method<Stellar.InnerTransactionResultPairDecodeRequest, Stellar.InnerTransactionResultPairDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6570,7 +6570,7 @@ namespace Stellar.RPC.AOT
                 InnerTransactionResultPairDecodeResponseGrpcMarshaller.InnerTransactionResultPairDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTransactionResult</summary>
-        public static readonly Method<Stellar.TransactionResultEncodeRequest, Stellar.TransactionResultEncodeResponse> EncodeTransactionResultMethod =
+        public static readonly Method<Stellar.TransactionResultEncodeRequest, Stellar.TransactionResultEncodeResponse> EncodeTransactionResult =
             new Method<Stellar.TransactionResultEncodeRequest, Stellar.TransactionResultEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6579,7 +6579,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultEncodeResponseGrpcMarshaller.TransactionResultEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTransactionResult</summary>
-        public static readonly Method<Stellar.TransactionResultDecodeRequest, Stellar.TransactionResultDecodeResponse> DecodeTransactionResultMethod =
+        public static readonly Method<Stellar.TransactionResultDecodeRequest, Stellar.TransactionResultDecodeResponse> DecodeTransactionResult =
             new Method<Stellar.TransactionResultDecodeRequest, Stellar.TransactionResultDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6588,7 +6588,7 @@ namespace Stellar.RPC.AOT
                 TransactionResultDecodeResponseGrpcMarshaller.TransactionResultDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHash</summary>
-        public static readonly Method<Stellar.HashEncodeRequest, Stellar.HashEncodeResponse> EncodeHashMethod =
+        public static readonly Method<Stellar.HashEncodeRequest, Stellar.HashEncodeResponse> EncodeHash =
             new Method<Stellar.HashEncodeRequest, Stellar.HashEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6597,7 +6597,7 @@ namespace Stellar.RPC.AOT
                 HashEncodeResponseGrpcMarshaller.HashEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHash</summary>
-        public static readonly Method<Stellar.HashDecodeRequest, Stellar.HashDecodeResponse> DecodeHashMethod =
+        public static readonly Method<Stellar.HashDecodeRequest, Stellar.HashDecodeResponse> DecodeHash =
             new Method<Stellar.HashDecodeRequest, Stellar.HashDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6606,7 +6606,7 @@ namespace Stellar.RPC.AOT
                 HashDecodeResponseGrpcMarshaller.HashDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodeuint256</summary>
-        public static readonly Method<Stellar.uint256EncodeRequest, Stellar.uint256EncodeResponse> Encodeuint256Method =
+        public static readonly Method<Stellar.uint256EncodeRequest, Stellar.uint256EncodeResponse> Encodeuint256 =
             new Method<Stellar.uint256EncodeRequest, Stellar.uint256EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6615,7 +6615,7 @@ namespace Stellar.RPC.AOT
                 uint256EncodeResponseGrpcMarshaller.uint256EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodeuint256</summary>
-        public static readonly Method<Stellar.uint256DecodeRequest, Stellar.uint256DecodeResponse> Decodeuint256Method =
+        public static readonly Method<Stellar.uint256DecodeRequest, Stellar.uint256DecodeResponse> Decodeuint256 =
             new Method<Stellar.uint256DecodeRequest, Stellar.uint256DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6624,7 +6624,7 @@ namespace Stellar.RPC.AOT
                 uint256DecodeResponseGrpcMarshaller.uint256DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodeuint32</summary>
-        public static readonly Method<Stellar.uint32EncodeRequest, Stellar.uint32EncodeResponse> Encodeuint32Method =
+        public static readonly Method<Stellar.uint32EncodeRequest, Stellar.uint32EncodeResponse> Encodeuint32 =
             new Method<Stellar.uint32EncodeRequest, Stellar.uint32EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6633,7 +6633,7 @@ namespace Stellar.RPC.AOT
                 uint32EncodeResponseGrpcMarshaller.uint32EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodeuint32</summary>
-        public static readonly Method<Stellar.uint32DecodeRequest, Stellar.uint32DecodeResponse> Decodeuint32Method =
+        public static readonly Method<Stellar.uint32DecodeRequest, Stellar.uint32DecodeResponse> Decodeuint32 =
             new Method<Stellar.uint32DecodeRequest, Stellar.uint32DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6642,7 +6642,7 @@ namespace Stellar.RPC.AOT
                 uint32DecodeResponseGrpcMarshaller.uint32DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodeint32</summary>
-        public static readonly Method<Stellar.int32EncodeRequest, Stellar.int32EncodeResponse> Encodeint32Method =
+        public static readonly Method<Stellar.int32EncodeRequest, Stellar.int32EncodeResponse> Encodeint32 =
             new Method<Stellar.int32EncodeRequest, Stellar.int32EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6651,7 +6651,7 @@ namespace Stellar.RPC.AOT
                 int32EncodeResponseGrpcMarshaller.int32EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodeint32</summary>
-        public static readonly Method<Stellar.int32DecodeRequest, Stellar.int32DecodeResponse> Decodeint32Method =
+        public static readonly Method<Stellar.int32DecodeRequest, Stellar.int32DecodeResponse> Decodeint32 =
             new Method<Stellar.int32DecodeRequest, Stellar.int32DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6660,7 +6660,7 @@ namespace Stellar.RPC.AOT
                 int32DecodeResponseGrpcMarshaller.int32DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodeuint64</summary>
-        public static readonly Method<Stellar.uint64EncodeRequest, Stellar.uint64EncodeResponse> Encodeuint64Method =
+        public static readonly Method<Stellar.uint64EncodeRequest, Stellar.uint64EncodeResponse> Encodeuint64 =
             new Method<Stellar.uint64EncodeRequest, Stellar.uint64EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6669,7 +6669,7 @@ namespace Stellar.RPC.AOT
                 uint64EncodeResponseGrpcMarshaller.uint64EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodeuint64</summary>
-        public static readonly Method<Stellar.uint64DecodeRequest, Stellar.uint64DecodeResponse> Decodeuint64Method =
+        public static readonly Method<Stellar.uint64DecodeRequest, Stellar.uint64DecodeResponse> Decodeuint64 =
             new Method<Stellar.uint64DecodeRequest, Stellar.uint64DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6678,7 +6678,7 @@ namespace Stellar.RPC.AOT
                 uint64DecodeResponseGrpcMarshaller.uint64DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for Encodeint64</summary>
-        public static readonly Method<Stellar.int64EncodeRequest, Stellar.int64EncodeResponse> Encodeint64Method =
+        public static readonly Method<Stellar.int64EncodeRequest, Stellar.int64EncodeResponse> Encodeint64 =
             new Method<Stellar.int64EncodeRequest, Stellar.int64EncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6687,7 +6687,7 @@ namespace Stellar.RPC.AOT
                 int64EncodeResponseGrpcMarshaller.int64EncodeResponseMarshaller);
 
         /// <summary>Method descriptor for Decodeint64</summary>
-        public static readonly Method<Stellar.int64DecodeRequest, Stellar.int64DecodeResponse> Decodeint64Method =
+        public static readonly Method<Stellar.int64DecodeRequest, Stellar.int64DecodeResponse> Decodeint64 =
             new Method<Stellar.int64DecodeRequest, Stellar.int64DecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6696,7 +6696,7 @@ namespace Stellar.RPC.AOT
                 int64DecodeResponseGrpcMarshaller.int64DecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeTimePoint</summary>
-        public static readonly Method<Stellar.TimePointEncodeRequest, Stellar.TimePointEncodeResponse> EncodeTimePointMethod =
+        public static readonly Method<Stellar.TimePointEncodeRequest, Stellar.TimePointEncodeResponse> EncodeTimePoint =
             new Method<Stellar.TimePointEncodeRequest, Stellar.TimePointEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6705,7 +6705,7 @@ namespace Stellar.RPC.AOT
                 TimePointEncodeResponseGrpcMarshaller.TimePointEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeTimePoint</summary>
-        public static readonly Method<Stellar.TimePointDecodeRequest, Stellar.TimePointDecodeResponse> DecodeTimePointMethod =
+        public static readonly Method<Stellar.TimePointDecodeRequest, Stellar.TimePointDecodeResponse> DecodeTimePoint =
             new Method<Stellar.TimePointDecodeRequest, Stellar.TimePointDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6714,7 +6714,7 @@ namespace Stellar.RPC.AOT
                 TimePointDecodeResponseGrpcMarshaller.TimePointDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeDuration</summary>
-        public static readonly Method<Stellar.DurationEncodeRequest, Stellar.DurationEncodeResponse> EncodeDurationMethod =
+        public static readonly Method<Stellar.DurationEncodeRequest, Stellar.DurationEncodeResponse> EncodeDuration =
             new Method<Stellar.DurationEncodeRequest, Stellar.DurationEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6723,7 +6723,7 @@ namespace Stellar.RPC.AOT
                 DurationEncodeResponseGrpcMarshaller.DurationEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeDuration</summary>
-        public static readonly Method<Stellar.DurationDecodeRequest, Stellar.DurationDecodeResponse> DecodeDurationMethod =
+        public static readonly Method<Stellar.DurationDecodeRequest, Stellar.DurationDecodeResponse> DecodeDuration =
             new Method<Stellar.DurationDecodeRequest, Stellar.DurationDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6732,7 +6732,7 @@ namespace Stellar.RPC.AOT
                 DurationDecodeResponseGrpcMarshaller.DurationDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeExtensionPoint</summary>
-        public static readonly Method<Stellar.ExtensionPointEncodeRequest, Stellar.ExtensionPointEncodeResponse> EncodeExtensionPointMethod =
+        public static readonly Method<Stellar.ExtensionPointEncodeRequest, Stellar.ExtensionPointEncodeResponse> EncodeExtensionPoint =
             new Method<Stellar.ExtensionPointEncodeRequest, Stellar.ExtensionPointEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6741,7 +6741,7 @@ namespace Stellar.RPC.AOT
                 ExtensionPointEncodeResponseGrpcMarshaller.ExtensionPointEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeExtensionPoint</summary>
-        public static readonly Method<Stellar.ExtensionPointDecodeRequest, Stellar.ExtensionPointDecodeResponse> DecodeExtensionPointMethod =
+        public static readonly Method<Stellar.ExtensionPointDecodeRequest, Stellar.ExtensionPointDecodeResponse> DecodeExtensionPoint =
             new Method<Stellar.ExtensionPointDecodeRequest, Stellar.ExtensionPointDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6750,7 +6750,7 @@ namespace Stellar.RPC.AOT
                 ExtensionPointDecodeResponseGrpcMarshaller.ExtensionPointDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCryptoKeyType</summary>
-        public static readonly Method<Stellar.CryptoKeyTypeEncodeRequest, Stellar.CryptoKeyTypeEncodeResponse> EncodeCryptoKeyTypeMethod =
+        public static readonly Method<Stellar.CryptoKeyTypeEncodeRequest, Stellar.CryptoKeyTypeEncodeResponse> EncodeCryptoKeyType =
             new Method<Stellar.CryptoKeyTypeEncodeRequest, Stellar.CryptoKeyTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6759,7 +6759,7 @@ namespace Stellar.RPC.AOT
                 CryptoKeyTypeEncodeResponseGrpcMarshaller.CryptoKeyTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCryptoKeyType</summary>
-        public static readonly Method<Stellar.CryptoKeyTypeDecodeRequest, Stellar.CryptoKeyTypeDecodeResponse> DecodeCryptoKeyTypeMethod =
+        public static readonly Method<Stellar.CryptoKeyTypeDecodeRequest, Stellar.CryptoKeyTypeDecodeResponse> DecodeCryptoKeyType =
             new Method<Stellar.CryptoKeyTypeDecodeRequest, Stellar.CryptoKeyTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6768,7 +6768,7 @@ namespace Stellar.RPC.AOT
                 CryptoKeyTypeDecodeResponseGrpcMarshaller.CryptoKeyTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePublicKeyType</summary>
-        public static readonly Method<Stellar.PublicKeyTypeEncodeRequest, Stellar.PublicKeyTypeEncodeResponse> EncodePublicKeyTypeMethod =
+        public static readonly Method<Stellar.PublicKeyTypeEncodeRequest, Stellar.PublicKeyTypeEncodeResponse> EncodePublicKeyType =
             new Method<Stellar.PublicKeyTypeEncodeRequest, Stellar.PublicKeyTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6777,7 +6777,7 @@ namespace Stellar.RPC.AOT
                 PublicKeyTypeEncodeResponseGrpcMarshaller.PublicKeyTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePublicKeyType</summary>
-        public static readonly Method<Stellar.PublicKeyTypeDecodeRequest, Stellar.PublicKeyTypeDecodeResponse> DecodePublicKeyTypeMethod =
+        public static readonly Method<Stellar.PublicKeyTypeDecodeRequest, Stellar.PublicKeyTypeDecodeResponse> DecodePublicKeyType =
             new Method<Stellar.PublicKeyTypeDecodeRequest, Stellar.PublicKeyTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6786,7 +6786,7 @@ namespace Stellar.RPC.AOT
                 PublicKeyTypeDecodeResponseGrpcMarshaller.PublicKeyTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignerKeyType</summary>
-        public static readonly Method<Stellar.SignerKeyTypeEncodeRequest, Stellar.SignerKeyTypeEncodeResponse> EncodeSignerKeyTypeMethod =
+        public static readonly Method<Stellar.SignerKeyTypeEncodeRequest, Stellar.SignerKeyTypeEncodeResponse> EncodeSignerKeyType =
             new Method<Stellar.SignerKeyTypeEncodeRequest, Stellar.SignerKeyTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6795,7 +6795,7 @@ namespace Stellar.RPC.AOT
                 SignerKeyTypeEncodeResponseGrpcMarshaller.SignerKeyTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignerKeyType</summary>
-        public static readonly Method<Stellar.SignerKeyTypeDecodeRequest, Stellar.SignerKeyTypeDecodeResponse> DecodeSignerKeyTypeMethod =
+        public static readonly Method<Stellar.SignerKeyTypeDecodeRequest, Stellar.SignerKeyTypeDecodeResponse> DecodeSignerKeyType =
             new Method<Stellar.SignerKeyTypeDecodeRequest, Stellar.SignerKeyTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6804,7 +6804,7 @@ namespace Stellar.RPC.AOT
                 SignerKeyTypeDecodeResponseGrpcMarshaller.SignerKeyTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodePublicKey</summary>
-        public static readonly Method<Stellar.PublicKeyEncodeRequest, Stellar.PublicKeyEncodeResponse> EncodePublicKeyMethod =
+        public static readonly Method<Stellar.PublicKeyEncodeRequest, Stellar.PublicKeyEncodeResponse> EncodePublicKey =
             new Method<Stellar.PublicKeyEncodeRequest, Stellar.PublicKeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6813,7 +6813,7 @@ namespace Stellar.RPC.AOT
                 PublicKeyEncodeResponseGrpcMarshaller.PublicKeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodePublicKey</summary>
-        public static readonly Method<Stellar.PublicKeyDecodeRequest, Stellar.PublicKeyDecodeResponse> DecodePublicKeyMethod =
+        public static readonly Method<Stellar.PublicKeyDecodeRequest, Stellar.PublicKeyDecodeResponse> DecodePublicKey =
             new Method<Stellar.PublicKeyDecodeRequest, Stellar.PublicKeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6822,7 +6822,7 @@ namespace Stellar.RPC.AOT
                 PublicKeyDecodeResponseGrpcMarshaller.PublicKeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignerKey</summary>
-        public static readonly Method<Stellar.SignerKeyEncodeRequest, Stellar.SignerKeyEncodeResponse> EncodeSignerKeyMethod =
+        public static readonly Method<Stellar.SignerKeyEncodeRequest, Stellar.SignerKeyEncodeResponse> EncodeSignerKey =
             new Method<Stellar.SignerKeyEncodeRequest, Stellar.SignerKeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6831,7 +6831,7 @@ namespace Stellar.RPC.AOT
                 SignerKeyEncodeResponseGrpcMarshaller.SignerKeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignerKey</summary>
-        public static readonly Method<Stellar.SignerKeyDecodeRequest, Stellar.SignerKeyDecodeResponse> DecodeSignerKeyMethod =
+        public static readonly Method<Stellar.SignerKeyDecodeRequest, Stellar.SignerKeyDecodeResponse> DecodeSignerKey =
             new Method<Stellar.SignerKeyDecodeRequest, Stellar.SignerKeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6840,7 +6840,7 @@ namespace Stellar.RPC.AOT
                 SignerKeyDecodeResponseGrpcMarshaller.SignerKeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignature</summary>
-        public static readonly Method<Stellar.SignatureEncodeRequest, Stellar.SignatureEncodeResponse> EncodeSignatureMethod =
+        public static readonly Method<Stellar.SignatureEncodeRequest, Stellar.SignatureEncodeResponse> EncodeSignature =
             new Method<Stellar.SignatureEncodeRequest, Stellar.SignatureEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6849,7 +6849,7 @@ namespace Stellar.RPC.AOT
                 SignatureEncodeResponseGrpcMarshaller.SignatureEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignature</summary>
-        public static readonly Method<Stellar.SignatureDecodeRequest, Stellar.SignatureDecodeResponse> DecodeSignatureMethod =
+        public static readonly Method<Stellar.SignatureDecodeRequest, Stellar.SignatureDecodeResponse> DecodeSignature =
             new Method<Stellar.SignatureDecodeRequest, Stellar.SignatureDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6858,7 +6858,7 @@ namespace Stellar.RPC.AOT
                 SignatureDecodeResponseGrpcMarshaller.SignatureDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSignatureHint</summary>
-        public static readonly Method<Stellar.SignatureHintEncodeRequest, Stellar.SignatureHintEncodeResponse> EncodeSignatureHintMethod =
+        public static readonly Method<Stellar.SignatureHintEncodeRequest, Stellar.SignatureHintEncodeResponse> EncodeSignatureHint =
             new Method<Stellar.SignatureHintEncodeRequest, Stellar.SignatureHintEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6867,7 +6867,7 @@ namespace Stellar.RPC.AOT
                 SignatureHintEncodeResponseGrpcMarshaller.SignatureHintEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSignatureHint</summary>
-        public static readonly Method<Stellar.SignatureHintDecodeRequest, Stellar.SignatureHintDecodeResponse> DecodeSignatureHintMethod =
+        public static readonly Method<Stellar.SignatureHintDecodeRequest, Stellar.SignatureHintDecodeResponse> DecodeSignatureHint =
             new Method<Stellar.SignatureHintDecodeRequest, Stellar.SignatureHintDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6876,7 +6876,7 @@ namespace Stellar.RPC.AOT
                 SignatureHintDecodeResponseGrpcMarshaller.SignatureHintDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeNodeID</summary>
-        public static readonly Method<Stellar.NodeIDEncodeRequest, Stellar.NodeIDEncodeResponse> EncodeNodeIDMethod =
+        public static readonly Method<Stellar.NodeIDEncodeRequest, Stellar.NodeIDEncodeResponse> EncodeNodeID =
             new Method<Stellar.NodeIDEncodeRequest, Stellar.NodeIDEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6885,7 +6885,7 @@ namespace Stellar.RPC.AOT
                 NodeIDEncodeResponseGrpcMarshaller.NodeIDEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeNodeID</summary>
-        public static readonly Method<Stellar.NodeIDDecodeRequest, Stellar.NodeIDDecodeResponse> DecodeNodeIDMethod =
+        public static readonly Method<Stellar.NodeIDDecodeRequest, Stellar.NodeIDDecodeResponse> DecodeNodeID =
             new Method<Stellar.NodeIDDecodeRequest, Stellar.NodeIDDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6894,7 +6894,7 @@ namespace Stellar.RPC.AOT
                 NodeIDDecodeResponseGrpcMarshaller.NodeIDDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeAccountID</summary>
-        public static readonly Method<Stellar.AccountIDEncodeRequest, Stellar.AccountIDEncodeResponse> EncodeAccountIDMethod =
+        public static readonly Method<Stellar.AccountIDEncodeRequest, Stellar.AccountIDEncodeResponse> EncodeAccountID =
             new Method<Stellar.AccountIDEncodeRequest, Stellar.AccountIDEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6903,7 +6903,7 @@ namespace Stellar.RPC.AOT
                 AccountIDEncodeResponseGrpcMarshaller.AccountIDEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeAccountID</summary>
-        public static readonly Method<Stellar.AccountIDDecodeRequest, Stellar.AccountIDDecodeResponse> DecodeAccountIDMethod =
+        public static readonly Method<Stellar.AccountIDDecodeRequest, Stellar.AccountIDDecodeResponse> DecodeAccountID =
             new Method<Stellar.AccountIDDecodeRequest, Stellar.AccountIDDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6912,7 +6912,7 @@ namespace Stellar.RPC.AOT
                 AccountIDDecodeResponseGrpcMarshaller.AccountIDDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCurve25519Secret</summary>
-        public static readonly Method<Stellar.Curve25519SecretEncodeRequest, Stellar.Curve25519SecretEncodeResponse> EncodeCurve25519SecretMethod =
+        public static readonly Method<Stellar.Curve25519SecretEncodeRequest, Stellar.Curve25519SecretEncodeResponse> EncodeCurve25519Secret =
             new Method<Stellar.Curve25519SecretEncodeRequest, Stellar.Curve25519SecretEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6921,7 +6921,7 @@ namespace Stellar.RPC.AOT
                 Curve25519SecretEncodeResponseGrpcMarshaller.Curve25519SecretEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCurve25519Secret</summary>
-        public static readonly Method<Stellar.Curve25519SecretDecodeRequest, Stellar.Curve25519SecretDecodeResponse> DecodeCurve25519SecretMethod =
+        public static readonly Method<Stellar.Curve25519SecretDecodeRequest, Stellar.Curve25519SecretDecodeResponse> DecodeCurve25519Secret =
             new Method<Stellar.Curve25519SecretDecodeRequest, Stellar.Curve25519SecretDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6930,7 +6930,7 @@ namespace Stellar.RPC.AOT
                 Curve25519SecretDecodeResponseGrpcMarshaller.Curve25519SecretDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeCurve25519Public</summary>
-        public static readonly Method<Stellar.Curve25519PublicEncodeRequest, Stellar.Curve25519PublicEncodeResponse> EncodeCurve25519PublicMethod =
+        public static readonly Method<Stellar.Curve25519PublicEncodeRequest, Stellar.Curve25519PublicEncodeResponse> EncodeCurve25519Public =
             new Method<Stellar.Curve25519PublicEncodeRequest, Stellar.Curve25519PublicEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6939,7 +6939,7 @@ namespace Stellar.RPC.AOT
                 Curve25519PublicEncodeResponseGrpcMarshaller.Curve25519PublicEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeCurve25519Public</summary>
-        public static readonly Method<Stellar.Curve25519PublicDecodeRequest, Stellar.Curve25519PublicDecodeResponse> DecodeCurve25519PublicMethod =
+        public static readonly Method<Stellar.Curve25519PublicDecodeRequest, Stellar.Curve25519PublicDecodeResponse> DecodeCurve25519Public =
             new Method<Stellar.Curve25519PublicDecodeRequest, Stellar.Curve25519PublicDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6948,7 +6948,7 @@ namespace Stellar.RPC.AOT
                 Curve25519PublicDecodeResponseGrpcMarshaller.Curve25519PublicDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHmacSha256Key</summary>
-        public static readonly Method<Stellar.HmacSha256KeyEncodeRequest, Stellar.HmacSha256KeyEncodeResponse> EncodeHmacSha256KeyMethod =
+        public static readonly Method<Stellar.HmacSha256KeyEncodeRequest, Stellar.HmacSha256KeyEncodeResponse> EncodeHmacSha256Key =
             new Method<Stellar.HmacSha256KeyEncodeRequest, Stellar.HmacSha256KeyEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6957,7 +6957,7 @@ namespace Stellar.RPC.AOT
                 HmacSha256KeyEncodeResponseGrpcMarshaller.HmacSha256KeyEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHmacSha256Key</summary>
-        public static readonly Method<Stellar.HmacSha256KeyDecodeRequest, Stellar.HmacSha256KeyDecodeResponse> DecodeHmacSha256KeyMethod =
+        public static readonly Method<Stellar.HmacSha256KeyDecodeRequest, Stellar.HmacSha256KeyDecodeResponse> DecodeHmacSha256Key =
             new Method<Stellar.HmacSha256KeyDecodeRequest, Stellar.HmacSha256KeyDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6966,7 +6966,7 @@ namespace Stellar.RPC.AOT
                 HmacSha256KeyDecodeResponseGrpcMarshaller.HmacSha256KeyDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeHmacSha256Mac</summary>
-        public static readonly Method<Stellar.HmacSha256MacEncodeRequest, Stellar.HmacSha256MacEncodeResponse> EncodeHmacSha256MacMethod =
+        public static readonly Method<Stellar.HmacSha256MacEncodeRequest, Stellar.HmacSha256MacEncodeResponse> EncodeHmacSha256Mac =
             new Method<Stellar.HmacSha256MacEncodeRequest, Stellar.HmacSha256MacEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6975,7 +6975,7 @@ namespace Stellar.RPC.AOT
                 HmacSha256MacEncodeResponseGrpcMarshaller.HmacSha256MacEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeHmacSha256Mac</summary>
-        public static readonly Method<Stellar.HmacSha256MacDecodeRequest, Stellar.HmacSha256MacDecodeResponse> DecodeHmacSha256MacMethod =
+        public static readonly Method<Stellar.HmacSha256MacDecodeRequest, Stellar.HmacSha256MacDecodeResponse> DecodeHmacSha256Mac =
             new Method<Stellar.HmacSha256MacDecodeRequest, Stellar.HmacSha256MacDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6984,7 +6984,7 @@ namespace Stellar.RPC.AOT
                 HmacSha256MacDecodeResponseGrpcMarshaller.HmacSha256MacDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeShortHashSeed</summary>
-        public static readonly Method<Stellar.ShortHashSeedEncodeRequest, Stellar.ShortHashSeedEncodeResponse> EncodeShortHashSeedMethod =
+        public static readonly Method<Stellar.ShortHashSeedEncodeRequest, Stellar.ShortHashSeedEncodeResponse> EncodeShortHashSeed =
             new Method<Stellar.ShortHashSeedEncodeRequest, Stellar.ShortHashSeedEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -6993,7 +6993,7 @@ namespace Stellar.RPC.AOT
                 ShortHashSeedEncodeResponseGrpcMarshaller.ShortHashSeedEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeShortHashSeed</summary>
-        public static readonly Method<Stellar.ShortHashSeedDecodeRequest, Stellar.ShortHashSeedDecodeResponse> DecodeShortHashSeedMethod =
+        public static readonly Method<Stellar.ShortHashSeedDecodeRequest, Stellar.ShortHashSeedDecodeResponse> DecodeShortHashSeed =
             new Method<Stellar.ShortHashSeedDecodeRequest, Stellar.ShortHashSeedDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -7002,7 +7002,7 @@ namespace Stellar.RPC.AOT
                 ShortHashSeedDecodeResponseGrpcMarshaller.ShortHashSeedDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeBinaryFuseFilterType</summary>
-        public static readonly Method<Stellar.BinaryFuseFilterTypeEncodeRequest, Stellar.BinaryFuseFilterTypeEncodeResponse> EncodeBinaryFuseFilterTypeMethod =
+        public static readonly Method<Stellar.BinaryFuseFilterTypeEncodeRequest, Stellar.BinaryFuseFilterTypeEncodeResponse> EncodeBinaryFuseFilterType =
             new Method<Stellar.BinaryFuseFilterTypeEncodeRequest, Stellar.BinaryFuseFilterTypeEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -7011,7 +7011,7 @@ namespace Stellar.RPC.AOT
                 BinaryFuseFilterTypeEncodeResponseGrpcMarshaller.BinaryFuseFilterTypeEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeBinaryFuseFilterType</summary>
-        public static readonly Method<Stellar.BinaryFuseFilterTypeDecodeRequest, Stellar.BinaryFuseFilterTypeDecodeResponse> DecodeBinaryFuseFilterTypeMethod =
+        public static readonly Method<Stellar.BinaryFuseFilterTypeDecodeRequest, Stellar.BinaryFuseFilterTypeDecodeResponse> DecodeBinaryFuseFilterType =
             new Method<Stellar.BinaryFuseFilterTypeDecodeRequest, Stellar.BinaryFuseFilterTypeDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -7020,7 +7020,7 @@ namespace Stellar.RPC.AOT
                 BinaryFuseFilterTypeDecodeResponseGrpcMarshaller.BinaryFuseFilterTypeDecodeResponseMarshaller);
 
         /// <summary>Method descriptor for EncodeSerializedBinaryFuseFilter</summary>
-        public static readonly Method<Stellar.SerializedBinaryFuseFilterEncodeRequest, Stellar.SerializedBinaryFuseFilterEncodeResponse> EncodeSerializedBinaryFuseFilterMethod =
+        public static readonly Method<Stellar.SerializedBinaryFuseFilterEncodeRequest, Stellar.SerializedBinaryFuseFilterEncodeResponse> EncodeSerializedBinaryFuseFilter =
             new Method<Stellar.SerializedBinaryFuseFilterEncodeRequest, Stellar.SerializedBinaryFuseFilterEncodeResponse>(
                 MethodType.Unary,
                 ServiceName,
@@ -7029,7 +7029,7 @@ namespace Stellar.RPC.AOT
                 SerializedBinaryFuseFilterEncodeResponseGrpcMarshaller.SerializedBinaryFuseFilterEncodeResponseMarshaller);
 
         /// <summary>Method descriptor for DecodeSerializedBinaryFuseFilter</summary>
-        public static readonly Method<Stellar.SerializedBinaryFuseFilterDecodeRequest, Stellar.SerializedBinaryFuseFilterDecodeResponse> DecodeSerializedBinaryFuseFilterMethod =
+        public static readonly Method<Stellar.SerializedBinaryFuseFilterDecodeRequest, Stellar.SerializedBinaryFuseFilterDecodeResponse> DecodeSerializedBinaryFuseFilter =
             new Method<Stellar.SerializedBinaryFuseFilterDecodeRequest, Stellar.SerializedBinaryFuseFilterDecodeResponse>(
                 MethodType.Unary,
                 ServiceName,

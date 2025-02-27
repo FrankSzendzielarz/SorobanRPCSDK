@@ -18,7 +18,7 @@ namespace Stellar.RPC.AOT
         public const string ServiceName = "Stellar.RPC.SimulateTransactionResult_ProtoWrapper";
 
         /// <summary>Method descriptor for ApplyTo</summary>
-        public static readonly Method<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam, Stellar.Transaction> ApplyToMethod =
+        public static readonly Method<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam, Stellar.Transaction> ApplyTo =
             new Method<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam, Stellar.Transaction>(
                 MethodType.Unary,
                 ServiceName,

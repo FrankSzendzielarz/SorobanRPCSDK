@@ -18,7 +18,7 @@ namespace Stellar.RPC.AOT
         public const string ServiceName = "Stellar.RPC.StellarRPCClient";
 
         /// <summary>Method descriptor for GetEventsAsync</summary>
-        public static readonly Method<Stellar.RPC.GetEventsParams, Stellar.RPC.GetEventsResult> GetEventsAsyncMethod =
+        public static readonly Method<Stellar.RPC.GetEventsParams, Stellar.RPC.GetEventsResult> GetEventsAsync =
             new Method<Stellar.RPC.GetEventsParams, Stellar.RPC.GetEventsResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -26,8 +26,35 @@ namespace Stellar.RPC.AOT
                 GetEventsParamsGrpcMarshaller.GetEventsParamsMarshaller,
                 GetEventsResultGrpcMarshaller.GetEventsResultMarshaller);
 
+        /// <summary>Method descriptor for GetFeeStatsAsync</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetFeeStatsResult> GetFeeStatsAsync =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetFeeStatsResult>(
+                MethodType.Unary,
+                ServiceName,
+                "GetFeeStatsAsync",
+                EmptyGrpcMarshaller.EmptyMarshaller,
+                GetFeeStatsResultGrpcMarshaller.GetFeeStatsResultMarshaller);
+
+        /// <summary>Method descriptor for GetHealthAsync</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetHealthResult> GetHealthAsync =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetHealthResult>(
+                MethodType.Unary,
+                ServiceName,
+                "GetHealthAsync",
+                EmptyGrpcMarshaller.EmptyMarshaller,
+                GetHealthResultGrpcMarshaller.GetHealthResultMarshaller);
+
+        /// <summary>Method descriptor for GetLatestLedgerAsync</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetLatestLedgerResult> GetLatestLedgerAsync =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetLatestLedgerResult>(
+                MethodType.Unary,
+                ServiceName,
+                "GetLatestLedgerAsync",
+                EmptyGrpcMarshaller.EmptyMarshaller,
+                GetLatestLedgerResultGrpcMarshaller.GetLatestLedgerResultMarshaller);
+
         /// <summary>Method descriptor for GetLedgerEntriesAsync</summary>
-        public static readonly Method<Stellar.RPC.GetLedgerEntriesParams, Stellar.RPC.GetLedgerEntriesResult> GetLedgerEntriesAsyncMethod =
+        public static readonly Method<Stellar.RPC.GetLedgerEntriesParams, Stellar.RPC.GetLedgerEntriesResult> GetLedgerEntriesAsync =
             new Method<Stellar.RPC.GetLedgerEntriesParams, Stellar.RPC.GetLedgerEntriesResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -35,8 +62,17 @@ namespace Stellar.RPC.AOT
                 GetLedgerEntriesParamsGrpcMarshaller.GetLedgerEntriesParamsMarshaller,
                 GetLedgerEntriesResultGrpcMarshaller.GetLedgerEntriesResultMarshaller);
 
+        /// <summary>Method descriptor for GetNetworkAsync</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetNetworkResult> GetNetworkAsync =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetNetworkResult>(
+                MethodType.Unary,
+                ServiceName,
+                "GetNetworkAsync",
+                EmptyGrpcMarshaller.EmptyMarshaller,
+                GetNetworkResultGrpcMarshaller.GetNetworkResultMarshaller);
+
         /// <summary>Method descriptor for GetTransactionAsync</summary>
-        public static readonly Method<Stellar.RPC.GetTransactionParams, Stellar.RPC.GetTransactionResult> GetTransactionAsyncMethod =
+        public static readonly Method<Stellar.RPC.GetTransactionParams, Stellar.RPC.GetTransactionResult> GetTransactionAsync =
             new Method<Stellar.RPC.GetTransactionParams, Stellar.RPC.GetTransactionResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -45,7 +81,7 @@ namespace Stellar.RPC.AOT
                 GetTransactionResultGrpcMarshaller.GetTransactionResultMarshaller);
 
         /// <summary>Method descriptor for GetTransactionsAsync</summary>
-        public static readonly Method<Stellar.RPC.GetTransactionsParams, Stellar.RPC.GetTransactionsResult> GetTransactionsAsyncMethod =
+        public static readonly Method<Stellar.RPC.GetTransactionsParams, Stellar.RPC.GetTransactionsResult> GetTransactionsAsync =
             new Method<Stellar.RPC.GetTransactionsParams, Stellar.RPC.GetTransactionsResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -53,8 +89,17 @@ namespace Stellar.RPC.AOT
                 GetTransactionsParamsGrpcMarshaller.GetTransactionsParamsMarshaller,
                 GetTransactionsResultGrpcMarshaller.GetTransactionsResultMarshaller);
 
+        /// <summary>Method descriptor for GetVersionInfoAsync</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetVersionInfoResult> GetVersionInfoAsync =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.RPC.GetVersionInfoResult>(
+                MethodType.Unary,
+                ServiceName,
+                "GetVersionInfoAsync",
+                EmptyGrpcMarshaller.EmptyMarshaller,
+                GetVersionInfoResultGrpcMarshaller.GetVersionInfoResultMarshaller);
+
         /// <summary>Method descriptor for SendTransactionAsync</summary>
-        public static readonly Method<Stellar.RPC.SendTransactionParams, Stellar.RPC.SendTransactionResult> SendTransactionAsyncMethod =
+        public static readonly Method<Stellar.RPC.SendTransactionParams, Stellar.RPC.SendTransactionResult> SendTransactionAsync =
             new Method<Stellar.RPC.SendTransactionParams, Stellar.RPC.SendTransactionResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -63,7 +108,7 @@ namespace Stellar.RPC.AOT
                 SendTransactionResultGrpcMarshaller.SendTransactionResultMarshaller);
 
         /// <summary>Method descriptor for SimulateTransactionAsync</summary>
-        public static readonly Method<Stellar.RPC.SimulateTransactionParams, Stellar.RPC.SimulateTransactionResult> SimulateTransactionAsyncMethod =
+        public static readonly Method<Stellar.RPC.SimulateTransactionParams, Stellar.RPC.SimulateTransactionResult> SimulateTransactionAsync =
             new Method<Stellar.RPC.SimulateTransactionParams, Stellar.RPC.SimulateTransactionResult>(
                 MethodType.Unary,
                 ServiceName,
@@ -97,6 +142,18 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.RPC.GetEventsResult), true);
             }
+            if (!model.IsDefined(typeof(Stellar.RPC.GetFeeStatsResult)))
+            {
+                model.Add(typeof(Stellar.RPC.GetFeeStatsResult), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.RPC.GetHealthResult)))
+            {
+                model.Add(typeof(Stellar.RPC.GetHealthResult), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.RPC.GetLatestLedgerResult)))
+            {
+                model.Add(typeof(Stellar.RPC.GetLatestLedgerResult), true);
+            }
             if (!model.IsDefined(typeof(Stellar.RPC.GetLedgerEntriesParams)))
             {
                 model.Add(typeof(Stellar.RPC.GetLedgerEntriesParams), true);
@@ -104,6 +161,10 @@ namespace Stellar.RPC.AOT
             if (!model.IsDefined(typeof(Stellar.RPC.GetLedgerEntriesResult)))
             {
                 model.Add(typeof(Stellar.RPC.GetLedgerEntriesResult), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.RPC.GetNetworkResult)))
+            {
+                model.Add(typeof(Stellar.RPC.GetNetworkResult), true);
             }
             if (!model.IsDefined(typeof(Stellar.RPC.GetTransactionParams)))
             {
@@ -120,6 +181,10 @@ namespace Stellar.RPC.AOT
             if (!model.IsDefined(typeof(Stellar.RPC.GetTransactionsResult)))
             {
                 model.Add(typeof(Stellar.RPC.GetTransactionsResult), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.RPC.GetVersionInfoResult)))
+            {
+                model.Add(typeof(Stellar.RPC.GetVersionInfoResult), true);
             }
             if (!model.IsDefined(typeof(Stellar.RPC.SendTransactionParams)))
             {
@@ -204,6 +269,102 @@ namespace Stellar.RPC.AOT
                 }
             });
 
+        /// <summary>Marshaller for GetFeeStatsResult</summary>
+        public static readonly Marshaller<Stellar.RPC.GetFeeStatsResult> GetFeeStatsResultMarshaller = Marshallers.Create<Stellar.RPC.GetFeeStatsResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.GetFeeStatsResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for GetHealthResult</summary>
+        public static readonly Marshaller<Stellar.RPC.GetHealthResult> GetHealthResultMarshaller = Marshallers.Create<Stellar.RPC.GetHealthResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.GetHealthResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for GetLatestLedgerResult</summary>
+        public static readonly Marshaller<Stellar.RPC.GetLatestLedgerResult> GetLatestLedgerResultMarshaller = Marshallers.Create<Stellar.RPC.GetLatestLedgerResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.GetLatestLedgerResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
         /// <summary>Marshaller for GetLedgerEntriesParams</summary>
         public static readonly Marshaller<Stellar.RPC.GetLedgerEntriesParams> GetLedgerEntriesParamsMarshaller = Marshallers.Create<Stellar.RPC.GetLedgerEntriesParams>(
             (message, serializationContext) =>
@@ -260,6 +421,38 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.RPC.GetLedgerEntriesResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for GetNetworkResult</summary>
+        public static readonly Marshaller<Stellar.RPC.GetNetworkResult> GetNetworkResultMarshaller = Marshallers.Create<Stellar.RPC.GetNetworkResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.GetNetworkResult>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -388,6 +581,38 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.RPC.GetTransactionsResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for GetVersionInfoResult</summary>
+        public static readonly Marshaller<Stellar.RPC.GetVersionInfoResult> GetVersionInfoResultMarshaller = Marshallers.Create<Stellar.RPC.GetVersionInfoResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.GetVersionInfoResult>(ms);
                     }
                 }
                 catch (Exception ex)

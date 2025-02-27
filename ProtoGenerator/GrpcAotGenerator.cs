@@ -1,16 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+using ProtoBuf;
 using System.Reflection;
 using System.ServiceModel;
 using System.Text;
-using ProtoBuf;
-using ProtoBuf.Meta;
-using Grpc.Core;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Routing;
 
 namespace Stellar.RPC.Tools
 {
@@ -65,7 +56,8 @@ namespace Stellar.RPC.Tools
             {
                 GenerateTypeMarshaller(type);
             }
-
+            // Generate Empty marshaller for gRPC methods that use Empty
+            GenerateEmptyMarshaller();
             // Generate registration extensions
             GenerateRegistrationExtensions(serviceContracts, protoContractTypes);
         }
@@ -138,8 +130,9 @@ namespace Stellar.RPC.Tools
             // Find all public instance methods that could be service operations
             var operations = serviceContract.GetMethods()
                 .Where(m => m.IsPublic && !m.IsStatic && !m.IsSpecialName) // Public instance methods, excluding property accessors
-                .Where(m => m.GetParameters().Length > 0) // Must have at least one parameter (request)
-                .Where(m => m.ReturnType != typeof(void)) // Must return something
+                .Where(m => m.DeclaringType != typeof(object))
+                //    .Where(m => m.GetParameters().Length > 0) // Must have at least one parameter (request)
+                //     .Where(m => m.ReturnType != typeof(void)) // Must return something
                 .Where(m => m.Name != "Equals" && m.Name != "GetHashCode" && m.Name != "ToString")
                 .ToList();
 
@@ -185,21 +178,47 @@ namespace Stellar.RPC.Tools
             foreach (var operation in operations)
             {
                 var methodName = operation.Name;
-                if (methodName == "Equals") continue;
-                var requestType = operation.GetParameters().FirstOrDefault()?.ParameterType;
-                var responseType = operation.ReturnType.IsGenericType ?
-                    operation.ReturnType.GetGenericArguments()[0] :
-                    operation.ReturnType;
+                // Handle request parameter (may be Empty or null)
+                var requestParam = operation.GetParameters().FirstOrDefault();
+                var requestType = requestParam?.ParameterType;
+                string requestTypeName;
+                if (requestType == null || requestType.Name.Contains("Empty"))
+                {
+                    // Determine what type to use for Empty in your system
+                    requestType = typeof(Google.Protobuf.WellKnownTypes.Empty);
+                    requestTypeName = "Google.Protobuf.WellKnownTypes.Empty";
+                }
+                else
+                {
+                    requestTypeName = GetTypeNameWithDotSeparators(requestType);
+                }
+
+                var responseType = operation.ReturnType;
+                string responseTypeName;
+
+                if (responseType == typeof(void) || responseType.Name.Contains("Empty"))
+                {
+                    responseType = typeof(Google.Protobuf.WellKnownTypes.Empty);
+                    responseTypeName = "Google.Protobuf.WellKnownTypes.Empty";
+                }
+                else if (responseType.IsGenericType)
+                {
+                    responseType = responseType.GetGenericArguments()[0];
+                    responseTypeName = GetTypeNameWithDotSeparators(responseType);
+                }
+                else
+                {
+                    responseTypeName = GetTypeNameWithDotSeparators(responseType);
+                }
 
                 if (requestType == null || responseType == null)
                 {
                     Console.WriteLine($"  Warning: Skipping method {methodName} - cannot determine request or response type");
                     continue;
-                }   
+                }
 
                 // Get proper type names with dot notation
-                string requestTypeName = GetTypeNameWithDotSeparators(requestType);
-                string responseTypeName = GetTypeNameWithDotSeparators(responseType);
+
                 string requestMarshallerProperty = GetMarshallerPropertyName(requestType);
                 string responseMarshallerProperty = GetMarshallerPropertyName(responseType);
 
@@ -208,7 +227,7 @@ namespace Stellar.RPC.Tools
                 string responseMarshallerClass = GetCleanClassName(responseType) + "GrpcMarshaller";
 
                 sb.AppendLine($"        /// <summary>Method descriptor for {methodName}</summary>");
-                sb.AppendLine($"        public static readonly Method<{requestTypeName}, {responseTypeName}> {methodName}Method =");
+                sb.AppendLine($"        public static readonly Method<{requestTypeName}, {responseTypeName}> {methodName} =");
                 sb.AppendLine($"            new Method<{requestTypeName}, {responseTypeName}>(");
                 sb.AppendLine("                MethodType.Unary,");
                 sb.AppendLine($"                ServiceName,");
@@ -236,7 +255,7 @@ namespace Stellar.RPC.Tools
                     operation.ReturnType;
 
                 if (requestType != null) allTypes.Add(requestType);
-                if (responseType != null) allTypes.Add(responseType);
+                if (responseType != null && responseType != typeof(void)) allTypes.Add(responseType);
             }
 
             // Static constructor to configure types
@@ -258,9 +277,10 @@ namespace Stellar.RPC.Tools
 
             foreach (var type in allTypes)
             {
+                if (type == typeof(void)) continue;
                 // Use dot notation for typeof expressions - this is critical!
                 string typeNameWithDots = GetTypeNameWithDotSeparators(type);
-
+                  
                 sb.AppendLine($"            if (!model.IsDefined(typeof({typeNameWithDots})))");
                 sb.AppendLine("            {");
                 sb.AppendLine($"                model.Add(typeof({typeNameWithDots}), true);");
@@ -343,7 +363,18 @@ namespace Stellar.RPC.Tools
                     continue;
 
                 string requestTypeWithDots = GetTypeNameWithDotSeparators(requestType);
-                string responseTypeWithDots = GetTypeNameWithDotSeparators(responseType);
+                string responseTypeWithDots;
+                bool isVoidReturn = (responseType == typeof(void));
+
+                if (isVoidReturn)
+                {
+                    // Use Google.Protobuf.WellKnownTypes.Empty or equivalent
+                    responseTypeWithDots = "Google.Protobuf.WellKnownTypes.Empty";
+                }
+                else
+                {
+                    responseTypeWithDots = GetTypeNameWithDotSeparators(responseType);
+                }
 
                 var isAsync = operation.ReturnType.IsGenericType &&
                                 (operation.ReturnType.GetGenericTypeDefinition() == typeof(Task<>) ||
@@ -356,13 +387,31 @@ namespace Stellar.RPC.Tools
                 sb.AppendLine("            {");
                 sb.AppendLine($"                _logger.LogInformation(\"Processing {methodName} request\");");
 
-                if (isAsync)
+                if (isVoidReturn)
                 {
-                    sb.AppendLine($"                return await _service.{methodName}(request);");
+                    // Call the method but don't try to return its result
+                    if (isAsync)
+                    {
+                        sb.AppendLine($"                await _service.{methodName}(request);");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"                _service.{methodName}(request);");
+                    }
+                    // Return a new Empty instance
+                    sb.AppendLine($"                return new {responseTypeWithDots}();");
                 }
                 else
                 {
-                    sb.AppendLine($"                return _service.{methodName}(request);");
+                    // Normal return handling
+                    if (isAsync)
+                    {
+                        sb.AppendLine($"                return await _service.{methodName}(request);");
+                    }
+                    else
+                    {
+                        sb.AppendLine($"                return _service.{methodName}(request);");
+                    }
                 }
 
                 sb.AppendLine("            }");
@@ -524,17 +573,13 @@ namespace Stellar.RPC.Tools
             return $"{type.Namespace}.{string.Join(".", parts)}";
         }
 
-      
-
-      
-
 
 
         // Fix the GenerateTypeMarshaller method to use DOT notation consistently everywhere
         private void GenerateTypeMarshaller(Type type)
         {
             // Skip if this is a service
-            if (type.GetCustomAttributes(typeof(ServiceContractAttribute), true).Any())
+            if (type == typeof(void) ||  type.GetCustomAttributes(typeof(ServiceContractAttribute), true).Any())
                 return;
 
             // Get the clean type name for the marshaller class
@@ -587,11 +632,11 @@ namespace Stellar.RPC.Tools
             // Get the type name with dot notation for C# code
             string typeNameForCode = GetTypeNameWithDotSeparators(type);
 
-            
+
             PreserveProtobufAttributes(type, sb);
 
-     //       sb.AppendLine("            // Pre-compile serializer for AOT compatibility");
-     //       sb.AppendLine("            model.CompileInPlace();");
+            //       sb.AppendLine("            // Pre-compile serializer for AOT compatibility");
+            //       sb.AppendLine("            model.CompileInPlace();");
             sb.AppendLine("        }");
             sb.AppendLine();
 
@@ -808,8 +853,8 @@ namespace Stellar.RPC.Tools
 
                 var operations = serviceContract.GetMethods()
                     .Where(m => m.IsPublic && !m.IsStatic && !m.IsSpecialName)
-                    .Where(m => m.GetParameters().Length > 0)
-                    .Where(m => m.ReturnType != typeof(void))
+                    .Where(m => m.DeclaringType != typeof(object))
+                    .Where(m => m.Name != "Equals" && m.Name != "GetHashCode" && m.Name != "ToString")
                     .ToList();
 
                 if (!operations.Any())
@@ -819,17 +864,48 @@ namespace Stellar.RPC.Tools
                 foreach (var operation in operations)
                 {
                     var methodName = operation.Name;
-                    if (methodName == "Equals") continue;
-                    var requestType = operation.GetParameters().FirstOrDefault()?.ParameterType;
-                    var responseType = operation.ReturnType.IsGenericType ?
-                        operation.ReturnType.GetGenericArguments()[0] :
-                        operation.ReturnType;
+
+                    var requestParam = operation.GetParameters().FirstOrDefault();
+                    var requestType = requestParam?.ParameterType;
+                    string requestTypeFullName;
+
+                    if (requestType == null || requestType.Name.Contains("Empty"))
+                    {
+                        // Determine what type to use for Empty in your system
+                        requestType = typeof(Google.Protobuf.WellKnownTypes.Empty);
+                        requestTypeFullName = "Google.Protobuf.WellKnownTypes.Empty";
+                    }
+                    else
+                    {
+                        requestTypeFullName = GetFullTypeNameWithDots(requestType);
+                    }
+
+
+                    var responseType = operation.ReturnType;
+                    string responseTypeFullName;
+
+                    if (responseType == typeof(void) || responseType.Name.Contains("Empty"))
+                    {
+                        // Determine what type to use for Empty in your system
+                        responseType = typeof(Google.Protobuf.WellKnownTypes.Empty);
+                        responseTypeFullName = "Google.Protobuf.WellKnownTypes.Empty";
+                    }
+                    else if (responseType.IsGenericType)
+                    {
+                        responseType = responseType.GetGenericArguments()[0];
+                        responseTypeFullName = GetFullTypeNameWithDots(responseType);
+                    }
+                    else
+                    {
+                        responseTypeFullName = GetFullTypeNameWithDots(responseType);
+                    }
+
 
                     if (requestType == null || responseType == null)
                         continue;
 
-                    string requestTypeFullName = GetFullTypeNameWithDots(requestType);
-                    string responseTypeFullName = GetFullTypeNameWithDots(responseType);
+
+
 
 
                     sb.AppendLine($"            endpoints.MapPost(\"/{serviceContract.Namespace}.{serviceImplName}/{methodName}\", async context =>");
@@ -934,6 +1010,100 @@ namespace Stellar.RPC.Tools
             }
         }
 
+        private void GenerateEmptyMarshaller()
+        {
+            var sb = new StringBuilder();
+
+            // Add file header
+            sb.AppendLine("// Generated code - do not modify directly");
+            sb.AppendLine("using System;");
+            sb.AppendLine("using System.IO;");
+            sb.AppendLine("using System.Buffers;");
+            sb.AppendLine("using Grpc.Core;");
+            sb.AppendLine("using ProtoBuf;");
+            sb.AppendLine("using ProtoBuf.Meta;");
+            sb.AppendLine("using Google.Protobuf.WellKnownTypes;");
+            sb.AppendLine();
+            sb.AppendLine($"namespace {_namespace}");
+            sb.AppendLine("{");
+
+            // Generate marshaller class
+            sb.AppendLine($"    /// <summary>Custom marshaller for Google.Protobuf.WellKnownTypes.Empty</summary>");
+            sb.AppendLine($"    public static class EmptyGrpcMarshaller");
+            sb.AppendLine("    {");
+
+            // Static constructor
+            sb.AppendLine("        // Static constructor to configure type");
+            sb.AppendLine($"        static EmptyGrpcMarshaller()");
+            sb.AppendLine("        {");
+            sb.AppendLine("            ConfigureTypes();");
+            sb.AppendLine("        }");
+            sb.AppendLine();
+
+            // ConfigureTypes method
+            sb.AppendLine("        /// <summary>Configure type serialization</summary>");
+            sb.AppendLine("        public static void ConfigureTypes()");
+            sb.AppendLine("        {");
+            sb.AppendLine("            // Get runtime type model");
+            sb.AppendLine("            var model = RuntimeTypeModel.Default;");
+            sb.AppendLine();
+            sb.AppendLine("            // Configure Google.Protobuf.WellKnownTypes.Empty");
+            sb.AppendLine("            if (!model.IsDefined(typeof(Google.Protobuf.WellKnownTypes.Empty)))");
+            sb.AppendLine("            {");
+            sb.AppendLine("                model.Add(typeof(Google.Protobuf.WellKnownTypes.Empty), true);");
+            sb.AppendLine("            }");
+            sb.AppendLine("        }");
+            sb.AppendLine();
+
+            // Marshaller property
+            sb.AppendLine($"        /// <summary>Marshaller for Empty</summary>");
+            sb.AppendLine($"        public static readonly Marshaller<Google.Protobuf.WellKnownTypes.Empty> EmptyMarshaller = Marshallers.Create<Google.Protobuf.WellKnownTypes.Empty>(");
+            sb.AppendLine("            (message, serializationContext) =>");
+            sb.AppendLine("            {");
+            sb.AppendLine("                try");
+            sb.AppendLine("                {");
+            sb.AppendLine("                    var ms = new MemoryStream();");
+            sb.AppendLine("                    Serializer.Serialize(ms, message);");
+            sb.AppendLine("                    var buffer = ms.ToArray();");
+            sb.AppendLine("                    serializationContext.Complete(buffer);");
+            sb.AppendLine("                }");
+            sb.AppendLine("                catch (Exception ex)");
+            sb.AppendLine("                {");
+            sb.AppendLine("                    throw new RpcException(new Status(StatusCode.Internal, $\"Serialization error: {ex.Message}\"));");
+            sb.AppendLine("                }");
+            sb.AppendLine("            },");
+            sb.AppendLine("            (deserializationContext) =>");
+            sb.AppendLine("            {");
+            sb.AppendLine("                try");
+            sb.AppendLine("                {");
+            sb.AppendLine("                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();");
+            sb.AppendLine("                    using (var ms = new MemoryStream(buffer))");
+            sb.AppendLine("                    {");
+            sb.AppendLine($"                        return Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);");
+            sb.AppendLine("                    }");
+            sb.AppendLine("                }");
+            sb.AppendLine("                catch (Exception ex)");
+            sb.AppendLine("                {");
+            sb.AppendLine("                    throw new RpcException(new Status(StatusCode.Internal, $\"Deserialization error: {ex.Message}\"));");
+            sb.AppendLine("                }");
+            sb.AppendLine("            });");
+            sb.AppendLine();
+
+            sb.AppendLine("    }");
+            sb.AppendLine("}");
+
+            // Write file
+            try
+            {
+                File.WriteAllText(Path.Combine(_outputPath, "EmptyGrpcMarshaller.cs"), sb.ToString());
+                Console.WriteLine($"  Generated EmptyGrpcMarshaller.cs");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"  Error writing EmptyGrpcMarshaller.cs: {ex.Message}");
+            }
+        }
+
         private string GetMarshallerPropertyName(Type type)
         {
             if (!type.IsNested)
@@ -986,6 +1156,6 @@ namespace Stellar.RPC.Tools
             return BuildNestedTypeNameForClass(type.DeclaringType) + type.Name;
         }
 
-     
+
     }
 }

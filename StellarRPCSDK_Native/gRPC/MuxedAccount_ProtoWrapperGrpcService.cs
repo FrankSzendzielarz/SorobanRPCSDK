@@ -18,7 +18,7 @@ namespace Stellar.RPC.AOT
         public const string ServiceName = "Stellar.MuxedAccount_ProtoWrapper";
 
         /// <summary>Method descriptor for GetPublicKey</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPublicKeyMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPublicKey =
             new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -27,7 +27,7 @@ namespace Stellar.RPC.AOT
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
 
         /// <summary>Method descriptor for GetPrivateKey</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPrivateKeyMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPrivateKey =
             new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
 
         /// <summary>Method descriptor for GetSeedBytes</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetSeedBytesMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetSeedBytes =
             new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -45,7 +45,7 @@ namespace Stellar.RPC.AOT
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
 
         /// <summary>Method descriptor for GetSecretSeed</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetSecretSeedMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetSecretSeed =
             new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -54,7 +54,7 @@ namespace Stellar.RPC.AOT
                 StringWrapperGrpcMarshaller.StringWrapperMarshaller);
 
         /// <summary>Method descriptor for GetAccountId</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAccountIdMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAccountId =
             new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -63,7 +63,7 @@ namespace Stellar.RPC.AOT
                 StringWrapperGrpcMarshaller.StringWrapperMarshaller);
 
         /// <summary>Method descriptor for GetAddress</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAddressMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAddress =
             new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -72,7 +72,7 @@ namespace Stellar.RPC.AOT
                 StringWrapperGrpcMarshaller.StringWrapperMarshaller);
 
         /// <summary>Method descriptor for CanSign</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.BoolWrapper> CanSignMethod =
+        public static readonly Method<Stellar.MuxedAccount, Stellar.BoolWrapper> CanSign =
             new Method<Stellar.MuxedAccount, Stellar.BoolWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -81,7 +81,7 @@ namespace Stellar.RPC.AOT
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for Sign</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper> SignMethod =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper> Sign =
             new Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -90,7 +90,7 @@ namespace Stellar.RPC.AOT
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
 
         /// <summary>Method descriptor for Verify</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper> VerifyMethod =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper> Verify =
             new Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -99,7 +99,7 @@ namespace Stellar.RPC.AOT
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for CreateKeyTypeEd25519</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param, Stellar.MuxedAccount.KeyTypeEd25519> CreateKeyTypeEd25519Method =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param, Stellar.MuxedAccount.KeyTypeEd25519> CreateKeyTypeEd25519 =
             new Method<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -108,7 +108,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for CreateKeyTypeMuxedEd25519</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param, Stellar.MuxedAccount.KeyTypeMuxedEd25519> CreateKeyTypeMuxedEd25519Method =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param, Stellar.MuxedAccount.KeyTypeMuxedEd25519> CreateKeyTypeMuxedEd25519 =
             new Method<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param, Stellar.MuxedAccount.KeyTypeMuxedEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -117,7 +117,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeMuxedEd25519GrpcMarshaller.MuxedAccount_KeyTypeMuxedEd25519Marshaller);
 
         /// <summary>Method descriptor for FromSecretSeed</summary>
-        public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeedMethod =
+        public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeed =
             new Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -126,7 +126,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromSecretSeedBytes</summary>
-        public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeedBytesMethod =
+        public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeedBytes =
             new Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -135,7 +135,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromAccountId</summary>
-        public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromAccountIdMethod =
+        public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromAccountId =
             new Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -144,7 +144,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromPublicKey</summary>
-        public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromPublicKeyMethod =
+        public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromPublicKey =
             new Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -153,7 +153,7 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromBIP39Seed</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39SeedMethod =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39Seed =
             new Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
@@ -162,12 +162,21 @@ namespace Stellar.RPC.AOT
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromBIP39SeedBytes</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39SeedBytesMethod =
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39SeedBytes =
             new Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam, Stellar.MuxedAccount.KeyTypeEd25519>(
                 MethodType.Unary,
                 ServiceName,
                 "FromBIP39SeedBytes",
                 MuxedAccount_ProtoWrapperBIP39SeedBytesParamGrpcMarshaller.MuxedAccount_ProtoWrapper_BIP39SeedBytesParamMarshaller,
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
+
+        /// <summary>Method descriptor for Random</summary>
+        public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.MuxedAccount.KeyTypeEd25519> Random =
+            new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.MuxedAccount.KeyTypeEd25519>(
+                MethodType.Unary,
+                ServiceName,
+                "Random",
+                EmptyGrpcMarshaller.EmptyMarshaller,
                 MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
     }

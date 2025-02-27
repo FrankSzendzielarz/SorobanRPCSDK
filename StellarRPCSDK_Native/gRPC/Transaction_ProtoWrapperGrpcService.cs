@@ -18,7 +18,7 @@ namespace Stellar.RPC.AOT
         public const string ServiceName = "Stellar.Transaction_ProtoWrapper";
 
         /// <summary>Method descriptor for Sign</summary>
-        public static readonly Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature> SignMethod =
+        public static readonly Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature> Sign =
             new Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature>(
                 MethodType.Unary,
                 ServiceName,
@@ -27,7 +27,7 @@ namespace Stellar.RPC.AOT
                 DecoratedSignatureGrpcMarshaller.DecoratedSignatureMarshaller);
 
         /// <summary>Method descriptor for Clone</summary>
-        public static readonly Method<Stellar.Transaction_ProtoWrapper.CloneParam, Stellar.Transaction> CloneMethod =
+        public static readonly Method<Stellar.Transaction_ProtoWrapper.CloneParam, Stellar.Transaction> Clone =
             new Method<Stellar.Transaction_ProtoWrapper.CloneParam, Stellar.Transaction>(
                 MethodType.Unary,
                 ServiceName,
@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
                 TransactionGrpcMarshaller.TransactionMarshaller);
 
         /// <summary>Method descriptor for IsSoroban</summary>
-        public static readonly Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper> IsSorobanMethod =
+        public static readonly Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper> IsSoroban =
             new Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper>(
                 MethodType.Unary,
                 ServiceName,
@@ -45,7 +45,7 @@ namespace Stellar.RPC.AOT
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for IsSorobanInvocation</summary>
-        public static readonly Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper> IsSorobanInvocationMethod =
+        public static readonly Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper> IsSorobanInvocation =
             new Method<Stellar.Transaction_ProtoWrapper.IsSorobanParam, Stellar.BoolWrapper>(
                 MethodType.Unary,
                 ServiceName,

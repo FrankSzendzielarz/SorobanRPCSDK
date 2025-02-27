@@ -28230,6 +28230,38 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromBIP39SeedBytes");
                 }
             });
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Random", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Random(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<MuxedAccount_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Random");
+                }
+            });
 
             // Map INetwork_ProtoWrapper methods
             endpoints.MapPost("/Stellar.Network_ProtoWrapper/Create", async context =>
@@ -28262,6 +28294,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/Create");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/GetCurrent", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetCurrent(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/GetCurrent");
                 }
             });
             endpoints.MapPost("/Stellar.Network_ProtoWrapper/GetNetworkPassphrase", async context =>
@@ -28326,6 +28390,198 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/IsPublicNetwork");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Public", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Public(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Public");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Test", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Test(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Test");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Use", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Stellar.Network_ProtoWrapper.UseParam>(ms);
+
+                    // Call service method
+                    var response = await service.Use(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Use");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/UsePublicNetwork", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.UsePublicNetwork(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/UsePublicNetwork");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/UseTestNetwork", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.UseTestNetwork(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/UseTestNetwork");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/SetUrl", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Stellar.Network_ProtoWrapper.SetUrlParam>(ms);
+
+                    // Call service method
+                    var response = await service.SetUrl(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/SetUrl");
                 }
             });
 
@@ -28526,6 +28782,102 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetEventsAsync");
                 }
             });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetFeeStatsAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetFeeStatsAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetFeeStatsAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetHealthAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetHealthAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetHealthAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLatestLedgerAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetLatestLedgerAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetLatestLedgerAsync");
+                }
+            });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLedgerEntriesAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
@@ -28556,6 +28908,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLedgerEntriesAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetNetworkAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetNetworkAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetNetworkAsync");
                 }
             });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionAsync", async context =>
@@ -28620,6 +29004,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionsAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetVersionInfoAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetVersionInfoAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetVersionInfoAsync");
                 }
             });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SendTransactionAsync", async context =>
@@ -54194,6 +54610,38 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromBIP39SeedBytes");
                 }
             });
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Random", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Random(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<MuxedAccount_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Random");
+                }
+            });
 
             // Map Network_ProtoWrapper methods
             endpoints.MapPost("/Stellar.Network_ProtoWrapper/Create", async context =>
@@ -54260,6 +54708,198 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/GetNetworkPassphrase");
                 }
             });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/GetCurrent", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetCurrent(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/GetCurrent");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Use", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Stellar.Network_ProtoWrapper.UseParam>(ms);
+
+                    // Call service method
+                    var response = await service.Use(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Use");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Public", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Public(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Public");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Test", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.Test(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Test");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/UsePublicNetwork", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.UsePublicNetwork(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/UsePublicNetwork");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/UseTestNetwork", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.UseTestNetwork(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/UseTestNetwork");
+                }
+            });
             endpoints.MapPost("/Stellar.Network_ProtoWrapper/IsPublicNetwork", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
@@ -54290,6 +54930,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/IsPublicNetwork");
+                }
+            });
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/SetUrl", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Stellar.Network_ProtoWrapper.SetUrlParam>(ms);
+
+                    // Call service method
+                    var response = await service.SetUrl(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
+                    logger?.LogError(ex, "Error in Network_ProtoWrapper/SetUrl");
                 }
             });
 
@@ -54456,6 +55128,102 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetEventsAsync");
                 }
             });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetFeeStatsAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetFeeStatsAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetFeeStatsAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetHealthAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetHealthAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetHealthAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLatestLedgerAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetLatestLedgerAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetLatestLedgerAsync");
+                }
+            });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLedgerEntriesAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
@@ -54486,6 +55254,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLedgerEntriesAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetNetworkAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetNetworkAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetNetworkAsync");
                 }
             });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionAsync", async context =>
@@ -54550,6 +55350,38 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionsAsync");
+                }
+            });
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetVersionInfoAsync", async context =>
+            {
+                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
+                var serverCallContext = CreateServerCallContext(context);
+                try
+                {
+                    // Read and deserialize request
+                    using var ms = new MemoryStream();
+                    await context.Request.Body.CopyToAsync(ms);
+                    ms.Position = 0;
+                    var request = Serializer.Deserialize<Google.Protobuf.WellKnownTypes.Empty>(ms);
+
+                    // Call service method
+                    var response = await service.GetVersionInfoAsync(request, serverCallContext);
+
+                    // Serialize and send response
+                    context.Response.ContentType = "application/grpc";
+                    context.Response.Headers.Add("grpc-status", "0");
+                    using var responseMs = new MemoryStream();
+                    Serializer.Serialize(responseMs, response);
+                    responseMs.Position = 0;
+                    await responseMs.CopyToAsync(context.Response.Body);
+                }
+                catch (Exception ex)
+                {
+                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+                    context.Response.Headers.Add("grpc-status", "2");
+                    context.Response.Headers.Add("grpc-message", ex.Message);
+                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
+                    logger?.LogError(ex, "Error in StellarRPCClient/GetVersionInfoAsync");
                 }
             });
             endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SendTransactionAsync", async context =>
