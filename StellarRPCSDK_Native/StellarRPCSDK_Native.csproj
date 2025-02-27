@@ -34,7 +34,10 @@
 
 		<Configurations>Debug;Release;NativeAOTDebug;NativeAOT</Configurations>
 	</PropertyGroup>
-
+	<ItemGroup>
+		<!-- Preserve protobuf-net completely -->
+		<TrimmerRootAssembly Include="protobuf-net" />
+	</ItemGroup>
 
 	<!-- Conditional compilation for different platforms -->
 	<PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">

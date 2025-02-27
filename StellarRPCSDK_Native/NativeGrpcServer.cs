@@ -1,22 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ProtoBuf.Grpc.Configuration;
-using ProtoBuf;
-using ProtoBuf.Grpc.Server;
+using Stellar.RPC.AOT;
 using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
-using static Stellar.Network_ProtoWrapper;
-using static Stellar.Transaction_ProtoWrapper;
-using System.Threading.Tasks;
 
 namespace Stellar.RPC.Native
 {
@@ -50,12 +40,7 @@ namespace Stellar.RPC.Native
                     {
                         client.BaseAddress = new Uri(Network.Url);
                     });
-                    // Add gRPC service. Should be fully AOT compat according to MS docs.
-                    builder.Services.AddGrpc(options =>
-                    {
-           
-                        options.EnableDetailedErrors = true;
-                    });
+                    builder.Services.AddAotGrpcServices();
 
                     builder.Services.AddSingleton<StellarRPCClient>();
                     builder.Services.AddSingleton<MuxedAccount_ProtoWrapper>();
@@ -87,16 +72,11 @@ namespace Stellar.RPC.Native
 
 
                     _app = builder.Build();
-                    _app.MapGrpcService<StellarRPCClient>();
-                    _app.MapGrpcService<MuxedAccount_ProtoWrapper>();
-                    _app.MapGrpcService<Transaction_ProtoWrapper>();
-                    _app.MapGrpcService<Network_ProtoWrapper>();
-                    _app.MapGrpcService<SimulateTransactionResult_ProtoWrapper>();
-                    _app.MapGrpcService<XdrProtoService>();
+                    _app.MapAotGrpcServices();
 
                     _app.Lifetime.ApplicationStarted.Register(() => { Console.WriteLine("Stellar SDK ready"); _serverReady.Set(); });
                     _app.Run();
-     
+
 
 
                 });
@@ -113,8 +93,6 @@ namespace Stellar.RPC.Native
                 _serverReady.Set(); // Prevent calling thread from waiting indefinitely
             }
         }
-
-        
 
         [UnmanagedCallersOnly(EntryPoint = "StopServer")]
         public static void StopServer()

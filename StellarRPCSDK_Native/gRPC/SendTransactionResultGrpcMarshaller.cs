@@ -1,0 +1,79 @@
+// Generated code - do not modify directly
+using System;
+using System.IO;
+using System.Buffers;
+using Grpc.Core;
+using ProtoBuf;
+using ProtoBuf.Meta;
+using Stellar.RPC;
+
+namespace Stellar.RPC.AOT
+{
+    /// <summary>Custom marshaller for Stellar.RPC.SendTransactionResult</summary>
+    public static class SendTransactionResultGrpcMarshaller
+    {
+        // Static constructor to configure type
+        static SendTransactionResultGrpcMarshaller()
+        {
+            ConfigureTypes();
+        }
+
+        /// <summary>Configure type serialization</summary>
+        public static void ConfigureTypes()
+        {
+            // Get runtime type model
+
+            var model = RuntimeTypeModel.Default;
+
+            // Configure Stellar.RPC.SendTransactionResult
+            if (!model.IsDefined(typeof(Stellar.RPC.SendTransactionResult)))
+            {
+                var metaType = model.Add(typeof(Stellar.RPC.SendTransactionResult), false);
+
+                // Add all properties with their original ProtoMember numbers
+                metaType.Add(1, "Hash");
+                metaType.Add(2, "Status");
+                metaType.Add(3, "LatestLedger");
+                metaType.Add(4, "LatestLedgerCloseTime");
+                metaType.Add(5, "ErrorResultXdr");
+                metaType.Add(6, "DiagnosticEventsXdr");
+                metaType.Add(100, "ErrorResult");
+                metaType.Add(101, "DiagnosticEvents");
+                metaType.UseConstructor = false;
+            }
+        }
+
+        /// <summary>Marshaller for SendTransactionResult</summary>
+        public static readonly Marshaller<Stellar.RPC.SendTransactionResult> SendTransactionResultMarshaller = Marshallers.Create<Stellar.RPC.SendTransactionResult>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.RPC.SendTransactionResult>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+    }
+}
