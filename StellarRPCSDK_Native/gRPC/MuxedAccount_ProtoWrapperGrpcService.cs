@@ -651,7 +651,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing CanSign request");
                 return _service.CanSign(request) ;
             }
@@ -667,7 +666,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing CreateKeyTypeEd25519 request");
                 return _service.CreateKeyTypeEd25519(request) ;
             }
@@ -683,7 +681,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing CreateKeyTypeMuxedEd25519 request");
                 return _service.CreateKeyTypeMuxedEd25519(request) ;
             }
@@ -699,7 +696,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetAccountId request");
                 return _service.GetAccountId(request) ;
             }
@@ -715,7 +711,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetAddress request");
                 return _service.GetAddress(request) ;
             }
@@ -731,7 +726,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetPrivateKey request");
                 return _service.GetPrivateKey(request) ;
             }
@@ -747,7 +741,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetPublicKey request");
                 return _service.GetPublicKey(request) ;
             }
@@ -763,7 +756,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetSecretSeed request");
                 return _service.GetSecretSeed(request) ;
             }
@@ -779,7 +771,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetSeedBytes request");
                 return _service.GetSeedBytes(request) ;
             }
@@ -795,7 +786,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Sign request");
                 return _service.Sign(request) ;
             }
@@ -811,7 +801,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Verify request");
                 return _service.Verify(request) ;
             }
@@ -827,7 +816,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromSecretSeed request");
                 return _service.FromSecretSeed(request) ;
             }
@@ -843,7 +831,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromSecretSeedBytes request");
                 return _service.FromSecretSeedBytes(request) ;
             }
@@ -859,7 +846,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromAccountId request");
                 return _service.FromAccountId(request) ;
             }
@@ -875,7 +861,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromPublicKey request");
                 return _service.FromPublicKey(request) ;
             }
@@ -891,7 +876,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromBIP39Seed request");
                 return _service.FromBIP39Seed(request) ;
             }
@@ -907,7 +891,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing FromBIP39SeedBytes request");
                 return _service.FromBIP39SeedBytes(request) ;
             }
@@ -923,7 +906,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Random request");
                 return _service.Random() ;
             }

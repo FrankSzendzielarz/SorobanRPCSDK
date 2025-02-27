@@ -309,7 +309,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Clone request");
                 return _service.Clone(request) ;
             }
@@ -325,7 +324,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing IsSoroban request");
                 return _service.IsSoroban(request) ;
             }
@@ -341,7 +339,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing IsSorobanInvocation request");
                 return _service.IsSorobanInvocation(request) ;
             }
@@ -357,7 +354,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Sign request");
                 return _service.Sign(request) ;
             }

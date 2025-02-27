@@ -33645,7 +33645,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map IStellarRPCClient methods
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetEventsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetEvents", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33683,7 +33683,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetEventsAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetFeeStatsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetFeeStats", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33716,7 +33716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetFeeStatsAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetHealthAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetHealth", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33749,7 +33749,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetHealthAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLatestLedgerAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetLatestLedger", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33782,7 +33782,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLatestLedgerAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLedgerEntriesAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetLedgerEntries", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33820,7 +33820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLedgerEntriesAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetNetworkAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetNetwork", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33853,7 +33853,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetNetworkAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33891,7 +33891,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetTransactions", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33929,7 +33929,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionsAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetVersionInfoAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/GetVersionInfo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33962,7 +33962,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetVersionInfoAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SendTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/SendTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34000,7 +34000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/SendTransactionAsync");
                 }
             });
-            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SimulateTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.Stellar/SimulateTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);

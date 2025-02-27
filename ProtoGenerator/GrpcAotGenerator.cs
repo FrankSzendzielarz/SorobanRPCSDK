@@ -1006,8 +1006,19 @@ namespace Stellar.RPC.Tools
                         continue;
 
 
-                    sb.AppendLine($"            endpoints.MapPost(\"/{serviceContract.Namespace}.{serviceImplName}/{methodName}\", async context =>");
-                    sb.AppendLine("            {");
+                    var serviceContractAttrs = serviceContract.GetCustomAttributes(typeof(ServiceContractAttribute), true);
+                    string serviceNameForRoute = serviceImplName;
+                    if (serviceContractAttrs.Length > 0)
+                    {
+                        var attr = (ServiceContractAttribute)serviceContractAttrs[0];
+                        if (!string.IsNullOrEmpty(attr.Name))
+                        {
+                            serviceNameForRoute = attr.Name;
+                        }
+                    }
+                    var methodNameForRoute = methodName.EndsWith("Async") ? methodName.Substring(0, methodName.Length - 5) : methodName;
+
+                    sb.AppendLine($"            endpoints.MapPost(\"/{serviceContract.Namespace}.{serviceNameForRoute}/{methodNameForRoute}\", async context =>"); sb.AppendLine("            {");
                     sb.AppendLine($"                var service = context.RequestServices.GetRequiredService<{serviceImplName}GrpcService>();");
                     sb.AppendLine("                var serverCallContext = CreateServerCallContext(context);");
                     sb.AppendLine("                try");

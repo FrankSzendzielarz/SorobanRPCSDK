@@ -63237,7 +63237,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractExecutionLanesV0 request");
                 return _service.EncodeConfigSettingContractExecutionLanesV0(request) ;
             }
@@ -63253,7 +63252,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractExecutionLanesV0 request");
                 return _service.DecodeConfigSettingContractExecutionLanesV0(request) ;
             }
@@ -63269,7 +63267,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractComputeV0 request");
                 return _service.EncodeConfigSettingContractComputeV0(request) ;
             }
@@ -63285,7 +63282,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractComputeV0 request");
                 return _service.DecodeConfigSettingContractComputeV0(request) ;
             }
@@ -63301,7 +63297,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractLedgerCostV0 request");
                 return _service.EncodeConfigSettingContractLedgerCostV0(request) ;
             }
@@ -63317,7 +63312,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractLedgerCostV0 request");
                 return _service.DecodeConfigSettingContractLedgerCostV0(request) ;
             }
@@ -63333,7 +63327,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractHistoricalDataV0 request");
                 return _service.EncodeConfigSettingContractHistoricalDataV0(request) ;
             }
@@ -63349,7 +63342,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractHistoricalDataV0 request");
                 return _service.DecodeConfigSettingContractHistoricalDataV0(request) ;
             }
@@ -63365,7 +63357,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractEventsV0 request");
                 return _service.EncodeConfigSettingContractEventsV0(request) ;
             }
@@ -63381,7 +63372,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractEventsV0 request");
                 return _service.DecodeConfigSettingContractEventsV0(request) ;
             }
@@ -63397,7 +63387,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingContractBandwidthV0 request");
                 return _service.EncodeConfigSettingContractBandwidthV0(request) ;
             }
@@ -63413,7 +63402,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingContractBandwidthV0 request");
                 return _service.DecodeConfigSettingContractBandwidthV0(request) ;
             }
@@ -63429,7 +63417,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractCostType request");
                 return _service.EncodeContractCostType(request) ;
             }
@@ -63445,7 +63432,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractCostType request");
                 return _service.DecodeContractCostType(request) ;
             }
@@ -63461,7 +63447,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractCostParamEntry request");
                 return _service.EncodeContractCostParamEntry(request) ;
             }
@@ -63477,7 +63462,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractCostParamEntry request");
                 return _service.DecodeContractCostParamEntry(request) ;
             }
@@ -63493,7 +63477,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStateArchivalSettings request");
                 return _service.EncodeStateArchivalSettings(request) ;
             }
@@ -63509,7 +63492,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStateArchivalSettings request");
                 return _service.DecodeStateArchivalSettings(request) ;
             }
@@ -63525,7 +63507,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeEvictionIterator request");
                 return _service.EncodeEvictionIterator(request) ;
             }
@@ -63541,7 +63522,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeEvictionIterator request");
                 return _service.DecodeEvictionIterator(request) ;
             }
@@ -63557,7 +63537,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractCostParams request");
                 return _service.EncodeContractCostParams(request) ;
             }
@@ -63573,7 +63552,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractCostParams request");
                 return _service.DecodeContractCostParams(request) ;
             }
@@ -63589,7 +63567,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingID request");
                 return _service.EncodeConfigSettingID(request) ;
             }
@@ -63605,7 +63582,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingID request");
                 return _service.DecodeConfigSettingID(request) ;
             }
@@ -63621,7 +63597,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigSettingEntry request");
                 return _service.EncodeConfigSettingEntry(request) ;
             }
@@ -63637,7 +63612,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigSettingEntry request");
                 return _service.DecodeConfigSettingEntry(request) ;
             }
@@ -63653,7 +63627,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCEnvMetaKind request");
                 return _service.EncodeSCEnvMetaKind(request) ;
             }
@@ -63669,7 +63642,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCEnvMetaKind request");
                 return _service.DecodeSCEnvMetaKind(request) ;
             }
@@ -63685,7 +63657,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCEnvMetaEntry request");
                 return _service.EncodeSCEnvMetaEntry(request) ;
             }
@@ -63701,7 +63672,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCEnvMetaEntry request");
                 return _service.DecodeSCEnvMetaEntry(request) ;
             }
@@ -63717,7 +63687,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCMetaV0 request");
                 return _service.EncodeSCMetaV0(request) ;
             }
@@ -63733,7 +63702,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCMetaV0 request");
                 return _service.DecodeSCMetaV0(request) ;
             }
@@ -63749,7 +63717,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCMetaKind request");
                 return _service.EncodeSCMetaKind(request) ;
             }
@@ -63765,7 +63732,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCMetaKind request");
                 return _service.DecodeSCMetaKind(request) ;
             }
@@ -63781,7 +63747,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCMetaEntry request");
                 return _service.EncodeSCMetaEntry(request) ;
             }
@@ -63797,7 +63762,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCMetaEntry request");
                 return _service.DecodeSCMetaEntry(request) ;
             }
@@ -63813,7 +63777,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecType request");
                 return _service.EncodeSCSpecType(request) ;
             }
@@ -63829,7 +63792,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecType request");
                 return _service.DecodeSCSpecType(request) ;
             }
@@ -63845,7 +63807,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeOption request");
                 return _service.EncodeSCSpecTypeOption(request) ;
             }
@@ -63861,7 +63822,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeOption request");
                 return _service.DecodeSCSpecTypeOption(request) ;
             }
@@ -63877,7 +63837,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeResult request");
                 return _service.EncodeSCSpecTypeResult(request) ;
             }
@@ -63893,7 +63852,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeResult request");
                 return _service.DecodeSCSpecTypeResult(request) ;
             }
@@ -63909,7 +63867,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeVec request");
                 return _service.EncodeSCSpecTypeVec(request) ;
             }
@@ -63925,7 +63882,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeVec request");
                 return _service.DecodeSCSpecTypeVec(request) ;
             }
@@ -63941,7 +63897,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeMap request");
                 return _service.EncodeSCSpecTypeMap(request) ;
             }
@@ -63957,7 +63912,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeMap request");
                 return _service.DecodeSCSpecTypeMap(request) ;
             }
@@ -63973,7 +63927,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeTuple request");
                 return _service.EncodeSCSpecTypeTuple(request) ;
             }
@@ -63989,7 +63942,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeTuple request");
                 return _service.DecodeSCSpecTypeTuple(request) ;
             }
@@ -64005,7 +63957,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeBytesN request");
                 return _service.EncodeSCSpecTypeBytesN(request) ;
             }
@@ -64021,7 +63972,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeBytesN request");
                 return _service.DecodeSCSpecTypeBytesN(request) ;
             }
@@ -64037,7 +63987,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeUDT request");
                 return _service.EncodeSCSpecTypeUDT(request) ;
             }
@@ -64053,7 +64002,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeUDT request");
                 return _service.DecodeSCSpecTypeUDT(request) ;
             }
@@ -64069,7 +64017,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecTypeDef request");
                 return _service.EncodeSCSpecTypeDef(request) ;
             }
@@ -64085,7 +64032,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecTypeDef request");
                 return _service.DecodeSCSpecTypeDef(request) ;
             }
@@ -64101,7 +64047,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTStructFieldV0 request");
                 return _service.EncodeSCSpecUDTStructFieldV0(request) ;
             }
@@ -64117,7 +64062,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTStructFieldV0 request");
                 return _service.DecodeSCSpecUDTStructFieldV0(request) ;
             }
@@ -64133,7 +64077,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTStructV0 request");
                 return _service.EncodeSCSpecUDTStructV0(request) ;
             }
@@ -64149,7 +64092,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTStructV0 request");
                 return _service.DecodeSCSpecUDTStructV0(request) ;
             }
@@ -64165,7 +64107,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTUnionCaseVoidV0 request");
                 return _service.EncodeSCSpecUDTUnionCaseVoidV0(request) ;
             }
@@ -64181,7 +64122,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTUnionCaseVoidV0 request");
                 return _service.DecodeSCSpecUDTUnionCaseVoidV0(request) ;
             }
@@ -64197,7 +64137,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTUnionCaseTupleV0 request");
                 return _service.EncodeSCSpecUDTUnionCaseTupleV0(request) ;
             }
@@ -64213,7 +64152,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTUnionCaseTupleV0 request");
                 return _service.DecodeSCSpecUDTUnionCaseTupleV0(request) ;
             }
@@ -64229,7 +64167,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTUnionCaseV0Kind request");
                 return _service.EncodeSCSpecUDTUnionCaseV0Kind(request) ;
             }
@@ -64245,7 +64182,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTUnionCaseV0Kind request");
                 return _service.DecodeSCSpecUDTUnionCaseV0Kind(request) ;
             }
@@ -64261,7 +64197,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTUnionCaseV0 request");
                 return _service.EncodeSCSpecUDTUnionCaseV0(request) ;
             }
@@ -64277,7 +64212,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTUnionCaseV0 request");
                 return _service.DecodeSCSpecUDTUnionCaseV0(request) ;
             }
@@ -64293,7 +64227,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTUnionV0 request");
                 return _service.EncodeSCSpecUDTUnionV0(request) ;
             }
@@ -64309,7 +64242,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTUnionV0 request");
                 return _service.DecodeSCSpecUDTUnionV0(request) ;
             }
@@ -64325,7 +64257,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTEnumCaseV0 request");
                 return _service.EncodeSCSpecUDTEnumCaseV0(request) ;
             }
@@ -64341,7 +64272,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTEnumCaseV0 request");
                 return _service.DecodeSCSpecUDTEnumCaseV0(request) ;
             }
@@ -64357,7 +64287,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTEnumV0 request");
                 return _service.EncodeSCSpecUDTEnumV0(request) ;
             }
@@ -64373,7 +64302,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTEnumV0 request");
                 return _service.DecodeSCSpecUDTEnumV0(request) ;
             }
@@ -64389,7 +64317,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTErrorEnumCaseV0 request");
                 return _service.EncodeSCSpecUDTErrorEnumCaseV0(request) ;
             }
@@ -64405,7 +64332,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTErrorEnumCaseV0 request");
                 return _service.DecodeSCSpecUDTErrorEnumCaseV0(request) ;
             }
@@ -64421,7 +64347,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecUDTErrorEnumV0 request");
                 return _service.EncodeSCSpecUDTErrorEnumV0(request) ;
             }
@@ -64437,7 +64362,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecUDTErrorEnumV0 request");
                 return _service.DecodeSCSpecUDTErrorEnumV0(request) ;
             }
@@ -64453,7 +64377,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecFunctionInputV0 request");
                 return _service.EncodeSCSpecFunctionInputV0(request) ;
             }
@@ -64469,7 +64392,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecFunctionInputV0 request");
                 return _service.DecodeSCSpecFunctionInputV0(request) ;
             }
@@ -64485,7 +64407,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecFunctionV0 request");
                 return _service.EncodeSCSpecFunctionV0(request) ;
             }
@@ -64501,7 +64422,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecFunctionV0 request");
                 return _service.DecodeSCSpecFunctionV0(request) ;
             }
@@ -64517,7 +64437,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecEntryKind request");
                 return _service.EncodeSCSpecEntryKind(request) ;
             }
@@ -64533,7 +64452,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecEntryKind request");
                 return _service.DecodeSCSpecEntryKind(request) ;
             }
@@ -64549,7 +64467,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSpecEntry request");
                 return _service.EncodeSCSpecEntry(request) ;
             }
@@ -64565,7 +64482,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSpecEntry request");
                 return _service.DecodeSCSpecEntry(request) ;
             }
@@ -64581,7 +64497,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCValType request");
                 return _service.EncodeSCValType(request) ;
             }
@@ -64597,7 +64512,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCValType request");
                 return _service.DecodeSCValType(request) ;
             }
@@ -64613,7 +64527,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCErrorType request");
                 return _service.EncodeSCErrorType(request) ;
             }
@@ -64629,7 +64542,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCErrorType request");
                 return _service.DecodeSCErrorType(request) ;
             }
@@ -64645,7 +64557,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCErrorCode request");
                 return _service.EncodeSCErrorCode(request) ;
             }
@@ -64661,7 +64572,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCErrorCode request");
                 return _service.DecodeSCErrorCode(request) ;
             }
@@ -64677,7 +64587,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCError request");
                 return _service.EncodeSCError(request) ;
             }
@@ -64693,7 +64602,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCError request");
                 return _service.DecodeSCError(request) ;
             }
@@ -64709,7 +64617,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeUInt128Parts request");
                 return _service.EncodeUInt128Parts(request) ;
             }
@@ -64725,7 +64632,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeUInt128Parts request");
                 return _service.DecodeUInt128Parts(request) ;
             }
@@ -64741,7 +64647,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInt128Parts request");
                 return _service.EncodeInt128Parts(request) ;
             }
@@ -64757,7 +64662,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInt128Parts request");
                 return _service.DecodeInt128Parts(request) ;
             }
@@ -64773,7 +64677,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeUInt256Parts request");
                 return _service.EncodeUInt256Parts(request) ;
             }
@@ -64789,7 +64692,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeUInt256Parts request");
                 return _service.DecodeUInt256Parts(request) ;
             }
@@ -64805,7 +64707,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInt256Parts request");
                 return _service.EncodeInt256Parts(request) ;
             }
@@ -64821,7 +64722,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInt256Parts request");
                 return _service.DecodeInt256Parts(request) ;
             }
@@ -64837,7 +64737,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractExecutableType request");
                 return _service.EncodeContractExecutableType(request) ;
             }
@@ -64853,7 +64752,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractExecutableType request");
                 return _service.DecodeContractExecutableType(request) ;
             }
@@ -64869,7 +64767,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractExecutable request");
                 return _service.EncodeContractExecutable(request) ;
             }
@@ -64885,7 +64782,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractExecutable request");
                 return _service.DecodeContractExecutable(request) ;
             }
@@ -64901,7 +64797,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCAddressType request");
                 return _service.EncodeSCAddressType(request) ;
             }
@@ -64917,7 +64812,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCAddressType request");
                 return _service.DecodeSCAddressType(request) ;
             }
@@ -64933,7 +64827,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCAddress request");
                 return _service.EncodeSCAddress(request) ;
             }
@@ -64949,7 +64842,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCAddress request");
                 return _service.DecodeSCAddress(request) ;
             }
@@ -64965,7 +64857,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCVec request");
                 return _service.EncodeSCVec(request) ;
             }
@@ -64981,7 +64872,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCVec request");
                 return _service.DecodeSCVec(request) ;
             }
@@ -64997,7 +64887,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCMap request");
                 return _service.EncodeSCMap(request) ;
             }
@@ -65013,7 +64902,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCMap request");
                 return _service.DecodeSCMap(request) ;
             }
@@ -65029,7 +64917,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCBytes request");
                 return _service.EncodeSCBytes(request) ;
             }
@@ -65045,7 +64932,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCBytes request");
                 return _service.DecodeSCBytes(request) ;
             }
@@ -65061,7 +64947,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCString request");
                 return _service.EncodeSCString(request) ;
             }
@@ -65077,7 +64962,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCString request");
                 return _service.DecodeSCString(request) ;
             }
@@ -65093,7 +64977,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCSymbol request");
                 return _service.EncodeSCSymbol(request) ;
             }
@@ -65109,7 +64992,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCSymbol request");
                 return _service.DecodeSCSymbol(request) ;
             }
@@ -65125,7 +65007,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCNonceKey request");
                 return _service.EncodeSCNonceKey(request) ;
             }
@@ -65141,7 +65022,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCNonceKey request");
                 return _service.DecodeSCNonceKey(request) ;
             }
@@ -65157,7 +65037,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCContractInstance request");
                 return _service.EncodeSCContractInstance(request) ;
             }
@@ -65173,7 +65052,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCContractInstance request");
                 return _service.DecodeSCContractInstance(request) ;
             }
@@ -65189,7 +65067,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCVal request");
                 return _service.EncodeSCVal(request) ;
             }
@@ -65205,7 +65082,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCVal request");
                 return _service.DecodeSCVal(request) ;
             }
@@ -65221,7 +65097,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCMapEntry request");
                 return _service.EncodeSCMapEntry(request) ;
             }
@@ -65237,7 +65112,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCMapEntry request");
                 return _service.DecodeSCMapEntry(request) ;
             }
@@ -65253,7 +65127,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStoredTransactionSet request");
                 return _service.EncodeStoredTransactionSet(request) ;
             }
@@ -65269,7 +65142,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStoredTransactionSet request");
                 return _service.DecodeStoredTransactionSet(request) ;
             }
@@ -65285,7 +65157,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStoredDebugTransactionSet request");
                 return _service.EncodeStoredDebugTransactionSet(request) ;
             }
@@ -65301,7 +65172,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStoredDebugTransactionSet request");
                 return _service.DecodeStoredDebugTransactionSet(request) ;
             }
@@ -65317,7 +65187,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePersistedSCPStateV0 request");
                 return _service.EncodePersistedSCPStateV0(request) ;
             }
@@ -65333,7 +65202,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePersistedSCPStateV0 request");
                 return _service.DecodePersistedSCPStateV0(request) ;
             }
@@ -65349,7 +65217,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePersistedSCPStateV1 request");
                 return _service.EncodePersistedSCPStateV1(request) ;
             }
@@ -65365,7 +65232,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePersistedSCPStateV1 request");
                 return _service.DecodePersistedSCPStateV1(request) ;
             }
@@ -65381,7 +65247,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePersistedSCPState request");
                 return _service.EncodePersistedSCPState(request) ;
             }
@@ -65397,7 +65262,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePersistedSCPState request");
                 return _service.DecodePersistedSCPState(request) ;
             }
@@ -65413,7 +65277,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeThresholds request");
                 return _service.EncodeThresholds(request) ;
             }
@@ -65429,7 +65292,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeThresholds request");
                 return _service.DecodeThresholds(request) ;
             }
@@ -65445,7 +65307,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodestring32 request");
                 return _service.Encodestring32(request) ;
             }
@@ -65461,7 +65322,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodestring32 request");
                 return _service.Decodestring32(request) ;
             }
@@ -65477,7 +65337,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodestring64 request");
                 return _service.Encodestring64(request) ;
             }
@@ -65493,7 +65352,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodestring64 request");
                 return _service.Decodestring64(request) ;
             }
@@ -65509,7 +65367,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSequenceNumber request");
                 return _service.EncodeSequenceNumber(request) ;
             }
@@ -65525,7 +65382,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSequenceNumber request");
                 return _service.DecodeSequenceNumber(request) ;
             }
@@ -65541,7 +65397,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDataValue request");
                 return _service.EncodeDataValue(request) ;
             }
@@ -65557,7 +65412,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDataValue request");
                 return _service.DecodeDataValue(request) ;
             }
@@ -65573,7 +65427,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePoolID request");
                 return _service.EncodePoolID(request) ;
             }
@@ -65589,7 +65442,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePoolID request");
                 return _service.DecodePoolID(request) ;
             }
@@ -65605,7 +65457,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAssetCode4 request");
                 return _service.EncodeAssetCode4(request) ;
             }
@@ -65621,7 +65472,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAssetCode4 request");
                 return _service.DecodeAssetCode4(request) ;
             }
@@ -65637,7 +65487,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAssetCode12 request");
                 return _service.EncodeAssetCode12(request) ;
             }
@@ -65653,7 +65502,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAssetCode12 request");
                 return _service.DecodeAssetCode12(request) ;
             }
@@ -65669,7 +65517,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAssetType request");
                 return _service.EncodeAssetType(request) ;
             }
@@ -65685,7 +65532,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAssetType request");
                 return _service.DecodeAssetType(request) ;
             }
@@ -65701,7 +65547,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAssetCode request");
                 return _service.EncodeAssetCode(request) ;
             }
@@ -65717,7 +65562,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAssetCode request");
                 return _service.DecodeAssetCode(request) ;
             }
@@ -65733,7 +65577,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAlphaNum4 request");
                 return _service.EncodeAlphaNum4(request) ;
             }
@@ -65749,7 +65592,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAlphaNum4 request");
                 return _service.DecodeAlphaNum4(request) ;
             }
@@ -65765,7 +65607,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAlphaNum12 request");
                 return _service.EncodeAlphaNum12(request) ;
             }
@@ -65781,7 +65622,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAlphaNum12 request");
                 return _service.DecodeAlphaNum12(request) ;
             }
@@ -65797,7 +65637,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAsset request");
                 return _service.EncodeAsset(request) ;
             }
@@ -65813,7 +65652,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAsset request");
                 return _service.DecodeAsset(request) ;
             }
@@ -65829,7 +65667,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePrice request");
                 return _service.EncodePrice(request) ;
             }
@@ -65845,7 +65682,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePrice request");
                 return _service.DecodePrice(request) ;
             }
@@ -65861,7 +65697,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiabilities request");
                 return _service.EncodeLiabilities(request) ;
             }
@@ -65877,7 +65712,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiabilities request");
                 return _service.DecodeLiabilities(request) ;
             }
@@ -65893,7 +65727,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeThresholdIndexes request");
                 return _service.EncodeThresholdIndexes(request) ;
             }
@@ -65909,7 +65742,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeThresholdIndexes request");
                 return _service.DecodeThresholdIndexes(request) ;
             }
@@ -65925,7 +65757,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntryType request");
                 return _service.EncodeLedgerEntryType(request) ;
             }
@@ -65941,7 +65772,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntryType request");
                 return _service.DecodeLedgerEntryType(request) ;
             }
@@ -65957,7 +65787,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSigner request");
                 return _service.EncodeSigner(request) ;
             }
@@ -65973,7 +65802,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSigner request");
                 return _service.DecodeSigner(request) ;
             }
@@ -65989,7 +65817,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountFlags request");
                 return _service.EncodeAccountFlags(request) ;
             }
@@ -66005,7 +65832,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountFlags request");
                 return _service.DecodeAccountFlags(request) ;
             }
@@ -66021,7 +65847,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSponsorshipDescriptor request");
                 return _service.EncodeSponsorshipDescriptor(request) ;
             }
@@ -66037,7 +65862,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSponsorshipDescriptor request");
                 return _service.DecodeSponsorshipDescriptor(request) ;
             }
@@ -66053,7 +65877,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountEntryExtensionV3 request");
                 return _service.EncodeAccountEntryExtensionV3(request) ;
             }
@@ -66069,7 +65892,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountEntryExtensionV3 request");
                 return _service.DecodeAccountEntryExtensionV3(request) ;
             }
@@ -66085,7 +65907,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountEntryExtensionV2 request");
                 return _service.EncodeAccountEntryExtensionV2(request) ;
             }
@@ -66101,7 +65922,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountEntryExtensionV2 request");
                 return _service.DecodeAccountEntryExtensionV2(request) ;
             }
@@ -66117,7 +65937,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountEntryExtensionV1 request");
                 return _service.EncodeAccountEntryExtensionV1(request) ;
             }
@@ -66133,7 +65952,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountEntryExtensionV1 request");
                 return _service.DecodeAccountEntryExtensionV1(request) ;
             }
@@ -66149,7 +65967,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountEntry request");
                 return _service.EncodeAccountEntry(request) ;
             }
@@ -66165,7 +65982,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountEntry request");
                 return _service.DecodeAccountEntry(request) ;
             }
@@ -66181,7 +65997,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTrustLineFlags request");
                 return _service.EncodeTrustLineFlags(request) ;
             }
@@ -66197,7 +66012,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTrustLineFlags request");
                 return _service.DecodeTrustLineFlags(request) ;
             }
@@ -66213,7 +66027,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolType request");
                 return _service.EncodeLiquidityPoolType(request) ;
             }
@@ -66229,7 +66042,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolType request");
                 return _service.DecodeLiquidityPoolType(request) ;
             }
@@ -66245,7 +66057,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTrustLineAsset request");
                 return _service.EncodeTrustLineAsset(request) ;
             }
@@ -66261,7 +66072,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTrustLineAsset request");
                 return _service.DecodeTrustLineAsset(request) ;
             }
@@ -66277,7 +66087,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTrustLineEntryExtensionV2 request");
                 return _service.EncodeTrustLineEntryExtensionV2(request) ;
             }
@@ -66293,7 +66102,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTrustLineEntryExtensionV2 request");
                 return _service.DecodeTrustLineEntryExtensionV2(request) ;
             }
@@ -66309,7 +66117,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTrustLineEntry request");
                 return _service.EncodeTrustLineEntry(request) ;
             }
@@ -66325,7 +66132,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTrustLineEntry request");
                 return _service.DecodeTrustLineEntry(request) ;
             }
@@ -66341,7 +66147,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOfferEntryFlags request");
                 return _service.EncodeOfferEntryFlags(request) ;
             }
@@ -66357,7 +66162,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOfferEntryFlags request");
                 return _service.DecodeOfferEntryFlags(request) ;
             }
@@ -66373,7 +66177,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOfferEntry request");
                 return _service.EncodeOfferEntry(request) ;
             }
@@ -66389,7 +66192,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOfferEntry request");
                 return _service.DecodeOfferEntry(request) ;
             }
@@ -66405,7 +66207,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDataEntry request");
                 return _service.EncodeDataEntry(request) ;
             }
@@ -66421,7 +66222,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDataEntry request");
                 return _service.DecodeDataEntry(request) ;
             }
@@ -66437,7 +66237,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimPredicateType request");
                 return _service.EncodeClaimPredicateType(request) ;
             }
@@ -66453,7 +66252,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimPredicateType request");
                 return _service.DecodeClaimPredicateType(request) ;
             }
@@ -66469,7 +66267,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimPredicate request");
                 return _service.EncodeClaimPredicate(request) ;
             }
@@ -66485,7 +66282,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimPredicate request");
                 return _service.DecodeClaimPredicate(request) ;
             }
@@ -66501,7 +66297,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimantType request");
                 return _service.EncodeClaimantType(request) ;
             }
@@ -66517,7 +66312,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimantType request");
                 return _service.DecodeClaimantType(request) ;
             }
@@ -66533,7 +66327,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimant request");
                 return _service.EncodeClaimant(request) ;
             }
@@ -66549,7 +66342,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimant request");
                 return _service.DecodeClaimant(request) ;
             }
@@ -66565,7 +66357,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimableBalanceIDType request");
                 return _service.EncodeClaimableBalanceIDType(request) ;
             }
@@ -66581,7 +66372,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimableBalanceIDType request");
                 return _service.DecodeClaimableBalanceIDType(request) ;
             }
@@ -66597,7 +66387,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimableBalanceID request");
                 return _service.EncodeClaimableBalanceID(request) ;
             }
@@ -66613,7 +66402,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimableBalanceID request");
                 return _service.DecodeClaimableBalanceID(request) ;
             }
@@ -66629,7 +66417,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimableBalanceFlags request");
                 return _service.EncodeClaimableBalanceFlags(request) ;
             }
@@ -66645,7 +66432,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimableBalanceFlags request");
                 return _service.DecodeClaimableBalanceFlags(request) ;
             }
@@ -66661,7 +66447,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimableBalanceEntryExtensionV1 request");
                 return _service.EncodeClaimableBalanceEntryExtensionV1(request) ;
             }
@@ -66677,7 +66462,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimableBalanceEntryExtensionV1 request");
                 return _service.DecodeClaimableBalanceEntryExtensionV1(request) ;
             }
@@ -66693,7 +66477,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimableBalanceEntry request");
                 return _service.EncodeClaimableBalanceEntry(request) ;
             }
@@ -66709,7 +66492,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimableBalanceEntry request");
                 return _service.DecodeClaimableBalanceEntry(request) ;
             }
@@ -66725,7 +66507,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolConstantProductParameters request");
                 return _service.EncodeLiquidityPoolConstantProductParameters(request) ;
             }
@@ -66741,7 +66522,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolConstantProductParameters request");
                 return _service.DecodeLiquidityPoolConstantProductParameters(request) ;
             }
@@ -66757,7 +66537,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolEntry request");
                 return _service.EncodeLiquidityPoolEntry(request) ;
             }
@@ -66773,7 +66552,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolEntry request");
                 return _service.DecodeLiquidityPoolEntry(request) ;
             }
@@ -66789,7 +66567,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractDataDurability request");
                 return _service.EncodeContractDataDurability(request) ;
             }
@@ -66805,7 +66582,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractDataDurability request");
                 return _service.DecodeContractDataDurability(request) ;
             }
@@ -66821,7 +66597,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractDataEntry request");
                 return _service.EncodeContractDataEntry(request) ;
             }
@@ -66837,7 +66612,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractDataEntry request");
                 return _service.DecodeContractDataEntry(request) ;
             }
@@ -66853,7 +66627,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractCodeCostInputs request");
                 return _service.EncodeContractCodeCostInputs(request) ;
             }
@@ -66869,7 +66642,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractCodeCostInputs request");
                 return _service.DecodeContractCodeCostInputs(request) ;
             }
@@ -66885,7 +66657,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractCodeEntry request");
                 return _service.EncodeContractCodeEntry(request) ;
             }
@@ -66901,7 +66672,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractCodeEntry request");
                 return _service.DecodeContractCodeEntry(request) ;
             }
@@ -66917,7 +66687,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTTLEntry request");
                 return _service.EncodeTTLEntry(request) ;
             }
@@ -66933,7 +66702,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTTLEntry request");
                 return _service.DecodeTTLEntry(request) ;
             }
@@ -66949,7 +66717,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntryExtensionV1 request");
                 return _service.EncodeLedgerEntryExtensionV1(request) ;
             }
@@ -66965,7 +66732,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntryExtensionV1 request");
                 return _service.DecodeLedgerEntryExtensionV1(request) ;
             }
@@ -66981,7 +66747,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntry request");
                 return _service.EncodeLedgerEntry(request) ;
             }
@@ -66997,7 +66762,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntry request");
                 return _service.DecodeLedgerEntry(request) ;
             }
@@ -67013,7 +66777,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerKey request");
                 return _service.EncodeLedgerKey(request) ;
             }
@@ -67029,7 +66792,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerKey request");
                 return _service.DecodeLedgerKey(request) ;
             }
@@ -67045,7 +66807,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeEnvelopeType request");
                 return _service.EncodeEnvelopeType(request) ;
             }
@@ -67061,7 +66822,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeEnvelopeType request");
                 return _service.DecodeEnvelopeType(request) ;
             }
@@ -67077,7 +66837,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBucketListType request");
                 return _service.EncodeBucketListType(request) ;
             }
@@ -67093,7 +66852,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBucketListType request");
                 return _service.DecodeBucketListType(request) ;
             }
@@ -67109,7 +66867,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBucketEntryType request");
                 return _service.EncodeBucketEntryType(request) ;
             }
@@ -67125,7 +66882,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBucketEntryType request");
                 return _service.DecodeBucketEntryType(request) ;
             }
@@ -67141,7 +66897,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHotArchiveBucketEntryType request");
                 return _service.EncodeHotArchiveBucketEntryType(request) ;
             }
@@ -67157,7 +66912,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHotArchiveBucketEntryType request");
                 return _service.DecodeHotArchiveBucketEntryType(request) ;
             }
@@ -67173,7 +66927,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveBucketEntryType request");
                 return _service.EncodeColdArchiveBucketEntryType(request) ;
             }
@@ -67189,7 +66942,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveBucketEntryType request");
                 return _service.DecodeColdArchiveBucketEntryType(request) ;
             }
@@ -67205,7 +66957,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBucketMetadata request");
                 return _service.EncodeBucketMetadata(request) ;
             }
@@ -67221,7 +66972,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBucketMetadata request");
                 return _service.DecodeBucketMetadata(request) ;
             }
@@ -67237,7 +66987,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBucketEntry request");
                 return _service.EncodeBucketEntry(request) ;
             }
@@ -67253,7 +67002,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBucketEntry request");
                 return _service.DecodeBucketEntry(request) ;
             }
@@ -67269,7 +67017,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHotArchiveBucketEntry request");
                 return _service.EncodeHotArchiveBucketEntry(request) ;
             }
@@ -67285,7 +67032,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHotArchiveBucketEntry request");
                 return _service.DecodeHotArchiveBucketEntry(request) ;
             }
@@ -67301,7 +67047,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveArchivedLeaf request");
                 return _service.EncodeColdArchiveArchivedLeaf(request) ;
             }
@@ -67317,7 +67062,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveArchivedLeaf request");
                 return _service.DecodeColdArchiveArchivedLeaf(request) ;
             }
@@ -67333,7 +67077,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveDeletedLeaf request");
                 return _service.EncodeColdArchiveDeletedLeaf(request) ;
             }
@@ -67349,7 +67092,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveDeletedLeaf request");
                 return _service.DecodeColdArchiveDeletedLeaf(request) ;
             }
@@ -67365,7 +67107,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveBoundaryLeaf request");
                 return _service.EncodeColdArchiveBoundaryLeaf(request) ;
             }
@@ -67381,7 +67122,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveBoundaryLeaf request");
                 return _service.DecodeColdArchiveBoundaryLeaf(request) ;
             }
@@ -67397,7 +67137,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveHashEntry request");
                 return _service.EncodeColdArchiveHashEntry(request) ;
             }
@@ -67413,7 +67152,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveHashEntry request");
                 return _service.DecodeColdArchiveHashEntry(request) ;
             }
@@ -67429,7 +67167,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeColdArchiveBucketEntry request");
                 return _service.EncodeColdArchiveBucketEntry(request) ;
             }
@@ -67445,7 +67182,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeColdArchiveBucketEntry request");
                 return _service.DecodeColdArchiveBucketEntry(request) ;
             }
@@ -67461,7 +67197,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeUpgradeType request");
                 return _service.EncodeUpgradeType(request) ;
             }
@@ -67477,7 +67212,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeUpgradeType request");
                 return _service.DecodeUpgradeType(request) ;
             }
@@ -67493,7 +67227,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStellarValueType request");
                 return _service.EncodeStellarValueType(request) ;
             }
@@ -67509,7 +67242,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStellarValueType request");
                 return _service.DecodeStellarValueType(request) ;
             }
@@ -67525,7 +67257,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseValueSignature request");
                 return _service.EncodeLedgerCloseValueSignature(request) ;
             }
@@ -67541,7 +67272,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseValueSignature request");
                 return _service.DecodeLedgerCloseValueSignature(request) ;
             }
@@ -67557,7 +67287,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStellarValue request");
                 return _service.EncodeStellarValue(request) ;
             }
@@ -67573,7 +67302,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStellarValue request");
                 return _service.DecodeStellarValue(request) ;
             }
@@ -67589,7 +67317,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerHeaderFlags request");
                 return _service.EncodeLedgerHeaderFlags(request) ;
             }
@@ -67605,7 +67332,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerHeaderFlags request");
                 return _service.DecodeLedgerHeaderFlags(request) ;
             }
@@ -67621,7 +67347,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerHeaderExtensionV1 request");
                 return _service.EncodeLedgerHeaderExtensionV1(request) ;
             }
@@ -67637,7 +67362,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerHeaderExtensionV1 request");
                 return _service.DecodeLedgerHeaderExtensionV1(request) ;
             }
@@ -67653,7 +67377,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerHeader request");
                 return _service.EncodeLedgerHeader(request) ;
             }
@@ -67669,7 +67392,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerHeader request");
                 return _service.DecodeLedgerHeader(request) ;
             }
@@ -67685,7 +67407,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerUpgradeType request");
                 return _service.EncodeLedgerUpgradeType(request) ;
             }
@@ -67701,7 +67422,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerUpgradeType request");
                 return _service.DecodeLedgerUpgradeType(request) ;
             }
@@ -67717,7 +67437,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigUpgradeSetKey request");
                 return _service.EncodeConfigUpgradeSetKey(request) ;
             }
@@ -67733,7 +67452,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigUpgradeSetKey request");
                 return _service.DecodeConfigUpgradeSetKey(request) ;
             }
@@ -67749,7 +67467,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerUpgrade request");
                 return _service.EncodeLedgerUpgrade(request) ;
             }
@@ -67765,7 +67482,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerUpgrade request");
                 return _service.DecodeLedgerUpgrade(request) ;
             }
@@ -67781,7 +67497,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeConfigUpgradeSet request");
                 return _service.EncodeConfigUpgradeSet(request) ;
             }
@@ -67797,7 +67512,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeConfigUpgradeSet request");
                 return _service.DecodeConfigUpgradeSet(request) ;
             }
@@ -67813,7 +67527,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTxSetComponentType request");
                 return _service.EncodeTxSetComponentType(request) ;
             }
@@ -67829,7 +67542,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTxSetComponentType request");
                 return _service.DecodeTxSetComponentType(request) ;
             }
@@ -67845,7 +67557,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTxSetComponent request");
                 return _service.EncodeTxSetComponent(request) ;
             }
@@ -67861,7 +67572,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTxSetComponent request");
                 return _service.DecodeTxSetComponent(request) ;
             }
@@ -67877,7 +67587,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionPhase request");
                 return _service.EncodeTransactionPhase(request) ;
             }
@@ -67893,7 +67602,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionPhase request");
                 return _service.DecodeTransactionPhase(request) ;
             }
@@ -67909,7 +67617,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionSet request");
                 return _service.EncodeTransactionSet(request) ;
             }
@@ -67925,7 +67632,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionSet request");
                 return _service.DecodeTransactionSet(request) ;
             }
@@ -67941,7 +67647,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionSetV1 request");
                 return _service.EncodeTransactionSetV1(request) ;
             }
@@ -67957,7 +67662,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionSetV1 request");
                 return _service.DecodeTransactionSetV1(request) ;
             }
@@ -67973,7 +67677,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeGeneralizedTransactionSet request");
                 return _service.EncodeGeneralizedTransactionSet(request) ;
             }
@@ -67989,7 +67692,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeGeneralizedTransactionSet request");
                 return _service.DecodeGeneralizedTransactionSet(request) ;
             }
@@ -68005,7 +67707,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionResultPair request");
                 return _service.EncodeTransactionResultPair(request) ;
             }
@@ -68021,7 +67722,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionResultPair request");
                 return _service.DecodeTransactionResultPair(request) ;
             }
@@ -68037,7 +67737,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionResultSet request");
                 return _service.EncodeTransactionResultSet(request) ;
             }
@@ -68053,7 +67752,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionResultSet request");
                 return _service.DecodeTransactionResultSet(request) ;
             }
@@ -68069,7 +67767,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionHistoryEntry request");
                 return _service.EncodeTransactionHistoryEntry(request) ;
             }
@@ -68085,7 +67782,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionHistoryEntry request");
                 return _service.DecodeTransactionHistoryEntry(request) ;
             }
@@ -68101,7 +67797,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionHistoryResultEntry request");
                 return _service.EncodeTransactionHistoryResultEntry(request) ;
             }
@@ -68117,7 +67812,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionHistoryResultEntry request");
                 return _service.DecodeTransactionHistoryResultEntry(request) ;
             }
@@ -68133,7 +67827,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerHeaderHistoryEntry request");
                 return _service.EncodeLedgerHeaderHistoryEntry(request) ;
             }
@@ -68149,7 +67842,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerHeaderHistoryEntry request");
                 return _service.DecodeLedgerHeaderHistoryEntry(request) ;
             }
@@ -68165,7 +67857,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerSCPMessages request");
                 return _service.EncodeLedgerSCPMessages(request) ;
             }
@@ -68181,7 +67872,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerSCPMessages request");
                 return _service.DecodeLedgerSCPMessages(request) ;
             }
@@ -68197,7 +67887,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPHistoryEntryV0 request");
                 return _service.EncodeSCPHistoryEntryV0(request) ;
             }
@@ -68213,7 +67902,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPHistoryEntryV0 request");
                 return _service.DecodeSCPHistoryEntryV0(request) ;
             }
@@ -68229,7 +67917,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPHistoryEntry request");
                 return _service.EncodeSCPHistoryEntry(request) ;
             }
@@ -68245,7 +67932,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPHistoryEntry request");
                 return _service.DecodeSCPHistoryEntry(request) ;
             }
@@ -68261,7 +67947,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntryChangeType request");
                 return _service.EncodeLedgerEntryChangeType(request) ;
             }
@@ -68277,7 +67962,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntryChangeType request");
                 return _service.DecodeLedgerEntryChangeType(request) ;
             }
@@ -68293,7 +67977,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntryChange request");
                 return _service.EncodeLedgerEntryChange(request) ;
             }
@@ -68309,7 +67992,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntryChange request");
                 return _service.DecodeLedgerEntryChange(request) ;
             }
@@ -68325,7 +68007,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerEntryChanges request");
                 return _service.EncodeLedgerEntryChanges(request) ;
             }
@@ -68341,7 +68022,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerEntryChanges request");
                 return _service.DecodeLedgerEntryChanges(request) ;
             }
@@ -68357,7 +68037,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOperationMeta request");
                 return _service.EncodeOperationMeta(request) ;
             }
@@ -68373,7 +68052,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOperationMeta request");
                 return _service.DecodeOperationMeta(request) ;
             }
@@ -68389,7 +68067,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionMetaV1 request");
                 return _service.EncodeTransactionMetaV1(request) ;
             }
@@ -68405,7 +68082,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionMetaV1 request");
                 return _service.DecodeTransactionMetaV1(request) ;
             }
@@ -68421,7 +68097,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionMetaV2 request");
                 return _service.EncodeTransactionMetaV2(request) ;
             }
@@ -68437,7 +68112,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionMetaV2 request");
                 return _service.DecodeTransactionMetaV2(request) ;
             }
@@ -68453,7 +68127,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractEventType request");
                 return _service.EncodeContractEventType(request) ;
             }
@@ -68469,7 +68142,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractEventType request");
                 return _service.DecodeContractEventType(request) ;
             }
@@ -68485,7 +68157,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractEvent request");
                 return _service.EncodeContractEvent(request) ;
             }
@@ -68501,7 +68172,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractEvent request");
                 return _service.DecodeContractEvent(request) ;
             }
@@ -68517,7 +68187,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDiagnosticEvent request");
                 return _service.EncodeDiagnosticEvent(request) ;
             }
@@ -68533,7 +68202,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDiagnosticEvent request");
                 return _service.DecodeDiagnosticEvent(request) ;
             }
@@ -68549,7 +68217,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDiagnosticEvents request");
                 return _service.EncodeDiagnosticEvents(request) ;
             }
@@ -68565,7 +68232,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDiagnosticEvents request");
                 return _service.DecodeDiagnosticEvents(request) ;
             }
@@ -68581,7 +68247,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanTransactionMetaExtV1 request");
                 return _service.EncodeSorobanTransactionMetaExtV1(request) ;
             }
@@ -68597,7 +68262,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanTransactionMetaExtV1 request");
                 return _service.DecodeSorobanTransactionMetaExtV1(request) ;
             }
@@ -68613,7 +68277,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanTransactionMetaExt request");
                 return _service.EncodeSorobanTransactionMetaExt(request) ;
             }
@@ -68629,7 +68292,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanTransactionMetaExt request");
                 return _service.DecodeSorobanTransactionMetaExt(request) ;
             }
@@ -68645,7 +68307,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanTransactionMeta request");
                 return _service.EncodeSorobanTransactionMeta(request) ;
             }
@@ -68661,7 +68322,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanTransactionMeta request");
                 return _service.DecodeSorobanTransactionMeta(request) ;
             }
@@ -68677,7 +68337,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionMetaV3 request");
                 return _service.EncodeTransactionMetaV3(request) ;
             }
@@ -68693,7 +68352,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionMetaV3 request");
                 return _service.DecodeTransactionMetaV3(request) ;
             }
@@ -68709,7 +68367,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInvokeHostFunctionSuccessPreImage request");
                 return _service.EncodeInvokeHostFunctionSuccessPreImage(request) ;
             }
@@ -68725,7 +68382,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInvokeHostFunctionSuccessPreImage request");
                 return _service.DecodeInvokeHostFunctionSuccessPreImage(request) ;
             }
@@ -68741,7 +68397,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionMeta request");
                 return _service.EncodeTransactionMeta(request) ;
             }
@@ -68757,7 +68412,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionMeta request");
                 return _service.DecodeTransactionMeta(request) ;
             }
@@ -68773,7 +68427,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionResultMeta request");
                 return _service.EncodeTransactionResultMeta(request) ;
             }
@@ -68789,7 +68442,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionResultMeta request");
                 return _service.DecodeTransactionResultMeta(request) ;
             }
@@ -68805,7 +68457,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeUpgradeEntryMeta request");
                 return _service.EncodeUpgradeEntryMeta(request) ;
             }
@@ -68821,7 +68472,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeUpgradeEntryMeta request");
                 return _service.DecodeUpgradeEntryMeta(request) ;
             }
@@ -68837,7 +68487,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseMetaV0 request");
                 return _service.EncodeLedgerCloseMetaV0(request) ;
             }
@@ -68853,7 +68502,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseMetaV0 request");
                 return _service.DecodeLedgerCloseMetaV0(request) ;
             }
@@ -68869,7 +68517,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseMetaExtV1 request");
                 return _service.EncodeLedgerCloseMetaExtV1(request) ;
             }
@@ -68885,7 +68532,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseMetaExtV1 request");
                 return _service.DecodeLedgerCloseMetaExtV1(request) ;
             }
@@ -68901,7 +68547,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseMetaExt request");
                 return _service.EncodeLedgerCloseMetaExt(request) ;
             }
@@ -68917,7 +68562,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseMetaExt request");
                 return _service.DecodeLedgerCloseMetaExt(request) ;
             }
@@ -68933,7 +68577,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseMetaV1 request");
                 return _service.EncodeLedgerCloseMetaV1(request) ;
             }
@@ -68949,7 +68592,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseMetaV1 request");
                 return _service.DecodeLedgerCloseMetaV1(request) ;
             }
@@ -68965,7 +68607,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerCloseMeta request");
                 return _service.EncodeLedgerCloseMeta(request) ;
             }
@@ -68981,7 +68622,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerCloseMeta request");
                 return _service.DecodeLedgerCloseMeta(request) ;
             }
@@ -68997,7 +68637,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeErrorCode request");
                 return _service.EncodeErrorCode(request) ;
             }
@@ -69013,7 +68652,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeErrorCode request");
                 return _service.DecodeErrorCode(request) ;
             }
@@ -69029,7 +68667,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeError request");
                 return _service.EncodeError(request) ;
             }
@@ -69045,7 +68682,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeError request");
                 return _service.DecodeError(request) ;
             }
@@ -69061,7 +68697,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSendMore request");
                 return _service.EncodeSendMore(request) ;
             }
@@ -69077,7 +68712,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSendMore request");
                 return _service.DecodeSendMore(request) ;
             }
@@ -69093,7 +68727,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSendMoreExtended request");
                 return _service.EncodeSendMoreExtended(request) ;
             }
@@ -69109,7 +68742,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSendMoreExtended request");
                 return _service.DecodeSendMoreExtended(request) ;
             }
@@ -69125,7 +68757,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAuthCert request");
                 return _service.EncodeAuthCert(request) ;
             }
@@ -69141,7 +68772,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAuthCert request");
                 return _service.DecodeAuthCert(request) ;
             }
@@ -69157,7 +68787,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHello request");
                 return _service.EncodeHello(request) ;
             }
@@ -69173,7 +68802,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHello request");
                 return _service.DecodeHello(request) ;
             }
@@ -69189,7 +68817,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAuth request");
                 return _service.EncodeAuth(request) ;
             }
@@ -69205,7 +68832,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAuth request");
                 return _service.DecodeAuth(request) ;
             }
@@ -69221,7 +68847,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeIPAddrType request");
                 return _service.EncodeIPAddrType(request) ;
             }
@@ -69237,7 +68862,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeIPAddrType request");
                 return _service.DecodeIPAddrType(request) ;
             }
@@ -69253,7 +68877,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePeerAddress request");
                 return _service.EncodePeerAddress(request) ;
             }
@@ -69269,7 +68892,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePeerAddress request");
                 return _service.DecodePeerAddress(request) ;
             }
@@ -69285,7 +68907,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeMessageType request");
                 return _service.EncodeMessageType(request) ;
             }
@@ -69301,7 +68922,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeMessageType request");
                 return _service.DecodeMessageType(request) ;
             }
@@ -69317,7 +68937,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDontHave request");
                 return _service.EncodeDontHave(request) ;
             }
@@ -69333,7 +68952,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDontHave request");
                 return _service.DecodeDontHave(request) ;
             }
@@ -69349,7 +68967,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSurveyMessageCommandType request");
                 return _service.EncodeSurveyMessageCommandType(request) ;
             }
@@ -69365,7 +68982,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSurveyMessageCommandType request");
                 return _service.DecodeSurveyMessageCommandType(request) ;
             }
@@ -69381,7 +68997,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSurveyMessageResponseType request");
                 return _service.EncodeSurveyMessageResponseType(request) ;
             }
@@ -69397,7 +69012,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSurveyMessageResponseType request");
                 return _service.DecodeSurveyMessageResponseType(request) ;
             }
@@ -69413,7 +69027,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedSurveyStartCollectingMessage request");
                 return _service.EncodeTimeSlicedSurveyStartCollectingMessage(request) ;
             }
@@ -69429,7 +69042,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedSurveyStartCollectingMessage request");
                 return _service.DecodeTimeSlicedSurveyStartCollectingMessage(request) ;
             }
@@ -69445,7 +69057,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedTimeSlicedSurveyStartCollectingMessage request");
                 return _service.EncodeSignedTimeSlicedSurveyStartCollectingMessage(request) ;
             }
@@ -69461,7 +69072,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedTimeSlicedSurveyStartCollectingMessage request");
                 return _service.DecodeSignedTimeSlicedSurveyStartCollectingMessage(request) ;
             }
@@ -69477,7 +69087,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedSurveyStopCollectingMessage request");
                 return _service.EncodeTimeSlicedSurveyStopCollectingMessage(request) ;
             }
@@ -69493,7 +69102,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedSurveyStopCollectingMessage request");
                 return _service.DecodeTimeSlicedSurveyStopCollectingMessage(request) ;
             }
@@ -69509,7 +69117,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedTimeSlicedSurveyStopCollectingMessage request");
                 return _service.EncodeSignedTimeSlicedSurveyStopCollectingMessage(request) ;
             }
@@ -69525,7 +69132,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedTimeSlicedSurveyStopCollectingMessage request");
                 return _service.DecodeSignedTimeSlicedSurveyStopCollectingMessage(request) ;
             }
@@ -69541,7 +69147,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSurveyRequestMessage request");
                 return _service.EncodeSurveyRequestMessage(request) ;
             }
@@ -69557,7 +69162,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSurveyRequestMessage request");
                 return _service.DecodeSurveyRequestMessage(request) ;
             }
@@ -69573,7 +69177,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedSurveyRequestMessage request");
                 return _service.EncodeTimeSlicedSurveyRequestMessage(request) ;
             }
@@ -69589,7 +69192,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedSurveyRequestMessage request");
                 return _service.DecodeTimeSlicedSurveyRequestMessage(request) ;
             }
@@ -69605,7 +69207,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedSurveyRequestMessage request");
                 return _service.EncodeSignedSurveyRequestMessage(request) ;
             }
@@ -69621,7 +69222,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedSurveyRequestMessage request");
                 return _service.DecodeSignedSurveyRequestMessage(request) ;
             }
@@ -69637,7 +69237,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedTimeSlicedSurveyRequestMessage request");
                 return _service.EncodeSignedTimeSlicedSurveyRequestMessage(request) ;
             }
@@ -69653,7 +69252,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedTimeSlicedSurveyRequestMessage request");
                 return _service.DecodeSignedTimeSlicedSurveyRequestMessage(request) ;
             }
@@ -69669,7 +69267,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeEncryptedBody request");
                 return _service.EncodeEncryptedBody(request) ;
             }
@@ -69685,7 +69282,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeEncryptedBody request");
                 return _service.DecodeEncryptedBody(request) ;
             }
@@ -69701,7 +69297,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSurveyResponseMessage request");
                 return _service.EncodeSurveyResponseMessage(request) ;
             }
@@ -69717,7 +69312,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSurveyResponseMessage request");
                 return _service.DecodeSurveyResponseMessage(request) ;
             }
@@ -69733,7 +69327,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedSurveyResponseMessage request");
                 return _service.EncodeTimeSlicedSurveyResponseMessage(request) ;
             }
@@ -69749,7 +69342,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedSurveyResponseMessage request");
                 return _service.DecodeTimeSlicedSurveyResponseMessage(request) ;
             }
@@ -69765,7 +69357,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedSurveyResponseMessage request");
                 return _service.EncodeSignedSurveyResponseMessage(request) ;
             }
@@ -69781,7 +69372,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedSurveyResponseMessage request");
                 return _service.DecodeSignedSurveyResponseMessage(request) ;
             }
@@ -69797,7 +69387,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignedTimeSlicedSurveyResponseMessage request");
                 return _service.EncodeSignedTimeSlicedSurveyResponseMessage(request) ;
             }
@@ -69813,7 +69402,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignedTimeSlicedSurveyResponseMessage request");
                 return _service.DecodeSignedTimeSlicedSurveyResponseMessage(request) ;
             }
@@ -69829,7 +69417,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePeerStats request");
                 return _service.EncodePeerStats(request) ;
             }
@@ -69845,7 +69432,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePeerStats request");
                 return _service.DecodePeerStats(request) ;
             }
@@ -69861,7 +69447,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePeerStatList request");
                 return _service.EncodePeerStatList(request) ;
             }
@@ -69877,7 +69462,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePeerStatList request");
                 return _service.DecodePeerStatList(request) ;
             }
@@ -69893,7 +69477,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedNodeData request");
                 return _service.EncodeTimeSlicedNodeData(request) ;
             }
@@ -69909,7 +69492,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedNodeData request");
                 return _service.DecodeTimeSlicedNodeData(request) ;
             }
@@ -69925,7 +69507,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedPeerData request");
                 return _service.EncodeTimeSlicedPeerData(request) ;
             }
@@ -69941,7 +69522,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedPeerData request");
                 return _service.DecodeTimeSlicedPeerData(request) ;
             }
@@ -69957,7 +69537,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeSlicedPeerDataList request");
                 return _service.EncodeTimeSlicedPeerDataList(request) ;
             }
@@ -69973,7 +69552,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeSlicedPeerDataList request");
                 return _service.DecodeTimeSlicedPeerDataList(request) ;
             }
@@ -69989,7 +69567,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTopologyResponseBodyV0 request");
                 return _service.EncodeTopologyResponseBodyV0(request) ;
             }
@@ -70005,7 +69582,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTopologyResponseBodyV0 request");
                 return _service.DecodeTopologyResponseBodyV0(request) ;
             }
@@ -70021,7 +69597,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTopologyResponseBodyV1 request");
                 return _service.EncodeTopologyResponseBodyV1(request) ;
             }
@@ -70037,7 +69612,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTopologyResponseBodyV1 request");
                 return _service.DecodeTopologyResponseBodyV1(request) ;
             }
@@ -70053,7 +69627,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTopologyResponseBodyV2 request");
                 return _service.EncodeTopologyResponseBodyV2(request) ;
             }
@@ -70069,7 +69642,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTopologyResponseBodyV2 request");
                 return _service.DecodeTopologyResponseBodyV2(request) ;
             }
@@ -70085,7 +69657,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSurveyResponseBody request");
                 return _service.EncodeSurveyResponseBody(request) ;
             }
@@ -70101,7 +69672,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSurveyResponseBody request");
                 return _service.DecodeSurveyResponseBody(request) ;
             }
@@ -70117,7 +69687,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTxAdvertVector request");
                 return _service.EncodeTxAdvertVector(request) ;
             }
@@ -70133,7 +69702,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTxAdvertVector request");
                 return _service.DecodeTxAdvertVector(request) ;
             }
@@ -70149,7 +69717,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeFloodAdvert request");
                 return _service.EncodeFloodAdvert(request) ;
             }
@@ -70165,7 +69732,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeFloodAdvert request");
                 return _service.DecodeFloodAdvert(request) ;
             }
@@ -70181,7 +69747,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTxDemandVector request");
                 return _service.EncodeTxDemandVector(request) ;
             }
@@ -70197,7 +69762,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTxDemandVector request");
                 return _service.DecodeTxDemandVector(request) ;
             }
@@ -70213,7 +69777,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeFloodDemand request");
                 return _service.EncodeFloodDemand(request) ;
             }
@@ -70229,7 +69792,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeFloodDemand request");
                 return _service.DecodeFloodDemand(request) ;
             }
@@ -70245,7 +69807,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeStellarMessage request");
                 return _service.EncodeStellarMessage(request) ;
             }
@@ -70261,7 +69822,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeStellarMessage request");
                 return _service.DecodeStellarMessage(request) ;
             }
@@ -70277,7 +69837,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAuthenticatedMessage request");
                 return _service.EncodeAuthenticatedMessage(request) ;
             }
@@ -70293,7 +69852,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAuthenticatedMessage request");
                 return _service.DecodeAuthenticatedMessage(request) ;
             }
@@ -70309,7 +69867,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeValue request");
                 return _service.EncodeValue(request) ;
             }
@@ -70325,7 +69882,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeValue request");
                 return _service.DecodeValue(request) ;
             }
@@ -70341,7 +69897,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPBallot request");
                 return _service.EncodeSCPBallot(request) ;
             }
@@ -70357,7 +69912,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPBallot request");
                 return _service.DecodeSCPBallot(request) ;
             }
@@ -70373,7 +69927,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPStatementType request");
                 return _service.EncodeSCPStatementType(request) ;
             }
@@ -70389,7 +69942,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPStatementType request");
                 return _service.DecodeSCPStatementType(request) ;
             }
@@ -70405,7 +69957,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPNomination request");
                 return _service.EncodeSCPNomination(request) ;
             }
@@ -70421,7 +69972,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPNomination request");
                 return _service.DecodeSCPNomination(request) ;
             }
@@ -70437,7 +69987,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPStatement request");
                 return _service.EncodeSCPStatement(request) ;
             }
@@ -70453,7 +70002,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPStatement request");
                 return _service.DecodeSCPStatement(request) ;
             }
@@ -70469,7 +70017,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPEnvelope request");
                 return _service.EncodeSCPEnvelope(request) ;
             }
@@ -70485,7 +70032,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPEnvelope request");
                 return _service.DecodeSCPEnvelope(request) ;
             }
@@ -70501,7 +70047,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSCPQuorumSet request");
                 return _service.EncodeSCPQuorumSet(request) ;
             }
@@ -70517,7 +70062,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSCPQuorumSet request");
                 return _service.DecodeSCPQuorumSet(request) ;
             }
@@ -70533,7 +70077,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolParameters request");
                 return _service.EncodeLiquidityPoolParameters(request) ;
             }
@@ -70549,7 +70092,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolParameters request");
                 return _service.DecodeLiquidityPoolParameters(request) ;
             }
@@ -70565,7 +70107,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeMuxedAccount request");
                 return _service.EncodeMuxedAccount(request) ;
             }
@@ -70581,7 +70122,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeMuxedAccount request");
                 return _service.DecodeMuxedAccount(request) ;
             }
@@ -70597,7 +70137,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDecoratedSignature request");
                 return _service.EncodeDecoratedSignature(request) ;
             }
@@ -70613,7 +70152,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDecoratedSignature request");
                 return _service.DecodeDecoratedSignature(request) ;
             }
@@ -70629,7 +70167,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOperationType request");
                 return _service.EncodeOperationType(request) ;
             }
@@ -70645,7 +70182,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOperationType request");
                 return _service.DecodeOperationType(request) ;
             }
@@ -70661,7 +70197,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateAccountOp request");
                 return _service.EncodeCreateAccountOp(request) ;
             }
@@ -70677,7 +70212,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateAccountOp request");
                 return _service.DecodeCreateAccountOp(request) ;
             }
@@ -70693,7 +70227,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePaymentOp request");
                 return _service.EncodePaymentOp(request) ;
             }
@@ -70709,7 +70242,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePaymentOp request");
                 return _service.DecodePaymentOp(request) ;
             }
@@ -70725,7 +70257,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictReceiveOp request");
                 return _service.EncodePathPaymentStrictReceiveOp(request) ;
             }
@@ -70741,7 +70272,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictReceiveOp request");
                 return _service.DecodePathPaymentStrictReceiveOp(request) ;
             }
@@ -70757,7 +70287,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictSendOp request");
                 return _service.EncodePathPaymentStrictSendOp(request) ;
             }
@@ -70773,7 +70302,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictSendOp request");
                 return _service.DecodePathPaymentStrictSendOp(request) ;
             }
@@ -70789,7 +70317,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageSellOfferOp request");
                 return _service.EncodeManageSellOfferOp(request) ;
             }
@@ -70805,7 +70332,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageSellOfferOp request");
                 return _service.DecodeManageSellOfferOp(request) ;
             }
@@ -70821,7 +70347,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageBuyOfferOp request");
                 return _service.EncodeManageBuyOfferOp(request) ;
             }
@@ -70837,7 +70362,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageBuyOfferOp request");
                 return _service.DecodeManageBuyOfferOp(request) ;
             }
@@ -70853,7 +70377,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreatePassiveSellOfferOp request");
                 return _service.EncodeCreatePassiveSellOfferOp(request) ;
             }
@@ -70869,7 +70392,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreatePassiveSellOfferOp request");
                 return _service.DecodeCreatePassiveSellOfferOp(request) ;
             }
@@ -70885,7 +70407,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetOptionsOp request");
                 return _service.EncodeSetOptionsOp(request) ;
             }
@@ -70901,7 +70422,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetOptionsOp request");
                 return _service.DecodeSetOptionsOp(request) ;
             }
@@ -70917,7 +70437,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeChangeTrustAsset request");
                 return _service.EncodeChangeTrustAsset(request) ;
             }
@@ -70933,7 +70452,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeChangeTrustAsset request");
                 return _service.DecodeChangeTrustAsset(request) ;
             }
@@ -70949,7 +70467,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeChangeTrustOp request");
                 return _service.EncodeChangeTrustOp(request) ;
             }
@@ -70965,7 +70482,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeChangeTrustOp request");
                 return _service.DecodeChangeTrustOp(request) ;
             }
@@ -70981,7 +70497,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAllowTrustOp request");
                 return _service.EncodeAllowTrustOp(request) ;
             }
@@ -70997,7 +70512,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAllowTrustOp request");
                 return _service.DecodeAllowTrustOp(request) ;
             }
@@ -71013,7 +70527,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageDataOp request");
                 return _service.EncodeManageDataOp(request) ;
             }
@@ -71029,7 +70542,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageDataOp request");
                 return _service.DecodeManageDataOp(request) ;
             }
@@ -71045,7 +70557,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBumpSequenceOp request");
                 return _service.EncodeBumpSequenceOp(request) ;
             }
@@ -71061,7 +70572,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBumpSequenceOp request");
                 return _service.DecodeBumpSequenceOp(request) ;
             }
@@ -71077,7 +70587,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateClaimableBalanceOp request");
                 return _service.EncodeCreateClaimableBalanceOp(request) ;
             }
@@ -71093,7 +70602,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateClaimableBalanceOp request");
                 return _service.DecodeCreateClaimableBalanceOp(request) ;
             }
@@ -71109,7 +70617,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimClaimableBalanceOp request");
                 return _service.EncodeClaimClaimableBalanceOp(request) ;
             }
@@ -71125,7 +70632,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimClaimableBalanceOp request");
                 return _service.DecodeClaimClaimableBalanceOp(request) ;
             }
@@ -71141,7 +70647,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBeginSponsoringFutureReservesOp request");
                 return _service.EncodeBeginSponsoringFutureReservesOp(request) ;
             }
@@ -71157,7 +70662,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBeginSponsoringFutureReservesOp request");
                 return _service.DecodeBeginSponsoringFutureReservesOp(request) ;
             }
@@ -71173,7 +70677,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRevokeSponsorshipType request");
                 return _service.EncodeRevokeSponsorshipType(request) ;
             }
@@ -71189,7 +70692,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRevokeSponsorshipType request");
                 return _service.DecodeRevokeSponsorshipType(request) ;
             }
@@ -71205,7 +70707,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRevokeSponsorshipOp request");
                 return _service.EncodeRevokeSponsorshipOp(request) ;
             }
@@ -71221,7 +70722,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRevokeSponsorshipOp request");
                 return _service.DecodeRevokeSponsorshipOp(request) ;
             }
@@ -71237,7 +70737,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackOp request");
                 return _service.EncodeClawbackOp(request) ;
             }
@@ -71253,7 +70752,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackOp request");
                 return _service.DecodeClawbackOp(request) ;
             }
@@ -71269,7 +70767,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackClaimableBalanceOp request");
                 return _service.EncodeClawbackClaimableBalanceOp(request) ;
             }
@@ -71285,7 +70782,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackClaimableBalanceOp request");
                 return _service.DecodeClawbackClaimableBalanceOp(request) ;
             }
@@ -71301,7 +70797,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetTrustLineFlagsOp request");
                 return _service.EncodeSetTrustLineFlagsOp(request) ;
             }
@@ -71317,7 +70812,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetTrustLineFlagsOp request");
                 return _service.DecodeSetTrustLineFlagsOp(request) ;
             }
@@ -71333,7 +70827,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolDepositOp request");
                 return _service.EncodeLiquidityPoolDepositOp(request) ;
             }
@@ -71349,7 +70842,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolDepositOp request");
                 return _service.DecodeLiquidityPoolDepositOp(request) ;
             }
@@ -71365,7 +70857,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolWithdrawOp request");
                 return _service.EncodeLiquidityPoolWithdrawOp(request) ;
             }
@@ -71381,7 +70872,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolWithdrawOp request");
                 return _service.DecodeLiquidityPoolWithdrawOp(request) ;
             }
@@ -71397,7 +70887,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHostFunctionType request");
                 return _service.EncodeHostFunctionType(request) ;
             }
@@ -71413,7 +70902,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHostFunctionType request");
                 return _service.DecodeHostFunctionType(request) ;
             }
@@ -71429,7 +70917,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractIDPreimageType request");
                 return _service.EncodeContractIDPreimageType(request) ;
             }
@@ -71445,7 +70932,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractIDPreimageType request");
                 return _service.DecodeContractIDPreimageType(request) ;
             }
@@ -71461,7 +70947,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeContractIDPreimage request");
                 return _service.EncodeContractIDPreimage(request) ;
             }
@@ -71477,7 +70962,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeContractIDPreimage request");
                 return _service.DecodeContractIDPreimage(request) ;
             }
@@ -71493,7 +70977,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateContractArgs request");
                 return _service.EncodeCreateContractArgs(request) ;
             }
@@ -71509,7 +70992,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateContractArgs request");
                 return _service.DecodeCreateContractArgs(request) ;
             }
@@ -71525,7 +71007,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateContractArgsV2 request");
                 return _service.EncodeCreateContractArgsV2(request) ;
             }
@@ -71541,7 +71022,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateContractArgsV2 request");
                 return _service.DecodeCreateContractArgsV2(request) ;
             }
@@ -71557,7 +71037,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInvokeContractArgs request");
                 return _service.EncodeInvokeContractArgs(request) ;
             }
@@ -71573,7 +71052,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInvokeContractArgs request");
                 return _service.DecodeInvokeContractArgs(request) ;
             }
@@ -71589,7 +71067,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHostFunction request");
                 return _service.EncodeHostFunction(request) ;
             }
@@ -71605,7 +71082,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHostFunction request");
                 return _service.DecodeHostFunction(request) ;
             }
@@ -71621,7 +71097,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanAuthorizedFunctionType request");
                 return _service.EncodeSorobanAuthorizedFunctionType(request) ;
             }
@@ -71637,7 +71112,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanAuthorizedFunctionType request");
                 return _service.DecodeSorobanAuthorizedFunctionType(request) ;
             }
@@ -71653,7 +71127,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanAuthorizedFunction request");
                 return _service.EncodeSorobanAuthorizedFunction(request) ;
             }
@@ -71669,7 +71142,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanAuthorizedFunction request");
                 return _service.DecodeSorobanAuthorizedFunction(request) ;
             }
@@ -71685,7 +71157,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanAuthorizedInvocation request");
                 return _service.EncodeSorobanAuthorizedInvocation(request) ;
             }
@@ -71701,7 +71172,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanAuthorizedInvocation request");
                 return _service.DecodeSorobanAuthorizedInvocation(request) ;
             }
@@ -71717,7 +71187,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanAddressCredentials request");
                 return _service.EncodeSorobanAddressCredentials(request) ;
             }
@@ -71733,7 +71202,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanAddressCredentials request");
                 return _service.DecodeSorobanAddressCredentials(request) ;
             }
@@ -71749,7 +71217,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanCredentialsType request");
                 return _service.EncodeSorobanCredentialsType(request) ;
             }
@@ -71765,7 +71232,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanCredentialsType request");
                 return _service.DecodeSorobanCredentialsType(request) ;
             }
@@ -71781,7 +71247,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanCredentials request");
                 return _service.EncodeSorobanCredentials(request) ;
             }
@@ -71797,7 +71262,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanCredentials request");
                 return _service.DecodeSorobanCredentials(request) ;
             }
@@ -71813,7 +71277,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanAuthorizationEntry request");
                 return _service.EncodeSorobanAuthorizationEntry(request) ;
             }
@@ -71829,7 +71292,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanAuthorizationEntry request");
                 return _service.DecodeSorobanAuthorizationEntry(request) ;
             }
@@ -71845,7 +71307,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInvokeHostFunctionOp request");
                 return _service.EncodeInvokeHostFunctionOp(request) ;
             }
@@ -71861,7 +71322,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInvokeHostFunctionOp request");
                 return _service.DecodeInvokeHostFunctionOp(request) ;
             }
@@ -71877,7 +71337,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeExtendFootprintTTLOp request");
                 return _service.EncodeExtendFootprintTTLOp(request) ;
             }
@@ -71893,7 +71352,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeExtendFootprintTTLOp request");
                 return _service.DecodeExtendFootprintTTLOp(request) ;
             }
@@ -71909,7 +71367,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRestoreFootprintOp request");
                 return _service.EncodeRestoreFootprintOp(request) ;
             }
@@ -71925,7 +71382,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRestoreFootprintOp request");
                 return _service.DecodeRestoreFootprintOp(request) ;
             }
@@ -71941,7 +71397,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOperation request");
                 return _service.EncodeOperation(request) ;
             }
@@ -71957,7 +71412,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOperation request");
                 return _service.DecodeOperation(request) ;
             }
@@ -71973,7 +71427,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHashIDPreimage request");
                 return _service.EncodeHashIDPreimage(request) ;
             }
@@ -71989,7 +71442,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHashIDPreimage request");
                 return _service.DecodeHashIDPreimage(request) ;
             }
@@ -72005,7 +71457,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeMemoType request");
                 return _service.EncodeMemoType(request) ;
             }
@@ -72021,7 +71472,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeMemoType request");
                 return _service.DecodeMemoType(request) ;
             }
@@ -72037,7 +71487,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeMemo request");
                 return _service.EncodeMemo(request) ;
             }
@@ -72053,7 +71502,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeMemo request");
                 return _service.DecodeMemo(request) ;
             }
@@ -72069,7 +71517,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimeBounds request");
                 return _service.EncodeTimeBounds(request) ;
             }
@@ -72085,7 +71532,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimeBounds request");
                 return _service.DecodeTimeBounds(request) ;
             }
@@ -72101,7 +71547,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerBounds request");
                 return _service.EncodeLedgerBounds(request) ;
             }
@@ -72117,7 +71562,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerBounds request");
                 return _service.DecodeLedgerBounds(request) ;
             }
@@ -72133,7 +71577,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePreconditionsV2 request");
                 return _service.EncodePreconditionsV2(request) ;
             }
@@ -72149,7 +71592,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePreconditionsV2 request");
                 return _service.DecodePreconditionsV2(request) ;
             }
@@ -72165,7 +71607,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePreconditionType request");
                 return _service.EncodePreconditionType(request) ;
             }
@@ -72181,7 +71622,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePreconditionType request");
                 return _service.DecodePreconditionType(request) ;
             }
@@ -72197,7 +71637,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePreconditions request");
                 return _service.EncodePreconditions(request) ;
             }
@@ -72213,7 +71652,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePreconditions request");
                 return _service.DecodePreconditions(request) ;
             }
@@ -72229,7 +71667,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLedgerFootprint request");
                 return _service.EncodeLedgerFootprint(request) ;
             }
@@ -72245,7 +71682,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLedgerFootprint request");
                 return _service.DecodeLedgerFootprint(request) ;
             }
@@ -72261,7 +71697,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeArchivalProofType request");
                 return _service.EncodeArchivalProofType(request) ;
             }
@@ -72277,7 +71712,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeArchivalProofType request");
                 return _service.DecodeArchivalProofType(request) ;
             }
@@ -72293,7 +71727,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeArchivalProofNode request");
                 return _service.EncodeArchivalProofNode(request) ;
             }
@@ -72309,7 +71742,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeArchivalProofNode request");
                 return _service.DecodeArchivalProofNode(request) ;
             }
@@ -72325,7 +71757,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeProofLevel request");
                 return _service.EncodeProofLevel(request) ;
             }
@@ -72341,7 +71772,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeProofLevel request");
                 return _service.DecodeProofLevel(request) ;
             }
@@ -72357,7 +71787,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeNonexistenceProofBody request");
                 return _service.EncodeNonexistenceProofBody(request) ;
             }
@@ -72373,7 +71802,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeNonexistenceProofBody request");
                 return _service.DecodeNonexistenceProofBody(request) ;
             }
@@ -72389,7 +71817,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeExistenceProofBody request");
                 return _service.EncodeExistenceProofBody(request) ;
             }
@@ -72405,7 +71832,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeExistenceProofBody request");
                 return _service.DecodeExistenceProofBody(request) ;
             }
@@ -72421,7 +71847,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeArchivalProof request");
                 return _service.EncodeArchivalProof(request) ;
             }
@@ -72437,7 +71862,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeArchivalProof request");
                 return _service.DecodeArchivalProof(request) ;
             }
@@ -72453,7 +71877,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanResources request");
                 return _service.EncodeSorobanResources(request) ;
             }
@@ -72469,7 +71892,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanResources request");
                 return _service.DecodeSorobanResources(request) ;
             }
@@ -72485,7 +71907,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSorobanTransactionData request");
                 return _service.EncodeSorobanTransactionData(request) ;
             }
@@ -72501,7 +71922,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSorobanTransactionData request");
                 return _service.DecodeSorobanTransactionData(request) ;
             }
@@ -72517,7 +71937,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionV0 request");
                 return _service.EncodeTransactionV0(request) ;
             }
@@ -72533,7 +71952,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionV0 request");
                 return _service.DecodeTransactionV0(request) ;
             }
@@ -72549,7 +71967,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionV0Envelope request");
                 return _service.EncodeTransactionV0Envelope(request) ;
             }
@@ -72565,7 +71982,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionV0Envelope request");
                 return _service.DecodeTransactionV0Envelope(request) ;
             }
@@ -72581,7 +71997,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransaction request");
                 return _service.EncodeTransaction(request) ;
             }
@@ -72597,7 +72012,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransaction request");
                 return _service.DecodeTransaction(request) ;
             }
@@ -72613,7 +72027,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionV1Envelope request");
                 return _service.EncodeTransactionV1Envelope(request) ;
             }
@@ -72629,7 +72042,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionV1Envelope request");
                 return _service.DecodeTransactionV1Envelope(request) ;
             }
@@ -72645,7 +72057,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeFeeBumpTransaction request");
                 return _service.EncodeFeeBumpTransaction(request) ;
             }
@@ -72661,7 +72072,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeFeeBumpTransaction request");
                 return _service.DecodeFeeBumpTransaction(request) ;
             }
@@ -72677,7 +72087,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeFeeBumpTransactionEnvelope request");
                 return _service.EncodeFeeBumpTransactionEnvelope(request) ;
             }
@@ -72693,7 +72102,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeFeeBumpTransactionEnvelope request");
                 return _service.DecodeFeeBumpTransactionEnvelope(request) ;
             }
@@ -72709,7 +72117,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionEnvelope request");
                 return _service.EncodeTransactionEnvelope(request) ;
             }
@@ -72725,7 +72132,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionEnvelope request");
                 return _service.DecodeTransactionEnvelope(request) ;
             }
@@ -72741,7 +72147,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionSignaturePayload request");
                 return _service.EncodeTransactionSignaturePayload(request) ;
             }
@@ -72757,7 +72162,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionSignaturePayload request");
                 return _service.DecodeTransactionSignaturePayload(request) ;
             }
@@ -72773,7 +72177,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimAtomType request");
                 return _service.EncodeClaimAtomType(request) ;
             }
@@ -72789,7 +72192,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimAtomType request");
                 return _service.DecodeClaimAtomType(request) ;
             }
@@ -72805,7 +72207,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimOfferAtomV0 request");
                 return _service.EncodeClaimOfferAtomV0(request) ;
             }
@@ -72821,7 +72222,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimOfferAtomV0 request");
                 return _service.DecodeClaimOfferAtomV0(request) ;
             }
@@ -72837,7 +72237,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimOfferAtom request");
                 return _service.EncodeClaimOfferAtom(request) ;
             }
@@ -72853,7 +72252,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimOfferAtom request");
                 return _service.DecodeClaimOfferAtom(request) ;
             }
@@ -72869,7 +72267,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimLiquidityAtom request");
                 return _service.EncodeClaimLiquidityAtom(request) ;
             }
@@ -72885,7 +72282,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimLiquidityAtom request");
                 return _service.DecodeClaimLiquidityAtom(request) ;
             }
@@ -72901,7 +72297,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimAtom request");
                 return _service.EncodeClaimAtom(request) ;
             }
@@ -72917,7 +72312,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimAtom request");
                 return _service.DecodeClaimAtom(request) ;
             }
@@ -72933,7 +72327,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateAccountResultCode request");
                 return _service.EncodeCreateAccountResultCode(request) ;
             }
@@ -72949,7 +72342,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateAccountResultCode request");
                 return _service.DecodeCreateAccountResultCode(request) ;
             }
@@ -72965,7 +72357,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateAccountResult request");
                 return _service.EncodeCreateAccountResult(request) ;
             }
@@ -72981,7 +72372,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateAccountResult request");
                 return _service.DecodeCreateAccountResult(request) ;
             }
@@ -72997,7 +72387,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePaymentResultCode request");
                 return _service.EncodePaymentResultCode(request) ;
             }
@@ -73013,7 +72402,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePaymentResultCode request");
                 return _service.DecodePaymentResultCode(request) ;
             }
@@ -73029,7 +72417,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePaymentResult request");
                 return _service.EncodePaymentResult(request) ;
             }
@@ -73045,7 +72432,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePaymentResult request");
                 return _service.DecodePaymentResult(request) ;
             }
@@ -73061,7 +72447,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictReceiveResultCode request");
                 return _service.EncodePathPaymentStrictReceiveResultCode(request) ;
             }
@@ -73077,7 +72462,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictReceiveResultCode request");
                 return _service.DecodePathPaymentStrictReceiveResultCode(request) ;
             }
@@ -73093,7 +72477,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSimplePaymentResult request");
                 return _service.EncodeSimplePaymentResult(request) ;
             }
@@ -73109,7 +72492,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSimplePaymentResult request");
                 return _service.DecodeSimplePaymentResult(request) ;
             }
@@ -73125,7 +72507,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictReceiveResult request");
                 return _service.EncodePathPaymentStrictReceiveResult(request) ;
             }
@@ -73141,7 +72522,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictReceiveResult request");
                 return _service.DecodePathPaymentStrictReceiveResult(request) ;
             }
@@ -73157,7 +72537,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictSendResultCode request");
                 return _service.EncodePathPaymentStrictSendResultCode(request) ;
             }
@@ -73173,7 +72552,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictSendResultCode request");
                 return _service.DecodePathPaymentStrictSendResultCode(request) ;
             }
@@ -73189,7 +72567,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePathPaymentStrictSendResult request");
                 return _service.EncodePathPaymentStrictSendResult(request) ;
             }
@@ -73205,7 +72582,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePathPaymentStrictSendResult request");
                 return _service.DecodePathPaymentStrictSendResult(request) ;
             }
@@ -73221,7 +72597,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageSellOfferResultCode request");
                 return _service.EncodeManageSellOfferResultCode(request) ;
             }
@@ -73237,7 +72612,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageSellOfferResultCode request");
                 return _service.DecodeManageSellOfferResultCode(request) ;
             }
@@ -73253,7 +72627,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageOfferEffect request");
                 return _service.EncodeManageOfferEffect(request) ;
             }
@@ -73269,7 +72642,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageOfferEffect request");
                 return _service.DecodeManageOfferEffect(request) ;
             }
@@ -73285,7 +72657,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageOfferSuccessResult request");
                 return _service.EncodeManageOfferSuccessResult(request) ;
             }
@@ -73301,7 +72672,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageOfferSuccessResult request");
                 return _service.DecodeManageOfferSuccessResult(request) ;
             }
@@ -73317,7 +72687,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageSellOfferResult request");
                 return _service.EncodeManageSellOfferResult(request) ;
             }
@@ -73333,7 +72702,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageSellOfferResult request");
                 return _service.DecodeManageSellOfferResult(request) ;
             }
@@ -73349,7 +72717,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageBuyOfferResultCode request");
                 return _service.EncodeManageBuyOfferResultCode(request) ;
             }
@@ -73365,7 +72732,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageBuyOfferResultCode request");
                 return _service.DecodeManageBuyOfferResultCode(request) ;
             }
@@ -73381,7 +72747,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageBuyOfferResult request");
                 return _service.EncodeManageBuyOfferResult(request) ;
             }
@@ -73397,7 +72762,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageBuyOfferResult request");
                 return _service.DecodeManageBuyOfferResult(request) ;
             }
@@ -73413,7 +72777,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetOptionsResultCode request");
                 return _service.EncodeSetOptionsResultCode(request) ;
             }
@@ -73429,7 +72792,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetOptionsResultCode request");
                 return _service.DecodeSetOptionsResultCode(request) ;
             }
@@ -73445,7 +72807,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetOptionsResult request");
                 return _service.EncodeSetOptionsResult(request) ;
             }
@@ -73461,7 +72822,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetOptionsResult request");
                 return _service.DecodeSetOptionsResult(request) ;
             }
@@ -73477,7 +72837,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeChangeTrustResultCode request");
                 return _service.EncodeChangeTrustResultCode(request) ;
             }
@@ -73493,7 +72852,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeChangeTrustResultCode request");
                 return _service.DecodeChangeTrustResultCode(request) ;
             }
@@ -73509,7 +72867,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeChangeTrustResult request");
                 return _service.EncodeChangeTrustResult(request) ;
             }
@@ -73525,7 +72882,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeChangeTrustResult request");
                 return _service.DecodeChangeTrustResult(request) ;
             }
@@ -73541,7 +72897,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAllowTrustResultCode request");
                 return _service.EncodeAllowTrustResultCode(request) ;
             }
@@ -73557,7 +72912,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAllowTrustResultCode request");
                 return _service.DecodeAllowTrustResultCode(request) ;
             }
@@ -73573,7 +72927,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAllowTrustResult request");
                 return _service.EncodeAllowTrustResult(request) ;
             }
@@ -73589,7 +72942,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAllowTrustResult request");
                 return _service.DecodeAllowTrustResult(request) ;
             }
@@ -73605,7 +72957,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountMergeResultCode request");
                 return _service.EncodeAccountMergeResultCode(request) ;
             }
@@ -73621,7 +72972,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountMergeResultCode request");
                 return _service.DecodeAccountMergeResultCode(request) ;
             }
@@ -73637,7 +72987,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountMergeResult request");
                 return _service.EncodeAccountMergeResult(request) ;
             }
@@ -73653,7 +73002,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountMergeResult request");
                 return _service.DecodeAccountMergeResult(request) ;
             }
@@ -73669,7 +73017,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInflationResultCode request");
                 return _service.EncodeInflationResultCode(request) ;
             }
@@ -73685,7 +73032,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInflationResultCode request");
                 return _service.DecodeInflationResultCode(request) ;
             }
@@ -73701,7 +73047,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInflationPayout request");
                 return _service.EncodeInflationPayout(request) ;
             }
@@ -73717,7 +73062,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInflationPayout request");
                 return _service.DecodeInflationPayout(request) ;
             }
@@ -73733,7 +73077,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInflationResult request");
                 return _service.EncodeInflationResult(request) ;
             }
@@ -73749,7 +73092,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInflationResult request");
                 return _service.DecodeInflationResult(request) ;
             }
@@ -73765,7 +73107,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageDataResultCode request");
                 return _service.EncodeManageDataResultCode(request) ;
             }
@@ -73781,7 +73122,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageDataResultCode request");
                 return _service.DecodeManageDataResultCode(request) ;
             }
@@ -73797,7 +73137,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeManageDataResult request");
                 return _service.EncodeManageDataResult(request) ;
             }
@@ -73813,7 +73152,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeManageDataResult request");
                 return _service.DecodeManageDataResult(request) ;
             }
@@ -73829,7 +73167,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBumpSequenceResultCode request");
                 return _service.EncodeBumpSequenceResultCode(request) ;
             }
@@ -73845,7 +73182,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBumpSequenceResultCode request");
                 return _service.DecodeBumpSequenceResultCode(request) ;
             }
@@ -73861,7 +73197,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBumpSequenceResult request");
                 return _service.EncodeBumpSequenceResult(request) ;
             }
@@ -73877,7 +73212,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBumpSequenceResult request");
                 return _service.DecodeBumpSequenceResult(request) ;
             }
@@ -73893,7 +73227,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateClaimableBalanceResultCode request");
                 return _service.EncodeCreateClaimableBalanceResultCode(request) ;
             }
@@ -73909,7 +73242,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateClaimableBalanceResultCode request");
                 return _service.DecodeCreateClaimableBalanceResultCode(request) ;
             }
@@ -73925,7 +73257,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCreateClaimableBalanceResult request");
                 return _service.EncodeCreateClaimableBalanceResult(request) ;
             }
@@ -73941,7 +73272,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCreateClaimableBalanceResult request");
                 return _service.DecodeCreateClaimableBalanceResult(request) ;
             }
@@ -73957,7 +73287,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimClaimableBalanceResultCode request");
                 return _service.EncodeClaimClaimableBalanceResultCode(request) ;
             }
@@ -73973,7 +73302,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimClaimableBalanceResultCode request");
                 return _service.DecodeClaimClaimableBalanceResultCode(request) ;
             }
@@ -73989,7 +73317,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClaimClaimableBalanceResult request");
                 return _service.EncodeClaimClaimableBalanceResult(request) ;
             }
@@ -74005,7 +73332,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClaimClaimableBalanceResult request");
                 return _service.DecodeClaimClaimableBalanceResult(request) ;
             }
@@ -74021,7 +73347,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBeginSponsoringFutureReservesResultCode request");
                 return _service.EncodeBeginSponsoringFutureReservesResultCode(request) ;
             }
@@ -74037,7 +73362,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBeginSponsoringFutureReservesResultCode request");
                 return _service.DecodeBeginSponsoringFutureReservesResultCode(request) ;
             }
@@ -74053,7 +73377,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBeginSponsoringFutureReservesResult request");
                 return _service.EncodeBeginSponsoringFutureReservesResult(request) ;
             }
@@ -74069,7 +73392,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBeginSponsoringFutureReservesResult request");
                 return _service.DecodeBeginSponsoringFutureReservesResult(request) ;
             }
@@ -74085,7 +73407,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeEndSponsoringFutureReservesResultCode request");
                 return _service.EncodeEndSponsoringFutureReservesResultCode(request) ;
             }
@@ -74101,7 +73422,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeEndSponsoringFutureReservesResultCode request");
                 return _service.DecodeEndSponsoringFutureReservesResultCode(request) ;
             }
@@ -74117,7 +73437,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeEndSponsoringFutureReservesResult request");
                 return _service.EncodeEndSponsoringFutureReservesResult(request) ;
             }
@@ -74133,7 +73452,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeEndSponsoringFutureReservesResult request");
                 return _service.DecodeEndSponsoringFutureReservesResult(request) ;
             }
@@ -74149,7 +73467,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRevokeSponsorshipResultCode request");
                 return _service.EncodeRevokeSponsorshipResultCode(request) ;
             }
@@ -74165,7 +73482,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRevokeSponsorshipResultCode request");
                 return _service.DecodeRevokeSponsorshipResultCode(request) ;
             }
@@ -74181,7 +73497,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRevokeSponsorshipResult request");
                 return _service.EncodeRevokeSponsorshipResult(request) ;
             }
@@ -74197,7 +73512,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRevokeSponsorshipResult request");
                 return _service.DecodeRevokeSponsorshipResult(request) ;
             }
@@ -74213,7 +73527,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackResultCode request");
                 return _service.EncodeClawbackResultCode(request) ;
             }
@@ -74229,7 +73542,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackResultCode request");
                 return _service.DecodeClawbackResultCode(request) ;
             }
@@ -74245,7 +73557,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackResult request");
                 return _service.EncodeClawbackResult(request) ;
             }
@@ -74261,7 +73572,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackResult request");
                 return _service.DecodeClawbackResult(request) ;
             }
@@ -74277,7 +73587,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackClaimableBalanceResultCode request");
                 return _service.EncodeClawbackClaimableBalanceResultCode(request) ;
             }
@@ -74293,7 +73602,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackClaimableBalanceResultCode request");
                 return _service.DecodeClawbackClaimableBalanceResultCode(request) ;
             }
@@ -74309,7 +73617,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeClawbackClaimableBalanceResult request");
                 return _service.EncodeClawbackClaimableBalanceResult(request) ;
             }
@@ -74325,7 +73632,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeClawbackClaimableBalanceResult request");
                 return _service.DecodeClawbackClaimableBalanceResult(request) ;
             }
@@ -74341,7 +73647,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetTrustLineFlagsResultCode request");
                 return _service.EncodeSetTrustLineFlagsResultCode(request) ;
             }
@@ -74357,7 +73662,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetTrustLineFlagsResultCode request");
                 return _service.DecodeSetTrustLineFlagsResultCode(request) ;
             }
@@ -74373,7 +73677,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSetTrustLineFlagsResult request");
                 return _service.EncodeSetTrustLineFlagsResult(request) ;
             }
@@ -74389,7 +73692,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSetTrustLineFlagsResult request");
                 return _service.DecodeSetTrustLineFlagsResult(request) ;
             }
@@ -74405,7 +73707,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolDepositResultCode request");
                 return _service.EncodeLiquidityPoolDepositResultCode(request) ;
             }
@@ -74421,7 +73722,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolDepositResultCode request");
                 return _service.DecodeLiquidityPoolDepositResultCode(request) ;
             }
@@ -74437,7 +73737,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolDepositResult request");
                 return _service.EncodeLiquidityPoolDepositResult(request) ;
             }
@@ -74453,7 +73752,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolDepositResult request");
                 return _service.DecodeLiquidityPoolDepositResult(request) ;
             }
@@ -74469,7 +73767,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolWithdrawResultCode request");
                 return _service.EncodeLiquidityPoolWithdrawResultCode(request) ;
             }
@@ -74485,7 +73782,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolWithdrawResultCode request");
                 return _service.DecodeLiquidityPoolWithdrawResultCode(request) ;
             }
@@ -74501,7 +73797,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeLiquidityPoolWithdrawResult request");
                 return _service.EncodeLiquidityPoolWithdrawResult(request) ;
             }
@@ -74517,7 +73812,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeLiquidityPoolWithdrawResult request");
                 return _service.DecodeLiquidityPoolWithdrawResult(request) ;
             }
@@ -74533,7 +73827,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInvokeHostFunctionResultCode request");
                 return _service.EncodeInvokeHostFunctionResultCode(request) ;
             }
@@ -74549,7 +73842,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInvokeHostFunctionResultCode request");
                 return _service.DecodeInvokeHostFunctionResultCode(request) ;
             }
@@ -74565,7 +73857,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInvokeHostFunctionResult request");
                 return _service.EncodeInvokeHostFunctionResult(request) ;
             }
@@ -74581,7 +73872,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInvokeHostFunctionResult request");
                 return _service.DecodeInvokeHostFunctionResult(request) ;
             }
@@ -74597,7 +73887,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeExtendFootprintTTLResultCode request");
                 return _service.EncodeExtendFootprintTTLResultCode(request) ;
             }
@@ -74613,7 +73902,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeExtendFootprintTTLResultCode request");
                 return _service.DecodeExtendFootprintTTLResultCode(request) ;
             }
@@ -74629,7 +73917,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeExtendFootprintTTLResult request");
                 return _service.EncodeExtendFootprintTTLResult(request) ;
             }
@@ -74645,7 +73932,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeExtendFootprintTTLResult request");
                 return _service.DecodeExtendFootprintTTLResult(request) ;
             }
@@ -74661,7 +73947,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRestoreFootprintResultCode request");
                 return _service.EncodeRestoreFootprintResultCode(request) ;
             }
@@ -74677,7 +73962,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRestoreFootprintResultCode request");
                 return _service.DecodeRestoreFootprintResultCode(request) ;
             }
@@ -74693,7 +73977,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeRestoreFootprintResult request");
                 return _service.EncodeRestoreFootprintResult(request) ;
             }
@@ -74709,7 +73992,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeRestoreFootprintResult request");
                 return _service.DecodeRestoreFootprintResult(request) ;
             }
@@ -74725,7 +74007,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOperationResultCode request");
                 return _service.EncodeOperationResultCode(request) ;
             }
@@ -74741,7 +74022,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOperationResultCode request");
                 return _service.DecodeOperationResultCode(request) ;
             }
@@ -74757,7 +74037,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeOperationResult request");
                 return _service.EncodeOperationResult(request) ;
             }
@@ -74773,7 +74052,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeOperationResult request");
                 return _service.DecodeOperationResult(request) ;
             }
@@ -74789,7 +74067,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionResultCode request");
                 return _service.EncodeTransactionResultCode(request) ;
             }
@@ -74805,7 +74082,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionResultCode request");
                 return _service.DecodeTransactionResultCode(request) ;
             }
@@ -74821,7 +74097,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInnerTransactionResult request");
                 return _service.EncodeInnerTransactionResult(request) ;
             }
@@ -74837,7 +74112,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInnerTransactionResult request");
                 return _service.DecodeInnerTransactionResult(request) ;
             }
@@ -74853,7 +74127,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeInnerTransactionResultPair request");
                 return _service.EncodeInnerTransactionResultPair(request) ;
             }
@@ -74869,7 +74142,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeInnerTransactionResultPair request");
                 return _service.DecodeInnerTransactionResultPair(request) ;
             }
@@ -74885,7 +74157,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTransactionResult request");
                 return _service.EncodeTransactionResult(request) ;
             }
@@ -74901,7 +74172,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTransactionResult request");
                 return _service.DecodeTransactionResult(request) ;
             }
@@ -74917,7 +74187,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHash request");
                 return _service.EncodeHash(request) ;
             }
@@ -74933,7 +74202,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHash request");
                 return _service.DecodeHash(request) ;
             }
@@ -74949,7 +74217,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodeuint256 request");
                 return _service.Encodeuint256(request) ;
             }
@@ -74965,7 +74232,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodeuint256 request");
                 return _service.Decodeuint256(request) ;
             }
@@ -74981,7 +74247,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodeuint32 request");
                 return _service.Encodeuint32(request) ;
             }
@@ -74997,7 +74262,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodeuint32 request");
                 return _service.Decodeuint32(request) ;
             }
@@ -75013,7 +74277,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodeint32 request");
                 return _service.Encodeint32(request) ;
             }
@@ -75029,7 +74292,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodeint32 request");
                 return _service.Decodeint32(request) ;
             }
@@ -75045,7 +74307,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodeuint64 request");
                 return _service.Encodeuint64(request) ;
             }
@@ -75061,7 +74322,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodeuint64 request");
                 return _service.Decodeuint64(request) ;
             }
@@ -75077,7 +74337,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Encodeint64 request");
                 return _service.Encodeint64(request) ;
             }
@@ -75093,7 +74352,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Decodeint64 request");
                 return _service.Decodeint64(request) ;
             }
@@ -75109,7 +74367,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeTimePoint request");
                 return _service.EncodeTimePoint(request) ;
             }
@@ -75125,7 +74382,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeTimePoint request");
                 return _service.DecodeTimePoint(request) ;
             }
@@ -75141,7 +74397,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeDuration request");
                 return _service.EncodeDuration(request) ;
             }
@@ -75157,7 +74412,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeDuration request");
                 return _service.DecodeDuration(request) ;
             }
@@ -75173,7 +74427,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeExtensionPoint request");
                 return _service.EncodeExtensionPoint(request) ;
             }
@@ -75189,7 +74442,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeExtensionPoint request");
                 return _service.DecodeExtensionPoint(request) ;
             }
@@ -75205,7 +74457,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCryptoKeyType request");
                 return _service.EncodeCryptoKeyType(request) ;
             }
@@ -75221,7 +74472,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCryptoKeyType request");
                 return _service.DecodeCryptoKeyType(request) ;
             }
@@ -75237,7 +74487,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePublicKeyType request");
                 return _service.EncodePublicKeyType(request) ;
             }
@@ -75253,7 +74502,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePublicKeyType request");
                 return _service.DecodePublicKeyType(request) ;
             }
@@ -75269,7 +74517,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignerKeyType request");
                 return _service.EncodeSignerKeyType(request) ;
             }
@@ -75285,7 +74532,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignerKeyType request");
                 return _service.DecodeSignerKeyType(request) ;
             }
@@ -75301,7 +74547,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodePublicKey request");
                 return _service.EncodePublicKey(request) ;
             }
@@ -75317,7 +74562,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodePublicKey request");
                 return _service.DecodePublicKey(request) ;
             }
@@ -75333,7 +74577,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignerKey request");
                 return _service.EncodeSignerKey(request) ;
             }
@@ -75349,7 +74592,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignerKey request");
                 return _service.DecodeSignerKey(request) ;
             }
@@ -75365,7 +74607,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignature request");
                 return _service.EncodeSignature(request) ;
             }
@@ -75381,7 +74622,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignature request");
                 return _service.DecodeSignature(request) ;
             }
@@ -75397,7 +74637,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSignatureHint request");
                 return _service.EncodeSignatureHint(request) ;
             }
@@ -75413,7 +74652,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSignatureHint request");
                 return _service.DecodeSignatureHint(request) ;
             }
@@ -75429,7 +74667,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeNodeID request");
                 return _service.EncodeNodeID(request) ;
             }
@@ -75445,7 +74682,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeNodeID request");
                 return _service.DecodeNodeID(request) ;
             }
@@ -75461,7 +74697,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeAccountID request");
                 return _service.EncodeAccountID(request) ;
             }
@@ -75477,7 +74712,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeAccountID request");
                 return _service.DecodeAccountID(request) ;
             }
@@ -75493,7 +74727,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCurve25519Secret request");
                 return _service.EncodeCurve25519Secret(request) ;
             }
@@ -75509,7 +74742,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCurve25519Secret request");
                 return _service.DecodeCurve25519Secret(request) ;
             }
@@ -75525,7 +74757,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeCurve25519Public request");
                 return _service.EncodeCurve25519Public(request) ;
             }
@@ -75541,7 +74772,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeCurve25519Public request");
                 return _service.DecodeCurve25519Public(request) ;
             }
@@ -75557,7 +74787,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHmacSha256Key request");
                 return _service.EncodeHmacSha256Key(request) ;
             }
@@ -75573,7 +74802,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHmacSha256Key request");
                 return _service.DecodeHmacSha256Key(request) ;
             }
@@ -75589,7 +74817,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeHmacSha256Mac request");
                 return _service.EncodeHmacSha256Mac(request) ;
             }
@@ -75605,7 +74832,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeHmacSha256Mac request");
                 return _service.DecodeHmacSha256Mac(request) ;
             }
@@ -75621,7 +74847,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeShortHashSeed request");
                 return _service.EncodeShortHashSeed(request) ;
             }
@@ -75637,7 +74862,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeShortHashSeed request");
                 return _service.DecodeShortHashSeed(request) ;
             }
@@ -75653,7 +74877,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeBinaryFuseFilterType request");
                 return _service.EncodeBinaryFuseFilterType(request) ;
             }
@@ -75669,7 +74892,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeBinaryFuseFilterType request");
                 return _service.DecodeBinaryFuseFilterType(request) ;
             }
@@ -75685,7 +74907,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing EncodeSerializedBinaryFuseFilter request");
                 return _service.EncodeSerializedBinaryFuseFilter(request) ;
             }
@@ -75701,7 +74922,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing DecodeSerializedBinaryFuseFilter request");
                 return _service.DecodeSerializedBinaryFuseFilter(request) ;
             }

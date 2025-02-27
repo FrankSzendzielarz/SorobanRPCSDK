@@ -138,7 +138,6 @@ namespace Stellar.RPC.AOT
         {
             try
             {
-                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing ApplyTo request");
                 return _service.ApplyTo(request) ;
             }
