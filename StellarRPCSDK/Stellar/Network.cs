@@ -260,6 +260,7 @@ namespace Stellar
         public static void SetUrl(string url)
         {
             Network.Url = url;
+            Console.WriteLine($"URL: {url}");
         }
 
         /// <summary>

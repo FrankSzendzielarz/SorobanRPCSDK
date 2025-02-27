@@ -26,7 +26,7 @@ namespace Stellar.RPC.Native
             try
             {
                 _serverThread = new Thread(() =>
-                {
+                { 
                     var builder = WebApplication.CreateBuilder(new WebApplicationOptions
                     {
                         ApplicationName = "StellarRPCSDK_Native",  // Explicit name
@@ -44,10 +44,10 @@ namespace Stellar.RPC.Native
                     builder.Services.AddHttpClient<StellarRPCClient>(client =>
                     {
                         client.BaseAddress = new Uri(Network.Url);
+                        Console.WriteLine($"SETTING DI CONTAINER URI {client.BaseAddress}");
                     });
                     builder.Services.AddAotGrpcServices();
-
-                    builder.Services.AddSingleton<StellarRPCClient>();
+                    builder.Services.AddTransient<StellarRPCClient>();
                     builder.Services.AddSingleton<MuxedAccount_ProtoWrapper>();
                     builder.Services.AddSingleton<Transaction_ProtoWrapper>();
                     builder.Services.AddSingleton<Network_ProtoWrapper>();

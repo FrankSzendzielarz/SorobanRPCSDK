@@ -4,6 +4,7 @@ using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Stellar.RPC;
+using System;
 
 namespace Stellar.RPC
 {
@@ -18,6 +19,7 @@ public partial class StellarRPCClient
     public StellarRPCClient(HttpClient httpClient)
     {
         _httpClient = httpClient;
+            Console.WriteLine($"HTTP CLIENT: {httpClient.BaseAddress}");
     }
 
     /// <summary>
@@ -102,6 +104,7 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
+            Console.WriteLine($"GET HEALTH BASE ADDR {_httpClient.BaseAddress}");
         var response = await _httpClient.PostAsync("", 
             new StringContent(
                 requestJson,
