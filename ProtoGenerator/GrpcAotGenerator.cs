@@ -779,6 +779,82 @@ namespace Stellar.RPC.Tools
             sb.AppendLine("    public static class GrpcServiceExtensions");
             sb.AppendLine("    {");
 
+            // Frame helpers
+            // Add utility methods for gRPC framing
+            sb.AppendLine("        #region gRPC Framing Utilities");
+
+            sb.AppendLine("        /// <summary>Frames a gRPC message with proper header</summary>");
+            sb.AppendLine("        private static byte[] FrameGrpcMessage(byte[] messageBytes)");
+            sb.AppendLine("        {");
+            sb.AppendLine("            var messageLength = messageBytes.Length;");
+            sb.AppendLine("            var framedMessage = new byte[5 + messageLength]; // 1 byte compression flag + 4 bytes length + message");
+            sb.AppendLine("            framedMessage[0] = 0; // No compression");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Convert length to big-endian (network byte order)");
+            sb.AppendLine("            if (BitConverter.IsLittleEndian)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                var lengthBytes = BitConverter.GetBytes(messageLength);");
+            sb.AppendLine("                Array.Reverse(lengthBytes);");
+            sb.AppendLine("                Buffer.BlockCopy(lengthBytes, 0, framedMessage, 1, 4);");
+            sb.AppendLine("            }");
+            sb.AppendLine("            else");
+            sb.AppendLine("            {");
+            sb.AppendLine("                BitConverter.GetBytes(messageLength).CopyTo(framedMessage, 1);");
+            sb.AppendLine("            }");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Copy message after the header");
+            sb.AppendLine("            if (messageLength > 0)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                Buffer.BlockCopy(messageBytes, 0, framedMessage, 5, messageLength);");
+            sb.AppendLine("            }");
+            sb.AppendLine("            ");
+            sb.AppendLine("            return framedMessage;");
+            sb.AppendLine("        }");
+
+            sb.AppendLine("        /// <summary>Unframes a gRPC message by parsing the header and extracting the message</summary>");
+            sb.AppendLine("        private static async Task<byte[]> UnframeGrpcMessageAsync(Stream requestBody)");
+            sb.AppendLine("        {");
+            sb.AppendLine("            // Read compression flag (1 byte)");
+            sb.AppendLine("            int compressionFlag = requestBody.ReadByte();");
+            sb.AppendLine("            if (compressionFlag < 0)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                throw new InvalidOperationException(\"Failed to read gRPC compression flag\");");
+            sb.AppendLine("            }");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Read message length (4 bytes)");
+            sb.AppendLine("            byte[] lengthBytes = new byte[4];");
+            sb.AppendLine("            int bytesRead = await requestBody.ReadAsync(lengthBytes, 0, 4);");
+            sb.AppendLine("            if (bytesRead != 4)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                throw new InvalidOperationException(\"Failed to read gRPC message length\");");
+            sb.AppendLine("            }");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Convert from big-endian to host byte order");
+            sb.AppendLine("            if (BitConverter.IsLittleEndian)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                Array.Reverse(lengthBytes);");
+            sb.AppendLine("            }");
+            sb.AppendLine("            int messageLength = BitConverter.ToInt32(lengthBytes, 0);");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Read message bytes");
+            sb.AppendLine("            if (messageLength > 0)");
+            sb.AppendLine("            {");
+            sb.AppendLine("                byte[] messageBytes = new byte[messageLength];");
+            sb.AppendLine("                bytesRead = await requestBody.ReadAsync(messageBytes, 0, messageLength);");
+            sb.AppendLine("                if (bytesRead != messageLength)");
+            sb.AppendLine("                {");
+            sb.AppendLine("                    throw new InvalidOperationException($\"Failed to read complete gRPC message: expected {messageLength} bytes but got {bytesRead}\");");
+            sb.AppendLine("                }");
+            sb.AppendLine("                return messageBytes;");
+            sb.AppendLine("            }");
+            sb.AppendLine("            ");
+            sb.AppendLine("            // Empty message");
+            sb.AppendLine("            return Array.Empty<byte>();");
+            sb.AppendLine("        }");
+
+            sb.AppendLine("        #endregion");
+            sb.AppendLine();
+
             // Service registration method
             sb.AppendLine("        /// <summary>Add all AOT-compatible gRPC services to the DI container</summary>");
             sb.AppendLine("        public static IServiceCollection AddAotGrpcServices(this IServiceCollection services)");
@@ -922,9 +998,6 @@ namespace Stellar.RPC.Tools
                         continue;
 
 
-
-
-
                     sb.AppendLine($"            endpoints.MapPost(\"/{serviceContract.Namespace}.{serviceImplName}/{methodName}\", async context =>");
                     sb.AppendLine("            {");
                     sb.AppendLine($"                var service = context.RequestServices.GetRequiredService<{serviceImplName}GrpcService>();");
@@ -939,36 +1012,33 @@ namespace Stellar.RPC.Tools
                     }
                     else
                     {
-                        sb.AppendLine("                    // Read and deserialize request");
-                        sb.AppendLine("                    using var ms = new MemoryStream();");
-                        sb.AppendLine("                    await context.Request.Body.CopyToAsync(ms);");
-                        sb.AppendLine("                    ms.Position = 0;");
-                        sb.AppendLine($"                    var request = Serializer.Deserialize<{requestTypeFullName}>(ms);");
+                        // Updated to handle proper gRPC framing
+                        sb.AppendLine("                    // Read and deserialize request with gRPC framing");
+                        sb.AppendLine("                    byte[] messageBytes = await UnframeGrpcMessageAsync(context.Request.Body);");
+                        sb.AppendLine($"                    var request = default({requestTypeFullName});");
+                        sb.AppendLine("                    using (var ms = new MemoryStream(messageBytes))");
+                        sb.AppendLine("                    {");
+                        sb.AppendLine($"                        request = Serializer.Deserialize<{requestTypeFullName}>(ms);");
+                        sb.AppendLine("                    }");
                     }
                     sb.AppendLine();
                     sb.AppendLine("                    // Call service method");
                     sb.AppendLine($"                    var response = await service.{methodName}(request, serverCallContext);");
                     sb.AppendLine();
-                    //if (responseType == null || responseType == typeof(void) || requestTypeFullName == "Google.Protobuf.WellKnownTypes.Empty")
-                    //{
-                    //    sb.AppendLine("                    // Empty response type - just set headers");
-                    //    sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
-                    //    sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
-                    //    // For Empty, we still need a valid response body even if it's empty
-                    //    sb.AppendLine("                    await context.Response.Body.WriteAsync(new byte[0], 0, 0);");
-                    //}
-                    //else
-                    {
-                        sb.AppendLine("                    // Serialize and send response");
-                        sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
-                        sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
-                      
-                        sb.AppendLine("                    using var responseMs = new MemoryStream();");
-                        sb.AppendLine("                    Serializer.Serialize(responseMs, response);");
-                       // sb.AppendLine("                    responseMs.Position = 0;");
-                        //    sb.AppendLine("                    await responseMs.CopyToAsync(context.Response.Body);");
-                        sb.AppendLine("                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());");
-                    }
+
+
+                    sb.AppendLine("                    // Serialize and send response with gRPC framing");
+                    sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
+                    sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
+                    sb.AppendLine("                    using var responseMs = new MemoryStream();");
+                    sb.AppendLine("                    Serializer.Serialize(responseMs, response);");
+                    sb.AppendLine("                    responseMs.Position = 0;");
+                    sb.AppendLine("                    var responseBytes = responseMs.ToArray();");
+                    sb.AppendLine("                    ");
+                    sb.AppendLine("                    // Add gRPC frame header and write to response");
+                    sb.AppendLine("                    var framedMessage = FrameGrpcMessage(responseBytes);");
+                    sb.AppendLine("                    await context.Response.BodyWriter.WriteAsync(framedMessage);");
+
                     sb.AppendLine("                }");
                     sb.AppendLine("                catch (Exception ex)");
                     sb.AppendLine("                {");
