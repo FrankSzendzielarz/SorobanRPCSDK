@@ -33,6 +33,11 @@ namespace Stellar.RPC.Native
                         EnvironmentName = "Production"  // Explicit environment
                     });
 
+                    builder.Services.Configure<KestrelServerOptions>(options =>
+                    {
+                        options.AllowSynchronousIO = true;
+                    });
+
                     builder.Logging.SetMinimumLevel(LogLevel.Debug);
                     builder.Logging.AddConsole();
                     //DI for the Stellar Service

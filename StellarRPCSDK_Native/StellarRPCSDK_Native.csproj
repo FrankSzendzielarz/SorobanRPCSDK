@@ -37,6 +37,7 @@
 	<ItemGroup>
 		<!-- Preserve protobuf-net completely -->
 		<TrimmerRootAssembly Include="protobuf-net" />
+		<TrimmerRootAssembly Include="StellarRPCSDK" />
 	</ItemGroup>
 
 	<!-- Conditional compilation for different platforms -->

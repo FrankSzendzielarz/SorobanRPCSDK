@@ -398,7 +398,14 @@ namespace Stellar.RPC.Tools
                 sb.AppendLine("        {");
                 sb.AppendLine("            try");
                 sb.AppendLine("            {");
+
+                //// Add this line for synchronous methods only
+                //if (!isAsync)
+                //{
+                //    sb.AppendLine("                await Task.CompletedTask; // Preserve async context");
+                //}
                 sb.AppendLine($"                _logger.LogInformation(\"Processing {methodName} request\");");
+
 
                 string requestString = isParamless? "()":"(request)";
           
@@ -413,6 +420,7 @@ namespace Stellar.RPC.Tools
                     }
                     else
                     {
+               
                         sb.AppendLine($"                _service.{methodName}{requestString};");
                     }
                     // Return a new Empty instance

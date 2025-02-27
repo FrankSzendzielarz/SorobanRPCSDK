@@ -435,6 +435,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Create request");
                 return _service.Create(request) ;
             }
@@ -450,6 +451,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetCurrent request");
                 return _service.GetCurrent() ;
             }
@@ -465,6 +467,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing GetNetworkPassphrase request");
                 return _service.GetNetworkPassphrase(request) ;
             }
@@ -480,6 +483,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing IsPublicNetwork request");
                 return _service.IsPublicNetwork(request) ;
             }
@@ -495,6 +499,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Public request");
                 return _service.Public() ;
             }
@@ -510,6 +515,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Test request");
                 return _service.Test() ;
             }
@@ -525,6 +531,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing Use request");
                 _service.Use(request);
                 return new Google.Protobuf.WellKnownTypes.Empty();
@@ -541,6 +548,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing UsePublicNetwork request");
                 _service.UsePublicNetwork();
                 return new Google.Protobuf.WellKnownTypes.Empty();
@@ -557,6 +565,7 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing UseTestNetwork request");
                 _service.UseTestNetwork();
                 return new Google.Protobuf.WellKnownTypes.Empty();
@@ -573,12 +582,13 @@ namespace Stellar.RPC.AOT
         {
             try
             {
+                await Task.CompletedTask; // Preserve async context
                 _logger.LogInformation("Processing SetUrl request");
                 _service.SetUrl(request);
                 return new Google.Protobuf.WellKnownTypes.Empty();
             }
             catch (Exception ex)
-            {
+            {  
                 _logger.LogError(ex, "Error in SetUrl");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
