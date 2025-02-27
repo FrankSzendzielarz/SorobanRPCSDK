@@ -12,7 +12,7 @@ using Stellar.RPC;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for SimulateTransactionResult_ProtoWrapper</summary>
+    /// <summary>gRPC service descriptor for ISimulateTransactionResult_ProtoWrapper</summary>
     public static class SimulateTransactionResult_ProtoWrapperGrpcDescriptor
     {
         public const string ServiceName = "Stellar.RPC.SimulateTransactionResult_ProtoWrapper";
@@ -28,7 +28,7 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>Custom marshallers for SimulateTransactionResult_ProtoWrapper types</summary>
+    /// <summary>Custom marshallers for ISimulateTransactionResult_ProtoWrapper types</summary>
     public static class SimulateTransactionResult_ProtoWrapperGrpcMarshaller
     {
         // Static constructor to configure types
@@ -121,13 +121,13 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>gRPC service implementation for SimulateTransactionResult_ProtoWrapper</summary>
+    /// <summary>gRPC service implementation for ISimulateTransactionResult_ProtoWrapper</summary>
     public class SimulateTransactionResult_ProtoWrapperGrpcService
     {
-        private readonly SimulateTransactionResult_ProtoWrapper _service;
+        private readonly ISimulateTransactionResult_ProtoWrapper _service;
         private readonly ILogger _logger;
 
-        public SimulateTransactionResult_ProtoWrapperGrpcService(SimulateTransactionResult_ProtoWrapper service, ILogger<SimulateTransactionResult_ProtoWrapperGrpcService> logger)
+        public SimulateTransactionResult_ProtoWrapperGrpcService(ISimulateTransactionResult_ProtoWrapper service, ILogger<SimulateTransactionResult_ProtoWrapperGrpcService> logger)
         {
             _service = service;
             _logger = logger;
@@ -139,7 +139,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing ApplyTo request");
-                return _service.ApplyTo(request);
+                return _service.ApplyTo(request) ;
             }
             catch (Exception ex)
             {

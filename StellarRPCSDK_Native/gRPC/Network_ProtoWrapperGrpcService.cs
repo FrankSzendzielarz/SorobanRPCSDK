@@ -12,7 +12,7 @@ using Stellar;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for Network_ProtoWrapper</summary>
+    /// <summary>gRPC service descriptor for INetwork_ProtoWrapper</summary>
     public static class Network_ProtoWrapperGrpcDescriptor
     {
         public const string ServiceName = "Stellar.Network_ProtoWrapper";
@@ -26,15 +26,6 @@ namespace Stellar.RPC.AOT
                 Network_ProtoWrapperCreateNetworkParamGrpcMarshaller.Network_ProtoWrapper_CreateNetworkParamMarshaller,
                 NetworkGrpcMarshaller.NetworkMarshaller);
 
-        /// <summary>Method descriptor for GetNetworkPassphrase</summary>
-        public static readonly Method<Stellar.Network, Stellar.StringWrapper> GetNetworkPassphrase =
-            new Method<Stellar.Network, Stellar.StringWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetNetworkPassphrase",
-                NetworkGrpcMarshaller.NetworkMarshaller,
-                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
-
         /// <summary>Method descriptor for GetCurrent</summary>
         public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.Network_ProtoWrapper.GetCurrentResult> GetCurrent =
             new Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.Network_ProtoWrapper.GetCurrentResult>(
@@ -44,14 +35,23 @@ namespace Stellar.RPC.AOT
                 EmptyGrpcMarshaller.EmptyMarshaller,
                 Network_ProtoWrapperGetCurrentResultGrpcMarshaller.Network_ProtoWrapper_GetCurrentResultMarshaller);
 
-        /// <summary>Method descriptor for Use</summary>
-        public static readonly Method<Stellar.Network_ProtoWrapper.UseParam, Google.Protobuf.WellKnownTypes.Empty> Use =
-            new Method<Stellar.Network_ProtoWrapper.UseParam, Google.Protobuf.WellKnownTypes.Empty>(
+        /// <summary>Method descriptor for GetNetworkPassphrase</summary>
+        public static readonly Method<Stellar.Network, Stellar.StringWrapper> GetNetworkPassphrase =
+            new Method<Stellar.Network, Stellar.StringWrapper>(
                 MethodType.Unary,
                 ServiceName,
-                "Use",
-                Network_ProtoWrapperUseParamGrpcMarshaller.Network_ProtoWrapper_UseParamMarshaller,
-                EmptyGrpcMarshaller.EmptyMarshaller);
+                "GetNetworkPassphrase",
+                NetworkGrpcMarshaller.NetworkMarshaller,
+                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
+
+        /// <summary>Method descriptor for IsPublicNetwork</summary>
+        public static readonly Method<Stellar.Network_ProtoWrapper.IsPublicNetworkParam, Stellar.BoolWrapper> IsPublicNetwork =
+            new Method<Stellar.Network_ProtoWrapper.IsPublicNetworkParam, Stellar.BoolWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "IsPublicNetwork",
+                Network_ProtoWrapperIsPublicNetworkParamGrpcMarshaller.Network_ProtoWrapper_IsPublicNetworkParamMarshaller,
+                BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for Public</summary>
         public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Stellar.Network> Public =
@@ -71,6 +71,15 @@ namespace Stellar.RPC.AOT
                 EmptyGrpcMarshaller.EmptyMarshaller,
                 NetworkGrpcMarshaller.NetworkMarshaller);
 
+        /// <summary>Method descriptor for Use</summary>
+        public static readonly Method<Stellar.Network_ProtoWrapper.UseParam, Google.Protobuf.WellKnownTypes.Empty> Use =
+            new Method<Stellar.Network_ProtoWrapper.UseParam, Google.Protobuf.WellKnownTypes.Empty>(
+                MethodType.Unary,
+                ServiceName,
+                "Use",
+                Network_ProtoWrapperUseParamGrpcMarshaller.Network_ProtoWrapper_UseParamMarshaller,
+                EmptyGrpcMarshaller.EmptyMarshaller);
+
         /// <summary>Method descriptor for UsePublicNetwork</summary>
         public static readonly Method<Google.Protobuf.WellKnownTypes.Empty, Google.Protobuf.WellKnownTypes.Empty> UsePublicNetwork =
             new Method<Google.Protobuf.WellKnownTypes.Empty, Google.Protobuf.WellKnownTypes.Empty>(
@@ -89,15 +98,6 @@ namespace Stellar.RPC.AOT
                 EmptyGrpcMarshaller.EmptyMarshaller,
                 EmptyGrpcMarshaller.EmptyMarshaller);
 
-        /// <summary>Method descriptor for IsPublicNetwork</summary>
-        public static readonly Method<Stellar.Network_ProtoWrapper.IsPublicNetworkParam, Stellar.BoolWrapper> IsPublicNetwork =
-            new Method<Stellar.Network_ProtoWrapper.IsPublicNetworkParam, Stellar.BoolWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "IsPublicNetwork",
-                Network_ProtoWrapperIsPublicNetworkParamGrpcMarshaller.Network_ProtoWrapper_IsPublicNetworkParamMarshaller,
-                BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
-
         /// <summary>Method descriptor for SetUrl</summary>
         public static readonly Method<Stellar.Network_ProtoWrapper.SetUrlParam, Google.Protobuf.WellKnownTypes.Empty> SetUrl =
             new Method<Stellar.Network_ProtoWrapper.SetUrlParam, Google.Protobuf.WellKnownTypes.Empty>(
@@ -109,7 +109,7 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>Custom marshallers for Network_ProtoWrapper types</summary>
+    /// <summary>Custom marshallers for INetwork_ProtoWrapper types</summary>
     public static class Network_ProtoWrapperGrpcMarshaller
     {
         // Static constructor to configure types
@@ -133,17 +133,13 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.Network), true);
             }
-            if (!model.IsDefined(typeof(Stellar.StringWrapper)))
-            {
-                model.Add(typeof(Stellar.StringWrapper), true);
-            }
             if (!model.IsDefined(typeof(Stellar.Network_ProtoWrapper.GetCurrentResult)))
             {
                 model.Add(typeof(Stellar.Network_ProtoWrapper.GetCurrentResult), true);
             }
-            if (!model.IsDefined(typeof(Stellar.Network_ProtoWrapper.UseParam)))
+            if (!model.IsDefined(typeof(Stellar.StringWrapper)))
             {
-                model.Add(typeof(Stellar.Network_ProtoWrapper.UseParam), true);
+                model.Add(typeof(Stellar.StringWrapper), true);
             }
             if (!model.IsDefined(typeof(Stellar.Network_ProtoWrapper.IsPublicNetworkParam)))
             {
@@ -152,6 +148,10 @@ namespace Stellar.RPC.AOT
             if (!model.IsDefined(typeof(Stellar.BoolWrapper)))
             {
                 model.Add(typeof(Stellar.BoolWrapper), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.Network_ProtoWrapper.UseParam)))
+            {
+                model.Add(typeof(Stellar.Network_ProtoWrapper.UseParam), true);
             }
             if (!model.IsDefined(typeof(Stellar.Network_ProtoWrapper.SetUrlParam)))
             {
@@ -224,38 +224,6 @@ namespace Stellar.RPC.AOT
                 }
             });
 
-        /// <summary>Marshaller for StringWrapper</summary>
-        public static readonly Marshaller<Stellar.StringWrapper> StringWrapperMarshaller = Marshallers.Create<Stellar.StringWrapper>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.StringWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
         /// <summary>Marshaller for GetCurrentResult</summary>
         public static readonly Marshaller<Stellar.Network_ProtoWrapper.GetCurrentResult> Network_ProtoWrapper_GetCurrentResultMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.GetCurrentResult>(
             (message, serializationContext) =>
@@ -288,8 +256,8 @@ namespace Stellar.RPC.AOT
                 }
             });
 
-        /// <summary>Marshaller for UseParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.UseParam> Network_ProtoWrapper_UseParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.UseParam>(
+        /// <summary>Marshaller for StringWrapper</summary>
+        public static readonly Marshaller<Stellar.StringWrapper> StringWrapperMarshaller = Marshallers.Create<Stellar.StringWrapper>(
             (message, serializationContext) =>
             {
                 try
@@ -311,7 +279,7 @@ namespace Stellar.RPC.AOT
                     var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
                     using (var ms = new MemoryStream(buffer))
                     {
-                        return Serializer.Deserialize<Stellar.Network_ProtoWrapper.UseParam>(ms);
+                        return Serializer.Deserialize<Stellar.StringWrapper>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -384,6 +352,38 @@ namespace Stellar.RPC.AOT
                 }
             });
 
+        /// <summary>Marshaller for UseParam</summary>
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.UseParam> Network_ProtoWrapper_UseParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.UseParam>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.Network_ProtoWrapper.UseParam>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
         /// <summary>Marshaller for SetUrlParam</summary>
         public static readonly Marshaller<Stellar.Network_ProtoWrapper.SetUrlParam> Network_ProtoWrapper_SetUrlParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.SetUrlParam>(
             (message, serializationContext) =>
@@ -418,13 +418,13 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>gRPC service implementation for Network_ProtoWrapper</summary>
+    /// <summary>gRPC service implementation for INetwork_ProtoWrapper</summary>
     public class Network_ProtoWrapperGrpcService
     {
-        private readonly Network_ProtoWrapper _service;
+        private readonly INetwork_ProtoWrapper _service;
         private readonly ILogger _logger;
 
-        public Network_ProtoWrapperGrpcService(Network_ProtoWrapper service, ILogger<Network_ProtoWrapperGrpcService> logger)
+        public Network_ProtoWrapperGrpcService(INetwork_ProtoWrapper service, ILogger<Network_ProtoWrapperGrpcService> logger)
         {
             _service = service;
             _logger = logger;
@@ -436,11 +436,26 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing Create request");
-                return _service.Create(request);
+                return _service.Create(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in Create");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetCurrent method</summary>
+        public async Task<Stellar.Network_ProtoWrapper.GetCurrentResult> GetCurrent(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetCurrent request");
+                return _service.GetCurrent() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetCurrent");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -451,11 +466,56 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing GetNetworkPassphrase request");
-                return _service.GetNetworkPassphrase(request);
+                return _service.GetNetworkPassphrase(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in GetNetworkPassphrase");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for IsPublicNetwork method</summary>
+        public async Task<Stellar.BoolWrapper> IsPublicNetwork(Stellar.Network_ProtoWrapper.IsPublicNetworkParam request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing IsPublicNetwork request");
+                return _service.IsPublicNetwork(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in IsPublicNetwork");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Public method</summary>
+        public async Task<Stellar.Network> Public(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Public request");
+                return _service.Public() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Public");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Test method</summary>
+        public async Task<Stellar.Network> Test(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Test request");
+                return _service.Test() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Test");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -476,17 +536,34 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Handler for IsPublicNetwork method</summary>
-        public async Task<Stellar.BoolWrapper> IsPublicNetwork(Stellar.Network_ProtoWrapper.IsPublicNetworkParam request, ServerCallContext context)
+        /// <summary>Handler for UsePublicNetwork method</summary>
+        public async Task<Google.Protobuf.WellKnownTypes.Empty> UsePublicNetwork(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
         {
             try
             {
-                _logger.LogInformation("Processing IsPublicNetwork request");
-                return _service.IsPublicNetwork(request);
+                _logger.LogInformation("Processing UsePublicNetwork request");
+                _service.UsePublicNetwork();
+                return new Google.Protobuf.WellKnownTypes.Empty();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error in IsPublicNetwork");
+                _logger.LogError(ex, "Error in UsePublicNetwork");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for UseTestNetwork method</summary>
+        public async Task<Google.Protobuf.WellKnownTypes.Empty> UseTestNetwork(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing UseTestNetwork request");
+                _service.UseTestNetwork();
+                return new Google.Protobuf.WellKnownTypes.Empty();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UseTestNetwork");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

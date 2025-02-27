@@ -12,64 +12,10 @@ using Stellar;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for MuxedAccount_ProtoWrapper</summary>
+    /// <summary>gRPC service descriptor for IMuxedAccount_ProtoWrapper</summary>
     public static class MuxedAccount_ProtoWrapperGrpcDescriptor
     {
         public const string ServiceName = "Stellar.MuxedAccount_ProtoWrapper";
-
-        /// <summary>Method descriptor for GetPublicKey</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPublicKey =
-            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetPublicKey",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
-
-        /// <summary>Method descriptor for GetPrivateKey</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPrivateKey =
-            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetPrivateKey",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
-
-        /// <summary>Method descriptor for GetSeedBytes</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetSeedBytes =
-            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetSeedBytes",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
-
-        /// <summary>Method descriptor for GetSecretSeed</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetSecretSeed =
-            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetSecretSeed",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
-
-        /// <summary>Method descriptor for GetAccountId</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAccountId =
-            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetAccountId",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
-
-        /// <summary>Method descriptor for GetAddress</summary>
-        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAddress =
-            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "GetAddress",
-                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
 
         /// <summary>Method descriptor for CanSign</summary>
         public static readonly Method<Stellar.MuxedAccount, Stellar.BoolWrapper> CanSign =
@@ -78,24 +24,6 @@ namespace Stellar.RPC.AOT
                 ServiceName,
                 "CanSign",
                 MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
-                BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
-
-        /// <summary>Method descriptor for Sign</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper> Sign =
-            new Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "Sign",
-                MuxedAccount_ProtoWrapperSignMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_SignMessageMarshaller,
-                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
-
-        /// <summary>Method descriptor for Verify</summary>
-        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper> Verify =
-            new Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper>(
-                MethodType.Unary,
-                ServiceName,
-                "Verify",
-                MuxedAccount_ProtoWrapperVerifyMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_VerifyMessageMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for CreateKeyTypeEd25519</summary>
@@ -115,6 +43,78 @@ namespace Stellar.RPC.AOT
                 "CreateKeyTypeMuxedEd25519",
                 MuxedAccount_ProtoWrapperCreateMuxedEd25519ParamGrpcMarshaller.MuxedAccount_ProtoWrapper_CreateMuxedEd25519ParamMarshaller,
                 MuxedAccountKeyTypeMuxedEd25519GrpcMarshaller.MuxedAccount_KeyTypeMuxedEd25519Marshaller);
+
+        /// <summary>Method descriptor for GetAccountId</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAccountId =
+            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetAccountId",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
+
+        /// <summary>Method descriptor for GetAddress</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetAddress =
+            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetAddress",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
+
+        /// <summary>Method descriptor for GetPrivateKey</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPrivateKey =
+            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetPrivateKey",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
+
+        /// <summary>Method descriptor for GetPublicKey</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetPublicKey =
+            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetPublicKey",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
+
+        /// <summary>Method descriptor for GetSecretSeed</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.StringWrapper> GetSecretSeed =
+            new Method<Stellar.MuxedAccount, Stellar.StringWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetSecretSeed",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                StringWrapperGrpcMarshaller.StringWrapperMarshaller);
+
+        /// <summary>Method descriptor for GetSeedBytes</summary>
+        public static readonly Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper> GetSeedBytes =
+            new Method<Stellar.MuxedAccount, Stellar.ByteArrayWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "GetSeedBytes",
+                MuxedAccountGrpcMarshaller.MuxedAccountMarshaller,
+                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
+
+        /// <summary>Method descriptor for Sign</summary>
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper> Sign =
+            new Method<Stellar.MuxedAccount_ProtoWrapper.SignMessage, Stellar.ByteArrayWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "Sign",
+                MuxedAccount_ProtoWrapperSignMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_SignMessageMarshaller,
+                ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
+
+        /// <summary>Method descriptor for Verify</summary>
+        public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper> Verify =
+            new Method<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage, Stellar.BoolWrapper>(
+                MethodType.Unary,
+                ServiceName,
+                "Verify",
+                MuxedAccount_ProtoWrapperVerifyMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_VerifyMessageMarshaller,
+                BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for FromSecretSeed</summary>
         public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeed =
@@ -181,7 +181,7 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>Custom marshallers for MuxedAccount_ProtoWrapper types</summary>
+    /// <summary>Custom marshallers for IMuxedAccount_ProtoWrapper types</summary>
     public static class MuxedAccount_ProtoWrapperGrpcMarshaller
     {
         // Static constructor to configure types
@@ -201,25 +201,9 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.MuxedAccount), true);
             }
-            if (!model.IsDefined(typeof(Stellar.ByteArrayWrapper)))
-            {
-                model.Add(typeof(Stellar.ByteArrayWrapper), true);
-            }
-            if (!model.IsDefined(typeof(Stellar.StringWrapper)))
-            {
-                model.Add(typeof(Stellar.StringWrapper), true);
-            }
             if (!model.IsDefined(typeof(Stellar.BoolWrapper)))
             {
                 model.Add(typeof(Stellar.BoolWrapper), true);
-            }
-            if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.SignMessage)))
-            {
-                model.Add(typeof(Stellar.MuxedAccount_ProtoWrapper.SignMessage), true);
-            }
-            if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage)))
-            {
-                model.Add(typeof(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage), true);
             }
             if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param)))
             {
@@ -236,6 +220,22 @@ namespace Stellar.RPC.AOT
             if (!model.IsDefined(typeof(Stellar.MuxedAccount.KeyTypeMuxedEd25519)))
             {
                 model.Add(typeof(Stellar.MuxedAccount.KeyTypeMuxedEd25519), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.StringWrapper)))
+            {
+                model.Add(typeof(Stellar.StringWrapper), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.ByteArrayWrapper)))
+            {
+                model.Add(typeof(Stellar.ByteArrayWrapper), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.SignMessage)))
+            {
+                model.Add(typeof(Stellar.MuxedAccount_ProtoWrapper.SignMessage), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage)))
+            {
+                model.Add(typeof(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage), true);
             }
             if (!model.IsDefined(typeof(Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam)))
             {
@@ -280,70 +280,6 @@ namespace Stellar.RPC.AOT
                 }
             });
 
-        /// <summary>Marshaller for ByteArrayWrapper</summary>
-        public static readonly Marshaller<Stellar.ByteArrayWrapper> ByteArrayWrapperMarshaller = Marshallers.Create<Stellar.ByteArrayWrapper>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.ByteArrayWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for StringWrapper</summary>
-        public static readonly Marshaller<Stellar.StringWrapper> StringWrapperMarshaller = Marshallers.Create<Stellar.StringWrapper>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.StringWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
         /// <summary>Marshaller for BoolWrapper</summary>
         public static readonly Marshaller<Stellar.BoolWrapper> BoolWrapperMarshaller = Marshallers.Create<Stellar.BoolWrapper>(
             (message, serializationContext) =>
@@ -368,70 +304,6 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.BoolWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for SignMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> MuxedAccount_ProtoWrapper_SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for VerifyMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> MuxedAccount_ProtoWrapper_VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -568,6 +440,134 @@ namespace Stellar.RPC.AOT
                 }
             });
 
+        /// <summary>Marshaller for StringWrapper</summary>
+        public static readonly Marshaller<Stellar.StringWrapper> StringWrapperMarshaller = Marshallers.Create<Stellar.StringWrapper>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.StringWrapper>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for ByteArrayWrapper</summary>
+        public static readonly Marshaller<Stellar.ByteArrayWrapper> ByteArrayWrapperMarshaller = Marshallers.Create<Stellar.ByteArrayWrapper>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.ByteArrayWrapper>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for SignMessage</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> MuxedAccount_ProtoWrapper_SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for VerifyMessage</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> MuxedAccount_ProtoWrapper_VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
         /// <summary>Marshaller for BIP39SeedParam</summary>
         public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam> MuxedAccount_ProtoWrapper_BIP39SeedParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam>(
             (message, serializationContext) =>
@@ -634,106 +634,16 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>gRPC service implementation for MuxedAccount_ProtoWrapper</summary>
+    /// <summary>gRPC service implementation for IMuxedAccount_ProtoWrapper</summary>
     public class MuxedAccount_ProtoWrapperGrpcService
     {
-        private readonly MuxedAccount_ProtoWrapper _service;
+        private readonly IMuxedAccount_ProtoWrapper _service;
         private readonly ILogger _logger;
 
-        public MuxedAccount_ProtoWrapperGrpcService(MuxedAccount_ProtoWrapper service, ILogger<MuxedAccount_ProtoWrapperGrpcService> logger)
+        public MuxedAccount_ProtoWrapperGrpcService(IMuxedAccount_ProtoWrapper service, ILogger<MuxedAccount_ProtoWrapperGrpcService> logger)
         {
             _service = service;
             _logger = logger;
-        }
-
-        /// <summary>Handler for GetPublicKey method</summary>
-        public async Task<Stellar.ByteArrayWrapper> GetPublicKey(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetPublicKey request");
-                return _service.GetPublicKey(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetPublicKey");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for GetPrivateKey method</summary>
-        public async Task<Stellar.ByteArrayWrapper> GetPrivateKey(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetPrivateKey request");
-                return _service.GetPrivateKey(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetPrivateKey");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for GetSeedBytes method</summary>
-        public async Task<Stellar.ByteArrayWrapper> GetSeedBytes(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetSeedBytes request");
-                return _service.GetSeedBytes(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetSeedBytes");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for GetSecretSeed method</summary>
-        public async Task<Stellar.StringWrapper> GetSecretSeed(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetSecretSeed request");
-                return _service.GetSecretSeed(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetSecretSeed");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for GetAccountId method</summary>
-        public async Task<Stellar.StringWrapper> GetAccountId(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetAccountId request");
-                return _service.GetAccountId(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetAccountId");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for GetAddress method</summary>
-        public async Task<Stellar.StringWrapper> GetAddress(Stellar.MuxedAccount request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing GetAddress request");
-                return _service.GetAddress(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in GetAddress");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
         }
 
         /// <summary>Handler for CanSign method</summary>
@@ -742,41 +652,11 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing CanSign request");
-                return _service.CanSign(request);
+                return _service.CanSign(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in CanSign");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Sign method</summary>
-        public async Task<Stellar.ByteArrayWrapper> Sign(Stellar.MuxedAccount_ProtoWrapper.SignMessage request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Sign request");
-                return _service.Sign(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Sign");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Verify method</summary>
-        public async Task<Stellar.BoolWrapper> Verify(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Verify request");
-                return _service.Verify(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Verify");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -787,7 +667,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing CreateKeyTypeEd25519 request");
-                return _service.CreateKeyTypeEd25519(request);
+                return _service.CreateKeyTypeEd25519(request) ;
             }
             catch (Exception ex)
             {
@@ -802,11 +682,131 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing CreateKeyTypeMuxedEd25519 request");
-                return _service.CreateKeyTypeMuxedEd25519(request);
+                return _service.CreateKeyTypeMuxedEd25519(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in CreateKeyTypeMuxedEd25519");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetAccountId method</summary>
+        public async Task<Stellar.StringWrapper> GetAccountId(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetAccountId request");
+                return _service.GetAccountId(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetAccountId");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetAddress method</summary>
+        public async Task<Stellar.StringWrapper> GetAddress(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetAddress request");
+                return _service.GetAddress(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetAddress");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetPrivateKey method</summary>
+        public async Task<Stellar.ByteArrayWrapper> GetPrivateKey(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetPrivateKey request");
+                return _service.GetPrivateKey(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetPrivateKey");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetPublicKey method</summary>
+        public async Task<Stellar.ByteArrayWrapper> GetPublicKey(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetPublicKey request");
+                return _service.GetPublicKey(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetPublicKey");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetSecretSeed method</summary>
+        public async Task<Stellar.StringWrapper> GetSecretSeed(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetSecretSeed request");
+                return _service.GetSecretSeed(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetSecretSeed");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetSeedBytes method</summary>
+        public async Task<Stellar.ByteArrayWrapper> GetSeedBytes(Stellar.MuxedAccount request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetSeedBytes request");
+                return _service.GetSeedBytes(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetSeedBytes");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Sign method</summary>
+        public async Task<Stellar.ByteArrayWrapper> Sign(Stellar.MuxedAccount_ProtoWrapper.SignMessage request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Sign request");
+                return _service.Sign(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Sign");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Verify method</summary>
+        public async Task<Stellar.BoolWrapper> Verify(Stellar.MuxedAccount_ProtoWrapper.VerifyMessage request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Verify request");
+                return _service.Verify(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Verify");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -817,7 +817,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromSecretSeed request");
-                return _service.FromSecretSeed(request);
+                return _service.FromSecretSeed(request) ;
             }
             catch (Exception ex)
             {
@@ -832,7 +832,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromSecretSeedBytes request");
-                return _service.FromSecretSeedBytes(request);
+                return _service.FromSecretSeedBytes(request) ;
             }
             catch (Exception ex)
             {
@@ -847,7 +847,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromAccountId request");
-                return _service.FromAccountId(request);
+                return _service.FromAccountId(request) ;
             }
             catch (Exception ex)
             {
@@ -862,7 +862,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromPublicKey request");
-                return _service.FromPublicKey(request);
+                return _service.FromPublicKey(request) ;
             }
             catch (Exception ex)
             {
@@ -877,7 +877,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromBIP39Seed request");
-                return _service.FromBIP39Seed(request);
+                return _service.FromBIP39Seed(request) ;
             }
             catch (Exception ex)
             {
@@ -892,11 +892,26 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing FromBIP39SeedBytes request");
-                return _service.FromBIP39SeedBytes(request);
+                return _service.FromBIP39SeedBytes(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in FromBIP39SeedBytes");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Random method</summary>
+        public async Task<Stellar.MuxedAccount.KeyTypeEd25519> Random(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Random request");
+                return _service.Random() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Random");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

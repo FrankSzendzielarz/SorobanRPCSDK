@@ -12,7 +12,7 @@ using Stellar.RPC;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for StellarRPCClient</summary>
+    /// <summary>gRPC service descriptor for IStellarRPCClient</summary>
     public static class StellarRPCClientGrpcDescriptor
     {
         public const string ServiceName = "Stellar.RPC.StellarRPCClient";
@@ -118,7 +118,7 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>Custom marshallers for StellarRPCClient types</summary>
+    /// <summary>Custom marshallers for IStellarRPCClient types</summary>
     public static class StellarRPCClientGrpcMarshaller
     {
         // Static constructor to configure types
@@ -751,13 +751,13 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>gRPC service implementation for StellarRPCClient</summary>
+    /// <summary>gRPC service implementation for IStellarRPCClient</summary>
     public class StellarRPCClientGrpcService
     {
-        private readonly StellarRPCClient _service;
+        private readonly IStellarRPCClient _service;
         private readonly ILogger _logger;
 
-        public StellarRPCClientGrpcService(StellarRPCClient service, ILogger<StellarRPCClientGrpcService> logger)
+        public StellarRPCClientGrpcService(IStellarRPCClient service, ILogger<StellarRPCClientGrpcService> logger)
         {
             _service = service;
             _logger = logger;
@@ -769,11 +769,56 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing GetEventsAsync request");
-                return await _service.GetEventsAsync(request);
+                return await _service.GetEventsAsync(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in GetEventsAsync");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetFeeStatsAsync method</summary>
+        public async Task<Stellar.RPC.GetFeeStatsResult> GetFeeStatsAsync(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetFeeStatsAsync request");
+                return await _service.GetFeeStatsAsync() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetFeeStatsAsync");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetHealthAsync method</summary>
+        public async Task<Stellar.RPC.GetHealthResult> GetHealthAsync(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetHealthAsync request");
+                return await _service.GetHealthAsync() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetHealthAsync");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetLatestLedgerAsync method</summary>
+        public async Task<Stellar.RPC.GetLatestLedgerResult> GetLatestLedgerAsync(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetLatestLedgerAsync request");
+                return await _service.GetLatestLedgerAsync() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetLatestLedgerAsync");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -784,11 +829,26 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing GetLedgerEntriesAsync request");
-                return await _service.GetLedgerEntriesAsync(request);
+                return await _service.GetLedgerEntriesAsync(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in GetLedgerEntriesAsync");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetNetworkAsync method</summary>
+        public async Task<Stellar.RPC.GetNetworkResult> GetNetworkAsync(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetNetworkAsync request");
+                return await _service.GetNetworkAsync() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetNetworkAsync");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -799,7 +859,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing GetTransactionAsync request");
-                return await _service.GetTransactionAsync(request);
+                return await _service.GetTransactionAsync(request) ;
             }
             catch (Exception ex)
             {
@@ -814,11 +874,26 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing GetTransactionsAsync request");
-                return await _service.GetTransactionsAsync(request);
+                return await _service.GetTransactionsAsync(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in GetTransactionsAsync");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for GetVersionInfoAsync method</summary>
+        public async Task<Stellar.RPC.GetVersionInfoResult> GetVersionInfoAsync(Google.Protobuf.WellKnownTypes.Empty request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing GetVersionInfoAsync request");
+                return await _service.GetVersionInfoAsync() ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetVersionInfoAsync");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }
@@ -829,7 +904,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing SendTransactionAsync request");
-                return await _service.SendTransactionAsync(request);
+                return await _service.SendTransactionAsync(request) ;
             }
             catch (Exception ex)
             {
@@ -844,7 +919,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing SimulateTransactionAsync request");
-                return await _service.SimulateTransactionAsync(request);
+                return await _service.SimulateTransactionAsync(request) ;
             }
             catch (Exception ex)
             {

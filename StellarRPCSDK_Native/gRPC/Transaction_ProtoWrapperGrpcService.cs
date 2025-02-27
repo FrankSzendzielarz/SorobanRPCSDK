@@ -12,19 +12,10 @@ using Stellar;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for Transaction_ProtoWrapper</summary>
+    /// <summary>gRPC service descriptor for ITransaction_ProtoWrapper</summary>
     public static class Transaction_ProtoWrapperGrpcDescriptor
     {
         public const string ServiceName = "Stellar.Transaction_ProtoWrapper";
-
-        /// <summary>Method descriptor for Sign</summary>
-        public static readonly Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature> Sign =
-            new Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature>(
-                MethodType.Unary,
-                ServiceName,
-                "Sign",
-                Transaction_ProtoWrapperSignParamGrpcMarshaller.Transaction_ProtoWrapper_SignParamMarshaller,
-                DecoratedSignatureGrpcMarshaller.DecoratedSignatureMarshaller);
 
         /// <summary>Method descriptor for Clone</summary>
         public static readonly Method<Stellar.Transaction_ProtoWrapper.CloneParam, Stellar.Transaction> Clone =
@@ -53,9 +44,18 @@ namespace Stellar.RPC.AOT
                 Transaction_ProtoWrapperIsSorobanParamGrpcMarshaller.Transaction_ProtoWrapper_IsSorobanParamMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
+        /// <summary>Method descriptor for Sign</summary>
+        public static readonly Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature> Sign =
+            new Method<Stellar.Transaction_ProtoWrapper.SignParam, Stellar.DecoratedSignature>(
+                MethodType.Unary,
+                ServiceName,
+                "Sign",
+                Transaction_ProtoWrapperSignParamGrpcMarshaller.Transaction_ProtoWrapper_SignParamMarshaller,
+                DecoratedSignatureGrpcMarshaller.DecoratedSignatureMarshaller);
+
     }
 
-    /// <summary>Custom marshallers for Transaction_ProtoWrapper types</summary>
+    /// <summary>Custom marshallers for ITransaction_ProtoWrapper types</summary>
     public static class Transaction_ProtoWrapperGrpcMarshaller
     {
         // Static constructor to configure types
@@ -71,14 +71,6 @@ namespace Stellar.RPC.AOT
             var model = RuntimeTypeModel.Default;
 
             // Ensure types are configured for AOT compatibility
-            if (!model.IsDefined(typeof(Stellar.Transaction_ProtoWrapper.SignParam)))
-            {
-                model.Add(typeof(Stellar.Transaction_ProtoWrapper.SignParam), true);
-            }
-            if (!model.IsDefined(typeof(Stellar.DecoratedSignature)))
-            {
-                model.Add(typeof(Stellar.DecoratedSignature), true);
-            }
             if (!model.IsDefined(typeof(Stellar.Transaction_ProtoWrapper.CloneParam)))
             {
                 model.Add(typeof(Stellar.Transaction_ProtoWrapper.CloneParam), true);
@@ -95,72 +87,16 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.BoolWrapper), true);
             }
+            if (!model.IsDefined(typeof(Stellar.Transaction_ProtoWrapper.SignParam)))
+            {
+                model.Add(typeof(Stellar.Transaction_ProtoWrapper.SignParam), true);
+            }
+            if (!model.IsDefined(typeof(Stellar.DecoratedSignature)))
+            {
+                model.Add(typeof(Stellar.DecoratedSignature), true);
+            }
 
         }
-
-        /// <summary>Marshaller for SignParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> Transaction_ProtoWrapper_SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.Transaction_ProtoWrapper.SignParam>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for DecoratedSignature</summary>
-        public static readonly Marshaller<Stellar.DecoratedSignature> DecoratedSignatureMarshaller = Marshallers.Create<Stellar.DecoratedSignature>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<Stellar.DecoratedSignature>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
 
         /// <summary>Marshaller for CloneParam</summary>
         public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.CloneParam> Transaction_ProtoWrapper_CloneParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.CloneParam>(
@@ -290,33 +226,82 @@ namespace Stellar.RPC.AOT
                 }
             });
 
+        /// <summary>Marshaller for SignParam</summary>
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> Transaction_ProtoWrapper_SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.Transaction_ProtoWrapper.SignParam>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
+        /// <summary>Marshaller for DecoratedSignature</summary>
+        public static readonly Marshaller<Stellar.DecoratedSignature> DecoratedSignatureMarshaller = Marshallers.Create<Stellar.DecoratedSignature>(
+            (message, serializationContext) =>
+            {
+                try
+                {
+                    var ms = new MemoryStream();
+                    Serializer.Serialize(ms, message);
+                    var buffer = ms.ToArray();
+                    serializationContext.Complete(buffer);
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
+                }
+            },
+            (deserializationContext) =>
+            {
+                try
+                {
+                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
+                    using (var ms = new MemoryStream(buffer))
+                    {
+                        return Serializer.Deserialize<Stellar.DecoratedSignature>(ms);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
+                }
+            });
+
     }
 
-    /// <summary>gRPC service implementation for Transaction_ProtoWrapper</summary>
+    /// <summary>gRPC service implementation for ITransaction_ProtoWrapper</summary>
     public class Transaction_ProtoWrapperGrpcService
     {
-        private readonly Transaction_ProtoWrapper _service;
+        private readonly ITransaction_ProtoWrapper _service;
         private readonly ILogger _logger;
 
-        public Transaction_ProtoWrapperGrpcService(Transaction_ProtoWrapper service, ILogger<Transaction_ProtoWrapperGrpcService> logger)
+        public Transaction_ProtoWrapperGrpcService(ITransaction_ProtoWrapper service, ILogger<Transaction_ProtoWrapperGrpcService> logger)
         {
             _service = service;
             _logger = logger;
-        }
-
-        /// <summary>Handler for Sign method</summary>
-        public async Task<Stellar.DecoratedSignature> Sign(Stellar.Transaction_ProtoWrapper.SignParam request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Sign request");
-                return _service.Sign(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Sign");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
         }
 
         /// <summary>Handler for Clone method</summary>
@@ -325,7 +310,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing Clone request");
-                return _service.Clone(request);
+                return _service.Clone(request) ;
             }
             catch (Exception ex)
             {
@@ -340,7 +325,7 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing IsSoroban request");
-                return _service.IsSoroban(request);
+                return _service.IsSoroban(request) ;
             }
             catch (Exception ex)
             {
@@ -355,11 +340,26 @@ namespace Stellar.RPC.AOT
             try
             {
                 _logger.LogInformation("Processing IsSorobanInvocation request");
-                return _service.IsSorobanInvocation(request);
+                return _service.IsSorobanInvocation(request) ;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in IsSorobanInvocation");
+                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
+            }
+        }
+
+        /// <summary>Handler for Sign method</summary>
+        public async Task<Stellar.DecoratedSignature> Sign(Stellar.Transaction_ProtoWrapper.SignParam request, ServerCallContext context)
+        {
+            try
+            {
+                _logger.LogInformation("Processing Sign request");
+                return _service.Sign(request) ;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Sign");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

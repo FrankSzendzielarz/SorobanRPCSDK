@@ -73,11 +73,11 @@ namespace Stellar.RPC.Tools
             contracts.AddRange(withAttribute);
 
             // Also look for types that implement interface with ServiceContract
-            var implementingServiceContract = _targetAssembly.GetTypes()
-                .Where(type => !type.IsInterface && !type.IsAbstract)
-                .Where(type => type.GetInterfaces().Any(i => i.GetCustomAttributes(typeof(ServiceContractAttribute), true).Any()))
-                .ToList();
-            contracts.AddRange(implementingServiceContract);
+            //var implementingServiceContract = _targetAssembly.GetTypes()
+            //    .Where(type => !type.IsInterface && !type.IsAbstract)
+            //    .Where(type => type.GetInterfaces().Any(i => i.GetCustomAttributes(typeof(ServiceContractAttribute), true).Any()))
+            //    .ToList();
+            //contracts.AddRange(implementingServiceContract);
 
             // Look for types with "RPC" or "Service" in the name as a fallback
             //var byNamingConvention = _targetAssembly.GetTypes()
@@ -354,21 +354,34 @@ namespace Stellar.RPC.Tools
             foreach (var operation in operations)
             {
                 var methodName = operation.Name;
-                var requestType = operation.GetParameters().FirstOrDefault()?.ParameterType;
+
+                // Get request type, defaulting to Empty for null
+                var requestParam = operation.GetParameters().FirstOrDefault();
+                var requestType = requestParam?.ParameterType;
+                string requestTypeWithDots;
+                bool isParamless = false;
+                if (requestType == null)
+                {
+                    // No parameters or Empty parameter
+                    requestType = typeof(Google.Protobuf.WellKnownTypes.Empty);
+                    requestTypeWithDots = "Google.Protobuf.WellKnownTypes.Empty";
+                    isParamless = true;
+                }
+                else
+                {
+                    requestTypeWithDots = GetTypeNameWithDotSeparators(requestType);
+                }
+
+                // Get response type, handling void returns
                 var responseType = operation.ReturnType.IsGenericType ?
                     operation.ReturnType.GetGenericArguments()[0] :
                     operation.ReturnType;
-
-                if (requestType == null || responseType == null)
-                    continue;
-
-                string requestTypeWithDots = GetTypeNameWithDotSeparators(requestType);
                 string responseTypeWithDots;
                 bool isVoidReturn = (responseType == typeof(void));
 
-                if (isVoidReturn)
+                if (isVoidReturn || responseType == null)
                 {
-                    // Use Google.Protobuf.WellKnownTypes.Empty or equivalent
+                    // Void return or Empty response
                     responseTypeWithDots = "Google.Protobuf.WellKnownTypes.Empty";
                 }
                 else
@@ -387,16 +400,20 @@ namespace Stellar.RPC.Tools
                 sb.AppendLine("            {");
                 sb.AppendLine($"                _logger.LogInformation(\"Processing {methodName} request\");");
 
+                string requestString = isParamless? "()":"(request)";
+          
+
                 if (isVoidReturn)
                 {
+
                     // Call the method but don't try to return its result
                     if (isAsync)
                     {
-                        sb.AppendLine($"                await _service.{methodName}(request);");
+                        sb.AppendLine($"                await _service.{methodName}{requestString};");
                     }
                     else
                     {
-                        sb.AppendLine($"                _service.{methodName}(request);");
+                        sb.AppendLine($"                _service.{methodName}{requestString};");
                     }
                     // Return a new Empty instance
                     sb.AppendLine($"                return new {responseTypeWithDots}();");
@@ -406,11 +423,11 @@ namespace Stellar.RPC.Tools
                     // Normal return handling
                     if (isAsync)
                     {
-                        sb.AppendLine($"                return await _service.{methodName}(request);");
+                        sb.AppendLine($"                return await _service.{methodName}{requestString} ;");
                     }
                     else
                     {
-                        sb.AppendLine($"                return _service.{methodName}(request);");
+                        sb.AppendLine($"                return _service.{methodName}{requestString} ;");
                     }
                 }
 
