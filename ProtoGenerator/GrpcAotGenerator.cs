@@ -962,10 +962,12 @@ namespace Stellar.RPC.Tools
                         sb.AppendLine("                    // Serialize and send response");
                         sb.AppendLine("                    context.Response.ContentType = \"application/grpc\";");
                         sb.AppendLine("                    context.Response.Headers.Add(\"grpc-status\", \"0\");");
+                      
                         sb.AppendLine("                    using var responseMs = new MemoryStream();");
                         sb.AppendLine("                    Serializer.Serialize(responseMs, response);");
-                        sb.AppendLine("                    responseMs.Position = 0;");
-                        sb.AppendLine("                    await responseMs.CopyToAsync(context.Response.Body);");
+                       // sb.AppendLine("                    responseMs.Position = 0;");
+                        //    sb.AppendLine("                    await responseMs.CopyToAsync(context.Response.Body);");
+                        sb.AppendLine("                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());");
                     }
                     sb.AppendLine("                }");
                     sb.AppendLine("                catch (Exception ex)");

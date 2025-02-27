@@ -2721,8 +2721,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2753,8 +2752,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2785,8 +2783,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2817,8 +2814,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2849,8 +2845,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2881,8 +2876,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2913,8 +2907,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2945,8 +2938,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -2977,8 +2969,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3009,8 +3000,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3041,8 +3031,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3073,8 +3062,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3105,8 +3093,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3137,8 +3124,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3169,8 +3155,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3201,8 +3186,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3233,8 +3217,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3265,8 +3248,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3297,8 +3279,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3329,8 +3310,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3361,8 +3341,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3393,8 +3372,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3425,8 +3403,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3457,8 +3434,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3489,8 +3465,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3521,8 +3496,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3553,8 +3527,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3585,8 +3558,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3617,8 +3589,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3649,8 +3620,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3681,8 +3651,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3713,8 +3682,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3745,8 +3713,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3777,8 +3744,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3809,8 +3775,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3841,8 +3806,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3873,8 +3837,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3905,8 +3868,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3937,8 +3899,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -3969,8 +3930,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4001,8 +3961,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4033,8 +3992,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4065,8 +4023,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4097,8 +4054,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4129,8 +4085,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4161,8 +4116,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4193,8 +4147,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4225,8 +4178,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4257,8 +4209,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4289,8 +4240,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4321,8 +4271,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4353,8 +4302,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4385,8 +4333,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4417,8 +4364,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4449,8 +4395,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4481,8 +4426,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4513,8 +4457,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4545,8 +4488,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4577,8 +4519,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4609,8 +4550,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4641,8 +4581,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4673,8 +4612,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4705,8 +4643,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4737,8 +4674,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4769,8 +4705,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4801,8 +4736,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4833,8 +4767,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4865,8 +4798,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4897,8 +4829,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4929,8 +4860,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4961,8 +4891,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -4993,8 +4922,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5025,8 +4953,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5057,8 +4984,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5089,8 +5015,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5121,8 +5046,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5153,8 +5077,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5185,8 +5108,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5217,8 +5139,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5249,8 +5170,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5281,8 +5201,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5313,8 +5232,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5345,8 +5263,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5377,8 +5294,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5409,8 +5325,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5441,8 +5356,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5473,8 +5387,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5505,8 +5418,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5537,8 +5449,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5569,8 +5480,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5601,8 +5511,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5633,8 +5542,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5665,8 +5573,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5697,8 +5604,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5729,8 +5635,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5761,8 +5666,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5793,8 +5697,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5825,8 +5728,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5857,8 +5759,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5889,8 +5790,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5921,8 +5821,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5953,8 +5852,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -5985,8 +5883,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6017,8 +5914,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6049,8 +5945,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6081,8 +5976,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6113,8 +6007,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6145,8 +6038,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6177,8 +6069,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6209,8 +6100,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6241,8 +6131,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6273,8 +6162,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6305,8 +6193,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6337,8 +6224,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6369,8 +6255,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6401,8 +6286,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6433,8 +6317,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6465,8 +6348,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6497,8 +6379,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6529,8 +6410,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6561,8 +6441,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6593,8 +6472,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6625,8 +6503,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6657,8 +6534,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6689,8 +6565,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6721,8 +6596,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6753,8 +6627,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6785,8 +6658,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6817,8 +6689,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6849,8 +6720,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6881,8 +6751,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6913,8 +6782,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6945,8 +6813,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -6977,8 +6844,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7009,8 +6875,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7041,8 +6906,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7073,8 +6937,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7105,8 +6968,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7137,8 +6999,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7169,8 +7030,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7201,8 +7061,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7233,8 +7092,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7265,8 +7123,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7297,8 +7154,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7329,8 +7185,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7361,8 +7216,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7393,8 +7247,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7425,8 +7278,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7457,8 +7309,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7489,8 +7340,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7521,8 +7371,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7553,8 +7402,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7585,8 +7433,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7617,8 +7464,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7649,8 +7495,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7681,8 +7526,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7713,8 +7557,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7745,8 +7588,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7777,8 +7619,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7809,8 +7650,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7841,8 +7681,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7873,8 +7712,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7905,8 +7743,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7937,8 +7774,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -7969,8 +7805,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8001,8 +7836,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8033,8 +7867,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8065,8 +7898,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8097,8 +7929,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8129,8 +7960,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8161,8 +7991,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8193,8 +8022,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8225,8 +8053,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8257,8 +8084,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8289,8 +8115,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8321,8 +8146,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8353,8 +8177,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8385,8 +8208,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8417,8 +8239,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8449,8 +8270,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8481,8 +8301,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8513,8 +8332,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8545,8 +8363,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8577,8 +8394,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8609,8 +8425,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8641,8 +8456,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8673,8 +8487,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8705,8 +8518,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8737,8 +8549,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8769,8 +8580,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8801,8 +8611,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8833,8 +8642,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8865,8 +8673,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8897,8 +8704,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8929,8 +8735,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8961,8 +8766,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -8993,8 +8797,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9025,8 +8828,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9057,8 +8859,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9089,8 +8890,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9121,8 +8921,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9153,8 +8952,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9185,8 +8983,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9217,8 +9014,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9249,8 +9045,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9281,8 +9076,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9313,8 +9107,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9345,8 +9138,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9377,8 +9169,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9409,8 +9200,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9441,8 +9231,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9473,8 +9262,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9505,8 +9293,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9537,8 +9324,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9569,8 +9355,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9601,8 +9386,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9633,8 +9417,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9665,8 +9448,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9697,8 +9479,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9729,8 +9510,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9761,8 +9541,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9793,8 +9572,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9825,8 +9603,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9857,8 +9634,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9889,8 +9665,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9921,8 +9696,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9953,8 +9727,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -9985,8 +9758,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10017,8 +9789,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10049,8 +9820,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10081,8 +9851,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10113,8 +9882,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10145,8 +9913,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10177,8 +9944,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10209,8 +9975,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10241,8 +10006,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10273,8 +10037,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10305,8 +10068,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10337,8 +10099,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10369,8 +10130,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10401,8 +10161,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10433,8 +10192,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10465,8 +10223,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10497,8 +10254,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10529,8 +10285,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10561,8 +10316,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10593,8 +10347,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10625,8 +10378,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10657,8 +10409,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10689,8 +10440,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10721,8 +10471,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10753,8 +10502,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10785,8 +10533,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10817,8 +10564,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10849,8 +10595,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10881,8 +10626,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10913,8 +10657,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10945,8 +10688,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -10977,8 +10719,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11009,8 +10750,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11041,8 +10781,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11073,8 +10812,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11105,8 +10843,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11137,8 +10874,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11169,8 +10905,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11201,8 +10936,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11233,8 +10967,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11265,8 +10998,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11297,8 +11029,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11329,8 +11060,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11361,8 +11091,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11393,8 +11122,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11425,8 +11153,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11457,8 +11184,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11489,8 +11215,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11521,8 +11246,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11553,8 +11277,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11585,8 +11308,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11617,8 +11339,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11649,8 +11370,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11681,8 +11401,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11713,8 +11432,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11745,8 +11463,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11777,8 +11494,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11809,8 +11525,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11841,8 +11556,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11873,8 +11587,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11905,8 +11618,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11937,8 +11649,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -11969,8 +11680,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12001,8 +11711,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12033,8 +11742,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12065,8 +11773,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12097,8 +11804,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12129,8 +11835,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12161,8 +11866,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12193,8 +11897,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12225,8 +11928,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12257,8 +11959,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12289,8 +11990,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12321,8 +12021,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12353,8 +12052,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12385,8 +12083,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12417,8 +12114,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12449,8 +12145,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12481,8 +12176,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12513,8 +12207,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12545,8 +12238,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12577,8 +12269,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12609,8 +12300,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12641,8 +12331,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12673,8 +12362,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12705,8 +12393,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12737,8 +12424,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12769,8 +12455,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12801,8 +12486,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12833,8 +12517,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12865,8 +12548,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12897,8 +12579,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12929,8 +12610,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12961,8 +12641,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -12993,8 +12672,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13025,8 +12703,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13057,8 +12734,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13089,8 +12765,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13121,8 +12796,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13153,8 +12827,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13185,8 +12858,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13217,8 +12889,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13249,8 +12920,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13281,8 +12951,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13313,8 +12982,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13345,8 +13013,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13377,8 +13044,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13409,8 +13075,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13441,8 +13106,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13473,8 +13137,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13505,8 +13168,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13537,8 +13199,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13569,8 +13230,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13601,8 +13261,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13633,8 +13292,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13665,8 +13323,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13697,8 +13354,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13729,8 +13385,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13761,8 +13416,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13793,8 +13447,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13825,8 +13478,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13857,8 +13509,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13889,8 +13540,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13921,8 +13571,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13953,8 +13602,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -13985,8 +13633,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14017,8 +13664,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14049,8 +13695,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14081,8 +13726,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14113,8 +13757,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14145,8 +13788,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14177,8 +13819,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14209,8 +13850,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14241,8 +13881,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14273,8 +13912,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14305,8 +13943,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14337,8 +13974,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14369,8 +14005,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14401,8 +14036,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14433,8 +14067,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14465,8 +14098,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14497,8 +14129,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14529,8 +14160,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14561,8 +14191,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14593,8 +14222,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14625,8 +14253,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14657,8 +14284,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14689,8 +14315,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14721,8 +14346,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14753,8 +14377,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14785,8 +14408,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14817,8 +14439,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14849,8 +14470,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14881,8 +14501,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14913,8 +14532,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14945,8 +14563,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -14977,8 +14594,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15009,8 +14625,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15041,8 +14656,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15073,8 +14687,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15105,8 +14718,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15137,8 +14749,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15169,8 +14780,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15201,8 +14811,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15233,8 +14842,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15265,8 +14873,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15297,8 +14904,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15329,8 +14935,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15361,8 +14966,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15393,8 +14997,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15425,8 +15028,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15457,8 +15059,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15489,8 +15090,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15521,8 +15121,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15553,8 +15152,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15585,8 +15183,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15617,8 +15214,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15649,8 +15245,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15681,8 +15276,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15713,8 +15307,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15745,8 +15338,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15777,8 +15369,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15809,8 +15400,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15841,8 +15431,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15873,8 +15462,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15905,8 +15493,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15937,8 +15524,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -15969,8 +15555,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16001,8 +15586,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16033,8 +15617,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16065,8 +15648,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16097,8 +15679,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16129,8 +15710,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16161,8 +15741,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16193,8 +15772,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16225,8 +15803,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16257,8 +15834,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16289,8 +15865,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16321,8 +15896,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16353,8 +15927,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16385,8 +15958,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16417,8 +15989,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16449,8 +16020,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16481,8 +16051,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16513,8 +16082,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16545,8 +16113,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16577,8 +16144,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16609,8 +16175,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16641,8 +16206,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16673,8 +16237,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16705,8 +16268,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16737,8 +16299,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16769,8 +16330,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16801,8 +16361,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16833,8 +16392,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16865,8 +16423,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16897,8 +16454,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16929,8 +16485,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16961,8 +16516,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -16993,8 +16547,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17025,8 +16578,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17057,8 +16609,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17089,8 +16640,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17121,8 +16671,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17153,8 +16702,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17185,8 +16733,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17217,8 +16764,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17249,8 +16795,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17281,8 +16826,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17313,8 +16857,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17345,8 +16888,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17377,8 +16919,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17409,8 +16950,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17441,8 +16981,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17473,8 +17012,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17505,8 +17043,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17537,8 +17074,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17569,8 +17105,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17601,8 +17136,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17633,8 +17167,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17665,8 +17198,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17697,8 +17229,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17729,8 +17260,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17761,8 +17291,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17793,8 +17322,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17825,8 +17353,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17857,8 +17384,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17889,8 +17415,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17921,8 +17446,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17953,8 +17477,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -17985,8 +17508,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18017,8 +17539,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18049,8 +17570,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18081,8 +17601,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18113,8 +17632,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18145,8 +17663,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18177,8 +17694,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18209,8 +17725,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18241,8 +17756,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18273,8 +17787,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18305,8 +17818,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18337,8 +17849,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18369,8 +17880,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18401,8 +17911,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18433,8 +17942,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18465,8 +17973,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18497,8 +18004,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18529,8 +18035,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18561,8 +18066,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18593,8 +18097,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18625,8 +18128,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18657,8 +18159,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18689,8 +18190,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18721,8 +18221,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18753,8 +18252,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18785,8 +18283,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18817,8 +18314,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18849,8 +18345,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18881,8 +18376,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18913,8 +18407,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18945,8 +18438,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -18977,8 +18469,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19009,8 +18500,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19041,8 +18531,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19073,8 +18562,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19105,8 +18593,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19137,8 +18624,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19169,8 +18655,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19201,8 +18686,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19233,8 +18717,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19265,8 +18748,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19297,8 +18779,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19329,8 +18810,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19361,8 +18841,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19393,8 +18872,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19425,8 +18903,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19457,8 +18934,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19489,8 +18965,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19521,8 +18996,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19553,8 +19027,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19585,8 +19058,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19617,8 +19089,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19649,8 +19120,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19681,8 +19151,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19713,8 +19182,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19745,8 +19213,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19777,8 +19244,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19809,8 +19275,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19841,8 +19306,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19873,8 +19337,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19905,8 +19368,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19937,8 +19399,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -19969,8 +19430,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20001,8 +19461,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20033,8 +19492,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20065,8 +19523,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20097,8 +19554,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20129,8 +19585,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20161,8 +19616,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20193,8 +19647,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20225,8 +19678,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20257,8 +19709,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20289,8 +19740,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20321,8 +19771,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20353,8 +19802,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20385,8 +19833,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20417,8 +19864,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20449,8 +19895,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20481,8 +19926,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20513,8 +19957,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20545,8 +19988,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20577,8 +20019,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20609,8 +20050,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20641,8 +20081,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20673,8 +20112,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20705,8 +20143,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20737,8 +20174,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20769,8 +20205,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20801,8 +20236,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20833,8 +20267,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20865,8 +20298,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20897,8 +20329,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20929,8 +20360,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20961,8 +20391,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -20993,8 +20422,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21025,8 +20453,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21057,8 +20484,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21089,8 +20515,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21121,8 +20546,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21153,8 +20577,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21185,8 +20608,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21217,8 +20639,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21249,8 +20670,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21281,8 +20701,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21313,8 +20732,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21345,8 +20763,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21377,8 +20794,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21409,8 +20825,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21441,8 +20856,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21473,8 +20887,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21505,8 +20918,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21537,8 +20949,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21569,8 +20980,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21601,8 +21011,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21633,8 +21042,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21665,8 +21073,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21697,8 +21104,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21729,8 +21135,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21761,8 +21166,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21793,8 +21197,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21825,8 +21228,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21857,8 +21259,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21889,8 +21290,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21921,8 +21321,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21953,8 +21352,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -21985,8 +21383,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22017,8 +21414,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22049,8 +21445,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22081,8 +21476,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22113,8 +21507,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22145,8 +21538,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22177,8 +21569,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22209,8 +21600,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22241,8 +21631,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22273,8 +21662,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22305,8 +21693,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22337,8 +21724,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22369,8 +21755,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22401,8 +21786,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22433,8 +21817,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22465,8 +21848,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22497,8 +21879,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22529,8 +21910,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22561,8 +21941,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22593,8 +21972,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22625,8 +22003,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22657,8 +22034,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22689,8 +22065,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22721,8 +22096,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22753,8 +22127,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22785,8 +22158,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22817,8 +22189,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22849,8 +22220,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22881,8 +22251,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22913,8 +22282,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22945,8 +22313,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -22977,8 +22344,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23009,8 +22375,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23041,8 +22406,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23073,8 +22437,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23105,8 +22468,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23137,8 +22499,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23169,8 +22530,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23201,8 +22561,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23233,8 +22592,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23265,8 +22623,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23297,8 +22654,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23329,8 +22685,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23361,8 +22716,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23393,8 +22747,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23425,8 +22778,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23457,8 +22809,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23489,8 +22840,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23521,8 +22871,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23553,8 +22902,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23585,8 +22933,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23617,8 +22964,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23649,8 +22995,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23681,8 +23026,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23713,8 +23057,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23745,8 +23088,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23777,8 +23119,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23809,8 +23150,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23841,8 +23181,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23873,8 +23212,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23905,8 +23243,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23937,8 +23274,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -23969,8 +23305,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24001,8 +23336,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24033,8 +23367,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24065,8 +23398,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24097,8 +23429,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24129,8 +23460,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24161,8 +23491,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24193,8 +23522,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24225,8 +23553,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24257,8 +23584,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24289,8 +23615,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24321,8 +23646,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24353,8 +23677,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24385,8 +23708,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24417,8 +23739,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24449,8 +23770,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24481,8 +23801,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24513,8 +23832,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24545,8 +23863,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24577,8 +23894,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24609,8 +23925,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24641,8 +23956,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24673,8 +23987,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24705,8 +24018,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24737,8 +24049,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24769,8 +24080,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24801,8 +24111,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24833,8 +24142,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24865,8 +24173,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24897,8 +24204,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24929,8 +24235,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24961,8 +24266,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -24993,8 +24297,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25025,8 +24328,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25057,8 +24359,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25089,8 +24390,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25121,8 +24421,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25153,8 +24452,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25185,8 +24483,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25217,8 +24514,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25249,8 +24545,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25281,8 +24576,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25313,8 +24607,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25345,8 +24638,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25377,8 +24669,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25409,8 +24700,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25441,8 +24731,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25473,8 +24762,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25505,8 +24793,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25537,8 +24824,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25569,8 +24855,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25601,8 +24886,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25633,8 +24917,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25665,8 +24948,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25697,8 +24979,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25729,8 +25010,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25761,8 +25041,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25793,8 +25072,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25825,8 +25103,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25857,8 +25134,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25889,8 +25165,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25921,8 +25196,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25953,8 +25227,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -25985,8 +25258,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26017,8 +25289,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26049,8 +25320,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26081,8 +25351,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26113,8 +25382,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26145,8 +25413,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26177,8 +25444,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26209,8 +25475,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26241,8 +25506,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26273,8 +25537,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26305,8 +25568,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26337,8 +25599,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26369,8 +25630,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26401,8 +25661,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26433,8 +25692,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26465,8 +25723,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26497,8 +25754,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26529,8 +25785,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26561,8 +25816,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26593,8 +25847,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26625,8 +25878,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26657,8 +25909,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26689,8 +25940,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26721,8 +25971,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26753,8 +26002,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26785,8 +26033,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26817,8 +26064,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26849,8 +26095,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26881,8 +26126,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26913,8 +26157,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26945,8 +26188,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -26977,8 +26219,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27009,8 +26250,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27041,8 +26281,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27073,8 +26312,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27105,8 +26343,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27137,8 +26374,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27169,8 +26405,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27201,8 +26436,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27233,8 +26467,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27265,8 +26498,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27297,8 +26529,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27329,8 +26560,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27361,8 +26591,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27393,8 +26622,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27425,8 +26653,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27457,8 +26684,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27489,8 +26715,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27521,8 +26746,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27553,8 +26777,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27585,8 +26808,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27617,8 +26839,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27649,8 +26870,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27683,8 +26903,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27715,8 +26934,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27747,8 +26965,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27779,8 +26996,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27811,8 +27027,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27843,8 +27058,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27875,8 +27089,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27907,8 +27120,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27939,8 +27151,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -27971,8 +27182,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28003,8 +27213,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28035,8 +27244,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28067,8 +27275,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28099,8 +27306,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28131,8 +27337,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28163,8 +27368,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28195,8 +27399,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28224,8 +27427,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28258,8 +27460,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28287,8 +27488,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28319,8 +27519,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28351,8 +27550,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28380,8 +27578,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28409,8 +27606,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28441,8 +27637,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28470,8 +27665,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28499,8 +27693,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28531,8 +27724,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28565,8 +27757,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28597,8 +27788,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28629,8 +27819,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28661,8 +27850,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28695,8 +27883,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28729,8 +27916,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28758,8 +27944,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28787,8 +27972,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28816,8 +28000,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28848,8 +28031,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28877,8 +28059,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28909,8 +28090,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28941,8 +28121,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -28970,8 +28149,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -29002,8 +28180,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -29034,8 +28211,7 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-status", "0");
                     using var responseMs = new MemoryStream();
                     Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
+                    await context.Response.BodyWriter.WriteAsync(responseMs.ToArray());
                 }
                 catch (Exception ex)
                 {
