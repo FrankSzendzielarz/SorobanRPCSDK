@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PathPaymentStrictReceiveResultCodeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse> PathPaymentStrictReceiveResultCodeDecodeResponseMarshaller = Marshallers.Create<Stellar.PathPaymentStrictReceiveResultCodeDecodeResponse>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingBucketlistSizeWindow</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingBucketlistSizeWindow> ConfigSettingBucketlistSizeWindowMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingBucketlistSizeWindow>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingBucketlistSizeWindow</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingBucketlistSizeWindow> ConfigSettingEntry_ConfigSettingBucketlistSizeWindowMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingBucketlistSizeWindow>(
             (message, serializationContext) =>
             {
                 try

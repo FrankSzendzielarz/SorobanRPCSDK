@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ArchivalProofNodeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ArchivalProofNodeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ArchivalProofNodeDecodeResponse> ArchivalProofNodeDecodeResponseMarshaller = Marshallers.Create<Stellar.ArchivalProofNodeDecodeResponse>(
             (message, serializationContext) =>
             {

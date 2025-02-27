@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerCloseValueSignatureEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LedgerCloseValueSignatureEncodeRequest</summary>
         public static readonly Marshaller<Stellar.LedgerCloseValueSignatureEncodeRequest> LedgerCloseValueSignatureEncodeRequestMarshaller = Marshallers.Create<Stellar.LedgerCloseValueSignatureEncodeRequest>(
             (message, serializationContext) =>
             {

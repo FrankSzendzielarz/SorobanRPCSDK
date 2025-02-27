@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AllowTrustOpDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.AllowTrustOpDecodeResponse</summary>
         public static readonly Marshaller<Stellar.AllowTrustOpDecodeResponse> AllowTrustOpDecodeResponseMarshaller = Marshallers.Create<Stellar.AllowTrustOpDecodeResponse>(
             (message, serializationContext) =>
             {

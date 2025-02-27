@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for EnvelopeTypeContractId</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypeContractId> EnvelopeTypeContractIdMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypeContractId>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+EnvelopeTypeContractId</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypeContractId> HashIDPreimage_EnvelopeTypeContractIdMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypeContractId>(
             (message, serializationContext) =>
             {
                 try

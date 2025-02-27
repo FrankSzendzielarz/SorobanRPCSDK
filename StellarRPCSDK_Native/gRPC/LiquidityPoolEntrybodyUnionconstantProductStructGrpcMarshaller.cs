@@ -40,8 +40,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for constantProductStruct</summary>
-        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion.constantProductStruct> constantProductStructMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion.constantProductStruct>(
+        /// <summary>Marshaller for Stellar.LiquidityPoolEntry+bodyUnion+constantProductStruct</summary>
+        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion.constantProductStruct> LiquidityPoolEntry_bodyUnion_constantProductStructMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion.constantProductStruct>(
             (message, serializationContext) =>
             {
                 try

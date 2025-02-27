@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerUpgradeTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.LedgerUpgradeTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.LedgerUpgradeTypeEncodeResponse> LedgerUpgradeTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.LedgerUpgradeTypeEncodeResponse>(
             (message, serializationContext) =>
             {

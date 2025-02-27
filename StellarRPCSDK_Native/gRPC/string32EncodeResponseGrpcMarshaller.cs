@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for string32EncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.string32EncodeResponse</summary>
         public static readonly Marshaller<Stellar.string32EncodeResponse> string32EncodeResponseMarshaller = Marshallers.Create<Stellar.string32EncodeResponse>(
             (message, serializationContext) =>
             {

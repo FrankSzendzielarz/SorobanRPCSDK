@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsThresholdOutOfRange</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsThresholdOutOfRange> SetOptionsThresholdOutOfRangeMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsThresholdOutOfRange>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsThresholdOutOfRange</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsThresholdOutOfRange> SetOptionsResult_SetOptionsThresholdOutOfRangeMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsThresholdOutOfRange>(
             (message, serializationContext) =>
             {
                 try

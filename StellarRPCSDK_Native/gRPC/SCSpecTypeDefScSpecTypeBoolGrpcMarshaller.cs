@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeBool</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeBool> ScSpecTypeBoolMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeBool>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeBool</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeBool> SCSpecTypeDef_ScSpecTypeBoolMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeBool>(
             (message, serializationContext) =>
             {
                 try

@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataOp</summary>
+        /// <summary>Marshaller for Stellar.ManageDataOp</summary>
         public static readonly Marshaller<Stellar.ManageDataOp> ManageDataOpMarshaller = Marshallers.Create<Stellar.ManageDataOp>(
             (message, serializationContext) =>
             {

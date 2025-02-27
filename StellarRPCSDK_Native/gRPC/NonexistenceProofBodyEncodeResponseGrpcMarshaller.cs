@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for NonexistenceProofBodyEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.NonexistenceProofBodyEncodeResponse</summary>
         public static readonly Marshaller<Stellar.NonexistenceProofBodyEncodeResponse> NonexistenceProofBodyEncodeResponseMarshaller = Marshallers.Create<Stellar.NonexistenceProofBodyEncodeResponse>(
             (message, serializationContext) =>
             {

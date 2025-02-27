@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Int256PartsDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.Int256PartsDecodeRequest</summary>
         public static readonly Marshaller<Stellar.Int256PartsDecodeRequest> Int256PartsDecodeRequestMarshaller = Marshallers.Create<Stellar.Int256PartsDecodeRequest>(
             (message, serializationContext) =>
             {

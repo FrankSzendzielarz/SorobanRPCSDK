@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvLedgerKeyNonce</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvLedgerKeyNonce> ScvLedgerKeyNonceMarshaller = Marshallers.Create<Stellar.SCVal.ScvLedgerKeyNonce>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvLedgerKeyNonce</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvLedgerKeyNonce> SCVal_ScvLedgerKeyNonceMarshaller = Marshallers.Create<Stellar.SCVal.ScvLedgerKeyNonce>(
             (message, serializationContext) =>
             {
                 try

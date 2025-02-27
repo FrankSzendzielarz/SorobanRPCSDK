@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AllowTrustCantRevoke</summary>
-        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustCantRevoke> AllowTrustCantRevokeMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustCantRevoke>(
+        /// <summary>Marshaller for Stellar.AllowTrustResult+AllowTrustCantRevoke</summary>
+        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustCantRevoke> AllowTrustResult_AllowTrustCantRevokeMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustCantRevoke>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxAdvertVectorEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.TxAdvertVectorEncodeResponse</summary>
         public static readonly Marshaller<Stellar.TxAdvertVectorEncodeResponse> TxAdvertVectorEncodeResponseMarshaller = Marshallers.Create<Stellar.TxAdvertVectorEncodeResponse>(
             (message, serializationContext) =>
             {

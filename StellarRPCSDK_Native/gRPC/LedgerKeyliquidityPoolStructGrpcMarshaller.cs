@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for liquidityPoolStruct</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.liquidityPoolStruct> liquidityPoolStructMarshaller = Marshallers.Create<Stellar.LedgerKey.liquidityPoolStruct>(
+        /// <summary>Marshaller for Stellar.LedgerKey+liquidityPoolStruct</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.liquidityPoolStruct> LedgerKey_liquidityPoolStructMarshaller = Marshallers.Create<Stellar.LedgerKey.liquidityPoolStruct>(
             (message, serializationContext) =>
             {
                 try

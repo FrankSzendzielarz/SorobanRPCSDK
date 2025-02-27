@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetTypeNative</summary>
-        public static readonly Marshaller<Stellar.Asset.AssetTypeNative> AssetTypeNativeMarshaller = Marshallers.Create<Stellar.Asset.AssetTypeNative>(
+        /// <summary>Marshaller for Stellar.Asset+AssetTypeNative</summary>
+        public static readonly Marshaller<Stellar.Asset.AssetTypeNative> Asset_AssetTypeNativeMarshaller = Marshallers.Create<Stellar.Asset.AssetTypeNative>(
             (message, serializationContext) =>
             {
                 try

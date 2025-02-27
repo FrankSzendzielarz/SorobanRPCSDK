@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractDataKeySizeBytes</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes> ConfigSettingContractDataKeySizeBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractDataKeySizeBytes</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes> ConfigSettingEntry_ConfigSettingContractDataKeySizeBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractDataKeySizeBytes>(
             (message, serializationContext) =>
             {
                 try

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for signerStruct</summary>
-        public static readonly Marshaller<Stellar.RevokeSponsorshipOp.signerStruct> signerStructMarshaller = Marshallers.Create<Stellar.RevokeSponsorshipOp.signerStruct>(
+        /// <summary>Marshaller for Stellar.RevokeSponsorshipOp+signerStruct</summary>
+        public static readonly Marshaller<Stellar.RevokeSponsorshipOp.signerStruct> RevokeSponsorshipOp_signerStructMarshaller = Marshallers.Create<Stellar.RevokeSponsorshipOp.signerStruct>(
             (message, serializationContext) =>
             {
                 try

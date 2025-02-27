@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetTypeCreditAlphanum12</summary>
-        public static readonly Marshaller<Stellar.TrustLineAsset.AssetTypeCreditAlphanum12> AssetTypeCreditAlphanum12Marshaller = Marshallers.Create<Stellar.TrustLineAsset.AssetTypeCreditAlphanum12>(
+        /// <summary>Marshaller for Stellar.TrustLineAsset+AssetTypeCreditAlphanum12</summary>
+        public static readonly Marshaller<Stellar.TrustLineAsset.AssetTypeCreditAlphanum12> TrustLineAsset_AssetTypeCreditAlphanum12Marshaller = Marshallers.Create<Stellar.TrustLineAsset.AssetTypeCreditAlphanum12>(
             (message, serializationContext) =>
             {
                 try

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for trustLineStruct</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.trustLineStruct> trustLineStructMarshaller = Marshallers.Create<Stellar.LedgerKey.trustLineStruct>(
+        /// <summary>Marshaller for Stellar.LedgerKey+trustLineStruct</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.trustLineStruct> LedgerKey_trustLineStructMarshaller = Marshallers.Create<Stellar.LedgerKey.trustLineStruct>(
             (message, serializationContext) =>
             {
                 try

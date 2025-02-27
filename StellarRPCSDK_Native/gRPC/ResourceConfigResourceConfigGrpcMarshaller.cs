@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ResourceConfigResourceConfig</summary>
+        /// <summary>Marshaller for Stellar.RPC.ResourceConfigResourceConfig</summary>
         public static readonly Marshaller<Stellar.RPC.ResourceConfigResourceConfig> ResourceConfigResourceConfigMarshaller = Marshallers.Create<Stellar.RPC.ResourceConfigResourceConfig>(
             (message, serializationContext) =>
             {

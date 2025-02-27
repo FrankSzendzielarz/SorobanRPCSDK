@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateAccountAlreadyExist</summary>
-        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountAlreadyExist> CreateAccountAlreadyExistMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountAlreadyExist>(
+        /// <summary>Marshaller for Stellar.CreateAccountResult+CreateAccountAlreadyExist</summary>
+        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountAlreadyExist> CreateAccountResult_CreateAccountAlreadyExistMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountAlreadyExist>(
             (message, serializationContext) =>
             {
                 try

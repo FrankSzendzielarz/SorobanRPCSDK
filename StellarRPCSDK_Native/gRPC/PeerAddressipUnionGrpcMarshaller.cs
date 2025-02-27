@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ipUnion</summary>
-        public static readonly Marshaller<Stellar.PeerAddress.ipUnion> ipUnionMarshaller = Marshallers.Create<Stellar.PeerAddress.ipUnion>(
+        /// <summary>Marshaller for Stellar.PeerAddress+ipUnion</summary>
+        public static readonly Marshaller<Stellar.PeerAddress.ipUnion> PeerAddress_ipUnionMarshaller = Marshallers.Create<Stellar.PeerAddress.ipUnion>(
             (message, serializationContext) =>
             {
                 try

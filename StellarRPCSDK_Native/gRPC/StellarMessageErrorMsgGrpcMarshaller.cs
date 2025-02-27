@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ErrorMsg</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.ErrorMsg> ErrorMsgMarshaller = Marshallers.Create<Stellar.StellarMessage.ErrorMsg>(
+        /// <summary>Marshaller for Stellar.StellarMessage+ErrorMsg</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.ErrorMsg> StellarMessage_ErrorMsgMarshaller = Marshallers.Create<Stellar.StellarMessage.ErrorMsg>(
             (message, serializationContext) =>
             {
                 try

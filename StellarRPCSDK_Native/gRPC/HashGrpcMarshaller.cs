@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Hash</summary>
+        /// <summary>Marshaller for Stellar.Hash</summary>
         public static readonly Marshaller<Stellar.Hash> HashMarshaller = Marshallers.Create<Stellar.Hash>(
             (message, serializationContext) =>
             {

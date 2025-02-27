@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for bodyUnion</summary>
-        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion> bodyUnionMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion>(
+        /// <summary>Marshaller for Stellar.LiquidityPoolEntry+bodyUnion</summary>
+        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion> LiquidityPoolEntry_bodyUnionMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion>(
             (message, serializationContext) =>
             {
                 try

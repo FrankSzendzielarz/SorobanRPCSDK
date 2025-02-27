@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetTrustLineFlagsResultEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SetTrustLineFlagsResultEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SetTrustLineFlagsResultEncodeResponse> SetTrustLineFlagsResultEncodeResponseMarshaller = Marshallers.Create<Stellar.SetTrustLineFlagsResultEncodeResponse>(
             (message, serializationContext) =>
             {

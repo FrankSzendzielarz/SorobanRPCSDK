@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingEvictionIterator</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingEvictionIterator> ConfigSettingEvictionIteratorMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingEvictionIterator>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingEvictionIterator</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingEvictionIterator> ConfigSettingEntry_ConfigSettingEvictionIteratorMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingEvictionIterator>(
             (message, serializationContext) =>
             {
                 try

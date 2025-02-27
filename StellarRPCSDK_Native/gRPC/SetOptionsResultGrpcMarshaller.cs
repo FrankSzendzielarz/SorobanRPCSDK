@@ -46,7 +46,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsResult</summary>
+        /// <summary>Marshaller for Stellar.SetOptionsResult</summary>
         public static readonly Marshaller<Stellar.SetOptionsResult> SetOptionsResultMarshaller = Marshallers.Create<Stellar.SetOptionsResult>(
             (message, serializationContext) =>
             {

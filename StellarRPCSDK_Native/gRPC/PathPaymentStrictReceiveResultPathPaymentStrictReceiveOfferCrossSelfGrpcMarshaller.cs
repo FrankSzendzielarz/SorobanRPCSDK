@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PathPaymentStrictReceiveOfferCrossSelf</summary>
-        public static readonly Marshaller<Stellar.PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf> PathPaymentStrictReceiveOfferCrossSelfMarshaller = Marshallers.Create<Stellar.PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf>(
+        /// <summary>Marshaller for Stellar.PathPaymentStrictReceiveResult+PathPaymentStrictReceiveOfferCrossSelf</summary>
+        public static readonly Marshaller<Stellar.PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf> PathPaymentStrictReceiveResult_PathPaymentStrictReceiveOfferCrossSelfMarshaller = Marshallers.Create<Stellar.PathPaymentStrictReceiveResult.PathPaymentStrictReceiveOfferCrossSelf>(
             (message, serializationContext) =>
             {
                 try

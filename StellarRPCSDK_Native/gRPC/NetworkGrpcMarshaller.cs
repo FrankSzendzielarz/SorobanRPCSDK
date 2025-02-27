@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Network</summary>
+        /// <summary>Marshaller for Stellar.Network</summary>
         public static readonly Marshaller<Stellar.Network> NetworkMarshaller = Marshallers.Create<Stellar.Network>(
             (message, serializationContext) =>
             {

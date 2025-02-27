@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageOfferEffect</summary>
+        /// <summary>Marshaller for Stellar.ManageOfferEffect</summary>
         public static readonly Marshaller<Stellar.ManageOfferEffect> ManageOfferEffectMarshaller = Marshallers.Create<Stellar.ManageOfferEffect>(
             (message, serializationContext) =>
             {

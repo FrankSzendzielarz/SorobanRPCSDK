@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackResultCodeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ClawbackResultCodeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ClawbackResultCodeEncodeResponse> ClawbackResultCodeEncodeResponseMarshaller = Marshallers.Create<Stellar.ClawbackResultCodeEncodeResponse>(
             (message, serializationContext) =>
             {

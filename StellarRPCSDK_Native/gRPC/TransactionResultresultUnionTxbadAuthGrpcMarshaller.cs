@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxbadAuth</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxbadAuth> TxbadAuthMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxbadAuth>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxbadAuth</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxbadAuth> TransactionResult_resultUnion_TxbadAuthMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxbadAuth>(
             (message, serializationContext) =>
             {
                 try

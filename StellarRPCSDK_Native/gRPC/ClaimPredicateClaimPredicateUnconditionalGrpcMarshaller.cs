@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimPredicateUnconditional</summary>
-        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateUnconditional> ClaimPredicateUnconditionalMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateUnconditional>(
+        /// <summary>Marshaller for Stellar.ClaimPredicate+ClaimPredicateUnconditional</summary>
+        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateUnconditional> ClaimPredicate_ClaimPredicateUnconditionalMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateUnconditional>(
             (message, serializationContext) =>
             {
                 try

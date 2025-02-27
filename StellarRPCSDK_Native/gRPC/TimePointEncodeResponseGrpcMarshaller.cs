@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimePointEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.TimePointEncodeResponse</summary>
         public static readonly Marshaller<Stellar.TimePointEncodeResponse> TimePointEncodeResponseMarshaller = Marshallers.Create<Stellar.TimePointEncodeResponse>(
             (message, serializationContext) =>
             {

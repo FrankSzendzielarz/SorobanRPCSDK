@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BumpSequence</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.BumpSequence> BumpSequenceMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.BumpSequence>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+BumpSequence</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.BumpSequence> Operation_bodyUnion_BumpSequenceMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.BumpSequence>(
             (message, serializationContext) =>
             {
                 try

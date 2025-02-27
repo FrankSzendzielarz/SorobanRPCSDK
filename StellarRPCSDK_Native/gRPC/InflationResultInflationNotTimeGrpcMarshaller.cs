@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InflationNotTime</summary>
-        public static readonly Marshaller<Stellar.InflationResult.InflationNotTime> InflationNotTimeMarshaller = Marshallers.Create<Stellar.InflationResult.InflationNotTime>(
+        /// <summary>Marshaller for Stellar.InflationResult+InflationNotTime</summary>
+        public static readonly Marshaller<Stellar.InflationResult.InflationNotTime> InflationResult_InflationNotTimeMarshaller = Marshallers.Create<Stellar.InflationResult.InflationNotTime>(
             (message, serializationContext) =>
             {
                 try

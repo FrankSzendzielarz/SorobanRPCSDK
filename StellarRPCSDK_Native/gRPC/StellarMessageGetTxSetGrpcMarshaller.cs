@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetTxSet</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.GetTxSet> GetTxSetMarshaller = Marshallers.Create<Stellar.StellarMessage.GetTxSet>(
+        /// <summary>Marshaller for Stellar.StellarMessage+GetTxSet</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.GetTxSet> StellarMessage_GetTxSetMarshaller = Marshallers.Create<Stellar.StellarMessage.GetTxSet>(
             (message, serializationContext) =>
             {
                 try

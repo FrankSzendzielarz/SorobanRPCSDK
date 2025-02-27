@@ -39,7 +39,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for UInt256Parts</summary>
+        /// <summary>Marshaller for Stellar.UInt256Parts</summary>
         public static readonly Marshaller<Stellar.UInt256Parts> UInt256PartsMarshaller = Marshallers.Create<Stellar.UInt256Parts>(
             (message, serializationContext) =>
             {

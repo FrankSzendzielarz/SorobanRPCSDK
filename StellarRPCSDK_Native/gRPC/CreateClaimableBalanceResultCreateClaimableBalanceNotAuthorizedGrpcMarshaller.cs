@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateClaimableBalanceNotAuthorized</summary>
-        public static readonly Marshaller<Stellar.CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized> CreateClaimableBalanceNotAuthorizedMarshaller = Marshallers.Create<Stellar.CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized>(
+        /// <summary>Marshaller for Stellar.CreateClaimableBalanceResult+CreateClaimableBalanceNotAuthorized</summary>
+        public static readonly Marshaller<Stellar.CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized> CreateClaimableBalanceResult_CreateClaimableBalanceNotAuthorizedMarshaller = Marshallers.Create<Stellar.CreateClaimableBalanceResult.CreateClaimableBalanceNotAuthorized>(
             (message, serializationContext) =>
             {
                 try

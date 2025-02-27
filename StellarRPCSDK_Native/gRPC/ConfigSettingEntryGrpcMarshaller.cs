@@ -49,7 +49,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingEntry</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry</summary>
         public static readonly Marshaller<Stellar.ConfigSettingEntry> ConfigSettingEntryMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry>(
             (message, serializationContext) =>
             {

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for contractIDStruct</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.contractIDStruct> contractIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.contractIDStruct>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+contractIDStruct</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.contractIDStruct> HashIDPreimage_contractIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.contractIDStruct>(
             (message, serializationContext) =>
             {
                 try

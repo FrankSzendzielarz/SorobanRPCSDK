@@ -23,7 +23,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "ApplyTo",
-                SimulateTransactionResult_ProtoWrapperApplyToParamGrpcMarshaller.ApplyToParamMarshaller,
+                SimulateTransactionResult_ProtoWrapperApplyToParamGrpcMarshaller.SimulateTransactionResult_ProtoWrapper_ApplyToParamMarshaller,
                 TransactionGrpcMarshaller.TransactionMarshaller);
 
     }
@@ -52,12 +52,11 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.Transaction), true);
             }
-           
 
         }
 
         /// <summary>Marshaller for ApplyToParam</summary>
-        public static readonly Marshaller<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam> ApplyToParamMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam>(
+        public static readonly Marshaller<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam> SimulateTransactionResult_ProtoWrapper_ApplyToParamMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam>(
             (message, serializationContext) =>
             {
                 try
@@ -120,70 +119,6 @@ namespace Stellar.RPC.AOT
                 }
             });
 
-        /// <summary>Marshaller for Object</summary>
-        public static readonly Marshaller<System.Object> ObjectMarshaller = Marshallers.Create<System.Object>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Object>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Boolean</summary>
-        public static readonly Marshaller<System.Boolean> BooleanMarshaller = Marshallers.Create<System.Boolean>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Boolean>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
     }
 
     /// <summary>gRPC service implementation for SimulateTransactionResult_ProtoWrapper</summary>
@@ -209,21 +144,6 @@ namespace Stellar.RPC.AOT
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in ApplyTo");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Equals method</summary>
-        public async Task<System.Boolean> Equals(System.Object request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Equals request");
-                return _service.Equals(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Equals");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

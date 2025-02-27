@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for successStruct</summary>
-        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.successStruct> successStructMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.successStruct>(
+        /// <summary>Marshaller for Stellar.PathPaymentStrictSendResult+successStruct</summary>
+        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.successStruct> PathPaymentStrictSendResult_successStructMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.successStruct>(
             (message, serializationContext) =>
             {
                 try

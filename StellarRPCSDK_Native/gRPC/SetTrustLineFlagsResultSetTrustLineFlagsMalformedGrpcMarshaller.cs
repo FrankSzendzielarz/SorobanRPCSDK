@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetTrustLineFlagsMalformed</summary>
-        public static readonly Marshaller<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsMalformed> SetTrustLineFlagsMalformedMarshaller = Marshallers.Create<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsMalformed>(
+        /// <summary>Marshaller for Stellar.SetTrustLineFlagsResult+SetTrustLineFlagsMalformed</summary>
+        public static readonly Marshaller<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsMalformed> SetTrustLineFlagsResult_SetTrustLineFlagsMalformedMarshaller = Marshallers.Create<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsMalformed>(
             (message, serializationContext) =>
             {
                 try

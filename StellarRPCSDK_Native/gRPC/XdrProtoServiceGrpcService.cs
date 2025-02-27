@@ -12,7 +12,7 @@ using Stellar;
 
 namespace Stellar.RPC.AOT
 {
-    /// <summary>gRPC service descriptor for XdrProtoService</summary>
+    /// <summary>gRPC service descriptor for IXdrProtoService</summary>
     public static class XdrProtoServiceGrpcDescriptor
     {
         public const string ServiceName = "Stellar.XdrProtoService";
@@ -7039,7 +7039,7 @@ namespace Stellar.RPC.AOT
 
     }
 
-    /// <summary>Custom marshallers for XdrProtoService types</summary>
+    /// <summary>Custom marshallers for IXdrProtoService types</summary>
     public static class XdrProtoServiceGrpcMarshaller
     {
         // Static constructor to configure types
@@ -13295,7 +13295,6 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.SerializedBinaryFuseFilterDecodeResponse), true);
             }
-
 
         }
 
@@ -63219,79 +63218,15 @@ namespace Stellar.RPC.AOT
                 }
             });
 
-        /// <summary>Marshaller for Object</summary>
-        public static readonly Marshaller<System.Object> ObjectMarshaller = Marshallers.Create<System.Object>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Object>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Boolean</summary>
-        public static readonly Marshaller<System.Boolean> BooleanMarshaller = Marshallers.Create<System.Boolean>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Boolean>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
     }
 
-    /// <summary>gRPC service implementation for XdrProtoService</summary>
+    /// <summary>gRPC service implementation for IXdrProtoService</summary>
     public class XdrProtoServiceGrpcService
     {
-        private readonly XdrProtoService _service;
+        private readonly IXdrProtoService _service;
         private readonly ILogger _logger;
 
-        public XdrProtoServiceGrpcService(XdrProtoService service, ILogger<XdrProtoServiceGrpcService> logger)
+        public XdrProtoServiceGrpcService(IXdrProtoService service, ILogger<XdrProtoServiceGrpcService> logger)
         {
             _service = service;
             _logger = logger;
@@ -74993,21 +74928,6 @@ namespace Stellar.RPC.AOT
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in DecodeSerializedBinaryFuseFilter");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Equals method</summary>
-        public async Task<System.Boolean> Equals(System.Object request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Equals request");
-                return _service.Equals(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Equals");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

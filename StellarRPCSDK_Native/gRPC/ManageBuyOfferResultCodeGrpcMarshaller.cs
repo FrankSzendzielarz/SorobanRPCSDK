@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageBuyOfferResultCode</summary>
+        /// <summary>Marshaller for Stellar.ManageBuyOfferResultCode</summary>
         public static readonly Marshaller<Stellar.ManageBuyOfferResultCode> ManageBuyOfferResultCodeMarshaller = Marshallers.Create<Stellar.ManageBuyOfferResultCode>(
             (message, serializationContext) =>
             {

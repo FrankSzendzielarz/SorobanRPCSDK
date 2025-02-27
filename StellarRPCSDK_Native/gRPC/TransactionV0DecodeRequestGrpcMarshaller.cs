@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionV0DecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TransactionV0DecodeRequest</summary>
         public static readonly Marshaller<Stellar.TransactionV0DecodeRequest> TransactionV0DecodeRequestMarshaller = Marshallers.Create<Stellar.TransactionV0DecodeRequest>(
             (message, serializationContext) =>
             {

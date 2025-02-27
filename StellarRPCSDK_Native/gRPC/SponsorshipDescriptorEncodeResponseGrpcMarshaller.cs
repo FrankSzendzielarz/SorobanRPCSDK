@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SponsorshipDescriptorEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SponsorshipDescriptorEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SponsorshipDescriptorEncodeResponse> SponsorshipDescriptorEncodeResponseMarshaller = Marshallers.Create<Stellar.SponsorshipDescriptorEncodeResponse>(
             (message, serializationContext) =>
             {

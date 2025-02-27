@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsBadSigner</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsBadSigner> SetOptionsBadSignerMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsBadSigner>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsBadSigner</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsBadSigner> SetOptionsResult_SetOptionsBadSignerMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsBadSigner>(
             (message, serializationContext) =>
             {
                 try

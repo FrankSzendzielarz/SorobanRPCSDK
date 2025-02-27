@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DontHaveCase</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.DontHaveCase> DontHaveCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.DontHaveCase>(
+        /// <summary>Marshaller for Stellar.StellarMessage+DontHaveCase</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.DontHaveCase> StellarMessage_DontHaveCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.DontHaveCase>(
             (message, serializationContext) =>
             {
                 try

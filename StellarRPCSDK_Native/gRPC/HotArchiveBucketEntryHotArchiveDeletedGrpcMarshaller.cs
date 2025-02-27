@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HotArchiveDeleted</summary>
-        public static readonly Marshaller<Stellar.HotArchiveBucketEntry.HotArchiveDeleted> HotArchiveDeletedMarshaller = Marshallers.Create<Stellar.HotArchiveBucketEntry.HotArchiveDeleted>(
+        /// <summary>Marshaller for Stellar.HotArchiveBucketEntry+HotArchiveDeleted</summary>
+        public static readonly Marshaller<Stellar.HotArchiveBucketEntry.HotArchiveDeleted> HotArchiveBucketEntry_HotArchiveDeletedMarshaller = Marshallers.Create<Stellar.HotArchiveBucketEntry.HotArchiveDeleted>(
             (message, serializationContext) =>
             {
                 try

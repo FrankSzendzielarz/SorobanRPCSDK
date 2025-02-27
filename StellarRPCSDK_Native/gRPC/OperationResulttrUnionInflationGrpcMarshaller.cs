@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Inflation</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.Inflation> InflationMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Inflation>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+Inflation</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.Inflation> OperationResult_trUnion_InflationMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Inflation>(
             (message, serializationContext) =>
             {
                 try

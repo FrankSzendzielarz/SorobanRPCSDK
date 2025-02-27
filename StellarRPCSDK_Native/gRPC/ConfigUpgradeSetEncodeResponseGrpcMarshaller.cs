@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigUpgradeSetEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ConfigUpgradeSetEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ConfigUpgradeSetEncodeResponse> ConfigUpgradeSetEncodeResponseMarshaller = Marshallers.Create<Stellar.ConfigUpgradeSetEncodeResponse>(
             (message, serializationContext) =>
             {

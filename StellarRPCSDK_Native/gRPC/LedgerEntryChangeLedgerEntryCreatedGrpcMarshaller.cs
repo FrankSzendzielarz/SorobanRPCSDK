@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerEntryCreated</summary>
-        public static readonly Marshaller<Stellar.LedgerEntryChange.LedgerEntryCreated> LedgerEntryCreatedMarshaller = Marshallers.Create<Stellar.LedgerEntryChange.LedgerEntryCreated>(
+        /// <summary>Marshaller for Stellar.LedgerEntryChange+LedgerEntryCreated</summary>
+        public static readonly Marshaller<Stellar.LedgerEntryChange.LedgerEntryCreated> LedgerEntryChange_LedgerEntryCreatedMarshaller = Marshallers.Create<Stellar.LedgerEntryChange.LedgerEntryCreated>(
             (message, serializationContext) =>
             {
                 try

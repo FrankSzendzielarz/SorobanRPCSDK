@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeVoid</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeVoid> ScSpecTypeVoidMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeVoid>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeVoid</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeVoid> SCSpecTypeDef_ScSpecTypeVoidMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeVoid>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Payment</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.Payment> PaymentMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Payment>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+Payment</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.Payment> OperationResult_trUnion_PaymentMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Payment>(
             (message, serializationContext) =>
             {
                 try

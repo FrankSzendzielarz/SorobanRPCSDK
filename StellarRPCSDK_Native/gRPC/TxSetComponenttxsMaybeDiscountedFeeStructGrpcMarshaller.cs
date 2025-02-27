@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for txsMaybeDiscountedFeeStruct</summary>
-        public static readonly Marshaller<Stellar.TxSetComponent.txsMaybeDiscountedFeeStruct> txsMaybeDiscountedFeeStructMarshaller = Marshallers.Create<Stellar.TxSetComponent.txsMaybeDiscountedFeeStruct>(
+        /// <summary>Marshaller for Stellar.TxSetComponent+txsMaybeDiscountedFeeStruct</summary>
+        public static readonly Marshaller<Stellar.TxSetComponent.txsMaybeDiscountedFeeStruct> TxSetComponent_txsMaybeDiscountedFeeStructMarshaller = Marshallers.Create<Stellar.TxSetComponent.txsMaybeDiscountedFeeStruct>(
             (message, serializationContext) =>
             {
                 try

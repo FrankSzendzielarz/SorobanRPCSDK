@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOfferOpDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ManageSellOfferOpDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ManageSellOfferOpDecodeResponse> ManageSellOfferOpDecodeResponseMarshaller = Marshallers.Create<Stellar.ManageSellOfferOpDecodeResponse>(
             (message, serializationContext) =>
             {

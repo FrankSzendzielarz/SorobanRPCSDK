@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for IsSorobanParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.IsSorobanParam> IsSorobanParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.IsSorobanParam>(
+        /// <summary>Marshaller for Stellar.Transaction_ProtoWrapper+IsSorobanParam</summary>
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.IsSorobanParam> Transaction_ProtoWrapper_IsSorobanParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.IsSorobanParam>(
             (message, serializationContext) =>
             {
                 try

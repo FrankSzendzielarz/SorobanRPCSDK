@@ -40,8 +40,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for revokeIDStruct</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.revokeIDStruct> revokeIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.revokeIDStruct>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+revokeIDStruct</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.revokeIDStruct> HashIDPreimage_revokeIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.revokeIDStruct>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Peers</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.Peers> PeersMarshaller = Marshallers.Create<Stellar.StellarMessage.Peers>(
+        /// <summary>Marshaller for Stellar.StellarMessage+Peers</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.Peers> StellarMessage_PeersMarshaller = Marshallers.Create<Stellar.StellarMessage.Peers>(
             (message, serializationContext) =>
             {
                 try

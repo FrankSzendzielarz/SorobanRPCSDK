@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractCostParamsMemoryBytes</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes> ConfigSettingContractCostParamsMemoryBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractCostParamsMemoryBytes</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes> ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsMemoryBytes>(
             (message, serializationContext) =>
             {
                 try

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiquidityPoolWithdrawUnderMinimum</summary>
-        public static readonly Marshaller<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum> LiquidityPoolWithdrawUnderMinimumMarshaller = Marshallers.Create<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum>(
+        /// <summary>Marshaller for Stellar.LiquidityPoolWithdrawResult+LiquidityPoolWithdrawUnderMinimum</summary>
+        public static readonly Marshaller<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum> LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderMinimumMarshaller = Marshallers.Create<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawUnderMinimum>(
             (message, serializationContext) =>
             {
                 try

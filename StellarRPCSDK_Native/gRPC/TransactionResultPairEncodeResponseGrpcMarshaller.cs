@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionResultPairEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.TransactionResultPairEncodeResponse</summary>
         public static readonly Marshaller<Stellar.TransactionResultPairEncodeResponse> TransactionResultPairEncodeResponseMarshaller = Marshallers.Create<Stellar.TransactionResultPairEncodeResponse>(
             (message, serializationContext) =>
             {

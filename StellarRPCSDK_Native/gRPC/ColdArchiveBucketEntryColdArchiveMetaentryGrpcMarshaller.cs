@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveMetaentry</summary>
-        public static readonly Marshaller<Stellar.ColdArchiveBucketEntry.ColdArchiveMetaentry> ColdArchiveMetaentryMarshaller = Marshallers.Create<Stellar.ColdArchiveBucketEntry.ColdArchiveMetaentry>(
+        /// <summary>Marshaller for Stellar.ColdArchiveBucketEntry+ColdArchiveMetaentry</summary>
+        public static readonly Marshaller<Stellar.ColdArchiveBucketEntry.ColdArchiveMetaentry> ColdArchiveBucketEntry_ColdArchiveMetaentryMarshaller = Marshallers.Create<Stellar.ColdArchiveBucketEntry.ColdArchiveMetaentry>(
             (message, serializationContext) =>
             {
                 try

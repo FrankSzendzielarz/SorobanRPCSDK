@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InflationResultCodeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.InflationResultCodeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.InflationResultCodeEncodeResponse> InflationResultCodeEncodeResponseMarshaller = Marshallers.Create<Stellar.InflationResultCodeEncodeResponse>(
             (message, serializationContext) =>
             {

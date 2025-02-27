@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeHostFunction</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.InvokeHostFunction> InvokeHostFunctionMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.InvokeHostFunction>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+InvokeHostFunction</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.InvokeHostFunction> Operation_bodyUnion_InvokeHostFunctionMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.InvokeHostFunction>(
             (message, serializationContext) =>
             {
                 try

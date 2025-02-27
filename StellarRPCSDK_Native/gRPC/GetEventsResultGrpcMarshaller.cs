@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetEventsResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetEventsResult</summary>
         public static readonly Marshaller<Stellar.RPC.GetEventsResult> GetEventsResultMarshaller = Marshallers.Create<Stellar.RPC.GetEventsResult>(
             (message, serializationContext) =>
             {

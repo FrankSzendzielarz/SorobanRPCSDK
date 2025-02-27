@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetFeeStatsResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetFeeStatsResult</summary>
         public static readonly Marshaller<Stellar.RPC.GetFeeStatsResult> GetFeeStatsResultMarshaller = Marshallers.Create<Stellar.RPC.GetFeeStatsResult>(
             (message, serializationContext) =>
             {

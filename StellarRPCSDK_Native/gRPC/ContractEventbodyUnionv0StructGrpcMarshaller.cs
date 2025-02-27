@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for v0Struct</summary>
-        public static readonly Marshaller<Stellar.ContractEvent.bodyUnion.v0Struct> v0StructMarshaller = Marshallers.Create<Stellar.ContractEvent.bodyUnion.v0Struct>(
+        /// <summary>Marshaller for Stellar.ContractEvent+bodyUnion+v0Struct</summary>
+        public static readonly Marshaller<Stellar.ContractEvent.bodyUnion.v0Struct> ContractEvent_bodyUnion_v0StructMarshaller = Marshallers.Create<Stellar.ContractEvent.bodyUnion.v0Struct>(
             (message, serializationContext) =>
             {
                 try

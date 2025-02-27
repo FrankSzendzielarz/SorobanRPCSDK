@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for string64DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.string64DecodeResponse</summary>
         public static readonly Marshaller<Stellar.string64DecodeResponse> string64DecodeResponseMarshaller = Marshallers.Create<Stellar.string64DecodeResponse>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DontHaveDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.DontHaveDecodeRequest</summary>
         public static readonly Marshaller<Stellar.DontHaveDecodeRequest> DontHaveDecodeRequestMarshaller = Marshallers.Create<Stellar.DontHaveDecodeRequest>(
             (message, serializationContext) =>
             {

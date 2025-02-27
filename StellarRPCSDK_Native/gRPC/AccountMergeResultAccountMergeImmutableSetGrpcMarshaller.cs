@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMergeImmutableSet</summary>
-        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeImmutableSet> AccountMergeImmutableSetMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeImmutableSet>(
+        /// <summary>Marshaller for Stellar.AccountMergeResult+AccountMergeImmutableSet</summary>
+        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeImmutableSet> AccountMergeResult_AccountMergeImmutableSetMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeImmutableSet>(
             (message, serializationContext) =>
             {
                 try

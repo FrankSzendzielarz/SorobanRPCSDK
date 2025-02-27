@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for StateArchivalSettingsDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.StateArchivalSettingsDecodeResponse</summary>
         public static readonly Marshaller<Stellar.StateArchivalSettingsDecodeResponse> StateArchivalSettingsDecodeResponseMarshaller = Marshallers.Create<Stellar.StateArchivalSettingsDecodeResponse>(
             (message, serializationContext) =>
             {

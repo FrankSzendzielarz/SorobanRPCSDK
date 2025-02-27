@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustLowReserve</summary>
-        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustLowReserve> ChangeTrustLowReserveMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustLowReserve>(
+        /// <summary>Marshaller for Stellar.ChangeTrustResult+ChangeTrustLowReserve</summary>
+        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustLowReserve> ChangeTrustResult_ChangeTrustLowReserveMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustLowReserve>(
             (message, serializationContext) =>
             {
                 try

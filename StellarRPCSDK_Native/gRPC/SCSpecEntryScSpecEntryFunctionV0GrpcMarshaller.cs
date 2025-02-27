@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecEntryFunctionV0</summary>
-        public static readonly Marshaller<Stellar.SCSpecEntry.ScSpecEntryFunctionV0> ScSpecEntryFunctionV0Marshaller = Marshallers.Create<Stellar.SCSpecEntry.ScSpecEntryFunctionV0>(
+        /// <summary>Marshaller for Stellar.SCSpecEntry+ScSpecEntryFunctionV0</summary>
+        public static readonly Marshaller<Stellar.SCSpecEntry.ScSpecEntryFunctionV0> SCSpecEntry_ScSpecEntryFunctionV0Marshaller = Marshallers.Create<Stellar.SCSpecEntry.ScSpecEntryFunctionV0>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PeerAddressDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.PeerAddressDecodeRequest</summary>
         public static readonly Marshaller<Stellar.PeerAddressDecodeRequest> PeerAddressDecodeRequestMarshaller = Marshallers.Create<Stellar.PeerAddressDecodeRequest>(
             (message, serializationContext) =>
             {

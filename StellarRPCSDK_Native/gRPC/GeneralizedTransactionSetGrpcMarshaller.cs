@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GeneralizedTransactionSet</summary>
+        /// <summary>Marshaller for Stellar.GeneralizedTransactionSet</summary>
         public static readonly Marshaller<Stellar.GeneralizedTransactionSet> GeneralizedTransactionSetMarshaller = Marshallers.Create<Stellar.GeneralizedTransactionSet>(
             (message, serializationContext) =>
             {

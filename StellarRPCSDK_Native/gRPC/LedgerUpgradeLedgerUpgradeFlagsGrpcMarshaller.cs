@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerUpgradeFlags</summary>
-        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeFlags> LedgerUpgradeFlagsMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeFlags>(
+        /// <summary>Marshaller for Stellar.LedgerUpgrade+LedgerUpgradeFlags</summary>
+        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeFlags> LedgerUpgrade_LedgerUpgradeFlagsMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeFlags>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractComputeV0Case</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractComputeV0Case> ConfigSettingContractComputeV0CaseMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractComputeV0Case>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractComputeV0Case</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractComputeV0Case> ConfigSettingEntry_ConfigSettingContractComputeV0CaseMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractComputeV0Case>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for contractCodeStruct</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.contractCodeStruct> contractCodeStructMarshaller = Marshallers.Create<Stellar.LedgerKey.contractCodeStruct>(
+        /// <summary>Marshaller for Stellar.LedgerKey+contractCodeStruct</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.contractCodeStruct> LedgerKey_contractCodeStructMarshaller = Marshallers.Create<Stellar.LedgerKey.contractCodeStruct>(
             (message, serializationContext) =>
             {
                 try

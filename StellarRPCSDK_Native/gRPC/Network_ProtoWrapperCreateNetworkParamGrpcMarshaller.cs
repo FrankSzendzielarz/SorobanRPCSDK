@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateNetworkParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.CreateNetworkParam> CreateNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.CreateNetworkParam>(
+        /// <summary>Marshaller for Stellar.Network_ProtoWrapper+CreateNetworkParam</summary>
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.CreateNetworkParam> Network_ProtoWrapper_CreateNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.CreateNetworkParam>(
             (message, serializationContext) =>
             {
                 try

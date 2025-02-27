@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for EvictionIteratorDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.EvictionIteratorDecodeRequest</summary>
         public static readonly Marshaller<Stellar.EvictionIteratorDecodeRequest> EvictionIteratorDecodeRequestMarshaller = Marshallers.Create<Stellar.EvictionIteratorDecodeRequest>(
             (message, serializationContext) =>
             {

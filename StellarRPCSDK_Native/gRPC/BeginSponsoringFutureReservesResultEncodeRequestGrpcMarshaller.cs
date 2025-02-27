@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BeginSponsoringFutureReservesResultEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.BeginSponsoringFutureReservesResultEncodeRequest</summary>
         public static readonly Marshaller<Stellar.BeginSponsoringFutureReservesResultEncodeRequest> BeginSponsoringFutureReservesResultEncodeRequestMarshaller = Marshallers.Create<Stellar.BeginSponsoringFutureReservesResultEncodeRequest>(
             (message, serializationContext) =>
             {

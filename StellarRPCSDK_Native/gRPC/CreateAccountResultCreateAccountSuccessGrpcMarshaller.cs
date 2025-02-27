@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateAccountSuccess</summary>
-        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountSuccess> CreateAccountSuccessMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountSuccess>(
+        /// <summary>Marshaller for Stellar.CreateAccountResult+CreateAccountSuccess</summary>
+        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountSuccess> CreateAccountResult_CreateAccountSuccessMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountSuccess>(
             (message, serializationContext) =>
             {
                 try

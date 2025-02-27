@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvTimepoint</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvTimepoint> ScvTimepointMarshaller = Marshallers.Create<Stellar.SCVal.ScvTimepoint>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvTimepoint</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvTimepoint> SCVal_ScvTimepointMarshaller = Marshallers.Create<Stellar.SCVal.ScvTimepoint>(
             (message, serializationContext) =>
             {
                 try

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeSymbol</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeSymbol> ScSpecTypeSymbolMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeSymbol>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeSymbol</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeSymbol> SCSpecTypeDef_ScSpecTypeSymbolMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeSymbol>(
             (message, serializationContext) =>
             {
                 try

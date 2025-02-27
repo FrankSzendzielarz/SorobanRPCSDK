@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCErrorTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SCErrorTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SCErrorTypeEncodeResponse> SCErrorTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.SCErrorTypeEncodeResponse>(
             (message, serializationContext) =>
             {

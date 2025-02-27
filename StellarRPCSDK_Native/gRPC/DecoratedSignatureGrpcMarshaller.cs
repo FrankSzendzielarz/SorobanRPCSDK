@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DecoratedSignature</summary>
+        /// <summary>Marshaller for Stellar.DecoratedSignature</summary>
         public static readonly Marshaller<Stellar.DecoratedSignature> DecoratedSignatureMarshaller = Marshallers.Create<Stellar.DecoratedSignature>(
             (message, serializationContext) =>
             {

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BIP39SeedBytesParam</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam> BIP39SeedBytesParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam>(
+        /// <summary>Marshaller for Stellar.MuxedAccount_ProtoWrapper+BIP39SeedBytesParam</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam> MuxedAccount_ProtoWrapper_BIP39SeedBytesParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam>(
             (message, serializationContext) =>
             {
                 try

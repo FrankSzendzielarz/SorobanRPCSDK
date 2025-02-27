@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ContractCostTypeDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ContractCostTypeDecodeRequest</summary>
         public static readonly Marshaller<Stellar.ContractCostTypeDecodeRequest> ContractCostTypeDecodeRequestMarshaller = Marshallers.Create<Stellar.ContractCostTypeDecodeRequest>(
             (message, serializationContext) =>
             {

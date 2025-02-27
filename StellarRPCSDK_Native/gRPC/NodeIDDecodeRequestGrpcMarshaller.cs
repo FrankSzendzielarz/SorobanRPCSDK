@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for NodeIDDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.NodeIDDecodeRequest</summary>
         public static readonly Marshaller<Stellar.NodeIDDecodeRequest> NodeIDDecodeRequestMarshaller = Marshallers.Create<Stellar.NodeIDDecodeRequest>(
             (message, serializationContext) =>
             {

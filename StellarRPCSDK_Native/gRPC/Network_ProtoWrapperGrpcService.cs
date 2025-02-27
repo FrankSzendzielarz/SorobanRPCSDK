@@ -23,7 +23,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "Create",
-                Network_ProtoWrapperCreateNetworkParamGrpcMarshaller.CreateNetworkParamMarshaller,
+                Network_ProtoWrapperCreateNetworkParamGrpcMarshaller.Network_ProtoWrapper_CreateNetworkParamMarshaller,
                 NetworkGrpcMarshaller.NetworkMarshaller);
 
         /// <summary>Method descriptor for GetNetworkPassphrase</summary>
@@ -41,7 +41,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "IsPublicNetwork",
-                Network_ProtoWrapperIsPublicNetworkParamGrpcMarshaller.IsPublicNetworkParamMarshaller,
+                Network_ProtoWrapperIsPublicNetworkParamGrpcMarshaller.Network_ProtoWrapper_IsPublicNetworkParamMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
     }
@@ -82,12 +82,11 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.BoolWrapper), true);
             }
- 
 
         }
 
         /// <summary>Marshaller for CreateNetworkParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.CreateNetworkParam> CreateNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.CreateNetworkParam>(
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.CreateNetworkParam> Network_ProtoWrapper_CreateNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.CreateNetworkParam>(
             (message, serializationContext) =>
             {
                 try
@@ -183,7 +182,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for IsPublicNetworkParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.IsPublicNetworkParam> IsPublicNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.IsPublicNetworkParam>(
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.IsPublicNetworkParam> Network_ProtoWrapper_IsPublicNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.IsPublicNetworkParam>(
             (message, serializationContext) =>
             {
                 try
@@ -238,70 +237,6 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.BoolWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Object</summary>
-        public static readonly Marshaller<System.Object> ObjectMarshaller = Marshallers.Create<System.Object>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Object>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Boolean</summary>
-        public static readonly Marshaller<System.Boolean> BooleanMarshaller = Marshallers.Create<System.Boolean>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Boolean>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -365,21 +300,6 @@ namespace Stellar.RPC.AOT
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in IsPublicNetwork");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Equals method</summary>
-        public async Task<System.Boolean> Equals(System.Object request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Equals request");
-                return _service.Equals(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Equals");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

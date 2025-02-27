@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimableBalanceEntryExtensionV1</summary>
+        /// <summary>Marshaller for Stellar.ClaimableBalanceEntryExtensionV1</summary>
         public static readonly Marshaller<Stellar.ClaimableBalanceEntryExtensionV1> ClaimableBalanceEntryExtensionV1Marshaller = Marshallers.Create<Stellar.ClaimableBalanceEntryExtensionV1>(
             (message, serializationContext) =>
             {

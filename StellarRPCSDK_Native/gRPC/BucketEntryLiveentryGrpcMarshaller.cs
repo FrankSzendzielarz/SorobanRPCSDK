@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Liveentry</summary>
-        public static readonly Marshaller<Stellar.BucketEntry.Liveentry> LiveentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Liveentry>(
+        /// <summary>Marshaller for Stellar.BucketEntry+Liveentry</summary>
+        public static readonly Marshaller<Stellar.BucketEntry.Liveentry> BucketEntry_LiveentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Liveentry>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimeSlicedSurveyResponse</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.TimeSlicedSurveyResponse> TimeSlicedSurveyResponseMarshaller = Marshallers.Create<Stellar.StellarMessage.TimeSlicedSurveyResponse>(
+        /// <summary>Marshaller for Stellar.StellarMessage+TimeSlicedSurveyResponse</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.TimeSlicedSurveyResponse> StellarMessage_TimeSlicedSurveyResponseMarshaller = Marshallers.Create<Stellar.StellarMessage.TimeSlicedSurveyResponse>(
             (message, serializationContext) =>
             {
                 try

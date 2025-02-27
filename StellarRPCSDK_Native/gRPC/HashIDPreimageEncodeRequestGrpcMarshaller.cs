@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HashIDPreimageEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.HashIDPreimageEncodeRequest</summary>
         public static readonly Marshaller<Stellar.HashIDPreimageEncodeRequest> HashIDPreimageEncodeRequestMarshaller = Marshallers.Create<Stellar.HashIDPreimageEncodeRequest>(
             (message, serializationContext) =>
             {

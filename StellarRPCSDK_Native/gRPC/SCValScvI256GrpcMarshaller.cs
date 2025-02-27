@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvI256</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvI256> ScvI256Marshaller = Marshallers.Create<Stellar.SCVal.ScvI256>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvI256</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvI256> SCVal_ScvI256Marshaller = Marshallers.Create<Stellar.SCVal.ScvI256>(
             (message, serializationContext) =>
             {
                 try

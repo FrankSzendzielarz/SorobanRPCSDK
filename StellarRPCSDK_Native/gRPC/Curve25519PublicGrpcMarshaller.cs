@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Curve25519Public</summary>
+        /// <summary>Marshaller for Stellar.Curve25519Public</summary>
         public static readonly Marshaller<Stellar.Curve25519Public> Curve25519PublicMarshaller = Marshallers.Create<Stellar.Curve25519Public>(
             (message, serializationContext) =>
             {

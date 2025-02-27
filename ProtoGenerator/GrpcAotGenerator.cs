@@ -107,16 +107,6 @@ namespace Stellar.RPC.Tools
             return contracts.Distinct().ToList();
         }
 
-        private bool HasPotentialServiceMethods(Type type)
-        {
-            return type.GetMethods()
-                .Any(m => m.IsPublic &&
-                         !m.IsStatic &&
-                         !m.IsSpecialName && // Exclude property accessors
-                         m.GetParameters().Length > 0 && // Has at least one parameter
-                         m.ReturnType != typeof(void) && // Returns something
-                         (m.ReturnType.IsGenericType || m.ReturnType.IsClass)); // Returns a complex type
-        }
 
         private List<Type> FindAllProtoContracts()
         {
@@ -150,6 +140,7 @@ namespace Stellar.RPC.Tools
                 .Where(m => m.IsPublic && !m.IsStatic && !m.IsSpecialName) // Public instance methods, excluding property accessors
                 .Where(m => m.GetParameters().Length > 0) // Must have at least one parameter (request)
                 .Where(m => m.ReturnType != typeof(void)) // Must return something
+                .Where(m => m.Name != "Equals" && m.Name != "GetHashCode" && m.Name != "ToString")
                 .ToList();
 
             if (!operations.Any())
@@ -204,11 +195,13 @@ namespace Stellar.RPC.Tools
                 {
                     Console.WriteLine($"  Warning: Skipping method {methodName} - cannot determine request or response type");
                     continue;
-                }
+                }   
 
                 // Get proper type names with dot notation
                 string requestTypeName = GetTypeNameWithDotSeparators(requestType);
                 string responseTypeName = GetTypeNameWithDotSeparators(responseType);
+                string requestMarshallerProperty = GetMarshallerPropertyName(requestType);
+                string responseMarshallerProperty = GetMarshallerPropertyName(responseType);
 
                 // Get marshaller class and property names
                 string requestMarshallerClass = GetCleanClassName(requestType) + "GrpcMarshaller";
@@ -220,8 +213,8 @@ namespace Stellar.RPC.Tools
                 sb.AppendLine("                MethodType.Unary,");
                 sb.AppendLine($"                ServiceName,");
                 sb.AppendLine($"                \"{methodName}\",");
-                sb.AppendLine($"                {requestMarshallerClass}.{requestType.Name}Marshaller,");
-                sb.AppendLine($"                {responseMarshallerClass}.{responseType.Name}Marshaller);");
+                sb.AppendLine($"                {requestMarshallerClass}.{requestMarshallerProperty}Marshaller,");
+                sb.AppendLine($"                {responseMarshallerClass}.{responseMarshallerProperty}Marshaller);");
                 sb.AppendLine();
             }
 
@@ -284,9 +277,10 @@ namespace Stellar.RPC.Tools
             foreach (var type in allTypes)
             {
                 string typeNameWithDots = GetTypeNameWithDotSeparators(type);
+                string marshallerPropertyName = GetMarshallerPropertyName(type);
 
                 sb.AppendLine($"        /// <summary>Marshaller for {type.Name}</summary>");
-                sb.AppendLine($"        public static readonly Marshaller<{typeNameWithDots}> {type.Name}Marshaller = Marshallers.Create<{typeNameWithDots}>(");
+                sb.AppendLine($"        public static readonly Marshaller<{typeNameWithDots}> {marshallerPropertyName}Marshaller = Marshallers.Create<{typeNameWithDots}>(");
                 sb.AppendLine("            (message, serializationContext) =>");
                 sb.AppendLine("            {");
                 sb.AppendLine("                try");
@@ -602,8 +596,9 @@ namespace Stellar.RPC.Tools
             sb.AppendLine();
 
             // Marshaller property - use dot notation
-            sb.AppendLine($"        /// <summary>Marshaller for {type.Name}</summary>");
-            sb.AppendLine($"        public static readonly Marshaller<{typeNameForCode}> {type.Name}Marshaller = Marshallers.Create<{typeNameForCode}>(");
+            string marshallerPropertyName = GetMarshallerPropertyName(type);
+            sb.AppendLine($"        /// <summary>Marshaller for {type.FullName}</summary>");
+            sb.AppendLine($"        public static readonly Marshaller<{typeNameForCode}> {marshallerPropertyName}Marshaller = Marshallers.Create<{typeNameForCode}>(");
             sb.AppendLine("            (message, serializationContext) =>");
             sb.AppendLine("            {");
             sb.AppendLine("                try");
@@ -824,6 +819,7 @@ namespace Stellar.RPC.Tools
                 foreach (var operation in operations)
                 {
                     var methodName = operation.Name;
+                    if (methodName == "Equals") continue;
                     var requestType = operation.GetParameters().FirstOrDefault()?.ParameterType;
                     var responseType = operation.ReturnType.IsGenericType ?
                         operation.ReturnType.GetGenericArguments()[0] :
@@ -836,7 +832,7 @@ namespace Stellar.RPC.Tools
                     string responseTypeFullName = GetFullTypeNameWithDots(responseType);
 
 
-                    sb.AppendLine($"            endpoints.MapPost(\"/{serviceImplName}/{methodName}\", async context =>");
+                    sb.AppendLine($"            endpoints.MapPost(\"/{serviceContract.Namespace}.{serviceImplName}/{methodName}\", async context =>");
                     sb.AppendLine("            {");
                     sb.AppendLine($"                var service = context.RequestServices.GetRequiredService<{serviceImplName}GrpcService>();");
                     sb.AppendLine("                var serverCallContext = CreateServerCallContext(context);");
@@ -937,6 +933,36 @@ namespace Stellar.RPC.Tools
                 Console.WriteLine($"  Error writing GrpcServiceExtensions.cs: {ex.Message}");
             }
         }
+
+        private string GetMarshallerPropertyName(Type type)
+        {
+            if (!type.IsNested)
+            {
+                return type.Name;
+            }
+
+            // For nested types, use consistent naming with underscores
+            var parts = new List<string>();
+            var currentType = type;
+
+            while (currentType != null)
+            {
+                if (currentType.IsNested)
+                {
+                    parts.Add(currentType.Name);
+                    currentType = currentType.DeclaringType;
+                }
+                else
+                {
+                    parts.Add(currentType.Name);
+                    break;
+                }
+            }
+
+            parts.Reverse();
+            return string.Join("_", parts);
+        }
+
         // Helper method to get clean class name (without special characters)
         private string GetCleanClassName(Type type)
         {

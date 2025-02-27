@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GeneralizedTxSet</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.GeneralizedTxSet> GeneralizedTxSetMarshaller = Marshallers.Create<Stellar.StellarMessage.GeneralizedTxSet>(
+        /// <summary>Marshaller for Stellar.StellarMessage+GeneralizedTxSet</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.GeneralizedTxSet> StellarMessage_GeneralizedTxSetMarshaller = Marshallers.Create<Stellar.StellarMessage.GeneralizedTxSet>(
             (message, serializationContext) =>
             {
                 try

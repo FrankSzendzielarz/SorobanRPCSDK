@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HostFunctionType</summary>
+        /// <summary>Marshaller for Stellar.HostFunctionType</summary>
         public static readonly Marshaller<Stellar.HostFunctionType> HostFunctionTypeMarshaller = Marshallers.Create<Stellar.HostFunctionType>(
             (message, serializationContext) =>
             {

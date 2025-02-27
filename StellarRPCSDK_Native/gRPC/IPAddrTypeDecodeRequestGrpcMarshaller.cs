@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for IPAddrTypeDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.IPAddrTypeDecodeRequest</summary>
         public static readonly Marshaller<Stellar.IPAddrTypeDecodeRequest> IPAddrTypeDecodeRequestMarshaller = Marshallers.Create<Stellar.IPAddrTypeDecodeRequest>(
             (message, serializationContext) =>
             {

@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCSpecType</summary>
+        /// <summary>Marshaller for Stellar.SCSpecType</summary>
         public static readonly Marshaller<Stellar.SCSpecType> SCSpecTypeMarshaller = Marshallers.Create<Stellar.SCSpecType>(
             (message, serializationContext) =>
             {

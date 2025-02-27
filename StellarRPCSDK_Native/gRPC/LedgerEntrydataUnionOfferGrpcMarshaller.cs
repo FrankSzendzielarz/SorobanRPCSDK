@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Offer</summary>
-        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.Offer> OfferMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.Offer>(
+        /// <summary>Marshaller for Stellar.LedgerEntry+dataUnion+Offer</summary>
+        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.Offer> LedgerEntry_dataUnion_OfferMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.Offer>(
             (message, serializationContext) =>
             {
                 try

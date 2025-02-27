@@ -40,7 +40,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetTransactionsResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetTransactionsResult</summary>
         public static readonly Marshaller<Stellar.RPC.GetTransactionsResult> GetTransactionsResultMarshaller = Marshallers.Create<Stellar.RPC.GetTransactionsResult>(
             (message, serializationContext) =>
             {

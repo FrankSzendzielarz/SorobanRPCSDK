@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for MuxedAccount</summary>
+        /// <summary>Marshaller for Stellar.MuxedAccount</summary>
         public static readonly Marshaller<Stellar.MuxedAccount> MuxedAccountMarshaller = Marshallers.Create<Stellar.MuxedAccount>(
             (message, serializationContext) =>
             {

@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCPNomination</summary>
+        /// <summary>Marshaller for Stellar.SCPNomination</summary>
         public static readonly Marshaller<Stellar.SCPNomination> SCPNominationMarshaller = Marshallers.Create<Stellar.SCPNomination>(
             (message, serializationContext) =>
             {

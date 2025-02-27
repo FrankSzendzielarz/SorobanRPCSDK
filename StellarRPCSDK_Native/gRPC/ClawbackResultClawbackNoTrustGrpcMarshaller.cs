@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackNoTrust</summary>
-        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackNoTrust> ClawbackNoTrustMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackNoTrust>(
+        /// <summary>Marshaller for Stellar.ClawbackResult+ClawbackNoTrust</summary>
+        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackNoTrust> ClawbackResult_ClawbackNoTrustMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackNoTrust>(
             (message, serializationContext) =>
             {
                 try

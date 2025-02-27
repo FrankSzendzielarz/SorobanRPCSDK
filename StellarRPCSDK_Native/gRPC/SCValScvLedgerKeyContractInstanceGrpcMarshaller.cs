@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvLedgerKeyContractInstance</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvLedgerKeyContractInstance> ScvLedgerKeyContractInstanceMarshaller = Marshallers.Create<Stellar.SCVal.ScvLedgerKeyContractInstance>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvLedgerKeyContractInstance</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvLedgerKeyContractInstance> SCVal_ScvLedgerKeyContractInstanceMarshaller = Marshallers.Create<Stellar.SCVal.ScvLedgerKeyContractInstance>(
             (message, serializationContext) =>
             {
                 try

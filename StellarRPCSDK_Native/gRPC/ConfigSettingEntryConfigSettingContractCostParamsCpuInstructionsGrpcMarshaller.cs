@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractCostParamsCpuInstructions</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions> ConfigSettingContractCostParamsCpuInstructionsMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractCostParamsCpuInstructions</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions> ConfigSettingEntry_ConfigSettingContractCostParamsCpuInstructionsMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractCostParamsCpuInstructions>(
             (message, serializationContext) =>
             {
                 try

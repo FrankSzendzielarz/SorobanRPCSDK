@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for bodyUnion</summary>
-        public static readonly Marshaller<Stellar.ArchivalProof.bodyUnion> bodyUnionMarshaller = Marshallers.Create<Stellar.ArchivalProof.bodyUnion>(
+        /// <summary>Marshaller for Stellar.ArchivalProof+bodyUnion</summary>
+        public static readonly Marshaller<Stellar.ArchivalProof.bodyUnion> ArchivalProof_bodyUnionMarshaller = Marshallers.Create<Stellar.ArchivalProof.bodyUnion>(
             (message, serializationContext) =>
             {
                 try

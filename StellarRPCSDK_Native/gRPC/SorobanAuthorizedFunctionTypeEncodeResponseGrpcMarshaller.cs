@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SorobanAuthorizedFunctionTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SorobanAuthorizedFunctionTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SorobanAuthorizedFunctionTypeEncodeResponse> SorobanAuthorizedFunctionTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.SorobanAuthorizedFunctionTypeEncodeResponse>(
             (message, serializationContext) =>
             {

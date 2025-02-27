@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for RevokeSponsorshipResultEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.RevokeSponsorshipResultEncodeRequest</summary>
         public static readonly Marshaller<Stellar.RevokeSponsorshipResultEncodeRequest> RevokeSponsorshipResultEncodeRequestMarshaller = Marshallers.Create<Stellar.RevokeSponsorshipResultEncodeRequest>(
             (message, serializationContext) =>
             {

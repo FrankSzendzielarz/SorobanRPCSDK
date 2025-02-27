@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountID</summary>
+        /// <summary>Marshaller for Stellar.AccountID</summary>
         public static readonly Marshaller<Stellar.AccountID> AccountIDMarshaller = Marshallers.Create<Stellar.AccountID>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PrecondTime</summary>
-        public static readonly Marshaller<Stellar.Preconditions.PrecondTime> PrecondTimeMarshaller = Marshallers.Create<Stellar.Preconditions.PrecondTime>(
+        /// <summary>Marshaller for Stellar.Preconditions+PrecondTime</summary>
+        public static readonly Marshaller<Stellar.Preconditions.PrecondTime> Preconditions_PrecondTimeMarshaller = Marshallers.Create<Stellar.Preconditions.PrecondTime>(
             (message, serializationContext) =>
             {
                 try

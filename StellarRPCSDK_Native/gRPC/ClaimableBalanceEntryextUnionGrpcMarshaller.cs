@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for extUnion</summary>
-        public static readonly Marshaller<Stellar.ClaimableBalanceEntry.extUnion> extUnionMarshaller = Marshallers.Create<Stellar.ClaimableBalanceEntry.extUnion>(
+        /// <summary>Marshaller for Stellar.ClaimableBalanceEntry+extUnion</summary>
+        public static readonly Marshaller<Stellar.ClaimableBalanceEntry.extUnion> ClaimableBalanceEntry_extUnionMarshaller = Marshallers.Create<Stellar.ClaimableBalanceEntry.extUnion>(
             (message, serializationContext) =>
             {
                 try

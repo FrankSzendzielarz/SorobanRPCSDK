@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimAtomType</summary>
+        /// <summary>Marshaller for Stellar.ClaimAtomType</summary>
         public static readonly Marshaller<Stellar.ClaimAtomType> ClaimAtomTypeMarshaller = Marshallers.Create<Stellar.ClaimAtomType>(
             (message, serializationContext) =>
             {

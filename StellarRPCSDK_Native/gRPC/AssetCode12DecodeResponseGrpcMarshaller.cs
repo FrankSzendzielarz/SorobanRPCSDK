@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetCode12DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.AssetCode12DecodeResponse</summary>
         public static readonly Marshaller<Stellar.AssetCode12DecodeResponse> AssetCode12DecodeResponseMarshaller = Marshallers.Create<Stellar.AssetCode12DecodeResponse>(
             (message, serializationContext) =>
             {

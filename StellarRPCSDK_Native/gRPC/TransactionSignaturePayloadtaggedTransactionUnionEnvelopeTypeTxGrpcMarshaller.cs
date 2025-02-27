@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for EnvelopeTypeTx</summary>
-        public static readonly Marshaller<Stellar.TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx> EnvelopeTypeTxMarshaller = Marshallers.Create<Stellar.TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx>(
+        /// <summary>Marshaller for Stellar.TransactionSignaturePayload+taggedTransactionUnion+EnvelopeTypeTx</summary>
+        public static readonly Marshaller<Stellar.TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx> TransactionSignaturePayload_taggedTransactionUnion_EnvelopeTypeTxMarshaller = Marshallers.Create<Stellar.TransactionSignaturePayload.taggedTransactionUnion.EnvelopeTypeTx>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExistenceProofBodyDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ExistenceProofBodyDecodeRequest</summary>
         public static readonly Marshaller<Stellar.ExistenceProofBodyDecodeRequest> ExistenceProofBodyDecodeRequestMarshaller = Marshallers.Create<Stellar.ExistenceProofBodyDecodeRequest>(
             (message, serializationContext) =>
             {

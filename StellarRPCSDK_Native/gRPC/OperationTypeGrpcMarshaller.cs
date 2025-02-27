@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OperationType</summary>
+        /// <summary>Marshaller for Stellar.OperationType</summary>
         public static readonly Marshaller<Stellar.OperationType> OperationTypeMarshaller = Marshallers.Create<Stellar.OperationType>(
             (message, serializationContext) =>
             {

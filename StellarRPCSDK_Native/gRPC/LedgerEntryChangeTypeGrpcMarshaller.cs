@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerEntryChangeType</summary>
+        /// <summary>Marshaller for Stellar.LedgerEntryChangeType</summary>
         public static readonly Marshaller<Stellar.LedgerEntryChangeType> LedgerEntryChangeTypeMarshaller = Marshallers.Create<Stellar.LedgerEntryChangeType>(
             (message, serializationContext) =>
             {

@@ -39,7 +39,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustAsset</summary>
+        /// <summary>Marshaller for Stellar.ChangeTrustAsset</summary>
         public static readonly Marshaller<Stellar.ChangeTrustAsset> ChangeTrustAssetMarshaller = Marshallers.Create<Stellar.ChangeTrustAsset>(
             (message, serializationContext) =>
             {

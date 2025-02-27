@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCAddressType</summary>
+        /// <summary>Marshaller for Stellar.SCAddressType</summary>
         public static readonly Marshaller<Stellar.SCAddressType> SCAddressTypeMarshaller = Marshallers.Create<Stellar.SCAddressType>(
             (message, serializationContext) =>
             {

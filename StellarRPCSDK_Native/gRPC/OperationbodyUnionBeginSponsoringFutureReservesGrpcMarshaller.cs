@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BeginSponsoringFutureReserves</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.BeginSponsoringFutureReserves> BeginSponsoringFutureReservesMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.BeginSponsoringFutureReserves>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+BeginSponsoringFutureReserves</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.BeginSponsoringFutureReserves> Operation_bodyUnion_BeginSponsoringFutureReservesMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.BeginSponsoringFutureReserves>(
             (message, serializationContext) =>
             {
                 try

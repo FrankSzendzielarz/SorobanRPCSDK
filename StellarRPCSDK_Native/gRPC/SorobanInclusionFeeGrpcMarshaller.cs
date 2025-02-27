@@ -51,7 +51,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SorobanInclusionFee</summary>
+        /// <summary>Marshaller for Stellar.RPC.SorobanInclusionFee</summary>
         public static readonly Marshaller<Stellar.RPC.SorobanInclusionFee> SorobanInclusionFeeMarshaller = Marshallers.Create<Stellar.RPC.SorobanInclusionFee>(
             (message, serializationContext) =>
             {

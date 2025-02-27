@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HostFunctionTypeUploadContractWasm</summary>
-        public static readonly Marshaller<Stellar.HostFunction.HostFunctionTypeUploadContractWasm> HostFunctionTypeUploadContractWasmMarshaller = Marshallers.Create<Stellar.HostFunction.HostFunctionTypeUploadContractWasm>(
+        /// <summary>Marshaller for Stellar.HostFunction+HostFunctionTypeUploadContractWasm</summary>
+        public static readonly Marshaller<Stellar.HostFunction.HostFunctionTypeUploadContractWasm> HostFunction_HostFunctionTypeUploadContractWasmMarshaller = Marshallers.Create<Stellar.HostFunction.HostFunctionTypeUploadContractWasm>(
             (message, serializationContext) =>
             {
                 try

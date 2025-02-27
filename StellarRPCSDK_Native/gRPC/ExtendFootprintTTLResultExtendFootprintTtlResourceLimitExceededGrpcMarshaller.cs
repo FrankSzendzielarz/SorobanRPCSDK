@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExtendFootprintTtlResourceLimitExceeded</summary>
-        public static readonly Marshaller<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded> ExtendFootprintTtlResourceLimitExceededMarshaller = Marshallers.Create<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded>(
+        /// <summary>Marshaller for Stellar.ExtendFootprintTTLResult+ExtendFootprintTtlResourceLimitExceeded</summary>
+        public static readonly Marshaller<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded> ExtendFootprintTTLResult_ExtendFootprintTtlResourceLimitExceededMarshaller = Marshallers.Create<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlResourceLimitExceeded>(
             (message, serializationContext) =>
             {
                 try

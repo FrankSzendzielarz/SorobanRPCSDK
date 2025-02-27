@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxnotSupported</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxnotSupported> TxnotSupportedMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxnotSupported>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxnotSupported</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxnotSupported> TransactionResult_resultUnion_TxnotSupportedMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxnotSupported>(
             (message, serializationContext) =>
             {
                 try

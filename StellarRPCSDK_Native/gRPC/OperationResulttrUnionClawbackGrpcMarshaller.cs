@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Clawback</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.Clawback> ClawbackMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Clawback>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+Clawback</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.Clawback> OperationResult_trUnion_ClawbackMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.Clawback>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExtendFootprintTtl</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.ExtendFootprintTtl> ExtendFootprintTtlMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ExtendFootprintTtl>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+ExtendFootprintTtl</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.ExtendFootprintTtl> OperationResult_trUnion_ExtendFootprintTtlMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ExtendFootprintTtl>(
             (message, serializationContext) =>
             {
                 try

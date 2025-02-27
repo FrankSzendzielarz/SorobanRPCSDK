@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PersistedSCPState</summary>
+        /// <summary>Marshaller for Stellar.PersistedSCPState</summary>
         public static readonly Marshaller<Stellar.PersistedSCPState> PersistedSCPStateMarshaller = Marshallers.Create<Stellar.PersistedSCPState>(
             (message, serializationContext) =>
             {

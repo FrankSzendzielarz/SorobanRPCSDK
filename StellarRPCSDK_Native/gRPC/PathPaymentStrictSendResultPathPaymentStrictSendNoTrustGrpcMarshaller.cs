@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PathPaymentStrictSendNoTrust</summary>
-        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendNoTrust> PathPaymentStrictSendNoTrustMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendNoTrust>(
+        /// <summary>Marshaller for Stellar.PathPaymentStrictSendResult+PathPaymentStrictSendNoTrust</summary>
+        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendNoTrust> PathPaymentStrictSendResult_PathPaymentStrictSendNoTrustMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendNoTrust>(
             (message, serializationContext) =>
             {
                 try

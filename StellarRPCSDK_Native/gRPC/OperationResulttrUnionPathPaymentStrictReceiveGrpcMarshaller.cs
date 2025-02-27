@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PathPaymentStrictReceive</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.PathPaymentStrictReceive> PathPaymentStrictReceiveMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.PathPaymentStrictReceive>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+PathPaymentStrictReceive</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.PathPaymentStrictReceive> OperationResult_trUnion_PathPaymentStrictReceiveMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.PathPaymentStrictReceive>(
             (message, serializationContext) =>
             {
                 try

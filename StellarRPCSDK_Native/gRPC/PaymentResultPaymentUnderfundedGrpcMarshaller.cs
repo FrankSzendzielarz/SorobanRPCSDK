@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PaymentUnderfunded</summary>
-        public static readonly Marshaller<Stellar.PaymentResult.PaymentUnderfunded> PaymentUnderfundedMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentUnderfunded>(
+        /// <summary>Marshaller for Stellar.PaymentResult+PaymentUnderfunded</summary>
+        public static readonly Marshaller<Stellar.PaymentResult.PaymentUnderfunded> PaymentResult_PaymentUnderfundedMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentUnderfunded>(
             (message, serializationContext) =>
             {
                 try

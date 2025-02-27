@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DontHave</summary>
+        /// <summary>Marshaller for Stellar.DontHave</summary>
         public static readonly Marshaller<Stellar.DontHave> DontHaveMarshaller = Marshallers.Create<Stellar.DontHave>(
             (message, serializationContext) =>
             {

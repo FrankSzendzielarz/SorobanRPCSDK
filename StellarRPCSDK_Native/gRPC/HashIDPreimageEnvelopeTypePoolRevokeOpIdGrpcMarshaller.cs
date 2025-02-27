@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for EnvelopeTypePoolRevokeOpId</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypePoolRevokeOpId> EnvelopeTypePoolRevokeOpIdMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypePoolRevokeOpId>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+EnvelopeTypePoolRevokeOpId</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypePoolRevokeOpId> HashIDPreimage_EnvelopeTypePoolRevokeOpIdMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypePoolRevokeOpId>(
             (message, serializationContext) =>
             {
                 try

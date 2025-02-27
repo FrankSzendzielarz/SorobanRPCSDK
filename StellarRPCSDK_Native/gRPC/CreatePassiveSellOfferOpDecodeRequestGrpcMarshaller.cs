@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreatePassiveSellOfferOpDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.CreatePassiveSellOfferOpDecodeRequest</summary>
         public static readonly Marshaller<Stellar.CreatePassiveSellOfferOpDecodeRequest> CreatePassiveSellOfferOpDecodeRequestMarshaller = Marshallers.Create<Stellar.CreatePassiveSellOfferOpDecodeRequest>(
             (message, serializationContext) =>
             {

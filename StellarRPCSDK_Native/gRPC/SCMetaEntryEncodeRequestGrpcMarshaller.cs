@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCMetaEntryEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SCMetaEntryEncodeRequest</summary>
         public static readonly Marshaller<Stellar.SCMetaEntryEncodeRequest> SCMetaEntryEncodeRequestMarshaller = Marshallers.Create<Stellar.SCMetaEntryEncodeRequest>(
             (message, serializationContext) =>
             {

@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SurveyMessageCommandType</summary>
+        /// <summary>Marshaller for Stellar.SurveyMessageCommandType</summary>
         public static readonly Marshaller<Stellar.SurveyMessageCommandType> SurveyMessageCommandTypeMarshaller = Marshallers.Create<Stellar.SurveyMessageCommandType>(
             (message, serializationContext) =>
             {

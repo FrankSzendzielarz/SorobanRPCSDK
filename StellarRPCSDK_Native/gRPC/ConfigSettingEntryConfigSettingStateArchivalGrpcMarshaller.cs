@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingStateArchival</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingStateArchival> ConfigSettingStateArchivalMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingStateArchival>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingStateArchival</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingStateArchival> ConfigSettingEntry_ConfigSettingStateArchivalMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingStateArchival>(
             (message, serializationContext) =>
             {
                 try

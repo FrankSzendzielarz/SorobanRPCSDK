@@ -23,7 +23,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "Sign",
-                Transaction_ProtoWrapperSignParamGrpcMarshaller.SignParamMarshaller,
+                Transaction_ProtoWrapperSignParamGrpcMarshaller.Transaction_ProtoWrapper_SignParamMarshaller,
                 DecoratedSignatureGrpcMarshaller.DecoratedSignatureMarshaller);
 
         /// <summary>Method descriptor for Clone</summary>
@@ -32,7 +32,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "Clone",
-                Transaction_ProtoWrapperCloneParamGrpcMarshaller.CloneParamMarshaller,
+                Transaction_ProtoWrapperCloneParamGrpcMarshaller.Transaction_ProtoWrapper_CloneParamMarshaller,
                 TransactionGrpcMarshaller.TransactionMarshaller);
 
         /// <summary>Method descriptor for IsSoroban</summary>
@@ -41,7 +41,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "IsSoroban",
-                Transaction_ProtoWrapperIsSorobanParamGrpcMarshaller.IsSorobanParamMarshaller,
+                Transaction_ProtoWrapperIsSorobanParamGrpcMarshaller.Transaction_ProtoWrapper_IsSorobanParamMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for IsSorobanInvocation</summary>
@@ -50,7 +50,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "IsSorobanInvocation",
-                Transaction_ProtoWrapperIsSorobanParamGrpcMarshaller.IsSorobanParamMarshaller,
+                Transaction_ProtoWrapperIsSorobanParamGrpcMarshaller.Transaction_ProtoWrapper_IsSorobanParamMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
     }
@@ -96,11 +96,10 @@ namespace Stellar.RPC.AOT
                 model.Add(typeof(Stellar.BoolWrapper), true);
             }
 
-
         }
 
         /// <summary>Marshaller for SignParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> Transaction_ProtoWrapper_SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
             (message, serializationContext) =>
             {
                 try
@@ -164,7 +163,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for CloneParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.CloneParam> CloneParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.CloneParam>(
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.CloneParam> Transaction_ProtoWrapper_CloneParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.CloneParam>(
             (message, serializationContext) =>
             {
                 try
@@ -228,7 +227,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for IsSorobanParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.IsSorobanParam> IsSorobanParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.IsSorobanParam>(
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.IsSorobanParam> Transaction_ProtoWrapper_IsSorobanParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.IsSorobanParam>(
             (message, serializationContext) =>
             {
                 try
@@ -283,70 +282,6 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.BoolWrapper>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Object</summary>
-        public static readonly Marshaller<System.Object> ObjectMarshaller = Marshallers.Create<System.Object>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Object>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Boolean</summary>
-        public static readonly Marshaller<System.Boolean> BooleanMarshaller = Marshallers.Create<System.Boolean>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Boolean>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -425,21 +360,6 @@ namespace Stellar.RPC.AOT
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in IsSorobanInvocation");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Equals method</summary>
-        public async Task<System.Boolean> Equals(System.Object request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Equals request");
-                return _service.Equals(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Equals");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

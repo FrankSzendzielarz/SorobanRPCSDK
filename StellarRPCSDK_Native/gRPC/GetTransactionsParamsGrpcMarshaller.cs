@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetTransactionsParams</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetTransactionsParams</summary>
         public static readonly Marshaller<Stellar.RPC.GetTransactionsParams> GetTransactionsParamsMarshaller = Marshallers.Create<Stellar.RPC.GetTransactionsParams>(
             (message, serializationContext) =>
             {

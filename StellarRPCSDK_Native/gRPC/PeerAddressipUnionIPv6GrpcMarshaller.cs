@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for IPv6</summary>
-        public static readonly Marshaller<Stellar.PeerAddress.ipUnion.IPv6> IPv6Marshaller = Marshallers.Create<Stellar.PeerAddress.ipUnion.IPv6>(
+        /// <summary>Marshaller for Stellar.PeerAddress+ipUnion+IPv6</summary>
+        public static readonly Marshaller<Stellar.PeerAddress.ipUnion.IPv6> PeerAddress_ipUnion_IPv6Marshaller = Marshallers.Create<Stellar.PeerAddress.ipUnion.IPv6>(
             (message, serializationContext) =>
             {
                 try

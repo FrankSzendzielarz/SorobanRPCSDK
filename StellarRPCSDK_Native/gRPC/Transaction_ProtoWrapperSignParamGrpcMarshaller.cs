@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
+        /// <summary>Marshaller for Stellar.Transaction_ProtoWrapper+SignParam</summary>
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.SignParam> Transaction_ProtoWrapper_SignParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.SignParam>(
             (message, serializationContext) =>
             {
                 try

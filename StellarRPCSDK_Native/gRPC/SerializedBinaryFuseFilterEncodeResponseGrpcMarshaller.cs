@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SerializedBinaryFuseFilterEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SerializedBinaryFuseFilterEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SerializedBinaryFuseFilterEncodeResponse> SerializedBinaryFuseFilterEncodeResponseMarshaller = Marshallers.Create<Stellar.SerializedBinaryFuseFilterEncodeResponse>(
             (message, serializationContext) =>
             {

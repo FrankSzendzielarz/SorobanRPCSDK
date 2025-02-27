@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for FeeBumpTransactionEnvelope</summary>
+        /// <summary>Marshaller for Stellar.FeeBumpTransactionEnvelope</summary>
         public static readonly Marshaller<Stellar.FeeBumpTransactionEnvelope> FeeBumpTransactionEnvelopeMarshaller = Marshallers.Create<Stellar.FeeBumpTransactionEnvelope>(
             (message, serializationContext) =>
             {

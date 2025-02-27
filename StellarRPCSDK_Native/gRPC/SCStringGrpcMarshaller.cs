@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCString</summary>
+        /// <summary>Marshaller for Stellar.SCString</summary>
         public static readonly Marshaller<Stellar.SCString> SCStringMarshaller = Marshallers.Create<Stellar.SCString>(
             (message, serializationContext) =>
             {

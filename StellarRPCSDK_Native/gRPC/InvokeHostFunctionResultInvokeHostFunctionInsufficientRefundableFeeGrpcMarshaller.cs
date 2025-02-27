@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeHostFunctionInsufficientRefundableFee</summary>
-        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee> InvokeHostFunctionInsufficientRefundableFeeMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee>(
+        /// <summary>Marshaller for Stellar.InvokeHostFunctionResult+InvokeHostFunctionInsufficientRefundableFee</summary>
+        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee> InvokeHostFunctionResult_InvokeHostFunctionInsufficientRefundableFeeMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionInsufficientRefundableFee>(
             (message, serializationContext) =>
             {
                 try

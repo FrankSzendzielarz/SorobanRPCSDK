@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Preconditions</summary>
+        /// <summary>Marshaller for Stellar.Preconditions</summary>
         public static readonly Marshaller<Stellar.Preconditions> PreconditionsMarshaller = Marshallers.Create<Stellar.Preconditions>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustTrustLineMissing</summary>
-        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustTrustLineMissing> ChangeTrustTrustLineMissingMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustTrustLineMissing>(
+        /// <summary>Marshaller for Stellar.ChangeTrustResult+ChangeTrustTrustLineMissing</summary>
+        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustTrustLineMissing> ChangeTrustResult_ChangeTrustTrustLineMissingMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustTrustLineMissing>(
             (message, serializationContext) =>
             {
                 try

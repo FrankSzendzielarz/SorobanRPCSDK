@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiquidityPoolTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.LiquidityPoolTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.LiquidityPoolTypeEncodeResponse> LiquidityPoolTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.LiquidityPoolTypeEncodeResponse>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetLedgerEntriesParams</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetLedgerEntriesParams</summary>
         public static readonly Marshaller<Stellar.RPC.GetLedgerEntriesParams> GetLedgerEntriesParamsMarshaller = Marshallers.Create<Stellar.RPC.GetLedgerEntriesParams>(
             (message, serializationContext) =>
             {

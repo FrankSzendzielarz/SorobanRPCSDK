@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for UpgradeTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.UpgradeTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.UpgradeTypeEncodeResponse> UpgradeTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.UpgradeTypeEncodeResponse>(
             (message, serializationContext) =>
             {

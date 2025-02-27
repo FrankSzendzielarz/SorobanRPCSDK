@@ -38,8 +38,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for operationIDStruct</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.operationIDStruct> operationIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.operationIDStruct>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+operationIDStruct</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.operationIDStruct> HashIDPreimage_operationIDStructMarshaller = Marshallers.Create<Stellar.HashIDPreimage.operationIDStruct>(
             (message, serializationContext) =>
             {
                 try

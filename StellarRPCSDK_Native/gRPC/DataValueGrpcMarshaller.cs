@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DataValue</summary>
+        /// <summary>Marshaller for Stellar.DataValue</summary>
         public static readonly Marshaller<Stellar.DataValue> DataValueMarshaller = Marshallers.Create<Stellar.DataValue>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for RestoreFootprintResourceLimitExceeded</summary>
-        public static readonly Marshaller<Stellar.RestoreFootprintResult.RestoreFootprintResourceLimitExceeded> RestoreFootprintResourceLimitExceededMarshaller = Marshallers.Create<Stellar.RestoreFootprintResult.RestoreFootprintResourceLimitExceeded>(
+        /// <summary>Marshaller for Stellar.RestoreFootprintResult+RestoreFootprintResourceLimitExceeded</summary>
+        public static readonly Marshaller<Stellar.RestoreFootprintResult.RestoreFootprintResourceLimitExceeded> RestoreFootprintResult_RestoreFootprintResourceLimitExceededMarshaller = Marshallers.Create<Stellar.RestoreFootprintResult.RestoreFootprintResourceLimitExceeded>(
             (message, serializationContext) =>
             {
                 try

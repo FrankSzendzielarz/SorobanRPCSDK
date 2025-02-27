@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for RestoreFootprintOpEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.RestoreFootprintOpEncodeResponse</summary>
         public static readonly Marshaller<Stellar.RestoreFootprintOpEncodeResponse> RestoreFootprintOpEncodeResponseMarshaller = Marshallers.Create<Stellar.RestoreFootprintOpEncodeResponse>(
             (message, serializationContext) =>
             {

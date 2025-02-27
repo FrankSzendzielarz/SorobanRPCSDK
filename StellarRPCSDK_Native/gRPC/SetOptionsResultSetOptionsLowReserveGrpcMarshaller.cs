@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsLowReserve</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsLowReserve> SetOptionsLowReserveMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsLowReserve>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsLowReserve</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsLowReserve> SetOptionsResult_SetOptionsLowReserveMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsLowReserve>(
             (message, serializationContext) =>
             {
                 try

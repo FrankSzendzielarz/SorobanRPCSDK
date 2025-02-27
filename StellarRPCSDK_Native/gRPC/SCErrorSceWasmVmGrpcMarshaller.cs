@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SceWasmVm</summary>
-        public static readonly Marshaller<Stellar.SCError.SceWasmVm> SceWasmVmMarshaller = Marshallers.Create<Stellar.SCError.SceWasmVm>(
+        /// <summary>Marshaller for Stellar.SCError+SceWasmVm</summary>
+        public static readonly Marshaller<Stellar.SCError.SceWasmVm> SCError_SceWasmVmMarshaller = Marshallers.Create<Stellar.SCError.SceWasmVm>(
             (message, serializationContext) =>
             {
                 try

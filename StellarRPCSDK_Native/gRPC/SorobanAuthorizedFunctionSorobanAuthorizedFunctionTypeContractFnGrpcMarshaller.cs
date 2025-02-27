@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SorobanAuthorizedFunctionTypeContractFn</summary>
-        public static readonly Marshaller<Stellar.SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn> SorobanAuthorizedFunctionTypeContractFnMarshaller = Marshallers.Create<Stellar.SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn>(
+        /// <summary>Marshaller for Stellar.SorobanAuthorizedFunction+SorobanAuthorizedFunctionTypeContractFn</summary>
+        public static readonly Marshaller<Stellar.SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn> SorobanAuthorizedFunction_SorobanAuthorizedFunctionTypeContractFnMarshaller = Marshallers.Create<Stellar.SorobanAuthorizedFunction.SorobanAuthorizedFunctionTypeContractFn>(
             (message, serializationContext) =>
             {
                 try

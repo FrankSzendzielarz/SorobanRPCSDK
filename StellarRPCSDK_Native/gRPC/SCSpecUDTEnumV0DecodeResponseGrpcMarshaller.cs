@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCSpecUDTEnumV0DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SCSpecUDTEnumV0DecodeResponse</summary>
         public static readonly Marshaller<Stellar.SCSpecUDTEnumV0DecodeResponse> SCSpecUDTEnumV0DecodeResponseMarshaller = Marshallers.Create<Stellar.SCSpecUDTEnumV0DecodeResponse>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMerge</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.AccountMerge> AccountMergeMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.AccountMerge>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+AccountMerge</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.AccountMerge> Operation_bodyUnion_AccountMergeMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.AccountMerge>(
             (message, serializationContext) =>
             {
                 try

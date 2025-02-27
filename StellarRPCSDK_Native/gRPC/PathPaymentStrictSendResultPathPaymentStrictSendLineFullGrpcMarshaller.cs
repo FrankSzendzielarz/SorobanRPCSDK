@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PathPaymentStrictSendLineFull</summary>
-        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendLineFull> PathPaymentStrictSendLineFullMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendLineFull>(
+        /// <summary>Marshaller for Stellar.PathPaymentStrictSendResult+PathPaymentStrictSendLineFull</summary>
+        public static readonly Marshaller<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendLineFull> PathPaymentStrictSendResult_PathPaymentStrictSendLineFullMarshaller = Marshallers.Create<Stellar.PathPaymentStrictSendResult.PathPaymentStrictSendLineFull>(
             (message, serializationContext) =>
             {
                 try

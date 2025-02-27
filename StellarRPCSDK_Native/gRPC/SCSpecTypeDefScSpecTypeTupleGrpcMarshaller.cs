@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeTuple</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeTuple> ScSpecTypeTupleMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeTuple>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeTuple</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeTuple> SCSpecTypeDef_ScSpecTypeTupleMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeTuple>(
             (message, serializationContext) =>
             {
                 try

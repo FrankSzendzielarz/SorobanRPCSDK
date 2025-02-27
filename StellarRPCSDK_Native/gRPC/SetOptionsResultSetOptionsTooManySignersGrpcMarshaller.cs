@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsTooManySigners</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsTooManySigners> SetOptionsTooManySignersMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsTooManySigners>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsTooManySigners</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsTooManySigners> SetOptionsResult_SetOptionsTooManySignersMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsTooManySigners>(
             (message, serializationContext) =>
             {
                 try

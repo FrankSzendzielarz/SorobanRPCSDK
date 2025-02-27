@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetTypeCreditAlphanum4</summary>
-        public static readonly Marshaller<Stellar.Asset.AssetTypeCreditAlphanum4> AssetTypeCreditAlphanum4Marshaller = Marshallers.Create<Stellar.Asset.AssetTypeCreditAlphanum4>(
+        /// <summary>Marshaller for Stellar.Asset+AssetTypeCreditAlphanum4</summary>
+        public static readonly Marshaller<Stellar.Asset.AssetTypeCreditAlphanum4> Asset_AssetTypeCreditAlphanum4Marshaller = Marshallers.Create<Stellar.Asset.AssetTypeCreditAlphanum4>(
             (message, serializationContext) =>
             {
                 try

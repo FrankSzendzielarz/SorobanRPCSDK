@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetType</summary>
+        /// <summary>Marshaller for Stellar.AssetType</summary>
         public static readonly Marshaller<Stellar.AssetType> AssetTypeMarshaller = Marshallers.Create<Stellar.AssetType>(
             (message, serializationContext) =>
             {

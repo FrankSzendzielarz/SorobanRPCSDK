@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxfeeBumpInnerFailed</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxfeeBumpInnerFailed> TxfeeBumpInnerFailedMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxfeeBumpInnerFailed>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxfeeBumpInnerFailed</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxfeeBumpInnerFailed> TransactionResult_resultUnion_TxfeeBumpInnerFailedMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxfeeBumpInnerFailed>(
             (message, serializationContext) =>
             {
                 try

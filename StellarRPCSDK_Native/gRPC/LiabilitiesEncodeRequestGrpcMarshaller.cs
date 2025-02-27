@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiabilitiesEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LiabilitiesEncodeRequest</summary>
         public static readonly Marshaller<Stellar.LiabilitiesEncodeRequest> LiabilitiesEncodeRequestMarshaller = Marshallers.Create<Stellar.LiabilitiesEncodeRequest>(
             (message, serializationContext) =>
             {

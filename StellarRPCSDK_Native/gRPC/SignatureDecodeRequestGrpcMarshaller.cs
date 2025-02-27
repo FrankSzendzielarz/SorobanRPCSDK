@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignatureDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SignatureDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SignatureDecodeRequest> SignatureDecodeRequestMarshaller = Marshallers.Create<Stellar.SignatureDecodeRequest>(
             (message, serializationContext) =>
             {

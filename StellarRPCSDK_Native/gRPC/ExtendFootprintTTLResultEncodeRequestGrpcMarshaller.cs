@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExtendFootprintTTLResultEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ExtendFootprintTTLResultEncodeRequest</summary>
         public static readonly Marshaller<Stellar.ExtendFootprintTTLResultEncodeRequest> ExtendFootprintTTLResultEncodeRequestMarshaller = Marshallers.Create<Stellar.ExtendFootprintTTLResultEncodeRequest>(
             (message, serializationContext) =>
             {

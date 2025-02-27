@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TrustLineEntryExtensionV2DecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TrustLineEntryExtensionV2DecodeRequest</summary>
         public static readonly Marshaller<Stellar.TrustLineEntryExtensionV2DecodeRequest> TrustLineEntryExtensionV2DecodeRequestMarshaller = Marshallers.Create<Stellar.TrustLineEntryExtensionV2DecodeRequest>(
             (message, serializationContext) =>
             {

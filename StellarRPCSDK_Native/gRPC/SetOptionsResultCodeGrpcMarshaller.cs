@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsResultCode</summary>
+        /// <summary>Marshaller for Stellar.SetOptionsResultCode</summary>
         public static readonly Marshaller<Stellar.SetOptionsResultCode> SetOptionsResultCodeMarshaller = Marshallers.Create<Stellar.SetOptionsResultCode>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimPredicateNot</summary>
-        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateNot> ClaimPredicateNotMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateNot>(
+        /// <summary>Marshaller for Stellar.ClaimPredicate+ClaimPredicateNot</summary>
+        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateNot> ClaimPredicate_ClaimPredicateNotMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateNot>(
             (message, serializationContext) =>
             {
                 try

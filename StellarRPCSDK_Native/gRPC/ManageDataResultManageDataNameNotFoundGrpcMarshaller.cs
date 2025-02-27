@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataNameNotFound</summary>
-        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataNameNotFound> ManageDataNameNotFoundMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataNameNotFound>(
+        /// <summary>Marshaller for Stellar.ManageDataResult+ManageDataNameNotFound</summary>
+        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataNameNotFound> ManageDataResult_ManageDataNameNotFoundMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataNameNotFound>(
             (message, serializationContext) =>
             {
                 try

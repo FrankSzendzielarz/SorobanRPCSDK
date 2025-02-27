@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractBandwidthV0Case</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractBandwidthV0Case> ConfigSettingContractBandwidthV0CaseMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractBandwidthV0Case>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractBandwidthV0Case</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractBandwidthV0Case> ConfigSettingEntry_ConfigSettingContractBandwidthV0CaseMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractBandwidthV0Case>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSetting</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.ConfigSetting> ConfigSettingMarshaller = Marshallers.Create<Stellar.LedgerKey.ConfigSetting>(
+        /// <summary>Marshaller for Stellar.LedgerKey+ConfigSetting</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.ConfigSetting> LedgerKey_ConfigSettingMarshaller = Marshallers.Create<Stellar.LedgerKey.ConfigSetting>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PreconditionTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.PreconditionTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.PreconditionTypeEncodeResponse> PreconditionTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.PreconditionTypeEncodeResponse>(
             (message, serializationContext) =>
             {

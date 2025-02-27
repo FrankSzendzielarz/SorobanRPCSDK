@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AlphaNum4</summary>
+        /// <summary>Marshaller for Stellar.AlphaNum4</summary>
         public static readonly Marshaller<Stellar.AlphaNum4> AlphaNum4Marshaller = Marshallers.Create<Stellar.AlphaNum4>(
             (message, serializationContext) =>
             {

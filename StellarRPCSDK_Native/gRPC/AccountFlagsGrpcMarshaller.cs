@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountFlags</summary>
+        /// <summary>Marshaller for Stellar.AccountFlags</summary>
         public static readonly Marshaller<Stellar.AccountFlags> AccountFlagsMarshaller = Marshallers.Create<Stellar.AccountFlags>(
             (message, serializationContext) =>
             {

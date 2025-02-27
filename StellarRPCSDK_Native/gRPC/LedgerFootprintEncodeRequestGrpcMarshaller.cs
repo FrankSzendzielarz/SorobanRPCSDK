@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerFootprintEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LedgerFootprintEncodeRequest</summary>
         public static readonly Marshaller<Stellar.LedgerFootprintEncodeRequest> LedgerFootprintEncodeRequestMarshaller = Marshallers.Create<Stellar.LedgerFootprintEncodeRequest>(
             (message, serializationContext) =>
             {

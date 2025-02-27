@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveBoundaryLeafEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ColdArchiveBoundaryLeafEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ColdArchiveBoundaryLeafEncodeResponse> ColdArchiveBoundaryLeafEncodeResponseMarshaller = Marshallers.Create<Stellar.ColdArchiveBoundaryLeafEncodeResponse>(
             (message, serializationContext) =>
             {

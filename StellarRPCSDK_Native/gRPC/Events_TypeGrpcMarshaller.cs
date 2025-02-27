@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Events_Type</summary>
+        /// <summary>Marshaller for Stellar.RPC.Events_Type</summary>
         public static readonly Marshaller<Stellar.RPC.Events_Type> Events_TypeMarshaller = Marshallers.Create<Stellar.RPC.Events_Type>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SendTransactionParams</summary>
+        /// <summary>Marshaller for Stellar.RPC.SendTransactionParams</summary>
         public static readonly Marshaller<Stellar.RPC.SendTransactionParams> SendTransactionParamsMarshaller = Marshallers.Create<Stellar.RPC.SendTransactionParams>(
             (message, serializationContext) =>
             {

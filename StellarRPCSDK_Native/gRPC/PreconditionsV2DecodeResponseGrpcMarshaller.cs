@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PreconditionsV2DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.PreconditionsV2DecodeResponse</summary>
         public static readonly Marshaller<Stellar.PreconditionsV2DecodeResponse> PreconditionsV2DecodeResponseMarshaller = Marshallers.Create<Stellar.PreconditionsV2DecodeResponse>(
             (message, serializationContext) =>
             {

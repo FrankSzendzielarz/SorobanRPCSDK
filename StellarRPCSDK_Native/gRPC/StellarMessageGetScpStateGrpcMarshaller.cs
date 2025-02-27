@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetScpState</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.GetScpState> GetScpStateMarshaller = Marshallers.Create<Stellar.StellarMessage.GetScpState>(
+        /// <summary>Marshaller for Stellar.StellarMessage+GetScpState</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.GetScpState> StellarMessage_GetScpStateMarshaller = Marshallers.Create<Stellar.StellarMessage.GetScpState>(
             (message, serializationContext) =>
             {
                 try

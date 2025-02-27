@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ArchivalProofType</summary>
+        /// <summary>Marshaller for Stellar.ArchivalProofType</summary>
         public static readonly Marshaller<Stellar.ArchivalProofType> ArchivalProofTypeMarshaller = Marshallers.Create<Stellar.ArchivalProofType>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Ttl</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.Ttl> TtlMarshaller = Marshallers.Create<Stellar.LedgerKey.Ttl>(
+        /// <summary>Marshaller for Stellar.LedgerKey+Ttl</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.Ttl> LedgerKey_TtlMarshaller = Marshallers.Create<Stellar.LedgerKey.Ttl>(
             (message, serializationContext) =>
             {
                 try

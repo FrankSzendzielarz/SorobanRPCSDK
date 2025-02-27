@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ContractIdPreimageFromAddress</summary>
-        public static readonly Marshaller<Stellar.ContractIDPreimage.ContractIdPreimageFromAddress> ContractIdPreimageFromAddressMarshaller = Marshallers.Create<Stellar.ContractIDPreimage.ContractIdPreimageFromAddress>(
+        /// <summary>Marshaller for Stellar.ContractIDPreimage+ContractIdPreimageFromAddress</summary>
+        public static readonly Marshaller<Stellar.ContractIDPreimage.ContractIdPreimageFromAddress> ContractIDPreimage_ContractIdPreimageFromAddressMarshaller = Marshallers.Create<Stellar.ContractIDPreimage.ContractIdPreimageFromAddress>(
             (message, serializationContext) =>
             {
                 try

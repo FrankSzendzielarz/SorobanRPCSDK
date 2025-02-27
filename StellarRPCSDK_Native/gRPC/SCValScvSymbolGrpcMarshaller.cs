@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvSymbol</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvSymbol> ScvSymbolMarshaller = Marshallers.Create<Stellar.SCVal.ScvSymbol>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvSymbol</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvSymbol> SCVal_ScvSymbolMarshaller = Marshallers.Create<Stellar.SCVal.ScvSymbol>(
             (message, serializationContext) =>
             {
                 try

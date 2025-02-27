@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataLowReserve</summary>
-        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataLowReserve> ManageDataLowReserveMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataLowReserve>(
+        /// <summary>Marshaller for Stellar.ManageDataResult+ManageDataLowReserve</summary>
+        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataLowReserve> ManageDataResult_ManageDataLowReserveMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataLowReserve>(
             (message, serializationContext) =>
             {
                 try

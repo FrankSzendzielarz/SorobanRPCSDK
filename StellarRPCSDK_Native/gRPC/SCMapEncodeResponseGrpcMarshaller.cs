@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCMapEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SCMapEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SCMapEncodeResponse> SCMapEncodeResponseMarshaller = Marshallers.Create<Stellar.SCMapEncodeResponse>(
             (message, serializationContext) =>
             {

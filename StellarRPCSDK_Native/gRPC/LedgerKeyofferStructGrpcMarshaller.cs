@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for offerStruct</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.offerStruct> offerStructMarshaller = Marshallers.Create<Stellar.LedgerKey.offerStruct>(
+        /// <summary>Marshaller for Stellar.LedgerKey+offerStruct</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.offerStruct> LedgerKey_offerStructMarshaller = Marshallers.Create<Stellar.LedgerKey.offerStruct>(
             (message, serializationContext) =>
             {
                 try

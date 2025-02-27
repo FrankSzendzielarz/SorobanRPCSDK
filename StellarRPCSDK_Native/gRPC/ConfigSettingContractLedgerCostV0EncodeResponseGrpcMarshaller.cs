@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractLedgerCostV0EncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingContractLedgerCostV0EncodeResponse</summary>
         public static readonly Marshaller<Stellar.ConfigSettingContractLedgerCostV0EncodeResponse> ConfigSettingContractLedgerCostV0EncodeResponseMarshaller = Marshallers.Create<Stellar.ConfigSettingContractLedgerCostV0EncodeResponse>(
             (message, serializationContext) =>
             {

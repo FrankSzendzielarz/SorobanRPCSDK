@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for MemoHash</summary>
-        public static readonly Marshaller<Stellar.Memo.MemoHash> MemoHashMarshaller = Marshallers.Create<Stellar.Memo.MemoHash>(
+        /// <summary>Marshaller for Stellar.Memo+MemoHash</summary>
+        public static readonly Marshaller<Stellar.Memo.MemoHash> Memo_MemoHashMarshaller = Marshallers.Create<Stellar.Memo.MemoHash>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerHeaderDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LedgerHeaderDecodeRequest</summary>
         public static readonly Marshaller<Stellar.LedgerHeaderDecodeRequest> LedgerHeaderDecodeRequestMarshaller = Marshallers.Create<Stellar.LedgerHeaderDecodeRequest>(
             (message, serializationContext) =>
             {

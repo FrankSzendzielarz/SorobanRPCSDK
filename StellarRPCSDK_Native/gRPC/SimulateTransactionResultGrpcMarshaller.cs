@@ -46,7 +46,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SimulateTransactionResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.SimulateTransactionResult</summary>
         public static readonly Marshaller<Stellar.RPC.SimulateTransactionResult> SimulateTransactionResultMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionResult>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveBucketEntryTypeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ColdArchiveBucketEntryTypeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ColdArchiveBucketEntryTypeDecodeResponse> ColdArchiveBucketEntryTypeDecodeResponseMarshaller = Marshallers.Create<Stellar.ColdArchiveBucketEntryTypeDecodeResponse>(
             (message, serializationContext) =>
             {

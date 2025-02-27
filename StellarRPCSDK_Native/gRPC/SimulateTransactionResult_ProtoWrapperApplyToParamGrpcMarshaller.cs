@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ApplyToParam</summary>
-        public static readonly Marshaller<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam> ApplyToParamMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam>(
+        /// <summary>Marshaller for Stellar.RPC.SimulateTransactionResult_ProtoWrapper+ApplyToParam</summary>
+        public static readonly Marshaller<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam> SimulateTransactionResult_ProtoWrapper_ApplyToParamMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionResult_ProtoWrapper.ApplyToParam>(
             (message, serializationContext) =>
             {
                 try

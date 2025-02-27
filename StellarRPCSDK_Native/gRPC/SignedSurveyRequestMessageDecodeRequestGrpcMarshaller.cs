@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignedSurveyRequestMessageDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SignedSurveyRequestMessageDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SignedSurveyRequestMessageDecodeRequest> SignedSurveyRequestMessageDecodeRequestMarshaller = Marshallers.Create<Stellar.SignedSurveyRequestMessageDecodeRequest>(
             (message, serializationContext) =>
             {

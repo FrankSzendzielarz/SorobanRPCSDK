@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCPQuorumSetDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SCPQuorumSetDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SCPQuorumSetDecodeRequest> SCPQuorumSetDecodeRequestMarshaller = Marshallers.Create<Stellar.SCPQuorumSetDecodeRequest>(
             (message, serializationContext) =>
             {

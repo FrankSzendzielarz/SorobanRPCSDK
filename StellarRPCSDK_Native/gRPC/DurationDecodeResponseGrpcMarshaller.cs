@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DurationDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.DurationDecodeResponse</summary>
         public static readonly Marshaller<Stellar.DurationDecodeResponse> DurationDecodeResponseMarshaller = Marshallers.Create<Stellar.DurationDecodeResponse>(
             (message, serializationContext) =>
             {

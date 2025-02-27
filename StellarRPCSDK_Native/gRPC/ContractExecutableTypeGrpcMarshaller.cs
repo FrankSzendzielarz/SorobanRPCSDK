@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ContractExecutableType</summary>
+        /// <summary>Marshaller for Stellar.ContractExecutableType</summary>
         public static readonly Marshaller<Stellar.ContractExecutableType> ContractExecutableTypeMarshaller = Marshallers.Create<Stellar.ContractExecutableType>(
             (message, serializationContext) =>
             {

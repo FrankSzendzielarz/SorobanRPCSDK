@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMergeHasSubEntries</summary>
-        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeHasSubEntries> AccountMergeHasSubEntriesMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeHasSubEntries>(
+        /// <summary>Marshaller for Stellar.AccountMergeResult+AccountMergeHasSubEntries</summary>
+        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeHasSubEntries> AccountMergeResult_AccountMergeHasSubEntriesMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeHasSubEntries>(
             (message, serializationContext) =>
             {
                 try

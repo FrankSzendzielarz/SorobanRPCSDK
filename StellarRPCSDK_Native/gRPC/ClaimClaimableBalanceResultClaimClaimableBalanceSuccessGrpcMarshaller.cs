@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimClaimableBalanceSuccess</summary>
-        public static readonly Marshaller<Stellar.ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess> ClaimClaimableBalanceSuccessMarshaller = Marshallers.Create<Stellar.ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess>(
+        /// <summary>Marshaller for Stellar.ClaimClaimableBalanceResult+ClaimClaimableBalanceSuccess</summary>
+        public static readonly Marshaller<Stellar.ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess> ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccessMarshaller = Marshallers.Create<Stellar.ClaimClaimableBalanceResult.ClaimClaimableBalanceSuccess>(
             (message, serializationContext) =>
             {
                 try

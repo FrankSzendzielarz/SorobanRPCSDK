@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeHostFunctionResourceLimitExceeded</summary>
-        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded> InvokeHostFunctionResourceLimitExceededMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded>(
+        /// <summary>Marshaller for Stellar.InvokeHostFunctionResult+InvokeHostFunctionResourceLimitExceeded</summary>
+        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded> InvokeHostFunctionResult_InvokeHostFunctionResourceLimitExceededMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionResourceLimitExceeded>(
             (message, serializationContext) =>
             {
                 try

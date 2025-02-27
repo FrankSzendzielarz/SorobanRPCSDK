@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateEd25519Param</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param> CreateEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param>(
+        /// <summary>Marshaller for Stellar.MuxedAccount_ProtoWrapper+CreateEd25519Param</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param> MuxedAccount_ProtoWrapper_CreateEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param>(
             (message, serializationContext) =>
             {
                 try

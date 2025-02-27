@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageData</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.ManageData> ManageDataMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.ManageData>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+ManageData</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.ManageData> Operation_bodyUnion_ManageDataMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.ManageData>(
             (message, serializationContext) =>
             {
                 try

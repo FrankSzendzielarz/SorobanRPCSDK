@@ -41,7 +41,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimOfferAtom</summary>
+        /// <summary>Marshaller for Stellar.ClaimOfferAtom</summary>
         public static readonly Marshaller<Stellar.ClaimOfferAtom> ClaimOfferAtomMarshaller = Marshallers.Create<Stellar.ClaimOfferAtom>(
             (message, serializationContext) =>
             {

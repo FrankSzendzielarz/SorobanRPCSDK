@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetTrustLineFlagsCantRevoke</summary>
-        public static readonly Marshaller<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke> SetTrustLineFlagsCantRevokeMarshaller = Marshallers.Create<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke>(
+        /// <summary>Marshaller for Stellar.SetTrustLineFlagsResult+SetTrustLineFlagsCantRevoke</summary>
+        public static readonly Marshaller<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke> SetTrustLineFlagsResult_SetTrustLineFlagsCantRevokeMarshaller = Marshallers.Create<Stellar.SetTrustLineFlagsResult.SetTrustLineFlagsCantRevoke>(
             (message, serializationContext) =>
             {
                 try

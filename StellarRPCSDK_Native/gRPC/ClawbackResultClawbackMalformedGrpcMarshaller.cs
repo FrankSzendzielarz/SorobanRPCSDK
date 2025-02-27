@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackMalformed</summary>
-        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackMalformed> ClawbackMalformedMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackMalformed>(
+        /// <summary>Marshaller for Stellar.ClawbackResult+ClawbackMalformed</summary>
+        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackMalformed> ClawbackResult_ClawbackMalformedMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackMalformed>(
             (message, serializationContext) =>
             {
                 try

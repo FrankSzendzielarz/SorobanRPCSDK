@@ -86,7 +86,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "Sign",
-                MuxedAccount_ProtoWrapperSignMessageGrpcMarshaller.SignMessageMarshaller,
+                MuxedAccount_ProtoWrapperSignMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_SignMessageMarshaller,
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller);
 
         /// <summary>Method descriptor for Verify</summary>
@@ -95,7 +95,7 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "Verify",
-                MuxedAccount_ProtoWrapperVerifyMessageGrpcMarshaller.VerifyMessageMarshaller,
+                MuxedAccount_ProtoWrapperVerifyMessageGrpcMarshaller.MuxedAccount_ProtoWrapper_VerifyMessageMarshaller,
                 BoolWrapperGrpcMarshaller.BoolWrapperMarshaller);
 
         /// <summary>Method descriptor for CreateKeyTypeEd25519</summary>
@@ -104,8 +104,8 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "CreateKeyTypeEd25519",
-                MuxedAccount_ProtoWrapperCreateEd25519ParamGrpcMarshaller.CreateEd25519ParamMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccount_ProtoWrapperCreateEd25519ParamGrpcMarshaller.MuxedAccount_ProtoWrapper_CreateEd25519ParamMarshaller,
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for CreateKeyTypeMuxedEd25519</summary>
         public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param, Stellar.MuxedAccount.KeyTypeMuxedEd25519> CreateKeyTypeMuxedEd25519Method =
@@ -113,8 +113,8 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "CreateKeyTypeMuxedEd25519",
-                MuxedAccount_ProtoWrapperCreateMuxedEd25519ParamGrpcMarshaller.CreateMuxedEd25519ParamMarshaller,
-                MuxedAccountKeyTypeMuxedEd25519GrpcMarshaller.KeyTypeMuxedEd25519Marshaller);
+                MuxedAccount_ProtoWrapperCreateMuxedEd25519ParamGrpcMarshaller.MuxedAccount_ProtoWrapper_CreateMuxedEd25519ParamMarshaller,
+                MuxedAccountKeyTypeMuxedEd25519GrpcMarshaller.MuxedAccount_KeyTypeMuxedEd25519Marshaller);
 
         /// <summary>Method descriptor for FromSecretSeed</summary>
         public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeedMethod =
@@ -123,7 +123,7 @@ namespace Stellar.RPC.AOT
                 ServiceName,
                 "FromSecretSeed",
                 StringWrapperGrpcMarshaller.StringWrapperMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromSecretSeedBytes</summary>
         public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromSecretSeedBytesMethod =
@@ -132,7 +132,7 @@ namespace Stellar.RPC.AOT
                 ServiceName,
                 "FromSecretSeedBytes",
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromAccountId</summary>
         public static readonly Method<Stellar.StringWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromAccountIdMethod =
@@ -141,7 +141,7 @@ namespace Stellar.RPC.AOT
                 ServiceName,
                 "FromAccountId",
                 StringWrapperGrpcMarshaller.StringWrapperMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromPublicKey</summary>
         public static readonly Method<Stellar.ByteArrayWrapper, Stellar.MuxedAccount.KeyTypeEd25519> FromPublicKeyMethod =
@@ -150,7 +150,7 @@ namespace Stellar.RPC.AOT
                 ServiceName,
                 "FromPublicKey",
                 ByteArrayWrapperGrpcMarshaller.ByteArrayWrapperMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromBIP39Seed</summary>
         public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39SeedMethod =
@@ -158,8 +158,8 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "FromBIP39Seed",
-                MuxedAccount_ProtoWrapperBIP39SeedParamGrpcMarshaller.BIP39SeedParamMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccount_ProtoWrapperBIP39SeedParamGrpcMarshaller.MuxedAccount_ProtoWrapper_BIP39SeedParamMarshaller,
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
         /// <summary>Method descriptor for FromBIP39SeedBytes</summary>
         public static readonly Method<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam, Stellar.MuxedAccount.KeyTypeEd25519> FromBIP39SeedBytesMethod =
@@ -167,8 +167,8 @@ namespace Stellar.RPC.AOT
                 MethodType.Unary,
                 ServiceName,
                 "FromBIP39SeedBytes",
-                MuxedAccount_ProtoWrapperBIP39SeedBytesParamGrpcMarshaller.BIP39SeedBytesParamMarshaller,
-                MuxedAccountKeyTypeEd25519GrpcMarshaller.KeyTypeEd25519Marshaller);
+                MuxedAccount_ProtoWrapperBIP39SeedBytesParamGrpcMarshaller.MuxedAccount_ProtoWrapper_BIP39SeedBytesParamMarshaller,
+                MuxedAccountKeyTypeEd25519GrpcMarshaller.MuxedAccount_KeyTypeEd25519Marshaller);
 
     }
 
@@ -236,7 +236,6 @@ namespace Stellar.RPC.AOT
             {
                 model.Add(typeof(Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam), true);
             }
-
 
         }
 
@@ -369,7 +368,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for SignMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> MuxedAccount_ProtoWrapper_SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
             (message, serializationContext) =>
             {
                 try
@@ -401,7 +400,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for VerifyMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> MuxedAccount_ProtoWrapper_VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
             (message, serializationContext) =>
             {
                 try
@@ -433,7 +432,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for CreateEd25519Param</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param> CreateEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param> MuxedAccount_ProtoWrapper_CreateEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateEd25519Param>(
             (message, serializationContext) =>
             {
                 try
@@ -465,7 +464,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for KeyTypeEd25519</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeEd25519> KeyTypeEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeEd25519>(
+        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeEd25519> MuxedAccount_KeyTypeEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeEd25519>(
             (message, serializationContext) =>
             {
                 try
@@ -497,7 +496,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for CreateMuxedEd25519Param</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param> CreateMuxedEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param> MuxedAccount_ProtoWrapper_CreateMuxedEd25519ParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.CreateMuxedEd25519Param>(
             (message, serializationContext) =>
             {
                 try
@@ -529,7 +528,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for KeyTypeMuxedEd25519</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeMuxedEd25519> KeyTypeMuxedEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeMuxedEd25519>(
+        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeMuxedEd25519> MuxedAccount_KeyTypeMuxedEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeMuxedEd25519>(
             (message, serializationContext) =>
             {
                 try
@@ -561,7 +560,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for BIP39SeedParam</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam> BIP39SeedParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam> MuxedAccount_ProtoWrapper_BIP39SeedParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedParam>(
             (message, serializationContext) =>
             {
                 try
@@ -593,7 +592,7 @@ namespace Stellar.RPC.AOT
             });
 
         /// <summary>Marshaller for BIP39SeedBytesParam</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam> BIP39SeedBytesParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam>(
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam> MuxedAccount_ProtoWrapper_BIP39SeedBytesParamMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam>(
             (message, serializationContext) =>
             {
                 try
@@ -616,70 +615,6 @@ namespace Stellar.RPC.AOT
                     using (var ms = new MemoryStream(buffer))
                     {
                         return Serializer.Deserialize<Stellar.MuxedAccount_ProtoWrapper.BIP39SeedBytesParam>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Object</summary>
-        public static readonly Marshaller<System.Object> ObjectMarshaller = Marshallers.Create<System.Object>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Object>(ms);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Deserialization error: {ex.Message}"));
-                }
-            });
-
-        /// <summary>Marshaller for Boolean</summary>
-        public static readonly Marshaller<System.Boolean> BooleanMarshaller = Marshallers.Create<System.Boolean>(
-            (message, serializationContext) =>
-            {
-                try
-                {
-                    var ms = new MemoryStream();
-                    Serializer.Serialize(ms, message);
-                    var buffer = ms.ToArray();
-                    serializationContext.Complete(buffer);
-                }
-                catch (Exception ex)
-                {
-                    throw new RpcException(new Status(StatusCode.Internal, $"Serialization error: {ex.Message}"));
-                }
-            },
-            (deserializationContext) =>
-            {
-                try
-                {
-                    var buffer = deserializationContext.PayloadAsReadOnlySequence().ToArray();
-                    using (var ms = new MemoryStream(buffer))
-                    {
-                        return Serializer.Deserialize<System.Boolean>(ms);
                     }
                 }
                 catch (Exception ex)
@@ -953,21 +888,6 @@ namespace Stellar.RPC.AOT
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error in FromBIP39SeedBytes");
-                throw new RpcException(new Status(StatusCode.Internal, ex.Message));
-            }
-        }
-
-        /// <summary>Handler for Equals method</summary>
-        public async Task<System.Boolean> Equals(System.Object request, ServerCallContext context)
-        {
-            try
-            {
-                _logger.LogInformation("Processing Equals request");
-                return _service.Equals(request);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error in Equals");
                 throw new RpcException(new Status(StatusCode.Internal, ex.Message));
             }
         }

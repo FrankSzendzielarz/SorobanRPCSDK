@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerCloseMetaExtDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LedgerCloseMetaExtDecodeRequest</summary>
         public static readonly Marshaller<Stellar.LedgerCloseMetaExtDecodeRequest> LedgerCloseMetaExtDecodeRequestMarshaller = Marshallers.Create<Stellar.LedgerCloseMetaExtDecodeRequest>(
             (message, serializationContext) =>
             {

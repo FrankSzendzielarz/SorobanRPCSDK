@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BucketListTypeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.BucketListTypeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.BucketListTypeDecodeResponse> BucketListTypeDecodeResponseMarshaller = Marshallers.Create<Stellar.BucketListTypeDecodeResponse>(
             (message, serializationContext) =>
             {

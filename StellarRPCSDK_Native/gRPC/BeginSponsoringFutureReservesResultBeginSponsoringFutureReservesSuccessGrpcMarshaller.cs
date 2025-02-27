@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BeginSponsoringFutureReservesSuccess</summary>
-        public static readonly Marshaller<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess> BeginSponsoringFutureReservesSuccessMarshaller = Marshallers.Create<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess>(
+        /// <summary>Marshaller for Stellar.BeginSponsoringFutureReservesResult+BeginSponsoringFutureReservesSuccess</summary>
+        public static readonly Marshaller<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess> BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesSuccessMarshaller = Marshallers.Create<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesSuccess>(
             (message, serializationContext) =>
             {
                 try

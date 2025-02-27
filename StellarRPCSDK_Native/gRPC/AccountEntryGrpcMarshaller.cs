@@ -45,7 +45,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountEntry</summary>
+        /// <summary>Marshaller for Stellar.AccountEntry</summary>
         public static readonly Marshaller<Stellar.AccountEntry> AccountEntryMarshaller = Marshallers.Create<Stellar.AccountEntry>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Deadentry</summary>
-        public static readonly Marshaller<Stellar.BucketEntry.Deadentry> DeadentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Deadentry>(
+        /// <summary>Marshaller for Stellar.BucketEntry+Deadentry</summary>
+        public static readonly Marshaller<Stellar.BucketEntry.Deadentry> BucketEntry_DeadentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Deadentry>(
             (message, serializationContext) =>
             {
                 try

@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Filters</summary>
+        /// <summary>Marshaller for Stellar.RPC.Filters</summary>
         public static readonly Marshaller<Stellar.RPC.Filters> FiltersMarshaller = Marshallers.Create<Stellar.RPC.Filters>(
             (message, serializationContext) =>
             {

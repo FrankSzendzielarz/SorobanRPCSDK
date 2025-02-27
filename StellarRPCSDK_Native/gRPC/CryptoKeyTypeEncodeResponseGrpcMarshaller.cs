@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CryptoKeyTypeEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.CryptoKeyTypeEncodeResponse</summary>
         public static readonly Marshaller<Stellar.CryptoKeyTypeEncodeResponse> CryptoKeyTypeEncodeResponseMarshaller = Marshallers.Create<Stellar.CryptoKeyTypeEncodeResponse>(
             (message, serializationContext) =>
             {

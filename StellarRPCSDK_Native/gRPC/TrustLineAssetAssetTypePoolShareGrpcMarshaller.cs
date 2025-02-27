@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetTypePoolShare</summary>
-        public static readonly Marshaller<Stellar.TrustLineAsset.AssetTypePoolShare> AssetTypePoolShareMarshaller = Marshallers.Create<Stellar.TrustLineAsset.AssetTypePoolShare>(
+        /// <summary>Marshaller for Stellar.TrustLineAsset+AssetTypePoolShare</summary>
+        public static readonly Marshaller<Stellar.TrustLineAsset.AssetTypePoolShare> TrustLineAsset_AssetTypePoolShareMarshaller = Marshallers.Create<Stellar.TrustLineAsset.AssetTypePoolShare>(
             (message, serializationContext) =>
             {
                 try

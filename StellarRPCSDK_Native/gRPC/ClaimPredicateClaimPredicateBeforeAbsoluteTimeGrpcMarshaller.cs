@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimPredicateBeforeAbsoluteTime</summary>
-        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateBeforeAbsoluteTime> ClaimPredicateBeforeAbsoluteTimeMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateBeforeAbsoluteTime>(
+        /// <summary>Marshaller for Stellar.ClaimPredicate+ClaimPredicateBeforeAbsoluteTime</summary>
+        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateBeforeAbsoluteTime> ClaimPredicate_ClaimPredicateBeforeAbsoluteTimeMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateBeforeAbsoluteTime>(
             (message, serializationContext) =>
             {
                 try

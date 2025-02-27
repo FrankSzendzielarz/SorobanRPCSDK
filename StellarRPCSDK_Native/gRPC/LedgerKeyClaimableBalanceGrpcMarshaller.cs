@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimableBalance</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.ClaimableBalance> ClaimableBalanceMarshaller = Marshallers.Create<Stellar.LedgerKey.ClaimableBalance>(
+        /// <summary>Marshaller for Stellar.LedgerKey+ClaimableBalance</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.ClaimableBalance> LedgerKey_ClaimableBalanceMarshaller = Marshallers.Create<Stellar.LedgerKey.ClaimableBalance>(
             (message, serializationContext) =>
             {
                 try

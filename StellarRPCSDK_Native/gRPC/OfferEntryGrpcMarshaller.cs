@@ -43,7 +43,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OfferEntry</summary>
+        /// <summary>Marshaller for Stellar.OfferEntry</summary>
         public static readonly Marshaller<Stellar.OfferEntry> OfferEntryMarshaller = Marshallers.Create<Stellar.OfferEntry>(
             (message, serializationContext) =>
             {

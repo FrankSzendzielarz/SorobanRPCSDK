@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for int64</summary>
+        /// <summary>Marshaller for Stellar.int64</summary>
         public static readonly Marshaller<Stellar.int64> int64Marshaller = Marshallers.Create<Stellar.int64>(
             (message, serializationContext) =>
             {

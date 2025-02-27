@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeHostFunctionEntryArchived</summary>
-        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionEntryArchived> InvokeHostFunctionEntryArchivedMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionEntryArchived>(
+        /// <summary>Marshaller for Stellar.InvokeHostFunctionResult+InvokeHostFunctionEntryArchived</summary>
+        public static readonly Marshaller<Stellar.InvokeHostFunctionResult.InvokeHostFunctionEntryArchived> InvokeHostFunctionResult_InvokeHostFunctionEntryArchivedMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionResult.InvokeHostFunctionEntryArchived>(
             (message, serializationContext) =>
             {
                 try

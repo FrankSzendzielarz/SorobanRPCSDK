@@ -38,8 +38,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for VerifyMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
+        /// <summary>Marshaller for Stellar.MuxedAccount_ProtoWrapper+VerifyMessage</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage> MuxedAccount_ProtoWrapper_VerifyMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.VerifyMessage>(
             (message, serializationContext) =>
             {
                 try

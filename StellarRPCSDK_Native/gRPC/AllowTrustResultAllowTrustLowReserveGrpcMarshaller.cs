@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AllowTrustLowReserve</summary>
-        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustLowReserve> AllowTrustLowReserveMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustLowReserve>(
+        /// <summary>Marshaller for Stellar.AllowTrustResult+AllowTrustLowReserve</summary>
+        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustLowReserve> AllowTrustResult_AllowTrustLowReserveMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustLowReserve>(
             (message, serializationContext) =>
             {
                 try

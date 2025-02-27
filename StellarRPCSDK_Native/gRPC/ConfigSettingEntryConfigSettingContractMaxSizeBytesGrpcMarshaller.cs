@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractMaxSizeBytes</summary>
-        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractMaxSizeBytes> ConfigSettingContractMaxSizeBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractMaxSizeBytes>(
+        /// <summary>Marshaller for Stellar.ConfigSettingEntry+ConfigSettingContractMaxSizeBytes</summary>
+        public static readonly Marshaller<Stellar.ConfigSettingEntry.ConfigSettingContractMaxSizeBytes> ConfigSettingEntry_ConfigSettingContractMaxSizeBytesMarshaller = Marshallers.Create<Stellar.ConfigSettingEntry.ConfigSettingContractMaxSizeBytes>(
             (message, serializationContext) =>
             {
                 try

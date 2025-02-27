@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for RestorePreamble</summary>
+        /// <summary>Marshaller for Stellar.RPC.RestorePreamble</summary>
         public static readonly Marshaller<Stellar.RPC.RestorePreamble> RestorePreambleMarshaller = Marshallers.Create<Stellar.RPC.RestorePreamble>(
             (message, serializationContext) =>
             {

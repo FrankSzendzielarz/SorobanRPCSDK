@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOfferNotFound</summary>
-        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferNotFound> ManageSellOfferNotFoundMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferNotFound>(
+        /// <summary>Marshaller for Stellar.ManageSellOfferResult+ManageSellOfferNotFound</summary>
+        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferNotFound> ManageSellOfferResult_ManageSellOfferNotFoundMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferNotFound>(
             (message, serializationContext) =>
             {
                 try

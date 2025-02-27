@@ -2724,7 +2724,7 @@ namespace Stellar.RPC.AOT
             TrustLineEntryextUnionv1StructextUnioncase_2GrpcMarshaller.ConfigureTypes();
 
             // Map IXdrProtoService methods
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractExecutionLanesV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractExecutionLanesV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2756,7 +2756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractExecutionLanesV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractExecutionLanesV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractExecutionLanesV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2788,7 +2788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractExecutionLanesV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractComputeV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractComputeV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2820,7 +2820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractComputeV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractComputeV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractComputeV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2852,7 +2852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractComputeV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractLedgerCostV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractLedgerCostV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2884,7 +2884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractLedgerCostV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractLedgerCostV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractLedgerCostV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2916,7 +2916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractLedgerCostV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractHistoricalDataV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractHistoricalDataV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2948,7 +2948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractHistoricalDataV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractHistoricalDataV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractHistoricalDataV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -2980,7 +2980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractHistoricalDataV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractEventsV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractEventsV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3012,7 +3012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractEventsV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractEventsV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractEventsV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3044,7 +3044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractEventsV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractBandwidthV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractBandwidthV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3076,7 +3076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractBandwidthV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractBandwidthV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractBandwidthV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3108,7 +3108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractBandwidthV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3140,7 +3140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3172,7 +3172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostParamEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostParamEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3204,7 +3204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostParamEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostParamEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostParamEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3236,7 +3236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostParamEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStateArchivalSettings", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStateArchivalSettings", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3268,7 +3268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStateArchivalSettings");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStateArchivalSettings", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStateArchivalSettings", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3300,7 +3300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStateArchivalSettings");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEvictionIterator", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEvictionIterator", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3332,7 +3332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEvictionIterator");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEvictionIterator", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEvictionIterator", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3364,7 +3364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEvictionIterator");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostParams", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostParams", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3396,7 +3396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostParams");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostParams", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostParams", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3428,7 +3428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostParams");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3460,7 +3460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3492,7 +3492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3524,7 +3524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3556,7 +3556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCEnvMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCEnvMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3588,7 +3588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCEnvMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCEnvMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCEnvMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3620,7 +3620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCEnvMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCEnvMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCEnvMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3652,7 +3652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCEnvMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCEnvMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCEnvMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3684,7 +3684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCEnvMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3716,7 +3716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3748,7 +3748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3780,7 +3780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3812,7 +3812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3844,7 +3844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3876,7 +3876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3908,7 +3908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3940,7 +3940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeOption", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeOption", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -3972,7 +3972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeOption");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeOption", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeOption", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4004,7 +4004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeOption");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4036,7 +4036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4068,7 +4068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4100,7 +4100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4132,7 +4132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4164,7 +4164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4196,7 +4196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeTuple", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeTuple", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4228,7 +4228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeTuple");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeTuple", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeTuple", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4260,7 +4260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeTuple");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeBytesN", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeBytesN", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4292,7 +4292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeBytesN");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeBytesN", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeBytesN", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4324,7 +4324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeBytesN");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeUDT", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeUDT", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4356,7 +4356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeUDT");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeUDT", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeUDT", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4388,7 +4388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeUDT");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeDef", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeDef", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4420,7 +4420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeDef");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeDef", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeDef", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4452,7 +4452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeDef");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTStructFieldV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTStructFieldV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4484,7 +4484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTStructFieldV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTStructFieldV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTStructFieldV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4516,7 +4516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTStructFieldV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTStructV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTStructV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4548,7 +4548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTStructV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTStructV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTStructV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4580,7 +4580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTStructV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4612,7 +4612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4644,7 +4644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4676,7 +4676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4708,7 +4708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4740,7 +4740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4772,7 +4772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4804,7 +4804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4836,7 +4836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4868,7 +4868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4900,7 +4900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4932,7 +4932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4964,7 +4964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -4996,7 +4996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5028,7 +5028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5060,7 +5060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5092,7 +5092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTErrorEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTErrorEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5124,7 +5124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTErrorEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTErrorEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTErrorEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5156,7 +5156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTErrorEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecFunctionInputV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecFunctionInputV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5188,7 +5188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecFunctionInputV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecFunctionInputV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecFunctionInputV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5220,7 +5220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecFunctionInputV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecFunctionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecFunctionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5252,7 +5252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecFunctionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecFunctionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecFunctionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5284,7 +5284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecFunctionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecEntryKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecEntryKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5316,7 +5316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecEntryKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecEntryKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecEntryKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5348,7 +5348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecEntryKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5380,7 +5380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5412,7 +5412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCValType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCValType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5444,7 +5444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCValType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCValType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCValType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5476,7 +5476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCValType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCErrorType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCErrorType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5508,7 +5508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCErrorType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCErrorType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCErrorType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5540,7 +5540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCErrorType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5572,7 +5572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5604,7 +5604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5636,7 +5636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5668,7 +5668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5700,7 +5700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5732,7 +5732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5764,7 +5764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5796,7 +5796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5828,7 +5828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5860,7 +5860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5892,7 +5892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5924,7 +5924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractExecutableType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractExecutableType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5956,7 +5956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractExecutableType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractExecutableType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractExecutableType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -5988,7 +5988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractExecutableType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractExecutable", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractExecutable", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6020,7 +6020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractExecutable");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractExecutable", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractExecutable", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6052,7 +6052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractExecutable");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCAddressType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCAddressType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6084,7 +6084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCAddressType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCAddressType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCAddressType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6116,7 +6116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCAddressType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6148,7 +6148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6180,7 +6180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6212,7 +6212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6244,7 +6244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6276,7 +6276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6308,7 +6308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCBytes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6340,7 +6340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCBytes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCBytes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6372,7 +6372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCBytes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCString", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCString", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6404,7 +6404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCString");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCString", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCString", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6436,7 +6436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCString");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSymbol", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSymbol", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6468,7 +6468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSymbol");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSymbol", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSymbol", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6500,7 +6500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSymbol");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCNonceKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCNonceKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6532,7 +6532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCNonceKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCNonceKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCNonceKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6564,7 +6564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCNonceKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCContractInstance", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCContractInstance", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6596,7 +6596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCContractInstance");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCContractInstance", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCContractInstance", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6628,7 +6628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCContractInstance");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCVal", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCVal", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6660,7 +6660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCVal");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCVal", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCVal", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6692,7 +6692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCVal");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMapEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMapEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6724,7 +6724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMapEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMapEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMapEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6756,7 +6756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMapEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStoredTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStoredTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6788,7 +6788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStoredTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStoredTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStoredTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6820,7 +6820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStoredTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStoredDebugTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStoredDebugTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6852,7 +6852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStoredDebugTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStoredDebugTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStoredDebugTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6884,7 +6884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStoredDebugTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPStateV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPStateV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6916,7 +6916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPStateV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPStateV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPStateV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6948,7 +6948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPStateV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPStateV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPStateV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -6980,7 +6980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPStateV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPStateV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPStateV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7012,7 +7012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPStateV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPState", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPState", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7044,7 +7044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPState");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPState", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPState", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7076,7 +7076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPState");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeThresholds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeThresholds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7108,7 +7108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeThresholds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeThresholds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeThresholds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7140,7 +7140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeThresholds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodestring32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodestring32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7172,7 +7172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodestring32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodestring32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodestring32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7204,7 +7204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodestring32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodestring64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodestring64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7236,7 +7236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodestring64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodestring64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodestring64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7268,7 +7268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodestring64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSequenceNumber", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSequenceNumber", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7300,7 +7300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSequenceNumber");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSequenceNumber", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSequenceNumber", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7332,7 +7332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSequenceNumber");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDataValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDataValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7364,7 +7364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDataValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDataValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDataValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7396,7 +7396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDataValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePoolID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePoolID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7428,7 +7428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePoolID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePoolID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePoolID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7460,7 +7460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePoolID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7492,7 +7492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7524,7 +7524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7556,7 +7556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7588,7 +7588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7620,7 +7620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7652,7 +7652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7684,7 +7684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7716,7 +7716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAlphaNum4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAlphaNum4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7748,7 +7748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAlphaNum4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAlphaNum4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAlphaNum4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7780,7 +7780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAlphaNum4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAlphaNum12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAlphaNum12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7812,7 +7812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAlphaNum12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAlphaNum12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAlphaNum12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7844,7 +7844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAlphaNum12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7876,7 +7876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7908,7 +7908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePrice", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePrice", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7940,7 +7940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePrice");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePrice", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePrice", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -7972,7 +7972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePrice");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiabilities", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiabilities", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8004,7 +8004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiabilities");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiabilities", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiabilities", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8036,7 +8036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiabilities");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeThresholdIndexes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeThresholdIndexes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8068,7 +8068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeThresholdIndexes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeThresholdIndexes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeThresholdIndexes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8100,7 +8100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeThresholdIndexes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8132,7 +8132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8164,7 +8164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSigner", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSigner", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8196,7 +8196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSigner");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSigner", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSigner", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8228,7 +8228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSigner");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8260,7 +8260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8292,7 +8292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSponsorshipDescriptor", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSponsorshipDescriptor", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8324,7 +8324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSponsorshipDescriptor");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSponsorshipDescriptor", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSponsorshipDescriptor", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8356,7 +8356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSponsorshipDescriptor");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8388,7 +8388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8420,7 +8420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8452,7 +8452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8484,7 +8484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8516,7 +8516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8548,7 +8548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8580,7 +8580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8612,7 +8612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8644,7 +8644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8676,7 +8676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8708,7 +8708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8740,7 +8740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8772,7 +8772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8804,7 +8804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8836,7 +8836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8868,7 +8868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8900,7 +8900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8932,7 +8932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOfferEntryFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOfferEntryFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8964,7 +8964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOfferEntryFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOfferEntryFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOfferEntryFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -8996,7 +8996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOfferEntryFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOfferEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOfferEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9028,7 +9028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOfferEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOfferEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOfferEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9060,7 +9060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOfferEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9092,7 +9092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9124,7 +9124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimPredicateType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimPredicateType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9156,7 +9156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimPredicateType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimPredicateType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimPredicateType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9188,7 +9188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimPredicateType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimPredicate", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimPredicate", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9220,7 +9220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimPredicate");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimPredicate", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimPredicate", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9252,7 +9252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimPredicate");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimantType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimantType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9284,7 +9284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimantType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimantType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimantType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9316,7 +9316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimantType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimant", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimant", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9348,7 +9348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimant");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimant", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimant", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9380,7 +9380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimant");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceIDType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceIDType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9412,7 +9412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceIDType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceIDType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceIDType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9444,7 +9444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceIDType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9476,7 +9476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9508,7 +9508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9540,7 +9540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9572,7 +9572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9604,7 +9604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9636,7 +9636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9668,7 +9668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9700,7 +9700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolConstantProductParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolConstantProductParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9732,7 +9732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolConstantProductParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolConstantProductParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolConstantProductParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9764,7 +9764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolConstantProductParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9796,7 +9796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9828,7 +9828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractDataDurability", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractDataDurability", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9860,7 +9860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractDataDurability");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractDataDurability", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractDataDurability", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9892,7 +9892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractDataDurability");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9924,7 +9924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9956,7 +9956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCodeCostInputs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCodeCostInputs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -9988,7 +9988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCodeCostInputs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCodeCostInputs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCodeCostInputs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10020,7 +10020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCodeCostInputs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCodeEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCodeEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10052,7 +10052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCodeEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCodeEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCodeEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10084,7 +10084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCodeEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTTLEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTTLEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10116,7 +10116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTTLEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTTLEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTTLEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10148,7 +10148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTTLEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10180,7 +10180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10212,7 +10212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10244,7 +10244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10276,7 +10276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10308,7 +10308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10340,7 +10340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEnvelopeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEnvelopeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10372,7 +10372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEnvelopeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEnvelopeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEnvelopeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10404,7 +10404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEnvelopeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketListType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketListType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10436,7 +10436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketListType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketListType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketListType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10468,7 +10468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketListType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10500,7 +10500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10532,7 +10532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHotArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHotArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10564,7 +10564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHotArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHotArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHotArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10596,7 +10596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHotArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10628,7 +10628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10660,7 +10660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketMetadata", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketMetadata", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10692,7 +10692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketMetadata");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketMetadata", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketMetadata", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10724,7 +10724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketMetadata");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10756,7 +10756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10788,7 +10788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHotArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHotArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10820,7 +10820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHotArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHotArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHotArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10852,7 +10852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHotArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveArchivedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveArchivedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10884,7 +10884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveArchivedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveArchivedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveArchivedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10916,7 +10916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveArchivedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveDeletedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveDeletedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10948,7 +10948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveDeletedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveDeletedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveDeletedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -10980,7 +10980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveDeletedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBoundaryLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBoundaryLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11012,7 +11012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBoundaryLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBoundaryLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBoundaryLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11044,7 +11044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBoundaryLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveHashEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveHashEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11076,7 +11076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveHashEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveHashEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveHashEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11108,7 +11108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveHashEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11140,7 +11140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11172,7 +11172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11204,7 +11204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11236,7 +11236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarValueType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarValueType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11268,7 +11268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarValueType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarValueType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarValueType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11300,7 +11300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarValueType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseValueSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseValueSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11332,7 +11332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseValueSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseValueSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseValueSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11364,7 +11364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseValueSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11396,7 +11396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11428,7 +11428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11460,7 +11460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11492,7 +11492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11524,7 +11524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11556,7 +11556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeader", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeader", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11588,7 +11588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeader");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeader", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeader", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11620,7 +11620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeader");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11652,7 +11652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11684,7 +11684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigUpgradeSetKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigUpgradeSetKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11716,7 +11716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigUpgradeSetKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigUpgradeSetKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigUpgradeSetKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11748,7 +11748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigUpgradeSetKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerUpgrade", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerUpgrade", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11780,7 +11780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerUpgrade");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerUpgrade", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerUpgrade", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11812,7 +11812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerUpgrade");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigUpgradeSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigUpgradeSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11844,7 +11844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigUpgradeSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigUpgradeSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigUpgradeSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11876,7 +11876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigUpgradeSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxSetComponentType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxSetComponentType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11908,7 +11908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxSetComponentType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxSetComponentType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxSetComponentType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11940,7 +11940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxSetComponentType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxSetComponent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxSetComponent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -11972,7 +11972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxSetComponent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxSetComponent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxSetComponent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12004,7 +12004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxSetComponent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionPhase", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionPhase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12036,7 +12036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionPhase");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionPhase", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionPhase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12068,7 +12068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionPhase");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12100,7 +12100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12132,7 +12132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSetV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSetV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12164,7 +12164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSetV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSetV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSetV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12196,7 +12196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSetV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeGeneralizedTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeGeneralizedTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12228,7 +12228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeGeneralizedTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeGeneralizedTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeGeneralizedTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12260,7 +12260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeGeneralizedTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12292,7 +12292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12324,7 +12324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12356,7 +12356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12388,7 +12388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12420,7 +12420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12452,7 +12452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionHistoryResultEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionHistoryResultEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12484,7 +12484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionHistoryResultEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionHistoryResultEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionHistoryResultEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12516,7 +12516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionHistoryResultEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12548,7 +12548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12580,7 +12580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerSCPMessages", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerSCPMessages", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12612,7 +12612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerSCPMessages");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerSCPMessages", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerSCPMessages", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12644,7 +12644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerSCPMessages");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPHistoryEntryV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPHistoryEntryV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12676,7 +12676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPHistoryEntryV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPHistoryEntryV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPHistoryEntryV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12708,7 +12708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPHistoryEntryV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12740,7 +12740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12772,7 +12772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChangeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChangeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12804,7 +12804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChangeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChangeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChangeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12836,7 +12836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChangeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChange", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChange", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12868,7 +12868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChange");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChange", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChange", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12900,7 +12900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChange");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChanges", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChanges", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12932,7 +12932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChanges");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChanges", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChanges", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12964,7 +12964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChanges");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -12996,7 +12996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13028,7 +13028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13060,7 +13060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13092,7 +13092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13124,7 +13124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13156,7 +13156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractEventType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractEventType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13188,7 +13188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractEventType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractEventType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractEventType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13220,7 +13220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractEventType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13252,7 +13252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13284,7 +13284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDiagnosticEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDiagnosticEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13316,7 +13316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDiagnosticEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDiagnosticEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDiagnosticEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13348,7 +13348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDiagnosticEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDiagnosticEvents", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDiagnosticEvents", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13380,7 +13380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDiagnosticEvents");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDiagnosticEvents", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDiagnosticEvents", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13412,7 +13412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDiagnosticEvents");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13444,7 +13444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13476,7 +13476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13508,7 +13508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13540,7 +13540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13572,7 +13572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13604,7 +13604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13636,7 +13636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13668,7 +13668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13700,7 +13700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13732,7 +13732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13764,7 +13764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13796,7 +13796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13828,7 +13828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13860,7 +13860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUpgradeEntryMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUpgradeEntryMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13892,7 +13892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUpgradeEntryMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUpgradeEntryMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUpgradeEntryMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13924,7 +13924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUpgradeEntryMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13956,7 +13956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -13988,7 +13988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14020,7 +14020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14052,7 +14052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14084,7 +14084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14116,7 +14116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14148,7 +14148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14180,7 +14180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14212,7 +14212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14244,7 +14244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14276,7 +14276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14308,7 +14308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14340,7 +14340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14372,7 +14372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSendMore", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSendMore", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14404,7 +14404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSendMore");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSendMore", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSendMore", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14436,7 +14436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSendMore");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSendMoreExtended", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSendMoreExtended", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14468,7 +14468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSendMoreExtended");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSendMoreExtended", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSendMoreExtended", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14500,7 +14500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSendMoreExtended");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuthCert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuthCert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14532,7 +14532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuthCert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuthCert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuthCert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14564,7 +14564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuthCert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHello", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHello", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14596,7 +14596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHello");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHello", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHello", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14628,7 +14628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHello");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuth", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuth", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14660,7 +14660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuth");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuth", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuth", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14692,7 +14692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuth");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeIPAddrType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeIPAddrType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14724,7 +14724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeIPAddrType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeIPAddrType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeIPAddrType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14756,7 +14756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeIPAddrType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14788,7 +14788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14820,7 +14820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMessageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMessageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14852,7 +14852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMessageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMessageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMessageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14884,7 +14884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMessageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDontHave", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDontHave", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14916,7 +14916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDontHave");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDontHave", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDontHave", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14948,7 +14948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDontHave");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyMessageCommandType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyMessageCommandType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -14980,7 +14980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyMessageCommandType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyMessageCommandType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyMessageCommandType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15012,7 +15012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyMessageCommandType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyMessageResponseType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyMessageResponseType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15044,7 +15044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyMessageResponseType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyMessageResponseType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyMessageResponseType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15076,7 +15076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyMessageResponseType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15108,7 +15108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15140,7 +15140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15172,7 +15172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15204,7 +15204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15236,7 +15236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15268,7 +15268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15300,7 +15300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15332,7 +15332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15364,7 +15364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15396,7 +15396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15428,7 +15428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15460,7 +15460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15492,7 +15492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15524,7 +15524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15556,7 +15556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15588,7 +15588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEncryptedBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEncryptedBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15620,7 +15620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEncryptedBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEncryptedBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEncryptedBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15652,7 +15652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEncryptedBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15684,7 +15684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15716,7 +15716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15748,7 +15748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15780,7 +15780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15812,7 +15812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15844,7 +15844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15876,7 +15876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15908,7 +15908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerStats", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerStats", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15940,7 +15940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerStats");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerStats", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerStats", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -15972,7 +15972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerStats");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerStatList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerStatList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16004,7 +16004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerStatList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerStatList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerStatList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16036,7 +16036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerStatList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedNodeData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedNodeData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16068,7 +16068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedNodeData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedNodeData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedNodeData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16100,7 +16100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedNodeData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedPeerData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedPeerData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16132,7 +16132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedPeerData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedPeerData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedPeerData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16164,7 +16164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedPeerData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedPeerDataList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedPeerDataList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16196,7 +16196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedPeerDataList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedPeerDataList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedPeerDataList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16228,7 +16228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedPeerDataList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16260,7 +16260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16292,7 +16292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16324,7 +16324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16356,7 +16356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16388,7 +16388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16420,7 +16420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyResponseBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyResponseBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16452,7 +16452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyResponseBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyResponseBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyResponseBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16484,7 +16484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyResponseBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxAdvertVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxAdvertVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16516,7 +16516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxAdvertVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxAdvertVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxAdvertVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16548,7 +16548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxAdvertVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFloodAdvert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFloodAdvert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16580,7 +16580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFloodAdvert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFloodAdvert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFloodAdvert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16612,7 +16612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFloodAdvert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxDemandVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxDemandVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16644,7 +16644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxDemandVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxDemandVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxDemandVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16676,7 +16676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxDemandVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFloodDemand", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFloodDemand", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16708,7 +16708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFloodDemand");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFloodDemand", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFloodDemand", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16740,7 +16740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFloodDemand");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16772,7 +16772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16804,7 +16804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuthenticatedMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuthenticatedMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16836,7 +16836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuthenticatedMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuthenticatedMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuthenticatedMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16868,7 +16868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuthenticatedMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16900,7 +16900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16932,7 +16932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPBallot", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPBallot", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16964,7 +16964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPBallot");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPBallot", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPBallot", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -16996,7 +16996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPBallot");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPStatementType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPStatementType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17028,7 +17028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPStatementType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPStatementType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPStatementType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17060,7 +17060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPStatementType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPNomination", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPNomination", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17092,7 +17092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPNomination");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPNomination", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPNomination", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17124,7 +17124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPNomination");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPStatement", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPStatement", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17156,7 +17156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPStatement");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPStatement", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPStatement", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17188,7 +17188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPStatement");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17220,7 +17220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17252,7 +17252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPQuorumSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPQuorumSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17284,7 +17284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPQuorumSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPQuorumSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPQuorumSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17316,7 +17316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPQuorumSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17348,7 +17348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17380,7 +17380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMuxedAccount", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMuxedAccount", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17412,7 +17412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMuxedAccount");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMuxedAccount", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMuxedAccount", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17444,7 +17444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMuxedAccount");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDecoratedSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDecoratedSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17476,7 +17476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDecoratedSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDecoratedSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDecoratedSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17508,7 +17508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDecoratedSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17540,7 +17540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17572,7 +17572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17604,7 +17604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17636,7 +17636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17668,7 +17668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17700,7 +17700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17732,7 +17732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17764,7 +17764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17796,7 +17796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17828,7 +17828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17860,7 +17860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17892,7 +17892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17924,7 +17924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17956,7 +17956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreatePassiveSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreatePassiveSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -17988,7 +17988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreatePassiveSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreatePassiveSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreatePassiveSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18020,7 +18020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreatePassiveSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18052,7 +18052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18084,7 +18084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18116,7 +18116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18148,7 +18148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18180,7 +18180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18212,7 +18212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18244,7 +18244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18276,7 +18276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18308,7 +18308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18340,7 +18340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18372,7 +18372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18404,7 +18404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18436,7 +18436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18468,7 +18468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18500,7 +18500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18532,7 +18532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18564,7 +18564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18596,7 +18596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18628,7 +18628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18660,7 +18660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18692,7 +18692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18724,7 +18724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18756,7 +18756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18788,7 +18788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18820,7 +18820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18852,7 +18852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18884,7 +18884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18916,7 +18916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18948,7 +18948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -18980,7 +18980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19012,7 +19012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19044,7 +19044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHostFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHostFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19076,7 +19076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHostFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHostFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHostFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19108,7 +19108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHostFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractIDPreimageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractIDPreimageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19140,7 +19140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractIDPreimageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractIDPreimageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractIDPreimageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19172,7 +19172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractIDPreimageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19204,7 +19204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19236,7 +19236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19268,7 +19268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19300,7 +19300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateContractArgsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateContractArgsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19332,7 +19332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateContractArgsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateContractArgsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateContractArgsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19364,7 +19364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateContractArgsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19396,7 +19396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19428,7 +19428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHostFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHostFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19460,7 +19460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHostFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHostFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHostFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19492,7 +19492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHostFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19524,7 +19524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19556,7 +19556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19588,7 +19588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19620,7 +19620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedInvocation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19652,7 +19652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedInvocation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedInvocation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19684,7 +19684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedInvocation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAddressCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAddressCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19716,7 +19716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAddressCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAddressCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAddressCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19748,7 +19748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAddressCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanCredentialsType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanCredentialsType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19780,7 +19780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanCredentialsType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanCredentialsType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanCredentialsType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19812,7 +19812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanCredentialsType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19844,7 +19844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19876,7 +19876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizationEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizationEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19908,7 +19908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizationEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizationEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizationEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19940,7 +19940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizationEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -19972,7 +19972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20004,7 +20004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20036,7 +20036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20068,7 +20068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20100,7 +20100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20132,7 +20132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20164,7 +20164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20196,7 +20196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHashIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHashIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20228,7 +20228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHashIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHashIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHashIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20260,7 +20260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHashIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMemoType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMemoType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20292,7 +20292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMemoType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMemoType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMemoType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20324,7 +20324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMemoType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMemo", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMemo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20356,7 +20356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMemo");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMemo", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMemo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20388,7 +20388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMemo");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20420,7 +20420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20452,7 +20452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20484,7 +20484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20516,7 +20516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditionsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditionsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20548,7 +20548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditionsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditionsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditionsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20580,7 +20580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditionsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20612,7 +20612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20644,7 +20644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditions", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditions", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20676,7 +20676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditions");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditions", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditions", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20708,7 +20708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditions");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerFootprint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerFootprint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20740,7 +20740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerFootprint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerFootprint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerFootprint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20772,7 +20772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerFootprint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProofType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProofType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20804,7 +20804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProofType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProofType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProofType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20836,7 +20836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProofType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProofNode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProofNode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20868,7 +20868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProofNode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProofNode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProofNode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20900,7 +20900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProofNode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeProofLevel", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeProofLevel", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20932,7 +20932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeProofLevel");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeProofLevel", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeProofLevel", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20964,7 +20964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeProofLevel");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeNonexistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeNonexistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -20996,7 +20996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeNonexistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeNonexistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeNonexistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21028,7 +21028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeNonexistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21060,7 +21060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21092,7 +21092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProof", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProof", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21124,7 +21124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProof");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProof", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProof", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21156,7 +21156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProof");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanResources", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanResources", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21188,7 +21188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanResources");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanResources", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanResources", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21220,7 +21220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanResources");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21252,7 +21252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21284,7 +21284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21316,7 +21316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21348,7 +21348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV0Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV0Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21380,7 +21380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV0Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV0Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV0Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21412,7 +21412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV0Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21444,7 +21444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21476,7 +21476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV1Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV1Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21508,7 +21508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV1Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV1Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV1Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21540,7 +21540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV1Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFeeBumpTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFeeBumpTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21572,7 +21572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFeeBumpTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFeeBumpTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFeeBumpTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21604,7 +21604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFeeBumpTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFeeBumpTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFeeBumpTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21636,7 +21636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFeeBumpTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFeeBumpTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFeeBumpTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21668,7 +21668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFeeBumpTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21700,7 +21700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21732,7 +21732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSignaturePayload", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSignaturePayload", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21764,7 +21764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSignaturePayload");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSignaturePayload", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSignaturePayload", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21796,7 +21796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSignaturePayload");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimAtomType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimAtomType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21828,7 +21828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimAtomType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimAtomType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimAtomType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21860,7 +21860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimAtomType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimOfferAtomV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimOfferAtomV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21892,7 +21892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimOfferAtomV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimOfferAtomV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimOfferAtomV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21924,7 +21924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimOfferAtomV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimOfferAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimOfferAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21956,7 +21956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimOfferAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimOfferAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimOfferAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -21988,7 +21988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimOfferAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimLiquidityAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimLiquidityAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22020,7 +22020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimLiquidityAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimLiquidityAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimLiquidityAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22052,7 +22052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimLiquidityAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22084,7 +22084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22116,7 +22116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22148,7 +22148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22180,7 +22180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22212,7 +22212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22244,7 +22244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22276,7 +22276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22308,7 +22308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22340,7 +22340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22372,7 +22372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22404,7 +22404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22436,7 +22436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSimplePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSimplePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22468,7 +22468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSimplePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSimplePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSimplePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22500,7 +22500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSimplePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22532,7 +22532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22564,7 +22564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22596,7 +22596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22628,7 +22628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22660,7 +22660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22692,7 +22692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22724,7 +22724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22756,7 +22756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageOfferEffect", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageOfferEffect", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22788,7 +22788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageOfferEffect");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageOfferEffect", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageOfferEffect", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22820,7 +22820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageOfferEffect");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageOfferSuccessResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageOfferSuccessResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22852,7 +22852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageOfferSuccessResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageOfferSuccessResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageOfferSuccessResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22884,7 +22884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageOfferSuccessResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22916,7 +22916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22948,7 +22948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -22980,7 +22980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23012,7 +23012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23044,7 +23044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23076,7 +23076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23108,7 +23108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23140,7 +23140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23172,7 +23172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23204,7 +23204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23236,7 +23236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23268,7 +23268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23300,7 +23300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23332,7 +23332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23364,7 +23364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23396,7 +23396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23428,7 +23428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23460,7 +23460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountMergeResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountMergeResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23492,7 +23492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountMergeResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountMergeResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountMergeResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23524,7 +23524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountMergeResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountMergeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountMergeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23556,7 +23556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountMergeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountMergeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountMergeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23588,7 +23588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountMergeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23620,7 +23620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23652,7 +23652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationPayout", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationPayout", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23684,7 +23684,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationPayout");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationPayout", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationPayout", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23716,7 +23716,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationPayout");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23748,7 +23748,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23780,7 +23780,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23812,7 +23812,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23844,7 +23844,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23876,7 +23876,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23908,7 +23908,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23940,7 +23940,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -23972,7 +23972,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24004,7 +24004,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24036,7 +24036,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24068,7 +24068,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24100,7 +24100,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24132,7 +24132,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24164,7 +24164,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24196,7 +24196,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24228,7 +24228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24260,7 +24260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24292,7 +24292,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24324,7 +24324,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24356,7 +24356,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24388,7 +24388,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24420,7 +24420,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEndSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEndSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24452,7 +24452,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEndSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEndSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEndSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24484,7 +24484,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEndSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEndSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEndSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24516,7 +24516,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEndSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEndSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEndSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24548,7 +24548,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEndSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24580,7 +24580,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24612,7 +24612,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24644,7 +24644,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24676,7 +24676,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24708,7 +24708,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24740,7 +24740,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24772,7 +24772,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24804,7 +24804,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24836,7 +24836,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24868,7 +24868,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24900,7 +24900,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24932,7 +24932,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24964,7 +24964,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -24996,7 +24996,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25028,7 +25028,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25060,7 +25060,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25092,7 +25092,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25124,7 +25124,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25156,7 +25156,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25188,7 +25188,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25220,7 +25220,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25252,7 +25252,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25284,7 +25284,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25316,7 +25316,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25348,7 +25348,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25380,7 +25380,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25412,7 +25412,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25444,7 +25444,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25476,7 +25476,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25508,7 +25508,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25540,7 +25540,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25572,7 +25572,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25604,7 +25604,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25636,7 +25636,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25668,7 +25668,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25700,7 +25700,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25732,7 +25732,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25764,7 +25764,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25796,7 +25796,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25828,7 +25828,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25860,7 +25860,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25892,7 +25892,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInnerTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInnerTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25924,7 +25924,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInnerTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInnerTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInnerTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25956,7 +25956,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInnerTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInnerTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInnerTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -25988,7 +25988,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInnerTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInnerTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInnerTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26020,7 +26020,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInnerTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26052,7 +26052,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26084,7 +26084,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHash", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHash", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26116,7 +26116,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHash");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHash", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHash", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26148,7 +26148,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHash");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint256", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint256", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26180,7 +26180,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint256");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint256", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint256", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26212,7 +26212,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint256");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26244,7 +26244,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26276,7 +26276,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26308,7 +26308,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26340,7 +26340,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26372,7 +26372,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26404,7 +26404,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26436,7 +26436,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26468,7 +26468,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimePoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimePoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26500,7 +26500,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimePoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimePoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimePoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26532,7 +26532,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimePoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDuration", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDuration", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26564,7 +26564,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDuration");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDuration", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDuration", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26596,7 +26596,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDuration");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtensionPoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtensionPoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26628,7 +26628,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtensionPoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtensionPoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtensionPoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26660,7 +26660,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtensionPoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCryptoKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCryptoKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26692,7 +26692,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCryptoKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCryptoKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCryptoKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26724,7 +26724,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCryptoKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePublicKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePublicKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26756,7 +26756,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePublicKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePublicKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePublicKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26788,7 +26788,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePublicKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignerKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignerKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26820,7 +26820,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignerKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignerKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignerKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26852,7 +26852,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignerKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePublicKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26884,7 +26884,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePublicKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePublicKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26916,7 +26916,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePublicKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26948,7 +26948,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -26980,7 +26980,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27012,7 +27012,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27044,7 +27044,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignatureHint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignatureHint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27076,7 +27076,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignatureHint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignatureHint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignatureHint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27108,7 +27108,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignatureHint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeNodeID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeNodeID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27140,7 +27140,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeNodeID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeNodeID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeNodeID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27172,7 +27172,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeNodeID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27204,7 +27204,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27236,7 +27236,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCurve25519Secret", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCurve25519Secret", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27268,7 +27268,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCurve25519Secret");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCurve25519Secret", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCurve25519Secret", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27300,7 +27300,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCurve25519Secret");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCurve25519Public", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCurve25519Public", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27332,7 +27332,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCurve25519Public");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCurve25519Public", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCurve25519Public", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27364,7 +27364,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCurve25519Public");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHmacSha256Key", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHmacSha256Key", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27396,7 +27396,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHmacSha256Key");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHmacSha256Key", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHmacSha256Key", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27428,7 +27428,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHmacSha256Key");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHmacSha256Mac", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHmacSha256Mac", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27460,7 +27460,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHmacSha256Mac");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHmacSha256Mac", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHmacSha256Mac", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27492,7 +27492,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHmacSha256Mac");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeShortHashSeed", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeShortHashSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27524,7 +27524,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeShortHashSeed");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeShortHashSeed", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeShortHashSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27556,7 +27556,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeShortHashSeed");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBinaryFuseFilterType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBinaryFuseFilterType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27588,7 +27588,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBinaryFuseFilterType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBinaryFuseFilterType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBinaryFuseFilterType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27620,7 +27620,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBinaryFuseFilterType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSerializedBinaryFuseFilter", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSerializedBinaryFuseFilter", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27652,7 +27652,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSerializedBinaryFuseFilter");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSerializedBinaryFuseFilter", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSerializedBinaryFuseFilter", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27686,7 +27686,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map IMuxedAccount_ProtoWrapper methods
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CanSign", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CanSign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27718,7 +27718,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CanSign");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27750,7 +27750,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27782,7 +27782,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetAccountId", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetAccountId", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27814,7 +27814,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetAccountId");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetAddress", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27846,7 +27846,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetAddress");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetPrivateKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetPrivateKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27878,7 +27878,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetPrivateKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetPublicKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetPublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27910,7 +27910,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetPublicKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetSecretSeed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetSecretSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27942,7 +27942,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetSecretSeed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetSeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetSeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -27974,7 +27974,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetSeedBytes");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/Sign", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Sign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28006,7 +28006,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Sign");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/Verify", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Verify", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28038,7 +28038,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Verify");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromSecretSeed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromSecretSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28070,7 +28070,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromSecretSeed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromSecretSeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromSecretSeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28102,7 +28102,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromSecretSeedBytes");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromAccountId", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromAccountId", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28134,7 +28134,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromAccountId");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromPublicKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromPublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28166,7 +28166,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromPublicKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromBIP39Seed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromBIP39Seed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28198,7 +28198,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromBIP39Seed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromBIP39SeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromBIP39SeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28232,7 +28232,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map INetwork_ProtoWrapper methods
-            endpoints.MapPost("/Network_ProtoWrapper/Create", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Create", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28264,7 +28264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/Create");
                 }
             });
-            endpoints.MapPost("/Network_ProtoWrapper/GetNetworkPassphrase", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/GetNetworkPassphrase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28296,7 +28296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/GetNetworkPassphrase");
                 }
             });
-            endpoints.MapPost("/Network_ProtoWrapper/IsPublicNetwork", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/IsPublicNetwork", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28330,7 +28330,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map ITransaction_ProtoWrapper methods
-            endpoints.MapPost("/Transaction_ProtoWrapper/Clone", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/Clone", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28362,7 +28362,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/Clone");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/IsSoroban", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/IsSoroban", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28394,7 +28394,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/IsSoroban");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/IsSorobanInvocation", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/IsSorobanInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28426,7 +28426,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/IsSorobanInvocation");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/Sign", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/Sign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28460,7 +28460,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map ISimulateTransactionResult_ProtoWrapper methods
-            endpoints.MapPost("/SimulateTransactionResult_ProtoWrapper/ApplyTo", async context =>
+            endpoints.MapPost("/Stellar.RPC.SimulateTransactionResult_ProtoWrapper/ApplyTo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<SimulateTransactionResult_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28494,7 +28494,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map IStellarRPCClient methods
-            endpoints.MapPost("/StellarRPCClient/GetEventsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetEventsAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28526,7 +28526,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetEventsAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetLedgerEntriesAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLedgerEntriesAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28558,7 +28558,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLedgerEntriesAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28590,7 +28590,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetTransactionsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionsAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28622,7 +28622,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionsAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/SendTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SendTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28654,7 +28654,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/SendTransactionAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/SimulateTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SimulateTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28688,7 +28688,7 @@ namespace Stellar.RPC.AOT
             });
 
             // Map XdrProtoService methods
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractExecutionLanesV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractExecutionLanesV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28720,7 +28720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractExecutionLanesV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractExecutionLanesV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractExecutionLanesV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28752,7 +28752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractExecutionLanesV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractComputeV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractComputeV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28784,7 +28784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractComputeV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractComputeV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractComputeV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28816,7 +28816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractComputeV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractLedgerCostV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractLedgerCostV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28848,7 +28848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractLedgerCostV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractLedgerCostV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractLedgerCostV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28880,7 +28880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractLedgerCostV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractHistoricalDataV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractHistoricalDataV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28912,7 +28912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractHistoricalDataV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractHistoricalDataV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractHistoricalDataV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28944,7 +28944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractHistoricalDataV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractEventsV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractEventsV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -28976,7 +28976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractEventsV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractEventsV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractEventsV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29008,7 +29008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractEventsV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingContractBandwidthV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingContractBandwidthV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29040,7 +29040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingContractBandwidthV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingContractBandwidthV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingContractBandwidthV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29072,7 +29072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingContractBandwidthV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29104,7 +29104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29136,7 +29136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostParamEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostParamEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29168,7 +29168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostParamEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostParamEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostParamEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29200,7 +29200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostParamEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStateArchivalSettings", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStateArchivalSettings", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29232,7 +29232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStateArchivalSettings");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStateArchivalSettings", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStateArchivalSettings", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29264,7 +29264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStateArchivalSettings");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEvictionIterator", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEvictionIterator", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29296,7 +29296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEvictionIterator");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEvictionIterator", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEvictionIterator", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29328,7 +29328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEvictionIterator");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCostParams", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCostParams", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29360,7 +29360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCostParams");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCostParams", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCostParams", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29392,7 +29392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCostParams");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29424,7 +29424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29456,7 +29456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigSettingEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigSettingEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29488,7 +29488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigSettingEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigSettingEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigSettingEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29520,7 +29520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigSettingEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCEnvMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCEnvMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29552,7 +29552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCEnvMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCEnvMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCEnvMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29584,7 +29584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCEnvMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCEnvMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCEnvMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29616,7 +29616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCEnvMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCEnvMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCEnvMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29648,7 +29648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCEnvMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29680,7 +29680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29712,7 +29712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29744,7 +29744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29776,7 +29776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29808,7 +29808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMetaEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMetaEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29840,7 +29840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMetaEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29872,7 +29872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29904,7 +29904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeOption", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeOption", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29936,7 +29936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeOption");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeOption", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeOption", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -29968,7 +29968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeOption");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30000,7 +30000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30032,7 +30032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30064,7 +30064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30096,7 +30096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30128,7 +30128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30160,7 +30160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeTuple", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeTuple", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30192,7 +30192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeTuple");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeTuple", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeTuple", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30224,7 +30224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeTuple");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeBytesN", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeBytesN", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30256,7 +30256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeBytesN");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeBytesN", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeBytesN", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30288,7 +30288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeBytesN");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeUDT", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeUDT", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30320,7 +30320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeUDT");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeUDT", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeUDT", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30352,7 +30352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeUDT");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecTypeDef", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecTypeDef", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30384,7 +30384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecTypeDef");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecTypeDef", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecTypeDef", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30416,7 +30416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecTypeDef");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTStructFieldV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTStructFieldV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30448,7 +30448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTStructFieldV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTStructFieldV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTStructFieldV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30480,7 +30480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTStructFieldV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTStructV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTStructV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30512,7 +30512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTStructV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTStructV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTStructV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30544,7 +30544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTStructV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30576,7 +30576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseVoidV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30608,7 +30608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseVoidV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30640,7 +30640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseTupleV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30672,7 +30672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseTupleV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30704,7 +30704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseV0Kind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30736,7 +30736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseV0Kind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30768,7 +30768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30800,7 +30800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTUnionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTUnionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30832,7 +30832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTUnionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTUnionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTUnionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30864,7 +30864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTUnionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30896,7 +30896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30928,7 +30928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30960,7 +30960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -30992,7 +30992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31024,7 +31024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTErrorEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31056,7 +31056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTErrorEnumCaseV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecUDTErrorEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecUDTErrorEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31088,7 +31088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecUDTErrorEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecUDTErrorEnumV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecUDTErrorEnumV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31120,7 +31120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecUDTErrorEnumV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecFunctionInputV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecFunctionInputV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31152,7 +31152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecFunctionInputV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecFunctionInputV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecFunctionInputV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31184,7 +31184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecFunctionInputV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecFunctionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecFunctionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31216,7 +31216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecFunctionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecFunctionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecFunctionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31248,7 +31248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecFunctionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecEntryKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecEntryKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31280,7 +31280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecEntryKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecEntryKind", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecEntryKind", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31312,7 +31312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecEntryKind");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSpecEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSpecEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31344,7 +31344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSpecEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSpecEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSpecEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31376,7 +31376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSpecEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCValType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCValType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31408,7 +31408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCValType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCValType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCValType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31440,7 +31440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCValType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCErrorType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCErrorType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31472,7 +31472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCErrorType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCErrorType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCErrorType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31504,7 +31504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCErrorType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31536,7 +31536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31568,7 +31568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31600,7 +31600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31632,7 +31632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31664,7 +31664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31696,7 +31696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31728,7 +31728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInt128Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInt128Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31760,7 +31760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInt128Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31792,7 +31792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31824,7 +31824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31856,7 +31856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInt256Parts", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInt256Parts", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31888,7 +31888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInt256Parts");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractExecutableType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractExecutableType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31920,7 +31920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractExecutableType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractExecutableType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractExecutableType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31952,7 +31952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractExecutableType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractExecutable", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractExecutable", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -31984,7 +31984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractExecutable");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractExecutable", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractExecutable", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32016,7 +32016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractExecutable");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCAddressType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCAddressType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32048,7 +32048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCAddressType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCAddressType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCAddressType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32080,7 +32080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCAddressType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32112,7 +32112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32144,7 +32144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32176,7 +32176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCVec", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCVec", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32208,7 +32208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCVec");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32240,7 +32240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMap", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMap", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32272,7 +32272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMap");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCBytes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32304,7 +32304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCBytes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCBytes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32336,7 +32336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCBytes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCString", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCString", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32368,7 +32368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCString");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCString", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCString", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32400,7 +32400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCString");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCSymbol", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCSymbol", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32432,7 +32432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCSymbol");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCSymbol", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCSymbol", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32464,7 +32464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCSymbol");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCNonceKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCNonceKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32496,7 +32496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCNonceKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCNonceKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCNonceKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32528,7 +32528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCNonceKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCContractInstance", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCContractInstance", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32560,7 +32560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCContractInstance");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCContractInstance", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCContractInstance", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32592,7 +32592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCContractInstance");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCVal", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCVal", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32624,7 +32624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCVal");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCVal", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCVal", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32656,7 +32656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCVal");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCMapEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCMapEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32688,7 +32688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCMapEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCMapEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCMapEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32720,7 +32720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCMapEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStoredTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStoredTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32752,7 +32752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStoredTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStoredTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStoredTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32784,7 +32784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStoredTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStoredDebugTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStoredDebugTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32816,7 +32816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStoredDebugTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStoredDebugTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStoredDebugTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32848,7 +32848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStoredDebugTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPStateV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPStateV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32880,7 +32880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPStateV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPStateV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPStateV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32912,7 +32912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPStateV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPStateV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPStateV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32944,7 +32944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPStateV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPStateV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPStateV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -32976,7 +32976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPStateV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePersistedSCPState", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePersistedSCPState", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33008,7 +33008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePersistedSCPState");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePersistedSCPState", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePersistedSCPState", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33040,7 +33040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePersistedSCPState");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeThresholds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeThresholds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33072,7 +33072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeThresholds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeThresholds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeThresholds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33104,7 +33104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeThresholds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodestring32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodestring32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33136,7 +33136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodestring32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodestring32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodestring32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33168,7 +33168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodestring32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodestring64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodestring64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33200,7 +33200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodestring64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodestring64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodestring64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33232,7 +33232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodestring64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSequenceNumber", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSequenceNumber", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33264,7 +33264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSequenceNumber");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSequenceNumber", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSequenceNumber", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33296,7 +33296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSequenceNumber");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDataValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDataValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33328,7 +33328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDataValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDataValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDataValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33360,7 +33360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDataValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePoolID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePoolID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33392,7 +33392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePoolID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePoolID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePoolID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33424,7 +33424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePoolID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33456,7 +33456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33488,7 +33488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33520,7 +33520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33552,7 +33552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33584,7 +33584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33616,7 +33616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAssetCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAssetCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33648,7 +33648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAssetCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAssetCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAssetCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33680,7 +33680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAssetCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAlphaNum4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAlphaNum4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33712,7 +33712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAlphaNum4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAlphaNum4", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAlphaNum4", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33744,7 +33744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAlphaNum4");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAlphaNum12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAlphaNum12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33776,7 +33776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAlphaNum12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAlphaNum12", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAlphaNum12", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33808,7 +33808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAlphaNum12");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33840,7 +33840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33872,7 +33872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePrice", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePrice", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33904,7 +33904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePrice");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePrice", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePrice", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33936,7 +33936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePrice");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiabilities", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiabilities", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -33968,7 +33968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiabilities");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiabilities", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiabilities", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34000,7 +34000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiabilities");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeThresholdIndexes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeThresholdIndexes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34032,7 +34032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeThresholdIndexes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeThresholdIndexes", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeThresholdIndexes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34064,7 +34064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeThresholdIndexes");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34096,7 +34096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34128,7 +34128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSigner", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSigner", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34160,7 +34160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSigner");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSigner", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSigner", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34192,7 +34192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSigner");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34224,7 +34224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34256,7 +34256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSponsorshipDescriptor", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSponsorshipDescriptor", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34288,7 +34288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSponsorshipDescriptor");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSponsorshipDescriptor", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSponsorshipDescriptor", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34320,7 +34320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSponsorshipDescriptor");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34352,7 +34352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34384,7 +34384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34416,7 +34416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34448,7 +34448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34480,7 +34480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34512,7 +34512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34544,7 +34544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34576,7 +34576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34608,7 +34608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34640,7 +34640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34672,7 +34672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34704,7 +34704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34736,7 +34736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34768,7 +34768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34800,7 +34800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineEntryExtensionV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineEntryExtensionV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34832,7 +34832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineEntryExtensionV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTrustLineEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTrustLineEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34864,7 +34864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTrustLineEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTrustLineEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTrustLineEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34896,7 +34896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTrustLineEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOfferEntryFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOfferEntryFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34928,7 +34928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOfferEntryFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOfferEntryFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOfferEntryFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34960,7 +34960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOfferEntryFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOfferEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOfferEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -34992,7 +34992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOfferEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOfferEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOfferEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35024,7 +35024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOfferEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35056,7 +35056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35088,7 +35088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimPredicateType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimPredicateType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35120,7 +35120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimPredicateType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimPredicateType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimPredicateType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35152,7 +35152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimPredicateType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimPredicate", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimPredicate", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35184,7 +35184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimPredicate");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimPredicate", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimPredicate", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35216,7 +35216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimPredicate");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimantType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimantType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35248,7 +35248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimantType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimantType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimantType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35280,7 +35280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimantType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimant", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimant", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35312,7 +35312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimant");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimant", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimant", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35344,7 +35344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimant");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceIDType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceIDType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35376,7 +35376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceIDType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceIDType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceIDType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35408,7 +35408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceIDType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35440,7 +35440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35472,7 +35472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35504,7 +35504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35536,7 +35536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35568,7 +35568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35600,7 +35600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimableBalanceEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimableBalanceEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35632,7 +35632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimableBalanceEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimableBalanceEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimableBalanceEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35664,7 +35664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimableBalanceEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolConstantProductParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolConstantProductParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35696,7 +35696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolConstantProductParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolConstantProductParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolConstantProductParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35728,7 +35728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolConstantProductParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35760,7 +35760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35792,7 +35792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractDataDurability", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractDataDurability", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35824,7 +35824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractDataDurability");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractDataDurability", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractDataDurability", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35856,7 +35856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractDataDurability");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35888,7 +35888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractDataEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractDataEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35920,7 +35920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractDataEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCodeCostInputs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCodeCostInputs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35952,7 +35952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCodeCostInputs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCodeCostInputs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCodeCostInputs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -35984,7 +35984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCodeCostInputs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractCodeEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractCodeEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36016,7 +36016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractCodeEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractCodeEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractCodeEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36048,7 +36048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractCodeEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTTLEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTTLEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36080,7 +36080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTTLEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTTLEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTTLEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36112,7 +36112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTTLEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36144,7 +36144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36176,7 +36176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36208,7 +36208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36240,7 +36240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36272,7 +36272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36304,7 +36304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEnvelopeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEnvelopeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36336,7 +36336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEnvelopeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEnvelopeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEnvelopeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36368,7 +36368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEnvelopeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketListType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketListType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36400,7 +36400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketListType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketListType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketListType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36432,7 +36432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketListType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36464,7 +36464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36496,7 +36496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHotArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHotArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36528,7 +36528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHotArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHotArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHotArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36560,7 +36560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHotArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36592,7 +36592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBucketEntryType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBucketEntryType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36624,7 +36624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBucketEntryType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketMetadata", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketMetadata", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36656,7 +36656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketMetadata");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketMetadata", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketMetadata", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36688,7 +36688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketMetadata");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36720,7 +36720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36752,7 +36752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHotArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHotArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36784,7 +36784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHotArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHotArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHotArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36816,7 +36816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHotArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveArchivedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveArchivedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36848,7 +36848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveArchivedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveArchivedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveArchivedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36880,7 +36880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveArchivedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveDeletedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveDeletedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36912,7 +36912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveDeletedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveDeletedLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveDeletedLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36944,7 +36944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveDeletedLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBoundaryLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBoundaryLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -36976,7 +36976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBoundaryLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBoundaryLeaf", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBoundaryLeaf", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37008,7 +37008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBoundaryLeaf");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveHashEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveHashEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37040,7 +37040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveHashEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveHashEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveHashEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37072,7 +37072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveHashEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeColdArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeColdArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37104,7 +37104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeColdArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeColdArchiveBucketEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeColdArchiveBucketEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37136,7 +37136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeColdArchiveBucketEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37168,7 +37168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37200,7 +37200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarValueType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarValueType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37232,7 +37232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarValueType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarValueType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarValueType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37264,7 +37264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarValueType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseValueSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseValueSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37296,7 +37296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseValueSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseValueSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseValueSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37328,7 +37328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseValueSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37360,7 +37360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37392,7 +37392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37424,7 +37424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderFlags", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderFlags", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37456,7 +37456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderFlags");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37488,7 +37488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderExtensionV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderExtensionV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37520,7 +37520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderExtensionV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeader", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeader", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37552,7 +37552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeader");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeader", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeader", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37584,7 +37584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeader");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37616,7 +37616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerUpgradeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerUpgradeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37648,7 +37648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerUpgradeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigUpgradeSetKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigUpgradeSetKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37680,7 +37680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigUpgradeSetKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigUpgradeSetKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigUpgradeSetKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37712,7 +37712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigUpgradeSetKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerUpgrade", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerUpgrade", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37744,7 +37744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerUpgrade");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerUpgrade", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerUpgrade", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37776,7 +37776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerUpgrade");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeConfigUpgradeSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeConfigUpgradeSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37808,7 +37808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeConfigUpgradeSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeConfigUpgradeSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeConfigUpgradeSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37840,7 +37840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeConfigUpgradeSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxSetComponentType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxSetComponentType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37872,7 +37872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxSetComponentType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxSetComponentType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxSetComponentType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37904,7 +37904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxSetComponentType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxSetComponent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxSetComponent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37936,7 +37936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxSetComponent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxSetComponent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxSetComponent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -37968,7 +37968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxSetComponent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionPhase", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionPhase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38000,7 +38000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionPhase");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionPhase", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionPhase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38032,7 +38032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionPhase");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38064,7 +38064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38096,7 +38096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSetV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSetV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38128,7 +38128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSetV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSetV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSetV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38160,7 +38160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSetV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeGeneralizedTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeGeneralizedTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38192,7 +38192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeGeneralizedTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeGeneralizedTransactionSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeGeneralizedTransactionSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38224,7 +38224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeGeneralizedTransactionSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38256,7 +38256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38288,7 +38288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38320,7 +38320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38352,7 +38352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38384,7 +38384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38416,7 +38416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionHistoryResultEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionHistoryResultEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38448,7 +38448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionHistoryResultEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionHistoryResultEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionHistoryResultEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38480,7 +38480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionHistoryResultEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerHeaderHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerHeaderHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38512,7 +38512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerHeaderHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerHeaderHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerHeaderHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38544,7 +38544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerHeaderHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerSCPMessages", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerSCPMessages", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38576,7 +38576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerSCPMessages");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerSCPMessages", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerSCPMessages", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38608,7 +38608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerSCPMessages");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPHistoryEntryV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPHistoryEntryV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38640,7 +38640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPHistoryEntryV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPHistoryEntryV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPHistoryEntryV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38672,7 +38672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPHistoryEntryV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38704,7 +38704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPHistoryEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPHistoryEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38736,7 +38736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPHistoryEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChangeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChangeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38768,7 +38768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChangeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChangeType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChangeType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38800,7 +38800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChangeType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChange", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChange", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38832,7 +38832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChange");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChange", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChange", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38864,7 +38864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChange");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerEntryChanges", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerEntryChanges", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38896,7 +38896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerEntryChanges");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerEntryChanges", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerEntryChanges", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38928,7 +38928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerEntryChanges");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38960,7 +38960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -38992,7 +38992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39024,7 +39024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39056,7 +39056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39088,7 +39088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39120,7 +39120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractEventType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractEventType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39152,7 +39152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractEventType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractEventType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractEventType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39184,7 +39184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractEventType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39216,7 +39216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39248,7 +39248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDiagnosticEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDiagnosticEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39280,7 +39280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDiagnosticEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDiagnosticEvent", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDiagnosticEvent", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39312,7 +39312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDiagnosticEvent");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDiagnosticEvents", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDiagnosticEvents", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39344,7 +39344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDiagnosticEvents");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDiagnosticEvents", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDiagnosticEvents", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39376,7 +39376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDiagnosticEvents");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39408,7 +39408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39440,7 +39440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39472,7 +39472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39504,7 +39504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39536,7 +39536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39568,7 +39568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMetaV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMetaV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39600,7 +39600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMetaV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMetaV3", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMetaV3", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39632,7 +39632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMetaV3");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39664,7 +39664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionSuccessPreImage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39696,7 +39696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionSuccessPreImage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39728,7 +39728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39760,7 +39760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39792,7 +39792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39824,7 +39824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeUpgradeEntryMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeUpgradeEntryMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39856,7 +39856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeUpgradeEntryMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeUpgradeEntryMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeUpgradeEntryMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39888,7 +39888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeUpgradeEntryMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39920,7 +39920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39952,7 +39952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -39984,7 +39984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaExtV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaExtV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40016,7 +40016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaExtV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40048,7 +40048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaExt", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaExt", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40080,7 +40080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaExt");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40112,7 +40112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMetaV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMetaV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40144,7 +40144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMetaV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerCloseMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerCloseMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40176,7 +40176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerCloseMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerCloseMeta", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerCloseMeta", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40208,7 +40208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerCloseMeta");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40240,7 +40240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeErrorCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeErrorCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40272,7 +40272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeErrorCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40304,7 +40304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeError", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeError", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40336,7 +40336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeError");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSendMore", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSendMore", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40368,7 +40368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSendMore");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSendMore", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSendMore", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40400,7 +40400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSendMore");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSendMoreExtended", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSendMoreExtended", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40432,7 +40432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSendMoreExtended");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSendMoreExtended", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSendMoreExtended", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40464,7 +40464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSendMoreExtended");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuthCert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuthCert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40496,7 +40496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuthCert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuthCert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuthCert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40528,7 +40528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuthCert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHello", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHello", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40560,7 +40560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHello");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHello", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHello", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40592,7 +40592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHello");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuth", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuth", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40624,7 +40624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuth");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuth", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuth", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40656,7 +40656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuth");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeIPAddrType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeIPAddrType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40688,7 +40688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeIPAddrType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeIPAddrType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeIPAddrType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40720,7 +40720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeIPAddrType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40752,7 +40752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerAddress", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40784,7 +40784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerAddress");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMessageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMessageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40816,7 +40816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMessageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMessageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMessageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40848,7 +40848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMessageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDontHave", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDontHave", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40880,7 +40880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDontHave");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDontHave", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDontHave", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40912,7 +40912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDontHave");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyMessageCommandType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyMessageCommandType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40944,7 +40944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyMessageCommandType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyMessageCommandType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyMessageCommandType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -40976,7 +40976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyMessageCommandType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyMessageResponseType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyMessageResponseType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41008,7 +41008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyMessageResponseType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyMessageResponseType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyMessageResponseType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41040,7 +41040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyMessageResponseType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41072,7 +41072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41104,7 +41104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41136,7 +41136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41168,7 +41168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyStartCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41200,7 +41200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41232,7 +41232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41264,7 +41264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41296,7 +41296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyStopCollectingMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41328,7 +41328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41360,7 +41360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41392,7 +41392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41424,7 +41424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41456,7 +41456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41488,7 +41488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41520,7 +41520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41552,7 +41552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyRequestMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEncryptedBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEncryptedBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41584,7 +41584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEncryptedBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEncryptedBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEncryptedBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41616,7 +41616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEncryptedBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41648,7 +41648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41680,7 +41680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41712,7 +41712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41744,7 +41744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41776,7 +41776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41808,7 +41808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41840,7 +41840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignedTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41872,7 +41872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignedTimeSlicedSurveyResponseMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerStats", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerStats", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41904,7 +41904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerStats");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerStats", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerStats", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41936,7 +41936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerStats");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePeerStatList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePeerStatList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -41968,7 +41968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePeerStatList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePeerStatList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePeerStatList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42000,7 +42000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePeerStatList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedNodeData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedNodeData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42032,7 +42032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedNodeData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedNodeData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedNodeData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42064,7 +42064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedNodeData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedPeerData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedPeerData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42096,7 +42096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedPeerData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedPeerData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedPeerData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42128,7 +42128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedPeerData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeSlicedPeerDataList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeSlicedPeerDataList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42160,7 +42160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeSlicedPeerDataList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeSlicedPeerDataList", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeSlicedPeerDataList", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42192,7 +42192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeSlicedPeerDataList");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42224,7 +42224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42256,7 +42256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42288,7 +42288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV1", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV1", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42320,7 +42320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV1");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTopologyResponseBodyV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTopologyResponseBodyV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42352,7 +42352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTopologyResponseBodyV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTopologyResponseBodyV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTopologyResponseBodyV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42384,7 +42384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTopologyResponseBodyV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSurveyResponseBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSurveyResponseBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42416,7 +42416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSurveyResponseBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSurveyResponseBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSurveyResponseBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42448,7 +42448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSurveyResponseBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxAdvertVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxAdvertVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42480,7 +42480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxAdvertVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxAdvertVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxAdvertVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42512,7 +42512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxAdvertVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFloodAdvert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFloodAdvert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42544,7 +42544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFloodAdvert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFloodAdvert", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFloodAdvert", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42576,7 +42576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFloodAdvert");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTxDemandVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTxDemandVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42608,7 +42608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTxDemandVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTxDemandVector", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTxDemandVector", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42640,7 +42640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTxDemandVector");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFloodDemand", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFloodDemand", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42672,7 +42672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFloodDemand");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFloodDemand", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFloodDemand", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42704,7 +42704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFloodDemand");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeStellarMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeStellarMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42736,7 +42736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeStellarMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeStellarMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeStellarMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42768,7 +42768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeStellarMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAuthenticatedMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAuthenticatedMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42800,7 +42800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAuthenticatedMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAuthenticatedMessage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAuthenticatedMessage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42832,7 +42832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAuthenticatedMessage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42864,7 +42864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeValue", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeValue", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42896,7 +42896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeValue");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPBallot", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPBallot", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42928,7 +42928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPBallot");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPBallot", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPBallot", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42960,7 +42960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPBallot");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPStatementType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPStatementType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -42992,7 +42992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPStatementType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPStatementType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPStatementType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43024,7 +43024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPStatementType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPNomination", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPNomination", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43056,7 +43056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPNomination");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPNomination", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPNomination", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43088,7 +43088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPNomination");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPStatement", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPStatement", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43120,7 +43120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPStatement");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPStatement", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPStatement", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43152,7 +43152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPStatement");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43184,7 +43184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43216,7 +43216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSCPQuorumSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSCPQuorumSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43248,7 +43248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSCPQuorumSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSCPQuorumSet", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSCPQuorumSet", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43280,7 +43280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSCPQuorumSet");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43312,7 +43312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolParameters", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolParameters", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43344,7 +43344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolParameters");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMuxedAccount", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMuxedAccount", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43376,7 +43376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMuxedAccount");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMuxedAccount", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMuxedAccount", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43408,7 +43408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMuxedAccount");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDecoratedSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDecoratedSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43440,7 +43440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDecoratedSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDecoratedSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDecoratedSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43472,7 +43472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDecoratedSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43504,7 +43504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43536,7 +43536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43568,7 +43568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43600,7 +43600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43632,7 +43632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43664,7 +43664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43696,7 +43696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43728,7 +43728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43760,7 +43760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43792,7 +43792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43824,7 +43824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43856,7 +43856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43888,7 +43888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43920,7 +43920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreatePassiveSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreatePassiveSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43952,7 +43952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreatePassiveSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreatePassiveSellOfferOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreatePassiveSellOfferOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -43984,7 +43984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreatePassiveSellOfferOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44016,7 +44016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44048,7 +44048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44080,7 +44080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustAsset", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustAsset", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44112,7 +44112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustAsset");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44144,7 +44144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44176,7 +44176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44208,7 +44208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44240,7 +44240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44272,7 +44272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44304,7 +44304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44336,7 +44336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44368,7 +44368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44400,7 +44400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44432,7 +44432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44464,7 +44464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44496,7 +44496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44528,7 +44528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44560,7 +44560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44592,7 +44592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44624,7 +44624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44656,7 +44656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44688,7 +44688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44720,7 +44720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44752,7 +44752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44784,7 +44784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44816,7 +44816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44848,7 +44848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44880,7 +44880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44912,7 +44912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44944,7 +44944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -44976,7 +44976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45008,7 +45008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHostFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHostFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45040,7 +45040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHostFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHostFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHostFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45072,7 +45072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHostFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractIDPreimageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractIDPreimageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45104,7 +45104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractIDPreimageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractIDPreimageType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractIDPreimageType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45136,7 +45136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractIDPreimageType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeContractIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeContractIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45168,7 +45168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeContractIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeContractIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeContractIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45200,7 +45200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeContractIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45232,7 +45232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45264,7 +45264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateContractArgsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateContractArgsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45296,7 +45296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateContractArgsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateContractArgsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateContractArgsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45328,7 +45328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateContractArgsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45360,7 +45360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeContractArgs", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeContractArgs", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45392,7 +45392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeContractArgs");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHostFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHostFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45424,7 +45424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHostFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHostFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHostFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45456,7 +45456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHostFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45488,7 +45488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedFunctionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedFunctionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45520,7 +45520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedFunctionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45552,7 +45552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedFunction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedFunction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45584,7 +45584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedFunction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizedInvocation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizedInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45616,7 +45616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizedInvocation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizedInvocation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizedInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45648,7 +45648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizedInvocation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAddressCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAddressCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45680,7 +45680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAddressCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAddressCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAddressCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45712,7 +45712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAddressCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanCredentialsType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanCredentialsType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45744,7 +45744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanCredentialsType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanCredentialsType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanCredentialsType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45776,7 +45776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanCredentialsType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45808,7 +45808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanCredentials", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanCredentials", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45840,7 +45840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanCredentials");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanAuthorizationEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanAuthorizationEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45872,7 +45872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanAuthorizationEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanAuthorizationEntry", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanAuthorizationEntry", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45904,7 +45904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanAuthorizationEntry");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45936,7 +45936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -45968,7 +45968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46000,7 +46000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46032,7 +46032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46064,7 +46064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintOp", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintOp", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46096,7 +46096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintOp");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46128,7 +46128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperation", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46160,7 +46160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperation");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHashIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHashIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46192,7 +46192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHashIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHashIDPreimage", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHashIDPreimage", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46224,7 +46224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHashIDPreimage");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMemoType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMemoType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46256,7 +46256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMemoType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMemoType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMemoType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46288,7 +46288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMemoType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeMemo", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeMemo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46320,7 +46320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeMemo");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeMemo", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeMemo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46352,7 +46352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeMemo");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimeBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimeBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46384,7 +46384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimeBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimeBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimeBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46416,7 +46416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimeBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46448,7 +46448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerBounds", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerBounds", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46480,7 +46480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerBounds");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditionsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditionsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46512,7 +46512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditionsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditionsV2", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditionsV2", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46544,7 +46544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditionsV2");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46576,7 +46576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditionType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditionType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46608,7 +46608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditionType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePreconditions", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePreconditions", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46640,7 +46640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePreconditions");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePreconditions", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePreconditions", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46672,7 +46672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePreconditions");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLedgerFootprint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLedgerFootprint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46704,7 +46704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLedgerFootprint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLedgerFootprint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLedgerFootprint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46736,7 +46736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLedgerFootprint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProofType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProofType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46768,7 +46768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProofType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProofType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProofType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46800,7 +46800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProofType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProofNode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProofNode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46832,7 +46832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProofNode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProofNode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProofNode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46864,7 +46864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProofNode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeProofLevel", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeProofLevel", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46896,7 +46896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeProofLevel");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeProofLevel", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeProofLevel", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46928,7 +46928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeProofLevel");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeNonexistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeNonexistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46960,7 +46960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeNonexistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeNonexistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeNonexistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -46992,7 +46992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeNonexistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47024,7 +47024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExistenceProofBody", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExistenceProofBody", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47056,7 +47056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExistenceProofBody");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeArchivalProof", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeArchivalProof", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47088,7 +47088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeArchivalProof");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeArchivalProof", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeArchivalProof", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47120,7 +47120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeArchivalProof");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanResources", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanResources", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47152,7 +47152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanResources");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanResources", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanResources", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47184,7 +47184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanResources");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSorobanTransactionData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSorobanTransactionData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47216,7 +47216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSorobanTransactionData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSorobanTransactionData", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSorobanTransactionData", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47248,7 +47248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSorobanTransactionData");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47280,7 +47280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47312,7 +47312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV0Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV0Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47344,7 +47344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV0Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV0Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV0Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47376,7 +47376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV0Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47408,7 +47408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47440,7 +47440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionV1Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionV1Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47472,7 +47472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionV1Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionV1Envelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionV1Envelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47504,7 +47504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionV1Envelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFeeBumpTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFeeBumpTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47536,7 +47536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFeeBumpTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFeeBumpTransaction", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFeeBumpTransaction", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47568,7 +47568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFeeBumpTransaction");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeFeeBumpTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeFeeBumpTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47600,7 +47600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeFeeBumpTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeFeeBumpTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeFeeBumpTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47632,7 +47632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeFeeBumpTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47664,7 +47664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionEnvelope", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionEnvelope", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47696,7 +47696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionEnvelope");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionSignaturePayload", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionSignaturePayload", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47728,7 +47728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionSignaturePayload");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionSignaturePayload", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionSignaturePayload", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47760,7 +47760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionSignaturePayload");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimAtomType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimAtomType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47792,7 +47792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimAtomType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimAtomType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimAtomType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47824,7 +47824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimAtomType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimOfferAtomV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimOfferAtomV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47856,7 +47856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimOfferAtomV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimOfferAtomV0", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimOfferAtomV0", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47888,7 +47888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimOfferAtomV0");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimOfferAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimOfferAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47920,7 +47920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimOfferAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimOfferAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimOfferAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47952,7 +47952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimOfferAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimLiquidityAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimLiquidityAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -47984,7 +47984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimLiquidityAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimLiquidityAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimLiquidityAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48016,7 +48016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimLiquidityAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48048,7 +48048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimAtom", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimAtom", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48080,7 +48080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimAtom");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48112,7 +48112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48144,7 +48144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateAccountResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateAccountResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48176,7 +48176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateAccountResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateAccountResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateAccountResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48208,7 +48208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateAccountResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48240,7 +48240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48272,7 +48272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48304,7 +48304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48336,7 +48336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48368,7 +48368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48400,7 +48400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSimplePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSimplePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48432,7 +48432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSimplePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSimplePaymentResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSimplePaymentResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48464,7 +48464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSimplePaymentResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictReceiveResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictReceiveResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48496,7 +48496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictReceiveResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictReceiveResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictReceiveResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48528,7 +48528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictReceiveResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48560,7 +48560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48592,7 +48592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePathPaymentStrictSendResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePathPaymentStrictSendResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48624,7 +48624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePathPaymentStrictSendResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePathPaymentStrictSendResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePathPaymentStrictSendResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48656,7 +48656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePathPaymentStrictSendResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48688,7 +48688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48720,7 +48720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageOfferEffect", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageOfferEffect", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48752,7 +48752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageOfferEffect");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageOfferEffect", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageOfferEffect", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48784,7 +48784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageOfferEffect");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageOfferSuccessResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageOfferSuccessResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48816,7 +48816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageOfferSuccessResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageOfferSuccessResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageOfferSuccessResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48848,7 +48848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageOfferSuccessResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageSellOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageSellOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48880,7 +48880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageSellOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageSellOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageSellOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48912,7 +48912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageSellOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48944,7 +48944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -48976,7 +48976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageBuyOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageBuyOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49008,7 +49008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageBuyOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageBuyOfferResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageBuyOfferResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49040,7 +49040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageBuyOfferResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49072,7 +49072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49104,7 +49104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetOptionsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetOptionsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49136,7 +49136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetOptionsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetOptionsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetOptionsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49168,7 +49168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetOptionsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49200,7 +49200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49232,7 +49232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeChangeTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeChangeTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49264,7 +49264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeChangeTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeChangeTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeChangeTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49296,7 +49296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeChangeTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49328,7 +49328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49360,7 +49360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAllowTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAllowTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49392,7 +49392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAllowTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAllowTrustResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAllowTrustResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49424,7 +49424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAllowTrustResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountMergeResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountMergeResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49456,7 +49456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountMergeResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountMergeResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountMergeResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49488,7 +49488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountMergeResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountMergeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountMergeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49520,7 +49520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountMergeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountMergeResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountMergeResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49552,7 +49552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountMergeResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49584,7 +49584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49616,7 +49616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationPayout", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationPayout", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49648,7 +49648,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationPayout");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationPayout", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationPayout", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49680,7 +49680,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationPayout");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInflationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInflationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49712,7 +49712,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInflationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInflationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInflationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49744,7 +49744,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInflationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49776,7 +49776,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49808,7 +49808,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeManageDataResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeManageDataResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49840,7 +49840,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeManageDataResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeManageDataResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeManageDataResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49872,7 +49872,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeManageDataResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49904,7 +49904,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49936,7 +49936,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBumpSequenceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBumpSequenceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -49968,7 +49968,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBumpSequenceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBumpSequenceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBumpSequenceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50000,7 +50000,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBumpSequenceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50032,7 +50032,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50064,7 +50064,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCreateClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCreateClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50096,7 +50096,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCreateClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCreateClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCreateClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50128,7 +50128,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCreateClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50160,7 +50160,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50192,7 +50192,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClaimClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClaimClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50224,7 +50224,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClaimClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClaimClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClaimClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50256,7 +50256,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClaimClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50288,7 +50288,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50320,7 +50320,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBeginSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBeginSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50352,7 +50352,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBeginSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBeginSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBeginSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50384,7 +50384,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBeginSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEndSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEndSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50416,7 +50416,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEndSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEndSponsoringFutureReservesResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEndSponsoringFutureReservesResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50448,7 +50448,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEndSponsoringFutureReservesResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeEndSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeEndSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50480,7 +50480,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeEndSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeEndSponsoringFutureReservesResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeEndSponsoringFutureReservesResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50512,7 +50512,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeEndSponsoringFutureReservesResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50544,7 +50544,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50576,7 +50576,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRevokeSponsorshipResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRevokeSponsorshipResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50608,7 +50608,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRevokeSponsorshipResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRevokeSponsorshipResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRevokeSponsorshipResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50640,7 +50640,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRevokeSponsorshipResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50672,7 +50672,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50704,7 +50704,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50736,7 +50736,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50768,7 +50768,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50800,7 +50800,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50832,7 +50832,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeClawbackClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeClawbackClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50864,7 +50864,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeClawbackClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeClawbackClaimableBalanceResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeClawbackClaimableBalanceResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50896,7 +50896,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeClawbackClaimableBalanceResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50928,7 +50928,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50960,7 +50960,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSetTrustLineFlagsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSetTrustLineFlagsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -50992,7 +50992,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSetTrustLineFlagsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSetTrustLineFlagsResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSetTrustLineFlagsResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51024,7 +51024,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSetTrustLineFlagsResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51056,7 +51056,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51088,7 +51088,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolDepositResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolDepositResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51120,7 +51120,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolDepositResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolDepositResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolDepositResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51152,7 +51152,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolDepositResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51184,7 +51184,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51216,7 +51216,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeLiquidityPoolWithdrawResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeLiquidityPoolWithdrawResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51248,7 +51248,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeLiquidityPoolWithdrawResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeLiquidityPoolWithdrawResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeLiquidityPoolWithdrawResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51280,7 +51280,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeLiquidityPoolWithdrawResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51312,7 +51312,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51344,7 +51344,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInvokeHostFunctionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInvokeHostFunctionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51376,7 +51376,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInvokeHostFunctionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInvokeHostFunctionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInvokeHostFunctionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51408,7 +51408,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInvokeHostFunctionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51440,7 +51440,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51472,7 +51472,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtendFootprintTTLResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtendFootprintTTLResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51504,7 +51504,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtendFootprintTTLResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtendFootprintTTLResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtendFootprintTTLResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51536,7 +51536,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtendFootprintTTLResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51568,7 +51568,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51600,7 +51600,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeRestoreFootprintResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeRestoreFootprintResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51632,7 +51632,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeRestoreFootprintResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeRestoreFootprintResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeRestoreFootprintResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51664,7 +51664,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeRestoreFootprintResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51696,7 +51696,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51728,7 +51728,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeOperationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeOperationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51760,7 +51760,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeOperationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeOperationResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeOperationResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51792,7 +51792,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeOperationResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51824,7 +51824,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResultCode", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResultCode", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51856,7 +51856,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResultCode");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInnerTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInnerTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51888,7 +51888,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInnerTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInnerTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInnerTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51920,7 +51920,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInnerTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeInnerTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeInnerTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51952,7 +51952,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeInnerTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeInnerTransactionResultPair", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeInnerTransactionResultPair", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -51984,7 +51984,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeInnerTransactionResultPair");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52016,7 +52016,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTransactionResult", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTransactionResult", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52048,7 +52048,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTransactionResult");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHash", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHash", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52080,7 +52080,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHash");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHash", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHash", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52112,7 +52112,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHash");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint256", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint256", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52144,7 +52144,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint256");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint256", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint256", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52176,7 +52176,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint256");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52208,7 +52208,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52240,7 +52240,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52272,7 +52272,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeint32", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeint32", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52304,7 +52304,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeint32");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeuint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeuint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52336,7 +52336,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeuint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeuint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeuint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52368,7 +52368,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeuint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Encodeint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Encodeint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52400,7 +52400,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Encodeint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Decodeint64", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/Decodeint64", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52432,7 +52432,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/Decodeint64");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeTimePoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeTimePoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52464,7 +52464,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeTimePoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeTimePoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeTimePoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52496,7 +52496,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeTimePoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeDuration", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeDuration", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52528,7 +52528,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeDuration");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeDuration", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeDuration", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52560,7 +52560,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeDuration");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeExtensionPoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeExtensionPoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52592,7 +52592,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeExtensionPoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeExtensionPoint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeExtensionPoint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52624,7 +52624,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeExtensionPoint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCryptoKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCryptoKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52656,7 +52656,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCryptoKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCryptoKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCryptoKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52688,7 +52688,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCryptoKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePublicKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePublicKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52720,7 +52720,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePublicKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePublicKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePublicKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52752,7 +52752,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePublicKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignerKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignerKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52784,7 +52784,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignerKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignerKeyType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignerKeyType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52816,7 +52816,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignerKeyType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodePublicKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodePublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52848,7 +52848,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodePublicKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodePublicKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodePublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52880,7 +52880,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodePublicKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52912,7 +52912,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignerKey", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignerKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52944,7 +52944,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignerKey");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -52976,7 +52976,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignature", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignature", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53008,7 +53008,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignature");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSignatureHint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSignatureHint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53040,7 +53040,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSignatureHint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSignatureHint", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSignatureHint", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53072,7 +53072,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSignatureHint");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeNodeID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeNodeID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53104,7 +53104,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeNodeID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeNodeID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeNodeID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53136,7 +53136,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeNodeID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeAccountID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeAccountID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53168,7 +53168,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeAccountID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeAccountID", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeAccountID", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53200,7 +53200,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeAccountID");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCurve25519Secret", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCurve25519Secret", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53232,7 +53232,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCurve25519Secret");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCurve25519Secret", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCurve25519Secret", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53264,7 +53264,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCurve25519Secret");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeCurve25519Public", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeCurve25519Public", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53296,7 +53296,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeCurve25519Public");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeCurve25519Public", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeCurve25519Public", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53328,7 +53328,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeCurve25519Public");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHmacSha256Key", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHmacSha256Key", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53360,7 +53360,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHmacSha256Key");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHmacSha256Key", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHmacSha256Key", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53392,7 +53392,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHmacSha256Key");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeHmacSha256Mac", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeHmacSha256Mac", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53424,7 +53424,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeHmacSha256Mac");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeHmacSha256Mac", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeHmacSha256Mac", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53456,7 +53456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeHmacSha256Mac");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeShortHashSeed", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeShortHashSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53488,7 +53488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeShortHashSeed");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeShortHashSeed", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeShortHashSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53520,7 +53520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeShortHashSeed");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeBinaryFuseFilterType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeBinaryFuseFilterType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53552,7 +53552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeBinaryFuseFilterType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeBinaryFuseFilterType", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeBinaryFuseFilterType", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53584,7 +53584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeBinaryFuseFilterType");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/EncodeSerializedBinaryFuseFilter", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/EncodeSerializedBinaryFuseFilter", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53616,7 +53616,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/EncodeSerializedBinaryFuseFilter");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/DecodeSerializedBinaryFuseFilter", async context =>
+            endpoints.MapPost("/Stellar.XdrProtoService/DecodeSerializedBinaryFuseFilter", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53648,41 +53648,9 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in XdrProtoService/DecodeSerializedBinaryFuseFilter");
                 }
             });
-            endpoints.MapPost("/XdrProtoService/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<XdrProtoServiceGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<XdrProtoServiceGrpcService>>();
-                    logger?.LogError(ex, "Error in XdrProtoService/Equals");
-                }
-            });
 
             // Map MuxedAccount_ProtoWrapper methods
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetPublicKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetPublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53714,7 +53682,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetPublicKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetPrivateKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetPrivateKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53746,7 +53714,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetPrivateKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetSeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetSeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53778,7 +53746,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetSeedBytes");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetSecretSeed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetSecretSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53810,7 +53778,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetSecretSeed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetAccountId", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetAccountId", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53842,7 +53810,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetAccountId");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/GetAddress", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/GetAddress", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53874,7 +53842,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/GetAddress");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CanSign", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CanSign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53906,7 +53874,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CanSign");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/Sign", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Sign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53938,7 +53906,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Sign");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/Verify", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/Verify", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -53970,7 +53938,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Verify");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54002,7 +53970,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CreateKeyTypeEd25519");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54034,7 +54002,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/CreateKeyTypeMuxedEd25519");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromSecretSeed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromSecretSeed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54066,7 +54034,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromSecretSeed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromSecretSeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromSecretSeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54098,7 +54066,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromSecretSeedBytes");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromAccountId", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromAccountId", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54130,7 +54098,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromAccountId");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromPublicKey", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromPublicKey", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54162,7 +54130,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromPublicKey");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromBIP39Seed", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromBIP39Seed", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54194,7 +54162,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromBIP39Seed");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/FromBIP39SeedBytes", async context =>
+            endpoints.MapPost("/Stellar.MuxedAccount_ProtoWrapper/FromBIP39SeedBytes", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54226,41 +54194,9 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/FromBIP39SeedBytes");
                 }
             });
-            endpoints.MapPost("/MuxedAccount_ProtoWrapper/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<MuxedAccount_ProtoWrapperGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<MuxedAccount_ProtoWrapperGrpcService>>();
-                    logger?.LogError(ex, "Error in MuxedAccount_ProtoWrapper/Equals");
-                }
-            });
 
             // Map Network_ProtoWrapper methods
-            endpoints.MapPost("/Network_ProtoWrapper/Create", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/Create", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54292,7 +54228,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/Create");
                 }
             });
-            endpoints.MapPost("/Network_ProtoWrapper/GetNetworkPassphrase", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/GetNetworkPassphrase", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54324,7 +54260,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/GetNetworkPassphrase");
                 }
             });
-            endpoints.MapPost("/Network_ProtoWrapper/IsPublicNetwork", async context =>
+            endpoints.MapPost("/Stellar.Network_ProtoWrapper/IsPublicNetwork", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54356,41 +54292,9 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Network_ProtoWrapper/IsPublicNetwork");
                 }
             });
-            endpoints.MapPost("/Network_ProtoWrapper/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<Network_ProtoWrapperGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<Network_ProtoWrapperGrpcService>>();
-                    logger?.LogError(ex, "Error in Network_ProtoWrapper/Equals");
-                }
-            });
 
             // Map Transaction_ProtoWrapper methods
-            endpoints.MapPost("/Transaction_ProtoWrapper/Sign", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/Sign", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54422,7 +54326,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/Sign");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/Clone", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/Clone", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54454,7 +54358,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/Clone");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/IsSoroban", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/IsSoroban", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54486,7 +54390,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/IsSoroban");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/IsSorobanInvocation", async context =>
+            endpoints.MapPost("/Stellar.Transaction_ProtoWrapper/IsSorobanInvocation", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54518,41 +54422,9 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in Transaction_ProtoWrapper/IsSorobanInvocation");
                 }
             });
-            endpoints.MapPost("/Transaction_ProtoWrapper/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<Transaction_ProtoWrapperGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<Transaction_ProtoWrapperGrpcService>>();
-                    logger?.LogError(ex, "Error in Transaction_ProtoWrapper/Equals");
-                }
-            });
 
             // Map StellarRPCClient methods
-            endpoints.MapPost("/StellarRPCClient/GetEventsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetEventsAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54584,7 +54456,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetEventsAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetLedgerEntriesAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetLedgerEntriesAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54616,7 +54488,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetLedgerEntriesAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54648,7 +54520,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/GetTransactionsAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/GetTransactionsAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54680,7 +54552,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/GetTransactionsAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/SendTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SendTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54712,7 +54584,7 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/SendTransactionAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/SimulateTransactionAsync", async context =>
+            endpoints.MapPost("/Stellar.RPC.StellarRPCClient/SimulateTransactionAsync", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54744,41 +54616,9 @@ namespace Stellar.RPC.AOT
                     logger?.LogError(ex, "Error in StellarRPCClient/SimulateTransactionAsync");
                 }
             });
-            endpoints.MapPost("/StellarRPCClient/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<StellarRPCClientGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<StellarRPCClientGrpcService>>();
-                    logger?.LogError(ex, "Error in StellarRPCClient/Equals");
-                }
-            });
 
             // Map SimulateTransactionResult_ProtoWrapper methods
-            endpoints.MapPost("/SimulateTransactionResult_ProtoWrapper/ApplyTo", async context =>
+            endpoints.MapPost("/Stellar.RPC.SimulateTransactionResult_ProtoWrapper/ApplyTo", async context =>
             {
                 var service = context.RequestServices.GetRequiredService<SimulateTransactionResult_ProtoWrapperGrpcService>();
                 var serverCallContext = CreateServerCallContext(context);
@@ -54808,38 +54648,6 @@ namespace Stellar.RPC.AOT
                     context.Response.Headers.Add("grpc-message", ex.Message);
                     var logger = context.RequestServices.GetService<ILogger<SimulateTransactionResult_ProtoWrapperGrpcService>>();
                     logger?.LogError(ex, "Error in SimulateTransactionResult_ProtoWrapper/ApplyTo");
-                }
-            });
-            endpoints.MapPost("/SimulateTransactionResult_ProtoWrapper/Equals", async context =>
-            {
-                var service = context.RequestServices.GetRequiredService<SimulateTransactionResult_ProtoWrapperGrpcService>();
-                var serverCallContext = CreateServerCallContext(context);
-                try
-                {
-                    // Read and deserialize request
-                    using var ms = new MemoryStream();
-                    await context.Request.Body.CopyToAsync(ms);
-                    ms.Position = 0;
-                    var request = Serializer.Deserialize<System.Object>(ms);
-
-                    // Call service method
-                    var response = await service.Equals(request, serverCallContext);
-
-                    // Serialize and send response
-                    context.Response.ContentType = "application/grpc";
-                    context.Response.Headers.Add("grpc-status", "0");
-                    using var responseMs = new MemoryStream();
-                    Serializer.Serialize(responseMs, response);
-                    responseMs.Position = 0;
-                    await responseMs.CopyToAsync(context.Response.Body);
-                }
-                catch (Exception ex)
-                {
-                    context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    context.Response.Headers.Add("grpc-status", "2");
-                    context.Response.Headers.Add("grpc-message", ex.Message);
-                    var logger = context.RequestServices.GetService<ILogger<SimulateTransactionResult_ProtoWrapperGrpcService>>();
-                    logger?.LogError(ex, "Error in SimulateTransactionResult_ProtoWrapper/Equals");
                 }
             });
 

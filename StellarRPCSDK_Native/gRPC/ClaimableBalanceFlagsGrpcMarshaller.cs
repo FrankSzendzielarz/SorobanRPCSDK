@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimableBalanceFlags</summary>
+        /// <summary>Marshaller for Stellar.ClaimableBalanceFlags</summary>
         public static readonly Marshaller<Stellar.ClaimableBalanceFlags> ClaimableBalanceFlagsMarshaller = Marshallers.Create<Stellar.ClaimableBalanceFlags>(
             (message, serializationContext) =>
             {

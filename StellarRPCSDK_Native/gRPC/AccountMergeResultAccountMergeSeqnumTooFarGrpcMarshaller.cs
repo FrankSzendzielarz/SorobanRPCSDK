@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMergeSeqnumTooFar</summary>
-        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeSeqnumTooFar> AccountMergeSeqnumTooFarMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeSeqnumTooFar>(
+        /// <summary>Marshaller for Stellar.AccountMergeResult+AccountMergeSeqnumTooFar</summary>
+        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeSeqnumTooFar> AccountMergeResult_AccountMergeSeqnumTooFarMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeSeqnumTooFar>(
             (message, serializationContext) =>
             {
                 try

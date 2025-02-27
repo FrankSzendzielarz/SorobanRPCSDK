@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HostFunctionTypeCreateContract</summary>
-        public static readonly Marshaller<Stellar.HostFunction.HostFunctionTypeCreateContract> HostFunctionTypeCreateContractMarshaller = Marshallers.Create<Stellar.HostFunction.HostFunctionTypeCreateContract>(
+        /// <summary>Marshaller for Stellar.HostFunction+HostFunctionTypeCreateContract</summary>
+        public static readonly Marshaller<Stellar.HostFunction.HostFunctionTypeCreateContract> HostFunction_HostFunctionTypeCreateContractMarshaller = Marshallers.Create<Stellar.HostFunction.HostFunctionTypeCreateContract>(
             (message, serializationContext) =>
             {
                 try

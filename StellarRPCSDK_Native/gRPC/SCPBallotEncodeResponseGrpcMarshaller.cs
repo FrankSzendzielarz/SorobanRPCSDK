@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCPBallotEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SCPBallotEncodeResponse</summary>
         public static readonly Marshaller<Stellar.SCPBallotEncodeResponse> SCPBallotEncodeResponseMarshaller = Marshallers.Create<Stellar.SCPBallotEncodeResponse>(
             (message, serializationContext) =>
             {

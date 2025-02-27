@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for FloodAdvertDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.FloodAdvertDecodeRequest</summary>
         public static readonly Marshaller<Stellar.FloodAdvertDecodeRequest> FloodAdvertDecodeRequestMarshaller = Marshallers.Create<Stellar.FloodAdvertDecodeRequest>(
             (message, serializationContext) =>
             {

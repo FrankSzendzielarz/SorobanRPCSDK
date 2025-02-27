@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SorobanAuthorizedInvocationDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SorobanAuthorizedInvocationDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SorobanAuthorizedInvocationDecodeRequest> SorobanAuthorizedInvocationDecodeRequestMarshaller = Marshallers.Create<Stellar.SorobanAuthorizedInvocationDecodeRequest>(
             (message, serializationContext) =>
             {

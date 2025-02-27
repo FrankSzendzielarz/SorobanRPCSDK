@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCMetaKind</summary>
+        /// <summary>Marshaller for Stellar.SCMetaKind</summary>
         public static readonly Marshaller<Stellar.SCMetaKind> SCMetaKindMarshaller = Marshallers.Create<Stellar.SCMetaKind>(
             (message, serializationContext) =>
             {

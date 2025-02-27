@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScpQuorumset</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.ScpQuorumset> ScpQuorumsetMarshaller = Marshallers.Create<Stellar.StellarMessage.ScpQuorumset>(
+        /// <summary>Marshaller for Stellar.StellarMessage+ScpQuorumset</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.ScpQuorumset> StellarMessage_ScpQuorumsetMarshaller = Marshallers.Create<Stellar.StellarMessage.ScpQuorumset>(
             (message, serializationContext) =>
             {
                 try

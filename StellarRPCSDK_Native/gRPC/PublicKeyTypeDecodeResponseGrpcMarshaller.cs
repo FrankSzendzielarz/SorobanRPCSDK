@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PublicKeyTypeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.PublicKeyTypeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.PublicKeyTypeDecodeResponse> PublicKeyTypeDecodeResponseMarshaller = Marshallers.Create<Stellar.PublicKeyTypeDecodeResponse>(
             (message, serializationContext) =>
             {

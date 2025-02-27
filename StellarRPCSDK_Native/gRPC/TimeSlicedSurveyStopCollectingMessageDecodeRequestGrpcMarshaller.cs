@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimeSlicedSurveyStopCollectingMessageDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest</summary>
         public static readonly Marshaller<Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest> TimeSlicedSurveyStopCollectingMessageDecodeRequestMarshaller = Marshallers.Create<Stellar.TimeSlicedSurveyStopCollectingMessageDecodeRequest>(
             (message, serializationContext) =>
             {

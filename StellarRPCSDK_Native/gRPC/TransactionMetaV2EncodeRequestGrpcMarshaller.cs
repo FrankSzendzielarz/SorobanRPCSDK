@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionMetaV2EncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TransactionMetaV2EncodeRequest</summary>
         public static readonly Marshaller<Stellar.TransactionMetaV2EncodeRequest> TransactionMetaV2EncodeRequestMarshaller = Marshallers.Create<Stellar.TransactionMetaV2EncodeRequest>(
             (message, serializationContext) =>
             {

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for extUnion</summary>
-        public static readonly Marshaller<Stellar.AccountEntryExtensionV2.extUnion> extUnionMarshaller = Marshallers.Create<Stellar.AccountEntryExtensionV2.extUnion>(
+        /// <summary>Marshaller for Stellar.AccountEntryExtensionV2+extUnion</summary>
+        public static readonly Marshaller<Stellar.AccountEntryExtensionV2.extUnion> AccountEntryExtensionV2_extUnionMarshaller = Marshallers.Create<Stellar.AccountEntryExtensionV2.extUnion>(
             (message, serializationContext) =>
             {
                 try

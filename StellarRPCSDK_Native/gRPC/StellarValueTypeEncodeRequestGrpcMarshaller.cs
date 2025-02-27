@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for StellarValueTypeEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.StellarValueTypeEncodeRequest</summary>
         public static readonly Marshaller<Stellar.StellarValueTypeEncodeRequest> StellarValueTypeEncodeRequestMarshaller = Marshallers.Create<Stellar.StellarValueTypeEncodeRequest>(
             (message, serializationContext) =>
             {

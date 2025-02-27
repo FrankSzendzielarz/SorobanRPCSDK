@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ProofLevel</summary>
+        /// <summary>Marshaller for Stellar.ProofLevel</summary>
         public static readonly Marshaller<Stellar.ProofLevel> ProofLevelMarshaller = Marshallers.Create<Stellar.ProofLevel>(
             (message, serializationContext) =>
             {

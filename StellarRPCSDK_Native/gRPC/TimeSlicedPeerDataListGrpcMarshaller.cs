@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimeSlicedPeerDataList</summary>
+        /// <summary>Marshaller for Stellar.TimeSlicedPeerDataList</summary>
         public static readonly Marshaller<Stellar.TimeSlicedPeerDataList> TimeSlicedPeerDataListMarshaller = Marshallers.Create<Stellar.TimeSlicedPeerDataList>(
             (message, serializationContext) =>
             {

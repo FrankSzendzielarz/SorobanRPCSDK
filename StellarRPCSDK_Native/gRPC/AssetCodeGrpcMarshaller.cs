@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AssetCode</summary>
+        /// <summary>Marshaller for Stellar.AssetCode</summary>
         public static readonly Marshaller<Stellar.AssetCode> AssetCodeMarshaller = Marshallers.Create<Stellar.AssetCode>(
             (message, serializationContext) =>
             {

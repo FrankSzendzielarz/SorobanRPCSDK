@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for MemoTypeDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.MemoTypeDecodeResponse</summary>
         public static readonly Marshaller<Stellar.MemoTypeDecodeResponse> MemoTypeDecodeResponseMarshaller = Marshallers.Create<Stellar.MemoTypeDecodeResponse>(
             (message, serializationContext) =>
             {

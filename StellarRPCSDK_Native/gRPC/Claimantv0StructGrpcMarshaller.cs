@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for v0Struct</summary>
-        public static readonly Marshaller<Stellar.Claimant.v0Struct> v0StructMarshaller = Marshallers.Create<Stellar.Claimant.v0Struct>(
+        /// <summary>Marshaller for Stellar.Claimant+v0Struct</summary>
+        public static readonly Marshaller<Stellar.Claimant.v0Struct> Claimant_v0StructMarshaller = Marshallers.Create<Stellar.Claimant.v0Struct>(
             (message, serializationContext) =>
             {
                 try

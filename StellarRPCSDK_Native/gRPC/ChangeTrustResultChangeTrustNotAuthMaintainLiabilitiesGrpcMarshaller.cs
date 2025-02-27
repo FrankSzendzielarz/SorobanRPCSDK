@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustNotAuthMaintainLiabilities</summary>
-        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities> ChangeTrustNotAuthMaintainLiabilitiesMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities>(
+        /// <summary>Marshaller for Stellar.ChangeTrustResult+ChangeTrustNotAuthMaintainLiabilities</summary>
+        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities> ChangeTrustResult_ChangeTrustNotAuthMaintainLiabilitiesMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustNotAuthMaintainLiabilities>(
             (message, serializationContext) =>
             {
                 try

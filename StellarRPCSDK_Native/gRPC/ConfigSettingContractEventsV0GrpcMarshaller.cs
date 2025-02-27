@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractEventsV0</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingContractEventsV0</summary>
         public static readonly Marshaller<Stellar.ConfigSettingContractEventsV0> ConfigSettingContractEventsV0Marshaller = Marshallers.Create<Stellar.ConfigSettingContractEventsV0>(
             (message, serializationContext) =>
             {

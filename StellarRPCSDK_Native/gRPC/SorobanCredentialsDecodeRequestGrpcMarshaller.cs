@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SorobanCredentialsDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SorobanCredentialsDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SorobanCredentialsDecodeRequest> SorobanCredentialsDecodeRequestMarshaller = Marshallers.Create<Stellar.SorobanCredentialsDecodeRequest>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Trustline</summary>
-        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.Trustline> TrustlineMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.Trustline>(
+        /// <summary>Marshaller for Stellar.LedgerEntry+dataUnion+Trustline</summary>
+        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.Trustline> LedgerEntry_dataUnion_TrustlineMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.Trustline>(
             (message, serializationContext) =>
             {
                 try

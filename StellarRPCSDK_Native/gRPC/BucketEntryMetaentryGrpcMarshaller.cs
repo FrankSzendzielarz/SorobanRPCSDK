@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Metaentry</summary>
-        public static readonly Marshaller<Stellar.BucketEntry.Metaentry> MetaentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Metaentry>(
+        /// <summary>Marshaller for Stellar.BucketEntry+Metaentry</summary>
+        public static readonly Marshaller<Stellar.BucketEntry.Metaentry> BucketEntry_MetaentryMarshaller = Marshallers.Create<Stellar.BucketEntry.Metaentry>(
             (message, serializationContext) =>
             {
                 try

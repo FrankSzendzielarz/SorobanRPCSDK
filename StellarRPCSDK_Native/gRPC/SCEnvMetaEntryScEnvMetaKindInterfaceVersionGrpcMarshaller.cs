@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScEnvMetaKindInterfaceVersion</summary>
-        public static readonly Marshaller<Stellar.SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion> ScEnvMetaKindInterfaceVersionMarshaller = Marshallers.Create<Stellar.SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion>(
+        /// <summary>Marshaller for Stellar.SCEnvMetaEntry+ScEnvMetaKindInterfaceVersion</summary>
+        public static readonly Marshaller<Stellar.SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion> SCEnvMetaEntry_ScEnvMetaKindInterfaceVersionMarshaller = Marshallers.Create<Stellar.SCEnvMetaEntry.ScEnvMetaKindInterfaceVersion>(
             (message, serializationContext) =>
             {
                 try

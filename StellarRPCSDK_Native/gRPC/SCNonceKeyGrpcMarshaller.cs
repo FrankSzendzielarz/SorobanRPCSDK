@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCNonceKey</summary>
+        /// <summary>Marshaller for Stellar.SCNonceKey</summary>
         public static readonly Marshaller<Stellar.SCNonceKey> SCNonceKeyMarshaller = Marshallers.Create<Stellar.SCNonceKey>(
             (message, serializationContext) =>
             {

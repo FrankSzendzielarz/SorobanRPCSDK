@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackClaimableBalanceResultDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ClawbackClaimableBalanceResultDecodeRequest</summary>
         public static readonly Marshaller<Stellar.ClawbackClaimableBalanceResultDecodeRequest> ClawbackClaimableBalanceResultDecodeRequestMarshaller = Marshallers.Create<Stellar.ClawbackClaimableBalanceResultDecodeRequest>(
             (message, serializationContext) =>
             {

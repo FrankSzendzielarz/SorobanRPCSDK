@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CloneParam</summary>
-        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.CloneParam> CloneParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.CloneParam>(
+        /// <summary>Marshaller for Stellar.Transaction_ProtoWrapper+CloneParam</summary>
+        public static readonly Marshaller<Stellar.Transaction_ProtoWrapper.CloneParam> Transaction_ProtoWrapper_CloneParamMarshaller = Marshallers.Create<Stellar.Transaction_ProtoWrapper.CloneParam>(
             (message, serializationContext) =>
             {
                 try

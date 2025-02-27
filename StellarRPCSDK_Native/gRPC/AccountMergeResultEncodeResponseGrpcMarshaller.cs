@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMergeResultEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.AccountMergeResultEncodeResponse</summary>
         public static readonly Marshaller<Stellar.AccountMergeResultEncodeResponse> AccountMergeResultEncodeResponseMarshaller = Marshallers.Create<Stellar.AccountMergeResultEncodeResponse>(
             (message, serializationContext) =>
             {

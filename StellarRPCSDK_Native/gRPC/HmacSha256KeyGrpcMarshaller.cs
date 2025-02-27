@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HmacSha256Key</summary>
+        /// <summary>Marshaller for Stellar.HmacSha256Key</summary>
         public static readonly Marshaller<Stellar.HmacSha256Key> HmacSha256KeyMarshaller = Marshallers.Create<Stellar.HmacSha256Key>(
             (message, serializationContext) =>
             {

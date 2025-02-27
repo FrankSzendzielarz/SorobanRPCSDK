@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScpMessage</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.ScpMessage> ScpMessageMarshaller = Marshallers.Create<Stellar.StellarMessage.ScpMessage>(
+        /// <summary>Marshaller for Stellar.StellarMessage+ScpMessage</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.ScpMessage> StellarMessage_ScpMessageMarshaller = Marshallers.Create<Stellar.StellarMessage.ScpMessage>(
             (message, serializationContext) =>
             {
                 try

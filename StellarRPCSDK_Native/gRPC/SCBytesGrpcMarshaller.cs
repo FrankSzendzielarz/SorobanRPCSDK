@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCBytes</summary>
+        /// <summary>Marshaller for Stellar.SCBytes</summary>
         public static readonly Marshaller<Stellar.SCBytes> SCBytesMarshaller = Marshallers.Create<Stellar.SCBytes>(
             (message, serializationContext) =>
             {

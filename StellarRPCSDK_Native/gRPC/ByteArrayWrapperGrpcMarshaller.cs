@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ByteArrayWrapper</summary>
+        /// <summary>Marshaller for Stellar.ByteArrayWrapper</summary>
         public static readonly Marshaller<Stellar.ByteArrayWrapper> ByteArrayWrapperMarshaller = Marshallers.Create<Stellar.ByteArrayWrapper>(
             (message, serializationContext) =>
             {

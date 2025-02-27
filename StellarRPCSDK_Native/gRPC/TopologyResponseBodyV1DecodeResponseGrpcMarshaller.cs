@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TopologyResponseBodyV1DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.TopologyResponseBodyV1DecodeResponse</summary>
         public static readonly Marshaller<Stellar.TopologyResponseBodyV1DecodeResponse> TopologyResponseBodyV1DecodeResponseMarshaller = Marshallers.Create<Stellar.TopologyResponseBodyV1DecodeResponse>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PaymentNotAuthorized</summary>
-        public static readonly Marshaller<Stellar.PaymentResult.PaymentNotAuthorized> PaymentNotAuthorizedMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentNotAuthorized>(
+        /// <summary>Marshaller for Stellar.PaymentResult+PaymentNotAuthorized</summary>
+        public static readonly Marshaller<Stellar.PaymentResult.PaymentNotAuthorized> PaymentResult_PaymentNotAuthorizedMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentNotAuthorized>(
             (message, serializationContext) =>
             {
                 try

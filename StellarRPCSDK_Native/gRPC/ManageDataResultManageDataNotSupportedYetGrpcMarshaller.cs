@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataNotSupportedYet</summary>
-        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataNotSupportedYet> ManageDataNotSupportedYetMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataNotSupportedYet>(
+        /// <summary>Marshaller for Stellar.ManageDataResult+ManageDataNotSupportedYet</summary>
+        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataNotSupportedYet> ManageDataResult_ManageDataNotSupportedYetMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataNotSupportedYet>(
             (message, serializationContext) =>
             {
                 try

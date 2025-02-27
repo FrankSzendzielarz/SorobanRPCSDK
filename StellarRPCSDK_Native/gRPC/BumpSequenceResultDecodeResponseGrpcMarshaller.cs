@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BumpSequenceResultDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.BumpSequenceResultDecodeResponse</summary>
         public static readonly Marshaller<Stellar.BumpSequenceResultDecodeResponse> BumpSequenceResultDecodeResponseMarshaller = Marshallers.Create<Stellar.BumpSequenceResultDecodeResponse>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataInvalidName</summary>
-        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataInvalidName> ManageDataInvalidNameMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataInvalidName>(
+        /// <summary>Marshaller for Stellar.ManageDataResult+ManageDataInvalidName</summary>
+        public static readonly Marshaller<Stellar.ManageDataResult.ManageDataInvalidName> ManageDataResult_ManageDataInvalidNameMarshaller = Marshallers.Create<Stellar.ManageDataResult.ManageDataInvalidName>(
             (message, serializationContext) =>
             {
                 try

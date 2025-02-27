@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackUnderfunded</summary>
-        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackUnderfunded> ClawbackUnderfundedMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackUnderfunded>(
+        /// <summary>Marshaller for Stellar.ClawbackResult+ClawbackUnderfunded</summary>
+        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackUnderfunded> ClawbackResult_ClawbackUnderfundedMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackUnderfunded>(
             (message, serializationContext) =>
             {
                 try

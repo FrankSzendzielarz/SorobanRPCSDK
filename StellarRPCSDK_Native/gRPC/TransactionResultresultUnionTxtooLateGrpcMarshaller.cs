@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxtooLate</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxtooLate> TxtooLateMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxtooLate>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxtooLate</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxtooLate> TransactionResult_resultUnion_TxtooLateMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxtooLate>(
             (message, serializationContext) =>
             {
                 try

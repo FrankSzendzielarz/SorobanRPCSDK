@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxbadSponsorship</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxbadSponsorship> TxbadSponsorshipMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxbadSponsorship>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxbadSponsorship</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxbadSponsorship> TransactionResult_resultUnion_TxbadSponsorshipMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxbadSponsorship>(
             (message, serializationContext) =>
             {
                 try

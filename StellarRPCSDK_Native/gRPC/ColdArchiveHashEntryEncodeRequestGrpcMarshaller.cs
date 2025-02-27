@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveHashEntryEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ColdArchiveHashEntryEncodeRequest</summary>
         public static readonly Marshaller<Stellar.ColdArchiveHashEntryEncodeRequest> ColdArchiveHashEntryEncodeRequestMarshaller = Marshallers.Create<Stellar.ColdArchiveHashEntryEncodeRequest>(
             (message, serializationContext) =>
             {

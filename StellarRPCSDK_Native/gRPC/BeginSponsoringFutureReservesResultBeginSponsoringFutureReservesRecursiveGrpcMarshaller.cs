@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BeginSponsoringFutureReservesRecursive</summary>
-        public static readonly Marshaller<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive> BeginSponsoringFutureReservesRecursiveMarshaller = Marshallers.Create<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive>(
+        /// <summary>Marshaller for Stellar.BeginSponsoringFutureReservesResult+BeginSponsoringFutureReservesRecursive</summary>
+        public static readonly Marshaller<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive> BeginSponsoringFutureReservesResult_BeginSponsoringFutureReservesRecursiveMarshaller = Marshallers.Create<Stellar.BeginSponsoringFutureReservesResult.BeginSponsoringFutureReservesRecursive>(
             (message, serializationContext) =>
             {
                 try

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for MemoNone</summary>
-        public static readonly Marshaller<Stellar.Memo.MemoNone> MemoNoneMarshaller = Marshallers.Create<Stellar.Memo.MemoNone>(
+        /// <summary>Marshaller for Stellar.Memo+MemoNone</summary>
+        public static readonly Marshaller<Stellar.Memo.MemoNone> Memo_MemoNoneMarshaller = Marshallers.Create<Stellar.Memo.MemoNone>(
             (message, serializationContext) =>
             {
                 try

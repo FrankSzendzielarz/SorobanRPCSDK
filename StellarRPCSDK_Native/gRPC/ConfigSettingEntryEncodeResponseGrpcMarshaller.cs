@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingEntryEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingEntryEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ConfigSettingEntryEncodeResponse> ConfigSettingEntryEncodeResponseMarshaller = Marshallers.Create<Stellar.ConfigSettingEntryEncodeResponse>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimeBoundsDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TimeBoundsDecodeRequest</summary>
         public static readonly Marshaller<Stellar.TimeBoundsDecodeRequest> TimeBoundsDecodeRequestMarshaller = Marshallers.Create<Stellar.TimeBoundsDecodeRequest>(
             (message, serializationContext) =>
             {

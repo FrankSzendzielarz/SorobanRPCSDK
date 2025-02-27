@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for med25519Struct</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount.med25519Struct> med25519StructMarshaller = Marshallers.Create<Stellar.MuxedAccount.med25519Struct>(
+        /// <summary>Marshaller for Stellar.MuxedAccount+med25519Struct</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount.med25519Struct> MuxedAccount_med25519StructMarshaller = Marshallers.Create<Stellar.MuxedAccount.med25519Struct>(
             (message, serializationContext) =>
             {
                 try

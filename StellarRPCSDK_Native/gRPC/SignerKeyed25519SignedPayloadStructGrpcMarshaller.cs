@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ed25519SignedPayloadStruct</summary>
-        public static readonly Marshaller<Stellar.SignerKey.ed25519SignedPayloadStruct> ed25519SignedPayloadStructMarshaller = Marshallers.Create<Stellar.SignerKey.ed25519SignedPayloadStruct>(
+        /// <summary>Marshaller for Stellar.SignerKey+ed25519SignedPayloadStruct</summary>
+        public static readonly Marshaller<Stellar.SignerKey.ed25519SignedPayloadStruct> SignerKey_ed25519SignedPayloadStructMarshaller = Marshallers.Create<Stellar.SignerKey.ed25519SignedPayloadStruct>(
             (message, serializationContext) =>
             {
                 try

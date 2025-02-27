@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetNetworkResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetNetworkResult</summary>
         public static readonly Marshaller<Stellar.RPC.GetNetworkResult> GetNetworkResultMarshaller = Marshallers.Create<Stellar.RPC.GetNetworkResult>(
             (message, serializationContext) =>
             {

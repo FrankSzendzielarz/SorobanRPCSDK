@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveDeletedLeafCase</summary>
-        public static readonly Marshaller<Stellar.ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase> ColdArchiveDeletedLeafCaseMarshaller = Marshallers.Create<Stellar.ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase>(
+        /// <summary>Marshaller for Stellar.ColdArchiveBucketEntry+ColdArchiveDeletedLeafCase</summary>
+        public static readonly Marshaller<Stellar.ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase> ColdArchiveBucketEntry_ColdArchiveDeletedLeafCaseMarshaller = Marshallers.Create<Stellar.ColdArchiveBucketEntry.ColdArchiveDeletedLeafCase>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageBuyOffer</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.ManageBuyOffer> ManageBuyOfferMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ManageBuyOffer>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+ManageBuyOffer</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.ManageBuyOffer> OperationResult_trUnion_ManageBuyOfferMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ManageBuyOffer>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Duration</summary>
+        /// <summary>Marshaller for Stellar.Duration</summary>
         public static readonly Marshaller<Stellar.Duration> DurationMarshaller = Marshallers.Create<Stellar.Duration>(
             (message, serializationContext) =>
             {

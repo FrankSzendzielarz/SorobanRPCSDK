@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for innerTxUnion</summary>
-        public static readonly Marshaller<Stellar.FeeBumpTransaction.innerTxUnion> innerTxUnionMarshaller = Marshallers.Create<Stellar.FeeBumpTransaction.innerTxUnion>(
+        /// <summary>Marshaller for Stellar.FeeBumpTransaction+innerTxUnion</summary>
+        public static readonly Marshaller<Stellar.FeeBumpTransaction.innerTxUnion> FeeBumpTransaction_innerTxUnionMarshaller = Marshallers.Create<Stellar.FeeBumpTransaction.innerTxUnion>(
             (message, serializationContext) =>
             {
                 try

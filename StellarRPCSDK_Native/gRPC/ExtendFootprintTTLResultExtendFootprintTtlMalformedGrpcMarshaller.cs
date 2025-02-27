@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExtendFootprintTtlMalformed</summary>
-        public static readonly Marshaller<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlMalformed> ExtendFootprintTtlMalformedMarshaller = Marshallers.Create<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlMalformed>(
+        /// <summary>Marshaller for Stellar.ExtendFootprintTTLResult+ExtendFootprintTtlMalformed</summary>
+        public static readonly Marshaller<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlMalformed> ExtendFootprintTTLResult_ExtendFootprintTtlMalformedMarshaller = Marshallers.Create<Stellar.ExtendFootprintTTLResult.ExtendFootprintTtlMalformed>(
             (message, serializationContext) =>
             {
                 try

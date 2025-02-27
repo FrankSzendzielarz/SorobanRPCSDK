@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecEntryUdtErrorEnumV0</summary>
-        public static readonly Marshaller<Stellar.SCSpecEntry.ScSpecEntryUdtErrorEnumV0> ScSpecEntryUdtErrorEnumV0Marshaller = Marshallers.Create<Stellar.SCSpecEntry.ScSpecEntryUdtErrorEnumV0>(
+        /// <summary>Marshaller for Stellar.SCSpecEntry+ScSpecEntryUdtErrorEnumV0</summary>
+        public static readonly Marshaller<Stellar.SCSpecEntry.ScSpecEntryUdtErrorEnumV0> SCSpecEntry_ScSpecEntryUdtErrorEnumV0Marshaller = Marshallers.Create<Stellar.SCSpecEntry.ScSpecEntryUdtErrorEnumV0>(
             (message, serializationContext) =>
             {
                 try

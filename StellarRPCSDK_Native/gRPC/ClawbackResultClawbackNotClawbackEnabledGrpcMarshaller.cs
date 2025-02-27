@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClawbackNotClawbackEnabled</summary>
-        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackNotClawbackEnabled> ClawbackNotClawbackEnabledMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackNotClawbackEnabled>(
+        /// <summary>Marshaller for Stellar.ClawbackResult+ClawbackNotClawbackEnabled</summary>
+        public static readonly Marshaller<Stellar.ClawbackResult.ClawbackNotClawbackEnabled> ClawbackResult_ClawbackNotClawbackEnabledMarshaller = Marshallers.Create<Stellar.ClawbackResult.ClawbackNotClawbackEnabled>(
             (message, serializationContext) =>
             {
                 try

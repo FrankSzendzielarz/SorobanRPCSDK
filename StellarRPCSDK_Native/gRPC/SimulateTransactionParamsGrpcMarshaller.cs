@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SimulateTransactionParams</summary>
+        /// <summary>Marshaller for Stellar.RPC.SimulateTransactionParams</summary>
         public static readonly Marshaller<Stellar.RPC.SimulateTransactionParams> SimulateTransactionParamsMarshaller = Marshallers.Create<Stellar.RPC.SimulateTransactionParams>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SceStorage</summary>
-        public static readonly Marshaller<Stellar.SCError.SceStorage> SceStorageMarshaller = Marshallers.Create<Stellar.SCError.SceStorage>(
+        /// <summary>Marshaller for Stellar.SCError+SceStorage</summary>
+        public static readonly Marshaller<Stellar.SCError.SceStorage> SCError_SceStorageMarshaller = Marshallers.Create<Stellar.SCError.SceStorage>(
             (message, serializationContext) =>
             {
                 try

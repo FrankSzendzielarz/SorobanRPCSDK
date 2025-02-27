@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerUpgradeBaseFee</summary>
-        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeBaseFee> LedgerUpgradeBaseFeeMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeBaseFee>(
+        /// <summary>Marshaller for Stellar.LedgerUpgrade+LedgerUpgradeBaseFee</summary>
+        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeBaseFee> LedgerUpgrade_LedgerUpgradeBaseFeeMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeBaseFee>(
             (message, serializationContext) =>
             {
                 try

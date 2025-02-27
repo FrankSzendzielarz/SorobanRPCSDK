@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SceContract</summary>
-        public static readonly Marshaller<Stellar.SCError.SceContract> SceContractMarshaller = Marshallers.Create<Stellar.SCError.SceContract>(
+        /// <summary>Marshaller for Stellar.SCError+SceContract</summary>
+        public static readonly Marshaller<Stellar.SCError.SceContract> SCError_SceContractMarshaller = Marshallers.Create<Stellar.SCError.SceContract>(
             (message, serializationContext) =>
             {
                 try

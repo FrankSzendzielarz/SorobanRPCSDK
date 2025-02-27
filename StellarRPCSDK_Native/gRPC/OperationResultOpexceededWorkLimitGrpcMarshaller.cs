@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OpexceededWorkLimit</summary>
-        public static readonly Marshaller<Stellar.OperationResult.OpexceededWorkLimit> OpexceededWorkLimitMarshaller = Marshallers.Create<Stellar.OperationResult.OpexceededWorkLimit>(
+        /// <summary>Marshaller for Stellar.OperationResult+OpexceededWorkLimit</summary>
+        public static readonly Marshaller<Stellar.OperationResult.OpexceededWorkLimit> OperationResult_OpexceededWorkLimitMarshaller = Marshallers.Create<Stellar.OperationResult.OpexceededWorkLimit>(
             (message, serializationContext) =>
             {
                 try

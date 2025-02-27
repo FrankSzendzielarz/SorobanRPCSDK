@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsSuccess</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsSuccess> SetOptionsSuccessMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsSuccess>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsSuccess</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsSuccess> SetOptionsResult_SetOptionsSuccessMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsSuccess>(
             (message, serializationContext) =>
             {
                 try

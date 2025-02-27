@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustInvalidLimit</summary>
-        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustInvalidLimit> ChangeTrustInvalidLimitMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustInvalidLimit>(
+        /// <summary>Marshaller for Stellar.ChangeTrustResult+ChangeTrustInvalidLimit</summary>
+        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustInvalidLimit> ChangeTrustResult_ChangeTrustInvalidLimitMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustInvalidLimit>(
             (message, serializationContext) =>
             {
                 try

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ExtensionPointEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ExtensionPointEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ExtensionPointEncodeResponse> ExtensionPointEncodeResponseMarshaller = Marshallers.Create<Stellar.ExtensionPointEncodeResponse>(
             (message, serializationContext) =>
             {

@@ -41,7 +41,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TrustLineEntry</summary>
+        /// <summary>Marshaller for Stellar.TrustLineEntry</summary>
         public static readonly Marshaller<Stellar.TrustLineEntry> TrustLineEntryMarshaller = Marshallers.Create<Stellar.TrustLineEntry>(
             (message, serializationContext) =>
             {

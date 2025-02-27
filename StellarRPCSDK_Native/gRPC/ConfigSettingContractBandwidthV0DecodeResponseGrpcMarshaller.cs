@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractBandwidthV0DecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingContractBandwidthV0DecodeResponse</summary>
         public static readonly Marshaller<Stellar.ConfigSettingContractBandwidthV0DecodeResponse> ConfigSettingContractBandwidthV0DecodeResponseMarshaller = Marshallers.Create<Stellar.ConfigSettingContractBandwidthV0DecodeResponse>(
             (message, serializationContext) =>
             {

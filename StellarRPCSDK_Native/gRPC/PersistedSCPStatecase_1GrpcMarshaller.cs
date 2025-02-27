@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for case_1</summary>
-        public static readonly Marshaller<Stellar.PersistedSCPState.case_1> case_1Marshaller = Marshallers.Create<Stellar.PersistedSCPState.case_1>(
+        /// <summary>Marshaller for Stellar.PersistedSCPState+case_1</summary>
+        public static readonly Marshaller<Stellar.PersistedSCPState.case_1> PersistedSCPState_case_1Marshaller = Marshallers.Create<Stellar.PersistedSCPState.case_1>(
             (message, serializationContext) =>
             {
                 try

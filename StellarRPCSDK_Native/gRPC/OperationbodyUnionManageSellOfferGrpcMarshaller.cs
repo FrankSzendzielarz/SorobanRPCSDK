@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOffer</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.ManageSellOffer> ManageSellOfferMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.ManageSellOffer>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+ManageSellOffer</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.ManageSellOffer> Operation_bodyUnion_ManageSellOfferMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.ManageSellOffer>(
             (message, serializationContext) =>
             {
                 try

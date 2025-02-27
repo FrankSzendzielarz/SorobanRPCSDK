@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsInvalidInflation</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsInvalidInflation> SetOptionsInvalidInflationMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsInvalidInflation>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsInvalidInflation</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsInvalidInflation> SetOptionsResult_SetOptionsInvalidInflationMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsInvalidInflation>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimPredicateOr</summary>
-        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateOr> ClaimPredicateOrMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateOr>(
+        /// <summary>Marshaller for Stellar.ClaimPredicate+ClaimPredicateOr</summary>
+        public static readonly Marshaller<Stellar.ClaimPredicate.ClaimPredicateOr> ClaimPredicate_ClaimPredicateOrMarshaller = Marshallers.Create<Stellar.ClaimPredicate.ClaimPredicateOr>(
             (message, serializationContext) =>
             {
                 try

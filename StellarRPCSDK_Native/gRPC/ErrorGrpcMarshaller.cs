@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Error</summary>
+        /// <summary>Marshaller for Stellar.Error</summary>
         public static readonly Marshaller<Stellar.Error> ErrorMarshaller = Marshallers.Create<Stellar.Error>(
             (message, serializationContext) =>
             {

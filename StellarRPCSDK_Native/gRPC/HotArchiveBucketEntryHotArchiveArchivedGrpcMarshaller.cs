@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HotArchiveArchived</summary>
-        public static readonly Marshaller<Stellar.HotArchiveBucketEntry.HotArchiveArchived> HotArchiveArchivedMarshaller = Marshallers.Create<Stellar.HotArchiveBucketEntry.HotArchiveArchived>(
+        /// <summary>Marshaller for Stellar.HotArchiveBucketEntry+HotArchiveArchived</summary>
+        public static readonly Marshaller<Stellar.HotArchiveBucketEntry.HotArchiveArchived> HotArchiveBucketEntry_HotArchiveArchivedMarshaller = Marshallers.Create<Stellar.HotArchiveBucketEntry.HotArchiveArchived>(
             (message, serializationContext) =>
             {
                 try

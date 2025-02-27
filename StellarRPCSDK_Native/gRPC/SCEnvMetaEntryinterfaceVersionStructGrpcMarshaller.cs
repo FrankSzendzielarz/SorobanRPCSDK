@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for interfaceVersionStruct</summary>
-        public static readonly Marshaller<Stellar.SCEnvMetaEntry.interfaceVersionStruct> interfaceVersionStructMarshaller = Marshallers.Create<Stellar.SCEnvMetaEntry.interfaceVersionStruct>(
+        /// <summary>Marshaller for Stellar.SCEnvMetaEntry+interfaceVersionStruct</summary>
+        public static readonly Marshaller<Stellar.SCEnvMetaEntry.interfaceVersionStruct> SCEnvMetaEntry_interfaceVersionStructMarshaller = Marshallers.Create<Stellar.SCEnvMetaEntry.interfaceVersionStruct>(
             (message, serializationContext) =>
             {
                 try

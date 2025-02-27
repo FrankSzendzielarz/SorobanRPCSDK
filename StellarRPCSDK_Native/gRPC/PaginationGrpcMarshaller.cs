@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Pagination</summary>
+        /// <summary>Marshaller for Stellar.RPC.Pagination</summary>
         public static readonly Marshaller<Stellar.RPC.Pagination> PaginationMarshaller = Marshallers.Create<Stellar.RPC.Pagination>(
             (message, serializationContext) =>
             {

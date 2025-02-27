@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsUnknownFlag</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsUnknownFlag> SetOptionsUnknownFlagMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsUnknownFlag>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsUnknownFlag</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsUnknownFlag> SetOptionsResult_SetOptionsUnknownFlagMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsUnknownFlag>(
             (message, serializationContext) =>
             {
                 try

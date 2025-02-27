@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxbadMinSeqAgeOrGap</summary>
-        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap> TxbadMinSeqAgeOrGapMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap>(
+        /// <summary>Marshaller for Stellar.InnerTransactionResult+resultUnion+TxbadMinSeqAgeOrGap</summary>
+        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap> InnerTransactionResult_resultUnion_TxbadMinSeqAgeOrGapMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxbadMinSeqAgeOrGap>(
             (message, serializationContext) =>
             {
                 try

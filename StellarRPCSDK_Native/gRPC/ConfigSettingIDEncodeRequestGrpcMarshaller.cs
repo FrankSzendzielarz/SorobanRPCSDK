@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingIDEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingIDEncodeRequest</summary>
         public static readonly Marshaller<Stellar.ConfigSettingIDEncodeRequest> ConfigSettingIDEncodeRequestMarshaller = Marshallers.Create<Stellar.ConfigSettingIDEncodeRequest>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvVec</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvVec> ScvVecMarshaller = Marshallers.Create<Stellar.SCVal.ScvVec>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvVec</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvVec> SCVal_ScvVecMarshaller = Marshallers.Create<Stellar.SCVal.ScvVec>(
             (message, serializationContext) =>
             {
                 try

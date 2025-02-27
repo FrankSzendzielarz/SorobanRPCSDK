@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SceBudget</summary>
-        public static readonly Marshaller<Stellar.SCError.SceBudget> SceBudgetMarshaller = Marshallers.Create<Stellar.SCError.SceBudget>(
+        /// <summary>Marshaller for Stellar.SCError+SceBudget</summary>
+        public static readonly Marshaller<Stellar.SCError.SceBudget> SCError_SceBudgetMarshaller = Marshallers.Create<Stellar.SCError.SceBudget>(
             (message, serializationContext) =>
             {
                 try

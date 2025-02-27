@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionResultCode</summary>
+        /// <summary>Marshaller for Stellar.TransactionResultCode</summary>
         public static readonly Marshaller<Stellar.TransactionResultCode> TransactionResultCodeMarshaller = Marshallers.Create<Stellar.TransactionResultCode>(
             (message, serializationContext) =>
             {

@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ThresholdIndexesEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ThresholdIndexesEncodeResponse</summary>
         public static readonly Marshaller<Stellar.ThresholdIndexesEncodeResponse> ThresholdIndexesEncodeResponseMarshaller = Marshallers.Create<Stellar.ThresholdIndexesEncodeResponse>(
             (message, serializationContext) =>
             {

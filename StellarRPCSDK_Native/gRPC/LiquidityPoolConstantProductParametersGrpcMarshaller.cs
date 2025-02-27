@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiquidityPoolConstantProductParameters</summary>
+        /// <summary>Marshaller for Stellar.LiquidityPoolConstantProductParameters</summary>
         public static readonly Marshaller<Stellar.LiquidityPoolConstantProductParameters> LiquidityPoolConstantProductParametersMarshaller = Marshallers.Create<Stellar.LiquidityPoolConstantProductParameters>(
             (message, serializationContext) =>
             {

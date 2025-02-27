@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for PaymentNoTrust</summary>
-        public static readonly Marshaller<Stellar.PaymentResult.PaymentNoTrust> PaymentNoTrustMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentNoTrust>(
+        /// <summary>Marshaller for Stellar.PaymentResult+PaymentNoTrust</summary>
+        public static readonly Marshaller<Stellar.PaymentResult.PaymentNoTrust> PaymentResult_PaymentNoTrustMarshaller = Marshallers.Create<Stellar.PaymentResult.PaymentNoTrust>(
             (message, serializationContext) =>
             {
                 try

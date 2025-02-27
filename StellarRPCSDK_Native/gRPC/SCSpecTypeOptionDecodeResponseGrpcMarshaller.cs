@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCSpecTypeOptionDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.SCSpecTypeOptionDecodeResponse</summary>
         public static readonly Marshaller<Stellar.SCSpecTypeOptionDecodeResponse> SCSpecTypeOptionDecodeResponseMarshaller = Marshallers.Create<Stellar.SCSpecTypeOptionDecodeResponse>(
             (message, serializationContext) =>
             {

@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCContractInstance</summary>
+        /// <summary>Marshaller for Stellar.SCContractInstance</summary>
         public static readonly Marshaller<Stellar.SCContractInstance> SCContractInstanceMarshaller = Marshallers.Create<Stellar.SCContractInstance>(
             (message, serializationContext) =>
             {

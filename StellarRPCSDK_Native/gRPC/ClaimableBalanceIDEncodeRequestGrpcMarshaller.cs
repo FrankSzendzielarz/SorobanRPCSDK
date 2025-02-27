@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ClaimableBalanceIDEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ClaimableBalanceIDEncodeRequest</summary>
         public static readonly Marshaller<Stellar.ClaimableBalanceIDEncodeRequest> ClaimableBalanceIDEncodeRequestMarshaller = Marshallers.Create<Stellar.ClaimableBalanceIDEncodeRequest>(
             (message, serializationContext) =>
             {

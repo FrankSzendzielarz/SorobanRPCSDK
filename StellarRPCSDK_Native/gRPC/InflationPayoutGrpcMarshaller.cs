@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InflationPayout</summary>
+        /// <summary>Marshaller for Stellar.InflationPayout</summary>
         public static readonly Marshaller<Stellar.InflationPayout> InflationPayoutMarshaller = Marshallers.Create<Stellar.InflationPayout>(
             (message, serializationContext) =>
             {

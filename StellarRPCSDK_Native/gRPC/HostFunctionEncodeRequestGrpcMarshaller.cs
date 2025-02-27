@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HostFunctionEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.HostFunctionEncodeRequest</summary>
         public static readonly Marshaller<Stellar.HostFunctionEncodeRequest> HostFunctionEncodeRequestMarshaller = Marshallers.Create<Stellar.HostFunctionEncodeRequest>(
             (message, serializationContext) =>
             {

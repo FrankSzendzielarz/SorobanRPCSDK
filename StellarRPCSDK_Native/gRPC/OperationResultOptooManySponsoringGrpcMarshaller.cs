@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OptooManySponsoring</summary>
-        public static readonly Marshaller<Stellar.OperationResult.OptooManySponsoring> OptooManySponsoringMarshaller = Marshallers.Create<Stellar.OperationResult.OptooManySponsoring>(
+        /// <summary>Marshaller for Stellar.OperationResult+OptooManySponsoring</summary>
+        public static readonly Marshaller<Stellar.OperationResult.OptooManySponsoring> OperationResult_OptooManySponsoringMarshaller = Marshallers.Create<Stellar.OperationResult.OptooManySponsoring>(
             (message, serializationContext) =>
             {
                 try

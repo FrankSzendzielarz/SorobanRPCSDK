@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SurveyTopologyResponseV1</summary>
-        public static readonly Marshaller<Stellar.SurveyResponseBody.SurveyTopologyResponseV1> SurveyTopologyResponseV1Marshaller = Marshallers.Create<Stellar.SurveyResponseBody.SurveyTopologyResponseV1>(
+        /// <summary>Marshaller for Stellar.SurveyResponseBody+SurveyTopologyResponseV1</summary>
+        public static readonly Marshaller<Stellar.SurveyResponseBody.SurveyTopologyResponseV1> SurveyResponseBody_SurveyTopologyResponseV1Marshaller = Marshallers.Create<Stellar.SurveyResponseBody.SurveyTopologyResponseV1>(
             (message, serializationContext) =>
             {
                 try

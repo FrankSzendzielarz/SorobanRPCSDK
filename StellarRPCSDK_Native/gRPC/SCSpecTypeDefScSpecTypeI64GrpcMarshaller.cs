@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeI64</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeI64> ScSpecTypeI64Marshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeI64>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeI64</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeI64> SCSpecTypeDef_ScSpecTypeI64Marshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeI64>(
             (message, serializationContext) =>
             {
                 try

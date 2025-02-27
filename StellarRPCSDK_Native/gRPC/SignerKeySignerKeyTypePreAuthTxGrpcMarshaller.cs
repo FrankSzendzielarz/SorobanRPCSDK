@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignerKeyTypePreAuthTx</summary>
-        public static readonly Marshaller<Stellar.SignerKey.SignerKeyTypePreAuthTx> SignerKeyTypePreAuthTxMarshaller = Marshallers.Create<Stellar.SignerKey.SignerKeyTypePreAuthTx>(
+        /// <summary>Marshaller for Stellar.SignerKey+SignerKeyTypePreAuthTx</summary>
+        public static readonly Marshaller<Stellar.SignerKey.SignerKeyTypePreAuthTx> SignerKey_SignerKeyTypePreAuthTxMarshaller = Marshallers.Create<Stellar.SignerKey.SignerKeyTypePreAuthTx>(
             (message, serializationContext) =>
             {
                 try

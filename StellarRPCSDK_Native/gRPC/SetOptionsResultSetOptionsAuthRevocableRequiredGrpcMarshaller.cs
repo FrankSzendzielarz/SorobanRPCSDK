@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsAuthRevocableRequired</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsAuthRevocableRequired> SetOptionsAuthRevocableRequiredMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsAuthRevocableRequired>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsAuthRevocableRequired</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsAuthRevocableRequired> SetOptionsResult_SetOptionsAuthRevocableRequiredMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsAuthRevocableRequired>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for KeyTypeEd25519</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeEd25519> KeyTypeEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeEd25519>(
+        /// <summary>Marshaller for Stellar.MuxedAccount+KeyTypeEd25519</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount.KeyTypeEd25519> MuxedAccount_KeyTypeEd25519Marshaller = Marshallers.Create<Stellar.MuxedAccount.KeyTypeEd25519>(
             (message, serializationContext) =>
             {
                 try

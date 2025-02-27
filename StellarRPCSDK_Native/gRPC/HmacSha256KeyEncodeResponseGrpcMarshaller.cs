@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HmacSha256KeyEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.HmacSha256KeyEncodeResponse</summary>
         public static readonly Marshaller<Stellar.HmacSha256KeyEncodeResponse> HmacSha256KeyEncodeResponseMarshaller = Marshallers.Create<Stellar.HmacSha256KeyEncodeResponse>(
             (message, serializationContext) =>
             {

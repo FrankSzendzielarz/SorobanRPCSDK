@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountFlagsEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.AccountFlagsEncodeResponse</summary>
         public static readonly Marshaller<Stellar.AccountFlagsEncodeResponse> AccountFlagsEncodeResponseMarshaller = Marshallers.Create<Stellar.AccountFlagsEncodeResponse>(
             (message, serializationContext) =>
             {

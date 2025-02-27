@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InflationSuccess</summary>
-        public static readonly Marshaller<Stellar.InflationResult.InflationSuccess> InflationSuccessMarshaller = Marshallers.Create<Stellar.InflationResult.InflationSuccess>(
+        /// <summary>Marshaller for Stellar.InflationResult+InflationSuccess</summary>
+        public static readonly Marshaller<Stellar.InflationResult.InflationSuccess> InflationResult_InflationSuccessMarshaller = Marshallers.Create<Stellar.InflationResult.InflationSuccess>(
             (message, serializationContext) =>
             {
                 try

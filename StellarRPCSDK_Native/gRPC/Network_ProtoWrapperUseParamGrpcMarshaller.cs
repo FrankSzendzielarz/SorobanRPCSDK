@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for UseParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.UseParam> UseParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.UseParam>(
+        /// <summary>Marshaller for Stellar.Network_ProtoWrapper+UseParam</summary>
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.UseParam> Network_ProtoWrapper_UseParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.UseParam>(
             (message, serializationContext) =>
             {
                 try

@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignMessage</summary>
-        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
+        /// <summary>Marshaller for Stellar.MuxedAccount_ProtoWrapper+SignMessage</summary>
+        public static readonly Marshaller<Stellar.MuxedAccount_ProtoWrapper.SignMessage> MuxedAccount_ProtoWrapper_SignMessageMarshaller = Marshallers.Create<Stellar.MuxedAccount_ProtoWrapper.SignMessage>(
             (message, serializationContext) =>
             {
                 try

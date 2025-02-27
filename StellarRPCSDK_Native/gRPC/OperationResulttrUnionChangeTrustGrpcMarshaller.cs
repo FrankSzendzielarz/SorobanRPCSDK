@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrust</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.ChangeTrust> ChangeTrustMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ChangeTrust>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+ChangeTrust</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.ChangeTrust> OperationResult_trUnion_ChangeTrustMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.ChangeTrust>(
             (message, serializationContext) =>
             {
                 try

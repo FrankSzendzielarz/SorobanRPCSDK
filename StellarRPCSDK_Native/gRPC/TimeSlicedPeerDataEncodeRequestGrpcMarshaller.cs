@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimeSlicedPeerDataEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TimeSlicedPeerDataEncodeRequest</summary>
         public static readonly Marshaller<Stellar.TimeSlicedPeerDataEncodeRequest> TimeSlicedPeerDataEncodeRequestMarshaller = Marshallers.Create<Stellar.TimeSlicedPeerDataEncodeRequest>(
             (message, serializationContext) =>
             {

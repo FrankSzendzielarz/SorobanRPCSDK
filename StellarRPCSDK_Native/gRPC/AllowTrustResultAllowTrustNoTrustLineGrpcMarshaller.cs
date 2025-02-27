@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AllowTrustNoTrustLine</summary>
-        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustNoTrustLine> AllowTrustNoTrustLineMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustNoTrustLine>(
+        /// <summary>Marshaller for Stellar.AllowTrustResult+AllowTrustNoTrustLine</summary>
+        public static readonly Marshaller<Stellar.AllowTrustResult.AllowTrustNoTrustLine> AllowTrustResult_AllowTrustNoTrustLineMarshaller = Marshallers.Create<Stellar.AllowTrustResult.AllowTrustNoTrustLine>(
             (message, serializationContext) =>
             {
                 try

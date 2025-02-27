@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for FeeBumpTransactionEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.FeeBumpTransactionEncodeResponse</summary>
         public static readonly Marshaller<Stellar.FeeBumpTransactionEncodeResponse> FeeBumpTransactionEncodeResponseMarshaller = Marshallers.Create<Stellar.FeeBumpTransactionEncodeResponse>(
             (message, serializationContext) =>
             {

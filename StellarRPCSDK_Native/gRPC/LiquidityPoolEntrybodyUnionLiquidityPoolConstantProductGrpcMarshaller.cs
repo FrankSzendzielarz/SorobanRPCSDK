@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiquidityPoolConstantProduct</summary>
-        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct> LiquidityPoolConstantProductMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct>(
+        /// <summary>Marshaller for Stellar.LiquidityPoolEntry+bodyUnion+LiquidityPoolConstantProduct</summary>
+        public static readonly Marshaller<Stellar.LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct> LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProductMarshaller = Marshallers.Create<Stellar.LiquidityPoolEntry.bodyUnion.LiquidityPoolConstantProduct>(
             (message, serializationContext) =>
             {
                 try

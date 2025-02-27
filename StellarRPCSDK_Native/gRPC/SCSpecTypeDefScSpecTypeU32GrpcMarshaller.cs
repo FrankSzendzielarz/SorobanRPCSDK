@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeU32</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeU32> ScSpecTypeU32Marshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeU32>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeU32</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeU32> SCSpecTypeDef_ScSpecTypeU32Marshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeU32>(
             (message, serializationContext) =>
             {
                 try

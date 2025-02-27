@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageDataResultDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ManageDataResultDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ManageDataResultDecodeResponse> ManageDataResultDecodeResponseMarshaller = Marshallers.Create<Stellar.ManageDataResultDecodeResponse>(
             (message, serializationContext) =>
             {

@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingID</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingID</summary>
         public static readonly Marshaller<Stellar.ConfigSettingID> ConfigSettingIDMarshaller = Marshallers.Create<Stellar.ConfigSettingID>(
             (message, serializationContext) =>
             {

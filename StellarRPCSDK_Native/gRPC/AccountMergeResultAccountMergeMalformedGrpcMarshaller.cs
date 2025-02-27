@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AccountMergeMalformed</summary>
-        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeMalformed> AccountMergeMalformedMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeMalformed>(
+        /// <summary>Marshaller for Stellar.AccountMergeResult+AccountMergeMalformed</summary>
+        public static readonly Marshaller<Stellar.AccountMergeResult.AccountMergeMalformed> AccountMergeResult_AccountMergeMalformedMarshaller = Marshallers.Create<Stellar.AccountMergeResult.AccountMergeMalformed>(
             (message, serializationContext) =>
             {
                 try

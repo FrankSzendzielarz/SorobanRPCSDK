@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionHistoryResultEntryDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.TransactionHistoryResultEntryDecodeRequest</summary>
         public static readonly Marshaller<Stellar.TransactionHistoryResultEntryDecodeRequest> TransactionHistoryResultEntryDecodeRequestMarshaller = Marshallers.Create<Stellar.TransactionHistoryResultEntryDecodeRequest>(
             (message, serializationContext) =>
             {

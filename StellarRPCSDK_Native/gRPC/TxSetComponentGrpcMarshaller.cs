@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxSetComponent</summary>
+        /// <summary>Marshaller for Stellar.TxSetComponent</summary>
         public static readonly Marshaller<Stellar.TxSetComponent> TxSetComponentMarshaller = Marshallers.Create<Stellar.TxSetComponent>(
             (message, serializationContext) =>
             {

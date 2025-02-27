@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SendTransactionResult_Status</summary>
+        /// <summary>Marshaller for Stellar.RPC.SendTransactionResult_Status</summary>
         public static readonly Marshaller<Stellar.RPC.SendTransactionResult_Status> SendTransactionResult_StatusMarshaller = Marshallers.Create<Stellar.RPC.SendTransactionResult_Status>(
             (message, serializationContext) =>
             {

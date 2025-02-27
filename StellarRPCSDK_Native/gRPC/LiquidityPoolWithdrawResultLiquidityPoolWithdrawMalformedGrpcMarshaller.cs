@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LiquidityPoolWithdrawMalformed</summary>
-        public static readonly Marshaller<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed> LiquidityPoolWithdrawMalformedMarshaller = Marshallers.Create<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed>(
+        /// <summary>Marshaller for Stellar.LiquidityPoolWithdrawResult+LiquidityPoolWithdrawMalformed</summary>
+        public static readonly Marshaller<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed> LiquidityPoolWithdrawResult_LiquidityPoolWithdrawMalformedMarshaller = Marshallers.Create<Stellar.LiquidityPoolWithdrawResult.LiquidityPoolWithdrawMalformed>(
             (message, serializationContext) =>
             {
                 try

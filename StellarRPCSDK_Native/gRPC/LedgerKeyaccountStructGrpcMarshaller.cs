@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for accountStruct</summary>
-        public static readonly Marshaller<Stellar.LedgerKey.accountStruct> accountStructMarshaller = Marshallers.Create<Stellar.LedgerKey.accountStruct>(
+        /// <summary>Marshaller for Stellar.LedgerKey+accountStruct</summary>
+        public static readonly Marshaller<Stellar.LedgerKey.accountStruct> LedgerKey_accountStructMarshaller = Marshallers.Create<Stellar.LedgerKey.accountStruct>(
             (message, serializationContext) =>
             {
                 try

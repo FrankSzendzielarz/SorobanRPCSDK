@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for FloodDemandCase</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.FloodDemandCase> FloodDemandCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.FloodDemandCase>(
+        /// <summary>Marshaller for Stellar.StellarMessage+FloodDemandCase</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.FloodDemandCase> StellarMessage_FloodDemandCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.FloodDemandCase>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for IsPublicNetworkParam</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.IsPublicNetworkParam> IsPublicNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.IsPublicNetworkParam>(
+        /// <summary>Marshaller for Stellar.Network_ProtoWrapper+IsPublicNetworkParam</summary>
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.IsPublicNetworkParam> Network_ProtoWrapper_IsPublicNetworkParamMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.IsPublicNetworkParam>(
             (message, serializationContext) =>
             {
                 try

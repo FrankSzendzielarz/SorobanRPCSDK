@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TransactionCase</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.TransactionCase> TransactionCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.TransactionCase>(
+        /// <summary>Marshaller for Stellar.StellarMessage+TransactionCase</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.TransactionCase> StellarMessage_TransactionCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.TransactionCase>(
             (message, serializationContext) =>
             {
                 try

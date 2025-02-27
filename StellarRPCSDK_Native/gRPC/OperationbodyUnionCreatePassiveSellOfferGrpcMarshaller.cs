@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreatePassiveSellOffer</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.CreatePassiveSellOffer> CreatePassiveSellOfferMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.CreatePassiveSellOffer>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+CreatePassiveSellOffer</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.CreatePassiveSellOffer> Operation_bodyUnion_CreatePassiveSellOfferMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.CreatePassiveSellOffer>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptions</summary>
-        public static readonly Marshaller<Stellar.OperationResult.trUnion.SetOptions> SetOptionsMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.SetOptions>(
+        /// <summary>Marshaller for Stellar.OperationResult+trUnion+SetOptions</summary>
+        public static readonly Marshaller<Stellar.OperationResult.trUnion.SetOptions> OperationResult_trUnion_SetOptionsMarshaller = Marshallers.Create<Stellar.OperationResult.trUnion.SetOptions>(
             (message, serializationContext) =>
             {
                 try

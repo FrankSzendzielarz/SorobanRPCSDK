@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScAddressTypeAccount</summary>
-        public static readonly Marshaller<Stellar.SCAddress.ScAddressTypeAccount> ScAddressTypeAccountMarshaller = Marshallers.Create<Stellar.SCAddress.ScAddressTypeAccount>(
+        /// <summary>Marshaller for Stellar.SCAddress+ScAddressTypeAccount</summary>
+        public static readonly Marshaller<Stellar.SCAddress.ScAddressTypeAccount> SCAddress_ScAddressTypeAccountMarshaller = Marshallers.Create<Stellar.SCAddress.ScAddressTypeAccount>(
             (message, serializationContext) =>
             {
                 try

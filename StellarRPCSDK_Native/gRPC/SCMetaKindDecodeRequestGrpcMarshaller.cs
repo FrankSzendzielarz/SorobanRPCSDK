@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCMetaKindDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SCMetaKindDecodeRequest</summary>
         public static readonly Marshaller<Stellar.SCMetaKindDecodeRequest> SCMetaKindDecodeRequestMarshaller = Marshallers.Create<Stellar.SCMetaKindDecodeRequest>(
             (message, serializationContext) =>
             {

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageOfferCreated</summary>
-        public static readonly Marshaller<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferCreated> ManageOfferCreatedMarshaller = Marshallers.Create<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferCreated>(
+        /// <summary>Marshaller for Stellar.ManageOfferSuccessResult+offerUnion+ManageOfferCreated</summary>
+        public static readonly Marshaller<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferCreated> ManageOfferSuccessResult_offerUnion_ManageOfferCreatedMarshaller = Marshallers.Create<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferCreated>(
             (message, serializationContext) =>
             {
                 try

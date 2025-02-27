@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for case_0</summary>
-        public static readonly Marshaller<Stellar.LedgerCloseMeta.case_0> case_0Marshaller = Marshallers.Create<Stellar.LedgerCloseMeta.case_0>(
+        /// <summary>Marshaller for Stellar.LedgerCloseMeta+case_0</summary>
+        public static readonly Marshaller<Stellar.LedgerCloseMeta.case_0> LedgerCloseMeta_case_0Marshaller = Marshallers.Create<Stellar.LedgerCloseMeta.case_0>(
             (message, serializationContext) =>
             {
                 try

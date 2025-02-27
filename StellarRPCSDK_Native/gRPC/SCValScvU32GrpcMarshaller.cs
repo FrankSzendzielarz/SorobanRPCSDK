@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScvU32</summary>
-        public static readonly Marshaller<Stellar.SCVal.ScvU32> ScvU32Marshaller = Marshallers.Create<Stellar.SCVal.ScvU32>(
+        /// <summary>Marshaller for Stellar.SCVal+ScvU32</summary>
+        public static readonly Marshaller<Stellar.SCVal.ScvU32> SCVal_ScvU32Marshaller = Marshallers.Create<Stellar.SCVal.ScvU32>(
             (message, serializationContext) =>
             {
                 try

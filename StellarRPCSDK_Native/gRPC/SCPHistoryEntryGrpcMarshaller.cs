@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCPHistoryEntry</summary>
+        /// <summary>Marshaller for Stellar.SCPHistoryEntry</summary>
         public static readonly Marshaller<Stellar.SCPHistoryEntry> SCPHistoryEntryMarshaller = Marshallers.Create<Stellar.SCPHistoryEntry>(
             (message, serializationContext) =>
             {

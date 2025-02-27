@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ContractIDPreimageDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ContractIDPreimageDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ContractIDPreimageDecodeResponse> ContractIDPreimageDecodeResponseMarshaller = Marshallers.Create<Stellar.ContractIDPreimageDecodeResponse>(
             (message, serializationContext) =>
             {

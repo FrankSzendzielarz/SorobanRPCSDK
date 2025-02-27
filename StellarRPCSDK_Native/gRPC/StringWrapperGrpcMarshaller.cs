@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for StringWrapper</summary>
+        /// <summary>Marshaller for Stellar.StringWrapper</summary>
         public static readonly Marshaller<Stellar.StringWrapper> StringWrapperMarshaller = Marshallers.Create<Stellar.StringWrapper>(
             (message, serializationContext) =>
             {

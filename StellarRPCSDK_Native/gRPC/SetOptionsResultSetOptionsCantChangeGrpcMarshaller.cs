@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsCantChange</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsCantChange> SetOptionsCantChangeMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsCantChange>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsCantChange</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsCantChange> SetOptionsResult_SetOptionsCantChangeMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsCantChange>(
             (message, serializationContext) =>
             {
                 try

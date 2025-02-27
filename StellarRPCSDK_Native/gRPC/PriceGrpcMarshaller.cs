@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Price</summary>
+        /// <summary>Marshaller for Stellar.Price</summary>
         public static readonly Marshaller<Stellar.Price> PriceMarshaller = Marshallers.Create<Stellar.Price>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScSpecTypeError</summary>
-        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeError> ScSpecTypeErrorMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeError>(
+        /// <summary>Marshaller for Stellar.SCSpecTypeDef+ScSpecTypeError</summary>
+        public static readonly Marshaller<Stellar.SCSpecTypeDef.ScSpecTypeError> SCSpecTypeDef_ScSpecTypeErrorMarshaller = Marshallers.Create<Stellar.SCSpecTypeDef.ScSpecTypeError>(
             (message, serializationContext) =>
             {
                 try

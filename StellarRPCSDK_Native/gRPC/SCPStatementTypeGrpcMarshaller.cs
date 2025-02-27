@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCPStatementType</summary>
+        /// <summary>Marshaller for Stellar.SCPStatementType</summary>
         public static readonly Marshaller<Stellar.SCPStatementType> SCPStatementTypeMarshaller = Marshallers.Create<Stellar.SCPStatementType>(
             (message, serializationContext) =>
             {

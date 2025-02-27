@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OpbadAuth</summary>
-        public static readonly Marshaller<Stellar.OperationResult.OpbadAuth> OpbadAuthMarshaller = Marshallers.Create<Stellar.OperationResult.OpbadAuth>(
+        /// <summary>Marshaller for Stellar.OperationResult+OpbadAuth</summary>
+        public static readonly Marshaller<Stellar.OperationResult.OpbadAuth> OperationResult_OpbadAuthMarshaller = Marshallers.Create<Stellar.OperationResult.OpbadAuth>(
             (message, serializationContext) =>
             {
                 try

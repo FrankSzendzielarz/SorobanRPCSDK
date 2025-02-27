@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for UpgradeEntryMetaEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.UpgradeEntryMetaEncodeRequest</summary>
         public static readonly Marshaller<Stellar.UpgradeEntryMetaEncodeRequest> UpgradeEntryMetaEncodeRequestMarshaller = Marshallers.Create<Stellar.UpgradeEntryMetaEncodeRequest>(
             (message, serializationContext) =>
             {

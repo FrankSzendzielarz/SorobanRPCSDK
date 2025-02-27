@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsResultCodeEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SetOptionsResultCodeEncodeRequest</summary>
         public static readonly Marshaller<Stellar.SetOptionsResultCodeEncodeRequest> SetOptionsResultCodeEncodeRequestMarshaller = Marshallers.Create<Stellar.SetOptionsResultCodeEncodeRequest>(
             (message, serializationContext) =>
             {

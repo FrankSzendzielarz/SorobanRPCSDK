@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ShortHashSeed</summary>
+        /// <summary>Marshaller for Stellar.ShortHashSeed</summary>
         public static readonly Marshaller<Stellar.ShortHashSeed> ShortHashSeedMarshaller = Marshallers.Create<Stellar.ShortHashSeed>(
             (message, serializationContext) =>
             {

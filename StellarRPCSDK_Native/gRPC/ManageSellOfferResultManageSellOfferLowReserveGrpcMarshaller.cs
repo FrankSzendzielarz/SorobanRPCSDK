@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOfferLowReserve</summary>
-        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferLowReserve> ManageSellOfferLowReserveMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferLowReserve>(
+        /// <summary>Marshaller for Stellar.ManageSellOfferResult+ManageSellOfferLowReserve</summary>
+        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferLowReserve> ManageSellOfferResult_ManageSellOfferLowReserveMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferLowReserve>(
             (message, serializationContext) =>
             {
                 try

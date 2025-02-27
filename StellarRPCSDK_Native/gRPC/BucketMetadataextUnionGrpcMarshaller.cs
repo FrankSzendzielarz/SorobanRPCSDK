@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for extUnion</summary>
-        public static readonly Marshaller<Stellar.BucketMetadata.extUnion> extUnionMarshaller = Marshallers.Create<Stellar.BucketMetadata.extUnion>(
+        /// <summary>Marshaller for Stellar.BucketMetadata+extUnion</summary>
+        public static readonly Marshaller<Stellar.BucketMetadata.extUnion> BucketMetadata_extUnionMarshaller = Marshallers.Create<Stellar.BucketMetadata.extUnion>(
             (message, serializationContext) =>
             {
                 try

@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SceCrypto</summary>
-        public static readonly Marshaller<Stellar.SCError.SceCrypto> SceCryptoMarshaller = Marshallers.Create<Stellar.SCError.SceCrypto>(
+        /// <summary>Marshaller for Stellar.SCError+SceCrypto</summary>
+        public static readonly Marshaller<Stellar.SCError.SceCrypto> SCError_SceCryptoMarshaller = Marshallers.Create<Stellar.SCError.SceCrypto>(
             (message, serializationContext) =>
             {
                 try

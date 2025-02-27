@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ColdArchiveDeletedLeaf</summary>
+        /// <summary>Marshaller for Stellar.ColdArchiveDeletedLeaf</summary>
         public static readonly Marshaller<Stellar.ColdArchiveDeletedLeaf> ColdArchiveDeletedLeafMarshaller = Marshallers.Create<Stellar.ColdArchiveDeletedLeaf>(
             (message, serializationContext) =>
             {

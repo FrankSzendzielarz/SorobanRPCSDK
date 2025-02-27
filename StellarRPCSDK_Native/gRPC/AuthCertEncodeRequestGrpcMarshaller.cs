@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AuthCertEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.AuthCertEncodeRequest</summary>
         public static readonly Marshaller<Stellar.AuthCertEncodeRequest> AuthCertEncodeRequestMarshaller = Marshallers.Create<Stellar.AuthCertEncodeRequest>(
             (message, serializationContext) =>
             {

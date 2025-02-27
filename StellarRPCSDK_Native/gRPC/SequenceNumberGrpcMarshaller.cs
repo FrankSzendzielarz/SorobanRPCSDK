@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SequenceNumber</summary>
+        /// <summary>Marshaller for Stellar.SequenceNumber</summary>
         public static readonly Marshaller<Stellar.SequenceNumber> SequenceNumberMarshaller = Marshallers.Create<Stellar.SequenceNumber>(
             (message, serializationContext) =>
             {

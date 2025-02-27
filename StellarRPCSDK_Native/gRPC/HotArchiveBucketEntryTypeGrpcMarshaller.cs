@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HotArchiveBucketEntryType</summary>
+        /// <summary>Marshaller for Stellar.HotArchiveBucketEntryType</summary>
         public static readonly Marshaller<Stellar.HotArchiveBucketEntryType> HotArchiveBucketEntryTypeMarshaller = Marshallers.Create<Stellar.HotArchiveBucketEntryType>(
             (message, serializationContext) =>
             {

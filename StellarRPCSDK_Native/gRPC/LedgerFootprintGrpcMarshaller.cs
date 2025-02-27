@@ -37,7 +37,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerFootprint</summary>
+        /// <summary>Marshaller for Stellar.LedgerFootprint</summary>
         public static readonly Marshaller<Stellar.LedgerFootprint> LedgerFootprintMarshaller = Marshallers.Create<Stellar.LedgerFootprint>(
             (message, serializationContext) =>
             {

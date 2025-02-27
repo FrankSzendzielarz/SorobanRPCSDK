@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerSCPMessagesEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.LedgerSCPMessagesEncodeRequest</summary>
         public static readonly Marshaller<Stellar.LedgerSCPMessagesEncodeRequest> LedgerSCPMessagesEncodeRequestMarshaller = Marshallers.Create<Stellar.LedgerSCPMessagesEncodeRequest>(
             (message, serializationContext) =>
             {

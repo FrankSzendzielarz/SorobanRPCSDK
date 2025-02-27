@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOfferBuyNotAuthorized</summary>
-        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferBuyNotAuthorized> ManageSellOfferBuyNotAuthorizedMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferBuyNotAuthorized>(
+        /// <summary>Marshaller for Stellar.ManageSellOfferResult+ManageSellOfferBuyNotAuthorized</summary>
+        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferBuyNotAuthorized> ManageSellOfferResult_ManageSellOfferBuyNotAuthorizedMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferBuyNotAuthorized>(
             (message, serializationContext) =>
             {
                 try

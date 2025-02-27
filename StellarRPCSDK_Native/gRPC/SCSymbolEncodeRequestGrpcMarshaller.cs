@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SCSymbolEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.SCSymbolEncodeRequest</summary>
         public static readonly Marshaller<Stellar.SCSymbolEncodeRequest> SCSymbolEncodeRequestMarshaller = Marshallers.Create<Stellar.SCSymbolEncodeRequest>(
             (message, serializationContext) =>
             {

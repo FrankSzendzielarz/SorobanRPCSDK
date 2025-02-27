@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for StateChanges_Type</summary>
+        /// <summary>Marshaller for Stellar.RPC.StateChanges_Type</summary>
         public static readonly Marshaller<Stellar.RPC.StateChanges_Type> StateChanges_TypeMarshaller = Marshallers.Create<Stellar.RPC.StateChanges_Type>(
             (message, serializationContext) =>
             {

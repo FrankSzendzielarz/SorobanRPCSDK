@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxinternalError</summary>
-        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxinternalError> TxinternalErrorMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxinternalError>(
+        /// <summary>Marshaller for Stellar.InnerTransactionResult+resultUnion+TxinternalError</summary>
+        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxinternalError> InnerTransactionResult_resultUnion_TxinternalErrorMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxinternalError>(
             (message, serializationContext) =>
             {
                 try

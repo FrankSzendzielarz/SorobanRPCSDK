@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for StellarValueBasic</summary>
-        public static readonly Marshaller<Stellar.StellarValue.extUnion.StellarValueBasic> StellarValueBasicMarshaller = Marshallers.Create<Stellar.StellarValue.extUnion.StellarValueBasic>(
+        /// <summary>Marshaller for Stellar.StellarValue+extUnion+StellarValueBasic</summary>
+        public static readonly Marshaller<Stellar.StellarValue.extUnion.StellarValueBasic> StellarValue_extUnion_StellarValueBasicMarshaller = Marshallers.Create<Stellar.StellarValue.extUnion.StellarValueBasic>(
             (message, serializationContext) =>
             {
                 try

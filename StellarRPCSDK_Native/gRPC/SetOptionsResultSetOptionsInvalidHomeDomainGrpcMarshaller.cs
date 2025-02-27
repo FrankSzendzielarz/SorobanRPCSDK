@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsInvalidHomeDomain</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsInvalidHomeDomain> SetOptionsInvalidHomeDomainMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsInvalidHomeDomain>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsInvalidHomeDomain</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsInvalidHomeDomain> SetOptionsResult_SetOptionsInvalidHomeDomainMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsInvalidHomeDomain>(
             (message, serializationContext) =>
             {
                 try

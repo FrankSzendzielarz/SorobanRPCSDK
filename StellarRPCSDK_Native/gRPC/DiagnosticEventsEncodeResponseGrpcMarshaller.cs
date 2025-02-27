@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for DiagnosticEventsEncodeResponse</summary>
+        /// <summary>Marshaller for Stellar.DiagnosticEventsEncodeResponse</summary>
         public static readonly Marshaller<Stellar.DiagnosticEventsEncodeResponse> DiagnosticEventsEncodeResponseMarshaller = Marshallers.Create<Stellar.DiagnosticEventsEncodeResponse>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxinsufficientFee</summary>
-        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxinsufficientFee> TxinsufficientFeeMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxinsufficientFee>(
+        /// <summary>Marshaller for Stellar.InnerTransactionResult+resultUnion+TxinsufficientFee</summary>
+        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxinsufficientFee> InnerTransactionResult_resultUnion_TxinsufficientFeeMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxinsufficientFee>(
             (message, serializationContext) =>
             {
                 try

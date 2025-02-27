@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SignerKeyTypeHashX</summary>
-        public static readonly Marshaller<Stellar.SignerKey.SignerKeyTypeHashX> SignerKeyTypeHashXMarshaller = Marshallers.Create<Stellar.SignerKey.SignerKeyTypeHashX>(
+        /// <summary>Marshaller for Stellar.SignerKey+SignerKeyTypeHashX</summary>
+        public static readonly Marshaller<Stellar.SignerKey.SignerKeyTypeHashX> SignerKey_SignerKeyTypeHashXMarshaller = Marshallers.Create<Stellar.SignerKey.SignerKeyTypeHashX>(
             (message, serializationContext) =>
             {
                 try

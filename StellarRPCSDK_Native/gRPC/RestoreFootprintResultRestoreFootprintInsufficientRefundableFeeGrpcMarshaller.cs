@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for RestoreFootprintInsufficientRefundableFee</summary>
-        public static readonly Marshaller<Stellar.RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee> RestoreFootprintInsufficientRefundableFeeMarshaller = Marshallers.Create<Stellar.RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee>(
+        /// <summary>Marshaller for Stellar.RestoreFootprintResult+RestoreFootprintInsufficientRefundableFee</summary>
+        public static readonly Marshaller<Stellar.RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee> RestoreFootprintResult_RestoreFootprintInsufficientRefundableFeeMarshaller = Marshallers.Create<Stellar.RestoreFootprintResult.RestoreFootprintInsufficientRefundableFee>(
             (message, serializationContext) =>
             {
                 try

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageOfferDeleted</summary>
-        public static readonly Marshaller<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferDeleted> ManageOfferDeletedMarshaller = Marshallers.Create<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferDeleted>(
+        /// <summary>Marshaller for Stellar.ManageOfferSuccessResult+offerUnion+ManageOfferDeleted</summary>
+        public static readonly Marshaller<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferDeleted> ManageOfferSuccessResult_offerUnion_ManageOfferDeletedMarshaller = Marshallers.Create<Stellar.ManageOfferSuccessResult.offerUnion.ManageOfferDeleted>(
             (message, serializationContext) =>
             {
                 try

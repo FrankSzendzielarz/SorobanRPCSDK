@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SetOptionsBadFlags</summary>
-        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsBadFlags> SetOptionsBadFlagsMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsBadFlags>(
+        /// <summary>Marshaller for Stellar.SetOptionsResult+SetOptionsBadFlags</summary>
+        public static readonly Marshaller<Stellar.SetOptionsResult.SetOptionsBadFlags> SetOptionsResult_SetOptionsBadFlagsMarshaller = Marshallers.Create<Stellar.SetOptionsResult.SetOptionsBadFlags>(
             (message, serializationContext) =>
             {
                 try

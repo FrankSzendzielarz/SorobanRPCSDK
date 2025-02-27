@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeHostFunctionSuccessPreImageEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest</summary>
         public static readonly Marshaller<Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest> InvokeHostFunctionSuccessPreImageEncodeRequestMarshaller = Marshallers.Create<Stellar.InvokeHostFunctionSuccessPreImageEncodeRequest>(
             (message, serializationContext) =>
             {

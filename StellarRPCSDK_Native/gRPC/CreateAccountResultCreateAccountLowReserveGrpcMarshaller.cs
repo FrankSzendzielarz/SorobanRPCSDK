@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateAccountLowReserve</summary>
-        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountLowReserve> CreateAccountLowReserveMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountLowReserve>(
+        /// <summary>Marshaller for Stellar.CreateAccountResult+CreateAccountLowReserve</summary>
+        public static readonly Marshaller<Stellar.CreateAccountResult.CreateAccountLowReserve> CreateAccountResult_CreateAccountLowReserveMarshaller = Marshallers.Create<Stellar.CreateAccountResult.CreateAccountLowReserve>(
             (message, serializationContext) =>
             {
                 try

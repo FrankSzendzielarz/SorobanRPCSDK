@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OpnotSupported</summary>
-        public static readonly Marshaller<Stellar.OperationResult.OpnotSupported> OpnotSupportedMarshaller = Marshallers.Create<Stellar.OperationResult.OpnotSupported>(
+        /// <summary>Marshaller for Stellar.OperationResult+OpnotSupported</summary>
+        public static readonly Marshaller<Stellar.OperationResult.OpnotSupported> OperationResult_OpnotSupportedMarshaller = Marshallers.Create<Stellar.OperationResult.OpnotSupported>(
             (message, serializationContext) =>
             {
                 try

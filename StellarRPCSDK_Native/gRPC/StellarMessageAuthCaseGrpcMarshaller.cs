@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for AuthCase</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.AuthCase> AuthCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.AuthCase>(
+        /// <summary>Marshaller for Stellar.StellarMessage+AuthCase</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.AuthCase> StellarMessage_AuthCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.AuthCase>(
             (message, serializationContext) =>
             {
                 try

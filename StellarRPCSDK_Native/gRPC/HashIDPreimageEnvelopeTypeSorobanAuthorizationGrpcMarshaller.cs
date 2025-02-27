@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for EnvelopeTypeSorobanAuthorization</summary>
-        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypeSorobanAuthorization> EnvelopeTypeSorobanAuthorizationMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypeSorobanAuthorization>(
+        /// <summary>Marshaller for Stellar.HashIDPreimage+EnvelopeTypeSorobanAuthorization</summary>
+        public static readonly Marshaller<Stellar.HashIDPreimage.EnvelopeTypeSorobanAuthorization> HashIDPreimage_EnvelopeTypeSorobanAuthorizationMarshaller = Marshallers.Create<Stellar.HashIDPreimage.EnvelopeTypeSorobanAuthorization>(
             (message, serializationContext) =>
             {
                 try

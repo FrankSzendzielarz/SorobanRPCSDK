@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxsorobanInvalid</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxsorobanInvalid> TxsorobanInvalidMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxsorobanInvalid>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxsorobanInvalid</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxsorobanInvalid> TransactionResult_resultUnion_TxsorobanInvalidMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxsorobanInvalid>(
             (message, serializationContext) =>
             {
                 try

@@ -38,7 +38,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for InvokeContractArgs</summary>
+        /// <summary>Marshaller for Stellar.InvokeContractArgs</summary>
         public static readonly Marshaller<Stellar.InvokeContractArgs> InvokeContractArgsMarshaller = Marshallers.Create<Stellar.InvokeContractArgs>(
             (message, serializationContext) =>
             {

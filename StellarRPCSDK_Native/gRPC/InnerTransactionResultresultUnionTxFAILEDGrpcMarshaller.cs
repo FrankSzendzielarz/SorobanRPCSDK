@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxFAILED</summary>
-        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxFAILED> TxFAILEDMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxFAILED>(
+        /// <summary>Marshaller for Stellar.InnerTransactionResult+resultUnion+TxFAILED</summary>
+        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxFAILED> InnerTransactionResult_resultUnion_TxFAILEDMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxFAILED>(
             (message, serializationContext) =>
             {
                 try

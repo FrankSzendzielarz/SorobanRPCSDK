@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for HmacSha256MacDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.HmacSha256MacDecodeRequest</summary>
         public static readonly Marshaller<Stellar.HmacSha256MacDecodeRequest> HmacSha256MacDecodeRequestMarshaller = Marshallers.Create<Stellar.HmacSha256MacDecodeRequest>(
             (message, serializationContext) =>
             {

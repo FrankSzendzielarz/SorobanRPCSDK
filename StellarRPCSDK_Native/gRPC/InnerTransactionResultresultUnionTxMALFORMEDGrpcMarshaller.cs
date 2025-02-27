@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxMALFORMED</summary>
-        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxMALFORMED> TxMALFORMEDMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxMALFORMED>(
+        /// <summary>Marshaller for Stellar.InnerTransactionResult+resultUnion+TxMALFORMED</summary>
+        public static readonly Marshaller<Stellar.InnerTransactionResult.resultUnion.TxMALFORMED> InnerTransactionResult_resultUnion_TxMALFORMEDMarshaller = Marshallers.Create<Stellar.InnerTransactionResult.resultUnion.TxMALFORMED>(
             (message, serializationContext) =>
             {
                 try

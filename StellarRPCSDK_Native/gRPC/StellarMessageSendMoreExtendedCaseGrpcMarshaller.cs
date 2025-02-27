@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for SendMoreExtendedCase</summary>
-        public static readonly Marshaller<Stellar.StellarMessage.SendMoreExtendedCase> SendMoreExtendedCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.SendMoreExtendedCase>(
+        /// <summary>Marshaller for Stellar.StellarMessage+SendMoreExtendedCase</summary>
+        public static readonly Marshaller<Stellar.StellarMessage.SendMoreExtendedCase> StellarMessage_SendMoreExtendedCaseMarshaller = Marshallers.Create<Stellar.StellarMessage.SendMoreExtendedCase>(
             (message, serializationContext) =>
             {
                 try

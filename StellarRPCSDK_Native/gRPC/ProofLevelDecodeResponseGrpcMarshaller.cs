@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ProofLevelDecodeResponse</summary>
+        /// <summary>Marshaller for Stellar.ProofLevelDecodeResponse</summary>
         public static readonly Marshaller<Stellar.ProofLevelDecodeResponse> ProofLevelDecodeResponseMarshaller = Marshallers.Create<Stellar.ProofLevelDecodeResponse>(
             (message, serializationContext) =>
             {

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TxinsufficientBalance</summary>
-        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxinsufficientBalance> TxinsufficientBalanceMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxinsufficientBalance>(
+        /// <summary>Marshaller for Stellar.TransactionResult+resultUnion+TxinsufficientBalance</summary>
+        public static readonly Marshaller<Stellar.TransactionResult.resultUnion.TxinsufficientBalance> TransactionResult_resultUnion_TxinsufficientBalanceMarshaller = Marshallers.Create<Stellar.TransactionResult.resultUnion.TxinsufficientBalance>(
             (message, serializationContext) =>
             {
                 try

@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ManageSellOfferCrossSelf</summary>
-        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferCrossSelf> ManageSellOfferCrossSelfMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferCrossSelf>(
+        /// <summary>Marshaller for Stellar.ManageSellOfferResult+ManageSellOfferCrossSelf</summary>
+        public static readonly Marshaller<Stellar.ManageSellOfferResult.ManageSellOfferCrossSelf> ManageSellOfferResult_ManageSellOfferCrossSelfMarshaller = Marshallers.Create<Stellar.ManageSellOfferResult.ManageSellOfferCrossSelf>(
             (message, serializationContext) =>
             {
                 try

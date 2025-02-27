@@ -38,8 +38,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for v0Struct</summary>
-        public static readonly Marshaller<Stellar.AuthenticatedMessage.v0Struct> v0StructMarshaller = Marshallers.Create<Stellar.AuthenticatedMessage.v0Struct>(
+        /// <summary>Marshaller for Stellar.AuthenticatedMessage+v0Struct</summary>
+        public static readonly Marshaller<Stellar.AuthenticatedMessage.v0Struct> AuthenticatedMessage_v0StructMarshaller = Marshallers.Create<Stellar.AuthenticatedMessage.v0Struct>(
             (message, serializationContext) =>
             {
                 try

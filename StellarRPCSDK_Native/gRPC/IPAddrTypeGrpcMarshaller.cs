@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for IPAddrType</summary>
+        /// <summary>Marshaller for Stellar.IPAddrType</summary>
         public static readonly Marshaller<Stellar.IPAddrType> IPAddrTypeMarshaller = Marshallers.Create<Stellar.IPAddrType>(
             (message, serializationContext) =>
             {

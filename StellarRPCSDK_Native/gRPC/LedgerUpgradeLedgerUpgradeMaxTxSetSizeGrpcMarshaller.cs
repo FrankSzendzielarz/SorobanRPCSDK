@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for LedgerUpgradeMaxTxSetSize</summary>
-        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeMaxTxSetSize> LedgerUpgradeMaxTxSetSizeMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeMaxTxSetSize>(
+        /// <summary>Marshaller for Stellar.LedgerUpgrade+LedgerUpgradeMaxTxSetSize</summary>
+        public static readonly Marshaller<Stellar.LedgerUpgrade.LedgerUpgradeMaxTxSetSize> LedgerUpgrade_LedgerUpgradeMaxTxSetSizeMarshaller = Marshallers.Create<Stellar.LedgerUpgrade.LedgerUpgradeMaxTxSetSize>(
             (message, serializationContext) =>
             {
                 try

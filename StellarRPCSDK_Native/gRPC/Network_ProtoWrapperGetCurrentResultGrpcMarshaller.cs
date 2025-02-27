@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetCurrentResult</summary>
-        public static readonly Marshaller<Stellar.Network_ProtoWrapper.GetCurrentResult> GetCurrentResultMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.GetCurrentResult>(
+        /// <summary>Marshaller for Stellar.Network_ProtoWrapper+GetCurrentResult</summary>
+        public static readonly Marshaller<Stellar.Network_ProtoWrapper.GetCurrentResult> Network_ProtoWrapper_GetCurrentResultMarshaller = Marshallers.Create<Stellar.Network_ProtoWrapper.GetCurrentResult>(
             (message, serializationContext) =>
             {
                 try

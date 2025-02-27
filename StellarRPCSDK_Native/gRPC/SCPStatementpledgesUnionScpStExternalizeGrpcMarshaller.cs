@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ScpStExternalize</summary>
-        public static readonly Marshaller<Stellar.SCPStatement.pledgesUnion.ScpStExternalize> ScpStExternalizeMarshaller = Marshallers.Create<Stellar.SCPStatement.pledgesUnion.ScpStExternalize>(
+        /// <summary>Marshaller for Stellar.SCPStatement+pledgesUnion+ScpStExternalize</summary>
+        public static readonly Marshaller<Stellar.SCPStatement.pledgesUnion.ScpStExternalize> SCPStatement_pledgesUnion_ScpStExternalizeMarshaller = Marshallers.Create<Stellar.SCPStatement.pledgesUnion.ScpStExternalize>(
             (message, serializationContext) =>
             {
                 try

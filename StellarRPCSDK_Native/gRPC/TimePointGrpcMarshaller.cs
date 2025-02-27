@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TimePoint</summary>
+        /// <summary>Marshaller for Stellar.TimePoint</summary>
         public static readonly Marshaller<Stellar.TimePoint> TimePointMarshaller = Marshallers.Create<Stellar.TimePoint>(
             (message, serializationContext) =>
             {

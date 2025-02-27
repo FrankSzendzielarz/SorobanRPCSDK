@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSettingContractExecutionLanesV0DecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest</summary>
         public static readonly Marshaller<Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest> ConfigSettingContractExecutionLanesV0DecodeRequestMarshaller = Marshallers.Create<Stellar.ConfigSettingContractExecutionLanesV0DecodeRequest>(
             (message, serializationContext) =>
             {

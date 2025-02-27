@@ -33,8 +33,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustCannotDelete</summary>
-        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustCannotDelete> ChangeTrustCannotDeleteMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustCannotDelete>(
+        /// <summary>Marshaller for Stellar.ChangeTrustResult+ChangeTrustCannotDelete</summary>
+        public static readonly Marshaller<Stellar.ChangeTrustResult.ChangeTrustCannotDelete> ChangeTrustResult_ChangeTrustCannotDeleteMarshaller = Marshallers.Create<Stellar.ChangeTrustResult.ChangeTrustCannotDelete>(
             (message, serializationContext) =>
             {
                 try

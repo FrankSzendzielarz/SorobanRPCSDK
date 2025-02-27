@@ -37,8 +37,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for taggedTransactionUnion</summary>
-        public static readonly Marshaller<Stellar.TransactionSignaturePayload.taggedTransactionUnion> taggedTransactionUnionMarshaller = Marshallers.Create<Stellar.TransactionSignaturePayload.taggedTransactionUnion>(
+        /// <summary>Marshaller for Stellar.TransactionSignaturePayload+taggedTransactionUnion</summary>
+        public static readonly Marshaller<Stellar.TransactionSignaturePayload.taggedTransactionUnion> TransactionSignaturePayload_taggedTransactionUnionMarshaller = Marshallers.Create<Stellar.TransactionSignaturePayload.taggedTransactionUnion>(
             (message, serializationContext) =>
             {
                 try

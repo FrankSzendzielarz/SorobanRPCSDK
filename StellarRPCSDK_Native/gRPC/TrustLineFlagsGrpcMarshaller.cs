@@ -33,7 +33,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for TrustLineFlags</summary>
+        /// <summary>Marshaller for Stellar.TrustLineFlags</summary>
         public static readonly Marshaller<Stellar.TrustLineFlags> TrustLineFlagsMarshaller = Marshallers.Create<Stellar.TrustLineFlags>(
             (message, serializationContext) =>
             {

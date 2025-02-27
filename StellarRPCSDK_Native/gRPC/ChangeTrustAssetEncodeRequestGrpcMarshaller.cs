@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ChangeTrustAssetEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ChangeTrustAssetEncodeRequest</summary>
         public static readonly Marshaller<Stellar.ChangeTrustAssetEncodeRequest> ChangeTrustAssetEncodeRequestMarshaller = Marshallers.Create<Stellar.ChangeTrustAssetEncodeRequest>(
             (message, serializationContext) =>
             {

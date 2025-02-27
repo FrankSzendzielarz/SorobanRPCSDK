@@ -40,7 +40,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for GetVersionInfoResult</summary>
+        /// <summary>Marshaller for Stellar.RPC.GetVersionInfoResult</summary>
         public static readonly Marshaller<Stellar.RPC.GetVersionInfoResult> GetVersionInfoResultMarshaller = Marshallers.Create<Stellar.RPC.GetVersionInfoResult>(
             (message, serializationContext) =>
             {

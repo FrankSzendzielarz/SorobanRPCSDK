@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ThresholdsDecodeRequest</summary>
+        /// <summary>Marshaller for Stellar.ThresholdsDecodeRequest</summary>
         public static readonly Marshaller<Stellar.ThresholdsDecodeRequest> ThresholdsDecodeRequestMarshaller = Marshallers.Create<Stellar.ThresholdsDecodeRequest>(
             (message, serializationContext) =>
             {

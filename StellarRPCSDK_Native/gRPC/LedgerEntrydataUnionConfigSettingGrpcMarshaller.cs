@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for ConfigSetting</summary>
-        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.ConfigSetting> ConfigSettingMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.ConfigSetting>(
+        /// <summary>Marshaller for Stellar.LedgerEntry+dataUnion+ConfigSetting</summary>
+        public static readonly Marshaller<Stellar.LedgerEntry.dataUnion.ConfigSetting> LedgerEntry_dataUnion_ConfigSettingMarshaller = Marshallers.Create<Stellar.LedgerEntry.dataUnion.ConfigSetting>(
             (message, serializationContext) =>
             {
                 try

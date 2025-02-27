@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for Nonexistence</summary>
-        public static readonly Marshaller<Stellar.ArchivalProof.bodyUnion.Nonexistence> NonexistenceMarshaller = Marshallers.Create<Stellar.ArchivalProof.bodyUnion.Nonexistence>(
+        /// <summary>Marshaller for Stellar.ArchivalProof+bodyUnion+Nonexistence</summary>
+        public static readonly Marshaller<Stellar.ArchivalProof.bodyUnion.Nonexistence> ArchivalProof_bodyUnion_NonexistenceMarshaller = Marshallers.Create<Stellar.ArchivalProof.bodyUnion.Nonexistence>(
             (message, serializationContext) =>
             {
                 try

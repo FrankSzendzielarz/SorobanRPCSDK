@@ -36,7 +36,7 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for BucketListTypeEncodeRequest</summary>
+        /// <summary>Marshaller for Stellar.BucketListTypeEncodeRequest</summary>
         public static readonly Marshaller<Stellar.BucketListTypeEncodeRequest> BucketListTypeEncodeRequestMarshaller = Marshallers.Create<Stellar.BucketListTypeEncodeRequest>(
             (message, serializationContext) =>
             {

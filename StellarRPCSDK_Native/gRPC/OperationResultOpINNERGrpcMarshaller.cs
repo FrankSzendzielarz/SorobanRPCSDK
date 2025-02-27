@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for OpINNER</summary>
-        public static readonly Marshaller<Stellar.OperationResult.OpINNER> OpINNERMarshaller = Marshallers.Create<Stellar.OperationResult.OpINNER>(
+        /// <summary>Marshaller for Stellar.OperationResult+OpINNER</summary>
+        public static readonly Marshaller<Stellar.OperationResult.OpINNER> OperationResult_OpINNERMarshaller = Marshallers.Create<Stellar.OperationResult.OpINNER>(
             (message, serializationContext) =>
             {
                 try

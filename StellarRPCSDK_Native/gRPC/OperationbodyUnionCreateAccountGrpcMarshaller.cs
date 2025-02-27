@@ -36,8 +36,8 @@ namespace Stellar.RPC.AOT
             }
         }
 
-        /// <summary>Marshaller for CreateAccount</summary>
-        public static readonly Marshaller<Stellar.Operation.bodyUnion.CreateAccount> CreateAccountMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.CreateAccount>(
+        /// <summary>Marshaller for Stellar.Operation+bodyUnion+CreateAccount</summary>
+        public static readonly Marshaller<Stellar.Operation.bodyUnion.CreateAccount> Operation_bodyUnion_CreateAccountMarshaller = Marshallers.Create<Stellar.Operation.bodyUnion.CreateAccount>(
             (message, serializationContext) =>
             {
                 try
