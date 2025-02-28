@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,16 @@ namespace Stellar.RPC
 
     public partial class StellarRPCClient : IStellarRPCClient
     {
+        private HttpClient GetClient()
+        {
+            var client = this._httpClientFactory.CreateClient("StellarClient");
+            if (string.IsNullOrEmpty(client.BaseAddress?.ToString()) && !string.IsNullOrEmpty(Network.Url))
+            {
+                client.BaseAddress = new Uri(Network.Url);
+                Console.WriteLine($"Setting client BaseAddress to: {client.BaseAddress}");
+            }
+            return client;
+        }
 
-    
     }
 }

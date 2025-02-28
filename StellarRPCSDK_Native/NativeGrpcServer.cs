@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Stellar.RPC.AOT;
 using System;
+using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading;
 
@@ -41,13 +42,10 @@ namespace Stellar.RPC.Native
                     builder.Logging.SetMinimumLevel(LogLevel.Debug);
                     builder.Logging.AddConsole();
                     //DI for the Stellar Service
-                    builder.Services.AddHttpClient<StellarRPCClient>(client =>
-                    {
-                        client.BaseAddress = new Uri(Network.Url);
-                        Console.WriteLine($"SETTING DI CONTAINER URI {client.BaseAddress}");
-                    });
+                 
                     builder.Services.AddAotGrpcServices();
-                    builder.Services.AddTransient<StellarRPCClient>();
+                    builder.Services.AddHttpClient("StellarClient");
+                    builder.Services.AddSingleton<StellarRPCClient>();
                     builder.Services.AddSingleton<MuxedAccount_ProtoWrapper>();
                     builder.Services.AddSingleton<Transaction_ProtoWrapper>();
                     builder.Services.AddSingleton<Network_ProtoWrapper>();

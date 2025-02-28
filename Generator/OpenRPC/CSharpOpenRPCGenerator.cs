@@ -171,16 +171,16 @@ namespace Generator.OpenRPC
 
             sb.AppendLine($"public partial class {_spec.Info.Title.Replace(" ", "")}Client");
             sb.AppendLine("{");
-            sb.AppendLine("    private readonly HttpClient _httpClient;");
+            sb.AppendLine("    private readonly IHttpClientFactory _httpClientFactory;");
 
             switch (_buildType)
             {
                 case BuildTarget.Unity:
                     sb.AppendLine("    private readonly JsonSerializerSettings _jsonSettings;");
                     sb.AppendLine();
-                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(IHttpClientFactory httpClientFactory)");
                     sb.AppendLine("    {");
-                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("        _httpClientFactory = httpClientFactory;");
                     sb.AppendLine("        _jsonSettings = new JsonSerializerSettings");
                     sb.AppendLine("        {");
                     sb.AppendLine("            ContractResolver = new CamelCasePropertyNamesContractResolver(),");
@@ -192,9 +192,9 @@ namespace Generator.OpenRPC
                 case BuildTarget.NetStandard2:
                     sb.AppendLine("    private readonly JsonSerializerOptions _jsonOptions;");
                     sb.AppendLine();
-                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(IHttpClientFactory httpClientFactory)");
                     sb.AppendLine("    {");
-                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("          _httpClientFactory = httpClientFactory;");
                     sb.AppendLine("        _jsonOptions = new JsonSerializerOptions");
                     sb.AppendLine("        {");
                     sb.AppendLine("            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,");
@@ -206,9 +206,9 @@ namespace Generator.OpenRPC
                 case BuildTarget.NativeAOT:
                     sb.AppendLine($"    private static readonly {_spec.Info.Title.Replace(" ", "")}JsonContext _jsonContext = {_spec.Info.Title.Replace(" ", "")}JsonContext.Default;");
                     sb.AppendLine();
-                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(HttpClient httpClient)");
+                    sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(IHttpClientFactory httpClientFactory)");
                     sb.AppendLine("    {");
-                    sb.AppendLine("        _httpClient = httpClient;");
+                    sb.AppendLine("         _httpClientFactory = httpClientFactory;");
                     sb.AppendLine("    }");
                     break;
 
@@ -276,7 +276,8 @@ namespace Generator.OpenRPC
                     break;
             }
 
-            sb.AppendLine($"        var response = await _httpClient.PostAsync(\"\", ");
+            sb.AppendLine("         var client = GetClient();");
+            sb.AppendLine($"        var response = await client.PostAsync(\"\", ");
             sb.AppendLine("            new StringContent(");
             sb.AppendLine("                requestJson,");
             sb.AppendLine("                Encoding.UTF8,");

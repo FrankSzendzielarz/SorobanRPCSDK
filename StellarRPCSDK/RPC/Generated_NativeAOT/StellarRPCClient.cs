@@ -4,7 +4,6 @@ using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Stellar.RPC;
-using System;
 
 namespace Stellar.RPC
 {
@@ -13,13 +12,12 @@ namespace Stellar.RPC
 /// </summary>
 public partial class StellarRPCClient
 {
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private static readonly StellarRPCJsonContext _jsonContext = StellarRPCJsonContext.Default;
 
-    public StellarRPCClient(HttpClient httpClient)
+    public StellarRPCClient(IHttpClientFactory httpClientFactory)
     {
-        _httpClient = httpClient;
-            Console.WriteLine($"HTTP CLIENT: {httpClient.BaseAddress}");
+         _httpClientFactory = httpClientFactory;
     }
 
     /// <summary>
@@ -40,7 +38,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -72,7 +71,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -104,8 +104,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-            Console.WriteLine($"GET HEALTH BASE ADDR {_httpClient.BaseAddress}");
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -137,7 +137,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -172,7 +173,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -204,7 +206,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -237,7 +240,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -270,7 +274,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -302,7 +307,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -337,7 +343,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
@@ -370,7 +377,8 @@ public partial class StellarRPCClient
         };
 
         var requestJson = JsonSerializer.Serialize(request, _jsonContext.JsonRpcRequest);
-        var response = await _httpClient.PostAsync("", 
+         var client = GetClient();
+        var response = await client.PostAsync("", 
             new StringContent(
                 requestJson,
                 Encoding.UTF8,
