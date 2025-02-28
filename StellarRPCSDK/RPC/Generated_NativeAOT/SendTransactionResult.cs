@@ -58,7 +58,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("diagnosticEventsXdr")]
-        [ProtoBuf.ProtoMember(6)] public System.Collections.Generic.ICollection<string>  DiagnosticEventsXdr { get; set; }
+        [ProtoBuf.ProtoMember(6)] public System.Collections.Generic.List<string>  DiagnosticEventsXdr { get; set; }
 
 
 

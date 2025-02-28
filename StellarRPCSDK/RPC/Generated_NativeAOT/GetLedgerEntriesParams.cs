@@ -21,7 +21,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("keys")]
         [System.ComponentModel.DataAnnotations.Required]
-        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.ICollection<string>  Keys { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.List<string>  Keys { get; set; } = new System.Collections.Generic.List<string>();
 
 
 

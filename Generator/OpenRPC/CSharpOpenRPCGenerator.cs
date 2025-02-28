@@ -28,22 +28,41 @@ namespace Generator.OpenRPC
             _spec = spec;
             _outputDir = outputDir;
             _buildType=buildType ;
-
-            _settings = new CSharpGeneratorSettings
+            if (_buildType != BuildTarget.NativeAOT)
             {
-                ClassStyle = CSharpClassStyle.Poco,
-                GenerateDataAnnotations = true,
-                GenerateJsonMethods = false,
-                Namespace = "Stellar.RPC",
-                JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
-                ArrayType = "System.Collections.Generic.ICollection",
-                ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
-                NumberType = "long",
-                TypeAccessModifier = "[ProtoBuf.ProtoContract] public",
-                PropertyNameGenerator = new PropertyMarkerNameGenerator(),
-                
-
-            };
+                // TODO - this is just here because I dont have time to check right now about impact on other builds
+                _settings = new CSharpGeneratorSettings
+                {
+                    ClassStyle = CSharpClassStyle.Poco,
+                    GenerateDataAnnotations = true,
+                    GenerateJsonMethods = false,
+                    Namespace = "Stellar.RPC",
+                    JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                    ArrayType = "System.Collections.Generic.ICollection",
+                    ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
+                    NumberType = "long",
+                    TypeAccessModifier = "[ProtoBuf.ProtoContract] public",
+                    PropertyNameGenerator = new PropertyMarkerNameGenerator(),
+                };
+            }
+            else
+            {
+                _settings = new CSharpGeneratorSettings
+                {
+                    ClassStyle = CSharpClassStyle.Poco,
+                    GenerateDataAnnotations = true,
+                    GenerateJsonMethods = false,
+                    Namespace = "Stellar.RPC",
+                    JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                    // Change these two lines to use List<T> instead of ICollection<T>
+                    ArrayType = "System.Collections.Generic.List",
+                    ArrayInstanceType = "System.Collections.Generic.List",
+                    ArrayBaseType = "System.Collections.Generic.List<{0}>",
+                    NumberType = "long",
+                    TypeAccessModifier = "[ProtoBuf.ProtoContract] public",
+                    PropertyNameGenerator = new PropertyMarkerNameGenerator(),
+                };
+            }
             _settings.TypeNameGenerator = new TypeFixNameGenerator(_settings.TypeNameGenerator);
       
         }

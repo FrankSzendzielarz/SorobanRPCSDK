@@ -38,7 +38,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("results")]
-        [ProtoBuf.ProtoMember(4)] public System.Collections.Generic.ICollection<Results>  Results { get; set; }
+        [ProtoBuf.ProtoMember(4)] public System.Collections.Generic.List<Results>  Results { get; set; }
 
         /// <summary>
         /// (optional) Serialized base64 string - The recommended Soroban Transaction Data to use when submitting the simulated transaction. This data contains the refundable fee and resource usage information such as the ledger footprint and IO access data (serialized in a base64 string). Not present in case of error.
@@ -52,7 +52,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("events")]
-        [ProtoBuf.ProtoMember(6)] public System.Collections.Generic.ICollection<string>  Events { get; set; }
+        [ProtoBuf.ProtoMember(6)] public System.Collections.Generic.List<string>  Events { get; set; }
 
         /// <summary>
         /// (optional) - It can only be present on successful simulation (i.e. no error) of `InvokeHostFunction` operations. If present, it indicates that the simulation detected archived ledger entries which need to be restored before the submission of the `InvokeHostFunction` operation. The `minResourceFee` and `transactionData` fields should be used to submit a transaction containing a `RestoreFootprint` operation.
@@ -66,7 +66,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("stateChanges")]
-        [ProtoBuf.ProtoMember(8)] public System.Collections.Generic.ICollection<StateChanges>  StateChanges { get; set; }
+        [ProtoBuf.ProtoMember(8)] public System.Collections.Generic.List<StateChanges>  StateChanges { get; set; }
 
         /// <summary>
         /// (optional) - This field will include details about why the invoke host function call failed. Only present if the transaction simulation failed.
@@ -137,7 +137,7 @@ namespace Stellar.RPC
 
         [System.Text.Json.Serialization.JsonPropertyName("auth")]
         [System.ComponentModel.DataAnnotations.Required]
-        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.ICollection<string>  Auth { get; set; } = new System.Collections.ObjectModel.Collection<string>();
+        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.List<string>  Auth { get; set; } = new System.Collections.Generic.List<string>();
 
 
 

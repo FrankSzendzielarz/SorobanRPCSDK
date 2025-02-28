@@ -14,7 +14,7 @@ namespace Stellar.RPC
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("transactions")]
-        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.ICollection<Transactions>  Transactions { get; set; }
+        [ProtoBuf.ProtoMember(1)] public System.Collections.Generic.List<Transactions>  Transactions { get; set; }
 
         /// <summary>
         /// The sequence number of the latest ledger known to Stellar RPC at the time it handled the request.
@@ -107,7 +107,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("diagnosticEventsXdr")]
-        [ProtoBuf.ProtoMember(7)] public System.Collections.Generic.ICollection<string>  DiagnosticEventsXdr { get; set; }
+        [ProtoBuf.ProtoMember(7)] public System.Collections.Generic.List<string>  DiagnosticEventsXdr { get; set; }
 
         /// <summary>
         /// The sequence number of the ledger which included the transaction.

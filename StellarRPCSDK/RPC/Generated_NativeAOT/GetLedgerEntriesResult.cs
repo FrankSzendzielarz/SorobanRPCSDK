@@ -24,7 +24,7 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("entries")]
-        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.ICollection<Entries>  Entries { get; set; }
+        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.List<Entries>  Entries { get; set; }
 
 
 

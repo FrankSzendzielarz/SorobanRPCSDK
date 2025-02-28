@@ -21,7 +21,7 @@ namespace Stellar.RPC
 
 
         [System.Text.Json.Serialization.JsonPropertyName("events")]
-        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.ICollection<Events>  Events { get; set; }
+        [ProtoBuf.ProtoMember(2)] public System.Collections.Generic.List<Events>  Events { get; set; }
 
 
 
@@ -106,7 +106,7 @@ namespace Stellar.RPC
         [System.Text.Json.Serialization.JsonPropertyName("topic")]
         [System.ComponentModel.DataAnnotations.MinLength(1)]
         [System.ComponentModel.DataAnnotations.MaxLength(4)]
-        [ProtoBuf.ProtoMember(8)] public System.Collections.Generic.ICollection<string>  Topic { get; set; }
+        [ProtoBuf.ProtoMember(8)] public System.Collections.Generic.List<string>  Topic { get; set; }
 
         /// <summary>
         /// The emitted body value of the event (serialized in a base64 string).
