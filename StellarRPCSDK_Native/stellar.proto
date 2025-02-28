@@ -4,11 +4,11 @@ import "google/protobuf/empty.proto";
 
 message AccountEntry {
    AccountID accountID = 1;
-   int64 balance = 2;
+   Stellar_int64 balance = 2;
    SequenceNumber seqNum = 3;
-   uint32 numSubEntries = 4;
+   Stellar_uint32 numSubEntries = 4;
    AccountID inflationDest = 5;
-   uint32 flags = 6;
+   Stellar_uint32 flags = 6;
    string32 homeDomain = 7;
    Thresholds thresholds = 8;
    repeated Signer signers = 9;
@@ -54,8 +54,8 @@ message AccountEntryExtensionV1_extUnion_case_2 {
    AccountEntryExtensionV2 v2 = 1;
 }
 message AccountEntryExtensionV2 {
-   uint32 numSponsored = 1;
-   uint32 numSponsoring = 2;
+   Stellar_uint32 numSponsored = 1;
+   Stellar_uint32 numSponsoring = 2;
    repeated SponsorshipDescriptor signerSponsoringIDs = 3;
    AccountEntryExtensionV2_extUnion ext = 4;
 }
@@ -84,7 +84,7 @@ message AccountEntryExtensionV2_extUnion_case_3 {
 }
 message AccountEntryExtensionV3 {
    ExtensionPoint ext = 1;
-   uint32 seqLedger = 2;
+   Stellar_uint32 seqLedger = 2;
    TimePoint seqTime = 3;
 }
 message AccountEntryExtensionV3DecodeRequest {
@@ -205,12 +205,12 @@ message AccountMergeResult_AccountMergeNoAccount {
 message AccountMergeResult_AccountMergeSeqnumTooFar {
 }
 message AccountMergeResult_AccountMergeSuccess {
-   int64 sourceAccountBalance = 1;
+   Stellar_int64 sourceAccountBalance = 1;
 }
 message AllowTrustOp {
    AccountID trustor = 1;
    AssetCode asset = 2;
-   uint32 authorize = 3;
+   Stellar_uint32 authorize = 3;
 }
 message AllowTrustOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -315,7 +315,7 @@ message AlphaNum4EncodeResponse {
    string EncodedValue = 1;
 }
 message ArchivalProof {
-   uint32 epoch = 1;
+   Stellar_uint32 epoch = 1;
    ArchivalProof_bodyUnion body = 2;
 }
 message ArchivalProofDecodeRequest {
@@ -331,7 +331,7 @@ message ArchivalProofEncodeResponse {
    string EncodedValue = 1;
 }
 message ArchivalProofNode {
-   uint32 index = 1;
+   Stellar_uint32 index = 1;
    Hash hash = 2;
 }
 message ArchivalProofNodeDecodeRequest {
@@ -478,7 +478,7 @@ message Auth {
 }
 message AuthCert {
    Curve25519Public pubkey = 1;
-   uint64 expiration = 2;
+   Stellar_uint64 expiration = 2;
    Signature sig = 3;
 }
 message AuthCertDecodeRequest {
@@ -526,7 +526,7 @@ message AuthenticatedMessage_case_0 {
    AuthenticatedMessage_v0Struct v0 = 1;
 }
 message AuthenticatedMessage_v0Struct {
-   uint64 sequence = 1;
+   Stellar_uint64 sequence = 1;
    StellarMessage message = 2;
    HmacSha256Mac mac = 3;
 }
@@ -687,7 +687,7 @@ message BucketListTypeEncodeResponse {
    string EncodedValue = 1;
 }
 message BucketMetadata {
-   uint32 ledgerVersion = 1;
+   Stellar_uint32 ledgerVersion = 1;
    BucketMetadata_extUnion ext = 2;
 }
 message BucketMetadataDecodeRequest {
@@ -802,7 +802,7 @@ message ChangeTrustAsset_AssetTypePoolShare {
 }
 message ChangeTrustOp {
    ChangeTrustAsset line = 1;
-   int64 limit = 2;
+   Stellar_int64 limit = 2;
 }
 message ChangeTrustOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -999,9 +999,9 @@ message ClaimClaimableBalanceResult_ClaimClaimableBalanceSuccess {
 message ClaimLiquidityAtom {
    PoolID liquidityPoolID = 1;
    Asset assetSold = 2;
-   int64 amountSold = 3;
+   Stellar_int64 amountSold = 3;
    Asset assetBought = 4;
-   int64 amountBought = 5;
+   Stellar_int64 amountBought = 5;
 }
 message ClaimLiquidityAtomDecodeRequest {
    bytes EncodedValue = 1;
@@ -1017,11 +1017,11 @@ message ClaimLiquidityAtomEncodeResponse {
 }
 message ClaimOfferAtom {
    AccountID sellerID = 1;
-   int64 offerID = 2;
+   Stellar_int64 offerID = 2;
    Asset assetSold = 3;
-   int64 amountSold = 4;
+   Stellar_int64 amountSold = 4;
    Asset assetBought = 5;
-   int64 amountBought = 6;
+   Stellar_int64 amountBought = 6;
 }
 message ClaimOfferAtomDecodeRequest {
    bytes EncodedValue = 1;
@@ -1037,11 +1037,11 @@ message ClaimOfferAtomEncodeResponse {
 }
 message ClaimOfferAtomV0 {
    uint256 sellerEd25519 = 1;
-   int64 offerID = 2;
+   Stellar_int64 offerID = 2;
    Asset assetSold = 3;
-   int64 amountSold = 4;
+   Stellar_int64 amountSold = 4;
    Asset assetBought = 5;
-   int64 amountBought = 6;
+   Stellar_int64 amountBought = 6;
 }
 message ClaimOfferAtomV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1101,10 +1101,10 @@ message ClaimPredicate_ClaimPredicateAnd {
    repeated ClaimPredicate andPredicates = 1;
 }
 message ClaimPredicate_ClaimPredicateBeforeAbsoluteTime {
-   int64 absBefore = 4;
+   Stellar_int64 absBefore = 4;
 }
 message ClaimPredicate_ClaimPredicateBeforeRelativeTime {
-   int64 relBefore = 5;
+   Stellar_int64 relBefore = 5;
 }
 message ClaimPredicate_ClaimPredicateNot {
    ClaimPredicate notPredicate = 3;
@@ -1118,7 +1118,7 @@ message ClaimableBalanceEntry {
    ClaimableBalanceID balanceID = 1;
    repeated Claimant claimants = 2;
    Asset asset = 3;
-   int64 amount = 4;
+   Stellar_int64 amount = 4;
    ClaimableBalanceEntry_extUnion ext = 5;
 }
 message ClaimableBalanceEntryDecodeRequest {
@@ -1135,7 +1135,7 @@ message ClaimableBalanceEntryEncodeResponse {
 }
 message ClaimableBalanceEntryExtensionV1 {
    ClaimableBalanceEntryExtensionV1_extUnion ext = 1;
-   uint32 flags = 2;
+   Stellar_uint32 flags = 2;
 }
 message ClaimableBalanceEntryExtensionV1DecodeRequest {
    bytes EncodedValue = 1;
@@ -1321,7 +1321,7 @@ message ClawbackClaimableBalanceResult_ClawbackClaimableBalanceSuccess {
 message ClawbackOp {
    Asset asset = 1;
    MuxedAccount from = 2;
-   int64 amount = 3;
+   Stellar_int64 amount = 3;
 }
 message ClawbackOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -1389,7 +1389,7 @@ message CloneParam {
    Transaction Transaction = 1;
 }
 message ColdArchiveArchivedLeaf {
-   uint32 index = 1;
+   Stellar_uint32 index = 1;
    LedgerEntry archivedEntry = 2;
 }
 message ColdArchiveArchivedLeafDecodeRequest {
@@ -1405,7 +1405,7 @@ message ColdArchiveArchivedLeafEncodeResponse {
    string EncodedValue = 1;
 }
 message ColdArchiveBoundaryLeaf {
-   uint32 index = 1;
+   Stellar_uint32 index = 1;
    bool isLowerBound = 2;
 }
 message ColdArchiveBoundaryLeafDecodeRequest {
@@ -1476,7 +1476,7 @@ message ColdArchiveBucketEntry_ColdArchiveMetaentry {
    BucketMetadata metaEntry = 1;
 }
 message ColdArchiveDeletedLeaf {
-   uint32 index = 1;
+   Stellar_uint32 index = 1;
    LedgerKey deletedKey = 2;
 }
 message ColdArchiveDeletedLeafDecodeRequest {
@@ -1492,8 +1492,8 @@ message ColdArchiveDeletedLeafEncodeResponse {
    string EncodedValue = 1;
 }
 message ColdArchiveHashEntry {
-   uint32 index = 1;
-   uint32 level = 2;
+   Stellar_uint32 index = 1;
+   Stellar_uint32 level = 2;
    Hash hash = 3;
 }
 message ColdArchiveHashEntryDecodeRequest {
@@ -1509,9 +1509,9 @@ message ColdArchiveHashEntryEncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractBandwidthV0 {
-   uint32 ledgerMaxTxsSizeBytes = 1;
-   uint32 txMaxSizeBytes = 2;
-   int64 feeTxSize1KB = 3;
+   Stellar_uint32 ledgerMaxTxsSizeBytes = 1;
+   Stellar_uint32 txMaxSizeBytes = 2;
+   Stellar_int64 feeTxSize1KB = 3;
 }
 message ConfigSettingContractBandwidthV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1526,10 +1526,10 @@ message ConfigSettingContractBandwidthV0EncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractComputeV0 {
-   int64 ledgerMaxInstructions = 1;
-   int64 txMaxInstructions = 2;
-   int64 feeRatePerInstructionsIncrement = 3;
-   uint32 txMemoryLimit = 4;
+   Stellar_int64 ledgerMaxInstructions = 1;
+   Stellar_int64 txMaxInstructions = 2;
+   Stellar_int64 feeRatePerInstructionsIncrement = 3;
+   Stellar_uint32 txMemoryLimit = 4;
 }
 message ConfigSettingContractComputeV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1544,8 +1544,8 @@ message ConfigSettingContractComputeV0EncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractEventsV0 {
-   uint32 txMaxContractEventsSizeBytes = 1;
-   int64 feeContractEvents1KB = 2;
+   Stellar_uint32 txMaxContractEventsSizeBytes = 1;
+   Stellar_int64 feeContractEvents1KB = 2;
 }
 message ConfigSettingContractEventsV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1560,7 +1560,7 @@ message ConfigSettingContractEventsV0EncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractExecutionLanesV0 {
-   uint32 ledgerMaxTxCount = 1;
+   Stellar_uint32 ledgerMaxTxCount = 1;
 }
 message ConfigSettingContractExecutionLanesV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1575,7 +1575,7 @@ message ConfigSettingContractExecutionLanesV0EncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractHistoricalDataV0 {
-   int64 feeHistorical1KB = 1;
+   Stellar_int64 feeHistorical1KB = 1;
 }
 message ConfigSettingContractHistoricalDataV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1590,21 +1590,21 @@ message ConfigSettingContractHistoricalDataV0EncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingContractLedgerCostV0 {
-   uint32 ledgerMaxReadLedgerEntries = 1;
-   uint32 ledgerMaxReadBytes = 2;
-   uint32 ledgerMaxWriteLedgerEntries = 3;
-   uint32 ledgerMaxWriteBytes = 4;
-   uint32 txMaxReadLedgerEntries = 5;
-   uint32 txMaxReadBytes = 6;
-   uint32 txMaxWriteLedgerEntries = 7;
-   uint32 txMaxWriteBytes = 8;
-   int64 feeReadLedgerEntry = 9;
-   int64 feeWriteLedgerEntry = 10;
-   int64 feeRead1KB = 11;
-   int64 bucketListTargetSizeBytes = 12;
-   int64 writeFee1KBBucketListLow = 13;
-   int64 writeFee1KBBucketListHigh = 14;
-   uint32 bucketListWriteFeeGrowthFactor = 15;
+   Stellar_uint32 ledgerMaxReadLedgerEntries = 1;
+   Stellar_uint32 ledgerMaxReadBytes = 2;
+   Stellar_uint32 ledgerMaxWriteLedgerEntries = 3;
+   Stellar_uint32 ledgerMaxWriteBytes = 4;
+   Stellar_uint32 txMaxReadLedgerEntries = 5;
+   Stellar_uint32 txMaxReadBytes = 6;
+   Stellar_uint32 txMaxWriteLedgerEntries = 7;
+   Stellar_uint32 txMaxWriteBytes = 8;
+   Stellar_int64 feeReadLedgerEntry = 9;
+   Stellar_int64 feeWriteLedgerEntry = 10;
+   Stellar_int64 feeRead1KB = 11;
+   Stellar_int64 bucketListTargetSizeBytes = 12;
+   Stellar_int64 writeFee1KBBucketListLow = 13;
+   Stellar_int64 writeFee1KBBucketListHigh = 14;
+   Stellar_uint32 bucketListWriteFeeGrowthFactor = 15;
 }
 message ConfigSettingContractLedgerCostV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -1649,7 +1649,7 @@ message ConfigSettingEntryEncodeResponse {
    string EncodedValue = 1;
 }
 message ConfigSettingEntry_ConfigSettingBucketlistSizeWindow {
-   repeated uint64 bucketListSizeWindow = 13;
+   repeated Stellar_uint64 bucketListSizeWindow = 13;
 }
 message ConfigSettingEntry_ConfigSettingContractBandwidthV0Case {
    ConfigSettingContractBandwidthV0 contractBandwidth = 6;
@@ -1664,10 +1664,10 @@ message ConfigSettingEntry_ConfigSettingContractCostParamsMemoryBytes {
    ContractCostParams contractCostParamsMemBytes = 8;
 }
 message ConfigSettingEntry_ConfigSettingContractDataEntrySizeBytes {
-   uint32 contractDataEntrySizeBytes = 10;
+   Stellar_uint32 contractDataEntrySizeBytes = 10;
 }
 message ConfigSettingEntry_ConfigSettingContractDataKeySizeBytes {
-   uint32 contractDataKeySizeBytes = 9;
+   Stellar_uint32 contractDataKeySizeBytes = 9;
 }
 message ConfigSettingEntry_ConfigSettingContractEventsV0Case {
    ConfigSettingContractEventsV0 contractEvents = 5;
@@ -1682,7 +1682,7 @@ message ConfigSettingEntry_ConfigSettingContractLedgerCostV0Case {
    ConfigSettingContractLedgerCostV0 contractLedgerCost = 3;
 }
 message ConfigSettingEntry_ConfigSettingContractMaxSizeBytes {
-   uint32 contractMaxSizeBytes = 1;
+   Stellar_uint32 contractMaxSizeBytes = 1;
 }
 message ConfigSettingEntry_ConfigSettingEvictionIterator {
    EvictionIterator evictionIterator = 14;
@@ -1751,16 +1751,16 @@ message ConfigUpgradeSetKeyEncodeResponse {
 }
 message ContractCodeCostInputs {
    ExtensionPoint ext = 1;
-   uint32 nInstructions = 2;
-   uint32 nFunctions = 3;
-   uint32 nGlobals = 4;
-   uint32 nTableEntries = 5;
-   uint32 nTypes = 6;
-   uint32 nDataSegments = 7;
-   uint32 nElemSegments = 8;
-   uint32 nImports = 9;
-   uint32 nExports = 10;
-   uint32 nDataSegmentBytes = 11;
+   Stellar_uint32 nInstructions = 2;
+   Stellar_uint32 nFunctions = 3;
+   Stellar_uint32 nGlobals = 4;
+   Stellar_uint32 nTableEntries = 5;
+   Stellar_uint32 nTypes = 6;
+   Stellar_uint32 nDataSegments = 7;
+   Stellar_uint32 nElemSegments = 8;
+   Stellar_uint32 nImports = 9;
+   Stellar_uint32 nExports = 10;
+   Stellar_uint32 nDataSegmentBytes = 11;
 }
 message ContractCodeCostInputsDecodeRequest {
    bytes EncodedValue = 1;
@@ -1808,8 +1808,8 @@ message ContractCodeEntry_extUnion_v1Struct {
 }
 message ContractCostParamEntry {
    ExtensionPoint ext = 1;
-   int64 constTerm = 2;
-   int64 linearTerm = 3;
+   Stellar_int64 constTerm = 2;
+   Stellar_int64 linearTerm = 3;
 }
 message ContractCostParamEntryDecodeRequest {
    bytes EncodedValue = 1;
@@ -2089,7 +2089,7 @@ message ContractIDPreimage_fromAddressStruct {
 }
 message CreateAccountOp {
    AccountID destination = 1;
-   int64 startingBalance = 2;
+   Stellar_int64 startingBalance = 2;
 }
 message CreateAccountOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -2155,7 +2155,7 @@ message CreateAccountResult_CreateAccountUnderfunded {
 }
 message CreateClaimableBalanceOp {
    Asset asset = 1;
-   int64 amount = 2;
+   Stellar_int64 amount = 2;
    repeated Claimant claimants = 3;
 }
 message CreateClaimableBalanceOpDecodeRequest {
@@ -2273,7 +2273,7 @@ message CreateNetworkParam {
 message CreatePassiveSellOfferOp {
    Asset selling = 1;
    Asset buying = 2;
-   int64 amount = 3;
+   Stellar_int64 amount = 3;
    Price price = 4;
 }
 message CreatePassiveSellOfferOpDecodeRequest {
@@ -2441,7 +2441,7 @@ message DontHaveEncodeResponse {
    string EncodedValue = 1;
 }
 message Duration {
-   uint64 InnerValue = 1;
+   Stellar_uint64 InnerValue = 1;
 }
 message DurationDecodeRequest {
    bytes EncodedValue = 1;
@@ -2568,9 +2568,9 @@ message ErrorEncodeResponse {
    string EncodedValue = 1;
 }
 message EvictionIterator {
-   uint32 bucketListLevel = 1;
+   Stellar_uint32 bucketListLevel = 1;
    bool isCurrBucket = 2;
-   uint64 bucketFileOffset = 3;
+   Stellar_uint64 bucketFileOffset = 3;
 }
 message EvictionIteratorDecodeRequest {
    bytes EncodedValue = 1;
@@ -2604,7 +2604,7 @@ message ExistenceProofBodyEncodeResponse {
 }
 message ExtendFootprintTTLOp {
    ExtensionPoint ext = 1;
-   uint32 extendTo = 2;
+   Stellar_uint32 extendTo = 2;
 }
 message ExtendFootprintTTLOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -2685,7 +2685,7 @@ message ExtensionPoint_case_0 {
 }
 message FeeBumpTransaction {
    MuxedAccount feeSource = 1;
-   int64 fee = 2;
+   Stellar_int64 fee = 2;
    FeeBumpTransaction_innerTxUnion innerTx = 3;
    FeeBumpTransaction_extUnion ext = 4;
 }
@@ -2839,25 +2839,25 @@ message HashIDPreimage_contractIDStruct {
 message HashIDPreimage_operationIDStruct {
    AccountID sourceAccount = 1;
    SequenceNumber seqNum = 2;
-   uint32 opNum = 3;
+   Stellar_uint32 opNum = 3;
 }
 message HashIDPreimage_revokeIDStruct {
    AccountID sourceAccount = 1;
    SequenceNumber seqNum = 2;
-   uint32 opNum = 3;
+   Stellar_uint32 opNum = 3;
    PoolID liquidityPoolID = 4;
    Asset asset = 5;
 }
 message HashIDPreimage_sorobanAuthorizationStruct {
    Hash networkID = 1;
-   int64 nonce = 2;
-   uint32 signatureExpirationLedger = 3;
+   Stellar_int64 nonce = 2;
+   Stellar_uint32 signatureExpirationLedger = 3;
    SorobanAuthorizedInvocation invocation = 4;
 }
 message Hello {
-   uint32 ledgerVersion = 1;
-   uint32 overlayVersion = 2;
-   uint32 overlayMinVersion = 3;
+   Stellar_uint32 ledgerVersion = 1;
+   Stellar_uint32 overlayVersion = 2;
+   Stellar_uint32 overlayMinVersion = 3;
    Hash networkID = 4;
    string versionStr = 5;
    int32 listeningPort = 6;
@@ -3025,7 +3025,7 @@ message IPAddrTypeEncodeResponse {
 }
 message InflationPayout {
    AccountID destination = 1;
-   int64 amount = 2;
+   Stellar_int64 amount = 2;
 }
 message InflationPayoutDecodeRequest {
    bytes EncodedValue = 1;
@@ -3079,7 +3079,7 @@ message InflationResult_InflationSuccess {
    repeated InflationPayout payouts = 1;
 }
 message InnerTransactionResult {
-   int64 feeCharged = 1;
+   Stellar_int64 feeCharged = 1;
    InnerTransactionResult_resultUnion result = 2;
    InnerTransactionResult_extUnion ext = 3;
 }
@@ -3176,8 +3176,8 @@ message InnerTransactionResult_resultUnion_TxtooEarly {
 message InnerTransactionResult_resultUnion_TxtooLate {
 }
 message Int128Parts {
-   int64 hi = 1;
-   uint64 lo = 2;
+   Stellar_int64 hi = 1;
+   Stellar_uint64 lo = 2;
 }
 message Int128PartsDecodeRequest {
    bytes EncodedValue = 1;
@@ -3192,10 +3192,10 @@ message Int128PartsEncodeResponse {
    string EncodedValue = 1;
 }
 message Int256Parts {
-   int64 hi_hi = 1;
-   uint64 hi_lo = 2;
-   uint64 lo_hi = 3;
-   uint64 lo_lo = 4;
+   Stellar_int64 hi_hi = 1;
+   Stellar_uint64 hi_lo = 2;
+   Stellar_uint64 lo_hi = 3;
+   Stellar_uint64 lo_lo = 4;
 }
 message Int256PartsDecodeRequest {
    bytes EncodedValue = 1;
@@ -3320,8 +3320,8 @@ message IsSorobanParam {
    Transaction Transaction = 1;
 }
 message LedgerBounds {
-   uint32 minLedger = 1;
-   uint32 maxLedger = 2;
+   Stellar_uint32 minLedger = 1;
+   Stellar_uint32 maxLedger = 2;
 }
 message LedgerBoundsDecodeRequest {
    bytes EncodedValue = 1;
@@ -3373,7 +3373,7 @@ message LedgerCloseMetaExtEncodeResponse {
 }
 message LedgerCloseMetaExtV1 {
    ExtensionPoint ext = 1;
-   int64 sorobanFeeWrite1KB = 2;
+   Stellar_int64 sorobanFeeWrite1KB = 2;
 }
 message LedgerCloseMetaExtV1DecodeRequest {
    bytes EncodedValue = 1;
@@ -3418,7 +3418,7 @@ message LedgerCloseMetaV1 {
    repeated TransactionResultMeta txProcessing = 4;
    repeated UpgradeEntryMeta upgradesProcessing = 5;
    repeated SCPHistoryEntry scpInfo = 6;
-   uint64 totalByteSizeOfBucketList = 7;
+   Stellar_uint64 totalByteSizeOfBucketList = 7;
    repeated LedgerKey evictedTemporaryLedgerKeys = 8;
    repeated LedgerEntry evictedPersistentLedgerEntries = 9;
 }
@@ -3457,7 +3457,7 @@ message LedgerCloseValueSignatureEncodeResponse {
    string EncodedValue = 1;
 }
 message LedgerEntry {
-   uint32 lastModifiedLedgerSeq = 1;
+   Stellar_uint32 lastModifiedLedgerSeq = 1;
    LedgerEntry_dataUnion data = 2;
    LedgerEntry_extUnion ext = 3;
 }
@@ -3657,19 +3657,19 @@ message LedgerFootprintEncodeResponse {
    string EncodedValue = 1;
 }
 message LedgerHeader {
-   uint32 ledgerVersion = 1;
+   Stellar_uint32 ledgerVersion = 1;
    Hash previousLedgerHash = 2;
    StellarValue scpValue = 3;
    Hash txSetResultHash = 4;
    Hash bucketListHash = 5;
-   uint32 ledgerSeq = 6;
-   int64 totalCoins = 7;
-   int64 feePool = 8;
-   uint32 inflationSeq = 9;
-   uint64 idPool = 10;
-   uint32 baseFee = 11;
-   uint32 baseReserve = 12;
-   uint32 maxTxSetSize = 13;
+   Stellar_uint32 ledgerSeq = 6;
+   Stellar_int64 totalCoins = 7;
+   Stellar_int64 feePool = 8;
+   Stellar_uint32 inflationSeq = 9;
+   Stellar_uint64 idPool = 10;
+   Stellar_uint32 baseFee = 11;
+   Stellar_uint32 baseReserve = 12;
+   Stellar_uint32 maxTxSetSize = 13;
    repeated Hash skipList = 14;
    LedgerHeader_extUnion ext = 15;
 }
@@ -3686,7 +3686,7 @@ message LedgerHeaderEncodeResponse {
    string EncodedValue = 1;
 }
 message LedgerHeaderExtensionV1 {
-   uint32 flags = 1;
+   Stellar_uint32 flags = 1;
    LedgerHeaderExtensionV1_extUnion ext = 2;
 }
 message LedgerHeaderExtensionV1DecodeRequest {
@@ -3843,7 +3843,7 @@ message LedgerKey_liquidityPoolStruct {
 }
 message LedgerKey_offerStruct {
    AccountID sellerID = 1;
-   int64 offerID = 2;
+   Stellar_int64 offerID = 2;
 }
 message LedgerKey_trustLineStruct {
    AccountID accountID = 1;
@@ -3853,7 +3853,7 @@ message LedgerKey_ttlStruct {
    Hash keyHash = 1;
 }
 message LedgerSCPMessages {
-   uint32 ledgerSeq = 1;
+   Stellar_uint32 ledgerSeq = 1;
    repeated SCPEnvelope messages = 2;
 }
 message LedgerSCPMessagesDecodeRequest {
@@ -3914,29 +3914,29 @@ message LedgerUpgradeTypeEncodeResponse {
    string EncodedValue = 1;
 }
 message LedgerUpgrade_LedgerUpgradeBaseFee {
-   uint32 newBaseFee = 2;
+   Stellar_uint32 newBaseFee = 2;
 }
 message LedgerUpgrade_LedgerUpgradeBaseReserve {
-   uint32 newBaseReserve = 4;
+   Stellar_uint32 newBaseReserve = 4;
 }
 message LedgerUpgrade_LedgerUpgradeConfig {
    ConfigUpgradeSetKey newConfig = 6;
 }
 message LedgerUpgrade_LedgerUpgradeFlags {
-   uint32 newFlags = 5;
+   Stellar_uint32 newFlags = 5;
 }
 message LedgerUpgrade_LedgerUpgradeMaxSorobanTxSetSize {
-   uint32 newMaxSorobanTxSetSize = 7;
+   Stellar_uint32 newMaxSorobanTxSetSize = 7;
 }
 message LedgerUpgrade_LedgerUpgradeMaxTxSetSize {
-   uint32 newMaxTxSetSize = 3;
+   Stellar_uint32 newMaxTxSetSize = 3;
 }
 message LedgerUpgrade_LedgerUpgradeVersion {
-   uint32 newLedgerVersion = 1;
+   Stellar_uint32 newLedgerVersion = 1;
 }
 message Liabilities {
-   int64 buying = 1;
-   int64 selling = 2;
+   Stellar_int64 buying = 1;
+   Stellar_int64 selling = 2;
 }
 message LiabilitiesDecodeRequest {
    bytes EncodedValue = 1;
@@ -3953,7 +3953,7 @@ message LiabilitiesEncodeResponse {
 message LiquidityPoolConstantProductParameters {
    Asset assetA = 1;
    Asset assetB = 2;
-   int32 fee = 3;
+   Stellar_int32 fee = 3;
 }
 message LiquidityPoolConstantProductParametersDecodeRequest {
    bytes EncodedValue = 1;
@@ -3969,8 +3969,8 @@ message LiquidityPoolConstantProductParametersEncodeResponse {
 }
 message LiquidityPoolDepositOp {
    PoolID liquidityPoolID = 1;
-   int64 maxAmountA = 2;
-   int64 maxAmountB = 3;
+   Stellar_int64 maxAmountA = 2;
+   Stellar_int64 maxAmountB = 3;
    Price minPrice = 4;
    Price maxPrice = 5;
 }
@@ -4074,10 +4074,10 @@ message LiquidityPoolEntry_bodyUnion_LiquidityPoolConstantProduct {
 }
 message LiquidityPoolEntry_bodyUnion_constantProductStruct {
    LiquidityPoolConstantProductParameters _params = 1;
-   int64 reserveA = 2;
-   int64 reserveB = 3;
-   int64 totalPoolShares = 4;
-   int64 poolSharesTrustLineCount = 5;
+   Stellar_int64 reserveA = 2;
+   Stellar_int64 reserveB = 3;
+   Stellar_int64 totalPoolShares = 4;
+   Stellar_int64 poolSharesTrustLineCount = 5;
 }
 message LiquidityPoolParameters {
    oneof subtype {
@@ -4116,9 +4116,9 @@ message LiquidityPoolTypeEncodeResponse {
 }
 message LiquidityPoolWithdrawOp {
    PoolID liquidityPoolID = 1;
-   int64 amount = 2;
-   int64 minAmountA = 3;
-   int64 minAmountB = 4;
+   Stellar_int64 amount = 2;
+   Stellar_int64 minAmountA = 3;
+   Stellar_int64 minAmountB = 4;
 }
 message LiquidityPoolWithdrawOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -4189,9 +4189,9 @@ message LiquidityPoolWithdrawResult_LiquidityPoolWithdrawUnderfunded {
 message ManageBuyOfferOp {
    Asset selling = 1;
    Asset buying = 2;
-   int64 buyAmount = 3;
+   Stellar_int64 buyAmount = 3;
    Price price = 4;
-   int64 offerID = 5;
+   Stellar_int64 offerID = 5;
 }
 message ManageBuyOfferOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -4405,9 +4405,9 @@ message ManageOfferSuccessResult_offerUnion_ManageOfferUpdated {
 message ManageSellOfferOp {
    Asset selling = 1;
    Asset buying = 2;
-   int64 amount = 3;
+   Stellar_int64 amount = 3;
    Price price = 4;
-   int64 offerID = 5;
+   Stellar_int64 offerID = 5;
 }
 message ManageSellOfferOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -4548,7 +4548,7 @@ message Memo_MemoHash {
    Hash hash = 3;
 }
 message Memo_MemoId {
-   uint64 id = 2;
+   Stellar_uint64 id = 2;
 }
 message Memo_MemoNone {
 }
@@ -4620,7 +4620,7 @@ message MuxedAccount_KeyTypeMuxedEd25519 {
    MuxedAccount_med25519Struct med25519 = 2;
 }
 message MuxedAccount_med25519Struct {
-   uint64 id = 1;
+   Stellar_uint64 id = 1;
    uint256 ed25519 = 2;
 }
 message Network {
@@ -4659,12 +4659,12 @@ message NonexistenceProofBodyEncodeResponse {
 }
 message OfferEntry {
    AccountID sellerID = 1;
-   int64 offerID = 2;
+   Stellar_int64 offerID = 2;
    Asset selling = 3;
    Asset buying = 4;
-   int64 amount = 5;
+   Stellar_int64 amount = 5;
    Price price = 6;
-   uint32 flags = 7;
+   Stellar_uint32 flags = 7;
    OfferEntry_extUnion ext = 8;
 }
 message OfferEntryDecodeRequest {
@@ -5057,10 +5057,10 @@ message Operation_bodyUnion_SetTrustLineFlags {
 }
 message PathPaymentStrictReceiveOp {
    Asset sendAsset = 1;
-   int64 sendMax = 2;
+   Stellar_int64 sendMax = 2;
    MuxedAccount destination = 3;
    Asset destAsset = 4;
-   int64 destAmount = 5;
+   Stellar_int64 destAmount = 5;
    repeated Asset path = 6;
 }
 message PathPaymentStrictReceiveOpDecodeRequest {
@@ -5165,10 +5165,10 @@ message PathPaymentStrictReceiveResult_successStruct {
 }
 message PathPaymentStrictSendOp {
    Asset sendAsset = 1;
-   int64 sendAmount = 2;
+   Stellar_int64 sendAmount = 2;
    MuxedAccount destination = 3;
    Asset destAsset = 4;
-   int64 destMin = 5;
+   Stellar_int64 destMin = 5;
    repeated Asset path = 6;
 }
 message PathPaymentStrictSendOpDecodeRequest {
@@ -5274,7 +5274,7 @@ message PathPaymentStrictSendResult_successStruct {
 message PaymentOp {
    MuxedAccount destination = 1;
    Asset asset = 2;
-   int64 amount = 3;
+   Stellar_int64 amount = 3;
 }
 message PaymentOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -5360,8 +5360,8 @@ message PaymentResult_PaymentUnderfunded {
 }
 message PeerAddress {
    PeerAddress_ipUnion ip = 1;
-   uint32 port = 2;
-   uint32 numFailures = 3;
+   Stellar_uint32 port = 2;
+   Stellar_uint32 numFailures = 3;
 }
 message PeerAddressDecodeRequest {
    bytes EncodedValue = 1;
@@ -5405,19 +5405,19 @@ message PeerStatListEncodeResponse {
 message PeerStats {
    NodeID id = 1;
    string versionStr = 2;
-   uint64 messagesRead = 3;
-   uint64 messagesWritten = 4;
-   uint64 bytesRead = 5;
-   uint64 bytesWritten = 6;
-   uint64 secondsConnected = 7;
-   uint64 uniqueFloodBytesRecv = 8;
-   uint64 duplicateFloodBytesRecv = 9;
-   uint64 uniqueFetchBytesRecv = 10;
-   uint64 duplicateFetchBytesRecv = 11;
-   uint64 uniqueFloodMessageRecv = 12;
-   uint64 duplicateFloodMessageRecv = 13;
-   uint64 uniqueFetchMessageRecv = 14;
-   uint64 duplicateFetchMessageRecv = 15;
+   Stellar_uint64 messagesRead = 3;
+   Stellar_uint64 messagesWritten = 4;
+   Stellar_uint64 bytesRead = 5;
+   Stellar_uint64 bytesWritten = 6;
+   Stellar_uint64 secondsConnected = 7;
+   Stellar_uint64 uniqueFloodBytesRecv = 8;
+   Stellar_uint64 duplicateFloodBytesRecv = 9;
+   Stellar_uint64 uniqueFetchBytesRecv = 10;
+   Stellar_uint64 duplicateFetchBytesRecv = 11;
+   Stellar_uint64 uniqueFloodMessageRecv = 12;
+   Stellar_uint64 duplicateFloodMessageRecv = 13;
+   Stellar_uint64 uniqueFetchMessageRecv = 14;
+   Stellar_uint64 duplicateFetchMessageRecv = 15;
 }
 message PeerStatsDecodeRequest {
    bytes EncodedValue = 1;
@@ -5544,7 +5544,7 @@ message PreconditionsV2 {
    LedgerBounds ledgerBounds = 2;
    SequenceNumber minSeqNum = 3;
    Duration minSeqAge = 4;
-   uint32 minSeqLedgerGap = 5;
+   Stellar_uint32 minSeqLedgerGap = 5;
    repeated SignerKey extraSigners = 6;
 }
 message PreconditionsV2DecodeRequest {
@@ -5568,8 +5568,8 @@ message Preconditions_PrecondV2 {
    PreconditionsV2 v2 = 2;
 }
 message Price {
-   int32 n = 1;
-   int32 d = 2;
+   Stellar_int32 n = 1;
+   Stellar_int32 d = 2;
 }
 message PriceDecodeRequest {
    bytes EncodedValue = 1;
@@ -5884,8 +5884,8 @@ message SCEnvMetaEntry_ScEnvMetaKindInterfaceVersion {
    SCEnvMetaEntry_interfaceVersionStruct interfaceVersion = 1;
 }
 message SCEnvMetaEntry_interfaceVersionStruct {
-   uint32 protocol = 1;
-   uint32 preRelease = 2;
+   Stellar_uint32 protocol = 1;
+   Stellar_uint32 preRelease = 2;
 }
 enum SCEnvMetaKind {
    SC_ENV_META_KIND_INTERFACE_VERSION = 0;
@@ -5986,7 +5986,7 @@ message SCError_SceContext {
    SCErrorCode code = 3;
 }
 message SCError_SceContract {
-   uint32 contractCode = 1;
+   Stellar_uint32 contractCode = 1;
 }
 message SCError_SceCrypto {
    SCErrorCode code = 6;
@@ -6089,7 +6089,7 @@ message SCMetaV0EncodeResponse {
    string EncodedValue = 1;
 }
 message SCNonceKey {
-   int64 nonce = 1;
+   Stellar_int64 nonce = 1;
 }
 message SCNonceKeyDecodeRequest {
    bytes EncodedValue = 1;
@@ -6104,7 +6104,7 @@ message SCNonceKeyEncodeResponse {
    string EncodedValue = 1;
 }
 message SCPBallot {
-   uint32 counter = 1;
+   Stellar_uint32 counter = 1;
    Value value = 2;
 }
 message SCPBallotDecodeRequest {
@@ -6189,7 +6189,7 @@ message SCPNominationEncodeResponse {
    string EncodedValue = 1;
 }
 message SCPQuorumSet {
-   uint32 threshold = 1;
+   Stellar_uint32 threshold = 1;
    repeated NodeID validators = 2;
    repeated SCPQuorumSet innerSets = 3;
 }
@@ -6207,7 +6207,7 @@ message SCPQuorumSetEncodeResponse {
 }
 message SCPStatement {
    NodeID nodeID = 1;
-   uint64 slotIndex = 2;
+   Stellar_uint64 slotIndex = 2;
    SCPStatement_pledgesUnion pledges = 3;
 }
 message SCPStatementDecodeRequest {
@@ -6262,14 +6262,14 @@ message SCPStatement_pledgesUnion_ScpStPrepare {
 }
 message SCPStatement_pledgesUnion_confirmStruct {
    SCPBallot ballot = 1;
-   uint32 nPrepared = 2;
-   uint32 nCommit = 3;
-   uint32 nH = 4;
+   Stellar_uint32 nPrepared = 2;
+   Stellar_uint32 nCommit = 3;
+   Stellar_uint32 nH = 4;
    Hash quorumSetHash = 5;
 }
 message SCPStatement_pledgesUnion_externalizeStruct {
    SCPBallot commit = 1;
-   uint32 nH = 2;
+   Stellar_uint32 nH = 2;
    Hash commitQuorumSetHash = 3;
 }
 message SCPStatement_pledgesUnion_prepareStruct {
@@ -6277,8 +6277,8 @@ message SCPStatement_pledgesUnion_prepareStruct {
    SCPBallot ballot = 2;
    SCPBallot prepared = 3;
    SCPBallot preparedPrime = 4;
-   uint32 nC = 5;
-   uint32 nH = 6;
+   Stellar_uint32 nC = 5;
+   Stellar_uint32 nH = 6;
 }
 message SCSpecEntry {
    oneof subtype {
@@ -6398,7 +6398,7 @@ enum SCSpecType {
    SC_SPEC_TYPE_UDT = 2000;
 }
 message SCSpecTypeBytesN {
-   uint32 n = 1;
+   Stellar_uint32 n = 1;
 }
 message SCSpecTypeBytesNDecodeRequest {
    bytes EncodedValue = 1;
@@ -6617,7 +6617,7 @@ message SCSpecTypeVecEncodeResponse {
 message SCSpecUDTEnumCaseV0 {
    string doc = 1;
    string name = 2;
-   uint32 value = 3;
+   Stellar_uint32 value = 3;
 }
 message SCSpecUDTEnumCaseV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -6652,7 +6652,7 @@ message SCSpecUDTEnumV0EncodeResponse {
 message SCSpecUDTErrorEnumCaseV0 {
    string doc = 1;
    string name = 2;
-   uint32 value = 3;
+   Stellar_uint32 value = 3;
 }
 message SCSpecUDTErrorEnumCaseV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -6939,10 +6939,10 @@ message SCVal_ScvI256 {
    Int256Parts i256 = 12;
 }
 message SCVal_ScvI32 {
-   int32 i32 = 4;
+   Stellar_int32 i32 = 4;
 }
 message SCVal_ScvI64 {
-   int64 i64 = 6;
+   Stellar_int64 i64 = 6;
 }
 message SCVal_ScvLedgerKeyContractInstance {
 }
@@ -6968,10 +6968,10 @@ message SCVal_ScvU256 {
    UInt256Parts u256 = 11;
 }
 message SCVal_ScvU32 {
-   uint32 u32 = 3;
+   Stellar_uint32 u32 = 3;
 }
 message SCVal_ScvU64 {
-   uint64 u64 = 5;
+   Stellar_uint64 u64 = 5;
 }
 message SCVal_ScvVec {
    SCVec vec = 16;
@@ -6994,7 +6994,7 @@ message SCVecEncodeResponse {
    string EncodedValue = 1;
 }
 message SendMore {
-   uint32 numMessages = 1;
+   Stellar_uint32 numMessages = 1;
 }
 message SendMoreDecodeRequest {
    bytes EncodedValue = 1;
@@ -7009,8 +7009,8 @@ message SendMoreEncodeResponse {
    string EncodedValue = 1;
 }
 message SendMoreExtended {
-   uint32 numMessages = 1;
-   uint32 numBytes = 2;
+   Stellar_uint32 numMessages = 1;
+   Stellar_uint32 numBytes = 2;
 }
 message SendMoreExtendedDecodeRequest {
    bytes EncodedValue = 1;
@@ -7025,7 +7025,7 @@ message SendMoreExtendedEncodeResponse {
    string EncodedValue = 1;
 }
 message SequenceNumber {
-   int64 InnerValue = 1;
+   Stellar_int64 InnerValue = 1;
 }
 message SequenceNumberDecodeRequest {
    bytes EncodedValue = 1;
@@ -7043,11 +7043,11 @@ message SerializedBinaryFuseFilter {
    BinaryFuseFilterType type = 1;
    ShortHashSeed inputHashSeed = 2;
    ShortHashSeed filterSeed = 3;
-   uint32 segmentLength = 4;
-   uint32 segementLengthMask = 5;
-   uint32 segmentCount = 6;
-   uint32 segmentCountLength = 7;
-   uint32 fingerprintLength = 8;
+   Stellar_uint32 segmentLength = 4;
+   Stellar_uint32 segementLengthMask = 5;
+   Stellar_uint32 segmentCount = 6;
+   Stellar_uint32 segmentCountLength = 7;
+   Stellar_uint32 fingerprintLength = 8;
    bytes fingerprints = 9;
 }
 message SerializedBinaryFuseFilterDecodeRequest {
@@ -7064,12 +7064,12 @@ message SerializedBinaryFuseFilterEncodeResponse {
 }
 message SetOptionsOp {
    AccountID inflationDest = 1;
-   uint32 clearFlags = 2;
-   uint32 setFlags = 3;
-   uint32 masterWeight = 4;
-   uint32 lowThreshold = 5;
-   uint32 medThreshold = 6;
-   uint32 highThreshold = 7;
+   Stellar_uint32 clearFlags = 2;
+   Stellar_uint32 setFlags = 3;
+   Stellar_uint32 masterWeight = 4;
+   Stellar_uint32 lowThreshold = 5;
+   Stellar_uint32 medThreshold = 6;
+   Stellar_uint32 highThreshold = 7;
    string32 homeDomain = 8;
    Signer signer = 9;
 }
@@ -7162,8 +7162,8 @@ message SetOptionsResult_SetOptionsUnknownFlag {
 message SetTrustLineFlagsOp {
    AccountID trustor = 1;
    Asset asset = 2;
-   uint32 clearFlags = 3;
-   uint32 setFlags = 4;
+   Stellar_uint32 clearFlags = 3;
+   Stellar_uint32 setFlags = 4;
 }
 message SetTrustLineFlagsOpDecodeRequest {
    bytes EncodedValue = 1;
@@ -7385,7 +7385,7 @@ message SignedTimeSlicedSurveyStopCollectingMessageEncodeResponse {
 }
 message Signer {
    SignerKey key = 1;
-   uint32 weight = 2;
+   Stellar_uint32 weight = 2;
 }
 message SignerDecodeRequest {
    bytes EncodedValue = 1;
@@ -7456,7 +7456,7 @@ message SignerKey_ed25519SignedPayloadStruct {
 message SimplePaymentResult {
    AccountID destination = 1;
    Asset asset = 2;
-   int64 amount = 3;
+   Stellar_int64 amount = 3;
 }
 message SimplePaymentResultDecodeRequest {
    bytes EncodedValue = 1;
@@ -7472,8 +7472,8 @@ message SimplePaymentResultEncodeResponse {
 }
 message SorobanAddressCredentials {
    SCAddress address = 1;
-   int64 nonce = 2;
-   uint32 signatureExpirationLedger = 3;
+   Stellar_int64 nonce = 2;
+   Stellar_uint32 signatureExpirationLedger = 3;
    SCVal signature = 4;
 }
 message SorobanAddressCredentialsDecodeRequest {
@@ -7606,9 +7606,9 @@ message SorobanCredentials_SorobanCredentialsSourceAccount {
 }
 message SorobanResources {
    LedgerFootprint footprint = 1;
-   uint32 instructions = 2;
-   uint32 readBytes = 3;
-   uint32 writeBytes = 4;
+   Stellar_uint32 instructions = 2;
+   Stellar_uint32 readBytes = 3;
+   Stellar_uint32 writeBytes = 4;
 }
 message SorobanResourcesDecodeRequest {
    bytes EncodedValue = 1;
@@ -7625,7 +7625,7 @@ message SorobanResourcesEncodeResponse {
 message SorobanTransactionData {
    ExtensionPoint ext = 1;
    SorobanResources resources = 2;
-   int64 resourceFee = 3;
+   Stellar_int64 resourceFee = 3;
 }
 message SorobanTransactionDataDecodeRequest {
    bytes EncodedValue = 1;
@@ -7677,9 +7677,9 @@ message SorobanTransactionMetaExtEncodeResponse {
 }
 message SorobanTransactionMetaExtV1 {
    ExtensionPoint ext = 1;
-   int64 totalNonRefundableResourceFeeCharged = 2;
-   int64 totalRefundableResourceFeeCharged = 3;
-   int64 rentFeeCharged = 4;
+   Stellar_int64 totalNonRefundableResourceFeeCharged = 2;
+   Stellar_int64 totalRefundableResourceFeeCharged = 3;
+   Stellar_int64 rentFeeCharged = 4;
 }
 message SorobanTransactionMetaExtV1DecodeRequest {
    bytes EncodedValue = 1;
@@ -7714,16 +7714,16 @@ message SponsorshipDescriptorEncodeResponse {
    string EncodedValue = 1;
 }
 message StateArchivalSettings {
-   uint32 maxEntryTTL = 1;
-   uint32 minTemporaryTTL = 2;
-   uint32 minPersistentTTL = 3;
-   int64 persistentRentRateDenominator = 4;
-   int64 tempRentRateDenominator = 5;
-   uint32 maxEntriesToArchive = 6;
-   uint32 bucketListSizeWindowSampleSize = 7;
-   uint32 bucketListWindowSamplePeriod = 8;
-   uint32 evictionScanSize = 9;
-   uint32 startingEvictionScanLevel = 10;
+   Stellar_uint32 maxEntryTTL = 1;
+   Stellar_uint32 minTemporaryTTL = 2;
+   Stellar_uint32 minPersistentTTL = 3;
+   Stellar_int64 persistentRentRateDenominator = 4;
+   Stellar_int64 tempRentRateDenominator = 5;
+   Stellar_uint32 maxEntriesToArchive = 6;
+   Stellar_uint32 bucketListSizeWindowSampleSize = 7;
+   Stellar_uint32 bucketListWindowSamplePeriod = 8;
+   Stellar_uint32 evictionScanSize = 9;
+   Stellar_uint32 startingEvictionScanLevel = 10;
 }
 message StateArchivalSettingsDecodeRequest {
    bytes EncodedValue = 1;
@@ -7798,7 +7798,7 @@ message StellarMessage_GetScpQuorumset {
    uint256 qSetHash = 16;
 }
 message StellarMessage_GetScpState {
-   uint32 getSCPLedgerSeq = 19;
+   Stellar_uint32 getSCPLedgerSeq = 19;
 }
 message StellarMessage_GetTxSet {
    uint256 txSetHash = 6;
@@ -7890,9 +7890,21 @@ message StellarValue_extUnion_StellarValueBasic {
 message StellarValue_extUnion_StellarValueSigned {
    LedgerCloseValueSignature lcValueSignature = 1;
 }
+message Stellar_int32 {
+   int32 InnerValue = 1;
+}
+message Stellar_int64 {
+   int64 InnerValue = 1;
+}
+message Stellar_uint32 {
+   uint32 InnerValue = 1;
+}
+message Stellar_uint64 {
+   uint64 InnerValue = 1;
+}
 message StoredDebugTransactionSet {
    StoredTransactionSet txSet = 1;
-   uint32 ledgerSeq = 2;
+   Stellar_uint32 ledgerSeq = 2;
    StellarValue scpValue = 3;
 }
 message StoredDebugTransactionSetDecodeRequest {
@@ -7970,7 +7982,7 @@ message SurveyMessageResponseTypeEncodeResponse {
 message SurveyRequestMessage {
    NodeID surveyorPeerID = 1;
    NodeID surveyedPeerID = 2;
-   uint32 ledgerNum = 3;
+   Stellar_uint32 ledgerNum = 3;
    Curve25519Public encryptionKey = 4;
    SurveyMessageCommandType commandType = 5;
 }
@@ -8017,7 +8029,7 @@ message SurveyResponseBody_SurveyTopologyResponseV2 {
 message SurveyResponseMessage {
    NodeID surveyorPeerID = 1;
    NodeID surveyedPeerID = 2;
-   uint32 ledgerNum = 3;
+   Stellar_uint32 ledgerNum = 3;
    SurveyMessageCommandType commandType = 4;
    EncryptedBody encryptedBody = 5;
 }
@@ -8035,7 +8047,7 @@ message SurveyResponseMessageEncodeResponse {
 }
 message TTLEntry {
    Hash keyHash = 1;
-   uint32 liveUntilLedgerSeq = 2;
+   Stellar_uint32 liveUntilLedgerSeq = 2;
 }
 message TTLEntryDecodeRequest {
    bytes EncodedValue = 1;
@@ -8099,7 +8111,7 @@ message TimeBoundsEncodeResponse {
    string EncodedValue = 1;
 }
 message TimePoint {
-   uint64 InnerValue = 1;
+   Stellar_uint64 InnerValue = 1;
 }
 message TimePointDecodeRequest {
    bytes EncodedValue = 1;
@@ -8114,16 +8126,16 @@ message TimePointEncodeResponse {
    string EncodedValue = 1;
 }
 message TimeSlicedNodeData {
-   uint32 addedAuthenticatedPeers = 1;
-   uint32 droppedAuthenticatedPeers = 2;
-   uint32 totalInboundPeerCount = 3;
-   uint32 totalOutboundPeerCount = 4;
-   uint32 p75SCPFirstToSelfLatencyMs = 5;
-   uint32 p75SCPSelfToOtherLatencyMs = 6;
-   uint32 lostSyncCount = 7;
+   Stellar_uint32 addedAuthenticatedPeers = 1;
+   Stellar_uint32 droppedAuthenticatedPeers = 2;
+   Stellar_uint32 totalInboundPeerCount = 3;
+   Stellar_uint32 totalOutboundPeerCount = 4;
+   Stellar_uint32 p75SCPFirstToSelfLatencyMs = 5;
+   Stellar_uint32 p75SCPSelfToOtherLatencyMs = 6;
+   Stellar_uint32 lostSyncCount = 7;
    bool isValidator = 8;
-   uint32 maxInboundPeerCount = 9;
-   uint32 maxOutboundPeerCount = 10;
+   Stellar_uint32 maxInboundPeerCount = 9;
+   Stellar_uint32 maxOutboundPeerCount = 10;
 }
 message TimeSlicedNodeDataDecodeRequest {
    bytes EncodedValue = 1;
@@ -8139,7 +8151,7 @@ message TimeSlicedNodeDataEncodeResponse {
 }
 message TimeSlicedPeerData {
    PeerStats peerStats = 1;
-   uint32 averageLatencyMs = 2;
+   Stellar_uint32 averageLatencyMs = 2;
 }
 message TimeSlicedPeerDataDecodeRequest {
    bytes EncodedValue = 1;
@@ -8170,9 +8182,9 @@ message TimeSlicedPeerDataListEncodeResponse {
 }
 message TimeSlicedSurveyRequestMessage {
    SurveyRequestMessage request = 1;
-   uint32 nonce = 2;
-   uint32 inboundPeersIndex = 3;
-   uint32 outboundPeersIndex = 4;
+   Stellar_uint32 nonce = 2;
+   Stellar_uint32 inboundPeersIndex = 3;
+   Stellar_uint32 outboundPeersIndex = 4;
 }
 message TimeSlicedSurveyRequestMessageDecodeRequest {
    bytes EncodedValue = 1;
@@ -8188,7 +8200,7 @@ message TimeSlicedSurveyRequestMessageEncodeResponse {
 }
 message TimeSlicedSurveyResponseMessage {
    SurveyResponseMessage response = 1;
-   uint32 nonce = 2;
+   Stellar_uint32 nonce = 2;
 }
 message TimeSlicedSurveyResponseMessageDecodeRequest {
    bytes EncodedValue = 1;
@@ -8204,8 +8216,8 @@ message TimeSlicedSurveyResponseMessageEncodeResponse {
 }
 message TimeSlicedSurveyStartCollectingMessage {
    NodeID surveyorID = 1;
-   uint32 nonce = 2;
-   uint32 ledgerNum = 3;
+   Stellar_uint32 nonce = 2;
+   Stellar_uint32 ledgerNum = 3;
 }
 message TimeSlicedSurveyStartCollectingMessageDecodeRequest {
    bytes EncodedValue = 1;
@@ -8221,8 +8233,8 @@ message TimeSlicedSurveyStartCollectingMessageEncodeResponse {
 }
 message TimeSlicedSurveyStopCollectingMessage {
    NodeID surveyorID = 1;
-   uint32 nonce = 2;
-   uint32 ledgerNum = 3;
+   Stellar_uint32 nonce = 2;
+   Stellar_uint32 ledgerNum = 3;
 }
 message TimeSlicedSurveyStopCollectingMessageDecodeRequest {
    bytes EncodedValue = 1;
@@ -8239,8 +8251,8 @@ message TimeSlicedSurveyStopCollectingMessageEncodeResponse {
 message TopologyResponseBodyV0 {
    PeerStatList inboundPeers = 1;
    PeerStatList outboundPeers = 2;
-   uint32 totalInboundPeerCount = 3;
-   uint32 totalOutboundPeerCount = 4;
+   Stellar_uint32 totalInboundPeerCount = 3;
+   Stellar_uint32 totalOutboundPeerCount = 4;
 }
 message TopologyResponseBodyV0DecodeRequest {
    bytes EncodedValue = 1;
@@ -8257,10 +8269,10 @@ message TopologyResponseBodyV0EncodeResponse {
 message TopologyResponseBodyV1 {
    PeerStatList inboundPeers = 1;
    PeerStatList outboundPeers = 2;
-   uint32 totalInboundPeerCount = 3;
-   uint32 totalOutboundPeerCount = 4;
-   uint32 maxInboundPeerCount = 5;
-   uint32 maxOutboundPeerCount = 6;
+   Stellar_uint32 totalInboundPeerCount = 3;
+   Stellar_uint32 totalOutboundPeerCount = 4;
+   Stellar_uint32 maxInboundPeerCount = 5;
+   Stellar_uint32 maxOutboundPeerCount = 6;
 }
 message TopologyResponseBodyV1DecodeRequest {
    bytes EncodedValue = 1;
@@ -8293,7 +8305,7 @@ message TopologyResponseBodyV2EncodeResponse {
 }
 message Transaction {
    MuxedAccount sourceAccount = 1;
-   uint32 fee = 2;
+   Stellar_uint32 fee = 2;
    SequenceNumber seqNum = 3;
    Preconditions cond = 4;
    Memo memo = 5;
@@ -8341,7 +8353,7 @@ message TransactionEnvelope_EnvelopeTypeTxV0 {
    TransactionV0Envelope v0 = 1;
 }
 message TransactionHistoryEntry {
-   uint32 ledgerSeq = 1;
+   Stellar_uint32 ledgerSeq = 1;
    TransactionSet txSet = 2;
    TransactionHistoryEntry_extUnion ext = 3;
 }
@@ -8369,7 +8381,7 @@ message TransactionHistoryEntry_extUnion_case_1 {
    GeneralizedTransactionSet generalizedTxSet = 1;
 }
 message TransactionHistoryResultEntry {
-   uint32 ledgerSeq = 1;
+   Stellar_uint32 ledgerSeq = 1;
    TransactionResultSet txResultSet = 2;
    TransactionHistoryResultEntry_extUnion ext = 3;
 }
@@ -8497,7 +8509,7 @@ message TransactionPhase_case_0 {
    repeated TxSetComponent v0Components = 1;
 }
 message TransactionResult {
-   int64 feeCharged = 1;
+   Stellar_int64 feeCharged = 1;
    TransactionResult_resultUnion result = 2;
    TransactionResult_extUnion ext = 3;
 }
@@ -8728,7 +8740,7 @@ message TransactionSignaturePayload_taggedTransactionUnion_EnvelopeTypeTxFeeBump
 }
 message TransactionV0 {
    uint256 sourceAccountEd25519 = 1;
-   uint32 fee = 2;
+   Stellar_uint32 fee = 2;
    SequenceNumber seqNum = 3;
    TimeBounds timeBounds = 4;
    Memo memo = 5;
@@ -8831,9 +8843,9 @@ message TrustLineAsset_AssetTypePoolShare {
 message TrustLineEntry {
    AccountID accountID = 1;
    TrustLineAsset asset = 2;
-   int64 balance = 3;
-   int64 limit = 4;
-   uint32 flags = 5;
+   Stellar_int64 balance = 3;
+   Stellar_int64 limit = 4;
+   Stellar_uint32 flags = 5;
    TrustLineEntry_extUnion ext = 6;
 }
 message TrustLineEntryDecodeRequest {
@@ -8849,7 +8861,7 @@ message TrustLineEntryEncodeResponse {
    string EncodedValue = 1;
 }
 message TrustLineEntryExtensionV2 {
-   int32 liquidityPoolUseCount = 1;
+   Stellar_int32 liquidityPoolUseCount = 1;
    TrustLineEntryExtensionV2_extUnion ext = 2;
 }
 message TrustLineEntryExtensionV2DecodeRequest {
@@ -8981,12 +8993,12 @@ message TxSetComponent_TxsetCompTxsMaybeDiscountedFee {
    TxSetComponent_txsMaybeDiscountedFeeStruct txsMaybeDiscountedFee = 1;
 }
 message TxSetComponent_txsMaybeDiscountedFeeStruct {
-   int64 baseFee = 1;
+   Stellar_int64 baseFee = 1;
    repeated TransactionEnvelope txs = 2;
 }
 message UInt128Parts {
-   uint64 hi = 1;
-   uint64 lo = 2;
+   Stellar_uint64 hi = 1;
+   Stellar_uint64 lo = 2;
 }
 message UInt128PartsDecodeRequest {
    bytes EncodedValue = 1;
@@ -9001,10 +9013,10 @@ message UInt128PartsEncodeResponse {
    string EncodedValue = 1;
 }
 message UInt256Parts {
-   uint64 hi_hi = 1;
-   uint64 hi_lo = 2;
-   uint64 lo_hi = 3;
-   uint64 lo_lo = 4;
+   Stellar_uint64 hi_hi = 1;
+   Stellar_uint64 hi_lo = 2;
+   Stellar_uint64 lo_hi = 3;
+   Stellar_uint64 lo_lo = 4;
 }
 message UInt256PartsDecodeRequest {
    bytes EncodedValue = 1;
@@ -9072,32 +9084,26 @@ message VerifyMessage {
    ByteArrayWrapper Data = 2;
    ByteArrayWrapper Signature = 3;
 }
-message int32 {
-   int32 InnerValue = 1;
-}
 message int32DecodeRequest {
    bytes EncodedValue = 1;
 }
 message int32DecodeResponse {
-   int32 Value = 1;
+   Stellar_int32 Value = 1;
 }
 message int32EncodeRequest {
-   int32 Value = 1;
+   Stellar_int32 Value = 1;
 }
 message int32EncodeResponse {
    string EncodedValue = 1;
-}
-message int64 {
-   int64 InnerValue = 1;
 }
 message int64DecodeRequest {
    bytes EncodedValue = 1;
 }
 message int64DecodeResponse {
-   int64 Value = 1;
+   Stellar_int64 Value = 1;
 }
 message int64EncodeRequest {
-   int64 Value = 1;
+   Stellar_int64 Value = 1;
 }
 message int64EncodeResponse {
    string EncodedValue = 1;
@@ -9147,32 +9153,26 @@ message uint256EncodeRequest {
 message uint256EncodeResponse {
    string EncodedValue = 1;
 }
-message uint32 {
-   uint32 InnerValue = 1;
-}
 message uint32DecodeRequest {
    bytes EncodedValue = 1;
 }
 message uint32DecodeResponse {
-   uint32 Value = 1;
+   Stellar_uint32 Value = 1;
 }
 message uint32EncodeRequest {
-   uint32 Value = 1;
+   Stellar_uint32 Value = 1;
 }
 message uint32EncodeResponse {
    string EncodedValue = 1;
-}
-message uint64 {
-   uint64 InnerValue = 1;
 }
 message uint64DecodeRequest {
    bytes EncodedValue = 1;
 }
 message uint64DecodeResponse {
-   uint64 Value = 1;
+   Stellar_uint64 Value = 1;
 }
 message uint64EncodeRequest {
-   uint64 Value = 1;
+   Stellar_uint64 Value = 1;
 }
 message uint64EncodeResponse {
    string EncodedValue = 1;

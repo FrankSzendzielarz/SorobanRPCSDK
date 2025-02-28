@@ -47,20 +47,35 @@ namespace Generator.XDR
             _currentProtoMemberTag = 1;
         }
 
-       
+
         private void WriteProtoContractAttribute(bool isNestedType = false)
         {
             var code = CodeFile;
-            if (isNestedType)
+            string typeName = Name;
+
+            // Check if this is a primitive-conflicting type
+            if (IsPrimitiveConflictType(typeName))
+            {
+                // Use a prefixed name for the protobuf contract
+                code.AppendLine($"[ProtoContract(Name = \"Stellar_{typeName}\")]");
+            }
+            else if (isNestedType)
             {
                 // For nested types, use the full hierarchical name
-                code.AppendLine($"[ProtoContract(Name = \"{FullName.Replace(".","_")}\")]");
+                code.AppendLine($"[ProtoContract(Name = \"{FullName.Replace(".", "_")}\")]");
             }
             else
             {
-                // For top-level types, just use the type name
+                // For regular top-level types, just use the type name
                 code.AppendLine("[ProtoContract]");
             }
+        }
+
+        // Helper method to identify types that conflict with protobuf primitives
+        private bool IsPrimitiveConflictType(string typeName)
+        {
+            string[] conflictingTypeNames = { "int32", "int64", "uint32", "uint64", "bool", "string" };
+            return conflictingTypeNames.Contains(typeName);
         }
 
         public XDRTypeDefinition(TypeExtractorVisitor generationContext, XDRType xdrType, ParserRuleContext? documentationContext, ParserRuleContext parserRuleContext, string _namespace, string name, XDRTypeDefinition? parent, string outputDir, Dictionary<IToken, string> commentMap, List<string> enumAliases, long constValue=0)
@@ -365,7 +380,17 @@ namespace Generator.XDR
              
                     break;
                 case ArrayType.None:
-                    code.AppendLine($"[ProtoMember({protoMemberTag})]");
+                    // Special handling for properties in primitive-conflicting types
+                    if (IsPrimitiveConflictType(Name) && fieldName == "InnerValue")
+                    {
+                        // For primitive wrapper types, set DataFormat to ensure correct wire format
+                        code.AppendLine($"[ProtoMember({protoMemberTag}, DataFormat = ProtoBuf.DataFormat.Default)]");
+                    }
+                    else
+                    {
+                        // Regular protobuf member attribute
+                        code.AppendLine($"[ProtoMember({protoMemberTag})]");
+                    }
                     if (fieldType.HasMaxLength)
                     {
                         code.AppendLine($"[MaxLength({fieldType.ResolveMaxLengthToInteger()})]");

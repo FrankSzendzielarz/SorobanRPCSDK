@@ -16,10 +16,10 @@ namespace Stellar {
 
     [System.CodeDom.Compiler.GeneratedCode("XdrGenerator", "1.0")]
     [System.Serializable]
-    [ProtoContract]
+    [ProtoContract(Name = "Stellar_int64")]
     public partial class int64
     {
-        [ProtoMember(1)]
+        [ProtoMember(1, DataFormat = ProtoBuf.DataFormat.Default)]
         public long InnerValue
         {
             get => _innerValue;

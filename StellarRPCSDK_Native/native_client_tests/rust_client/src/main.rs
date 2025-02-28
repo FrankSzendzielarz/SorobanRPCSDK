@@ -119,7 +119,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         if let Some(ledger_entry_data) = &entry.ledger_entry_data {
             if let Some(stellar_rpc::ledger_entry_data_union::Subtype::LedgerEntryDataUnionAccount(account_data)) = &ledger_entry_data.subtype {
                 if let Some(account) = &account_data.account {
-                    println!("Account balance: {}", account.balance);
+                  if let Some(ref balance) = account.balance {
+                        println!("Account balance: {}", balance.inner_value);
+                    } else {
+                        println!("Account balance is not available.");
+                    }
                 }
             }
         }
