@@ -39,11 +39,15 @@ namespace SDKTest
              *                                      * 
              ****************************************/
             string demoContractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT"; // See SorobanExample project in the solution
+            string nestedStructContractId = "CDO5UFNRHPMCLFN6NXFPMS22HTQFZQACUZP6S25QUTFIGDFP4HLD3YVN";
 
             // Initialise a connection to the RPC Client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient sorobanClient = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+
+
+            StellarRPCClient sorobanClient = new StellarRPCClient(httpClientFactory);  // USE HTTPCLIENT DIRECTLY ON PREVIOUS SDK VERSION. CURRENTLY IN DEV.
 
             // Use a test account that has already been pre-funded
             MuxedAccount.KeyTypeEd25519 testAccount = MuxedAccount.FromSecretSeed("SAZEWZ7VSEMZI35JROGXVGLDH4XAFZHY6HB2MO3NQXOY6K5WFSSG7PRH");
@@ -56,6 +60,7 @@ namespace SDKTest
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
             AccountEntry accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            await CreateAndSimulateNestedStructSorobanInvocationUseCase(sorobanClient, testAccount, accountEntry, nestedStructContractId);
             AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
             await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
             await GetFeeStatsUseCase(sorobanClient);
@@ -111,6 +116,108 @@ namespace SDKTest
             var finalResult = await GetTransactionAndWaitForStatusUseCase(sorobanClient, res);
             return finalResult;
         }
+
+        private static async Task CreateAndSimulateNestedStructSorobanInvocationUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, AccountEntry newAccountEntry, string demoContractId)
+        {
+            // First, create the nested FlatTestReq struct as an SCMap
+            var flatTestReqMap = new SCVal.ScvMap()
+            {
+                map = new SCMap(new SCMapEntry[]
+                {
+                    new SCMapEntry()
+                    {
+                        key = new SCVal.ScvSymbol() { sym = new SCSymbol("number") },
+                        val = new SCVal.ScvU32() { u32 = 42 }  // Example value
+                    },
+                    new SCMapEntry()
+                    {
+                        key = new SCVal.ScvSymbol() { sym = new SCSymbol("word") },
+                        val = new SCVal.ScvString() { str = new SCString("hello") }  // Example value
+                    }
+                })
+            };
+
+            // Then, create the parent NestedTestReq struct as an SCMap
+            var nestedTestReqMap = new SCVal.ScvMap()
+            {
+                map = new SCMap(new SCMapEntry[]
+                {
+                   /*
+                    *  MUST BE IN ALPHA ORDER
+                    */
+                    new SCMapEntry()
+                    {
+                        key = new SCVal.ScvSymbol() { sym = new SCSymbol("flat") },
+                        val = flatTestReqMap  // Using the nested struct we created above
+                    },
+                      new SCMapEntry()
+                    {
+                        key = new SCVal.ScvSymbol() { sym = new SCSymbol("numba") },
+                        val = new SCVal.ScvU32() { u32 = 100 }  // Example value
+                    },
+                    new SCMapEntry()
+                    {
+                        key = new SCVal.ScvSymbol() { sym = new SCSymbol("word") },
+                        val = new SCVal.ScvString() { str = new SCString("world") }  // Example value
+                    },
+
+                })
+            };
+
+            // Create a soroban contract invocation
+            Operation nestedParamTestInvocation = new Operation()
+            {
+                sourceAccount = testAccount,
+                body = new Operation.bodyUnion.InvokeHostFunction()
+                {
+                    invokeHostFunctionOp = new InvokeHostFunctionOp()
+                    {
+                        auth = [], // No authorization needed
+                        hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
+                        {
+                            invokeContract = new InvokeContractArgs()
+                            {
+                                contractAddress = new SCAddress.ScAddressTypeContract()
+                                {
+                                    contractId = new Hash(StrKey.DecodeContractId(demoContractId))
+                                },
+                                functionName = new SCSymbol("nested_param_test"),
+                                args = [nestedTestReqMap]  // Pass the constructed map as the argument
+                            }
+                        }
+                    }
+                }
+            };
+
+            invokeContractTransaction = new Transaction()
+            {
+                sourceAccount = testAccount,
+                fee = 100,
+                memo = new Memo.MemoNone(),
+                seqNum = newAccountEntry.seqNum.Increment(),
+                cond = new Preconditions.PrecondNone(),
+                ext = new Transaction.extUnion.case_0(),
+                operations =
+                [
+                    nestedParamTestInvocation
+                ]
+            };
+
+            // Simulate a Soroban contract invocation
+            TransactionEnvelope simulateEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = invokeContractTransaction,
+                    signatures = []
+                }
+            };
+            simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
+            });
+        }
+
 
         private static async Task CreateAndSimulateSorobanInvocationUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, AccountEntry newAccountEntry, string demoContractId, long val1, long val2)
         {
@@ -359,6 +466,22 @@ namespace SDKTest
             return healthResult.LatestLedger;
         }
     }
+  
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
+    }
+
 
     public static class Assert
     {

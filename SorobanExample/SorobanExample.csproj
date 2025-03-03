@@ -16,6 +16,12 @@
 		<Exec Command="cd out &amp;&amp; soroban contract optimize --wasm ./arithmetic.wasm" />
 		<Exec Command="cd out &amp;&amp; soroban contract deploy --rpc-url &quot;$(SOROBAN_RPC_URL)&quot; --network-passphrase &quot;$(SOROBAN_NETWORK_PASSPHRASE)&quot; --source-account &quot;$(SOROBAN_ACCOUNT)&quot; --wasm ./arithmetic.optimized.wasm" />
 		<Exec Command="cd arithmetic &amp;&amp; cargo clean" />
+
+		<Exec Command="cd nestedstruct &amp;&amp; cargo fmt --all" />
+		<Exec Command="cd nestedstruct &amp;&amp; soroban contract build --out-dir ../out" />
+		<Exec Command="cd out &amp;&amp; soroban contract optimize --wasm ./nestedstruct.wasm" />
+		<Exec Command="cd out &amp;&amp; soroban contract deploy --rpc-url &quot;$(SOROBAN_RPC_URL)&quot; --network-passphrase &quot;$(SOROBAN_NETWORK_PASSPHRASE)&quot; --source-account &quot;$(SOROBAN_ACCOUNT)&quot; --wasm ./nestedstruct.optimized.wasm" />
+		<Exec Command="cd nestedstruct &amp;&amp; cargo clean" />
 	</Target>
 
 	<Target Name="Build" />
