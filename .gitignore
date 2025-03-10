@@ -609,3 +609,7 @@
 /StellarNativeGRPCServerTest/obj/StellarNativeGRPCServerTest.csproj.nuget.g.props
 /StellarNativeGRPCServerTest/obj/Release/net9.0
 /SorobanExample/nestedstruct/target/release
+/Stellar_Tizen/Stellar_Tizen/bin/Debug/netstandard2.0
+/Stellar_Tizen/Stellar_Tizen/obj
+/Stellar_Tizen/Stellar_Tizen.Tizen/bin/Debug/tizen50
+/Stellar_Tizen/Stellar_Tizen.Tizen/obj
