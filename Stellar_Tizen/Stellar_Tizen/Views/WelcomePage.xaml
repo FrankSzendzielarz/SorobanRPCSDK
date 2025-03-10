@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stellar_Tizen.Views.WelcomePage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             BackgroundImage="images/bg.png">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Image Source="images/welcome_screen_icon.png"
+                   Margin="0, 201, 0, 0" />
+            <Label FontSize="170"
+                   FontFamily="BreezeSans:style=Condensed"
+                   HorizontalTextAlignment="Center"
+                   Margin="0, 59, 0, 0"
+                   Text="Stellar Tizen"
+                   TextColor="#FFFFFF" />
+            <Label FontSize="60"
+                   FontFamily="BreezeSans:style=Condensed"
+                   HorizontalTextAlignment="Center"
+                   Margin="20, 44, 20, 0"
+                   Text="This SmartTV client demonstrates secure Stellar account usage."
+                   TextColor="#FFFFFF" />
+            <Button x:Name="GetStartedButton"
+                    Text="Get started"
+                    FontSize="55"
+                    HeightRequest="80"
+                    Margin="810, 56, 810, 0"
+                    Command="{Binding GoToApplicationCommand}" />
+            <Button x:Name="ResetAccountButton"
+                     Text="New account"
+                     FontSize="55"
+                     HeightRequest="80"
+                     Margin="810, 10, 810, 0"
+                     Command="{Binding ResetAccountCommand}" />  
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
