@@ -2,19 +2,22 @@
 	<PropertyGroup Condition="'$(Configuration)'=='Release' Or '$(Configuration)'=='Debug'">
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>Stellar</RootNamespace>
-		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT;Tizen;TizenDebug</Configurations>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)'=='Tizen' Or '$(Configuration)'=='TizenDebug'">
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>Stellar</RootNamespace>
+		<DefineConstants>TIZEN;$(DefineConstants)</DefineConstants> 
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+	
 	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<RootNamespace>Stellar</RootNamespace>
-		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
-		<Nullable>disable</Nullable>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<DefineConstants>UNITY;$(DefineConstants)</DefineConstants>
+		<Nullable>disable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='NativeAOT' Or '$(Configuration)'=='NativeAOTDebug'">
@@ -25,7 +28,6 @@
 		<IsAotCompatible>true</IsAotCompatible>
 		<LangVersion>latest</LangVersion>
 		<Nullable>disable</Nullable>
-		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT</Configurations>
 
 	</PropertyGroup>
 
@@ -35,9 +37,9 @@
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
 		<PackageReference Include="protobuf-net.Grpc" Version="1.2.2" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="System.Text.Json" Version="9.0.1" Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug'" />
+		<PackageReference Include="System.Text.Json" Version="9.0.1" Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug' And '$(Configuration)'!='Tizen' And '$(Configuration)'!='TizenDebug'" />
 		
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug' Or '$(Configuration)'=='Tizen' Or '$(Configuration)'=='TizenDebug'" />
 		<PackageReference Include="ILRepack.Lib.MSBuild" Version="2.1.18" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
 	</ItemGroup>
 
@@ -59,17 +61,23 @@
 	<ItemGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
 		<Compile Remove="RPC\Generated\*.cs" />
 		<Compile Remove="RPC\Generated_NativeAOT\*.cs" />
+		<Compile Remove="RPC\Generated_Tizen\*.cs" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(Configuration)'=='NativeAOT' Or '$(Configuration)'=='NativeAOTDebug'">
 		<Compile Remove="RPC\Generated\*.cs" />
 		<Compile Remove="RPC\Generated_Unity\*.cs" />
-
+		<Compile Remove="RPC\Generated_Tizen\*.cs" />
 	</ItemGroup>
-
-
-	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug' And '$(Configuration)'!='NativeAOT' And '$(Configuration)'!='NativeAOTDebug'">
+	<ItemGroup Condition="'$(Configuration)'=='Tizen' Or '$(Configuration)'=='TizenDebug'">
+		<Compile Remove="RPC\Generated\*.cs" />
 		<Compile Remove="RPC\Generated_Unity\*.cs" />
 		<Compile Remove="RPC\Generated_NativeAOT\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'!='Unity' And '$(Configuration)'!='UnityDebug' And '$(Configuration)'!='NativeAOT' And '$(Configuration)'!='NativeAOTDebug' And '$(Configuration)'!='Tizen' And '$(Configuration)'!='TizenDebug'">
+		<Compile Remove="RPC\Generated_Unity\*.cs" />
+		<Compile Remove="RPC\Generated_NativeAOT\*.cs" />
+		<Compile Remove="RPC\Generated_Tizen\*.cs" />
 	</ItemGroup>
 
 

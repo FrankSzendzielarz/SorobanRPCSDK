@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand">
             <Image Source="images/welcome_screen_icon.png"
-                   Margin="0, 201, 0, 0" />
+                   Margin="0, 101, 0, 0" />
             <Label FontSize="170"
                    FontFamily="BreezeSans:style=Condensed"
                    HorizontalTextAlignment="Center"
@@ -18,15 +18,36 @@
             <Label FontSize="60"
                    FontFamily="BreezeSans:style=Condensed"
                    HorizontalTextAlignment="Center"
-                   Margin="20, 44, 20, 0"
+                   Margin="20, 14, 20, 0"
                    Text="This SmartTV client demonstrates secure Stellar account usage."
                    TextColor="#FFFFFF" />
-            <Button x:Name="GetStartedButton"
-                    Text="Get started"
-                    FontSize="55"
-                    HeightRequest="80"
-                    Margin="810, 56, 810, 0"
-                    Command="{Binding GoToApplicationCommand}" />
+            <Image 
+                Source="{Binding CurrentQRAddress}" 
+                WidthRequest="200" 
+                HeightRequest="200" 
+                HorizontalOptions="Center"
+              />
+            <Label FontSize="60"
+                 FontFamily="BreezeSans:style=Condensed"
+                 HorizontalTextAlignment="Center"
+                 Margin="20, 4, 20, 0"
+                 Text="{Binding CurrentAddress}"
+                 TextColor="#FFFFFF" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label FontSize="60"
+                    FontFamily="BreezeSans:style=Condensed"
+                    HorizontalTextAlignment="Center"
+                    Margin="20, 4, 20, 0"
+                    Text="Balance:"
+                    TextColor="#FFFFFF" />
+                <Label FontSize="60"
+                    FontFamily="BreezeSans:style=Condensed"
+                    HorizontalTextAlignment="Center"
+                    Margin="20, 4, 20, 0"
+                    Text="{Binding CurrentBalance}"
+                    TextColor="#FFFFFF" />
+            </StackLayout>
+          
             <Button x:Name="ResetAccountButton"
                      Text="New account"
                      FontSize="55"

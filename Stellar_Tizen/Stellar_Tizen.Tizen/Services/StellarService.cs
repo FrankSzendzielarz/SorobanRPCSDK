@@ -1,9 +1,11 @@
 ﻿using Stellar;
+using Stellar.RPC;
 using Stellar_Tizen.Models;
 using Stellar_Tizen.Tizen.TV.SecureStorage;
 using Stellar_Tizen.Tizen.TV.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -17,15 +19,19 @@ namespace Stellar_Tizen.Tizen.TV.Services
 
         private Data _data;
 
-        private HttpClient _stellarClient;
+        private HttpClient _httpClient;
+        private StellarRPCClient _sorobanClient;
 
 
 
         public StellarService()
         {
             _data = new Data();
-            _stellarClient = new HttpClient();
-            _stellarClient.Timeout = TimeSpan.FromSeconds(3000); //for debugging
+            _httpClient = new HttpClient();
+            _httpClient.Timeout = TimeSpan.FromSeconds(3000);               //for debugging
+            _httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
+            var httpClientFactory = new SimpleHttpClientFactory(_httpClient);
+            _sorobanClient = new StellarRPCClient(httpClientFactory);
 
         }
 
@@ -51,11 +57,11 @@ namespace Stellar_Tizen.Tizen.TV.Services
 
         }
 
-        public async Task<MuxedAccount> GetAccount()
+        public async Task<MuxedAccount.KeyTypeEd25519> GetAccount()
         {
             try
             {
-                MuxedAccount account;
+                MuxedAccount.KeyTypeEd25519 account;
                 //check if secure storage has our key.
                 if (_data.Exists(StellarKeyAlias))
                 {
@@ -77,13 +83,53 @@ namespace Stellar_Tizen.Tizen.TV.Services
 
         }
 
-        public async Task<decimal> GetBalance()
+        public async Task<long> GetBalance(MuxedAccount.KeyTypeEd25519 account)
         {
-            return 0.0M;
+            AccountID accountId = new AccountID(account.XdrPublicKey);
+            AccountEntry entry = await GetAccountLedgerEntry(accountId);
+            if (entry != null)
+                return entry.balance;
+            else
+                return 0;
+        }
+    
+        private async Task<AccountEntry> GetAccountLedgerEntry( AccountID testAccountId)
+        {
+            LedgerKey myAccount = new LedgerKey.Account()
+            {
+                account = new LedgerKey.accountStruct()
+                {
+                    accountID = testAccountId
+                }
+            };
+            var encodedAccount = LedgerKeyXdr.EncodeToBase64(myAccount);
+            var accountLedgerEntriesArgument = new GetLedgerEntriesParams()
+            {
+                Keys = new List<string>() { encodedAccount }
+            };
+            var ledgerEntriesAccount = await _sorobanClient.GetLedgerEntriesAsync(accountLedgerEntriesArgument);
+            var test = ledgerEntriesAccount.Entries.FirstOrDefault()?.LedgerEntryData as LedgerEntry.dataUnion.Account;
+        
+            return test?.account;
         }
 
 
 
 
+    }
+
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
     }
 }

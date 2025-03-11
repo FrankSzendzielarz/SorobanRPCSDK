@@ -12,7 +12,8 @@ namespace Generator.OpenRPC
     {
         NetStandard2,
         Unity,
-        NativeAOT
+        NativeAOT,
+        Tizen
 
     }
     public class CSharpOpenRPCGenerator
@@ -37,7 +38,7 @@ namespace Generator.OpenRPC
                     GenerateDataAnnotations = true,
                     GenerateJsonMethods = false,
                     Namespace = "Stellar.RPC",
-                    JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                    JsonLibrary = (buildType == BuildTarget.Unity || buildType==BuildTarget.Tizen) ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
                     ArrayType = "System.Collections.Generic.ICollection",
                     ArrayBaseType = "System.Collections.Generic.ICollection<{0}>",
                     NumberType = "long",
@@ -53,7 +54,7 @@ namespace Generator.OpenRPC
                     GenerateDataAnnotations = true,
                     GenerateJsonMethods = false,
                     Namespace = "Stellar.RPC",
-                    JsonLibrary = buildType == BuildTarget.Unity ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
+                    JsonLibrary = (buildType == BuildTarget.Unity || buildType == BuildTarget.Tizen) ? CSharpJsonLibrary.NewtonsoftJson : CSharpJsonLibrary.SystemTextJson,
                     // Change these two lines to use List<T> instead of ICollection<T>
                     ArrayType = "System.Collections.Generic.List",
                     ArrayInstanceType = "System.Collections.Generic.List",
@@ -164,7 +165,7 @@ namespace Generator.OpenRPC
             var sb = new StringBuilder();
 
             // Add appropriate using statements based on JSON library
-            if (_buildType == BuildTarget.Unity)
+            if (_buildType == BuildTarget.Unity || _buildType == BuildTarget.Tizen)
             {
                 sb.AppendLine("using Newtonsoft.Json;");
                 sb.AppendLine("using Newtonsoft.Json.Serialization;");
@@ -195,6 +196,7 @@ namespace Generator.OpenRPC
             switch (_buildType)
             {
                 case BuildTarget.Unity:
+                case BuildTarget.Tizen:
                     sb.AppendLine("    private readonly JsonSerializerSettings _jsonSettings;");
                     sb.AppendLine();
                     sb.AppendLine($"    public {_spec.Info.Title.Replace(" ", "")}Client(IHttpClientFactory httpClientFactory)");
@@ -221,6 +223,8 @@ namespace Generator.OpenRPC
                     sb.AppendLine("        };");
                     sb.AppendLine("    }");
                     break;
+
+
 
                 case BuildTarget.NativeAOT:
                     sb.AppendLine($"    private static readonly {_spec.Info.Title.Replace(" ", "")}JsonContext _jsonContext = {_spec.Info.Title.Replace(" ", "")}JsonContext.Default;");
@@ -282,6 +286,7 @@ namespace Generator.OpenRPC
             switch (_buildType)
             {
                 case BuildTarget.Unity:
+                case BuildTarget.Tizen:
                     // Newtonsoft.Json serialization for Unity
                     sb.AppendLine("        var requestJson = JsonConvert.SerializeObject(request, _jsonSettings);");
                     break;
@@ -316,6 +321,7 @@ namespace Generator.OpenRPC
             switch (_buildType)
             {
                 case BuildTarget.Unity:
+                case BuildTarget.Tizen:
                     // Newtonsoft.Json deserialization for Unity
                     sb.AppendLine($"        var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<{resultType}>>(content, _jsonSettings);");
                     break;

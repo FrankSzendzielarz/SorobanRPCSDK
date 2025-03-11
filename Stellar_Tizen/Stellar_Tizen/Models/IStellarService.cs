@@ -9,12 +9,12 @@ namespace Stellar_Tizen.Models
     public interface IStellarService
     {
         // Get account for funding
-        Task<MuxedAccount> GetAccount();
+        Task<MuxedAccount.KeyTypeEd25519> GetAccount();
 
         Task ResetAccount();
 
         // Get current balance 
-        Task<decimal> GetBalance();
+        Task<long> GetBalance(MuxedAccount.KeyTypeEd25519 account);
 
 
 

@@ -35,11 +35,11 @@ namespace Stellar_Tizen.ViewModels
 
         #region properties
 
-        MuxedAccount _currentAccount = null;
+        MuxedAccount.KeyTypeEd25519 _currentAccount = null;
         /// <summary>
         /// Current account.
         /// </summary>
-        public MuxedAccount CurrentAccount { get { return _currentAccount; } private set { _currentAccount = value; CurrentAddress = value.Address; } }
+        public MuxedAccount.KeyTypeEd25519 CurrentAccount { get { return _currentAccount; } private set { _currentAccount = value; CurrentAddress = value.Address; } }
 
         string _currentAddress;
         public string CurrentAddress
@@ -67,9 +67,20 @@ namespace Stellar_Tizen.ViewModels
             }
         }
 
+        long _currentBalance;
+        public long CurrentBalance
+        {
+            get => _currentBalance;
+            private set
+            {
+                _currentBalance = value;
+                OnPropertyChanged(nameof(CurrentBalance));
+            }
+
+        }
 
 
-      
+
 
         #endregion
 
@@ -85,9 +96,9 @@ namespace Stellar_Tizen.ViewModels
 
             _appModel = new AppModel();
             CurrentAccount = DependencyService.Get<IStellarService>().GetAccount().Result;
-        
+           
 
-            Device.StartTimer(TimeSpan.FromMilliseconds(UPDATE_INTERVAL), OnProgressUpdateTimerTick);
+            Device.StartTimer(TimeSpan.FromMilliseconds(UPDATE_INTERVAL), OnUpdateBalanceTimer);
 
 
 
@@ -122,9 +133,20 @@ namespace Stellar_Tizen.ViewModels
         /// Updates the account periodically
         /// </summary>
         /// <returns>Flag indicating if timer should keep recurring.</returns>
-        private bool OnProgressUpdateTimerTick()
+        private bool OnUpdateBalanceTimer()
         {
-           //TODO
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                try
+                {
+                    var balance = await DependencyService.Get<IStellarService>().GetBalance(CurrentAccount);
+                    CurrentBalance = balance;
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception
+                }
+            });
 
             return true;
         }

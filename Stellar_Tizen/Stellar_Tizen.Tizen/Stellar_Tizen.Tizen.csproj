@@ -13,9 +13,6 @@
     <DebugType>None</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Stellar_Tizen\Stellar_Tizen.csproj" />
   </ItemGroup>
 

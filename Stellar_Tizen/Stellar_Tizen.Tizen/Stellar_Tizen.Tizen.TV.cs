@@ -31,10 +31,11 @@ namespace Stellar_Tizen.Tizen.TV
 
         private void DisableCertificateValidation()
         {
+            // USE if working with local SSL RPC
             ServicePointManager.ServerCertificateValidationCallback +=
                 (sender, cert, chain, sslPolicyErrors) => true;
 
-            //       Console.WriteLine("WARNING: SSL Certificate validation has been disabled.");
+           
         }
 
 

@@ -93,6 +93,8 @@ public class Program
             await generator.GenerateAsync();
             generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc + "_NativeAOT", BuildTarget.NativeAOT);
             await generator.GenerateAsync();
+            generator = new CSharpOpenRPCGenerator(spec!, outputDirRpc + "_Tizen", BuildTarget.Tizen);
+            await generator.GenerateAsync();
             Console.WriteLine($"Successfully generated code in {outputDirXdr} and {outputDirRpc}");
         }
         catch (Exception ex)
