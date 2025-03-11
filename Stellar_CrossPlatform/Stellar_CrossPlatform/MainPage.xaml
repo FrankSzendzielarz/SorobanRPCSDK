@@ -26,11 +26,30 @@
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
+            <Label
+                 x:Name="AccountLabel"
+                 Text="Account:"
+                 TextColor="Orange"
+                 HorizontalTextAlignment="Center"
+                 SemanticProperties.HeadingLevel="Level2"
+                 SemanticProperties.Description="Balance" />
+            <Label
+                 x:Name="BalanceLabel"
+                Text="Balance: 0"
+                TextColor="Yellow"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Balance" />
+            <Button
+                x:Name="AccountBtn"
+                Text="New Account" 
+                SemanticProperties.Hint="Makes a new Stellar account"
+                Clicked="AccountBtn_Clicked"
+                HorizontalOptions="Fill" />
             <Button
                 x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Get Balance" 
+                SemanticProperties.Hint="Gets the account balance"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
