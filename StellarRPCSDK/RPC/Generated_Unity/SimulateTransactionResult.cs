@@ -176,6 +176,8 @@ namespace Stellar.RPC
         /// Indicates if the entry was created (1), updated (2), or deleted (3)
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type", Required = Newtonsoft.Json.Required.Always)]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         [ProtoBuf.ProtoMember(1)] public StateChanges_Type  Type { get; set; }
 
         /// <summary>
@@ -214,13 +216,16 @@ namespace Stellar.RPC
     [ProtoBuf.ProtoContract] public enum StateChanges_Type
     {
 
-        _1 = 1,
+        [System.Runtime.Serialization.EnumMember(Value = @"CREATED")]
+        CREATED = 0,
 
 
-        _2 = 2,
+        [System.Runtime.Serialization.EnumMember(Value = @"UPDATED")]
+        UPDATED = 1,
 
 
-        _3 = 3,
+        [System.Runtime.Serialization.EnumMember(Value = @"DELETED")]
+        DELETED = 2,
 
 
     }

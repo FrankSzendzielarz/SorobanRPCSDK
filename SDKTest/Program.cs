@@ -40,6 +40,7 @@ namespace SDKTest
              ****************************************/
             string demoContractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT"; // See SorobanExample project in the solution
             string nestedStructContractId = "CDO5UFNRHPMCLFN6NXFPMS22HTQFZQACUZP6S25QUTFIGDFP4HLD3YVN";
+            string sorobanAuthContractId = "CALYAREJBDZNQCWDDUL26O6WKQFUUDOOQPP7SKXKHM6REXEBLCX6ZFLK";
 
             // Initialise a connection to the RPC Client
             HttpClient httpClient = new HttpClient();
@@ -60,24 +61,26 @@ namespace SDKTest
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
             AccountEntry accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
-            await CreateAndSimulateNestedStructSorobanInvocationUseCase(sorobanClient, testAccount, accountEntry, nestedStructContractId);
-            AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
-            await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
-            await GetFeeStatsUseCase(sorobanClient);
-            await GetLatestLedgerUseCase(sorobanClient, lastLedger);
-            await GetNetworkUseCase(sorobanClient);
-            await GetTransactions(sorobanClient, lastLedger);
-            await GetServerVersionInfo(sorobanClient);
-            SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
-            await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
-            await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
+            //await CreateAndSimulateNestedStructSorobanInvocationUseCase(sorobanClient, testAccount, accountEntry, nestedStructContractId);
+            //AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
+            //await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
+            //await GetFeeStatsUseCase(sorobanClient);
+            //await GetLatestLedgerUseCase(sorobanClient, lastLedger);
+            //await GetNetworkUseCase(sorobanClient);
+            //await GetTransactions(sorobanClient, lastLedger);
+            //await GetServerVersionInfo(sorobanClient);
+            //SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
+            //await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
+            //await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
             AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
-            long val1 = 33;
-            long val2 = 11;
-            await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
-            GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
-            AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
-            
+            //long val1 = 33;
+            //long val2 = 11;
+            //await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
+            //GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
+            //AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
+
+            await CreateAndSimulateSorobanAuthInvocationUseCase(sorobanClient, testAccount, newAccountEntry, recipientAccount, testAccount, sorobanAuthContractId);
+
             // TODO:
             //  - Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
             //    2nd account and us
@@ -216,6 +219,79 @@ namespace SDKTest
             });
         }
 
+
+        private static async Task CreateAndSimulateSorobanAuthInvocationUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 sourceAccount, AccountEntry sourceAccountEntry, MuxedAccount.KeyTypeEd25519 payerAccount, MuxedAccount.KeyTypeEd25519 recipientAccount, string contractId)
+        {
+            // Create a soroban contract invocation
+            Operation payOperation = new Operation()
+            {
+                sourceAccount = sourceAccount,
+                body = new Operation.bodyUnion.InvokeHostFunction()
+                {
+                    invokeHostFunctionOp = new InvokeHostFunctionOp()
+                    {
+                        auth = [], //no authorisation needed in this scenario
+                        hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
+                        {
+                            invokeContract = new InvokeContractArgs()
+                            {
+                                contractAddress = new SCAddress.ScAddressTypeContract()
+                                {
+                                    contractId = new Hash(StrKey.DecodeContractId(contractId))
+                                },
+                                functionName = new SCSymbol("pay"),
+                                args =
+                                [
+                                    new SCVal.ScvAddress()
+                                    {
+                                        address= new SCAddress.ScAddressTypeAccount()
+                                        {
+                                            accountId = new AccountID(payerAccount.XdrPublicKey)
+                                        }
+                                    },
+                                     new SCVal.ScvAddress()
+                                    {
+                                        address= new SCAddress.ScAddressTypeAccount()
+                                        {
+                                            accountId = new AccountID(recipientAccount.XdrPublicKey)
+                                        }
+                                    },
+                                    new SCVal.ScvI128(){   i128= new Int128Parts(){ lo=100,hi=0 } }
+                                ]
+                            }
+                        }
+                    }
+                }
+            };
+
+            invokeContractTransaction = new Transaction()
+            {
+                sourceAccount = sourceAccount,
+                fee = 100,
+                memo = new Memo.MemoNone(),
+                seqNum = sourceAccountEntry.seqNum.Increment(),
+                cond = new Preconditions.PrecondNone(),
+                ext = new Transaction.extUnion.case_0(),
+                operations =
+                [
+                    payOperation
+                ]
+            };
+
+            // Simulate a Soroban contract invocation
+            TransactionEnvelope simulateEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = invokeContractTransaction,
+                    signatures = []
+                }
+            };
+            simulationResult = await sorobanClient.SimulateTransactionAsync(new SimulateTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
+            });
+        }
 
         private static async Task CreateAndSimulateSorobanInvocationUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, AccountEntry newAccountEntry, string demoContractId, long val1, long val2)
         {

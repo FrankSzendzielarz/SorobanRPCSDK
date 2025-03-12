@@ -1721,11 +1721,11 @@
                 ],
                 "properties": {
                   "type": {
-                    "type": "integer",
+                    "type": "string",
                     "enum": [
-                      1,
-                      2,
-                      3
+                      "CREATED",
+                      "UPDATED",
+                      "DELETED"
                     ],
                     "description": "Indicates if the entry was created (1), updated (2), or deleted (3)"
                   },

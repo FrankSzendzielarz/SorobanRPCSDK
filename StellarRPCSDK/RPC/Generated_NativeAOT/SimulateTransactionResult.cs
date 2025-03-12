@@ -192,6 +192,8 @@ namespace Stellar.RPC
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("type")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
         [ProtoBuf.ProtoMember(1)] public StateChanges_Type  Type { get; set; }
 
         /// <summary>
@@ -233,13 +235,16 @@ namespace Stellar.RPC
     [ProtoBuf.ProtoContract] public enum StateChanges_Type
     {
 
-        _1 = 1,
+        [System.Runtime.Serialization.EnumMember(Value = @"CREATED")]
+        CREATED = 0,
 
 
-        _2 = 2,
+        [System.Runtime.Serialization.EnumMember(Value = @"UPDATED")]
+        UPDATED = 1,
 
 
-        _3 = 3,
+        [System.Runtime.Serialization.EnumMember(Value = @"DELETED")]
+        DELETED = 2,
 
 
     }
