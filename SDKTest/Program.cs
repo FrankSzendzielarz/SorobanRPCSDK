@@ -1,6 +1,7 @@
 ﻿using Stellar;
 using Stellar.RPC;
 using Stellar.Utilities;
+using System.Security.Cryptography;
 using System.Text.Json;
 
 namespace SDKTest
@@ -72,15 +73,18 @@ namespace SDKTest
             //SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
             //await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
             //await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
+                  Network.UseTestNetwork();
             AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
             //long val1 = 33;
             //long val2 = 11;
             //await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
             //GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
             //AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
-
+      
             await CreateAndSimulateSorobanAuthInvocationUseCase(sorobanClient, testAccount, newAccountEntry, recipientAccount, testAccount, sorobanAuthContractId);
-
+            GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
+            
+            
             // TODO:
             //  - Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
             //    2nd account and us
@@ -96,6 +100,66 @@ namespace SDKTest
             long divisionResult = ((finalResult.TransactionResultMeta as TransactionMeta.case_3).v3.sorobanMeta.returnValue as SCVal.ScvI64).i64;
             Console.WriteLine($"Soroban says that {val1} divided by {val2} is {divisionResult}");
         }
+
+     
+
+        private static async Task<GetTransactionResult> AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, Transaction invokeContractTransaction, SimulateTransactionResult simulationResult)
+        {
+            //TODO
+            // 1. The soroban authorisations to sign are returned by Simulate, with the nonces
+            // 2. The soroban authorisation do not have the latest ledger expirations
+            // 3. Preopulate them and retunr them...make a func available in the simulationResult class to return all the SorobanAuthorizations later used in applyto
+            // 4. The client can have the respective signers sign them...make a function on the SorobanAuthorizationEntry partial that returns the payload to sign
+            // 5. Make a new ApplyTo that takes the updated sorobanauthorisations and adds them
+
+
+
+
+
+            //Apply the simulation results to the transaction
+            Transaction assembledTransaction = simulationResult.ApplyTo(invokeContractTransaction);
+
+            //Get the auth data to sign
+            var auths = simulationResult.Results.FirstOrDefault()?.SorobanAuthorizations;
+            if (auths == null) throw new Exception();
+            var authorisationDetailsToSign = new HashIDPreimage.sorobanAuthorizationStruct()
+            {
+                
+                invocation = auths[0].rootInvocation,
+                nonce = GetRandomInt(),
+                signatureExpirationLedger = (uint32)simulationResult.LatestLedger,
+                networkID = new Hash(Network.Current.NetworkId)
+            };
+
+            //update the assembled transaction with the nonce and expiration
+            SorobanAddressCredentials updatedCreds = (auths[0].credentials as SorobanCredentials.SorobanCredentialsAddress).address;
+    
+            var ops=assembledTransaction.operations.Where(op => op.body is Operation.bodyUnion.InvokeHostFunction).Select(op=>op.body as Operation.bodyUnion.InvokeHostFunction);
+            foreach( var op in ops)
+            {
+             
+            }
+
+
+            //Sign and send
+            var signature = assembledTransaction.Sign(testAccount);
+            TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = assembledTransaction,
+                    signatures = [signature]
+                }
+            };
+            SendTransactionResult res = await sorobanClient.SendTransactionAsync(new SendTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
+            });
+
+            var finalResult = await GetTransactionAndWaitForStatusUseCase(sorobanClient, res);
+            return finalResult;
+        }
+
 
         private static async Task<GetTransactionResult> AssembleSorobanInvocationAndExecuteUseCase(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, Transaction invokeContractTransaction, SimulateTransactionResult simulationResult)
         {
