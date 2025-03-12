@@ -82,9 +82,7 @@ namespace SDKTest
             //  - Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
             //    2nd account and us
             //  - Add utility for Authorising the Operation (signing)
-            //  - Add corresponding classes for FeeBumpTransaction : The feebumptransaction is a second transaction
-            //    type that requires a different envelope and different txn signature payload. i.e. it needs a slightly
-            //    different Sign implementation. Also, in ApplyTo, see InnerTransaction
+
 
 
 
