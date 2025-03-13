@@ -56,41 +56,37 @@ namespace SDKTest
             AccountID testAccountId = new AccountID(testAccount.XdrPublicKey);
 
             // Create a recipient test account for a payment transaction that has already been pre-funded
-            MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+            MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromSecretSeed("SATD6DG6F25FZX2GIQU74GZVECOKXRYSM74ACULTR7NGSEJI7ILDBW6H");
             AccountID recipientAccountId = recipientAccount.XdrPublicKey;
 
             // Use cases
             var lastLedger = await ServerHealthCheckUseCase(sorobanClient);
             AccountEntry accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
-            //await CreateAndSimulateNestedStructSorobanInvocationUseCase(sorobanClient, testAccount, accountEntry, nestedStructContractId);
-            //AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
-            //await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
-            //await GetFeeStatsUseCase(sorobanClient);
-            //await GetLatestLedgerUseCase(sorobanClient, lastLedger);
-            //await GetNetworkUseCase(sorobanClient);
-            //await GetTransactions(sorobanClient, lastLedger);
-            //await GetServerVersionInfo(sorobanClient);
-            //SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
-            //await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
-            //await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
-                  Network.UseTestNetwork();
+            await CreateAndSimulateNestedStructSorobanInvocationUseCase(sorobanClient, testAccount, accountEntry, nestedStructContractId);
+            AccountEntry accountEntryRecipient = await GetAccountLedgerEntryUseCase(sorobanClient, recipientAccountId);
+            await GetEventsAboutAContractUseCase(sorobanClient, lastLedger);
+            await GetFeeStatsUseCase(sorobanClient);
+            await GetLatestLedgerUseCase(sorobanClient, lastLedger);
+            await GetNetworkUseCase(sorobanClient);
+            await GetTransactions(sorobanClient, lastLedger);
+            await GetServerVersionInfo(sorobanClient);
+            accountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
+            SendTransactionResult result = await SignAndSendAPaymentTransactionUseCase(sorobanClient, testAccount, recipientAccount, accountEntry);
+            await GetTransactionAndWaitForStatusUseCase(sorobanClient, result);
+            await VerifyBalanceChangeUseCase(sorobanClient, testAccountId, recipientAccountId, accountEntry, accountEntryRecipient);
+            Network.UseTestNetwork();
             AccountEntry newAccountEntry = await GetAccountLedgerEntryUseCase(sorobanClient, testAccountId);
-            //long val1 = 33;
-            //long val2 = 11;
-            //await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
-            //GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
-            //AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
-      
+            long val1 = 33;
+            long val2 = 11;
+            await CreateAndSimulateSorobanInvocationUseCase(sorobanClient, testAccount, newAccountEntry, demoContractId, val1, val2);
+            GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCase(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
+            AccessSorobanInvocationResultUseCase(val1, val2, finalResult);
+
             await CreateAndSimulateSorobanAuthInvocationUseCase(sorobanClient, testAccount, newAccountEntry, recipientAccount, testAccount, sorobanAuthContractId);
-            GetTransactionResult finalResult = await AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(sorobanClient, testAccount, invokeContractTransaction, simulationResult);
+            GetTransactionResult finalResultWithAuth = await AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(sorobanClient, testAccount, recipientAccount, invokeContractTransaction, simulationResult);
             
             
-            // TODO:
-            //  - Execute a contract demonstrating the auth required on a passed in account by signing the operation from 
-            //    2nd account and us
-            //  - Add utility for Authorising the Operation (signing)
-
-
+         
 
 
         }
@@ -103,43 +99,19 @@ namespace SDKTest
 
      
 
-        private static async Task<GetTransactionResult> AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, Transaction invokeContractTransaction, SimulateTransactionResult simulationResult)
+        private static async Task<GetTransactionResult> AssembleSorobanInvocationAndExecuteUseCaseWithAuthorisation(StellarRPCClient sorobanClient, MuxedAccount.KeyTypeEd25519 testAccount, MuxedAccount.KeyTypeEd25519 authorisingAccount, Transaction invokeContractTransaction, SimulateTransactionResult simulationResult)
         {
-            //TODO
-            // 1. The soroban authorisations to sign are returned by Simulate, with the nonces
-            // 2. The soroban authorisation do not have the latest ledger expirations
-            // 3. Preopulate them and retunr them...make a func available in the simulationResult class to return all the SorobanAuthorizations later used in applyto
-            // 4. The client can have the respective signers sign them...make a function on the SorobanAuthorizationEntry partial that returns the payload to sign
-            // 5. Make a new ApplyTo that takes the updated sorobanauthorisations and adds them
-
-
-
-
-
+            //Get authorisations to sign and then sign them
+            List<HashIDPreimage.EnvelopeTypeSorobanAuthorization> authorisationsToSign = simulationResult.GetAuthorisationsRequired();
+            if (authorisationsToSign!=null && authorisationsToSign.Count==1) //test scenario expects one authorisation from the payer
+            {
+                byte[] payloadToSign = Util.Hash(Convert.FromBase64String(HashIDPreimageXdr.EncodeToBase64(authorisationsToSign[0])));
+                byte[] sorobanAuthSig = authorisingAccount.Sign(payloadToSign);
+                simulationResult.AddAuthorisationSignature(0,authorisingAccount.PublicKey,sorobanAuthSig);
+            }
+         
             //Apply the simulation results to the transaction
             Transaction assembledTransaction = simulationResult.ApplyTo(invokeContractTransaction);
-
-            //Get the auth data to sign
-            var auths = simulationResult.Results.FirstOrDefault()?.SorobanAuthorizations;
-            if (auths == null) throw new Exception();
-            var authorisationDetailsToSign = new HashIDPreimage.sorobanAuthorizationStruct()
-            {
-                
-                invocation = auths[0].rootInvocation,
-                nonce = GetRandomInt(),
-                signatureExpirationLedger = (uint32)simulationResult.LatestLedger,
-                networkID = new Hash(Network.Current.NetworkId)
-            };
-
-            //update the assembled transaction with the nonce and expiration
-            SorobanAddressCredentials updatedCreds = (auths[0].credentials as SorobanCredentials.SorobanCredentialsAddress).address;
-    
-            var ops=assembledTransaction.operations.Where(op => op.body is Operation.bodyUnion.InvokeHostFunction).Select(op=>op.body as Operation.bodyUnion.InvokeHostFunction);
-            foreach( var op in ops)
-            {
-             
-            }
-
 
             //Sign and send
             var signature = assembledTransaction.Sign(testAccount);
