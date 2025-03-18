@@ -74,6 +74,7 @@ namespace Stellar_Tizen.Tizen.TV.Services
                     account = MuxedAccount.Random();         //In a production setting copy the pk and dispose the old KP
                     _data.Save(account.SeedBytes, StellarKeyAlias);
                 }
+
                 return account;
             }
             catch
