@@ -47,6 +47,10 @@ Learn how to use the SDK through practical examples:
 - [Tizen Integration](platforms/tizen.md)
 - [Native Bindings](platforms/native.md)
 
+## SDK Maintenance
+
+- [Maintenance Guide](maintenance/maintenance.md)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

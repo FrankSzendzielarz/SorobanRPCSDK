@@ -1,0 +1,142 @@
+name: Build and Release SDK
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'SDK Version (e.g., 1.0.0)'
+        required: true
+      update_specs:
+        description: 'Update OpenRPC and XDR specifications'
+        type: boolean
+        default: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Update Specifications
+        if: ${{ inputs.update_specs == 'true' }}
+        run: |
+          mkdir -p StellarOpenRPC
+          mkdir -p StellarXDR
+          curl -L https://raw.githubusercontent.com/stellar/stellar-rpc/main/docs/specs/stellar-rpc.openrpc.json -o StellarOpenRPC/stellar-rpc.openrpc.json
+          git clone https://github.com/stellar/stellar-core.git temp-stellar-core
+          cp temp-stellar-core/src/protocol-curr/*.x StellarXDR/
+          rm -rf temp-stellar-core
+
+      - name: Generate SDK Code
+        run: |
+          ROOT_DIR=$(pwd)
+          dotnet run --project Generator/Generator.csproj -- "$ROOT_DIR/StellarXDR" "$ROOT_DIR/StellarOpenRPC/stellar-rpc.openrpc.json" "$ROOT_DIR/StellarRPCSDK/Stellar/Generated" "$ROOT_DIR/StellarRPCSDK/RPC/Generated"
+
+      - name: Build SDK Variants
+        run: |
+          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:Version=${{ inputs.version }}
+          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:Version=${{ inputs.version }}
+          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:Version=${{ inputs.version }}
+          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c NativeAOT -p:Version=${{ inputs.version }}
+
+      - name: Generate Protocol Buffer Wrappers
+        run: |
+          GRPC_OUTPUT_DIR="$(pwd)/StellarRPCSDK_Native/gRPC"
+          mkdir -p "$GRPC_OUTPUT_DIR"
+          dotnet run --project ProtoGenerator/ProtoGenerator.csproj -- --proto "$(pwd)/StellarRPCSDK_Native" --grpc-aot "$GRPC_OUTPUT_DIR"
+
+      - name: Create NuGet Packages
+        run: |
+          mkdir -p Releases/NuGet
+          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
+          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
+          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
+
+      - name: Upload NuGet Packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: nuget-packages
+          path: Releases/NuGet
+
+  publish_native:
+    needs: build
+    strategy:
+      matrix:
+        platform: [win-x64, win-arm64, linux-x64, linux-arm64, osx-x64, osx-arm64]
+        include:
+          - platform: win-x64
+            os: windows-latest
+          - platform: win-arm64
+            os: windows-latest
+          - platform: linux-x64
+            os: ubuntu-latest
+          - platform: linux-arm64
+            os: ubuntu-latest
+          - platform: osx-x64
+            os: macos-latest
+          - platform: osx-arm64
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Download Generator Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: generated-code
+          path: .
+
+      - name: Publish Native Binary
+        run: |
+          mkdir -p Releases/Binaries/${{ matrix.platform }}
+          dotnet publish StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
+            -c Release \
+            -r ${{ matrix.platform }} \
+            --self-contained \
+            -p:Version=${{ github.event.inputs.version }} \
+            -o Releases/Binaries/${{ matrix.platform }}
+
+      - name: Upload Native Binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: native-binary-${{ matrix.platform }}
+          path: Releases/Binaries/${{ matrix.platform }}
+
+  release:
+    needs: [build, publish_native]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: Release v${{ github.event.inputs.version }}
+          files: |
+            artifacts/nuget-packages/*
+            artifacts/native-binary-*/**/*
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish NuGet Packages
+        run: |
+          for package in artifacts/nuget-packages/*.nupkg; do
+            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          done
