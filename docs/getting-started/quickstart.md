@@ -39,12 +39,33 @@ namespace StellarRpcSdkDemo
 {
     internal class Program
     {
+
+        // A simple HTTP client factory for console applications
+        // Note: In real applications, you would typically use dependency injection
+        public class SimpleHttpClientFactory : IHttpClientFactory
+        {
+            private readonly HttpClient _httpClient;
+
+            public SimpleHttpClientFactory(HttpClient httpClient)
+            {
+                _httpClient = httpClient;
+            }
+
+            public HttpClient CreateClient(string name)
+            {
+                return _httpClient;
+            }
+        }
+
+
+
         static async Task Main(string[] args)
         {
-            // Set up the RPC client
+            // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient client = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient client = new StellarRPCClient(httpClientFactory);
 
             try
             {
