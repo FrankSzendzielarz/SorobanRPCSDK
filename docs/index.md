@@ -39,8 +39,6 @@ Learn how to use the SDK through practical examples:
 
 - [StellarRPCClient](api/client.md)
 - [Data Models](api/models.md)
-- [Operations](api/operations.md)
-- [Transactions](api/transactions.md)
 
 ## Platform-Specific Guides
 
