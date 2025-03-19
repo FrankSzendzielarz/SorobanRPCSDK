@@ -1,13 +1,23 @@
-# Invoking Soroban Smart Contracts
+# Soroban Authorizations
 
-This tutorial demonstrates how to invoke Soroban smart contracts using the Stellar RPC SDK. You'll learn how to create, simulate, and execute a contract invocation transaction.
+This tutorial demonstrates how to work with Soroban authorizations using the Stellar RPC SDK. You'll learn how to create, simulate, sign, and execute transactions that require authorization from multiple accounts.
 
 ## Prerequisites
 
 - A project with the Stellar RPC SDK installed
-- A funded Stellar account
-- A deployed Soroban contract ID
+- Multiple funded Stellar accounts
+- A deployed Soroban contract that requires authorization
 - Basic understanding of Stellar transactions and Soroban
+
+## Understanding Soroban Authorizations
+
+Soroban contracts can require authorization from specific accounts to perform certain operations. For example, a payment contract might require authorization from the account that's sending funds. The authorization process in Soroban involves:
+
+1. Creating a contract invocation
+2. Simulating the transaction to determine which authorizations are needed
+3. Signing the authorization payloads with the required accounts
+4. Adding the signatures to the transaction
+5. Submitting the completed transaction
 
 ## Initializing the Client
 
@@ -20,6 +30,24 @@ using Stellar.Utilities;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
 
 // Initialize the client
 HttpClient httpClient = new HttpClient();
@@ -27,26 +55,36 @@ httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
 var httpClientFactory = new SimpleHttpClientFactory(httpClient);
 StellarRPCClient client = new StellarRPCClient(httpClientFactory);
 
-// Set the network context (important for transaction signing)
+// Set the network context
 Network.UseTestNetwork();
 ```
 
+> **Note:** The `SimpleHttpClientFactory` implementation shown here is a convenience for example code and simple console applications. In production applications, you should use a proper dependency injection system to provide an implementation of `IHttpClientFactory`.
+
 ## Setting Up Account and Contract Information
 
-Define your account and the contract you want to interact with:
+Define the accounts and contract for the authorization example:
 
 ```csharp
-// User account that will invoke the contract
-MuxedAccount.KeyTypeEd25519 userAccount = MuxedAccount.FromSecretSeed(
+// Source account that will submit the transaction
+MuxedAccount.KeyTypeEd25519 sourceAccount = MuxedAccount.FromSecretSeed(
     "SAZEWZ7VSEMZI35JROGXVGLDH4XAFZHY6HB2MO3NQXOY6K5WFSSG7PRH");
 
-// Contract ID of the deployed Soroban contract
-string contractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT";
+// Account that will provide authorization (e.g., the payer)
+MuxedAccount.KeyTypeEd25519 authorizingAccount = MuxedAccount.FromSecretSeed(
+    "SATD6DG6F25FZX2GIQU74GZVECOKXRYSM74ACULTR7NGSEJI7ILDBW6H");
+
+// Recipient account for the payment
+MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId(
+    "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
+
+// Contract ID of the payment contract
+string contractId = "CALYAREJBDZNQCWDDUL26O6WKQFUUDOOQPP7SKXKHM6REXEBLCX6ZFLK";
 ```
 
 ## Getting Account Information
 
-Before creating a transaction, you need the user's current sequence number:
+Retrieve the account information to get the current sequence number:
 
 ```csharp
 async Task<AccountEntry> GetAccountInfo(StellarRPCClient client, MuxedAccount.KeyTypeEd25519 account)
@@ -81,16 +119,16 @@ async Task<AccountEntry> GetAccountInfo(StellarRPCClient client, MuxedAccount.Ke
 }
 ```
 
-## Creating a Contract Invocation
+## Creating a Contract Invocation with Potential Authorization
 
-Create an operation to invoke a contract function with parameters:
+Create an operation to invoke a contract function that will require authorization:
 
 ```csharp
-Operation CreateContractInvocation(
+Operation CreatePaymentOperation(
     MuxedAccount.KeyTypeEd25519 sourceAccount, 
-    string contractId, 
-    string functionName, 
-    params SCVal[] arguments)
+    MuxedAccount.KeyTypeEd25519 payerAccount,
+    MuxedAccount.KeyTypeEd25519 recipientAccount,
+    string contractId)
 {
     // Create the contract invocation
     Operation operation = new Operation()
@@ -100,7 +138,7 @@ Operation CreateContractInvocation(
         {
             invokeHostFunctionOp = new InvokeHostFunctionOp()
             {
-                auth = [], // No authorization needed for this example
+                auth = [], // Authorization will be added later after simulation
                 hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
                 {
                     invokeContract = new InvokeContractArgs()
@@ -109,8 +147,35 @@ Operation CreateContractInvocation(
                         {
                             contractId = new Hash(StrKey.DecodeContractId(contractId))
                         },
-                        functionName = new SCSymbol(functionName),
-                        args = arguments
+                        functionName = new SCSymbol("pay"),
+                        args =
+                        [
+                            // Payer account (requires authorization)
+                            new SCVal.ScvAddress()
+                            {
+                                address = new SCAddress.ScAddressTypeAccount()
+                                {
+                                    accountId = new AccountID(payerAccount.XdrPublicKey)
+                                }
+                            },
+                            // Recipient account
+                            new SCVal.ScvAddress()
+                            {
+                                address = new SCAddress.ScAddressTypeAccount()
+                                {
+                                    accountId = new AccountID(recipientAccount.XdrPublicKey)
+                                }
+                            },
+                            // Amount (e.g., 100 units)
+                            new SCVal.ScvI128()
+                            {
+                                i128 = new Int128Parts()
+                                {
+                                    lo = 100,
+                                    hi = 0
+                                }
+                            }
+                        ]
                     }
                 }
             }
@@ -126,40 +191,51 @@ Operation CreateContractInvocation(
 Create a transaction with the contract invocation operation:
 
 ```csharp
-Transaction CreateContractTransaction(
+async Task<Transaction> CreateAuthorizationTransaction(
+    StellarRPCClient client,
     MuxedAccount.KeyTypeEd25519 sourceAccount,
-    SequenceNumber sequenceNumber,
-    Operation operation)
+    MuxedAccount.KeyTypeEd25519 payerAccount,
+    MuxedAccount.KeyTypeEd25519 recipientAccount,
+    string contractId)
 {
+    // Get the current account information for the sequence number
+    AccountEntry accountEntry = await GetAccountInfo(client, sourceAccount);
+    
+    // Create the payment operation
+    Operation payOperation = CreatePaymentOperation(
+        sourceAccount,
+        payerAccount,
+        recipientAccount,
+        contractId
+    );
+    
+    // Create the transaction
     Transaction transaction = new Transaction()
     {
         sourceAccount = sourceAccount,
         fee = 100, // Base fee
         memo = new Memo.MemoNone(),
-        seqNum = sequenceNumber.Increment(), // Increment the sequence number
+        seqNum = accountEntry.seqNum.Increment(),
         cond = new Preconditions.PrecondNone(),
         ext = new Transaction.extUnion.case_0(),
-        operations =
-        [
-            operation
-        ]
+        operations = [payOperation]
     };
     
     return transaction;
 }
 ```
 
-## Simulating the Transaction
+## Simulating the Transaction to Get Authorization Requirements
 
-Before executing a contract invocation, simulate it to get the proper transaction setup:
+Simulate the transaction to determine which authorizations are needed:
 
 ```csharp
-async Task<SimulateTransactionResult> SimulateTransaction(
+async Task<SimulateTransactionResult> SimulateAuthorizationTransaction(
     StellarRPCClient client,
     Transaction transaction)
 {
     // Create an envelope without signatures for simulation
-    TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+    TransactionEnvelope simulateEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
     {
         v1 = new TransactionV1Envelope()
         {
@@ -168,39 +244,65 @@ async Task<SimulateTransactionResult> SimulateTransaction(
         }
     };
     
-    // Encode the envelope
-    string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
-    
     // Simulate the transaction
     SimulateTransactionResult simulationResult = await client.SimulateTransactionAsync(
         new SimulateTransactionParams()
         {
-            Transaction = encodedEnvelope
+            Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
         });
     
     return simulationResult;
 }
 ```
 
-## Assembling and Executing the Transaction
+## Adding Authorization Signatures
 
-Apply the simulation results to the transaction, sign it, and submit it:
+Process the simulation results and add the required authorization signatures:
 
 ```csharp
-async Task<GetTransactionResult> AssembleAndExecuteTransaction(
+async Task<GetTransactionResult> AssembleAndExecuteAuthorizationTransaction(
     StellarRPCClient client,
+    MuxedAccount.KeyTypeEd25519 sourceAccount,
+    MuxedAccount.KeyTypeEd25519 authorizingAccount,
     Transaction transaction,
-    SimulateTransactionResult simulationResult,
-    MuxedAccount.KeyTypeEd25519 signerAccount)
+    SimulateTransactionResult simulationResult)
 {
-    // Apply simulation results to the transaction
+    // Get authorizations to sign
+    List<HashIDPreimage.EnvelopeTypeSorobanAuthorization> authorisationsToSign = 
+        simulationResult.GetAuthorisationsRequired();
+    
+    // Process each required authorization
+    if (authorisationsToSign != null && authorisationsToSign.Count > 0)
+    {
+        for (int i = 0; i < authorisationsToSign.Count; i++)
+        {
+            // Create the payload hash to sign
+            byte[] payloadToSign = Util.Hash(
+                Convert.FromBase64String(
+                    HashIDPreimageXdr.EncodeToBase64(authorisationsToSign[i])
+                )
+            );
+            
+            // Sign the payload with the authorizing account
+            byte[] authSignature = authorizingAccount.Sign(payloadToSign);
+            
+            // Add the signature to the simulation result
+            simulationResult.AddAuthorisationSignature(
+                i,
+                authorizingAccount.PublicKey,
+                authSignature
+            );
+        }
+    }
+    
+    // Apply the simulation results with authorizations to the transaction
     Transaction assembledTransaction = simulationResult.ApplyTo(transaction);
     
-    // Sign the transaction
-    var signature = assembledTransaction.Sign(signerAccount);
+    // Sign the transaction with the source account
+    var signature = assembledTransaction.Sign(sourceAccount);
     
-    // Create the transaction envelope with signature
-    TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+    // Create the transaction envelope with the signature
+    TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
     {
         v1 = new TransactionV1Envelope()
         {
@@ -209,14 +311,11 @@ async Task<GetTransactionResult> AssembleAndExecuteTransaction(
         }
     };
     
-    // Encode the envelope
-    string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
-    
     // Submit the transaction
     SendTransactionResult sendResult = await client.SendTransactionAsync(
         new SendTransactionParams()
         {
-            Transaction = encodedEnvelope
+            Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
         });
     
     if (sendResult.Status != SendTransactionResult_Status.PENDING)
@@ -224,7 +323,7 @@ async Task<GetTransactionResult> AssembleAndExecuteTransaction(
         throw new Exception($"Transaction submission failed: {sendResult.ErrorResult?.result}");
     }
     
-    // Check transaction status
+    // Check and return the transaction status
     return await CheckTransactionStatus(client, sendResult);
 }
 ```
@@ -269,39 +368,37 @@ async Task<GetTransactionResult> CheckTransactionStatus(
 }
 ```
 
-## Accessing the Invocation Result
+## Complete Example
 
-Extract and process the contract invocation result:
-
-```csharp
-SCVal AccessInvocationResult(GetTransactionResult transactionResult)
-{
-    // Extract the result from the transaction metadata
-    var meta = transactionResult.TransactionResultMeta as TransactionMeta.case_3;
-    
-    if (meta != null)
-    {
-        return meta.v3.sorobanMeta.returnValue;
-    }
-    
-    throw new Exception("Cannot access invocation result");
-}
-```
-
-## Complete Example: Division Function
-
-Here's a complete example that invokes a contract's division function:
+Here's a complete example that demonstrates invoking a contract function with authorization:
 
 ```csharp
 using Stellar;
 using Stellar.RPC;
 using Stellar.Utilities;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ContractInvocationExample
+namespace SorobanAuthorizationExample
 {
+    // A simple HTTP client factory for console applications
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
+    }
+
     internal class Program
     {
         static async Task Main(string[] args)
@@ -309,72 +406,61 @@ namespace ContractInvocationExample
             // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient client = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient client = new StellarRPCClient(httpClientFactory);
             
             // Set the network context
             Network.UseTestNetwork();
             
             try
             {
-                // Set up user account
-                MuxedAccount.KeyTypeEd25519 userAccount = MuxedAccount.FromSecretSeed(
+                // Set up accounts
+                MuxedAccount.KeyTypeEd25519 sourceAccount = MuxedAccount.FromSecretSeed(
                     "SAZEWZ7VSEMZI35JROGXVGLDH4XAFZHY6HB2MO3NQXOY6K5WFSSG7PRH");
                 
-                // Contract ID to invoke
-                string contractId = "CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT";
+                MuxedAccount.KeyTypeEd25519 authorizingAccount = MuxedAccount.FromSecretSeed(
+                    "SATD6DG6F25FZX2GIQU74GZVECOKXRYSM74ACULTR7NGSEJI7ILDBW6H");
                 
-                // Define the parameters for the division function
-                long dividend = 33;
-                long divisor = 11;
+                MuxedAccount.KeyTypeEd25519 recipientAccount = MuxedAccount.FromAccountId(
+                    "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T");
                 
-                Console.WriteLine($"Invoking division function with parameters: {dividend} / {divisor}");
+                // Contract ID
+                string contractId = "CALYAREJBDZNQCWDDUL26O6WKQFUUDOOQPP7SKXKHM6REXEBLCX6ZFLK";
                 
-                // Get account information for the sequence number
-                AccountEntry accountEntry = await GetAccountInfo(client, userAccount);
-                
-                // Create the contract invocation operation
-                Operation invokeDivisionOp = CreateContractInvocation(
-                    userAccount,
-                    contractId,
-                    "divide_two_numbers",
-                    new SCVal.ScvI64() { i64 = dividend },
-                    new SCVal.ScvI64() { i64 = divisor }
-                );
+                Console.WriteLine("Creating authorized payment transaction...");
                 
                 // Create the transaction
-                Transaction invokeTransaction = CreateContractTransaction(
-                    userAccount,
-                    accountEntry.seqNum,
-                    invokeDivisionOp
+                Transaction transaction = await CreateAuthorizationTransaction(
+                    client,
+                    sourceAccount,
+                    authorizingAccount,
+                    recipientAccount,
+                    contractId
                 );
                 
                 // Simulate the transaction
-                Console.WriteLine("Simulating transaction...");
-                SimulateTransactionResult simulationResult = await SimulateTransaction(
+                Console.WriteLine("Simulating transaction to get authorization requirements...");
+                SimulateTransactionResult simulationResult = 
+                    await SimulateAuthorizationTransaction(client, transaction);
+                
+                // Get the number of required authorizations
+                List<HashIDPreimage.EnvelopeTypeSorobanAuthorization> authorizations = 
+                    simulationResult.GetAuthorisationsRequired();
+                
+                Console.WriteLine($"Transaction requires {authorizations?.Count ?? 0} authorizations");
+                
+                // Execute the transaction with authorizations
+                Console.WriteLine("Adding authorization signatures and executing transaction...");
+                GetTransactionResult result = await AssembleAndExecuteAuthorizationTransaction(
                     client,
-                    invokeTransaction
+                    sourceAccount,
+                    authorizingAccount,
+                    transaction,
+                    simulationResult
                 );
                 
-                // Execute the transaction
-                Console.WriteLine("Executing transaction...");
-                GetTransactionResult transactionResult = await AssembleAndExecuteTransaction(
-                    client,
-                    invokeTransaction,
-                    simulationResult,
-                    userAccount
-                );
-                
-                // Access and display the result
-                SCVal result = AccessInvocationResult(transactionResult);
-                
-                if (result is SCVal.ScvI64 scvI64)
-                {
-                    Console.WriteLine($"Contract result: {dividend} / {divisor} = {scvI64.i64}");
-                }
-                else
-                {
-                    Console.WriteLine($"Unexpected result type: {result.GetType().Name}");
-                }
+                Console.WriteLine("Transaction completed successfully!");
+                Console.WriteLine($"Transaction hash: {result.Hash}");
             }
             catch (Exception ex)
             {
@@ -382,6 +468,7 @@ namespace ContractInvocationExample
             }
         }
         
+        // Include all the other methods defined earlier
         static async Task<AccountEntry> GetAccountInfo(StellarRPCClient client, MuxedAccount.KeyTypeEd25519 account)
         {
             AccountID accountId = new AccountID(account.XdrPublicKey);
@@ -413,11 +500,11 @@ namespace ContractInvocationExample
             throw new Exception("Account not found");
         }
         
-        static Operation CreateContractInvocation(
+        static Operation CreatePaymentOperation(
             MuxedAccount.KeyTypeEd25519 sourceAccount, 
-            string contractId, 
-            string functionName, 
-            params SCVal[] arguments)
+            MuxedAccount.KeyTypeEd25519 payerAccount,
+            MuxedAccount.KeyTypeEd25519 recipientAccount,
+            string contractId)
         {
             // Create the contract invocation
             Operation operation = new Operation()
@@ -427,7 +514,7 @@ namespace ContractInvocationExample
                 {
                     invokeHostFunctionOp = new InvokeHostFunctionOp()
                     {
-                        auth = [], // No authorization needed for this example
+                        auth = [], // Authorization will be added later after simulation
                         hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
                         {
                             invokeContract = new InvokeContractArgs()
@@ -436,8 +523,35 @@ namespace ContractInvocationExample
                                 {
                                     contractId = new Hash(StrKey.DecodeContractId(contractId))
                                 },
-                                functionName = new SCSymbol(functionName),
-                                args = arguments
+                                functionName = new SCSymbol("pay"),
+                                args =
+                                [
+                                    // Payer account (requires authorization)
+                                    new SCVal.ScvAddress()
+                                    {
+                                        address = new SCAddress.ScAddressTypeAccount()
+                                        {
+                                            accountId = new AccountID(payerAccount.XdrPublicKey)
+                                        }
+                                    },
+                                    // Recipient account
+                                    new SCVal.ScvAddress()
+                                    {
+                                        address = new SCAddress.ScAddressTypeAccount()
+                                        {
+                                            accountId = new AccountID(recipientAccount.XdrPublicKey)
+                                        }
+                                    },
+                                    // Amount (e.g., 100 units)
+                                    new SCVal.ScvI128()
+                                    {
+                                        i128 = new Int128Parts()
+                                        {
+                                            lo = 100,
+                                            hi = 0
+                                        }
+                                    }
+                                ]
                             }
                         }
                     }
@@ -447,34 +561,45 @@ namespace ContractInvocationExample
             return operation;
         }
         
-        static Transaction CreateContractTransaction(
+        static async Task<Transaction> CreateAuthorizationTransaction(
+            StellarRPCClient client,
             MuxedAccount.KeyTypeEd25519 sourceAccount,
-            SequenceNumber sequenceNumber,
-            Operation operation)
+            MuxedAccount.KeyTypeEd25519 payerAccount,
+            MuxedAccount.KeyTypeEd25519 recipientAccount,
+            string contractId)
         {
+            // Get the current account information for the sequence number
+            AccountEntry accountEntry = await GetAccountInfo(client, sourceAccount);
+            
+            // Create the payment operation
+            Operation payOperation = CreatePaymentOperation(
+                sourceAccount,
+                payerAccount,
+                recipientAccount,
+                contractId
+            );
+            
+            // Create the transaction
             Transaction transaction = new Transaction()
             {
                 sourceAccount = sourceAccount,
                 fee = 100, // Base fee
                 memo = new Memo.MemoNone(),
-                seqNum = sequenceNumber.Increment(), // Increment the sequence number
+                seqNum = accountEntry.seqNum.Increment(),
                 cond = new Preconditions.PrecondNone(),
                 ext = new Transaction.extUnion.case_0(),
-                operations =
-                [
-                    operation
-                ]
+                operations = [payOperation]
             };
             
             return transaction;
         }
         
-        static async Task<SimulateTransactionResult> SimulateTransaction(
+        static async Task<SimulateTransactionResult> SimulateAuthorizationTransaction(
             StellarRPCClient client,
             Transaction transaction)
         {
             // Create an envelope without signatures for simulation
-            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            TransactionEnvelope simulateEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()
                 {
@@ -483,33 +608,59 @@ namespace ContractInvocationExample
                 }
             };
             
-            // Encode the envelope
-            string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
-            
             // Simulate the transaction
             SimulateTransactionResult simulationResult = await client.SimulateTransactionAsync(
                 new SimulateTransactionParams()
                 {
-                    Transaction = encodedEnvelope
+                    Transaction = TransactionEnvelopeXdr.EncodeToBase64(simulateEnvelope)
                 });
             
             return simulationResult;
         }
         
-        static async Task<GetTransactionResult> AssembleAndExecuteTransaction(
+        static async Task<GetTransactionResult> AssembleAndExecuteAuthorizationTransaction(
             StellarRPCClient client,
+            MuxedAccount.KeyTypeEd25519 sourceAccount,
+            MuxedAccount.KeyTypeEd25519 authorizingAccount,
             Transaction transaction,
-            SimulateTransactionResult simulationResult,
-            MuxedAccount.KeyTypeEd25519 signerAccount)
+            SimulateTransactionResult simulationResult)
         {
-            // Apply simulation results to the transaction
+            // Get authorizations to sign
+            List<HashIDPreimage.EnvelopeTypeSorobanAuthorization> authorisationsToSign = 
+                simulationResult.GetAuthorisationsRequired();
+            
+            // Process each required authorization
+            if (authorisationsToSign != null && authorisationsToSign.Count > 0)
+            {
+                for (int i = 0; i < authorisationsToSign.Count; i++)
+                {
+                    // Create the payload hash to sign
+                    byte[] payloadToSign = Util.Hash(
+                        Convert.FromBase64String(
+                            HashIDPreimageXdr.EncodeToBase64(authorisationsToSign[i])
+                        )
+                    );
+                    
+                    // Sign the payload with the authorizing account
+                    byte[] authSignature = authorizingAccount.Sign(payloadToSign);
+                    
+                    // Add the signature to the simulation result
+                    simulationResult.AddAuthorisationSignature(
+                        i,
+                        authorizingAccount.PublicKey,
+                        authSignature
+                    );
+                }
+            }
+            
+            // Apply the simulation results with authorizations to the transaction
             Transaction assembledTransaction = simulationResult.ApplyTo(transaction);
             
-            // Sign the transaction
-            var signature = assembledTransaction.Sign(signerAccount);
+            // Sign the transaction with the source account
+            var signature = assembledTransaction.Sign(sourceAccount);
             
-            // Create the transaction envelope with signature
-            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            // Create the transaction envelope with the signature
+            TransactionEnvelope sendEnvelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()
                 {
@@ -518,14 +669,11 @@ namespace ContractInvocationExample
                 }
             };
             
-            // Encode the envelope
-            string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
-            
             // Submit the transaction
             SendTransactionResult sendResult = await client.SendTransactionAsync(
                 new SendTransactionParams()
                 {
-                    Transaction = encodedEnvelope
+                    Transaction = TransactionEnvelopeXdr.EncodeToBase64(sendEnvelope)
                 });
             
             if (sendResult.Status != SendTransactionResult_Status.PENDING)
@@ -533,7 +681,7 @@ namespace ContractInvocationExample
                 throw new Exception($"Transaction submission failed: {sendResult.ErrorResult?.result}");
             }
             
-            // Check transaction status
+            // Check and return the transaction status
             return await CheckTransactionStatus(client, sendResult);
         }
         
@@ -570,17 +718,41 @@ namespace ContractInvocationExample
             
             throw new Exception("Transaction timed out");
         }
-        
-        static SCVal AccessInvocationResult(GetTransactionResult transactionResult)
-        {
-            // Extract the result from the transaction metadata
-            var meta = transactionResult.TransactionResultMeta as TransactionMeta.case_3;
-            
-            if (meta != null)
-            {
-                return meta.v3.sorobanMeta.returnValue;
-            }
-            
-            throw new Exception("Cannot access invocation result");
-        }
     }
+}
+```
+
+## Understanding Soroban Authorization Format
+
+Soroban authorizations use a specific format encoded in XDR:
+
+1. **HashIDPreimage.EnvelopeTypeSorobanAuthorization**: The authorization envelope that contains:
+   - **networkID**: Hash of the network passphrase
+   - **nonce**: A unique number to prevent replay attacks
+   - **signatureExpirationLedger**: The ledger number after which the signature expires
+   - **invocation**: The authorized invocation details
+
+2. Each authorization requires:
+   - Creating the payload hash from the XDR-encoded authorization envelope
+   - Signing the hash with the authorizing account's secret key
+   - Adding the signature and public key to the transaction
+
+## Best Practices for Authorization
+
+1. **Security**: Keep authorization secret seeds secure and never expose them in client applications.
+
+2. **Expiration Ledgers**: Be aware of the signature expiration ledger and ensure transactions are submitted in time.
+
+3. **Multiple Authorizations**: Some contract functions might require authorization from multiple accounts. Process each one separately.
+
+4. **Error Handling**: Implement robust error handling for authorization failures.
+
+5. **Testing**: Test authorization flows thoroughly in the testnet before moving to mainnet.
+
+## Next Steps
+
+Now that you understand Soroban authorizations, you can:
+
+- [Explore More Complex Contract Interactions](soroban-invocation.md)
+- [Learn About Monitoring Contract Events](events-monitoring.md)
+- [Develop Advanced Multi-Signature Contract Solutions](https://soroban.stellar.org/docs)

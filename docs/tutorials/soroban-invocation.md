@@ -21,6 +21,23 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
+
 // Initialize the client
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
@@ -30,6 +47,8 @@ StellarRPCClient client = new StellarRPCClient(httpClientFactory);
 // Set the network context (important for transaction signing)
 Network.UseTestNetwork();
 ```
+
+> **Note:** The `SimpleHttpClientFactory` implementation shown here is a convenience for example code and simple console applications. In production applications, you should use a proper dependency injection system to provide an implementation of `IHttpClientFactory`.
 
 ## Setting Up Account and Contract Information
 
@@ -302,6 +321,22 @@ using System.Threading.Tasks;
 
 namespace ContractInvocationExample
 {
+    // A simple HTTP client factory for console applications
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
+    }
+
     internal class Program
     {
         static async Task Main(string[] args)
@@ -309,7 +344,8 @@ namespace ContractInvocationExample
             // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient client = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient client = new StellarRPCClient(httpClientFactory);
             
             // Set the network context
             Network.UseTestNetwork();
@@ -382,6 +418,7 @@ namespace ContractInvocationExample
             }
         }
         
+        // Include all the other methods defined earlier
         static async Task<AccountEntry> GetAccountInfo(StellarRPCClient client, MuxedAccount.KeyTypeEd25519 account)
         {
             AccountID accountId = new AccountID(account.XdrPublicKey);
@@ -419,7 +456,6 @@ namespace ContractInvocationExample
             string functionName, 
             params SCVal[] arguments)
         {
-            // Create the contract invocation
             Operation operation = new Operation()
             {
                 sourceAccount = sourceAccount,
@@ -427,7 +463,7 @@ namespace ContractInvocationExample
                 {
                     invokeHostFunctionOp = new InvokeHostFunctionOp()
                     {
-                        auth = [], // No authorization needed for this example
+                        auth = [],
                         hostFunction = new HostFunction.HostFunctionTypeInvokeContract()
                         {
                             invokeContract = new InvokeContractArgs()
@@ -455,15 +491,12 @@ namespace ContractInvocationExample
             Transaction transaction = new Transaction()
             {
                 sourceAccount = sourceAccount,
-                fee = 100, // Base fee
+                fee = 100,
                 memo = new Memo.MemoNone(),
-                seqNum = sequenceNumber.Increment(), // Increment the sequence number
+                seqNum = sequenceNumber.Increment(),
                 cond = new Preconditions.PrecondNone(),
                 ext = new Transaction.extUnion.case_0(),
-                operations =
-                [
-                    operation
-                ]
+                operations = [operation]
             };
             
             return transaction;
@@ -473,20 +506,17 @@ namespace ContractInvocationExample
             StellarRPCClient client,
             Transaction transaction)
         {
-            // Create an envelope without signatures for simulation
             TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()
                 {
                     tx = transaction,
-                    signatures = [] // No signatures needed for simulation
+                    signatures = []
                 }
             };
             
-            // Encode the envelope
             string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
             
-            // Simulate the transaction
             SimulateTransactionResult simulationResult = await client.SimulateTransactionAsync(
                 new SimulateTransactionParams()
                 {
@@ -502,13 +532,10 @@ namespace ContractInvocationExample
             SimulateTransactionResult simulationResult,
             MuxedAccount.KeyTypeEd25519 signerAccount)
         {
-            // Apply simulation results to the transaction
             Transaction assembledTransaction = simulationResult.ApplyTo(transaction);
             
-            // Sign the transaction
             var signature = assembledTransaction.Sign(signerAccount);
             
-            // Create the transaction envelope with signature
             TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
             {
                 v1 = new TransactionV1Envelope()
@@ -518,14 +545,10 @@ namespace ContractInvocationExample
                 }
             };
             
-            // Encode the envelope
-            string encodedEnvelope = TransactionEnvelopeXdr.EncodeToBase64(envelope);
-            
-            // Submit the transaction
             SendTransactionResult sendResult = await client.SendTransactionAsync(
                 new SendTransactionParams()
                 {
-                    Transaction = encodedEnvelope
+                    Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
                 });
             
             if (sendResult.Status != SendTransactionResult_Status.PENDING)
@@ -533,7 +556,6 @@ namespace ContractInvocationExample
                 throw new Exception($"Transaction submission failed: {sendResult.ErrorResult?.result}");
             }
             
-            // Check transaction status
             return await CheckTransactionStatus(client, sendResult);
         }
         
@@ -561,9 +583,8 @@ namespace ContractInvocationExample
                         throw new Exception("Transaction failed");
                         
                     case GetTransactionResult_Status.NOT_FOUND:
-                        // Transaction not processed yet, wait and retry
                         attempts++;
-                        await Task.Delay(1000); // Wait 1 second before checking again
+                        await Task.Delay(1000);
                         break;
                 }
             }
@@ -573,7 +594,6 @@ namespace ContractInvocationExample
         
         static SCVal AccessInvocationResult(GetTransactionResult transactionResult)
         {
-            // Extract the result from the transaction metadata
             var meta = transactionResult.TransactionResultMeta as TransactionMeta.case_3;
             
             if (meta != null)
@@ -584,3 +604,156 @@ namespace ContractInvocationExample
             throw new Exception("Cannot access invocation result");
         }
     }
+}
+```
+
+## Understanding Soroban Contract Invocation
+
+Soroban contract invocation in the Stellar RPC SDK involves several steps:
+
+1. **Creating an Invocation Operation**: Define which contract and function to call with what parameters
+2. **Transaction Creation**: Embed the invocation operation in a transaction
+3. **Simulation**: Run a simulation to get the proper resource setup
+4. **Execution**: Sign and submit the transaction with the simulation results
+5. **Result Processing**: Extract and process the return value from the transaction metadata
+
+## Working with Different Parameter Types
+
+Soroban contracts can accept various parameter types. Here's how to create different SCVal types:
+
+```csharp
+// Integer
+SCVal intValue = new SCVal.ScvI64() { i64 = 42 };
+
+// Unsigned integer
+SCVal uintValue = new SCVal.ScvU64() { u64 = 42 };
+
+// Boolean
+SCVal boolValue = new SCVal.ScvBool() { b = true };
+
+// String
+SCVal stringValue = new SCVal.ScvString() { str = new SCString("Hello, Soroban!") };
+
+// Binary data
+SCVal binaryValue = new SCVal.ScvBytes() { bytes = Encoding.UTF8.GetBytes("Binary data") };
+
+// Symbol (for function names, etc.)
+SCVal symbolValue = new SCVal.ScvSymbol() { sym = new SCSymbol("symbol_name") };
+
+// Address (account)
+SCVal accountAddressValue = new SCVal.ScvAddress() 
+{ 
+    address = new SCAddress.ScAddressTypeAccount() 
+    { 
+        accountId = new AccountID(MuxedAccount.FromAccountId("GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T").XdrPublicKey) 
+    } 
+};
+
+// Address (contract)
+SCVal contractAddressValue = new SCVal.ScvAddress() 
+{ 
+    address = new SCAddress.ScAddressTypeContract() 
+    { 
+        contractId = new Hash(StrKey.DecodeContractId("CARVNC27XT7FUE6EGISSPYAUIY6X4TJPZLDZDMMBHRMUDBL7VHT45UZT")) 
+    } 
+};
+```
+
+## Processing Return Values
+
+Different contracts return different types. Here's how to handle various return value types:
+
+```csharp
+void ProcessReturnValue(SCVal returnValue)
+{
+    switch (returnValue)
+    {
+        case SCVal.ScvBool scvBool:
+            Console.WriteLine($"Boolean result: {scvBool.b}");
+            break;
+            
+        case SCVal.ScvI64 scvI64:
+            Console.WriteLine($"Integer result: {scvI64.i64}");
+            break;
+            
+        case SCVal.ScvU64 scvU64:
+            Console.WriteLine($"Unsigned integer result: {scvU64.u64}");
+            break;
+            
+        case SCVal.ScvString scvString:
+            Console.WriteLine($"String result: {scvString.str}");
+            break;
+            
+        case SCVal.ScvBytes scvBytes:
+            string hexString = BitConverter.ToString(scvBytes.bytes).Replace("-", "");
+            Console.WriteLine($"Binary result: {hexString}");
+            break;
+            
+        case SCVal.ScvVec scvVec:
+            Console.WriteLine($"Vector result with {scvVec.vec.Length} elements");
+            // Process each element in the vector
+            break;
+            
+        case SCVal.ScvMap scvMap:
+            Console.WriteLine($"Map result with {scvMap.map.Length} entries");
+            // Process each key-value pair in the map
+            break;
+            
+        default:
+            Console.WriteLine($"Unhandled result type: {returnValue.GetType().Name}");
+            break;
+    }
+}
+```
+
+## Error Handling
+
+Contract invocations can fail for several reasons. Here are common errors and how to handle them:
+
+1. **Contract Execution Errors**: Check the simulation result for potential execution errors before submitting the transaction.
+
+2. **Resource Exhausted**: If the transaction exceeds the allowed resources, try adjusting the resource limits in the transaction.
+
+3. **Authorization Errors**: If the contract requires authorization from multiple accounts, ensure all required signatures are included.
+
+4. **Contract Not Found**: Verify the contract ID exists on the network you're connecting to.
+
+```csharp
+try
+{
+    SimulateTransactionResult simulationResult = await SimulateTransaction(client, transaction);
+    
+    // Check if simulation succeeded
+    if (simulationResult.Error != null)
+    {
+        Console.WriteLine($"Simulation failed: {simulationResult.Error}");
+        return;
+    }
+    
+    // Continue with transaction execution
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error during contract invocation: {ex.Message}");
+}
+```
+
+## Best Practices
+
+1. **Always Simulate First**: Always simulate transactions before executing them to catch errors early and set up proper resources.
+
+2. **Proper Error Handling**: Implement robust error handling, especially for contract-specific errors.
+
+3. **Resource Management**: Be aware of the resource requirements for your contract invocations, especially for contracts that involve significant computation or storage.
+
+4. **Security Considerations**: For contracts that require authorization from multiple accounts, ensure proper signature collection and validation.
+
+5. **Testing Strategy**: Test contract invocations in a testnet environment before moving to mainnet.
+
+## Next Steps
+
+Now that you can invoke Soroban contracts, you can:
+
+- [Learn About Monitoring Contract Events](events-monitoring.md)
+- [Explore More Complex Contract Interactions](transaction-status.md)
+- [Develop Your Own Soroban Contracts](https://soroban.stellar.org/docs)

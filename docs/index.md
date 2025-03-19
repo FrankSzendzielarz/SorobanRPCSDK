@@ -34,7 +34,6 @@ Learn how to use the SDK through practical examples:
 - [Invoking Soroban Contracts](tutorials/soroban-invocation.md)
 - [Soroban Authorizations](tutorials/soroban-authorizations.md)
 - [Soroban Nested Structs](tutorials/soroban-nested-structs.md)
-- [Monitoring Events](tutorials/events-monitoring.md)
 
 ## API Reference
 

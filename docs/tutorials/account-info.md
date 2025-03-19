@@ -19,12 +19,31 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
+
 // Initialize the client
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
 var httpClientFactory = new SimpleHttpClientFactory(httpClient);
 StellarRPCClient client = new StellarRPCClient(httpClientFactory);
 ```
+
+> **Note:** The `SimpleHttpClientFactory` implementation shown here is a convenience for example code and simple console applications. In production applications, you should use a proper dependency injection system to provide an implementation of `IHttpClientFactory`.
 
 ## Getting Account Information
 
@@ -119,6 +138,22 @@ using System.Threading.Tasks;
 
 namespace AccountInfoExample
 {
+    // A simple HTTP client factory for console applications
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
+    }
+
     internal class Program
     {
         static async Task Main(string[] args)
@@ -126,7 +161,8 @@ namespace AccountInfoExample
             // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient client = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient client = new StellarRPCClient(httpClientFactory);
             
             // Example account ID
             string accountId = "GDVEUTTMKYKO3TEZKTOONFCWGYCQTWOC6DPJM4AGYXKBQLWJWE3PKX6T";
@@ -206,3 +242,111 @@ namespace AccountInfoExample
             Console.WriteLine($"  - High: {account.thresholds.highThreshold}");
         }
     }
+}
+```
+
+## Working with Account Signers
+
+If you need to access the account's signers, you can extend the `DisplayAccountInfo` method:
+
+```csharp
+void DisplaySigners(AccountEntry account)
+{
+    Console.WriteLine("- Signers:");
+    
+    foreach (var signer in account.signers)
+    {
+        string signerType = "Unknown";
+        string signerValue = "Unknown";
+        
+        if (signer.key is SignerKey.SignerKeyTypeEd25519)
+        {
+            var ed25519Key = (SignerKey.SignerKeyTypeEd25519)signer.key;
+            signerType = "Ed25519 Public Key";
+            signerValue = StrKey.EncodeAccountId(new AccountID(new PublicKey.PublicKeyTypeEd25519() 
+            { 
+                ed25519 = ed25519Key.ed25519
+            }));
+        }
+        else if (signer.key is SignerKey.SignerKeyTypePreAuthTx)
+        {
+            signerType = "Pre-authorized Transaction Hash";
+            // Format hash if needed
+        }
+        else if (signer.key is SignerKey.SignerKeyTypeHashX)
+        {
+            signerType = "SHA-256 Hash";
+            // Format hash if needed
+        }
+        
+        Console.WriteLine($"  - Type: {signerType}");
+        Console.WriteLine($"    Value: {signerValue}");
+        Console.WriteLine($"    Weight: {signer.weight}");
+    }
+}
+```
+
+## Checking if an Account Exists
+
+Before retrieving account details, you may want to check if an account exists:
+
+```csharp
+async Task<bool> AccountExists(StellarRPCClient client, string accountIdStr)
+{
+    try
+    {
+        await GetAccountInfo(client, accountIdStr);
+        return true;
+    }
+    catch (Exception)
+    {
+        return false;
+    }
+}
+```
+
+## Error Handling
+
+When working with account information, be prepared to handle these common errors:
+
+1. **Account Not Found**: The account hasn't been created or funded yet
+2. **Invalid Account ID**: The provided account ID string is not valid
+3. **Network Errors**: Connection issues with the Stellar network
+
+```csharp
+try
+{
+    AccountEntry account = await GetAccountInfo(client, accountId);
+    DisplayAccountInfo(account);
+}
+catch (FormatException ex)
+{
+    Console.WriteLine("Invalid account ID format. Make sure you're using a valid Stellar account ID.");
+}
+catch (Exception ex) when (ex.Message.Contains("not found"))
+{
+    Console.WriteLine("Account not found or not activated. The account may need to be funded first.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error retrieving account information: {ex.Message}");
+}
+```
+
+## Best Practices
+
+1. **Cache Account Information**: To reduce network calls, consider caching account information for a short period.
+
+2. **Check Sequence Numbers**: Before submitting transactions, always get the latest sequence number from the network.
+
+3. **Handle Different Account States**: Be prepared to handle accounts in different states (new, funded, merged).
+
+4. **Balance Formatting**: When displaying balances, remember that Stellar uses "stroops" (1 XLM = 10,000,000 stroops).
+
+## Next Steps
+
+Now that you can retrieve account information, you can:
+
+- [Create and Send Payments](payment-transaction.md)
+- [Work with Ledger Entries](ledger-entries.md)
+- [Monitor Account Events](events-monitoring.md)

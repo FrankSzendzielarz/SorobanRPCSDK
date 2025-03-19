@@ -22,6 +22,56 @@ Alternatively, you can add the package reference directly to your `.csproj` file
 </ItemGroup>
 ```
 
+## Using with Dependency Injection
+
+The Stellar RPC SDK is designed to work with dependency injection systems. The `StellarRPCClient` requires an `IHttpClientFactory` implementation.
+
+### In ASP.NET Core applications
+
+```csharp
+// In Program.cs or Startup.cs
+builder.Services.AddHttpClient("StellarClient", client =>
+{
+    client.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
+});
+
+builder.Services.AddScoped<StellarRPCClient>(provider =>
+{
+    var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
+    return new StellarRPCClient(httpClientFactory);
+});
+```
+
+### In Console Applications
+
+For simple console applications without dependency injection, you can use a simple implementation:
+
+```csharp
+// A simple HTTP client factory for console applications
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
+
+// Usage
+HttpClient httpClient = new HttpClient();
+httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
+var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+StellarRPCClient client = new StellarRPCClient(httpClientFactory);
+```
+
+Note that this simple implementation is provided as a convenience for example code and simple applications. For production applications, a proper dependency injection system is recommended.
+
 ## Platform-Specific Installations
 
 ### Unity
@@ -57,12 +107,13 @@ For Tizen applications, add the following to your `.csproj` file:
 </ItemGroup>
 ```
 
-### Native Applications
+### Native Windows Applications
 
-For native applications such Unreal Engine, Go, Rust and so on:
+For native Windows applications using our Rust bindings:
 
 1. Download the appropriate binary from our [GitHub Releases](https://github.com/yourusername/stellar-rpcsdk/releases)
-2. Follow our [Native Platform](../platforms/native.md) guidance
+2. Place the binary in your project's output directory
+3. Add the appropriate P/Invoke declarations to your code
 
 ## Verifying the Installation
 

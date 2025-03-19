@@ -21,6 +21,23 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
+
 // Initialize the client
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
@@ -30,6 +47,8 @@ StellarRPCClient client = new StellarRPCClient(httpClientFactory);
 // Set the network context (important for transaction signing)
 Network.UseTestNetwork(); // Use Network.UseMainNetwork() for mainnet
 ```
+
+> **Note:** The `SimpleHttpClientFactory` implementation shown here is a convenience for example code and simple console applications. In production applications, you should use a proper dependency injection system to provide an implementation of `IHttpClientFactory`.
 
 ## Setting Up the Accounts
 
@@ -253,6 +272,22 @@ using System.Threading.Tasks;
 
 namespace PaymentExample
 {
+    // A simple HTTP client factory for console applications
+    public class SimpleHttpClientFactory : IHttpClientFactory
+    {
+        private readonly HttpClient _httpClient;
+
+        public SimpleHttpClientFactory(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public HttpClient CreateClient(string name)
+        {
+            return _httpClient;
+        }
+    }
+
     internal class Program
     {
         static async Task Main(string[] args)
@@ -260,7 +295,8 @@ namespace PaymentExample
             // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient client = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient client = new StellarRPCClient(httpClientFactory);
             
             // Set the network context
             Network.UseTestNetwork();
@@ -327,7 +363,163 @@ namespace PaymentExample
             }
         }
         
-        // ... Include all the methods defined earlier ...
+        static async Task<AccountEntry> GetAccountInfo(StellarRPCClient client, AccountID accountId)
+        {
+            // Create a ledger key for the account
+            LedgerKey accountKey = new LedgerKey.Account()
+            {
+                account = new LedgerKey.accountStruct()
+                {
+                    accountID = accountId
+                }
+            };
+            
+            var request = new GetLedgerEntriesParams()
+            {
+                Keys = [LedgerKeyXdr.EncodeToBase64(accountKey)]
+            };
+            
+            var response = await client.GetLedgerEntriesAsync(request);
+            
+            if (response.Entries.Count > 0)
+            {
+                var accountData = response.Entries[0].LedgerEntryData as LedgerEntry.dataUnion.Account;
+                if (accountData != null)
+                {
+                    return accountData.account;
+                }
+            }
+            
+            throw new Exception("Account not found");
+        }
+        
+        static Transaction CreatePaymentTransaction(
+            MuxedAccount.KeyTypeEd25519 senderAccount, 
+            MuxedAccount.KeyTypeEd25519 recipientAccount, 
+            SequenceNumber currentSequenceNumber,
+            long amount)
+        {
+            // Increment the sequence number for the new transaction
+            SequenceNumber nextSequenceNumber = new SequenceNumber(currentSequenceNumber.InnerValue + 1);
+            
+            // Create a payment operation
+            Operation paymentOperation = new Operation()
+            {
+                sourceAccount = senderAccount,
+                body = new Operation.bodyUnion.Payment()
+                {
+                    paymentOp = new PaymentOp()
+                    {
+                        amount = amount,
+                        destination = recipientAccount,
+                        asset = new Asset.AssetTypeNative()
+                    }
+                }
+            };
+            
+            // Create the transaction
+            Transaction transaction = new Transaction()
+            {
+                sourceAccount = senderAccount,
+                fee = 100,
+                memo = new Memo.MemoNone(),
+                seqNum = nextSequenceNumber,
+                cond = new Preconditions.PrecondNone(),
+                ext = new Transaction.extUnion.case_0(),
+                operations = [paymentOperation]
+            };
+            
+            return transaction;
+        }
+        
+        static async Task<SendTransactionResult> SignAndSubmitTransaction(
+            StellarRPCClient client, 
+            Transaction transaction, 
+            MuxedAccount.KeyTypeEd25519 signerAccount)
+        {
+            // Sign the transaction
+            var signature = transaction.Sign(signerAccount);
+            
+            // Create the transaction envelope
+            TransactionEnvelope envelope = new TransactionEnvelope.EnvelopeTypeTx()
+            {
+                v1 = new TransactionV1Envelope()
+                {
+                    tx = transaction,
+                    signatures = [signature]
+                }
+            };
+            
+            // Submit the transaction
+            SendTransactionResult result = await client.SendTransactionAsync(new SendTransactionParams()
+            {
+                Transaction = TransactionEnvelopeXdr.EncodeToBase64(envelope)
+            });
+            
+            if (result.Status == SendTransactionResult_Status.ERROR)
+            {
+                throw new Exception($"Transaction failed: {result.ErrorResult?.result}");
+            }
+            
+            return result;
+        }
+        
+        static async Task<GetTransactionResult> CheckTransactionStatus(
+            StellarRPCClient client, 
+            SendTransactionResult sendResult)
+        {
+            int maxAttempts = 10;
+            int attempts = 0;
+            
+            while (attempts < maxAttempts)
+            {
+                var transaction = await client.GetTransactionAsync(new GetTransactionParams()
+                {
+                    Hash = sendResult.Hash
+                });
+                
+                switch (transaction.Status)
+                {
+                    case GetTransactionResult_Status.SUCCESS:
+                        return transaction;
+                        
+                    case GetTransactionResult_Status.FAILED:
+                        throw new Exception("Transaction failed");
+                        
+                    case GetTransactionResult_Status.NOT_FOUND:
+                        attempts++;
+                        await Task.Delay(500);
+                        break;
+                }
+            }
+            
+            throw new Exception("Transaction timed out");
+        }
+        
+        static async Task VerifyBalanceChange(
+            StellarRPCClient client, 
+            AccountID senderAccountId, 
+            AccountID recipientAccountId, 
+            long originalSenderBalance, 
+            long originalRecipientBalance, 
+            long paymentAmount)
+        {
+            AccountEntry newSenderAccount = await GetAccountInfo(client, senderAccountId);
+            AccountEntry newRecipientAccount = await GetAccountInfo(client, recipientAccountId);
+            
+            long expectedSenderDecrease = paymentAmount + 100;
+            if (originalSenderBalance - newSenderAccount.balance != expectedSenderDecrease)
+            {
+                Console.WriteLine("Warning: Sender balance change doesn't match expected amount");
+            }
+            
+            if (newRecipientAccount.balance - originalRecipientBalance != paymentAmount)
+            {
+                Console.WriteLine("Warning: Recipient balance change doesn't match expected amount");
+            }
+            
+            Console.WriteLine("Balance changes verified successfully");
+        }
     }
 }
 ```

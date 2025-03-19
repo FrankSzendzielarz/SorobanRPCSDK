@@ -18,6 +18,23 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
+    }
+}
+
 // Create an HTTP client with the base address set to a Stellar RPC server
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
@@ -27,6 +44,9 @@ var httpClientFactory = new SimpleHttpClientFactory(httpClient);
 
 // Initialize the Stellar RPC client
 StellarRPCClient sorobanClient = new StellarRPCClient(httpClientFactory);
+```
+
+> **Note:** The `SimpleHttpClientFactory` implementation shown here is a convenience for example code and simple console applications. In production applications, you should use a proper dependency injection system to provide an implementation of `IHttpClientFactory`.
 ```
 
 ## Checking Server Health
@@ -137,7 +157,8 @@ namespace ServerHealthCheckExample
             // Initialize the client
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
-            StellarRPCClient sorobanClient = new StellarRPCClient(httpClient);
+            var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+            StellarRPCClient sorobanClient = new StellarRPCClient(httpClientFactory);
             
             try
             {
