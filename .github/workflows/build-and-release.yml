@@ -85,14 +85,14 @@ jobs:
           name: unity-build
           path: Releases/Unity
 
-      - name: Upload Generated Code
+      # Upload the entire compiled SDK project instead of just the generated code
+      - name: Upload SDK Projects
         uses: actions/upload-artifact@v4
         with:
-          name: generated-code
+          name: sdk-projects
           path: |
-            StellarRPCSDK/Stellar/Generated
-            StellarRPCSDK/RPC/Generated
-            StellarRPCSDK_Native/gRPC
+            StellarRPCSDK/
+            StellarRPCSDK_Native/
 
   publish_native:
     needs: build
@@ -115,25 +115,19 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Download Generated Code
+      # Download the compiled SDK projects
+      - name: Download SDK Projects
         uses: actions/download-artifact@v4
         with:
-          name: generated-code
+          name: sdk-projects
           path: .
-
-      - name: Clean Generated Directories
-        run: |
-            rm -rf StellarRPCSDK/Stellar/Generated/*
-            rm -rf StellarRPCSDK/RPC/Generated/*
-            mkdir -p StellarRPCSDK/Stellar/Generated
-            mkdir -p StellarRPCSDK/RPC/Generated
 
       - name: Publish Native Binary
         run: |
