@@ -9,7 +9,7 @@ on:
       update_specs:
         description: 'Update OpenRPC and XDR specifications'
         type: boolean
-        default: true
+        default: false
 
 jobs:
   build:
