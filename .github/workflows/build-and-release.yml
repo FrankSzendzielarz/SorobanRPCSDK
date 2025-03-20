@@ -34,7 +34,6 @@ jobs:
           rm -rf temp-stellar-core
 
       - name: Clean Generated Directories
-        if: ${{ inputs.update_specs == 'true' }}
         run: |
             rm -rf StellarRPCSDK/Stellar/Generated/*
             rm -rf StellarRPCSDK/RPC/Generated/*
