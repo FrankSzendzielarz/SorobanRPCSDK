@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
@@ -54,15 +54,38 @@ jobs:
       - name: Create NuGet Packages
         run: |
           mkdir -p Releases/NuGet
+          # Create NuGet packages for Standard and Tizen (not Unity)
           dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
-          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
           dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
 
+      - name: Prepare Unity Build Output
+        run: |
+          mkdir -p Releases/Unity
+          cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.dll Releases/Unity/
+          cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.pdb Releases/Unity/
+          # Copy any additional required files for Unity
+          # cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.xml Releases/Unity/  # If you have XML documentation
+
       - name: Upload NuGet Packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuget-packages
           path: Releases/NuGet
+
+      - name: Upload Unity Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-build
+          path: Releases/Unity
+
+      - name: Upload Generated Code
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-code
+          path: |
+            StellarRPCSDK/Stellar/Generated
+            StellarRPCSDK/RPC/Generated
+            StellarRPCSDK_Native/gRPC
 
   publish_native:
     needs: build
@@ -92,8 +115,8 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Download Generator Artifacts
-        uses: actions/download-artifact@v3
+      - name: Download Generated Code
+        uses: actions/download-artifact@v4
         with:
           name: generated-code
           path: .
@@ -109,7 +132,7 @@ jobs:
             -o Releases/Binaries/${{ matrix.platform }}
 
       - name: Upload Native Binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: native-binary-${{ matrix.platform }}
           path: Releases/Binaries/${{ matrix.platform }}
@@ -119,7 +142,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download All Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
@@ -130,6 +153,7 @@ jobs:
           name: Release v${{ github.event.inputs.version }}
           files: |
             artifacts/nuget-packages/*
+            artifacts/unity-build/*
             artifacts/native-binary-*/**/*
           draft: true
         env:
