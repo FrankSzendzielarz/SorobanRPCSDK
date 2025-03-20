@@ -33,6 +33,14 @@ jobs:
           cp temp-stellar-core/src/protocol-curr/*.x StellarXDR/
           rm -rf temp-stellar-core
 
+      - name: Clean Generated Directories
+        if: ${{ inputs.update_specs == 'true' }}
+        run: |
+            rm -rf StellarRPCSDK/Stellar/Generated/*
+            rm -rf StellarRPCSDK/RPC/Generated/*
+            mkdir -p StellarRPCSDK/Stellar/Generated
+            mkdir -p StellarRPCSDK/RPC/Generated
+
       - name: Generate SDK Code
         run: |
           ROOT_DIR=$(pwd)
