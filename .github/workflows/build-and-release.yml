@@ -128,6 +128,13 @@ jobs:
           name: generated-code
           path: .
 
+      - name: Clean Generated Directories
+        run: |
+            rm -rf StellarRPCSDK/Stellar/Generated/*
+            rm -rf StellarRPCSDK/RPC/Generated/*
+            mkdir -p StellarRPCSDK/Stellar/Generated
+            mkdir -p StellarRPCSDK/RPC/Generated
+
       - name: Publish Native Binary
         run: |
           mkdir -p Releases/Binaries/${{ matrix.platform }}
