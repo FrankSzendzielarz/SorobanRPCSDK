@@ -85,14 +85,16 @@ jobs:
           name: unity-build
           path: Releases/Unity
 
-      # Upload the entire compiled SDK project instead of just the generated code
-      - name: Upload SDK Projects
+      # Create a complete build archive with all the generated content
+      - name: Create Build Archive
+        run: |
+          tar -czf build-archive.tar.gz StellarRPCSDK/ StellarRPCSDK_Native/ Generator/ ProtoGenerator/
+
+      - name: Upload Build Archive
         uses: actions/upload-artifact@v4
         with:
-          name: sdk-projects
-          path: |
-            StellarRPCSDK/
-            StellarRPCSDK_Native/
+          name: build-archive
+          path: build-archive.tar.gz
 
   publish_native:
     needs: build
@@ -122,12 +124,28 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # Download the compiled SDK projects
-      - name: Download SDK Projects
+      # Download and extract the complete build
+      - name: Download Build Archive
         uses: actions/download-artifact@v4
         with:
-          name: sdk-projects
+          name: build-archive
           path: .
+
+      # Extract the archive - platform-specific commands
+      - name: Extract Build Archive (Unix)
+        if: runner.os != 'Windows'
+        run: |
+          tar -xzf build-archive.tar.gz
+          ls -la StellarRPCSDK/
+          ls -la StellarRPCSDK_Native/
+
+      - name: Extract Build Archive (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          tar -xzf build-archive.tar.gz
+          dir StellarRPCSDK
+          dir StellarRPCSDK_Native
 
       - name: Publish Native Binary
         run: |
