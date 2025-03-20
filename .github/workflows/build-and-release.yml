@@ -88,7 +88,7 @@ jobs:
       # Create a complete build archive with all the generated content
       - name: Create Build Archive
         run: |
-          tar -czf build-archive.tar.gz StellarRPCSDK/ StellarRPCSDK_Native/ Generator/ ProtoGenerator/
+          tar -czf build-archive.tar.gz .
 
       - name: Upload Build Archive
         uses: actions/upload-artifact@v4
@@ -116,9 +116,6 @@ jobs:
             os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
