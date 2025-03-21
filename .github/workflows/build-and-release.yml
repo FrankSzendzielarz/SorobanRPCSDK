@@ -200,7 +200,7 @@ jobs:
   publish_native_linux_arm64:
     needs: build
     # Use the GitHub-hosted ARM64 runner
-    runs-on: ubuntu-latest-arm64
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -244,7 +244,7 @@ jobs:
 
   publish_native_macos_x64:
     needs: build
-    runs-on: macos-latest
+    runs-on: macos-13
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
