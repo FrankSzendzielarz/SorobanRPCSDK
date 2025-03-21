@@ -380,25 +380,26 @@ jobs:
           cp artifacts/native-binary-osx-arm64/*.dylib release_files/osx-arm64/
           cp artifacts/native-binary-osx-arm64/*.pdb release_files/osx-arm64/
           
-          # List files to verify
-          echo "Files prepared for release:"
-          find release_files -type f | sort
+          # Create a zip archive of all release files
+          zip -r release-v${{ github.event.inputs.version }}.zip release_files
 
-      # Create release using GitHub CLI
+      # Try deleting any existing release, ignoring errors
+      - name: Try deleting existing release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete v${{ github.event.inputs.version }} --yes || true
+
+      # Create a fresh release
       - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create a release
+          # Create a fresh release with just the zip file
           gh release create v${{ github.event.inputs.version }} \
             --title "Release v${{ github.event.inputs.version }}" \
-            --draft
-          
-          # Upload files to the release
-          for file in $(find release_files -type f); do
-            echo "Uploading $file..."
-            gh release upload v${{ github.event.inputs.version }} "$file"
-          done
+            --draft \
+            release-v${{ github.event.inputs.version }}.zip
 
       # - name: Publish NuGet Packages
       #   run: |
