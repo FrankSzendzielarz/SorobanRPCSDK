@@ -153,12 +153,9 @@ jobs:
           name: native-binary-${{ matrix.platform }}
           path: Releases/Binaries/${{ matrix.platform }}
 
-  publish_native_linux:
+  publish_native_linux_x64:
     needs: build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [linux-x64]
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -186,79 +183,24 @@ jobs:
 
       - name: Publish Native Binary
         run: |
-          mkdir -p Releases/Binaries/${{ matrix.platform }}
+          mkdir -p Releases/Binaries/linux-x64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
             -c Release \
-            -r ${{ matrix.platform }} \
+            -r linux-x64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
-            -o Releases/Binaries/${{ matrix.platform }}
+            -o Releases/Binaries/linux-x64
 
       - name: Upload Native Binary
         uses: actions/upload-artifact@v4
         with:
-          name: native-binary-${{ matrix.platform }}
-          path: Releases/Binaries/${{ matrix.platform }}
+          name: native-binary-linux-x64
+          path: Releases/Binaries/linux-x64
 
   publish_native_linux_arm64:
     needs: build
-    # Use a self-hosted arm64 runner or a service that can build for ARM64
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [linux-arm64]
-    steps:
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-      
-      # Install ARM64 cross-compilation tools
-      - name: Install ARM64 tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-
-      # Create a directory to extract to
-      - name: Create Extract Directory
-        run: mkdir extract_dir
-
-      # Download the build archive
-      - name: Download Build Archive
-        uses: actions/download-artifact@v4
-        with:
-          name: build-archive
-          path: .
-
-      # Extract the archive
-      - name: Extract Build Archive
-        run: |
-          tar -xzf build-archive.tar.gz -C extract_dir
-          ls -la extract_dir
-          ls -la extract_dir/StellarRPCSDK
-          ls -la extract_dir/StellarRPCSDK_Native
-
-      - name: Publish Native Binary
-        # For now, skip publishing for linux-arm64 as it requires additional setup
-        # Later, we can implement a proper cross-compilation setup or use a dedicated ARM64 runner
-        run: |
-          mkdir -p Releases/Binaries/${{ matrix.platform }}
-          echo "Skipping ARM64 build due to cross-compilation constraints. This would require a proper ARM64 environment." > Releases/Binaries/${{ matrix.platform }}/README.txt
-          # The following command would work with proper cross-compilation setup:
-          # DOTNET_CrossGen=0 CppCompilerAndLinker=clang-9 dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj -c Release -r ${{ matrix.platform }} --self-contained -p:Version=${{ github.event.inputs.version }} -o Releases/Binaries/${{ matrix.platform }}
-
-      - name: Upload Native Binary
-        uses: actions/upload-artifact@v4
-        with:
-          name: native-binary-${{ matrix.platform }}
-          path: Releases/Binaries/${{ matrix.platform }}
-
-  publish_native_macos:
-    needs: build
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        platform: [osx-x64, osx-arm64]
+    # Use the GitHub-hosted ARM64 runner
+    runs-on: ubuntu-latest-arm64
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -284,25 +226,113 @@ jobs:
           ls -la extract_dir/StellarRPCSDK
           ls -la extract_dir/StellarRPCSDK_Native
 
-      # MacOS can cross-compile between x64 and arm64 more easily
       - name: Publish Native Binary
         run: |
-          mkdir -p Releases/Binaries/${{ matrix.platform }}
+          mkdir -p Releases/Binaries/linux-arm64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
             -c Release \
-            -r ${{ matrix.platform }} \
+            -r linux-arm64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
-            -o Releases/Binaries/${{ matrix.platform }}
+            -o Releases/Binaries/linux-arm64
 
       - name: Upload Native Binary
         uses: actions/upload-artifact@v4
         with:
-          name: native-binary-${{ matrix.platform }}
-          path: Releases/Binaries/${{ matrix.platform }}
+          name: native-binary-linux-arm64
+          path: Releases/Binaries/linux-arm64
+
+  publish_native_macos_x64:
+    needs: build
+    runs-on: macos-latest
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # Create a directory to extract to
+      - name: Create Extract Directory
+        run: mkdir extract_dir
+
+      # Download the build archive
+      - name: Download Build Archive
+        uses: actions/download-artifact@v4
+        with:
+          name: build-archive
+          path: .
+
+      # Extract the archive
+      - name: Extract Build Archive
+        run: |
+          tar -xzf build-archive.tar.gz -C extract_dir
+          ls -la extract_dir
+          ls -la extract_dir/StellarRPCSDK
+          ls -la extract_dir/StellarRPCSDK_Native
+
+      - name: Publish Native Binary
+        run: |
+          mkdir -p Releases/Binaries/osx-x64
+          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
+            -c Release \
+            -r osx-x64 \
+            --self-contained \
+            -p:Version=${{ github.event.inputs.version }} \
+            -o Releases/Binaries/osx-x64
+
+      - name: Upload Native Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-binary-osx-x64
+          path: Releases/Binaries/osx-x64
+
+  publish_native_macos_arm64:
+    needs: build
+    # macOS ARM64 can be built on Intel macOS
+    runs-on: macos-latest
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # Create a directory to extract to
+      - name: Create Extract Directory
+        run: mkdir extract_dir
+
+      # Download the build archive
+      - name: Download Build Archive
+        uses: actions/download-artifact@v4
+        with:
+          name: build-archive
+          path: .
+
+      # Extract the archive
+      - name: Extract Build Archive
+        run: |
+          tar -xzf build-archive.tar.gz -C extract_dir
+          ls -la extract_dir
+          ls -la extract_dir/StellarRPCSDK
+          ls -la extract_dir/StellarRPCSDK_Native
+
+      - name: Publish Native Binary
+        run: |
+          mkdir -p Releases/Binaries/osx-arm64
+          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
+            -c Release \
+            -r osx-arm64 \
+            --self-contained \
+            -p:Version=${{ github.event.inputs.version }} \
+            -o Releases/Binaries/osx-arm64
+
+      - name: Upload Native Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-binary-osx-arm64
+          path: Releases/Binaries/osx-arm64
 
   release:
-    needs: [build, publish_native_windows, publish_native_linux, publish_native_linux_arm64, publish_native_macos]
+    needs: [build, publish_native_windows, publish_native_linux_x64, publish_native_linux_arm64, publish_native_macos_x64, publish_native_macos_arm64]
     runs-on: ubuntu-latest
     steps:
       - name: Download All Artifacts
