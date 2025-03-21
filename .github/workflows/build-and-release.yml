@@ -344,15 +344,29 @@ jobs:
         with:
           path: artifacts
 
+      # Add a step to check what files actually exist
+      - name: List artifact files
+        run: |
+          find artifacts -type f | sort
+
+      # Modified GitHub Release step with more specific file patterns
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ github.event.inputs.version }}
           name: Release v${{ github.event.inputs.version }}
           files: |
-            artifacts/nuget-packages/*
-            artifacts/unity-build/*
-            artifacts/native-binary-*/**/*
+            artifacts/nuget-packages/*.nupkg
+            artifacts/unity-build/*.dll
+            artifacts/unity-build/*.pdb
+            artifacts/native-binary-win-x64/**/*.dll
+            artifacts/native-binary-win-x64/**/*.pdb
+            artifacts/native-binary-win-arm64/**/*.dll
+            artifacts/native-binary-win-arm64/**/*.pdb
+            artifacts/native-binary-linux-x64/**/*.so
+            artifacts/native-binary-linux-arm64/**/*.so
+            artifacts/native-binary-osx-x64/**/*.dylib
+            artifacts/native-binary-osx-arm64/**/*.dylib
           draft: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
