@@ -344,12 +344,12 @@ jobs:
         with:
           path: artifacts
 
-      # Add a step to check what files actually exist
+      # List artifact files for debugging
       - name: List artifact files
         run: |
           find artifacts -type f | sort
 
-       # Create a directory with just the files we want to include
+      # Prepare release files in a clean directory structure
       - name: Prepare release files
         run: |
           mkdir -p release_files
@@ -375,18 +375,31 @@ jobs:
           mkdir -p release_files/osx-arm64
           cp artifacts/native-binary-osx-arm64/*.dylib release_files/osx-arm64/
           cp artifacts/native-binary-osx-arm64/*.pdb release_files/osx-arm64/
-          ls -la release_files
+          
+          # List files to verify
+          echo "Files prepared for release:"
           find release_files -type f | sort
 
-      # Simple GitHub Release using directory rather than specific file patterns
+      # Create release using GitHub CLI
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ github.event.inputs.version }}
-          name: Release v${{ github.event.inputs.version }}
-          files: release_files/**/*
-          draft: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create a release
+          gh release create v${{ github.event.inputs.version }} \
+            --title "Release v${{ github.event.inputs.version }}" \
+            --draft
+          
+          # Upload files to the release
+          for file in $(find release_files -type f); do
+            echo "Uploading $file..."
+            gh release upload v${{ github.event.inputs.version }} "$file"
+          done
+
+      - name: Publish NuGet Packages
+        run: |
+          for package in artifacts/nuget-packages/*.nupkg; do
+            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          done
 
      
