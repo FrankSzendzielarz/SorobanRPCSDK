@@ -2,9 +2,16 @@
 
 This guide covers how to install the Stellar RPC SDK for different platforms and project types.
 
+Releases can be found in the [releases](https://github.com/FrankSzendzielarz/SorobanRPCSDK/releases) pages of 
+the GitHub repository as a ***zip file***.
+
 ## .NET Console/Web Applications
 
-For standard .NET applications, the SDK is available as a NuGet package:
+For standard .NET applications, the SDK is available as a NuGet package.
+
+Until the NuGet is published on Nuget.org, use the **StellarRPCSDK.[version].nupkg** in a local source.
+
+When the NuGet is available on Nuget.org, use these commands.
 
 ```bash
 # Using the .NET CLI
@@ -78,64 +85,31 @@ Note that this simple implementation is provided as a convenience for example co
 
 For Unity projects:
 
-1. Open your Unity project
-2. Navigate to **Window > Package Manager**
-3. Click the **+** button and select **Add package from git URL...**
-4. Enter the package URL: `https://github.com/yourusername/stellar-rpcsdk-unity.git#v1.0.0`
+Download the Unity package from our [GitHub Releases](https://github.com/FrankSzendzielarz/SorobanRPCSDK/releases) and import the
+**StellarRPCSDK.dll** and **StellarRPCSDK.pdb** into your project.
 
-Alternatively, download the Unity package from our [GitHub Releases](https://github.com/yourusername/stellar-rpcsdk/releases) and import it into your project.
+### MAUI Cross Platform Native
 
-### MAUI/Xamarin
-
-For MAUI or Xamarin applications:
-
-```bash
-# Using the .NET CLI
-dotnet add package StellarRPCSDK.Mobile
-
-# Using the Package Manager Console in Visual Studio
-Install-Package StellarRPCSDK.Mobile
-```
+For MAUI applications target .NET 8 and follow the same instructions for .NET.
 
 ### Tizen
 
-For Tizen applications, add the following to your `.csproj` file:
+For Tizen applications, use the NuGet package from the Tizen folder of the release zip.
 
-```xml
-<ItemGroup>
-  <PackageReference Include="StellarRPCSDK.Tizen" Version="1.0.0" />
-</ItemGroup>
-```
 
-### Native Windows Applications
+### Native  Applications
 
-For native Windows applications using our Rust bindings:
+For native applications:
 
-1. Download the appropriate binary from our [GitHub Releases](https://github.com/yourusername/stellar-rpcsdk/releases)
-2. Place the binary in your project's output directory
-3. Add the appropriate P/Invoke declarations to your code
+1. Download the appropriate binary from our [GitHub Releases](https://github.com/FrankSzendzielarz/SorobanRPCSDK/releases)
+2. See the tutorials for further instructions on:
+3. Load the library
+4. Start it
+5. Create gRPC clients and invoke them.
 
-## Verifying the Installation
+Also see the Rust example [here](https://github.com/FrankSzendzielarz/SorobanRPCSDK/tree/main/StellarRPCSDK_Native/native_client_tests/rust_client) for examples of
+how to use the binary for your platform.
 
-To verify that the SDK is correctly installed:
-
-```csharp
-using Stellar.RPC;
-
-// Create a client instance
-var client = new StellarRPCClient("https://soroban-testnet.stellar.org");
-
-// Check connection to the server
-var health = await client.GetHealthAsync();
-Console.WriteLine($"Connected to Stellar network, latest ledger: {health.LatestLedger}");
-```
-
-## Framework Requirements
-
-- .NET 8.0 or higher
-- Unity 2021.3 or higher (for Unity package)
-- MAUI 7.0 or higher (for MAUI package)
-- Tizen 6.5 or higher (for Tizen package)
 
 ## Next Steps
 

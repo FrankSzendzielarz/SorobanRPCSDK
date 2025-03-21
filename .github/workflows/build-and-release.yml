@@ -49,12 +49,22 @@ jobs:
           ROOT_DIR=$(pwd)
           dotnet run --project Generator/Generator.csproj -- "$ROOT_DIR/StellarXDR" "$ROOT_DIR/StellarOpenRPC/stellar-rpc.openrpc.json" "$ROOT_DIR/StellarRPCSDK/Stellar/Generated" "$ROOT_DIR/StellarRPCSDK/RPC/Generated"
 
-      - name: Build SDK Variants
-        run: |
-          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:Version=${{ inputs.version }}
-          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:Version=${{ inputs.version }}
-          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:Version=${{ inputs.version }}
-          dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c NativeAOT -p:Version=${{ inputs.version }}
+      # Build each configuration separately and ensure output is preserved
+      - name: Build SDK - Release
+        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:Version=${{ inputs.version }}
+
+      - name: Build SDK - Unity
+        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:Version=${{ inputs.version }}
+
+      - name: Build SDK - Tizen
+        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:Version=${{ inputs.version }}
+
+      - name: Build SDK - NativeAOT
+        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c NativeAOT -p:Version=${{ inputs.version }}
+
+      # Build the Native RPC SDK explicitly with NativeAOT configuration
+      - name: Build Native SDK - NativeAOT
+        run: dotnet build StellarRPCSDK_Native/StellarRPCSDK_Native.csproj -c NativeAOT -p:Version=${{ inputs.version }}
 
       - name: Generate Protocol Buffer Wrappers
         run: |
@@ -65,17 +75,30 @@ jobs:
       - name: Create NuGet Packages
         run: |
           mkdir -p Releases/NuGet
-          # Create NuGet packages for Standard and Tizen (not Unity)
+          # Create NuGet packages for Standard and Tizen
           dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
-          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet
+          dotnet pack StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:PackageVersion=${{ inputs.version }} -o Releases/NuGet/Tizen
 
-      - name: Prepare Unity Build Output
+      # Copy each configuration's output to dedicated folders
+      - name: Prepare Output Folders
         run: |
+          # Create output directories
+          mkdir -p Releases/Release
           mkdir -p Releases/Unity
-          cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.dll Releases/Unity/
-          cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.pdb Releases/Unity/
-          # Copy any additional required files for Unity
-          # cp StellarRPCSDK/bin/Unity/netstandard2.1/StellarRPCSDK.xml Releases/Unity/  # If you have XML documentation
+          mkdir -p Releases/Tizen
+          mkdir -p Releases/NativeAOT
+          
+          # Copy Release build
+          cp -r StellarRPCSDK/bin/Release/* Releases/Release/
+          
+          # Copy Unity build
+          cp -r StellarRPCSDK/bin/Unity/* Releases/Unity/
+          
+          # Copy Tizen build
+          cp -r StellarRPCSDK/bin/Tizen/* Releases/Tizen/
+          
+          # Copy NativeAOT build
+          cp -r StellarRPCSDK/bin/NativeAOT/* Releases/NativeAOT/
 
       - name: Upload NuGet Packages
         uses: actions/upload-artifact@v4
@@ -83,11 +106,29 @@ jobs:
           name: nuget-packages
           path: Releases/NuGet
 
+      - name: Upload Release Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-build
+          path: Releases/Release
+
       - name: Upload Unity Build
         uses: actions/upload-artifact@v4
         with:
           name: unity-build
           path: Releases/Unity
+
+      - name: Upload Tizen Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: tizen-build
+          path: Releases/Tizen
+
+      - name: Upload NativeAOT Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: nativeaot-build
+          path: Releases/NativeAOT
 
       # Prepare archive with only the necessary files
       - name: Prepare Archive Files
@@ -149,7 +190,7 @@ jobs:
         shell: pwsh
         run: |
           mkdir -p Releases/Binaries/${{ matrix.platform }}
-          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj -c Release -r ${{ matrix.platform }} --self-contained -p:Version=${{ github.event.inputs.version }} -o Releases/Binaries/${{ matrix.platform }}
+          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj -c NativeAOT -r ${{ matrix.platform }} --self-contained -p:Version=${{ github.event.inputs.version }} -o Releases/Binaries/${{ matrix.platform }}
 
       - name: Upload Native Binary
         uses: actions/upload-artifact@v4
@@ -189,7 +230,7 @@ jobs:
         run: |
           mkdir -p Releases/Binaries/linux-x64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
-            -c Release \
+            -c NativeAOT \
             -r linux-x64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
@@ -203,7 +244,7 @@ jobs:
 
   publish_native_linux_arm64:
     needs: build
-    # Use the GitHub-hosted ARM64 runner
+    # Use the GitHub-hosted ARM64 runner with the correct label
     runs-on: ubuntu-24.04-arm
     steps:
       - name: Setup .NET
@@ -234,7 +275,7 @@ jobs:
         run: |
           mkdir -p Releases/Binaries/linux-arm64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
-            -c Release \
+            -c NativeAOT \
             -r linux-arm64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
@@ -278,7 +319,7 @@ jobs:
         run: |
           mkdir -p Releases/Binaries/osx-x64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
-            -c Release \
+            -c NativeAOT \
             -r osx-x64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
@@ -292,7 +333,7 @@ jobs:
 
   publish_native_macos_arm64:
     needs: build
-    # macOS ARM64 can be built on Intel macOS
+    # macOS ARM64 - technically can use the newer macOS ARM runners, but can also cross-compile from Intel
     runs-on: macos-latest
     steps:
       - name: Setup .NET
@@ -323,7 +364,7 @@ jobs:
         run: |
           mkdir -p Releases/Binaries/osx-arm64
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
-            -c Release \
+            -c NativeAOT \
             -r osx-arm64 \
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
@@ -356,32 +397,40 @@ jobs:
       # Prepare release files in a clean directory structure
       - name: Prepare release files
         run: |
-          mkdir -p release_files
-          # Copy the specific files we know exist
-          cp artifacts/nuget-packages/*.nupkg release_files/
-          cp artifacts/unity-build/*.dll release_files/
-          cp artifacts/unity-build/*.pdb release_files/
-          mkdir -p release_files/win-x64
-          cp artifacts/native-binary-win-x64/*.dll release_files/win-x64/
-          cp artifacts/native-binary-win-x64/*.pdb release_files/win-x64/
-          mkdir -p release_files/win-arm64
-          cp artifacts/native-binary-win-arm64/*.dll release_files/win-arm64/
-          cp artifacts/native-binary-win-arm64/*.pdb release_files/win-arm64/
-          mkdir -p release_files/linux-x64
-          cp artifacts/native-binary-linux-x64/*.so release_files/linux-x64/
-          cp artifacts/native-binary-linux-x64/*.pdb release_files/linux-x64/
-          mkdir -p release_files/linux-arm64
-          cp artifacts/native-binary-linux-arm64/*.so release_files/linux-arm64/
-          cp artifacts/native-binary-linux-arm64/*.pdb release_files/linux-arm64/
-          mkdir -p release_files/osx-x64
-          cp artifacts/native-binary-osx-x64/*.dylib release_files/osx-x64/
-          cp artifacts/native-binary-osx-x64/*.pdb release_files/osx-x64/
-          mkdir -p release_files/osx-arm64
-          cp artifacts/native-binary-osx-arm64/*.dylib release_files/osx-arm64/
-          cp artifacts/native-binary-osx-arm64/*.pdb release_files/osx-arm64/
+          mkdir -p release_files/nuget
+          mkdir -p release_files/release
+          mkdir -p release_files/unity
+          mkdir -p release_files/tizen
+          mkdir -p release_files/nativeaot
+          mkdir -p release_files/native/win-x64
+          mkdir -p release_files/native/win-arm64
+          mkdir -p release_files/native/linux-x64
+          mkdir -p release_files/native/linux-arm64
+          mkdir -p release_files/native/osx-x64
+          mkdir -p release_files/native/osx-arm64
           
-          # Create a zip archive of all release files
-          zip -r release-v${{ github.event.inputs.version }}.zip release_files
+          # Copy artifacts to release folders
+          cp -r artifacts/nuget-packages/* release_files/nuget/
+          cp -r artifacts/release-build/* release_files/release/
+          cp -r artifacts/unity-build/* release_files/unity/
+          cp -r artifacts/tizen-build/* release_files/tizen/
+          cp -r artifacts/nativeaot-build/* release_files/nativeaot/
+          cp -r artifacts/native-binary-win-x64/* release_files/native/win-x64/
+          cp -r artifacts/native-binary-win-arm64/* release_files/native/win-arm64/
+          cp -r artifacts/native-binary-linux-x64/* release_files/native/linux-x64/
+          cp -r artifacts/native-binary-linux-arm64/* release_files/native/linux-arm64/
+          cp -r artifacts/native-binary-osx-x64/* release_files/native/osx-x64/
+          cp -r artifacts/native-binary-osx-arm64/* release_files/native/osx-arm64/
+          
+          # Create ZIP archives for each component
+          cd release_files
+          zip -r ../stellar-sdk-nuget-v${{ github.event.inputs.version }}.zip nuget
+          zip -r ../stellar-sdk-release-v${{ github.event.inputs.version }}.zip release
+          zip -r ../stellar-sdk-unity-v${{ github.event.inputs.version }}.zip unity
+          zip -r ../stellar-sdk-tizen-v${{ github.event.inputs.version }}.zip tizen
+          zip -r ../stellar-sdk-nativeaot-v${{ github.event.inputs.version }}.zip nativeaot
+          zip -r ../stellar-sdk-native-v${{ github.event.inputs.version }}.zip native
+          cd ..
 
       # Try deleting any existing release, ignoring errors
       - name: Try deleting existing release
@@ -395,16 +444,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create a fresh release with just the zip file
           gh release create v${{ github.event.inputs.version }} \
             --title "Release v${{ github.event.inputs.version }}" \
             --draft \
-            release-v${{ github.event.inputs.version }}.zip
+            stellar-sdk-nuget-v${{ github.event.inputs.version }}.zip \
+            stellar-sdk-release-v${{ github.event.inputs.version }}.zip \
+            stellar-sdk-unity-v${{ github.event.inputs.version }}.zip \
+            stellar-sdk-tizen-v${{ github.event.inputs.version }}.zip \
+            stellar-sdk-nativeaot-v${{ github.event.inputs.version }}.zip \
+            stellar-sdk-native-v${{ github.event.inputs.version }}.zip
 
-      # - name: Publish NuGet Packages
-      #   run: |
-      #     for package in artifacts/nuget-packages/*.nupkg; do
-      #       dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-      #     done
-
-     
+      - name: Publish NuGet Packages
+        run: |
+          for package in artifacts/nuget-packages/*.nupkg; do
+            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          done
