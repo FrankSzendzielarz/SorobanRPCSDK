@@ -163,7 +163,9 @@ jobs:
           dir extract_dir\StellarRPCSDK
           dir extract_dir\StellarRPCSDK_Native
 
-      - name: Publish Native Binary
+      # Use different publish commands for Windows and Unix platforms
+      - name: Publish Native Binary (Unix)
+        if: runner.os != 'Windows'
         run: |
           mkdir -p Releases/Binaries/${{ matrix.platform }}
           dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
@@ -172,6 +174,13 @@ jobs:
             --self-contained \
             -p:Version=${{ github.event.inputs.version }} \
             -o Releases/Binaries/${{ matrix.platform }}
+
+      - name: Publish Native Binary (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          mkdir -p Releases/Binaries/${{ matrix.platform }}
+          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj -c Release -r ${{ matrix.platform }} --self-contained -p:Version=${{ github.event.inputs.version }} -o Releases/Binaries/${{ matrix.platform }}
 
       - name: Upload Native Binary
         uses: actions/upload-artifact@v4
