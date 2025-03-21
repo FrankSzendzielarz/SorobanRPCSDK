@@ -339,6 +339,10 @@ jobs:
     needs: [build, publish_native_windows, publish_native_linux_x64, publish_native_linux_arm64, publish_native_macos_x64, publish_native_macos_arm64]
     runs-on: ubuntu-latest
     steps:
+      # Check out the repository first for git context
+      - name: Check out code
+        uses: actions/checkout@v4
+
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
@@ -396,10 +400,10 @@ jobs:
             gh release upload v${{ github.event.inputs.version }} "$file"
           done
 
-      - name: Publish NuGet Packages
-        run: |
-          for package in artifacts/nuget-packages/*.nupkg; do
-            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-          done
+      # - name: Publish NuGet Packages
+      #   run: |
+      #     for package in artifacts/nuget-packages/*.nupkg; do
+      #       dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      #     done
 
      
