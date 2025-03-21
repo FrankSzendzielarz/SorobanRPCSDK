@@ -454,8 +454,8 @@ jobs:
             stellar-sdk-nativeaot-v${{ github.event.inputs.version }}.zip \
             stellar-sdk-native-v${{ github.event.inputs.version }}.zip
 
-      - name: Publish NuGet Packages
-        run: |
-          for package in artifacts/nuget-packages/*.nupkg; do
-            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-          done
+      # - name: Publish NuGet Packages
+      #   run: |
+      #     for package in artifacts/nuget-packages/*.nupkg; do
+      #       dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      #     done
