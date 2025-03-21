@@ -11,6 +11,10 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -353,8 +357,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish NuGet Packages
-        run: |
-          for package in artifacts/nuget-packages/*.nupkg; do
-            dotnet nuget push $package --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-          done
+     
