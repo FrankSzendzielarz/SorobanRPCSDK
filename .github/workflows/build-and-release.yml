@@ -349,24 +349,42 @@ jobs:
         run: |
           find artifacts -type f | sort
 
-      # Modified GitHub Release step with more specific file patterns
+       # Create a directory with just the files we want to include
+      - name: Prepare release files
+        run: |
+          mkdir -p release_files
+          # Copy the specific files we know exist
+          cp artifacts/nuget-packages/*.nupkg release_files/
+          cp artifacts/unity-build/*.dll release_files/
+          cp artifacts/unity-build/*.pdb release_files/
+          mkdir -p release_files/win-x64
+          cp artifacts/native-binary-win-x64/*.dll release_files/win-x64/
+          cp artifacts/native-binary-win-x64/*.pdb release_files/win-x64/
+          mkdir -p release_files/win-arm64
+          cp artifacts/native-binary-win-arm64/*.dll release_files/win-arm64/
+          cp artifacts/native-binary-win-arm64/*.pdb release_files/win-arm64/
+          mkdir -p release_files/linux-x64
+          cp artifacts/native-binary-linux-x64/*.so release_files/linux-x64/
+          cp artifacts/native-binary-linux-x64/*.pdb release_files/linux-x64/
+          mkdir -p release_files/linux-arm64
+          cp artifacts/native-binary-linux-arm64/*.so release_files/linux-arm64/
+          cp artifacts/native-binary-linux-arm64/*.pdb release_files/linux-arm64/
+          mkdir -p release_files/osx-x64
+          cp artifacts/native-binary-osx-x64/*.dylib release_files/osx-x64/
+          cp artifacts/native-binary-osx-x64/*.pdb release_files/osx-x64/
+          mkdir -p release_files/osx-arm64
+          cp artifacts/native-binary-osx-arm64/*.dylib release_files/osx-arm64/
+          cp artifacts/native-binary-osx-arm64/*.pdb release_files/osx-arm64/
+          ls -la release_files
+          find release_files -type f | sort
+
+      # Simple GitHub Release using directory rather than specific file patterns
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ github.event.inputs.version }}
           name: Release v${{ github.event.inputs.version }}
-          files: |
-            artifacts/nuget-packages/*.nupkg
-            artifacts/unity-build/*.dll
-            artifacts/unity-build/*.pdb
-            artifacts/native-binary-win-x64/**/*.dll
-            artifacts/native-binary-win-x64/**/*.pdb
-            artifacts/native-binary-win-arm64/**/*.dll
-            artifacts/native-binary-win-arm64/**/*.pdb
-            artifacts/native-binary-linux-x64/**/*.so
-            artifacts/native-binary-linux-arm64/**/*.so
-            artifacts/native-binary-osx-x64/**/*.dylib
-            artifacts/native-binary-osx-arm64/**/*.dylib
+          files: release_files/**/*
           draft: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
