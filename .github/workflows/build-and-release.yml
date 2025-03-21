@@ -85,10 +85,23 @@ jobs:
           name: unity-build
           path: Releases/Unity
 
-      # Create a complete build archive with all the generated content
+      # Prepare archive with only the necessary files
+      - name: Prepare Archive Files
+        run: |
+          mkdir -p archive_content
+          cp -r StellarRPCSDK archive_content/
+          cp -r StellarRPCSDK_Native archive_content/
+          cp -r ProtoGenerator archive_content/
+          cp -r StellarOpenRPC archive_content/
+          cp -r StellarXDR archive_content/
+
+      # Create a complete build archive with only the necessary content
       - name: Create Build Archive
         run: |
-          tar -czf build-archive.tar.gz .
+          cd archive_content
+          tar -czf ../build-archive.tar.gz .
+          cd ..
+          ls -la
 
       - name: Upload Build Archive
         uses: actions/upload-artifact@v4
@@ -121,7 +134,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # Download and extract the complete build
+      # Create a directory to extract to
+      - name: Create Extract Directory
+        run: mkdir extract_dir
+
+      # Download the build archive
       - name: Download Build Archive
         uses: actions/download-artifact@v4
         with:
@@ -132,22 +149,24 @@ jobs:
       - name: Extract Build Archive (Unix)
         if: runner.os != 'Windows'
         run: |
-          tar -xzf build-archive.tar.gz
-          ls -la StellarRPCSDK/
-          ls -la StellarRPCSDK_Native/
+          tar -xzf build-archive.tar.gz -C extract_dir
+          ls -la extract_dir
+          ls -la extract_dir/StellarRPCSDK
+          ls -la extract_dir/StellarRPCSDK_Native
 
       - name: Extract Build Archive (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          tar -xzf build-archive.tar.gz
-          dir StellarRPCSDK
-          dir StellarRPCSDK_Native
+          tar -xzf build-archive.tar.gz -C extract_dir
+          dir extract_dir
+          dir extract_dir\StellarRPCSDK
+          dir extract_dir\StellarRPCSDK_Native
 
       - name: Publish Native Binary
         run: |
           mkdir -p Releases/Binaries/${{ matrix.platform }}
-          dotnet publish StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
+          dotnet publish extract_dir/StellarRPCSDK_Native/StellarRPCSDK_Native.csproj \
             -c Release \
             -r ${{ matrix.platform }} \
             --self-contained \
