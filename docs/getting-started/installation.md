@@ -102,10 +102,10 @@ For Tizen applications, use the NuGet package from the Tizen folder of the relea
 For native applications:
 
 1. Download the appropriate binary from our [GitHub Releases](https://github.com/FrankSzendzielarz/SorobanRPCSDK/releases)
-2. See the tutorials for further instructions on:
-3. Load the library
-4. Start it
-5. Create gRPC clients and invoke them.
+2. See the tutorials for further instructions to
+    1. Load the library
+    2. Start it
+    3. Create gRPC clients and invoke them.
 
 Also see the Rust example [here](https://github.com/FrankSzendzielarz/SorobanRPCSDK/tree/main/StellarRPCSDK_Native/native_client_tests/rust_client) for examples of
 how to use the binary for your platform.

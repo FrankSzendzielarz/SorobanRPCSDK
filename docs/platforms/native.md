@@ -32,6 +32,9 @@ The native binaries are available from the GitHub releases page for this reposit
 - Linux (linux-x64, linux-arm64)
 - macOS (osx-x64, osx-arm64)
 
+An example release is here https://github.com/FrankSzendzielarz/SorobanRPCSDK/releases/download/v0.0.3/stellar-sdk-native-v0.0.3.zip Note that the binary is the **sdk-native** not
+the native-aot. The zip file contains the proto files in the proto folder.
+
 For supported platforms, see the list in `StellarRPCSDK_Native/README.txt`:
 
 ```

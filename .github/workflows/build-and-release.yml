@@ -138,7 +138,6 @@ jobs:
           path: |
             StellarRPCSDK_Native/Stellar.proto
             StellarRPCSDK_Native/Stellar.RPC.proto
-            StellarRPCSDK_Native/gRPC/
 
       # Prepare archive with only the necessary files
       - name: Prepare Archive Files
