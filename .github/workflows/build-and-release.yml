@@ -130,6 +130,16 @@ jobs:
           name: nativeaot-build
           path: Releases/NativeAOT
 
+      # Upload generated protobuf files for later use
+      - name: Upload Protobuf Files
+        uses: actions/upload-artifact@v4
+        with:
+          name: protobuf-files
+          path: |
+            StellarRPCSDK_Native/Stellar.proto
+            StellarRPCSDK_Native/Stellar.RPC.proto
+            StellarRPCSDK_Native/gRPC/
+
       # Prepare archive with only the necessary files
       - name: Prepare Archive Files
         run: |
@@ -408,6 +418,7 @@ jobs:
           mkdir -p release_files/native/linux-arm64
           mkdir -p release_files/native/osx-x64
           mkdir -p release_files/native/osx-arm64
+          mkdir -p release_files/native/proto
           
           # Copy artifacts to release folders
           cp -r artifacts/nuget-packages/* release_files/nuget/
@@ -421,6 +432,9 @@ jobs:
           cp -r artifacts/native-binary-linux-arm64/* release_files/native/linux-arm64/
           cp -r artifacts/native-binary-osx-x64/* release_files/native/osx-x64/
           cp -r artifacts/native-binary-osx-arm64/* release_files/native/osx-arm64/
+          
+          # Copy protobuf files to the native release folder
+          cp -r artifacts/protobuf-files/* release_files/native/proto/
           
           # Create ZIP archives for each component
           cd release_files
