@@ -1,7 +1,7 @@
 ﻿# Stellar SDK Build and Release Guide
 
 This document outlines the **manual** process for updating the Stellar SDK from updated OpenRPC and XDR specifications, building all variants, and creating releases.
-The GitHub Action that makes this semiautomatic can be found [here](../tutorials/payment-transaction.md)
+The GitHub Action that makes this semiautomatic can be found [here](https://github.com/FrankSzendzielarz/SorobanRPCSDK/actions/workflows/build-and-release.yml)
 
 ## Overview
 
