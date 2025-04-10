@@ -86,8 +86,8 @@
 
 
 
-	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Config.props"  />
-	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Targets"  />
+	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Config.props" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'" />
+	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Targets" Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'"  />
 
 
 	
