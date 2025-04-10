@@ -54,7 +54,7 @@ jobs:
         run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Release -p:Version=${{ inputs.version }}
 
       - name: Build SDK - Unity
-        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:Version=${{ inputs.version }} -v:detailed -p:DoILRepack=true
+        run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Unity -p:Version=${{ inputs.version }} -v:detailed 
 
       - name: Build SDK - Tizen
         run: dotnet build StellarRPCSDK/StellarRPCSDK.csproj -c Tizen -p:Version=${{ inputs.version }}
