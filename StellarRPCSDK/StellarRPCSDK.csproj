@@ -11,6 +11,7 @@
 		<RootNamespace>Stellar</RootNamespace>
 		<DefineConstants>TIZEN;$(DefineConstants)</DefineConstants> 
 		<Nullable>disable</Nullable>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT;Tizen;TizenDebug</Configurations>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)'=='Unity' Or '$(Configuration)'=='UnityDebug'">
@@ -18,6 +19,7 @@
 		<RootNamespace>Stellar</RootNamespace>
 		<DefineConstants>UNITY;$(DefineConstants)</DefineConstants>
 		<Nullable>disable</Nullable>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT;Tizen;TizenDebug</Configurations>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='NativeAOT' Or '$(Configuration)'=='NativeAOTDebug'">
@@ -28,6 +30,7 @@
 		<IsAotCompatible>true</IsAotCompatible>
 		<LangVersion>latest</LangVersion>
 		<Nullable>disable</Nullable>
+		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT;Tizen;TizenDebug</Configurations>
 
 	</PropertyGroup>
 

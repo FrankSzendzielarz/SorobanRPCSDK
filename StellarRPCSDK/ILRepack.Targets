@@ -5,10 +5,15 @@
 	
 		<ItemGroup>
 			<InputAssemblies Include="@(ReferencePathWithRefAssemblies)" Condition="'%(filename)' == 'Newtonsoft.Json'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.ServiceModel.Primitives'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'protobuf-net'" />
 			<InputAssemblies Include="$(TargetPath)" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'dotnetstandard-bip32'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'dotnetstandard-bip39'" />
 			<InputAssemblies Include="@(ReferencePath)" Condition="'%(filename)' == 'System.ComponentModel.Annotations'" />
+			<InputAssemblies Include="@(ReferencePath)" Condition="$([System.String]::Copy('%(Filename)').StartsWith('Microsoft.Extensions'))" />
+			<InputAssemblies Include="@(ReferencePathWithRefAssemblies)" Condition="'%(filename)' == 'System.RunTime.CompilerServices.Unsafe'" />
+			<InputAssemblies Include="@(ReferencePathWithRefAssemblies)" Condition="'%(filename)' == 'System.Diagnostics.DiagnosticSource'" />
 		</ItemGroup>
 
 	
@@ -17,7 +22,7 @@
 				  DebugInfo="true"
 				  Union="true"
 				  Internalize="true"
-			     InternalizeExclude="^Stellar.*"
+				InternalizeExclude="^Stellar.*|^Microsoft\.Extensions\.Http"
 				  InputAssemblies="@(InputAssemblies)"
 				  OutputFile="$(TargetPath)"
 				  Parallel="true"

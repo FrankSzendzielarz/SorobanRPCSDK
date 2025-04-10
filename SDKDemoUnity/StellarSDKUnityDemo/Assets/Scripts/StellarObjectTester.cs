@@ -45,8 +45,9 @@ public class StellarObjectTester : MonoBehaviour
     private async Task InitializeStellarClient()
     {
         httpClient = new HttpClient();
-        httpClient.BaseAddress = new Uri(testnetUrl);
-        sorobanClient = new StellarRPCClient(httpClient);
+        httpClient.BaseAddress = new Uri("https://soroban-testnet.stellar.org");
+        var httpClientFactory = new SimpleHttpClientFactory(httpClient);
+        sorobanClient = new StellarRPCClient(httpClientFactory);
 
         var testAccount = MuxedAccount.FromSecretSeed(secretSeed);
         testAccountId = new AccountID(testAccount.XdrPublicKey);
@@ -118,14 +119,10 @@ public class StellarObjectTester : MonoBehaviour
             isProcessing = true;
             Debug.Log("Starting account test...");
 
-            using (httpClient = new HttpClient())
-            {
-                httpClient.BaseAddress = new Uri(testnetUrl);
-                sorobanClient = new StellarRPCClient(httpClient);
 
-                await InitializeStellarClient();
-                await GetAccountDetails();
-            }
+            await InitializeStellarClient();
+            await GetAccountDetails();
+            
             Debug.Log("Account test completed successfully!");
         }
         catch (Exception e)
@@ -138,5 +135,22 @@ public class StellarObjectTester : MonoBehaviour
             httpClient?.Dispose();
             httpClient = null;
         }
+    }
+}
+
+// A simple HTTP client factory for console applications
+// Note: In real applications, you would typically use dependency injection
+public class SimpleHttpClientFactory : IHttpClientFactory
+{
+    private readonly HttpClient _httpClient;
+
+    public SimpleHttpClientFactory(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public HttpClient CreateClient(string name)
+    {
+        return _httpClient;
     }
 }
