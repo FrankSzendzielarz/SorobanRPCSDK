@@ -86,8 +86,8 @@
 
 
 
-	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Config.Props"  />
-	<Import Project="$(MSBuildProjectDirectory)\ILRepack.targets"  />
+	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Config.props"  />
+	<Import Project="$(MSBuildProjectDirectory)\ILRepack.Targets"  />
 
 
 	
