@@ -19,6 +19,7 @@
 		<RootNamespace>Stellar</RootNamespace>
 		<DefineConstants>UNITY;$(DefineConstants)</DefineConstants>
 		<Nullable>disable</Nullable>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
 		<Configurations>Debug;Release;Unity;UnityDebug;NativeAOTDebug;NativeAOT;Tizen;TizenDebug</Configurations>
 	</PropertyGroup>
 
